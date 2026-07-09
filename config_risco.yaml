@@ -1,0 +1,384 @@
+# ──────────────────────────────────────────────────────────────
+#  Radar de Risco — Configuração
+#  Uso:  python risk_dashboard.py --config config_risco.yaml
+#  Demo: python risk_dashboard.py --config config_risco.yaml --demo
+# ──────────────────────────────────────────────────────────────
+
+dashboard:
+  title: "Radar de Risco — Emissores"
+  language: "pt-BR"
+  country: "BR"
+  period: "7d"                 # Janela de busca no Google News: 1d | 7d | 30d
+  windows: [7, 30, 90, 365]    # Janelas selecionáveis no dashboard
+  default_window: 7            # Janela exibida ao abrir
+  attention_max_window: 30     # Selo "ATENÇÃO IMEDIATA" só em janelas curtas (score não é comparável em janelas longas)
+  history_keep_days: 400       # Retenção do histórico (>= maior janela)
+  max_articles_per_query: 15
+  restrict_to_sources: false
+  sources:
+    - "valor.globo.com"
+    - "infomoney.com.br"
+    - "braziljournal.com"
+    - "neofeed.com.br"
+    - "exame.com"
+    - "estadao.com.br"
+    - "folha.uol.com.br"
+    - "moneytimes.com.br"
+    - "reuters.com"
+    - "bloomberg.com"
+    - "bloomberglinea.com.br"
+    - "pipelinevalor.globo.com"
+
+# ── Tiers de monitoramento ────────────────────────────────────
+# fetch_every_n_runs: 1 = busca em toda execução (tempo quase-real com o
+# workflow 4x/dia) · 2 = busca em execuções alternadas · 0 = não busca,
+# a menos que o emissor tenha force_fetch: true (Tier 3 sob demanda).
+tiers:
+  1: { label: "Tier 1", fetch_every_n_runs: 1 }
+  2: { label: "Tier 2", fetch_every_n_runs: 2 }
+  3: { label: "Tier 3", fetch_every_n_runs: 0 }
+
+# ── Watchlist de emissores ────────────────────────────────────
+# aliases: nome + variações + TODOS os tickers (matching por palavra inteira,
+# sem acento/caixa). tier: nível de monitoramento.
+watchlist:
+  # ── Tier 1 — maior exposição típica dos fundos (tempo quase-real)
+  - name: "Petrobras"
+    tier: 1
+    aliases: ["Petrobras", "Petróleo Brasileiro", "PETR4", "PETR3"]
+  - name: "Vale"
+    tier: 1
+    aliases: ["Vale S.A.", "VALE3"]
+  - name: "Itaú Unibanco"
+    tier: 1
+    aliases: ["Itaú Unibanco", "Itaú", "Itau", "ITUB4", "ITUB3"]
+  - name: "Banco do Brasil"
+    tier: 1
+    aliases: ["Banco do Brasil", "BBAS3"]
+  - name: "Bradesco"
+    tier: 1
+    aliases: ["Bradesco", "BBDC4", "BBDC3"]
+  - name: "BTG Pactual"
+    tier: 1
+    aliases: ["BTG Pactual", "BTG", "BPAC11", "BPAC3", "BPAC5"]
+  - name: "WEG"
+    tier: 1
+    aliases: ["WEG", "WEGE3"]
+  - name: "Ambev"
+    tier: 1
+    aliases: ["Ambev", "ABEV3"]
+  - name: "Suzano"
+    tier: 1
+    aliases: ["Suzano", "SUZB3"]
+  - name: "PRIO"
+    tier: 1
+    aliases: ["PRIO", "PetroRio", "PRIO3"]
+  - name: "Vibra Energia"
+    tier: 1
+    aliases: ["Vibra Energia", "Vibra", "VBBR3"]
+  - name: "Localiza"
+    tier: 1
+    aliases: ["Localiza", "RENT3"]
+  - name: "Raia Drogasil"
+    tier: 1
+    aliases: ["Raia Drogasil", "RD Saúde", "RADL3"]
+  - name: "Rede D'Or"
+    tier: 1
+    aliases: ["Rede D'Or", "Rede DOr", "RDOR3"]
+  - name: "Equatorial Energia"
+    tier: 1
+    aliases: ["Equatorial Energia", "Equatorial", "EQTL3"]
+
+  # ── Tier 2 — demais large caps (monitoramento frequente)
+  - name: "Itaúsa"
+    tier: 2
+    aliases: ["Itaúsa", "Itausa", "ITSA4"]
+  - name: "Santander Brasil"
+    tier: 2
+    aliases: ["Santander Brasil", "Santander", "SANB11", "SANB4", "SANB3"]
+  - name: "B3"
+    tier: 2
+    aliases: ["B3 S.A.", "B3SA3"]
+  - name: "JBS"
+    tier: 2
+    aliases: ["JBS", "JBSS3"]
+  - name: "Rumo"
+    tier: 2
+    aliases: ["Rumo", "RAIL3"]
+  - name: "Eletrobras"
+    tier: 2
+    aliases: ["Eletrobras", "ELET3", "ELET6"]
+  - name: "Gerdau"
+    tier: 2
+    aliases: ["Gerdau", "GGBR4"]
+  - name: "Copel"
+    tier: 2
+    aliases: ["Copel", "CPLE6"]
+  - name: "Cemig"
+    tier: 2
+    aliases: ["Cemig", "CMIG4"]
+  - name: "Sabesp"
+    tier: 2
+    aliases: ["Sabesp", "SBSP3"]
+  - name: "Embraer"
+    tier: 2
+    aliases: ["Embraer", "EMBR3"]
+  - name: "Klabin"
+    tier: 2
+    aliases: ["Klabin", "KLBN11"]
+  - name: "Hapvida"
+    tier: 2
+    aliases: ["Hapvida", "HAPV3"]
+  - name: "CCR"
+    tier: 2
+    aliases: ["CCR", "Grupo CCR", "Motiva", "CCRO3"]
+  - name: "Cosan"
+    tier: 2
+    aliases: ["Cosan", "CSAN3"]
+  - name: "Telefônica Brasil"
+    tier: 2
+    aliases: ["Telefônica Brasil", "Vivo", "VIVT3"]
+  - name: "Natura &Co"
+    tier: 2
+    aliases: ["Natura &Co", "Natura", "NTCO3"]
+  - name: "TIM Brasil"
+    tier: 2
+    aliases: ["TIM Brasil", "TIM", "TIMS3"]
+  - name: "Ultrapar"
+    tier: 2
+    aliases: ["Ultrapar", "Ultra", "UGPA3"]
+  - name: "Porto"
+    tier: 2
+    aliases: ["Porto Seguro", "Porto", "PSSA3"]
+  - name: "BRF"
+    tier: 2
+    aliases: ["BRF", "BRFS3"]
+  - name: "Lojas Renner"
+    tier: 2
+    aliases: ["Lojas Renner", "Renner", "LREN3"]
+  - name: "Engie Brasil"
+    tier: 2
+    aliases: ["Engie Brasil", "Engie", "EGIE3"]
+  - name: "ISA Energia Brasil"
+    tier: 2
+    aliases: ["ISA Energia", "ISA CTEEP", "ISAE4"]
+  - name: "CPFL Energia"
+    tier: 2
+    aliases: ["CPFL Energia", "CPFL", "CPFE3"]
+  - name: "Smart Fit"
+    tier: 2
+    aliases: ["Smart Fit", "Smartfit", "SMFT3"]
+  - name: "Caixa Seguridade"
+    tier: 2
+    aliases: ["Caixa Seguridade", "CXSE3"]
+
+  # ── Tier 3 — empresas menores, apenas com exposição relevante.
+  # Adicione com tier: 3 e force_fetch: true quando quiser ativar a busca:
+  # - name: "Exemplo S.A."
+  #   tier: 3
+  #   force_fetch: true
+  #   aliases: ["Exemplo", "EXMP3"]
+
+# ── Buscas de mercado (sem empresa específica) ────────────────
+market_queries:
+  enabled: true
+  queries:
+    - "recuperação judicial empresa"
+    - "pedido de falência empresa"
+    - "rebaixamento rating empresa brasileira"
+    - "covenant dívida empresa"
+    - "CVM suspende negociação"
+
+# ── Taxonomia de eventos, severidade e scoring ────────────────
+taxonomy:
+  # 🔴 Crítico — alerta imediato
+  - id: recuperacao_judicial
+    label: "Recuperação Judicial"
+    severity: critico
+    score: 100
+    keywords: ["recuperação judicial", "recuperacao judicial", "pedido de RJ", "entra com RJ", "chapter 11"]
+  - id: default
+    label: "Default"
+    severity: critico
+    score: 100
+    keywords: ["default", "calote", "deixa de pagar juros", "não paga debênture", "inadimplência da dívida", "missed payment", "atraso no pagamento de dívida"]
+  - id: falencia
+    label: "Falência"
+    severity: critico
+    score: 95
+    keywords: ["falência", "falencia", "pedido de falência", "autofalência", "liquidação judicial", "bankruptcy"]
+  - id: fraude
+    label: "Fraude"
+    severity: critico
+    score: 90
+    keywords: ["fraude contábil", "fraude fiscal", "inconsistências contábeis", "manipulação de resultados", "accounting fraud", "rombo contábil", "esquema de fraude na", "fraude bilionária na"]
+  - id: suspensao_negociacao
+    label: "Suspensão de negociação"
+    severity: critico
+    score: 85
+    keywords: ["suspensão de negociação", "suspensao de negociacao", "negociação suspensa", "trading halt", "B3 suspende"]
+  - id: intervencao_regulatoria
+    label: "Intervenção regulatória"
+    severity: critico
+    score: 85
+    keywords: ["intervenção do banco central", "liquidação extrajudicial", "intervenção regulatória", "regime de administração especial", "intervenção na companhia"]
+  - id: covenant_breach
+    label: "Covenant breach"
+    severity: critico
+    score: 80
+    keywords: ["covenant", "quebra de covenant", "waiver", "descumprimento de cláusula financeira"]
+  - id: rebaixamento_rating
+    label: "Rebaixamento de rating"
+    severity: critico
+    score: 80
+    keywords: ["rebaixamento de rating", "downgrade", "rebaixa rating", "rebaixa nota de crédito", "corta rating", "rebaixada pela S&P", "rebaixada pela Moody's", "rebaixada pela Fitch"]
+  - id: renuncia_auditor
+    label: "Renúncia do auditor"
+    severity: critico
+    score: 75
+    keywords: ["renúncia do auditor", "auditor renuncia", "auditoria renuncia", "KPMG renuncia", "PwC renuncia", "EY renuncia", "Deloitte renuncia"]
+
+  # 🟠 Alto impacto
+  - id: investigacao_regulatoria
+    label: "Investigação regulatória"
+    severity: alto
+    score: 30
+    keywords: ["CVM abre processo", "inquérito administrativo", "investigação da CVM", "alvo de operação", "alvo de buscas", "busca e apreensão"]
+  - id: lucro_abaixo_consenso
+    label: "Lucro muito abaixo do consenso"
+    severity: alto
+    score: 45
+    keywords: ["lucro abaixo do consenso", "resultado decepciona", "prejuízo surpreende", "abaixo das expectativas", "miss no resultado", "lucro despenca"]
+  - id: ma
+    label: "M&A"
+    severity: alto
+    score: 40
+    keywords: ["fusão", "aquisição", "M&A", "compra a rival", "incorporação de", "combinação de negócios", "OPA"]
+  - id: guidance_negativo
+    label: "Guidance negativo"
+    severity: alto
+    score: 35
+    keywords: ["guidance negativo", "reduz guidance", "corta projeção", "revisa projeções para baixo", "reduz estimativa"]
+  - id: emissao_divida
+    label: "Grande emissão de dívida"
+    severity: alto
+    score: 35
+    keywords: ["emissão de debêntures", "emissão de dívida", "capta R$", "emissão de bonds", "oferta de notas", "emissão bilionária"]
+  - id: follow_on
+    label: "Follow-on"
+    severity: alto
+    score: 30
+    keywords: ["follow-on", "follow on", "oferta subsequente de ações", "oferta de ações", "aumento de capital"]
+  - id: troca_ceo
+    label: "Troca de CEO"
+    severity: alto
+    score: 25
+    keywords: ["novo CEO", "troca de CEO", "renúncia do CEO", "deixa o comando da", "assume a presidência da", "CEO deixa"]
+
+  # 🟡 Médio
+  - id: outlook_negativo
+    label: "Outlook negativo"
+    severity: medio
+    score: 20
+    keywords: ["perspectiva negativa", "outlook rebaixado", "perspectiva rebaixada", "revisa perspectiva para negativa", "perspectiva para negativa"]
+  - id: recomendacao_negativa
+    label: "Recomendação rebaixada"
+    severity: medio
+    score: 15
+    keywords: ["rebaixa recomendação", "corta preço-alvo", "reduz preço-alvo", "recomendação de venda", "rebaixada para venda", "rebaixada para neutra"]
+  - id: mudanca_regulatoria
+    label: "Mudanças regulatórias"
+    severity: medio
+    score: 15
+    keywords: ["nova regulação", "CVM edita", "resolução do CMN", "mudança regulatória", "marco regulatório"]
+  - id: indice
+    label: "Inclusão/remoção de índice"
+    severity: medio
+    score: 10
+    keywords: ["sai do Ibovespa", "entra no Ibovespa", "sai do índice", "saem do índice", "rebalanceamento do índice", "remoção do índice", "removida do índice", "incluída no índice", "MSCI"]
+  - id: pequenas_aquisicoes
+    label: "Pequenas aquisições"
+    severity: medio
+    score: 10
+    suppresses: ["ma"]   # se detectado junto com M&A, prevalece o mais específico
+    keywords: ["adquire participação", "compra fatia", "aquisição minoritária", "compra participação minoritária"]
+
+  # 🟢 Contexto positivo — aparece no feed e na timeline, mas NÃO pontua risco
+  - id: rating_elevado
+    label: "Rating elevado"
+    severity: info
+    positive: true
+    score: 0
+    keywords: ["eleva rating", "elevação de rating", "upgrade de rating", "eleva nota de crédito", "elevada pela S&P", "elevada pela Moody's", "elevada pela Fitch"]
+  - id: outlook_positivo
+    label: "Outlook positivo"
+    severity: info
+    positive: true
+    score: 0
+    suppresses: ["outlook_negativo"]
+    keywords: ["perspectiva positiva", "outlook elevado", "perspectiva elevada", "revisa perspectiva para positiva", "perspectiva para positiva"]
+  - id: recomendacao_positiva
+    label: "Recomendação elevada"
+    severity: info
+    positive: true
+    score: 0
+    keywords: ["eleva recomendação", "eleva preço-alvo", "recomendação de compra", "elevada para compra", "inicia cobertura"]
+
+# ── Scoring semanal (radar) ───────────────────────────────────
+scoring:
+  attention_threshold: 80
+  count_repeated_events: false
+  extra_per_article: 5
+  extra_cap: 20
+
+# ── Evolução por emissor (radar de longo prazo) ───────────────
+# Status:
+#   Crítico          → evento com score BRUTO >= critico_event_min_score na
+#                      janela (fatos duros como RJ/default não "envelhecem")
+#                      OU score acumulado PONDERADO >= critico_total_min
+#   Atenção elevada  → score ponderado >= atencao_total_min
+#                      OU 2+ tipos de evento negativos distintos
+#   Monitorar        → qualquer evento negativo na janela
+# Decaimento: o score acumulado usa meia-vida (evento de hoje vale 100%,
+# de 30 dias vale 50%, de 60 dias vale 25%) — prioriza deterioração RECENTE.
+evolution:
+  window_days: 90
+  decay:
+    enabled: true
+    half_life_days: 30
+  status:
+    critico_event_min_score: 90
+    critico_total_min: 140   # calibrado p/ score ponderado: ≈ 2 eventos de severidade crítica recentes
+    atencao_total_min: 60
+
+# ── Deduplicação ──────────────────────────────────────────────
+# A mesma matéria replicada em vários veículos conta uma vez só.
+dedup:
+  enabled: true
+  similarity: 0.75        # razão de similaridade entre títulos (SequenceMatcher, 0-1)
+  token_overlap: 0.50     # OU sobreposição de palavras-chave dos títulos (Jaccard, 0-1)
+
+# ── Fatos relevantes da CVM (dados abertos) ───────────────────
+# RJ, waiver, renúncia de auditor e troca de CEO saem primeiro em fato
+# relevante, antes da imprensa. Fonte: dados.cvm.gov.br (dataset IPE).
+cvm_fatos_relevantes:
+  enabled: true
+  categories: ["Fato Relevante"]
+  lookback_days: 7        # janela de protocolos considerada em cada execução
+
+# ── LLM (opcional) ────────────────────────────────────────────
+# validate_critical: eventos CRÍTICOS detectados por keyword passam por
+# validação do Gemini antes de pontuar — confirma que o evento de fato
+# ocorreu (não é especulação, negação ou possibilidade) e é sobre a
+# empresa. Falha da API = mantém a classificação por keyword (fail-open).
+llm:
+  enabled: true            # requer o secret GEMINI_API_KEY no GitHub Actions; sem ele, segue só com keywords
+  validate_critical: true
+  model: "gemini-2.5-flash-lite"
+  gemini_api_key: ""           # ou variável de ambiente GEMINI_API_KEY
+
+# ── Saída ─────────────────────────────────────────────────────
+output:
+  filename: "dashboard_risco.html"
+  history_file: "risk_history.json"
+  open_browser: false
