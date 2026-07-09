@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar de Risco — Emissores</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#101319; --surface:#171c26; --surface2:#1d2432; --border:#242e40;
+  --text:#e8edf5; --muted:#8b96a8; --accent:#5b8def;
+  --critico:#ff3b5c; --alto:#ff8a3d; --medio:#f5c518; --info:#3ddc97;
+  --radius:10px;
+  --display:'Space Grotesk',system-ui,sans-serif;
+  --body:'Inter',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:14px;line-height:1.55;
+  background-image:radial-gradient(1200px 400px at 70% -10%, rgba(91,141,239,.07), transparent 60%);}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+
+/* ── header ─────────────────────────────── */
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;
+  padding-bottom:20px;border-bottom:1px solid var(--border);margin-bottom:26px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+h1{font-family:var(--display);font-size:clamp(24px,3.4vw,34px);font-weight:700;letter-spacing:-.01em}
+.gen-meta{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:right}
+.demo-badge{display:inline-block;margin-top:6px;padding:3px 9px;border:1px dashed var(--medio);
+  border-radius:99px;color:var(--medio);font-family:var(--mono);font-size:10px;letter-spacing:.1em}
+.totals{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.total-chip{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);
+  border-radius:99px;padding:5px 14px 5px 10px;font-size:12px;color:var(--muted)}
+.total-chip b{font-family:var(--mono);color:var(--text);font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%}
+.dot.critico{background:var(--critico)} .dot.alto{background:var(--alto)} .dot.medio{background:var(--medio)} .dot.info{background:var(--info)}
+
+/* ── radar de emissores (assinatura) ─────── */
+section{margin-bottom:34px}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:14px}
+.sec-title{font-family:var(--display);font-size:17px;font-weight:700;letter-spacing:.01em}
+.sec-sub{font-size:12px;color:var(--muted)}
+.radar{display:flex;flex-direction:column;gap:8px}
+.radar-row{display:grid;grid-template-columns:34px 170px 1fr 84px;gap:14px;align-items:center;
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:13px 16px;transition:border-color .15s}
+.radar-row:hover{border-color:#31405c}
+.radar-row.attention{border-color:rgba(255,59,92,.55);background:linear-gradient(90deg, rgba(255,59,92,.08), var(--surface) 45%)}
+.rank{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.radar-company{font-weight:600;font-size:14px}
+.attn-tag{display:inline-block;margin-top:3px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;
+  color:var(--critico);border:1px solid rgba(255,59,92,.5);border-radius:4px;padding:2px 6px;animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+@media (prefers-reduced-motion: reduce){.attn-tag{animation:none}}
+.radar-mid{min-width:0}
+.bar-track{height:7px;background:var(--surface2);border-radius:99px;overflow:hidden;margin-bottom:8px}
+.bar-fill{height:100%;border-radius:99px}
+.bar-fill.critico{background:linear-gradient(90deg,#7a1d2c,var(--critico))}
+.bar-fill.alto{background:linear-gradient(90deg,#7a4014,var(--alto))}
+.bar-fill.medio{background:linear-gradient(90deg,#6e5a0a,var(--medio))}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:5px;border:1px solid var(--border);color:var(--muted);background:var(--surface2)}
+.chip.critico{color:var(--critico);border-color:rgba(255,59,92,.4)}
+.chip.alto{color:var(--alto);border-color:rgba(255,138,61,.4)}
+.chip.medio{color:var(--medio);border-color:rgba(245,197,24,.4)}
+.chip.info{color:var(--info);border-color:rgba(61,220,151,.4)}
+.chip .x{opacity:.65}
+.radar-score{text-align:right}
+.radar-score b{font-family:var(--mono);font-size:22px;font-weight:600;display:block;line-height:1.1}
+.radar-score span{font-family:var(--mono);font-size:10px;color:var(--muted)}
+.empty{background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius);
+  padding:26px;text-align:center;color:var(--muted);font-size:13px}
+.tier-badge{font-family:var(--mono);font-size:9.5px;color:var(--muted);border:1px solid var(--border);
+  border-radius:4px;padding:1px 5px;vertical-align:2px;margin-left:6px}
+
+/* ── evolução por emissor ────────────────── */
+.evo-summary{display:flex;gap:14px;margin-bottom:12px;font-family:var(--mono);font-size:11px}
+.evo-count{padding:3px 10px;border-radius:99px;border:1px solid var(--border);color:var(--muted)}
+.evo-count.critico{color:var(--critico);border-color:rgba(255,59,92,.4)}
+.evo-count.alto{color:var(--alto);border-color:rgba(255,138,61,.4)}
+.evo-count.medio{color:var(--medio);border-color:rgba(245,197,24,.4)}
+.evo{display:flex;flex-direction:column;gap:8px}
+.evo-row{display:grid;grid-template-columns:190px 1fr 84px;gap:18px;align-items:center;
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px}
+.evo-row:hover{border-color:#31405c}
+.evo-row.status-critico{border-left:3px solid var(--critico)}
+.evo-row.status-atencao{border-left:3px solid var(--alto)}
+.evo-row.status-monitorar{border-left:3px solid var(--medio)}
+.evo-company{font-weight:600;font-size:14px}
+.evo-dates{font-family:var(--mono);font-size:10px;color:var(--muted);margin:3px 0 7px}
+.status-badge{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;
+  text-transform:uppercase;border-radius:4px;padding:3px 8px;border:1px solid}
+.status-badge.critico{color:var(--critico);border-color:rgba(255,59,92,.5);background:rgba(255,59,92,.08)}
+.status-badge.alto{color:var(--alto);border-color:rgba(255,138,61,.5);background:rgba(255,138,61,.08)}
+.status-badge.medio{color:var(--medio);border-color:rgba(245,197,24,.5);background:rgba(245,197,24,.08)}
+.evo-mid{min-width:0}
+.evo-track{position:relative;height:26px;margin-bottom:9px}
+.evo-track-line{position:absolute;top:50%;left:0;right:0;height:2px;background:var(--surface2);border-radius:2px}
+.evo-dot{position:absolute;top:50%;width:12px;height:12px;border-radius:50%;
+  transform:translate(-50%,-50%);border:2px solid var(--bg);transition:transform .1s;z-index:1}
+.evo-dot:hover{transform:translate(-50%,-50%) scale(1.5);z-index:2}
+.evo-dot.critico{background:var(--critico)} .evo-dot.alto{background:var(--alto)} .evo-dot.medio{background:var(--medio)} .evo-dot.info{background:var(--info)}
+.evo-spark{display:block;margin-top:2px}
+.evo-spark polyline{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.evo-spark.critico polyline{stroke:var(--critico)} .evo-spark.atencao polyline{stroke:var(--alto)} .evo-spark.monitorar polyline{stroke:var(--medio)}
+.spark-label{font-family:var(--mono);font-size:9px;color:var(--muted)}
+.evo-legend{display:flex;justify-content:space-between;margin-top:10px;
+  font-family:var(--mono);font-size:10px;color:var(--muted)}
+
+/* ── filtros ─────────────────────────────── */
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+.search{flex:1;min-width:220px;background:var(--surface);border:1px solid var(--border);color:var(--text);
+  border-radius:8px;padding:9px 14px;font-size:13px;font-family:var(--body);outline:none}
+.search:focus{border-color:var(--accent)}
+.sev-toggle{cursor:pointer;user-select:none;display:flex;align-items:center;gap:7px;background:var(--surface);
+  border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:12.5px;color:var(--muted)}
+.sev-toggle.active{color:var(--text);border-color:#3a4b66}
+.sev-toggle.active.critico{border-color:rgba(255,59,92,.6)}
+.sev-toggle.active.alto{border-color:rgba(255,138,61,.6)}
+.sev-toggle.active.medio{border-color:rgba(245,197,24,.6)}
+.sev-toggle.active.info{border-color:rgba(61,220,151,.6)}
+.sev-toggle:not(.active){opacity:.45}
+select{background:var(--surface);border:1px solid var(--border);color:var(--text);border-radius:8px;
+  padding:9px 12px;font-size:12.5px;font-family:var(--body);outline:none}
+
+/* ── feed ────────────────────────────────── */
+.sev-group{margin-bottom:26px}
+.sev-group-head{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+.sev-group-title{font-family:var(--display);font-size:15px;font-weight:700}
+.sev-group-count{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:10px}
+.card{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:14px 16px 14px 18px;display:flex;flex-direction:column;gap:8px;transition:border-color .15s}
+.card::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3px;border-radius:3px}
+.card.critico::before{background:var(--critico)}
+.card.alto::before{background:var(--alto)}
+.card.medio::before{background:var(--medio)}
+.card.info::before{background:var(--info)}
+.card:hover{border-color:#31405c}
+.card-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.card-title{font-size:13.5px;font-weight:600;line-height:1.4}
+.card-title a:hover{color:var(--accent)}
+.card-score{font-family:var(--mono);font-size:14px;font-weight:600;white-space:nowrap}
+.card-score.critico{color:var(--critico)} .card-score.alto{color:var(--alto)} .card-score.medio{color:var(--medio)} .card-score.info{color:var(--info)}
+.card-summary{font-size:12px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-meta{display:flex;justify-content:space-between;gap:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.company-tags{display:flex;gap:6px;flex-wrap:wrap}
+.company-tag{font-size:10.5px;font-weight:600;background:var(--surface2);border:1px solid var(--border);
+  border-radius:5px;padding:2px 8px;color:var(--accent)}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);
+  font-family:var(--mono);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (max-width:720px){
+  .radar-row{grid-template-columns:26px 1fr 70px;grid-template-areas:"rank company score" "mid mid mid"}
+  .rank{grid-area:rank}.radar-company-wrap{grid-area:company}.radar-mid{grid-area:mid}.radar-score{grid-area:score}
+  .evo-row{grid-template-columns:1fr 70px;grid-template-areas:"left score" "mid mid"}
+  .evo-left{grid-area:left}.evo-mid{grid-area:mid}.evo-row .radar-score{grid-area:score}
+  .gen-meta{text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div>
+    <div class="eyebrow">Monitor de risco · janela de 7 dias</div>
+    <h1>Radar de Risco — Emissores</h1>
+    <div class="totals">
+      <div class="total-chip"><span class="dot critico"></span> Crítico <b>1</b></div>
+      <div class="total-chip"><span class="dot alto"></span> Alto impacto <b>3</b></div>
+      <div class="total-chip"><span class="dot medio"></span> Médio <b>2</b></div>
+      <div class="total-chip"><span class="dot info"></span> Contexto positivo <b>0</b></div>
+    </div>
+  </div>
+  <div class="gen-meta">
+    gerado em 09 jul 2026 · 19:43 BRT
+    <br><span class="demo-badge">DADOS SIMULADOS · MODO DEMO</span>
+  </div>
+</header>
+
+<!-- ── Radar de emissores ─────────────────── -->
+<section>
+  <div class="sec-head">
+    <div class="sec-title">Radar de emissores</div>
+    <div class="sec-sub">score acumulado na semana · ≥ 80 pts = atenção imediata</div>
+  </div>
+  
+  
+  <div class="radar">
+    
+    <div class="radar-row attention">
+      <div class="rank">01</div>
+      <div class="radar-company-wrap">
+        <div class="radar-company">Hapvida <span class="tier-badge">T2</span></div>
+        <span class="attn-tag">ATENÇÃO IMEDIATA</span>
+      </div>
+      <div class="radar-mid">
+        <div class="bar-track">
+          <div class="bar-fill critico" style="width: 100.0%"></div>
+        </div>
+        <div class="chips">
+          
+          <span class="chip critico">Covenant breach</span>
+          
+          <span class="chip alto">Lucro muito abaixo do consenso</span>
+          
+        </div>
+      </div>
+      <div class="radar-score"><b>125</b><span>pts · 2 not.</span></div>
+    </div>
+    
+    <div class="radar-row">
+      <div class="rank">02</div>
+      <div class="radar-company-wrap">
+        <div class="radar-company">Smart Fit <span class="tier-badge">T2</span></div>
+        
+      </div>
+      <div class="radar-mid">
+        <div class="bar-track">
+          <div class="bar-fill alto" style="width: 24.0%"></div>
+        </div>
+        <div class="chips">
+          
+          <span class="chip alto">Follow-on</span>
+          
+        </div>
+      </div>
+      <div class="radar-score"><b>30</b><span>pts · 1 not.</span></div>
+    </div>
+    
+    <div class="radar-row">
+      <div class="rank">03</div>
+      <div class="radar-company-wrap">
+        <div class="radar-company">Natura &Co <span class="tier-badge">T2</span></div>
+        
+      </div>
+      <div class="radar-mid">
+        <div class="bar-track">
+          <div class="bar-fill alto" style="width: 20.0%"></div>
+        </div>
+        <div class="chips">
+          
+          <span class="chip alto">Troca de CEO</span>
+          
+        </div>
+      </div>
+      <div class="radar-score"><b>25</b><span>pts · 1 not.</span></div>
+    </div>
+    
+    <div class="radar-row">
+      <div class="rank">04</div>
+      <div class="radar-company-wrap">
+        <div class="radar-company">Vale <span class="tier-badge">T1</span></div>
+        
+      </div>
+      <div class="radar-mid">
+        <div class="bar-track">
+          <div class="bar-fill medio" style="width: 12.0%"></div>
+        </div>
+        <div class="chips">
+          
+          <span class="chip medio">Recomendação rebaixada</span>
+          
+        </div>
+      </div>
+      <div class="radar-score"><b>15</b><span>pts · 1 not.</span></div>
+    </div>
+    
+  </div>
+  
+</section>
+
+<!-- ── Evolução por emissor (90 dias) ─────── -->
+<section>
+  <div class="sec-head">
+    <div class="sec-title">Evolução por emissor</div>
+    <div class="sec-sub">sequência de sinais nos últimos 90 dias · score com decaimento (meia-vida) — deterioração recente pesa mais</div>
+  </div>
+  
+  <div class="evo-summary">
+    <span class="evo-count critico">1 Crítico</span>
+    <span class="evo-count alto">1 Atenção elevada</span>
+    <span class="evo-count medio">8 Monitorar</span>
+  </div>
+  <div class="evo">
+    
+    <div class="evo-row status-critico">
+      <div class="evo-left">
+        <div class="evo-company">Hapvida <span class="tier-badge">T2</span></div>
+        <div class="evo-dates">2026-04-25 → 2026-07-05</div>
+        <span class="status-badge critico">Crítico</span>
+      </div>
+      <div class="evo-mid">
+        <div class="evo-track">
+          <div class="evo-track-line"></div>
+          
+          <a class="evo-dot medio" href="https://demo.local/noticia-0" target="_blank" rel="noopener"
+             style="left: 16.67%; opacity: 0.46"
+             title="2026-04-25 · Outlook negativo — Moody's revisa perspectiva da Hapvida para negativa e cita alavancagem"></a>
+          
+          <a class="evo-dot critico" href="https://demo.local/noticia-1" target="_blank" rel="noopener"
+             style="left: 53.33%; opacity: 0.6"
+             title="2026-05-28 · Rebaixamento de rating — S&P rebaixa rating da Hapvida após queima de caixa acima do esperado"></a>
+          
+          <a class="evo-dot critico" href="https://demo.local/noticia-2" target="_blank" rel="noopener"
+             style="left: 93.33%; opacity: 0.92"
+             title="2026-07-03 · Covenant breach — Hapvida negocia waiver com credores após quebra de covenant de alavancagem"></a>
+          
+          <a class="evo-dot alto" href="https://demo.local/noticia-3" target="_blank" rel="noopener"
+             style="left: 95.56%; opacity: 0.94"
+             title="2026-07-05 · Lucro muito abaixo do consenso — Lucro da Hapvida decepciona e fica bem abaixo das expectativas no 2T26"></a>
+          
+        </div>
+        <div class="chips">
+          
+          <span class="chip critico">Rebaixamento de rating</span>
+          
+          <span class="chip critico">Covenant breach</span>
+          
+          <span class="chip alto">Lucro muito abaixo do consenso</span>
+          
+          <span class="chip medio">Outlook negativo</span>
+          
+        </div>
+      </div>
+      <div class="radar-score">
+        <b>145</b><span>pts pond. · 4 sinais</span>
+        <svg class="evo-spark critico" width="84" height="26" viewBox="0 0 100 26" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="0.0,24.0 5.6,24.0 11.1,24.0 16.7,21.2 22.2,21.5 27.8,21.8 33.3,22.0 38.9,22.3 44.4,22.4 50.0,22.6 55.6,12.2 61.1,13.5 66.7,14.6 72.2,15.7 77.8,16.6 83.3,17.4 88.9,18.1 94.4,7.9 100.0,4.0"/>
+        </svg>
+        <span class="spark-label">trajetória 90d</span>
+      </div>
+    </div>
+    
+    <div class="evo-row status-atencao">
+      <div class="evo-left">
+        <div class="evo-company">Natura &Co <span class="tier-badge">T2</span></div>
+        <div class="evo-dates">2026-06-19 → 2026-07-04</div>
+        <span class="status-badge alto">Atenção elevada</span>
+      </div>
+      <div class="evo-mid">
+        <div class="evo-track">
+          <div class="evo-track-line"></div>
+          
+          <a class="evo-dot alto" href="https://demo.local/noticia-4" target="_blank" rel="noopener"
+             style="left: 77.78%; opacity: 0.76"
+             title="2026-06-19 · Guidance negativo — Natura reduz guidance de margem para 2026 com câmbio pressionado"></a>
+          
+          <a class="evo-dot alto" href="https://demo.local/noticia-5" target="_blank" rel="noopener"
+             style="left: 94.44%; opacity: 0.93"
+             title="2026-07-04 · Troca de CEO — CEO deixa a Natura; conselho inicia busca por sucessor"></a>
+          
+        </div>
+        <div class="chips">
+          
+          <span class="chip alto">Guidance negativo</span>
+          
+          <span class="chip alto">Troca de CEO</span>
+          
+        </div>
+      </div>
+      <div class="radar-score">
+        <b>44</b><span>pts pond. · 2 sinais</span>
+        <svg class="evo-spark atencao" width="84" height="26" viewBox="0 0 100 26" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="0.0,24.0 5.6,24.0 11.1,24.0 16.7,24.0 22.2,24.0 27.8,24.0 33.3,24.0 38.9,24.0 44.4,24.0 50.0,24.0 55.6,24.0 61.1,24.0 66.7,24.0 72.2,24.0 77.8,9.9 83.3,11.5 88.9,12.8 94.4,4.0 100.0,6.2"/>
+        </svg>
+        <span class="spark-label">trajetória 90d</span>
+      </div>
+    </div>
+    
+    <div class="evo-row status-monitorar">
+      <div class="evo-left">
+        <div class="evo-company">Smart Fit <span class="tier-badge">T2</span></div>
+        <div class="evo-dates">2026-07-07 → 2026-07-07</div>
+        <span class="status-badge medio">Monitorar</span>
+      </div>
+      <div class="evo-mid">
+        <div class="evo-track">
+          <div class="evo-track-line"></div>
+          
+          <a class="evo-dot alto" href="https://demo.local/noticia-12" target="_blank" rel="noopener"
+             style="left: 97.78%; opacity: 0.97"
+             title="2026-07-07 · Follow-on — Smart Fit anuncia follow-on de R$ 1,2 bilhão para acelerar expansão"></a>
+          
+        </div>
+        <div class="chips">
+          
+          <span class="chip alto">Follow-on</span>
+          
+        </div>
+      </div>
+      <div class="radar-score">
+        <b>29</b><span>pts pond. · 1 sinais</span>
+        <svg class="evo-spark monitorar" width="84" height="26" viewBox="0 0 100 26" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="0.0,24.0 5.6,24.0 11.1,24.0 16.7,24.0 22.2,24.0 27.8,24.0 33.3,24.0 38.9,24.0 44.4,24.0 50.0,24.0 55.6,24.0 61.1,24.0 66.7,24.0 72.2,24.0 77.8,24.0 83.3,24.0 88.9,24.0 94.4,24.0 100.0,4.0"/>
+        </svg>
+        <span class="spark-label">trajetória 90d</span>
+      </div>
+    </div>
+    
+    <div class="evo-row status-monitorar">
+      <div class="evo-left">
+        <div class="evo-company">Klabin <span class="tier-badge">T2</span></div>
+        <div class="evo-dates">2026-06-27 → 2026-06-27</div>
+        <span class="status-badge medio">Monitorar</span>
+      </div>
+      <div class="evo-mid">
+        <div class="evo-track">
+          <div class="evo-track-line"></div>
+          
+          <a class="evo-dot alto" href="https://demo.local/noticia-16" target="_blank" rel="noopener"
+             style="left: 86.67%; opacity: 0.84"
+             title="2026-06-27 · Grande emissão de dívida — [Fato Relevante] Klabin: Aprovação de emissão de debêntures — 14ª emissão"></a>
+          
+        </div>
+        <div class="chips">
+          
+          <span class="chip alto">Grande emissão de dívida</span>
+          
+        </div>
+      </div>
+      <div class="radar-score">
+        <b>27</b><span>pts pond. · 1 sinais</span>
+        <svg class="evo-spark monitorar" width="84" height="26" viewBox="0 0 100 26" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="0.0,24.0 5.6,24.0 11.1,24.0 16.7,24.0 22.2,24.0 27.8,24.0 33.3,24.0 38.9,24.0 44.4,24.0 50.0,24.0 55.6,24.0 61.1,24.0 66.7,24.0 72.2,24.0 77.8,24.0 83.3,24.0 88.9,4.0 94.4,6.2 100.0,8.1"/>
+        </svg>
+        <span class="spark-label">trajetória 90d</span>
+      </div>
+    </div>
+    
+    <div class="evo-row status-monitorar">
+      <div class="evo-left">
+        <div class="evo-company">Suzano <span class="tier-badge">T1</span></div>
+        <div class="evo-dates">2026-06-24 → 2026-07-01</div>
+        <span class="status-badge medio">Monitorar</span>
+      </div>
+      <div class="evo-mid">
+        <div class="evo-track">
+          <div class="evo-track-line"></div>
+          
+          <a class="evo-dot alto" href="https://demo.local/noticia-9" target="_blank" rel="noopener"
+             style="left: 83.33%; opacity: 0.81"
+             title="2026-06-24 · Grande emissão de dívida — Suzano capta US$ 1 bilhão em emissão de bonds de 10 anos"></a>
+          
+          <a class="evo-dot info" href="https://demo.local/noticia-14" target="_blank" rel="noopener"
+             style="left: 91.11%; opacity: 0.89"
+             title="2026-07-01 · Rating elevado — Moody's eleva rating da Suzano com geração de caixa robusta"></a>
+          
+        </div>
+        <div class="chips">
+          
+          <span class="chip alto">Grande emissão de dívida</span>
+          
+          <span class="chip info">Rating elevado</span>
+          
+        </div>
+      </div>
+      <div class="radar-score">
+        <b>25</b><span>pts pond. · 2 sinais</span>
+        <svg class="evo-spark monitorar" width="84" height="26" viewBox="0 0 100 26" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="0.0,24.0 5.6,24.0 11.1,24.0 16.7,24.0 22.2,24.0 27.8,24.0 33.3,24.0 38.9,24.0 44.4,24.0 50.0,24.0 55.6,24.0 61.1,24.0 66.7,24.0 72.2,24.0 77.8,24.0 83.3,4.0 88.9,6.2 94.4,8.1 100.0,9.9"/>
+        </svg>
+        <span class="spark-label">trajetória 90d</span>
+      </div>
+    </div>
+    
+    <div class="evo-row status-monitorar">
+      <div class="evo-left">
+        <div class="evo-company">BRF <span class="tier-badge">T2</span></div>
+        <div class="evo-dates">2026-06-09 → 2026-06-09</div>
+        <span class="status-badge medio">Monitorar</span>
+      </div>
+      <div class="evo-mid">
+        <div class="evo-track">
+          <div class="evo-track-line"></div>
+          
+          <a class="evo-dot alto" href="https://demo.local/noticia-6" target="_blank" rel="noopener"
+             style="left: 66.67%; opacity: 0.68"
+             title="2026-06-09 · M&A — BRF e Marfrig avançam em fusão e convocam assembleias de acionistas"></a>
+          
+        </div>
+        <div class="chips">
+          
+          <span class="chip alto">M&A</span>
+          
+        </div>
+      </div>
+      <div class="radar-score">
+        <b>20</b><span>pts pond. · 1 sinais</span>
+        <svg class="evo-spark monitorar" width="84" height="26" viewBox="0 0 100 26" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="0.0,24.0 5.6,24.0 11.1,24.0 16.7,24.0 22.2,24.0 27.8,24.0 33.3,24.0 38.9,24.0 44.4,24.0 50.0,24.0 55.6,24.0 61.1,24.0 66.7,4.0 72.2,6.2 77.8,8.1 83.3,9.9 88.9,11.4 94.4,12.8 100.0,14.0"/>
+        </svg>
+        <span class="spark-label">trajetória 90d</span>
+      </div>
+    </div>
+    
+    <div class="evo-row status-monitorar">
+      <div class="evo-left">
+        <div class="evo-company">Vale <span class="tier-badge">T1</span></div>
+        <div class="evo-dates">2026-07-06 → 2026-07-06</div>
+        <span class="status-badge medio">Monitorar</span>
+      </div>
+      <div class="evo-mid">
+        <div class="evo-track">
+          <div class="evo-track-line"></div>
+          
+          <a class="evo-dot medio" href="https://demo.local/noticia-8" target="_blank" rel="noopener"
+             style="left: 96.67%; opacity: 0.96"
+             title="2026-07-06 · Recomendação rebaixada — JPMorgan corta preço-alvo da Vale com minério de ferro mais fraco"></a>
+          
+        </div>
+        <div class="chips">
+          
+          <span class="chip medio">Recomendação rebaixada</span>
+          
+        </div>
+      </div>
+      <div class="radar-score">
+        <b>14</b><span>pts pond. · 1 sinais</span>
+        <svg class="evo-spark monitorar" width="84" height="26" viewBox="0 0 100 26" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="0.0,24.0 5.6,24.0 11.1,24.0 16.7,24.0 22.2,24.0 27.8,24.0 33.3,24.0 38.9,24.0 44.4,24.0 50.0,24.0 55.6,24.0 61.1,24.0 66.7,24.0 72.2,24.0 77.8,24.0 83.3,24.0 88.9,24.0 94.4,24.0 100.0,4.0"/>
+        </svg>
+        <span class="spark-label">trajetória 90d</span>
+      </div>
+    </div>
+    
+    <div class="evo-row status-monitorar">
+      <div class="evo-left">
+        <div class="evo-company">Eletrobras <span class="tier-badge">T2</span></div>
+        <div class="evo-dates">2026-06-29 → 2026-06-29</div>
+        <span class="status-badge medio">Monitorar</span>
+      </div>
+      <div class="evo-mid">
+        <div class="evo-track">
+          <div class="evo-track-line"></div>
+          
+          <a class="evo-dot medio" href="https://demo.local/noticia-10" target="_blank" rel="noopener"
+             style="left: 88.89%; opacity: 0.87"
+             title="2026-06-29 · Mudanças regulatórias — Novo marco regulatório de energia muda regras de concessão; Eletrobras é a mais afetada"></a>
+          
+        </div>
+        <div class="chips">
+          
+          <span class="chip medio">Mudanças regulatórias</span>
+          
+        </div>
+      </div>
+      <div class="radar-score">
+        <b>12</b><span>pts pond. · 1 sinais</span>
+        <svg class="evo-spark monitorar" width="84" height="26" viewBox="0 0 100 26" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="0.0,24.0 5.6,24.0 11.1,24.0 16.7,24.0 22.2,24.0 27.8,24.0 33.3,24.0 38.9,24.0 44.4,24.0 50.0,24.0 55.6,24.0 61.1,24.0 66.7,24.0 72.2,24.0 77.8,24.0 83.3,24.0 88.9,4.0 94.4,6.2 100.0,8.1"/>
+        </svg>
+        <span class="spark-label">trajetória 90d</span>
+      </div>
+    </div>
+    
+    <div class="evo-row status-monitorar">
+      <div class="evo-left">
+        <div class="evo-company">Petrobras <span class="tier-badge">T1</span></div>
+        <div class="evo-dates">2026-05-10 → 2026-05-10</div>
+        <span class="status-badge medio">Monitorar</span>
+      </div>
+      <div class="evo-mid">
+        <div class="evo-track">
+          <div class="evo-track-line"></div>
+          
+          <a class="evo-dot alto" href="https://demo.local/noticia-7" target="_blank" rel="noopener"
+             style="left: 33.33%; opacity: 0.51"
+             title="2026-05-10 · Troca de CEO — Governo confirma troca de CEO na Petrobras; mercado reage com cautela"></a>
+          
+        </div>
+        <div class="chips">
+          
+          <span class="chip alto">Troca de CEO</span>
+          
+        </div>
+      </div>
+      <div class="radar-score">
+        <b>6</b><span>pts pond. · 1 sinais</span>
+        <svg class="evo-spark monitorar" width="84" height="26" viewBox="0 0 100 26" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="0.0,24.0 5.6,24.0 11.1,24.0 16.7,24.0 22.2,24.0 27.8,24.0 33.3,4.0 38.9,6.2 44.4,8.1 50.0,9.9 55.6,11.4 61.1,12.8 66.7,14.0 72.2,15.1 77.8,16.1 83.3,16.9 88.9,17.7 94.4,18.4 100.0,19.0"/>
+        </svg>
+        <span class="spark-label">trajetória 90d</span>
+      </div>
+    </div>
+    
+    <div class="evo-row status-monitorar">
+      <div class="evo-left">
+        <div class="evo-company">CCR <span class="tier-badge">T2</span></div>
+        <div class="evo-dates">2026-06-14 → 2026-06-14</div>
+        <span class="status-badge medio">Monitorar</span>
+      </div>
+      <div class="evo-mid">
+        <div class="evo-track">
+          <div class="evo-track-line"></div>
+          
+          <a class="evo-dot medio" href="https://demo.local/noticia-11" target="_blank" rel="noopener"
+             style="left: 72.22%; opacity: 0.71"
+             title="2026-06-14 · Pequenas aquisições — CCR adquire participação em concessão de aeroportos na região Sul"></a>
+          
+        </div>
+        <div class="chips">
+          
+          <span class="chip medio">Pequenas aquisições</span>
+          
+        </div>
+      </div>
+      <div class="radar-score">
+        <b>6</b><span>pts pond. · 1 sinais</span>
+        <svg class="evo-spark monitorar" width="84" height="26" viewBox="0 0 100 26" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="0.0,24.0 5.6,24.0 11.1,24.0 16.7,24.0 22.2,24.0 27.8,24.0 33.3,24.0 38.9,24.0 44.4,24.0 50.0,24.0 55.6,24.0 61.1,24.0 66.7,24.0 72.2,4.0 77.8,6.2 83.3,8.1 88.9,9.9 94.4,11.4 100.0,12.8"/>
+        </svg>
+        <span class="spark-label">trajetória 90d</span>
+      </div>
+    </div>
+    
+  </div>
+  <div class="evo-legend">
+    <span>← há 90 dias</span>
+    <span>cada ponto é um sinal na linha do tempo · passe o mouse para ver a notícia</span>
+    <span>hoje →</span>
+  </div>
+  
+</section>
+
+<!-- ── Feed de notícias ───────────────────── -->
+<section>
+  <div class="sec-head">
+    <div class="sec-title">Notícias classificadas</div>
+    <div class="sec-sub">6 notícias na janela</div>
+  </div>
+
+  <div class="filters">
+    <input type="text" id="q" class="search" placeholder="Buscar por empresa, evento ou título…" oninput="applyFilters()">
+    <div class="sev-toggle active critico" data-sev="critico" onclick="toggleSev(this)"><span class="dot critico"></span> Crítico</div>
+    <div class="sev-toggle active alto" data-sev="alto" onclick="toggleSev(this)"><span class="dot alto"></span> Alto</div>
+    <div class="sev-toggle active medio" data-sev="medio" onclick="toggleSev(this)"><span class="dot medio"></span> Médio</div>
+    <div class="sev-toggle active info" data-sev="info" onclick="toggleSev(this)"><span class="dot info"></span> Positivo</div>
+    <select id="companySel" onchange="applyFilters()">
+      <option value="">Todas as empresas</option>
+      <option value="hapvida">Hapvida</option><option value="mercado (geral)">Mercado (geral)</option><option value="natura &co">Natura &Co</option><option value="smart fit">Smart Fit</option><option value="vale">Vale</option>
+    </select>
+  </div>
+
+  
+  
+  <div class="sev-group" data-sev-group="critico">
+    <div class="sev-group-head">
+      <div class="sev-group-title">🔴 Crítico <span style="color:var(--muted);font-weight:400;font-size:12px">(alerta imediato)</span></div>
+      <div class="sev-group-count" data-count>1 notícia</div>
+    </div>
+    <div class="cards">
+      
+      <div class="card critico" data-sev="critico"
+           data-search="hapvida negocia waiver com credores após quebra de covenant de alavancagem hapvida covenant breach brazil journal"
+           data-companies="hapvida">
+        <div class="card-top">
+          <div class="card-title"><a href="https://demo.local/noticia-2" target="_blank" rel="noopener">Hapvida negocia waiver com credores após quebra de covenant de alavancagem</a></div>
+          <div class="card-score critico">80</div>
+        </div>
+        <div class="card-summary">Companhia descumpriu cláusula de dívida líquida/EBITDA e busca acordo com debenturistas.</div>
+        <div class="chips">
+          <span class="chip critico">Covenant breach</span>
+        </div>
+        <div class="card-meta">
+          <div class="company-tags">
+            <span class="company-tag">Hapvida</span>
+          </div>
+          <span>Brazil Journal · 2026-07-03 19:43</span>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  
+  
+  <div class="sev-group" data-sev-group="alto">
+    <div class="sev-group-head">
+      <div class="sev-group-title">🟠 Alto impacto</div>
+      <div class="sev-group-count" data-count>3 notícias</div>
+    </div>
+    <div class="cards">
+      
+      <div class="card alto" data-sev="alto"
+           data-search="lucro da hapvida decepciona e fica bem abaixo das expectativas no 2t26 hapvida lucro muito abaixo do consenso money times"
+           data-companies="hapvida">
+        <div class="card-top">
+          <div class="card-title"><a href="https://demo.local/noticia-3" target="_blank" rel="noopener">Lucro da Hapvida decepciona e fica bem abaixo das expectativas no 2T26</a></div>
+          <div class="card-score alto">45</div>
+        </div>
+        <div class="card-summary">Resultado decepciona analistas; sinistralidade segue pressionando margens.</div>
+        <div class="chips">
+          <span class="chip alto">Lucro muito abaixo do consenso</span>
+        </div>
+        <div class="card-meta">
+          <div class="company-tags">
+            <span class="company-tag">Hapvida</span>
+          </div>
+          <span>Money Times · 2026-07-05 19:43</span>
+        </div>
+      </div>
+      
+      <div class="card alto" data-sev="alto"
+           data-search="smart fit anuncia follow-on de r$ 1,2 bilhão para acelerar expansão smart fit follow-on brazil journal"
+           data-companies="smart fit">
+        <div class="card-top">
+          <div class="card-title"><a href="https://demo.local/noticia-12" target="_blank" rel="noopener">Smart Fit anuncia follow-on de R$ 1,2 bilhão para acelerar expansão</a></div>
+          <div class="card-score alto">30</div>
+        </div>
+        <div class="card-summary">Oferta de ações financiará abertura de novas unidades na América Latina.</div>
+        <div class="chips">
+          <span class="chip alto">Follow-on</span>
+        </div>
+        <div class="card-meta">
+          <div class="company-tags">
+            <span class="company-tag">Smart Fit</span>
+          </div>
+          <span>Brazil Journal · 2026-07-07 19:43</span>
+        </div>
+      </div>
+      
+      <div class="card alto" data-sev="alto"
+           data-search="ceo deixa a natura; conselho inicia busca por sucessor natura &co troca de ceo neofeed"
+           data-companies="natura &co">
+        <div class="card-top">
+          <div class="card-title"><a href="https://demo.local/noticia-5" target="_blank" rel="noopener">CEO deixa a Natura; conselho inicia busca por sucessor</a></div>
+          <div class="card-score alto">25</div>
+        </div>
+        <div class="card-summary">Troca de comando ocorre em meio à revisão do plano de reestruturação internacional.</div>
+        <div class="chips">
+          <span class="chip alto">Troca de CEO</span>
+        </div>
+        <div class="card-meta">
+          <div class="company-tags">
+            <span class="company-tag">Natura &Co</span>
+          </div>
+          <span>NeoFeed · 2026-07-04 19:43</span>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  
+  
+  <div class="sev-group" data-sev-group="medio">
+    <div class="sev-group-head">
+      <div class="sev-group-title">🟡 Médio</div>
+      <div class="sev-group-count" data-count>2 notícias</div>
+    </div>
+    <div class="cards">
+      
+      <div class="card medio" data-sev="medio"
+           data-search="cvm edita resolução que endurece divulgação de emissores em reestruturação mercado (geral) mudanças regulatórias valor econômico"
+           data-companies="mercado (geral)">
+        <div class="card-top">
+          <div class="card-title"><a href="https://demo.local/noticia-17" target="_blank" rel="noopener">CVM edita resolução que endurece divulgação de emissores em reestruturação</a></div>
+          <div class="card-score medio">15</div>
+        </div>
+        <div class="card-summary">Mudança regulatória exige relatórios mensais de liquidez para companhias em crise.</div>
+        <div class="chips">
+          <span class="chip medio">Mudanças regulatórias</span>
+        </div>
+        <div class="card-meta">
+          <div class="company-tags">
+            <span class="company-tag">Mercado (geral)</span>
+          </div>
+          <span>Valor Econômico · 2026-07-08 19:43</span>
+        </div>
+      </div>
+      
+      <div class="card medio" data-sev="medio"
+           data-search="jpmorgan corta preço-alvo da vale com minério de ferro mais fraco vale recomendação rebaixada infomoney"
+           data-companies="vale">
+        <div class="card-top">
+          <div class="card-title"><a href="https://demo.local/noticia-8" target="_blank" rel="noopener">JPMorgan corta preço-alvo da Vale com minério de ferro mais fraco</a></div>
+          <div class="card-score medio">15</div>
+        </div>
+        <div class="card-summary">Banco reduz preço-alvo e mantém recomendação neutra para os ADRs.</div>
+        <div class="chips">
+          <span class="chip medio">Recomendação rebaixada</span>
+        </div>
+        <div class="card-meta">
+          <div class="company-tags">
+            <span class="company-tag">Vale</span>
+          </div>
+          <span>InfoMoney · 2026-07-06 19:43</span>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  
+  
+  <div class="sev-group" data-sev-group="info">
+    <div class="sev-group-head">
+      <div class="sev-group-title">🟢 Contexto positivo <span style="color:var(--muted);font-weight:400;font-size:12px">(não pontua risco)</span></div>
+      <div class="sev-group-count" data-count>0 notícias</div>
+    </div>
+    <div class="cards">
+      
+      <div class="empty" style="grid-column:1/-1">Sem notícias nesta severidade na janela.</div>
+    </div>
+  </div>
+  
+</section>
+
+<footer>
+  <span>Radar de Risco — Emissores</span>
+  <span>classificação por taxonomia de eventos · scoring semanal por emissor</span>
+</footer>
+</div>
+
+<script>
+const activeSev = new Set(['critico','alto','medio','info']);
+function toggleSev(el){
+  const s = el.dataset.sev;
+  if(activeSev.has(s)){ activeSev.delete(s); el.classList.remove('active'); }
+  else { activeSev.add(s); el.classList.add('active'); }
+  applyFilters();
+}
+function applyFilters(){
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  const comp = document.getElementById('companySel').value;
+  document.querySelectorAll('.sev-group').forEach(group => {
+    const sev = group.dataset.sevGroup;
+    let visible = 0;
+    group.querySelectorAll('.card').forEach(card => {
+      const okSev = activeSev.has(sev);
+      const okQ = !q || card.dataset.search.includes(q);
+      const okC = !comp || card.dataset.companies.split('|').includes(comp);
+      const show = okSev && okQ && okC;
+      card.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    group.style.display = activeSev.has(sev) ? '' : 'none';
+    const counter = group.querySelector('[data-count]');
+    if(counter) counter.textContent = visible + (visible === 1 ? ' notícia' : ' notícias');
+  });
+}
+</script>
+</body>
+</html>
