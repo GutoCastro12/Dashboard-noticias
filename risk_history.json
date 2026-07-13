@@ -3940,7 +3940,37 @@
    "event_ids": [
     "falencia"
    ]
+  },
+  "https://news.google.com/rss/articles/CBMiogFBVV95cUxQOWZyb3FyRVdTOVMtYmpRM2lZVVI3Tjgwc1NPY0xtemVJRHZuaENuUGE3WFNRZXc0bXFWeVlRaFRtLWF3dVJXUFZ4T0dqYVJwaXpOcm9kdVp6NVhxNU5WaTF2NW9GOWFOYk95VkRuVFhVZTdMYW1fWDZfbmppeEtRR1VrZVdQMUlaYmdCcS1yaFh5WnBSNmJxTThuaHR0OGcxaVE?oc=5": {
+   "title": "Fitch eleva rating da Vale para ‘BBB+’ e destaca menor risco ambiental e solidez financeira",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQOWZyb3FyRVdTOVMtYmpRM2lZVVI3Tjgwc1NPY0xtemVJRHZuaENuUGE3WFNRZXc0bXFWeVlRaFRtLWF3dVJXUFZ4T0dqYVJwaXpOcm9kdVp6NVhxNU5WaTF2NW9GOWFOYk95VkRuVFhVZTdMYW1fWDZfbmppeEtRR1VrZVdQMUlaYmdCcS1yaFh5WnBSNmJxTThuaHR0OGcxaVE?oc=5",
+   "summary": "Fitch eleva rating da Vale para ‘BBB+’ e destaca menor risco ambiental e solidez financeira &nbsp;&nbsp; Times Brasil | CNBC",
+   "source": "Times Brasil | CNBC",
+   "domain": "timesbrasil.com.br",
+   "pub_ts": 1761289200,
+   "pub_iso": "2025-10-24 04:00",
+   "companies": [
+    "Vale"
+   ],
+   "event_ids": [
+    "rating_elevado"
+   ]
+  },
+  "https://news.google.com/rss/articles/CBMijAJBVV95cUxPWXdIdms4OUVfX1pOcWNxZnZtZkVQNkFkSm54MElvRERoNjRlZjNXalRBbUZkeF9JQkRuVDdSbUcyQU1GZVdxRTZmeFo2aWZmLXpwTnZtQjNfLVR1a1JtdE4xSVk4aElVaFNid3BmR3BRSmpJODFRUzJNdVRfamE5eTdyaGlER1NGenU2ajlHRTFuRUVlTWVWeURiZEJFZnlzT28xaTI0ODMteGRwRV9zUHNqeDJyWlpSTDh2Ui12SVJnNFZURkVfM0VUUVU4QjF0aW5SLUh0RmpDVHBiT2Nhd1I2d1BUWXVhUTdrNXlMaW8wZ3hqU2NKaklsdl9CektvejNYdjNRaEtpeFQ5?oc=5": {
+   "title": "O caixa, a dívida e as receitas da Ambipar (AMBP3) — veja o que a empresa está oferecendo para conseguir aprovar sua recuperação judicial",
+   "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxPWXdIdms4OUVfX1pOcWNxZnZtZkVQNkFkSm54MElvRERoNjRlZjNXalRBbUZkeF9JQkRuVDdSbUcyQU1GZVdxRTZmeFo2aWZmLXpwTnZtQjNfLVR1a1JtdE4xSVk4aElVaFNid3BmR3BRSmpJODFRUzJNdVRfamE5eTdyaGlER1NGenU2ajlHRTFuRUVlTWVWeURiZEJFZnlzT28xaTI0ODMteGRwRV9zUHNqeDJyWlpSTDh2Ui12SVJnNFZURkVfM0VUUVU4QjF0aW5SLUh0RmpDVHBiT2Nhd1I2d1BUWXVhUTdrNXlMaW8wZ3hqU2NKaklsdl9CektvejNYdjNRaEtpeFQ5?oc=5",
+   "summary": "O caixa, a dívida e as receitas da Ambipar (AMBP3) — veja o que a empresa está oferecendo para conseguir aprovar sua recuperação judicial &nbsp;&nbsp; Seu Dinheiro",
+   "source": "Seu Dinheiro",
+   "domain": "seudinheiro.com",
+   "pub_ts": 1783968174,
+   "pub_iso": "2026-07-13 15:42",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ]
   }
  },
- "run_count": 4
+ "run_count": 5
 }
