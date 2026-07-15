@@ -4881,20 +4881,54 @@
    ],
    "captured_ts": 1784127082,
    "cap_iso": "2026-07-15 11:51"
+  },
+  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOT3czTkpxNFU0RnNvQ18wQWJQaXNldkw2N2tNdVpKeGdxOEpzbzIzT29zbFltZDU1WERsWE1nZnEyVnpCdVNobHBJYl96OVFBU2hLYVpmN1JhdzV5WUR1YnRRT3d5bDNYNm5PeFhoS3BkQ3pDM19lTmstR0FoY2xIcWUwZVJqSWp3ai1tYWw4S0ZDamFJYVUzMFRWdUdSUkhQU0JEUmRKMXNGdzg5TVhXS0VnTzZFTW5JT2xZ?oc=5": {
+   "title": "Fitch eleva rating da Vale para BBB+ e reforça confiança na mineradora listada na B3",
+   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOT3czTkpxNFU0RnNvQ18wQWJQaXNldkw2N2tNdVpKeGdxOEpzbzIzT29zbFltZDU1WERsWE1nZnEyVnpCdVNobHBJYl96OVFBU2hLYVpmN1JhdzV5WUR1YnRRT3d5bDNYNm5PeFhoS3BkQ3pDM19lTmstR0FoY2xIcWUwZVJqSWp3ai1tYWw4S0ZDamFJYVUzMFRWdUdSUkhQU0JEUmRKMXNGdzg5TVhXS0VnTzZFTW5JT2xZ?oc=5",
+   "summary": "Fitch eleva rating da Vale para BBB+ e reforça confiança na mineradora listada na B3 &nbsp;&nbsp; ADVFN",
+   "source": "ADVFN",
+   "domain": "br.advfn.com",
+   "pub_ts": 1761289200,
+   "pub_iso": "2025-10-24 04:00",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "rating_elevado"
+   ],
+   "captured_ts": 1784135656,
+   "cap_iso": "2026-07-15 14:14"
+  },
+  "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQWWZGLXoydlhkRExCdHBjamFvTkZtbXpyUlY0ZU1RZV9BOFNHTzNlVU5BM0RuZjlyMnNUbUZBZlZZWS05RlMtTVpMMnFOZ2hqWUh4Rzc4ckd6cjYyYmlpbUVuNHQ1Wjk2UVZxTjlaWW45cU54Nzh4bWduVGxFVHZXX29xUWoxOUtUSmZ0WURHWlc0RFhTQTAxLUVZU0VSNi1GMVlwTlZlOXk4SmhHUldTUk5DR19rNEU4b2JVaHR6QTF2MWg1TG9HNA?oc=5": {
+   "title": "Ministério Público se manifesta favorável à falência da Móveis Três Irmãos; entenda como fica a situação",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQWWZGLXoydlhkRExCdHBjamFvTkZtbXpyUlY0ZU1RZV9BOFNHTzNlVU5BM0RuZjlyMnNUbUZBZlZZWS05RlMtTVpMMnFOZ2hqWUh4Rzc4ckd6cjYyYmlpbUVuNHQ1Wjk2UVZxTjlaWW45cU54Nzh4bWduVGxFVHZXX29xUWoxOUtUSmZ0WURHWlc0RFhTQTAxLUVZU0VSNi1GMVlwTlZlOXk4SmhHUldTUk5DR19rNEU4b2JVaHR6QTF2MWg1TG9HNA?oc=5",
+   "summary": "Ministério Público se manifesta favorável à falência da Móveis Três Irmãos; entenda como fica a situação &nbsp;&nbsp; gazetasbs.com.br",
+   "source": "gazetasbs.com.br",
+   "domain": "gazetasbs.com.br",
+   "pub_ts": 1784132786,
+   "pub_iso": "2026-07-15 13:26",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1784135656,
+   "cap_iso": "2026-07-15 14:14"
   }
  },
- "run_count": 8,
+ "run_count": 9,
  "last_run": {
-  "ts": 1784127082,
-  "iso": "15 jul 2026 · 11:51 BRT",
+  "ts": 1784135656,
+  "iso": "15 jul 2026 · 14:14 BRT",
   "status": {
    "Tok&Stok": {
     "status": "critico",
-    "score": 88
+    "score": 87
    },
    "Engie Brasil": {
     "status": "critico",
-    "score": 80
+    "score": 79
    },
    "Cosan": {
     "status": "atencao",
