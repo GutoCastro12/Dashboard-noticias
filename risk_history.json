@@ -4650,28 +4650,75 @@
    ],
    "captured_ts": 1784060078,
    "cap_iso": "2026-07-14 17:14"
+  },
+  "https://news.google.com/rss/articles/CBMiakFVX3lxTE1tekdiR2tJbjNHRFFmdmYxWnVHcF9NWGV5V1lPb1JzUnlMMHYtZEhhWGlqNWtKS25rWmlINlZpNWJyT0M0VTdxZ20yc2JQcnptNk9LdkVpaE9oV2RtZkJPWGd1Mk42cWRFcnc?oc=5": {
+   "title": "Santander Brasil reforça continuidade estratégica com troca de CEO e mira ROE acima de 20% até 2028",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1tekdiR2tJbjNHRFFmdmYxWnVHcF9NWGV5V1lPb1JzUnlMMHYtZEhhWGlqNWtKS25rWmlINlZpNWJyT0M0VTdxZ20yc2JQcnptNk9LdkVpaE9oV2RtZkJPWGd1Mk42cWRFcnc?oc=5",
+   "summary": "Santander Brasil reforça continuidade estratégica com troca de CEO e mira ROE acima de 20% até 2028 &nbsp;&nbsp; ADVFN",
+   "source": "ADVFN",
+   "domain": "br.advfn.com",
+   "pub_ts": 1774335600,
+   "pub_iso": "2026-03-24 04:00",
+   "companies": [
+    "Santander Brasil"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "captured_ts": 1784114941,
+   "cap_iso": "2026-07-15 08:29"
+  },
+  "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOUE5mRkFfMVZBLXBpdFlrQWVQNDI1Vnh6TF9MNE9uT3RsSm1sWFdOQzh0M1pKMTNJa2VZaUNjeUZQbVRENjlGclFDdzd5cWxfZ0swTHlHbURrbFZGd2o4eXpjS05qOXhTbUxWalA3ckthdjV5eGIzVmJwY08xZUpKSU4xSkNhRDBWV3dxdnM0QTFoSnBGSG1xbVlmYW1Oejh4WHYydDJsbVlFYnJxd0RsQkE0MEtwRU55M1dKSk5jTnA?oc=5": {
+   "title": "Americanas (AMER3) nega atrasos e descumprimento do plano de recuperação judicial",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOUE5mRkFfMVZBLXBpdFlrQWVQNDI1Vnh6TF9MNE9uT3RsSm1sWFdOQzh0M1pKMTNJa2VZaUNjeUZQbVRENjlGclFDdzd5cWxfZ0swTHlHbURrbFZGd2o4eXpjS05qOXhTbUxWalA3ckthdjV5eGIzVmJwY08xZUpKSU4xSkNhRDBWV3dxdnM0QTFoSnBGSG1xbVlmYW1Oejh4WHYydDJsbVlFYnJxd0RsQkE0MEtwRU55M1dKSk5jTnA?oc=5",
+   "summary": "Americanas (AMER3) nega atrasos e descumprimento do plano de recuperação judicial &nbsp;&nbsp; Money Times",
+   "source": "Money Times",
+   "domain": "moneytimes.com.br",
+   "pub_ts": 1783608060,
+   "pub_iso": "2026-07-09 11:41",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1784114941,
+   "cap_iso": "2026-07-15 08:29"
+  },
+  "https://news.google.com/rss/articles/CBMivwFBVV95cUxORmZaNEdxU1J1SXJONTNxZnYwU1UxOGU2bjlxbXY4OTJfOVc0THkwOEozb1J2ZjdiMzFnQ25LYVM0aHpLUEp1M3M1clJPcEk1VHM1YldBZTVHQjBCVEJCbllBbnRUcktBNF94R1h4Z3hMMGNvU3UxbXVWZVNyTnFKeFJSWHFQNXVGcDJwNUxYSmhXU3NSTWJxTHlOMFM3X2RlUUJPcTU5d1lMVFJYMGYwX3ZBMkREaThPTHVwU1poWQ?oc=5": {
+   "title": "Ações da Lucid recuam após empresa negar rumores de falência",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxORmZaNEdxU1J1SXJONTNxZnYwU1UxOGU2bjlxbXY4OTJfOVc0THkwOEozb1J2ZjdiMzFnQ25LYVM0aHpLUEp1M3M1clJPcEk1VHM1YldBZTVHQjBCVEJCbllBbnRUcktBNF94R1h4Z3hMMGNvU3UxbXVWZVNyTnFKeFJSWHFQNXVGcDJwNUxYSmhXU3NSTWJxTHlOMFM3X2RlUUJPcTU5d1lMVFJYMGYwX3ZBMkREaThPTHVwU1poWQ?oc=5",
+   "summary": "Ações da Lucid recuam após empresa negar rumores de falência &nbsp;&nbsp; Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "domain": "br.investing.com",
+   "pub_ts": 1784052600,
+   "pub_iso": "2026-07-14 15:10",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1784114941,
+   "cap_iso": "2026-07-15 08:29"
   }
  },
- "run_count": 6,
+ "run_count": 7,
  "last_run": {
-  "ts": 1784060078,
-  "iso": "14 jul 2026 · 17:14 BRT",
+  "ts": 1784114941,
+  "iso": "15 jul 2026 · 08:29 BRT",
   "status": {
    "Tok&Stok": {
     "status": "critico",
-    "score": 89
+    "score": 88
    },
    "Engie Brasil": {
     "status": "critico",
-    "score": 81
+    "score": 80
    },
    "Cosan": {
-    "status": "critico",
-    "score": 76
-   },
-   "Santander Brasil": {
     "status": "atencao",
-    "score": 25
+    "score": 74
    },
    "Rumo": {
     "status": "atencao",
@@ -4681,25 +4728,25 @@
     "status": "atencao",
     "score": 24
    },
+   "Santander Brasil": {
+    "status": "atencao",
+    "score": 24
+   },
    "Bradesco": {
     "status": "atencao",
-    "score": 13
-   },
-   "Itaú Unibanco": {
-    "status": "atencao",
-    "score": 6
+    "score": 10
    },
    "Petrobras": {
     "status": "monitorar",
-    "score": 36
+    "score": 35
    },
    "BTG Pactual": {
     "status": "monitorar",
-    "score": 36
+    "score": 35
    },
    "Natura &Co": {
     "status": "monitorar",
-    "score": 30
+    "score": 29
    },
    "Suzano": {
     "status": "monitorar",
@@ -4711,11 +4758,11 @@
    },
    "Aegea Saneamento": {
     "status": "monitorar",
-    "score": 25
+    "score": 24
    },
    "Axia Energia": {
     "status": "monitorar",
-    "score": 23
+    "score": 22
    },
    "ISA Energia Brasil": {
     "status": "monitorar",
