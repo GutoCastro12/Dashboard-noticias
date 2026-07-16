@@ -1,0 +1,21 @@
+# ──────────────────────────────────────────────────────────────
+#  Render Blueprint — Radar de Risco (100% gratuito)
+#  Deploy: Render Dashboard → New → Blueprint → selecione este repositório
+#
+#  Quem roda o pipeline é o GitHub Actions (grátis, .github/workflows/
+#  update_risk_dashboard.yml), que commita risk_history.json + index.html
+#  de volta no repositório. Este Static Site só serve o resultado e
+#  republica sozinho a cada push — sem custo.
+# ──────────────────────────────────────────────────────────────
+services:
+  - type: web
+    name: radar-de-risco-dashboard
+    runtime: static
+    plan: free
+    branch: main
+    buildCommand: "echo 'nada para compilar — HTML já vem pronto do GitHub Actions'"
+    staticPublishPath: "."
+    routes:
+      - type: rewrite
+        source: /
+        destination: /index.html
