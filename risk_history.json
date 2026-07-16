@@ -2706,7 +2706,14 @@
     "investigacao_regulatoria"
    ],
    "captured_ts": 1783993364,
-   "cap_iso": "2026-07-13 22:42"
+   "cap_iso": "2026-07-13 22:42",
+   "corroborations": [
+    {
+     "source": "Revista Fórum",
+     "domain": "revistaforum.com.br",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPa2tJY0d6TnVqUUxFVkNZUWx6Ui1tQ2FYVGpCanBfNEt2ZFhtczkzVjNvOGpNa1Y1N0lNRmRTRGRwR29DNENmS0o3MkhDRkZkX1VhR2lYSTV6czZnSEdaaXZiZmk0TUdvOFNvOS1kbmN4R0J3czQxSzZBSjdBdTdxaFVlX3BBVUZ4THhpaU1lVlVmYWEteEs1aU1R?oc=5"
+    }
+   ]
   },
   "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1539108&numSequencia=1063814&numVersao=1": {
    "title": "[Fato Relevante] Axia Energia: 6ª Emissão de Debêntures da AXIA Energia Sul",
@@ -4654,7 +4661,8 @@
     "ma"
    ],
    "captured_ts": 1784060078,
-   "cap_iso": "2026-07-14 17:14"
+   "cap_iso": "2026-07-14 17:14",
+   "corroborations": []
   },
   "https://news.google.com/rss/articles/CBMiakFVX3lxTE1tekdiR2tJbjNHRFFmdmYxWnVHcF9NWGV5V1lPb1JzUnlMMHYtZEhhWGlqNWtKS25rWmlINlZpNWJyT0M0VTdxZ20yc2JQcnptNk9LdkVpaE9oV2RtZkJPWGd1Mk42cWRFcnc?oc=5": {
    "title": "Santander Brasil reforça continuidade estratégica com troca de CEO e mira ROE acima de 20% até 2028",
@@ -5056,36 +5064,122 @@
    ],
    "captured_ts": 1784146284,
    "cap_iso": "2026-07-15 17:11"
+  },
+  "https://news.google.com/rss/articles/CBMinwFBVV95cUxOMHF6OGNMQVg3SVV4MWJGRkljZHg4TDdVVUtXU3pvTEw5TUJOOWFsenJJakhsb2NyX2pybnRZbW9XVExwWThoNnQ1LWdoZUJLWXhwbkw3NzMzUWpjLTNXM205Yk9rNmxzWHlwb1hQWTRiTFowQjIwb3J1SkQ5ZnUwa3JXQXd6b01ac2ZxLWx4T1M1LXp5V3VCTHlnT3hJTFk?oc=5": {
+   "title": "Raia Drogasil prevê abrir até 350 lojas em 2026 e fazer aumento de capital",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOMHF6OGNMQVg3SVV4MWJGRkljZHg4TDdVVUtXU3pvTEw5TUJOOWFsenJJakhsb2NyX2pybnRZbW9XVExwWThoNnQ1LWdoZUJLWXhwbkw3NzMzUWpjLTNXM205Yk9rNmxzWHlwb1hQWTRiTFowQjIwb3J1SkQ5ZnUwa3JXQXd6b01ac2ZxLWx4T1M1LXp5V3VCTHlnT3hJTFk?oc=5",
+   "summary": "Raia Drogasil prevê abrir até 350 lojas em 2026 e fazer aumento de capital &nbsp;&nbsp; Times Brasil | CNBC",
+   "source": "Times Brasil | CNBC",
+   "domain": "timesbrasil.com.br",
+   "pub_ts": 1764576000,
+   "pub_iso": "2025-12-01 05:00",
+   "companies": [
+    "Raia Drogasil"
+   ],
+   "event_ids": [
+    "follow_on"
+   ],
+   "captured_ts": 1784201546,
+   "cap_iso": "2026-07-16 08:32"
+  },
+  "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPRE5DU2lCUDN3aUMteEc3YlRGX09DVnA5OFNkVFZ2c1V2bzM2U1JtdXdPWWVSMEZqUnRaaEVoQmV2bWRSb1JJVkxrVXplcTBzYmdRYlNYem9raHN6TEZwQUY1aHdiUkxDczZkeXVDX1hLRFF4eDcxVkZsanJxNVlzT2c1Uld4MWNrT3hCd2ttS0w0b2FJdm9LNWxudGd2TWp2TmUzSTV3QWdveFRqcnV6Z2FJSk1ZNXlwNFhtTmlBQ25TVjM3Vk5nY2xWMXZ6SFVDOWUwZjJrU1JuMVBfclJXdmNoUzRQd9IB9AFBVV95cUxNVklFM3JFcjB1Z3BRYWd1SFppc0xTUDR0Y18wLW40SWtNRzNWYm91Zi03NXlVMnlleEdPT3h6Q1ljYXM3ZzVqeV9aX3pMaGU2Ui03VVN3aEZqNlgyMi1yUDJXZ3dkdjZaLWVqd3NIajQ4d0NwNEZsazJzdDkyQlFReFp3Q3ZhX3M5ZjRXLWJ5OFVhYkdsLTBuRDhuWnJlVzFjX09GbmNJZzVydlA4Ny0zVkNSY1B6SVppSG1jdmFuR2NKNlJYUUpsTkpMWE5xQUJ5ZjN0aFljam9Ga1ZKcVNrbzlFdlNpN04yb1JvbXlXd1E2UW5O?oc=5": {
+   "title": "CNJ determina ‘suspensão excepcional’ da falência do Banco Santos e afasta administrador judicial",
+   "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPRE5DU2lCUDN3aUMteEc3YlRGX09DVnA5OFNkVFZ2c1V2bzM2U1JtdXdPWWVSMEZqUnRaaEVoQmV2bWRSb1JJVkxrVXplcTBzYmdRYlNYem9raHN6TEZwQUY1aHdiUkxDczZkeXVDX1hLRFF4eDcxVkZsanJxNVlzT2c1Uld4MWNrT3hCd2ttS0w0b2FJdm9LNWxudGd2TWp2TmUzSTV3QWdveFRqcnV6Z2FJSk1ZNXlwNFhtTmlBQ25TVjM3Vk5nY2xWMXZ6SFVDOWUwZjJrU1JuMVBfclJXdmNoUzRQd9IB9AFBVV95cUxNVklFM3JFcjB1Z3BRYWd1SFppc0xTUDR0Y18wLW40SWtNRzNWYm91Zi03NXlVMnlleEdPT3h6Q1ljYXM3ZzVqeV9aX3pMaGU2Ui03VVN3aEZqNlgyMi1yUDJXZ3dkdjZaLWVqd3NIajQ4d0NwNEZsazJzdDkyQlFReFp3Q3ZhX3M5ZjRXLWJ5OFVhYkdsLTBuRDhuWnJlVzFjX09GbmNJZzVydlA4Ny0zVkNSY1B6SVppSG1jdmFuR2NKNlJYUUpsTkpMWE5xQUJ5ZjN0aFljam9Ga1ZKcVNrbzlFdlNpN04yb1JvbXlXd1E2UW5O?oc=5",
+   "summary": "CNJ determina ‘suspensão excepcional’ da falência do Banco Santos e afasta administrador judicial &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1783711988,
+   "pub_iso": "2026-07-10 16:33",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "corroborations": [
+    {
+     "source": "O Bastidor",
+     "domain": "obastidor.com.br",
+     "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5UWGFDV3EwZGg3LXRkcTJDSGFUNTVPbHVhZFJjZFIwcTlIX2hzNkRyR0RSVHhlUmlHUFhyME5pYXhfOFA1eW5QRGtfODRNaThlLXh5NEQyWXVzWk9RYUxIWTRnVzN3eWl1Y0dnZ05B?oc=5"
+    },
+    {
+     "source": "Consultor Jurídico",
+     "domain": "conjur.com.br",
+     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOZHJzbF9taXE5bS1qRXFGV280R0ptNlhPQmJZbVdXeFQ4ZVdscHdxWGo5cEFhbUJJRXg2Tk1VS21lbldvYTNwNi1XZVVORklZNU52MHhrYjBYUjRiVzZiYjd2WkRJcFdxa1k4VzdjSkswY2hzcl9BWXJXSi1nNmRockhaT19BOFUyMF9PbEtkdElCejkxWHNFY2lRUzJYTy1OMmp1RXFrSmFqZGZBT2g4b0J2RkRkQQ?oc=5"
+    },
+    {
+     "source": "Jurinews",
+     "domain": "jurinews.com.br",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZ3JVQUJPVFdVaXltNldkdXhDZDgzbVVhM2d5dFRyb296RkNTZFFLemJoQXNhUWItV2hKaDRMTjJ3bEtHSU5lUm5DenNrQy1maXhneGJ6cWN3d0ppVWMtaURBUExYbHpFYlEzem52WVN2YzJ4c3p0UGNwd0xtamFOb2ctWDVvdUZDXzlwTjdCSnVnSmYzQjRjbHhLQTQwUQ?oc=5"
+    }
+   ],
+   "captured_ts": 1784201546,
+   "cap_iso": "2026-07-16 08:32"
+  },
+  "https://news.google.com/rss/articles/CBMinwFBVV95cUxQdkFnSEQ2QVlMNHRTNDlSYzJMZzh6MnRmWW9lR20zWkQyelZVMXJTSGxsb3lmRDBMamFUcTdTUGRxZWRpczV2b0k2aHlQZWp1WGVQM3NjZGQtSWw4cER0Vjhfajk3ZU9ld0k0UnJBM2F2VFZHRzh2UnFsVGFPa3FqWlVaZnpqVERWRmFDWU9hVjF6TXkwTmF3Mk82alJYSUXSAa4BQVVfeXFMT1pzU2VDbzQzdTZCcWNXb3JQQklQTW02dmEtdmczTEZBRjlhYXg3aWsxRGltUnI5ejRzcHFMdmF4RVVtdFNTcV9yQkNUY0FIejh2YWlLQjNoRU9jelFtbWRMQkh4SzU5VjhRUUZPcm4td1VKcUpGa0NxcjUtN2c1bUg3LVBBRFB5VW9VdzRJOTRGT3FmWV9mZUhhYTlxcFhaN1lMa29OT3FDbzVER3l3?oc=5": {
+   "title": "Light pede saída de recuperação judicial",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQdkFnSEQ2QVlMNHRTNDlSYzJMZzh6MnRmWW9lR20zWkQyelZVMXJTSGxsb3lmRDBMamFUcTdTUGRxZWRpczV2b0k2aHlQZWp1WGVQM3NjZGQtSWw4cER0Vjhfajk3ZU9ld0k0UnJBM2F2VFZHRzh2UnFsVGFPa3FqWlVaZnpqVERWRmFDWU9hVjF6TXkwTmF3Mk82alJYSUXSAa4BQVVfeXFMT1pzU2VDbzQzdTZCcWNXb3JQQklQTW02dmEtdmczTEZBRjlhYXg3aWsxRGltUnI5ejRzcHFMdmF4RVVtdFNTcV9yQkNUY0FIejh2YWlLQjNoRU9jelFtbWRMQkh4SzU5VjhRUUZPcm4td1VKcUpGa0NxcjUtN2c1bUg3LVBBRFB5VW9VdzRJOTRGT3FmWV9mZUhhYTlxcFhaN1lMa29OT3FDbzVER3l3?oc=5",
+   "summary": "Light pede saída de recuperação judicial &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1784188872,
+   "pub_iso": "2026-07-16 05:01",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1784201546,
+   "cap_iso": "2026-07-16 08:32"
+  },
+  "https://news.google.com/rss/articles/CBMixgFBVV95cUxPOFVxUEJDYzY1ajRydnA5Rl9JVVEyS0dVdkhhVDA3eDZNRm54YXZTMEt3VEZmVjN2RURhaDJDQ1pQWm5PQmxpLXY3Z3cwcWQ1cVBabUNDQ1pqbDZpblM1bUU0NVViUGc2dmt2Mi1kRGlFbEJSUUg1YTZBVERXcVkyS2lVcUxUOGNqVWgzdzIwTkZXZHY2Yjk2dDlJZ19jWFdpV3BPZEd2bFRKOXkzOTVZZzk4cXBjdHU0dGFTcWRtZ3QwR3p5a1E?oc=5": {
+   "title": "Tradicional indústria de móveis fundada há 55 anos em SC pode ter recuperação judicial convertida em falência",
+   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPOFVxUEJDYzY1ajRydnA5Rl9JVVEyS0dVdkhhVDA3eDZNRm54YXZTMEt3VEZmVjN2RURhaDJDQ1pQWm5PQmxpLXY3Z3cwcWQ1cVBabUNDQ1pqbDZpblM1bUU0NVViUGc2dmt2Mi1kRGlFbEJSUUg1YTZBVERXcVkyS2lVcUxUOGNqVWgzdzIwTkZXZHY2Yjk2dDlJZ19jWFdpV3BPZEd2bFRKOXkzOTVZZzk4cXBjdHU0dGFTcWRtZ3QwR3p5a1E?oc=5",
+   "summary": "Tradicional indústria de móveis fundada há 55 anos em SC pode ter recuperação judicial convertida em falência &nbsp;&nbsp; NSC Total",
+   "source": "NSC Total",
+   "domain": "nsctotal.com.br",
+   "pub_ts": 1784196068,
+   "pub_iso": "2026-07-16 07:01",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial",
+    "falencia"
+   ],
+   "captured_ts": 1784201546,
+   "cap_iso": "2026-07-16 08:32"
   }
  },
- "run_count": 10,
+ "run_count": 11,
  "last_run": {
-  "ts": 1784146284,
-  "iso": "15 jul 2026 · 17:11 BRT",
+  "ts": 1784201546,
+  "iso": "16 jul 2026 · 08:32 BRT",
   "status": {
    "Tok&Stok": {
     "status": "critico",
-    "score": 87
+    "score": 86
    },
    "Engie Brasil": {
     "status": "critico",
-    "score": 79
+    "score": 78
    },
    "Cosan": {
     "status": "atencao",
-    "score": 74
-   },
-   "Rumo": {
-    "status": "atencao",
-    "score": 25
-   },
-   "Cemig": {
-    "status": "atencao",
-    "score": 24
+    "score": 73
    },
    "Santander Brasil": {
     "status": "atencao",
     "score": 24
+   },
+   "Rumo": {
+    "status": "atencao",
+    "score": 24
+   },
+   "Cemig": {
+    "status": "atencao",
+    "score": 23
    },
    "Bradesco": {
     "status": "atencao",
@@ -5105,7 +5199,7 @@
    },
    "Suzano": {
     "status": "monitorar",
-    "score": 27
+    "score": 26
    },
    "Embraer": {
     "status": "monitorar",
@@ -5121,7 +5215,7 @@
    },
    "ISA Energia Brasil": {
     "status": "monitorar",
-    "score": 22
+    "score": 21
    },
    "Copel": {
     "status": "monitorar",
@@ -5129,11 +5223,11 @@
    },
    "Raia Drogasil": {
     "status": "monitorar",
-    "score": 17
+    "score": 16
    },
    "Sabesp": {
     "status": "monitorar",
-    "score": 14
+    "score": 13
    },
    "PRIO": {
     "status": "monitorar",
@@ -5158,10 +5252,6 @@
    "JBS": {
     "status": "monitorar",
     "score": 5
-   },
-   "Gerdau": {
-    "status": "monitorar",
-    "score": 3
    },
    "Tupy": {
     "status": "monitorar",
