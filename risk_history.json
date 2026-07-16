@@ -5354,14 +5354,14 @@
    "cap_iso": "2026-07-16 12:02"
   }
  },
- "run_count": 12,
+ "run_count": 13,
  "last_run": {
-  "ts": 1784214125,
-  "iso": "16 jul 2026 · 12:02 BRT",
+  "ts": 1784221958,
+  "iso": "16 jul 2026 · 14:12 BRT",
   "status": {
    "Tok&Stok": {
     "status": "critico",
-    "score": 86
+    "score": 85
    },
    "Engie Brasil": {
     "status": "critico",
@@ -5397,7 +5397,7 @@
    },
    "Natura &Co": {
     "status": "monitorar",
-    "score": 29
+    "score": 28
    },
    "Suzano": {
     "status": "monitorar",
