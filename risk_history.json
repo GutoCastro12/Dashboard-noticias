@@ -586,7 +586,9 @@
     "ma"
    ],
    "captured_ts": 1784263196,
-   "cap_iso": "2026-07-17 01:39"
+   "cap_iso": "2026-07-17 01:39",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www1.folha.uol.com.br": {
    "title": "Vazamento sobre calote de R$ 3,6 bi do Banco do Brasil está na mira da CVM",
@@ -2444,7 +2446,9 @@
     "ma"
    ],
    "captured_ts": 1784298795,
-   "cap_iso": "2026-07-17 11:33"
+   "cap_iso": "2026-07-17 11:33",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://gov.br": {
    "title": "Cade aprova, em definitivo, aquisição da Emae pela Sabesp — Conselho Administrativo de Defesa Econômica",
@@ -2498,7 +2502,9 @@
     "ma"
    ],
    "captured_ts": 1784298795,
-   "cap_iso": "2026-07-17 11:33"
+   "cap_iso": "2026-07-17 11:33",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://visnoinvest.com.br": {
    "title": "Eneva (ENEV3) conclui processo de emissão de debêntures de R$ 2,4 bi",
@@ -2552,7 +2558,9 @@
     "ma"
    ],
    "captured_ts": 1784298795,
-   "cap_iso": "2026-07-17 11:33"
+   "cap_iso": "2026-07-17 11:33",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://br.tradingview.com": {
    "title": "S&P corta rating da Cosan para BB- ante BB, define observação negativa",
@@ -2586,7 +2594,8 @@
     }
    ],
    "captured_ts": 1784298795,
-   "cap_iso": "2026-07-17 11:33"
+   "cap_iso": "2026-07-17 11:33",
+   "corrob_sources": []
   },
   "https://megawhat.uol.com.br": {
    "title": "Gerdau negocia aquisição de hidrelétrica da Celesc e reforça autoprodução",
@@ -2603,7 +2612,9 @@
     "ma"
    ],
    "captured_ts": 1784298795,
-   "cap_iso": "2026-07-17 11:33"
+   "cap_iso": "2026-07-17 11:33",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMihAFBVV95cUxOZkxyVkg4cThobVlLOTBQeUxlT0JWTjJ5T2RackU4djAzek5uQUNNbjdSZms0R05Qc0x0Yk9BUVJCNm1aRVJlOEtzVEdmZjFXRU1VazdBaVUzdTJtUnViYlhoRUhhVWNzQ1dyQkpzTUY0SFlta21ncng4X0dwMkpGRkhHcjg?oc=5": {
    "title": "Justiça do Paraná aceita recuperação judicial bilionária da Tradener",
@@ -2661,6 +2672,11 @@
      "source": "Estadão",
      "domain": "estadao.com.br",
      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNSkRaM0xaXzQxQm9nZWF0Yjd6dDBibjBhX2NhRXZhUXJLbWNzUGVPNWdvRUVPaXZ5emZ0RXJuc2lPLUswc1ZsSHhWNUVFMk1Xa3hoaTFMWk84Y0QyYkVOZWFfRTBod091NF93cHgyc0xSMGVCRUdIbEI2XzVSc1F1UDBfMXVTc3ZnMF82bVlDakJZcVYzblhrbUtfY01YWHlJZkNfTWRzNE9YOEZVWUExc0ZodkwzeW1nRWpwNXFxSHItY3N1QWJVbmNMa3FpSVVYSUdvWHpQSWpuOWJvSEhGUzZB0gHnAUFVX3lxTE45R3M5OU41Smg3SFkyODFzVkpHWGV6ZXpoQUlCZGdzUWlTUW5LZ1hLTnhPdGxEdkRKbGk2NWdldVBXRjR4VnV2MHNFTzlVYWJ2ZXRtcXdrV2NuR0lJTnFkbFVjSEdab0Y1dWpUaXpMTExoRk45QnU4blhxU3owYjNzV3BDNnFxQ011SUI2MlFDYnQwYW5jcXk2NHJvQl9XLTg3UmNzQTBjWi1IQlY0VlNaUTVRVFZJaUhtRVlBLUE5azctTm12Z3FBRW9rT2ZkTFJuMXFNR2t0a1Z3N2hSOE1uVjA3VGpsMA?oc=5"
+    },
+    {
+     "source": "BPMoney",
+     "domain": "bpmoney.com.br",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZUZQdGxrTWhYZlRlcVRxQk9YYUp0bFhsQk5iNVktR0JyVUlVZFVIRndvZVc2ZEwzZ0VoUC0tc19BbUpzMmZBWG84dFphblItWHk4MEwxN245a3d2T1hxTW9WdVcwaklQalpTM0ZkNEV2ekFTVHBwelJKc0hORzRzMXR2Qy1SenlfeTFIYWFVdFRhdUZHaFBxYg?oc=5"
     }
    ],
    "corrob_sources": [
@@ -2687,6 +2703,12 @@
      "domain": "nordinvestimentos.com.br",
      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1HQjAwU0lGdEtGVFh4dmJJcnllX0NUWHdJY0IyeVE5LWZVUFQwTVlMMUFxOG55QVBuaVFwVXRPVWRuSlBNNzFuVVJPWGY3XzdxejZOV2MtWVRDMkJ5dVVGZnZUN3FfUVRTU0hFb04yNGpndVRDRDdGMzBB0gF_QVVfeXFMTlFDUTJxMUZwRmR5QmhTRDJhMmdKd2ltbDRlam95WlhpM1IzYzFQWW90VVE3dHJRVlYybWV2ZWZEZmhQb1gtRWZTaTZZYzZQLUU4U3hqc3ZTQmJ2Z2kxeG16MUsxaUhDR1lkYXJ6RUZkR2hUT3ZkQ214N19nUFFFcw?oc=5",
      "when": "03/07 18:47"
+    },
+    {
+     "source": "BPMoney",
+     "domain": "bpmoney.com.br",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZUZQdGxrTWhYZlRlcVRxQk9YYUp0bFhsQk5iNVktR0JyVUlVZFVIRndvZVc2ZEwzZ0VoUC0tc19BbUpzMmZBWG84dFphblItWHk4MEwxN245a3d2T1hxTW9WdVcwaklQalpTM0ZkNEV2ekFTVHBwelJKc0hORzRzMXR2Qy1SenlfeTFIYWFVdFRhdUZHaFBxYg?oc=5",
+     "when": "03/07 04:00"
     }
    ],
    "captured_ts": 1784298795,
@@ -2707,24 +2729,9 @@
     "emissao_divida"
    ],
    "captured_ts": 1784298795,
-   "cap_iso": "2026-07-17 11:33"
-  },
-  "https://theagribiz.com": {
-   "title": "Por que BTG e Santander gostaram do novo CEO da Rumo",
-   "url": "https://theagribiz.com",
-   "summary": "Por que BTG e Santander gostaram do novo CEO da Rumo &nbsp;&nbsp; The AgriBiz",
-   "source": "The AgriBiz",
-   "domain": "theagribiz.com",
-   "pub_ts": 1782198000,
-   "pub_iso": "2026-06-23 04:00",
-   "companies": [
-    "Rumo"
-   ],
-   "event_ids": [
-    "troca_ceo"
-   ],
-   "captured_ts": 1784307789,
-   "cap_iso": "2026-07-17 14:03"
+   "cap_iso": "2026-07-17 11:33",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMipANBVV95cUxPQ3BFZjZ1YjhJdC1ZcmNncWtaSXpLRThzTlVscmtfNVR4Zm5fem4tcGlXY3FLYmVabEhwZjRwYjVkQ0I3S2tscnBWbk0wbDVZaTJaNTBSUU9pSmp0TzBLYm9KWnpKenFRbFB5SUNkalNEMjBHVDZ2MFFaYUxzY3Z0WHV0dUZqc2NIMjU4Ql95ZUVKUndrVWpLb0pkUzZsRHl6UlIwNmotUS1tQzl0WllXci1LQXdSb0s5R0NfS0FYX3VBUUdKM2o4bV90bTJpY253U3d2LS1pNFdrUVRUdWJLeU9KOXFUeks5al8zcGNjb2tueUlsZDlvSm1YYklDZklDOUdicUpuX0NlYllia0hJOEZDZUozNUQtcDdGUkdGanJ2LWhuWmlJRDFoVmpscnN4S3JLcm80eHJURXAtU0lTVldQUllvbWhvQVhET21ibVVCekZpN0VCeWMyX3BNSl9UTzNGc1ZIbWk4YnZyVlRuaU11SXNIZ2Y2eWU0VlFTRTlQWERJYVJMMXdnU0o4a1JYYW5CMGdQc0FLblppNmR2ZlVwY1c?oc=5": {
    "title": "Falência da Dolly: empresas veem mudança no consumo, diz especialista",
@@ -2776,9 +2783,60 @@
    ],
    "captured_ts": 1784307789,
    "cap_iso": "2026-07-17 14:03"
+  },
+  "https://migalhas.com.br": {
+   "title": "Mattos Filho assessora Energo-Pro na aquisição do CEBI da Copel",
+   "url": "https://migalhas.com.br",
+   "summary": "Mattos Filho assessora Energo-Pro na aquisição do CEBI da Copel &nbsp;&nbsp; Migalhas",
+   "source": "Migalhas",
+   "domain": "migalhas.com.br",
+   "pub_ts": 1761202800,
+   "pub_iso": "2025-10-23 04:00",
+   "companies": [
+    "Copel"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1784319014,
+   "cap_iso": "2026-07-17 17:10"
+  },
+  "https://demarest.com.br": {
+   "title": "Eneva capta R$ 2,4 bilhões com debêntures",
+   "url": "https://demarest.com.br",
+   "summary": "Eneva capta R$ 2,4 bilhões com debêntures &nbsp;&nbsp; Demarest",
+   "source": "Demarest",
+   "domain": "demarest.com.br",
+   "pub_ts": 1773903600,
+   "pub_iso": "2026-03-19 04:00",
+   "companies": [
+    "Eneva"
+   ],
+   "event_ids": [
+    "emissao_divida"
+   ],
+   "captured_ts": 1784319014,
+   "cap_iso": "2026-07-17 17:10"
+  },
+  "https://news.google.com/rss/articles/CBMirgFBVV95cUxOV2VuZTVzNWtDNFplOVpXYkRBMUFYRlJMVm5LYnRndnRFX2lMajFiTVJOcXI4YWM2aHVWcEpQSFl0cG1lODBOSXhEVVppNTRGYnZaSVNjUXpteGVXeUJvSVNIM0RQWXR6bTBrMDJQWmZ1cnJpVXNFLXZhRWpUYnVRX3Q4ZHg1aWhXQ1NWSmlJVnR5WllfamtfQnpQbkYzMGN6N2RoR3JaSjRyOFRsOEE?oc=5": {
+   "title": "Opinião | O desequilíbrio da recuperação judicial brasileira",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOV2VuZTVzNWtDNFplOVpXYkRBMUFYRlJMVm5LYnRndnRFX2lMajFiTVJOcXI4YWM2aHVWcEpQSFl0cG1lODBOSXhEVVppNTRGYnZaSVNjUXpteGVXeUJvSVNIM0RQWXR6bTBrMDJQWmZ1cnJpVXNFLXZhRWpUYnVRX3Q4ZHg1aWhXQ1NWSmlJVnR5WllfamtfQnpQbkYzMGN6N2RoR3JaSjRyOFRsOEE?oc=5",
+   "summary": "Opinião | O desequilíbrio da recuperação judicial brasileira &nbsp;&nbsp; Estadão",
+   "source": "Estadão",
+   "domain": "estadao.com.br",
+   "pub_ts": 1784311200,
+   "pub_iso": "2026-07-17 15:00",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1784319014,
+   "cap_iso": "2026-07-17 17:10"
   }
  },
- "run_count": 5,
+ "run_count": 6,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com",
@@ -3579,11 +3637,31 @@
   "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOVVB6eThnakt6cUd4RlktRnZpQVlxNXNfWnRMTkNSbFRlcGdaZUxad2pFTW93V09zR2FPVDFadzdVcEFzdXdxanJtb01Vd1ZiZTZFekV3MlNCb0ZydEs3dkxZTnZtc1RoZDdWbldVeHhPbVpyQWotM2gyTUZmRXd1WXhnZ19SLTVTR0F6YWlfcVB2bEZnNlRRQ09vYVlGUWE1UFdoMGdFTTk?oc=5": {
    "url": "https://braziljournal.com",
    "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOMVlROUY4VWlhN0lfeTlDZVNDNFdNeUFZOUNQeDE2bFA0dXRaUFpoMW9rS1ZhS0JfVElCUG5tNEpZd3MxbHdUNmpxRlZNSDM2WkhyUHFNM25XVFpnc2oxdUkxdVhwaHRyZHY5YzR3SVZ6VEExbERIdHFuZGVjdzhWT1prRi0tWUtfM3U5RTJ2QkxHTTBMQWlEWWlpM0JSc3FwdnU4TjBVbUpxUQ?oc=5": {
+   "url": "https://migalhas.com.br",
+   "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPTUpuUTVEQ24zNVlPMmZBSGhTVkdLN1dlbVFKT3hiQnhpb1VuN3Z4dWtkUF83bUV6NVJiN29pWUx3QTk5MnFXcmpTbnRYajJvREpfWi1PQ0pUZE10UlVmck9VY1c1QnlobmVrdFFId0d0NzVqbUFDLUxpS09Xd2dsRmRnR3FXczYzZlpOUkVjRXJQTG9ZQ0luVm95SklwU2JpSWJmaExyQWw?oc=5": {
+   "url": "https://moneytimes.com.br",
+   "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMiywFBVV95cUxPdno4Q0xaa2d6cXdkZ2ViRWxOODBYUWJFMTZ6bnpfTUhnYVhPcmdTcFkwUnh3NElRdVI0ZXhPaU5rZ0xDSUlwOEJxaHA2SnoyUnhNU1RJODcxdk9zcEd4VzF3Q3NpVWZqZkR6RFVKS3RDdmo1bGNVSUlGU29xWTdyTUVNR2prXzl3NFh3UHZlbjI3QnZEczFtazVacHgwQy1BTmRVdlBVZWNpU0lCNXJsa1cwQ2RUb2luNXg0VVl2Z1EyLVJ4Sk93SkhWMNIB2gFBVV95cUxQbHpmd2x4QktKMVhsaUsxcERlZU9hdWJ1ckhXMURSSk4zNVV5OGZjcVp0SkRIdWNjU1RlZ1FiMWRJSFNpcnJSVmEzdnM4azNvajdwZWR1S1lPY3JEcjRNVDdmcGRqZ2tZTGl2YnktSjNsd203T2pDdHVYX0dISjZYQmNOemdpT05EY3lESXhxbnpsUDdPbUdHU0xZemxoUEVEdlJCbTdsVnVtd0ZPXy1pYVNkMEEzT1dMQkxzMmZ4ZV9vNFZfcUdKbGRLUEthd3dGdjVhdWNCUmlSUQ?oc=5": {
+   "url": "https://valor.globo.com",
+   "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMid0FVX3lxTE9IdkNLNV84UmRBZk9mcW5VNmphWXNWZTQtdGNpRURNV1haWTF0UERDd0pYbThZTHNOcFdTMDlDSlZKRlp4MkFHMlg1UVRCNGN5VmNaYVF1VUpITUM0cFpJd1JZZDNzeGEzSXBENXlIeG9RZ05wbXRJ?oc=5": {
+   "url": "https://demarest.com.br",
+   "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNSkRaM0xaXzQxQm9nZWF0Yjd6dDBibjBhX2NhRXZhUXJLbWNzUGVPNWdvRUVPaXZ5emZ0RXJuc2lPLUswc1ZsSHhWNUVFMk1Xa3hoaTFMWk84Y0QyYkVOZWFfRTBod091NF93cHgyc0xSMGVCRUdIbEI2XzVSc1F1UDBfMXVTc3ZnMF82bVlDakJZcVYzblhrbUtfY01YWHlJZkNfTWRzNE9YOEZVWUExc0ZodkwzeW1nRWpwNXFxSHItY3N1QWJVbmNMa3FpSVVYSUdvWHpQSWpuOWJvSEhGUzZB0gHnAUFVX3lxTE45R3M5OU41Smg3SFkyODFzVkpHWGV6ZXpoQUlCZGdzUWlTUW5LZ1hLTnhPdGxEdkRKbGk2NWdldVBXRjR4VnV2MHNFTzlVYWJ2ZXRtcXdrV2NuR0lJTnFkbFVjSEdab0Y1dWpUaXpMTExoRk45QnU4blhxU3owYjNzV3BDNnFxQ011SUI2MlFDYnQwYW5jcXk2NHJvQl9XLTg3UmNzQTBjWi1IQlY0VlNaUTVRVFZJaUhtRVlBLUE5azctTm12Z3FBRW9rT2ZkTFJuMXFNR2t0a1Z3N2hSOE1uVjA3VGpsMA?oc=5": {
+   "url": "https://estadao.com.br",
+   "exact": false
   }
  },
  "last_run": {
-  "ts": 1784307818,
-  "iso": "17 jul 2026 · 14:03 BRT",
+  "ts": 1784319042,
+  "iso": "17 jul 2026 · 17:10 BRT",
   "status": {
    "Engie Brasil": {
     "status": "monitorar",
@@ -3622,10 +3700,6 @@
     "score": 11
    },
    "Vamos": {
-    "status": "monitorar",
-    "score": 9
-   },
-   "Rumo": {
     "status": "monitorar",
     "score": 9
    },
