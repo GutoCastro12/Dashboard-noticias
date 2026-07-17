@@ -15,7 +15,9 @@
     "troca_ceo"
    ],
    "captured_ts": 1784263196,
-   "cap_iso": "2026-07-17 01:39"
+   "cap_iso": "2026-07-17 01:39",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOR2t2XzZBbzFseEpZWTI0RmxhT2VxUk90clpRVmFTSUNUbnZJRmhVQUVzV2loUi1FTjFfQXVqWURHdWFHVmUtaDVfeVJBclVnWGw5Y2pxMzZyTnRDdl93Nl9sR2RlY3JYb0YtRVBWMDVYSFBZc0otNU1EUUk4MENEQmNaQ0IxQUxqcnByTnFtdHNXSjZwZHlhUGtOTEM0N2JvQ2pUM2VMdmfSAbcBQVVfeXFMTmtEaktweC1TRkYzakxILVFrWFVTdXozUklVXzd6QTExSWRiekVwSGhuMHJjRGtUd09xM0lKc3lKUURlTkFFTXRYTVJYdk1IOUxDVmFpS2pDZ2d3WW9pZUI2T3E2dE02YVhxaTNuTDdQS2plQ1ZsSFFwaVBoUm1PeVFmMVc4VFBGN2F0RUV2dXJEREVydEt0WXI1LU1XZndzcld4TENQdkcwT28zWVVvWDlPSjJmbmww?oc=5": {
    "title": "Rede D’Or negocia aquisição do Fleury, dizem fontes",
@@ -625,7 +627,9 @@
     "pequenas_aquisicoes"
    ],
    "captured_ts": 1784263196,
-   "cap_iso": "2026-07-17 01:39"
+   "cap_iso": "2026-07-17 01:39",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMipAFBVV95cUxPTGFra1lsZDNlVzAyX1RSOTlxelJqZTVhYVZLRzJtMWxNOWd3elpmYWJPZHkweFkzaklOMVJXal9ndGwyU25sQXZFaWFxS1JKVEpXVDJHRWxiNExKeDNZeHBxUV9KcHpZVWppYnhoUU4zQWpKMDhvRlN5c1kwcjU5WTBtekVMenE0UUZiOTVFZ2dDLVdWWF9YOFJHQ0g2aFVmQWhhbw?oc=5": {
    "title": "Gold Energia entra em recuperação judicial e retorna à CCEE",
@@ -1067,7 +1071,9 @@
     "ma"
    ],
    "captured_ts": 1784263196,
-   "cap_iso": "2026-07-17 01:39"
+   "cap_iso": "2026-07-17 01:39",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMijgFBVV95cUxQR2ktT3J3N200TXo5SXJpbGdkUGVGWFYzLWxzWmFvejhGSUEwbGFBMjF4V0lFeTQyU092QWVDR0thUkVpQVh0c2NraW84aFpOYXI0YnRxeFo4OFM1WXA1djE0aHJwRGN4RWhYaEljaUwtVTlnZlg2WC1mb1l0THdTbnJ0WjN1M3pLMWhnV2FB?oc=5": {
    "title": "Tradener é mais uma comercializadora a pedir recuperação judicial",
@@ -1274,7 +1280,8 @@
     }
    ],
    "captured_ts": 1784263196,
-   "cap_iso": "2026-07-17 01:39"
+   "cap_iso": "2026-07-17 01:39",
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMinAFBVV95cUxNQzJwTEFzZGlMZmdHUEZUencwTkVta2JOV1ppUERBZzc3d0xscGtjbHlxRVFvMmYyeFlzc3hGT0FvTFJtWWNTckRXTElQS18tSWZIazhYbVBLTmxlUEFPaE9SX3VUQTg0Z2pQS3RZRDQwdnFoelpTSlpnSHFHblgtbGJvWDV4RmgtVGJjMjJVTURyZVBBOHEtUWRTMTI?oc=5": {
    "title": "Saída da recuperação judicial não representa o fim dos desafios",
@@ -2126,9 +2133,299 @@
    ],
    "captured_ts": 1784263196,
    "cap_iso": "2026-07-17 01:39"
+  },
+  "https://timesbrasil.com.br": {
+   "title": "Cade aprova aquisição pela Suzano de 51% de sociedade com 22 fábricas de papel da Kimberly-Clark",
+   "url": "https://timesbrasil.com.br",
+   "summary": "Cade aprova aquisição pela Suzano de 51% de sociedade com 22 fábricas de papel da Kimberly-Clark &nbsp;&nbsp; Times Brasil | CNBC",
+   "source": "Times Brasil | CNBC",
+   "domain": "timesbrasil.com.br",
+   "pub_ts": 1758524400,
+   "pub_iso": "2025-09-22 04:00",
+   "companies": [
+    "Suzano"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "corroborations": [
+    {
+     "source": "Money Times",
+     "domain": "moneytimes.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQkJpbWhrZHdTYXhmRkdfcnkzSFdvOFdjOUdLUlhGa1p4WVBMUTh0cEdTMnM3UnBlMnFiSldsdjU2aUFDVTRQX3dTRXFqNmVDX1RZSG5mSkJOUkcyM2xwellrNVBWWjFnMTBuWlZDX0Y4enRNUHpRSE1PUllTWTRJNkRpcnpZYmxjVmN5eVkxNzJScDA5S0dTQnVSTElwTzdFN3dTSGhvTzNYSEVZV0dPTlBENFpURTVCUEE?oc=5"
+    }
+   ],
+   "captured_ts": 1784287132,
+   "cap_iso": "2026-07-17 08:18"
+  },
+  "https://br.advfn.com": {
+   "title": "S&P eleva rating da Prio e projeta produção recorde",
+   "url": "https://br.advfn.com",
+   "summary": "S&P eleva rating da Prio e projeta produção recorde &nbsp;&nbsp; ADVFN",
+   "source": "ADVFN",
+   "domain": "br.advfn.com",
+   "pub_ts": 1763107200,
+   "pub_iso": "2025-11-14 05:00",
+   "companies": [
+    "PRIO"
+   ],
+   "event_ids": [
+    "rating_elevado"
+   ],
+   "corroborations": [
+    {
+     "source": "Money Times",
+     "domain": "moneytimes.com.br",
+     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOSlRONi1iQnltNldCU0tUUGhuV1hxajA0Rjh5NGZDajBibG90MDNaejJGcE1PbkRqQm1LRWVsaFhPQklrMVRoSWx4cnB4X0Vhd21PWTV6d1BRQTZNd05lV0NlR2pVUzZ0X1hyN3RTOTY1eV9VMmRnS2llSTdEY2FUenNBdXdwQTl5X05tcG1kOHZhbXNWXzlOYTY4S2ZUR2xRVmtGaDNmbWhRdHpVYk9mSjdXOG5qZV8yQmJ3MlJR?oc=5"
+    }
+   ],
+   "captured_ts": 1784287132,
+   "cap_iso": "2026-07-17 08:18"
+  },
+  "https://infomoney.com.br": {
+   "title": "Suzano (SUZB3) aprova emissão de debêntures no valor de R$ 179 milhões",
+   "url": "https://infomoney.com.br",
+   "summary": "Suzano (SUZB3) aprova emissão de debêntures no valor de R$ 179 milhões &nbsp;&nbsp; InfoMoney",
+   "source": "InfoMoney",
+   "domain": "infomoney.com.br",
+   "pub_ts": 1773212400,
+   "pub_iso": "2026-03-11 04:00",
+   "companies": [
+    "Suzano"
+   ],
+   "event_ids": [
+    "emissao_divida"
+   ],
+   "corroborations": [
+    {
+     "source": "CNN Brasil",
+     "domain": "cnnbrasil.com.br",
+     "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOejNWVFZGNVNIQXJSUEQ2RWF5bi1qdlBoSmNlMjhsVy1LSHBTZGFwaDNfNVRBX1hMRHZrMDRDVkdWYS1QekQ4dVVDYVRfUDhoT05PaHo0SVFwdk1SU19iWmZoWGNLQVlHVFRYMEkxd2hFWDBIc1ZCNThCaXRDVjNqYW9wSEpnRkRRTm1sdF95dFk?oc=5"
+    },
+    {
+     "source": "Visno Invest",
+     "domain": "visnoinvest.com.br",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQVGl3RENnVEg0VDFJWmk5a0o5MzQzWmZJUGhPX1BHVngzaGRWLXYwSjNzd09xUFV4VlhERUgyRGZTamNPTGZmSS1vQV9ZTjVpN09wSjByOWVVb1FhVHVSdVFLUWdYbFdYQTFhZDBHRWMzbXVFVGx2cUJ4eXJlZU12cE5BSE1hMFA0WlBqakkxbHhBMVRHSHc?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "CNN Brasil",
+     "domain": "cnnbrasil.com.br",
+     "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOejNWVFZGNVNIQXJSUEQ2RWF5bi1qdlBoSmNlMjhsVy1LSHBTZGFwaDNfNVRBX1hMRHZrMDRDVkdWYS1QekQ4dVVDYVRfUDhoT05PaHo0SVFwdk1SU19iWmZoWGNLQVlHVFRYMEkxd2hFWDBIc1ZCNThCaXRDVjNqYW9wSEpnRkRRTm1sdF95dFk?oc=5",
+     "when": "11/03 04:00"
+    }
+   ],
+   "captured_ts": 1784287132,
+   "cap_iso": "2026-07-17 08:18"
+  },
+  "https://financenews.com.br": {
+   "title": "Tupy (TUPY3) escolhe Harro Burmann como novo CEO",
+   "url": "https://financenews.com.br",
+   "summary": "Tupy (TUPY3) escolhe Harro Burmann como novo CEO &nbsp;&nbsp; financenews.com.br",
+   "source": "financenews.com.br",
+   "domain": "financenews.com.br",
+   "pub_ts": 1777878000,
+   "pub_iso": "2026-05-04 04:00",
+   "companies": [
+    "Tupy"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "corroborations": [
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQTGptZ1ZSX1RuUEIxTGx0bzlobVpsTmh3OFhJeVZ6aWJUUVlaTWFnY2ZYSWVhOTZZa2gyVGRoWkNWSVF4MEhpSVhpcUhnQ3JrRE92VWpTbzc3ZEJvcHBDTjJTVlRhbDRtRW11ME9nTkIxOFEyVWxzZEx2bFYtbDZXUWRqZDVEM1JCVVp3RWRrUGR5eHJOZHJVN1U1ZHp0X195TUVCN05GU3pHRnlzTXdHYURiUk83SGtDMjdv?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQTGptZ1ZSX1RuUEIxTGx0bzlobVpsTmh3OFhJeVZ6aWJUUVlaTWFnY2ZYSWVhOTZZa2gyVGRoWkNWSVF4MEhpSVhpcUhnQ3JrRE92VWpTbzc3ZEJvcHBDTjJTVlRhbDRtRW11ME9nTkIxOFEyVWxzZEx2bFYtbDZXUWRqZDVEM1JCVVp3RWRrUGR5eHJOZHJVN1U1ZHp0X195TUVCN05GU3pHRnlzTXdHYURiUk83SGtDMjdv?oc=5",
+     "when": "05/05 04:00"
+    }
+   ],
+   "captured_ts": 1784287132,
+   "cap_iso": "2026-07-17 08:18"
+  },
+  "https://theagribiz.com": {
+   "title": "Por que BTG e Santander gostaram do novo CEO da Rumo",
+   "url": "https://theagribiz.com",
+   "summary": "Por que BTG e Santander gostaram do novo CEO da Rumo &nbsp;&nbsp; The AgriBiz",
+   "source": "The AgriBiz",
+   "domain": "theagribiz.com",
+   "pub_ts": 1782198000,
+   "pub_iso": "2026-06-23 04:00",
+   "companies": [
+    "Rumo"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "captured_ts": 1784287132,
+   "cap_iso": "2026-07-17 08:18"
+  },
+  "https://news.google.com/rss/articles/CBMiugFBVV95cUxQaWNocFpxSVBLVFhBRjVQXzFLQXNUeFlvT0g4ZzhQdnBsS0ZmS3M5N3FTNUxHS3JMcGFieTR3UHVWUnZScjNfRFFicDVKNGs2ZjdPdGxUOWR5dXJIak5SdGZCbVA5WU1BZjYyX1NBNnRuUXpvc3hwT05CdzBNRUpMZ0MzbXRTS3VIbWVHUm9JZDlRZnUxUkNOM0o5RkhaUm9aZmdLQzc2bC00emZFZDR5c0xSNFVjanJjY1E?oc=5": {
+   "title": "Recuperação judicial deixa de ser sinônimo de falência e ganha papel de reestruturação",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQaWNocFpxSVBLVFhBRjVQXzFLQXNUeFlvT0g4ZzhQdnBsS0ZmS3M5N3FTNUxHS3JMcGFieTR3UHVWUnZScjNfRFFicDVKNGs2ZjdPdGxUOWR5dXJIak5SdGZCbVA5WU1BZjYyX1NBNnRuUXpvc3hwT05CdzBNRUpMZ0MzbXRTS3VIbWVHUm9JZDlRZnUxUkNOM0o5RkhaUm9aZmdLQzc2bC00emZFZDR5c0xSNFVjanJjY1E?oc=5",
+   "summary": "Recuperação judicial deixa de ser sinônimo de falência e ganha papel de reestruturação &nbsp;&nbsp; Jornal O Florense",
+   "source": "Jornal O Florense",
+   "domain": "jornaloflorense.com.br",
+   "pub_ts": 1783947640,
+   "pub_iso": "2026-07-13 10:00",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial",
+    "falencia"
+   ],
+   "captured_ts": 1784287132,
+   "cap_iso": "2026-07-17 08:18"
+  },
+  "https://news.google.com/rss/articles/CBMijAJBVV95cUxPWXdIdms4OUVfX1pOcWNxZnZtZkVQNkFkSm54MElvRERoNjRlZjNXalRBbUZkeF9JQkRuVDdSbUcyQU1GZVdxRTZmeFo2aWZmLXpwTnZtQjNfLVR1a1JtdE4xSVk4aElVaFNid3BmR3BRSmpJODFRUzJNdVRfamE5eTdyaGlER1NGenU2ajlHRTFuRUVlTWVWeURiZEJFZnlzT28xaTI0ODMteGRwRV9zUHNqeDJyWlpSTDh2Ui12SVJnNFZURkVfM0VUUVU4QjF0aW5SLUh0RmpDVHBiT2Nhd1I2d1BUWXVhUTdrNXlMaW8wZ3hqU2NKaklsdl9CektvejNYdjNRaEtpeFQ5?oc=5": {
+   "title": "O caixa, a dívida e as receitas da Ambipar (AMBP3) — veja o que a empresa está oferecendo para conseguir aprovar sua recuperação judicial",
+   "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxPWXdIdms4OUVfX1pOcWNxZnZtZkVQNkFkSm54MElvRERoNjRlZjNXalRBbUZkeF9JQkRuVDdSbUcyQU1GZVdxRTZmeFo2aWZmLXpwTnZtQjNfLVR1a1JtdE4xSVk4aElVaFNid3BmR3BRSmpJODFRUzJNdVRfamE5eTdyaGlER1NGenU2ajlHRTFuRUVlTWVWeURiZEJFZnlzT28xaTI0ODMteGRwRV9zUHNqeDJyWlpSTDh2Ui12SVJnNFZURkVfM0VUUVU4QjF0aW5SLUh0RmpDVHBiT2Nhd1I2d1BUWXVhUTdrNXlMaW8wZ3hqU2NKaklsdl9CektvejNYdjNRaEtpeFQ5?oc=5",
+   "summary": "O caixa, a dívida e as receitas da Ambipar (AMBP3) — veja o que a empresa está oferecendo para conseguir aprovar sua recuperação judicial &nbsp;&nbsp; Seu Dinheiro",
+   "source": "Seu Dinheiro",
+   "domain": "seudinheiro.com",
+   "pub_ts": 1783968174,
+   "pub_iso": "2026-07-13 15:42",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1784287132,
+   "cap_iso": "2026-07-17 08:18"
+  },
+  "https://news.google.com/rss/articles/CBMivwFBVV95cUxORmZaNEdxU1J1SXJONTNxZnYwU1UxOGU2bjlxbXY4OTJfOVc0THkwOEozb1J2ZjdiMzFnQ25LYVM0aHpLUEp1M3M1clJPcEk1VHM1YldBZTVHQjBCVEJCbllBbnRUcktBNF94R1h4Z3hMMGNvU3UxbXVWZVNyTnFKeFJSWHFQNXVGcDJwNUxYSmhXU3NSTWJxTHlOMFM3X2RlUUJPcTU5d1lMVFJYMGYwX3ZBMkREaThPTHVwU1poWQ?oc=5": {
+   "title": "Ações da Lucid recuam após empresa negar rumores de falência",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxORmZaNEdxU1J1SXJONTNxZnYwU1UxOGU2bjlxbXY4OTJfOVc0THkwOEozb1J2ZjdiMzFnQ25LYVM0aHpLUEp1M3M1clJPcEk1VHM1YldBZTVHQjBCVEJCbllBbnRUcktBNF94R1h4Z3hMMGNvU3UxbXVWZVNyTnFKeFJSWHFQNXVGcDJwNUxYSmhXU3NSTWJxTHlOMFM3X2RlUUJPcTU5d1lMVFJYMGYwX3ZBMkREaThPTHVwU1poWQ?oc=5",
+   "summary": "Ações da Lucid recuam após empresa negar rumores de falência &nbsp;&nbsp; Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "domain": "br.investing.com",
+   "pub_ts": 1784052600,
+   "pub_iso": "2026-07-14 15:10",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "corroborations": [
+    {
+     "source": "Vietnam.vn",
+     "domain": "vietnam.vn",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQdjUyaUlGbGx0UFVuanB5bkxKdEVpeUVzUEoxNVdUdzl2Zm9jMGszZFBfYVBpcW9iajZVczRqV3RBSUZFQVZQZFdoeEdkZmRIMldmSHB6VWRndERLLXhiOVl1cG85a1o0U3M1dDA4QTh6eXJFS09uLVZnUUtIaFVsdldBOUE?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Vietnam.vn",
+     "domain": "vietnam.vn",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQdjUyaUlGbGx0UFVuanB5bkxKdEVpeUVzUEoxNVdUdzl2Zm9jMGszZFBfYVBpcW9iajZVczRqV3RBSUZFQVZQZFdoeEdkZmRIMldmSHB6VWRndERLLXhiOVl1cG85a1o0U3M1dDA4QTh6eXJFS09uLVZnUUtIaFVsdldBOUE?oc=5",
+     "when": "15/07 09:40"
+    }
+   ],
+   "captured_ts": 1784287132,
+   "cap_iso": "2026-07-17 08:18"
+  },
+  "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQWWZGLXoydlhkRExCdHBjamFvTkZtbXpyUlY0ZU1RZV9BOFNHTzNlVU5BM0RuZjlyMnNUbUZBZlZZWS05RlMtTVpMMnFOZ2hqWUh4Rzc4ckd6cjYyYmlpbUVuNHQ1Wjk2UVZxTjlaWW45cU54Nzh4bWduVGxFVHZXX29xUWoxOUtUSmZ0WURHWlc0RFhTQTAxLUVZU0VSNi1GMVlwTlZlOXk4SmhHUldTUk5DR19rNEU4b2JVaHR6QTF2MWg1TG9HNA?oc=5": {
+   "title": "Ministério Público se manifesta favorável à falência da Móveis Três Irmãos; entenda como fica a situação",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQWWZGLXoydlhkRExCdHBjamFvTkZtbXpyUlY0ZU1RZV9BOFNHTzNlVU5BM0RuZjlyMnNUbUZBZlZZWS05RlMtTVpMMnFOZ2hqWUh4Rzc4ckd6cjYyYmlpbUVuNHQ1Wjk2UVZxTjlaWW45cU54Nzh4bWduVGxFVHZXX29xUWoxOUtUSmZ0WURHWlc0RFhTQTAxLUVZU0VSNi1GMVlwTlZlOXk4SmhHUldTUk5DR19rNEU4b2JVaHR6QTF2MWg1TG9HNA?oc=5",
+   "summary": "Ministério Público se manifesta favorável à falência da Móveis Três Irmãos; entenda como fica a situação &nbsp;&nbsp; gazetasbs.com.br",
+   "source": "gazetasbs.com.br",
+   "domain": "gazetasbs.com.br",
+   "pub_ts": 1784132786,
+   "pub_iso": "2026-07-15 13:26",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1784287132,
+   "cap_iso": "2026-07-17 08:18"
+  },
+  "https://news.google.com/rss/articles/CBMixgFBVV95cUxPOFVxUEJDYzY1ajRydnA5Rl9JVVEyS0dVdkhhVDA3eDZNRm54YXZTMEt3VEZmVjN2RURhaDJDQ1pQWm5PQmxpLXY3Z3cwcWQ1cVBabUNDQ1pqbDZpblM1bUU0NVViUGc2dmt2Mi1kRGlFbEJSUUg1YTZBVERXcVkyS2lVcUxUOGNqVWgzdzIwTkZXZHY2Yjk2dDlJZ19jWFdpV3BPZEd2bFRKOXkzOTVZZzk4cXBjdHU0dGFTcWRtZ3QwR3p5a1E?oc=5": {
+   "title": "Tradicional indústria de móveis fundada há 55 anos em SC pode ter recuperação judicial convertida em falência",
+   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPOFVxUEJDYzY1ajRydnA5Rl9JVVEyS0dVdkhhVDA3eDZNRm54YXZTMEt3VEZmVjN2RURhaDJDQ1pQWm5PQmxpLXY3Z3cwcWQ1cVBabUNDQ1pqbDZpblM1bUU0NVViUGc2dmt2Mi1kRGlFbEJSUUg1YTZBVERXcVkyS2lVcUxUOGNqVWgzdzIwTkZXZHY2Yjk2dDlJZ19jWFdpV3BPZEd2bFRKOXkzOTVZZzk4cXBjdHU0dGFTcWRtZ3QwR3p5a1E?oc=5",
+   "summary": "Tradicional indústria de móveis fundada há 55 anos em SC pode ter recuperação judicial convertida em falência &nbsp;&nbsp; NSC Total",
+   "source": "NSC Total",
+   "domain": "nsctotal.com.br",
+   "pub_ts": 1784210400,
+   "pub_iso": "2026-07-16 11:00",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial",
+    "falencia"
+   ],
+   "captured_ts": 1784287132,
+   "cap_iso": "2026-07-17 08:18"
+  },
+  "https://news.google.com/rss/articles/CBMiqwJBVV95cUxON1JTODdGZ2VlRzJ5TktMeldmUWU3SmZwYURuZ2R4dTctU21TZWxoRlhXYUVENGk3Vk5Db3VDTVpKTzgwMVotNE0yc3JlYnFOYWJySTA0ZXBqT3JUbWdTTjNPMnJIZlI3Vk5CV2hhQmxFR05MZy1wV25YY2FFOEZ6dVlrT2l2VzdSbmMtRkJVdDl6XzF4UFp1TGpkRXc5dHgxWHpKNmRlMTFqa24xNkNxamRfYnV5SGQyWlVtSUEwRmI0UDExMUg4OWM3MERkV3FPOWk1TUdjbEVNcDNhLW1mUllsMUgyQUcyT3FSU1kweFZkdWRVSDJPTHRrNU9PeGdVRVA4eENGTExvdm5OOTVZNWtXMzVNR1VqbjBEbXI3NFVkR2ZkaXNTTUFfSQ?oc=5": {
+   "title": "Decretada falência de fabricante de móveis da Serra após plano de recuperação judicial ser rejeitado",
+   "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxON1JTODdGZ2VlRzJ5TktMeldmUWU3SmZwYURuZ2R4dTctU21TZWxoRlhXYUVENGk3Vk5Db3VDTVpKTzgwMVotNE0yc3JlYnFOYWJySTA0ZXBqT3JUbWdTTjNPMnJIZlI3Vk5CV2hhQmxFR05MZy1wV25YY2FFOEZ6dVlrT2l2VzdSbmMtRkJVdDl6XzF4UFp1TGpkRXc5dHgxWHpKNmRlMTFqa24xNkNxamRfYnV5SGQyWlVtSUEwRmI0UDExMUg4OWM3MERkV3FPOWk1TUdjbEVNcDNhLW1mUllsMUgyQUcyT3FSU1kweFZkdWRVSDJPTHRrNU9PeGdVRVA4eENGTExvdm5OOTVZNWtXMzVNR1VqbjBEbXI3NFVkR2ZkaXNTTUFfSQ?oc=5",
+   "summary": "Decretada falência de fabricante de móveis da Serra após plano de recuperação judicial ser rejeitado &nbsp;&nbsp; GZH",
+   "source": "GZH",
+   "domain": "gauchazh.clicrbs.com.br",
+   "pub_ts": 1784241941,
+   "pub_iso": "2026-07-16 19:45",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial",
+    "falencia"
+   ],
+   "captured_ts": 1784287132,
+   "cap_iso": "2026-07-17 08:18"
+  },
+  "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOaVhPODEzSjVTaGdnSTgzbW9yaVNlTGZ4bG5ELXBLM0NTcWZmdGNaMGFMblRETVhod2lRX2JkVGptT1hha0JLRXdkUzlfX3BYM2ZiQzVrUWJvQmw3MlpvZi1jVEN4WXRUUi1HUFJIYUZJclNuRkhLUkZUU2dtZTNIUXpBcUZmZVptbFpVLWtCSDJzQXM1Nlh3R0YxNlUzOEhhMVFZV0QxT0xocDRCQlA5Ym05ajAxSzZKUW95NE5FclVQX2IweEhxSGY3UVpLZ3BTM3NLdTYxd3J4SHNFT2lGVHR3?oc=5": {
+   "title": "Pedidos de recuperação judicial somaram 76 processos em março, aponta Serasa Experian",
+   "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOaVhPODEzSjVTaGdnSTgzbW9yaVNlTGZ4bG5ELXBLM0NTcWZmdGNaMGFMblRETVhod2lRX2JkVGptT1hha0JLRXdkUzlfX3BYM2ZiQzVrUWJvQmw3MlpvZi1jVEN4WXRUUi1HUFJIYUZJclNuRkhLUkZUU2dtZTNIUXpBcUZmZVptbFpVLWtCSDJzQXM1Nlh3R0YxNlUzOEhhMVFZV0QxT0xocDRCQlA5Ym05ajAxSzZKUW95NE5FclVQX2IweEhxSGY3UVpLZ3BTM3NLdTYxd3J4SHNFT2lGVHR3?oc=5",
+   "summary": "Pedidos de recuperação judicial somaram 76 processos em março, aponta Serasa Experian &nbsp;&nbsp; Serasa Experian",
+   "source": "Serasa Experian",
+   "domain": "serasaexperian.com.br",
+   "pub_ts": 1784251218,
+   "pub_iso": "2026-07-16 22:20",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1784287132,
+   "cap_iso": "2026-07-17 08:18"
+  },
+  "https://news.google.com/rss/articles/CBMid0FVX3lxTE9QbzFTWVc4WTRjNWpvUVoyNDFZZ2ZnUjdIQlNmR0tMLWMtMWJYUXU5QmtOSy1HcTY0RTJ2OEE3UGxqZzNHNlRfR19tQXZITGZXSllfYVEwVnVndW10ckV3Y1ZzSDdwaE5HRXk3eWxSYkNaY1lHcnc4?oc=5": {
+   "title": "BNDES exige falência da TV Gazeta de Alagoas por calote em recuperação judicial",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9QbzFTWVc4WTRjNWpvUVoyNDFZZ2ZnUjdIQlNmR0tMLWMtMWJYUXU5QmtOSy1HcTY0RTJ2OEE3UGxqZzNHNlRfR19tQXZITGZXSllfYVEwVnVndW10ckV3Y1ZzSDdwaE5HRXk3eWxSYkNaY1lHcnc4?oc=5",
+   "summary": "BNDES exige falência da TV Gazeta de Alagoas por calote em recuperação judicial &nbsp;&nbsp; Fato Paulista",
+   "source": "Fato Paulista",
+   "domain": "fatopaulista.com.br",
+   "pub_ts": 1784285550,
+   "pub_iso": "2026-07-17 07:52",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial",
+    "default",
+    "falencia"
+   ],
+   "captured_ts": 1784287132,
+   "cap_iso": "2026-07-17 08:18"
   }
  },
- "run_count": 2,
+ "run_count": 3,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com",
@@ -2825,11 +3122,51 @@
   "https://news.google.com/rss/articles/CBMihAJBVV95cUxQdlJ2dV9ENXZjMDBjdkFnVlhwa25DcjZJS09yZ092RHo2QmwzMTZWZlB3TWdYZVc5aHBQUjF0em9PNXhBdzNhWDZmd1JOQkk2cVNhcDhUd1ItaTQzRXlqVUlWUXZKSl9BX2JhQzY4WnZtMmhsUU5FWk1pY1gtdW5rUjJoanZfd2NSUnlFSFp6OXdZMmtxNTdCd2l6S3VUVUdQaGJyVFd5ZFJiYnUzU0hQZ1ZXTHFjN1kyYVBRWTFLSHV4OFpxSlpZcEZsTVJMUUVXUWg0dTVZTm02TE8yUFlDQTZvQjNyaEM2TDA0Vk85WlR4VjdnTGQ2SWxEajZxQ1g3bXBUeNIBkwJBVV95cUxOVm1CbjRhVGVNdHcybjloSUhRb2dDSU5GX2psYkhabWxpanNld2lmRC1GT1VNcXU2TXJPMU1ZZjZBeFQ3N0IwT2F6SVl4bkJybHVsN3JZX1pSOWpQN09pUTR4SDFOTl9obEhPUkx1U29oeDlpcHlHdFVrS0pDLXZtUDVtOFNhQjhpT091SDhwcUFBRVB3X2ZTU1BrVGtwYnhaVkgtZWs4MEw1emJBa2NDVWRPRktvNmNPRkxKTDllM2trZUJwWlN4aHZxN2NfVFRKajZNYzJmVmtPQ2loN0tLXzF6cWxRVUJlcXZLQ2FNY1BWTEgxdC1IYlVmekNCU1FweE9UNE9HM3BvV2doN21GQWcxUQ?oc=5": {
    "url": "https://valor.globo.com",
    "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMic0FVX3lxTE9TdVZkVmkxWGxHNmFYd0Z2ZzBpekhrei1rWGRVaW56VXZTSXYtUDdRV2tpUnhiVHJhZjdKeGp5ZnBPMGl3czlEYzFPYTZrRDM2MHpJRVNHOEI0Y3dtZnRlUHU2VzUxd0dseEprWEVnNE5FaGfSAXhBVV95cUxPeUJWWElGMk0xdXFnNlRldUxhVURjV2g3d0NNOWlINGQ4SC1ucVVHbm02MGpCSWdpOVRySmRzaXk0YnhEMnlDS1JNSVZTTUNWUjlVbjItNGNPd1lSOWxnaWpvMS1tbzJ5bFZORVFaaFNfTmVEREdmaTY?oc=5": {
+   "url": "https://suno.com.br",
+   "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMikAFBVV95cUxON1laci1GMDllN19FUHJadmw0NmJGWlNqMENSZUVwaGVyNWFmM0VXZ1JoQlBXWDd4UmxuQm4xeVFsNndFU2VUMjNlbFhJYl8zdXdsM2t4S1IxMkk4VGhvZEt4cGRXaWEwdmJ5YWJlOXN3Y1ktclFOWGZ6WlZUVDRZbk12YzVrX3hJMmp6OXNCa07SAZYBQVVfeXFMTWF1YWptLXBHRFU1elNTVTM1aGg0bm94eVgzOWhvcDd5TElRbzlMMHNSeGRpa2ZnOWVWaFNpbllocHdQeWNFTGYxc0I2VG1rVGZRN1BucXIwWnhQSDBfUTlkUFJwTTdxSzFURkQwamU2ZzhCdWRGMnU5eWJFV0p5eXJsSGM2RDNxMlVhcmszX0RyOTVXeU13?oc=5": {
+   "url": "https://investnews.com.br",
+   "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMiggFBVV95cUxPVjRCTlVBNzRZMVdDRHlQempVX2lCdXQwUEh6bTEzOHdxczR1b0U0Z0pvSHMzZUxwS3JKMUNmV2RMODBZU1JUbjkxMXBfSGJCVEJGajZyaU1NYUF4MF9sMTVNSURWWmk5ODZScHlTdkNkaVhNTzBEd2l2Mm1DSGZpb3F3?oc=5": {
+   "url": "https://neofeed.com.br",
+   "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQblEyS2JRX19xOWphWkpVUEFtWDlfQlNKdnkzSEFxUTlYY3d6ZkNscmw3aVh6cVlhV0sybzNxTy1oMkhXbFVqbjZsZm9IQTdaV0J5eVNWcVRrcF82ZkxuNnZjNEwtc0Fya3JqSGlDcUZXeWJ6V2JhRGlGOGxIQnRaRzVXRjN1TXpYVGp0SHdoWkFxQzJVRDNhM3dwUERpVTVOb3pfTkNxakpXUnpBYldrZTd2SDhxX2ZtemljOVhJM25zdHfSAdcBQVVfeXFMUGN6Zzc4ODBzMlFJdUZiaFNDVW1xVFp2NDVRdDVjbF9KZkZTQThSM2FwVVdvVHl4QkxRYnNKbGdxcGxVcldUXzByU3J1QUdwU0tBNXRpLThhZFB5YUN0QUJVMm5SYWMwRUg4SHl6Zm9ZcmdLenE1Nkl5UzRKd2lDWmFtZ2Fkc3dnRHBkcEhmeHFuU1dJcFpoUmFCM1NiUTVacVcwUFQ4a0RYcnMyakFoQm9OeUxjT01pZXRUd29pVm8zVVBSeEd4Z3NsbGduRUw0cDg5aWFVNVU?oc=5": {
+   "url": "https://bloomberglinea.com.br",
+   "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMiygFBVV95cUxNVkxqcmxkWUZRejVER0JxcVlrQ2o4MF9fZlpHZzRhTTd0bWZ1UlN1ZVpjR21Lc3NpM1U3dlBTbnBHR3pyOGtQRF9VakZySVVhTkt3VDdldzdSeW05Z3NncWh4SEdtVkdpYU9aVVpmc0JmcUlvQjhmbGNjTDlFTW1aX0xRV1VNTVdKa0NzdzItZjJUSlRjX3ZGU0Z6Y3NSUEhmUnV4UlF2YUgxWHh4QXY5R09mSWJvZTRyWExodHhQQXZpVHBjLUh3cjVn?oc=5": {
+   "url": "https://timesbrasil.com.br",
+   "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMinwFBVV95cUxOMHF6OGNMQVg3SVV4MWJGRkljZHg4TDdVVUtXU3pvTEw5TUJOOWFsenJJakhsb2NyX2pybnRZbW9XVExwWThoNnQ1LWdoZUJLWXhwbkw3NzMzUWpjLTNXM205Yk9rNmxzWHlwb1hQWTRiTFowQjIwb3J1SkQ5ZnUwa3JXQXd6b01ac2ZxLWx4T1M1LXp5V3VCTHlnT3hJTFk?oc=5": {
+   "url": "https://timesbrasil.com.br",
+   "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMiakFVX3lxTE1tekdiR2tJbjNHRFFmdmYxWnVHcF9NWGV5V1lPb1JzUnlMMHYtZEhhWGlqNWtKS25rWmlINlZpNWJyT0M0VTdxZ20yc2JQcnptNk9LdkVpaE9oV2RtZkJPWGd1Mk42cWRFcnc?oc=5": {
+   "url": "https://br.advfn.com",
+   "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMiigFBVV95cUxNT19NZjhtLUV6T1FaT3FuNTJMakJNNkJUX18tcER1aVpjR3JhY18xZlRqZmRxYVNpelYyY29DZEJPM2s2MjJtLTg1aTlNTzljbmg1Q0VRLVE0QVJHR1VvTkxaZzIwZ19aOHROM2VyRjhoeEJPZ3JCSDNneUNKbEJnOGRhNU1HSDBZN0E?oc=5": {
+   "url": "https://financenews.com.br",
+   "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMikwFBVV95cUxORkZaQUN6S0dOcHlqVHNFSXEyc1l1QXFBV1NUeTZGSW5qTEdNSndBcThUYTAtTVZvWEJueU9iRWVtX0FJX3hjVE1BaUtaTGVKbnpTMkd4ZkYyUktndmVoOEcxTWhWZjFDdWwzNzZqMmtHcS13QlAzbTliMmttTk94cnpYbFZHd0x4OG9oaHNpMEw1b0k?oc=5": {
+   "url": "https://theagribiz.com",
+   "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMivwFBVV95cUxPdWhlM2Z1cUpMRFR3N193R2R1SDZ0Ym00ZUJiMUd2RmVabFJmS2V2VWJ0R3BWN21LamdzZjJYTnpHMjVQVTZ3eFdfZFNxX3RWLWVWamFYRWowdTlZVDlPbk00bm16LTJ1NTdxMWliNV9OWTVFRE5NTkFnTmk4VjMzR2JtRlVtWlhGMUNhRVRISmxmSWw4VFQ2X0ljLWtYUGNVa1RDSDVZNkVlckt2Q2F3LXBnZy1wNTREUHhXTW54NNIBxAFBVV95cUxNalRmNXBUQk44aHVXUGxEOTI5Mm5VbDEyc1NobDkwOXJGZHExejJtZDR2b29RZGIyTjcxYVJ1b1F3OWk5NWw0TldJZ2taOEF1WlVUUFBzNjhxV0gta1NNdXQ3QUpHY3o0RzZLYlVHenpCR2JZNDgzbjZYbjdVSWJyVHlXOWxscnpad0UtYVdFajFhSmlsbnVrT3lZWGUtUWN6amF3TnUwX0t6ZVE3ZTBoQUc5ZlF1bU8xRzhOZGRPUjBiUkpp?oc=5": {
+   "url": "https://estadao.com.br",
+   "exact": false
   }
  },
  "last_run": {
-  "ts": 1784263224,
-  "iso": "17 jul 2026 · 01:40 BRT",
+  "ts": 1784287161,
+  "iso": "17 jul 2026 · 08:19 BRT",
   "status": {
    "Engie Brasil": {
     "status": "monitorar",
@@ -2849,7 +3186,7 @@
    },
    "Santander Brasil": {
     "status": "monitorar",
-    "score": 13
+    "score": 12
    },
    "Cemig": {
     "status": "atencao",
@@ -2863,9 +3200,17 @@
     "status": "monitorar",
     "score": 9
    },
+   "Rumo": {
+    "status": "monitorar",
+    "score": 9
+   },
    "Petrobras": {
     "status": "monitorar",
     "score": 7
+   },
+   "Tupy": {
+    "status": "monitorar",
+    "score": 3
    }
   }
  }
