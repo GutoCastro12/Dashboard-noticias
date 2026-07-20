@@ -1768,7 +1768,9 @@
     "pequenas_aquisicoes"
    ],
    "captured_ts": 1784519010,
-   "cap_iso": "2026-07-20 00:43"
+   "cap_iso": "2026-07-20 00:43",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMisgFBVV95cUxNOGNBdFBrQ2d3N3ZpdWlzVVoxQmtCNnFObXdYTlphellLMkdhUHFPS25XRUZ5bTNqbjg5TXpvaTlvMTllaFREejFKWlhINHFIZ3dWZXpmU25OU09QTU02YkxrNHlxTm9sRU1yNS1RR2RPMDlxWGptTGNCWEFDSWhxc3R4Q29yVjgwcFBVTC1XUkZyMDZ3SGJtcE10MF9ibTlkaXg1ZV9MX2tHUHN4NUJQRmRB?oc=5": {
    "title": "Recuperação judicial pode abrir sem anuência de credor majoritário",
@@ -3901,6 +3903,12 @@
      "domain": "infomoney.com.br",
      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQenU5RmMyRVQtVm14QUxuMVpWYTVudDA0LWMyYll5ZVBKdmdFMFVUWDR3NDZLNXI5cXF4QlZNVGJ3S3N0UFpYalRORXA2OXc1WHVEX3M5ZVV5T2xKaFBOMGFjckpDQUlhV1F0Y1hjRHN1Y25uVmRYY19Ld3NTN0FrMXZScUpMeG5ha1kzSlBDaHBWZjVKb3Q0QWN3aDFLcGF4UFZ1cHNvdTl0SUtadXZxak14S01lYTNX0gG-AUFVX3lxTE9DLTFNWkNWc0N5b2ltVDQtdFBYeEpIaFBaZW5qYWprOHhtUUZielljdllXSUthY0t3cnBXNXZmUExmNDRDRExuTlRqNXJZbFdtQVhGZTR5UW5ZZzZzYzVmemNyaklWTk9QRDBwNE51SXU0SEpobHFCeFRpaDdrWlpjTU5oa2plem5NeGRJU3M4RG9qakFXWUZCMHo1UmR5Q09qdEZKNjg5Nnp0LVA3VkJUa3I4TldEUUFYVkFGZkE?oc=5",
      "when": "10/07 04:00"
+    },
+    {
+     "source": "Money Times",
+     "domain": "moneytimes.com.br",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQQmZDM2NzbEpxRTg4STM2V214QUpmSWhDNVF0dUNPMWVjbjdVeDVIYXhUWUgzXy1NeHFYN1BtdHlqR2YxeHhhRnhUTGxWLTVsLXdDNlhsUU1hX2N3OXUtX3ktSE5tc2ZUZmExcTEtZkROenhaVUltQURSUnQ0akw2NnIxNWxnRTZJU1hBLUpwaEc5bURqU2Zwek5yVjJjSmdyWThvcUIycUF2MWpCZEE?oc=5",
+     "when": "09/07 18:56"
     }
    ],
    "captured_ts": 1784519010,
@@ -4460,6 +4468,11 @@
      "source": "financenews.com.br",
      "domain": "financenews.com.br",
      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNT19NZjhtLUV6T1FaT3FuNTJMakJNNkJUX18tcER1aVpjR3JhY18xZlRqZmRxYVNpelYyY29DZEJPM2s2MjJtLTg1aTlNTzljbmg1Q0VRLVE0QVJHR1VvTkxaZzIwZ19aOHROM2VyRjhoeEJPZ3JCSDNneUNKbEJnOGRhNU1HSDBZN0E?oc=5"
+    },
+    {
+     "source": "NSC Total",
+     "domain": "nsctotal.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUjhIMTgwcldxTFFITGZLUzBTUFlfLXJKblRKckl6bWNCTy16bkM2ajZZbVNlUzlvZ1RZR2k1TXdaV2VMVnNySHR6OUJESG9pSmtiNDB1ZHNwRWc4NmRBMG45Mk9IUjdGd2pYYnU3NHFPczl4dTlHR0NjQTExSzBFM210b0VISTdjejU1bnF1RU1GSGE3QkJVcXdjQ3J2REVtVzJrQUxJazQ3Q2NSTndyNXpzVjJFaEVwcWFwVFIzcmxZNWQ0UnZyaA?oc=5"
     }
    ],
    "corrob_sources": [
@@ -4468,6 +4481,12 @@
      "domain": "financenews.com.br",
      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNT19NZjhtLUV6T1FaT3FuNTJMakJNNkJUX18tcER1aVpjR3JhY18xZlRqZmRxYVNpelYyY29DZEJPM2s2MjJtLTg1aTlNTzljbmg1Q0VRLVE0QVJHR1VvTkxaZzIwZ19aOHROM2VyRjhoeEJPZ3JCSDNneUNKbEJnOGRhNU1HSDBZN0E?oc=5",
      "when": "04/05 04:00"
+    },
+    {
+     "source": "NSC Total",
+     "domain": "nsctotal.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUjhIMTgwcldxTFFITGZLUzBTUFlfLXJKblRKckl6bWNCTy16bkM2ajZZbVNlUzlvZ1RZR2k1TXdaV2VMVnNySHR6OUJESG9pSmtiNDB1ZHNwRWc4NmRBMG45Mk9IUjdGd2pYYnU3NHFPczl4dTlHR0NjQTExSzBFM210b0VISTdjejU1bnF1RU1GSGE3QkJVcXdjQ3J2REVtVzJrQUxJazQ3Q2NSTndyNXpzVjJFaEVwcWFwVFIzcmxZNWQ0UnZyaA?oc=5",
+     "when": "05/05 04:00"
     }
    ]
   },
@@ -4701,7 +4720,8 @@
     }
    ],
    "captured_ts": 1784560134,
-   "cap_iso": "2026-07-20 12:08"
+   "cap_iso": "2026-07-20 12:08",
+   "corrob_sources": []
   },
   "https://www.migalhas.com.br/quentes/442948/mattos-filho-assessora-energo-pro-na-aquisicao-do-cebi-da-copel": {
    "title": "Mattos Filho assessora Energo-Pro na aquisição do CEBI da Copel",
@@ -4718,39 +4738,9 @@
     "ma"
    ],
    "captured_ts": 1784560134,
-   "cap_iso": "2026-07-20 12:08"
-  },
-  "https://conteudos.xpi.com.br/acoes/relatorios/prio-prio3-conclusao-da-aquisicao-de-40-do-campo-de-peregrino/": {
-   "title": "PRIO (PRIO3) | Conclusão da aquisição de 40% do campo de Peregrino",
-   "url": "https://conteudos.xpi.com.br/acoes/relatorios/prio-prio3-conclusao-da-aquisicao-de-40-do-campo-de-peregrino/",
-   "summary": "PRIO (PRIO3) | Conclusão da aquisição de 40% do campo de Peregrino &nbsp;&nbsp; XP Investimentos",
-   "source": "XP Investimentos",
-   "domain": "conteudos.xpi.com.br",
-   "pub_ts": 1762918772,
-   "pub_iso": "2025-11-12 00:39",
-   "companies": [
-    "PRIO"
-   ],
-   "event_ids": [
-    "ma"
-   ],
-   "corroborations": [
-    {
-     "source": "TN Petróleo",
-     "domain": "tnpetroleo.com.br",
-     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNbUtDWTBGUFRHLV9LQzgxcEFwYWpNa2lWaENRTkxRNTQ2VGs4STE3VEtfYWQwS0U5MTJQblhhWHRtajctWHdHTjNXTmRKZTJSQURiQ0psRlZrX1gwMjRrQ0dMbGhsaXFGRHk3U3FQWkNhbUVPSWd5OTk4X24wWkNMMmdiNWlyUW4ybnNjLXJhT0ExN05RUDN4VFpXSHdlZ1NQY2FyQUlieHcyRjd3NGpWQkZ6SQ?oc=5"
-    }
-   ],
-   "corrob_sources": [
-    {
-     "source": "TN Petróleo",
-     "domain": "tnpetroleo.com.br",
-     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNbUtDWTBGUFRHLV9LQzgxcEFwYWpNa2lWaENRTkxRNTQ2VGs4STE3VEtfYWQwS0U5MTJQblhhWHRtajctWHdHTjNXTmRKZTJSQURiQ0psRlZrX1gwMjRrQ0dMbGhsaXFGRHk3U3FQWkNhbUVPSWd5OTk4X24wWkNMMmdiNWlyUW4ybnNjLXJhT0ExN05RUDN4VFpXSHdlZ1NQY2FyQUlieHcyRjd3NGpWQkZ6SQ?oc=5",
-     "when": "13/11 05:00"
-    }
-   ],
-   "captured_ts": 1784560134,
-   "cap_iso": "2026-07-20 12:08"
+   "cap_iso": "2026-07-20 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.suno.com.br/noticias/fitch-rebaixa-rating-hapvida-hapv3-2026-mt/": {
    "title": "Hapvida (HAPV3): Fitch corta rating e liga o alerta para 2026",
@@ -4767,7 +4757,9 @@
     "rebaixamento_rating"
    ],
    "captured_ts": 1784560134,
-   "cap_iso": "2026-07-20 12:08"
+   "cap_iso": "2026-07-20 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://canalsolar.com.br/cemig-sim-conclui-aquisicao-de-10mwp-em-usinas-solares/": {
    "title": "Cemig SIM conclui aquisição de 10MWp em usinas solares",
@@ -4784,7 +4776,9 @@
     "pequenas_aquisicoes"
    ],
    "captured_ts": 1784560134,
-   "cap_iso": "2026-07-20 12:08"
+   "cap_iso": "2026-07-20 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.conjur.com.br/2026-jan-20/cade-aprova-aquisicao-da-emae-pela-sabesp-sem-qualquer-restricao/": {
    "title": "Cade aprova aquisição da Emae pela Sabesp sem qualquer restrição",
@@ -4857,7 +4851,9 @@
     "ma"
    ],
    "captured_ts": 1784560134,
-   "cap_iso": "2026-07-20 12:08"
+   "cap_iso": "2026-07-20 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://visnoinvest.com.br/news/11689/eneva-enev3-conclui-processo-de-emissao-de-debentures-de-r-24-bi": {
    "title": "Eneva (ENEV3) conclui processo de emissão de debêntures de R$ 2,4 bi",
@@ -4974,6 +4970,11 @@
      "source": "ADVFN",
      "domain": "br.advfn.com",
      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQNGNIdVJ1ZlJtRm41Mm1NLWRseWw5Tkl0T1U4eUNXSEZYT3ZNM2FfY2JhaDFDMkZsd0dQUXBaVWdsc2FGS1ptU0tUaF83RTJoODFXQVlDWFhNcWdPSmtNQ2VscTN2eXVTRmJCSGt0MF9aT2hKSHBNbUdjbmQwZHZ6ODVMYzN1SldxQ0RRN2JoTlY1NEhzWHpHVmdPZ1UzekpxbUVtMzJwU3I4djZibkluQ2FURmQ5M19UMGZpZA?oc=5"
+    },
+    {
+     "source": "Money Times",
+     "domain": "moneytimes.com.br",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPMnBHdWt2bllpenRRNlJiQ3VmM3c0bW5la3dqN0tOZ3daTnI4NFZCbmRqVHlmLWVyT3J3UFF4emJjOWdSRkEzZmx4ajJnRFJXSUtRSW9KdlV1NG84TU9IUWZzQy1YbG51aXNKeVFTdUtPMnpDWHJ0eEZVYlVBTFpHQ1VDYW1KZjdKZWlqdjY5M2pQbEJxYlBKS3RId0FXZWtyYnZkYmROQ0liWVJZbmdfTGxCNXQ?oc=5"
     }
    ],
    "corrob_sources": [
@@ -4987,6 +4988,12 @@
      "source": "ADVFN",
      "domain": "br.advfn.com",
      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQNGNIdVJ1ZlJtRm41Mm1NLWRseWw5Tkl0T1U4eUNXSEZYT3ZNM2FfY2JhaDFDMkZsd0dQUXBaVWdsc2FGS1ptU0tUaF83RTJoODFXQVlDWFhNcWdPSmtNQ2VscTN2eXVTRmJCSGt0MF9aT2hKSHBNbUdjbmQwZHZ6ODVMYzN1SldxQ0RRN2JoTlY1NEhzWHpHVmdPZ1UzekpxbUVtMzJwU3I4djZibkluQ2FURmQ5M19UMGZpZA?oc=5",
+     "when": "25/05 04:00"
+    },
+    {
+     "source": "Money Times",
+     "domain": "moneytimes.com.br",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPMnBHdWt2bllpenRRNlJiQ3VmM3c0bW5la3dqN0tOZ3daTnI4NFZCbmRqVHlmLWVyT3J3UFF4emJjOWdSRkEzZmx4ajJnRFJXSUtRSW9KdlV1NG84TU9IUWZzQy1YbG51aXNKeVFTdUtPMnpDWHJ0eEZVYlVBTFpHQ1VDYW1KZjdKZWlqdjY5M2pQbEJxYlBKS3RId0FXZWtyYnZkYmROQ0liWVJZbmdfTGxCNXQ?oc=5",
      "when": "25/05 04:00"
     }
    ],
@@ -5008,7 +5015,9 @@
     "emissao_divida"
    ],
    "captured_ts": 1784560134,
-   "cap_iso": "2026-07-20 12:08"
+   "cap_iso": "2026-07-20 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://braziljournal.com/engie-faz-follow-on-de-r-83-bilhoes-para-comprar-fatia-em-jirau-e-desalavancar/": {
    "title": "Engie faz follow-on de R$ 8,3 bilhões para comprar fatia em Jirau e desalavancar",
@@ -5043,7 +5052,8 @@
     }
    ],
    "captured_ts": 1784560134,
-   "cap_iso": "2026-07-20 12:08"
+   "cap_iso": "2026-07-20 12:08",
+   "corrob_sources": []
   },
   "https://braziljournal.com/exclusivo-rumo-escolhe-rockenbach-ferroviario-raiz-como-novo-ceo/": {
    "title": "EXCLUSIVO: Rumo escolhe Rockenbach, “ferroviário raiz”, como novo CEO",
@@ -5099,6 +5109,12 @@
      "domain": "aciara.com.br",
      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE50TkV3VWxtbFZ6aEdqTDc1QUE2N2JvN0I4aEZCQlA5Y3Jwb3dFc0dsbXVGZlM3dnUtVlJzTzdENFJOSmdma2F4amJHOE9pM1RJSTYzd01DRTlWZkJndjIta0diQjZTZw?oc=5",
      "when": "23/06 04:00"
+    },
+    {
+     "source": "AgFeed",
+     "domain": "agfeed.com.br",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNQUdCLWVkZHl0anJBekJYQURLMThmblZZUVQ1b3BrUWxZa3FmVTMybmJZS2ZmT0hCRXFJejBDOGw3bGszQTRkb3pBcDYta1YwR3E5aEJQMWJlWi1pNkNiVTQ0dzE5bjJ4Rl9YQ2ZvR2JFYnB0azlnOWVldFoydDQyTzdSYkVUY1VBbjVlUUdPMXRRcGdYZ29lMGlYcVBpMGxhVHB3UEhveTI5RWFPQXpJM3lzQ2FaY3Bfazdjc1NaY1ZScnNDdng0?oc=5",
+     "when": "22/06 04:00"
     }
    ],
    "captured_ts": 1784560134,
@@ -5123,23 +5139,6 @@
    "corroborations": [],
    "corrob_sources": []
   },
-  "https://br.advfn.com/noticias/PAPERBR/2026/artigo/98866589": {
-   "title": "Engie Brasil aprova aquisição de fatia de 40% da Jirau Energia, avaliada em R$ 5,74 bilhões",
-   "url": "https://br.advfn.com/noticias/PAPERBR/2026/artigo/98866589",
-   "summary": "Engie Brasil aprova aquisição de fatia de 40% da Jirau Energia, avaliada em R$ 5,74 bilhões &nbsp;&nbsp; ADVFN",
-   "source": "ADVFN",
-   "domain": "br.advfn.com",
-   "pub_ts": 1783105539,
-   "pub_iso": "2026-07-03 16:05",
-   "companies": [
-    "Engie Brasil"
-   ],
-   "event_ids": [
-    "ma"
-   ],
-   "captured_ts": 1784560134,
-   "cap_iso": "2026-07-20 12:08"
-  },
   "https://monitormercantil.com.br/fitch-aaa-a-proposta-de-12a-emissao-de-debentures-da-copel-dis/": {
    "title": "Fitch: AAA à proposta de 12ª emissão de debêntures da Copel Dis",
    "url": "https://monitormercantil.com.br/fitch-aaa-a-proposta-de-12a-emissao-de-debentures-da-copel-dis/",
@@ -5155,7 +5154,9 @@
     "emissao_divida"
    ],
    "captured_ts": 1784560134,
-   "cap_iso": "2026-07-20 12:08"
+   "cap_iso": "2026-07-20 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/isa-energia-isae4-protocola-pedido-de-follow-on-para-emitir-ate-44-milhoes-de-novas-acoes/": {
    "title": "Isa Energia (ISAE4) despenca 5% após pedido de follow-on para emitir até 44 milhões de ações",
@@ -5204,7 +5205,9 @@
     "emissao_divida"
    ],
    "captured_ts": 1784560134,
-   "cap_iso": "2026-07-20 12:08"
+   "cap_iso": "2026-07-20 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNRkw3b1pQMUZxZUdfc0NQaFJTcWd6TWRxRC1UQzlBM0FVVmR4TmNmdFhHUmlkNXIwNG1GZnI4RTY3azdFTU5jMURQUWZ5ZE5zNzBxR3h2MkNTSzJFUkFaYk9JWDFSSlBhZWN1VThsVEUycUE0U3liaEtOSFYwcnp6amF2N1ZIcWFrenNtTHo0SFpsc2dXZFRjcW5URUxYTm93WE5qam02c0luQzd2WHExem12a3RCdXVocFBrdkZZMmhOTVlfcFYwSVdfS2JUeWNG?oc=5": {
    "title": "Recuperação judicial exige transparência para preservar empresas e proteger credores",
@@ -5238,7 +5241,9 @@
     "rating_elevado"
    ],
    "captured_ts": 1784568207,
-   "cap_iso": "2026-07-20 14:23"
+   "cap_iso": "2026-07-20 14:23",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1544874&numSequencia=1069580&numVersao=2": {
    "title": "[Fato Relevante] Engie Brasil: Precificação da Oferta de Ações",
@@ -5256,9 +5261,143 @@
    ],
    "captured_ts": 1784568207,
    "cap_iso": "2026-07-20 14:23"
+  },
+  "https://www.demarest.com.br/eneva-capta-r-24-bilhoes-com-debentures/": {
+   "title": "Eneva capta R$ 2,4 bilhões com debêntures",
+   "url": "https://www.demarest.com.br/eneva-capta-r-24-bilhoes-com-debentures/",
+   "summary": "Eneva capta R$ 2,4 bilhões com debêntures &nbsp;&nbsp; Demarest",
+   "source": "Demarest",
+   "domain": "demarest.com.br",
+   "pub_ts": 1773903600,
+   "pub_iso": "2026-03-19 04:00",
+   "companies": [
+    "Eneva"
+   ],
+   "event_ids": [
+    "emissao_divida"
+   ],
+   "captured_ts": 1784578993,
+   "cap_iso": "2026-07-20 17:23"
+  },
+  "https://news.google.com/rss/articles/CBMixwFBVV95cUxQQUw1aHBlaERKZ0IwY2lpNFMyQnZfSVh0bU43XzBxM1NvOWozb2lVdWlFcDFkYXVSelRPV3J5WnJXOTY0VFBIUU42U1NQbWZXR0xrVFBaYnhTeXRFUURVc2MyUUpUOEhYbnBBRENnTW9OajUxUEJsTWVyNGp0ZmhrWndkZl9uXzhsMngwak9KU29NUF9KOHktMV9hXzdQUDlRSDR0OUV4XzQyUFRwWEF5WFhnODB4Wm96Y1ZGRDNTakF0Rnlxb29F?oc=5": {
+   "title": "Motiva anuncia aquisição da Autopista Fernão Dias por R$ 381 milhões e reforça expansão na B3",
+   "url": "https://br.advfn.com/jornal/2026/04/motiva-anuncia-aquisicao-da-autopista-fernao-dias-por-r-381-milhoes-e-reforca-expansao-na-b3",
+   "summary": "Motiva anuncia aquisição da Autopista Fernão Dias por R$ 381 milhões e reforça expansão na B3 &nbsp;&nbsp; ADVFN",
+   "source": "ADVFN",
+   "domain": "br.advfn.com",
+   "pub_ts": 1775458800,
+   "pub_iso": "2026-04-06 04:00",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1784578993,
+   "cap_iso": "2026-07-20 17:23"
+  },
+  "https://neofeed.com.br/negocios/sob-pressao-novo-ceo-traca-plano-de-guerrilha-para-tentar-recuperar-hapvida/": {
+   "title": "Sob pressão, novo CEO traça plano de “guerrilha” para tentar recuperar Hapvida",
+   "url": "https://neofeed.com.br/negocios/sob-pressao-novo-ceo-traca-plano-de-guerrilha-para-tentar-recuperar-hapvida/",
+   "summary": "Sob pressão, novo CEO traça plano de “guerrilha” para tentar recuperar Hapvida &nbsp;&nbsp; NeoFeed",
+   "source": "NeoFeed",
+   "domain": "neofeed.com.br",
+   "pub_ts": 1778569200,
+   "pub_iso": "2026-05-12 04:00",
+   "companies": [
+    "Hapvida"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "captured_ts": 1784578993,
+   "cap_iso": "2026-07-20 17:23"
+  },
+  "https://www.estadao.com.br/web-stories/einvestidor/o-que-fez-cvm-adiar-assembleia-fusao-marfrig-e-brf/": {
+   "title": "O que fez a CVM adiar a assembleia de fusão entre Marfrig e BRF?",
+   "url": "https://www.estadao.com.br/web-stories/einvestidor/o-que-fez-cvm-adiar-assembleia-fusao-marfrig-e-brf/",
+   "summary": "O que fez a CVM adiar a assembleia de fusão entre Marfrig e BRF? &nbsp;&nbsp; Estadão",
+   "source": "Estadão",
+   "domain": "estadao.com.br",
+   "pub_ts": 1779971057,
+   "pub_iso": "2026-05-28 09:24",
+   "companies": [
+    "BRF"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1784578993,
+   "cap_iso": "2026-07-20 17:23"
+  },
+  "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/ultrapar-ugpa3-troca-ceo-surpreende-citi/": {
+   "title": "Troca de CEO da Ultrapar (UGPA3) surpreende Citi; veja qual é a visão do banco para a mudança",
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/ultrapar-ugpa3-troca-ceo-surpreende-citi/",
+   "summary": "Troca de CEO da Ultrapar (UGPA3) surpreende Citi; veja qual é a visão do banco para a mudança &nbsp;&nbsp; Estadão",
+   "source": "Estadão",
+   "domain": "estadao.com.br",
+   "pub_ts": 1780037231,
+   "pub_iso": "2026-05-29 03:47",
+   "companies": [
+    "Ultrapar"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "captured_ts": 1784578993,
+   "cap_iso": "2026-07-20 17:23"
+  },
+  "https://www.infomoney.com.br/mercados/por-que-as-acoes-da-engie-brasil-despencaram-com-a-aquisicao-de-jirau/": {
+   "title": "Por que as ações da Engie Brasil despencaram com a aquisição de Jirau?",
+   "url": "https://www.infomoney.com.br/mercados/por-que-as-acoes-da-engie-brasil-despencaram-com-a-aquisicao-de-jirau/",
+   "summary": "Por que as ações da Engie Brasil despencaram com a aquisição de Jirau? &nbsp;&nbsp; InfoMoney",
+   "source": "InfoMoney",
+   "domain": "infomoney.com.br",
+   "pub_ts": 1783062000,
+   "pub_iso": "2026-07-03 04:00",
+   "companies": [
+    "Engie Brasil"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "corroborations": [
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://br.advfn.com/noticias/PAPERBR/2026/artigo/98866589"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://br.advfn.com/noticias/PAPERBR/2026/artigo/98866589",
+     "when": "03/07 16:05"
+    }
+   ],
+   "captured_ts": 1784578993,
+   "cap_iso": "2026-07-20 17:23"
+  },
+  "https://news.google.com/rss/articles/CBMihgFBVV95cUxOUjRCRm5HcmQ5YWhIUDdtZU1xOWFxZ25rWlFIM0hjZ2kyNjZUOFRWOThkTXZ6TkVmWDM4Um5PTE1fLUV0SDZaY01peVRUdE5DcFAzWl9rVE95UDF4ZmNIOFVweldtRmk2Q1lfcFlpOFFncFJNdzJCSDdxNXNDd250XzBnTy1lUQ?oc=5": {
+   "title": "Brava Energia retoma oferta de aquisição de controle pela Ecopetrol",
+   "url": "https://bpmoney.com.br/negocios/empresas/brava-energia-retoma-oferta-ecopetrol/",
+   "summary": "Brava Energia retoma oferta de aquisição de controle pela Ecopetrol &nbsp;&nbsp; BPMoney",
+   "source": "BPMoney",
+   "domain": "bpmoney.com.br",
+   "pub_ts": 1784213586,
+   "pub_iso": "2026-07-16 11:53",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1784578993,
+   "cap_iso": "2026-07-20 17:23"
   }
  },
- "run_count": 11,
+ "run_count": 12,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -5969,8 +6108,8 @@
    "exact": true
   },
   "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQblEyS2JRX19xOWphWkpVUEFtWDlfQlNKdnkzSEFxUTlYY3d6ZkNscmw3aVh6cVlhV0sybzNxTy1oMkhXbFVqbjZsZm9IQTdaV0J5eVNWcVRrcF82ZkxuNnZjNEwtc0Fya3JqSGlDcUZXeWJ6V2JhRGlGOGxIQnRaRzVXRjN1TXpYVGp0SHdoWkFxQzJVRDNhM3dwUERpVTVOb3pfTkNxakpXUnpBYldrZTd2SDhxX2ZtemljOVhJM25zdHfSAdcBQVVfeXFMUGN6Zzc4ODBzMlFJdUZiaFNDVW1xVFp2NDVRdDVjbF9KZkZTQThSM2FwVVdvVHl4QkxRYnNKbGdxcGxVcldUXzByU3J1QUdwU0tBNXRpLThhZFB5YUN0QUJVMm5SYWMwRUg4SHl6Zm9ZcmdLenE1Nkl5UzRKd2lDWmFtZ2Fkc3dnRHBkcEhmeHFuU1dJcFpoUmFCM1NiUTVacVcwUFQ4a0RYcnMyakFoQm9OeUxjT01pZXRUd29pVm8zVVBSeEd4Z3NsbGduRUw0cDg5aWFVNVU?oc=5": {
-   "url": "https://bloomberglinea.com.br",
-   "exact": false
+   "url": "https://www.bloomberglinea.com.br/negocios/prio-como-a-aquisicao-bilionaria-do-campo-de-peregrino-pode-impulsionar-a-empresa/",
+   "exact": true
   },
   "https://news.google.com/rss/articles/CBMiygFBVV95cUxNVkxqcmxkWUZRejVER0JxcVlrQ2o4MF9fZlpHZzRhTTd0bWZ1UlN1ZVpjR21Lc3NpM1U3dlBTbnBHR3pyOGtQRF9VakZySVVhTkt3VDdldzdSeW05Z3NncWh4SEdtVkdpYU9aVVpmc0JmcUlvQjhmbGNjTDlFTW1aX0xRV1VNTVdKa0NzdzItZjJUSlRjX3ZGU0Z6Y3NSUEhmUnV4UlF2YUgxWHh4QXY5R09mSWJvZTRyWExodHhQQXZpVHBjLUh3cjVn?oc=5": {
    "url": "https://timesbrasil.com.br",
@@ -6073,8 +6212,8 @@
    "exact": false
   },
   "https://news.google.com/rss/articles/CBMid0FVX3lxTE9IdkNLNV84UmRBZk9mcW5VNmphWXNWZTQtdGNpRURNV1haWTF0UERDd0pYbThZTHNOcFdTMDlDSlZKRlp4MkFHMlg1UVRCNGN5VmNaYVF1VUpITUM0cFpJd1JZZDNzeGEzSXBENXlIeG9RZ05wbXRJ?oc=5": {
-   "url": "https://demarest.com.br",
-   "exact": false
+   "url": "https://www.demarest.com.br/eneva-capta-r-24-bilhoes-com-debentures/",
+   "exact": true
   },
   "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNSkRaM0xaXzQxQm9nZWF0Yjd6dDBibjBhX2NhRXZhUXJLbWNzUGVPNWdvRUVPaXZ5emZ0RXJuc2lPLUswc1ZsSHhWNUVFMk1Xa3hoaTFMWk84Y0QyYkVOZWFfRTBod091NF93cHgyc0xSMGVCRUdIbEI2XzVSc1F1UDBfMXVTc3ZnMF82bVlDakJZcVYzblhrbUtfY01YWHlJZkNfTWRzNE9YOEZVWUExc0ZodkwzeW1nRWpwNXFxSHItY3N1QWJVbmNMa3FpSVVYSUdvWHpQSWpuOWJvSEhGUzZB0gHnAUFVX3lxTE45R3M5OU41Smg3SFkyODFzVkpHWGV6ZXpoQUlCZGdzUWlTUW5LZ1hLTnhPdGxEdkRKbGk2NWdldVBXRjR4VnV2MHNFTzlVYWJ2ZXRtcXdrV2NuR0lJTnFkbFVjSEdab0Y1dWpUaXpMTExoRk45QnU4blhxU3owYjNzV3BDNnFxQ011SUI2MlFDYnQwYW5jcXk2NHJvQl9XLTg3UmNzQTBjWi1IQlY0VlNaUTVRVFZJaUhtRVlBLUE5azctTm12Z3FBRW9rT2ZkTFJuMXFNR2t0a1Z3N2hSOE1uVjA3VGpsMA?oc=5": {
    "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/isa-energia-isae4-protocola-pedido-de-follow-on-para-emitir-ate-44-milhoes-de-novas-acoes/",
@@ -6423,19 +6562,39 @@
   "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNRkw3b1pQMUZxZUdfc0NQaFJTcWd6TWRxRC1UQzlBM0FVVmR4TmNmdFhHUmlkNXIwNG1GZnI4RTY3azdFTU5jMURQUWZ5ZE5zNzBxR3h2MkNTSzJFUkFaYk9JWDFSSlBhZWN1VThsVEUycUE0U3liaEtOSFYwcnp6amF2N1ZIcWFrenNtTHo0SFpsc2dXZFRjcW5URUxYTm93WE5qam02c0luQzd2WHExem12a3RCdXVocFBrdkZZMmhOTVlfcFYwSVdfS2JUeWNG?oc=5": {
    "url": "https://www.agenciatocantins.com.br/noticia/109503/recuperacao-judicial-exige-transparencia-para-preservar-empresas-e-proteger-credores",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMirAFBVV95cUxONXRxLXRua1V1Z09OWUFVQlNkVlQ5NWRYbEpqcFZCaW1zLTFjN3pjbkhCWlVBTnh3cmxXcjdEbFBuMG84WGJiXzZLdlB5Wm1xUUJxVlowY1Q4cEhhTVVUVnB6TTlqQ1VEd0RRejVMZ09Wa0Ezb05TaHJna09kRGlGdzFLVWR0dktwTURJMTZ5bVo3Ym1obC1GODY2OHVZMVNhZHloYU5mMnJ1cEN4?oc=5": {
+   "url": "https://neofeed.com.br/negocios/sob-pressao-novo-ceo-traca-plano-de-guerrilha-para-tentar-recuperar-hapvida/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipAFBVV95cUxNdW1tUWxuS2JwbHVvQlItby1nSlZuZWZHaURxNDlOc3p3X0EwT0ZkTkJmQVR1blNteEtiYUloZjNNM0FUSHFVbjZQZzA5TTBqbXNyLTBQdXZmakhkVEN3aVF1RHBkcUl3cTI3aHc4NHR3WHRLOVB3U2RpV014NnVqQlIycUNDRkhMVkN1MWFKWm9zdXFnSXMtdjc5cjhMLS1vcWpiVNIBpAFBVV95cUxNdW1tUWxuS2JwbHVvQlItby1nSlZuZWZHaURxNDlOc3p3X0EwT0ZkTkJmQVR1blNteEtiYUloZjNNM0FUSHFVbjZQZzA5TTBqbXNyLTBQdXZmakhkVEN3aVF1RHBkcUl3cTI3aHc4NHR3WHRLOVB3U2RpV014NnVqQlIycUNDRkhMVkN1MWFKWm9zdXFnSXMtdjc5cjhMLS1vcWpiVA?oc=5": {
+   "url": "https://www.estadao.com.br/web-stories/einvestidor/o-que-fez-cvm-adiar-assembleia-fusao-marfrig-e-brf/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMirAFBVV95cUxPb0VLV1lSRnZyQkNtWXZYTWt0a3hrdHBXSVZBRmpEZTZTdHVwRHRYaWxlSkYycWVkbXhkMmQyeUFvLXpINjkxWUdSNWJpWGFsdEFwUDY5MUdQNmZROFBOWFhlLUJkT0NiQy1JUTJuc0tHSnJoM0pCcGVRdnVQOE82bGRjM1ZsZjZoNDl3X2FNUlVIYkluNWNsNlBQM1BaSWM5RzhPQ25YQ1VnZ0FK0gGyAUFVX3lxTFBSR1E0OUdyU0sxVTNhNDBncnJDSkJ6UzBfbW5sOWxLbW5ycjI0T1Q4X3c3TmJJZm9qMmswZ0QyWWU3dWxNVG90VlJUUVlTbUtfQTdMbG1PcmYweWdUdDlBQkVtR1Q4eEVyUzVMR1BWdkxZa2hPSEx3elhFNWFWVGhpc3NDMkM3M3dJMW9ZZGNIMTdkcDBTWTJaMHptUVN2Wk9TbzVTclJsWUd3RXhVN3o0c3c?oc=5": {
+   "url": "https://www.infomoney.com.br/mercados/por-que-as-acoes-da-engie-brasil-despencaram-com-a-aquisicao-de-jirau/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMixwFBVV95cUxQQUw1aHBlaERKZ0IwY2lpNFMyQnZfSVh0bU43XzBxM1NvOWozb2lVdWlFcDFkYXVSelRPV3J5WnJXOTY0VFBIUU42U1NQbWZXR0xrVFBaYnhTeXRFUURVc2MyUUpUOEhYbnBBRENnTW9OajUxUEJsTWVyNGp0ZmhrWndkZl9uXzhsMngwak9KU29NUF9KOHktMV9hXzdQUDlRSDR0OUV4XzQyUFRwWEF5WFhnODB4Wm96Y1ZGRDNTakF0Rnlxb29F?oc=5": {
+   "url": "https://br.advfn.com/jornal/2026/04/motiva-anuncia-aquisicao-da-autopista-fernao-dias-por-r-381-milhoes-e-reforca-expansao-na-b3",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMihgFBVV95cUxOUjRCRm5HcmQ5YWhIUDdtZU1xOWFxZ25rWlFIM0hjZ2kyNjZUOFRWOThkTXZ6TkVmWDM4Um5PTE1fLUV0SDZaY01peVRUdE5DcFAzWl9rVE95UDF4ZmNIOFVweldtRmk2Q1lfcFlpOFFncFJNdzJCSDdxNXNDd250XzBnTy1lUQ?oc=5": {
+   "url": "https://bpmoney.com.br/negocios/empresas/brava-energia-retoma-oferta-ecopetrol/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1784568209,
-  "iso": "20 jul 2026 · 14:23 BRT",
+  "ts": 1784578996,
+  "iso": "20 jul 2026 · 17:23 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
     "score": 116
    },
    "Engie Brasil": {
-    "status": "atencao",
-    "score": 71
+    "status": "critico",
+    "score": 82
    },
    "Cosan": {
     "status": "atencao",
@@ -6479,7 +6638,7 @@
    },
    "Santander Brasil": {
     "status": "atencao",
-    "score": 22
+    "score": 21
    },
    "Copel": {
     "status": "monitorar",
@@ -6505,7 +6664,15 @@
     "status": "monitorar",
     "score": 11
    },
+   "BRF": {
+    "status": "monitorar",
+    "score": 10
+   },
    "Vale": {
+    "status": "monitorar",
+    "score": 7
+   },
+   "Ultrapar": {
     "status": "monitorar",
     "score": 7
    },
@@ -6513,13 +6680,17 @@
     "status": "monitorar",
     "score": 7
    },
-   "Banco do Brasil": {
+   "Hapvida": {
     "status": "monitorar",
-    "score": 4
+    "score": 5
    },
    "Tupy": {
     "status": "monitorar",
-    "score": 3
+    "score": 4
+   },
+   "Banco do Brasil": {
+    "status": "monitorar",
+    "score": 4
    }
   }
  }
