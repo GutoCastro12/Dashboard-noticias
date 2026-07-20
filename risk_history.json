@@ -4455,8 +4455,21 @@
    ],
    "captured_ts": 1784549561,
    "cap_iso": "2026-07-20 09:12",
-   "corroborations": [],
-   "corrob_sources": []
+   "corroborations": [
+    {
+     "source": "financenews.com.br",
+     "domain": "financenews.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNT19NZjhtLUV6T1FaT3FuNTJMakJNNkJUX18tcER1aVpjR3JhY18xZlRqZmRxYVNpelYyY29DZEJPM2s2MjJtLTg1aTlNTzljbmg1Q0VRLVE0QVJHR1VvTkxaZzIwZ19aOHROM2VyRjhoeEJPZ3JCSDNneUNKbEJnOGRhNU1HSDBZN0E?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "financenews.com.br",
+     "domain": "financenews.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNT19NZjhtLUV6T1FaT3FuNTJMakJNNkJUX18tcER1aVpjR3JhY18xZlRqZmRxYVNpelYyY29DZEJPM2s2MjJtLTg1aTlNTzljbmg1Q0VRLVE0QVJHR1VvTkxaZzIwZ19aOHROM2VyRjhoeEJPZ3JCSDNneUNKbEJnOGRhNU1HSDBZN0E?oc=5",
+     "when": "04/05 04:00"
+    }
+   ]
   },
   "https://www.moneytimes.com.br/suzano-suzb3-recebe-aval-da-comissao-europeia-para-aquisicao-da-kimberly-clark-ifp-pads/": {
    "title": "Suzano (SUZB3) recebe aval da Comissão Europeia para aquisição da Kimberly-Clark IFP",
@@ -5106,7 +5119,9 @@
     "investigacao_regulatoria"
    ],
    "captured_ts": 1784560134,
-   "cap_iso": "2026-07-20 12:08"
+   "cap_iso": "2026-07-20 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://br.advfn.com/noticias/PAPERBR/2026/artigo/98866589": {
    "title": "Engie Brasil aprova aquisição de fatia de 40% da Jirau Energia, avaliada em R$ 5,74 bilhões",
@@ -5207,9 +5222,43 @@
    ],
    "captured_ts": 1784560134,
    "cap_iso": "2026-07-20 12:08"
+  },
+  "https://br.advfn.com/jornal/2025/11/s-amp-p-eleva-rating-da-prio-e-projeta-producao-recorde": {
+   "title": "S&P eleva rating da Prio e projeta produção recorde",
+   "url": "https://br.advfn.com/jornal/2025/11/s-amp-p-eleva-rating-da-prio-e-projeta-producao-recorde",
+   "summary": "S&P eleva rating da Prio e projeta produção recorde &nbsp;&nbsp; ADVFN",
+   "source": "ADVFN",
+   "domain": "br.advfn.com",
+   "pub_ts": 1763107200,
+   "pub_iso": "2025-11-14 05:00",
+   "companies": [
+    "PRIO"
+   ],
+   "event_ids": [
+    "rating_elevado"
+   ],
+   "captured_ts": 1784568207,
+   "cap_iso": "2026-07-20 14:23"
+  },
+  "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1544874&numSequencia=1069580&numVersao=2": {
+   "title": "[Fato Relevante] Engie Brasil: Precificação da Oferta de Ações",
+   "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1544874&numSequencia=1069580&numVersao=2",
+   "summary": "Precificação da Oferta de Ações",
+   "source": "CVM · Fato Relevante",
+   "domain": "cvm.gov.br",
+   "pub_ts": 1783987200,
+   "pub_iso": "2026-07-14",
+   "companies": [
+    "Engie Brasil"
+   ],
+   "event_ids": [
+    "follow_on"
+   ],
+   "captured_ts": 1784568207,
+   "cap_iso": "2026-07-20 14:23"
   }
  },
- "run_count": 10,
+ "run_count": 11,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -6377,20 +6426,20 @@
   }
  },
  "last_run": {
-  "ts": 1784560136,
-  "iso": "20 jul 2026 · 12:08 BRT",
+  "ts": 1784568209,
+  "iso": "20 jul 2026 · 14:23 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
     "score": 116
    },
+   "Engie Brasil": {
+    "status": "atencao",
+    "score": 71
+   },
    "Cosan": {
     "status": "atencao",
     "score": 67
-   },
-   "Engie Brasil": {
-    "status": "atencao",
-    "score": 57
    },
    "Petrobras": {
     "status": "atencao",
