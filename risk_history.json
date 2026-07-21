@@ -5395,9 +5395,43 @@
    ],
    "captured_ts": 1784578993,
    "cap_iso": "2026-07-20 17:23"
+  },
+  "https://economia.uol.com.br/noticias/redacao/2026/07/17/tokstok-e-mobly-em-recuperacao-judicial-o-que-muda.ghtm": {
+   "title": "Tok&Stok e Mobly em recuperação judicial: o que muda para quem compra?",
+   "url": "https://economia.uol.com.br/noticias/redacao/2026/07/17/tokstok-e-mobly-em-recuperacao-judicial-o-que-muda.ghtm",
+   "summary": "Tok&Stok e Mobly em recuperação judicial: o que muda para quem compra? &nbsp;&nbsp; UOL Economia",
+   "source": "UOL Economia",
+   "domain": "economia.uol.com.br",
+   "pub_ts": 1784291400,
+   "pub_iso": "2026-07-17 09:30",
+   "companies": [
+    "Tok&Stok"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1784634331,
+   "cap_iso": "2026-07-21 08:45"
+  },
+  "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQNGcweWRtdVRlY3FmSUM4bURhN3FZa3haei1lR3d5RTBlWERxWS1zTkxYOWpBcDhDdjNxdUpKdkJwcDJKM1FiQldKOFR0TUlSOGg1b1p3UXFTMmR1aXlzb280cDROU2xfSzl6TGppcVVHTDhtTmUwdnZmdFBKNk9kSzd2ZUNGVTZrWmtEbUhYc1FVLWJvM2ZpTUNhTFdSREN6S0pTNkQzbXF3LXdZM0RLSk14Nnlnc1dpbm5CTEthU0ZLbFVmQTlKZldkbzNqV1lSNVl0elBZZFhIbHlSV2NnOWRMQUdnV2tWZW1MNWstek82NzB6b0s3cklB0gGIAkFVX3lxTE9jcFRIOGZQeWJJOVhmV1FRaUR2UV8tR0V1R3RSeWs1dTZXNDR4NVdDNXRqOGFsVlVSSDVIc3JIT1NEd3FkUlNlMmtodzRlcWlQZE9aNGxPNlFyZ0dlMFZubFUyaWpsUTU1NGFFMFBGVHpmODBUUnJuT1hXSzB2YmROejNxWV9FZ0xfSVVONVpkOFBtd2lma1BSVnpGSy1GNUctUkdmSkN0UkMxdzBxd2tzWVZUX1dZSXVoZ0ZwM1h2R3ZUaXJVaWJPRUtYZ1pFS2RiWHlGTGUwRU1lX1lDOGdIUFRlMXExWWhmUHBHeGhQekpMVmpoQVp0eEMzUXRBRXdUdGk4UWNCVw?oc=5": {
+   "title": "Exclusivo: Após consulta de investidor, CVM abre processo sobre apoio da Previ a candidato ao conselho da Vale",
+   "url": "https://valor.globo.com/empresas/noticia/2026/07/20/exclusivo-apos-consulta-de-investidor-cvm-abre-processo-sobre-apoio-da-previ-a-candidato-ao-conselho-da-vale.ghtml",
+   "summary": "Exclusivo: Após consulta de investidor, CVM abre processo sobre apoio da Previ a candidato ao conselho da Vale &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1784586602,
+   "pub_iso": "2026-07-20 19:30",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "investigacao_regulatoria"
+   ],
+   "captured_ts": 1784634331,
+   "cap_iso": "2026-07-21 08:45"
   }
  },
- "run_count": 12,
+ "run_count": 13,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -6582,31 +6616,43 @@
   "https://news.google.com/rss/articles/CBMihgFBVV95cUxOUjRCRm5HcmQ5YWhIUDdtZU1xOWFxZ25rWlFIM0hjZ2kyNjZUOFRWOThkTXZ6TkVmWDM4Um5PTE1fLUV0SDZaY01peVRUdE5DcFAzWl9rVE95UDF4ZmNIOFVweldtRmk2Q1lfcFlpOFFncFJNdzJCSDdxNXNDd250XzBnTy1lUQ?oc=5": {
    "url": "https://bpmoney.com.br/negocios/empresas/brava-energia-retoma-oferta-ecopetrol/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMisAFBVV95cUxQN3NVQkxBQlNEaUt6XzBFVm50YkU2WUh3c05TckhBaXdaNVFnTGRCWnhISkY3UFdXVl9iUmt4ck9qaGR2cnoxMzRYdENneFEyUUNtVUM2Sk9lUUZMdDZGSEFScFhPQk5BVU1TTlhaM1lqMGJNSzFFeGFhdk0wUkRQNl9HU1dibDBpNEZRanZ0SEhxeTNyb3BCcjUwWlJuem1FV0I3NEVpRUtwWk14TWRMWQ?oc=5": {
+   "url": "https://economia.uol.com.br/noticias/redacao/2026/07/17/tokstok-e-mobly-em-recuperacao-judicial-o-que-muda.ghtm",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQNGcweWRtdVRlY3FmSUM4bURhN3FZa3haei1lR3d5RTBlWERxWS1zTkxYOWpBcDhDdjNxdUpKdkJwcDJKM1FiQldKOFR0TUlSOGg1b1p3UXFTMmR1aXlzb280cDROU2xfSzl6TGppcVVHTDhtTmUwdnZmdFBKNk9kSzd2ZUNGVTZrWmtEbUhYc1FVLWJvM2ZpTUNhTFdSREN6S0pTNkQzbXF3LXdZM0RLSk14Nnlnc1dpbm5CTEthU0ZLbFVmQTlKZldkbzNqV1lSNVl0elBZZFhIbHlSV2NnOWRMQUdnV2tWZW1MNWstek82NzB6b0s3cklB0gGIAkFVX3lxTE9jcFRIOGZQeWJJOVhmV1FRaUR2UV8tR0V1R3RSeWs1dTZXNDR4NVdDNXRqOGFsVlVSSDVIc3JIT1NEd3FkUlNlMmtodzRlcWlQZE9aNGxPNlFyZ0dlMFZubFUyaWpsUTU1NGFFMFBGVHpmODBUUnJuT1hXSzB2YmROejNxWV9FZ0xfSVVONVpkOFBtd2lma1BSVnpGSy1GNUctUkdmSkN0UkMxdzBxd2tzWVZUX1dZSXVoZ0ZwM1h2R3ZUaXJVaWJPRUtYZ1pFS2RiWHlGTGUwRU1lX1lDOGdIUFRlMXExWWhmUHBHeGhQekpMVmpoQVp0eEMzUXRBRXdUdGk4UWNCVw?oc=5": {
+   "url": "https://valor.globo.com/empresas/noticia/2026/07/20/exclusivo-apos-consulta-de-investidor-cvm-abre-processo-sobre-apoio-da-previ-a-candidato-ao-conselho-da-vale.ghtml",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1784578996,
-  "iso": "20 jul 2026 · 17:23 BRT",
+  "ts": 1784634333,
+  "iso": "21 jul 2026 · 08:45 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
-    "score": 116
+    "score": 114
    },
    "Engie Brasil": {
     "status": "critico",
-    "score": 82
+    "score": 81
+   },
+   "Tok&Stok": {
+    "status": "critico",
+    "score": 80
    },
    "Cosan": {
     "status": "atencao",
-    "score": 67
-   },
-   "Petrobras": {
-    "status": "atencao",
-    "score": 37
+    "score": 66
    },
    "BTG Pactual": {
     "status": "atencao",
     "score": 37
+   },
+   "Petrobras": {
+    "status": "atencao",
+    "score": 36
    },
    "Itaúsa": {
     "status": "monitorar",
@@ -6616,23 +6662,19 @@
     "status": "monitorar",
     "score": 32
    },
-   "Tok&Stok": {
-    "status": "critico",
-    "score": 28
-   },
    "Suzano": {
     "status": "monitorar",
     "score": 28
    },
    "ISA Energia Brasil": {
     "status": "monitorar",
-    "score": 28
-   },
-   "Natura &Co": {
-    "status": "monitorar",
-    "score": 26
+    "score": 27
    },
    "Embraer": {
+    "status": "monitorar",
+    "score": 25
+   },
+   "Natura &Co": {
     "status": "monitorar",
     "score": 25
    },
@@ -6640,12 +6682,12 @@
     "status": "atencao",
     "score": 21
    },
-   "Copel": {
-    "status": "monitorar",
-    "score": 17
-   },
    "Cemig": {
     "status": "atencao",
+    "score": 16
+   },
+   "Copel": {
+    "status": "monitorar",
     "score": 16
    },
    "Raia Drogasil": {
@@ -6658,7 +6700,7 @@
    },
    "Sabesp": {
     "status": "monitorar",
-    "score": 12
+    "score": 11
    },
    "Vibra Energia": {
     "status": "monitorar",
@@ -6668,7 +6710,7 @@
     "status": "monitorar",
     "score": 10
    },
-   "Vale": {
+   "Vamos": {
     "status": "monitorar",
     "score": 7
    },
@@ -6676,9 +6718,9 @@
     "status": "monitorar",
     "score": 7
    },
-   "Vamos": {
+   "Vale": {
     "status": "monitorar",
-    "score": 7
+    "score": 6
    },
    "Hapvida": {
     "status": "monitorar",
