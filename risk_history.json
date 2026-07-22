@@ -1040,25 +1040,6 @@
    "captured_ts": 1784666282,
    "cap_iso": "2026-07-21 17:38"
   },
-  "https://br.advfn.com/jornal/2026/01/copel-capta-r-2-bilhoes-em-debentures-e-reforca-investimentos-na-distribuicao-de-energia": {
-   "title": "Copel capta R$ 2 bilhões em debêntures e reforça investimentos na distribuição de energia",
-   "url": "https://br.advfn.com/jornal/2026/01/copel-capta-r-2-bilhoes-em-debentures-e-reforca-investimentos-na-distribuicao-de-energia",
-   "summary": "Copel capta R$ 2 bilhões em debêntures e reforça investimentos na distribuição de energia &nbsp;&nbsp; ADVFN",
-   "source": "ADVFN",
-   "domain": "br.advfn.com",
-   "pub_ts": 1769155200,
-   "pub_iso": "2026-01-23 05:00",
-   "companies": [
-    "Copel"
-   ],
-   "event_ids": [
-    "emissao_divida"
-   ],
-   "captured_ts": 1784666282,
-   "cap_iso": "2026-07-21 17:38",
-   "corroborations": [],
-   "corrob_sources": []
-  },
   "https://www.infomoney.com.br/mercados/eneva-enev3-anuncia-14a-emissao-de-debentures-no-valor-de-r-2-bilhoes/": {
    "title": "Eneva (ENEV3) anuncia 14ª emissão de debêntures no valor de R$ 2 bilhões",
    "url": "https://www.infomoney.com.br/mercados/eneva-enev3-anuncia-14a-emissao-de-debentures-no-valor-de-r-2-bilhoes/",
@@ -4727,7 +4708,9 @@
     "rebaixamento_rating"
    ],
    "captured_ts": 1784720983,
-   "cap_iso": "2026-07-22 08:49"
+   "cap_iso": "2026-07-22 08:49",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://canalsolar.com.br/cemig-sim-conclui-aquisicao-de-10mwp-em-usinas-solares/": {
    "title": "Cemig SIM conclui aquisição de 10MWp em usinas solares",
@@ -4744,7 +4727,9 @@
     "ma"
    ],
    "captured_ts": 1784720983,
-   "cap_iso": "2026-07-22 08:49"
+   "cap_iso": "2026-07-22 08:49",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://valor.globo.com/empresas/noticia/2026/02/02/sabesp-protocola-pedido-para-aquisio-das-aes-restantes-da-emae-no-mercado.ghtml": {
    "title": "Sabesp protocola pedido para aquisição das ações restantes da Emae no mercado",
@@ -4761,7 +4746,9 @@
     "ma"
    ],
    "captured_ts": 1784720983,
-   "cap_iso": "2026-07-22 08:49"
+   "cap_iso": "2026-07-22 08:49",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/localiza-resgate-antecipado-21-emissao-debentures/": {
    "title": "Localiza (RENT3) anuncia resgate antecipado integral da 21ª emissão de debêntures",
@@ -4834,7 +4821,9 @@
     "ma"
    ],
    "captured_ts": 1784720983,
-   "cap_iso": "2026-07-22 08:49"
+   "cap_iso": "2026-07-22 08:49",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://br.advfn.com/jornal/2026/03/santander-brasil-reforca-continuidade-estrategica-com-troca-de-ceo-e-mira-roe-acima-de-20-ate-2028": {
    "title": "Santander Brasil reforça continuidade estratégica com troca de CEO e mira ROE acima de 20% até 2028",
@@ -4887,7 +4876,9 @@
     "ma"
    ],
    "captured_ts": 1784720983,
-   "cap_iso": "2026-07-22 08:49"
+   "cap_iso": "2026-07-22 08:49",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://financenews.com.br/2026/05/tupy-tupy3-escolhe-harro-burmann-como-novo-ceo/": {
    "title": "Tupy (TUPY3) escolhe Harro Burmann como novo CEO",
@@ -4979,7 +4970,9 @@
     "troca_ceo"
    ],
    "captured_ts": 1784720983,
-   "cap_iso": "2026-07-22 08:49"
+   "cap_iso": "2026-07-22 08:49",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://valor.globo.com/empresas/noticia/2026/05/22/cade-aprova-aquisio-de-90-pontos-percentuais-da-sanessol-pela-sabesp.ghtml": {
    "title": "Cade aprova aquisição de 90% da Sanessol pela Sabesp",
@@ -5073,7 +5066,9 @@
     "emissao_divida"
    ],
    "captured_ts": 1784720983,
-   "cap_iso": "2026-07-22 08:49"
+   "cap_iso": "2026-07-22 08:49",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://tagdlaw.com.br/cade-aprova-aquisicao-no-campo-de-argonauta-pela-petrobras/": {
    "title": "Cade aprova aquisição no campo de Argonauta pela Petrobras",
@@ -5127,7 +5122,8 @@
     }
    ],
    "captured_ts": 1784720983,
-   "cap_iso": "2026-07-22 08:49"
+   "cap_iso": "2026-07-22 08:49",
+   "corrob_sources": []
   },
   "https://www.moneytimes.com.br/cade-aprova-aquisicao-pela-rd-saude-radl3-da-participacao-da-gpa-pcar3-na-stix/": {
    "title": "Cade aprova aquisição pela RD Saúde (RADL3) da participação da GPA (PCAR3) na Stix",
@@ -5399,7 +5395,9 @@
     "emissao_divida"
    ],
    "captured_ts": 1784720983,
-   "cap_iso": "2026-07-22 08:49"
+   "cap_iso": "2026-07-22 08:49",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://brasilenergia.com.br/petroleoegas/ep/anp-aprova-aquisicao-da-parcela-de-40-em-peregrino-pela-prio": {
    "title": "ANP aprova aquisição da parcela de 40% em Peregrino pela Prio",
@@ -5423,7 +5421,8 @@
     }
    ],
    "captured_ts": 1784732344,
-   "cap_iso": "2026-07-22 11:59"
+   "cap_iso": "2026-07-22 11:59",
+   "corrob_sources": []
   },
   "https://br.advfn.com/jornal/2025/11/s-amp-p-eleva-rating-da-prio-e-projeta-producao-recorde": {
    "title": "S&P eleva rating da Prio e projeta produção recorde",
@@ -5447,7 +5446,8 @@
     }
    ],
    "captured_ts": 1784732344,
-   "cap_iso": "2026-07-22 11:59"
+   "cap_iso": "2026-07-22 11:59",
+   "corrob_sources": []
   },
   "https://www.infomoney.com.br/mercados/axia-axia3-ex-eletrobras-aprova-emissao-de-debentures-no-valor-de-r-3-bi/": {
    "title": "Axia (AXIA3), ex-Eletrobras, aprova emissão de debêntures no valor de R$ 3 bi",
@@ -5499,9 +5499,260 @@
    ],
    "captured_ts": 1784732344,
    "cap_iso": "2026-07-22 11:59"
+  },
+  "https://www.infomoney.com.br/mercados/copel-realiza-bookbuilding-da-11a-emissao-de-debentures-no-valor-de-r-2-bilhoes/": {
+   "title": "Copel realiza bookbuilding da 11ª emissão de debêntures no valor de R$ 2 bilhões",
+   "url": "https://www.infomoney.com.br/mercados/copel-realiza-bookbuilding-da-11a-emissao-de-debentures-no-valor-de-r-2-bilhoes/",
+   "summary": "Copel realiza bookbuilding da 11ª emissão de debêntures no valor de R$ 2 bilhões &nbsp;&nbsp; InfoMoney",
+   "source": "InfoMoney",
+   "domain": "infomoney.com.br",
+   "pub_ts": 1769155200,
+   "pub_iso": "2026-01-23 05:00",
+   "companies": [
+    "Copel"
+   ],
+   "event_ids": [
+    "emissao_divida"
+   ],
+   "corroborations": [
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://br.advfn.com/jornal/2026/01/copel-capta-r-2-bilhoes-em-debentures-e-reforca-investimentos-na-distribuicao-de-energia"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://br.advfn.com/jornal/2026/01/copel-capta-r-2-bilhoes-em-debentures-e-reforca-investimentos-na-distribuicao-de-energia",
+     "when": "23/01 05:00"
+    }
+   ],
+   "captured_ts": 1784740429,
+   "cap_iso": "2026-07-22 14:13"
+  },
+  "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/moodys-eleva-rating-prio-prio3-compra-peregrino/": {
+   "title": "Moody’s eleva nota de crédito da Prio (PRIO3) após compra de Peregrino e reforço de produção",
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/moodys-eleva-rating-prio-prio3-compra-peregrino/",
+   "summary": "Moody’s eleva nota de crédito da Prio (PRIO3) após compra de Peregrino e reforço de produção &nbsp;&nbsp; Estadão",
+   "source": "Estadão",
+   "domain": "estadao.com.br",
+   "pub_ts": 1769414400,
+   "pub_iso": "2026-01-26 05:00",
+   "companies": [
+    "PRIO"
+   ],
+   "event_ids": [
+    "rating_elevado"
+   ],
+   "corroborations": [
+    {
+     "source": "Money Times",
+     "domain": "moneytimes.com.br",
+     "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNaXZKaC1DQzNCdG9IVDZqQ0txSXRWYmZiVzNERHdQcUMxcFc1cWxtcHJZNWUtSE9HRmZfdEQ4RDRWRVdWOEw4d2lqZTZWdDE3eGlnREhaOTJHbDZXZlNxeTVhaHQxQ3gtNXVWRGd5VE5KdThnd3k3eDgycEp4NjJLZUJxeVNtdHMxS09aMVk0Z09PdEdQVFhIZ19uVnBLbmpIVjlFZzJiT3RPWVJ3dEpLTXRMOU9MTm1vLXVEeE4xZG5FeEtxRWZQdmRHUjBLdw?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Money Times",
+     "domain": "moneytimes.com.br",
+     "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNaXZKaC1DQzNCdG9IVDZqQ0txSXRWYmZiVzNERHdQcUMxcFc1cWxtcHJZNWUtSE9HRmZfdEQ4RDRWRVdWOEw4d2lqZTZWdDE3eGlnREhaOTJHbDZXZlNxeTVhaHQxQ3gtNXVWRGd5VE5KdThnd3k3eDgycEp4NjJLZUJxeVNtdHMxS09aMVk0Z09PdEdQVFhIZ19uVnBLbmpIVjlFZzJiT3RPWVJ3dEpLTXRMOU9MTm1vLXVEeE4xZG5FeEtxRWZQdmRHUjBLdw?oc=5",
+     "when": "27/01 05:00"
+    }
+   ],
+   "captured_ts": 1784740429,
+   "cap_iso": "2026-07-22 14:13"
+  },
+  "https://www.demarest.com.br/eneva-capta-r-24-bilhoes-com-debentures/": {
+   "title": "Eneva capta R$ 2,4 bilhões com debêntures",
+   "url": "https://www.demarest.com.br/eneva-capta-r-24-bilhoes-com-debentures/",
+   "summary": "Eneva capta R$ 2,4 bilhões com debêntures &nbsp;&nbsp; Demarest",
+   "source": "Demarest",
+   "domain": "demarest.com.br",
+   "pub_ts": 1773903600,
+   "pub_iso": "2026-03-19 04:00",
+   "companies": [
+    "Eneva"
+   ],
+   "event_ids": [
+    "emissao_divida"
+   ],
+   "captured_ts": 1784740429,
+   "cap_iso": "2026-07-22 14:13"
+  },
+  "https://www.brasildefato.com.br/2026/06/25/fraude-nas-americanas-executivos-de-itau-bradesco-e-santander-sao-alvo-de-buscas/": {
+   "title": "Fraude nas Americanas: executivos de Itaú, Bradesco e Santander são alvo de buscas",
+   "url": "https://www.brasildefato.com.br/2026/06/25/fraude-nas-americanas-executivos-de-itau-bradesco-e-santander-sao-alvo-de-buscas/",
+   "summary": "Fraude nas Americanas: executivos de Itaú, Bradesco e Santander são alvo de buscas &nbsp;&nbsp; Brasil de Fato",
+   "source": "Brasil de Fato",
+   "domain": "brasildefato.com.br",
+   "pub_ts": 1782370800,
+   "pub_iso": "2026-06-25 04:00",
+   "companies": [
+    "Santander Brasil"
+   ],
+   "event_ids": [
+    "investigacao_regulatoria"
+   ],
+   "captured_ts": 1784740429,
+   "cap_iso": "2026-07-22 14:13"
+  },
+  "https://www.infomoney.com.br/mercados/por-que-as-acoes-da-engie-brasil-despencaram-com-a-aquisicao-de-jirau/": {
+   "title": "Por que as ações da Engie Brasil despencaram com a aquisição de Jirau?",
+   "url": "https://www.infomoney.com.br/mercados/por-que-as-acoes-da-engie-brasil-despencaram-com-a-aquisicao-de-jirau/",
+   "summary": "Por que as ações da Engie Brasil despencaram com a aquisição de Jirau? &nbsp;&nbsp; InfoMoney",
+   "source": "InfoMoney",
+   "domain": "infomoney.com.br",
+   "pub_ts": 1783062000,
+   "pub_iso": "2026-07-03 04:00",
+   "companies": [
+    "Engie Brasil"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "corroborations": [
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1rbU5IdDhRc2FaT0pvYU90X2ZTLUxSVUprWGNJdjJ2NXM0eTc5UjZ1ZTJWYWRMNDcxTHVIVFBoSVFWOXg2Ujc4WXdEa3lkcnlKR01rNFVUSFU5Z0tKQmw5eF9pdEswS0FlcVE?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1rbU5IdDhRc2FaT0pvYU90X2ZTLUxSVUprWGNJdjJ2NXM0eTc5UjZ1ZTJWYWRMNDcxTHVIVFBoSVFWOXg2Ujc4WXdEa3lkcnlKR01rNFVUSFU5Z0tKQmw5eF9pdEswS0FlcVE?oc=5",
+     "when": "03/07 16:05"
+    }
+   ],
+   "captured_ts": 1784740429,
+   "cap_iso": "2026-07-22 14:13"
+  },
+  "https://br.investing.com/analysis/engie-brasil-egie3-movimenta-r84-bi-em-followon-para-incorporacao-de-jirau-200478513": {
+   "title": "Engie Brasil (EGIE3) movimenta R$8,4 bi em follow-on para incorporação de Jirau",
+   "url": "https://br.investing.com/analysis/engie-brasil-egie3-movimenta-r84-bi-em-followon-para-incorporacao-de-jirau-200478513",
+   "summary": "Engie Brasil (EGIE3) movimenta R$8,4 bi em follow-on para incorporação de Jirau &nbsp;&nbsp; Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "domain": "br.investing.com",
+   "pub_ts": 1784285880,
+   "pub_iso": "2026-07-17 07:58",
+   "companies": [
+    "Engie Brasil"
+   ],
+   "event_ids": [
+    "ma",
+    "follow_on"
+   ],
+   "corroborations": [
+    {
+     "source": "MegaWhat",
+     "domain": "megawhat.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPZUpFTEx0OFVzYi15RTZ0QkxtU25qZmdZY2J1QjRvR2NPeW9ZNlJsMTVUQTBmSTFnM0JCZVRaRzVvMVYyYnQxelBmQmw2NFZZM0s4TExXWC03dnZyanJLRDZEa2kxcGdZaDE3MEk5M2F1cC14WEUwY3NlbnBlNjRHSGVLbGZOTTFKbnJnaHZkSFlXeG1jNkl4T2FpOFQwNWl5Z1ExYno1X0xKd3lMMGJmU0I5QU9jX2kwNnFRd0dnNWNsYkpSclRkTzB0cFdKVW8?oc=5"
+    },
+    {
+     "source": "Terra",
+     "domain": "terra.com.br",
+     "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQVEhiNzZUWm9hWjNjOEFqdURSbjNlUFlPTFM2bDVYVjJwMmlhZXB6RHNnVmplSm9FTkFydUdfaEY0V21VUmZmT0NfWW9haUpBTHdFdE91WGVWY0RLNzY5MGc4czdJLTEzSU5MZXpvTk52SUF2dmJXSFBLR1BUNENvVTJsQ1M1Q09oNnV4TEZyQjB0emtLX01PbThiRjJLRGlhQzI1dDF6YnNkWEFVdms5WFVrYVhzVVB1RG5kaDVhU2RVa0Z0ZWNnR3pRWHE3enpsd3hTOVAyVHRGdFk2R1UwS1hnMA?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "MegaWhat",
+     "domain": "megawhat.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPZUpFTEx0OFVzYi15RTZ0QkxtU25qZmdZY2J1QjRvR2NPeW9ZNlJsMTVUQTBmSTFnM0JCZVRaRzVvMVYyYnQxelBmQmw2NFZZM0s4TExXWC03dnZyanJLRDZEa2kxcGdZaDE3MEk5M2F1cC14WEUwY3NlbnBlNjRHSGVLbGZOTTFKbnJnaHZkSFlXeG1jNkl4T2FpOFQwNWl5Z1ExYno1X0xKd3lMMGJmU0I5QU9jX2kwNnFRd0dnNWNsYkpSclRkTzB0cFdKVW8?oc=5",
+     "when": "15/07 11:07"
+    }
+   ],
+   "captured_ts": 1784740429,
+   "cap_iso": "2026-07-22 14:13"
+  },
+  "https://arevista.com.br/acoes/isae4-pode-cair-apos-follow-on-analista-aponta-preco-de-compra/": {
+   "title": "ISAE4 pode cair após follow-on? Analista aponta preço de compra",
+   "url": "https://arevista.com.br/acoes/isae4-pode-cair-apos-follow-on-analista-aponta-preco-de-compra/",
+   "summary": "ISAE4 pode cair após follow-on? Analista aponta preço de compra &nbsp;&nbsp; A Revista",
+   "source": "A Revista",
+   "domain": "arevista.com.br",
+   "pub_ts": 1784401813,
+   "pub_iso": "2026-07-18 16:10",
+   "companies": [
+    "ISA Energia Brasil"
+   ],
+   "event_ids": [
+    "follow_on"
+   ],
+   "captured_ts": 1784740429,
+   "cap_iso": "2026-07-22 14:13"
+  },
+  "https://news.google.com/rss/articles/CBMiygFBVV95cUxOZGM4MGYzQ1VEQkNxeDFLRUpyU1FETk10N0Y5SUVKOU5KZEx2dFpTelBVZ0RzZmV0WG5Fa1djQ2hvVGhqLTJDd3lfMkhuM3NyYmpvVkZtaHVNNXpybDZVZlREWk9ubWtNQ1Y3dDBUX3ZJLVczV1Z6bElzSmp4TnZKT0doTUpNLXladUtlUkh2ZE5UcGREWkY1eWdIUWYydHR5Q2gtaTNhaVduZ2V6anZFNWxHU0JfeWxhV2FmVjdmWWZlNkZ5Q0d6MmR3?oc=5": {
+   "title": "Movement (MOVE) entra com Chapter 11 após $141.4M em financiamento não evitar colapso",
+   "url": "https://invezz.com/pt/noticias/2026/07/22/movement-move-entra-com-chapter-11-apos-dollar1414m-em-financiamento-nao-evitar-colapso/",
+   "summary": "Movement (MOVE) entra com Chapter 11 após $141.4M em financiamento não evitar colapso &nbsp;&nbsp; Invezz",
+   "source": "Invezz",
+   "domain": "invezz.com",
+   "pub_ts": 1784718646,
+   "pub_iso": "2026-07-22 08:10",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "corroborations": [
+    {
+     "source": "cointelegraph.com.br",
+     "domain": "cointelegraph.com.br",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxONVhJdkNiWE94R1pSV0E2VXpMZWk1SDFqWWlXek42MHZGZFBJM1d5TEVhN2EwS0lMNDFORmstUFphRWtIUS1ldkVLaFNiZWVULUpDTF9fR21IcnhkLWI1Q2ZEQk4wLVZtRTd2NVN0Q2I3V2s0bklWa0I1RXBLZ3BNd0dTcEFlU1hoM1hjbDlKSTI1bDJDNzJvUVF3?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "cointelegraph.com.br",
+     "domain": "cointelegraph.com.br",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxONVhJdkNiWE94R1pSV0E2VXpMZWk1SDFqWWlXek42MHZGZFBJM1d5TEVhN2EwS0lMNDFORmstUFphRWtIUS1ldkVLaFNiZWVULUpDTF9fR21IcnhkLWI1Q2ZEQk4wLVZtRTd2NVN0Q2I3V2s0bklWa0I1RXBLZ3BNd0dTcEFlU1hoM1hjbDlKSTI1bDJDNzJvUVF3?oc=5",
+     "when": "22/07 10:18"
+    }
+   ],
+   "captured_ts": 1784740429,
+   "cap_iso": "2026-07-22 14:13"
+  },
+  "https://www.bloomberglinea.com.br/negocios/santander-supera-estimativas-de-lucro-com-expansao-da-base-de-clientes-apos-aquisicao/": {
+   "title": "Santander supera estimativas de lucro com expansão da base de clientes após aquisição",
+   "url": "https://www.bloomberglinea.com.br/negocios/santander-supera-estimativas-de-lucro-com-expansao-da-base-de-clientes-apos-aquisicao/",
+   "summary": "Santander supera estimativas de lucro com expansão da base de clientes após aquisição &nbsp;&nbsp; Bloomberg Línea Brasil",
+   "source": "Bloomberg Línea Brasil",
+   "domain": "bloomberglinea.com.br",
+   "pub_ts": 1784718737,
+   "pub_iso": "2026-07-22 08:12",
+   "companies": [
+    "Santander Brasil"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1784740429,
+   "cap_iso": "2026-07-22 14:13"
+  },
+  "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPclhoRUZVclhNeUpIbGwwUG00c085Z09BWks1dmhzZWpKVk9IZUNrOTJ3NE1KTG5lVjZDNUQ0Q1ljUWx0QXVzZk9fOHdrWkUyVjZHejV2bFg5LW41ZXZfalp4VnJZRURtNG0xTDI1MGtTX0Z5Q3ZMR0ttdy1mZDhRcC1IQXk4M1FFdW5UTmpyaV8yWXVRd2ZFbG5Zbm1rWkZCOUJQaW4yLVJ2LXZoclRzSmkwUlBPVnRQQ3BBNnpJam9VY3Ytd1NWSEpoZ2k3VS1MSDAzaVVn?oc=5": {
+   "title": "Gigante das autopeças entra em falência com mais de 11 bilhões em dívidas e avança para liquidação",
+   "url": "https://www.em.com.br/emfoco/2026/07/22/gigante-das-autopecas-entra-em-falencia-com-mais-de-11-bilhoes-em-dividas-e-avanca-para-liquidacao/",
+   "summary": "Gigante das autopeças entra em falência com mais de 11 bilhões em dívidas e avança para liquidação &nbsp;&nbsp; Estado de Minas",
+   "source": "Estado de Minas",
+   "domain": "em.com.br",
+   "pub_ts": 1784732100,
+   "pub_iso": "2026-07-22 11:55",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1784740429,
+   "cap_iso": "2026-07-22 14:13"
   }
  },
- "run_count": 19,
+ "run_count": 20,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -6810,15 +7061,39 @@
   "https://news.google.com/rss/articles/CBMimgFBVV95cUxONVhJdkNiWE94R1pSV0E2VXpMZWk1SDFqWWlXek42MHZGZFBJM1d5TEVhN2EwS0lMNDFORmstUFphRWtIUS1ldkVLaFNiZWVULUpDTF9fR21IcnhkLWI1Q2ZEQk4wLVZtRTd2NVN0Q2I3V2s0bklWa0I1RXBLZ3BNd0dTcEFlU1hoM1hjbDlKSTI1bDJDNzJvUVF3?oc=5": {
    "url": "https://cointelegraph.com.br/news/movement-labs-files-chapter-11-bankruptcy-move-token-turmoil",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiugFBVV95cUxQRlpwNlpGUzdCOVhlLXlhRlp1RWNUVkpobjJsVXhZQlc3MzV4OGltTDYzbmhZaEhKRzlxaEFjdDJwRjNiemd2a2hmWDBvMGFPQlpwRkZadDc1WHpjb043TXdGcVFLRHJJaWY3eTc0VTgzYXRaSEpzek9QQXZicjhFLTdzVk5OLVNIVXMwWUk2cm9BbC1SR2lKQjV3SmMyalJVMGFjZHB5V1dvSEVSWk93OHB6S05ldGItR0E?oc=5": {
+   "url": "https://br.investing.com/analysis/engie-brasil-egie3-movimenta-r84-bi-em-followon-para-incorporacao-de-jirau-200478513",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMimAFBVV95cUxQNmw0QnNzRkswa2FmNHlCVG9BVGt6NFRnRkNsOXlZZUJPM3V0Z1JxS0d0RENONzVLQ0o1UXhqT0cyS2NRcFU0QXJmR3RmUnVJU3RISlNMcGhaRzR2N2tmWktURjZmMVpIaGVLUFJfeXdrajNrX3dSZzZDRWZ5WEZ1MTN3TWNwZmtJTC1oSC0yRk0zeENCZ1pOeQ?oc=5": {
+   "url": "https://arevista.com.br/acoes/isae4-pode-cair-apos-follow-on-analista-aponta-preco-de-compra/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOMkc1RHp4Q2FkenRyZnA1UWpVVTFOSXlGLTZBd3l4OUtJU09rd1ozX09pUWs2Q2xtd2ZRM19ZYldmaGNnOXF6UWNNSjFfR3RHQ25oRFNMZ3VscmFWYkZqVTFVQ2NuSzliWE5MUUtBcnowU3RkYW0xc3RsRUx3ZmlmS055OXhZRFF3TUpFNnMwT1ZjZEJ3ZFRVbVQ5cWxramVRXzlMUUtLMFVuN0RmekR3OXFWaFc4aUhNamVDY1J4aVdPVXNqUjYzS9IB3AFBVV95cUxOd1lMNnE4X2swVkNCSVh3YmFiSHhWbFB4Tm9GTkplOElXdHpyN2FmMGZ0ZVRxcklVYmlRVXVSY3N3aUY0VXh5cjZEX0NOQTVBN0NZbHBxZzNqQm9Eak5VOEliRkRQajdSdXc5emxEaEJ3ZENOUWFFNUhCbXA2NVpwUGdYTFdxbHRNYVNTdDdxSk5KdVRseHFSMktqWWc4WkU3QWtjQWlhLXg1SGgySld1cld2c21xelFxbTBGN3V4c285eU9BWGJzclBXT2U0V2d3VnY2Rk0wd1dwa2pL?oc=5": {
+   "url": "https://www.bloomberglinea.com.br/negocios/santander-supera-estimativas-de-lucro-com-expansao-da-base-de-clientes-apos-aquisicao/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiygFBVV95cUxOZGM4MGYzQ1VEQkNxeDFLRUpyU1FETk10N0Y5SUVKOU5KZEx2dFpTelBVZ0RzZmV0WG5Fa1djQ2hvVGhqLTJDd3lfMkhuM3NyYmpvVkZtaHVNNXpybDZVZlREWk9ubWtNQ1Y3dDBUX3ZJLVczV1Z6bElzSmp4TnZKT0doTUpNLXladUtlUkh2ZE5UcGREWkY1eWdIUWYydHR5Q2gtaTNhaVduZ2V6anZFNWxHU0JfeWxhV2FmVjdmWWZlNkZ5Q0d6MmR3?oc=5": {
+   "url": "https://invezz.com/pt/noticias/2026/07/22/movement-move-entra-com-chapter-11-apos-dollar1414m-em-financiamento-nao-evitar-colapso/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPclhoRUZVclhNeUpIbGwwUG00c085Z09BWks1dmhzZWpKVk9IZUNrOTJ3NE1KTG5lVjZDNUQ0Q1ljUWx0QXVzZk9fOHdrWkUyVjZHejV2bFg5LW41ZXZfalp4VnJZRURtNG0xTDI1MGtTX0Z5Q3ZMR0ttdy1mZDhRcC1IQXk4M1FFdW5UTmpyaV8yWXVRd2ZFbG5Zbm1rWkZCOUJQaW4yLVJ2LXZoclRzSmkwUlBPVnRQQ3BBNnpJam9VY3Ytd1NWSEpoZ2k3VS1MSDAzaVVn?oc=5": {
+   "url": "https://www.em.com.br/emfoco/2026/07/22/gigante-das-autopecas-entra-em-falencia-com-mais-de-11-bilhoes-em-dividas-e-avanca-para-liquidacao/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1784732346,
-  "iso": "22 jul 2026 · 11:59 BRT",
+  "ts": 1784740432,
+  "iso": "22 jul 2026 · 14:13 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
     "score": 111
+   },
+   "Engie Brasil": {
+    "status": "critico",
+    "score": 90
    },
    "Tok&Stok": {
     "status": "critico",
@@ -6828,9 +7103,9 @@
     "status": "atencao",
     "score": 64
    },
-   "Engie Brasil": {
+   "Santander Brasil": {
     "status": "atencao",
-    "score": 52
+    "score": 49
    },
    "BTG Pactual": {
     "status": "atencao",
@@ -6848,13 +7123,13 @@
     "status": "monitorar",
     "score": 31
    },
+   "ISA Energia Brasil": {
+    "status": "monitorar",
+    "score": 28
+   },
    "Suzano": {
     "status": "monitorar",
     "score": 27
-   },
-   "ISA Energia Brasil": {
-    "status": "monitorar",
-    "score": 26
    },
    "Natura &Co": {
     "status": "monitorar",
@@ -6881,10 +7156,6 @@
     "score": 15
    },
    "Sabesp": {
-    "status": "monitorar",
-    "score": 11
-   },
-   "Santander Brasil": {
     "status": "monitorar",
     "score": 11
    },
