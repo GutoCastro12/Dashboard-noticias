@@ -2616,7 +2616,8 @@
     }
    ],
    "captured_ts": 1784666282,
-   "cap_iso": "2026-07-21 17:38"
+   "cap_iso": "2026-07-21 17:38",
+   "corrob_sources": []
   },
   "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/natura-cosmeticos-incorporacao-acoes/": {
    "title": "Natura aprova incorporação de holding; ações começam a ser negociadas em julho",
@@ -5596,7 +5597,22 @@
     "investigacao_regulatoria"
    ],
    "captured_ts": 1784740429,
-   "cap_iso": "2026-07-22 14:13"
+   "cap_iso": "2026-07-22 14:13",
+   "corroborations": [
+    {
+     "source": "Revista Fórum",
+     "domain": "revistaforum.com.br",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPa2tJY0d6TnVqUUxFVkNZUWx6Ui1tQ2FYVGpCanBfNEt2ZFhtczkzVjNvOGpNa1Y1N0lNRmRTRGRwR29DNENmS0o3MkhDRkZkX1VhR2lYSTV6czZnSEdaaXZiZmk0TUdvOFNvOS1kbmN4R0J3czQxSzZBSjdBdTdxaFVlX3BBVUZ4THhpaU1lVlVmYWEteEs1aU1R?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Revista Fórum",
+     "domain": "revistaforum.com.br",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPa2tJY0d6TnVqUUxFVkNZUWx6Ui1tQ2FYVGpCanBfNEt2ZFhtczkzVjNvOGpNa1Y1N0lNRmRTRGRwR29DNENmS0o3MkhDRkZkX1VhR2lYSTV6czZnSEdaaXZiZmk0TUdvOFNvOS1kbmN4R0J3czQxSzZBSjdBdTdxaFVlX3BBVUZ4THhpaU1lVlVmYWEteEs1aU1R?oc=5",
+     "when": "25/06 04:00"
+    }
+   ]
   },
   "https://www.infomoney.com.br/mercados/por-que-as-acoes-da-engie-brasil-despencaram-com-a-aquisicao-de-jirau/": {
    "title": "Por que as ações da Engie Brasil despencaram com a aquisição de Jirau?",
@@ -5750,9 +5766,43 @@
    ],
    "captured_ts": 1784740429,
    "cap_iso": "2026-07-22 14:13"
+  },
+  "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQYVFTOUY4ZjJ1WC1Ddmk2R19CZTUtMkVOQ2FEM3RjcnlVZUZoWUcwdGUwb2FSMmNMa3VXeV9jS1NXQkRnSy05Z1lnVDRPbjg4X2FuUjdsaFJtZ2hISHgteUhrT2hWTXpXdmlhR0JjX2lHSTlEVmhTZWFnNXAzQUFGUDBTMlR6UnRFcmdrNGV2Ql83Yi1Yb1NaUDNwdEVWNzNLSWZNZndOc29IRXVEX3BuZzJNeFd2M3dFNENJVmVSU25femVtdWx4a2hZUlNqQ2NOWGJXU9IB1AFBVV95cUxQYVFTOUY4ZjJ1WC1Ddmk2R19CZTUtMkVOQ2FEM3RjcnlVZUZoWUcwdGUwb2FSMmNMa3VXeV9jS1NXQkRnSy05Z1lnVDRPbjg4X2FuUjdsaFJtZ2hISHgteUhrT2hWTXpXdmlhR0JjX2lHSTlEVmhTZWFnNXAzQUFGUDBTMlR6UnRFcmdrNGV2Ql83Yi1Yb1NaUDNwdEVWNzNLSWZNZndOc29IRXVEX3BuZzJNeFd2M3dFNENJVmVSU25femVtdWx4a2hZUlNqQ2NOWGJXUw?oc=5": {
+   "title": "Venda.ai capta R$ 2 milhões em rodada anjo para acelerar expansão da inteligência artificial no varejo",
+   "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQYVFTOUY4ZjJ1WC1Ddmk2R19CZTUtMkVOQ2FEM3RjcnlVZUZoWUcwdGUwb2FSMmNMa3VXeV9jS1NXQkRnSy05Z1lnVDRPbjg4X2FuUjdsaFJtZ2hISHgteUhrT2hWTXpXdmlhR0JjX2lHSTlEVmhTZWFnNXAzQUFGUDBTMlR6UnRFcmdrNGV2Ql83Yi1Yb1NaUDNwdEVWNzNLSWZNZndOc29IRXVEX3BuZzJNeFd2M3dFNENJVmVSU25femVtdWx4a2hZUlNqQ2NOWGJXU9IB1AFBVV95cUxQYVFTOUY4ZjJ1WC1Ddmk2R19CZTUtMkVOQ2FEM3RjcnlVZUZoWUcwdGUwb2FSMmNMa3VXeV9jS1NXQkRnSy05Z1lnVDRPbjg4X2FuUjdsaFJtZ2hISHgteUhrT2hWTXpXdmlhR0JjX2lHSTlEVmhTZWFnNXAzQUFGUDBTMlR6UnRFcmdrNGV2Ql83Yi1Yb1NaUDNwdEVWNzNLSWZNZndOc29IRXVEX3BuZzJNeFd2M3dFNENJVmVSU25femVtdWx4a2hZUlNqQ2NOWGJXUw?oc=5",
+   "summary": "Venda.ai capta R$ 2 milhões em rodada anjo para acelerar expansão da inteligência artificial no varejo &nbsp;&nbsp; Business Moment",
+   "source": "Business Moment",
+   "domain": "businessmoment.com.br",
+   "pub_ts": 1784726320,
+   "pub_iso": "2026-07-22 10:18",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "emissao_divida"
+   ],
+   "captured_ts": 1784750976,
+   "cap_iso": "2026-07-22 17:09"
+  },
+  "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQdV82UkRJMGZNM1diTWFNYmhUMl9TWU1VOEJ2a3hoUU4xb2wtQXFVdF83aWVUOHdLYzloNXZJRkRCSUwxd2hYVmZTTDBpTUd1MmZwbGJQV3E2c3VrUU12N3JUeFZ0a29SRWs1dnNsclA3RUxmTC1CRHFTSWFyQWpYSWVxby1BOXBGV1NmWnV6M3U5a1lEVFNJNmZWaVh3V00wUm8xckVmLXJyZTBPWWd3Y0ZVLVVGZmY5TVBSeE1UY1NMRGMxUEE4eXN5S2s2RkhvV3ZzY0hwS1d5UXpiSWlvOWtBdDF3TE5HM3k0NQ?oc=5": {
+   "title": "Operadora de marca de roupas com 106 anos entra em falência e fecha cerca de 180 lojas após não encontrar comprador",
+   "url": "https://www.em.com.br/emfoco/2026/07/22/operadora-de-marca-de-roupas-com-106-anos-entra-em-falencia-e-fecha-cerca-de-180-lojas-apos-nao-encontrar-comprador/",
+   "summary": "Operadora de marca de roupas com 106 anos entra em falência e fecha cerca de 180 lojas após não encontrar comprador &nbsp;&nbsp; Estado de Minas",
+   "source": "Estado de Minas",
+   "domain": "em.com.br",
+   "pub_ts": 1784740500,
+   "pub_iso": "2026-07-22 14:15",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1784750976,
+   "cap_iso": "2026-07-22 17:09"
   }
  },
- "run_count": 20,
+ "run_count": 21,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -7081,11 +7131,23 @@
   "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPclhoRUZVclhNeUpIbGwwUG00c085Z09BWks1dmhzZWpKVk9IZUNrOTJ3NE1KTG5lVjZDNUQ0Q1ljUWx0QXVzZk9fOHdrWkUyVjZHejV2bFg5LW41ZXZfalp4VnJZRURtNG0xTDI1MGtTX0Z5Q3ZMR0ttdy1mZDhRcC1IQXk4M1FFdW5UTmpyaV8yWXVRd2ZFbG5Zbm1rWkZCOUJQaW4yLVJ2LXZoclRzSmkwUlBPVnRQQ3BBNnpJam9VY3Ytd1NWSEpoZ2k3VS1MSDAzaVVn?oc=5": {
    "url": "https://www.em.com.br/emfoco/2026/07/22/gigante-das-autopecas-entra-em-falencia-com-mais-de-11-bilhoes-em-dividas-e-avanca-para-liquidacao/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMifEFVX3lxTFBYc2M3aVVENUwwaUtKYnAxUnRLZ0RwY1BSTGdTLVliamdNS2I5VE5TLVJRdXhtdXpGdHNUTkVqTGl4RHdGdUNFZXRmd2UxYW83cV9fQ0ltMm1FOVBHV3MxeVMtNW11Q3VmbmVPWWpCTDRZNWVfZ1F6YmNTVG8?oc=5": {
+   "url": "https://braziljournal.com/localiza-lanca-oferta-de-acoes-de-ate-r-45-bi/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQYVFTOUY4ZjJ1WC1Ddmk2R19CZTUtMkVOQ2FEM3RjcnlVZUZoWUcwdGUwb2FSMmNMa3VXeV9jS1NXQkRnSy05Z1lnVDRPbjg4X2FuUjdsaFJtZ2hISHgteUhrT2hWTXpXdmlhR0JjX2lHSTlEVmhTZWFnNXAzQUFGUDBTMlR6UnRFcmdrNGV2Ql83Yi1Yb1NaUDNwdEVWNzNLSWZNZndOc29IRXVEX3BuZzJNeFd2M3dFNENJVmVSU25femVtdWx4a2hZUlNqQ2NOWGJXU9IB1AFBVV95cUxQYVFTOUY4ZjJ1WC1Ddmk2R19CZTUtMkVOQ2FEM3RjcnlVZUZoWUcwdGUwb2FSMmNMa3VXeV9jS1NXQkRnSy05Z1lnVDRPbjg4X2FuUjdsaFJtZ2hISHgteUhrT2hWTXpXdmlhR0JjX2lHSTlEVmhTZWFnNXAzQUFGUDBTMlR6UnRFcmdrNGV2Ql83Yi1Yb1NaUDNwdEVWNzNLSWZNZndOc29IRXVEX3BuZzJNeFd2M3dFNENJVmVSU25femVtdWx4a2hZUlNqQ2NOWGJXUw?oc=5": {
+   "url": "https://businessmoment.com.br",
+   "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQdV82UkRJMGZNM1diTWFNYmhUMl9TWU1VOEJ2a3hoUU4xb2wtQXFVdF83aWVUOHdLYzloNXZJRkRCSUwxd2hYVmZTTDBpTUd1MmZwbGJQV3E2c3VrUU12N3JUeFZ0a29SRWs1dnNsclA3RUxmTC1CRHFTSWFyQWpYSWVxby1BOXBGV1NmWnV6M3U5a1lEVFNJNmZWaVh3V00wUm8xckVmLXJyZTBPWWd3Y0ZVLVVGZmY5TVBSeE1UY1NMRGMxUEE4eXN5S2s2RkhvV3ZzY0hwS1d5UXpiSWlvOWtBdDF3TE5HM3k0NQ?oc=5": {
+   "url": "https://www.em.com.br/emfoco/2026/07/22/operadora-de-marca-de-roupas-com-106-anos-entra-em-falencia-e-fecha-cerca-de-180-lojas-apos-nao-encontrar-comprador/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1784740432,
-  "iso": "22 jul 2026 · 14:13 BRT",
+  "ts": 1784750978,
+  "iso": "22 jul 2026 · 17:09 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
@@ -7097,7 +7159,7 @@
    },
    "Tok&Stok": {
     "status": "critico",
-    "score": 82
+    "score": 81
    },
    "Cosan": {
     "status": "atencao",
@@ -7105,7 +7167,7 @@
    },
    "Santander Brasil": {
     "status": "atencao",
-    "score": 49
+    "score": 51
    },
    "BTG Pactual": {
     "status": "atencao",
