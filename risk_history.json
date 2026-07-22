@@ -2339,7 +2339,9 @@
     "ma"
    ],
    "captured_ts": 1784666282,
-   "cap_iso": "2026-07-21 17:38"
+   "cap_iso": "2026-07-21 17:38",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMijgFBVV95cUxQR2ktT3J3N200TXo5SXJpbGdkUGVGWFYzLWxzWmFvejhGSUEwbGFBMjF4V0lFeTQyU092QWVDR0thUkVpQVh0c2NraW84aFpOYXI0YnRxeFo4OFM1WXA1djE0aHJwRGN4RWhYaEljaUwtVTlnZlg2WC1mb1l0THdTbnJ0WjN1M3pLMWhnV2FB?oc=5": {
    "title": "Tradener é mais uma comercializadora a pedir recuperação judicial",
@@ -4707,7 +4709,8 @@
     }
    ],
    "captured_ts": 1784720983,
-   "cap_iso": "2026-07-22 08:49"
+   "cap_iso": "2026-07-22 08:49",
+   "corrob_sources": []
   },
   "https://www.suno.com.br/noticias/fitch-rebaixa-rating-hapvida-hapv3-2026-mt/": {
    "title": "Hapvida (HAPV3): Fitch corta rating e liga o alerta para 2026",
@@ -4775,7 +4778,9 @@
     "emissao_divida"
    ],
    "captured_ts": 1784720983,
-   "cap_iso": "2026-07-22 08:49"
+   "cap_iso": "2026-07-22 08:49",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://visnoinvest.com.br/news/11689/eneva-enev3-conclui-processo-de-emissao-de-debentures-de-r-24-bi": {
    "title": "Eneva (ENEV3) conclui processo de emissão de debêntures de R$ 2,4 bi",
@@ -4846,7 +4851,9 @@
     "troca_ceo"
    ],
    "captured_ts": 1784720983,
-   "cap_iso": "2026-07-22 08:49"
+   "cap_iso": "2026-07-22 08:49",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMixwFBVV95cUxQQUw1aHBlaERKZ0IwY2lpNFMyQnZfSVh0bU43XzBxM1NvOWozb2lVdWlFcDFkYXVSelRPV3J5WnJXOTY0VFBIUU42U1NQbWZXR0xrVFBaYnhTeXRFUURVc2MyUUpUOEhYbnBBRENnTW9OajUxUEJsTWVyNGp0ZmhrWndkZl9uXzhsMngwak9KU29NUF9KOHktMV9hXzdQUDlRSDR0OUV4XzQyUFRwWEF5WFhnODB4Wm96Y1ZGRDNTakF0Rnlxb29F?oc=5": {
    "title": "Motiva anuncia aquisição da Autopista Fernão Dias por R$ 381 milhões e reforça expansão na B3",
@@ -5083,7 +5090,9 @@
     "ma"
    ],
    "captured_ts": 1784720983,
-   "cap_iso": "2026-07-22 08:49"
+   "cap_iso": "2026-07-22 08:49",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://braziljournal.com/engie-faz-follow-on-de-r-83-bilhoes-para-comprar-fatia-em-jirau-e-desalavancar/": {
    "title": "Engie faz follow-on de R$ 8,3 bilhões para comprar fatia em Jirau e desalavancar",
@@ -5135,7 +5144,9 @@
     "ma"
    ],
    "captured_ts": 1784720983,
-   "cap_iso": "2026-07-22 08:49"
+   "cap_iso": "2026-07-22 08:49",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://braziljournal.com/exclusivo-rumo-escolhe-rockenbach-ferroviario-raiz-como-novo-ceo/": {
    "title": "EXCLUSIVO: Rumo escolhe Rockenbach, “ferroviário raiz”, como novo CEO",
@@ -5217,7 +5228,9 @@
     "ma"
    ],
    "captured_ts": 1784720983,
-   "cap_iso": "2026-07-22 08:49"
+   "cap_iso": "2026-07-22 08:49",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMivwFBVV95cUxOZzc3YzFXLTR1MFRxWEs5RXpiczBRa2RBSUNIN0RsRVQxTmpEVkFkZmltdUhBdG9veDk0YmtNNE9fcmpsY2ZnT0JKU082bE8xbklPVXotTWY2VW5mdFVkZE9sQmpfOW1HNVpucFgzM3ZOSmJ0M2g2dHBlTFRzUzA1a2c2M1BSSmNaUURvVkFHMlNjWm5ZSk5VZGVoTXlsb2JiSjQ3NUtmc29GTXdaTzJKVmFGYm9XNUNVbGdydHRNUQ?oc=5": {
    "title": "Ações da Lucid Group despencam com temores de falência: é seguro comprar a queda?",
@@ -5387,9 +5400,108 @@
    ],
    "captured_ts": 1784720983,
    "cap_iso": "2026-07-22 08:49"
+  },
+  "https://brasilenergia.com.br/petroleoegas/ep/anp-aprova-aquisicao-da-parcela-de-40-em-peregrino-pela-prio": {
+   "title": "ANP aprova aquisição da parcela de 40% em Peregrino pela Prio",
+   "url": "https://brasilenergia.com.br/petroleoegas/ep/anp-aprova-aquisicao-da-parcela-de-40-em-peregrino-pela-prio",
+   "summary": "ANP aprova aquisição da parcela de 40% em Peregrino pela Prio &nbsp;&nbsp; Editora Brasil Energia",
+   "source": "Editora Brasil Energia",
+   "domain": "brasilenergia.com.br",
+   "pub_ts": 1758870000,
+   "pub_iso": "2025-09-26 04:00",
+   "companies": [
+    "PRIO"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "corroborations": [
+    {
+     "source": "Money Times",
+     "domain": "moneytimes.com.br",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQcnNBOFJ0SDJyd3RrSmhHUEl1YXlIOVpKdDVTLV9NYVp5R3VTLU03d0dURFl3bHVHRTZBQWdSTVBRS01RVVZXZU9sM2tHaFpRRnJHQ3lYQ19VYlZSeHphdGsxQUZHVnBIUVYyVjhneEpISldZM3NSMnBYR3NhdlJIVU1pQnhvYkdBUVZZZnI5VzQyd1BQYUQ3MWpiWVpTT3Z3S204cFYxRG53Y3ZzQ0xCTQ?oc=5"
+    }
+   ],
+   "captured_ts": 1784732344,
+   "cap_iso": "2026-07-22 11:59"
+  },
+  "https://br.advfn.com/jornal/2025/11/s-amp-p-eleva-rating-da-prio-e-projeta-producao-recorde": {
+   "title": "S&P eleva rating da Prio e projeta produção recorde",
+   "url": "https://br.advfn.com/jornal/2025/11/s-amp-p-eleva-rating-da-prio-e-projeta-producao-recorde",
+   "summary": "S&P eleva rating da Prio e projeta produção recorde &nbsp;&nbsp; ADVFN",
+   "source": "ADVFN",
+   "domain": "br.advfn.com",
+   "pub_ts": 1763107200,
+   "pub_iso": "2025-11-14 05:00",
+   "companies": [
+    "PRIO"
+   ],
+   "event_ids": [
+    "rating_elevado"
+   ],
+   "corroborations": [
+    {
+     "source": "Estadão",
+     "domain": "estadao.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOWVJ4Ri05MnR3Y1BIaUp0eGlpZDk0UjFCWEowY2ZPTjFVMmJmQVNTQUNFS0JOM0FuY3FDSHNrb0NBVGo2M3ZnVzlqVndxdUN1UHRkTDFvRUtfQUxnaHZvZDBfV2ZGSzcwYWtFUXBkclVQSHppU0JYODFybmM2RS1qdU5hNzI0a2FXVTlrODFNSDA1TVZGb1FZNXZYc1Z6Smdxcl8xbFZ5RlhiZ9IBrwFBVV95cUxOdHFJZFUtd1FnSDZNOWcwQWl2RGZqX2xIeWN2c01zd1RKZzNXRVZZNklXODF4c3djUGljVTdPeHlmOWFmZWo4WHBJOVA0eW1seFo2NjFMLW5qbmFRejNEaEhOTEpUYTdnTnBMLVdGbGFuakVMZGVUaHlHcDNKREZIa3U5dDF1S2oxbmNqelUwTmZkY2hUTHlKeTZhUDd2bGdkT24zQWtGMkZpM1U4UnNR?oc=5"
+    }
+   ],
+   "captured_ts": 1784732344,
+   "cap_iso": "2026-07-22 11:59"
+  },
+  "https://www.infomoney.com.br/mercados/axia-axia3-ex-eletrobras-aprova-emissao-de-debentures-no-valor-de-r-3-bi/": {
+   "title": "Axia (AXIA3), ex-Eletrobras, aprova emissão de debêntures no valor de R$ 3 bi",
+   "url": "https://www.infomoney.com.br/mercados/axia-axia3-ex-eletrobras-aprova-emissao-de-debentures-no-valor-de-r-3-bi/",
+   "summary": "Axia (AXIA3), ex-Eletrobras, aprova emissão de debêntures no valor de R$ 3 bi &nbsp;&nbsp; InfoMoney",
+   "source": "InfoMoney",
+   "domain": "infomoney.com.br",
+   "pub_ts": 1763107200,
+   "pub_iso": "2025-11-14 05:00",
+   "companies": [
+    "Axia Energia"
+   ],
+   "event_ids": [
+    "emissao_divida"
+   ],
+   "captured_ts": 1784732344,
+   "cap_iso": "2026-07-22 11:59"
+  },
+  "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPUU5DSkI3MGlOejJoZjVzbkNJMVlMcmJJNjdFM2pWVkhXakJ0SGJwNFBBZnJkSmw3eWpvcS1aUnVINm52NmJBQzVqeEFET1RfUGlJZ05MY3BGcWZ2blpqZXFkMXAxclladTVvdF91RktnTjF6cWlXXzFmWUdMdjU5NHc3OEtmcTg1WTF6ZGpFZC1hNlpSSDdsZTFhQ1o3ZEQ0LWZBSTA3UUNEMzB3MW1UeFFPUENWT0xpLTNCMk1mc01SN0Zfd0xQdnlnekJpcElrSE5DaUFJY1JTaXNMT1RLVHI4X3JBNk5DZ2JFQTNPZ0FQdw?oc=5": {
+   "title": "O Sunshine Group afirma que não é parte em nenhum processo de dissolução ou falência em andamento.",
+   "url": "https://www.vietnam.vn/pt/tap-doan-sunshine-khang-dinh-khong-phai-la-duong-su-trong-bat-ky-vu-viec-giai-the-hoac-yeu-cau-mo-thu-tuc-pha-san-nao-dang-duoc-thu-ly",
+   "summary": "O Sunshine Group afirma que não é parte em nenhum processo de dissolução ou falência em andamento. &nbsp;&nbsp; Vietnam.vn",
+   "source": "Vietnam.vn",
+   "domain": "vietnam.vn",
+   "pub_ts": 1784444400,
+   "pub_iso": "2026-07-19 04:00",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1784732344,
+   "cap_iso": "2026-07-22 11:59"
+  },
+  "https://news.google.com/rss/articles/CBMimgFBVV95cUxONVhJdkNiWE94R1pSV0E2VXpMZWk1SDFqWWlXek42MHZGZFBJM1d5TEVhN2EwS0lMNDFORmstUFphRWtIUS1ldkVLaFNiZWVULUpDTF9fR21IcnhkLWI1Q2ZEQk4wLVZtRTd2NVN0Q2I3V2s0bklWa0I1RXBLZ3BNd0dTcEFlU1hoM1hjbDlKSTI1bDJDNzJvUVF3?oc=5": {
+   "title": "Movement Labs pede recuperação judicial nos EUA após crise envolvendo o token MOVE",
+   "url": "https://cointelegraph.com.br/news/movement-labs-files-chapter-11-bankruptcy-move-token-turmoil",
+   "summary": "Movement Labs pede recuperação judicial nos EUA após crise envolvendo o token MOVE &nbsp;&nbsp; cointelegraph.com.br",
+   "source": "cointelegraph.com.br",
+   "domain": "cointelegraph.com.br",
+   "pub_ts": 1784726327,
+   "pub_iso": "2026-07-22 10:18",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1784732344,
+   "cap_iso": "2026-07-22 11:59"
   }
  },
- "run_count": 18,
+ "run_count": 19,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -6682,11 +6794,27 @@
   "https://news.google.com/rss/articles/CBMivgFBVV95cUxNVTlaWUFNNm81SzFpTFEtaW42MmdpaFprSWpuVk1vN29rNzlEbkQ3aEp0T0gxeGNvLTFqeEgtQmVvZlBVV2JrQnM1QkZCX21nTXQ1N2h4bDFndUxxOHNza1ktUmF1LW9JNzhZcjN2cUZMRFRwaVdaYUlpbXNFZ0VuX3B4NlM5SWFwUEhoR1lhQjlCT2I4LWZKVGZvVEV5VUtCZWxjbTZvYktMbVpOTG1DMENqYjgyZUlIdnJFRkpR0gHDAUFVX3lxTFAwR3pfTlVldUJ3WXlWTWdtdWR1NnhSUmhIaWF6WWswOWpudXdTWTl3ZHB2eUpGekFQQnF5cWpEanJvZDczUEdYanF3bWE3c3BzZUlEV1NINVBwWXhCeG14QzNJMmtmSGtZUjdhOW0xN0JRNmxVcGtvV3prOVNBaTFWendMOHVvMWZnX1dPNEJHVXVmV0NrSUlQeHo2Qk5hNzNWeUh6bE5OYUdjZV9rMjEwdmM0SUxqV19MdEJSbzlwWTlMcw?oc=5": {
    "url": "https://www.infomoney.com.br/mercados/light-anuncia-homologacao-de-aumento-de-capital-e-pede-fim-da-recuperacao-judicial/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPNVp0aWFza0xtbjJVVWtxc3BtNUViTHh6eGJ5OVBjbF9neFpUSzNUOHNhUW1PZ1BxRnlYQmJkb2ZPRzZRNXdIdjEtcmtvSHdtdkNycUdMLUQ3dFY3VUJ4UDNBOFNaNEtWR3FyeVFzcEhTVkpKZEEtYTZ0VVVrWTB0b2pSc01KaXh4S0RaUFgxekxsS1hlZ0h5UHNlRVE1ZUwwcHRQWTNUdzhXTjlmWG9YcG5iT0dBdDR6WkVhWVdfOTVYTTBQMFdoZ2Y1T2U3OW9HS3J3YWhJbFNwQWtTZ1ZGbDh0T2htMmJQWVBtdTlHc2RqRXcweG8xR25B0gGIAkFVX3lxTE1nUzdlX0lyR2g2OWdLOUpKYkNhVWZMNTQtQ2QwZmlGRUdEQ0g5bUlaYjJaUWNVakxwTHdwQ29KTVNBSDFzZE4zNkd4ZUw4aHNQVWhCUkRBXzdjc3Jtc3lrTzVZNHZwYnVWZWVJenhGZi1oTmF3cTNadXJ1cFNKTElwUnFwVWJvSXlIMHBMTnpVV3Z6bXFzSVoxVTZaUmJwQTdLMS1rM3U5N2Rac3BPd2Qyc3BkUkNkelVVbEEwb1VmRDFtUzZ1a250NEswY2VEWEh6Ri1EOHFyTkhrVVh1NE03a1lNcWhmeXpVOWZMMTV4UGpzRzFUeU9Obk1QMG93U0FIb2g2OUJJZg?oc=5": {
+   "url": "https://oglobo.globo.com/blogs/capital/post/2025/06/petroleira-prio-vai-dobrar-de-tamanho-apos-aquisicao-de-us-33-bi-agora-quer-olhar-mais-para-dentro-conta-ceo.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMisAFBVV95cUxOd1RUMUFmUkhLdTBNWTl4bDB0NHlkUTBjajdlelU0TnVxUDhFVkp6T2ZsMXdrTHlXNzVieExqby1jbEZBZXQ4ZEFrbGVabFdvWm03dUhQcUk4T1hhNEFacV9pclFwMnBWWVRnd2JUV2ZHNnlEcUxxNl9mUU51ZFR5VVF0Z0oxaXczWVBfakNON0RkZmxybjlNbGhuaDBIZUlmWkpvNlhNOUsxUkl4NGZsadIBtgFBVV95cUxOa0FwcnNYRjVyUVJoblU2anRqVndYWElCczU3ekpDRm1xbml5TTB2WThhNzE1T2x3d1c3SW8ycUlaaHR5enR3eDRPcW5tUXdRVUg4S1d4dnBKY2hoRzdnbmE0aXNwMVd0bjI0dVV6Z2tGT19qZHJmLVBpRktvUkU4WmQ2OW9Rd2kwNjNNU21jUElIVy1HdDZJZE5GUVgtZE9hTUtnMUpCWDVrN0lIWmpOaVVDUG9GQQ?oc=5": {
+   "url": "https://www.infomoney.com.br/mercados/axia-axia3-ex-eletrobras-aprova-emissao-de-debentures-no-valor-de-r-3-bi/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPUU5DSkI3MGlOejJoZjVzbkNJMVlMcmJJNjdFM2pWVkhXakJ0SGJwNFBBZnJkSmw3eWpvcS1aUnVINm52NmJBQzVqeEFET1RfUGlJZ05MY3BGcWZ2blpqZXFkMXAxclladTVvdF91RktnTjF6cWlXXzFmWUdMdjU5NHc3OEtmcTg1WTF6ZGpFZC1hNlpSSDdsZTFhQ1o3ZEQ0LWZBSTA3UUNEMzB3MW1UeFFPUENWT0xpLTNCMk1mc01SN0Zfd0xQdnlnekJpcElrSE5DaUFJY1JTaXNMT1RLVHI4X3JBNk5DZ2JFQTNPZ0FQdw?oc=5": {
+   "url": "https://www.vietnam.vn/pt/tap-doan-sunshine-khang-dinh-khong-phai-la-duong-su-trong-bat-ky-vu-viec-giai-the-hoac-yeu-cau-mo-thu-tuc-pha-san-nao-dang-duoc-thu-ly",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMimgFBVV95cUxONVhJdkNiWE94R1pSV0E2VXpMZWk1SDFqWWlXek42MHZGZFBJM1d5TEVhN2EwS0lMNDFORmstUFphRWtIUS1ldkVLaFNiZWVULUpDTF9fR21IcnhkLWI1Q2ZEQk4wLVZtRTd2NVN0Q2I3V2s0bklWa0I1RXBLZ3BNd0dTcEFlU1hoM1hjbDlKSTI1bDJDNzJvUVF3?oc=5": {
+   "url": "https://cointelegraph.com.br/news/movement-labs-files-chapter-11-bankruptcy-move-token-turmoil",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1784720987,
-  "iso": "22 jul 2026 · 08:49 BRT",
+  "ts": 1784732346,
+  "iso": "22 jul 2026 · 11:59 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
@@ -6698,11 +6826,11 @@
    },
    "Cosan": {
     "status": "atencao",
-    "score": 65
+    "score": 64
    },
    "Engie Brasil": {
     "status": "atencao",
-    "score": 53
+    "score": 52
    },
    "BTG Pactual": {
     "status": "atencao",
