@@ -5782,7 +5782,8 @@
     "emissao_divida"
    ],
    "captured_ts": 1784750976,
-   "cap_iso": "2026-07-22 17:09"
+   "cap_iso": "2026-07-22 17:09",
+   "display_url": "https://businessmoment.com.br"
   },
   "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQdV82UkRJMGZNM1diTWFNYmhUMl9TWU1VOEJ2a3hoUU4xb2wtQXFVdF83aWVUOHdLYzloNXZJRkRCSUwxd2hYVmZTTDBpTUd1MmZwbGJQV3E2c3VrUU12N3JUeFZ0a29SRWs1dnNsclA3RUxmTC1CRHFTSWFyQWpYSWVxby1BOXBGV1NmWnV6M3U5a1lEVFNJNmZWaVh3V00wUm8xckVmLXJyZTBPWWd3Y0ZVLVVGZmY5TVBSeE1UY1NMRGMxUEE4eXN5S2s2RkhvV3ZzY0hwS1d5UXpiSWlvOWtBdDF3TE5HM3k0NQ?oc=5": {
    "title": "Operadora de marca de roupas com 106 anos entra em falência e fecha cerca de 180 lojas após não encontrar comprador",
@@ -5802,7 +5803,7 @@
    "cap_iso": "2026-07-22 17:09"
   }
  },
- "run_count": 21,
+ "run_count": 22,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -7146,44 +7147,44 @@
   }
  },
  "last_run": {
-  "ts": 1784750978,
-  "iso": "22 jul 2026 · 17:09 BRT",
+  "ts": 1784807872,
+  "iso": "23 jul 2026 · 08:57 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
-    "score": 111
+    "score": 109
    },
    "Engie Brasil": {
     "status": "critico",
-    "score": 90
+    "score": 88
    },
    "Tok&Stok": {
     "status": "critico",
-    "score": 81
+    "score": 80
    },
    "Cosan": {
     "status": "atencao",
-    "score": 64
+    "score": 63
    },
    "Santander Brasil": {
     "status": "atencao",
-    "score": 51
-   },
-   "BTG Pactual": {
-    "status": "atencao",
-    "score": 36
+    "score": 50
    },
    "Petrobras": {
     "status": "monitorar",
     "score": 35
    },
+   "BTG Pactual": {
+    "status": "atencao",
+    "score": 35
+   },
    "Itaúsa": {
     "status": "monitorar",
-    "score": 33
+    "score": 32
    },
    "Axia Energia": {
     "status": "monitorar",
-    "score": 31
+    "score": 30
    },
    "ISA Energia Brasil": {
     "status": "monitorar",
@@ -7191,23 +7192,23 @@
    },
    "Suzano": {
     "status": "monitorar",
-    "score": 27
+    "score": 26
    },
    "Natura &Co": {
     "status": "monitorar",
-    "score": 25
+    "score": 24
    },
    "Embraer": {
     "status": "monitorar",
-    "score": 22
+    "score": 21
    },
    "Raia Drogasil": {
     "status": "atencao",
-    "score": 21
+    "score": 20
    },
    "JBS": {
     "status": "monitorar",
-    "score": 21
+    "score": 20
    },
    "Copel": {
     "status": "monitorar",
@@ -7243,7 +7244,7 @@
    },
    "Hapvida": {
     "status": "monitorar",
-    "score": 5
+    "score": 4
    },
    "Banco do Brasil": {
     "status": "monitorar",
