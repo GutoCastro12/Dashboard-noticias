@@ -3605,6 +3605,11 @@
      "source": "A Revista",
      "domain": "arevista.com.br",
      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQNmw0QnNzRkswa2FmNHlCVG9BVGt6NFRnRkNsOXlZZUJPM3V0Z1JxS0d0RENONzVLQ0o1UXhqT0cyS2NRcFU0QXJmR3RmUnVJU3RISlNMcGhaRzR2N2tmWktURjZmMVpIaGVLUFJfeXdrajNrX3dSZzZDRWZ5WEZ1MTN3TWNwZmtJTC1oSC0yRk0zeENCZ1pOeQ?oc=5"
+    },
+    {
+     "source": "NeoFeed",
+     "domain": "neofeed.com.br",
+     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOYTg3Y3lnX0s4M0hHUmRkSXlRZlNxYmhiQ1gxWlhldEY2N25iVjByaS1ibzE5dVk0YWpxdU5UUC1CSWdYa2tJSmZMMl9CcWZybHRLTXluQTJaX0xnZm05M1NRZUMxaGNXN1ZQMEZtWDluWGhIX0dWZkpxUmV2UFp0V3NZQ3ozZFl4OHFvTmlLbVc0a3ExSEhmUGlCMjc5bHBlWEVvdmNB?oc=5"
     }
    ],
    "corrob_sources": [
@@ -3631,6 +3636,12 @@
      "domain": "nordinvestimentos.com.br",
      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1HQjAwU0lGdEtGVFh4dmJJcnllX0NUWHdJY0IyeVE5LWZVUFQwTVlMMUFxOG55QVBuaVFwVXRPVWRuSlBNNzFuVVJPWGY3XzdxejZOV2MtWVRDMkJ5dVVGZnZUN3FfUVRTU0hFb04yNGpndVRDRDdGMzBB0gF_QVVfeXFMTlFDUTJxMUZwRmR5QmhTRDJhMmdKd2ltbDRlam95WlhpM1IzYzFQWW90VVE3dHJRVlYybWV2ZWZEZmhQb1gtRWZTaTZZYzZQLUU4U3hqc3ZTQmJ2Z2kxeG16MUsxaUhDR1lkYXJ6RUZkR2hUT3ZkQ214N19nUFFFcw?oc=5",
      "when": "03/07 18:47"
+    },
+    {
+     "source": "NeoFeed",
+     "domain": "neofeed.com.br",
+     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOYTg3Y3lnX0s4M0hHUmRkSXlRZlNxYmhiQ1gxWlhldEY2N25iVjByaS1ibzE5dVk0YWpxdU5UUC1CSWdYa2tJSmZMMl9CcWZybHRLTXluQTJaX0xnZm05M1NRZUMxaGNXN1ZQMEZtWDluWGhIX0dWZkpxUmV2UFp0V3NZQ3ozZFl4OHFvTmlLbVc0a3ExSEhmUGlCMjc5bHBlWEVvdmNB?oc=5",
+     "when": "03/07 04:00"
     }
    ],
    "captured_ts": 1784666282,
@@ -5250,43 +5261,6 @@
    "captured_ts": 1784720983,
    "cap_iso": "2026-07-22 08:49"
   },
-  "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/isa-energia-isae4-protocola-pedido-de-follow-on-para-emitir-ate-44-milhoes-de-novas-acoes/": {
-   "title": "Isa Energia (ISAE4) despenca 5% após pedido de follow-on para emitir até 44 milhões de ações",
-   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/isa-energia-isae4-protocola-pedido-de-follow-on-para-emitir-ate-44-milhoes-de-novas-acoes/",
-   "summary": "Isa Energia (ISAE4) despenca 5% após pedido de follow-on para emitir até 44 milhões de ações &nbsp;&nbsp; Estadão",
-   "source": "Estadão",
-   "domain": "estadao.com.br",
-   "pub_ts": 1784133816,
-   "pub_iso": "2026-07-15 13:43",
-   "companies": [
-    "ISA Energia Brasil"
-   ],
-   "event_ids": [
-    "follow_on"
-   ],
-   "corroborations": [
-    {
-     "source": "suno.com.br",
-     "domain": "suno.com.br",
-     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNS0pudVp3TVkwUUlNMkxncC1pd2RsUDFnWDVQTU1aaUhFaS0xMDl5eDdDR2lmemhRLTJfYmxWOU9pOXA3SmJkcldlbnNNWWZ1ZDBxc2VfV0VSUkp1RXIyZWtNZmpFTVdUbWJGWEc5cHNoMS1CSC03VlJyRjlQRG1ISFdpZnR1MGZfYld0a1BXa0FWdWNRMG02S9IBngFBVV95cUxPVkVLZ254RnVxb19LV2taeVNZMGdmWExnM1lUQk5hTjl3cFBNWUFxcmg3bnB4S1lGdkJNOWI1SXZHTm5VenZRNzVBR3RwVE1Pd3hXTkxZd3VVYlpHTlpUZzdpYk5mSE1acTFySGF6c0ljWnJDQ0I2ZXkyWmMzVTRNakhyeC1pVUVKaUQ1NGNZQlhsYnFJbHYzV0Jwei1Fdw?oc=5"
-    },
-    {
-     "source": "A Revista",
-     "domain": "arevista.com.br",
-     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQNmw0QnNzRkswa2FmNHlCVG9BVGt6NFRnRkNsOXlZZUJPM3V0Z1JxS0d0RENONzVLQ0o1UXhqT0cyS2NRcFU0QXJmR3RmUnVJU3RISlNMcGhaRzR2N2tmWktURjZmMVpIaGVLUFJfeXdrajNrX3dSZzZDRWZ5WEZ1MTN3TWNwZmtJTC1oSC0yRk0zeENCZ1pOeQ?oc=5"
-    }
-   ],
-   "corrob_sources": [
-    {
-     "source": "suno.com.br",
-     "domain": "suno.com.br",
-     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNS0pudVp3TVkwUUlNMkxncC1pd2RsUDFnWDVQTU1aaUhFaS0xMDl5eDdDR2lmemhRLTJfYmxWOU9pOXA3SmJkcldlbnNNWWZ1ZDBxc2VfV0VSUkp1RXIyZWtNZmpFTVdUbWJGWEc5cHNoMS1CSC03VlJyRjlQRG1ISFdpZnR1MGZfYld0a1BXa0FWdWNRMG02S9IBngFBVV95cUxPVkVLZ254RnVxb19LV2taeVNZMGdmWExnM1lUQk5hTjl3cFBNWUFxcmg3bnB4S1lGdkJNOWI1SXZHTm5VenZRNzVBR3RwVE1Pd3hXTkxZd3VVYlpHTlpUZzdpYk5mSE1acTFySGF6c0ljWnJDQ0I2ZXkyWmMzVTRNakhyeC1pVUVKaUQ1NGNZQlhsYnFJbHYzV0Jwei1Fdw?oc=5",
-     "when": "15/07 12:15"
-    }
-   ],
-   "captured_ts": 1784720983,
-   "cap_iso": "2026-07-22 08:49"
-  },
   "https://news.google.com/rss/articles/CBMinwFBVV95cUxQdkFnSEQ2QVlMNHRTNDlSYzJMZzh6MnRmWW9lR20zWkQyelZVMXJTSGxsb3lmRDBMamFUcTdTUGRxZWRpczV2b0k2aHlQZWp1WGVQM3NjZGQtSWw4cER0Vjhfajk3ZU9ld0k0UnJBM2F2VFZHRzh2UnFsVGFPa3FqWlVaZnpqVERWRmFDWU9hVjF6TXkwTmF3Mk82alJYSUXSAa4BQVVfeXFMT1pzU2VDbzQzdTZCcWNXb3JQQklQTW02dmEtdmczTEZBRjlhYXg3aWsxRGltUnI5ejRzcHFMdmF4RVVtdFNTcV9yQkNUY0FIejh2YWlLQjNoRU9jelFtbWRMQkh4SzU5VjhRUUZPcm4td1VKcUpGa0NxcjUtN2c1bUg3LVBBRFB5VW9VdzRJOTRGT3FmWV9mZUhhYTlxcFhaN1lMa29OT3FDbzVER3l3?oc=5": {
    "title": "Light pede saída de recuperação judicial",
    "url": "https://valor.globo.com/empresas/noticia/2026/07/16/light-pede-saida-de-recuperacao-judicial.ghtml",
@@ -5586,7 +5560,9 @@
     "emissao_divida"
    ],
    "captured_ts": 1784740429,
-   "cap_iso": "2026-07-22 14:13"
+   "cap_iso": "2026-07-22 14:13",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.brasildefato.com.br/2026/06/25/fraude-nas-americanas-executivos-de-itau-bradesco-e-santander-sao-alvo-de-buscas/": {
    "title": "Fraude nas Americanas: executivos de Itaú, Bradesco e Santander são alvo de buscas",
@@ -5705,7 +5681,9 @@
     "follow_on"
    ],
    "captured_ts": 1784740429,
-   "cap_iso": "2026-07-22 14:13"
+   "cap_iso": "2026-07-22 14:13",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMiygFBVV95cUxOZGM4MGYzQ1VEQkNxeDFLRUpyU1FETk10N0Y5SUVKOU5KZEx2dFpTelBVZ0RzZmV0WG5Fa1djQ2hvVGhqLTJDd3lfMkhuM3NyYmpvVkZtaHVNNXpybDZVZlREWk9ubWtNQ1Y3dDBUX3ZJLVczV1Z6bElzSmp4TnZKT0doTUpNLXladUtlUkh2ZE5UcGREWkY1eWdIUWYydHR5Q2gtaTNhaVduZ2V6anZFNWxHU0JfeWxhV2FmVjdmWWZlNkZ5Q0d6MmR3?oc=5": {
    "title": "Movement (MOVE) entra com Chapter 11 após $141.4M em financiamento não evitar colapso",
@@ -5754,7 +5732,9 @@
     "ma"
    ],
    "captured_ts": 1784740429,
-   "cap_iso": "2026-07-22 14:13"
+   "cap_iso": "2026-07-22 14:13",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPclhoRUZVclhNeUpIbGwwUG00c085Z09BWks1dmhzZWpKVk9IZUNrOTJ3NE1KTG5lVjZDNUQ0Q1ljUWx0QXVzZk9fOHdrWkUyVjZHejV2bFg5LW41ZXZfalp4VnJZRURtNG0xTDI1MGtTX0Z5Q3ZMR0ttdy1mZDhRcC1IQXk4M1FFdW5UTmpyaV8yWXVRd2ZFbG5Zbm1rWkZCOUJQaW4yLVJ2LXZoclRzSmkwUlBPVnRQQ3BBNnpJam9VY3Ytd1NWSEpoZ2k3VS1MSDAzaVVn?oc=5": {
    "title": "Gigante das autopeças entra em falência com mais de 11 bilhões em dívidas e avança para liquidação",
@@ -5907,9 +5887,159 @@
    ],
    "captured_ts": 1784819091,
    "cap_iso": "2026-07-23 12:04"
+  },
+  "https://www.demarest.com.br/decisao-da-cvm-sobre-brf-e-marfrig-quais-informacoes-devem-ser-disponibilizadas-aos-acionistas-para-uma-assembleia-de-combinacao-de-negocios/": {
+   "title": "Decisão da CVM sobre BRF e Marfrig: quais informações devem ser disponibilizadas aos acionistas para uma assembleia de combinação de negócios?",
+   "url": "https://www.demarest.com.br/decisao-da-cvm-sobre-brf-e-marfrig-quais-informacoes-devem-ser-disponibilizadas-aos-acionistas-para-uma-assembleia-de-combinacao-de-negocios/",
+   "summary": "Decisão da CVM sobre BRF e Marfrig: quais informações devem ser disponibilizadas aos acionistas para uma assembleia de combinação de negócios? &nbsp;&nbsp; Demarest",
+   "source": "Demarest",
+   "domain": "demarest.com.br",
+   "pub_ts": 1762329600,
+   "pub_iso": "2025-11-05 05:00",
+   "companies": [
+    "BRF"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1784826946,
+   "cap_iso": "2026-07-23 14:15"
+  },
+  "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/santander-brasil-sanb11-estrategia-novo-ceo-roe-xp/": {
+   "title": "XP vê troca de CEO no Santander (SANB11) sem ruptura e aposta em alta rentabilidade",
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/santander-brasil-sanb11-estrategia-novo-ceo-roe-xp/",
+   "summary": "XP vê troca de CEO no Santander (SANB11) sem ruptura e aposta em alta rentabilidade &nbsp;&nbsp; Estadão",
+   "source": "Estadão",
+   "domain": "estadao.com.br",
+   "pub_ts": 1774854000,
+   "pub_iso": "2026-03-30 04:00",
+   "companies": [
+    "Santander Brasil"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "captured_ts": 1784826946,
+   "cap_iso": "2026-07-23 14:15"
+  },
+  "https://br.advfn.com/jornal/2026/07/fitch-mantem-rating-bbb-da-gerdau-e-revisa-perspectiva-para-positiva": {
+   "title": "Fitch mantém rating ‘BBB’ da Gerdau e revisa perspectiva para positiva",
+   "url": "https://br.advfn.com/jornal/2026/07/fitch-mantem-rating-bbb-da-gerdau-e-revisa-perspectiva-para-positiva",
+   "summary": "Fitch mantém rating ‘BBB’ da Gerdau e revisa perspectiva para positiva &nbsp;&nbsp; ADVFN",
+   "source": "ADVFN",
+   "domain": "br.advfn.com",
+   "pub_ts": 1783062000,
+   "pub_iso": "2026-07-03 04:00",
+   "companies": [
+    "Gerdau"
+   ],
+   "event_ids": [
+    "outlook_positivo"
+   ],
+   "captured_ts": 1784826946,
+   "cap_iso": "2026-07-23 14:15"
+  },
+  "https://valor.globo.com/financas/noticia/2026/07/15/isa-energia-lana-oferta-subsequente-de-aes-que-pode-alcanar-r-13-bilho.ghtml": {
+   "title": "ISA Energia lança oferta subsequente de ações que pode alcançar R$ 1,3 bilhão",
+   "url": "https://valor.globo.com/financas/noticia/2026/07/15/isa-energia-lana-oferta-subsequente-de-aes-que-pode-alcanar-r-13-bilho.ghtml",
+   "summary": "ISA Energia lança oferta subsequente de ações que pode alcançar R$ 1,3 bilhão &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1784122872,
+   "pub_iso": "2026-07-15 10:41",
+   "companies": [
+    "ISA Energia Brasil"
+   ],
+   "event_ids": [
+    "follow_on"
+   ],
+   "corroborations": [
+    {
+     "source": "Estadão",
+     "domain": "estadao.com.br",
+     "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/isa-energia-isae4-protocola-pedido-de-follow-on-para-emitir-ate-44-milhoes-de-novas-acoes/"
+    },
+    {
+     "source": "suno.com.br",
+     "domain": "suno.com.br",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNS0pudVp3TVkwUUlNMkxncC1pd2RsUDFnWDVQTU1aaUhFaS0xMDl5eDdDR2lmemhRLTJfYmxWOU9pOXA3SmJkcldlbnNNWWZ1ZDBxc2VfV0VSUkp1RXIyZWtNZmpFTVdUbWJGWEc5cHNoMS1CSC03VlJyRjlQRG1ISFdpZnR1MGZfYld0a1BXa0FWdWNRMG02S9IBngFBVV95cUxPVkVLZ254RnVxb19LV2taeVNZMGdmWExnM1lUQk5hTjl3cFBNWUFxcmg3bnB4S1lGdkJNOWI1SXZHTm5VenZRNzVBR3RwVE1Pd3hXTkxZd3VVYlpHTlpUZzdpYk5mSE1acTFySGF6c0ljWnJDQ0I2ZXkyWmMzVTRNakhyeC1pVUVKaUQ1NGNZQlhsYnFJbHYzV0Jwei1Fdw?oc=5"
+    },
+    {
+     "source": "A Revista",
+     "domain": "arevista.com.br",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQNmw0QnNzRkswa2FmNHlCVG9BVGt6NFRnRkNsOXlZZUJPM3V0Z1JxS0d0RENONzVLQ0o1UXhqT0cyS2NRcFU0QXJmR3RmUnVJU3RISlNMcGhaRzR2N2tmWktURjZmMVpIaGVLUFJfeXdrajNrX3dSZzZDRWZ5WEZ1MTN3TWNwZmtJTC1oSC0yRk0zeENCZ1pOeQ?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Estadão",
+     "domain": "estadao.com.br",
+     "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/isa-energia-isae4-protocola-pedido-de-follow-on-para-emitir-ate-44-milhoes-de-novas-acoes/",
+     "when": "15/07 13:43"
+    },
+    {
+     "source": "suno.com.br",
+     "domain": "suno.com.br",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNS0pudVp3TVkwUUlNMkxncC1pd2RsUDFnWDVQTU1aaUhFaS0xMDl5eDdDR2lmemhRLTJfYmxWOU9pOXA3SmJkcldlbnNNWWZ1ZDBxc2VfV0VSUkp1RXIyZWtNZmpFTVdUbWJGWEc5cHNoMS1CSC03VlJyRjlQRG1ISFdpZnR1MGZfYld0a1BXa0FWdWNRMG02S9IBngFBVV95cUxPVkVLZ254RnVxb19LV2taeVNZMGdmWExnM1lUQk5hTjl3cFBNWUFxcmg3bnB4S1lGdkJNOWI1SXZHTm5VenZRNzVBR3RwVE1Pd3hXTkxZd3VVYlpHTlpUZzdpYk5mSE1acTFySGF6c0ljWnJDQ0I2ZXkyWmMzVTRNakhyeC1pVUVKaUQ1NGNZQlhsYnFJbHYzV0Jwei1Fdw?oc=5",
+     "when": "15/07 12:15"
+    }
+   ],
+   "captured_ts": 1784826946,
+   "cap_iso": "2026-07-23 14:15"
+  },
+  "https://www.infomoney.com.br/mercados/gerdau-ggbr4-conclui-aquisicao-da-usina-dona-francisca/": {
+   "title": "Gerdau (GGBR4) conclui aquisição da usina Dona Francisca",
+   "url": "https://www.infomoney.com.br/mercados/gerdau-ggbr4-conclui-aquisicao-da-usina-dona-francisca/",
+   "summary": "Gerdau (GGBR4) conclui aquisição da usina Dona Francisca &nbsp;&nbsp; InfoMoney",
+   "source": "InfoMoney",
+   "domain": "infomoney.com.br",
+   "pub_ts": 1784632939,
+   "pub_iso": "2026-07-21 08:22",
+   "companies": [
+    "Gerdau"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1784826946,
+   "cap_iso": "2026-07-23 14:15"
+  },
+  "https://news.google.com/rss/articles/CBMi3gFBVV95cUxObk16dWFpYm40cWk0Ujc1aktIN1A4QU40Qk03MlhaWjJySkpxMkR4M1ZvQ1hUWWZFNG1EYjJQOGpLbVl4VVZQQkM5TWs1Wm5iclBVaFFtbzJqTDlEZm0xdy1LdU5Iam9BUHpwMC1BWElZbWEtSlpjS3RWUTBoam1Id2dpWjdCS2dmcU1FWVRFc3dIbDRqVFE0TUNiUi1WY3R0ZjZ1YmZGS2NndndwN2V6eUJzY01JdnZ1dTh5YmwxS1N3ZTc2VFYtVFMycFFFeVZSclFnVHJRVHdIaXZDMFE?oc=5": {
+   "title": "Dona de duas grandes redes de móveis entra em falência e encerra as últimas 89 lojas em liquidação total",
+   "url": "https://www.em.com.br/emfoco/2026/07/23/dona-de-duas-grandes-redes-de-moveis-entra-em-falencia-e-encerra-as-ultimas-89-lojas-em-liquidacao-total/",
+   "summary": "Dona de duas grandes redes de móveis entra em falência e encerra as últimas 89 lojas em liquidação total &nbsp;&nbsp; Estado de Minas",
+   "source": "Estado de Minas",
+   "domain": "em.com.br",
+   "pub_ts": 1784817900,
+   "pub_iso": "2026-07-23 11:45",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1784826946,
+   "cap_iso": "2026-07-23 14:15"
+  },
+  "https://www.vgnoticias.com.br/vgnjur/jbs-paga-r-174-milhoes-e-encerra-acao-sobre-fraude-fiscal-em-mt/149407": {
+   "title": "JBS paga R$ 174 milhões e encerra ação sobre fraude fiscal em MT",
+   "url": "https://www.vgnoticias.com.br/vgnjur/jbs-paga-r-174-milhoes-e-encerra-acao-sobre-fraude-fiscal-em-mt/149407",
+   "summary": "JBS paga R$ 174 milhões e encerra ação sobre fraude fiscal em MT &nbsp;&nbsp; vgnoticias.com.br",
+   "source": "vgnoticias.com.br",
+   "domain": "vgnoticias.com.br",
+   "pub_ts": 1784820900,
+   "pub_iso": "2026-07-23 12:35",
+   "companies": [
+    "JBS"
+   ],
+   "event_ids": [
+    "fraude"
+   ],
+   "captured_ts": 1784826946,
+   "cap_iso": "2026-07-23 14:15"
   }
  },
- "run_count": 23,
+ "run_count": 24,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -7270,15 +7400,43 @@
   "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNUXVzRFVSMURaaEw4ZURneEFpaTBFdHBwbFJQQXpKUUhiWmk1X3ZWOW1DZjBQRjJLTzFtcldMclp4UHAyUG8wc3RYd3JGX0duY1ROVXg2Vzh5QndYZEd3bF9INzVUekJwZVZ6V0JncFF6Ry05NG5ubVpFc3Q2Nm15REp3MGd3RDFidzBXNFFBekFSaEZKMENUOF9PdkpCRDBtV1dzZ1A5cTZfcmFMX3ROX3dKY1hOZlpWWE14NWZ3VFVvUGRQcXZZMWRLLXpTRWp1OWxoMXZzR3VWWW9JWkdj?oc=5": {
    "url": "https://fmcruzeiro.com.br/2026/07/23/falencia-da-francisco-cherobim-filhos-completa-25-anos-e-ainda-gera-reflexos-para-ex-funcionarios-e-credores/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNU2VGeWhwODV1NWtzLWJXNFFoUUFSNEwtMTlOc3huWFJ1dHF2WnBicXUta191WnplaTA1dFFlWk84VnhweEVScVZaM2FpV1UzZjE4Tkp0bF9qMHdDVHg3Z2JPaHItMmo2U1ZWVm1OWHJxRVU3eVB5aEJRZ2RqcXZUODVOLWZwektwMk5HdlNmMjlEdzhJZGt4STRveS11ODhSZVczekg4MWw1a0ZxOHZkV19XaWxjV1duWGcwN3E2b0M2ZG1jTTZVUE5RcGloY1ZWdWFKV2NPMDczNjFQdmx3S253MkRVQ2Z2cERxN0ZBZll4bUdHWHZaVVh3TVVBdw?oc=5": {
+   "url": "https://www.demarest.com.br/decisao-da-cvm-sobre-brf-e-marfrig-quais-informacoes-devem-ser-disponibilizadas-aos-acionistas-para-uma-assembleia-de-combinacao-de-negocios/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMirgFBVV95cUxObV9uZlR5ZXJWSjRJOWlQdS0yc0JqbEt0dzVGV1FOVk1YYTlYaHQ2TzFoY0ZxSW4xNnM2M2tQRGpYUTBQNzRFUjVYU2lhdmpteDJOaVlZWUY2S2ZzMWxybjAtZWZKMHFmamJYSmt2WFJSZ0s3VGJJNDBMdTM4MFdXZ2hNSXFFelhIUkdHR01rdVRNcVRmVXI0MmZEOEVZYWdSdmxqdjVXNHdEMUxhX1HSAbMBQVVfeXFMT2QwX1o0WkIyV2VnY2JvTV9IT3N1ck1jakRxekJuYkZlUVZwaW56WGNFVmRCR1dhYlNnUmM2NjFpTm5zQnNZQlhvOEVaSUxLaC03U0ljUFhJaUtXQ29CelNrbXEwb3hhTDlEU19paTNCQ3BwMW1xZTRTaUlrYzJ4ODVMOGE4Q1lPUzk1WGZHblhfVERmUHl6OE13SWRJMWZoQXBQWXNKYVdqNFZodV8xZG5ON00?oc=5": {
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/santander-brasil-sanb11-estrategia-novo-ceo-roe-xp/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipwFBVV95cUxQUmVJVmJreE5EWDFzMlkyVFpEeFhLcDZpYUhvdFJ0Q1ZEMVRnUVV3aUlFUER0bHBQZ05qRi1OS0NDSWtWT3Q2TjlqRkF6cC16QUZfT21aNXMyTkIzUXJoSDBIQmNKNGh1bDhBVzg1dWxtQnk0MFAyRlo2dkxDV3FQR194UEUyWDVnLUVhcEFFc0tyMFlJQm9rTV9oSXBwWnh5QVRTc3cwdw?oc=5": {
+   "url": "https://br.advfn.com/jornal/2026/07/fitch-mantem-rating-bbb-da-gerdau-e-revisa-perspectiva-para-positiva",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMixwFBVV95cUxQT3BaQ2ExSy0tMVpQOHZvYXNMdUZHbC1oSi1Qb2VGVVB3d0lqdGRQdk9IWnplRk1fVXg5N3JhSmVSN194TnNKOWllQ0tRVkp1MmxkdVlzRWV4aFY4VEsxTEtBaTQ3emNYQlBVMktFUUZ6M3BRdFk5VWhPblhXQ3k2R1F1M25abWxJUlJQNGdaLU9RaHVIVzlucWpodWZMaEN0XzRVVkJnWXd4TzVCakw0Q2U2MVU3b2dzY3JUSkRiejVoWnlWMGpF0gHWAUFVX3lxTE5TQUpKS3NVajBuYm9XOUw4cmQzeC11Y0NlWHdFOE5FOG5RZV84ZWxCM3RGRFFKOGtsckQ4TWg3NU0yems4TlVJWUpSaHhGSkxtT21zbkNxS1dMaVctUTUwSnZOdk9QNDdJXy12NGVmVmtwOVZ0WWY0X0dma2M0eG1xZ25sT3BSM1BGWUdoNF9uNUc2NFdoY3d4eFBBT3N6YXN2bk1jQ2h3SFRvd0Z1U1J6ajhBWEc4Q3NWa2ljWGNweGZySHkyckxOT3Z6d0tWdmtoMWJhMXc?oc=5": {
+   "url": "https://valor.globo.com/financas/noticia/2026/07/15/isa-energia-lana-oferta-subsequente-de-aes-que-pode-alcanar-r-13-bilho.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMimAFBVV95cUxObnRuXzBPMXZQVkExQktrdUdxSktpcE5KME9Nc2M2bUk4bVNJSm12Y180bE0zZFdUVzY0NmN6Q3l5ZGtjblpBam9aMDctMXlQdXZNRVpNbkdlanM2a3VsZzg4QXRnQkRLOUFRcFEwWEhHTDNkMUFtWDc5Z1Q1b3R2Zkd4cl91SV9ybWQ2RW1YTmJ0WDBuUDJiYdIBngFBVV95cUxPcGl0MUh1MnUxcVRpbmlqYVdZTFBmbEdzc2k2V2VWZGNLZm9WbmxRa2E2QlQ3eFZsNlZ0MmlOS0dyUXdZUjZtd3MweDJZQXRDVTd0S3U5Yk9MNDhxVk9uRmFodHplWU9lUEZNWVpfYllsZWFfd0NVMGZPZHJJNHR6QmFzSUdYSlZxenpvMERlLV9aT082WEVPVmVHQ3ZRdw?oc=5": {
+   "url": "https://www.infomoney.com.br/mercados/gerdau-ggbr4-conclui-aquisicao-da-usina-dona-francisca/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOczhza1dhcmFYOE84cmNtakNhRlJkSUJEZ05fYWo4Y0otcTVBYUFweGdsUEdPQ3JQcGVheUYwY3JWTGs5ZlU0R1RjbUgwQ0YzTk90QVliTEhteHpEcUFzX2Z5SkZEM2owbFVZdEJoSXhPUkV1S0U3b3ljYW9vdWxwNUdwNUllc3ByU2xJZWZxOTBUZjVvZUZmOE5UaTM3TUttWmR0cUlmUk9Fb0k?oc=5": {
+   "url": "https://www.vgnoticias.com.br/vgnjur/jbs-paga-r-174-milhoes-e-encerra-acao-sobre-fraude-fiscal-em-mt/149407",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi3gFBVV95cUxObk16dWFpYm40cWk0Ujc1aktIN1A4QU40Qk03MlhaWjJySkpxMkR4M1ZvQ1hUWWZFNG1EYjJQOGpLbVl4VVZQQkM5TWs1Wm5iclBVaFFtbzJqTDlEZm0xdy1LdU5Iam9BUHpwMC1BWElZbWEtSlpjS3RWUTBoam1Id2dpWjdCS2dmcU1FWVRFc3dIbDRqVFE0TUNiUi1WY3R0ZjZ1YmZGS2NndndwN2V6eUJzY01JdnZ1dTh5YmwxS1N3ZTc2VFYtVFMycFFFeVZSclFnVHJRVHdIaXZDMFE?oc=5": {
+   "url": "https://www.em.com.br/emfoco/2026/07/23/dona-de-duas-grandes-redes-de-moveis-entra-em-falencia-e-encerra-as-ultimas-89-lojas-em-liquidacao-total/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1784819096,
-  "iso": "23 jul 2026 · 12:04 BRT",
+  "ts": 1784826950,
+  "iso": "23 jul 2026 · 14:15 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
-    "score": 109
+    "score": 108
    },
    "Engie Brasil": {
     "status": "critico",
@@ -7287,6 +7445,10 @@
    "Tok&Stok": {
     "status": "critico",
     "score": 80
+   },
+   "JBS": {
+    "status": "critico",
+    "score": 74
    },
    "Cosan": {
     "status": "atencao",
@@ -7300,6 +7462,10 @@
     "status": "atencao",
     "score": 35
    },
+   "Gerdau": {
+    "status": "monitorar",
+    "score": 35
+   },
    "Petrobras": {
     "status": "monitorar",
     "score": 34
@@ -7308,13 +7474,13 @@
     "status": "monitorar",
     "score": 32
    },
-   "Axia Energia": {
+   "ISA Energia Brasil": {
     "status": "monitorar",
     "score": 30
    },
-   "ISA Energia Brasil": {
+   "Axia Energia": {
     "status": "monitorar",
-    "score": 27
+    "score": 30
    },
    "Suzano": {
     "status": "monitorar",
@@ -7330,10 +7496,6 @@
    },
    "Raia Drogasil": {
     "status": "atencao",
-    "score": 20
-   },
-   "JBS": {
-    "status": "monitorar",
     "score": 20
    },
    "Copel": {
