@@ -1419,7 +1419,9 @@
     "pequenas_aquisicoes"
    ],
    "captured_ts": 1784666282,
-   "cap_iso": "2026-07-21 17:38"
+   "cap_iso": "2026-07-21 17:38",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1482876&numSequencia=1007582&numVersao=1": {
    "title": "[Fato Relevante] Engie Brasil: Emissão de Debêntures (16ª Emissão)",
@@ -2267,7 +2269,9 @@
     "guidance_negativo"
    ],
    "captured_ts": 1784666282,
-   "cap_iso": "2026-07-21 17:38"
+   "cap_iso": "2026-07-21 17:38",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://canalsolar.com.br/petrobras-aquisicao-lightsource-bp-solar-eolica-baterias/": {
    "title": "De olho em baterias e energia solar, Petrobras conclui aquisição de quase metade da Lightsource bp no Brasil",
@@ -5465,7 +5469,9 @@
     "emissao_divida"
    ],
    "captured_ts": 1784732344,
-   "cap_iso": "2026-07-22 11:59"
+   "cap_iso": "2026-07-22 11:59",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPUU5DSkI3MGlOejJoZjVzbkNJMVlMcmJJNjdFM2pWVkhXakJ0SGJwNFBBZnJkSmw3eWpvcS1aUnVINm52NmJBQzVqeEFET1RfUGlJZ05MY3BGcWZ2blpqZXFkMXAxclladTVvdF91RktnTjF6cWlXXzFmWUdMdjU5NHc3OEtmcTg1WTF6ZGpFZC1hNlpSSDdsZTFhQ1o3ZEQ0LWZBSTA3UUNEMzB3MW1UeFFPUENWT0xpLTNCMk1mc01SN0Zfd0xQdnlnekJpcElrSE5DaUFJY1JTaXNMT1RLVHI4X3JBNk5DZ2JFQTNPZ0FQdw?oc=5": {
    "title": "O Sunshine Group afirma que não é parte em nenhum processo de dissolução ou falência em andamento.",
@@ -5801,9 +5807,109 @@
    ],
    "captured_ts": 1784750976,
    "cap_iso": "2026-07-22 17:09"
+  },
+  "https://www.moneytimes.com.br/prio-prio3-conclui-aquisicao-de-40-de-peregrino-e-pitangola-por-us-15-bilhao-kda/": {
+   "title": "Prio (PRIO3) conclui aquisição de 40% de Peregrino e Pitangola por US$ 1,5 bilhão",
+   "url": "https://www.moneytimes.com.br/prio-prio3-conclui-aquisicao-de-40-de-peregrino-e-pitangola-por-us-15-bilhao-kda/",
+   "summary": "Prio (PRIO3) conclui aquisição de 40% de Peregrino e Pitangola por US$ 1,5 bilhão &nbsp;&nbsp; Money Times",
+   "source": "Money Times",
+   "domain": "moneytimes.com.br",
+   "pub_ts": 1762848000,
+   "pub_iso": "2025-11-11 05:00",
+   "companies": [
+    "PRIO"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "corroborations": [
+    {
+     "source": "XP Investimentos",
+     "domain": "conteudos.xpi.com.br",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPVG9oSmNhV3I1eFRjdUlQd0NoZ0k0TnZxTklQQWktTmVpajF4VzFPMUpIeDY5cWNRVnhRZFpWbXVNT2U3MVpiQWtjSFdFWmFXd2JTQ0g1ZG0tOXU1SzJxVVV1YTU0Tk5YTXhReldHN20wLXNFNTJlczJscUNnRHl2alNISW13TXV2OVNPSkVZQnFvMXdfSTdxc3M5a1lQS1NDVjR4QmJEc2NlRGll?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "XP Investimentos",
+     "domain": "conteudos.xpi.com.br",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPVG9oSmNhV3I1eFRjdUlQd0NoZ0k0TnZxTklQQWktTmVpajF4VzFPMUpIeDY5cWNRVnhRZFpWbXVNT2U3MVpiQWtjSFdFWmFXd2JTQ0g1ZG0tOXU1SzJxVVV1YTU0Tk5YTXhReldHN20wLXNFNTJlczJscUNnRHl2alNISW13TXV2OVNPSkVZQnFvMXdfSTdxc3M5a1lQS1NDVjR4QmJEc2NlRGll?oc=5",
+     "when": "12/11 00:39"
+    }
+   ],
+   "captured_ts": 1784819091,
+   "cap_iso": "2026-07-23 12:04"
+  },
+  "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPOE0tWjl2QjNqUm9yZS04S2E5U3k5UmZZdTJwTUxYZGR4dUJndV9TMU03azg5amxTT2twZ185VThyQ0NFSVhRdkNjaUhZdTh6amtSaEszOGplYTA2US1NTU5VejJweTB5cDA5TFVMbjFrazdVLWhYOC1EOHBQNmY3LVZDbmxoTk9qT2xHM3ZmNkxRUnpvaUdMT0NEdEZLZjFFZ0c4RFdRU2pjb3VGSS1wY3A5LTJORVFJWnJWV09xOEFzTUczYXlLSWJUc1haN1NsTkE?oc=5": {
+   "title": "Após três anos, Light pede para sair da recuperação judicial; veja o Radar Energia XP",
+   "url": "https://conteudos.xpi.com.br/acoes/relatorios/apos-tres-anos-light-pede-para-sair-da-recuperacao-judicial-veja-o-radar-energia-xp-julho/",
+   "summary": "Após três anos, Light pede para sair da recuperação judicial; veja o Radar Energia XP &nbsp;&nbsp; XP Investimentos",
+   "source": "XP Investimentos",
+   "domain": "conteudos.xpi.com.br",
+   "pub_ts": 1784288617,
+   "pub_iso": "2026-07-17 08:43",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1784819091,
+   "cap_iso": "2026-07-23 12:04"
+  },
+  "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaG5mX0M4TFQ0Z0kzTVRoQk8yd1UxSGx6a0lZZVh1ZUFjTXkxWW9sXzdlNnlBVzBzVkZQT0hidHgtaW52YWhHTnVjcUtwTDVGZElubUxqSWlOa2hIcFd2ZGtmNGFfTlhZeFNDdDJYLWRibmhXZ3dtOHNoaFR1SkhnbjNuSkFuOVNNNFZILTBDektKLXV0cWo4OUFSeTc1c190YlgzajJQcmM3WFdmLTVkNlRpeGhQSGhZTktLYTdRUk1MZ2o2UWhvMlpSWGJQbjA?oc=5": {
+   "title": "Nova Iguaçu: Empresa em recuperação judicial já recebeu cerca R$ 425 milhões da Prefeitura",
+   "url": "https://elizeupires.com/artigos/geral/109336-nova-iguacu-empresa-em-recuperacao-judicial-ja-recebeu-cerca-r-425-milhoes-da-prefeitura/",
+   "summary": "Nova Iguaçu: Empresa em recuperação judicial já recebeu cerca R$ 425 milhões da Prefeitura &nbsp;&nbsp; Elizeu Pires",
+   "source": "Elizeu Pires",
+   "domain": "elizeupires.com",
+   "pub_ts": 1784635200,
+   "pub_iso": "2026-07-21 09:00",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1784819091,
+   "cap_iso": "2026-07-23 12:04"
+  },
+  "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZEZiQy1jRmtnU296QUlNbW4wM0RTVWhzTVREX3pTc3h2TUFYUUlUUWlTNzJYSWdybkR0c05LeGNHUFpxUk9YSmN5SDNlWUZRZGlWNVdodEY2Ykd0Nk5BcWJCSk5EdjRFWmE4YXVXOFN5eU9PckM1ajhRVUY3RzUweURNaTMtdHRUQnpSRW5Td2VmRkc0WDVxdllHUlJRcjVLWFFUc1ZFWGoxSUU?oc=5": {
+   "title": "Piracicaba: Justiça defere recuperação judicial do Grupo Manetoni",
+   "url": "https://tododia.com.br/cidades/piracicaba/piracicaba-justica-defere-recuperacao-judicial-do-grupo-manetoni/",
+   "summary": "Piracicaba: Justiça defere recuperação judicial do Grupo Manetoni &nbsp;&nbsp; Todo Dia",
+   "source": "Todo Dia",
+   "domain": "tododia.com.br",
+   "pub_ts": 1784734240,
+   "pub_iso": "2026-07-22 12:30",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1784819091,
+   "cap_iso": "2026-07-23 12:04"
+  },
+  "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNUXVzRFVSMURaaEw4ZURneEFpaTBFdHBwbFJQQXpKUUhiWmk1X3ZWOW1DZjBQRjJLTzFtcldMclp4UHAyUG8wc3RYd3JGX0duY1ROVXg2Vzh5QndYZEd3bF9INzVUekJwZVZ6V0JncFF6Ry05NG5ubVpFc3Q2Nm15REp3MGd3RDFidzBXNFFBekFSaEZKMENUOF9PdkpCRDBtV1dzZ1A5cTZfcmFMX3ROX3dKY1hOZlpWWE14NWZ3VFVvUGRQcXZZMWRLLXpTRWp1OWxoMXZzR3VWWW9JWkdj?oc=5": {
+   "title": "FALÊNCIA DA FRANCISCO CHEROBIM & FILHOS COMPLETA 25 ANOS E AINDA GERA REFLEXOS PARA EX-FUNCIONÁRIOS E CREDORES",
+   "url": "https://fmcruzeiro.com.br/2026/07/23/falencia-da-francisco-cherobim-filhos-completa-25-anos-e-ainda-gera-reflexos-para-ex-funcionarios-e-credores/",
+   "summary": "FALÊNCIA DA FRANCISCO CHEROBIM & FILHOS COMPLETA 25 ANOS E AINDA GERA REFLEXOS PARA EX-FUNCIONÁRIOS E CREDORES &nbsp;&nbsp; fmcruzeiro.com.br",
+   "source": "fmcruzeiro.com.br",
+   "domain": "fmcruzeiro.com.br",
+   "pub_ts": 1784799740,
+   "pub_iso": "2026-07-23 06:42",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1784819091,
+   "cap_iso": "2026-07-23 12:04"
   }
  },
- "run_count": 22,
+ "run_count": 23,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -7144,11 +7250,31 @@
   "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQdV82UkRJMGZNM1diTWFNYmhUMl9TWU1VOEJ2a3hoUU4xb2wtQXFVdF83aWVUOHdLYzloNXZJRkRCSUwxd2hYVmZTTDBpTUd1MmZwbGJQV3E2c3VrUU12N3JUeFZ0a29SRWs1dnNsclA3RUxmTC1CRHFTSWFyQWpYSWVxby1BOXBGV1NmWnV6M3U5a1lEVFNJNmZWaVh3V00wUm8xckVmLXJyZTBPWWd3Y0ZVLVVGZmY5TVBSeE1UY1NMRGMxUEE4eXN5S2s2RkhvV3ZzY0hwS1d5UXpiSWlvOWtBdDF3TE5HM3k0NQ?oc=5": {
    "url": "https://www.em.com.br/emfoco/2026/07/22/operadora-de-marca-de-roupas-com-106-anos-entra-em-falencia-e-fecha-cerca-de-180-lojas-apos-nao-encontrar-comprador/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMisAFBVV95cUxQcnNBOFJ0SDJyd3RrSmhHUEl1YXlIOVpKdDVTLV9NYVp5R3VTLU03d0dURFl3bHVHRTZBQWdSTVBRS01RVVZXZU9sM2tHaFpRRnJHQ3lYQ19VYlZSeHphdGsxQUZHVnBIUVYyVjhneEpISldZM3NSMnBYR3NhdlJIVU1pQnhvYkdBUVZZZnI5VzQyd1BQYUQ3MWpiWVpTT3Z3S204cFYxRG53Y3ZzQ0xCTQ?oc=5": {
+   "url": "https://www.moneytimes.com.br/prio-prio3-conclui-aquisicao-de-40-de-peregrino-e-pitangola-por-us-15-bilhao-kda/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPOE0tWjl2QjNqUm9yZS04S2E5U3k5UmZZdTJwTUxYZGR4dUJndV9TMU03azg5amxTT2twZ185VThyQ0NFSVhRdkNjaUhZdTh6amtSaEszOGplYTA2US1NTU5VejJweTB5cDA5TFVMbjFrazdVLWhYOC1EOHBQNmY3LVZDbmxoTk9qT2xHM3ZmNkxRUnpvaUdMT0NEdEZLZjFFZ0c4RFdRU2pjb3VGSS1wY3A5LTJORVFJWnJWV09xOEFzTUczYXlLSWJUc1haN1NsTkE?oc=5": {
+   "url": "https://conteudos.xpi.com.br/acoes/relatorios/apos-tres-anos-light-pede-para-sair-da-recuperacao-judicial-veja-o-radar-energia-xp-julho/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaG5mX0M4TFQ0Z0kzTVRoQk8yd1UxSGx6a0lZZVh1ZUFjTXkxWW9sXzdlNnlBVzBzVkZQT0hidHgtaW52YWhHTnVjcUtwTDVGZElubUxqSWlOa2hIcFd2ZGtmNGFfTlhZeFNDdDJYLWRibmhXZ3dtOHNoaFR1SkhnbjNuSkFuOVNNNFZILTBDektKLXV0cWo4OUFSeTc1c190YlgzajJQcmM3WFdmLTVkNlRpeGhQSGhZTktLYTdRUk1MZ2o2UWhvMlpSWGJQbjA?oc=5": {
+   "url": "https://elizeupires.com/artigos/geral/109336-nova-iguacu-empresa-em-recuperacao-judicial-ja-recebeu-cerca-r-425-milhoes-da-prefeitura/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZEZiQy1jRmtnU296QUlNbW4wM0RTVWhzTVREX3pTc3h2TUFYUUlUUWlTNzJYSWdybkR0c05LeGNHUFpxUk9YSmN5SDNlWUZRZGlWNVdodEY2Ykd0Nk5BcWJCSk5EdjRFWmE4YXVXOFN5eU9PckM1ajhRVUY3RzUweURNaTMtdHRUQnpSRW5Td2VmRkc0WDVxdllHUlJRcjVLWFFUc1ZFWGoxSUU?oc=5": {
+   "url": "https://tododia.com.br/cidades/piracicaba/piracicaba-justica-defere-recuperacao-judicial-do-grupo-manetoni/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNUXVzRFVSMURaaEw4ZURneEFpaTBFdHBwbFJQQXpKUUhiWmk1X3ZWOW1DZjBQRjJLTzFtcldMclp4UHAyUG8wc3RYd3JGX0duY1ROVXg2Vzh5QndYZEd3bF9INzVUekJwZVZ6V0JncFF6Ry05NG5ubVpFc3Q2Nm15REp3MGd3RDFidzBXNFFBekFSaEZKMENUOF9PdkpCRDBtV1dzZ1A5cTZfcmFMX3ROX3dKY1hOZlpWWE14NWZ3VFVvUGRQcXZZMWRLLXpTRWp1OWxoMXZzR3VWWW9JWkdj?oc=5": {
+   "url": "https://fmcruzeiro.com.br/2026/07/23/falencia-da-francisco-cherobim-filhos-completa-25-anos-e-ainda-gera-reflexos-para-ex-funcionarios-e-credores/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1784807872,
-  "iso": "23 jul 2026 · 08:57 BRT",
+  "ts": 1784819096,
+  "iso": "23 jul 2026 · 12:04 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
@@ -7170,13 +7296,13 @@
     "status": "atencao",
     "score": 50
    },
-   "Petrobras": {
-    "status": "monitorar",
-    "score": 35
-   },
    "BTG Pactual": {
     "status": "atencao",
     "score": 35
+   },
+   "Petrobras": {
+    "status": "monitorar",
+    "score": 34
    },
    "Itaúsa": {
     "status": "monitorar",
@@ -7188,7 +7314,7 @@
    },
    "ISA Energia Brasil": {
     "status": "monitorar",
-    "score": 28
+    "score": 27
    },
    "Suzano": {
     "status": "monitorar",
