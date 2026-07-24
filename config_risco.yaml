@@ -1,0 +1,2452 @@
+# ──────────────────────────────────────────────────────────────
+#  Radar de Risco — Configuração
+#  Uso:  python risk_dashboard.py --config config_risco.yaml
+#  Demo: python risk_dashboard.py --config config_risco.yaml --demo
+# ──────────────────────────────────────────────────────────────
+
+dashboard:
+  title: "Radar de Risco — Emissores"
+  language: "pt-BR"
+  country: "BR"
+  period: "7d"                 # Janela de busca no Google News: 1d | 7d | 30d
+  windows: [7, 30, 90, 365]    # Janelas selecionáveis no dashboard
+  default_window: 7            # Janela exibida ao abrir
+  attention_max_window: 30     # Selo "ATENÇÃO IMEDIATA" só em janelas curtas (score não é comparável em janelas longas)
+  history_keep_days: 400       # Retenção do histórico (>= maior janela)
+  max_articles_per_query: 15
+  # Removido em v1.0 (jul/2026): restrict_to_sources / sources (allowlist inerte).
+  # Cobertura é aberta — toda fonte encontrada é elegível, desde que a notícia
+  # satisfaça os demais critérios de inclusão. A confiança e a ponderação de
+  # cada fonte são governadas exclusivamente por source_trust (tiers + overrides
+  # + peso padrão de fonte não verificada, 0.60). Ver Capítulo 9 do manual.
+
+# ── Tiers de monitoramento ────────────────────────────────────
+# fetch_every_n_runs: 1 = busca em toda execução (tempo quase-real com o
+# workflow 4x/dia) · 2 = busca em execuções alternadas · 0 = não busca,
+# a menos que o emissor tenha force_fetch: true (Tier 3 sob demanda).
+tiers:
+  1: { label: "Tier 1", fetch_every_n_runs: 1 }
+  2: { label: "Tier 2", fetch_every_n_runs: 2 }
+  3: { label: "Tier 3", fetch_every_n_runs: 0 }
+
+# ── Watchlist de emissores ────────────────────────────────────
+# Hierarquia de fontes oficiais por emissor (bloco "official"):
+#   1. official.rss  → RSS de comunicados do RI (melhor: estruturado, rápido)
+#   2. official.news → página estática de notícias do RI (scraping best-effort;
+#      NÃO funciona em sites 100% JavaScript — nesses casos use rss ou confie na CVM)
+#   3. CVM/IPE       → fatos relevantes (automático p/ toda listada; cvm: true documenta)
+#   4. Imprensa      → Google News (sempre ativo)
+# Tudo que vem de rss/news entra com confiança "oficial" (1.0) e atribuição forçada.
+# ATENÇÃO: as URLs "ri:" abaixo são informacionais e as mais conhecidas — valide
+# antes de preencher rss/news (só rss/news disparam coleta).
+# aliases: nome + variações + TODOS os tickers (matching por palavra inteira,
+# sem acento/caixa). tier: nível de monitoramento.
+watchlist:
+  # Subgrupo = NATUREZA DO EMISSOR monitorado — nunca o instrumento da posição.
+  # País/região = domicílio do EMISSOR, não a praça de negociação.
+  # `ticker` é campo CADASTRAL obrigatório para emissores listados (validação,
+  # exportação, EDGAR). `aliases` são termos de BUSCA — tickers curtos não entram.
+  # `official.sec: true` marca emissor com valores registrados na SEC (elegível a EDGAR).
+
+  # ── EMPRESAS LISTADAS (companhia aberta com ticker/bolsa) ──  (105 emissores)
+  - name: "Ambev"
+    asset_class: listada
+    ticker: ABEV3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 1
+    sector: consumo
+    official:
+      ri: "https://ri.ambev.com.br/"
+      rss: ""
+      news: "https://ri.ambev.com.br/comunicados-ao-mercado/"
+      cvm: true
+    aliases: ["Ambev", "ABEV3"]
+  - name: "B3"
+    asset_class: listada
+    ticker: B3SA3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 1
+    sector: infraestrutura
+    official:
+      ri: "https://ri.b3.com.br/"
+      rss: ""
+      news: "https://ri.b3.com.br/informacoes-financeiras-e-comunicados/"
+      cvm: true
+    aliases: ["B3", "B3 S.A.", "B3SA3"]
+  - name: "BTG Pactual"
+    asset_class: listada
+    ticker: BPAC11
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 1
+    sector: bancos
+    official:
+      ri: "https://ri.btgpactual.com/"
+      rss: ""
+      news: "https://ri.btgpactual.com/noticias/"
+      cvm: true
+    aliases: ["BTG Pactual", "BTG", "BPAC11", "BPAC3", "BPAC5"]
+  - name: "Banco do Brasil"
+    asset_class: listada
+    ticker: BBAS3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 1
+    sector: bancos
+    official:
+      ri: "https://ri.bb.com.br/"
+      rss: ""
+      news: "https://ri.bb.com.br/publicacoes-e-comunicados/fatos-relevantes-comunicados-e-avisos/"
+      cvm: true
+    aliases: ["Banco do Brasil", "BBAS3"]
+  - name: "Bradesco"
+    asset_class: listada
+    ticker: BBDC4
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 1
+    sector: bancos
+    official:
+      ri: "https://www.bradescori.com.br/"
+      rss: ""
+      news: "https://www.bradescori.com.br/site/conteudo/comunicados-e-fatos-relevantes"
+      cvm: true
+    aliases: ["Bradesco", "BBDC4", "BBDC3"]
+  - name: "Eletrobras"
+    asset_class: listada
+    ticker: ELET3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 1
+    sector: utilities
+    official:
+      ri: "https://ri.eletrobras.com/"
+      rss: ""
+      news: "https://ri.eletrobras.com/pt-br/informacoes-financeiras/fatos-relevantes"
+      cvm: true
+    aliases: ["Eletrobras", "ELET3", "ELET6"]
+  - name: "Equatorial Energia"
+    asset_class: listada
+    ticker: EQTL3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 1
+    sector: utilities
+    official:
+      ri: "https://ri.equatorialenergia.com.br/"
+      rss: ""
+      news: "https://ri.equatorialenergia.com.br/informacoes-financeiras/fatos-relevantes/"
+      cvm: true
+    aliases: ["Equatorial Energia", "Equatorial", "EQTL3", "Celpa"]
+  - name: "Itaú Unibanco"
+    asset_class: listada
+    ticker: ITUB4
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 1
+    sector: bancos
+    official:
+      ri: "https://www.itau.com.br/relacoes-com-investidores"
+      rss: ""
+      news: "https://www.itau.com.br/relacoes-com-investidores/resultados-e-comunicados"
+      cvm: true
+    aliases: ["Itaú Unibanco", "Itaú", "Itau", "ITUB4", "ITUB3"]
+  - name: "Localiza"
+    asset_class: listada
+    ticker: RENT3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 1
+    sector: consumo
+    official:
+      ri: "https://ri.localiza.com/"
+      rss: ""
+      news: "https://ri.localiza.com/informacoes-financeiras/fatos-relevantes/"
+      cvm: true
+    aliases: ["Localiza", "RENT3"]
+  - name: "PRIO"
+    asset_class: listada
+    ticker: PRIO3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 1
+    sector: commodities
+    official:
+      ri: "https://ri.prio3.com.br/"
+      rss: ""
+      news: "https://ri.prio3.com.br/informacoes-aos-acionistas/comunicados-e-fatos-relevantes/"
+      cvm: true
+    aliases: ["PRIO", "PetroRio", "PRIO3"]
+  - name: "Petrobras"
+    asset_class: listada
+    ticker: PETR4
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 1
+    sector: commodities
+    official:
+      ri: "https://www.investidorpetrobras.com.br/"
+      rss: ""
+      news: "https://www.investidorpetrobras.com.br/resultados-e-comunicados/"
+      cvm: true
+    aliases: ["Petrobras", "Petróleo Brasileiro", "PETR4", "PETR3"]
+  - name: "Raia Drogasil"
+    asset_class: listada
+    ticker: RADL3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 1
+    sector: consumo
+    official:
+      ri: "https://ri.rd.com.br/"
+      rss: ""
+      news: "https://ri.rd.com.br/informacoes-financeiras/fatos-relevantes/"
+      cvm: true
+    aliases: ["Raia Drogasil", "RD Saúde", "RADL3"]
+  - name: "Rede D'Or"
+    asset_class: listada
+    ticker: RDOR3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 1
+    sector: infraestrutura
+    official:
+      ri: "https://ri.rededorsaoluiz.com.br/"
+      rss: ""
+      news: "https://ri.rededorsaoluiz.com.br/informacoes-financeiras/fatos-relevantes/"
+      cvm: true
+    aliases: ["Rede D'Or", "Rede DOr", "RDOR3"]
+  - name: "Suzano"
+    asset_class: listada
+    ticker: SUZB3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 1
+    sector: commodities
+    official:
+      ri: "https://ri.suzano.com.br/"
+      rss: ""
+      news: "https://ri.suzano.com.br/informacoes-financeiras/comunicados-e-fatos-relevantes/"
+      cvm: true
+    aliases: ["Suzano", "SUZB3"]
+  - name: "Vale"
+    asset_class: listada
+    ticker: VALE3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 1
+    sector: commodities
+    official:
+      ri: "https://vale.com/pt/investidores"
+      rss: ""
+      news: "https://vale.com/pt/investidores"
+      cvm: true
+    aliases: ["Vale", "Vale S.A.", "VALE3"]
+  - name: "Vibra Energia"
+    asset_class: listada
+    ticker: VBBR3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 1
+    sector: infraestrutura
+    official:
+      ri: "https://ri.vibraenergia.com.br/"
+      rss: ""
+      news: "https://ri.vibraenergia.com.br/informacoes-financeiras/fatos-relevantes/"
+      cvm: true
+    aliases: ["Vibra Energia", "Vibra", "VBBR3"]
+  - name: "Axia Energia"
+    asset_class: listada
+    ticker: AXIA3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Axia Energia", "AXIA3", "AXIA5", "AXIA6"]
+  - name: "BRF"
+    asset_class: listada
+    ticker: BRFS3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["BRF", "BRFS3"]
+  - name: "Banco de Crédito e Inversiones"
+    asset_class: listada
+    ticker: BCI
+    listing: Bolsa de Santiago
+    country: Chile
+    region: América Latina
+    language: es
+    tier: 2
+    aliases: ["Banco de Crédito e Inversiones"]
+  - name: "Bunge"
+    asset_class: listada
+    ticker: BG
+    listing: NYSE
+    country: Suíça
+    region: Europa
+    language: en
+    tier: 2
+    official:
+      sec: true
+    aliases: ["Bunge"]
+  - name: "CPFL Energia"
+    asset_class: listada
+    ticker: CPFE3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["CPFL Energia", "CPFL", "CPFE3"]
+  - name: "CVS Health"
+    asset_class: listada
+    ticker: CVS
+    listing: NYSE
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 2
+    official:
+      sec: true
+    aliases: ["CVS Health"]
+  - name: "Caixa Seguridade"
+    asset_class: listada
+    ticker: CXSE3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Caixa Seguridade", "CXSE3"]
+  - name: "Cemig"
+    asset_class: listada
+    ticker: CMIG4
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Cemig", "CMIG4"]
+  - name: "Construtora Tenda"
+    asset_class: listada
+    ticker: TEND3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Construtora Tenda", "TEND3"]
+  - name: "Copel"
+    asset_class: listada
+    ticker: CPLE6
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Copel", "CPLE6"]
+  - name: "Cosan"
+    asset_class: listada
+    ticker: CSAN3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Cosan", "CSAN3"]
+  - name: "Embraer"
+    asset_class: listada
+    ticker: EMBR3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Embraer", "EMBR3"]
+  - name: "Energy Transfer"
+    asset_class: listada
+    ticker: ET
+    listing: NYSE
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 2
+    official:
+      sec: true
+    aliases: ["Energy Transfer"]
+  - name: "Eneva"
+    asset_class: listada
+    ticker: ENEV3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Eneva", "ENEV3"]
+  - name: "Engie Brasil"
+    asset_class: listada
+    ticker: EGIE3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Engie Brasil", "Engie", "EGIE3"]
+  - name: "Ford Motor"
+    asset_class: listada
+    ticker: F
+    listing: NYSE
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 2
+    official:
+      sec: true
+    aliases: ["Ford Motor"]
+  - name: "Gerdau"
+    asset_class: listada
+    ticker: GGBR4
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Gerdau", "GGBR4"]
+  - name: "Hapvida"
+    asset_class: listada
+    ticker: HAPV3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Hapvida", "HAPV3"]
+  - name: "ISA Energia Brasil"
+    asset_class: listada
+    ticker: ISAE4
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["ISA Energia Brasil", "ISA Energia", "ISA CTEEP", "ISAE4"]
+  - name: "Itaúsa"
+    asset_class: listada
+    ticker: ITSA4
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Itaúsa", "Itausa", "ITSA4"]
+  - name: "JBS"
+    asset_class: listada
+    ticker: JBSS3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["JBS", "JBSS3"]
+  - name: "Klabin"
+    asset_class: listada
+    ticker: KLBN11
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Klabin", "KLBN11"]
+  - name: "LATAM Airlines"
+    asset_class: listada
+    ticker: LTM
+    listing: NYSE / Santiago
+    country: Chile
+    region: América Latina
+    language: es
+    tier: 2
+    official:
+      sec: true
+    aliases: ["LATAM Airlines", "LATAM"]
+  - name: "Lojas Renner"
+    asset_class: listada
+    ticker: LREN3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Lojas Renner", "Renner", "LREN3"]
+  - name: "MercadoLibre"
+    asset_class: listada
+    ticker: MELI
+    listing: Nasdaq
+    country: Uruguai
+    region: América Latina
+    language: es
+    tier: 2
+    official:
+      sec: true
+    aliases: ["Mercado Livre", "MercadoLibre", "MELI"]
+  - name: "Motiva"
+    asset_class: listada
+    ticker: MOTV3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Motiva", "Motiva Infraestrutura", "CCR", "Grupo CCR", "MOTV3", "CCRO3"]
+  - name: "Natura &Co"
+    asset_class: listada
+    ticker: NTCO3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Natura &Co", "Natura", "NTCO3"]
+  - name: "Porto"
+    asset_class: listada
+    ticker: PSSA3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Porto Seguro", "Porto", "PSSA3"]
+  - name: "Rumo"
+    asset_class: listada
+    ticker: RAIL3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Rumo", "RAIL3"]
+  - name: "Sabesp"
+    asset_class: listada
+    ticker: SBSP3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Sabesp", "SBSP3"]
+  - name: "Santander Brasil"
+    asset_class: listada
+    ticker: SANB11
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Santander Brasil", "Santander", "SANB11", "SANB4", "SANB3"]
+  - name: "Smart Fit"
+    asset_class: listada
+    ticker: SMFT3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Smart Fit", "Smartfit", "SMFT3"]
+  - name: "TIM Brasil"
+    asset_class: listada
+    ticker: TIMS3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["TIM Brasil", "TIM", "TIMS3"]
+  - name: "Telefônica Brasil"
+    asset_class: listada
+    ticker: VIVT3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Telefônica Brasil", "Vivo", "VIVT3"]
+  - name: "Ultrapar"
+    asset_class: listada
+    ticker: UGPA3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Ultrapar", "Ultra", "UGPA3"]
+  - name: "WEG"
+    asset_class: listada
+    ticker: WEGE3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["WEG", "WEGE3"]
+  - name: "AES Andes"
+    asset_class: listada
+    ticker: AESANDES
+    listing: Bolsa de Santiago
+    country: Chile
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["AES Andes", "AES Gener"]
+  - name: "Baker Hughes"
+    asset_class: listada
+    ticker: BKR
+    listing: Nasdaq
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Baker Hughes"]
+  - name: "Banco Davivienda"
+    asset_class: listada
+    ticker: PFDAVVNDA
+    listing: BVC
+    country: Colômbia
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["Banco Davivienda", "Davivienda"]
+  - name: "Banco Mercantil do Brasil"
+    asset_class: listada
+    ticker: BMEB4
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Banco Mercantil do Brasil"]
+  - name: "Besalco"
+    asset_class: listada
+    ticker: BESALCO
+    listing: Bolsa de Santiago
+    country: Chile
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["Besalco"]
+  - name: "British American Tobacco"
+    asset_class: listada
+    ticker: BTI
+    listing: LSE / NYSE
+    country: Reino Unido
+    region: Europa
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["British American Tobacco", "BAT"]
+  - name: "Capital One Financial"
+    asset_class: listada
+    ticker: COF
+    listing: NYSE
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Capital One Financial", "Capital One"]
+  - name: "Cemex"
+    asset_class: listada
+    ticker: CX
+    listing: NYSE / BMV
+    country: México
+    region: América Latina
+    language: es
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Cemex"]
+  - name: "Cencosud"
+    asset_class: listada
+    ticker: CENCOSUD
+    listing: Bolsa de Santiago
+    country: Chile
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["Cencosud"]
+  - name: "Cigna Group"
+    asset_class: listada
+    ticker: CI
+    listing: NYSE
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Cigna Group", "Cigna"]
+  - name: "Citigroup"
+    asset_class: listada
+    ticker: C
+    listing: NYSE
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Citigroup", "Citibank"]
+  - name: "Coca-Cola Embonor"
+    asset_class: listada
+    ticker: EMBONORB
+    listing: Bolsa de Santiago
+    country: Chile
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["Coca-Cola Embonor", "Embonor"]
+  - name: "Cyrela Brazil Realty"
+    asset_class: listada
+    ticker: CYRE3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Cyrela Brazil Realty", "Cyrela", "CYRE3"]
+  - name: "Dasa"
+    asset_class: listada
+    ticker: DASA3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    force_fetch: true
+    aliases: ["Dasa", "Diagnósticos da América", "DASA3"]
+  - name: "Direcional Engenharia"
+    asset_class: listada
+    ticker: DIRR3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Direcional Engenharia", "Direcional", "DIRR3"]
+  - name: "Dommo Energia"
+    asset_class: listada
+    ticker: DMMO3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    force_fetch: true
+    aliases: ["Dommo Energia", "DMMO3"]
+  - name: "Duke Energy"
+    asset_class: listada
+    ticker: DUK
+    listing: NYSE
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Duke Energy"]
+  - name: "EQT Corporation"
+    asset_class: listada
+    ticker: EQT
+    listing: NYSE
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["EQT Corporation", "EQT Corp"]
+  - name: "Ecopetrol"
+    asset_class: listada
+    ticker: EC
+    listing: NYSE / BVC
+    country: Colômbia
+    region: América Latina
+    language: es
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Ecopetrol"]
+  - name: "Energisa"
+    asset_class: listada
+    ticker: ENGI11
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Energisa"]
+  - name: "General Motors"
+    asset_class: listada
+    ticker: GM
+    listing: NYSE
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["General Motors"]
+  - name: "Grupo Aeroméxico"
+    asset_class: listada
+    ticker: AERO
+    listing: NYSE
+    country: México
+    region: América Latina
+    language: es
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Aeroméxico", "Grupo Aeroméxico"]
+  - name: "Grupo Financiero Banorte"
+    asset_class: listada
+    ticker: GFNORTEO
+    listing: BMV
+    country: México
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["Banorte", "Grupo Financiero Banorte"]
+  - name: "Grupo México"
+    asset_class: listada
+    ticker: GMEXICOB
+    listing: BMV
+    country: México
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["Grupo México"]
+  - name: "Grupo Nutresa"
+    asset_class: listada
+    ticker: NUTRESA
+    listing: BVC
+    country: Colômbia
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["Grupo Nutresa", "Nutresa"]
+  - name: "Halliburton"
+    asset_class: listada
+    ticker: HAL
+    listing: NYSE
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Halliburton"]
+  - name: "Instituto de Diagnóstico (IDS)"
+    asset_class: listada
+    ticker: IDS
+    listing: Bolsa de Santiago
+    country: Chile
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["Instituto de Diagnóstico (IDS)", "Instituto de Diagnóstico"]
+  - name: "JPMorgan Chase"
+    asset_class: listada
+    ticker: JPM
+    listing: NYSE
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["JPMorgan Chase", "JP Morgan Chase"]
+  - name: "Loews Corporation"
+    asset_class: listada
+    ticker: L
+    listing: NYSE
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Loews Corporation", "Loews"]
+  - name: "Micron Technology"
+    asset_class: listada
+    ticker: MU
+    listing: Nasdaq
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Micron Technology"]
+  - name: "Millicom (Tigo)"
+    asset_class: listada
+    ticker: TIGO
+    listing: Nasdaq
+    country: Luxemburgo
+    region: América Latina
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Millicom (Tigo)", "Millicom", "Tigo"]
+  - name: "Multiexport Foods"
+    asset_class: listada
+    ticker: MULTIFOODS
+    listing: Bolsa de Santiago
+    country: Chile
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["Multiexport Foods"]
+  - name: "Multiplan"
+    asset_class: listada
+    ticker: MULT3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Multiplan", "MULT3"]
+  - name: "NextEra Energy"
+    asset_class: listada
+    ticker: NEE
+    listing: NYSE
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["NextEra Energy"]
+  - name: "Nubank (Nu Holdings)"
+    asset_class: listada
+    ticker: NU
+    listing: NYSE
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Nubank (Nu Holdings)", "Nubank", "Nu Holdings"]
+  - name: "Odontoprev"
+    asset_class: listada
+    ticker: ODPV3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Odontoprev"]
+  - name: "Orizon Valorização de Resíduos"
+    asset_class: listada
+    ticker: ORVR3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Orizon Valorização de Resíduos", "Orizon Valorização", "ORVR3"]
+  - name: "Prudential Financial"
+    asset_class: listada
+    ticker: PRU
+    listing: NYSE
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Prudential Financial"]
+  - name: "SMU"
+    asset_class: listada
+    ticker: SMU
+    listing: Bolsa de Santiago
+    country: Chile
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["SMU"]
+  - name: "Salfacorp"
+    asset_class: listada
+    ticker: SALFACORP
+    listing: Bolsa de Santiago
+    country: Chile
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["Salfacorp"]
+  - name: "Salmones Camanchaca"
+    asset_class: listada
+    ticker: SALMOCAM
+    listing: Santiago / Oslo
+    country: Chile
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["Salmones Camanchaca"]
+  - name: "StoneCo"
+    asset_class: listada
+    ticker: STNE
+    listing: Nasdaq
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    force_fetch: true
+    official:
+      sec: true
+    aliases: ["StoneCo", "Stone Pagamentos", "STNE"]
+  - name: "Telecom Argentina"
+    asset_class: listada
+    ticker: TEO
+    listing: NYSE / BYMA
+    country: Argentina
+    region: América Latina
+    language: es
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Telecom Argentina"]
+  - name: "Toronto-Dominion Bank"
+    asset_class: listada
+    ticker: TD
+    listing: NYSE / TSX
+    country: Canadá
+    region: América do Norte
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Toronto-Dominion Bank", "Toronto-Dominion", "TD Bank"]
+  - name: "Truist Financial"
+    asset_class: listada
+    ticker: TFC
+    listing: NYSE
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Truist Financial", "Truist"]
+  - name: "Tupy"
+    asset_class: listada
+    ticker: TUPY3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    force_fetch: true
+    aliases: ["Tupy", "TUPY3"]
+  - name: "UnitedHealth Group"
+    asset_class: listada
+    ticker: UNH
+    listing: NYSE
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    official:
+      sec: true
+    aliases: ["UnitedHealth Group", "UnitedHealth"]
+  - name: "Usiminas"
+    asset_class: listada
+    ticker: USIM5
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Usiminas", "USIM5"]
+  - name: "Vamos"
+    asset_class: listada
+    ticker: VAMO3
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    force_fetch: true
+    aliases: ["Vamos", "Vamos Locação", "VAMO3"]
+  - name: "Vesta"
+    asset_class: listada
+    ticker: VTMX
+    listing: NYSE / BMV
+    country: México
+    region: América Latina
+    language: es
+    tier: 3
+    official:
+      sec: true
+    aliases: ["Vesta", "Corporación Inmobiliaria Vesta"]
+  - name: "Viña Concha y Toro"
+    asset_class: listada
+    ticker: CONCHATORO
+    listing: Bolsa de Santiago
+    country: Chile
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["Concha y Toro", "Viña Concha y Toro"]
+  - name: "YPF"
+    asset_class: listada
+    ticker: YPF
+    listing: NYSE / BYMA
+    country: Argentina
+    region: América Latina
+    language: es
+    tier: 3
+    official:
+      sec: true
+    aliases: ["YPF"]
+  - name: "Yinson Holdings"
+    asset_class: listada
+    ticker: YINSON
+    listing: Bursa Malaysia
+    country: Malásia
+    region: Ásia
+    language: en
+    tier: 3
+    aliases: ["Yinson Holdings", "Yinson"]
+
+  # ── NÃO LISTADAS (capital fechado / PE / crédito privado / SPE) ──  (31 emissores)
+  - name: "AGV"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    revisao: alias_a_confirmar
+    nota: "Participação privada sem ticker/listagem identificada. Aliases compostos para evitar falso positivo com a sigla \"AGV\"; confirmar a razão social correta com a área antes de considerar a cobertura confiável."
+    aliases: ["AGV Logística", "AGV Participações", "Grupo AGV"]
+  - name: "Aegea Saneamento"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Aegea Saneamento", "Aegea"]
+    type: nao_listada
+  - name: "Austral Participações"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Austral Participações", "Austral Seguradora", "Austral Re"]
+    type: nao_listada
+  - name: "Oceana Offshore"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Oceana Offshore"]
+    type: nao_listada
+  - name: "Outback Brasil"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Outback Brasil", "Outback Steakhouse"]
+    type: nao_listada
+  - name: "Tok&Stok"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Tok&Stok", "TokStok", "Tok Stok"]
+    type: nao_listada
+  - name: "Vias Participações"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Vias Participações"]
+    type: nao_listada
+  - name: "AI Candelaria"
+    asset_class: nao_listada
+    country: Espanha
+    region: Europa
+    language: es
+    tier: 3
+    aliases: ["AI Candelaria"]
+  - name: "Albioma"
+    asset_class: nao_listada
+    country: França
+    region: Europa
+    language: fr
+    tier: 3
+    force_fetch: true
+    aliases: ["Albioma"]
+    type: nao_listada
+  - name: "Arapuã Florestal"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    force_fetch: true
+    aliases: ["Arapuã Florestal"]
+    type: nao_listada
+  - name: "BBVA México"
+    asset_class: nao_listada
+    country: México
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["BBVA México", "BBVA Bancomer"]
+  - name: "Banco BV"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    force_fetch: true
+    aliases: ["Banco BV", "Banco Votorantim"]
+    type: nao_listada
+  - name: "Banco CNH Industrial"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Banco CNH Industrial"]
+  - name: "Banco Stellantis"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Banco Stellantis"]
+  - name: "Bio Phyllas Florestal"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Bio Phyllas Florestal", "Bio Phyllas Florestal SA"]
+  - name: "CIBanco"
+    asset_class: nao_listada
+    country: México
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["CIBanco"]
+  - name: "Ciranda Holding"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    force_fetch: true
+    aliases: ["Ciranda Holding", "Ciranda I Holding"]
+    type: nao_listada
+  - name: "Fisia"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    force_fetch: true
+    aliases: ["Fisia"]
+    type: nao_listada
+  - name: "GSH Corp"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    force_fetch: true
+    aliases: ["GSH Corp"]
+    type: nao_listada
+  - name: "Grupo CVLB"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Grupo CVLB", "CVLB"]
+  - name: "Grupo Security"
+    asset_class: nao_listada
+    country: Chile
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["Grupo Security", "Security"]
+  - name: "Hospital Care"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Hospital Care"]
+  - name: "Imbuia Florestal"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Imbuia Florestal", "Imbuia Florestal SA"]
+  - name: "Investment Energy Resources"
+    asset_class: nao_listada
+    country: Honduras
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["Investment Energy Resources"]
+  - name: "Minum Genco"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    force_fetch: true
+    aliases: ["Minum Genco"]
+    type: nao_listada
+  - name: "Nova Esperança Florestal"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Nova Esperança Florestal", "Nova Esperanca Florestal SA"]
+  - name: "Pemex (Petróleos Mexicanos)"
+    asset_class: nao_listada
+    country: México
+    region: América Latina
+    language: es
+    tier: 3
+    aliases: ["Pemex (Petróleos Mexicanos)", "Pemex", "Petróleos Mexicanos"]
+  - name: "Samarco Mineração"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Samarco Mineração", "Samarco"]
+  - name: "Tarumã Florestal"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    force_fetch: true
+    aliases: ["Tarumã Florestal"]
+    type: nao_listada
+  - name: "Uro Grandis Florestal"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Uro Grandis Florestal", "Uro Grandis Florestal SA"]
+  - name: "Ápice Florestal"
+    asset_class: nao_listada
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    aliases: ["Ápice Florestal", "Apice Florestal SA"]
+
+  # ── FIIs / FUNDOS LISTADOS DE ATIVOS REAIS (B3) ──  (8 emissores)
+  - name: "Vinci Credit Securities FII"
+    asset_class: fii
+    ticker: VCRI11
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Vinci Credit Securities FII", "Vinci Credit Securities", "VCRI11"]
+    type: fii
+  - name: "Vinci Crédito Agro FIAGRO"
+    asset_class: fii
+    ticker: VICA11
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Vinci Crédito Agro FIAGRO", "Vinci Crédito Agro", "VICA11"]
+    type: fii
+  - name: "Vinci Energia FIP-IE"
+    asset_class: fii
+    ticker: VIGT11
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Vinci Energia FIP-IE", "Vinci Energia", "VIGT11"]
+    type: fii
+  - name: "Vinci Imóveis Urbanos FII"
+    asset_class: fii
+    ticker: VIUR11
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Vinci Imóveis Urbanos FII", "Vinci Imóveis Urbanos", "VIUR11"]
+    type: fii
+  - name: "Vinci Logística FII"
+    asset_class: fii
+    ticker: VILG11
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Vinci Logística FII", "Vinci Logística", "VILG11"]
+    type: fii
+  - name: "Vinci Offices FII"
+    asset_class: fii
+    ticker: VINO11
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Vinci Offices FII", "Vinci Offices", "VINO11"]
+    type: fii
+  - name: "Vinci Oportunidade Residencial FII"
+    asset_class: fii
+    ticker: VORE11
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Vinci Oportunidade Residencial FII", "Vinci Oportunidade Residencial", "VORE11"]
+    type: fii
+  - name: "Vinci Shopping Centers FII"
+    asset_class: fii
+    ticker: VISC11
+    listing: B3
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    aliases: ["Vinci Shopping Centers FII", "Vinci Shopping Centers", "VISC11"]
+    type: fii
+
+  # ── GESTORAS/FUNDOS (risco de veículo/gestor · taxonomia própria) ──  (16 emissores)
+  - name: "Patria"
+    asset_class: gestora_fundo
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 2
+    vehicle_kind: gestora
+    tratamento: revisar_manualmente
+    scoring_mode: taxonomia_propria
+    aliases: ["Patria", "Pátria Investimentos", "PAX"]
+  - name: "Blackstone"
+    asset_class: gestora_fundo
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    vehicle_kind: gestora
+    tratamento: monitorar_gestora
+    scoring_mode: taxonomia_propria
+    aliases: ["Blackstone"]
+  - name: "Genoa Capital"
+    asset_class: gestora_fundo
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    vehicle_kind: gestora
+    tratamento: monitorar_gestora
+    scoring_mode: taxonomia_propria
+    aliases: ["Genoa Capital"]
+  - name: "Janus"
+    asset_class: gestora_fundo
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    vehicle_kind: gestora
+    tratamento: monitorar_gestora
+    scoring_mode: taxonomia_propria
+    aliases: ["Janus", "Janus Henderson"]
+  - name: "Jgp"
+    asset_class: gestora_fundo
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    vehicle_kind: gestora
+    tratamento: monitorar_gestora
+    scoring_mode: taxonomia_propria
+    aliases: ["Jgp", "JGP Gestão"]
+  - name: "Jp Morgan Asset"
+    asset_class: gestora_fundo
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    vehicle_kind: gestora
+    tratamento: consolidar_jpmorgan
+    scoring_mode: taxonomia_propria
+    aliases: ["Jp Morgan Asset", "JPMorgan Asset Management"]
+  - name: "Kapitalo"
+    asset_class: gestora_fundo
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    vehicle_kind: gestora
+    tratamento: monitorar_gestora
+    scoring_mode: taxonomia_propria
+    aliases: ["Kapitalo", "Kapitalo Investimentos"]
+  - name: "Larrainvial"
+    asset_class: gestora_fundo
+    country: Chile
+    region: América Latina
+    language: es
+    tier: 3
+    vehicle_kind: gestora
+    tratamento: monitorar_gestora
+    scoring_mode: taxonomia_propria
+    aliases: ["Larrainvial", "LarrainVial"]
+  - name: "Morgan Stanley"
+    asset_class: gestora_fundo
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    vehicle_kind: gestora
+    tratamento: revisar_manualmente
+    scoring_mode: taxonomia_propria
+    aliases: ["Morgan Stanley"]
+  - name: "Navi"
+    asset_class: gestora_fundo
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    vehicle_kind: gestora
+    tratamento: monitorar_gestora
+    scoring_mode: taxonomia_propria
+    aliases: ["Navi", "Navi Capital"]
+  - name: "Ninety One"
+    asset_class: gestora_fundo
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    vehicle_kind: gestora
+    tratamento: monitorar_gestora
+    scoring_mode: taxonomia_propria
+    aliases: ["Ninety One"]
+  - name: "Principal Claritas"
+    asset_class: gestora_fundo
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    vehicle_kind: gestora
+    tratamento: monitorar_gestora
+    scoring_mode: taxonomia_propria
+    aliases: ["Principal Claritas"]
+  - name: "Schroder"
+    asset_class: gestora_fundo
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    vehicle_kind: gestora
+    tratamento: monitorar_gestora
+    scoring_mode: taxonomia_propria
+    aliases: ["Schroder", "Schroders"]
+  - name: "Singular"
+    asset_class: gestora_fundo
+    country: Chile
+    region: América Latina
+    language: es
+    tier: 3
+    vehicle_kind: gestora
+    tratamento: monitorar_gestora
+    scoring_mode: taxonomia_propria
+    aliases: ["Singular", "Singular Asset"]
+  - name: "Spx"
+    asset_class: gestora_fundo
+    country: Brasil
+    region: Brasil
+    language: pt
+    tier: 3
+    vehicle_kind: gestora
+    tratamento: monitorar_gestora
+    scoring_mode: taxonomia_propria
+    aliases: ["Spx", "SPX Capital"]
+  - name: "Viking Global Investors"
+    asset_class: gestora_fundo
+    country: EUA
+    region: América do Norte
+    language: en
+    tier: 3
+    vehicle_kind: gestora
+    tratamento: monitorar_gestora
+    scoring_mode: taxonomia_propria
+    aliases: ["Viking Global Investors", "Viking Global"]
+
+source_trust:
+  default_tier: outros
+  overrides:
+    reuters.com: 0.99
+    bloomberg.com: 0.99
+    bloomberglinea.com.br: 0.99
+    valor.globo.com: 0.97
+    pipelinevalor.globo.com: 0.97
+    braziljournal.com: 0.96
+    broadcast.com.br: 0.96
+    neofeed.com.br: 0.95
+    infomoney.com.br: 0.93
+    exame.com: 0.92
+    einvestidor.estadao.com.br: 0.92
+    br.investing.com: 0.91
+    moneytimes.com.br: 0.9
+    clubefii.com.br: 0.9
+    estadao.com.br: 0.9
+    folha.uol.com.br: 0.9
+    oglobo.globo.com: 0.89
+    g1.globo.com: 0.89
+    cnnbrasil.com.br: 0.89
+    economia.uol.com.br: 0.88
+  tiers:
+    oficial:
+      label: Fonte oficial
+      weight: 1.0
+    agencia:
+      label: Agência de rating
+      weight: 0.99
+    imprensa:
+      label: Imprensa consolidada
+      weight: 0.9
+    outros:
+      label: Fonte não verificada
+      weight: 0.6
+  domains:
+    oficial:
+      - amf-france.org
+      - b3.com.br
+      - banrep.gov.co
+      - banxico.org.mx
+      - bcentral.cl
+      - bcra.gob.ar
+      - biva.mx
+      - bmv.com.mx
+      - bolsadesantiago.com
+      - bourse.lu
+      - bursamalaysia.com
+      - bvc.com.co
+      - byma.com.ar
+      - cmfchile.cl
+      - cnbv.gob.mx
+      - cnmv.es
+      - cnv.gov.ar
+      - cvm.gov.br
+      - data.fca.org.uk
+      - data.sec.gov
+      - fnet.bmfbovespa.com.br
+      - mzweb.com.br
+      - ri.pn
+      - sec.gov
+      - sedarplus.ca
+      - six-group.com
+      - superfinanciera.gov.co
+    agencia:
+      - austin-rating.com.br
+      - brc.com.co
+      - feller-rate.com
+      - fitchratings.com
+      - fixscr.com
+      - hrratings.com
+      - humphreys.cl
+      - moodys.com
+      - moodyslocal.com
+      - ratingspcr.com
+      - spglobal.com
+      - sr-rating.com
+      - verum.com.mx
+      - vriskr.com
+    imprensa:
+      - ambito.com
+      - bloomberg.com
+      - bloomberglinea.com.br
+      - br.investing.com
+      - braziljournal.com
+      - broadcast.com.br
+      - clubefii.com.br
+      - cnbc.com
+      - cnnbrasil.com.br
+      - cronista.com
+      - df.cl
+      - economia.uol.com.br
+      - economiaynegocios.cl
+      - einvestidor.estadao.com.br
+      - eleconomista.com.mx
+      - elfinanciero.com.mx
+      - emol.com
+      - estadao.com.br
+      - exame.com
+      - expansion.mx
+      - fiis.com.br
+      - finance.yahoo.com
+      - folha.uol.com.br
+      - ft.com
+      - g1.globo.com
+      - infobae.com
+      - infomoney.com.br
+      - larepublica.co
+      - latercera.com
+      - marketwatch.com
+      - moneytimes.com.br
+      - neofeed.com.br
+      - oglobo.globo.com
+      - pipelinevalor.globo.com
+      - portafolio.co
+      - reforma.com
+      - reuters.com
+      - seudinheiro.com
+      - spacemoney.com.br
+      - valor.globo.com
+      - valoraanalitik.com
+      - wsj.com
+
+custom_feeds:
+  - name: CNBC · Finance
+    url: "https://www.cnbc.com/id/10000664/device/rss/rss.html"
+    trust_tier: imprensa
+    country: EUA
+    language: en
+  - name: CNBC · Economy
+    url: "https://www.cnbc.com/id/20910258/device/rss/rss.html"
+    trust_tier: imprensa
+    country: EUA
+    language: en
+  - name: MarketWatch · Top Stories
+    url: "https://feeds.marketwatch.com/marketwatch/topstories/"
+    trust_tier: imprensa
+    country: EUA
+    language: en
+  - name: Yahoo Finance
+    url: "https://finance.yahoo.com/news/rssindex"
+    trust_tier: imprensa
+    country: EUA
+    language: en
+  - name: El Economista (MX)
+    url: "https://www.eleconomista.com.mx/arc/outboundfeeds/rss/?outputType=xml"
+    trust_tier: imprensa
+    country: México
+    language: es
+  - name: El Financiero (MX)
+    url: "https://www.elfinanciero.com.mx/arc/outboundfeeds/rss/?outputType=xml"
+    trust_tier: imprensa
+    country: México
+    language: es
+  - name: Portafolio · Economía
+    url: "http://portafolio.co/rss/economia.xml"
+    trust_tier: imprensa
+    country: Colômbia
+    language: es
+  - name: Portafolio · Empresas
+    url: "http://portafolio.co/rss/negocios/empresas.xml"
+    trust_tier: imprensa
+    country: Colômbia
+    language: es
+  - name: Ámbito · Economía
+    url: "https://www.ambito.com/rss/pages/economia.xml"
+    trust_tier: imprensa
+    country: Argentina
+    language: es
+  - name: Ámbito · Finanzas
+    url: "https://www.ambito.com/rss/pages/finanzas.xml"
+    trust_tier: imprensa
+    country: Argentina
+    language: es
+  - name: Infobae
+    url: "https://www.infobae.com/feeds/rss/"
+    trust_tier: imprensa
+    country: Argentina
+    language: es
+
+ri_scraper:
+  use_browser: true          # habilita o degrau 4 (headless) quando 1-3 falham
+  browser_timeout_s: 35
+  min_items: 3               # menos que isso → tenta a próxima estratégia
+  # Resiliência: se a URL de official.news quebrar ou render pouco (sites de
+  # RI mudam de caminho ao trocar de fornecedor — MZ, RIWeb, Ten Meetings…),
+  # o crawler volta à home do RI (official.ri) e localiza sozinho a seção
+  # cujo caminho contenha um destes termos, nesta ordem de preferência:
+  preferred_paths:
+    - "fatos-relevantes"
+    - "fato-relevante"
+    - "comunicados-e-fatos"
+    - "comunicados-ao-mercado"
+    - "comunicados"
+    - "resultados-e-comunicados"
+    - "noticias"
+    - "avisos"
+    - "resultados"
+
+# ── Buscas de mercado (sem empresa específica) ────────────────
+market_queries:
+  enabled: true
+  queries:
+    - "recuperação judicial empresa"
+    - "pedido de falência empresa"
+    - "rebaixamento rating empresa brasileira"
+    - "covenant dívida empresa"
+    - "CVM suspende negociação"
+
+# ── Taxonomia de eventos, severidade e scoring ────────────────
+taxonomy:
+  # `applies_to` = grupos de ativos em que o evento faz sentido. Eventos
+  # corporativos NÃO se aplicam a Gestoras/Fundos (uma "recuperação judicial"
+  # não descreve risco de um veículo); estes têm taxonomia própria, ancorada em
+  # SEC Rule 22e-4, ESMA (AIFMD II/UCITS) e IOSCO.
+  # Palavras-chave em EN/ES nos eventos materiais são REDE DE SEGURANÇA: se a
+  # tradução falhar, a notícia internacional ainda é classificada.
+  - id: recuperacao_judicial
+    label: "Recuperação Judicial"
+    severity: "critico"
+    direction: "negativa"
+    score: 100
+    dimensions: ["credito", "liquidez"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["recuperação judicial", "recuperacao judicial", "pedido de RJ", "entra com RJ", "chapter 11", "chapter eleven", "bankruptcy protection", "files for bankruptcy", "concurso de acreedores", "procedimiento concursal", "quiebra preventiva"]
+    negations: ["evitar recuperação judicial", "evitar a recuperação judicial", "evitar uma recuperação judicial", "afasta recuperação judicial", "afastar a recuperação judicial", "descarta recuperação judicial", "recuperação judicial é vista como improvável", "recuperação judicial improvável", "deixou a recuperação judicial", "saiu da recuperação judicial", "sai da recuperação judicial", "fim da recuperação judicial", "encerra a recuperação judicial", "conclui a recuperação judicial", "concluiu a recuperação judicial", "supera a recuperação judicial", "superou a recuperação judicial", "após a recuperação judicial", "pós-recuperação judicial", "trocam a recuperação judicial", "sem recuperação judicial", "plano de recuperação judicial aprovado", "cumprindo todos os compromissos"]
+  - id: default
+    label: "Default"
+    severity: "critico"
+    direction: "negativa"
+    score: 100
+    dimensions: ["credito", "liquidez"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["default", "calote", "deixa de pagar juros", "não paga debênture", "inadimplência da dívida", "missed payment", "atraso no pagamento de dívida", "defaults on", "payment default", "failed to pay", "incumplimiento de pago", "impago", "cesación de pagos", "default de deuda"]
+    negations: ["evita default", "evitar default", "evita o calote", "afasta default", "afasta risco de calote", "descarta default", "sem risco de default", "paga em dia", "quita a dívida"]
+  - id: falencia
+    label: "Falência"
+    severity: "critico"
+    direction: "negativa"
+    score: 95
+    dimensions: ["credito"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["falência", "falencia", "pedido de falência", "autofalência", "liquidação judicial", "bankruptcy", "files for bankruptcy", "insolvency", "liquidation proceedings", "quiebra", "insolvencia", "declara la quiebra"]
+    negations: ["evitar falência", "evitar a falência", "afasta falência", "afasta a falência", "descarta falência", "escapa da falência", "escapou da falência", "reverte a falência", "sai da falência", "supera a falência", "sem risco de falência"]
+  - id: fraude
+    label: "Fraude"
+    severity: "critico"
+    direction: "negativa"
+    score: 90
+    dimensions: ["governanca", "credito"]
+    applies_to: ["listed_companies", "nao_listada", "fii", "gestora_fundo"]
+    keywords: ["fraude contábil", "fraude fiscal", "inconsistências contábeis", "manipulação de resultados", "accounting fraud", "rombo contábil", "esquema de fraude na", "fraude bilionária na", "fraud", "accounting irregularities", "misstatement", "fraude contable", "irregularidades contables", "maquillaje contable"]
+  - id: suspensao_negociacao
+    label: "Suspensão de negociação"
+    severity: "critico"
+    direction: "negativa"
+    score: 85
+    dimensions: ["mercado", "regulatorio"]
+    applies_to: ["listed_companies", "nao_listada", "fii", "gestora_fundo"]
+    keywords: ["suspensão de negociação", "suspensao de negociacao", "negociação suspensa", "trading halt", "B3 suspende", "trading halted", "trading suspension", "shares suspended", "suspensión de la negociación", "suspende cotización"]
+  - id: intervencao_regulatoria
+    label: "Intervenção regulatória"
+    severity: "critico"
+    direction: "negativa"
+    score: 85
+    dimensions: ["regulatorio", "governanca"]
+    applies_to: ["listed_companies", "nao_listada", "fii", "gestora_fundo"]
+    keywords: ["intervenção do banco central", "liquidação extrajudicial", "intervenção regulatória", "regime de administração especial", "intervenção na companhia", "regulatory intervention", "placed under administration", "intervención regulatoria", "intervenida por el regulador"]
+  - id: covenant_breach
+    label: "Covenant breach"
+    severity: "critico"
+    direction: "negativa"
+    score: 80
+    dimensions: ["credito", "liquidez", "governanca"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["covenant", "quebra de covenant", "waiver", "descumprimento de cláusula financeira", "covenant breach", "breached covenants", "waiver request", "incumplimiento de covenants", "ruptura de covenants"]
+  - id: rebaixamento_rating
+    label: "Rebaixamento de rating"
+    severity: "critico"
+    direction: "negativa"
+    score: 80
+    dimensions: ["credito"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["rebaixamento de rating", "downgrade", "rebaixa rating", "rebaixa nota de crédito", "corta rating", "rebaixada pela S&P", "rebaixada pela Moody's", "rebaixada pela Fitch", "downgraded", "cuts rating", "rating cut", "lowered the rating", "credit rating cut", "baja la calificación", "recorte de calificación", "rebaja de calificación", "degrada la nota", "creditwatch negative", "creditwatch with negative implications", "rating watch negative", "placed on creditwatch", "placed on rating watch", "on negative watch", "under review for downgrade", "ratings lowered", "affirms with negative", "cut to junk", "downgraded to junk", "junk status", "revisión a la baja", "revision a la baja", "baja de clasificación", "baja de clasificacion", "rebaja la clasificación", "clasificación de riesgo rebajada", "en revisión especial", "en revision especial", "bajo observación", "bajo observacion", "perspectiva en revisión", "retiro de clasificación"]
+    negations: ["afasta rebaixamento", "evita rebaixamento", "descarta rebaixamento", "reafirma rating", "mantém rating", "confirma rating", "reverte o rebaixamento"]
+  - id: renuncia_auditor
+    label: "Renúncia do auditor"
+    severity: "critico"
+    direction: "negativa"
+    score: 75
+    dimensions: ["governanca"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["renúncia do auditor", "auditor renuncia", "auditoria renuncia", "KPMG renuncia", "PwC renuncia", "EY renuncia", "Deloitte renuncia", "auditor resigns", "resignation of auditor", "dismissed the auditor", "renuncia del auditor"]
+  - id: investigacao_regulatoria
+    label: "Investigação regulatória"
+    severity: "alto"
+    direction: "negativa"
+    score: 30
+    dimensions: ["regulatorio", "governanca"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["CVM abre processo", "inquérito administrativo", "investigação da CVM", "alvo de operação", "alvo de buscas", "busca e apreensão", "under investigation", "regulatory probe", "sec charges", "enforcement action", "investigación regulatoria", "expediente sancionador"]
+  - id: lucro_abaixo_consenso
+    label: "Lucro muito abaixo do consenso"
+    severity: "alto"
+    direction: "negativa"
+    score: 45
+    dimensions: ["credito", "mercado"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["lucro abaixo do consenso", "resultado decepciona", "prejuízo surpreende", "abaixo das expectativas", "miss no resultado", "lucro despenca", "misses estimates", "earnings miss", "below expectations", "profit falls short", "resultados por debajo", "decepciona al mercado"]
+  - id: ma
+    label: "M&A"
+    severity: "alto"
+    direction: "neutra"
+    score: 40
+    dimensions: ["mercado", "governanca"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["fusão", "aquisição", "M&A", "compra a rival", "incorporação de", "combinação de negócios", "OPA"]
+  - id: guidance_negativo
+    label: "Guidance negativo"
+    severity: "alto"
+    direction: "negativa"
+    score: 35
+    dimensions: ["mercado"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["guidance negativo", "reduz guidance", "corta projeção", "revisa projeções para baixo", "reduz estimativa", "cuts guidance", "lowers outlook", "guidance cut", "warns on profit", "recorta previsiones", "baja su guía", "advertencia de beneficios"]
+  - id: emissao_divida
+    label: "Grande emissão de dívida"
+    severity: "alto"
+    direction: "neutra"
+    score: 35
+    dimensions: ["credito", "liquidez"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["emissão de debêntures", "emissão de dívida", "capta R$", "emissão de bonds", "oferta de notas", "emissão bilionária"]
+  - id: follow_on
+    label: "Follow-on"
+    severity: "alto"
+    direction: "neutra"
+    score: 30
+    dimensions: ["mercado", "liquidez"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["follow-on", "follow on", "oferta subsequente de ações", "oferta de ações", "aumento de capital"]
+  - id: troca_ceo
+    label: "Troca de CEO"
+    severity: "alto"
+    direction: "neutra"
+    score: 25
+    dimensions: ["governanca"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["novo CEO", "troca de CEO", "renúncia do CEO", "deixa o comando da", "assume a presidência da", "CEO deixa", "ceo steps down", "ceo resigns", "chief executive resigns", "names new ceo", "renuncia el ceo", "nuevo director ejecutivo", "cambio de ceo"]
+  - id: outlook_negativo
+    label: "Outlook negativo"
+    severity: "medio"
+    direction: "negativa"
+    score: 20
+    dimensions: ["credito"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["perspectiva negativa", "outlook rebaixado", "perspectiva rebaixada", "revisa perspectiva para negativa", "perspectiva para negativa", "negative outlook", "outlook revised to negative", "on watch negative", "panorama negativo", "outlook negative", "outlook to negative", "revised outlook to negative", "negative implications", "perspectiva a negativa", "revisa la perspectiva a negativa", "tendencia negativa"]
+  - id: recomendacao_negativa
+    label: "Recomendação rebaixada"
+    severity: "medio"
+    direction: "negativa"
+    score: 15
+    dimensions: ["mercado"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["rebaixa recomendação", "corta preço-alvo", "reduz preço-alvo", "recomendação de venda", "rebaixada para venda", "rebaixada para neutra"]
+  - id: mudanca_regulatoria
+    label: "Mudanças regulatórias"
+    severity: "medio"
+    direction: "neutra"
+    score: 15
+    dimensions: ["regulatorio"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["nova regulação", "CVM edita", "resolução do CMN", "mudança regulatória", "marco regulatório"]
+  - id: indice
+    label: "Inclusão/remoção de índice"
+    severity: "medio"
+    direction: "neutra"
+    score: 10
+    dimensions: ["mercado"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["sai do Ibovespa", "entra no Ibovespa", "sai do índice", "saem do índice", "rebalanceamento do índice", "remoção do índice", "removida do índice", "incluída no índice", "MSCI"]
+  - id: pequenas_aquisicoes
+    label: "Pequenas aquisições"
+    severity: "medio"
+    direction: "neutra"
+    score: 10
+    dimensions: ["mercado"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["adquire participação", "compra fatia", "aquisição minoritária", "compra participação minoritária"]
+  - id: default_cri
+    label: "Default de CRI na carteira"
+    severity: "critico"
+    direction: "negativa"
+    score: 80
+    dimensions: ["credito"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["default de CRI", "inadimplência de CRI", "CRI inadimplente", "evento de inadimplemento no CRI", "CRI em atraso"]
+  - id: inadimplencia_locatario
+    label: "Inadimplência de locatário"
+    severity: "alto"
+    direction: "negativa"
+    score: 40
+    dimensions: ["credito", "operacional"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["inadimplência de locatário", "locatário inadimplente", "inadimplência do inquilino", "atraso no aluguel", "inadimplência de aluguéis"]
+  - id: corte_rendimento
+    label: "Corte de rendimento"
+    severity: "alto"
+    direction: "negativa"
+    score: 35
+    dimensions: ["mercado", "liquidez"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["reduz rendimento", "corta rendimento", "redução do rendimento", "redução no rendimento", "corta dividendo", "reduz distribuição", "redução na distribuição por cota"]
+    negations: ["eleva rendimento", "aumenta rendimento", "aumento do rendimento", "eleva a distribuição"]
+  - id: vacancia
+    label: "Vacância"
+    severity: "alto"
+    direction: "negativa"
+    score: 30
+    dimensions: ["operacional", "mercado"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["vacância", "desocupação do imóvel", "rescisão do contrato de locação", "inquilino deixa", "devolução de área", "devolve o imóvel"]
+    negations: ["queda da vacância", "redução da vacância", "reduz vacância", "vacância zero", "vacância recua"]
+  - id: emissao_cotas
+    label: "Emissão de cotas"
+    severity: "medio"
+    direction: "neutra"
+    score: 15
+    dimensions: ["mercado", "liquidez"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["emissão de cotas", "oferta de cotas", "nova emissão do fundo"]
+  - id: rating_elevado
+    label: "Rating elevado"
+    severity: "baixa"
+    direction: "positiva"
+    score: 0
+    positive: true
+    dimensions: ["credito"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["eleva rating", "elevação de rating", "upgrade de rating", "eleva nota de crédito", "elevada pela S&P", "elevada pela Moody's", "elevada pela Fitch", "upgrade", "upgraded", "raises rating", "rating raised", "sube la calificación", "mejora la calificación", "creditwatch positive", "rating watch positive", "under review for upgrade", "ratings raised", "upgraded to investment grade", "returns to investment grade", "alza de clasificación", "alza de clasificacion", "sube la clasificación", "mejora la clasificación", "revisión al alza", "revision al alza"]
+  - id: outlook_positivo
+    label: "Outlook positivo"
+    severity: "baixa"
+    direction: "positiva"
+    score: 0
+    positive: true
+    dimensions: ["credito"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["perspectiva positiva", "outlook elevado", "perspectiva elevada", "revisa perspectiva para positiva", "perspectiva para positiva", "outlook positive", "outlook to positive", "revised outlook to positive", "positive implications", "perspectiva a positiva", "revisa la perspectiva a positiva", "tendencia positiva"]
+  - id: recomendacao_positiva
+    label: "Recomendação elevada"
+    severity: "baixa"
+    direction: "positiva"
+    score: 0
+    positive: true
+    dimensions: ["mercado"]
+    applies_to: ["listed_companies", "nao_listada", "fii"]
+    keywords: ["eleva recomendação", "eleva preço-alvo", "recomendação de compra", "elevada para compra", "inicia cobertura"]
+  - id: suspensao_resgates
+    label: "Suspensão de resgates"
+    severity: "critico"
+    direction: "negativa"
+    score: 95
+    dimensions: ["liquidez", "governanca"]
+    applies_to: ["gestora_fundo"]
+    keywords: ["suspensão de resgates", "suspende resgates", "suspende os resgates", "suspensão dos resgates", "resgates suspensos", "congelamento de resgates", "suspensión de rescates", "suspende rescates", "rescates suspendidos", "suspends redemptions", "redemptions suspended", "suspension of redemptions", "halted redemptions", "gating the fund", "suspende los rescates", "suspende las suscripciones y rescates", "suspensión temporal de rescates", "suspende o resgate", "suspende os resgates de cotas", "halts redemptions", "suspends withdrawals"]
+    negations: ["retoma os resgates", "reabre para resgates", "encerra a suspensão", "levanta a suspensão", "resumes redemptions", "lifts suspension", "descarta suspensão", "sem suspensão de resgates"]
+  - id: gate_resgates
+    label: "Limitação de resgates (gate)"
+    severity: "alto"
+    direction: "negativa"
+    score: 70
+    dimensions: ["liquidez"]
+    applies_to: ["gestora_fundo"]
+    keywords: ["fechamento para resgates", "fechado para resgates", "limita resgates", "limitação de resgates", "resgate limitado", "janela de resgate ampliada", "aumento do prazo de resgate", "prazo de resgate alongado", "limita rescates", "límite de rescates", "ampliación del plazo de rescate", "redemption gate", "redemption gates", "limits redemptions", "extended notice period", "limita los rescates", "restringe los rescates", "limits withdrawals"]
+    negations: ["remove o gate", "encerra a limitação", "volta a aceitar resgates", "removes the gate", "lifts redemption limits"]
+  - id: side_pocket
+    label: "Side pocket (segregação de ativos)"
+    severity: "alto"
+    direction: "negativa"
+    score: 75
+    dimensions: ["liquidez", "governanca"]
+    applies_to: ["gestora_fundo"]
+    keywords: ["side pocket", "side pockets", "segregação de ativos", "conta segregada", "cisão do fundo com ativos ilíquidos", "cuenta segregada", "activos segregados", "side-pocket"]
+    negations: ["encerra o side pocket", "reverte a segregação", "closes the side pocket"]
+  - id: liquidacao_fundo
+    label: "Liquidação/encerramento do fundo"
+    severity: "critico"
+    direction: "negativa"
+    score: 90
+    dimensions: ["liquidez", "credito", "governanca"]
+    applies_to: ["gestora_fundo"]
+    keywords: ["liquidação do fundo", "liquidação antecipada do fundo", "encerramento do fundo", "fundo será liquidado", "fundo em liquidação", "descontinuação do fundo", "liquidación del fondo", "cierre del fondo", "fondo en liquidación", "fund liquidation", "winding up the fund", "fund termination", "fund will be closed", "terminating the fund", "shutting down the fund", "liquida el fondo", "cierra el fondo", "closes the fund"]
+    negations: ["descarta a liquidação", "evita a liquidação", "sem liquidação", "após a liquidação", "concluiu a liquidação", "encerrou a liquidação"]
+  - id: resgates_elevados
+    label: "Resgates elevados / saída de recursos"
+    severity: "alto"
+    direction: "negativa"
+    score: 60
+    dimensions: ["liquidez"]
+    applies_to: ["gestora_fundo"]
+    keywords: ["onda de resgates", "resgates elevados", "forte resgate", "sangria de resgates", "saída de recursos", "perda de patrimônio sob gestão", "queda no patrimônio líquido", "retiradas masivas", "fuerte salida de recursos", "rescates elevados", "salida de capital", "heavy redemptions", "redemption surge", "large outflows", "investor withdrawals", "assets under management fell", "outflows accelerated", "fuertes rescates", "ola de rescates", "onda de saques"]
+    negations: ["captação líquida positiva", "forte captação", "entrada de recursos", "net inflows", "strong inflows", "reverte os resgates"]
+  - id: key_person
+    label: "Key person risk (saída de gestor-chave)"
+    severity: "alto"
+    direction: "negativa"
+    score: 65
+    dimensions: ["governanca", "operacional"]
+    applies_to: ["gestora_fundo"]
+    keywords: ["key person", "saída do gestor", "deixa a gestora", "deixou a gestora", "sócio deixa a gestora", "troca de gestor do fundo", "substituição do gestor", "renúncia do gestor", "saída do sócio-fundador", "fundador deixa", "renuncia del gestor", "salida del portfolio manager", "cambio de gestor", "portfolio manager departs", "portfolio manager leaves", "founder steps down", "star manager exits", "key-person"]
+    negations: ["contrata gestor", "reforça a equipe", "anuncia novo sócio", "amplia o time de gestão", "hires portfolio manager"]
+  - id: restricao_liquidez_fundo
+    label: "Restrição de liquidez do portfólio"
+    severity: "alto"
+    direction: "negativa"
+    score: 70
+    dimensions: ["liquidez"]
+    applies_to: ["gestora_fundo"]
+    keywords: ["restrição de liquidez", "iliquidez da carteira", "ativos ilíquidos", "descasamento de liquidez", "excesso de ativos ilíquidos", "limite de ilíquidos", "iliquidez de la cartera", "activos ilíquidos", "restricción de liquidez", "illiquid investments", "liquidity mismatch", "liquidity risk management program", "exceeded the 15% limit", "highly liquid investment minimum"]
+    negations: ["reforça a liquidez", "melhora a liquidez", "improves liquidity"]
+  - id: dificuldade_valoracao
+    label: "Dificuldade de valoração/marcação"
+    severity: "alto"
+    direction: "negativa"
+    score: 65
+    dimensions: ["governanca", "mercado"]
+    applies_to: ["gestora_fundo"]
+    keywords: ["dificuldade de marcação", "problema de marcação a mercado", "remarcação de cotas", "reprecificação de ativos do fundo", "erro no cálculo da cota", "cota recalculada", "suspensão do cálculo da cota", "problema de valoración", "revaluación de cuotas", "valuation issue", "fair value concerns", "NAV error", "net asset value restated", "suspended NAV calculation"]
+    negations: ["sem impacto na cota", "cálculo normalizado", "NAV restored"]
+  - id: perdas_relevantes_fundo
+    label: "Perdas relevantes do fundo"
+    severity: "medio"
+    direction: "negativa"
+    score: 45
+    dimensions: ["mercado"]
+    applies_to: ["gestora_fundo"]
+    keywords: ["perdas relevantes", "forte perda no fundo", "rentabilidade negativa", "cotas desvalorizam", "tombo do fundo", "prejuízo do fundo", "perda expressiva", "pérdidas relevantes", "fuerte caída del fondo", "rentabilidad negativa", "heavy losses", "fund posts loss", "sharp drawdown", "worst month"]
+    negations: ["recupera as perdas", "forte rentabilidade", "melhor desempenho", "recovers losses", "strong performance"]
+  - id: investigacao_gestora
+    label: "Investigação regulatória (gestora/fundo)"
+    severity: "critico"
+    direction: "negativa"
+    score: 85
+    dimensions: ["governanca", "regulatorio"]
+    applies_to: ["gestora_fundo"]
+    keywords: ["processo administrativo sancionador", "investigação da CVM", "autuada pela CVM", "apuração da CVM", "investigação regulatória da gestora", "ofício da CVM à gestora", "investigación regulatoria", "sancionada por la CMF", "expediente sancionador", "SEC investigation", "SEC charges", "regulatory probe", "enforcement action", "FCA investigation", "under investigation by regulators"]
+    negations: ["arquiva o processo", "encerra a investigação", "absolvida", "case dismissed", "closes the investigation", "sem indícios"]
+  - id: reabertura_resgates
+    label: "Reabertura para resgates"
+    severity: "baixa"
+    direction: "positiva"
+    score: 15
+    positive: true
+    dimensions: ["liquidez"]
+    applies_to: ["gestora_fundo"]
+    keywords: ["reabertura para resgates", "retoma os resgates", "volta a aceitar resgates", "levanta a suspensão de resgates", "encerra o gate", "reanuda los rescates", "reapertura de rescates", "resumes redemptions", "lifts the suspension", "reopens for redemptions"]
+    negations: []
+
+scoring:
+  attention_threshold: 80   # score >= 80 em janelas <=30d ativa o selo
+                            # "ATENÇÃO IMEDIATA" (destaque visual do Radar).
+                            # NÃO é o limiar da classificação geral "Atenção
+                            # elevada" (esse é 60 e fica em evolution.status).
+  # Removido em v1.0 (jul/2026): count_repeated_events / extra_per_article /
+  # extra_cap. O Radar não pontua mais por número de notícias — republicações
+  # não inflam o score. A corroboração por fontes independentes usa o mesmo
+  # bônus limitado [4,2,1] da aba Evolução (evolution.corroboration_bonus).
+
+# ── Evolução por emissor (radar de longo prazo) ───────────────
+# Status:
+#   Crítico          → evento com score BRUTO >= critico_event_min_score na
+#                      janela (fatos duros como RJ/default não "envelhecem")
+#                      OU score acumulado PONDERADO >= critico_total_min
+#   Atenção elevada  → score ponderado >= atencao_total_min
+#                      OU 2+ tipos de evento negativos distintos
+#   Monitorar        → qualquer evento negativo na janela
+# Decaimento: o score acumulado usa meia-vida (evento de hoje vale 100%,
+# de 30 dias vale 50%, de 60 dias vale 25%) — prioriza deterioração RECENTE.
+evolution:
+  window_days: 90
+  decay:
+    enabled: true
+    half_life_days: 30
+  same_event_window_days: 10  # notícias do mesmo tipo de evento p/ o mesmo emissor
+                              # dentro desta janela = 1 sinal corroborado (não N sinais)
+  corroboration_bonus: [4, 2, 1]  # bônus por fonte independente ADICIONAL (2ª: +4,
+                              # 3ª: +2, 4ª: +1, demais: 0). Republicações confirmam
+                              # o evento sem multiplicar o score.
+  persistence_alert:          # "N sinais negativos em X dias" — acúmulo importa
+    min_signals: 3            # ocorrências negativas (pós-dedup) na janela
+    min_types: 2              # de pelo menos N tipos distintos
+    days: 45
+  status:
+    critico_event_min_score: 90   # PISO ABSOLUTO: fatos duros (RJ, default, falência,
+                                  # fraude) são Crítico sempre — nunca relativos ao regime
+    critico_total_min: 125        # valores BASE: âncora da banda adaptativa + fallback
+    atencao_total_min: 60
+    # ── Limiares adaptativos de acumulação ──────────────────────
+    # Os limiares de score acumulado são recalibrados a cada execução com a
+    # distribuição REAL da carteira: amostra = pico semanal do score ponderado
+    # por emissor (só emissores ativos) na janela de calibração. "Atenção" e
+    # "Crítico" viram percentis dessa distribuição — em ano calmo os limiares
+    # caem (evento manso não vira alarme falso... nem passa despercebido);
+    # em regime agitado sobem, MAS só dentro da banda: em crise sistêmica o
+    # limiar trava no teto e a tela fica vermelha MESMO — crise não é
+    # normalizada para fora. Amostra pequena (início) → usa os valores base.
+    adaptive:
+      enabled: true
+      calibration_days: 90
+      atencao_percentile: 75      # "Atenção" ≈ quartil superior dos emissores ativos
+      critico_percentile: 95      # "Crítico" ≈ top 5% dos emissores ativos
+      min_sample: 40              # emissor-semanas ativos mínimos p/ calibrar
+      band: [0.6, 1.5]            # limiar efetivo ∈ [0.6×, 1.5×] do valor base
+
+# ── Deduplicação ──────────────────────────────────────────────
+# A mesma matéria replicada em vários veículos conta uma vez só.
+dedup:
+  enabled: true
+  similarity: 0.75        # razão de similaridade entre títulos (SequenceMatcher, 0-1)
+  token_overlap: 0.50     # OU sobreposição de palavras-chave dos títulos (Jaccard, 0-1)
+
+# ── Fatos relevantes da CVM (dados abertos) ───────────────────
+# RJ, waiver, renúncia de auditor e troca de CEO saem primeiro em fato
+# relevante, antes da imprensa. Fonte: dados.cvm.gov.br (dataset IPE).
+cvm_fatos_relevantes:
+  enabled: true
+  categories: ["Fato Relevante"]
+  lookback_days: 7        # janela de protocolos considerada em cada execução
+
+# ── LLM (opcional) ────────────────────────────────────────────
+# consolidate: análise EM LOTE por emissor — o Gemini recebe todas as
+# manchetes novas da empresa e, numa única chamada: (1) agrupa manchetes
+# que cobrem o MESMO fato (dedup semântico); (2) confirma quais eventos de
+# fato ocorreram (descarta especulação/negação/caso requentado); (3)
+# verifica se a empresa é protagonista (não assessora/credora/citada de
+# passagem). Falha da API = mantém a classificação por keyword (fail-open).
+# Artigos já no histórico não são reanalisados.
+llm:
+  enabled: true              # requer o secret GEMINI_API_KEY no GitHub Actions; sem ele, segue só com keywords
+  consolidate: true
+  # Desde abr/2026 o free tier da API só tem Flash/Flash-Lite da geração 3;
+  # a família 2.5 inteira virou paga (contas novas recebem 404 nela).
+  # gemini-3-flash: 10 req/min e 1.500 req/dia grátis.
+  model: "gemini-3-flash"
+  model_fallbacks: ["gemini-3.1-flash-lite"]   # tentados em ordem se o principal der 404
+  rpm_sleep_seconds: 6.5     # respeita o limite de requisições/minuto do free tier
+  gemini_api_key: ""         # ou variável de ambiente GEMINI_API_KEY
+
+# ── Saída ─────────────────────────────────────────────────────
+output:
+  filename: "dashboard_risco.html"
+  history_file: "risk_history.json"
+  open_browser: false
+
+official_sources:
+  Brasil:
+    regulador: CVM
+    filings: IPE (dados abertos)
+    filings_url: "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/IPE/DADOS/"
+    api: "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/IPE/DADOS/ipe_cia_aberta_{year}.zip"
+    bolsa: B3
+    idioma: pt
+    viabilidade: facil
+    nota: "Dataset público em CSV/ZIP, varrido integralmente e casado por alias contra toda a watchlist. Companhias abertas e fundos registrados são cobertos automaticamente; emissores não listados dependem de registro na CVM (ver --audit-cvm)."
+  EUA:
+    regulador: SEC
+    filings: EDGAR
+    filings_url: "https://www.sec.gov/edgar/search/"
+    api: "https://efts.sec.gov/LATEST/search-index"
+    submissions_api: "https://data.sec.gov/submissions/CIK{cik10}.json"
+    ticker_map: "https://www.sec.gov/files/company_tickers.json"
+    rss_por_empresa: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={cik}&type={form}&output=atom"
+    formularios_gatilho: "['8-K', '6-K', '10-K', '10-Q', '20-F']"
+    rate_limit_rps: 8
+    requer_user_agent: true
+    bolsa: NYSE / Nasdaq
+    idioma: en
+    viabilidade: facil
+    nota: Endpoint de full-text não é formalmente documentado pela SEC; pode mudar sem aviso. Feeds Atom e data.sec.gov são documentados.
+  Chile:
+    regulador: CMF
+    filings: Hechos Esenciales
+    filings_url: "https://www.cmfchile.cl/institucional/hechos/hechos.php"
+    api: null
+    bolsa: Bolsa de Santiago
+    idioma: es
+    viabilidade: dificil
+    nota: Sem API/RSS. Bolsa de Santiago com anti-bot; usar navegador headless se necessário.
+  México:
+    regulador: CNBV
+    filings: RNV/STIV + EMISNET
+    filings_url: "https://stivconsultasexternas.cnbv.gob.mx"
+    api: null
+    bolsa: BMV / BIVA
+    idioma: es
+    viabilidade: media
+    nota: "Eventos relevantes divulgados operacionalmente pelo EMISNET/BMV, por emissora."
+  Colômbia:
+    regulador: SFC (Superfinanciera)
+    filings: SIMEV/RNVE
+    filings_url: "https://www.superfinanciera.gov.co/SIMEV2/"
+    api: null
+    bolsa: bvc/nuam
+    idioma: es
+    viabilidade: media
+    nota: Público por lei; sem API.
+  Argentina:
+    regulador: CNV
+    filings: AIF
+    filings_url: "https://www.cnv.gov.ar/SitioWeb/Home/AIF"
+    api: null
+    bolsa: BYMA / A3
+    idioma: es
+    viabilidade: dificil
+    nota: AIF com histórico recente de indisponibilidade; usar BYMA e imprensa aberta como fallback.
+  Canadá:
+    regulador: CSA
+    filings: SEDAR+
+    filings_url: "https://www.sedarplus.ca"
+    api: null
+    bolsa: TSX
+    idioma: en/fr
+    viabilidade: media
+    nota: Substituiu o SEDAR em 25/07/2023.
+  Reino Unido:
+    regulador: FCA
+    filings: National Storage Mechanism (NSM)
+    filings_url: "https://data.fca.org.uk/#/nsm/nationalstoragemechanism"
+    api: null
+    bolsa: LSE (RNS)
+    idioma: en
+    viabilidade: media
+  Suíça:
+    regulador: FINMA / SIX Exchange Regulation
+    filings: Ad hoc publicity
+    filings_url: "https://www.six-group.com"
+    api: null
+    bolsa: SIX
+    idioma: de/fr/en
+    viabilidade: media
+  Espanha:
+    regulador: CNMV
+    filings: Información Privilegiada / Otra Información Relevante
+    filings_url: "https://www.cnmv.es"
+    api: null
+    bolsa: BME
+    idioma: es
+    viabilidade: media
+    nota: "Desde 08/02/2020 os \"hechos relevantes\" foram divididos em IP e OIR."
+  França:
+    regulador: AMF
+    filings: Information privilégiée (MAR)
+    filings_url: "https://www.amf-france.org"
+    api: null
+    bolsa: Euronext Paris
+    idioma: fr
+    viabilidade: media
+  Luxemburgo:
+    regulador: CSSF
+    filings: OAM (Bolsa de Luxemburgo)
+    filings_url: "https://www.bourse.lu"
+    api: null
+    bolsa: LuxSE
+    idioma: fr/en
+    viabilidade: media
+  Malásia:
+    regulador: Securities Commission Malaysia
+    filings: Bursa announcements
+    filings_url: "https://www.bursamalaysia.com"
+    api: null
+    bolsa: Bursa Malaysia
+    idioma: en
+    viabilidade: media
+  Honduras:
+    regulador: CNBS
+    filings: null
+    filings_url: null
+    api: null
+    bolsa: Bolsa Centroamericana
+    idioma: es
+    viabilidade: sem_fonte_clara
+    nota: Sem fonte pública com API/feed; cobertura limitada e manual.
+  Uruguai:
+    regulador: BCU — Superintendencia de Servicios Financieros
+    filings: null
+    filings_url: "https://www.bcu.gub.uy"
+    api: null
+    bolsa: BVM
+    idioma: es
+    viabilidade: media
+
+translation:
+  enabled: true
+  target: pt
+  fields:
+    - title
+    - summary
+  max_chars: 400
+  skip_languages:
+    - pt
+  note: "Estratégia translate-then-classify: evidência recente favorece traduzir antes de classificar; para pt/es/en a diferença é pequena, mas padroniza o classificador."
