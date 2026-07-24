@@ -1,0 +1,16 @@
+﻿pais,regulador,campo,url,status,content_type,bytes,rss_declarado,provavel_js,anti_bot,bloqueio_ambiente,latencia_ms,viabilidade_documentada,veredito,erro
+Brasil,CVM,filings_url,https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/IPE/DADOS/,200,text/html,4423,False,False,False,False,566,facil,HTML estático — provavelmente raspável,
+EUA,SEC,filings_url,https://www.sec.gov/edgar/search/,403,text/html,1925,False,False,True,False,70,facil,anti-bot — exigiria navegador headless,
+EUA,SEC,api,https://efts.sec.gov/LATEST/search-index,200,application/json,125,False,False,False,False,238,facil,JSON — implementar agora,
+Chile,CMF,filings_url,https://www.cmfchile.cl/institucional/hechos/hechos.php,200,text/html,132159,False,False,True,False,1218,dificil,anti-bot — exigiria navegador headless,
+México,CNBV,filings_url,https://stivconsultasexternas.cnbv.gob.mx,,,0,False,False,False,False,462,media,indisponivel — revisar URL/rede,"SSLError: HTTPSConnectionPool(host='stivconsultasexternas.cnbv.gob.mx', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError"
+Colômbia,SFC (Superfinanciera),filings_url,https://www.superfinanciera.gov.co/SIMEV2/,200,text/html,2586,False,False,True,False,267,media,anti-bot — exigiria navegador headless,
+Argentina,CNV,filings_url,https://www.cnv.gov.ar/SitioWeb/Home/AIF,200,text/html,29492,False,False,False,False,1291,dificil,HTML estático — provavelmente raspável,
+Canadá,CSA,filings_url,https://www.sedarplus.ca,200,text/html,15028,False,False,True,False,683,media,anti-bot — exigiria navegador headless,
+Reino Unido,FCA,filings_url,https://data.fca.org.uk/#/nsm/nationalstoragemechanism,200,text/html,49710,False,False,False,False,747,media,HTML estático — provavelmente raspável,
+Suíça,FINMA / SIX Exchange Regulation,filings_url,https://www.six-group.com,200,text/html,250256,False,False,False,False,883,media,HTML estático — provavelmente raspável,
+Espanha,CNMV,filings_url,https://www.cnmv.es,200,text/html,308616,False,False,False,False,2728,media,HTML estático — provavelmente raspável,
+França,AMF,filings_url,https://www.amf-france.org,200,text/html,74278,False,False,False,False,1181,media,HTML estático — provavelmente raspável,
+Luxemburgo,CSSF,filings_url,https://www.bourse.lu,200,text/html,228350,False,False,False,False,1407,media,HTML estático — provavelmente raspável,
+Malásia,Securities Commission Malaysia,filings_url,https://www.bursamalaysia.com,403,text/html,5518,False,False,True,False,80,media,anti-bot — exigiria navegador headless,
+Uruguai,BCU — Superintendencia de Servicios Financieros,filings_url,https://www.bcu.gub.uy,,,0,False,False,False,False,2129,media,indisponivel — revisar URL/rede,"SSLError: HTTPSConnectionPool(host='www.bcu.gub.uy', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFIC"
