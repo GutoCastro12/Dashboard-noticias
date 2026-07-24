@@ -1,0 +1,106 @@
+name: Update Risk Dashboard
+
+on:
+  schedule:
+    - cron: '0 10,13,16,19 * * 1-5'   # 07h, 10h, 13h e 16h BRT, dias úteis
+  workflow_dispatch:
+    inputs:
+      reclassify:
+        description: 'Reprocessar todo o histórico com as regras atuais (use após atualizar keywords/taxonomia)'
+        type: boolean
+        default: false
+      backfill:
+        description: 'Semear o histórico: busca ampliada (notícias 30d, CVM 365d, todos os tiers) — use na primeira execução'
+        type: boolean
+        default: false
+      audit_cvm:
+        description: 'Auditoria CVM/IPE: quais emissores brasileiros são filiantes (gera auditoria_cobertura_cvm.csv)'
+        type: boolean
+        default: false
+      probe_sources:
+        description: 'Probe das fontes oficiais: mede acessibilidade sem coletar (gera probe_fontes_oficiais.csv)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt google-generativeai playwright
+
+      # Chromium p/ raspar páginas de RI 100% JavaScript (cacheado entre runs)
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-${{ runner.os }}
+
+      - name: Install Chromium
+        run: playwright install --with-deps chromium
+
+      - name: Run pipeline
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}   # necessário p/ validação LLM dos eventos
+        run: |
+          EXTRA=""
+          if [ "${{ github.event.inputs.reclassify }}" = "true" ]; then
+            EXTRA="$EXTRA --reclassify"
+            echo "♻️  Modo reclassificação: reprocessando todo o histórico"
+          fi
+          if [ "${{ github.event.inputs.backfill }}" = "true" ]; then
+            EXTRA="$EXTRA --backfill"
+            echo "⏪ Modo backfill: semeando o histórico com janela ampliada"
+          fi
+          if [ "${{ github.event.inputs.audit_cvm }}" = "true" ]; then
+            EXTRA="$EXTRA --audit-cvm"
+            echo "🔎 Auditoria CVM/IPE ativada"
+          fi
+          if [ "${{ github.event.inputs.probe_sources }}" = "true" ]; then
+            EXTRA="$EXTRA --probe-sources"
+            echo "🩺 Probe de fontes oficiais ativado (diagnóstico, não coleta)"
+          fi
+          # --strict-groups: aborta o deploy se algum emissor estiver sem
+          # classificação cadastral (asset_class/grupo) ou sem aliases.
+          python risk_dashboard.py --config config_risco.yaml --strict-groups $EXTRA
+
+      - name: Prepare static output for Render
+        run: cp dashboard_risco.html index.html
+
+      # Histórico persistido via commit no repositório — não via actions/cache,
+      # que evicta entradas não acessadas há 7 dias e tem limite de 10GB/repo.
+      - name: Commit history + dashboard
+        run: |
+          git config user.email "github-actions@github.com"
+          git config user.name "Radar de Risco (GitHub Actions)"
+          git add risk_history.json dashboard_risco.html index.html
+          # CSVs de diagnóstico, quando gerados nesta execução
+          git add -f auditoria_cobertura_cvm.csv probe_fontes_oficiais.csv 2>/dev/null || true
+          # Nada mudou? sai sem erro.
+          if git diff --cached --quiet; then
+            echo "Nada a commitar."
+            exit 0
+          fi
+          git commit -m "chore(radar): atualização automática $(date -u +'%Y-%m-%d %H:%M UTC')"
+          # O remoto pode ter avançado enquanto o pipeline rodava (ex.: upload
+          # manual de arquivos pela interface do GitHub). Sincroniza com rebase
+          # antes de empurrar e tenta algumas vezes em caso de corrida.
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash origin main && git push origin main && {
+              echo "✅ push concluído na tentativa $i"; exit 0; }
+            echo "⚠️  push rejeitado (remoto avançou); tentativa $i, sincronizando…"
+            sleep $((i * 3))
+          done
+          echo "❌ não foi possível empurrar após 5 tentativas"
+          exit 1
