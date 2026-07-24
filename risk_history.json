@@ -6084,7 +6084,8 @@
     }
    ],
    "captured_ts": 1784905719,
-   "cap_iso": "2026-07-24 12:08"
+   "cap_iso": "2026-07-24 12:08",
+   "corrob_sources": []
   },
   "https://www.demarest.com.br/decisao-da-cvm-sobre-brf-e-marfrig-quais-informacoes-devem-ser-disponibilizadas-aos-acionistas-para-uma-assembleia-de-combinacao-de-negocios/": {
    "title": "Decisão da CVM sobre BRF e Marfrig: quais informações devem ser disponibilizadas aos acionistas para uma assembleia de combinação de negócios?",
@@ -6120,7 +6121,9 @@
     "rating_elevado"
    ],
    "captured_ts": 1784905719,
-   "cap_iso": "2026-07-24 12:08"
+   "cap_iso": "2026-07-24 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.suno.com.br/noticias/fitch-rebaixa-rating-hapvida-hapv3-2026-mt/": {
    "title": "Hapvida (HAPV3): Fitch corta rating e liga o alerta para 2026",
@@ -6589,9 +6592,78 @@
    ],
    "captured_ts": 1784905719,
    "cap_iso": "2026-07-24 12:08"
+  },
+  "https://conteudos.xpi.com.br/acoes/relatorios/prio-prio3-conclusao-da-aquisicao-de-40-do-campo-de-peregrino/": {
+   "title": "PRIO (PRIO3) | Conclusão da aquisição de 40% do campo de Peregrino",
+   "url": "https://conteudos.xpi.com.br/acoes/relatorios/prio-prio3-conclusao-da-aquisicao-de-40-do-campo-de-peregrino/",
+   "summary": "PRIO (PRIO3) | Conclusão da aquisição de 40% do campo de Peregrino &nbsp;&nbsp; XP Investimentos",
+   "source": "XP Investimentos",
+   "domain": "conteudos.xpi.com.br",
+   "pub_ts": 1762918772,
+   "pub_iso": "2025-11-12 00:39",
+   "language": "pt",
+   "companies": [
+    "PRIO"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "corroborations": [
+    {
+     "source": "TN Petróleo",
+     "domain": "tnpetroleo.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNbUtDWTBGUFRHLV9LQzgxcEFwYWpNa2lWaENRTkxRNTQ2VGs4STE3VEtfYWQwS0U5MTJQblhhWHRtajctWHdHTjNXTmRKZTJSQURiQ0psRlZrX1gwMjRrQ0dMbGhsaXFGRHk3U3FQWkNhbUVPSWd5OTk4X24wWkNMMmdiNWlyUW4ybnNjLXJhT0ExN05RUDN4VFpXSHdlZ1NQY2FyQUlieHcyRjd3NGpWQkZ6SQ?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "TN Petróleo",
+     "domain": "tnpetroleo.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNbUtDWTBGUFRHLV9LQzgxcEFwYWpNa2lWaENRTkxRNTQ2VGs4STE3VEtfYWQwS0U5MTJQblhhWHRtajctWHdHTjNXTmRKZTJSQURiQ0psRlZrX1gwMjRrQ0dMbGhsaXFGRHk3U3FQWkNhbUVPSWd5OTk4X24wWkNMMmdiNWlyUW4ybnNjLXJhT0ExN05RUDN4VFpXSHdlZ1NQY2FyQUlieHcyRjd3NGpWQkZ6SQ?oc=5",
+     "when": "13/11 05:00"
+    }
+   ],
+   "captured_ts": 1784915635,
+   "cap_iso": "2026-07-24 14:53"
+  },
+  "https://news.google.com/rss/articles/CBMixAFBVV95cUxNdHJPRGhMNkxBSnFIaU90Mi0yNlo0NHJQRUg5RDIya1lJVEV3MWxPdUppVUFiMUFkeEV4aFFXcmRGTEhWTkFaQ3o2VjF6ekdkZUowNVJ3UkpfMnludEpEdUZ6dTFseVlBS1RuMGQwRXpGdDdFeG50LTZaTEl0NGJOZGpBd01QY0RVSGgzVEpFUnc0eEc5REhoVEx5RlZGcVVGNnkyX0NTakxtUXlTRHA4U3VxX29obm5TejdBd0U3bDhaZVA4?oc=5": {
+   "title": "Trabalhadores da Ditália Móveis reagem à decretação de falência",
+   "url": "https://www.jornaldocomercio.com/economia/2026/07/1256847-trabalhadores-da-ditalia-moveis-reagem-a-decretacao-de-falencia.html",
+   "summary": "Trabalhadores da Ditália Móveis reagem à decretação de falência &nbsp;&nbsp; Jornal do Comércio",
+   "source": "Jornal do Comércio",
+   "domain": "jornaldocomercio.com",
+   "pub_ts": 1784576903,
+   "pub_iso": "2026-07-20 16:48",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1784915635,
+   "cap_iso": "2026-07-24 14:53"
+  },
+  "https://news.google.com/rss/articles/CBMizwFBVV95cUxPV2g2Rld2U2hTT0h5RXFXOTV6ck5IaGt4QjN1MFU5RmhTZUFQVEpxRmFaUUZ3aDgyaHJDTXdlY0Uyc0steGpmSWtQaVNYa2tIYlBGeFZoRXlXSnpmT1hZQzMtS1JURkN4bkdZM2hEQjJ2c0U5eU40WnU5RV9kdlFoYUMxbDVkYkE0d2FYSDY2Sms0YzhWcmJUdW5JZVNkNkNaVzh0THlXVzFOajRZMzBqVGdlUG5YMWdrLXQtUTF6ckdTNW9nSFBVeDh3SXEyQjA?oc=5": {
+   "title": "Gigante do mercado brasileiro que disputou contra a Coca-Cola recebe pedido de falência de R$ 15 bilhões",
+   "url": "https://www.em.com.br/emfoco/2026/07/24/gigante-do-mercado-brasileiro-declara-falencia-e-mostra-o-momento-de-mais-fragilidade-do-pais/",
+   "summary": "Gigante do mercado brasileiro que disputou contra a Coca-Cola recebe pedido de falência de R$ 15 bilhões &nbsp;&nbsp; Estado de Minas",
+   "source": "Estado de Minas",
+   "domain": "em.com.br",
+   "pub_ts": 1784913900,
+   "pub_iso": "2026-07-24 14:25",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1784915635,
+   "cap_iso": "2026-07-24 14:53"
   }
  },
- "run_count": 28,
+ "run_count": 29,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -8176,11 +8248,23 @@
   "https://news.google.com/rss/articles/CBMie0FVX3lxTE9DTl9oX1NiRzcxSmZBNzJRZm5BS3MxVFRPNE9mZ01oZmRzRWQtOS1mRVNwM0ZhbmgybE1fNWNJcFlVNWRScnl5c0Izcjc3U2ZzalRwZnRlNVhobWtETXFSeVZ6b1h3ajBYd2xhNXhKTXJYeVVXc1c1S21Taw?oc=5": {
    "url": "https://br.beincrypto.com/poolin-capitulo-11-piscina-mineracao-bitcoin/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQR1dNdnlPRHlIQVdORjZNZTBLTFJTWEhJUVZ6UmdkV01jUFU1NWIxcVNLXzVFN1htTDh0bkZTd2V3RlluZ0s3MkxwOFBXV3lfcUk2US1RbkViNngzZGlDeDA5MnJQWENYUG9DbFFBbVhJMXpKSzF6Q1RDNG1aNTEzQVd1eTc4OTFyNnVmYlVJN1NIQWtDRHFJZ3h0VUR1NUJyVDU3VElqcnpCd9IBuAFBVV95cUxORHJXTVdZZWEzVlhPbWtzSmROZHRRa0JqeUNVcFVQX2lJaER2UWIwc25FLVk1aEZ4eGFvVHo2cmJyUXJjR1kyelRMckZvd2UxUndobXRQdXBFZzVDS1VMcHNjdGY1VEZxWUVsU0dVdW9fSnRRekhmXzI2bE1Kakh1aTJqWXd2c19tdk1KUHpES2F1bVdpV2hjdWFUTGJ2N25Gb2NfVl9uQVhtSVVxMlJITzNVTkdhSnI2?oc=5": {
+   "url": "https://valor.globo.com/empresas/noticia/2023/06/28/pipeline-dasa-tera-novo-ceo-em-fevereiro-de-2024.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMixAFBVV95cUxNdHJPRGhMNkxBSnFIaU90Mi0yNlo0NHJQRUg5RDIya1lJVEV3MWxPdUppVUFiMUFkeEV4aFFXcmRGTEhWTkFaQ3o2VjF6ekdkZUowNVJ3UkpfMnludEpEdUZ6dTFseVlBS1RuMGQwRXpGdDdFeG50LTZaTEl0NGJOZGpBd01QY0RVSGgzVEpFUnc0eEc5REhoVEx5RlZGcVVGNnkyX0NTakxtUXlTRHA4U3VxX29obm5TejdBd0U3bDhaZVA4?oc=5": {
+   "url": "https://www.jornaldocomercio.com/economia/2026/07/1256847-trabalhadores-da-ditalia-moveis-reagem-a-decretacao-de-falencia.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMizwFBVV95cUxPV2g2Rld2U2hTT0h5RXFXOTV6ck5IaGt4QjN1MFU5RmhTZUFQVEpxRmFaUUZ3aDgyaHJDTXdlY0Uyc0steGpmSWtQaVNYa2tIYlBGeFZoRXlXSnpmT1hZQzMtS1JURkN4bkdZM2hEQjJ2c0U5eU40WnU5RV9kdlFoYUMxbDVkYkE0d2FYSDY2Sms0YzhWcmJUdW5JZVNkNkNaVzh0THlXVzFOajRZMzBqVGdlUG5YMWdrLXQtUTF6ckdTNW9nSFBVeDh3SXEyQjA?oc=5": {
+   "url": "https://www.em.com.br/emfoco/2026/07/24/gigante-do-mercado-brasileiro-declara-falencia-e-mostra-o-momento-de-mais-fragilidade-do-pais/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1784905723,
-  "iso": "24 jul 2026 · 12:08 BRT",
+  "ts": 1784915639,
+  "iso": "24 jul 2026 · 14:53 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
@@ -8192,7 +8276,7 @@
    },
    "Tok&Stok": {
     "status": "critico",
-    "score": 75
+    "score": 74
    },
    "Engie Brasil": {
     "status": "atencao",
@@ -8224,7 +8308,7 @@
    },
    "Axia Energia": {
     "status": "monitorar",
-    "score": 30
+    "score": 29
    },
    "ISA Energia Brasil": {
     "status": "monitorar",
@@ -8268,7 +8352,7 @@
    },
    "Raia Drogasil": {
     "status": "monitorar",
-    "score": 14
+    "score": 13
    },
    "Cencosud": {
     "status": "monitorar",
@@ -8282,11 +8366,11 @@
     "status": "monitorar",
     "score": 10
    },
-   "Pemex (Petróleos Mexicanos)": {
-    "status": "monitorar",
-    "score": 10
-   },
    "Localiza": {
+    "status": "monitorar",
+    "score": 9
+   },
+   "Pemex (Petróleos Mexicanos)": {
     "status": "monitorar",
     "score": 9
    },
