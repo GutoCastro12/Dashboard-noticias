@@ -5832,6 +5832,11 @@
      "source": "novarejo",
      "domain": "portalnovarejo.com.br",
      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQeENCWk5mYnZUU1lYbXA2LXM4V3RtbHZ2a1ZlVWsteXNRZmt6dm1nQ2RRNkt5R28wdE1qTFVybG1mbjlfMzlqQm1TSmJxVlZrdUQwdEF2UVJJa0lERGNldHFBQV9qMXNHRk1VOVNLTzh4QjcxYTJtanVQaW5ZWlAyTFF1UEwwdThoU3ZYMjRNRko3dWs3YkpIMkRMZndFRUlpWWhURERLWXpFcFlqZ3lFLUdoX05rcmxpdUxGVHFJRzQ?oc=5"
+    },
+    {
+     "source": "MegaWhat",
+     "domain": "megawhat.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQSmpYdER6UjJ1RHZueWppZE1RbXh2dkhSc1B2MkREdzd2SGdEemFyX3EtX004eTZQVXFsRjA1OUVIazRLOENLUldHdG0yc0RDdWp2cTIxRDhyaURINHY3TVh0VV91bl9NZ2tDNTlqXzdJVTNCNEs4WjhwekVrdmN4ZkVicHFHU2RSdGwwTWg3OHJaLVl3ZGswNWphOE9zRUkwS2N4YWdVbEMtYWZGYU9NeEs2SEYyZGhfT3o5N2hyeE8?oc=5"
     }
    ],
    "corrob_sources": [
@@ -5864,6 +5869,12 @@
      "domain": "portalnovarejo.com.br",
      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQeENCWk5mYnZUU1lYbXA2LXM4V3RtbHZ2a1ZlVWsteXNRZmt6dm1nQ2RRNkt5R28wdE1qTFVybG1mbjlfMzlqQm1TSmJxVlZrdUQwdEF2UVJJa0lERGNldHFBQV9qMXNHRk1VOVNLTzh4QjcxYTJtanVQaW5ZWlAyTFF1UEwwdThoU3ZYMjRNRko3dWs3YkpIMkRMZndFRUlpWWhURERLWXpFcFlqZ3lFLUdoX05rcmxpdUxGVHFJRzQ?oc=5",
      "when": "19/07 21:13"
+    },
+    {
+     "source": "MegaWhat",
+     "domain": "megawhat.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQSmpYdER6UjJ1RHZueWppZE1RbXh2dkhSc1B2MkREdzd2SGdEemFyX3EtX004eTZQVXFsRjA1OUVIazRLOENLUldHdG0yc0RDdWp2cTIxRDhyaURINHY3TVh0VV91bl9NZ2tDNTlqXzdJVTNCNEs4WjhwekVrdmN4ZkVicHFHU2RSdGwwTWg3OHJaLVl3ZGswNWphOE9zRUkwS2N4YWdVbEMtYWZGYU9NeEs2SEYyZGhfT3o5N2hyeE8?oc=5",
+     "when": "17/07 09:20"
     }
    ]
   },
@@ -6103,7 +6114,9 @@
     "ma"
    ],
    "captured_ts": 1784905719,
-   "cap_iso": "2026-07-24 12:08"
+   "cap_iso": "2026-07-24 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.moneytimes.com.br/prio-prio3-sp-global-eleva-nota-de-credito-da-petrolifera-apos-aquisicao-de-peregrino-lmrs/": {
    "title": "Prio (PRIO3): S&P Global eleva nota de crédito da petrolífera após aquisição de Peregrino",
@@ -6141,7 +6154,9 @@
     "rebaixamento_rating"
    ],
    "captured_ts": 1784905719,
-   "cap_iso": "2026-07-24 12:08"
+   "cap_iso": "2026-07-24 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://canalsolar.com.br/cemig-sim-conclui-aquisicao-de-10mwp-em-usinas-solares/": {
    "title": "Cemig SIM conclui aquisição de 10MWp em usinas solares",
@@ -6159,7 +6174,9 @@
     "ma"
    ],
    "captured_ts": 1784905719,
-   "cap_iso": "2026-07-24 12:08"
+   "cap_iso": "2026-07-24 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.infomoney.com.br/mercados/copel-realiza-bookbuilding-da-11a-emissao-de-debentures-no-valor-de-r-2-bilhoes/": {
    "title": "Copel realiza bookbuilding da 11ª emissão de debêntures no valor de R$ 2 bilhões",
@@ -6210,7 +6227,9 @@
     "ma"
    ],
    "captured_ts": 1784905719,
-   "cap_iso": "2026-07-24 12:08"
+   "cap_iso": "2026-07-24 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.moneytimes.com.br/tim-brasil-tims3-aquisicao-da-i-systems-mira-ganhos-de-eficiencia-operacional-segundo-ceo-lmrs/": {
    "title": "TIM Brasil (TIMS3): Aquisição de R$ 950 milhões mira ganhos de eficiência operacional, segundo CEO",
@@ -6228,7 +6247,9 @@
     "ma"
    ],
    "captured_ts": 1784905719,
-   "cap_iso": "2026-07-24 12:08"
+   "cap_iso": "2026-07-24 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://mercadoeconsumo.com.br/14/02/2026/gestao/smart-fit-tem-novo-ceo-confira-outras-mudancas/": {
    "title": "Smart Fit tem novo CEO; confira outras mudanças",
@@ -6264,7 +6285,9 @@
     "emissao_divida"
    ],
    "captured_ts": 1784905719,
-   "cap_iso": "2026-07-24 12:08"
+   "cap_iso": "2026-07-24 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.demarest.com.br/eneva-capta-r-24-bilhoes-com-debentures/": {
    "title": "Eneva capta R$ 2,4 bilhões com debêntures",
@@ -6282,7 +6305,9 @@
     "emissao_divida"
    ],
    "captured_ts": 1784905719,
-   "cap_iso": "2026-07-24 12:08"
+   "cap_iso": "2026-07-24 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/santander-brasil-sanb11-estrategia-novo-ceo-roe-xp/": {
    "title": "XP vê troca de CEO no Santander (SANB11) sem ruptura e aposta em alta rentabilidade",
@@ -6300,7 +6325,9 @@
     "troca_ceo"
    ],
    "captured_ts": 1784905719,
-   "cap_iso": "2026-07-24 12:08"
+   "cap_iso": "2026-07-24 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.moneytimes.com.br/hapvida-hapv3-anuncia-troca-de-ceo-kda/": {
    "title": "Hapvida (HAPV3) anuncia troca de CEO em meio a críticas à governança e pressão por mudanças",
@@ -6418,7 +6445,9 @@
     "emissao_divida"
    ],
    "captured_ts": 1784905719,
-   "cap_iso": "2026-07-24 12:08"
+   "cap_iso": "2026-07-24 12:08",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://braziljournal.com/engie-faz-follow-on-de-r-83-bilhoes-para-comprar-fatia-em-jirau-e-desalavancar/": {
    "title": "Engie faz follow-on de R$ 8,3 bilhões para comprar fatia em Jirau e desalavancar",
@@ -6459,7 +6488,8 @@
     }
    ],
    "captured_ts": 1784905719,
-   "cap_iso": "2026-07-24 12:08"
+   "cap_iso": "2026-07-24 12:08",
+   "corrob_sources": []
   },
   "https://braziljournal.com/exclusivo-rumo-escolhe-rockenbach-ferroviario-raiz-como-novo-ceo/": {
    "title": "EXCLUSIVO: Rumo escolhe Rockenbach, “ferroviário raiz”, como novo CEO",
@@ -6516,6 +6546,12 @@
      "domain": "aciara.com.br",
      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE50TkV3VWxtbFZ6aEdqTDc1QUE2N2JvN0I4aEZCQlA5Y3Jwb3dFc0dsbXVGZlM3dnUtVlJzTzdENFJOSmdma2F4amJHOE9pM1RJSTYzd01DRTlWZkJndjIta0diQjZTZw?oc=5",
      "when": "23/06 04:00"
+    },
+    {
+     "source": "AgFeed",
+     "domain": "agfeed.com.br",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNQUdCLWVkZHl0anJBekJYQURLMThmblZZUVQ1b3BrUWxZa3FmVTMybmJZS2ZmT0hCRXFJejBDOGw3bGszQTRkb3pBcDYta1YwR3E5aEJQMWJlWi1pNkNiVTQ0dzE5bjJ4Rl9YQ2ZvR2JFYnB0azlnOWVldFoydDQyTzdSYkVUY1VBbjVlUUdPMXRRcGdYZ29lMGlYcVBpMGxhVHB3UEhveTI5RWFPQXpJM3lzQ2FaY3Bfazdjc1NaY1ZScnNDdng0?oc=5",
+     "when": "22/06 04:00"
     }
    ],
    "captured_ts": 1784905719,
@@ -6661,9 +6697,121 @@
    ],
    "captured_ts": 1784915635,
    "cap_iso": "2026-07-24 14:53"
+  },
+  "https://neofeed.com.br/negocios/sob-pressao-novo-ceo-traca-plano-de-guerrilha-para-tentar-recuperar-hapvida/": {
+   "title": "Sob pressão, novo CEO traça plano de “guerrilha” para tentar recuperar Hapvida",
+   "url": "https://neofeed.com.br/negocios/sob-pressao-novo-ceo-traca-plano-de-guerrilha-para-tentar-recuperar-hapvida/",
+   "summary": "Sob pressão, novo CEO traça plano de “guerrilha” para tentar recuperar Hapvida &nbsp;&nbsp; NeoFeed",
+   "source": "NeoFeed",
+   "domain": "neofeed.com.br",
+   "pub_ts": 1778569200,
+   "pub_iso": "2026-05-12 04:00",
+   "language": "pt",
+   "companies": [
+    "Hapvida"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "captured_ts": 1784925136,
+   "cap_iso": "2026-07-24 17:32"
+  },
+  "https://www.infomoney.com.br/mercados/por-que-as-acoes-da-engie-brasil-despencaram-com-a-aquisicao-de-jirau/": {
+   "title": "Por que as ações da Engie Brasil despencaram com a aquisição de Jirau?",
+   "url": "https://www.infomoney.com.br/mercados/por-que-as-acoes-da-engie-brasil-despencaram-com-a-aquisicao-de-jirau/",
+   "summary": "Por que as ações da Engie Brasil despencaram com a aquisição de Jirau? &nbsp;&nbsp; InfoMoney",
+   "source": "InfoMoney",
+   "domain": "infomoney.com.br",
+   "pub_ts": 1783062000,
+   "pub_iso": "2026-07-03 04:00",
+   "language": "pt",
+   "companies": [
+    "Engie Brasil"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "corroborations": [
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1rbU5IdDhRc2FaT0pvYU90X2ZTLUxSVUprWGNJdjJ2NXM0eTc5UjZ1ZTJWYWRMNDcxTHVIVFBoSVFWOXg2Ujc4WXdEa3lkcnlKR01rNFVUSFU5Z0tKQmw5eF9pdEswS0FlcVE?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1rbU5IdDhRc2FaT0pvYU90X2ZTLUxSVUprWGNJdjJ2NXM0eTc5UjZ1ZTJWYWRMNDcxTHVIVFBoSVFWOXg2Ujc4WXdEa3lkcnlKR01rNFVUSFU5Z0tKQmw5eF9pdEswS0FlcVE?oc=5",
+     "when": "03/07 16:05"
+    }
+   ],
+   "captured_ts": 1784925136,
+   "cap_iso": "2026-07-24 17:32"
+  },
+  "https://arevista.com.br/acoes/isae4-pode-cair-apos-follow-on-analista-aponta-preco-de-compra/": {
+   "title": "ISAE4 pode cair após follow-on? Analista aponta preço de compra",
+   "url": "https://arevista.com.br/acoes/isae4-pode-cair-apos-follow-on-analista-aponta-preco-de-compra/",
+   "summary": "ISAE4 pode cair após follow-on? Analista aponta preço de compra &nbsp;&nbsp; A Revista",
+   "source": "A Revista",
+   "domain": "arevista.com.br",
+   "pub_ts": 1784401813,
+   "pub_iso": "2026-07-18 16:10",
+   "language": "pt",
+   "companies": [
+    "ISA Energia Brasil"
+   ],
+   "event_ids": [
+    "follow_on"
+   ],
+   "corroborations": [
+    {
+     "source": "NeoFeed",
+     "domain": "neofeed.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNT1NUdDVTSFMtLXBLVldseVNpbWR2QnZzSExFQ0pSZU5yd2JXMGh1TERpT0c2UmppOWhOTTVRa1N6NXpHcC0tS1FwYkhNRmJhNEdLN3NTb1lraHNTN0xzX2RrNWNueHlvYW9jaWo2TjBrZEFOMTZGNzN4TU9KdDRfc0ZwRkZmaFpuaFQ4?oc=5"
+    }
+   ],
+   "captured_ts": 1784925136,
+   "cap_iso": "2026-07-24 17:32"
+  },
+  "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcHZiZXpNdFVNTnFBVk9GQ1JnTkZ6SFR5OXR5emp4N2tBN3NTSHR0OThmbWpaTjlNLW1NQWN2WVA5V0w5djRiQ1VjVFQ5NE92UmtRVENkeGd4MkozNWRxbGRpRTdON1MwVThNQ3pPdXU1OTRVRXhJWmtVYmRZRWxrcDNOdWRhQThTblFLRVl1aW9jellDWVRRQTZXdl9FQUYyc2V0U1dvWGppS0ZUMjV0aUJ3b2xkQW92cE12dlBKZGpEdw?oc=5": {
+   "title": "Ex-executivos da Fictor fundam a Fortem após recuperação judicial do grupo",
+   "url": "https://veja.abril.com.br/coluna/radar-economico/ex-executivos-da-fictor-fundam-a-fortem-apos-recuperacao-judicial-do-grupo/",
+   "summary": "Ex-executivos da Fictor fundam a Fortem após recuperação judicial do grupo &nbsp;&nbsp; VEJA",
+   "source": "VEJA",
+   "domain": "veja.abril.com.br",
+   "pub_ts": 1784905207,
+   "pub_iso": "2026-07-24 12:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1784925136,
+   "cap_iso": "2026-07-24 17:32"
+  },
+  "https://aeroin.net/latam-airlines-obtem-financiamento-de-us-505-milhoes-vinculado-a-sustentabilidade-para-aquisicao-de-aeronaves/": {
+   "title": "LATAM Airlines obtém financiamento de US$ 505 milhões vinculado à sustentabilidade para aquisição de aeronaves",
+   "url": "https://aeroin.net/latam-airlines-obtem-financiamento-de-us-505-milhoes-vinculado-a-sustentabilidade-para-aquisicao-de-aeronaves/",
+   "summary": "LATAM Airlines obtém financiamento de US$ 505 milhões vinculado à sustentabilidade para aquisição de aeronaves &nbsp;&nbsp; AEROIN",
+   "source": "AEROIN",
+   "domain": "aeroin.net",
+   "pub_ts": 1784917978,
+   "pub_iso": "2026-07-24 15:32",
+   "language": "pt",
+   "companies": [
+    "LATAM Airlines"
+   ],
+   "event_ids": [
+    "emissao_divida"
+   ],
+   "captured_ts": 1784925136,
+   "cap_iso": "2026-07-24 17:32"
   }
  },
- "run_count": 29,
+ "run_count": 30,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -8260,11 +8408,19 @@
   "https://news.google.com/rss/articles/CBMizwFBVV95cUxPV2g2Rld2U2hTT0h5RXFXOTV6ck5IaGt4QjN1MFU5RmhTZUFQVEpxRmFaUUZ3aDgyaHJDTXdlY0Uyc0steGpmSWtQaVNYa2tIYlBGeFZoRXlXSnpmT1hZQzMtS1JURkN4bkdZM2hEQjJ2c0U5eU40WnU5RV9kdlFoYUMxbDVkYkE0d2FYSDY2Sms0YzhWcmJUdW5JZVNkNkNaVzh0THlXVzFOajRZMzBqVGdlUG5YMWdrLXQtUTF6ckdTNW9nSFBVeDh3SXEyQjA?oc=5": {
    "url": "https://www.em.com.br/emfoco/2026/07/24/gigante-do-mercado-brasileiro-declara-falencia-e-mostra-o-momento-de-mais-fragilidade-do-pais/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQcGpZOVZtNld2NzF6cWNNanZ2R296LW1WMVMtQUlsaUQtRnZlaGR1RG9tWnZnV3pHQ2lmdXptX2tONGxZUHpLNVp1WW9sSEFNNFNjYlVDeG85dm5faWlWWlgyVC1BTzBJZHdmWkFWTXdWTXlUaHN6aWZ0ek9zclVWaWhDLUFpXzRHT1Zfdld6SEdKSFNabVhld25SWEZQT2ZJcEt3dTh6VG5aeXdYMzROaUpJZlNxNEdxaFBnOUZ1WmlhSUpDQThFbNIByAFBVV95cUxQcGpZOVZtNld2NzF6cWNNanZ2R296LW1WMVMtQUlsaUQtRnZlaGR1RG9tWnZnV3pHQ2lmdXptX2tONGxZUHpLNVp1WW9sSEFNNFNjYlVDeG85dm5faWlWWlgyVC1BTzBJZHdmWkFWTXdWTXlUaHN6aWZ0ek9zclVWaWhDLUFpXzRHT1Zfdld6SEdKSFNabVhld25SWEZQT2ZJcEt3dTh6VG5aeXdYMzROaUpJZlNxNEdxaFBnOUZ1WmlhSUpDQThFbA?oc=5": {
+   "url": "https://aeroin.net/latam-airlines-obtem-financiamento-de-us-505-milhoes-vinculado-a-sustentabilidade-para-aquisicao-de-aeronaves/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcHZiZXpNdFVNTnFBVk9GQ1JnTkZ6SFR5OXR5emp4N2tBN3NTSHR0OThmbWpaTjlNLW1NQWN2WVA5V0w5djRiQ1VjVFQ5NE92UmtRVENkeGd4MkozNWRxbGRpRTdON1MwVThNQ3pPdXU1OTRVRXhJWmtVYmRZRWxrcDNOdWRhQThTblFLRVl1aW9jellDWVRRQTZXdl9FQUYyc2V0U1dvWGppS0ZUMjV0aUJ3b2xkQW92cE12dlBKZGpEdw?oc=5": {
+   "url": "https://veja.abril.com.br/coluna/radar-economico/ex-executivos-da-fictor-fundam-a-fortem-apos-recuperacao-judicial-do-grupo/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1784915639,
-  "iso": "24 jul 2026 · 14:53 BRT",
+  "ts": 1784925139,
+  "iso": "24 jul 2026 · 17:32 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
@@ -8274,13 +8430,13 @@
     "status": "critico",
     "score": 96
    },
+   "Engie Brasil": {
+    "status": "critico",
+    "score": 82
+   },
    "Tok&Stok": {
     "status": "critico",
     "score": 74
-   },
-   "Engie Brasil": {
-    "status": "atencao",
-    "score": 71
    },
    "Cosan": {
     "status": "atencao",
@@ -8296,7 +8452,7 @@
    },
    "Santander Brasil": {
     "status": "atencao",
-    "score": 38
+    "score": 37
    },
    "Vale": {
     "status": "atencao",
@@ -8306,13 +8462,13 @@
     "status": "monitorar",
     "score": 31
    },
-   "Axia Energia": {
+   "ISA Energia Brasil": {
     "status": "monitorar",
     "score": 29
    },
-   "ISA Energia Brasil": {
+   "Axia Energia": {
     "status": "monitorar",
-    "score": 28
+    "score": 29
    },
    "Suzano": {
     "status": "monitorar",
@@ -8323,6 +8479,10 @@
     "score": 24
    },
    "Embraer": {
+    "status": "monitorar",
+    "score": 21
+   },
+   "LATAM Airlines": {
     "status": "monitorar",
     "score": 21
    },
@@ -8385,6 +8545,10 @@
    "Caixa Seguridade": {
     "status": "monitorar",
     "score": 7
+   },
+   "Hapvida": {
+    "status": "monitorar",
+    "score": 4
    },
    "Banco do Brasil": {
     "status": "monitorar",
