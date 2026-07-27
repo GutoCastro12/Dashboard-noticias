@@ -6109,7 +6109,8 @@
     }
    ],
    "captured_ts": 1785168118,
-   "cap_iso": "2026-07-27 13:01"
+   "cap_iso": "2026-07-27 13:01",
+   "corrob_sources": []
   },
   "https://www.suno.com.br/noticias/fitch-rebaixa-rating-hapvida-hapv3-2026-mt/": {
    "title": "Hapvida (HAPV3): Fitch corta rating e liga o alerta para 2026",
@@ -6288,7 +6289,9 @@
     "troca_ceo"
    ],
    "captured_ts": 1785168118,
-   "cap_iso": "2026-07-27 13:01"
+   "cap_iso": "2026-07-27 13:01",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.moneytimes.com.br/suzano-suzb3-recebe-aval-da-comissao-europeia-para-aquisicao-da-kimberly-clark-ifp-pads/": {
    "title": "Suzano (SUZB3) recebe aval da Comissão Europeia para aquisição da Kimberly-Clark IFP",
@@ -6466,7 +6469,9 @@
     "ma"
    ],
    "captured_ts": 1785168118,
-   "cap_iso": "2026-07-27 13:01"
+   "cap_iso": "2026-07-27 13:01",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://braziljournal.com/engie-faz-follow-on-de-r-83-bilhoes-para-comprar-fatia-em-jirau-e-desalavancar/": {
    "title": "Engie faz follow-on de R$ 8,3 bilhões para comprar fatia em Jirau e desalavancar",
@@ -6525,7 +6530,9 @@
     "ma"
    ],
    "captured_ts": 1785168118,
-   "cap_iso": "2026-07-27 13:01"
+   "cap_iso": "2026-07-27 13:01",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://braziljournal.com/exclusivo-rumo-escolhe-rockenbach-ferroviario-raiz-como-novo-ceo/": {
    "title": "EXCLUSIVO: Rumo escolhe Rockenbach, “ferroviário raiz”, como novo CEO",
@@ -6609,7 +6616,9 @@
     "investigacao_regulatoria"
    ],
    "captured_ts": 1785168118,
-   "cap_iso": "2026-07-27 13:01"
+   "cap_iso": "2026-07-27 13:01",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.estadao.com.br/einvestidor/wealth-management/btg-conclui-aquisicao-do-hsbc-uruguai-e-inicia-operacoes-no-pais/": {
    "title": "BTG conclui aquisição do HSBC Uruguai e inicia operações no país",
@@ -6627,7 +6636,9 @@
     "ma"
    ],
    "captured_ts": 1785168118,
-   "cap_iso": "2026-07-27 13:01"
+   "cap_iso": "2026-07-27 13:01",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.estadao.com.br/em-alta/einvestidor/wealth-management/quem-e-christian-egan-novo-ceo-b3/": {
    "title": "Quem é Christian Egan, novo CEO da B3 (B3SA3), a Bolsa de Valores brasileira?",
@@ -6645,7 +6656,9 @@
     "troca_ceo"
    ],
    "captured_ts": 1785168118,
-   "cap_iso": "2026-07-27 13:01"
+   "cap_iso": "2026-07-27 13:01",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://valor.globo.com/financas/noticia/2026/07/15/isa-energia-lana-oferta-subsequente-de-aes-que-pode-alcanar-r-13-bilho.ghtml": {
    "title": "ISA Energia lança oferta subsequente de ações que pode alcançar R$ 1,3 bilhão",
@@ -6761,7 +6774,9 @@
     "investigacao_regulatoria"
    ],
    "captured_ts": 1785168118,
-   "cap_iso": "2026-07-27 13:01"
+   "cap_iso": "2026-07-27 13:01",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMizwFBVV95cUxPV2g2Rld2U2hTT0h5RXFXOTV6ck5IaGt4QjN1MFU5RmhTZUFQVEpxRmFaUUZ3aDgyaHJDTXdlY0Uyc0steGpmSWtQaVNYa2tIYlBGeFZoRXlXSnpmT1hZQzMtS1JURkN4bkdZM2hEQjJ2c0U5eU40WnU5RV9kdlFoYUMxbDVkYkE0d2FYSDY2Sms0YzhWcmJUdW5JZVNkNkNaVzh0THlXVzFOajRZMzBqVGdlUG5YMWdrLXQtUTF6ckdTNW9nSFBVeDh3SXEyQjA?oc=5": {
    "title": "Gigante do mercado brasileiro que disputou contra a Coca-Cola recebe pedido de falência de R$ 15 bilhões",
@@ -6780,9 +6795,119 @@
    ],
    "captured_ts": 1785168118,
    "cap_iso": "2026-07-27 13:01"
+  },
+  "https://www.moneytimes.com.br/prio-prio3-sp-global-eleva-nota-de-credito-da-petrolifera-apos-aquisicao-de-peregrino-lmrs/": {
+   "title": "Prio (PRIO3): S&P Global eleva nota de crédito da petrolífera após aquisição de Peregrino",
+   "url": "https://www.moneytimes.com.br/prio-prio3-sp-global-eleva-nota-de-credito-da-petrolifera-apos-aquisicao-de-peregrino-lmrs/",
+   "summary": "Prio (PRIO3): S&P Global eleva nota de crédito da petrolífera após aquisição de Peregrino &nbsp;&nbsp; Money Times",
+   "source": "Money Times",
+   "domain": "moneytimes.com.br",
+   "pub_ts": 1763107200,
+   "pub_iso": "2025-11-14 05:00",
+   "language": "pt",
+   "companies": [
+    "PRIO"
+   ],
+   "event_ids": [
+    "rating_elevado"
+   ],
+   "captured_ts": 1785174623,
+   "cap_iso": "2026-07-27 14:50"
+  },
+  "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNelRrVjJhM3pTM2ZlaHVlRk95UWZpSHVQU3JkQkFudW1XWnd5b3c2NE53U3N0bmxTeVFVblNPMzRNUldYbDlRSk1pQkFJX2QxSjJiVk1ZNlQ1QkpUbkx0cnhtaDYyVUo3clFtcnVVc1lzbTc5UzRzSUhaWjR5V1M0RUpCMGM1NUhaRFhFcllOek9BcDF6dWlFTjdIMDVZMFJma3Z5UzJaZnA5RnhDX3dtXzFYTGEwdjdIOEdKeDY1VjZ0ZTBySm1LStIB1wFBVV95cUxQMGo1aFU4UzVieU9YdDQtTXAyZ2VQbDRzbDdRTWZ1MWMtd3FLR1NlRVNtM2pwMGRJMVBZazZmdUViQ1BORV9uX2NCel9LSE8zdF9SZVk3SmMxWWExRUR4T1M2ZWJmdFlZNHV6c05nNlRxUDU5OFhxNTJieDU3QjlZOFVjTHJQVzJCYkVqN1BUaEFtbl9mT1B6Q0M4S3dJVFZTWGg4TWNBUzJEME85al9BQXpFNnE5VF9PdVlsRm5ZT3RrbzhaTE5nMEpqTTFyMFZESkJENmRLSQ?oc=5": {
+   "title": "Pontal-Thopen obtém proteção na Justiça, enquanto prepara recuperação judicial",
+   "url": "https://valor.globo.com/empresas/noticia/2026/07/27/pontal-thopen-obtm-proteo-na-justia-enquanto-prepara-recuperao-judicial.ghtml",
+   "summary": "Pontal-Thopen obtém proteção na Justiça, enquanto prepara recuperação judicial &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1785167178,
+   "pub_iso": "2026-07-27 12:46",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "corroborations": [
+    {
+     "source": "Brazil Journal",
+     "domain": "braziljournal.com",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxObWN5RHE0eXRLZTUtMjRJU3U0VGxwZElDNGUtYXA5ZWMtUkNaUDJiTEpBOVo0NnpSVHYxWEQ3YmdGMTFWN19ubmFNRnNmd3luN1hBZk9iOWdQNkNvMzRmTFF3UmVRR05WSk0ydk9jTlczb0dLWHdhWExMMy1ob256WEZZanc?oc=5"
+    },
+    {
+     "source": "Canal Solar",
+     "domain": "canalsolar.com.br",
+     "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE4wR0xEcHB3anZOcHozSmlJaWxKelhwRXIwRmszUUxYMXd4QzMzRkhHQzdyaDlacnU5cFEzSkNTeVdIUk9DYmJZSGVrcU5yczNndzB1b050aTZwMDhhQzBqbWhudzdyaDBldXp1OHdUaWdQdw?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Brazil Journal",
+     "domain": "braziljournal.com",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxObWN5RHE0eXRLZTUtMjRJU3U0VGxwZElDNGUtYXA5ZWMtUkNaUDJiTEpBOVo0NnpSVHYxWEQ3YmdGMTFWN19ubmFNRnNmd3luN1hBZk9iOWdQNkNvMzRmTFF3UmVRR05WSk0ydk9jTlczb0dLWHdhWExMMy1ob256WEZZanc?oc=5",
+     "when": "25/07 05:48"
+    }
+   ],
+   "captured_ts": 1785174623,
+   "cap_iso": "2026-07-27 14:50"
+  },
+  "https://news.google.com/rss/articles/CBMitAFBVV95cUxNWk9YWEVrVGRGTkNiR29KRTZoS0Y3ZGJ5SzJtRWoza0Z2QzVwOXVNeUJXSTFaNHJzWWhsYXdGUmlFX0I4TS12c1p5bDFQMEFhbzVzdnVkTHZWazNYV2J0Q2s0ckZuSTFidm5GOS1CTEJNaThrXzZudWJuczE4dGI5ZFpfLWI5azVCYmpab3VDN0llSnVIdzc1RTdkWUtCSjlMa1RmQ0dwNVJucnNvV2dfM09xYWY?oc=5": {
+   "title": "Grupo Dolly é alvo de pedido de falência por dívida de R$ 15,7 bilhões",
+   "url": "https://ilheuseventos.com.br/noticias/brasil/grupo-dolly-e-alvo-de-pedido-de-falencia-por-divida-de-r-157-bilhoes/",
+   "summary": "Grupo Dolly é alvo de pedido de falência por dívida de R$ 15,7 bilhões &nbsp;&nbsp; Ilhéus Eventos",
+   "source": "Ilhéus Eventos",
+   "domain": "ilheuseventos.com.br",
+   "pub_ts": 1785159399,
+   "pub_iso": "2026-07-27 10:36",
+   "language": "es",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785174623,
+   "cap_iso": "2026-07-27 14:50"
+  },
+  "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOdWVaWWpFM0c2NHV4QWxFQmx5NF9MZjNObW5xRDZLOTNhbENzQUxDYUdZMmFQY1lEX2dJR1JQZlY2QktQTmNzWlRxXzZ6aDVtLVhTZ2wybk10ZEJpLWNQNTRsVjFHMXNZc2pHU3ZJMjBHS3doR3FkQllESjZpS1VKRGpDLUYxVllyS2g3ZEhmQklRSUtqODRPNDBPcWdlTG1sRmNzSmkxNmlwYVhaRHgwbV9CSndpU2wxZ0k1Sl80Sms4RjdrQ0FyME1oYTNtXzdabGfSAdIBQVVfeXFMTnVlWllqRTNHNjR1eEFsRUJseTRfTGYzTm1ucUQ2SzkzYWxDc0FMQ2FHWTJhUGNZRF9nSUdSUGZWNkJLUE5jc1pUcV82emg1bS1YU2dsMm5NdGRCaS1jUDU0bFYxRzFzWXNqR1N2STIwR0t3aEdxZEJZREo2aUtVSkRqQy1GMVZZcktoN2RIZkJJUUlLajg0TzQwT3FnZUxtbEZjc0ppMTZpcGFYWkR4MG1fQkp3aVNsMWdJNUpfNEprOEY3a0NBcjBNaGEzbV83Wmxn?oc=5": {
+   "title": "Tradicional marca brasileira de refrigerantes é alvo de pedido de falência por dívida de R$ 15,7 bilhões",
+   "url": "https://acreagora.com/2026/07/27/tradicional-marca-brasileira-de-refrigerantes-e-alvo-de-pedido-de-falencia-por-divida-de-r-157-bilhoes/",
+   "summary": "Tradicional marca brasileira de refrigerantes é alvo de pedido de falência por dívida de R$ 15,7 bilhões &nbsp;&nbsp; Acre Agora",
+   "source": "Acre Agora",
+   "domain": "acreagora.com",
+   "pub_ts": 1785160239,
+   "pub_iso": "2026-07-27 10:50",
+   "language": "es",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785174623,
+   "cap_iso": "2026-07-27 14:50"
+  },
+  "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOOElQVkdzTEhaMHhPY1dCX3d6S1FRVGI3a3J3NjhPWUlUWDBraW9id2Y0QXdWWlFRLVJJM2p1eEhTbERSU0ZpVmIwdmZjT2ZtckU4aUh1Q1BSWUZlVWFfN25UZHp2anMzOWQ0MVFOZUZ0dWxFRWtvZzBGWnJBVnhyTFNKY0FVTXcxOE9MTloyUDRYSlpTdUJLWDJXR3FDc1FCd0VKWDhfWnNneXFaS2Vuak1ZSmlKMW1lUnlfSTN3WHZmZVJUcWtESzBrQ3FBb0FsOVE?oc=5": {
+   "title": "Empresa alerta para possível interrupção de serviços em meio à recuperação judicial",
+   "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOOElQVkdzTEhaMHhPY1dCX3d6S1FRVGI3a3J3NjhPWUlUWDBraW9id2Y0QXdWWlFRLVJJM2p1eEhTbERSU0ZpVmIwdmZjT2ZtckU4aUh1Q1BSWUZlVWFfN25UZHp2anMzOWQ0MVFOZUZ0dWxFRWtvZzBGWnJBVnhyTFNKY0FVTXcxOE9MTloyUDRYSlpTdUJLWDJXR3FDc1FCd0VKWDhfWnNneXFaS2Vuak1ZSmlKMW1lUnlfSTN3WHZmZVJUcWtESzBrQ3FBb0FsOVE?oc=5",
+   "summary": "Empresa alerta para possível interrupção de serviços em meio à recuperação judicial &nbsp;&nbsp; DIARINHO",
+   "source": "DIARINHO",
+   "domain": "diarinho.net",
+   "pub_ts": 1785171240,
+   "pub_iso": "2026-07-27 13:54",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1785174623,
+   "cap_iso": "2026-07-27 14:50"
   }
  },
- "run_count": 34,
+ "run_count": 35,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -8515,11 +8640,27 @@
   "https://news.google.com/rss/articles/CBMixwFBVV95cUxNQzM4QU1pa1drZkllRHlBZFFUX3h2TlllcUJKcDQyQXZ5bVJHRnlIa1hHREl3VVdtYUJwaVJlVm91SGU4YUY2UG1TQWFnRFhtc0x5X2d1c3ZtOGxQRnlteXZwbld5RjlYbnJHSUZHN1Qydkxka29LRDhuYUJxNTZzYjc3YkJ5THhsZ0ZoNFVqSHlXUVlXOHMyNUhhOHZzaDJYbl9WUVlOMUlqa3VGbEFST09KSk85RGFLNlVscm5lVGhMOGR0WlV3?oc=5": {
    "url": "https://www.justicaemfoco.com.br/noticias/recuperacao-judicial-exige-equilibrio-preservar-empresas-credores--diz-marcello-perino",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNelRrVjJhM3pTM2ZlaHVlRk95UWZpSHVQU3JkQkFudW1XWnd5b3c2NE53U3N0bmxTeVFVblNPMzRNUldYbDlRSk1pQkFJX2QxSjJiVk1ZNlQ1QkpUbkx0cnhtaDYyVUo3clFtcnVVc1lzbTc5UzRzSUhaWjR5V1M0RUpCMGM1NUhaRFhFcllOek9BcDF6dWlFTjdIMDVZMFJma3Z5UzJaZnA5RnhDX3dtXzFYTGEwdjdIOEdKeDY1VjZ0ZTBySm1LStIB1wFBVV95cUxQMGo1aFU4UzVieU9YdDQtTXAyZ2VQbDRzbDdRTWZ1MWMtd3FLR1NlRVNtM2pwMGRJMVBZazZmdUViQ1BORV9uX2NCel9LSE8zdF9SZVk3SmMxWWExRUR4T1M2ZWJmdFlZNHV6c05nNlRxUDU5OFhxNTJieDU3QjlZOFVjTHJQVzJCYkVqN1BUaEFtbl9mT1B6Q0M4S3dJVFZTWGg4TWNBUzJEME85al9BQXpFNnE5VF9PdVlsRm5ZT3RrbzhaTE5nMEpqTTFyMFZESkJENmRLSQ?oc=5": {
+   "url": "https://valor.globo.com/empresas/noticia/2026/07/27/pontal-thopen-obtm-proteo-na-justia-enquanto-prepara-recuperao-judicial.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMitAFBVV95cUxNWk9YWEVrVGRGTkNiR29KRTZoS0Y3ZGJ5SzJtRWoza0Z2QzVwOXVNeUJXSTFaNHJzWWhsYXdGUmlFX0I4TS12c1p5bDFQMEFhbzVzdnVkTHZWazNYV2J0Q2s0ckZuSTFidm5GOS1CTEJNaThrXzZudWJuczE4dGI5ZFpfLWI5azVCYmpab3VDN0llSnVIdzc1RTdkWUtCSjlMa1RmQ0dwNVJucnNvV2dfM09xYWY?oc=5": {
+   "url": "https://ilheuseventos.com.br/noticias/brasil/grupo-dolly-e-alvo-de-pedido-de-falencia-por-divida-de-r-157-bilhoes/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOdWVaWWpFM0c2NHV4QWxFQmx5NF9MZjNObW5xRDZLOTNhbENzQUxDYUdZMmFQY1lEX2dJR1JQZlY2QktQTmNzWlRxXzZ6aDVtLVhTZ2wybk10ZEJpLWNQNTRsVjFHMXNZc2pHU3ZJMjBHS3doR3FkQllESjZpS1VKRGpDLUYxVllyS2g3ZEhmQklRSUtqODRPNDBPcWdlTG1sRmNzSmkxNmlwYVhaRHgwbV9CSndpU2wxZ0k1Sl80Sms4RjdrQ0FyME1oYTNtXzdabGfSAdIBQVVfeXFMTnVlWllqRTNHNjR1eEFsRUJseTRfTGYzTm1ucUQ2SzkzYWxDc0FMQ2FHWTJhUGNZRF9nSUdSUGZWNkJLUE5jc1pUcV82emg1bS1YU2dsMm5NdGRCaS1jUDU0bFYxRzFzWXNqR1N2STIwR0t3aEdxZEJZREo2aUtVSkRqQy1GMVZZcktoN2RIZkJJUUlLajg0TzQwT3FnZUxtbEZjc0ppMTZpcGFYWkR4MG1fQkp3aVNsMWdJNUpfNEprOEY3a0NBcjBNaGEzbV83Wmxn?oc=5": {
+   "url": "https://acreagora.com/2026/07/27/tradicional-marca-brasileira-de-refrigerantes-e-alvo-de-pedido-de-falencia-por-divida-de-r-157-bilhoes/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOOElQVkdzTEhaMHhPY1dCX3d6S1FRVGI3a3J3NjhPWUlUWDBraW9id2Y0QXdWWlFRLVJJM2p1eEhTbERSU0ZpVmIwdmZjT2ZtckU4aUh1Q1BSWUZlVWFfN25UZHp2anMzOWQ0MVFOZUZ0dWxFRWtvZzBGWnJBVnhyTFNKY0FVTXcxOE9MTloyUDRYSlpTdUJLWDJXR3FDc1FCd0VKWDhfWnNneXFaS2Vuak1ZSmlKMW1lUnlfSTN3WHZmZVJUcWtESzBrQ3FBb0FsOVE?oc=5": {
+   "url": "https://diarinho.net",
+   "exact": false
   }
  },
  "last_run": {
-  "ts": 1785168121,
-  "iso": "27 jul 2026 · 13:02 BRT",
+  "ts": 1785174627,
+  "iso": "27 jul 2026 · 14:50 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
@@ -8527,7 +8668,7 @@
    },
    "JBS": {
     "status": "critico",
-    "score": 90
+    "score": 89
    },
    "Engie Brasil": {
     "status": "atencao",
@@ -8551,7 +8692,7 @@
    },
    "BTG Pactual": {
     "status": "atencao",
-    "score": 32
+    "score": 31
    },
    "Itaúsa": {
     "status": "monitorar",
