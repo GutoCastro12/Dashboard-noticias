@@ -6128,7 +6128,9 @@
     "rebaixamento_rating"
    ],
    "captured_ts": 1785168118,
-   "cap_iso": "2026-07-27 13:01"
+   "cap_iso": "2026-07-27 13:01",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://canalsolar.com.br/cemig-sim-conclui-aquisicao-de-10mwp-em-usinas-solares/": {
    "title": "Cemig SIM conclui aquisição de 10MWp em usinas solares",
@@ -6146,7 +6148,9 @@
     "ma"
    ],
    "captured_ts": 1785168118,
-   "cap_iso": "2026-07-27 13:01"
+   "cap_iso": "2026-07-27 13:01",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.conjur.com.br/2026-jan-20/cade-aprova-aquisicao-da-emae-pela-sabesp-sem-qualquer-restricao/": {
    "title": "Cade aprova aquisição da Emae pela Sabesp sem qualquer restrição",
@@ -6164,7 +6168,9 @@
     "ma"
    ],
    "captured_ts": 1785168118,
-   "cap_iso": "2026-07-27 13:01"
+   "cap_iso": "2026-07-27 13:01",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.infomoney.com.br/mercados/copel-realiza-bookbuilding-da-11a-emissao-de-debentures-no-valor-de-r-2-bilhoes/": {
    "title": "Copel realiza bookbuilding da 11ª emissão de debêntures no valor de R$ 2 bilhões",
@@ -6290,8 +6296,32 @@
    ],
    "captured_ts": 1785168118,
    "cap_iso": "2026-07-27 13:01",
-   "corroborations": [],
-   "corrob_sources": []
+   "corroborations": [
+    {
+     "source": "financenews.com.br",
+     "domain": "financenews.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNT19NZjhtLUV6T1FaT3FuNTJMakJNNkJUX18tcER1aVpjR3JhY18xZlRqZmRxYVNpelYyY29DZEJPM2s2MjJtLTg1aTlNTzljbmg1Q0VRLVE0QVJHR1VvTkxaZzIwZ19aOHROM2VyRjhoeEJPZ3JCSDNneUNKbEJnOGRhNU1HSDBZN0E?oc=5"
+    },
+    {
+     "source": "NSC Total",
+     "domain": "nsctotal.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPNmFocjJaM1p4T3BaUVB3OFdBZk5tY01kdHY5QmFzX3R5cHB1VnFOTmhPUjVJQ19ucjhXbnFHU2xiNlVGenVlUTZPeUlFWW0zRjI2VFhvUmp4bzVhbVdOTnV4SDI2dDlfQzdOeXlIWE1TeW9fTWxLaXdtNFlnUm1ueE9uMVpSLWVnNzFHS0kwMkhoNlhYRHpDZW0yOHNSakVvd1NNWkFuQVhxQVJMYzJrZEFnOUVReXY5UWJqemZmNnlMM0M4dnRtd19R?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "financenews.com.br",
+     "domain": "financenews.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNT19NZjhtLUV6T1FaT3FuNTJMakJNNkJUX18tcER1aVpjR3JhY18xZlRqZmRxYVNpelYyY29DZEJPM2s2MjJtLTg1aTlNTzljbmg1Q0VRLVE0QVJHR1VvTkxaZzIwZ19aOHROM2VyRjhoeEJPZ3JCSDNneUNKbEJnOGRhNU1HSDBZN0E?oc=5",
+     "when": "04/05 04:00"
+    },
+    {
+     "source": "NSC Total",
+     "domain": "nsctotal.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPNmFocjJaM1p4T3BaUVB3OFdBZk5tY01kdHY5QmFzX3R5cHB1VnFOTmhPUjVJQ19ucjhXbnFHU2xiNlVGenVlUTZPeUlFWW0zRjI2VFhvUmp4bzVhbVdOTnV4SDI2dDlfQzdOeXlIWE1TeW9fTWxLaXdtNFlnUm1ueE9uMVpSLWVnNzFHS0kwMkhoNlhYRHpDZW0yOHNSakVvd1NNWkFuQVhxQVJMYzJrZEFnOUVReXY5UWJqemZmNnlMM0M4dnRtd19R?oc=5",
+     "when": "05/05 04:00"
+    }
+   ]
   },
   "https://www.moneytimes.com.br/suzano-suzb3-recebe-aval-da-comissao-europeia-para-aquisicao-da-kimberly-clark-ifp-pads/": {
    "title": "Suzano (SUZB3) recebe aval da Comissão Europeia para aquisição da Kimberly-Clark IFP",
@@ -6342,7 +6372,9 @@
     "troca_ceo"
    ],
    "captured_ts": 1785168118,
-   "cap_iso": "2026-07-27 13:01"
+   "cap_iso": "2026-07-27 13:01",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://valor.globo.com/empresas/noticia/2026/05/22/cade-aprova-aquisio-de-90-pontos-percentuais-da-sanessol-pela-sabesp.ghtml": {
    "title": "Cade aprova aquisição de 90% da Sanessol pela Sabesp",
@@ -6433,7 +6465,9 @@
     "emissao_divida"
    ],
    "captured_ts": 1785168118,
-   "cap_iso": "2026-07-27 13:01"
+   "cap_iso": "2026-07-27 13:01",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/santander-brasil-sanb11-estrategia-novo-ceo-roe-xp/": {
    "title": "XP vê troca de CEO no Santander (SANB11) sem ruptura e aposta em alta rentabilidade",
@@ -6451,7 +6485,9 @@
     "troca_ceo"
    ],
    "captured_ts": 1785168118,
-   "cap_iso": "2026-07-27 13:01"
+   "cap_iso": "2026-07-27 13:01",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://tagdlaw.com.br/cade-aprova-aquisicao-no-campo-de-argonauta-pela-petrobras/": {
    "title": "Cade aprova aquisição no campo de Argonauta pela Petrobras",
@@ -6512,7 +6548,8 @@
     }
    ],
    "captured_ts": 1785168118,
-   "cap_iso": "2026-07-27 13:01"
+   "cap_iso": "2026-07-27 13:01",
+   "corrob_sources": []
   },
   "https://www.moneytimes.com.br/cade-aprova-aquisicao-pela-rd-saude-radl3-da-participacao-da-gpa-pcar3-na-stix/": {
    "title": "Cade aprova aquisição pela RD Saúde (RADL3) da participação da GPA (PCAR3) na Stix",
@@ -6685,6 +6722,11 @@
      "source": "Estadão",
      "domain": "estadao.com.br",
      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNSkRaM0xaXzQxQm9nZWF0Yjd6dDBibjBhX2NhRXZhUXJLbWNzUGVPNWdvRUVPaXZ5emZ0RXJuc2lPLUswc1ZsSHhWNUVFMk1Xa3hoaTFMWk84Y0QyYkVOZWFfRTBod091NF93cHgyc0xSMGVCRUdIbEI2XzVSc1F1UDBfMXVTc3ZnMF82bVlDakJZcVYzblhrbUtfY01YWHlJZkNfTWRzNE9YOEZVWUExc0ZodkwzeW1nRWpwNXFxSHItY3N1QWJVbmNMa3FpSVVYSUdvWHpQSWpuOWJvSEhGUzZB0gHnAUFVX3lxTE45R3M5OU41Smg3SFkyODFzVkpHWGV6ZXpoQUlCZGdzUWlTUW5LZ1hLTnhPdGxEdkRKbGk2NWdldVBXRjR4VnV2MHNFTzlVYWJ2ZXRtcXdrV2NuR0lJTnFkbFVjSEdab0Y1dWpUaXpMTExoRk45QnU4blhxU3owYjNzV3BDNnFxQ011SUI2MlFDYnQwYW5jcXk2NHJvQl9XLTg3UmNzQTBjWi1IQlY0VlNaUTVRVFZJaUhtRVlBLUE5azctTm12Z3FBRW9rT2ZkTFJuMXFNR2t0a1Z3N2hSOE1uVjA3VGpsMA?oc=5"
+    },
+    {
+     "source": "A Revista",
+     "domain": "arevista.com.br",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQNmw0QnNzRkswa2FmNHlCVG9BVGt6NFRnRkNsOXlZZUJPM3V0Z1JxS0d0RENONzVLQ0o1UXhqT0cyS2NRcFU0QXJmR3RmUnVJU3RISlNMcGhaRzR2N2tmWktURjZmMVpIaGVLUFJfeXdrajNrX3dSZzZDRWZ5WEZ1MTN3TWNwZmtJTC1oSC0yRk0zeENCZ1pOeQ?oc=5"
     }
    ],
    "corrob_sources": [
@@ -6699,6 +6741,12 @@
      "domain": "estadao.com.br",
      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNSkRaM0xaXzQxQm9nZWF0Yjd6dDBibjBhX2NhRXZhUXJLbWNzUGVPNWdvRUVPaXZ5emZ0RXJuc2lPLUswc1ZsSHhWNUVFMk1Xa3hoaTFMWk84Y0QyYkVOZWFfRTBod091NF93cHgyc0xSMGVCRUdIbEI2XzVSc1F1UDBfMXVTc3ZnMF82bVlDakJZcVYzblhrbUtfY01YWHlJZkNfTWRzNE9YOEZVWUExc0ZodkwzeW1nRWpwNXFxSHItY3N1QWJVbmNMa3FpSVVYSUdvWHpQSWpuOWJvSEhGUzZB0gHnAUFVX3lxTE45R3M5OU41Smg3SFkyODFzVkpHWGV6ZXpoQUlCZGdzUWlTUW5LZ1hLTnhPdGxEdkRKbGk2NWdldVBXRjR4VnV2MHNFTzlVYWJ2ZXRtcXdrV2NuR0lJTnFkbFVjSEdab0Y1dWpUaXpMTExoRk45QnU4blhxU3owYjNzV3BDNnFxQ011SUI2MlFDYnQwYW5jcXk2NHJvQl9XLTg3UmNzQTBjWi1IQlY0VlNaUTVRVFZJaUhtRVlBLUE5azctTm12Z3FBRW9rT2ZkTFJuMXFNR2t0a1Z3N2hSOE1uVjA3VGpsMA?oc=5",
      "when": "16/07 04:00"
+    },
+    {
+     "source": "A Revista",
+     "domain": "arevista.com.br",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQNmw0QnNzRkswa2FmNHlCVG9BVGt6NFRnRkNsOXlZZUJPM3V0Z1JxS0d0RENONzVLQ0o1UXhqT0cyS2NRcFU0QXJmR3RmUnVJU3RISlNMcGhaRzR2N2tmWktURjZmMVpIaGVLUFJfeXdrajNrX3dSZzZDRWZ5WEZ1MTN3TWNwZmtJTC1oSC0yRk0zeENCZ1pOeQ?oc=5",
+     "when": "18/07 04:00"
     }
    ],
    "captured_ts": 1785168118,
@@ -6720,7 +6768,9 @@
     "follow_on"
    ],
    "captured_ts": 1785168118,
-   "cap_iso": "2026-07-27 13:01"
+   "cap_iso": "2026-07-27 13:01",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMixwFBVV95cUxNQzM4QU1pa1drZkllRHlBZFFUX3h2TlllcUJKcDQyQXZ5bVJHRnlIa1hHREl3VVdtYUJwaVJlVm91SGU4YUY2UG1TQWFnRFhtc0x5X2d1c3ZtOGxQRnlteXZwbld5RjlYbnJHSUZHN1Qydkxka29LRDhuYUJxNTZzYjc3YkJ5THhsZ0ZoNFVqSHlXUVlXOHMyNUhhOHZzaDJYbl9WUVlOMUlqa3VGbEFST09KSk85RGFLNlVscm5lVGhMOGR0WlV3?oc=5": {
    "title": "Recuperação judicial exige equilíbrio para preservar empresas e credores, diz Marcello Perino",
@@ -6756,7 +6806,9 @@
     "ma"
    ],
    "captured_ts": 1785168118,
-   "cap_iso": "2026-07-27 13:01"
+   "cap_iso": "2026-07-27 13:01",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-destituicao-de-conselheiro-da-vale.shtml": {
    "title": "CVM abre processo para apurar destituição de conselheiro da Vale",
@@ -6812,7 +6864,9 @@
     "rating_elevado"
    ],
    "captured_ts": 1785174623,
-   "cap_iso": "2026-07-27 14:50"
+   "cap_iso": "2026-07-27 14:50",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNelRrVjJhM3pTM2ZlaHVlRk95UWZpSHVQU3JkQkFudW1XWnd5b3c2NE53U3N0bmxTeVFVblNPMzRNUldYbDlRSk1pQkFJX2QxSjJiVk1ZNlQ1QkpUbkx0cnhtaDYyVUo3clFtcnVVc1lzbTc5UzRzSUhaWjR5V1M0RUpCMGM1NUhaRFhFcllOek9BcDF6dWlFTjdIMDVZMFJma3Z5UzJaZnA5RnhDX3dtXzFYTGEwdjdIOEdKeDY1VjZ0ZTBySm1LStIB1wFBVV95cUxQMGo1aFU4UzVieU9YdDQtTXAyZ2VQbDRzbDdRTWZ1MWMtd3FLR1NlRVNtM2pwMGRJMVBZazZmdUViQ1BORV9uX2NCel9LSE8zdF9SZVk3SmMxWWExRUR4T1M2ZWJmdFlZNHV6c05nNlRxUDU5OFhxNTJieDU3QjlZOFVjTHJQVzJCYkVqN1BUaEFtbl9mT1B6Q0M4S3dJVFZTWGg4TWNBUzJEME85al9BQXpFNnE5VF9PdVlsRm5ZT3RrbzhaTE5nMEpqTTFyMFZESkJENmRLSQ?oc=5": {
    "title": "Pontal-Thopen obtém proteção na Justiça, enquanto prepara recuperação judicial",
@@ -6904,10 +6958,242 @@
     "recuperacao_judicial"
    ],
    "captured_ts": 1785174623,
-   "cap_iso": "2026-07-27 14:50"
+   "cap_iso": "2026-07-27 14:50",
+   "display_url": "https://diarinho.net"
+  },
+  "https://www.demarest.com.br/decisao-da-cvm-sobre-brf-e-marfrig-quais-informacoes-devem-ser-disponibilizadas-aos-acionistas-para-uma-assembleia-de-combinacao-de-negocios/": {
+   "title": "Decisão da CVM sobre BRF e Marfrig: quais informações devem ser disponibilizadas aos acionistas para uma assembleia de combinação de negócios?",
+   "url": "https://www.demarest.com.br/decisao-da-cvm-sobre-brf-e-marfrig-quais-informacoes-devem-ser-disponibilizadas-aos-acionistas-para-uma-assembleia-de-combinacao-de-negocios/",
+   "summary": "Decisão da CVM sobre BRF e Marfrig: quais informações devem ser disponibilizadas aos acionistas para uma assembleia de combinação de negócios? &nbsp;&nbsp; Demarest",
+   "source": "Demarest",
+   "domain": "demarest.com.br",
+   "pub_ts": 1762463586,
+   "pub_iso": "2025-11-06 18:13",
+   "language": "pt",
+   "companies": [
+    "BRF"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "corroborations": [
+    {
+     "source": "Estadão",
+     "domain": "estadao.com.br",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNdW1tUWxuS2JwbHVvQlItby1nSlZuZWZHaURxNDlOc3p3X0EwT0ZkTkJmQVR1blNteEtiYUloZjNNM0FUSHFVbjZQZzA5TTBqbXNyLTBQdXZmakhkVEN3aVF1RHBkcUl3cTI3aHc4NHR3WHRLOVB3U2RpV014NnVqQlIycUNDRkhMVkN1MWFKWm9zdXFnSXMtdjc5cjhMLS1vcWpiVNIBpAFBVV95cUxNdW1tUWxuS2JwbHVvQlItby1nSlZuZWZHaURxNDlOc3p3X0EwT0ZkTkJmQVR1blNteEtiYUloZjNNM0FUSHFVbjZQZzA5TTBqbXNyLTBQdXZmakhkVEN3aVF1RHBkcUl3cTI3aHc4NHR3WHRLOVB3U2RpV014NnVqQlIycUNDRkhMVkN1MWFKWm9zdXFnSXMtdjc5cjhMLS1vcWpiVA?oc=5"
+    }
+   ],
+   "captured_ts": 1785184336,
+   "cap_iso": "2026-07-27 17:32"
+  },
+  "https://www.infomoney.com.br/mercados/viaquatro-controlada-da-motiva-aprova-emissao-de-debentures-no-valor-de-r-1829-bi/": {
+   "title": "ViaQuatro, controlada da Motiva, aprova emissão de debêntures no valor de R$ 1,829 bi",
+   "url": "https://www.infomoney.com.br/mercados/viaquatro-controlada-da-motiva-aprova-emissao-de-debentures-no-valor-de-r-1829-bi/",
+   "summary": "ViaQuatro, controlada da Motiva, aprova emissão de debêntures no valor de R$ 1,829 bi &nbsp;&nbsp; InfoMoney",
+   "source": "InfoMoney",
+   "domain": "infomoney.com.br",
+   "pub_ts": 1773385200,
+   "pub_iso": "2026-03-13 04:00",
+   "language": "pt",
+   "companies": [
+    "Motiva"
+   ],
+   "event_ids": [
+    "emissao_divida"
+   ],
+   "captured_ts": 1785184336,
+   "cap_iso": "2026-07-27 17:32"
+  },
+  "https://www.demarest.com.br/eneva-capta-r-24-bilhoes-com-debentures/": {
+   "title": "Eneva capta R$ 2,4 bilhões com debêntures",
+   "url": "https://www.demarest.com.br/eneva-capta-r-24-bilhoes-com-debentures/",
+   "summary": "Eneva capta R$ 2,4 bilhões com debêntures &nbsp;&nbsp; Demarest",
+   "source": "Demarest",
+   "domain": "demarest.com.br",
+   "pub_ts": 1773903600,
+   "pub_iso": "2026-03-19 04:00",
+   "language": "pt",
+   "companies": [
+    "Eneva"
+   ],
+   "event_ids": [
+    "emissao_divida"
+   ],
+   "captured_ts": 1785184336,
+   "cap_iso": "2026-07-27 17:32"
+  },
+  "https://www.canalenergia.com.br/noticias/53350231/engie-brasil-convoca-age-para-decidir-aquisicao-de-participacao-em-jirau": {
+   "title": "Engie Brasil convoca AGE para decidir aquisição de participação em Jirau",
+   "url": "https://www.canalenergia.com.br/noticias/53350231/engie-brasil-convoca-age-para-decidir-aquisicao-de-participacao-em-jirau",
+   "summary": "Engie Brasil convoca AGE para decidir aquisição de participação em Jirau &nbsp;&nbsp; CanalEnergia",
+   "source": "CanalEnergia",
+   "domain": "canalenergia.com.br",
+   "pub_ts": 1782504100,
+   "pub_iso": "2026-06-26 17:01",
+   "language": "pt",
+   "companies": [
+    "Engie Brasil"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "corroborations": [
+    {
+     "source": "InfoMoney",
+     "domain": "infomoney.com.br",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPb0VLV1lSRnZyQkNtWXZYTWt0a3hrdHBXSVZBRmpEZTZTdHVwRHRYaWxlSkYycWVkbXhkMmQyeUFvLXpINjkxWUdSNWJpWGFsdEFwUDY5MUdQNmZROFBOWFhlLUJkT0NiQy1JUTJuc0tHSnJoM0pCcGVRdnVQOE82bGRjM1ZsZjZoNDl3X2FNUlVIYkluNWNsNlBQM1BaSWM5RzhPQ25YQ1VnZ0FK0gGyAUFVX3lxTFBSR1E0OUdyU0sxVTNhNDBncnJDSkJ6UzBfbW5sOWxLbW5ycjI0T1Q4X3c3TmJJZm9qMmswZ0QyWWU3dWxNVG90VlJUUVlTbUtfQTdMbG1PcmYweWdUdDlBQkVtR1Q4eEVyUzVMR1BWdkxZa2hPSEx3elhFNWFWVGhpc3NDMkM3M3dJMW9ZZGNIMTdkcDBTWTJaMHptUVN2Wk9TbzVTclJsWUd3RXhVN3o0c3c?oc=5"
+    }
+   ],
+   "captured_ts": 1785184336,
+   "cap_iso": "2026-07-27 17:32"
+  },
+  "https://pipelinevalor.globo.com/negocios/noticia/engie-movimenta-r-84-bilhoes-em-follow-on.ghtml": {
+   "title": "Engie movimenta R$ 8,4 bilhões em follow-on",
+   "url": "https://pipelinevalor.globo.com/negocios/noticia/engie-movimenta-r-84-bilhoes-em-follow-on.ghtml",
+   "summary": "Engie movimenta R$ 8,4 bilhões em follow-on &nbsp;&nbsp; Pipeline",
+   "source": "Pipeline",
+   "domain": "pipelinevalor.globo.com",
+   "pub_ts": 1784065577,
+   "pub_iso": "2026-07-14 18:46",
+   "language": "pt",
+   "companies": [
+    "Engie Brasil"
+   ],
+   "event_ids": [
+    "follow_on"
+   ],
+   "corroborations": [
+    {
+     "source": "Valor Econômico",
+     "domain": "valor.globo.com",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNdGY2UXQwTGk2NGcxSmxiWEMzaUhaS2c1RVpQeXUxNXFkaXhobVh3NDZZbklpTUlqTURnUzEyN05JdGdpR1hmSzRXT1JuMW1yZkFIamFTOThDSS1WcjljWDB1QjZCNF9UanJqYkNUVkEzWU41RHNfRXIta0dvTl9aRkxQMkE5UlQzU0JBWVc0Q0pUSnVyUTJJTzVFQmJhU29uMnpyQ0h1WS01MTVzaVM2LU90Y2YyN2FzczgtZGdjOFhmYWdf0gHTAUFVX3lxTE0zdEVBS2pkalVoQk1pWHRpOFpWdUNIU3plWk40cl9vWjBneFdJRER4cTN6ZkwxNm9VUUxrR2JPX0ZRWU9RdGIzbzg1Y2RDRDB0bmR5b1pTd2V3dS1LanlidEZOVGppcUMzQmhLcnNuSG5aQlZJMU5SUXdxcThqbkhYejY5Z09QWUp6Nk9NQmlRRnNDb0JvRjlTSFFNN3hFdXhHbnpMOGRYdVd3UnQtbVlBOFB5SktPcWxvYnMzOUVJdXpNN3BPZjF5a3pYdlhUTzcwb0U?oc=5"
+    },
+    {
+     "source": "Money Times",
+     "domain": "moneytimes.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSjVfVUdrRUxQeHM0emdmd09HRUxONGJ1anJ3SXhXbjlXZUQ4SHdFS3o3YURDMWRYaldCTzNrLWJON1Q5bGtPdGNOWU5RME55N1FmcHpUcUhWdzBSSlR5VE5DaGN3TGRKMUFfaTJnVk82X3ZhN0NCeTZkRW1DOXZiSWNPdmh5TXhfRzE0NnhxUnliLUd2Vm02d0VteGdoc0paY1gxYWZ5WkxCUW15TUV3eEY2NA?oc=5"
+    },
+    {
+     "source": "MegaWhat",
+     "domain": "megawhat.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQSmpYdER6UjJ1RHZueWppZE1RbXh2dkhSc1B2MkREdzd2SGdEemFyX3EtX004eTZQVXFsRjA1OUVIazRLOENLUldHdG0yc0RDdWp2cTIxRDhyaURINHY3TVh0VV91bl9NZ2tDNTlqXzdJVTNCNEs4WjhwekVrdmN4ZkVicHFHU2RSdGwwTWg3OHJaLVl3ZGswNWphOE9zRUkwS2N4YWdVbEMtYWZGYU9NeEs2SEYyZGhfT3o5N2hyeE8?oc=5"
+    },
+    {
+     "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+     "domain": "br.investing.com",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQRlpwNlpGUzdCOVhlLXlhRlp1RWNUVkpobjJsVXhZQlc3MzV4OGltTDYzbmhZaEhKRzlxaEFjdDJwRjNiemd2a2hmWDBvMGFPQlpwRkZadDc1WHpjb043TXdGcVFLRHJJaWY3eTc0VTgzYXRaSEpzek9QQXZicjhFLTdzVk5OLVNIVXMwWUk2cm9BbC1SR2lKQjV3SmMyalJVMGFjZHB5V1dvSEVSWk93OHB6S05ldGItR0E?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Valor Econômico",
+     "domain": "valor.globo.com",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNdGY2UXQwTGk2NGcxSmxiWEMzaUhaS2c1RVpQeXUxNXFkaXhobVh3NDZZbklpTUlqTURnUzEyN05JdGdpR1hmSzRXT1JuMW1yZkFIamFTOThDSS1WcjljWDB1QjZCNF9UanJqYkNUVkEzWU41RHNfRXIta0dvTl9aRkxQMkE5UlQzU0JBWVc0Q0pUSnVyUTJJTzVFQmJhU29uMnpyQ0h1WS01MTVzaVM2LU90Y2YyN2FzczgtZGdjOFhmYWdf0gHTAUFVX3lxTE0zdEVBS2pkalVoQk1pWHRpOFpWdUNIU3plWk40cl9vWjBneFdJRER4cTN6ZkwxNm9VUUxrR2JPX0ZRWU9RdGIzbzg1Y2RDRDB0bmR5b1pTd2V3dS1LanlidEZOVGppcUMzQmhLcnNuSG5aQlZJMU5SUXdxcThqbkhYejY5Z09QWUp6Nk9NQmlRRnNDb0JvRjlTSFFNN3hFdXhHbnpMOGRYdVd3UnQtbVlBOFB5SktPcWxvYnMzOUVJdXpNN3BPZjF5a3pYdlhUTzcwb0U?oc=5",
+     "when": "15/07 04:00"
+    },
+    {
+     "source": "Money Times",
+     "domain": "moneytimes.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSjVfVUdrRUxQeHM0emdmd09HRUxONGJ1anJ3SXhXbjlXZUQ4SHdFS3o3YURDMWRYaldCTzNrLWJON1Q5bGtPdGNOWU5RME55N1FmcHpUcUhWdzBSSlR5VE5DaGN3TGRKMUFfaTJnVk82X3ZhN0NCeTZkRW1DOXZiSWNPdmh5TXhfRzE0NnhxUnliLUd2Vm02d0VteGdoc0paY1gxYWZ5WkxCUW15TUV3eEY2NA?oc=5",
+     "when": "15/07 06:54"
+    },
+    {
+     "source": "MegaWhat",
+     "domain": "megawhat.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQSmpYdER6UjJ1RHZueWppZE1RbXh2dkhSc1B2MkREdzd2SGdEemFyX3EtX004eTZQVXFsRjA1OUVIazRLOENLUldHdG0yc0RDdWp2cTIxRDhyaURINHY3TVh0VV91bl9NZ2tDNTlqXzdJVTNCNEs4WjhwekVrdmN4ZkVicHFHU2RSdGwwTWg3OHJaLVl3ZGswNWphOE9zRUkwS2N4YWdVbEMtYWZGYU9NeEs2SEYyZGhfT3o5N2hyeE8?oc=5",
+     "when": "17/07 09:20"
+    }
+   ],
+   "captured_ts": 1785184336,
+   "cap_iso": "2026-07-27 17:32"
+  },
+  "https://valor.globo.com/financas/noticia/2026/07/24/isa-energia-precifica-follow-on-em-r-27-por-ao-e-vai-levantar-r-12-bilho.ghtml": {
+   "title": "ISA Energia precifica ‘follow-on’ em R$ 27 por ação e vai levantar R$ 1,2 bilhão",
+   "url": "https://valor.globo.com/financas/noticia/2026/07/24/isa-energia-precifica-follow-on-em-r-27-por-ao-e-vai-levantar-r-12-bilho.ghtml",
+   "summary": "ISA Energia precifica ‘follow-on’ em R$ 27 por ação e vai levantar R$ 1,2 bilhão &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1784925668,
+   "pub_iso": "2026-07-24 17:41",
+   "language": "es",
+   "companies": [
+    "ISA Energia Brasil"
+   ],
+   "event_ids": [
+    "follow_on"
+   ],
+   "corroborations": [
+    {
+     "source": "NeoFeed",
+     "domain": "neofeed.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNT1NUdDVTSFMtLXBLVldseVNpbWR2QnZzSExFQ0pSZU5yd2JXMGh1TERpT0c2UmppOWhOTTVRa1N6NXpHcC0tS1FwYkhNRmJhNEdLN3NTb1lraHNTN0xzX2RrNWNueHlvYW9jaWo2TjBrZEFOMTZGNzN4TU9KdDRfc0ZwRkZmaFpuaFQ4?oc=5"
+    },
+    {
+     "source": "MegaWhat",
+     "domain": "megawhat.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQaWVWYktZOTM5Rlo4Q0ZnVlUxQ05DSGlWeTZrRHRIazJ3VDVTOG1vc1l4NktRd0RSRzBxbFU5Y2lrNnRFNmtjM3BxbXhadnl3Zzl3YmtWMXVLSFBjekNyd2FsNUpnakhEQ005Z0JKemtCWERSY0ktZjBzVVZ3ZHZIbHlPVlh6WlY2T0g3QWcybllEc1RtbVJaTl9Pd09aZmVEQ3ZZVEZmQVFVcXZPTXpyRC1VZ2NraWo4Tm12Q2Y5RQ?oc=5"
+    },
+    {
+     "source": "Brasil 247",
+     "domain": "brasil247.com",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNOHdCS3k2RUsxQ2VSU0JvX21CZ3YzT1Q1UGFKaUQzaEJvbk9hZUZqWDlUVUVYa3BObEh6YlpwWkYxWUV2N3A0Z2VmcWJiMEUxR0E2X1k1XzFKNWxQSFdMLTRGS3BiSTB3TV9fZWFoWUpVSFhSS1VRcERZQ2JEajUteDQ4dE8yODBGM0w5Vk5nanh6ek1u?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "NeoFeed",
+     "domain": "neofeed.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNT1NUdDVTSFMtLXBLVldseVNpbWR2QnZzSExFQ0pSZU5yd2JXMGh1TERpT0c2UmppOWhOTTVRa1N6NXpHcC0tS1FwYkhNRmJhNEdLN3NTb1lraHNTN0xzX2RrNWNueHlvYW9jaWo2TjBrZEFOMTZGNzN4TU9KdDRfc0ZwRkZmaFpuaFQ4?oc=5",
+     "when": "24/07 09:21"
+    },
+    {
+     "source": "Brasil 247",
+     "domain": "brasil247.com",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNOHdCS3k2RUsxQ2VSU0JvX21CZ3YzT1Q1UGFKaUQzaEJvbk9hZUZqWDlUVUVYa3BObEh6YlpwWkYxWUV2N3A0Z2VmcWJiMEUxR0E2X1k1XzFKNWxQSFdMLTRGS3BiSTB3TV9fZWFoWUpVSFhSS1VRcERZQ2JEajUteDQ4dE8yODBGM0w5Vk5nanh6ek1u?oc=5",
+     "when": "24/07 18:44"
+    }
+   ],
+   "captured_ts": 1785184336,
+   "cap_iso": "2026-07-27 17:32"
+  },
+  "https://news.google.com/rss/articles/CBMiswFBVV95cUxObjc5eGtEMHlXekJRZ3dGVUVqbEZOdVJ0a2E4OGEtVWhiVTh2UUhMWUFvUlV4TVhFNmJtdVhfYWFTeUNPVXM5dzhtSm9aRnpqV1o4MHNmejk3UnlSX2k0WVBZSW1HMU5zdENUbkltbDZUYVpFNlNWTWFUR2VzUm9JYjRCa1dFQkVpT2RGX09FR1BpYnpLR3lCMGg2TGxuRjNQUVFGcG5IRnpGc1BGTHhXUndYYw?oc=5": {
+   "title": "Empresa alerta para possível interrupção de serviços em meio à recuperação judicial",
+   "url": "https://diarinho.net/em-alta/empresa-alerta-para-possivel-interrupcao-de-servicos-em-meio-a-recuperacao-judicial/",
+   "summary": "Empresa alerta para possível interrupção de serviços em meio à recuperação judicial &nbsp;&nbsp; DIARINHO",
+   "source": "DIARINHO",
+   "domain": "diarinho.net",
+   "pub_ts": 1785171240,
+   "pub_iso": "2026-07-27 13:54",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1785184336,
+   "cap_iso": "2026-07-27 17:32"
+  },
+  "https://news.google.com/rss/articles/CBMiygFBVV95cUxNS29rMjl0eW1BTlNEcTlsS0dZeC1fNHNUT2Nia1JZOVY5aGQzM1NMTjVOZ3M4S3B3Wng3SlNuRUlnR2RnalJhYmJjMmRBMHBnYXlpWTZnLUcxMHZNa0c1Y29WQ1lCQ0RxZGZEZnpFaG5yOHdhQndJR0UyVXZ4bDdnelRoTV82eVgxbE5VSGxxdmlWeTl2aHl1ZkRqSUl4QUR2RFNMT2tDYXllaGlDOVRMQ0IzaE9oNkFneDluNjMtaGh1Q0l1WUFCbU1n?oc=5": {
+   "title": "Recuperação judicial não impede cobrança de taxas de condomínio, decide STJ",
+   "url": "https://www.jornalopcao.com.br/ultimas-noticias/recuperacao-judicial-nao-impede-cobranca-de-taxas-de-condominio-decide-stj-851073/",
+   "summary": "Recuperação judicial não impede cobrança de taxas de condomínio, decide STJ &nbsp;&nbsp; Jornal Opção",
+   "source": "Jornal Opção",
+   "domain": "jornalopcao.com.br",
+   "pub_ts": 1785183300,
+   "pub_iso": "2026-07-27 17:15",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1785184336,
+   "cap_iso": "2026-07-27 17:32"
   }
  },
- "run_count": 35,
+ "run_count": 36,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -8656,15 +8942,39 @@
   "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOOElQVkdzTEhaMHhPY1dCX3d6S1FRVGI3a3J3NjhPWUlUWDBraW9id2Y0QXdWWlFRLVJJM2p1eEhTbERSU0ZpVmIwdmZjT2ZtckU4aUh1Q1BSWUZlVWFfN25UZHp2anMzOWQ0MVFOZUZ0dWxFRWtvZzBGWnJBVnhyTFNKY0FVTXcxOE9MTloyUDRYSlpTdUJLWDJXR3FDc1FCd0VKWDhfWnNneXFaS2Vuak1ZSmlKMW1lUnlfSTN3WHZmZVJUcWtESzBrQ3FBb0FsOVE?oc=5": {
    "url": "https://diarinho.net",
    "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMivAFBVV95cUxPVG13LUl5UW93Z1dvMWQ1bHB1MnJWTV9HVmhqc1RCMFZySFdiUDFvUnRIbGVfZFp1NW1mR25Vb21GQ1NyQUUtQ3BCSmxlQ0stMmxMY1dtcHRaSkMxN2JRbEdMTDJHTmtSLXpoUGU5Nzk2OVZxeGpPdHZlbGhZU0kxbmlXOFBiUEJUM3Jmb3FVa2t2c2p6MG9PdmFEV2dta3JPRkN4NWMwR21qblhrdVBQU3hjQWJVcVZ6aW5jWdIBwgFBVV95cUxOSXB6V1hzSGU0RWZWbk5YQTdYNGdYV1V4bkJvQ1hsTTJYSWJPeGNXemlxZFQ4MzdhVGNKSjR1RnMxbGQ3YXZUWDZrXy12ZXlLMXJxTERhdU9Ob2o3RG1uYzdCWTVLdEZrcGdhbEFWb1VEVnZ5aWN4YmsyLUZWVDRsTXB5bEM4OXJubF80MEplV1BSVlNsc2NFTEdqd3dTQ3pWN2ZpMXRQRFNBM1Jva3NZTHJQTmZCOENWb09WUWVleXVsZw?oc=5": {
+   "url": "https://www.infomoney.com.br/mercados/viaquatro-controlada-da-motiva-aprova-emissao-de-debentures-no-valor-de-r-1829-bi/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMivwFBVV95cUxPT2MyRXQ2dFc1WENSYzF6dTJpMFVWRDBqdkhFZThISEZnQXFtNlk1U3d2WnNWLXNaQUdFY0hiLUEtT2VsWlo4cmJRUEI2dGJPR2hVYUVTMHBWaXUzMlIxLTFBbTVKNEJ0VEkyY1hUT3BCVDdWaV9qV21MS3BCWVdhTHhub2xlZW5HSmszdHVVZUdQTGJxNHktODhxNTE0RVRQMDJmb2hYN3Q4RDR3cndONUp1SVFYTWVaUVdVYjhlbw?oc=5": {
+   "url": "https://www.canalenergia.com.br/noticias/53350231/engie-brasil-convoca-age-para-decidir-aquisicao-de-participacao-em-jirau",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMinAFBVV95cUxNMGRKTXZSOEd5YzdwM1VfTl9Sa0xVenQ2dHNLTHB2WWxMS0FwWXRpLW5RdGpHWHcyemxnc3pHc2xvNU4tREl0WFZhbU1Lazd4alo4V2VweU9YanAzbkhRdTJFWnpvRXZPWTZZTTdMX0l2WG1IT3o4cFpwc2JNMXlZSWxHWDhacXFTWkhHbWJnODdlNVhodFhQQi1iTDTSAasBQVVfeXFMTTZHcGl1dXVpY3BqWDNiTUZZcE4xTmQ4VTZxTkt6bUppaU5QZHl3aUJtUWtfUkt6ODZtMk5OdmZyQlA4REpMRWFfZWVKX2VfQTBSTXRhQWdYQTlUQlMzM2UxN0trbWVGNVpqNnlXcGY4YzdpTWYxVFl1dXdyMHY1bXpjZXVCOC1SdGlyUGZrSWNmWTJvMlNaN1RNTDJPQThFeWNqTmNpbHRCZVRZ?oc=5": {
+   "url": "https://pipelinevalor.globo.com/negocios/noticia/engie-movimenta-r-84-bilhoes-em-follow-on.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiygFBVV95cUxQc1ZHSnZyYlFTUkREa001ckEwRkRsUGV5UTV6aWh4YjkxR19PQlZDZU9IQlVMbV83YUlJYkRnTDFzYmg5ZFNER2kza2xfY0htNHF3SFR1enM1QUdqVnA4cl9xX2JNN3ZWUkVsSzVNRjlMMkJjY1ZHXzk0MjRVUlFvRU5OU183UnZoWDhjNmdpOG95R2luRjVnLVB4cnBlbm5Wei1tOUs1elNsQjF4SkgzZFN6cHJpQWsxandFaG42UTl1S1R5cDNBbnVR0gHYAUFVX3lxTE5LRDBoa3hvQVhTOV9zYldYSTNRUDZTN3FRek5ES1BfZVItRGFxcFVSMTlCdzNCV2x3amttQVpiM3hFY2xTWURacjZRdHdhd1FDTlVhZENzWDU3UklrZktoaU0yMkJsOWlmVVFJSnEwMFl1UVlMMEpZV3ZsRDY1RFdqVkJZUEVzdVk0Nm5DcjktTUFaMEtiQlZpZUllWDlVLWIxWGN0ZWpHR2VzS0dYZ3hlbnFkeGNveVRKNGpidDl2bDdBZ2dwZVFHUHFaeUN2b0ZBRTduTjRkWg?oc=5": {
+   "url": "https://valor.globo.com/financas/noticia/2026/07/24/isa-energia-precifica-follow-on-em-r-27-por-ao-e-vai-levantar-r-12-bilho.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiswFBVV95cUxObjc5eGtEMHlXekJRZ3dGVUVqbEZOdVJ0a2E4OGEtVWhiVTh2UUhMWUFvUlV4TVhFNmJtdVhfYWFTeUNPVXM5dzhtSm9aRnpqV1o4MHNmejk3UnlSX2k0WVBZSW1HMU5zdENUbkltbDZUYVpFNlNWTWFUR2VzUm9JYjRCa1dFQkVpT2RGX09FR1BpYnpLR3lCMGg2TGxuRjNQUVFGcG5IRnpGc1BGTHhXUndYYw?oc=5": {
+   "url": "https://diarinho.net/em-alta/empresa-alerta-para-possivel-interrupcao-de-servicos-em-meio-a-recuperacao-judicial/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiygFBVV95cUxNS29rMjl0eW1BTlNEcTlsS0dZeC1fNHNUT2Nia1JZOVY5aGQzM1NMTjVOZ3M4S3B3Wng3SlNuRUlnR2RnalJhYmJjMmRBMHBnYXlpWTZnLUcxMHZNa0c1Y29WQ1lCQ0RxZGZEZnpFaG5yOHdhQndJR0UyVXZ4bDdnelRoTV82eVgxbE5VSGxxdmlWeTl2aHl1ZkRqSUl4QUR2RFNMT2tDYXllaGlDOVRMQ0IzaE9oNkFneDluNjMtaGh1Q0l1WUFCbU1n?oc=5": {
+   "url": "https://www.jornalopcao.com.br/ultimas-noticias/recuperacao-judicial-nao-impede-cobranca-de-taxas-de-condominio-decide-stj-851073/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785174627,
-  "iso": "27 jul 2026 · 14:50 BRT",
+  "ts": 1785184340,
+  "iso": "27 jul 2026 · 17:32 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
-    "score": 99
+    "score": 98
    },
    "JBS": {
     "status": "critico",
@@ -8672,7 +8982,7 @@
    },
    "Engie Brasil": {
     "status": "atencao",
-    "score": 59
+    "score": 63
    },
    "Cosan": {
     "status": "atencao",
@@ -8698,13 +9008,13 @@
     "status": "monitorar",
     "score": 29
    },
-   "Axia Energia": {
-    "status": "monitorar",
-    "score": 28
-   },
    "ISA Energia Brasil": {
     "status": "monitorar",
-    "score": 26
+    "score": 27
+   },
+   "Axia Energia": {
+    "status": "monitorar",
+    "score": 27
    },
    "Tok&Stok": {
     "status": "critico",
@@ -8796,7 +9106,7 @@
    },
    "Tupy": {
     "status": "monitorar",
-    "score": 2
+    "score": 3
    }
   }
  }
