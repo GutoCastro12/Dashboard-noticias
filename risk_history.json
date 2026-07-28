@@ -4901,7 +4901,9 @@
     "ma"
    ],
    "captured_ts": 1785259121,
-   "cap_iso": "2026-07-28 14:18"
+   "cap_iso": "2026-07-28 14:18",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://tagdlaw.com.br/cade-aprova-aquisicao-no-campo-de-argonauta-pela-petrobras/": {
    "title": "Cade aprova aquisição no campo de Argonauta pela Petrobras",
@@ -7871,49 +7873,6 @@
    "captured_ts": 1785259121,
    "cap_iso": "2026-07-28 14:18"
   },
-  "https://www.estadao.com.br/em-alta/einvestidor/cenarios-e-mercado/engie-brasil-egie3-pede-registro-de-follow-on-que-pode-movimentar-ate-r-105-bilhoes/": {
-   "title": "Engie Brasil (EGIE3) pede registro de follow-on que pode movimentar até R$ 10,5 bilhões",
-   "url": "https://www.estadao.com.br/em-alta/einvestidor/cenarios-e-mercado/engie-brasil-egie3-pede-registro-de-follow-on-que-pode-movimentar-ate-r-105-bilhoes/",
-   "summary": "Engie Brasil (EGIE3) pede registro de follow-on que pode movimentar até R$ 10,5 bilhões &nbsp;&nbsp; Estadão",
-   "source": "Estadão",
-   "domain": "estadao.com.br",
-   "pub_ts": 1784469637,
-   "pub_iso": "2026-07-19 11:00",
-   "language": "pt",
-   "companies": [
-    "Engie Brasil"
-   ],
-   "event_ids": [
-    "follow_on"
-   ],
-   "corroborations": [
-    {
-     "source": "MegaWhat",
-     "domain": "megawhat.uol.com.br",
-     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQSmpYdER6UjJ1RHZueWppZE1RbXh2dkhSc1B2MkREdzd2SGdEemFyX3EtX004eTZQVXFsRjA1OUVIazRLOENLUldHdG0yc0RDdWp2cTIxRDhyaURINHY3TVh0VV91bl9NZ2tDNTlqXzdJVTNCNEs4WjhwekVrdmN4ZkVicHFHU2RSdGwwTWg3OHJaLVl3ZGswNWphOE9zRUkwS2N4YWdVbEMtYWZGYU9NeEs2SEYyZGhfT3o5N2hyeE8?oc=5"
-    },
-    {
-     "source": "Cenário Energia",
-     "domain": "cenarioenergia.com.br",
-     "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNT2Z4LWlSMnBfRGRaRnJ1QzRLUkJka0U5NkNRZEpncjJEc3A5NU9zUFlzUlI1SHFZaU1yS0ptMzJXUEVnY1ZuUEpDby0wblRURlhpM05TWmZZNW5MN2RmQXA1LVJReW1OaFZtRUpIQUZEeDNoR0JJVTVXb1YwQzNsY2NvZGhzc2F2MG9CbkViaHBYaWZfS3piLTNnckZZR09LNEJ6ZnhZTWJWdnl0SW9xZkZzZTl5d21hWG5rMk5QaUNmMDdIOVFIUTY3X29zQQ?oc=5"
-    },
-    {
-     "source": "novarejo",
-     "domain": "portalnovarejo.com.br",
-     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQeENCWk5mYnZUU1lYbXA2LXM4V3RtbHZ2a1ZlVWsteXNRZmt6dm1nQ2RRNkt5R28wdE1qTFVybG1mbjlfMzlqQm1TSmJxVlZrdUQwdEF2UVJJa0lERGNldHFBQV9qMXNHRk1VOVNLTzh4QjcxYTJtanVQaW5ZWlAyTFF1UEwwdThoU3ZYMjRNRko3dWs3YkpIMkRMZndFRUlpWWhURERLWXpFcFlqZ3lFLUdoX05rcmxpdUxGVHFJRzQ?oc=5"
-    }
-   ],
-   "corrob_sources": [
-    {
-     "source": "MegaWhat",
-     "domain": "megawhat.uol.com.br",
-     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQSmpYdER6UjJ1RHZueWppZE1RbXh2dkhSc1B2MkREdzd2SGdEemFyX3EtX004eTZQVXFsRjA1OUVIazRLOENLUldHdG0yc0RDdWp2cTIxRDhyaURINHY3TVh0VV91bl9NZ2tDNTlqXzdJVTNCNEs4WjhwekVrdmN4ZkVicHFHU2RSdGwwTWg3OHJaLVl3ZGswNWphOE9zRUkwS2N4YWdVbEMtYWZGYU9NeEs2SEYyZGhfT3o5N2hyeE8?oc=5",
-     "when": "17/07 09:20"
-    }
-   ],
-   "captured_ts": 1785259121,
-   "cap_iso": "2026-07-28 14:18"
-  },
   "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNVEEyM2x3b0hLM3hNQTY5MHVXTVIwUTFMUi03RVNtTnd1MFVIRGJDTlFZdlByclk0WWN6eG5kYXNGcWFKWGRmR2IzOHRoTG5xbDZkRXpOX1FXaGVucVM5bnM3RnZLS1VsaC1SS2VITnA0eGlSOUY0RWtFZGc2ZjJ6VnpudXBwZDF6MXA0?oc=5": {
    "title": "Follow-on",
    "url": "https://www.b3.com.br/pt_br/noticias/follow-on-8AA8D0CD9F63414D019F70A1756C75B7.htm",
@@ -9102,7 +9061,9 @@
     "rebaixamento_rating"
    ],
    "captured_ts": 1785259660,
-   "cap_iso": "2026-07-28 14:27"
+   "cap_iso": "2026-07-28 14:27",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://euqueroinvestir.com/negocios/ultrapar-ugpa3-como-ficaria-apos-compra-da-rumo": {
    "title": "Como ficará a Ultrapar (UGPA3) com uma aquisição da Rumo (RAIL3)?",
@@ -9121,7 +9082,9 @@
     "ma"
    ],
    "captured_ts": 1785259660,
-   "cap_iso": "2026-07-28 14:27"
+   "cap_iso": "2026-07-28 14:27",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMigwFBVV95cUxNd2ZSUGhhaWFYMWc1Tm13WFl4bk9OZnFweUZyMnJZZFlLZ3BLRzBJN3R1dk9wSldmX1dMXzQ3ZzB4dXBjWDFMdFI0WVVTT1R0bk5mWHNLOXUwS1VSbml6X2ppV3E1bmtnUlg1SDYyTmtEM010eFVMVzF0MzcySTBuUm00QQ?oc=5": {
    "title": "Diferencial Energia também entra com pedido de recuperação judicial",
@@ -9231,24 +9194,6 @@
    "captured_ts": 1785266917,
    "cap_iso": "2026-07-28 16:28"
   },
-  "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml": {
-   "title": "CVM abre processo para apurar renúncia de presidente do conselho da Vale",
-   "url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
-   "summary": "CVM abre processo para apurar renúncia de presidente do conselho da Vale &nbsp;&nbsp; Folha de S.Paulo",
-   "source": "Folha de S.Paulo",
-   "domain": "www1.folha.uol.com.br",
-   "pub_ts": 1783494000,
-   "pub_iso": "2026-07-08 04:00",
-   "language": "pt",
-   "companies": [
-    "Vale"
-   ],
-   "event_ids": [
-    "investigacao_regulatoria"
-   ],
-   "captured_ts": 1785266917,
-   "cap_iso": "2026-07-28 16:28"
-  },
   "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOMXFOdUhLQ1lhQ1hkYnU5RG4tUFVhcG5kenNSODRsNlV1SDljbkYzV1lZVV9NMVRxN0JvaG5pODZRVVA0UlJ1d2N2Q3ZZYXpkMW5qbG1QVFJvcGpKWTBpXy1hZWx2T21PamFaaWNIUHNZcU03d0p3Mnk0aWdyS1ZUcGQ1ZDMzZlJSS2tHaVctdVBLeEZiZDZoX1hocmh5RnI2YnVnZE9iTU1uLXMwX2dNdjNDLVhHbDdqTEphSXEyTGp1YldldGV3aA?oc=5": {
    "title": "Embates judiciais, propostas de aquisição e problemas de produção: os bastidores do Vale do Lítio",
    "url": "https://ofator.com.br/informacao/embates-judiciais-propostas-de-aquisicao-e-problemas-de-producao-os-bastidores-do-vale-do-litio/",
@@ -9266,9 +9211,528 @@
    ],
    "captured_ts": 1785266917,
    "cap_iso": "2026-07-28 16:28"
+  },
+  "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPY1otZmhxR2lWVFN0N0JOaXFSUXFGVDdrNHVaTS1lc2RSNFNhdUdicDVBcl9yZ1ZHVkxGRlpmYjdidzY1NFhWaXpRaG9sX3FRVEQ4VmxzM3ZWdFZmZF9CVHNjUk9JN29tTGF2UHpNNk9DblhlQkl0UG1HcktCLUxTUURIZGRERWFPUEZCV2lLN0hrcmotbjRWRWw0eG9EbGZ4MUN6Rkd4WnVNV1JJQWk2bjlQSzFlZjZhWGk4UWE2ZDRldklWUk9HMS1ZUlFZejZDMTVsWGtoMzBXZDJVTXl1Ni1yaTV0NDk5Uk0ybG9LOUpMQdIBkwJBVV95cUxQZ2lBRDJFSFozdGdPVkZ3UDg4UjVWeUpSTk14RjgzWHdJTW9BSHhBTGV6ZWJJTkhhRHpJV29MZjlOd2ZlUWtPa1RYdzZnSVgwRU1lQmhhQzhRUVpZSTFLS2hsbUdlbDZZbkhEZ0oyRGpfSnBGNGRzckFBazlPQlhMMUhmZ2NCemZGYmE1R2RMdUxFeGlpeDJXWTN4X3JoWEt5UlNuMW1BeXZzSkFwTXl3OFM3R3NSczFCRlMxTjQ2Qmg5RXJ6RG9rV21nMWt0YzRLUW05eldfQ2paVHBOd2tiT2d2eXJaLTB0RXhldU5LUnIzTF91TUJrdHcxdndMVjJjLXc0VWtRd1R0c0FGWkxPcVJpUQ?oc=5": {
+   "title": "Gigante checa de energía solar pide su reorganización para evitar la quiebra y acusa “incertidumbre regulatoria” en Chile",
+   "url": "https://www.latercera.com/pulso/noticia/gigante-checa-de-energia-solar-pide-su-reorganizacion-para-evitar-la-quiebra-y-acusa-incertidumbre-regulatoria-en-chile/",
+   "summary": "Gigante checa de energía solar pide su reorganización para evitar la quiebra y acusa “incertidumbre regulatoria” en Chile &nbsp;&nbsp; La Tercera",
+   "source": "La Tercera",
+   "domain": "latercera.com",
+   "pub_ts": 1755673200,
+   "pub_iso": "2025-08-20 04:00",
+   "language": "es",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMilAFBVV95cUxQd0plY3JVaU5DMnVNWnNUaDUtRmVsMjE1Sm1xRWlFTklOeG1BSlFpZnV4WTMybXIyMjVLU1RFS2NvbEtGeUc1T2JMellQZmVrMHRIZVE3LXp4MWRVUVJWWHJKTGdJUUxQTnhTWEdtbDVxdndSVnF6RzZkNW0tVms0QUJGS002cHdocXphYTlzcjdvUE16?oc=5": {
+   "title": "Here's Why Ford Is Interested In First Brands' Bankruptcy",
+   "url": "https://fordauthority.com/2025/10/heres-why-ford-is-interested-in-first-brands-bankruptcy/",
+   "summary": "Here's Why Ford Is Interested In First Brands' Bankruptcy &nbsp;&nbsp; Ford Authority",
+   "source": "Ford Authority",
+   "domain": "fordauthority.com",
+   "pub_ts": 1760338800,
+   "pub_iso": "2025-10-13 04:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMijAFBVV95cUxQR2l2UnZpWVVrWU1rZHh6RVdyMC0yQUVfYnhDRFc3RGVYcDgxcjdEdXhuRTdIRnhJZW5qTHVWLVQ3MEROb25PVVpIMEdCY1c1T19GZXpQbmhpQl83Rm9neFNhVmg1M0tZSy0xR1FUb2NuX2p3M1dhNnBGNnFNWjRPbFZGTmtiNEpQaHMxcg?oc=5": {
+   "title": "Ford loses $300 million fraud case in California",
+   "url": "https://www.thestreet.com/automotive/ford-loses-300-million-fraud-case-in-california",
+   "summary": "Ford loses $300 million fraud case in California &nbsp;&nbsp; thestreet.com",
+   "source": "thestreet.com",
+   "domain": "thestreet.com",
+   "pub_ts": 1764230400,
+   "pub_iso": "2025-11-27 05:00",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "fraude"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMivwFBVV95cUxOUGRCNno1Sm81Zi1MMXdxMW5vZWNVaVk1ajdGVXUzQUxyWHdkTEFSU1RYU21JSFlSSWd4aWNVQUE3M01kOFJZR2dxdXVlLUZTbEljcTVrVUVTS3U3ZzhEZVM1eWpmZ3VkOTJ0SXk0VV8xV28tQTJYVmdGaUJ3V2JEQkpwTGRnaG1sR1lVbl9UTGRaUDNVNU9OQWRJTjlHZ045Z3ZoTVRiUEhTYTV6OF81NTBtaGpERTdwZkNhRjAtSQ?oc=5": {
+   "title": "Falência de fornecedor de marcas próprias: Altas Cumbres Group cai por dívidas milionárias",
+   "url": "https://www.paislobo.cl/2026/02/quiebra-de-proveedor-de-marcas-propias-altas-cumbres-group-cae-por-deudas-millonarias.html",
+   "summary": "Falência de fornecedor de marcas próprias: Altas Cumbres Group cai por dívidas milionárias &nbsp;&nbsp; Paislobo Prensa",
+   "source": "Paislobo Prensa",
+   "domain": "paislobo.cl",
+   "pub_ts": 1771228800,
+   "pub_iso": "2026-02-16 05:00",
+   "language": "es",
+   "title_original": "Quiebra de proveedor de marcas propias: Altas Cumbres Group cae por deudas millonarias",
+   "summary_original": "Quiebra de proveedor de marcas propias: Altas Cumbres Group cae por deudas millonarias &nbsp;&nbsp; Paislobo Prensa",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMizAFBVV95cUxOWVI1cE13elhtMmxCMEFTX25IN291bW9obW1FWDd5Z05yREhybE1VVHFTb1lOWWtzMkJvT3BwMFZHbWlmYmQ1Y3NVaFJwN3BnT2VPQjYwYW0yZEtWU3lnWDF1bGtKZ0Y5UmlCaTVJTm00YW5NT1BJTHRVTWJ4TUZuVHpjd19OTlFlUEt4TEVlSHE3VFlBdjFab2p4Y3RJZ0ZjTHFGckNoZ19GX3RNMHF2MjZFdk9IZmtxdWNOZjBsWTRPQk9JTktEZE1FN3M?oc=5": {
+   "title": "Tribunal declara falência de Mauricio Pinilla por dívidas que superam os $1.670 milhões",
+   "url": "https://www.publimetro.cl/noticias/2026/02/18/tribunal-declara-quiebra-de-mauricio-pinilla-por-deudas-que-superan-los-1670-millones/",
+   "summary": "Tribunal declara falência de Mauricio Pinilla por dívidas que superam os $1.670 milhões &nbsp;&nbsp; Publimetro",
+   "source": "Publimetro",
+   "domain": "publimetro.cl",
+   "pub_ts": 1771401600,
+   "pub_iso": "2026-02-18 05:00",
+   "language": "es",
+   "title_original": "Tribunal declara quiebra de Mauricio Pinilla por deudas que superan los $1.670 millones",
+   "summary_original": "Tribunal declara quiebra de Mauricio Pinilla por deudas que superan los $1.670 millones &nbsp;&nbsp; Publimetro",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://www.bloomberg.com/news/articles/2026-02-23/tras-la-quiebra-latam-se-dispara-un-76-y-domina-entre-aerolineas-rivales": {
+   "title": "Tras la quiebra, Latam se dispara un 76% y domina entre aerolíneas rivales",
+   "url": "https://www.bloomberg.com/news/articles/2026-02-23/tras-la-quiebra-latam-se-dispara-un-76-y-domina-entre-aerolineas-rivales",
+   "summary": "Tras la quiebra, Latam se dispara un 76% y domina entre aerolíneas rivales &nbsp;&nbsp; Bloomberg.com",
+   "source": "Bloomberg.com",
+   "domain": "bloomberg.com",
+   "pub_ts": 1771833600,
+   "pub_iso": "2026-02-23 05:00",
+   "language": "es",
+   "companies": [
+    "LATAM Airlines"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "corroborations": [
+    {
+     "source": "XTB.com",
+     "domain": "xtb.com",
+     "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOU2sxVXJua1JpRmkyekJGalpsLVhLYl95WFVISjlVeWYwM203WkRFdzAtcFB1NUZFcHI1MjdQTHJxd2xWNU1veUlCb0xoQUo4NC12YXBvcXZkT2VPUEZVR204Zkp0c3k2bTFUc1NLdXUtR19meHVYdnAyLVVNUmhqM3Y4T25Ca1JnRTItN1F3WTVPWG16VjdvQzhnbHpZZHdETVM5bk02VF9yemVVcm1sNGF5TWlfVF9hdmVhOEljZWpXQkk4S1dPVElLUEV6TXFuTGtOMF9sVk5wcThqT2ZPdTFNR1ZWeGl6?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "XTB.com",
+     "domain": "xtb.com",
+     "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOU2sxVXJua1JpRmkyekJGalpsLVhLYl95WFVISjlVeWYwM203WkRFdzAtcFB1NUZFcHI1MjdQTHJxd2xWNU1veUlCb0xoQUo4NC12YXBvcXZkT2VPUEZVR204Zkp0c3k2bTFUc1NLdXUtR19meHVYdnAyLVVNUmhqM3Y4T25Ca1JnRTItN1F3WTVPWG16VjdvQzhnbHpZZHdETVM5bk02VF9yemVVcm1sNGF5TWlfVF9hdmVhOEljZWpXQkk4S1dPVElLUEV6TXFuTGtOMF9sVk5wcThqT2ZPdTFNR1ZWeGl6?oc=5",
+     "when": "23/02 05:00"
+    }
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://www.bloomberglinea.com/negocios/tras-salir-de-la-quiebra-latam-airlines-repunta-76-y-lidera-entre-sus-rivales/": {
+   "title": "Tras salir de la quiebra, Latam Airlines repunta 76% y lidera entre sus rivales",
+   "url": "https://www.bloomberglinea.com/negocios/tras-salir-de-la-quiebra-latam-airlines-repunta-76-y-lidera-entre-sus-rivales/",
+   "summary": "Tras salir de la quiebra, Latam Airlines repunta 76% y lidera entre sus rivales &nbsp;&nbsp; Bloomberg Línea",
+   "source": "Bloomberg Línea",
+   "domain": "bloomberglinea.com",
+   "pub_ts": 1772265600,
+   "pub_iso": "2026-02-28 05:00",
+   "language": "es",
+   "companies": [
+    "LATAM Airlines"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMinAFBVV95cUxNYmNodUxmMklpLVlJUjQ0RVk1TjBBbTlrdWVramNXUHhfVDVmLUpuc2IzR2FzSnNRMmlaYUE5UE9OajR4aGFnaDZqSVFTQTQ1cEJQTjlfajU5b0lzTTh3emR2NktDRTJPaG5CTjRuTEdZN1B0bk9KT2t2dVZUTTA2N09lOUxkMFhYakNvWDdBaHQwYkZwdFVPUWVjd2bSAbABQVVfeXFMT2lmSFh5RlFEUG5zVjRXX1pQV1BVU3BOaXY0ZXJsWkFaUHdlYkJrUDJTcFBSOHlhT2h4UGtyakJkcXo3dUtwbDRUTXdWc25GWmkyWmhsNUJPT0l6MjFVOXlzVU5oNWxaaE1HUVhEd09iNUc1M2cweGl0TzRhMUxFVDNtNl9KZmRrZkJJMklwWWkyNDNaZ2VBV3R2TUt4bS02NVhMMVp1WG1IaDBZRHY3Smw?oc=5": {
+   "title": "Stellantis accuses Eastern Iowa car dealership of $12M fraud scheme",
+   "url": "https://www.kcrg.com/2026/03/06/stellantis-accuses-eastern-iowa-car-dealership-12m-fraud-scheme/",
+   "summary": "Stellantis accuses Eastern Iowa car dealership of $12M fraud scheme &nbsp;&nbsp; KCRG",
+   "source": "KCRG",
+   "domain": "kcrg.com",
+   "pub_ts": 1772697600,
+   "pub_iso": "2026-03-05 05:00",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "fraude"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMijgFBVV95cUxPV29ISWNRbHRrcThDLWc1LVFIV250TXZ6OGxFVkhlZlV0QWZnV1FQSG9XZkVpZG9nTHBJYjJWSjhQYzd3ZlI2eUZlcHVIRU5TTERISFpUa0Y1U2VPOGxBRXREZUs3V09OOEpjejlWbmpxQmVrTzFNemVDS3RIN0Y1ZmljRmpDSWNIanUzem1R?oc=5": {
+   "title": "Court gives Stellantis, Ford access to inventory in Iowa dealership group floorplan fraud case",
+   "url": "https://www.autonews.com/retail/an-iowa-dealership-stellantis-ford-out-of-trust-0326/",
+   "summary": "Court gives Stellantis, Ford access to inventory in Iowa dealership group floorplan fraud case &nbsp;&nbsp; Automotive News",
+   "source": "Automotive News",
+   "domain": "autonews.com",
+   "pub_ts": 1774508400,
+   "pub_iso": "2026-03-26 04:00",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "fraude"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNSTFfaGI3QnYxRDI1MlZDTVJpNkVWaUh6NWVWVVRUY19GY1ZLSWdIOThXUXowWF95MmcyRk1yRThFZXdlNzR6LTVjZDBLNTJxZ2xEbkMzUWhkMzd5LXpuN0hWWnFKZXoxb2Q3RGtITU4wMFpoLXVDLTVvQVlMRy1Xc2xXVVJUaXNKMDJHd2U0eE9vREpSNjV6eW15bXNScmpxbGdSU1d6YWhmXzdoTnZnMnc2eEp1V1BuSkVIZ1g3RUd5WWtvZm5VeHFQazRwdjhqS2NxaG91eEtLdjDSAfwBQVVfeXFMTWJuNWJUMHVxcHNfLS1pQ080dEV5a0tyOEMwM1kzVzl1U2ZKWklrSDF5ZFJ3X3dzdV9WajZjMG9fczZGSjllZkZFTGdCSi02ODBaa3VhbmV5QV9lOTRYd3hSUFdBUVVyeUhGbWFvT3QyMVlPRm1hUmd3cFNjbDUwLUd4VXRBTVMxdWVpbThoVnM2ellrcHFjSl9zVEgyUE4wT1A0TXlGRFJkeWdOMllzT2hjWEVtTmRhN25Tdk9OSXpIUUdKdXpKQ215aXlqUmxnelNxMm1laEZTOV91NWZmaU4wNE5SZjFQVm95SEw5bFgySG1zOEd6UWgxTWNH?oc=5": {
+   "title": "Bci pede falência da rede de academias Energy Fitness Club por descumprir acordo de reorganização",
+   "url": "https://www.latercera.com/pulso/noticia/bci-pide-la-quiebra-de-cadena-de-gimnasios-energy-fitness-club-por-incumplir-acuerdo-de-reorganizacion/",
+   "summary": "Bci pede falência da rede de academias Energy Fitness Club por descumprir acordo de reorganização &nbsp;&nbsp; La Tercera",
+   "source": "La Tercera",
+   "domain": "latercera.com",
+   "pub_ts": 1776063600,
+   "pub_iso": "2026-04-13 04:00",
+   "language": "es",
+   "title_original": "Bci pide la quiebra de cadena de gimnasios Energy Fitness Club por incumplir acuerdo de reorganización",
+   "summary_original": "Bci pide la quiebra de cadena de gimnasios Energy Fitness Club por incumplir acuerdo de reorganización &nbsp;&nbsp; La Tercera",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMiywFBVV95cUxOVXgxUU9SRk5OYWtOeUs3NVJBemhCZ3F3eGZOZVhBQi1hR1I2bDdrX1FsM1RWb2ZRckVLYWJPb2dCcngwZDk0NGJRdXlJWE9iRmdjQW1GaHlmN2VTRWZCZndCQmgyM3Z6ai1aSWdVTXh2RFpzYk5PYTVsQjNaRUNTclJYcWdlMWNKaVNYZTRkczYtLTI4NHVPTGdkNlBBcGtnck5ZRVl1eHpvZXl1a2xLajNXZFlmZXFQM1FjQkJLMmItUXFYaE0xS1pINNIB3wFBVV95cUxPSkRKM1htZVRTVG40RkxGWjBDRFVjaVQyMGljUVRwNTBvZ0RmaFdYZ2RHZjVjcnBjU09SUDBJQ3dLWTJ1WkNkdUFGS3BBZEFlZWJGOUNCT3FReGdmRDFtTVU3Tmx1T0lPTDg1bURsVHN6dFF4VUxQdFFOMGMzZEJaSWpmQjFFTmlJYzdUOVNFN2t1OEpyS1RwN1hianVnQWZpR0hoRXZ4NXJxUUFvVmxtX2QxalkxVmZlX0IxVExHd3dncEdGbjNJc1dQMkc0YnA5MnhiaGUxcXhhU3hQa3hZ?oc=5": {
+   "title": "Bci pede falência de conhecida rede de academias no Chile: acusam descumprimentos milionários",
+   "url": "https://www.adnradio.cl/2026/04/13/bci-pide-la-quiebra-de-conocida-cadena-de-gimnasios-en-chile-acusan-millonarios-incumplimientos/",
+   "summary": "Bci pede falência de conhecida rede de academias no Chile: acusam descumprimentos milionários &nbsp;&nbsp; ADN Radio",
+   "source": "ADN Radio",
+   "domain": "adnradio.cl",
+   "pub_ts": 1776063600,
+   "pub_iso": "2026-04-13 04:00",
+   "language": "es",
+   "title_original": "Bci pide la quiebra de conocida cadena de gimnasios en Chile: acusan millonarios incumplimientos",
+   "summary_original": "Bci pide la quiebra de conocida cadena de gimnasios en Chile: acusan millonarios incumplimientos &nbsp;&nbsp; ADN Radio",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZjh5aW96OHZGZS1FdGdYU3ZGZWpZcHlSVF91bW5rNU5xRW8tM2dkUktYaWRmTThtd200ekZ5NzNsTXpkUkxWUDNVZTJjd2NYSFNTRW4yQlFvWGgzNU9wVmluVFVHdWEwWVdKQmM1QnlwOS1yNGs2SXNxdm56SFdld19ZQ3NCeVB2b1FTV2V2eUlmWlBCd1RtZlBzYzUtMTB4VmpjQmNtNXVJUHhabzRwa1J6d9IBuAFBVV95cUxQdHoxVExKd0QwWnBaZTZ6dTVUMExuY0MxbzZZUHhjMWFwVUdQZG05Q2c3M3VZUk9tOWFwa0JlWFdTS1o3WjRMdnVTUFQ2cUFDaWdfSEtoMzRLNGxWUmVCOElna1BqUW9ENV9aaUJwWFF3QWpvZ2ZzN1ZFVi1lQXRONnktOC0wQ0gyVng5RTNtbFl1TGxBMVduQW1sdEFRdXktUWhKa0FKdDJkWUlHdmpTR2d0NmtBMGt4?oc=5": {
+   "title": "Pedem falência de reconhecida rede de academias: Devem milhões em contribuições e impostos",
+   "url": "https://www.meganoticias.cl/nacional/519306-bci-pide-quiebra-gimnasios-energy-deudas-cotizaciones-13-04-2026.html",
+   "summary": "Pedem falência de reconhecida rede de academias: Devem milhões em contribuições e impostos &nbsp;&nbsp; Meganoticias",
+   "source": "Meganoticias",
+   "domain": "meganoticias.cl",
+   "pub_ts": 1776063600,
+   "pub_iso": "2026-04-13 04:00",
+   "language": "es",
+   "title_original": "Piden la quiebra de reconocida cadena de gimnasios: Deben millones en cotizaciones e impuestos",
+   "summary_original": "Piden la quiebra de reconocida cadena de gimnasios: Deben millones en cotizaciones e impuestos &nbsp;&nbsp; Meganoticias",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQUDRwWDBIUUZRQW15bVBGNXlmZnV1cFBhSnQwUk5ZamJVd1ZWWi1TSzQyQkN3WktCQjR5ZUtUVDVXQk1PYVR3Nmx6QVhjYUdRR3h1SkZwbG5IdFBVeWdYZXkwNFVhcXUxZndiS3hYcjE1cFpXS0FGNWlLa1dFc25qQWFSNFZETk1ZeXZPcF9lUWVnS25VOENmNEZGZmxDVVRqc050Mkx6cl9CeDJROEF0SDkzLVF2MFpSVHNza3A0b29MTVNQQ3VPTW9hSDlKdlVXQkRRV1R5V3RScmlO0gHwAUFVX3lxTFA2aVBBX280WFZIeTc4OWhfQzRQNE42dnQtYVJkMDBfaHJJSmlORzZUM2FPa1lBMXh5MFdZWXZxRlRIanhET2xaTlUyY0tENV9vUFJ3VzR3Z3hYRmFfS3U0UTZHLThndkhDTWI1RTJKV3JIVHJhOFRDQlR5N3h4YTJNeFVkS3JNNlBwTWJuZlVidDBTUkh6UkhQZnlYbUJXM1Y2UHJsRV85WERzWnJCbGFjS2ZPWmNnbTlHUTlpMzJoYWpBNWJ2cnVFcmNmS2szczV2TjhnSXRXTlR0V1BsbjA2SF9kY19ObWJSYjhndkc5dA?oc=5": {
+   "title": "Tras solicitud de quiebra de conocida cadena de gimnasios: su fundador aclara cómo funcionarán sus sucursales",
+   "url": "https://www.adnradio.cl/2026/04/15/tras-solicitud-de-quiebra-de-conocida-cadena-de-gimnasios-su-fundador-aclara-como-funcionaran-sus-sucursales/",
+   "summary": "Tras solicitud de quiebra de conocida cadena de gimnasios: su fundador aclara cómo funcionarán sus sucursales &nbsp;&nbsp; ADN Radio",
+   "source": "ADN Radio",
+   "domain": "adnradio.cl",
+   "pub_ts": 1776236400,
+   "pub_iso": "2026-04-15 04:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMi-wFBVV95cUxPLVhUS3MybGRtQ3doeVVGT2NBaXJOUTlsRk02bHl3clBHZDEycUJOQ0lVVFJ0Y1VvVnprS3BkRU1KR1R4dTdBekFkTUVRSTFueUo4OVMxMXVQWTkzTmNVMnBIemZRb1lzb2ZpYVV1U2ZiTk92Vm1QOEhLTGtnNnAzYjBwaGwxb0FSVV82SXRtdnhOQk9jMVFFczdGWkY0aHdjaE1YYmh4N29ZODYydTZMWkcyVURwdGZ1R254RDB5SzVaaGhoUjhRVTZqcmJydVBhd1MyeHM1U0FHZFpxX3NkRXZ0WlNhWG1hVXBFVFVsVWVpdGJ6OTVVejNCNA?oc=5": {
+   "title": "Reconhecida rede de academias no Chile pode ir à falência após pedido de banco: têm descumprimentos milionários",
+   "url": "https://elcontraste.cl/nacional/2026/04/20/reconocida-cadena-de-gimnasios-en-chile-podria-irse-a-la-quiebra-tras-solicitud-de-banco-tienen-millonarios-incumplimientos/",
+   "summary": "Reconhecida rede de academias no Chile pode ir à falência após pedido de banco: têm descumprimentos milionários &nbsp;&nbsp; El Contraste",
+   "source": "El Contraste",
+   "domain": "elcontraste.cl",
+   "pub_ts": 1776668400,
+   "pub_iso": "2026-04-20 04:00",
+   "language": "es",
+   "title_original": "Reconocida cadena de gimnasios en Chile podría irse a la quiebra tras solicitud de banco: tienen millonarios incumplimientos",
+   "summary_original": "Reconocida cadena de gimnasios en Chile podría irse a la quiebra tras solicitud de banco: tienen millonarios incumplimientos &nbsp;&nbsp; El Contraste",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQQU5odlVOSTk5MXNHZk5VV3VrbHl5alF3SWxpdzZoZWEyNllQTGtxVVgtVzhqX1FacWxLV1lPQ0s1WERIUTA1Tk80UWpXclFBMUdjUzVwbVZGRnBEUmthQTZrV0pQRGJHTzBjQ1dlWEpzZ1RCcmFpSlYwcnVTZFM0YmVQbGVHYmZtWWMyMTEyMHRiY3Y0YktHY0FremRIMVVTandHTHBlenhzVmZDLXFsem9iVEdoNFYxN1NZcUdKR0VXYTM4X3M1OS1JTTk2MnVwVk5Nb9IB3AFBVV95cUxOd2dxOTBUSFFNVVowa3BLRERjaE1UTTZobFBnTlRNU3NCNW40VlVBWXY2ZFRSSkRlc0YyYW1CTWxQTEdJMzR4Smg4RGxFRXptZE5YTlNQcDducGhpS1lwRGZvdW9xYjJXOWZHN2RFM083UHNnYWFXcGxUeS1TNVBXVkxDRDFQSDVjdTBLaE1GbnNpU3dKQ1JMdDJTQUw2MkJXQWtPY21vX3dncWxyX3QyOWc3Q1RsVl9WWVh4UHNrZVdWVnZrd2EtWjlWUnhEX19wWTNHX2poRmJaTENX?oc=5": {
+   "title": "Spirit Airlines quiebra y cancela todos sus vuelos: más de 600 mil pasajeros afectados",
+   "url": "https://citytv.eltiempo.com/noticias/movilidad/spirit-airlines-quiebra-y-cancela-todos-sus-vuelos-mas-de-600-mil-pasajeros-afectados_91581",
+   "summary": "Spirit Airlines quiebra y cancela todos sus vuelos: más de 600 mil pasajeros afectados &nbsp;&nbsp; City Tv",
+   "source": "City Tv",
+   "domain": "citytv.eltiempo.com",
+   "pub_ts": 1777705200,
+   "pub_iso": "2026-05-02 04:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://pbn.com/bankruptcy-judge-approves-sale-of-cvs-health-subsidiary-omnicare-to-genierx/": {
+   "title": "Bankruptcy judge approves sale of CVS Health subsidiary Omnicare to GenieRX",
+   "url": "https://pbn.com/bankruptcy-judge-approves-sale-of-cvs-health-subsidiary-omnicare-to-genierx/",
+   "summary": "Bankruptcy judge approves sale of CVS Health subsidiary Omnicare to GenieRX &nbsp;&nbsp; Providence Business News",
+   "source": "Providence Business News",
+   "domain": "pbn.com",
+   "pub_ts": 1778742000,
+   "pub_iso": "2026-05-14 04:00",
+   "language": "en",
+   "companies": [
+    "CVS Health"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNdzN3dkQ3ZWlyRm5ITlY3VzFyenFOSk1LajZrMjBfbnRpaENaUFBMNmZNYld5VFhvZzllZ1lMVU4yTjJmNzFKMGxUclhtNTNFWkRGX0k5b0JRUzZDTlJYRkd1UWRZUDJTYWlRLVJvZmt3NnVHbUVPd0VSNHF1OFA4Y1UzRnFfVHowZjRPdEwzek1JaURqNEdLX0ZVbWwtVzhJelNwY2lFOVhfNmd0Ujk3WlNweWQzbG1hQWdUOE1SNFk3NUVSTkllek9mX2VoSlNQdjcw?oc=5": {
+   "title": "CVS offloads Omnicare pharmacy unit in $250m bankruptcy sale",
+   "url": "https://www.insurancebusinessmag.com/us/news/mergers-acquisitions/cvs-offloads-omnicare-pharmacy-unit-in-250m-bankruptcy-sale-575756.aspx",
+   "summary": "CVS offloads Omnicare pharmacy unit in $250m bankruptcy sale &nbsp;&nbsp; Insurance Business",
+   "source": "Insurance Business",
+   "domain": "insurancebusinessmag.com",
+   "pub_ts": 1779174000,
+   "pub_iso": "2026-05-19 04:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSW00bXcteVQ2TF9hVFFDSFA2V1h3SndvaXFNXzdyV29ta2N6RUMzcFVDUW9sZUJRajBDV0tpaFo0QjZkRG40emZpMTVQMmNnSHE4N0UzdjBHdzR1Z1FDWUR6c1RsTGdMOExVSmQtU3ljRFotUmpyUktrSnVwT3lQNVhWT1VOZUIwV0cxeFZIcko4NDFQQzNmeS11b1B3SGtUN0pOVVVR?oc=5": {
+   "title": "Ford Says Los Angeles Law Firm Uses Car Warranty Law for Fraud",
+   "url": "https://news.bloomberglaw.com/litigation/ford-says-los-angeles-law-firm-uses-car-warranty-law-for-fraud",
+   "summary": "Ford Says Los Angeles Law Firm Uses Car Warranty Law for Fraud &nbsp;&nbsp; Bloomberg Law News",
+   "source": "Bloomberg Law News",
+   "domain": "news.bloomberglaw.com",
+   "pub_ts": 1781766000,
+   "pub_iso": "2026-06-18 04:00",
+   "language": "es",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "fraude"
+   ],
+   "corroborations": [
+    {
+     "source": "Daily Journal",
+     "domain": "dailyjournal.com",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPazdvTGktdlpud2ZGY29INVN5aTRob28zdkZ3WF9KMjcyM0N6b0lwMUcxUV9BVl9KNzJVMC1iamhFMjRWdk81dk1GSnJPcEVkVUd6bVdhRC1RZnI3Rmk5TDRVVjRpSk52RElJWFl6NEN4MXc4akdiVllYUTE4el83elZZWGtDVUY0ZnpDQVd3OGZDSV82cHBKaW1WWTY1X0xDUnJjSA?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Daily Journal",
+     "domain": "dailyjournal.com",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPazdvTGktdlpud2ZGY29INVN5aTRob28zdkZ3WF9KMjcyM0N6b0lwMUcxUV9BVl9KNzJVMC1iamhFMjRWdk81dk1GSnJPcEVkVUd6bVdhRC1RZnI3Rmk5TDRVVjRpSk52RElJWFl6NEN4MXc4akdiVllYUTE4el83elZZWGtDVUY0ZnpDQVd3OGZDSV82cHBKaW1WWTY1X0xDUnJjSA?oc=5",
+     "when": "19/06 04:00"
+    }
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://www.ien.com/home/video/22969305/ford-motor-sues-to-shut-down-lemon-law-fraud": {
+   "title": "Ford Motor Sues to Shut Down Lemon Law Fraud",
+   "url": "https://www.ien.com/home/video/22969305/ford-motor-sues-to-shut-down-lemon-law-fraud",
+   "summary": "Ford Motor Sues to Shut Down Lemon Law Fraud &nbsp;&nbsp; Industrial Equipment News",
+   "source": "Industrial Equipment News",
+   "domain": "ien.com",
+   "pub_ts": 1782111600,
+   "pub_iso": "2026-06-22 04:00",
+   "language": "en",
+   "companies": [
+    "Ford Motor"
+   ],
+   "event_ids": [
+    "fraude"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://www.mcknightsseniorliving.com/news/omnicare-cvs-health-reach-440-million-settlement-in-senior-living-prescription-fraud-case/": {
+   "title": "Omnicare, CVS Health reach $440 million settlement in senior living prescription fraud case",
+   "url": "https://www.mcknightsseniorliving.com/news/omnicare-cvs-health-reach-440-million-settlement-in-senior-living-prescription-fraud-case/",
+   "summary": "Omnicare, CVS Health reach $440 million settlement in senior living prescription fraud case &nbsp;&nbsp; McKnight's Senior Living",
+   "source": "McKnight's Senior Living",
+   "domain": "mcknightsseniorliving.com",
+   "pub_ts": 1783321200,
+   "pub_iso": "2026-07-06 04:00",
+   "language": "en",
+   "companies": [
+    "CVS Health"
+   ],
+   "event_ids": [
+    "fraude"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMipgFBVV95cUxPaVRqbUdMSUEySHdKTHpVX3ZmT0J5Ukk1REJUSkh5V09IMkItYVRKY0pXS2NkZXo3OEFjSFFkbFEzTnU5ZFI3ODI4c0ZkeFp4UWlrX01mdlEtU2tpM00yZGFLZU1aLVhWWjlIR0JaRERzVnpnNXBQenRIN19qVTA5Q1oxZ0hUTEM0MWZONUFhVlJwTTVST2lHd1o5bDVfNm9HR1U2STRn?oc=5": {
+   "title": "CVS' Omnicare agrees to $440M settlement with DOJ in fraud case",
+   "url": "https://www.fiercehealthcare.com/payers/cvs-omnicare-unit-agrees-440m-settlement-doj-ongoing-fraud-case",
+   "summary": "CVS' Omnicare agrees to $440M settlement with DOJ in fraud case &nbsp;&nbsp; Fierce Healthcare",
+   "source": "Fierce Healthcare",
+   "domain": "fiercehealthcare.com",
+   "pub_ts": 1783580400,
+   "pub_iso": "2026-07-09 04:00",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "fraude"
+   ],
+   "corroborations": [
+    {
+     "source": "Healthcare Dive",
+     "domain": "healthcaredive.com",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORHR6djNUQXBGdy1wdGx5UWU3QU0tSnBld1RqN0NkYWEwcmR6c2U0S0h4bW1waENxbjEwVkxTczBsVURFNjlQTENJS2t1NUIzaFZ3Q1dWS3hNeXZvdDhZb3M3RlYtS2doMFpoSUdZWmdEakNEemU5RDdmOHg5c3EwVnVxeG9PZzJqcFJCSTVDQzlOaXJmVFZXTTltTUtHTU1XRFE?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Healthcare Dive",
+     "domain": "healthcaredive.com",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORHR6djNUQXBGdy1wdGx5UWU3QU0tSnBld1RqN0NkYWEwcmR6c2U0S0h4bW1waENxbjEwVkxTczBsVURFNjlQTENJS2t1NUIzaFZ3Q1dWS3hNeXZvdDhZb3M3RlYtS2doMFpoSUdZWmdEakNEemU5RDdmOHg5c3EwVnVxeG9PZzJqcFJCSTVDQzlOaXJmVFZXTTltTUtHTU1XRFE?oc=5",
+     "when": "10/07 04:00"
+    }
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMigAFBVV95cUxQLWFBVWlRQnYyZmdKMzA0Rk5YNFFqVTB0Nmx2REdGZzJ3WnI4ZElfWUxEdkN0bldZUmF0MzNkbURaQ2dzaTdTSXBEWkZTQlNDZXQ1a0NGUVVrME5jcE53UU1GZlVPczhjQmhBeEZId3IwOVNOVHpMNTNqaVBjMjJTZA?oc=5": {
+   "title": "CVS, Omnicare settle $440M fraud case",
+   "url": "https://www.benefitspro.com/2026/07/14/cvs-omnicare-settle-440m-fraud-case/",
+   "summary": "CVS, Omnicare settle $440M fraud case &nbsp;&nbsp; BenefitsPRO",
+   "source": "BenefitsPRO",
+   "domain": "benefitspro.com",
+   "pub_ts": 1784044029,
+   "pub_iso": "2026-07-14 12:47",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "fraude"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://borainvestir.b3.com.br/tipos-de-investimentos/renda-variavel/acoes/follow-on-engie-brasil-realiza-oferta-subsequente-de-acoes-na-b3/": {
+   "title": "Follow-on: Engie Brasil realiza oferta subsequente de ações na B3",
+   "url": "https://borainvestir.b3.com.br/tipos-de-investimentos/renda-variavel/acoes/follow-on-engie-brasil-realiza-oferta-subsequente-de-acoes-na-b3/",
+   "summary": "Follow-on: Engie Brasil realiza oferta subsequente de ações na B3 &nbsp;&nbsp; Bora Investir",
+   "source": "Bora Investir",
+   "domain": "borainvestir.b3.com.br",
+   "pub_ts": 1784271600,
+   "pub_iso": "2026-07-17 04:00",
+   "language": "pt",
+   "companies": [
+    "Engie Brasil"
+   ],
+   "event_ids": [
+    "follow_on"
+   ],
+   "corroborations": [
+    {
+     "source": "Estadão",
+     "domain": "estadao.com.br",
+     "url": "https://www.estadao.com.br/em-alta/einvestidor/cenarios-e-mercado/engie-brasil-egie3-pede-registro-de-follow-on-que-pode-movimentar-ate-r-105-bilhoes/"
+    },
+    {
+     "source": "MegaWhat",
+     "domain": "megawhat.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQSmpYdER6UjJ1RHZueWppZE1RbXh2dkhSc1B2MkREdzd2SGdEemFyX3EtX004eTZQVXFsRjA1OUVIazRLOENLUldHdG0yc0RDdWp2cTIxRDhyaURINHY3TVh0VV91bl9NZ2tDNTlqXzdJVTNCNEs4WjhwekVrdmN4ZkVicHFHU2RSdGwwTWg3OHJaLVl3ZGswNWphOE9zRUkwS2N4YWdVbEMtYWZGYU9NeEs2SEYyZGhfT3o5N2hyeE8?oc=5"
+    },
+    {
+     "source": "Cenário Energia",
+     "domain": "cenarioenergia.com.br",
+     "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNT2Z4LWlSMnBfRGRaRnJ1QzRLUkJka0U5NkNRZEpncjJEc3A5NU9zUFlzUlI1SHFZaU1yS0ptMzJXUEVnY1ZuUEpDby0wblRURlhpM05TWmZZNW5MN2RmQXA1LVJReW1OaFZtRUpIQUZEeDNoR0JJVTVXb1YwQzNsY2NvZGhzc2F2MG9CbkViaHBYaWZfS3piLTNnckZZR09LNEJ6ZnhZTWJWdnl0SW9xZkZzZTl5d21hWG5rMk5QaUNmMDdIOVFIUTY3X29zQQ?oc=5"
+    },
+    {
+     "source": "novarejo",
+     "domain": "portalnovarejo.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQeENCWk5mYnZUU1lYbXA2LXM4V3RtbHZ2a1ZlVWsteXNRZmt6dm1nQ2RRNkt5R28wdE1qTFVybG1mbjlfMzlqQm1TSmJxVlZrdUQwdEF2UVJJa0lERGNldHFBQV9qMXNHRk1VOVNLTzh4QjcxYTJtanVQaW5ZWlAyTFF1UEwwdThoU3ZYMjRNRko3dWs3YkpIMkRMZndFRUlpWWhURERLWXpFcFlqZ3lFLUdoX05rcmxpdUxGVHFJRzQ?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Estadão",
+     "domain": "estadao.com.br",
+     "url": "https://www.estadao.com.br/em-alta/einvestidor/cenarios-e-mercado/engie-brasil-egie3-pede-registro-de-follow-on-que-pode-movimentar-ate-r-105-bilhoes/",
+     "when": "19/07 11:00"
+    }
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
+  },
+  "https://www.crainsdetroit.com/health-care/cdb-cvs-drug-pricing-lawsuit-20260722/": {
+   "title": "2 of Michigan’s largest health systems sue CVS Health alleging fraud in drug pricing program",
+   "url": "https://www.crainsdetroit.com/health-care/cdb-cvs-drug-pricing-lawsuit-20260722/",
+   "summary": "2 of Michigan’s largest health systems sue CVS Health alleging fraud in drug pricing program &nbsp;&nbsp; Crain's Detroit",
+   "source": "Crain's Detroit",
+   "domain": "crainsdetroit.com",
+   "pub_ts": 1784734980,
+   "pub_iso": "2026-07-22 12:43",
+   "language": "en",
+   "companies": [
+    "CVS Health"
+   ],
+   "event_ids": [
+    "fraude"
+   ],
+   "captured_ts": 1785269924,
+   "cap_iso": "2026-07-28 17:18"
   }
  },
- "run_count": 43,
+ "run_count": 44,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -11433,11 +11897,119 @@
   "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMnpuZ1NDaTFUbnNWT2VuRHFKOGpRdWpLOWM4QVoxbXVoUlVOWGY0b21YNFlrc1ZPZkFhQnZuN3BRczZOeGdMQmFodHNxM3JrYWxGaGduM19HSEc1Um94WVhZTjF6bDBDaTBrakRuSWtsVmNKVS1ZUFZrd3hFYmRZTjJvQWZNbEtWWlFtbUFzd2hQeXl3RU9adnl6bV9BdWNwRE5JMWZaQmFEUQ?oc=5": {
    "url": "https://www.lerevenu.com/reussir-bourse/coeur-operations/opa-rumeurs-umanis-albioma-et-casino-en-evidence/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMitwFBVV95cUxPMW9tSS12R2pJelp2bVdKTll3UUZxdzBvUlBYckVQX0RZV0pXV3R6ZUZnbHRONkhBTEdyS2pUbWhTQU5hakdoR0h1b2RoeDB3QzJZZ2lxQ0t6d3NGNXhUcTZHUlNkdm5OR0piVTNPYWdYNTBRWUxTcms4Mm04UkQ5TWU2bFZ5OFRwTFM1VkEwY0I0eTJGREswSk0zUHlYejdPeDh2Wl8zZ0xWQVdUMGVFdEZVZXNwNnc?oc=5": {
+   "url": "https://abc7amarillo.com/news/local/ford-motor-credit-files-suit-against-reagor-dykes-auto-group-rd-files-chapter-11",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipAFBVV95cUxOdlkyN1FrVWs4YzNKZ1lIcFNPU2t1ZEZPQmhDVmJFaWJrZkNuYW45R3Y5Q3RvRWRWN1pMR0tLMndEX1h0dUVFVnpHQjdDakVzWXJtdFVqS055ak44d0luaUR5MGdlQkdocXZHWHNJOVFRdG5LTm1NWkJyODhmQWhPR0RqV292M3EwREltRVVQWW1ULU9PeU1tVm16dDdkczZ4Mk9KSNIBpAFBVV95cUxPZFgwQTd6SjFHTUxQR1JxY1Z0LWp6V2NWTXFwM01EbWVEUjkzNk92RFFFU3VpUk12cVB4LTRSRHFiSDFlbVQyMFAzRmxzMGtBa3BpeHdQb0VFODV1YzUwSUphdHV5NjJtc3pROWRiNFVGeV8ydXRkVjlXZzdRUVV4WWNzN1FFZ1VTaG4zc0VLZWo2dVVvOXJ4bVlhTUVTdVZsZjFGSA?oc=5": {
+   "url": "https://www.dw.com/es/corte-de-eeuu-aprueba-plan-de-latam-airlines-para-salir-de-la-quiebra/a-62180731",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMinwJBVV95cUxPV0Y2UW5TZXAzTkJVSlVnUGVHSHdwb2h5emppaDh3VVZzVnA1NmdpU1h1UlNnQktpN29pWUZOa3ZiN2pmMEV1REhzSi10Y05FeDhlaFQ0SjJJc1I4SmlTVDhuXzBXM01yXy1PRnNVUndwSjd3MHB5UEJJYVBOSWUtMlBZSlRoODZ3R0pkcVMtRzFiZzk0cUdaMlVuUjBDV1JJT2R0WlAwbkZvbjFkVncyUXM3NDlaVGI3ZC1Pb29ZUVRDT1JLN3FqUHNOYW5rSTRoUDNpLW9vQXFvV25yQWtERENGdTU5eTJDRkdVV3BPY1pZSkU4aVJUUm9MQTdJZm1UZ1NrX3ByTnJyU2lnR2I0WWRuYmNfa0luekppUFo3UQ?oc=5": {
+   "url": "https://www.newsfilecorp.com/release/223042/FORD-INVESTOR-NEWS-Investors-of-Ford-Motor-Company-that-Suffered-Losses-are-Encouraged-to-Contact-BFA-Law-by-October-7-about-Securities-Fraud-Deadline",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNb0I0dHNVVjFIX2RFWXdpTzRUOEZtMENLSTFoNEh5TjU5UWRqTFAxQ25FOG5OVjMyMEJUVzNKY3dkck45R3pGTDlzN3J2ZDAtR3VJRmY4cGJEbDV5OHczWFZXak5USUk3SDBuSHZiM3V4T2xKXzRkbzE0c19NcnFwTHVqRWNMTWhXcHdlYno5Vlh3UkM0QVQzVVVtdzRVaGZsYm5nYkw4aGstOWpGaXlFc2Vac1hSckJZZTBZUUkwUnBXbFc2UVhzTExpdHNPSElZZVlxSkZ1TzJkaDZaU2VtRU4wYw?oc=5": {
+   "url": "https://www.ex-ante.cl/perfil-el-fulminante-ascenso-de-roberto-alvo-el-ejecutivo-que-rescato-a-latam-de-la-quiebra-y-la-llevo-a-ganancias-historicas/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPNTRTcUt0aHVLRzJpcEpwREd4OWR6aklNUEY4eVJXNDV6Z3l3WG9kSUlKRW1mTDQ4S1VsTkFPRE9tVVJOTGZzclVVbzNoWXlMOF9kUkdibUlwNmdJak82YzAzdndEcmdSVk5rNmFGYk04bzlnSUN1RmVfT0xyLVQ0T3MtcGZqUW1LMWN0R1hyclhlS0RGZmJSeE1uUWIxaHhJX3k4enY5WHR0WUduMTRuYlJ0VmRVYTIyVGE2OEh6cDU?oc=5": {
+   "url": "https://www.bloomberg.com/news/articles/2026-02-23/tras-la-quiebra-latam-se-dispara-un-76-y-domina-entre-aerolineas-rivales",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiugFBVV95cUxNd2RHODQ1UnBYTkJjMnpibXVDVG9HTldxZDRxNW5lNnphbUgyQm9TWkhlRE9nTU05ZkVhMWcyY3FpOGVhc3VTZW96eW9HOEQ5TzZONkV5R3B6NlRlM1pDb1JZakhxWDA0RWdjT0l5Y2ZTQlM2Sk5ibWQ5aHNrLVpCZTUwblhOaDExN1NjTFVfMk9jcGJKUzNVUUxscmhmTXJJbTZHQUxGRnlsUnFkeFpvMjlKTFNDMldSYXfSAc4BQVVfeXFMTnUtcjE3NEZhcTkzbWNqV2g0eDFRaElOeUpETkNIQzYzdmZ6VFBGQVlHU0ZFTnF5TTZqRm52LTR1X3RsYkh2VTdtbjhrcUJqT3dCSTRrTnpkZzd3VDUyYXZUb0ExWmVHcnJ3MVZWNmlSY2phb0tob1BTUmpTVUxGYm12ZV91V2ZMVGY5aHVScVdmVlpSaXJMT0d0YV9pbHVQcW5wSG5EZVpVMnA5NUlsZ0gtdHpkVlpkWUJ6UldteldVRTdTRm1uUHRWSGg0Z0E?oc=5": {
+   "url": "https://www.bloomberglinea.com/negocios/tras-salir-de-la-quiebra-latam-airlines-repunta-76-y-lidera-entre-sus-rivales/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMilwFBVV95cUxPVkNqc0ZjYjlFYWlsdEFheVV2ak5wbDFtRmZibEExUHl5WF81dWtaTVQ1TVhZVmg4STdEVjRaeVJaYUdfMGFQdXVsTnNwX3dEcGdmYkpyQzV5V3BPeEJMVkU2TklMQjQ4bkZ1RkVZSGs4bFB6LVBYVUpqdlBIeWpGVU1tOVFzSnRYQ3Ftb0dLYk1BZ0xQRDA00gGfAUFVX3lxTFBkeHpoN1hyYjhTa0NpZUJSUFd3M1VKaHAtUkxaUDRPSmxZc1FWZG5WTzVuRTRQcGp0SVhMdUxzZjlVcDF2Z0FxeGRxVEVxYVpmZDdHeDJIeVphb19mM21zZlJDcmFXVzhlWURNdGRRazVhbHBxT2FrR2tIUE8zdXBKQTlrSWtjZlBEQkNGVUlLaG1SMVRxMnpZaVpHWjJESQ?oc=5": {
+   "url": "https://pbn.com/bankruptcy-judge-approves-sale-of-cvs-health-subsidiary-omnicare-to-genierx/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMijAFBVV95cUxPcjBldjdCQ1YyY0NqeEJIc005Qk1OZGNCdHlhNkZEbFV4aEllXzY1a3JhOUpISUFlanVON0VhaEg0UGJDSVRjdlZaSkYwMWM0Z2Z6d3VQREQ2VFQ4R2xPSXZaTU1wbmFFTWNyLWVKUEV3MjBQRGVEMEZ4VlFxU0o1MHFPUVltN0hQSHpxeg?oc=5": {
+   "url": "https://www.ien.com/home/video/22969305/ford-motor-sues-to-shut-down-lemon-law-fraud",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMizgFBVV95cUxNQ3NHNEhXVGYwRkVMcDZDOURCLXBkZFNKN1hHWmJDWFVRVEVRbGRiNEVlWF9JbUFXSmd4SlNtcW1DOElsbUhjTExFa1o4aXE5TzBSbTU1ejdHWUdzZnA3cFdSc1VCaW5FQkdmSVhjWDNXSGx1QThBcXRseWhBMUtTNzhKajNra291ZWNuNzR0amxSX1pDVGg2LW5qLV9GcFZ2MW40WEpWRWtpeWpsTkVjNEtmdmtIUGlIaXZHMW5MdEl6Rk93TXRxR2lvMENXQQ?oc=5": {
+   "url": "https://www.mcknightsseniorliving.com/news/omnicare-cvs-health-reach-440-million-settlement-in-senior-living-prescription-fraud-case/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMihwFBVV95cUxNQy1RVVh6NHUtMVRwbm1ZaHJCaVVuaGtvUnVQYWk3dXZmUzR3WXNsR3ptdHJoXzVzbWtseHp5WW5DMHJud3pQRVdDWjhUQkRxd3AzcXpXZkxVSmZ5VTFwZmxCLUxrcXRDQW1IczhobkE5cG0yWUpVVHB2bFIzMjJKSWx1NS05ODQ?oc=5": {
+   "url": "https://www.crainsdetroit.com/health-care/cdb-cvs-drug-pricing-lawsuit-20260722/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPY1otZmhxR2lWVFN0N0JOaXFSUXFGVDdrNHVaTS1lc2RSNFNhdUdicDVBcl9yZ1ZHVkxGRlpmYjdidzY1NFhWaXpRaG9sX3FRVEQ4VmxzM3ZWdFZmZF9CVHNjUk9JN29tTGF2UHpNNk9DblhlQkl0UG1HcktCLUxTUURIZGRERWFPUEZCV2lLN0hrcmotbjRWRWw0eG9EbGZ4MUN6Rkd4WnVNV1JJQWk2bjlQSzFlZjZhWGk4UWE2ZDRldklWUk9HMS1ZUlFZejZDMTVsWGtoMzBXZDJVTXl1Ni1yaTV0NDk5Uk0ybG9LOUpMQdIBkwJBVV95cUxQZ2lBRDJFSFozdGdPVkZ3UDg4UjVWeUpSTk14RjgzWHdJTW9BSHhBTGV6ZWJJTkhhRHpJV29MZjlOd2ZlUWtPa1RYdzZnSVgwRU1lQmhhQzhRUVpZSTFLS2hsbUdlbDZZbkhEZ0oyRGpfSnBGNGRzckFBazlPQlhMMUhmZ2NCemZGYmE1R2RMdUxFeGlpeDJXWTN4X3JoWEt5UlNuMW1BeXZzSkFwTXl3OFM3R3NSczFCRlMxTjQ2Qmg5RXJ6RG9rV21nMWt0YzRLUW05eldfQ2paVHBOd2tiT2d2eXJaLTB0RXhldU5LUnIzTF91TUJrdHcxdndMVjJjLXc0VWtRd1R0c0FGWkxPcVJpUQ?oc=5": {
+   "url": "https://www.latercera.com/pulso/noticia/gigante-checa-de-energia-solar-pide-su-reorganizacion-para-evitar-la-quiebra-y-acusa-incertidumbre-regulatoria-en-chile/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMilAFBVV95cUxQd0plY3JVaU5DMnVNWnNUaDUtRmVsMjE1Sm1xRWlFTklOeG1BSlFpZnV4WTMybXIyMjVLU1RFS2NvbEtGeUc1T2JMellQZmVrMHRIZVE3LXp4MWRVUVJWWHJKTGdJUUxQTnhTWEdtbDVxdndSVnF6RzZkNW0tVms0QUJGS002cHdocXphYTlzcjdvUE16?oc=5": {
+   "url": "https://fordauthority.com/2025/10/heres-why-ford-is-interested-in-first-brands-bankruptcy/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMijAFBVV95cUxQR2l2UnZpWVVrWU1rZHh6RVdyMC0yQUVfYnhDRFc3RGVYcDgxcjdEdXhuRTdIRnhJZW5qTHVWLVQ3MEROb25PVVpIMEdCY1c1T19GZXpQbmhpQl83Rm9neFNhVmg1M0tZSy0xR1FUb2NuX2p3M1dhNnBGNnFNWjRPbFZGTmtiNEpQaHMxcg?oc=5": {
+   "url": "https://www.thestreet.com/automotive/ford-loses-300-million-fraud-case-in-california",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMivwFBVV95cUxOUGRCNno1Sm81Zi1MMXdxMW5vZWNVaVk1ajdGVXUzQUxyWHdkTEFSU1RYU21JSFlSSWd4aWNVQUE3M01kOFJZR2dxdXVlLUZTbEljcTVrVUVTS3U3ZzhEZVM1eWpmZ3VkOTJ0SXk0VV8xV28tQTJYVmdGaUJ3V2JEQkpwTGRnaG1sR1lVbl9UTGRaUDNVNU9OQWRJTjlHZ045Z3ZoTVRiUEhTYTV6OF81NTBtaGpERTdwZkNhRjAtSQ?oc=5": {
+   "url": "https://www.paislobo.cl/2026/02/quiebra-de-proveedor-de-marcas-propias-altas-cumbres-group-cae-por-deudas-millonarias.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMizAFBVV95cUxOWVI1cE13elhtMmxCMEFTX25IN291bW9obW1FWDd5Z05yREhybE1VVHFTb1lOWWtzMkJvT3BwMFZHbWlmYmQ1Y3NVaFJwN3BnT2VPQjYwYW0yZEtWU3lnWDF1bGtKZ0Y5UmlCaTVJTm00YW5NT1BJTHRVTWJ4TUZuVHpjd19OTlFlUEt4TEVlSHE3VFlBdjFab2p4Y3RJZ0ZjTHFGckNoZ19GX3RNMHF2MjZFdk9IZmtxdWNOZjBsWTRPQk9JTktEZE1FN3M?oc=5": {
+   "url": "https://www.publimetro.cl/noticias/2026/02/18/tribunal-declara-quiebra-de-mauricio-pinilla-por-deudas-que-superan-los-1670-millones/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMinAFBVV95cUxNYmNodUxmMklpLVlJUjQ0RVk1TjBBbTlrdWVramNXUHhfVDVmLUpuc2IzR2FzSnNRMmlaYUE5UE9OajR4aGFnaDZqSVFTQTQ1cEJQTjlfajU5b0lzTTh3emR2NktDRTJPaG5CTjRuTEdZN1B0bk9KT2t2dVZUTTA2N09lOUxkMFhYakNvWDdBaHQwYkZwdFVPUWVjd2bSAbABQVVfeXFMT2lmSFh5RlFEUG5zVjRXX1pQV1BVU3BOaXY0ZXJsWkFaUHdlYkJrUDJTcFBSOHlhT2h4UGtyakJkcXo3dUtwbDRUTXdWc25GWmkyWmhsNUJPT0l6MjFVOXlzVU5oNWxaaE1HUVhEd09iNUc1M2cweGl0TzRhMUxFVDNtNl9KZmRrZkJJMklwWWkyNDNaZ2VBV3R2TUt4bS02NVhMMVp1WG1IaDBZRHY3Smw?oc=5": {
+   "url": "https://www.kcrg.com/2026/03/06/stellantis-accuses-eastern-iowa-car-dealership-12m-fraud-scheme/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMijgFBVV95cUxPV29ISWNRbHRrcThDLWc1LVFIV250TXZ6OGxFVkhlZlV0QWZnV1FQSG9XZkVpZG9nTHBJYjJWSjhQYzd3ZlI2eUZlcHVIRU5TTERISFpUa0Y1U2VPOGxBRXREZUs3V09OOEpjejlWbmpxQmVrTzFNemVDS3RIN0Y1ZmljRmpDSWNIanUzem1R?oc=5": {
+   "url": "https://www.autonews.com/retail/an-iowa-dealership-stellantis-ford-out-of-trust-0326/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNSTFfaGI3QnYxRDI1MlZDTVJpNkVWaUh6NWVWVVRUY19GY1ZLSWdIOThXUXowWF95MmcyRk1yRThFZXdlNzR6LTVjZDBLNTJxZ2xEbkMzUWhkMzd5LXpuN0hWWnFKZXoxb2Q3RGtITU4wMFpoLXVDLTVvQVlMRy1Xc2xXVVJUaXNKMDJHd2U0eE9vREpSNjV6eW15bXNScmpxbGdSU1d6YWhmXzdoTnZnMnc2eEp1V1BuSkVIZ1g3RUd5WWtvZm5VeHFQazRwdjhqS2NxaG91eEtLdjDSAfwBQVVfeXFMTWJuNWJUMHVxcHNfLS1pQ080dEV5a0tyOEMwM1kzVzl1U2ZKWklrSDF5ZFJ3X3dzdV9WajZjMG9fczZGSjllZkZFTGdCSi02ODBaa3VhbmV5QV9lOTRYd3hSUFdBUVVyeUhGbWFvT3QyMVlPRm1hUmd3cFNjbDUwLUd4VXRBTVMxdWVpbThoVnM2ellrcHFjSl9zVEgyUE4wT1A0TXlGRFJkeWdOMllzT2hjWEVtTmRhN25Tdk9OSXpIUUdKdXpKQ215aXlqUmxnelNxMm1laEZTOV91NWZmaU4wNE5SZjFQVm95SEw5bFgySG1zOEd6UWgxTWNH?oc=5": {
+   "url": "https://www.latercera.com/pulso/noticia/bci-pide-la-quiebra-de-cadena-de-gimnasios-energy-fitness-club-por-incumplir-acuerdo-de-reorganizacion/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiywFBVV95cUxOVXgxUU9SRk5OYWtOeUs3NVJBemhCZ3F3eGZOZVhBQi1hR1I2bDdrX1FsM1RWb2ZRckVLYWJPb2dCcngwZDk0NGJRdXlJWE9iRmdjQW1GaHlmN2VTRWZCZndCQmgyM3Z6ai1aSWdVTXh2RFpzYk5PYTVsQjNaRUNTclJYcWdlMWNKaVNYZTRkczYtLTI4NHVPTGdkNlBBcGtnck5ZRVl1eHpvZXl1a2xLajNXZFlmZXFQM1FjQkJLMmItUXFYaE0xS1pINNIB3wFBVV95cUxPSkRKM1htZVRTVG40RkxGWjBDRFVjaVQyMGljUVRwNTBvZ0RmaFdYZ2RHZjVjcnBjU09SUDBJQ3dLWTJ1WkNkdUFGS3BBZEFlZWJGOUNCT3FReGdmRDFtTVU3Tmx1T0lPTDg1bURsVHN6dFF4VUxQdFFOMGMzZEJaSWpmQjFFTmlJYzdUOVNFN2t1OEpyS1RwN1hianVnQWZpR0hoRXZ4NXJxUUFvVmxtX2QxalkxVmZlX0IxVExHd3dncEdGbjNJc1dQMkc0YnA5MnhiaGUxcXhhU3hQa3hZ?oc=5": {
+   "url": "https://www.adnradio.cl/2026/04/13/bci-pide-la-quiebra-de-conocida-cadena-de-gimnasios-en-chile-acusan-millonarios-incumplimientos/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZjh5aW96OHZGZS1FdGdYU3ZGZWpZcHlSVF91bW5rNU5xRW8tM2dkUktYaWRmTThtd200ekZ5NzNsTXpkUkxWUDNVZTJjd2NYSFNTRW4yQlFvWGgzNU9wVmluVFVHdWEwWVdKQmM1QnlwOS1yNGs2SXNxdm56SFdld19ZQ3NCeVB2b1FTV2V2eUlmWlBCd1RtZlBzYzUtMTB4VmpjQmNtNXVJUHhabzRwa1J6d9IBuAFBVV95cUxQdHoxVExKd0QwWnBaZTZ6dTVUMExuY0MxbzZZUHhjMWFwVUdQZG05Q2c3M3VZUk9tOWFwa0JlWFdTS1o3WjRMdnVTUFQ2cUFDaWdfSEtoMzRLNGxWUmVCOElna1BqUW9ENV9aaUJwWFF3QWpvZ2ZzN1ZFVi1lQXRONnktOC0wQ0gyVng5RTNtbFl1TGxBMVduQW1sdEFRdXktUWhKa0FKdDJkWUlHdmpTR2d0NmtBMGt4?oc=5": {
+   "url": "https://www.meganoticias.cl/nacional/519306-bci-pide-quiebra-gimnasios-energy-deudas-cotizaciones-13-04-2026.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQUDRwWDBIUUZRQW15bVBGNXlmZnV1cFBhSnQwUk5ZamJVd1ZWWi1TSzQyQkN3WktCQjR5ZUtUVDVXQk1PYVR3Nmx6QVhjYUdRR3h1SkZwbG5IdFBVeWdYZXkwNFVhcXUxZndiS3hYcjE1cFpXS0FGNWlLa1dFc25qQWFSNFZETk1ZeXZPcF9lUWVnS25VOENmNEZGZmxDVVRqc050Mkx6cl9CeDJROEF0SDkzLVF2MFpSVHNza3A0b29MTVNQQ3VPTW9hSDlKdlVXQkRRV1R5V3RScmlO0gHwAUFVX3lxTFA2aVBBX280WFZIeTc4OWhfQzRQNE42dnQtYVJkMDBfaHJJSmlORzZUM2FPa1lBMXh5MFdZWXZxRlRIanhET2xaTlUyY0tENV9vUFJ3VzR3Z3hYRmFfS3U0UTZHLThndkhDTWI1RTJKV3JIVHJhOFRDQlR5N3h4YTJNeFVkS3JNNlBwTWJuZlVidDBTUkh6UkhQZnlYbUJXM1Y2UHJsRV85WERzWnJCbGFjS2ZPWmNnbTlHUTlpMzJoYWpBNWJ2cnVFcmNmS2szczV2TjhnSXRXTlR0V1BsbjA2SF9kY19ObWJSYjhndkc5dA?oc=5": {
+   "url": "https://www.adnradio.cl/2026/04/15/tras-solicitud-de-quiebra-de-conocida-cadena-de-gimnasios-su-fundador-aclara-como-funcionaran-sus-sucursales/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi-wFBVV95cUxPLVhUS3MybGRtQ3doeVVGT2NBaXJOUTlsRk02bHl3clBHZDEycUJOQ0lVVFJ0Y1VvVnprS3BkRU1KR1R4dTdBekFkTUVRSTFueUo4OVMxMXVQWTkzTmNVMnBIemZRb1lzb2ZpYVV1U2ZiTk92Vm1QOEhLTGtnNnAzYjBwaGwxb0FSVV82SXRtdnhOQk9jMVFFczdGWkY0aHdjaE1YYmh4N29ZODYydTZMWkcyVURwdGZ1R254RDB5SzVaaGhoUjhRVTZqcmJydVBhd1MyeHM1U0FHZFpxX3NkRXZ0WlNhWG1hVXBFVFVsVWVpdGJ6OTVVejNCNA?oc=5": {
+   "url": "https://elcontraste.cl/nacional/2026/04/20/reconocida-cadena-de-gimnasios-en-chile-podria-irse-a-la-quiebra-tras-solicitud-de-banco-tienen-millonarios-incumplimientos/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQQU5odlVOSTk5MXNHZk5VV3VrbHl5alF3SWxpdzZoZWEyNllQTGtxVVgtVzhqX1FacWxLV1lPQ0s1WERIUTA1Tk80UWpXclFBMUdjUzVwbVZGRnBEUmthQTZrV0pQRGJHTzBjQ1dlWEpzZ1RCcmFpSlYwcnVTZFM0YmVQbGVHYmZtWWMyMTEyMHRiY3Y0YktHY0FremRIMVVTandHTHBlenhzVmZDLXFsem9iVEdoNFYxN1NZcUdKR0VXYTM4X3M1OS1JTTk2MnVwVk5Nb9IB3AFBVV95cUxOd2dxOTBUSFFNVVowa3BLRERjaE1UTTZobFBnTlRNU3NCNW40VlVBWXY2ZFRSSkRlc0YyYW1CTWxQTEdJMzR4Smg4RGxFRXptZE5YTlNQcDducGhpS1lwRGZvdW9xYjJXOWZHN2RFM083UHNnYWFXcGxUeS1TNVBXVkxDRDFQSDVjdTBLaE1GbnNpU3dKQ1JMdDJTQUw2MkJXQWtPY21vX3dncWxyX3QyOWc3Q1RsVl9WWVh4UHNrZVdWVnZrd2EtWjlWUnhEX19wWTNHX2poRmJaTENX?oc=5": {
+   "url": "https://citytv.eltiempo.com/noticias/movilidad/spirit-airlines-quiebra-y-cancela-todos-sus-vuelos-mas-de-600-mil-pasajeros-afectados_91581",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNdzN3dkQ3ZWlyRm5ITlY3VzFyenFOSk1LajZrMjBfbnRpaENaUFBMNmZNYld5VFhvZzllZ1lMVU4yTjJmNzFKMGxUclhtNTNFWkRGX0k5b0JRUzZDTlJYRkd1UWRZUDJTYWlRLVJvZmt3NnVHbUVPd0VSNHF1OFA4Y1UzRnFfVHowZjRPdEwzek1JaURqNEdLX0ZVbWwtVzhJelNwY2lFOVhfNmd0Ujk3WlNweWQzbG1hQWdUOE1SNFk3NUVSTkllek9mX2VoSlNQdjcw?oc=5": {
+   "url": "https://www.insurancebusinessmag.com/us/news/mergers-acquisitions/cvs-offloads-omnicare-pharmacy-unit-in-250m-bankruptcy-sale-575756.aspx",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSW00bXcteVQ2TF9hVFFDSFA2V1h3SndvaXFNXzdyV29ta2N6RUMzcFVDUW9sZUJRajBDV0tpaFo0QjZkRG40emZpMTVQMmNnSHE4N0UzdjBHdzR1Z1FDWUR6c1RsTGdMOExVSmQtU3ljRFotUmpyUktrSnVwT3lQNVhWT1VOZUIwV0cxeFZIcko4NDFQQzNmeS11b1B3SGtUN0pOVVVR?oc=5": {
+   "url": "https://news.bloomberglaw.com/litigation/ford-says-los-angeles-law-firm-uses-car-warranty-law-for-fraud",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipgFBVV95cUxPaVRqbUdMSUEySHdKTHpVX3ZmT0J5Ukk1REJUSkh5V09IMkItYVRKY0pXS2NkZXo3OEFjSFFkbFEzTnU5ZFI3ODI4c0ZkeFp4UWlrX01mdlEtU2tpM00yZGFLZU1aLVhWWjlIR0JaRERzVnpnNXBQenRIN19qVTA5Q1oxZ0hUTEM0MWZONUFhVlJwTTVST2lHd1o5bDVfNm9HR1U2STRn?oc=5": {
+   "url": "https://www.fiercehealthcare.com/payers/cvs-omnicare-unit-agrees-440m-settlement-doj-ongoing-fraud-case",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMigAFBVV95cUxQLWFBVWlRQnYyZmdKMzA0Rk5YNFFqVTB0Nmx2REdGZzJ3WnI4ZElfWUxEdkN0bldZUmF0MzNkbURaQ2dzaTdTSXBEWkZTQlNDZXQ1a0NGUVVrME5jcE53UU1GZlVPczhjQmhBeEZId3IwOVNOVHpMNTNqaVBjMjJTZA?oc=5": {
+   "url": "https://www.benefitspro.com/2026/07/14/cvs-omnicare-settle-440m-fraud-case/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785266920,
-  "iso": "28 jul 2026 · 16:28 BRT",
+  "ts": 1785269938,
+  "iso": "28 jul 2026 · 17:18 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
@@ -11466,6 +12038,10 @@
    "Santander Brasil": {
     "status": "atencao",
     "score": 58
+   },
+   "CVS Health": {
+    "status": "critico",
+    "score": 57
    },
    "Cosan": {
     "status": "atencao",
@@ -11506,6 +12082,10 @@
    "ISA Energia Brasil": {
     "status": "monitorar",
     "score": 26
+   },
+   "Ford Motor": {
+    "status": "critico",
+    "score": 23
    },
    "Suzano": {
     "status": "monitorar",
