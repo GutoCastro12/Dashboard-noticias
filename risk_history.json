@@ -6902,6 +6902,12 @@
      "domain": "agenciainfra.com",
      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOUlFYY0RoSm0tMDg0M3hBNDg2VnQ1ZUliZUZXdmFrSlNobHc0TFVoN1B0SFVMc2Z1N296MzhXYzlWQU84aWlMVzFrSko1dm9ORnQ3YmlmTGMzcUF4cXdlbjE0SHRqS2JBZzNBQ24wUnFzVXNVQnlqbWZFc1kwbmYybF9USEZJSkFETWEwOG9OcUw0b3h6eUlOMlhqYWFmelBpM0dxYmF3?oc=5",
      "when": "09/07 18:46"
+    },
+    {
+     "source": "Money Times",
+     "domain": "moneytimes.com.br",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQQmZDM2NzbEpxRTg4STM2V214QUpmSWhDNVF0dUNPMWVjbjdVeDVIYXhUWUgzXy1NeHFYN1BtdHlqR2YxeHhhRnhUTGxWLTVsLXdDNlhsUU1hX2N3OXUtX3ktSE5tc2ZUZmExcTEtZkROenhaVUltQURSUnQ0akw2NnIxNWxnRTZJU1hBLUpwaEc5bURqU2Zwek5yVjJjSmdyWThvcUIycUF2MWpCZEE?oc=5",
+     "when": "09/07 18:56"
     }
    ],
    "captured_ts": 1785259121,
@@ -9188,9 +9194,81 @@
    ],
    "captured_ts": 1785259660,
    "cap_iso": "2026-07-28 14:27"
+  },
+  "https://news.google.com/rss/articles/CBMixAFBVV95cUxQaTA4VVFORzI1US1qeU16SVgwSmFyVXR4Q2NqSlNwY010VzdUenpFZ3hGNy1aNGFNS2NsX2VieEppODV4b1RjNk5rajg2ZlloRmZfbXRneDN4cWpmemYxUDg3VGdQMm42WGJIZ2tSVEY3dkhBVWMwcDNQWktNQXdCOWtKak8wNFM2dkdLbnVVZXVXSGg3NmpQdUJ2NE9CQTlxanpLRmpiQ2hYbXNiNl9qb2twMm1ObDVKTFJINERfOFJEZ3RC0gHTAUFVX3lxTE9CTzRJTXA1aEwwUjVIS1hpanU2djlBQ0xVcmlBQVdsTTI3aGl3OFlnMXBqd1c0NnB6R1N0bmJhM0xQcEtrMWYxdUIzQU5PblVTN2ttVUY2cmZXTTQzTlE2cWtHVk1tUHhGcHlHTUJadDVjWlFieFExNlFiYXZ1UDU3cF9BY1k1ZWs4SElmbGpxdGVXTDVRZXNCN1RBQUF4Z0tlaUNGdERRSFZFYjFsZnN4VHVxVzZ4dG5nNkxvNl81UzhrT0hWY2pyYXN4WVYyQmw0OFE?oc=5": {
+   "title": "Ex- Localiza Carlos Sarquis assume Grupo Hive como novo CEO",
+   "url": "https://valor.globo.com/patrocinado/dino/noticia/2025/12/01/ex-localiza-carlos-sarquis-assume-grupo-hive-como-novo-ceo-1.ghtml",
+   "summary": "Ex- Localiza Carlos Sarquis assume Grupo Hive como novo CEO &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1764576000,
+   "pub_iso": "2025-12-01 05:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "captured_ts": 1785266917,
+   "cap_iso": "2026-07-28 16:28"
+  },
+  "https://news.google.com/rss/articles/CBMijgJBVV95cUxNZWcwMk1nM1NYWjBudGxXeXk3SVEyUHd2WVF5eTdTbExLblpaUnoyMGtIVkNOcmozTmlhMGNVdS04RGl5T2FPRXYyUHJfd2M0dGdsWG50cGdHZjVrTjhaY0R2ZE04VElFQVNscV9OcDJLNS0taFZHSjVHT2lJQlVuckRKYnJqU2pUdnFDLUkzXzg4TFZJdGpWcGlUaTB0TFN1czl1ZTBYakVFdkZteXFDcDNxNzdWdzlEU25DZGZ2OGx2ZDRzMEVxSjAwd3RaLXh6NHZJYnhrWGRIMk5acERQQ2swaHBuYXFuTGwzcXk4UTIwVFNwVi1yM202ZnJxWjBLekVUcWxTVktwU0tORVE?oc=5": {
+   "title": "Metalúrgica do Vale do Sinos pede suspensão da falência decretada pela Justiça",
+   "url": "https://gauchazh.clicrbs.com.br/colunistas/giane-guerra/noticia/2026/07/metalurgica-do-vale-do-sinos-pede-suspensao-da-falencia-decretada-pela-justica-cmr6casbi02fz011vkqwijpo5.html",
+   "summary": "Metalúrgica do Vale do Sinos pede suspensão da falência decretada pela Justiça &nbsp;&nbsp; GZH",
+   "source": "GZH",
+   "domain": "gauchazh.clicrbs.com.br",
+   "pub_ts": 1783148400,
+   "pub_iso": "2026-07-04 04:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785266917,
+   "cap_iso": "2026-07-28 16:28"
+  },
+  "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml": {
+   "title": "CVM abre processo para apurar renúncia de presidente do conselho da Vale",
+   "url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
+   "summary": "CVM abre processo para apurar renúncia de presidente do conselho da Vale &nbsp;&nbsp; Folha de S.Paulo",
+   "source": "Folha de S.Paulo",
+   "domain": "www1.folha.uol.com.br",
+   "pub_ts": 1783494000,
+   "pub_iso": "2026-07-08 04:00",
+   "language": "pt",
+   "companies": [
+    "Vale"
+   ],
+   "event_ids": [
+    "investigacao_regulatoria"
+   ],
+   "captured_ts": 1785266917,
+   "cap_iso": "2026-07-28 16:28"
+  },
+  "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOMXFOdUhLQ1lhQ1hkYnU5RG4tUFVhcG5kenNSODRsNlV1SDljbkYzV1lZVV9NMVRxN0JvaG5pODZRVVA0UlJ1d2N2Q3ZZYXpkMW5qbG1QVFJvcGpKWTBpXy1hZWx2T21PamFaaWNIUHNZcU03d0p3Mnk0aWdyS1ZUcGQ1ZDMzZlJSS2tHaVctdVBLeEZiZDZoX1hocmh5RnI2YnVnZE9iTU1uLXMwX2dNdjNDLVhHbDdqTEphSXEyTGp1YldldGV3aA?oc=5": {
+   "title": "Embates judiciais, propostas de aquisição e problemas de produção: os bastidores do Vale do Lítio",
+   "url": "https://ofator.com.br/informacao/embates-judiciais-propostas-de-aquisicao-e-problemas-de-producao-os-bastidores-do-vale-do-litio/",
+   "summary": "Embates judiciais, propostas de aquisição e problemas de produção: os bastidores do Vale do Lítio &nbsp;&nbsp; O Fator",
+   "source": "O Fator",
+   "domain": "ofator.com.br",
+   "pub_ts": 1783926000,
+   "pub_iso": "2026-07-13 04:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1785266917,
+   "cap_iso": "2026-07-28 16:28"
   }
  },
- "run_count": 42,
+ "run_count": 43,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -11351,15 +11429,19 @@
   "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOeDRLMmExeWs0MHNMZXU3U0tiNmRVSmhyU250SGhJcnZZTld3c2Y5WVlVT09rOERzdWs1N2tndlpTbGhtZlcxelRMSTlnV0R4cEtCbXpfaF9qdXc0SHNpWFB3M0RreWMzR3hQZ1JEZUJWdzdaNUNrNlFUZmphU0Y3R25YT2NzTkp5WFJGTkRIWFd6WG1GX2ZqVlNpWXBoRmJ3cjR6WU9TQVlLQzVFRG80YTVEZDIzbERpemJXLXI0UGtldHNYNW5FakdjaGdCeEdHOFQza1d0dTg3dW1CUVE?oc=5": {
    "url": "https://monitormercantil.com.br/da-recuperacao-judicial-a-extrajudicial-possibilidade-de-conversao-como-estrategia-de-reestruturacao-empresarial/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMnpuZ1NDaTFUbnNWT2VuRHFKOGpRdWpLOWM4QVoxbXVoUlVOWGY0b21YNFlrc1ZPZkFhQnZuN3BRczZOeGdMQmFodHNxM3JrYWxGaGduM19HSEc1Um94WVhZTjF6bDBDaTBrakRuSWtsVmNKVS1ZUFZrd3hFYmRZTjJvQWZNbEtWWlFtbUFzd2hQeXl3RU9adnl6bV9BdWNwRE5JMWZaQmFEUQ?oc=5": {
+   "url": "https://www.lerevenu.com/reussir-bourse/coeur-operations/opa-rumeurs-umanis-albioma-et-casino-en-evidence/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785259663,
-  "iso": "28 jul 2026 · 14:27 BRT",
+  "ts": 1785266920,
+  "iso": "28 jul 2026 · 16:28 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
-    "score": 102
+    "score": 101
    },
    "JBS": {
     "status": "critico",
@@ -11409,12 +11491,12 @@
     "status": "monitorar",
     "score": 30
    },
-   "Embraer": {
-    "status": "atencao",
-    "score": 28
-   },
    "Cencosud": {
     "status": "critico",
+    "score": 27
+   },
+   "Embraer": {
+    "status": "atencao",
     "score": 27
    },
    "Axia Energia": {
