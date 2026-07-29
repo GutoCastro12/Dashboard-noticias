@@ -1,66 +1,5 @@
 {
  "articles": {
-  "https://news.google.com/rss/articles/CBMivwFBVV95cUxPXzdYU24waHpHNm5aR2ZnMGhGUnViQW9IaExDazl6bzg1QjYzUndwTXBIYVljdGN5aC1ZbWZRMnY3V1EycXdyUWQwTXZySndZT3A0TGZGdUFWUkdlaFpENDIwTzNVRnBXb3ppZ1M2N0tGU3FhSmM4bmxNU2tMVzRfaHF6RjljTmV4aHdZZ1lwYmFJaUcyaHRqS2FSZk9mcTZ5WWhwZ2hkTkRhcmhpMmFkT2V0em8zTlkyQ3NteWkyWQ?oc=5": {
-   "title": "High-flying FPSO company testing the market for possible new bond issue",
-   "url": "https://www.upstreamonline.com/finance/high-flying-fpso-company-testing-the-market-for-possible-new-bond-issue/2-1-1837731",
-   "summary": "High-flying FPSO company testing the market for possible new bond issue &nbsp;&nbsp; Upstream Online",
-   "source": "Upstream Online",
-   "domain": "upstreamonline.com",
-   "pub_ts": 1750748400,
-   "pub_iso": "2025-06-24 04:00",
-   "language": "en",
-   "companies": [
-    "Mercado (geral)"
-   ],
-   "event_ids": [
-    "emissao_divida"
-   ],
-   "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
-  },
-  "https://www.estadao.com.br/einvestidor/onde-investir/subsidiaria-prio-prio3-emissao-debentures-valor-bilionario/": {
-   "title": "Subsidiária da Prio (PRIO3) faz 6ª emissão de debêntures em valor bilionário; veja montante total",
-   "url": "https://www.estadao.com.br/einvestidor/onde-investir/subsidiaria-prio-prio3-emissao-debentures-valor-bilionario/",
-   "summary": "Subsidiária da Prio (PRIO3) faz 6ª emissão de debêntures em valor bilionário; veja montante total &nbsp;&nbsp; Estadão",
-   "source": "Estadão",
-   "domain": "estadao.com.br",
-   "pub_ts": 1750748400,
-   "pub_iso": "2025-06-24 04:00",
-   "language": "pt",
-   "companies": [
-    "PRIO"
-   ],
-   "event_ids": [
-    "emissao_divida"
-   ],
-   "events_by_company": {
-    "PRIO": [
-     "emissao_divida"
-    ]
-   },
-   "mention_roles": {
-    "PRIO": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "companies_attributed": [
-    "PRIO"
-   ],
-   "context_companies": [],
-   "corroborations": [
-    {
-     "source": "Seu Dinheiro",
-     "domain": "seudinheiro.com",
-     "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPLTh5b0IyREx3WjlHQmhxR2Iyc28wRlQxWDROSzh5UWhvV0dLRFdjN0tvdzhGY1pyb2ZYRnhER01zYWJ0UVpkd2J5bzZoSVVoX1FVRDdlMW5RVGJabi1CT1BWUWR1dGZWMU1JQjhGZU43cmgxRkF5aTNua2JtLVc3WUJXWEdLTDBtak51WHZpdXdUWDlkR0tEVmRWX212cnp4bHZ0TDFaeE42TmhLMEMyYThZRTVPdFR5NVZwNTFQSWVlbG56MS1IVXlUbWktR1huRXRTcQ?oc=5"
-    }
-   ],
-   "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
-  },
   "https://www.informador.mx/economia/Lavado-de-dinero-Que-pasaria-si-CIBanco-e-Intercam-se-declaran-en-quiebra-20250627-0061.html": {
    "title": "¿Qué pasaría si CIBanco e Intercam se declaran en quiebra?",
    "url": "https://www.informador.mx/economia/Lavado-de-dinero-Que-pasaria-si-CIBanco-e-Intercam-se-declaran-en-quiebra-20250627-0061.html",
@@ -167,7 +106,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.infomoney.com.br/mercados/copel-cple6-conclui-aquisicao-da-usina-baixo-iguacu-da-neoenergia-por-r-105-bi/": {
    "title": "Copel (CPLE6) conclui aquisição da usina Baixo Iguaçu da Neoenergia por R$ 1,05 bi",
@@ -639,7 +580,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://investalk.bb.com.br/noticias/mercado/a-novela-continua-brf-deve-aprovar-fusao-com-marfrig-mas-cvm-endurece-o-jogo": {
    "title": "A novela continua: BRF deve aprovar fusão com Marfrig, mas CVM endurece o jogo",
@@ -853,7 +796,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPY1otZmhxR2lWVFN0N0JOaXFSUXFGVDdrNHVaTS1lc2RSNFNhdUdicDVBcl9yZ1ZHVkxGRlpmYjdidzY1NFhWaXpRaG9sX3FRVEQ4VmxzM3ZWdFZmZF9CVHNjUk9JN29tTGF2UHpNNk9DblhlQkl0UG1HcktCLUxTUURIZGRERWFPUEZCV2lLN0hrcmotbjRWRWw0eG9EbGZ4MUN6Rkd4WnVNV1JJQWk2bjlQSzFlZjZhWGk4UWE2ZDRldklWUk9HMS1ZUlFZejZDMTVsWGtoMzBXZDJVTXl1Ni1yaTV0NDk5Uk0ybG9LOUpMQdIBkwJBVV95cUxQZ2lBRDJFSFozdGdPVkZ3UDg4UjVWeUpSTk14RjgzWHdJTW9BSHhBTGV6ZWJJTkhhRHpJV29MZjlOd2ZlUWtPa1RYdzZnSVgwRU1lQmhhQzhRUVpZSTFLS2hsbUdlbDZZbkhEZ0oyRGpfSnBGNGRzckFBazlPQlhMMUhmZ2NCemZGYmE1R2RMdUxFeGlpeDJXWTN4X3JoWEt5UlNuMW1BeXZzSkFwTXl3OFM3R3NSczFCRlMxTjQ2Qmg5RXJ6RG9rV21nMWt0YzRLUW05eldfQ2paVHBOd2tiT2d2eXJaLTB0RXhldU5LUnIzTF91TUJrdHcxdndMVjJjLXc0VWtRd1R0c0FGWkxPcVJpUQ?oc=5": {
    "title": "Gigante checa de energía solar pide su reorganización para evitar la quiebra y acusa “incertidumbre regulatoria” en Chile",
@@ -907,7 +852,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.df.cl/mercados/banca-fintech/fusion-bicecorp-y-grupo-security-ya-tiene-nombre-la-marca-elegida-para-el": {
    "title": "Fusión Bicecorp y Grupo Security ya tiene nombre: la marca elegida para el grupo financiero es BICE",
@@ -1236,7 +1183,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.lanacion.com.ar/economia/negocios/el-exceo-de-ypf-que-busca-recuperar-aconcagua-tras-la-quiebra-nid11092025/": {
    "title": "El exCEO de YPF que busca recuperar Aconcagua tras la quiebra",
@@ -1470,7 +1419,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/brf-cancelamento-acoes-registro-cvm-fusao-marfrig/": {
    "title": "BRF aprova cancelamento de ações e pede mudança de registro na CVM para concretizar fusão com Marfrig na Bolsa",
@@ -2723,7 +2674,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.moneytimes.com.br/energisa-9-adquire-participacao-majoritaria-na-lurean-e-investe-em-usina-de-biometano-kda/": {
    "title": "Energisa (ENGI11) conclui aquisição de participação majoritária na Lurean",
@@ -2851,7 +2804,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://investnews.com.br/negocios/multiplan-adquire-participacao-adicional-no-barrashopping-por-r-362-milhoes/": {
    "title": "Multiplan adquire participação adicional no BarraShopping por R$ 362 milhões",
@@ -2887,7 +2842,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.demarest.com.br/decisao-da-cvm-sobre-brf-e-marfrig-quais-informacoes-devem-ser-disponibilizadas-aos-acionistas-para-uma-assembleia-de-combinacao-de-negocios/": {
    "title": "Decisão da CVM sobre BRF e Marfrig: quais informações devem ser disponibilizadas aos acionistas para uma assembleia de combinação de negócios?",
@@ -2930,7 +2887,8 @@
     }
    ],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corrob_sources": []
   },
   "https://expansion.mx/empresas/2025/11/10/asi-logro-aeromexico-salir-de-la-quiebra-y-cotizar-en-bolsa": {
    "title": "De tocar fondo a recuperar el vuelo: Así logró Aeroméxico salir de la quiebra y volver a cotizar en Bolsa",
@@ -2966,7 +2924,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://valor.globo.com/empresas/noticia/2025/11/11/ita-unibanco-tenta-suspender-na-justia-deciso-que-converteu-recuperao-da-oi-em-falncia.ghtml": {
    "title": "Itaú Unibanco tenta suspender na Justiça decisão que converteu recuperação da Oi em falência",
@@ -3247,7 +3207,8 @@
     }
    ],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corrob_sources": []
   },
   "https://www.moneytimes.com.br/prio-prio3-sp-global-eleva-nota-de-credito-da-petrolifera-apos-aquisicao-de-peregrino-lmrs/": {
    "title": "Prio (PRIO3): S&P Global eleva nota de crédito da petrolífera após aquisição de Peregrino",
@@ -3285,7 +3246,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.moneytimes.com.br/eneva-enev3-anuncia-compra-de-participacoes-em-termicas-do-btg-e-follow-on-bilionario-vinp/": {
    "title": "Eneva (ENEV3) anuncia compra de térmicas do BTG e follow on de até R$ 4,2 bilhões",
@@ -3559,7 +3522,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMijAFBVV95cUxQR2l2UnZpWVVrWU1rZHh6RVdyMC0yQUVfYnhDRFc3RGVYcDgxcjdEdXhuRTdIRnhJZW5qTHVWLVQ3MEROb25PVVpIMEdCY1c1T19GZXpQbmhpQl83Rm9neFNhVmg1M0tZSy0xR1FUb2NuX2p3M1dhNnBGNnFNWjRPbFZGTmtiNEpQaHMxcg?oc=5": {
    "title": "Ford loses $300 million fraud case in California",
@@ -3877,7 +3842,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.lafm.com.co/economia/estafas-se-aprovechan-de-la-fusion-entre-davivienda-y-scotia-bank-asi-aprovechan-para-enganar-385089": {
    "title": "Estafas por la fusión Davivienda y ScotiaBank: así delincuentes engañan a los clientes",
@@ -3949,7 +3916,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://br.advfn.com/jornal/2025/12/motiva-aprova-emissao-de-debentures-de-r-1-4-bilhao-para-reforcar-estrutura-financeira-da-controlada": {
    "title": "Motiva aprova emissão de debêntures de R$ 1,4 bilhão para reforçar estrutura financeira da controlada",
@@ -5112,6 +5081,12 @@
      "domain": "moneytimes.com.br",
      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPTUpuUTVEQ24zNVlPMmZBSGhTVkdLN1dlbVFKT3hiQnhpb1VuN3Z4dWtkUF83bUV6NVJiN29pWUx3QTk5MnFXcmpTbnRYajJvREpfWi1PQ0pUZE10UlVmck9VY1c1QnlobmVrdFFId0d0NzVqbUFDLUxpS09Xd2dsRmRnR3FXczYzZlpOUkVjRXJQTG9ZQ0luVm95SklwU2JpSWJmaExyQWw?oc=5",
      "when": "26/01 05:00"
+    },
+    {
+     "source": "CNN Brasil",
+     "domain": "cnnbrasil.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOY1R2S3NnNkk2MVJjSWdHNDUzTWt6Mnl1dGwydjNBYm5JOHhEbGJJRklmcW56ekFSMW05RHBVeFNEOWwtcEdra3ZXU0NEdTM4WWpFdEUyY0F3emtJY1V3MmMyYXBkekF4Rk1qamQ4N0ZkS0ktMG1DbHBBa044S256N3hic3ZVQUdodmNObGNzU1I1dV9IUVA3TExCSkJwelQwM215SlFzdkliQQ?oc=5",
+     "when": "26/01 05:00"
     }
    ],
    "captured_ts": 1785294267,
@@ -5187,7 +5162,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMisAFBVV95cUxPc2hlU3g3OHZxUk9CWi1kVDlHOHZHRVAzX2RVbm5yM2ZyVkpNbEstOFRkcVlHVHgyOTA2WE42WnhRUDF1WmpqNWtSQl92LWdHT2FtNUhVMmRiUFUtLS1qYUUtT1F5dFBDU1pTaUR1a2FZWUpvSGZTbXlfSW1PaFhwZk41SVRyWHlZdmROYWdXSmxwOGNxdVI3WldkcUtlRjhFeS1weGJjc002OEVxb3VRWA?oc=5": {
    "title": "Prudential's Japan life insurance unit faces probe over employee fraud",
@@ -5582,7 +5559,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.infomoney.com.br/mercados/rumo-fara-emissao-de-debentures-para-controlada-malha-central-no-valor-de-r-15-bi/": {
    "title": "Rumo fará emissão de debêntures para controlada Malha Central no valor de R$ 1,5 bi",
@@ -6118,7 +6097,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://valor.globo.com/empresas/noticia/2026/02/11/usiminas-ternium-finaliza-operao-de-aquisio-das-aes-da-nippon-steel-e-mitsubishi.ghtml": {
    "title": "Usiminas: Ternium finaliza operação de aquisição das ações da Nippon Steel e Mitsubishi",
@@ -6262,7 +6243,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.estadao.com.br/economia/btg-pactual-conclui-aquisicao-de-48-da-plataforma-digital-meutudo-npr/": {
    "title": "BTG Pactual conclui aquisição de 48% da plataforma digital meutudo",
@@ -6334,7 +6317,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.bloomberglinea.com.br/negocios/vale-aposta-em-reserva-propria-para-crescer-em-cobre-nao-precisamos-de-ma-diz-ceo/": {
    "title": "Vale aposta em reserva própria para crescer em cobre. ‘Não precisamos de M&A’, diz CEO",
@@ -7105,7 +7090,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.segs.com.br/seguros/441849-zurich-santander-brasil-anuncia-alejandro-widder-como-novo-ceo": {
    "title": "Zurich Santander Brasil anuncia Alejandro Widder como novo CEO | SEGS Portal Nacional de Seguros, Saúde,...",
@@ -7384,7 +7371,8 @@
     }
    ],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corrob_sources": []
   },
   "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1489791&numSequencia=1014497&numVersao=1": {
    "title": "[Fato Relevante] Motiva: ViaQuatro",
@@ -7556,7 +7544,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.alcircle.com/news/citigroup-inc-announces-acquisition-of-kaiser-aluminium-corporation-shares-117575": {
    "title": "Citigroup Inc. announces acquisition of Kaiser Aluminium Corporation shares",
@@ -8124,7 +8114,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://neofeed.com.br/negocios/gilson-finkelsztain-sera-o-novo-ceo-do-santander/": {
    "title": "Gilson Finkelsztain será o novo CEO do Santander",
@@ -8187,7 +8179,8 @@
     }
    ],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMitgFBVV95cUxObC1JMXJjY2lWQV9BLXJhdDlEX1F5WF9KM2dNM3BoNy12dS0zTlpaRHFWVnFETGRzcmN5LWJhcjFUQ1hnVW8yenIwQUdEaTJaUUNIV3h2VlNEOWdyTlhVSXhOaHdVZVppb2JlSVIzQmxKb0JaNUpiaUVQbXVmVjdRTXdEWUZtcEdHTURMSGQ4Z0lack1KQnNORTFwUUI1MWpfazI2WFozOHdGSDJKNV9YcHNad3RXZw?oc=5": {
    "title": "Ações do Santander e da B3 fecham em queda após troca de CEO",
@@ -8251,7 +8244,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://tagdlaw.com.br/petrobras-solicita-reanalise-da-aquisicao-da-jv-da-wilson-sons/": {
    "title": "Petrobras solicita reanálise da aquisição da JV da Wilson Sons",
@@ -8546,7 +8541,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMijgFBVV95cUxPV29ISWNRbHRrcThDLWc1LVFIV250TXZ6OGxFVkhlZlV0QWZnV1FQSG9XZkVpZG9nTHBJYjJWSjhQYzd3ZlI2eUZlcHVIRU5TTERISFpUa0Y1U2VPOGxBRXREZUs3V09OOEpjejlWbmpxQmVrTzFNemVDS3RIN0Y1ZmljRmpDSWNIanUzem1R?oc=5": {
    "title": "Court gives Stellantis, Ford access to inventory in Iowa dealership group floorplan fraud case",
@@ -8612,7 +8609,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1497406&numSequencia=1022112&numVersao=1": {
    "title": "[Fato Relevante] Dasa: Reorganização Societária",
@@ -8814,7 +8813,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUi1LZy1YeE5lLXdFaG0yc0NCOEotN0VZc3RDSXdjTDNPUlRYczVsNmFmZGgtUjdfZVQtVDF4ekE4WFpPOTdfczZzZWZVUGtfWGhNVVlUZUJnc3UxdzZVZWhKUW8xMldzZ0Ewb1VWVUxSNjNEZE5rVzlyei1ZNThiaEJsWG1TanVxeFZOaUJjVmF5dm16Uy1KaV9IZFk3dndWSXFhaElnWks?oc=5": {
    "title": "Organigram announces shareholder approval of acquisition of Sanity Group GmbH",
@@ -9482,7 +9483,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1504196&numSequencia=1028902&numVersao=1": {
    "title": "[Fato Relevante] Vamos: Verificação das Condições Precedentes do Aumento de Capital",
@@ -9734,7 +9737,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNb01FR1BZb1dvUGRVZER6b0RZTHdrYXBjdy1UUmlhSzZEcEpVa0NseWFTR0x6d3hOMldBV09IdHlHaUc5Um9SdVpYd2dXeDNYX0ZlRFh5QjVqN0R1aXRJME9RSVJXOU95dlRrRHFhUGtuXzdkblM2c3FTZzFTN1FsdXJ0MGF4aWoxM2lIWXFVNUlYUEhjeG45aVBQaFZqMkJvcWs2QXFyNFc0VXNySXdwSHkzcEZnc3V2QTJSZTRtYklmX3I5cWdVNGNlWlpoYXBqNU03MHk5Y1RMOUFVcFFraTZOQkd4UdIB6wFBVV95cUxQMjRPUDQxQnZPQnROb0ZheE5lcHlZRDhpbnNvbHgzNDI2UVNjNHFOZF9BbFRFSmlGaWNvbmtTNDF2M292OVRvdkRJMU03Q3BWVXVIaVE2eldQc3VhWUxtazNJOVJuLWZLSC12SnlkbUlkMW9qTkJVVVJ4ZExfeXRGX3hnTTdHMWhLYWllQll4Ry1oS3dYQklsQ1haMllxZDNBc2x5SFVUTzRRR2hRWGFlWlRPSzE4ZWZuRHN3U3VoczBGbXAteTBzYjZMNUtZWDNabTM4UlBKY3U4RkJUaFpQX3htTGdBcHZ5VGY4?oc=5": {
    "title": "Destapan el sueño frustrado de reconocido banquero colombiano que enfrenta el abismo por la quiebra",
@@ -9836,7 +9841,8 @@
     }
    ],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNbWdZS3Zna2xGX0t5MEJzb1RjTThWcE9ZNXZLdmsyZ0s5amNLMW9qVmVlbFNZMkxhdTNGZG5sSXpSNU40WUZBS1EwUV96MFRub3hzM1ROZWRwdjVuR0xfaGJiTTNXTzZid1pyWmJZQmZFWUV0VVU3d1lMMDVkM1RKSzNTbTB3cTIzdk9YNzIwcEEyekJ4bWVBMEZ5dlhnV1NlcVVRdmgwSE9QWmFta1FQaW1HbUtsX2pWNUVFM055NGdvblJxYTRiSEh6OHdEMVkzQlE?oc=5": {
    "title": "Golpe a la reputación arriesga la quiebra de exportador de salmón",
@@ -10677,7 +10683,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://br.investing.com": {
    "title": "JBS (JBSS32): mesmo com resultado fraco nos EUA, BTG mantém recomendação de compra",
@@ -10761,7 +10769,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://pbn.com/bankruptcy-judge-approves-sale-of-cvs-health-subsidiary-omnicare-to-genierx/": {
    "title": "Bankruptcy judge approves sale of CVS Health subsidiary Omnicare to GenieRX",
@@ -11197,7 +11207,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMitAFBVV95cUxOOGdGS2w4bEpIa19aa0VCc2tsUG80aUdWNm9lZEhQQ1pjNVg4YkVnV09CdkhQMnltUC1ZLXpQWi0wYjVNbkJOOFE0UVp1QTRJVGFtYTRpM0FZRVZ3TFY1cXc0ZjBRbmpkT0NrdUd4V0NvUm94b0dWbF95UUJsZkdHSXBzTnhuWGFsa3I4T2hhSVdZM1kxcW1jRjBiMTNwSm52WGRUdVhpbUFQSjJSdUdYNUhBVlI?oc=5": {
    "title": "Transmissora Aliança de Energia Elétrica anuncia aquisição de ativos da Energisa",
@@ -11430,7 +11442,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.seudinheiro.com/2026/empresas/conselho-de-administracao-da-rd-aprova-compra-de-fatia-do-gpa-na-stix-lvgb/": {
    "title": "Stix muda de mãos: conselho da RD Saúde (RADL3) aprova aquisição da fatia do GPA (PCAR3)",
@@ -11473,7 +11487,8 @@
     }
    ],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corrob_sources": []
   },
   "https://www.daily-sun.com/business/876610": {
    "title": "ACC probes Tk3 lakh crore fraud allegations against BAT",
@@ -11930,7 +11945,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.estadao.com.br/einvestidor/wealth-management/vale-vale3-novo-presidente-ceo-klabin-klbn11-embraer-embr3-selecao/": {
    "title": "Novo CEO da Vale (VALE3): o que Embraer e Klabin dizem sobre participação de diretores na concorrência",
@@ -12062,7 +12079,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/sp-eleva-rating-embraer-bbb-perspectiva-estavel/": {
    "title": "S&P eleva rating da Embraer (EMBR3) e mantém perspectiva estável",
@@ -12206,7 +12225,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://valor.globo.com/empresas/noticia/2026/05/31/sabesp-conclui-aquisio-de-participao-na-concessionria-castilho-por-r-307-milhes.ghtml": {
    "title": "Sabesp conclui aquisição de participação na concessionária Castilho por R$ 30,7 milhões",
@@ -12358,7 +12379,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://tagdlaw.com.br/cade-aprova-aquisicao-no-campo-de-argonauta-pela-petrobras/": {
    "title": "Cade aprova aquisição no campo de Argonauta pela Petrobras",
@@ -12394,7 +12417,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.moomoo.com/news/post/70864125/halliburton-expands-digital-capabilities-with-acquisition-of-informatiq": {
    "title": "Halliburton Expands Digital Capabilities With Acquisition of InformatiQ",
@@ -12937,7 +12962,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.moneytimes.com.br/chinesa-aier-eye-compra-fatia-do-patria-na-opty/": {
    "title": "Chinesa Aier Eye compra fatia do Patria na Opty",
@@ -12973,7 +13000,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://finance.yahoo.com/markets/stocks/articles/eu-scrutiny-puts-baker-hughes-030955772.html": {
    "title": "EU Scrutiny Puts Baker Hughes Acquisition Synergies And Valuation In Focus",
@@ -13057,7 +13086,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.jornaldocomercio.com/economia/2026/06/1252414-btg-pactual-banco-central-do-uruguai-autoriza-aquisicao-do-hsbc-local-por-uss-175-milhoes.html": {
    "title": "BTG Pactual: Banco Central do Uruguai autoriza aquisição do HSBC local por US$ 175 milhões",
@@ -14088,7 +14119,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://eixos.com.br/transicao-energetica/combio-capta-r-200-mi-junto-ao-santander-em-operacao-amparada-pelo-eco-invest/": {
    "title": "ComBio capta R$ 200 mi junto ao Santander em operação amparada pelo Eco Invest",
@@ -14482,7 +14515,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.stocktitan.net/sec-filings/JHG/schedule-13d-a-janus-henderson-group-plc-amended-major-shareholder-re-ad93c3953a0c.html": {
    "title": "Trian exits Janus Henderson (NYSE: JHG) as $52-per-share cash merger closes",
@@ -15462,42 +15497,6 @@
    "captured_ts": 1785294267,
    "cap_iso": "2026-07-29 00:04"
   },
-  "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml": {
-   "title": "CVM abre processo para apurar renúncia de presidente do conselho da Vale",
-   "url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
-   "summary": "CVM abre processo para apurar renúncia de presidente do conselho da Vale &nbsp;&nbsp; Folha de S.Paulo",
-   "source": "Folha de S.Paulo",
-   "domain": "www1.folha.uol.com.br",
-   "pub_ts": 1783494000,
-   "pub_iso": "2026-07-08 04:00",
-   "language": "pt",
-   "companies": [
-    "Vale"
-   ],
-   "event_ids": [
-    "investigacao_regulatoria"
-   ],
-   "events_by_company": {
-    "Vale": [
-     "investigacao_regulatoria"
-    ]
-   },
-   "mention_roles": {
-    "Vale": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "companies_attributed": [
-    "Vale"
-   ],
-   "context_companies": [],
-   "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
-  },
   "https://www.cnnbrasil.com.br/agro/sp-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/": {
    "title": "S&P rebaixa rating da Cosan e cita reestruturação da Raízen",
    "url": "https://www.cnnbrasil.com.br/agro/sp-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/",
@@ -15532,7 +15531,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMihwJBVV95cUxQbUVqTmhxVWYwTkFUZGRCeXktQmtqS2dIOGlUTnNOUlBERFBHUWp6S3RVb2NhZGl6S0ItV201YmJoVkJ0cFRiS2M1eVg3b0FyZTIwOE9LTGU0czYyVDVCOWZkTzY0dzBDR3FOaGl5ZjlrRUJ3a0ZwWXJwd0p2b2pfaGsxaXIyNHhNTDI4MDRkWWxKM0xQNXl1VVFEcjlCRDBnUlBkQjZ2d2NuTmtTZ0xxd3BYYm44cFBqS2NSLTJheDQyT3hWb24tVnA4b3B2TjRNd2Vza3F1a0V5d2Z0V2xIZVJkY1pGT2NqZVl1Njl5bld2b3dXU3dFTUlxTjhLNVRFd2VHQXJPONIBlgJBVV95cUxOSm1VYnl4YmhMU1luaVRadEt2SWE5RloyTk8xUExkdll2XzhTaTdLRnBQRGdVYWhwc2g5d05HdldTazMzdlI0OERONmlDNWlMVUVSdGF1amhKRWFBUGdpQXFsTGIxZGZmSmRJdzZxRWt1c3RJVjRlQThtZVZiQThlRmgyZWVsNjF3REdQWFR2eldFRndidlhESDV2Wl83aG1mWXZsOHA3c1l2bHJseHhYeHpzTlhPOWFjY2EzZXNfdnRONldnSm12THJJdlRUSWQ4c3k3QnZ4ckFlWU1ZSWM0em5teXYzVHVxMkNHdGFSN0JCX1hEV3p4cmh0Slowbk5WU3RMdzRvZXFJZnBQd2V1VThxX1JkQQ?oc=5": {
    "title": "Recuperação judicial do St Marche evidencia nova tendência entre empresas em crise, aponta especialista",
@@ -15647,6 +15648,12 @@
      "domain": "infomoney.com.br",
      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQenU5RmMyRVQtVm14QUxuMVpWYTVudDA0LWMyYll5ZVBKdmdFMFVUWDR3NDZLNXI5cXF4QlZNVGJ3S3N0UFpYalRORXA2OXc1WHVEX3M5ZVV5T2xKaFBOMGFjckpDQUlhV1F0Y1hjRHN1Y25uVmRYY19Ld3NTN0FrMXZScUpMeG5ha1kzSlBDaHBWZjVKb3Q0QWN3aDFLcGF4UFZ1cHNvdTl0SUtadXZxak14S01lYTNX0gG-AUFVX3lxTE9DLTFNWkNWc0N5b2ltVDQtdFBYeEpIaFBaZW5qYWprOHhtUUZielljdllXSUthY0t3cnBXNXZmUExmNDRDRExuTlRqNXJZbFdtQVhGZTR5UW5ZZzZzYzVmemNyaklWTk9QRDBwNE51SXU0SEpobHFCeFRpaDdrWlpjTU5oa2plem5NeGRJU3M4RG9qakFXWUZCMHo1UmR5Q09qdEZKNjg5Nnp0LVA3VkJUa3I4TldEUUFYVkFGZkE?oc=5",
      "when": "10/07 04:00"
+    },
+    {
+     "source": "Agência iNFRA",
+     "domain": "agenciainfra.com",
+     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOUlFYY0RoSm0tMDg0M3hBNDg2VnQ1ZUliZUZXdmFrSlNobHc0TFVoN1B0SFVMc2Z1N296MzhXYzlWQU84aWlMVzFrSko1dm9ORnQ3YmlmTGMzcUF4cXdlbjE0SHRqS2JBZzNBQ24wUnFzVXNVQnlqbWZFc1kwbmYybF9USEZJSkFETWEwOG9OcUw0b3h6eUlOMlhqYWFmelBpM0dxYmF3?oc=5",
+     "when": "09/07 18:46"
     }
    ],
    "captured_ts": 1785294267,
@@ -16101,7 +16108,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.infomoney.com.br/consumo/recuperacao-judicial-afeta-quem-esta-esperando-moveis-de-tokstok-e-mobly-veja/": {
    "title": "Recuperação judicial afeta quem está esperando móveis de Tok&Stok e Mobly? Veja",
@@ -16392,7 +16401,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOUEFrMy1PcHpGc0xKVkhSTS1OYVBRRHN1NFFZRW41bUZmc0dzT0NTYWQ1cFFiOFR1UGhWbmZiMlZHNlM4a3M5SWNIdGtLQ0dIVFo0TEtONDJDX1FWdlR4WWlteHB4VkFHUHVxR29wLUl5R0NMQ1kycjI4M3YyU0g3SkR2QVRUZ0RScTdIUnZOMXZNWGpwbmhXZHdlcURqdk4wbVRCUXdvdDJGSU5qWDlzRVZvaXF2TkxnSnh5NHl2WlpES053SFVIVlFZU0RkYnRFOHdCYTFRMjZkUENpdjhhMlo3cUxwc1BBNHpYSVp1ZS1KX3NC?oc=5": {
    "title": "Recorde de empresas em recuperação judicial expõe deterioração do ambiente de negócios no Brasil",
@@ -16448,7 +16459,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://valor.globo.com/financas/noticia/2026/07/15/isa-energia-lana-oferta-subsequente-de-aes-que-pode-alcanar-r-13-bilho.ghtml": {
    "title": "ISA Energia lança oferta subsequente de ações que pode alcançar R$ 1,3 bilhão",
@@ -17374,7 +17387,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://po-news-eg.net/first-dry/Capital-One-Faces-Earnings-Test-After-HighStakes-Discover-Acquisition-Bet-44-10168": {
    "title": "Capital One Faces Earnings Test After High-Stakes Discover Acquisition Bet",
@@ -17643,7 +17658,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaG5mX0M4TFQ0Z0kzTVRoQk8yd1UxSGx6a0lZZVh1ZUFjTXkxWW9sXzdlNnlBVzBzVkZQT0hidHgtaW52YWhHTnVjcUtwTDVGZElubUxqSWlOa2hIcFd2ZGtmNGFfTlhZeFNDdDJYLWRibmhXZ3dtOHNoaFR1SkhnbjNuSkFuOVNNNFZILTBDektKLXV0cWo4OUFSeTc1c190YlgzajJQcmM3WFdmLTVkNlRpeGhQSGhZTktLYTdRUk1MZ2o2UWhvMlpSWGJQbjA?oc=5": {
    "title": "Nova Iguaçu: Empresa em recuperação judicial já recebeu cerca R$ 425 milhões da Prefeitura",
@@ -17795,7 +17812,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMie0FVX3lxTFBTY2VIWDgwSXpIanRjdW00dGpFeW96azhoU1VlX1h2ZW9JUklqZ09XQ0dnNERjcG5rSXQ4ZHR5ZXp5SWM3NVdqcVZfQWlYMFcwLTAxbVJraTBERDBzZHZMRGItbVc5a3BqeFQtWVdTZUNMVHhCemtLM01ydw?oc=5": {
    "title": "MOVE atinge mínima histórica após falência da MVMT Labs: o que acontece agora?",
@@ -17970,7 +17989,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPclhoRUZVclhNeUpIbGwwUG00c085Z09BWks1dmhzZWpKVk9IZUNrOTJ3NE1KTG5lVjZDNUQ0Q1ljUWx0QXVzZk9fOHdrWkUyVjZHejV2bFg5LW41ZXZfalp4VnJZRURtNG0xTDI1MGtTX0Z5Q3ZMR0ttdy1mZDhRcC1IQXk4M1FFdW5UTmpyaV8yWXVRd2ZFbG5Zbm1rWkZCOUJQaW4yLVJ2LXZoclRzSmkwUlBPVnRQQ3BBNnpJam9VY3Ytd1NWSEpoZ2k3VS1MSDAzaVVn?oc=5": {
    "title": "Gigante das autopeças entra em falência com mais de 11 bilhões em dívidas e avança para liquidação",
@@ -18144,7 +18165,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.canalenergia.com.br/noticias/53352151/energisa-mato-grosso-capta-r-350-milhoes-em-debentures": {
    "title": "Energisa Mato Grosso capta R$ 350 milhões em debêntures",
@@ -18285,7 +18308,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-destituicao-de-conselheiro-da-vale.shtml": {
    "title": "CVM abre processo para apurar destituição de conselheiro da Vale",
@@ -18321,7 +18346,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMizwFBVV95cUxQdm05elk1TzJYdmJ5T1gxUGxNRy0wVW9MbUJFQWRCZzVFSTN0RHU0aFdMZWlpWng4X3ZMcnhQQVllMnNiMl9nYTJSYnl1RmdaOW96STh2dWZSTndHOXI4cGxzTktuN1RSdHNURnRXWnBEazdMNXU4bFpXaUNYTHVVWUN3YzdBNkZxd3dxN2I0Z2xHOGZVNExnSE1KeDlTcEpaVTFNakR4cTFzTnBsZ0t4Q2ZkTGNRdWVuaHlxVWVITkY0YUNoMFJCM0Ria1BFMWs?oc=5": {
    "title": "Decretação de falência permite extinção de execuções suspensas durante recuperação judicial",
@@ -18385,7 +18412,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOSjJkTC1VeHhZODl2dG9MTlpkUkROWUhXMkt5TG4tMDBrT3lpWldFMWg1T2dHSnpIRHU4ZDFpTVdzeVVHSldlY2RwOUxkYmVSSmxBZHhBNkNVelNfU2Z3eEg0VENTd0dwNk9iZVRmT3hBSXhlQk5LbXp6aG9qd0h3QWpnWXhhN1daYTBiSjN6M0h5QlN6VUZlbVRBWVd6NVdPWEVoQzMwdkRXRy1MaGVSSk52Z3dpVlQyam5GNGlYV3ZCVzg?oc=5": {
    "title": "Poolin foi a maior pool de mineração de bitcoin e agora está entrando com pedido de falência",
@@ -18575,6 +18604,12 @@
      "domain": "brasil247.com",
      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNOHdCS3k2RUsxQ2VSU0JvX21CZ3YzT1Q1UGFKaUQzaEJvbk9hZUZqWDlUVUVYa3BObEh6YlpwWkYxWUV2N3A0Z2VmcWJiMEUxR0E2X1k1XzFKNWxQSFdMLTRGS3BiSTB3TV9fZWFoWUpVSFhSS1VRcERZQ2JEajUteDQ4dE8yODBGM0w5Vk5nanh6ek1u?oc=5",
      "when": "24/07 18:44"
+    },
+    {
+     "source": "MegaWhat",
+     "domain": "megawhat.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQaWVWYktZOTM5Rlo4Q0ZnVlUxQ05DSGlWeTZrRHRIazJ3VDVTOG1vc1l4NktRd0RSRzBxbFU5Y2lrNnRFNmtjM3BxbXhadnl3Zzl3YmtWMXVLSFBjekNyd2FsNUpnakhEQ005Z0JKemtCWERSY0ktZjBzVVZ3ZHZIbHlPVlh6WlY2T0g3QWcybllEc1RtbVJaTl9Pd09aZmVEQ3ZZVEZmQVFVcXZPTXpyRC1VZ2NraWo4Tm12Q2Y5RQ?oc=5",
+     "when": "24/07 11:12"
     }
    ],
    "captured_ts": 1785294267,
@@ -19013,7 +19048,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785294267,
-   "cap_iso": "2026-07-29 00:04"
+   "cap_iso": "2026-07-29 00:04",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://api.mziq.com/mzfilemanager/v2/d/cecb3d3e-6bd6-4edd-b9b3-3cacde780cac/322ef558-06df-b45c-aaf6-55a0e489bbeb?origin=2": {
    "title": "FATO RELEVANTE - AUMENTO DE CAPITAL SOCIAL POR EXERCÍCIO DE OPÇÕES DE COMPRA DE AÇÕES",
@@ -19042,9 +19079,157 @@
    "trust_override": "oficial",
    "captured_ts": 1785294267,
    "cap_iso": "2026-07-29 00:04"
+  },
+  "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNdTNNVmxWWDFCYkxsSVp4aGo4Z1ppaHBYckVhcVVVQU5GX0MzeXFidEtULVZ6UGJZc1ZINnRlRVQwaGJSNkswSk1aZ2J6dV9aaldZYTNPU2Q0clRlc2pfaC1VQXVCNE5fVTBEcGVGLW10Q1dxN1A2aXYwLWpyVDhHeEFadGlnTEZnYWs4djMzdU1qeXRlX19GM3lTQTNrT2lVdXItTFlwU3RDOGptMXJCeUM0SHR5R2R0R1Fvak4xRXN0cmh6cjdnWmdkOTloenBkeFNuOUsxRDk?oc=5": {
+   "title": "EQT anuncia resultados preliminares e aumento de sua oferta pública de aquisição de certas notas sênior",
+   "url": "https://www.prnewswire.com/news-releases/eqt-announces-early-results-and-upsizing-of-its-tender-offer-for-certain-senior-notes-302722789.html",
+   "summary": "EQT anuncia resultados preliminares e aumento de sua oferta pública de aquisição de certas notas sênior &nbsp;&nbsp; PR Newswire",
+   "source": "PR Newswire",
+   "domain": "prnewswire.com",
+   "pub_ts": 1774335600,
+   "pub_iso": "2026-03-24 04:00",
+   "language": "en",
+   "title_original": "EQT Announces Early Results and Upsizing of its Tender Offer for Certain Senior Notes",
+   "summary_original": "EQT Announces Early Results and Upsizing of its Tender Offer for Certain Senior Notes &nbsp;&nbsp; PR Newswire",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1785327100,
+   "cap_iso": "2026-07-29 09:11"
+  },
+  "https://www.cnbc.com/2026/07/20/kalshi-traders-think-coinbases-trading-volume-will-fall-again.html": {
+   "title": "Resultados de negociação da Coinbase podem ficar abaixo das expectativas, segundo mercados de previsão",
+   "url": "https://www.cnbc.com/2026/07/20/kalshi-traders-think-coinbases-trading-volume-will-fall-again.html",
+   "summary": "Especuladores acham que no relatório de resultados do segundo trimestre da empresa, será mostrado que o volume de negociação caiu pelo terceiro trimestre consecutivo.",
+   "source": "CNBC · Finance",
+   "domain": "cnbc.com",
+   "pub_ts": 1784551310,
+   "pub_iso": "2026-07-20 09:41",
+   "language": "en",
+   "title_original": "Coinbase trading results may fall short of expectations, according to prediction markets",
+   "summary_original": "Speculators think in the company's second quarter earnings report, it will show trading volume fell for a third consecutive quarter.",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "lucro_abaixo_consenso"
+   ],
+   "trust_override": "imprensa",
+   "captured_ts": 1785327100,
+   "cap_iso": "2026-07-29 09:11"
+  },
+  "https://news.google.com/rss/articles/CBMixwFBVV95cUxNQzM4QU1pa1drZkllRHlBZFFUX3h2TlllcUJKcDQyQXZ5bVJHRnlIa1hHREl3VVdtYUJwaVJlVm91SGU4YUY2UG1TQWFnRFhtc0x5X2d1c3ZtOGxQRnlteXZwbld5RjlYbnJHSUZHN1Qydkxka29LRDhuYUJxNTZzYjc3YkJ5THhsZ0ZoNFVqSHlXUVlXOHMyNUhhOHZzaDJYbl9WUVlOMUlqa3VGbEFST09KSk85RGFLNlVscm5lVGhMOGR0WlV3?oc=5": {
+   "title": "Recuperação judicial exige equilíbrio para preservar empresas e credores, diz Marcello Perino",
+   "url": "https://www.justicaemfoco.com.br/noticias/recuperacao-judicial-exige-equilibrio-preservar-empresas-credores--diz-marcello-perino",
+   "summary": "Recuperação judicial exige equilíbrio para preservar empresas e credores, diz Marcello Perino &nbsp;&nbsp; Justiça em Foco",
+   "source": "Justiça em Foco",
+   "domain": "justicaemfoco.com.br",
+   "pub_ts": 1784741182,
+   "pub_iso": "2026-07-22 14:26",
+   "language": "es",
+   "title_original": "Recuperação judicial exige equilíbrio para preservar empresas e credores, diz Marcello Perino",
+   "summary_original": "Recuperação judicial exige equilíbrio para preservar empresas e credores, diz Marcello Perino &nbsp;&nbsp; Justiça em Foco",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1785327100,
+   "cap_iso": "2026-07-29 09:11"
+  },
+  "https://news.google.com/rss/articles/CBMihAFBVV95cUxObWN5RHE0eXRLZTUtMjRJU3U0VGxwZElDNGUtYXA5ZWMtUkNaUDJiTEpBOVo0NnpSVHYxWEQ3YmdGMTFWN19ubmFNRnNmd3luN1hBZk9iOWdQNkNvMzRmTFF3UmVRR05WSk0ydk9jTlczb0dLWHdhWExMMy1ob256WEZZanc?oc=5": {
+   "title": "Thopen, empresa de GD da Denham, prepara pedido de RJ",
+   "url": "https://braziljournal.com/thopen-empresa-de-gd-da-denham-prepara-pedido-de-rj/",
+   "summary": "Thopen, empresa de GD da Denham, prepara pedido de RJ &nbsp;&nbsp; Brazil Journal",
+   "source": "Brazil Journal",
+   "domain": "braziljournal.com",
+   "pub_ts": 1784969309,
+   "pub_iso": "2026-07-25 05:48",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "corroborations": [
+    {
+     "source": "Canal Solar",
+     "domain": "canalsolar.com.br",
+     "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE4wR0xEcHB3anZOcHozSmlJaWxKelhwRXIwRmszUUxYMXd4QzMzRkhHQzdyaDlacnU5cFEzSkNTeVdIUk9DYmJZSGVrcU5yczNndzB1b050aTZwMDhhQzBqbWhudzdyaDBldXp1OHdUaWdQdw?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Canal Solar",
+     "domain": "canalsolar.com.br",
+     "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE4wR0xEcHB3anZOcHozSmlJaWxKelhwRXIwRmszUUxYMXd4QzMzRkhHQzdyaDlacnU5cFEzSkNTeVdIUk9DYmJZSGVrcU5yczNndzB1b050aTZwMDhhQzBqbWhudzdyaDBldXp1OHdUaWdQdw?oc=5",
+     "when": "27/07 08:54"
+    }
+   ],
+   "captured_ts": 1785327100,
+   "cap_iso": "2026-07-29 09:11"
+  },
+  "https://timesbrasil.com.br/empresas-e-negocios/gerdau-transportadoras-falencia-pedagio/": {
+   "title": "DENÚNCIA EXCLUSIVA: Gerdau descumpre lei federal e leva transportadoras brasileiras à beira da falência",
+   "url": "https://timesbrasil.com.br/empresas-e-negocios/gerdau-transportadoras-falencia-pedagio/",
+   "summary": "DENÚNCIA EXCLUSIVA: Gerdau descumpre lei federal e leva transportadoras brasileiras à beira da falência &nbsp;&nbsp; Times Brasil | CNBC",
+   "source": "Times Brasil | CNBC",
+   "domain": "timesbrasil.com.br",
+   "pub_ts": 1785243780,
+   "pub_iso": "2026-07-28 10:03",
+   "language": "pt",
+   "companies": [
+    "Gerdau"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "events_by_company": {
+    "Gerdau": [
+     "falencia"
+    ]
+   },
+   "mention_roles": {
+    "Gerdau": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "agravamento",
+     "direction_hint": ""
+    }
+   },
+   "companies_attributed": [
+    "Gerdau"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785327100,
+   "cap_iso": "2026-07-29 09:11"
+  },
+  "https://news.google.com/rss/articles/CBMibEFVX3lxTFBHS0Nqa2pvd2x6N3R5NzJDcm5xUjhtNjBsTnRSYzZzNlVoZVduMlVWVDhPN0FEdWNHTEJmMXpGbEQ2NFFzWTRqR1ZON2NJZ2Y3YW5IUXZkU1pBMzVMRm4xLUFzTVZlUzN6SjhBMA?oc=5": {
+   "title": "CVLG|Covenant Logistics Group Inc|Preço:43.731|Var. %:-1.219",
+   "url": "https://www.tradingkey.com/pt/markets/stocks/cvlg/financials",
+   "summary": "CVLG|Covenant Logistics Group Inc|Preço:43.731|Var. %:-1.219 &nbsp;&nbsp; TradingKey",
+   "source": "TradingKey",
+   "domain": "tradingkey.com",
+   "pub_ts": 1785269335,
+   "pub_iso": "2026-07-28 17:08",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "covenant_breach"
+   ],
+   "captured_ts": 1785327100,
+   "cap_iso": "2026-07-29 09:11"
   }
  },
- "run_count": 49,
+ "run_count": 50,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -22377,27 +22562,43 @@
   "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQV1l2S0F5blR2RGNvc3RqdXRKeVh5QjdVOTZITExPWTI3WGF5MmFicG5kWTJobVNHZDgwb0xmZzQ0ajNYTDhPSTlpQ0dNaUQ5cmtiSzJabkU2M0U2bWtrSVZuR2NxSUZGQTFSeklzMFhJZlFoU1Bsd0E1WWlKNzc3UldYTEhkSlZZcDBjYktWVldaNzZvbG92cFZ5cmQ5MzNmOFlqZ2RFZ2g0Zw?oc=5": {
    "url": "https://www.hartenergy.com/energy-market-transactions/acquisitions-and-divestitures/he-halliburton-ofs-ma/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMikAFBVV95cUxNNmd1X2F4azhuYUdEbUJ3WDltQ01vYjYzZ0lJaURpdWY0UmFEYVJGVHp1Q05NaEN3OWRBdUpET1BMNlBtYzEwNl8xN040SHE2S29ZZ2JaOXVmdzVKV3cyTkVzanBVc2VBZGlKVk9PRXRIdUZfU1dZeE9WQTVCY3JSbmdhcVlwcjVzMXRQU2ZpNks?oc=5": {
+   "url": "https://timesbrasil.com.br/empresas-e-negocios/gerdau-transportadoras-falencia-pedagio/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNdTNNVmxWWDFCYkxsSVp4aGo4Z1ppaHBYckVhcVVVQU5GX0MzeXFidEtULVZ6UGJZc1ZINnRlRVQwaGJSNkswSk1aZ2J6dV9aaldZYTNPU2Q0clRlc2pfaC1VQXVCNE5fVTBEcGVGLW10Q1dxN1A2aXYwLWpyVDhHeEFadGlnTEZnYWs4djMzdU1qeXRlX19GM3lTQTNrT2lVdXItTFlwU3RDOGptMXJCeUM0SHR5R2R0R1Fvak4xRXN0cmh6cjdnWmdkOTloenBkeFNuOUsxRDk?oc=5": {
+   "url": "https://www.prnewswire.com/news-releases/eqt-announces-early-results-and-upsizing-of-its-tender-offer-for-certain-senior-notes-302722789.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMibEFVX3lxTFBHS0Nqa2pvd2x6N3R5NzJDcm5xUjhtNjBsTnRSYzZzNlVoZVduMlVWVDhPN0FEdWNHTEJmMXpGbEQ2NFFzWTRqR1ZON2NJZ2Y3YW5IUXZkU1pBMzVMRm4xLUFzTVZlUzN6SjhBMA?oc=5": {
+   "url": "https://www.tradingkey.com/pt/markets/stocks/cvlg/financials",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785294270,
-  "iso": "29 jul 2026 · 00:04 BRT",
+  "ts": 1785327104,
+  "iso": "29 jul 2026 · 09:11 BRT",
   "status": {
+   "Gerdau": {
+    "status": "critico",
+    "score": 87
+   },
    "Vale": {
-    "status": "critico",
-    "score": 87
-   },
-   "JBS": {
-    "status": "critico",
-    "score": 87
-   },
-   "Rumo": {
     "status": "critico",
     "score": 86
    },
+   "JBS": {
+    "status": "critico",
+    "score": 86
+   },
+   "Rumo": {
+    "status": "critico",
+    "score": 85
+   },
    "Engie Brasil": {
     "status": "critico",
-    "score": 80
+    "score": 79
    },
    "Tok&Stok": {
     "status": "critico",
@@ -22405,11 +22606,11 @@
    },
    "Santander Brasil": {
     "status": "atencao",
-    "score": 67
+    "score": 66
    },
    "BTG Pactual": {
     "status": "critico",
-    "score": 62
+    "score": 61
    },
    "CVS Health": {
     "status": "critico",
@@ -22421,11 +22622,11 @@
    },
    "Samarco Mineração": {
     "status": "critico",
-    "score": 52
+    "score": 51
    },
    "Axia Energia": {
     "status": "atencao",
-    "score": 48
+    "score": 47
    },
    "Petrobras": {
     "status": "atencao",
@@ -22437,11 +22638,7 @@
    },
    "Baker Hughes": {
     "status": "monitorar",
-    "score": 33
-   },
-   "Gerdau": {
-    "status": "monitorar",
-    "score": 31
+    "score": 32
    },
    "Aegea Saneamento": {
     "status": "critico",
@@ -22483,21 +22680,21 @@
     "status": "monitorar",
     "score": 22
    },
-   "Ultrapar": {
-    "status": "atencao",
-    "score": 21
-   },
    "Natura &Co": {
-    "status": "monitorar",
-    "score": 21
-   },
-   "Albioma": {
     "status": "monitorar",
     "score": 21
    },
    "EQT Corporation": {
     "status": "monitorar",
     "score": 21
+   },
+   "Ultrapar": {
+    "status": "atencao",
+    "score": 20
+   },
+   "Albioma": {
+    "status": "monitorar",
+    "score": 20
    },
    "Cemig": {
     "status": "atencao",
@@ -22553,7 +22750,7 @@
    },
    "Sabesp": {
     "status": "monitorar",
-    "score": 10
+    "score": 9
    },
    "JPMorgan Chase": {
     "status": "monitorar",
