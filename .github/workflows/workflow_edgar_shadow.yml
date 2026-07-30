@@ -21,12 +21,13 @@ on:
         type: string
 
 permissions:
-  contents: read          # somente leitura: o job não pode commitar
+  contents: read
 
 jobs:
   edgar-shadow:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -49,6 +50,7 @@ jobs:
         run: |
           python - <<'PY'
           import yaml
+
           c = yaml.safe_load(open("${{ inputs.config }}", encoding="utf-8"))
           assert c.get("edgar_scoring_enabled") is False, \
               "edgar_scoring_enabled DEVE ser false na 4H.3B"
@@ -108,6 +110,7 @@ jobs:
             echo "::error::O runner NÃO alcançou data.sec.gov — os CSVs são PLACEHOLDERS, não dados reais."
             exit 1
           fi
+
           for F in out_4h3b/edgar_dry_run_real_por_emissor.csv \
                    out_4h3b/edgar_runtime_shadow_classification.csv; do
             if [ -f "$F" ]; then
@@ -127,12 +130,14 @@ jobs:
             if [ -f "$f" ]; then
               new=$(sha256sum "$f" | cut -d' ' -f1)
               if [ "$new" != "$old" ]; then
-                echo "::error::$f FOI ALTERADO ($old -> $new)"; FAIL=1
+                echo "::error::$f FOI ALTERADO ($old -> $new)"
+                FAIL=1
               else
                 echo "OK inalterado: $f"
               fi
             else
-              echo "::error::$f DESAPARECEU"; FAIL=1
+              echo "::error::$f DESAPARECEU"
+              FAIL=1
             fi
           done < out_4h3b/hashes_antes.txt
           exit $FAIL
@@ -143,36 +148,68 @@ jobs:
           for f in risk_history.json config_risco.yaml index.html dashboard_risco.html; do
             [ -f "$f" ] && FILES="$FILES $f"
           done
+
           if [ -n "$FILES" ]; then
             echo "Verificando git diff em:$FILES"
             git diff --exit-code -- $FILES
           else
             echo "Nenhum dos arquivos monitorados existe no repositório."
           fi
-          # nada pode ter sido criado/alterado fora de out_4h3b/
+
+          # Remover arquivos temporários criados pela execução
+          rm -f .cik_cache.json
+          find . -type d -name "__pycache__" -prune -exec rm -rf {} +
+          rm -rf .pytest_cache
+
+          # Nada pode ter sido criado/alterado fora de out_4h3b/
           git status --porcelain | grep -v '^?? out_4h3b/' > /tmp/dirty || true
           if [ -s /tmp/dirty ]; then
-            echo "::error::Arquivos alterados fora de out_4h3b/:"; cat /tmp/dirty; exit 1
+            echo "::error::Arquivos alterados fora de out_4h3b/"
+            cat /tmp/dirty
+            exit 1
           fi
+
           echo "OK — árvore de trabalho limpa fora de out_4h3b/"
 
       - name: Verificar critério de shadow no run_meta
         if: ${{ inputs.modo == 'shadow' }}
         run: |
           python - <<'PY'
-          import json, pathlib, sys
+          import json
+          import pathlib
+          import sys
+
           p = pathlib.Path("out_4h3b/edgar_runtime_shadow_run_meta.json")
           if not p.exists():
-              print("::warning::run_meta de shadow ausente (nenhum filing coletado?)"); sys.exit(0)
+              print("::warning::run_meta de shadow ausente (nenhum filing coletado?)")
+              sys.exit(0)
+
           m = json.loads(p.read_text(encoding="utf-8"))
-          for k, exp in [("persisted_records", 0), ("history_changed", False),
-                         ("dashboard_changed", False), ("backfill", False),
-                         ("scoring_enabled", False)]:
+          for k, exp in [
+              ("persisted_records", 0),
+              ("history_changed", False),
+              ("dashboard_changed", False),
+              ("backfill", False),
+              ("scoring_enabled", False),
+          ]:
               assert m.get(k) == exp, f"{k}={m.get(k)!r}, esperado {exp!r}"
-          print("OK — critério de shadow satisfeito:", json.dumps(
-              {k: m.get(k) for k in ("filings_collected", "filings_classified",
-                                     "filings_with_event", "simulated_score_total",
-                                     "persisted_records")}, ensure_ascii=False))
+
+          print(
+              "OK — critério de shadow satisfeito:",
+              json.dumps(
+                  {
+                      k: m.get(k)
+                      for k in (
+                          "filings_collected",
+                          "filings_classified",
+                          "filings_with_event",
+                          "simulated_score_total",
+                          "persisted_records",
+                      )
+                  },
+                  ensure_ascii=False,
+              ),
+          )
           PY
 
       - name: Upload dos artifacts reais
