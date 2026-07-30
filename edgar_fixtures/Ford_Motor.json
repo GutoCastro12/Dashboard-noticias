@@ -1,0 +1,56 @@
+{
+ "filings": {
+  "recent": {
+   "form": [
+    "8-K",
+    "8-K",
+    "8-K",
+    "10-Q",
+    "8-K",
+    "10-K",
+    "4",
+    "4"
+   ],
+   "filingDate": [
+    "2026-07-24",
+    "2026-07-02",
+    "2026-06-05",
+    "2026-05-01",
+    "2026-05-01",
+    "2026-02-06",
+    "2026-07-10",
+    "2026-06-30"
+   ],
+   "accessionNumber": [
+    "0000037996-26-000143",
+    "0001997303-26-000003",
+    "0000037996-26-000101",
+    "0000037996-26-000090",
+    "0000037996-26-000088",
+    "0000037996-26-000013",
+    "0000037996-26-000200",
+    "0000037996-26-000190"
+   ],
+   "primaryDocument": [
+    "d1.htm",
+    "d2.htm",
+    "d3.htm",
+    "f10q.htm",
+    "d5.htm",
+    "f10k.htm",
+    "f4a.htm",
+    "f4b.htm"
+   ],
+   "primaryDocDescription": [
+    "Current report",
+    "Current report",
+    "Current report",
+    "Quarterly report",
+    "Current report",
+    "Annual report",
+    "Statement of changes",
+    "Statement of changes"
+   ]
+  }
+ }
+}
