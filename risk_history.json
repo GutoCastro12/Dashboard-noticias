@@ -15333,7 +15333,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785345276,
-   "cap_iso": "2026-07-29 14:14"
+   "cap_iso": "2026-07-29 14:14",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdk9YaXFtODh2Z21MZEV3bWdQSU1oOWR4VkhBejJTbi1odmlWVng1Vi1Na1hfYWFMOUFWSEQyOHVidEZwU283aWU3WDczTGltaE5rOTE0TFpzX0ZuNzZ2M0JqTHA4bFRGaGdGclV6dHFBbFFOMlYwZzZFeHpvbmdRQlpiRDU0Z3RkUl9vZlhnSklVd2VJYmpYb211U0NUekhvenV4dExIaXlyUHg1dVE?oc=5": {
    "title": "Tech Sector Highlights: Salesforce Acquisition and Accenture Earnings Report",
@@ -22129,9 +22131,78 @@
    "context_companies": [],
    "captured_ts": 1785442709,
    "cap_iso": "2026-07-30 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPRjJNamNkcFZmQ08xRmhoMWs4QTBiWEJ2ZTYzT0NVRG91NFJRVWdweFlmcVIzdlVIbmtSM0RDckh3a2IxYmZtbHBBQ0x2ZWQ2c1NFYjZCT0NwM2h5aWVPbDJRbGFlMGhmOE80Q0YwMEdGRF9yM3o3M2FpY1c3T1ZQNC1fZHdBRDdTUVo5dDlZRVVmLUJfSjE1bHduUHd0UTIxR0UySXV3dW1JZUdtekp5SEUtNkRPMUIyVG00d2xLM1gycXRCRlBQekpZRV9KY2QtS0VId2tB?oc=5": {
+   "title": "Prudential (PRU) Faces Customer Fraud Claims, Considers Contract Suspension",
+   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPRjJNamNkcFZmQ08xRmhoMWs4QTBiWEJ2ZTYzT0NVRG91NFJRVWdweFlmcVIzdlVIbmtSM0RDckh3a2IxYmZtbHBBQ0x2ZWQ2c1NFYjZCT0NwM2h5aWVPbDJRbGFlMGhmOE80Q0YwMEdGRF9yM3o3M2FpY1c3T1ZQNC1fZHdBRDdTUVo5dDlZRVVmLUJfSjE1bHduUHd0UTIxR0UySXV3dW1JZUdtekp5SEUtNkRPMUIyVG00d2xLM1gycXRCRlBQekpZRV9KY2QtS0VId2tB?oc=5",
+   "summary": "Prudential (PRU) Faces Customer Fraud Claims, Considers Contract Suspension &nbsp;&nbsp; GuruFocus",
+   "source": "GuruFocus",
+   "domain": "gurufocus.com",
+   "pub_ts": 1776754800,
+   "pub_iso": "2026-04-21 04:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "fraude"
+   ],
+   "corroborations": [
+    {
+     "source": "Nikkei Asia",
+     "domain": "asia.nikkei.com",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNX0RReGR3Z2p4WHE0QmNJbFhMMHdIWGdNY1Rza3RCZkwzclFVeFNCT254OWQxX1NkbkhCY1FiTWQ4NmZoUDVBbl9aOTFNSTNKMjlLVWFCMjJ2M2cydmg2UE8yU3hOX3RYRG5tNUtJdlo1SjgycnBOVVFQSTFMcWR0UURMWS11bUVaYUtrT1JfYUtjU05VZFJTbm8yb1NSeDFsVWJjMUEyNHF0dWtpMU5CaF9kN08?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Nikkei Asia",
+     "domain": "asia.nikkei.com",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNX0RReGR3Z2p4WHE0QmNJbFhMMHdIWGdNY1Rza3RCZkwzclFVeFNCT254OWQxX1NkbkhCY1FiTWQ4NmZoUDVBbl9aOTFNSTNKMjlLVWFCMjJ2M2cydmg2UE8yU3hOX3RYRG5tNUtJdlo1SjgycnBOVVFQSTFMcWR0UURMWS11bUVaYUtrT1JfYUtjU05VZFJTbm8yb1NSeDFsVWJjMUEyNHF0dWtpMU5CaF9kN08?oc=5",
+     "when": "22/04 04:00"
+    }
+   ],
+   "captured_ts": 1785447224,
+   "cap_iso": "2026-07-30 18:33"
+  },
+  "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml": {
+   "title": "CVM abre processo para apurar renúncia de presidente do conselho da Vale",
+   "url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
+   "summary": "CVM abre processo para apurar renúncia de presidente do conselho da Vale &nbsp;&nbsp; Folha de S.Paulo",
+   "source": "Folha de S.Paulo",
+   "domain": "www1.folha.uol.com.br",
+   "pub_ts": 1783494000,
+   "pub_iso": "2026-07-08 04:00",
+   "language": "pt",
+   "companies": [
+    "Vale"
+   ],
+   "event_ids": [
+    "investigacao_regulatoria"
+   ],
+   "events_by_company": {
+    "Vale": [
+     "investigacao_regulatoria"
+    ]
+   },
+   "mention_roles": {
+    "Vale": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "companies_attributed": [
+    "Vale"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785447224,
+   "cap_iso": "2026-07-30 18:33"
   }
  },
- "run_count": 57,
+ "run_count": 58,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -25584,11 +25655,19 @@
   "https://news.google.com/rss/articles/CBMipwFBVV95cUxPaS1sSHdvQ2JmUERkWGlYaVN3cUl5aEpZdWEwMHpBQzg3NEYtU3h2d0F3LWdmdW1fem9qLXJaZV9fUkdTdnJPZXJoa1phVW40S2tmdzV1LUJ5dEx6aFVVcWh3RExGSnB1akktRTZKS2FucGRBUnN6S1poSWh0bUo3N1NUcmo3dHA3TnhrVG9XT1lwcjJYVU5nV0JvS2FmV3g5UlJoQU5Zaw?oc=5": {
    "url": "https://www.vpm.org/news/2026-05-18/dominion-energy-nextera-merger-electric-utility-virginia-florida-67b",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMijwFBVV95cUxNNVpyU3dJYTRHcDAtcWU1d1o3UFJDOEZIWHhfTUQxZVk4b19fSmNmREdwUnhVbTJJaDRqazBnVUV6ZDJ0dEhtME1hU1lZN0p5VV85aGg0ZEVxakg0LWc4SG5wWmlZS2xLTkV1MWlnWnJqN3BIRXpFczVvTk40azZ1VUtvT0RWYzlsY0VaRHR0b9IBlAFBVV95cUxOLVVVdUViWElwTG9obmJ6VnFZaXNQcUlsV25pbTdFU1liZHotQVd3S29NNVM4MUxIUEtBMHRVWjhEVjNBV3Nad29mSlh0SjBXTHEtcHdfYVVnMUgyUUF4QWhhVzJMVElkYzZKUWsxcDV4Vkc0c2w1Um11aXBqd3FjaVJQcnA4UFRpOFRTZGFqc3VRVGQ5?oc=5": {
+   "url": "https://www.cnbc.com/2025/05/15/unitedhealth-group-stock-doj-investigation-report.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPRjJNamNkcFZmQ08xRmhoMWs4QTBiWEJ2ZTYzT0NVRG91NFJRVWdweFlmcVIzdlVIbmtSM0RDckh3a2IxYmZtbHBBQ0x2ZWQ2c1NFYjZCT0NwM2h5aWVPbDJRbGFlMGhmOE80Q0YwMEdGRF9yM3o3M2FpY1c3T1ZQNC1fZHdBRDdTUVo5dDlZRVVmLUJfSjE1bHduUHd0UTIxR0UySXV3dW1JZUdtekp5SEUtNkRPMUIyVG00d2xLM1gycXRCRlBQekpZRV9KY2QtS0VId2tB?oc=5": {
+   "url": "https://gurufocus.com",
+   "exact": false
   }
  },
  "last_run": {
-  "ts": 1785445667,
-  "iso": "30 jul 2026 · 18:07 BRT",
+  "ts": 1785447228,
+  "iso": "30 jul 2026 · 18:33 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
@@ -25678,11 +25757,11 @@
     "status": "monitorar",
     "score": 23
    },
-   "B3": {
-    "status": "monitorar",
-    "score": 22
-   },
    "Natura &Co": {
+    "status": "monitorar",
+    "score": 21
+   },
+   "B3": {
     "status": "monitorar",
     "score": 21
    },
