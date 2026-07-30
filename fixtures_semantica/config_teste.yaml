@@ -1,0 +1,850 @@
+_comment: Fixture AUTOCONTIDA da auditoria semântica. Não usar config de produção.
+watchlist:
+- name: Ambev
+  asset_class: listada
+  ticker: ABEV3
+  country: Brasil
+  tier: 1
+  aliases:
+  - Ambev
+  - ABEV3
+- name: BTG Pactual
+  asset_class: listada
+  ticker: BPAC11
+  country: Brasil
+  tier: 1
+  aliases:
+  - BTG Pactual
+  - BTG
+  - BPAC11
+  - BPAC3
+  - BPAC5
+- name: Banco do Brasil
+  asset_class: listada
+  ticker: BBAS3
+  country: Brasil
+  tier: 1
+  aliases:
+  - Banco do Brasil
+  - BBAS3
+- name: Itaú Unibanco
+  asset_class: listada
+  ticker: ITUB4
+  country: Brasil
+  tier: 1
+  aliases:
+  - Itaú Unibanco
+  - Itaú
+  - Itau
+  - ITUB4
+  - ITUB3
+- name: Suzano
+  asset_class: listada
+  ticker: SUZB3
+  country: Brasil
+  tier: 1
+  aliases:
+  - Suzano
+  - SUZB3
+- name: Vale
+  asset_class: listada
+  ticker: VALE3
+  country: Brasil
+  tier: 1
+  aliases:
+  - Vale
+  - Vale S.A.
+  - VALE3
+- name: Axia Energia
+  asset_class: listada
+  ticker: AXIA3
+  country: Brasil
+  tier: 2
+  aliases:
+  - Axia Energia
+  - AXIA3
+  - AXIA5
+  - AXIA6
+- name: Bunge
+  asset_class: listada
+  ticker: BG
+  country: Suíça
+  tier: 2
+  aliases:
+  - Bunge
+- name: Gerdau
+  asset_class: listada
+  ticker: GGBR4
+  country: Brasil
+  tier: 2
+  aliases:
+  - Gerdau
+  - GGBR4
+- name: JBS
+  asset_class: listada
+  ticker: JBSS3
+  country: Brasil
+  tier: 2
+  aliases:
+  - JBS
+  - JBSS3
+- name: LATAM Airlines
+  asset_class: listada
+  ticker: LTM
+  country: Chile
+  tier: 2
+  aliases:
+  - LATAM Airlines
+  - LATAM
+- name: Rumo
+  asset_class: listada
+  ticker: RAIL3
+  country: Brasil
+  tier: 2
+  aliases:
+  - Rumo
+  - RAIL3
+- name: Santander Brasil
+  asset_class: listada
+  ticker: SANB11
+  country: Brasil
+  tier: 2
+  aliases:
+  - Santander Brasil
+  - Santander
+  - SANB11
+  - SANB4
+  - SANB3
+- name: Capital One Financial
+  asset_class: listada
+  ticker: COF
+  country: EUA
+  tier: 3
+  aliases:
+  - Capital One Financial
+  - Capital One
+- name: Cencosud
+  asset_class: listada
+  ticker: CENCOSUD
+  country: Chile
+  tier: 3
+  aliases:
+  - Cencosud
+- name: General Motors
+  asset_class: listada
+  ticker: GM
+  country: EUA
+  tier: 3
+  aliases:
+  - General Motors
+- name: Halliburton
+  asset_class: listada
+  ticker: HAL
+  country: EUA
+  tier: 3
+  aliases:
+  - Halliburton
+- name: Tok&Stok
+  asset_class: nao_listada
+  country: Brasil
+  tier: 2
+  aliases:
+  - Tok&Stok
+  - TokStok
+  - Tok Stok
+- name: Samarco Mineração
+  asset_class: nao_listada
+  country: Brasil
+  tier: 3
+  aliases:
+  - Samarco Mineração
+  - Samarco
+- name: Oi
+  aliases:
+  - Oi
+  country: Brasil
+  asset_class: listada
+  tier: 3
+taxonomy:
+- id: recuperacao_judicial
+  label: Recuperação Judicial
+  severity: critico
+  direction: negativa
+  score: 100
+  dimensions:
+  - credito
+  - liquidez
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - chapter 11
+  - bankruptcy protection
+  - insolvency proceedings
+  - concurso de acreedores
+  - procedimiento concursal
+  - reorganización judicial
+  - recuperação judicial
+  - recuperacao judicial
+  - pedido de RJ
+  - entra com RJ
+  - chapter 11
+  - chapter eleven
+  - bankruptcy protection
+  - files for bankruptcy
+  - concurso de acreedores
+  - procedimiento concursal
+  - quiebra preventiva
+  negations:
+  - evitar recuperação judicial
+  - evitar a recuperação judicial
+  - evitar uma recuperação judicial
+  - afasta recuperação judicial
+  - afastar a recuperação judicial
+  - descarta recuperação judicial
+  - recuperação judicial é vista como improvável
+  - recuperação judicial improvável
+  - deixou a recuperação judicial
+  - saiu da recuperação judicial
+  - sai da recuperação judicial
+  - fim da recuperação judicial
+  - encerra a recuperação judicial
+  - conclui a recuperação judicial
+  - concluiu a recuperação judicial
+  - supera a recuperação judicial
+  - superou a recuperação judicial
+  - após a recuperação judicial
+  - pós-recuperação judicial
+  - trocam a recuperação judicial
+  - sem recuperação judicial
+  - plano de recuperação judicial aprovado
+  - cumprindo todos os compromissos
+- id: default
+  label: Default
+  severity: critico
+  direction: negativa
+  score: 100
+  dimensions:
+  - credito
+  - liquidez
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - default
+  - payment default
+  - missed payment
+  - failure to pay
+  - impago
+  - incumplimiento de pago
+  - cesación de pagos
+  - default
+  - calote
+  - deixa de pagar juros
+  - não paga debênture
+  - inadimplência da dívida
+  - missed payment
+  - atraso no pagamento de dívida
+  - defaults on
+  - payment default
+  - failed to pay
+  - incumplimiento de pago
+  - impago
+  - cesación de pagos
+  - default de deuda
+  negations:
+  - evita default
+  - evitar default
+  - evita o calote
+  - afasta default
+  - afasta risco de calote
+  - descarta default
+  - sem risco de default
+  - paga em dia
+  - quita a dívida
+- id: falencia
+  label: Falência
+  severity: critico
+  direction: negativa
+  score: 95
+  dimensions:
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - bankruptcy
+  - liquidation
+  - wound up
+  - quiebra
+  - liquidación judicial
+  - declaración de quiebra
+  - falência
+  - falencia
+  - pedido de falência
+  - autofalência
+  - liquidação judicial
+  - bankruptcy
+  - files for bankruptcy
+  - insolvency
+  - liquidation proceedings
+  - quiebra
+  - insolvencia
+  - declara la quiebra
+  negations:
+  - evitar falência
+  - evitar a falência
+  - afasta falência
+  - afasta a falência
+  - descarta falência
+  - escapa da falência
+  - escapou da falência
+  - reverte a falência
+  - sai da falência
+  - supera a falência
+  - sem risco de falência
+- id: fraude
+  label: Fraude
+  severity: critico
+  direction: negativa
+  score: 90
+  dimensions:
+  - governanca
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  - gestora_fundo
+  keywords:
+  - accounting fraud
+  - misconduct
+  - embezzlement
+  - fraude contable
+  - malversación
+  - irregularidades contables
+  - fraude contábil
+  - fraude fiscal
+  - inconsistências contábeis
+  - manipulação de resultados
+  - accounting fraud
+  - rombo contábil
+  - esquema de fraude na
+  - fraude bilionária na
+  - fraud
+  - accounting irregularities
+  - misstatement
+  - fraude contable
+  - irregularidades contables
+  - maquillaje contable
+- id: rebaixamento_rating
+  label: Rebaixamento de rating
+  severity: critico
+  direction: negativa
+  score: 80
+  dimensions:
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - downgrade
+  - downgraded
+  - rating cut
+  - cut to
+  - rebaja de calificación
+  - recorta la calificación
+  - rebaixamento de rating
+  - rebaixa rating
+  - rebaixa nota de crédito
+  - corta rating
+  - rebaixada pela S&P
+  - rebaixada pela Moody's
+  - rebaixada pela Fitch
+  - cuts rating
+  - lowered the rating
+  - credit rating cut
+  - baja la calificación
+  - recorte de calificación
+  - degrada la nota
+  - ratings lowered
+  - cut to junk
+  - downgraded to junk
+  - junk status
+  - baja de clasificación
+  - baja de clasificacion
+  - rebaja la clasificación
+  - clasificación de riesgo rebajada
+  - retiro de clasificación
+  - rating rebaixado
+  - nota rebaixada
+  - teve rating rebaixado
+  negations:
+  - afasta rebaixamento
+  - evita rebaixamento
+  - descarta rebaixamento
+  - reafirma rating
+  - mantém rating
+  - confirma rating
+  - reverte o rebaixamento
+- id: ma
+  label: M&A
+  severity: alto
+  direction: neutra
+  score: 40
+  dimensions:
+  - mercado
+  - governanca
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - merger
+  - acquisition
+  - takeover
+  - to acquire
+  - stake purchase
+  - fusión
+  - adquisición
+  - compra de participación
+  - fusão
+  - aquisição
+  - M&A
+  - compra a rival
+  - incorporação de
+  - combinação de negócios
+  - OPA
+- id: emissao_divida
+  label: Grande emissão de dívida
+  severity: alto
+  direction: neutra
+  score: 35
+  dimensions:
+  - credito
+  - liquidez
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - bond issue
+  - notes offering
+  - senior notes
+  - debt offering
+  - emisión de bonos
+  - colocación de deuda
+  - emissão de debêntures
+  - emissão de dívida
+  - capta R$
+  - emissão de bonds
+  - oferta de notas
+  - emissão bilionária
+- id: outlook_negativo
+  label: Outlook negativo
+  severity: medio
+  direction: negativa
+  score: 20
+  dimensions:
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - perspectiva negativa
+  - outlook rebaixado
+  - perspectiva rebaixada
+  - revisa perspectiva para negativa
+  - perspectiva para negativa
+  - negative outlook
+  - outlook revised to negative
+  - on watch negative
+  - panorama negativo
+  - outlook negative
+  - outlook to negative
+  - revised outlook to negative
+  - negative implications
+  - perspectiva a negativa
+  - revisa la perspectiva a negativa
+  - tendencia negativa
+  - creditwatch negative
+  - rating watch negative
+  - placed on creditwatch
+  - on negative watch
+  - under review for downgrade
+  - bajo observación
+  - en revisión especial
+  - perspectiva en revisión
+  - creditwatch negativo
+  - watch negativo
+  - em observação
+  - em observacao
+  - revisão especial
+  - revisao especial
+  - colocada em creditwatch
+  - coloca em creditwatch
+  - observação negativa
+- id: rating_elevado
+  label: Rating elevado
+  severity: baixa
+  direction: positiva
+  score: 0
+  positive: true
+  dimensions:
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - eleva rating
+  - elevação de rating
+  - upgrade de rating
+  - eleva nota de crédito
+  - elevada pela S&P
+  - elevada pela Moody's
+  - elevada pela Fitch
+  - upgrade
+  - upgraded
+  - raises rating
+  - rating raised
+  - sube la calificación
+  - mejora la calificación
+  - creditwatch positive
+  - rating watch positive
+  - under review for upgrade
+  - ratings raised
+  - upgraded to investment grade
+  - returns to investment grade
+  - alza de clasificación
+  - alza de clasificacion
+  - sube la clasificación
+  - mejora la clasificación
+  - revisión al alza
+  - revision al alza
+- id: outlook_positivo
+  label: Outlook positivo
+  severity: baixa
+  direction: positiva
+  score: 0
+  positive: true
+  dimensions:
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - perspectiva positiva
+  - outlook elevado
+  - perspectiva elevada
+  - revisa perspectiva para positiva
+  - perspectiva para positiva
+  - outlook positive
+  - outlook to positive
+  - revised outlook to positive
+  - positive implications
+  - perspectiva a positiva
+  - revisa la perspectiva a positiva
+  - tendencia positiva
+- id: recomendacao_positiva
+  label: Recomendação elevada
+  severity: baixa
+  direction: positiva
+  score: 0
+  positive: true
+  dimensions:
+  - mercado
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - eleva recomendação
+  - eleva preço-alvo
+  - recomendação de compra
+  - elevada para compra
+  - inicia cobertura
+- id: recompra_acoes
+  label: Recompra de ações próprias
+  severity: informativo
+  direction: positiva
+  score: 0
+  dimensions:
+  - contexto
+  applies_to:
+  - all
+  keywords: []
+  negations: []
+- id: reorganizacao_societaria_interna
+  label: Reorganização societária interna
+  severity: informativo
+  direction: neutra
+  score: 0
+  dimensions:
+  - contexto
+  applies_to:
+  - all
+  keywords: []
+  negations: []
+- id: integracao_pos_aquisicao
+  label: Integração pós-aquisição
+  severity: informativo
+  direction: positiva
+  score: 0
+  dimensions:
+  - contexto
+  applies_to:
+  - all
+  keywords: []
+  negations: []
+- id: aquisicao_capex
+  label: Aquisição de ativo (capex)
+  severity: informativo
+  direction: neutra
+  score: 0
+  dimensions:
+  - contexto
+  applies_to:
+  - all
+  keywords: []
+  negations: []
+- id: encerramento_litigio
+  label: Encerramento de litígio
+  severity: informativo
+  direction: mitigadora
+  score: 0
+  dimensions:
+  - contexto
+  applies_to:
+  - all
+  keywords: []
+  negations: []
+- id: acordo_judicial
+  label: Acordo judicial
+  severity: informativo
+  direction: mitigadora
+  score: 0
+  dimensions:
+  - contexto
+  applies_to:
+  - all
+  keywords: []
+  negations: []
+- id: pagamento_contingencia
+  label: Pagamento de contingência
+  severity: informativo
+  direction: mitigadora
+  score: 0
+  dimensions:
+  - contexto
+  applies_to:
+  - all
+  keywords: []
+  negations: []
+- id: rumor_ma
+  label: Rumor de M&A (não confirmado)
+  severity: informativo
+  direction: neutra
+  score: 0
+  dimensions:
+  - contexto
+  applies_to:
+  - all
+  keywords: []
+  negations: []
+- id: evento_historico
+  label: Referência histórica
+  severity: informativo
+  direction: neutra
+  score: 0
+  dimensions:
+  - contexto
+  applies_to:
+  - all
+  keywords: []
+  negations: []
+- id: arquivamento_processo
+  label: Arquivamento de processo
+  severity: informativo
+  direction: mitigadora
+  score: 0
+  dimensions:
+  - contexto
+  applies_to:
+  - all
+  keywords: []
+  negations: []
+- id: absolvicao
+  label: Absolvição
+  severity: informativo
+  direction: mitigadora
+  score: 0
+  dimensions:
+  - contexto
+  applies_to:
+  - all
+  keywords: []
+  negations: []
+- id: desfecho_juridico
+  label: Desfecho jurídico
+  severity: informativo
+  direction: mitigadora
+  score: 0
+  dimensions:
+  - contexto
+  applies_to:
+  - all
+  keywords: []
+  negations: []
+evolution:
+  window_days: 90
+  same_event_window_days: 10
+dashboard:
+  title: Radar de Risco — Emissores
+  language: pt-BR
+  country: BR
+  period: 7d
+  windows:
+  - 7
+  - 30
+  - 90
+  - 365
+  default_window: 7
+  attention_max_window: 30
+  history_keep_days: 400
+  max_articles_per_query: 15
+scoring:
+  attention_threshold: 80
+output:
+  filename: dashboard_risco.html
+  history_file: risk_history_teste.json
+  open_browser: false
+source_trust:
+  default_tier: outros
+  overrides:
+    reuters.com: 0.99
+    bloomberg.com: 0.99
+    bloomberglinea.com.br: 0.99
+    valor.globo.com: 0.97
+    pipelinevalor.globo.com: 0.97
+    braziljournal.com: 0.96
+    broadcast.com.br: 0.96
+    neofeed.com.br: 0.95
+    infomoney.com.br: 0.93
+    exame.com: 0.92
+    einvestidor.estadao.com.br: 0.92
+    br.investing.com: 0.91
+    moneytimes.com.br: 0.9
+    clubefii.com.br: 0.9
+    estadao.com.br: 0.9
+    folha.uol.com.br: 0.9
+    oglobo.globo.com: 0.89
+    g1.globo.com: 0.89
+    cnnbrasil.com.br: 0.89
+    economia.uol.com.br: 0.88
+  tiers:
+    oficial:
+      label: Fonte oficial
+      weight: 1.0
+    agencia:
+      label: Agência de rating
+      weight: 0.99
+    imprensa:
+      label: Imprensa consolidada
+      weight: 0.9
+    outros:
+      label: Fonte não verificada
+      weight: 0.6
+  domains:
+    oficial:
+    - amf-france.org
+    - b3.com.br
+    - banrep.gov.co
+    - banxico.org.mx
+    - bcentral.cl
+    - bcra.gob.ar
+    - biva.mx
+    - bmv.com.mx
+    - bolsadesantiago.com
+    - bourse.lu
+    - bursamalaysia.com
+    - bvc.com.co
+    - byma.com.ar
+    - cmfchile.cl
+    - cnbv.gob.mx
+    - cnmv.es
+    - cnv.gov.ar
+    - cvm.gov.br
+    - data.fca.org.uk
+    - data.sec.gov
+    - fnet.bmfbovespa.com.br
+    - mzweb.com.br
+    - ri.pn
+    - sec.gov
+    - sedarplus.ca
+    - six-group.com
+    - superfinanciera.gov.co
+    agencia:
+    - austin-rating.com.br
+    - brc.com.co
+    - feller-rate.com
+    - fitchratings.com
+    - fixscr.com
+    - hrratings.com
+    - humphreys.cl
+    - moodys.com
+    - moodyslocal.com
+    - ratingspcr.com
+    - spglobal.com
+    - sr-rating.com
+    - verum.com.mx
+    - vriskr.com
+    imprensa:
+    - ambito.com
+    - bloomberg.com
+    - bloomberglinea.com.br
+    - br.investing.com
+    - braziljournal.com
+    - broadcast.com.br
+    - clubefii.com.br
+    - cnbc.com
+    - cnnbrasil.com.br
+    - cronista.com
+    - df.cl
+    - economia.uol.com.br
+    - economiaynegocios.cl
+    - einvestidor.estadao.com.br
+    - eleconomista.com.mx
+    - elfinanciero.com.mx
+    - emol.com
+    - estadao.com.br
+    - exame.com
+    - expansion.mx
+    - fiis.com.br
+    - finance.yahoo.com
+    - folha.uol.com.br
+    - ft.com
+    - g1.globo.com
+    - infobae.com
+    - infomoney.com.br
+    - larepublica.co
+    - latercera.com
+    - marketwatch.com
+    - moneytimes.com.br
+    - neofeed.com.br
+    - oglobo.globo.com
+    - pipelinevalor.globo.com
+    - portafolio.co
+    - reforma.com
+    - reuters.com
+    - seudinheiro.com
+    - spacemoney.com.br
+    - valor.globo.com
+    - valoraanalitik.com
+    - wsj.com
