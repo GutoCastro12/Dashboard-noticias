@@ -1,0 +1,46 @@
+{
+ "filings": {
+  "recent": {
+   "form": [
+    "6-K",
+    "6-K",
+    "424B2",
+    "6-K",
+    "6-K",
+    "40-F"
+   ],
+   "filingDate": [
+    "2026-07-15",
+    "2026-05-28",
+    "2026-06-26",
+    "2026-04-23",
+    "2026-04-16",
+    "2025-12-04"
+   ],
+   "accessionNumber": [
+    "0001279569-26-000420",
+    "0001279569-26-000388",
+    "0001140361-26-026594",
+    "0001193125-26-173703",
+    "0001279569-26-000313",
+    "0001279569-25-000900"
+   ],
+   "primaryDocument": [
+    "tdbank6k.htm",
+    "tdbank6k.htm",
+    "d424b2.htm",
+    "d67848d6k.htm",
+    "tdbank6k.htm",
+    "td40f.htm"
+   ],
+   "primaryDocDescription": [
+    "Report of foreign private issuer",
+    "Q2 earnings 6-K",
+    "Prospectus supplement",
+    "Report of foreign private issuer",
+    "Proxy circular 6-K",
+    "Annual report (40-F)"
+   ]
+  }
+ }
+}
