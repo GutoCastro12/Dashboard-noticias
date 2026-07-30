@@ -4684,7 +4684,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785345276,
-   "cap_iso": "2026-07-29 14:14"
+   "cap_iso": "2026-07-29 14:14",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://br.advfn.com/jornal/2026/01/copel-aprova-11a-emissao-de-debentures-de-r-1-2-bilhao-para-reforcar-investimentos-em-distribuicao-de-energia": {
    "title": "Copel aprova 11ª emissão de debêntures de R$ 1,2 bilhão, para reforçar investimentos em distribuição de energia",
@@ -9185,7 +9187,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785345276,
-   "cap_iso": "2026-07-29 14:14"
+   "cap_iso": "2026-07-29 14:14",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://economia.uol.com.br/colunas/graciliano-rocha/2026/04/01/agencia-de-rating-rebaixa-nota-de-credito-da-aegea-gigante-do-saneamento.htm": {
    "title": "Graciliano Rocha: Agência de rating rebaixa nota de crédito da Aegea, gigante do saneamento",
@@ -12040,7 +12044,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785345276,
-   "cap_iso": "2026-07-29 14:14"
+   "cap_iso": "2026-07-29 14:14",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOUlU0bGwwRXpfY2RGUXpxZU5JaWU5aWdNZURJeV8tekVxWHNsSEhhSFRZQ0hfRjAwSU9xYmZwbE92enMzSFpYQjZQLXhsSmxvN2ZCYklRLTBlTVl0YWxUU1ZJcjFVLVh3S2hIdWlNUzVkeXFETjJFV1ZBYnRRanZlQnFJdzB3S19nVkV0cE9JdW5qb2IwU2hnY3FTNWJaMzFBMTNPVGNHQjJrcTg1NTA4RHJWTzk2U1IwUGdUaEl4NmFYZXdOd2FTV2RMMnprN0pmdXZqUDhaYUtXZw?oc=5": {
    "title": "Regulatory hurdles await massive NextEra, Dominion Energy merger",
@@ -12671,8 +12677,21 @@
    "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "corroborations": [],
-   "corrob_sources": []
+   "corroborations": [
+    {
+     "source": "Smartkarma",
+     "domain": "smartkarma.com",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQU0l2Sm5ybzdacGlIU3FHWWt2QU9FVDZnb2VtQlVRR2FtbjI0OW1ldmhnZ2N1NWFjaXctT0hKUmF4ZU1KRDU2cmxIejRPTHF3QWtrd25PX2NZdy1nNDFWeG1IMWlRY3c1U0xFVFZsd2dMQVhoeV9PVDJ2dXJ6dDlLcE1ZV1U0YjIyQy0wandHWXA2MWhreDlnWUNDV0oxeEEyeS13?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Smartkarma",
+     "domain": "smartkarma.com",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQU0l2Sm5ybzdacGlIU3FHWWt2QU9FVDZnb2VtQlVRR2FtbjI0OW1ldmhnZ2N1NWFjaXctT0hKUmF4ZU1KRDU2cmxIejRPTHF3QWtrd25PX2NZdy1nNDFWeG1IMWlRY3c1U0xFVFZsd2dMQVhoeV9PVDJ2dXJ6dDlLcE1ZV1U0YjIyQy0wandHWXA2MWhreDlnWUNDV0oxeEEyeS13?oc=5",
+     "when": "03/06 04:00"
+    }
+   ]
   },
   "https://www.wsaw.com/video/2026/06/01/this-day-history-june-1-2009-general-motors-files-chapter-11-reorganization/": {
    "title": "This Day in History: June 1, 2009 - General Motors files for Chapter 11 reorganization",
@@ -13099,7 +13118,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785345276,
-   "cap_iso": "2026-07-29 14:14"
+   "cap_iso": "2026-07-29 14:14",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMitAFBVV95cUxNOHozYlFCb1pTT2t0UW1EUHgwZ0tsczVWajNiNk5oYTNWTFR0Y3JlelhwTDNKbVI2MHBNU3lPRUxLQjdFbm9qWENPYzVXcThwYVdfRDNRZFAzTF9Cdi0wbUVwY1VMMk56WDBCRnRhTXh2RTVFWHlwU0M1QkZPQU95Y2pCVXAyMWtKdWFKMEw5bGZGWHE1VjVycnhRalRtc1MxdlFya1NQNVBaRWsyMTVQdGw4TUU?oc=5": {
    "title": "Ações da Braskem têm alta após após novo controlador registrar pedido para OPA",
@@ -20019,28 +20040,28 @@
    "captured_ts": 1785432503,
    "cap_iso": "2026-07-30 14:28"
   },
-  "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml": {
-   "title": "CVM abre processo para apurar renúncia de presidente do conselho da Vale",
-   "url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
-   "summary": "CVM abre processo para apurar renúncia de presidente do conselho da Vale &nbsp;&nbsp; Folha de S.Paulo",
-   "source": "Folha de S.Paulo",
-   "domain": "www1.folha.uol.com.br",
-   "pub_ts": 1783494000,
-   "pub_iso": "2026-07-08 04:00",
-   "language": "pt",
+  "https://www.proceso.com.mx/economia/2025/8/19/nuevo-apoyo-pemex-no-mejora-la-calificacion-de-mexico-se-suma-una-deuda-ya-elevada-fitch-355328.html": {
+   "title": "Nuevo apoyo a Pemex no mejora la calificación de México y se suma a una deuda ya elevada: Fitch",
+   "url": "https://www.proceso.com.mx/economia/2025/8/19/nuevo-apoyo-pemex-no-mejora-la-calificacion-de-mexico-se-suma-una-deuda-ya-elevada-fitch-355328.html",
+   "summary": "Nuevo apoyo a Pemex no mejora la calificación de México y se suma a una deuda ya elevada: Fitch &nbsp;&nbsp; Proceso",
+   "source": "Proceso",
+   "domain": "proceso.com.mx",
+   "pub_ts": 1755586800,
+   "pub_iso": "2025-08-19 04:00",
+   "language": "es",
    "companies": [
-    "Vale"
+    "Pemex (Petróleos Mexicanos)"
    ],
    "event_ids": [
-    "investigacao_regulatoria"
+    "rating_elevado"
    ],
    "events_by_company": {
-    "Vale": [
-     "investigacao_regulatoria"
+    "Pemex (Petróleos Mexicanos)": [
+     "rating_elevado"
     ]
    },
    "mention_roles": {
-    "Vale": {
+    "Pemex (Petróleos Mexicanos)": {
      "relation_type": "direto",
      "subject_company": "",
      "impact_type": "direto",
@@ -20049,14 +20070,94 @@
     }
    },
    "companies_attributed": [
-    "Vale"
+    "Pemex (Petróleos Mexicanos)"
    ],
    "context_companies": [],
-   "captured_ts": 1785432503,
-   "cap_iso": "2026-07-30 14:28"
+   "captured_ts": 1785442709,
+   "cap_iso": "2026-07-30 17:18"
+  },
+  "https://news.google.com/rss/articles/CBMipwFBVV95cUxPaS1sSHdvQ2JmUERkWGlYaVN3cUl5aEpZdWEwMHpBQzg3NEYtU3h2d0F3LWdmdW1fem9qLXJaZV9fUkdTdnJPZXJoa1phVW40S2tmdzV1LUJ5dEx6aFVVcWh3RExGSnB1akktRTZKS2FucGRBUnN6S1poSWh0bUo3N1NUcmo3dHA3TnhrVG9XT1lwcjJYVU5nV0JvS2FmV3g5UlJoQU5Zaw?oc=5": {
+   "title": "Florida-based NextEra agrees to $67B Dominion Energy acquisition",
+   "url": "https://www.vpm.org/news/2026-05-18/dominion-energy-nextera-merger-electric-utility-virginia-florida-67b",
+   "summary": "Florida-based NextEra agrees to $67B Dominion Energy acquisition &nbsp;&nbsp; VPM",
+   "source": "VPM",
+   "domain": "vpm.org",
+   "pub_ts": 1779087600,
+   "pub_iso": "2026-05-18 04:00",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "corroborations": [
+    {
+     "source": "The Global Legal Post",
+     "domain": "globallegalpost.com",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNSHBZT2RsR2IzcndsOXJWRktiLXZSalBKZzZLeGhJaXNOZ2dtVzJ5TF9aa2ZvRHlCRm9GVzdnSnhraFFkVlUyazZjUHRxcE9MTmZBLW9KQmlGME9LN1NwWjQ4NnpkRDVfNXBWeFlIQlUtQmxyNTI4N2VNY29iZWFYVml6SXZTVnJ6OHVKZHMwSzFsQ3BDVW9Kb3loOEs0eFJ0dXlnMk1JY1J2MjJUTzZ6OGJWTGMyY0p5Z0E?oc=5"
+    },
+    {
+     "source": "Virginia Business",
+     "domain": "virginiabusiness.com",
+     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQU2UwUjlPZFdiRFlqdERYRnRLaFljTkpxTVZQU2w0M0h6NDBFTXIxQ0Y5SnlCb3VZQWo5V29sQ0c3eWdqUWZlNW0zRDBtbl9fUDhpLVZOWkNkMjNtUGpvUVJjR09USlVlQ3lpZnRkdHBHRlk3eEJOaWVMX2N1SEVNTGx2MnlwUlNz?oc=5"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "The Global Legal Post",
+     "domain": "globallegalpost.com",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNSHBZT2RsR2IzcndsOXJWRktiLXZSalBKZzZLeGhJaXNOZ2dtVzJ5TF9aa2ZvRHlCRm9GVzdnSnhraFFkVlUyazZjUHRxcE9MTmZBLW9KQmlGME9LN1NwWjQ4NnpkRDVfNXBWeFlIQlUtQmxyNTI4N2VNY29iZWFYVml6SXZTVnJ6OHVKZHMwSzFsQ3BDVW9Kb3loOEs0eFJ0dXlnMk1JY1J2MjJUTzZ6OGJWTGMyY0p5Z0E?oc=5",
+     "when": "19/05 04:00"
+    },
+    {
+     "source": "Virginia Business",
+     "domain": "virginiabusiness.com",
+     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQU2UwUjlPZFdiRFlqdERYRnRLaFljTkpxTVZQU2w0M0h6NDBFTXIxQ0Y5SnlCb3VZQWo5V29sQ0c3eWdqUWZlNW0zRDBtbl9fUDhpLVZOWkNkMjNtUGpvUVJjR09USlVlQ3lpZnRkdHBHRlk3eEJOaWVMX2N1SEVNTGx2MnlwUlNz?oc=5",
+     "when": "20/05 20:22"
+    }
+   ],
+   "captured_ts": 1785442709,
+   "cap_iso": "2026-07-30 17:18"
+  },
+  "https://visnoinvest.com.br/news/12939/tupy-tupy3-conclui-sucessao-e-elege-novo-ceo": {
+   "title": "Tupy (TUPY3) conclui sucessão e elege novo CEO",
+   "url": "https://visnoinvest.com.br/news/12939/tupy-tupy3-conclui-sucessao-e-elege-novo-ceo",
+   "summary": "Tupy (TUPY3) conclui sucessão e elege novo CEO &nbsp;&nbsp; Visno Invest",
+   "source": "Visno Invest",
+   "domain": "visnoinvest.com.br",
+   "pub_ts": 1780297200,
+   "pub_iso": "2026-06-01 04:00",
+   "language": "pt",
+   "companies": [
+    "Tupy"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "events_by_company": {
+    "Tupy": [
+     "troca_ceo"
+    ]
+   },
+   "mention_roles": {
+    "Tupy": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "encerramento",
+     "direction_hint": ""
+    }
+   },
+   "companies_attributed": [
+    "Tupy"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785442709,
+   "cap_iso": "2026-07-30 17:18"
   }
  },
- "run_count": 56,
+ "run_count": 57,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -23493,11 +23594,27 @@
   "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5YMjl5YjhldUhlNFEzT2dTUC1OX0JrWTVJdkdJZFh5SUtPbExlOG1JZnY5WS1GZnVEZ2NURVdGcGQ5ZjBpOE1yV1VoM0xJNHlrdXdLbW0xekllaUVGMXdGS3V3?oc=5": {
    "url": "https://energyandpolicy.org/nextera-dominion-merger/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMikwJBVV95cUxPSDNlSHRKazFxdjl4RVBCeXN5U3ZzQ3JnQ2RWRGlmTHdvenFMWjEyTGl5a2ZDTnVzWXAtUDdwc2ZiV2d3MHVLM2NDRld4dlhSWjU1MkMzVTlQMVNHRUZVUXhCajk3aXVEZ0VvX1pHckdrNHdfSEROMUdkc1g0c0RpRnpjWWQtcFVjdGk1MVV2UUZSY2JJMGFadEVFaDhhV0J2VEpCMlk2SWJsa1dqeG11MFlacGJNaEpPWUdMVllLYjYzVGVQSHJjeE5weTl5d0xXRHlYamxXdjI5VXYtQWdIX0dULWxpWThlWnpua0tIN2JwcEtRcGt1YjFzTkhBMG5NNFpUbnFDSDhqeDM2YWJIUVVmTQ?oc=5": {
+   "url": "https://www.newsfilecorp.com/release/224722/FORD-FRAUD-ALERT-BFA-Law-Notifies-Ford-Motor-Company-Investors-who-Suffered-Losses-to-Contact-the-Firm-by-the-October-7-Class-Action-Deadline",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQX0tVeUJWX1JHaWNMRlBmaWFiX2ZXS0IxTmxRMnhNdHBHZldtQ3NvZXNaU3FQV2FTX01rT3pZUTNvVVk0aURWNHpfZ2Z3UjJqVVdvbmFOa0dnUklwYko2NXFZdUJaSG1aZktfcV9FZXVfaEpyd2NZMW1KX1UzZHh4ajhqcXdvYWJLTG5nRktXenRJcEdUWU5WMUtKdGp3OC1rLWdxcVdyUENmODUyckUyOWtrNUpmRUhhMVF4ejZCb0dGczdEX0Q3eVcwYnZsVWk3Y3R1Um1wYmlRRENsX2Fn?oc=5": {
+   "url": "https://www.proceso.com.mx/economia/2025/8/19/nuevo-apoyo-pemex-no-mejora-la-calificacion-de-mexico-se-suma-una-deuda-ya-elevada-fitch-355328.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiigFBVV95cUxNRkF2RmU2TGdUZE94R3lNOWFzR054c2g5Y2Y5a0tHZE5rMy10TC1ZVlZSeWFvaTFOTU5zbi0tOEx4RkVHTWxUNzA3U1BGdktCTWh2cm12WjZfbGNPRklmSmtPMjlJbVhfaWNWWWpJbXg5UHVNWmJwSTA3LWdhYWFmTGt5RkV3bDd3Wnc?oc=5": {
+   "url": "https://visnoinvest.com.br/news/12939/tupy-tupy3-conclui-sucessao-e-elege-novo-ceo",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipwFBVV95cUxPaS1sSHdvQ2JmUERkWGlYaVN3cUl5aEpZdWEwMHpBQzg3NEYtU3h2d0F3LWdmdW1fem9qLXJaZV9fUkdTdnJPZXJoa1phVW40S2tmdzV1LUJ5dEx6aFVVcWh3RExGSnB1akktRTZKS2FucGRBUnN6S1poSWh0bUo3N1NUcmo3dHA3TnhrVG9XT1lwcjJYVU5nV0JvS2FmV3g5UlJoQU5Zaw?oc=5": {
+   "url": "https://www.vpm.org/news/2026-05-18/dominion-energy-nextera-merger-electric-utility-virginia-florida-67b",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785432507,
-  "iso": "30 jul 2026 · 14:28 BRT",
+  "ts": 1785442713,
+  "iso": "30 jul 2026 · 17:18 BRT",
   "status": {
    "Gerdau": {
     "status": "critico",
@@ -23521,11 +23638,11 @@
    },
    "Santander Brasil": {
     "status": "atencao",
-    "score": 65
+    "score": 64
    },
    "BTG Pactual": {
     "status": "critico",
-    "score": 60
+    "score": 59
    },
    "Grupo Financiero Banorte": {
     "status": "critico",
@@ -23559,12 +23676,12 @@
     "status": "atencao",
     "score": 34
    },
-   "Baker Hughes": {
-    "status": "monitorar",
-    "score": 32
-   },
    "Aegea Saneamento": {
     "status": "critico",
+    "score": 31
+   },
+   "Baker Hughes": {
+    "status": "monitorar",
     "score": 31
    },
    "PRIO": {
@@ -23625,7 +23742,7 @@
    },
    "Eneva": {
     "status": "monitorar",
-    "score": 18
+    "score": 17
    },
    "Ecopetrol": {
     "status": "monitorar",
@@ -23707,11 +23824,11 @@
     "status": "atencao",
     "score": 7
    },
-   "Caixa Seguridade": {
-    "status": "monitorar",
-    "score": 6
-   },
    "Halliburton": {
+    "status": "monitorar",
+    "score": 7
+   },
+   "Caixa Seguridade": {
     "status": "monitorar",
     "score": 6
    },
@@ -23723,15 +23840,15 @@
     "status": "monitorar",
     "score": 4
    },
-   "Banco do Brasil": {
-    "status": "monitorar",
-    "score": 4
-   },
    "MercadoLibre": {
     "status": "monitorar",
     "score": 4
    },
    "Tupy": {
+    "status": "monitorar",
+    "score": 4
+   },
+   "Banco do Brasil": {
     "status": "monitorar",
     "score": 3
    },
