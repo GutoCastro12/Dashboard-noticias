@@ -1,0 +1,285 @@
+_comment: Fixture AUTOCONTIDA da 4H.3B (item 6). Testes NÃO devem depender do config
+  de producao.
+watchlist:
+- name: Vale
+  asset_class: listada
+  ticker: VALE3
+  listing: B3
+  country: Brasil
+  tier: 1
+  aliases:
+  - Vale
+  - Vale S.A.
+  - VALE3
+- name: Ford Motor
+  asset_class: listada
+  ticker: F
+  listing: NYSE
+  country: EUA
+  tier: 2
+  aliases:
+  - Ford Motor
+- name: Samarco Mineração
+  asset_class: nao_listada
+  country: Brasil
+  tier: 3
+  aliases:
+  - Samarco Mineração
+  - Samarco
+taxonomy:
+- id: recuperacao_judicial
+  label: Recuperação Judicial
+  severity: critico
+  direction: negativa
+  score: 100
+  dimensions:
+  - credito
+  - liquidez
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - chapter 11
+  - bankruptcy protection
+  - insolvency proceedings
+  - concurso de acreedores
+  - procedimiento concursal
+  - reorganización judicial
+  - recuperação judicial
+  - recuperacao judicial
+  - pedido de RJ
+  - entra com RJ
+  - chapter 11
+  - chapter eleven
+  - bankruptcy protection
+  - files for bankruptcy
+  - concurso de acreedores
+  - procedimiento concursal
+  - quiebra preventiva
+  negations:
+  - evitar recuperação judicial
+  - evitar a recuperação judicial
+  - evitar uma recuperação judicial
+  - afasta recuperação judicial
+  - afastar a recuperação judicial
+  - descarta recuperação judicial
+  - recuperação judicial é vista como improvável
+  - recuperação judicial improvável
+  - deixou a recuperação judicial
+  - saiu da recuperação judicial
+  - sai da recuperação judicial
+  - fim da recuperação judicial
+  - encerra a recuperação judicial
+  - conclui a recuperação judicial
+  - concluiu a recuperação judicial
+  - supera a recuperação judicial
+  - superou a recuperação judicial
+  - após a recuperação judicial
+  - pós-recuperação judicial
+  - trocam a recuperação judicial
+  - sem recuperação judicial
+  - plano de recuperação judicial aprovado
+  - cumprindo todos os compromissos
+- id: default
+  label: Default
+  severity: critico
+  direction: negativa
+  score: 100
+  dimensions:
+  - credito
+  - liquidez
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - default
+  - payment default
+  - missed payment
+  - failure to pay
+  - impago
+  - incumplimiento de pago
+  - cesación de pagos
+  - default
+  - calote
+  - deixa de pagar juros
+  - não paga debênture
+  - inadimplência da dívida
+  - missed payment
+  - atraso no pagamento de dívida
+  - defaults on
+  - payment default
+  - failed to pay
+  - incumplimiento de pago
+  - impago
+  - cesación de pagos
+  - default de deuda
+  negations:
+  - evita default
+  - evitar default
+  - evita o calote
+  - afasta default
+  - afasta risco de calote
+  - descarta default
+  - sem risco de default
+  - paga em dia
+  - quita a dívida
+- id: falencia
+  label: Falência
+  severity: critico
+  direction: negativa
+  score: 95
+  dimensions:
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - bankruptcy
+  - liquidation
+  - wound up
+  - quiebra
+  - liquidación judicial
+  - declaración de quiebra
+  - falência
+  - falencia
+  - pedido de falência
+  - autofalência
+  - liquidação judicial
+  - bankruptcy
+  - files for bankruptcy
+  - insolvency
+  - liquidation proceedings
+  - quiebra
+  - insolvencia
+  - declara la quiebra
+  negations:
+  - evitar falência
+  - evitar a falência
+  - afasta falência
+  - afasta a falência
+  - descarta falência
+  - escapa da falência
+  - escapou da falência
+  - reverte a falência
+  - sai da falência
+  - supera a falência
+  - sem risco de falência
+- id: rebaixamento_rating
+  label: Rebaixamento de rating
+  severity: critico
+  direction: negativa
+  score: 80
+  dimensions:
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - downgrade
+  - downgraded
+  - rating cut
+  - cut to
+  - rebaja de calificación
+  - recorta la calificación
+  - rebaixamento de rating
+  - rebaixa rating
+  - rebaixa nota de crédito
+  - corta rating
+  - rebaixada pela S&P
+  - rebaixada pela Moody's
+  - rebaixada pela Fitch
+  - cuts rating
+  - lowered the rating
+  - credit rating cut
+  - baja la calificación
+  - recorte de calificación
+  - degrada la nota
+  - ratings lowered
+  - cut to junk
+  - downgraded to junk
+  - junk status
+  - baja de clasificación
+  - baja de clasificacion
+  - rebaja la clasificación
+  - clasificación de riesgo rebajada
+  - retiro de clasificación
+  - rating rebaixado
+  - nota rebaixada
+  - teve rating rebaixado
+  negations:
+  - afasta rebaixamento
+  - evita rebaixamento
+  - descarta rebaixamento
+  - reafirma rating
+  - mantém rating
+  - confirma rating
+  - reverte o rebaixamento
+  patterns:
+  - \brating\s+d[aeo]s?\s+\w+(?:\s+\w+){0,3}\s+(?:foi\s+|foram\s+)?rebaixad\w*
+  - \b(?:teve|tiveram)\s+(?:[oa]s?\s+)?(?:rating|nota|classificacao|nota de credito)\s+rebaixad\w*
+  - \b(?:rebaixa|rebaixou|rebaixam|corta|cortou|reduz|reduziu)\w*\s+(?:[oa]s?\s+)?(?:rating|nota|classificacao|nota
+    de credito)\s+d[aeo]s?\s+\w+
+  - \bcuts?\s+\w+(?:\s+\w+){0,2}\s+(?:credit\s+)?rating\b
+  - \bdowngrades?\s+\w+(?:\s+\w+){0,2}\b
+  - \bcalificacion\s+de\s+\w+(?:\s+\w+){0,3}\s+(?:fue\s+)?rebajad\w*
+  - \brebaj\w*\s+(?:la\s+)?calificacion\s+de\s+\w+
+- id: emissao_divida
+  label: Grande emissão de dívida
+  severity: alto
+  direction: neutra
+  score: 35
+  dimensions:
+  - credito
+  - liquidez
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - bond issue
+  - notes offering
+  - senior notes
+  - debt offering
+  - emisión de bonos
+  - colocación de deuda
+  - emissão de debêntures
+  - emissão de dívida
+  - capta R$
+  - emissão de bonds
+  - oferta de notas
+  - emissão bilionária
+evolution:
+  window_days: 90
+  same_event_window_days: 10
+official_sources:
+  EUA:
+    formularios_gatilho:
+    - 8-K
+    - 6-K
+    - 10-K
+    - 10-Q
+    - 20-F
+    - 40-F
+    rate_limit_rps: 8
+output:
+  history_file: risk_history_teste.json
+dashboard:
+  title: Radar de Risco — Emissores
+  language: pt-BR
+  country: BR
+  period: 7d
+  windows:
+  - 7
+  - 30
+  - 90
+  - 365
+  default_window: 7
+  attention_max_window: 30
+  history_keep_days: 400
+  max_articles_per_query: 15
+scoring:
+  attention_threshold: 80
