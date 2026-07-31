@@ -1,0 +1,576 @@
+---
+report_type: project_chat_handoff
+suggested_filename: chat_report_radar_risco_emissores_4h.md
+chat_scope: Cobertura internacional, exclusividade semântica de eventos, atribuição empresa×evento e camada de validação pós-Actions do "Radar de Risco — Emissores"
+project_name: Radar de Risco — Emissores
+repository_name: não confirmado (mencionado como "Dashboard-noticias" em um path de log do Actions, não confirmado como nome oficial do repositório)
+report_date: 2026-07-31
+last_project_date_mentioned: 2026-07-29 (run_meta.json, run_count=52, run_finished_at 2026-07-29T17:14:40)
+overall_confidence: média
+---
+
+# 1. Resumo executivo
+
+Este chat tratou da evolução de um dashboard interno de risco de crédito por notícias, chamado "Radar de Risco — Emissores", mantido por Gustavo (Vinci Partners) em um repositório GitHub com pipeline via GitHub Actions e publicação estática (Render). O escopo começou na Fase 4D (fechamento gerencial da cobertura) e avançou por 4E (validador pós-Actions), 4F (correções de backfill/tradução/feeds), 4G/4G.1 (saneamento de identificadores CVM), e principalmente pela Fase 4H, que ocupou a maior parte do chat: cobertura internacional de mídia e fontes oficiais, exclusividade semântica de eventos (evitar dupla contagem de rebaixamento+outlook), e o problema mais profundo — atribuição correta de evento por empresa quando uma notícia menciona múltiplas empresas em papéis diferentes (autor vs. réu, direto vs. indireto).
+
+O problema central resolvido nesta parte do projeto foi um padrão recorrente de falso positivo: o motor atribuía eventos de risco (falência, fraude, recuperação judicial) à empresa monitorada mesmo quando ela não era o sujeito real do evento — por ser apenas citada, ser autora de uma ação judicial, ser dona do RI que publicou a notícia, ou ser investidora indireta (JV) de uma empresa que de fato sofreu o evento. O caso mais emblemático e testado extensivamente foi "Vale informa sobre Plano de Recuperação Judicial da Samarco", em que a Vale aparecia com chip crítico de RJ direta quando na verdade é a Samarco (investida/JV) quem está em RJ, e a notícia é, na visão do usuário, um evento *mitigador* para a Vale.
+
+A solução geral adotada foi introduzir uma camada de "papel semântico" (`mention_role`, `semantic_role_guard`) que roda antes da resolução por famílias e antes da gravação no histórico, calculando por par (empresa monitorada × evento candidato) uma classificação de relação (`direto`, `investida_jv`, `contraparte_credor`, `mercado_contexto`, etc.), e separando explicitamente eventos pontuáveis (`events_by_company`) de eventos apenas contextuais (`context_events_by_company`), que não pontuam, não geram chip crítico, não entram na timeline nem no breakdown, mas ficam visíveis numa seção "Contexto relacionado · não pontua" no card do emissor.
+
+Paralelamente, foi corrigido um problema de dupla contagem de eventos da mesma "família semântica" (ex.: rebaixamento de rating + outlook negativo do mesmo comunicado contando como dois eventos/dois pontos de score), via `resolve_event_families`, com precedência configurável por família em `config_risco.yaml` (`event_resolution`).
+
+Também foi feita uma extensa correção da telemetria de cobertura internacional: o motor original tratava "elegibilidade na rotação" como sinônimo de "efetivamente pesquisado", e "fonte configurada" como sinônimo de "fonte executada com sucesso" — dois erros conceituais que inflavam artificialmente a sensação de cobertura. Isso foi corrigido com uma separação rigorosa entre configuração, tentativa, sucesso técnico e resultado, persistida em `run_meta.json` (execução atual) e `international_search_history.json` (histórico cumulativo de até 8 execuções, necessário porque o runner do GitHub Actions é efêmero).
+
+No fim do chat, o usuário trouxe arquivos reais de uma execução de produção (`risk_history__3_.json`, `run_meta.json`, `international_search_history.json`, `index.html`) que confirmam que parte relevante do trabalho foi de fato publicada: o caso Vale/Samarco aparece corretamente separado no histórico real, e a cobertura internacional atingiu 62/62 emissores estrangeiros com evidência real de tentativa em 4 execuções cumulativas (run_count 49 a 52).
+
+O ponto mais importante que o próximo agente precisa preservar é a arquitetura de atribuição empresa×evento (`events_by_company` / `context_events_by_company` / `event_ids_for()`), que é o resultado de múltiplas iterações de correção de bugs sutis (ordem de aplicação da guarda, precedência entre LLM e guarda determinística, separação entre "quem processa" e "quem é processado", regex quebrada por acentuação). Essa lógica não deve ser redesenhada; o que ainda falta é principalmente validação em produção (exports XLSX/CSV, reclassificação controlada com before/after de score) e a extensão da cobertura de fontes oficiais internacionais (RI_RSS está zerado, EDGAR retornou 0 filings para 32 emissores elegíveis).
+
+Uma advertência forte de método: ao longo do chat, o assistente cometeu e corrigiu diversos bugs de regex/heurística ingênua (ex.: "começa com o nome" causando falsos positivos como atribuir Petrobras a "Petroquisa"; guarda de "empresa processa fraude" capturando incorretamente a empresa ré como autora por causa de resumo duplicando o título). Esses casos foram convertidos em testes de regressão e devem ser tratados como contrato de comportamento, não como decisões triviais.
+
+# 2. Objetivo do projeto e valor de negócio
+
+O sistema é usado pela equipe de investimentos da Vinci Partners para monitorar risco de crédito de emissores em carteira (originalmente ações/renda fixa brasileira, expandido para cobertura internacional) por meio de notícias, fatos relevantes de reguladores (CVM/IPE no Brasil, SEC/EDGAR nos EUA) e páginas de RI. O dashboard consolida sinais de eventos de risco (recuperação judicial, falência, default, rebaixamento de rating, fraude, M&A, covenant breach, troca de CEO, etc.) por emissor, com um score ponderado, uma linha do tempo de ocorrências e uma aba de cobertura que mostra transparentemente o que está e o que não está sendo efetivamente monitorado.
+
+O objetivo de negócio é permitir que analistas identifiquem deterioração de crédito rapidamente sem depender de leitura manual de notícias, mas sem gerar alarmes falsos que corroam a confiança no sistema — daí a insistência recorrente do usuário (Gustavo) em nunca "afirmar cobertura sem evidência" e nunca atribuir eventos a emissores que não são o sujeito real do fato.
+
+O objetivo técnico neste chat foi de qualidade de dados e precisão semântica: eliminar falsos positivos de atribuição, eliminar dupla contagem de eventos, e transformar a cobertura internacional de "declarada" para "medida com evidência real (telemetria)". Sucesso, na visão do usuário, foi definido operacionalmente por critérios de aceite explícitos e testáveis (ex.: "events_by_company['Vale'] == []" para o caso Samarco), não por afirmações qualitativas.
+
+# 3. Escopo deste chat
+
+**Temas centrais:**
+- Fase 4H — cobertura internacional de produção (rotação de tiers, locale por país, keywords multilíngues, telemetria de busca e de fontes oficiais).
+- Fase 4H.0 / 4H.0b — exclusividade semântica de eventos (famílias) e atribuição correta de sujeito/papel por empresa×evento (guardas determinísticas + LLM).
+- Fase 4H.1 a 4H.1f — telemetria de produção, persistência empresa×evento, feed/changes/exports por empresa, renderização visual de "contexto relacionado · não pontua".
+- Validação com arquivos reais de produção (ciclo 1 de telemetria internacional, caso Vale/Samarco em produção).
+
+**Temas secundários (mencionados como contexto herdado de fases anteriores, não trabalhados a fundo neste chat):**
+- Fase 4D (funil de cobertura, backlog de cobertura, texto executivo para o chefe).
+- Fase 4E (comandos `--analyze-audit-cvm`, `--analyze-probe-sources`, `--quality-gate`, `--post-actions-report`).
+- Fase 4F (correção de backfill acidental, fallback de tradução Gemini, feeds 404).
+- Fase 4G/4G.1 (saneamento de identificadores CVM — código CVM/CNPJ para Tier 1).
+
+**Mencionados mas não implementados neste chat:**
+- FNET (fonte de fundos/FIIs) — explicitamente mantido como "não implementar", inconclusivo.
+- Scrapers de reguladores locais (CMF Chile, BIVA, SIMEV Colômbia) — mantidos como "documentar apenas", anti-bot.
+- Metodologia geral de multiplicadores de score para eventos indiretos — proposta em documento (`PROPOSTA_SCORE_INDIRETO.md`), explicitamente **não aprovada nem implementada**.
+
+**Explicitamente fora de escopo (por restrição do usuário):**
+- Alterar pesos-base, thresholds, tiers de materialidade.
+- Rodar backfill.
+- Ativar coletores de reguladores locais.
+
+**Trabalhos pausados no fim do chat:**
+- 4H.2 — Cobertura oficial internacional prioritária (apenas iniciada; diagnóstico do "ciclo 1" foi feito, mas seleção de 10–15 emissores prioritários e cadastro de fontes RI validadas não foram concluídos).
+- Reclassificação controlada (`--reclassify-only`) com relatório antes/depois de score da Vale — pedida explicitamente, não implementada.
+- 4 arquivos de auditoria pendentes: `eventos_indiretos_reclassificados.csv`, `conflitos_direcao_evento.csv`, `relatorio_atribuicao_impacto.md`, e atualização de `auditoria_atribuicao_entidade.csv`.
+
+# 4. Estado atual conhecido
+
+| Componente ou funcionalidade | Estado | Evidência no chat | Observação |
+|---|---|---|---|
+| Guarda de atribuição por papel (`detect_companies`, contexto vs. sujeito) | IMPLEMENTADO_NO_REPOSITORIO; TESTADO_LOCALMENTE | Suíte `--test-attribution` citada repetidamente, culminando em 75/75 casos | Evoluiu por múltiplas iterações; código enviado como `risk_dashboard.py` diversas vezes |
+| `resolve_event_families` (exclusividade semântica: rating vs outlook, RJ vs falência) | IMPLEMENTADO_NO_REPOSITORIO; TESTADO_LOCALMENTE | Config `event_resolution` em `config_risco.yaml`; testes de família na suíte | — |
+| `mention_role` / `semantic_role_guard` (papel: direto, investida_jv, contraparte_credor, mercado_contexto) | IMPLEMENTADO_NO_REPOSITORIO; TESTADO_LOCALMENTE | Casos Vale/Samarco, CVS/JPMorgan, Ford testados e corrigidos por várias iterações | Ver DEC-3, DEC-4 |
+| Separação `events_by_company` × `context_events_by_company` | IMPLEMENTADO_NO_REPOSITORIO; TESTADO_LOCALMENTE | Teste determinístico do caso Vale/Samarco (75/75); **confirmado em `risk_history__3_.json` real** | Ver seção 18 sobre confiabilidade real |
+| `event_ids_for()` (fonte única de verdade para score/feed/changes) | IMPLEMENTADO_NO_REPOSITORIO; TESTADO_LOCALMENTE | Aplicado em score, radar, feed, changes | Fallback legado documentado |
+| Renderização "Contexto relacionado · não pontua" no `template_risco.html.j2` | IMPLEMENTADO_NO_REPOSITORIO; TESTADO_LOCALMENTE; **PUBLICADO_EM_PRODUCAO (indício)** | Grep `"Contexto relacionado"` retornou 1 ocorrência no `index.html` real anexado no fim do chat | Confirmação parcial: presença no HTML real, mas não houve inspeção visual completa |
+| `build_feed` / `build_changes` por empresa×artigo (uma linha por empresa) | IMPLEMENTADO_NO_REPOSITORIO; TESTADO_LOCALMENTE | Teste explícito CVS/JPMorgan (2 empresas, eventos distintos, sem união) | Não validado em exports XLSX/CSV |
+| Exports CSV/XLSX com campos de atribuição (company_role, legal_status etc.) | DECIDIDO_MAS_NAO_IMPLEMENTADO | Usuário pediu explicitamente; assistente reconheceu não ter feito | — |
+| LLM com formato `event_assessments` por empresa×evento | IMPLEMENTADO_NO_REPOSITORIO (prompt); INCERTO (comportamento real em produção) | Prompt reescrito; parsing com fallback ao formato antigo | Nunca testado contra resposta real da API Gemini nesta conversa |
+| Telemetria de busca internacional (`_SEARCH_TELEMETRY`, `fetch_query_result`) | IMPLEMENTADO_NO_REPOSITORIO; TESTADO_NO_GITHUB_ACTIONS | `run_meta.json` real mostra 123 emissores com telemetria de busca | — |
+| Telemetria de fontes oficiais (EDGAR, RI_RSS, RI_NEWS) | IMPLEMENTADO_NO_REPOSITORIO; TESTADO_NO_GITHUB_ACTIONS | `run_meta.json` real: EDGAR 32/32 tentados, 0 filings; RI_NEWS 16/16, 15 com itens; RI_RSS 0 configurados | RI_RSS não tem nenhuma fonte cadastrada ainda |
+| Rotação Tier 3 internacional (buckets, `fetch_every_n_runs`) | IMPLEMENTADO_NO_REPOSITORIO; TESTADO_NO_GITHUB_ACTIONS | `international_search_history.json` real: 62/62 estrangeiros tentados em 4 runs (run_count 49-52) | Antes da correção, 54/62 nunca eram pesquisados (Tier 3 = 0) |
+| Histórico cumulativo `international_search_history.json` (até 8 runs) | IMPLEMENTADO_NO_REPOSITORIO; TESTADO_NO_GITHUB_ACTIONS | Arquivo real anexado com 4 runs | — |
+| Workflow GitHub Actions commitando telemetria (`international_search_history.json`, `run_meta.json`) | IMPLEMENTADO_NO_REPOSITORIO (declarado); TESTADO_NO_GITHUB_ACTIONS (indício forte) | Arquivos reais existem pós-run, o que indica que o commit funcionou | Não foi mostrado o diff do workflow file no fim do chat |
+| Saneamento de identificadores CVM (Vale, CVLB, Fisia, Ambev, PRIO + 8 Tier 1) | IMPLEMENTADO_NO_REPOSITORIO; TESTADO_NO_GITHUB_ACTIONS (parcial) | Auditoria CVM real mostrou queda de 30→22 revisar após primeira leva | Herdado de fases 4G/4G.1, fora do foco central deste chat |
+| Reclassificação controlada (`--reclassify-only`) sem fetch externo | DECIDIDO_MAS_NAO_IMPLEMENTADO | Usuário pediu explicitamente; não foi codificado nesta conversa | Alto valor para validação segura |
+| `auditoria_atribuicao_entidade.csv`, `eventos_indiretos_reclassificados.csv`, `conflitos_direcao_evento.csv`, `relatorio_atribuicao_impacto.md` | PARCIAL (1 de 4 gerado; desatualizado) | `auditoria_atribuicao_entidade.csv` gerado antes da correção do bug "Mercado (geral) = investida_jv" | Precisa ser regerado |
+| Multiplicadores de score para eventos indiretos | PROPOSTO; DECIDIDO_MAS_NAO_IMPLEMENTADO (explicitamente recusado por ora) | `PROPOSTA_SCORE_INDIRETO.md` gerado, não aprovado | Usuário instruiu repetidamente "não implementar agora" |
+| Cobertura oficial internacional prioritária (4H.2) | PROPOSTO; PAUSADO | Diagnóstico do ciclo 1 feito nas últimas mensagens | Não há seleção de 10-15 emissores nem fontes RSS/RI validadas |
+
+# 5. Arquitetura e fluxo de dados
+
+O fluxo, conforme reconstruído neste chat (a arquitetura completa do projeto não está integralmente disponível nesta conversa — partes anteriores a 4D não foram descritas aqui):
+
+```
+fontes (Google News por locale/país, RSS de RI, SEC/EDGAR, CVM/IPE)
+  → fetch_query_result() / fetch_all()      [coleta + telemetria por emissor]
+  → classify_article()                       [keywords multilíngues → event_ids preliminares]
+  → detect_companies()                       [empresas citadas no título, com guardas de contexto]
+  → mention_role() / semantic_role_guard()   [papel por empresa×evento: direto/investida_jv/contraparte/mercado_contexto]
+  → resolve_event_families()                 [1 principal por família semântica; POR EMPRESA]
+  → consolidate_with_llm()                   [LLM confirma/restringe por empresa×evento; NUNCA reintroduz o que a guarda de alta confiança removeu]
+  → merge_into_history()                     [grava events_by_company, context_events_by_company, companies_attributed, context_companies]
+  → build_evolution() / build_radar()        [score usa event_ids_for(rec, empresa); context_events aparece separado, não pontua]
+  → build_feed() / build_changes()           [uma linha por empresa×artigo; nunca união de eventos entre empresas]
+  → render_html() / template_risco.html.j2   [chips, timeline, breakdown pontuável + seção "Contexto relacionado · não pontua"]
+  → GitHub Actions commit                    [risk_history.json, run_meta.json, international_search_history.json, dashboard/index.html]
+```
+
+Para cada etapa, o que se sabe neste chat:
+
+- **Coleta (`fetch_query_result`, `locale_for_company`, `locales_for_company`)** — entrada: emissor + config; saída: artigos brutos + registro de telemetria (`_SEARCH_TELEMETRY`). Risco conhecido: erro de rede sendo contado como sucesso (corrigido — ver DEC-6). Invariante: `success`/`errors` são os campos primários; `http_success` é só fallback de compatibilidade com históricos antigos.
+- **Classificação (`classify_article`)** — entrada: título/resumo; saída: lista de `event_ids` preliminares por palavra-chave. Risco: dependência de keywords só em português historicamente (corrigido com adição de termos en/es para 12 eventos materiais).
+- **Atribuição de empresas (`detect_companies`)** — entrada: título; saída: lista de empresas citadas, com supressão de menções puramente contextuais (praça de negociação, fonte de dado, nota de rating, topônimo, nome composto colado). Invariante crítico: **não é aceitável atribuir evento a empresa citada apenas como praça, fonte, ou por substring de nome parecido**.
+- **Papel semântico (`mention_role`, `semantic_role_guard`)** — entrada: (empresa, evento candidato, título); saída: `relation_type`, `subject_company`, `impact_type`, `event_scope`, `direction_hint`, `event_phase`. É a camada mais delicada e mais retrabalhada do chat. Invariante: `source_company != subject_company` — a empresa dona do domínio/RI que publica a notícia não é automaticamente o sujeito.
+- **Resolução por famílias (`resolve_event_families`)** — entrada: eventos por empresa; saída: 1 evento principal + secundários (metadado, não pontuável) por família configurada em `event_resolution` no YAML. Deve rodar **por empresa**, não globalmente.
+- **Merge no histórico (`merge_into_history`)** — grava `events_by_company`, `context_events_by_company`, `companies_attributed`, `context_companies`, `event_assessments`, `semantic_discards`, `llm_divergences`. Invariante: `events_by_company` tem precedência absoluta sobre `event_ids` legado em `event_ids_for()`.
+- **Score/radar (`build_evolution`, `event_ids_for`)** — usa exclusivamente `event_ids_for(registro, empresa)` para decidir o que pontua. Eventos em `context_events_by_company` nunca entram no cálculo.
+- **Feed/Changes (`build_feed`, `build_changes`)** — reescritos para gerar uma linha por (artigo, empresa atribuída), nunca uma união de eventos entre empresas diferentes citadas no mesmo artigo.
+- **Renderização (`template_risco.html.j2`)** — seção nova "Contexto relacionado · não pontua" (classes CSS `.context-block`, `.context-title`, `.context-item` etc.), abaixo do breakdown pontuável, condicional a `row.context_events.length > 0`.
+- **Publicação (GitHub Actions)** — commit de `risk_history.json`, `dashboard_risco.html`, `index.html`, e (adição deste chat) `international_search_history.json`, `run_meta.json`, `auditoria_cobertura_internacional.csv`, `cobertura_internacional_por_pais.csv`.
+
+# 6. Mapa de arquivos, módulos e artefatos
+
+| Caminho ou nome | Função | Estado conhecido | Deve ser preservado? | Observações |
+|---|---|---|---|---|
+| `risk_dashboard.py` | Módulo principal: coleta, classificação, atribuição, score, exports, CLI | Editado repetidamente ao longo do chat; última versão entregue no fim (pós item "última milha" da 4H.0b) | Sim | Contém `_EVENTOS_CRITICOS`, `RELATION_LABELS`, `IMPACT_LABELS`, `_DIRECTION_LABELS`, `_PHASE_LABELS`, `event_ids_for`, `mention_role`, `semantic_role_guard`, `resolve_event_families`, `_build_context_events` |
+| `template_risco.html.j2` | Template Jinja do dashboard HTML | Editado para incluir seção de contexto | Sim | Contém CSS `.context-*` e `.rel-tag*` |
+| `config_risco.yaml` | Configuração: watchlist, taxonomia, `event_resolution` (famílias), tiers, `official_sources` | Editado para incluir bloco `event_resolution`, keywords multilíngues, correção de Tier 3 (`fetch_every_n_runs`) | Sim | Contém decisões de negócio (não alterar pesos/thresholds sem aprovação explícita) |
+| `update_risk_dashboard.yml` (workflow GitHub Actions) | Orquestra execução, commit de artefatos | Mencionado como alterado para incluir commit de `international_search_history.json`/`run_meta.json` | Sim, verificar no repo | Conteúdo exato do diff não está integralmente reproduzido nesta conversa; **precisa ser confirmado no GitHub** |
+| `risk_history.json` | Histórico de artigos/eventos processados | Real, anexado múltiplas vezes (`risk_history__1_.json`, `__2_.json`, `__3_.json`) | Sim (é dado de produção, não código) | `__3_.json` é a versão mais recente confirmada; contém 553 registros |
+| `run_meta.json` | Metadados da execução atual: modos (`reclassify`, `backfill`, `audit_cvm`, `probe_sources`), `international_search_execution`, `official_source_execution` | Real, anexado no fim do chat | Sim (dado de execução) | Confirma `backfill: false`, `run_count: 52` |
+| `international_search_history.json` | Histórico cumulativo de telemetria de busca internacional (até 8 runs) | Real, anexado; contém 4 runs (49-52) | Sim | Arquivo crítico para provar cobertura de ciclo — não deve ser tratado como código, é estado |
+| `index.html` / `dashboard_risco.html` | HTML publicado (produção) | `index.html` real anexado; contém 1 ocorrência de "Contexto relacionado" | Sim | Evidência parcial de publicação bem-sucedida da seção de contexto |
+| `auditoria_cobertura_internacional.csv` | Auditoria por emissor: elegibilidade, execução, resultado bruto, atribuição, fontes oficiais | Gerado por comando `--audit-international-coverage`; regenerado várias vezes ao longo do chat | Sim (mas gerar de novo com dados mais recentes) | Contém campos como `elegivel_na_rotacao`, `pesquisado_nesta_execucao`, `edgar_configurado`, `edgar_executado` |
+| `cobertura_internacional_por_pais.csv` | Agregado por país | Gerado junto com o anterior | Sim | — |
+| `identificadores_cvm_tier1_review.csv`, `identificadores_cvm_sugeridos.csv`, `identificadores_cvm_pendentes.csv` | Saneamento CVM (herdado de fase 4G) | Gerado em fases anteriores, fora do foco central deste chat | Sim, se ainda relevante | Não é o foco desta conversa |
+| `auditoria_atribuicao_entidade.csv` | Auditoria de casos de atribuição indevida (Vale/Samarco e casos Mercado geral) | Gerado ANTES da correção do bug "Mercado (geral) = investida_jv"; **desatualizado** | Não sem regenerar | Precisa reexecução após correção final |
+| `eventos_indiretos_reclassificados.csv` | Pedido explicitamente, não gerado | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO → na verdade nem gerado | — | Pendência P0/P1 |
+| `conflitos_direcao_evento.csv` | Pedido explicitamente, não gerado | Não gerado | — | Pendência |
+| `relatorio_atribuicao_impacto.md` | Pedido explicitamente, não gerado | Não gerado | — | Pendência |
+| `PROPOSTA_SCORE_INDIRETO.md` | Proposta de multiplicadores de score para eventos indiretos | PROPOSTO, não aprovado | Sim, como referência de proposta pendente | Não implementar sem aprovação explícita do usuário |
+| `EXEMPLO_run_meta.json`, `EXEMPLO_international_search_history.json`, `EXEMPLO_registro_historico_empresa_evento.json` | Exemplos sintéticos gerados pelo assistente para ilustrar formato | Explicitamente marcados como NÃO produção | Não usar como evidência real | O usuário insistiu várias vezes "não usar EXEMPLO_* como evidência de produção" |
+| `--test-attribution` (suíte de testes offline) | Suíte de regressão dentro de `risk_dashboard.py` | 75/75 casos passando na última execução relatada | Sim, crítico | Cobre: contexto de menção, topônimo, nome composto, evento de terceiro, famílias, clusterização de ocorrências (Engie), papel semântico (CVS/JPMorgan/Ford/Vale-Samarco), telemetria |
+| `--test-cvm-fixture`, `--test-fund-coverage` | Suítes herdadas de fases anteriores | 11/11 e 10/10 respectivamente, mantidas passando | Sim | Fora do escopo central deste chat, mas não podem regredir |
+| `--audit-international-coverage` | Comando CLI que gera as auditorias de cobertura internacional | Implementado e usado repetidamente | Sim | Aceita `--history`, `--run-meta`, `--exposure-base`, `--outdir` |
+| `--reclassify-only` | Comando pedido pelo usuário para reclassificação segura sem fetch externo | DECIDIDO_MAS_NAO_IMPLEMENTADO | — | P0 no backlog |
+
+# 7. Decisões técnicas e de produto
+
+## DEC-1 — Separar `companies` (todas citadas) de `companies_attributed` (com evento pontuável) e `context_companies`
+
+- Problema: o feed e os exports mostravam todas as empresas citadas num artigo como se todas fossem afetadas pelo mesmo evento.
+- Decisão: `merge_into_history` passa a derivar `companies_attributed` (empresas com ≥1 evento em `events_by_company`) e `context_companies` (empresas citadas sem evento atribuível).
+- Objetivo: impedir que uma empresa meramente citada (ex.: JPMorgan processando terceiros) apareça como afetada por fraude.
+- Justificativa: caso real "Health systems represented by JPMorgan sue CVS Health alleging fraud" — JPMorgan não pode aparecer como réu de fraude.
+- Alternativas consideradas: manter `companies` genérico e filtrar apenas na exibição — rejeitada porque o filtro teria que ser reaplicado em toda camada consumidora (score, feed, changes, exports), replicando lógica e criando risco de esquecimento.
+- Trade-offs: mais campos no histórico, maior complexidade de leitura para quem não conhece o esquema.
+- Consequências: `event_ids_for()` tornou-se a única fonte de verdade; qualquer consumidor que ainda leia `rec.get("event_ids")` diretamente reintroduz o bug.
+- Invariantes: `events_by_company` tem precedência absoluta sobre `event_ids` legado.
+- Status: IMPLEMENTADO_NO_REPOSITORIO, TESTADO_LOCALMENTE.
+- Evidência: teste `run_attribution_tests` com caso CVS/JPMorgan citado várias vezes no chat.
+- O que verificar no repositório: se `build_feed`/`build_changes`/exports (CSV/XLSX) de fato usam `companies_attributed` e não `rec["companies"]` em produção real (não apenas em testes sintéticos).
+
+## DEC-2 — Resolução por famílias semânticas de eventos (`event_resolution`)
+
+- Problema: mesma ação de rating gerando dois eventos (rebaixamento + outlook) e, portanto, dupla contribuição de score.
+- Decisão: introduzir `resolve_event_families()`, com famílias configuráveis em `config_risco.yaml` (`event_resolution`), definindo qual evento é "principal" (pontuável) e quais são "secundários" (metadado, não pontuável) dentro da mesma família e mesma ocorrência.
+- Objetivo: uma ocorrência econômica = um evento pontuável.
+- Justificativa: caso real da Rumo com rebaixamento de rating e outlook negativo do mesmo comunicado.
+- Alternativas consideradas: usar apenas o mecanismo antigo de `suppresses` por par de eventos — rejeitada por ser rígida e não escalar para N eventos por família.
+- Trade-offs: exige manutenção de uma lista de famílias no YAML; erro de configuração pode suprimir evento indevidamente.
+- Consequências: precisou ser refeita para rodar **por empresa** (não globalmente) depois que se percebeu que duas empresas diferentes no mesmo artigo podiam ter eventos de famílias diferentes sendo indevidamente resolvidos em conjunto.
+- Invariantes: resolução de família nunca deve unir eventos de empresas diferentes.
+- Status: IMPLEMENTADO_NO_REPOSITORIO, TESTADO_LOCALMENTE.
+- Evidência: casos de teste "Rumo rating/outlook" e "Engie quatro ocorrências" citados repetidamente.
+- O que verificar: se o `config_risco.yaml` real em produção contém o bloco `event_resolution` esperado e se está sincronizado com o código.
+
+## DEC-3 — `mention_role`/`semantic_role_guard`: papel semântico por empresa×evento, não supressão cega
+
+- Problema (evolução em múltiplas iterações): primeira versão suprimia qualquer evento em que a empresa monitorada não fosse o "sujeito jurídico direto" — isso gerava falso negativo grave (CVS Health, ré numa ação de fraude, tinha o evento suprimido porque a regex só olhava "quem processa", não "quem é processado").
+- Decisão final: classificar explicitamente o papel (`relation_type`: `direto`, `investida_jv`, `contraparte_credor`, `mercado_contexto`) e a posição sintática (sujeito vs. objeto do verbo de ação judicial), preservando o evento como atribuível quando a empresa é ré/investigada, e movendo para contexto apenas quando ela é autora, investigadora, ou dona de departamento mencionado.
+- Objetivo: não confundir "empresa não é o sujeito jurídico direto" com "não atribuível" — alegação de fraude contra a empresa é um sinal de risco legítimo, ainda que não seja "fraude confirmada".
+- Justificativa: casos reais "2 of Michigan's largest health systems sue CVS Health alleging fraud" (CVS deve ficar com o evento, marcado como alegação) vs. "JPMorgan sues Aleph over fraud" (JPMorgan não deve ficar com o evento).
+- Alternativas consideradas: heurística "procura o verbo perto da palavra fraude" — rejeitada por não distinguir sujeito de objeto (bug real encontrado e corrigido).
+- Trade-offs: regex de linguagem natural é frágil; há risco de novos casos não cobertos.
+- Consequências: criação de `legal_status` (`allegation/lawsuit`) e `confirmation_status`, propagados até o card, com selo visual "⚖️ Acusação em ação judicial — não é fato comprovado".
+- Invariantes: nunca apresentar alegação como fato confirmado; nunca suprimir evento apenas porque a empresa não é o sujeito jurídico "puro" quando há exposição econômica clara.
+- Status: IMPLEMENTADO_NO_REPOSITORIO, TESTADO_LOCALMENTE.
+- Evidência: sequência de mensagens de correção do bug CVS/JPMorgan; suíte cresceu de ~56 para 62 e depois 68/71/75 casos ao longo das correções.
+- O que verificar: comportamento real da LLM em produção (não testado nesta conversa contra API real) e se casos não cobertos pelas regex aparecem no dashboard real.
+
+## DEC-4 — Separação `events_by_company` (pontuável) × `context_events_by_company` (contexto, não pontuável) — última milha do caso Vale/Samarco
+
+- Problema: mesmo com `mention_role` classificando corretamente Vale→Samarco como `investida_jv`/indireto/mitigador, essa informação não estava sendo usada para remover o evento de `events_by_company["Vale"]`; a Vale continuava recebendo RJ direta pontuável.
+- Decisão: após `mention_role`, para cada evento crítico atribuído a uma empresa cujo `subject_company` for diferente dela mesma (e `relation_type != direto`), mover o evento de `events_by_company[empresa]` para `context_events_by_company[empresa]`, com `scoreable: false`.
+- Objetivo: garantir que `event_ids_for(registro, "Vale") == []` no caso Samarco, e que a Vale nunca receba chip crítico, ponto na timeline, ou contribuição de score por esse evento.
+- Justificativa: caso real "Vale informa sobre Plano de Recuperação Judicial da Samarco" — confirmado no `risk_history__3_.json` real: `events_by_company = {"Vale": [], "Samarco Mineração": ["recuperacao_judicial"]}`.
+- Alternativas consideradas: manter tudo em `events_by_company` e filtrar apenas na exibição — rejeitada explicitamente pelo usuário ("não use events_by_company para armazenar contexto, pois event_ids_for usa esse campo como fonte oficial dos eventos que pontuam").
+- Trade-offs: mais um campo a persistir e propagar por toda a pipeline (feed, changes, radar, template).
+- Consequências: criação de `row["context_events"]` na evolução, com deduplicação por `subject_company + event_id + URL`, ordenação por `pub_ts` desc, limite de 8, e rótulos (`relation_label`, `impact_label`, `direction_label`, `phase_label`).
+- Invariantes: eventos de contexto **nunca** entram em `row.timeline`, `row.events`, `row.breakdown`, nunca alteram `worst_event`, `n_critical`, `total_score`, `score_delta`, ou deterioração persistente.
+- Status: IMPLEMENTADO_NO_REPOSITORIO; TESTADO_LOCALMENTE (teste determinístico específico); **confirmado no histórico real** (`risk_history__3_.json` mostra o registro correto) e **indício de publicação** (`index.html` real contém a string "Contexto relacionado" uma vez).
+- Evidência: mensagens finais do chat com diagnóstico do arquivo real anexado.
+- O que verificar no repositório: (a) se `context_events` aparece corretamente renderizado visualmente no card da Vale (validação visual manual não foi feita, apenas grep de string); (b) se o score real da Vale mudou entre a versão antiga e nova do histórico (before/after nunca foi calculado e apresentado, apesar de pedido explícito do usuário).
+
+## DEC-5 — "Mercado (geral)" não pode ser tratado como `investida_jv`
+
+- Problema: a primeira versão da auditoria de atribuição marcou casos como "Três Irmãos", "AHMSA", "Tok&Stok" (empresas fora da watchlist, atribuídas ao bucket `Mercado (geral)`) como `investida_jv`, o que é conceitualmente errado — "Mercado (geral)" não é controlador nem investidor de ninguém.
+- Decisão: criar `relation_type = "mercado_contexto"` e `event_scope = "mercado"` especificamente para quando o "emissor monitorado" é o bucket de mercado.
+- Objetivo: não fabricar uma relação societária inexistente.
+- Justificativa: apontado explicitamente pelo usuário como erro conceitual na revisão da auditoria.
+- Status: IMPLEMENTADO_NO_REPOSITORIO (última correção do chat, antes de "última milha"), TESTADO_LOCALMENTE.
+- Evidência: correção aplicada no mesmo turno em que `_papel_em_acao_judicial` foi criado.
+- O que verificar: se `auditoria_atribuicao_entidade.csv` foi regenerado após essa correção (indício no chat é que **não foi** — o arquivo mencionado como entregue ainda reflete a versão antiga com o bug).
+
+## DEC-6 — Telemetria estruturada de coleta (elegibilidade ≠ execução ≠ sucesso ≠ resultado)
+
+- Problema: `pesquisado_na_rotacao` era calculado apenas por `fetch_every_n_runs != 0`, o que mede elegibilidade de configuração, não execução real. Da mesma forma, `fetch_query()` retornava `[]` tanto para "resposta OK com zero artigos" quanto para timeout/erro HTTP, e o código fazia `http_success += 1 if _res is not None else 0` — como `[] is not None`, todo erro virava "sucesso".
+- Decisão: criar `fetch_query_result()` retornando um dicionário estruturado (`ok`, `articles`, `status_code`, `error`, `error_type`, `elapsed_ms`), e separar campos de auditoria em: `elegivel_na_rotacao`, `pesquisado_nesta_execucao`, `midia_respondeu_ultima_execucao`, `midia_com_resultado_bruto`, com status finais explícitos (`BLOQUEIO`, `SEM_EVIDENCIA`, `ERRO_FONTE`, `ZERO_BRUTO`, `SEM_ATRIBUICAO`, `SEM_EVENTO_CLASSIFICADO`, `OK`).
+- Objetivo: nunca afirmar cobertura sem evidência real de execução.
+- Justificativa: pedido explícito e repetido do usuário — "não afirmar 62/62 antes dos quatro ciclos reais", "PASS somente se houver evidência real acumulada".
+- Trade-offs: aumento significativo de complexidade no schema de telemetria; múltiplas correções de bug de ordem de execução (variável usada antes de definida) ao longo do chat.
+- Consequências: criação de `international_search_history.json` (persistência cumulativa entre runs, já que o runner do GitHub Actions é efêmero) e telemetria separada por canal oficial (`_OFFICIAL_SOURCE_TELEMETRY`: EDGAR, RI_RSS, RI_NEWS, REGULADOR_LOCAL).
+- Status: IMPLEMENTADO_NO_REPOSITORIO; TESTADO_NO_GITHUB_ACTIONS — confirmado pelos arquivos reais anexados no fim do chat (`run_meta.json` com `international_search_execution` de 123 emissores e `official_source_execution` populado).
+- O que verificar: por que EDGAR retornou 0 filings para os 32 emissores elegíveis (`filings_found: 0` para todos) — não investigado neste chat, é hipótese não comprovada (pode ser janela de formulários (`forms`) restritiva, período de 90 dias sem eventos reais, ou bug).
+
+## DEC-7 — Rotação por buckets estáveis em vez de `run_count % n`
+
+- Problema: Tier 3 tinha `fetch_every_n_runs: 0`, o que na implementação original significava "nunca pesquisado" (salvo `force_fetch`). Isso deixava 54 dos 62 emissores estrangeiros permanentemente fora de rotação. Além disso, `run_count % n` fazia todo o Tier 2 cair na mesma execução (pico de carga).
+- Decisão: `fetch_every_n_runs` do Tier 3 alterado de `0` para `4`; introduzido offset de bucket por hash do nome do emissor (`should_fetch_company` usa `(run_count + offset) % n`), distribuindo a carga entre execuções.
+- Objetivo: garantir que todo emissor elegível seja pesquisado dentro de um ciclo de N execuções, sem pico de carga.
+- Justificativa: medição real mostrou 0/62 estrangeiros "sem evidência de execução" antes da correção (mesmo estando "elegíveis").
+- Status: IMPLEMENTADO_NO_REPOSITORIO; TESTADO_NO_GITHUB_ACTIONS — `international_search_history.json` real confirma 62/62 tentados em 4 runs (49-52), com carga por run entre 82 e 125 emissores.
+- O que verificar: se a distribuição de carga está de fato estável ao longo de mais execuções (só 4 runs foram observados).
+
+# 8. Regras de negócio e invariantes
+
+- **Atribuição de evento por empresa nunca pode ser feita por "empresa está entre as `companies` do artigo"** — precisa passar por `event_ids_for(registro, empresa)`, que respeita `events_by_company`. Motivo: um artigo pode citar múltiplas empresas em papéis distintos (autor/réu, direto/indireto), e a atribuição incorreta gera falsos positivos graves de risco de crédito.
+- **`source_company != subject_company`** — a empresa dona do domínio, do RI, ou que publicou o comunicado não é automaticamente o sujeito do evento. Motivo: caso Vale/Samarco (RI da Vale publicando sobre RJ da Samarco).
+- **Evento contextual (indireto) nunca pontua, nunca gera chip crítico, nunca entra em timeline/breakdown, nunca altera `worst_event`/`n_critical`/`total_score`/`score_delta`, nunca alimenta deterioração persistente.** Motivo: distinguir risco direto de exposição indireta é uma decisão de produto explícita do usuário, para não inflar artificialmente o risco de um emissor por eventos de terceiros relacionados.
+- **Não implementar multiplicador de score para eventos indiretos sem aprovação explícita.** Motivo: usuário determinou repetidamente "score_delta negativo igual a zero" para o caso Vale/Samarco até que uma metodologia geral seja aprovada — mera proposta (`PROPOSTA_SCORE_INDIRETO.md`) não é aprovação.
+- **Uma ocorrência econômica pontua uma vez, mesmo que gere múltiplos eventos da mesma família semântica** (ex.: rebaixamento + outlook do mesmo comunicado). Motivo: caso real Rumo, dupla contagem inflava indevidamente o score.
+- **Alegação em ação judicial não é fato confirmado** — deve ser sinalizada com `legal_status: allegation/lawsuit` e exibida com selo visual específico, não como "fraude confirmada". Motivo: precisão jornalística/jurídica exigida pelo usuário.
+- **"Mercado (geral)" nunca deve receber `relation_type = investida_jv`.** Motivo: não há relação societária real entre o bucket de agregação e empresas fora da watchlist.
+- **Guarda determinística de alta confiança que remove um evento não pode ser silenciosamente revertida pela LLM.** A LLM pode restringir eventos, mas reintroduzir um evento removido por guarda de alta confiança deve ser registrado como divergência auditável (`llm_divergences`), não aplicado silenciosamente. Motivo: garantir que o comportamento determinístico e testável prevaleça sobre inferência não determinística da LLM.
+- **Backfill não pode ser ativado implicitamente.** Aparece como restrição repetida em quase todas as fases deste chat (herdada de fases anteriores 4F/4G). O `run_meta.json` real confirma `backfill: false` na última execução.
+- **Não afirmar cobertura de fonte oficial (EDGAR, RI) sem evidência de execução com sucesso.** "Elegível" ou "configurado" não é "executado com sucesso" — distinção formalizada em DEC-6.
+- **Não afirmar "62/62 pesquisados" sem evidência acumulada de 4 ciclos reais.** Regra explícita do usuário, cumprida neste chat com a análise do `international_search_history.json` real.
+- **Arquivos `EXEMPLO_*` nunca podem ser tratados como evidência de produção.** Regra explícita repetida pelo usuário.
+
+# 9. Implementações e correções realizadas
+
+**1. Guarda de contexto vs. sujeito em `detect_companies` (praça de negociação, fonte, nota de rating, topônimo, nome composto)**
+- Problema original: B3 sendo atribuída como sujeito de eventos quando era apenas a praça de negociação mencionada, ou nota de rating (ex.: "eleva rating para B3").
+- Causa raiz: matching de nome sem checagem de papel sintático.
+- Solução: conjunto de regex de contexto (praça, fonte de dado, terceiro no negócio) que suprime a atribuição quando a menção é puramente contextual.
+- Arquivos: `risk_dashboard.py`.
+- Testes: incorporados na suíte `--test-attribution`.
+- Status: IMPLEMENTADO_NO_REPOSITORIO, TESTADO_LOCALMENTE.
+- Limitação: cobre padrões identificados manualmente; não é exaustivo.
+
+**2. Clusterização de ocorrências por identidade econômica composta (caso Engie)**
+- Problema original: notícias sobre a mesma operação (ex.: follow-on em etapas) contadas como ocorrências separadas, e vice-versa, ocorrências distintas (16ª vs 17ª emissão de debêntures) sendo agrupadas indevidamente pelo gap temporal de 45 dias.
+- Causa raiz: clusterização usava apenas gap de dias.
+- Solução: chave composta (emissor + tipo + série/número + objeto + marcadores da operação), com gap de dias como fallback, não identificador único.
+- Testes: caso Engie (4 ocorrências reais) e Rumo citados como regressão.
+- Status: IMPLEMENTADO_NO_REPOSITORIO, TESTADO_LOCALMENTE.
+
+**3. `resolve_event_families` — ver DEC-2.**
+
+**4. `mention_role`/`semantic_role_guard` — ver DEC-3.**
+
+**5. Persistência `events_by_company`/`context_events_by_company`/`companies_attributed`/`context_companies` — ver DEC-1 e DEC-4.**
+
+**6. `event_ids_for()` como fonte única de verdade para score/feed/changes**
+- Problema original: score, feed e changes liam `rec.event_ids` (união global), fazendo com que evento de uma empresa vazasse para outra citada no mesmo artigo.
+- Causa raiz: ausência de uma função central de leitura por empresa.
+- Solução: `event_ids_for(registro, empresa)`, com precedência de `events_by_company` e fallback legado para registros antigos sem esse campo.
+- Arquivos: `risk_dashboard.py` (score, radar, `build_feed`, `build_changes`).
+- Status: IMPLEMENTADO_NO_REPOSITORIO, TESTADO_LOCALMENTE.
+- Efeito colateral relevante: exigiu retrabalho de `resolve_event_families` para rodar por empresa (não globalmente).
+
+**7. `build_feed`/`build_changes` — uma linha por empresa×artigo**
+- Problema original (relatado explicitamente pelo usuário como "vazamento"): mesmo calculando `companies_attributed`, o retorno do feed ainda usava `**rec`, preservando `companies` com todas as empresas citadas — então o template continuava exibindo a tag da empresa não-atribuída.
+- Causa raiz: espalhamento de dicionário (`**rec`) sobrescrevendo a correção.
+- Solução: loop explícito por empresa atribuída, gerando uma linha/sinal por empresa, sem unir eventos.
+- Testes: caso CVS/JPMorgan e caso de duas empresas com eventos distintos (rating rebaixado vs. fraude).
+- Status: IMPLEMENTADO_NO_REPOSITORIO, TESTADO_LOCALMENTE (71/71 na suíte após esta correção).
+
+**8. Telemetria de coleta e de fontes oficiais — ver DEC-6.**
+
+**9. Rotação por buckets — ver DEC-7.**
+
+**10. Locale por país e keywords multilíngues**
+- Problema original: cobertura internacional quase vazia mesmo após correção de rotação, porque toda busca usava locale fixo `pt-BR/BR` e keywords só em português.
+- Solução: `locale_for_company()`/`locales_for_company()` (com override `search_locale.primary`/`fallbacks`, mecanismo implementado mas não aplicado a nenhum emissor ainda), e adição de termos em inglês/espanhol para 12 eventos materiais da taxonomia.
+- Status: IMPLEMENTADO_NO_REPOSITORIO, TESTADO_NO_GITHUB_ACTIONS (confirmado por telemetria real: 62 emissores com locale correto).
+- Limitação: fallback de locale implementado mas nunca ativado para nenhum emissor real (mecanismo pronto, não aplicado).
+
+**11. Renderização "Contexto relacionado · não pontua"**
+- Solução: seção no `template_risco.html.j2`, condicional a `row.context_events`, com classes CSS próprias, sem reutilizar estilo de evento crítico.
+- Status: IMPLEMENTADO_NO_REPOSITORIO; indício de PUBLICADO_EM_PRODUCAO (grep no `index.html` real retornou 1 ocorrência da string).
+- Limitação: não houve validação visual (screenshot) desta seção especificamente renderizada no card da Vale.
+
+**12. Correção de bug "erro de query contado como sucesso" — ver DEC-6.**
+
+# 10. Casos reais e testes de regressão
+
+| Caso | Erro ou requisito | Resultado esperado | Status | Teste existente |
+|---|---|---|---|---|
+| "Vale informa sobre Plano de Recuperação Judicial da Samarco" | Vale recebia RJ direta, chip crítico, ponto vermelho | `events_by_company["Vale"]=[]`; evento em `context_events_by_company["Vale"]`; sujeito=Samarco; direção=mitigadora | Corrigido e testado localmente; confirmado no histórico real (`risk_history__3_.json`) | Sim, teste determinístico no `--test-attribution` |
+| "Vale pede recuperação judicial" | Controle positivo: RJ direta deve continuar pontuando | `events_by_company["Vale"]=["recuperacao_judicial"]`, pontua normalmente | Testado | Sim |
+| "Vale tem rating rebaixado e informa sobre plano de RJ da Samarco" (caso misto) | Separar por evento, não por artigo | `events_by_company["Vale"]=["rebaixamento_rating"]`; RJ da Samarco vira contexto | Testado e corrigido (faltava keyword "rating rebaixado" no particípio) | Sim |
+| "2 of Michigan's largest health systems sue CVS Health alleging fraud" | CVS (ré) não podia perder o evento de fraude | CVS mantém fraude, marcada `defendant_accused`, `legal_status: allegation/lawsuit` | Corrigido após bug em que CVS virava `plaintiff_enforcer` incorretamente | Sim |
+| "JPMorgan sues Aleph over Frank fraud fallout" | JPMorgan (autor) não pode receber fraude | `plaintiff_enforcer`, sem evento pontuável | Testado | Sim |
+| "Ford Motor Sues to Shut Down Lemon Law Fraud" | Ford (autora/enforcer) não pode receber fraude | `plaintiff_enforcer`, sem evento | Corrigido após bug em que o resumo duplicado do título fazia Ford virar `defendant_accused` incorretamente | Sim |
+| "JPMorgan is investigated for accounting fraud" | Controle positivo: investigação direta deve pontuar | Fraude atribuída, `investigated_entity`/direto | Testado | Sim |
+| "Vamos conversar sobre a falência das instituições" | Uso metafórico não deve gerar evento | Nenhum evento; `abstrato_metaforico` | Testado | Sim |
+| "JPMorgan Chase pushes fraud division layoffs" | Departamento antifraude não é fraude da empresa | Nenhum evento; `departamento_contexto` | Testado | Sim |
+| Rumo — rebaixamento de rating + outlook negativo do mesmo comunicado | Dupla contagem de score | Apenas rebaixamento pontua; outlook vira metadado secundário | Corrigido via `resolve_event_families` | Sim |
+| Engie — 11 notícias sobre a mesma operação, incluindo 16ª e 17ª emissão de debêntures | Confundir etapas da mesma operação com operações distintas | 4 ocorrências distintas (não 11, não 1) | Corrigido via chave de identidade composta | Sim, citado como "Engie: 11 notícias → 4 eventos" |
+| Empresas fora da watchlist no bucket "Mercado (geral)" (Três Irmãos, AHMSA, Tok&Stok) | Marcadas erroneamente como `investida_jv` de "Mercado (geral)" | `relation_type = mercado_contexto` | Corrigido (última correção antes da "última milha") | Necessita regeração de `auditoria_atribuicao_entidade.csv` para confirmar |
+| EDGAR — 32 emissores elegíveis, 0 filings encontrados em todos | Possível problema de janela/formulário/CIK | Investigar causa raiz | **Não investigado** — hipótese aberta | Não há teste |
+
+# 11. Testes e validações
+
+- **Suíte principal `--test-attribution`**: cresceu ao longo do chat de dezenas de casos até **75/75** na última execução relatada, cobrindo contexto vs. sujeito, topônimo, nome composto, evento de terceiro, exclusividade semântica de famílias, clusterização de ocorrências (Engie), papel semântico por empresa×evento (CVS/JPMorgan/Ford/Vale-Samarco), telemetria de busca (timeout, HTTP 403, RSS vazio, sucesso), telemetria de fontes oficiais (EDGAR com 0 filings = executado, CIK não resolvido explícito), feed/changes por empresa, e teste visual determinístico de `context_events`.
+- **`--test-cvm-fixture`**: 11/11, mantido passando ao longo de todo o chat (herdado de fases anteriores, fora do escopo central).
+- **`--test-fund-coverage`**: 10/10, mantido passando (idem).
+- **Ambiente de execução**: todos os testes citados foram executados **localmente pelo assistente** em ambiente de desenvolvimento próprio (não é o ambiente real do usuário nem o GitHub Actions), usando cópias de `risk_dashboard.py` e `config_risco.yaml` mantidas ao longo da conversa. Diferencial importante: **não há garantia de que a versão final entregue no chat é byte-a-byte idêntica ao que está no repositório real do usuário**, já que o assistente não tem acesso direto ao GitHub.
+- **Testes executados no GitHub Actions real**: confirmados indiretamente pelos arquivos reais anexados no fim do chat (`run_meta.json`, `international_search_history.json`, `risk_history__3_.json`, `index.html`, `run_count: 52`). Esses arquivos demonstram que ao menos uma versão do código (não necessariamente a última) rodou com sucesso em produção, sem backfill, com telemetria populada, e com o caso Vale/Samarco corrigido no histórico real.
+- **Validação visual manual**: parcial. O usuário enviou 2 screenshots ao longo do chat mostrando o problema (card da Vale com "Crítico · Recuperação Judicial" e a notícia real do RI da Vale sobre a Samarco). Não há screenshot confirmando a correção renderizada visualmente — apenas um `grep` de string no `index.html` real.
+- **Testes que ainda faltam** (declarados explicitamente como pendentes pelo assistente):
+  - Teste ponta a ponta usando `--reclassify-only` sobre o histórico real completo, comparando `risk_history_antes` vs `risk_history_depois`.
+  - Validação de exports CSV/XLSX com os novos campos de atribuição (company_role, legal_status, subject_company).
+  - Investigação da causa dos "0 filings" do EDGAR.
+  - Teste de comportamento real da LLM (Gemini) com o novo prompt `event_assessments`, contra a API real (não simulado).
+
+# 12. Deploy, automações e operação
+
+- **Workflow GitHub Actions**: nome mencionado como `update_risk_dashboard.yml` (herdado de fases anteriores). Inputs conhecidos: `reclassify`, `backfill`, `audit_cvm`, `probe_sources` (booleanos). Uma correção relevante de fases anteriores (4F) foi restringir `backfill` a apenas disparar quando `event_name == workflow_dispatch` e input explícito `true`, para evitar reprocessamento acidental — essa regra é citada como já corrigida em fase anterior, não neste chat.
+- **Comandos de dispatch usados neste chat**:
+  ```
+  gh workflow run "Update Risk Dashboard" \
+    -f reclassify=true -f audit_cvm=true -f probe_sources=true -f backfill=false
+  ```
+  repetido em várias mensagens como o comando padrão para runs completos deste chat. O usuário também solicitou, para os próximos ciclos de cobertura internacional (4H.2), usar preferencialmente:
+  ```
+  reclassify=false
+  backfill=false
+  audit_cvm=true
+  probe_sources=true
+  ```
+- **Artefatos versionados/commitados pelo Actions** (segundo instrução dada pelo usuário e aceita pelo assistente): `risk_history.json`, `dashboard_risco.html`, `index.html`, `international_search_history.json`, `run_meta.json`, `auditoria_cobertura_cvm.csv` (quando gerada), `probe_fontes_oficiais.csv` (quando gerado), `auditoria_cobertura_internacional.csv`, `cobertura_internacional_por_pais.csv`.
+- **Render (ou plataforma de publicação estática)**: mencionado apenas como contexto herdado de fases anteriores; não foi tema ativo neste chat.
+- **Comandos operacionais do CLI (`risk_dashboard.py`)** confirmados neste chat:
+  - `--audit-international-coverage --history <path> --run-meta <path> --exposure-base <path> --outdir <path>`
+  - `--test-attribution`, `--test-cvm-fixture`, `--test-fund-coverage`
+  - Comandos de fases anteriores (não centrais aqui): `--analyze-audit-cvm`, `--analyze-probe-sources`, `--quality-gate`, `--post-actions-report`, `--resolve-cvm-identifiers`
+  - `--reclassify-only`: **pedido, não implementado**.
+- **Riscos de publicação identificados**: (a) reintrodução do bug de dupla contagem se `event_resolution` for removido do YAML sem substituição; (b) reintrodução do vazamento de atribuição se algum consumidor voltar a usar `rec["companies"]`/`rec["event_ids"]` diretamente em vez de `event_ids_for`; (c) commit da telemetria falhando silenciosamente reintroduziria o problema de "62/62 sem evidência real".
+
+# 13. Problemas conhecidos, limitações e riscos
+
+## Problemas confirmados
+- EDGAR com 0 filings para os 32 emissores elegíveis na última execução real.
+- RI_RSS com 0 fontes configuradas (nenhum emissor tem `official.rss` cadastrado).
+- `auditoria_atribuicao_entidade.csv` desatualizado (gerado antes da correção do bug "Mercado (geral) = investida_jv").
+- Exports CSV/XLSX não confirmadamente atualizados com os novos campos de atribuição.
+
+## Hipóteses ainda não comprovadas
+- EDGAR com 0 filings pode ser causado por janela de formulários (`forms`) restritiva, ausência real de eventos no período, ou bug de mapeamento CIK/URL — **não investigado**.
+- A seção "Contexto relacionado · não pontua" está de fato sendo renderizada corretamente e de forma legível no card real da Vale — só há confirmação de presença de string via grep, não inspeção de layout.
+
+## Limitações do ambiente
+- O assistente não tem acesso direto ao repositório GitHub real; toda validação de "está no repositório" depende de arquivos que o usuário anexa manualmente ao chat.
+- Testes locais rodam em um ambiente de desenvolvimento paralelo mantido pelo assistente ao longo da conversa, não necessariamente sincronizado byte-a-byte com o que foi de fato commitado.
+
+## Riscos de regressão
+- Qualquer refatoração de `detect_companies`, `mention_role`, `semantic_role_guard`, `resolve_event_families` ou `event_ids_for` sem rodar a suíte completa (75 casos) arrisca reintroduzir bugs já corrigidos e documentados na seção 14.
+- A precedência LLM vs. guarda determinística é delicada: se o parsing do formato novo (`event_assessments`) falhar silenciosamente e cair no fallback antigo (`event_ids` genérico), o comportamento de atribuição por empresa pode regredir.
+
+## Dívida técnica
+- Falta função `--reclassify-only` para validação segura sem side effects de rede.
+- Faltam os 3 relatórios de auditoria de atribuição de entidade pedidos e não gerados.
+- Metodologia de score para eventos indiretos não existe (hoje é sempre zero, por decisão explícita, não por limitação técnica).
+
+## Questões de produto ou metodologia
+- Não há decisão final sobre se/quando eventos indiretos mitigadores devem ter impacto positivo no score (proposta existe, não aprovada).
+- Não há decisão sobre priorização definitiva dos 10-15 emissores internacionais da fase 4H.2 (diagnóstico feito, seleção não).
+
+# 14. Tentativas que deram errado ou foram revertidas
+
+**1. Supressão cega de evento quando empresa não é sujeito jurídico direto**
+- O que foi tentado: primeira versão da guarda de papel suprimia qualquer evento crítico em que a empresa monitorada não fosse claramente "quem processa"/autor.
+- Por que parecia razoável: reduzir falso positivo de atribuição de fraude a quem meramente investiga ou processa terceiros.
+- Por que estava errado: suprimiu também o caso legítimo em que a empresa é **ré** (CVS Health processada por alegação de fraude) — falso negativo grave, pior que o problema original.
+- Impacto: um evento de risco real (alegação de fraude contra CVS) desapareceria do dashboard.
+- Correção: distinção explícita sujeito vs. objeto do verbo de ação judicial (`_papel_em_acao_judicial`), checando primeiro a posição de sujeito antes de decidir o objeto.
+- Lição geral: regra de supressão baseada em "presença de padrão perto de palavra-chave" sem análise de posição sintática (quem age vs. quem sofre a ação) é sistematicamente enganosa em texto jornalístico.
+
+**2. Heurística "candidato de identificador CVM que começa com o nome do emissor"**
+- O que foi tentado (em fase anterior, 4G, citada como contexto de lição aprendida): aceitar automaticamente candidatos de identificador CVM cujo nome comece com o nome do emissor monitorado.
+- Por que parecia razoável: parecia um matching de alta precisão.
+- Por que estava errado: capturou subsidiárias/controladas com nome parecido (ex.: Petrobras → "Petroquisa"), gerando atribuição de identificador errado.
+- Impacto: risco de vincular CNPJ/código CVM incorreto a um emissor.
+- Correção: uso de comparação por núcleo de nome com igualdade estrita (`_core_name`), não prefixo.
+- Lição geral (relevante também para este chat): qualquer correspondência textual "parecida" ou "prefixo/substring" tende a produzir falsos positivos sistemáticos quando há hierarquia societária (holdings, subsidiárias, controladas).
+
+**3. Bug de ordem de execução na telemetria (`hl`/`gl` usados antes de definidos)**
+- O que foi tentado: reorganizar o código de telemetria de cobertura internacional, movendo blocos de cálculo.
+- Por que parecia razoável: consolidar telemetria em um único ponto do pipeline.
+- Por que estava errado: variável de locale (`hl`, `gl`) foi referenciada antes de ser calculada, causando `UnboundLocalError` em tempo de execução.
+- Impacto: quebra de execução, detectada e corrigida na mesma sessão antes de qualquer publicação.
+- Correção: reordenação explícita do cálculo do locale antes do bloco que o consome.
+- Lição geral: mudanças de "reorganização de código" em pipeline complexo com muitas variáveis de estado por emissor merecem teste de execução completo (não apenas leitura), especialmente em código gerado em blocos grandes.
+
+**4. Regex de "Plano de Recuperação Judicial da X" falhando por acentuação**
+- O que foi tentado: regex `recuperac\w+` para casar "recuperação".
+- Por que parecia razoável: `\w` deveria casar caracteres de palavra.
+- Por que estava errado: a cedilha/acentuação em "recuperação" não é necessariamente coberta pela forma como o padrão foi escrito, causando falha silenciosa de match.
+- Impacto: o caso Vale/Samarco não era capturado mesmo com a lógica correta implementada.
+- Correção: ajuste da regex para tolerar variação ortográfica.
+- Lição geral: regras textuais em português precisam de teste explícito com acentuação real, não apenas ASCII normalizado nos exemplos de desenvolvimento.
+
+**5. `**rec` no retorno do feed sobrescrevendo a correção de atribuição**
+- O que foi tentado: calcular `companies_attributed` corretamente, mas montar o objeto de retorno do feed com `{**rec, ...}`.
+- Por que parecia razoável: reaproveitar todos os campos do registro histórico é um padrão comum e conveniente.
+- Por que estava errado: `**rec` reintroduzia `companies` com a lista completa original, silenciosamente anulando a correção calculada logo acima.
+- Impacto: bug relatado pelo próprio usuário como "vazamento concreto que ainda impede o run" — a empresa de contexto continuava aparecendo como company-tag principal no feed.
+- Correção: construção explícita e completa do objeto de retorno, campo a campo, sem spread do registro bruto.
+- Lição geral: `**dict` para "herdar" campos de uma estrutura de dados é perigoso quando alguns desses campos são exatamente os que a lógica anterior corrigiu — o spread precisa vir *antes* da sobrescrita, e a ordem de chaves precisa ser auditada.
+
+**6. Erro de rede sendo contado como sucesso técnico**
+- O que foi tentado: `http_success += 1 if _res is not None else 0`, onde `_res` é o retorno de `fetch_query()`.
+- Por que parecia razoável: parecia checar se a função retornou algo válido.
+- Por que estava errado: `fetch_query()` retornava lista vazia `[]` tanto para "sucesso com zero resultados" quanto para timeout/erro HTTP — e `[] is not None` é `True`.
+- Impacto: toda a auditoria de cobertura internacional superestimava sistematicamente o sucesso técnico das buscas.
+- Correção: `fetch_query_result()` estruturado com campo `ok` booleano explícito.
+- Lição geral: nunca inferir sucesso de operação de rede a partir da "verdade" de um valor de retorno genérico (lista vazia, `None`, string vazia) — sempre usar um contrato de retorno explícito com status.
+
+# 15. Backlog priorizado
+
+## P0 — bloqueante ou risco de produção
+- **Investigar causa raiz de EDGAR com 0 filings para 32 emissores elegíveis.** Objetivo: entender se é falta real de eventos, filtro de formulário restritivo, ou bug de mapeamento. Arquivos prováveis: `risk_dashboard.py` (função de coleta EDGAR). Dependências: nenhuma. Critério de aceite: diagnóstico claro com pelo menos um caso investigado manualmente. Risco: sem isso, não se sabe se a fonte oficial americana está de fato funcionando. Status: não iniciado.
+- **Confirmar no repositório real que `event_ids_for()` é de fato usado em todos os exports (CSV/XLSX), não apenas em feed/changes/score.** Objetivo: fechar o vazamento potencial mencionado pelo usuário. Critério de aceite: teste com o caso CVS/JPMorgan aplicado à exportação real. Status: não confirmado.
+
+## P1 — necessário para a próxima entrega
+- **Implementar `--reclassify-only`**, modo seguro que reprocessa o histórico existente sem chamar fetch externo (Google News, CVM, EDGAR, RI), sem tradução via API, preservando o histórico original e gerando `risk_history_antes_4h0b.json`/`risk_history_depois_4h0b.json` para comparação auditável.
+- **Regenerar os 4 arquivos de auditoria pendentes**: `auditoria_atribuicao_entidade.csv` (atualizado pós-correção do "Mercado (geral)"), `eventos_indiretos_reclassificados.csv`, `conflitos_direcao_evento.csv`, `relatorio_atribuicao_impacto.md`.
+- **Calcular e apresentar score da Vale antes/depois da correção** usando o histórico real, não sintético.
+- **Continuar 4H.2**: selecionar 10-15 emissores internacionais de maior exposição sem fonte oficial ativa, verificar manualmente RSS/página de comunicados de RI, cadastrar apenas fontes validadas (mínimo 3 documentos reais confirmados), popular `official.rss`/`official.news` no `config_risco.yaml`.
+
+## P2 — melhoria relevante
+- Ativar `search_locale.primary`/`fallbacks` para emissores identificados com zero resultado de mídia (mecanismo já implementado, não aplicado).
+- Validar comportamento real da LLM (Gemini) contra o novo prompt `event_assessments`, incluindo casos de divergência LLM×guarda determinística.
+- Investigar e cadastrar RI_RSS para pelo menos alguns emissores prioritários (hoje zerado).
+
+## P3 — ideia futura
+- Aprovar e implementar metodologia de multiplicadores de score para eventos indiretos (`PROPOSTA_SCORE_INDIRETO.md` como ponto de partida).
+- Expandir cobertura para reguladores locais (Chile/CMF, BIVA, SIMEV Colômbia) — hoje deliberadamente fora de escopo por serem anti-bot.
+
+# 16. Próximos passos recomendados
+
+1. Ler `risk_dashboard.py`, `config_risco.yaml` e `template_risco.html.j2` no estado atual do repositório real (não confiar na última versão mencionada neste chat como necessariamente idêntica).
+2. Verificar se o workflow `update_risk_dashboard.yml` de fato commita `international_search_history.json` e `run_meta.json` — comparar com o que este relatório descreve.
+3. Comparar a suíte de testes `--test-attribution` do repositório real com a contagem de 75 casos mencionada aqui; rodar e confirmar que passa.
+4. Executar `--audit-international-coverage` com o `risk_history.json` e `run_meta.json` mais recentes do repositório real para confirmar os números de cobertura (62/62, EDGAR 32/0 filings) ainda se sustentam.
+5. Comparar `risk_history.json` real mais recente com `risk_history__3_.json` anexado neste chat — confirmar se são a mesma versão ou se houve execuções adicionais não documentadas aqui.
+6. Somente depois de 1-5, considerar alterar código: começar pela implementação de `--reclassify-only` (P1), que é isolada e de baixo risco.
+7. Testar `--reclassify-only` contra uma cópia do histórico real, gerando o relatório antes/depois pedido pelo usuário.
+8. Documentar o resultado (score da Vale antes/depois) e apresentar ao usuário antes de prosseguir para 4H.2.
+
+# 17. Quickstart para o próximo agente
+
+## Leia primeiro
+`risk_dashboard.py` (funções: `event_ids_for`, `mention_role`, `semantic_role_guard`, `resolve_event_families`, `merge_into_history`, `build_feed`, `build_changes`, `_build_context_events`), `config_risco.yaml` (bloco `event_resolution`), `template_risco.html.j2` (seção `.context-block`).
+
+## Arquivos centrais
+`risk_dashboard.py`, `config_risco.yaml`, `template_risco.html.j2`, e os dados reais mais recentes: `risk_history.json`, `run_meta.json`, `international_search_history.json`.
+
+## Comandos conhecidos
+```
+python risk_dashboard.py --test-attribution
+python risk_dashboard.py --test-cvm-fixture
+python risk_dashboard.py --test-fund-coverage
+python risk_dashboard.py --audit-international-coverage --history <path> --run-meta <path> --exposure-base <path> --outdir <path>
+gh workflow run "Update Risk Dashboard" -f reclassify=true -f audit_cvm=true -f probe_sources=true -f backfill=false
+```
+
+## Não altere sem aprovação
+Pesos-base, thresholds, tiers de materialidade, taxonomia de eventos, `event_resolution` (famílias), lógica de atribuição empresa×evento já validada (`events_by_company`/`context_events_by_company`), qualquer coisa relacionada a multiplicador de score indireto (não aprovado).
+
+## Verifique antes de confiar
+Se a versão de `risk_dashboard.py` no repositório real contém de fato as funções e comportamentos descritos neste relatório — este chat não tem acesso direto ao GitHub, e toda evidência de "produção" vem de arquivos anexados manualmente pelo usuário.
+
+## Primeira tarefa segura
+Implementar `--reclassify-only` (P1), rodar contra uma cópia do `risk_history.json` real, e apresentar o relatório antes/depois do score da Vale — não requer alterar lógica de negócio já validada.
+
+## Definição de pronto
+Para qualquer mudança em atribuição/score: suíte `--test-attribution` passando integralmente (mínimo 75 casos, sem remover nenhum), mais confirmação manual, no histórico real, de que `events_by_company["Vale"] == []` para o caso Samarco e que o score da Vale não inclui a contribuição indevida.
+
+# 18. Informações conflitantes ou incertas
+
+| Tema | Versão A | Versão B | Mais recente | Confiança | Verificação necessária |
+|---|---|---|---|---|---|
+| Contagem de casos na suíte `--test-attribution` | 62, depois 68, depois 71 | 75 (última mensagem) | 75 | média | Confirmar contagem real no arquivo do repositório |
+| `auditoria_atribuicao_entidade.csv` — casos "Mercado (geral)" | Marcados como `investida_jv` | Corrigido para `mercado_contexto` | `mercado_contexto` é a versão correta, mas o CSV entregue **não foi regenerado** com a correção | alta (quanto à decisão), baixa (quanto ao arquivo estar atualizado) | Regenerar o CSV antes de usar como fonte |
+| Nome do repositório GitHub | Path de log menciona `Dashboard-noticias` | Nunca confirmado como nome oficial | Incerto | baixa | Confirmar no GitHub |
+| Se o workflow real commita `international_search_history.json` | Usuário pediu explicitamente que sim | Nunca foi mostrado o diff do workflow neste chat | Provavelmente sim, pela existência do arquivo real | média (indício forte, não prova direta) | Ler o arquivo `.yml` real do repositório |
+| Score da Vale antes/depois da correção Vale/Samarco | Não calculado numericamente em nenhum momento do chat | — | Não disponível | baixa | Deve ser calculado com `--reclassify-only` |
+| Comportamento real da LLM com o novo prompt `event_assessments` | Prompt reescrito e parsing implementado | Nunca testado contra resposta real da API | Incerto | baixa | Rodar um ciclo real com LLM ativa e inspecionar `llm_divergences` |
+
+# 19. Decisões e caminhos que não devem ser carregados adiante
+
+- Primeira versão da guarda semântica que suprimia **qualquer** evento em que a empresa não fosse sujeito jurídico direto — substituída pela versão com distinção sujeito/objeto (DEC-3).
+- Heurística de correspondência de identificador CVM por prefixo/"começa com o nome" — substituída por igualdade estrita de núcleo (herdada de fase 4G, mas relevante como padrão de risco a evitar também aqui).
+- `http_success` como campo primário de telemetria de sucesso — mantido apenas como fallback de compatibilidade, não deve ser reintroduzido como fonte primária.
+- `event_ids` global do registro histórico como fonte de verdade para score/feed/changes — substituído por `event_ids_for()`; qualquer código novo que leia `rec["event_ids"]` diretamente para decidir pontuação de uma empresa específica é regressão.
+- Uso de `{**rec, ...}` para montar objetos de retorno do feed sem reescrever explicitamente os campos corrigidos (`companies`, `context_companies`) — padrão perigoso identificado, não repetir.
+- `auditoria_atribuicao_entidade.csv` na versão que classifica "Mercado (geral)" como `investida_jv` — versão obsoleta, não deve ser usada como referência.
+- `EXEMPLO_run_meta.json`, `EXEMPLO_international_search_history.json`, `EXEMPLO_registro_historico_empresa_evento.json` — dados sintéticos ilustrativos, nunca usar como evidência de comportamento real.
+- Números "62/62 pesquisados" antes da correção de telemetria — eram baseados em elegibilidade, não em execução real; só passaram a ser confiáveis após a correção descrita em DEC-6/DEC-7 e a confirmação com `international_search_history.json` real.
+
+# 20. Glossário do projeto
+
+- **Emissor**: empresa/entidade monitorada na watchlist do dashboard (ex.: Vale, CVS Health, Rumo).
+- **Watchlist**: lista de emissores monitorados, definida em `config_risco.yaml`.
+- **Evento**: tipo de fato de risco de crédito da taxonomia (ex.: `recuperacao_judicial`, `falencia`, `default`, `rebaixamento_rating`, `fraude`, `ma`, `covenant_breach`, `troca_ceo`).
+- **Ocorrência**: unidade econômica de um evento — pode agregar múltiplas notícias sobre o mesmo fato (ex.: anúncio + aprovação + precificação do mesmo follow-on).
+- **`events_by_company`**: mapa empresa → lista de `event_ids` pontuáveis para aquela empresa em um registro do histórico.
+- **`context_events_by_company`**: mapa empresa → lista de eventos relacionados mas NÃO pontuáveis (ex.: evento de uma investida/JV).
+- **`companies_attributed`**: empresas de um registro que têm ao menos um evento pontuável.
+- **`context_companies`**: empresas citadas mas sem evento pontuável (aparecem apenas como contexto).
+- **`event_ids_for(registro, empresa)`**: função central que retorna os eventos pontuáveis de uma empresa específica num registro, respeitando `events_by_company` com fallback legado.
+- **`mention_role`**: classificação do papel de uma empresa numa notícia (relação, sujeito, direção, fase).
+- **`relation_type`**: tipo de relação entre a empresa monitorada e o evento — valores usados no chat: `direto`, `investida_jv`, `contraparte_credor`, `mercado_contexto`.
+- **`event_scope`**: escopo do evento em relação à empresa — `direto`, `indireto`, `mercado`.
+- **`impact_type`**: tipo de impacto — `indireto_material`, `externo`, etc.
+- **`direction_hint`/`direction`**: direção do impacto — `mitigadora`, `negativa`, `neutra`.
+- **`legal_status`**: status jurídico do evento, ex. `allegation/lawsuit` (alegação em ação judicial, não fato confirmado).
+- **`confirmation_status`**: grau de confirmação factual do evento.
+- **Família semântica (`event_resolution`)**: agrupamento de eventos que representam a mesma ação econômica (ex.: rebaixamento de rating + outlook negativo), do qual apenas um "principal" pontua.
+- **Guarda determinística**: regra de código (regex/heurística) que decide atribuição/supressão de evento sem depender da LLM.
+- **`semantic_discards`**: registro de eventos removidos pela guarda semântica, com motivo e evidência.
+- **`llm_divergences`**: registro de casos em que a LLM tentou reverter uma decisão da guarda determinística de alta confiança.
+- **Telemetria de busca (`_SEARCH_TELEMETRY`, `international_search_execution`)**: registro por emissor de tentativas de busca de mídia (queries, sucesso, erros, artigos brutos) na execução atual.
+- **`international_search_history.json`**: histórico cumulativo (até 8 execuções) de telemetria de busca internacional, necessário porque o runner do GitHub Actions não persiste estado entre execuções.
+- **`official_source_execution`**: telemetria por canal oficial (EDGAR, RI_RSS, RI_NEWS, REGULADOR_LOCAL) de tentativas de coleta de fontes oficiais.
+- **Ciclo (de cobertura internacional)**: conjunto de execuções (tipicamente 4, pela rotação Tier 3) necessário para cobrir todos os emissores elegíveis pelo menos uma vez.
+- **`run_meta.json`**: metadados da execução atual do pipeline (modos ativos, telemetria da execução corrente).
+- **CVM/IPE, SEC/EDGAR**: fontes oficiais regulatórias brasileira e americana, respectivamente (contexto herdado de fases anteriores).
+- **Fases 4D a 4H**: numeração interna de etapas de evolução do projeto usada ao longo da conversa (4D = fechamento gerencial de cobertura; 4E = validador pós-Actions; 4F = correções operacionais; 4G/4G.1 = saneamento CVM; 4H = cobertura internacional + exclusividade semântica + atribuição empresa×evento, foco central deste chat).
+
+# 21. Handoff mínimo para IA
+
+- **Missão**: garantir que o Radar de Risco atribua eventos de risco corretamente por empresa (nunca espalhando evento de uma empresa citada para outra no mesmo artigo), nunca conte o mesmo fato econômico duas vezes, e meça cobertura internacional com evidência real de execução, não com inferência de elegibilidade.
+- **Estado atual conhecido**: a lógica central de atribuição empresa×evento (`events_by_company`/`context_events_by_company`/`event_ids_for`) está implementada, testada localmente (75/75) e há indícios fortes de que está publicada em produção (confirmada no histórico real `risk_history__3_.json` e parcialmente no `index.html` real). A telemetria de cobertura internacional está implementada e confirmada com dados reais (62/62 emissores tentados em 4 ciclos).
+- **Fonte de verdade**: o repositório GitHub real do usuário — este chat não tem acesso direto a ele; todas as afirmações de "produção" aqui vêm de arquivos anexados manualmente pelo usuário.
+- **Decisões que devem ser preservadas**: separação pontuável/contextual por empresa×evento; um evento principal por família semântica; nenhum multiplicador de score indireto sem aprovação explícita; nenhuma cobertura oficial afirmada sem telemetria real de execução.
+- **Maior risco**: reintrodução silenciosa do bug de "vazamento" de atribuição (evento de uma empresa aparecendo em outra) por qualquer código novo que use `rec["companies"]`/`rec["event_ids"]` diretamente ou que faça `{**rec, ...}` sem reescrever os campos corrigidos.
+- **Pendência mais importante**: implementar `--reclassify-only` e apresentar o relatório antes/depois do score da Vale sobre o histórico real completo — foi pedido repetidamente e nunca foi entregue.
+- **O que verificar primeiro**: se a versão de `risk_dashboard.py`/`config_risco.yaml`/`template_risco.html.j2` no repositório real corresponde ao comportamento descrito neste relatório, rodando a suíte `--test-attribution` diretamente no repositório.
+- **O que não fazer**: não alterar pesos/thresholds/tiers sem aprovação explícita; não implementar multiplicador de score indireto sem aprovação; não tratar `EXEMPLO_*` como dado real; não reintroduzir supressão cega de evento baseada apenas em presença de padrão textual sem checar posição sintática (sujeito vs. objeto).
+- **Próxima entrega esperada**: fechamento da última milha de auditoria (4 arquivos de auditoria de atribuição regenerados, `--reclassify-only` implementado e validado, score da Vale antes/depois apresentado), seguido da continuação da 4H.2 (seleção e validação de fontes oficiais RI para os 10-15 emissores internacionais de maior exposição).
+
+# 22. Fontes internas deste relatório
+
+- Arquivos de código citados: `risk_dashboard.py`, `template_risco.html.j2`, `config_risco.yaml`, `update_risk_dashboard.yml`.
+- Dados reais anexados pelo usuário: `risk_history.json`, `risk_history__1_.json`, `risk_history__2_.json`, `risk_history__3_.json`, `run_meta.json`, `international_search_history.json`, `index.html`, `probe_fontes_oficiais.csv` (e variantes `__1_`, `__2_`), `auditoria_cobertura_cvm.csv` (e variante `__1_`).
+- Relatórios/CSVs de auditoria gerados ao longo do chat: `auditoria_cobertura_internacional.csv`, `cobertura_internacional_por_pais.csv`, `auditoria_atribuicao_entidade.csv`, `PROPOSTA_SCORE_INDIRETO.md`.
+- Arquivos de exemplo (não produção): `EXEMPLO_run_meta.json`, `EXEMPLO_international_search_history.json`, `EXEMPLO_registro_historico_empresa_evento.json`.
+- Comandos citados: `--test-attribution`, `--test-cvm-fixture`, `--test-fund-coverage`, `--audit-international-coverage`, `gh workflow run "Update Risk Dashboard" ...`.
+- Screenshots enviados pelo usuário: captura do card da Vale mostrando "Crítico · Recuperação Judicial" com score 88 e ponto vermelho na timeline; captura da página real do RI da Vale (vale.com) com a notícia "Vale informa sobre Plano de Recuperação Judicial da Samarco".
+- Casos reais nomeados pelo usuário e usados como regressão: Vale/Samarco, Rumo (rating/outlook), Engie (16ª/17ª emissão de debêntures), CVS Health/JPMorgan (fraude), Ford Motor (Lemon Law fraud), Três Irmãos/AHMSA/Tok&Stok (bucket Mercado geral).

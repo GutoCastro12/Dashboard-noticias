@@ -1,0 +1,503 @@
+---
+report_type: project_chat_handoff
+suggested_filename: chat_report_edgar_semantica_links.md
+chat_scope: EDGAR shadow mode (fases 4H.2–4H.3C), auditoria semântica de atribuição de eventos por empresa, e resolução de links de fontes (Google News/batchexecute) do "Radar de Risco"
+project_name: Radar de Risco — Emissores
+repository_name: não confirmado
+report_date: 2026-07-31
+last_project_date_mentioned: 2026-07-31 (timestamp `links_repaired_at` em execução real do GitHub Actions, histórico de produção enviado pelo usuário)
+overall_confidence: média
+---
+
+# 1. Resumo executivo
+
+Este chat cobriu três frentes de trabalho sobre o mesmo sistema, um dashboard de risco de crédito chamado "Radar de Risco" (arquivo central `risk_dashboard.py`, template `template_risco.html.j2`, histórico `risk_history.json`, saída publicada `index.html`/`dashboard_risco.html`, automação via GitHub Actions em `update_risk_dashboard.yml`).
+
+A primeira frente foi uma sequência de fases (4H.2 → 4H.3A → 4H.3B.0 → 4H.3C) de diagnóstico e ativação controlada de uma fonte oficial adicional, o EDGAR (SEC). O objetivo era investigar por que o coletor de EDGAR retornava zero filings, corrigir a causa raiz, e avaliar se essa fonte poderia ser ativada em modo de pontuação (scoring). A causa raiz do "zero filings" foi encontrada e corrigida (um campo de configuração armazenado como string em vez de lista YAML, fazendo `set()` iterar caracteres). Depois disso, uma cadeia de bugs mais sutis foi encontrada e corrigida: uma matriz de flags que não travava de verdade, uma atribuição automática de sujeito ao "filer" do documento (revivendo o mesmo problema do caso Vale/Samarco), e — o mais grave — uma flag `edgar_scoring_enabled` que existia no código mas nunca era consultada no pipeline real, o que significava que o "modo sombra" alegado não existia de fato na execução normal. Todos esses bugs foram corrigidos, mas a recomendação final, em todas as iterações, foi **não ativar pontuação (scoring) do EDGAR** — permanecer em modo sombra. Essa é a decisão mais importante a preservar: EDGAR contribui zero ao score de produção até nova aprovação explícita.
+
+A segunda frente foi uma auditoria semântica bloqueante, motivada por erros reais que o usuário encontrou no dashboard publicado: eventos de recuperação judicial/falência/fraude atribuídos à empresa errada, M&A detectado em operações que não eram aquisições de empresas, notícias históricas tratadas como eventos atuais, e ações de rating pontuando duas vezes. O padrão de correção "Vale/Samarco" (evento sai de `events_by_company` da empresa errada, entra em `context_events_by_company` com `scoreable=false`, aparece como "Contexto relacionado · não pontua", sem afetar score/chips/timeline) foi generalizado para oito regras nomeadas e aplicado ao histórico real de produção (572 registros, 37 alterados). Esta foi a única frente em que o usuário confirmou, em mensagem própria, que a correção está no ar e funcionando bem ("O dashboard está semanticamente muito melhor").
+
+A terceira frente foi a correção de abertura de links: fontes corroboradoras (secundárias) de notícias não abriam dentro da rede corporativa, enquanto a fonte principal e o mesmo link fora da empresa abriam normalmente. A causa raiz confirmada foi que o resolvedor de URLs do Google News só processava as fontes principais, nunca as corroboradoras. Uma primeira correção (v1) foi aplicada e **executada de fato no GitHub Actions em modo repair pelo usuário**, reduzindo bastante o problema, mas deixando 373 fontes corroboradoras presas em "Link em verificação". Uma investigação mais profunda revelou que existiam **duas implementações divergentes** do resolvedor de Google News — uma forte, com decodificação via endpoint interno `batchexecute`, usada só para fontes principais; outra fraca, sem `batchexecute`, usada para corroboradoras e por todo o modo de reparo. A v2 consolida tudo em um único resolvedor canônico. Esta correção **foi entregue mas nunca confirmada em execução real com rede** (o ambiente de desenvolvimento não alcança `news.google.com`); é o item mais urgente a validar.
+
+O estado mais recente conhecido é: EDGAR em modo sombra, sem scoring, aguardando um segundo ciclo de evidência real; auditoria semântica aplicada e aprovada visualmente pelo usuário em produção; correção de links v1 aplicada e parcialmente eficaz em produção; correção de links v2 pronta mas não testada com rede real nem confirmada como aplicada.
+
+O ponto mais importante que o próximo agente precisa preservar: **nunca ativar `edgar_scoring_enabled=true`** sem nova aprovação explícita, **nunca reintroduzir uma regra de M&A ampla demais** (já causou 142 falsos positivos numa iteração anterior), e **nunca tratar HTTP 200 do Google News como resolução válida de link** (é exatamente o erro que causou os 373 pendentes).
+
+# 2. Objetivo do projeto e valor de negócio
+
+O sistema monitora risco de crédito de uma carteira de emissores (ações, dívida, fundos) a partir de notícias públicas e comunicados oficiais (CVM/IPE no Brasil, SEC/EDGAR nos EUA), classifica eventos de risco por uma taxonomia própria, calcula um score ponderado com decaimento temporal por meia-vida, e publica um dashboard estático (via GitHub Actions + hospedagem, citada como Render em nomes de arquivo `render.yaml`) mostrando o "radar de risco" por emissor.
+
+Evidência direta neste chat de uso de negócio: o usuário declarou explicitamente "Meu objetivo é colocar as correções no dashboard e apresentá-lo ao CFO" — confirmando que o dashboard é usado como insumo para apresentação executiva/financeira, não apenas uma ferramenta interna de engenharia.
+
+O nome "Vinci Partners" e o e-mail `risco@vincipartners.com` aparecem no código como `User-Agent` das requisições HTTP ao EDGAR, indicando a organização proprietária do projeto.
+
+Objetivo técnico: manter um pipeline de coleta → classificação → atribuição → persistência → scoring → publicação que seja auditável, sem falsos positivos evidentes, e que separe claramente eventos diretos de eventos de terceiros (contexto).
+
+Objetivo de negócio: fornecer um radar de risco de crédito confiável o bastante para ser levado a uma reunião de CFO, sem atribuir a uma empresa monitorada eventos que na verdade pertencem a terceiros (fornecedores, investidas, alvos de aquisição, etc.), o que destruiria a credibilidade da ferramenta.
+
+Sucesso, neste chat, foi medido por: (a) zero eventos de terceiro atribuídos à empresa errada nos casos revisados manualmente pelo usuário; (b) links que abrem de fato dentro da rede corporativa; (c) EDGAR contribuindo evidência real sem inflar score com falsos positivos.
+
+# 3. Escopo deste chat
+
+**Temas centrais:**
+- Diagnóstico e correção do coletor EDGAR (SEC) — causa raiz do "zero filings", ativação em modo sombra, gate real de scoring, atribuição empresa×evento×evidência para filings oficiais.
+- Auditoria semântica bloqueante de atribuição de eventos por empresa monitorada (RJ/falência/default, fraude, M&A legítimo vs. falso, referências históricas, ações de rating duplicadas).
+- Resolução de URLs de notícias (fontes principais e corroboradoras), incluindo o mecanismo de decodificação de links do Google News.
+
+**Temas secundários (mencionados como contexto, não aprofundados neste chat):**
+- CMF (Chile), BMV/CNBV (México), scraping de RI — mencionados repetidamente como próximos passos possíveis, mas explicitamente **não iniciados** em nenhum momento deste chat.
+- Estrutura geral do dashboard (thresholds, tiers, pesos-base, meia-vida) — usada como invariante a preservar, mas não redesenhada.
+- Deploy/Render — mencionado apenas por nome de arquivo (`render.yaml`), sem discussão de configuração.
+
+**Itens explicitamente fora de escopo (por instrução direta do usuário em múltiplos pontos):**
+- Ativar scoring do EDGAR.
+- Alterar pesos-base, thresholds, tiers, meia-vida, multiplicadores.
+- Fazer backfill.
+- Iniciar CMF/BMV/RI.
+- Alterar a auditoria semântica já aprovada (nas entregas de link fix v1/v2).
+
+**Trabalhos pausados:**
+- 4H.3C do EDGAR foi explicitamente pausada por ordem do usuário ("Antes de avançar com a classificação do EDGAR... execute uma auditoria semântica bloqueante") e retomada depois, mas terminou de novo em modo sombra (recomendação B), sem novo ciclo de evidência real.
+
+# 4. Estado atual conhecido
+
+| Componente ou funcionalidade | Estado | Evidência no chat | Observação |
+|---|---|---|---|
+| Coleta EDGAR (parser canônico, `edgar_canonical.py`) | TESTADO_LOCALMENTE | 75/75 em `test_edgar_4h3c.py`, rodado com fixtures | Nunca confirmado como mesclado no `risk_dashboard.py` de produção real do usuário |
+| Correção do bug `formularios_gatilho` (string→lista) | IMPLEMENTADO_NO_REPOSITORIO / TESTADO_NO_GITHUB_ACTIONS | O `risk_dashboard.py` que o usuário enviou depois (para a auditoria semântica) já continha `_normalize_edgar_forms`, `edgar_collection_enabled`, `edgar_scoring_enabled` | Confirma que pelo menos até a fase 4H.3B o código chegou ao repositório real |
+| Gate real de shadow mode (scoring flag consultada no pipeline) | IMPLEMENTADO_NO_REPOSITORIO / TESTADO_NO_GITHUB_ACTIONS | Mesma evidência acima; artifact real do Actions (`edgar-4h3b-shadow-...zip`) mostrando `scoring_enabled: false`, `persisted_records: 0` | |
+| Coleta real de filings EDGAR (206 filings, 32 emissores) | TESTADO_NO_GITHUB_ACTIONS | Artifact real baixado pelo usuário, HTTP 200 em 32/32, CIKs reais conferidos | Qualidade da classificação inválida (ver DEC-04) |
+| `edgar_canonical.py` / `edgar_shadow_4h3c.py` (evidência por item 8-K, busca de corpo) | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO | Entregue como pacote de arquivos via `present_files`, nunca confirmado como subido pelo usuário | Segundo shadow real com esse código nunca foi executado neste chat |
+| Scoring EDGAR | DECIDIDO_MAS_NAO_IMPLEMENTADO (decidido que NÃO deve ser ativado) | Recomendação B repetida em 4H.3A, 4H.3B, 4H.3C | `edgar_scoring_enabled` deve continuar `false`/ausente em produção |
+| CMF / BMV / RI (fontes internacionais) | PAUSADO / PROPOSTO | Mencionado repetidamente, nunca iniciado | |
+| `semantic_audit.py` (motor de regras) | IMPLEMENTADO_NO_REPOSITORIO (inferido) | Integrado a `risk_dashboard.py` real do usuário, testes 102/102, usuário confirmou "dashboard semanticamente muito melhor" | Confirmação do usuário é qualitativa/visual, não um "log de deploy" explícito |
+| Reclassificação semântica do histórico real (572 registros, 37 alterados) | TESTADO_LOCALMENTE / PUBLICADO_EM_PRODUCAO (indício forte) | Rodado sobre o `risk_history.json` real enviado pelo usuário; resultado entregue em `dashboard_semantic_production_ready.zip`; usuário depois relatou o dashboard já corrigido | |
+| Modo `--reclassify-semantic-only` | IMPLEMENTADO_NO_REPOSITORIO (indício) | Presente no pacote entregue e citado pelo usuário como já rodado (indiretamente) | Comando exato nunca confirmado como executado pelo usuário fora deste chat |
+| Correção de links v1 (`resolve_article_url` inicial, `--repair-links-only`, `workflow_link_audit.yml`) | TESTADO_NO_GITHUB_ACTIONS / PUBLICADO_EM_PRODUCAO | Usuário relatou: "O workflow de reparo de links foi executado com sucesso em mode=repair"; enviou `risk_history.json`/`dashboard_risco.html`/`index.html` reais pós-execução | Resultado parcial: 373 fontes corroboradoras continuaram sem resolução |
+| Resolvedor consolidado v2 (`resolve_gnews_token`, `batchexecute`) | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO / TESTADO_LOCALMENTE (com mocks) | 92/92 em `test_links.py`, mas nunca testado com rede real (`news.google.com` bloqueado no ambiente de desenvolvimento) | Este é o entregável mais recente e o menos validado |
+| Testes de atribuição (`--test-attribution`) | TESTADO_LOCALMENTE (repetido em cada entrega) | 75/75 em múltiplos pontos do chat | |
+| Testes CVM (`--test-cvm-fixture`) | TESTADO_LOCALMENTE | 11/11 | |
+| Testes de fundos (`--test-fund-coverage`) | TESTADO_LOCALMENTE | 10/10 | |
+| Workflow `update_risk_dashboard.yml` | IMPLEMENTADO_NO_REPOSITORIO (preexistente) | Usuário enviou o arquivo real do repositório | Não foi objeto de mudança de conteúdo neste chat, só reafirmado nos pacotes |
+| Workflow `workflow_link_audit.yml` (modos audit/repair) | TESTADO_NO_GITHUB_ACTIONS (versão v1) / GERADO_MAS_NAO_CONFIRMADO (versão v2) | v1 confirmadamente rodado pelo usuário; v2 entregue mas não confirmado | |
+| Dashboard publicado (`index.html`/`dashboard_risco.html`) | PUBLICADO_EM_PRODUCAO (para o estado pós link-fix-v1 + semântica) | Usuário enviou de volta os arquivos reais pós-execução | O estado pós link-fix-v2 nunca foi publicado nem confirmado |
+
+# 5. Arquitetura e fluxo de dados
+
+Fluxo conhecido (sintetizado a partir do código lido/editado neste chat):
+
+```
+fontes (Google News, CVM/IPE, EDGAR, RI)
+  → fetch_all / fetch_cvm_fatos / fetch_edgar_filings / fetch_ri_news_pages
+  → tradução (translate_articles)
+  → classificação (classify_article, taxonomia)
+  → atribuição por empresa (classify_and_attribute)
+      → detect_companies (candidatos)
+      → mention_role (papel: sujeito/ator/afetado)
+      → resolução semântica (semantic_audit.apply_semantics_to_record)
+      → atribuição por evidência para EDGAR (edgar_shadow_4h3b.apply_evidence_attribution)
+  → deduplicação (dedupe_articles)
+  → persistência (merge_into_history → risk_history.json)
+  → resolução de URLs (resolve_history_urls / --repair-links-only)
+  → scoring/agregação (build_evolution, calibrate_thresholds)
+  → feed e mudanças (build_feed, build_changes)
+  → renderização (render_html, template_risco.html.j2)
+  → publicação (index.html / dashboard_risco.html, commit via GitHub Actions)
+```
+
+Por etapa:
+
+**Classificação e atribuição (`classify_and_attribute`)** — responsabilidade: dado um artigo bruto (título, resumo, empresa candidata), decidir quais eventos pontuáveis existem e para qual empresa. Entrada: artigo com `title`/`summary`/`companies`. Saída: `events_by_company`, `context_events_by_company`, `mention_roles`, `event_assessments`, `semantic_discards`. Arquivo: `risk_dashboard.py` (função central) chamando `semantic_audit.py`. Risco: qualquer alteração aqui pode reintroduzir atribuição incorreta de sujeito. Invariante: **uma palavra-chave nunca decide sozinha o sujeito, a fase, a confirmação ou a pontuabilidade de um evento** — isso deve ser resolvido por regra com evidência textual.
+
+**Resolução semântica (`semantic_audit.py`)** — responsabilidade: mover eventos de terceiro para contexto, bloquear falso M&A, referências históricas e fases jurídicas de desfecho, colapsar ações de rating duplicadas. Entrada: `events_by_company` bruto de um registro. Saída: `events_by_company` corrigido + `context_events_by_company` + `semantic_discards`. Risco: regra ampla demais remove evento legítimo (já aconteceu uma vez, ver DEC-07). Invariante: casos de M&A legítimo (aquisição de empresa nomeada, participação societária) **devem continuar pontuando**.
+
+**Agregação/score (`build_evolution`, `calibrate_thresholds`)** — responsabilidade: transformar ocorrências em score ponderado real (peso-base × decaimento × confiança + bônus de fontes). Entrada: `risk_history.json`. Saída: lista de linhas por empresa (`total_score`, `status`, `context_events`, `timeline`, `breakdown`). Risco: uma empresa cujo(s) único(s) evento(s) virou(aram) contexto pode desaparecer do radar inteiramente se o código não tratar esse caso — **isso foi encontrado e corrigido neste chat** (ver seção 9). Invariante: emissor com apenas contexto relevante deve continuar aparecendo, com score 0.
+
+**Resolução de URLs (`link_debt_audit.py`, `resolve_history_urls`, `--repair-links-only`)** — responsabilidade: transformar URLs intermediárias (Google News, encurtadores) em URLs diretas do veículo, para fontes principais E corroboradoras, sem tocar em score/eventos. Entrada: `url`/`corroborations`/`corrob_sources` de cada registro. Saída: `display_url`, `link_health`, `resolution_method` por fonte. Risco: dois caminhos de resolução divergentes (forte/fraco) causam o próprio bug que motivou a v2. Invariante: HTTP 200 do Google News nunca é aceito como resolução válida; nenhum `href` pode apontar para `news.google.com`/`google.com/url`.
+
+A arquitetura completa (por exemplo, como `fetch_all` decide entre Google News e outras fontes, ou o detalhe interno do template Jinja além dos trechos editados) **não está integralmente disponível neste chat** — só as partes tocadas foram lidas em profundidade.
+
+# 6. Mapa de arquivos, módulos e artefatos
+
+| Caminho ou nome | Função | Estado conhecido | Deve ser preservado? | Observações |
+|---|---|---|---|---|
+| `risk_dashboard.py` | Pipeline principal (coleta, classificação, scoring, CLI) | Editado repetidamente neste chat; versão do usuário confirmada conter até 4H.3B | Sim | Verificar no repo real se contém `edgar_canonical`/4H.3C e o resolvedor de links v2 |
+| `semantic_audit.py` | Motor de regras semânticas (Vale/Samarco generalizado) | Integrado à produção real (indício forte) | Sim, crítico | Contém `apply_semantics_to_record`, `resolve_article_semantics`, `ma_is_legitimate`, `subject_by_possessive` |
+| `link_debt_audit.py` | Saúde de links, ocorrências de dívida, resolvedor de URL | v1 confirmado em produção; v2 (batchexecute) não confirmado | Sim | Contém `resolve_article_url`, `resolve_gnews_token`, `gnews_batchexecute`, `interface_decision`, `group_debt_occurrences` |
+| `edgar_canonical.py` | Parser único de submissions EDGAR, mapeamento de items 8-K | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO | Verificar | Substitui `sample_filings()` divergente |
+| `edgar_shadow_4h3a.py` / `4h3b.py` / `4h3c.py` | Módulos de shadow classification por fase | 4h3b confirmado em uso real (Actions); 4h3c só local | Verificar no repo | `run_edgar_runtime_shadow`, `apply_evidence_attribution`, `run_shadow_4h3c` |
+| `edgar_audit_4h2.py` | Auditoria diagnóstica original do EDGAR (`sample_filings`) | Superado pelo parser canônico | Não deveria mais ser fonte de artigos classificados | Continha o parser DIVERGENTE que causou perda de `items` no primeiro shadow real |
+| `test_semantica.py` | 102 testes (20 unitários + ~82 incluindo integração) | TESTADO_LOCALMENTE, resultado citado como 102/102 | Sim | Usa `fixtures_semantica/config_teste.yaml`, autocontido |
+| `test_links.py` | 92 testes de resolução de links (30 + 16 novos com mocks de batchexecute) | TESTADO_LOCALMENTE | Sim | Contém `MockSession`, testes de idempotência |
+| `test_edgar_4h2/3a/3b/3c.py` | Suítes por fase EDGAR (23, 49, 59, 75 checagens respectivamente) | TESTADO_LOCALMENTE; parte confirmada rodar também no Actions (workflow) | Sim | |
+| `fixtures_semantica/config_teste.yaml` | Config mínimo autocontido para testes semânticos | Entregue | Sim | Não deve ser confundido com `config_risco.yaml` de produção |
+| `fixtures_4h3b/config_teste.yaml`, `edgar_fixtures/*.json` | Fixtures de EDGAR | Entregues em pacotes anteriores | Sim, para reprodutibilidade dos testes | |
+| `config_risco.yaml` | Configuração de produção (watchlist, taxonomia, flags EDGAR) | Real, enviado pelo usuário; alterado só para adicionar 12 eventos informativos `score:0` | Sim, crítico — não alterar pesos/thresholds/tiers | |
+| `config_risco_4h2_candidato.yaml` / `_4h3a_` / `_4h3b_` / `_4h3c_` | Configs candidatos por fase EDGAR (não-produção) | Superados sucessivamente; `_4h3c_` é o mais recente | Não subir ao repositório de produção sem aprovação | Cada um tem `edgar_scoring_enabled` explicitamente `false` |
+| `risk_history.json` | Histórico de produção (artigos, scores, cache de URLs) | Real; reclassificado semanticamente (572→37 alterados) e reparado (v1) via workflow real | Sim, é a fonte de verdade dos dados | **Nomear exatamente assim no repositório** — instrução explícita do usuário para não usar `__3_`/`__4_` |
+| `index.html` / `dashboard_risco.html` | Saída publicada do dashboard | Reconstruídos e (para v1) publicados de fato | Sim | Devem ser idênticos entre si (cópia) |
+| `template_risco.html.j2` | Template Jinja do dashboard | Alterado para remover geração de `href` de redirecionador (`linkOf`/`linkDecision`) | Sim | Contém o bloco "Contexto relacionado · não pontua" |
+| `.github/workflows/update_risk_dashboard.yml` | Workflow principal (coleta, scoring, publish) | Preexistente, real | Sim | Inputs: `reclassify`, `backfill`, `audit_cvm`, `probe_sources` |
+| `.github/workflows/workflow_link_audit.yml` | Workflow de auditoria/reparo de links (`mode: audit\|repair`) | v1 confirmado rodar no Actions; v2 entregue, não confirmado | Sim | v2 adiciona Summary de pendentes/resolvidos |
+| `dashboard_semantic_production_ready.zip` | Pacote de entrega da correção semântica | Entregue via `present_files`; conteúdo aplicado (indício forte) | — | Estrutura: `repo_ready/` + `audit_artifacts/` |
+| `dashboard_link_fix_production_ready.zip` | Pacote v1 da correção de links | Entregue; confirmado aplicado (usuário rodou o workflow) | — | |
+| `dashboard_link_resolution_v2_production_ready.zip` | Pacote v2 (batchexecute consolidado) | Entregue; **NÃO confirmado aplicado** | — | Item de maior incerteza no momento do handoff |
+| `edgar-4h3b-shadow-30558094852-20260730T154348Z.zip` | Artifact real do GitHub Actions (shadow EDGAR) | Real, baixado e analisado neste chat | — | Prova que o pipeline 4H.3B chegou a rodar de verdade no Actions |
+| `auditoria_links_dashboard_live.csv`, `resumo_link_repair.json`, `comparacao_casos_rumo_vale_engie.csv` | Artefatos de auditoria de links | Gerados localmente e (v1) também no Actions real | Não subir ao repositório (são evidência, não código) | |
+| `eventos_reclassificados_semantica.csv`, `aceite_por_empresa.csv`, `resumo_auditoria.json`, `relatorio_auditoria_semantica_consolidada.md` | Artefatos de auditoria semântica | Gerados localmente | Não subir ao repositório | |
+
+# 7. Decisões técnicas e de produto
+
+## DEC-01 — Causa raiz do "zero filings" do EDGAR
+
+- Problema: coletor EDGAR retornava 0 filings para todos os 32 emissores elegíveis, apesar de HTTP 200.
+- Decisão: `formularios_gatilho` estava gravado como STRING YAML (`"['8-K', ...]"`) em vez de lista; `set(string)` iterava caracteres, criando um allowlist de 14 caracteres que nenhum formulário real casava.
+- Objetivo: restaurar a capacidade de coleta oficial via SEC.
+- Justificativa: reproduzido por inspeção de código, teste unitário e telemetria real de produção (zero uniforme em emissores de alto volume, estatisticamente impossível).
+- Alternativas consideradas: nenhuma — é um bug de tipo, não uma escolha de design.
+- Trade-offs: nenhum.
+- Consequências: correção normaliza `list | string-lista | csv | None`; adicionado `40-F` (MJDS canadense) por evidência real (Toronto-Dominion).
+- Invariantes: a normalização deve continuar aceitando os formatos legados sem quebrar.
+- Status: IMPLEMENTADO_NO_REPOSITORIO (indício: `_normalize_edgar_forms` presente no código real do usuário).
+- Evidência: código, teste `test_edgar_4h2.py` (23/23), telemetria do `run_meta.json`.
+- Verificar no repositório: confirmar que `config_risco.yaml` de produção tem `formularios_gatilho` como lista de verdade.
+
+## DEC-02 — Flag mestre do EDGAR deve ser AND estrito
+
+- Problema: lógica original era `global_flag or source_enabled` — a flag global não travava nada.
+- Decisão: `edgar_collection_enabled = global is True and source is True`.
+- Objetivo: garantir que desligar a flag global sempre desliga a coleta, independente de outras flags.
+- Justificativa: matriz de 4 combinações testada explicitamente.
+- Status: IMPLEMENTADO_NO_REPOSITORIO (indício), TESTADO_LOCALMENTE.
+- Invariantes: `--edgar-dry-run`/`--edgar-shadow-run` continuam podendo rodar via `force=True`, isolados da matriz — não pode virar uma forma de burlar a trava em produção normal.
+
+## DEC-03 — Scoring do EDGAR é flag separada da coleta (shadow mode real)
+
+- Problema: `edgar_scoring_enabled` existia mas nunca era consultada no `main()` — filings entravam incondicionalmente no pipeline pontuável.
+- Decisão: roteamento explícito em três listas: `production_articles` / `edgar_shadow_articles` / `edgar_scoring_articles`, com `classify_and_attribute` extraído como função compartilhada para não haver dois caminhos de classificação.
+- Objetivo: fazer o "modo sombra" existir de verdade na execução normal, não só em um script diagnóstico separado.
+- Justificativa: o próprio usuário descobriu e comprovou o bug com um teste de integração ponta a ponta (monkeypatch de `fetch_edgar_filings`).
+- Trade-offs: exige `copy.deepcopy` dos artigos no caminho sombra (classify_and_attribute é destrutivo).
+- Consequências: 6 artifacts de shadow de runtime (`edgar_runtime_shadow_*`), `run_meta` com `persisted_records=0`, `history_changed=false` etc.
+- Status: IMPLEMENTADO_NO_REPOSITORIO / TESTADO_NO_GITHUB_ACTIONS (artifact real confirma `scoring_enabled: false`, `persisted_records: 0`).
+- Invariantes: **nunca** deixar `articles += fetch_edgar_filings(cfg)` incondicional voltar a existir.
+
+## DEC-04 — Não ativar scoring do EDGAR (recomendação B, repetida 3 vezes)
+
+- Problema: mesmo após corrigir o gate, a qualidade da classificação (falsos positivos, vazamento entre empresas, deduplicação) nunca pôde ser medida de forma não-vazia com dados reais, porque o primeiro shadow real usou um parser (`sample_filings()`) que descartava os `items` do 8-K, produzindo títulos vazios ("Ford Motor — 8-K: 8-K") e zero eventos por vacuidade, não por precisão.
+- Decisão: recomendar **B — manter em modo sombra**, nunca C, em todas as três avaliações (4H.3A, 4H.3B, 4H.3C).
+- Objetivo: não confundir "o pipeline funciona" com "o classificador foi medido".
+- Justificativa: HTTP 200 e "zero eventos" não são evidência de precisão sem extração real de conteúdo.
+- Status: DECIDIDO_MAS_NAO_IMPLEMENTADO (a decisão é justamente NÃO implementar scoring).
+- Invariantes: **não ativar `edgar_scoring_enabled=true` em nenhum config de produção sem novo ciclo de evidência real com o parser canônico (`edgar_canonical.py`) rodando de fato no GitHub Actions.**
+
+## DEC-05 — Parser único (canônico) para EDGAR, eliminando duplicação
+
+- Problema: existiam dois parsers de submissions divergentes — `sample_filings()` (usado no shadow) e o coletor de produção — e o primeiro descartava `items`, `reportDate` e outros campos.
+- Decisão: `edgar_canonical.parse_submissions()` como único parser; `fetch_edgar_filings()` passa a delegar a ele.
+- Objetivo: impedir que caminhos diferentes produzam artigos com informação diferente para o mesmo filing.
+- Status: TESTADO_LOCALMENTE (75/75 em `test_edgar_4h3c.py`), GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO quanto a estar de fato no repo.
+- Verificar no repositório: se `edgar_canonical.py` existe no repo real e se `fetch_edgar_filings` delega a ele.
+
+## DEC-06 — Atribuição empresa×evento×evidência escopada por oração
+
+- Problema: no caso misto ("rating rebaixado ... e RJ da Samarco"), o rebaixamento vazava para a Samarco porque a atribuição usava o papel geral do artigo, não evidência por evento.
+- Decisão: atribuição por oração (regras `R1_possessivo_mesma_oracao`, `R4_empresa_unica_na_oracao`, `R3_oracao_sem_terceiro_atribui_ao_emissor`, `R5_proximidade_na_oracao`).
+- Justificativa: teste de integração comprovou `events_by_company["Samarco Mineração"] == ["recuperacao_judicial"]` sem vazamento de rating.
+- Status: IMPLEMENTADO_NO_REPOSITORIO (indício), TESTADO_LOCALMENTE.
+- Invariantes: a janela textual NUNCA pode atravessar fronteira de oração.
+
+## DEC-07 — Regra de M&A: correção de uma regra ampla demais
+
+- Problema: a primeira versão da regra semântica de "M&A legítimo" exigia as palavras "empresa/companhia" explícitas no texto, e rejeitou **142 eventos**, incluindo M&A real ("aquisição da Viterra", "51% de sociedade da Kimberly-Clark", "Summit ESP Acquisition").
+- Decisão: inverter o default — entidade nomeada logo após verbo de aquisição é M&A legítimo por padrão; rejeição exige prova do contrário (ação própria, dívida própria, aeronave/equipamento/imóvel, intragrupo, pós-aquisição, rumor, negação explícita).
+- Justificativa: o usuário exigiu explicitamente "não criar novamente uma regra ampla que elimine aquisições legítimas".
+- Consequência: número de M&A corretamente rejeitados caiu de 142 para 29, todos verificados individualmente.
+- Status: IMPLEMENTADO_NO_REPOSITORIO (indício), TESTADO_LOCALMENTE.
+- Invariante crítica: **qualquer nova regra de rejeição de M&A deve ser testada contra uma lista de M&A legítimos conhecidos antes de ser aceita** — este é o erro mais caro cometido neste chat.
+
+## DEC-08 — Score real (ponderado) em vez de soma de peso-base
+
+- Problema: o relatório de auditoria semântica inicial apresentou "score removido" como soma de pesos-base da taxonomia (total −2005 pontos), que **não é** o score exibido no dashboard.
+- Decisão: recalcular usando `build_evolution` (peso-base × decaimento × confiança + bônus de fontes), o mesmo cálculo real do dashboard.
+- Justificativa: exigência explícita do usuário ("Não apresentar 255→80 ou 485→310 como score do dashboard caso esses valores sejam apenas soma de pesos-base").
+- Consequência: números finais corretos: score real removido = 269 pontos (não 2005); tabela por empresa recalculada (ver seção 9).
+- Status: IMPLEMENTADO_NO_REPOSITORIO (indício forte — número usado no pacote de produção final).
+- O que verificar: confirmar no repositório que o número exibido em qualquer relatório de acompanhamento seja sempre derivado de `build_evolution`, nunca de soma direta de `score` da taxonomia.
+
+## DEC-09 — Emissor só-com-contexto deve continuar visível no radar
+
+- Problema: ao mover todos os eventos de Gerdau/Cencosud/GM/LATAM para contexto, o card do emissor desaparecia inteiramente do dashboard (o dicionário `per_company` nunca recebia entrada), escondendo justamente a informação de contexto relevante.
+- Decisão: alterar o laço de montagem de linhas para manter (com score 0) qualquer emissor que tenha `context_events_by_company` não vazio, mesmo sem eventos pontuáveis.
+- Status: IMPLEMENTADO_NO_REPOSITORIO (indício).
+- Invariante: nunca esconder um emissor com contexto relevante só porque não há evento pontuável.
+
+## DEC-10 — Causa raiz da falha de abertura de links
+
+- Problema: fontes corroboradoras não abriam dentro da rede corporativa.
+- Decisão: `resolve_history_urls()` só processava as chaves principais de `history["articles"]`; `corroborations`/`corrob_sources` nunca eram resolvidas. Medido: 39,0% das principais vs. 98,6% das corroboradoras ainda com redirecionador do Google.
+- Status: IMPLEMENTADO_NO_REPOSITORIO / TESTADO_NO_GITHUB_ACTIONS (v1, confirmado pelo usuário).
+- Invariante: toda fonte (principal ou corroboradora) deve passar pela mesma função de resolução.
+
+## DEC-11 — Consolidação do resolvedor de Google News (batchexecute)
+
+- Problema: mesmo após a v1, 373 corroboradoras continuaram sem resolução, porque existiam **duas implementações divergentes**: uma forte (`_resolve_one_gnews`/`_gnews_batchexecute`, com decodificação via endpoint interno do Google News), usada só para principais; outra fraca (sem `batchexecute`), usada para corroboradoras e por todo o `--repair-links-only`.
+- Decisão: consolidar tudo em `link_debt_audit.resolve_gnews_token()` (cache → decode inline → batchexecute → redirect+`data-n-au`), usado por todos os caminhos; remover as funções duplicadas de `risk_dashboard.py`; corrigir um segundo bug independente (`if not pending: return` que pulava a resolução de corroboradoras quando não havia principais pendentes).
+- Status: TESTADO_LOCALMENTE (92/92, com `MockSession` simulando o `batchexecute`) — **NÃO testado com rede real** (o ambiente de desenvolvimento não alcança `news.google.com`).
+- O que ainda precisa ser verificado no repositório: se este código foi de fato subido e se uma execução real do workflow em modo `repair` confirma a queda real do número de pendentes (a estimativa neste chat, de ~356 ainda pendentes, foi obtida OFFLINE e não reflete o resultado real do batchexecute com rede).
+
+# 8. Regras de negócio e invariantes
+
+- **Atribuição de eventos por empresa**: um evento só pertence a `events_by_company[X]` se X for de fato o sujeito econômico do evento — nunca o filer, comunicador, comprador ou controladora só por menção. Motivo: caso Vale/Samarco é o exemplo canônico e motivou toda a auditoria semântica.
+- **Contexto relacionado vs. evento direto**: eventos de terceiro relevantes para a empresa monitorada vão para `context_events_by_company`, nunca para `events_by_company`. Motivo: preservar informação útil sem inflar score da empresa errada.
+- **Eventos pontuáveis vs. não pontuáveis**: contexto tem sempre `scoreable=false` e nunca deve entrar em breakdown, chip, timeline, `worst_event`, status, `n_critical`, ou "O que mudou". Motivo: é a regra central que separa "informativo" de "risco real".
+- **M&A legítimo vs. falso M&A**: recompra de ações próprias, aquisição de aeronave/equipamento/imóvel, reorganização intragrupo, contexto pós-aquisição, rumor não confirmado e negação explícita NÃO são M&A. Qualquer entidade nomeada como alvo/comprador, por padrão, É M&A legítimo — a rejeição exige prova do contrário. Motivo: DEC-07, erro caro já cometido.
+- **Referências históricas**: a data de publicação nunca substitui a data econômica do evento; notícias "This Day in History" ou equivalentes não pontuam. Motivo: caso GM/Chapter 11 de 2009.
+- **Fases jurídicas**: desfecho (acordo, pagamento, encerramento, absolvição, arquivamento) tem precedência sobre a menção de uma acusação antiga no mesmo texto — não é nova fraude. Motivo: caso JBS.
+- **Ações de rating**: downgrade + outlook negativo da mesma ação da agência = uma única contribuição de score. Motivo: caso Rumo (mecanismo implementado; nunca observado ocorrendo de fato no histórico real testado).
+- **Deduplicação de emissões de dívida**: identidade de ocorrência = emissor + instrumento + valor normalizado + série; contagem de notícias nunca é usada como ordinal de emissão. Motivo: caso Axia Energia, saltos aparentes de "emissão 9 para 11".
+- **Backfill**: nunca deve ocorrer automaticamente; só em `workflow_dispatch` manual com input explícito. Motivo: preservado do workflow original (`update_risk_dashboard.yml`), reafirmado em todos os modos novos (`--reclassify-semantic-only`, `--repair-links-only`) como "zero backfill".
+- **Invariância de histórico/score durante reparos técnicos** (semântica, links): qualquer modo `--reclassify-semantic-only` ou `--repair-links-only` deve comprovar, antes de sobrescrever os arquivos finais, que score, eventos, `occurrence_id`, datas e thresholds não mudaram (exceto exatamente o que o modo se propõe a mudar). Motivo: exigência explícita e repetida do usuário; implementado como abort automático quando a invariância falha.
+- **Tratamento de links**: HTTP 200 de `news.google.com` nunca é aceito como resolução válida; o host final deve ser diferente do agregador. Motivo: causa raiz dos 373 pendentes.
+- **Scoring EDGAR**: permanece desligado até novo ciclo de evidência real. Motivo: DEC-04.
+
+# 9. Implementações e correções realizadas
+
+**1. Bug do `formularios_gatilho` (EDGAR).** Causa raiz: string YAML em vez de lista, `set()` iterando caracteres. Solução: `_normalize_edgar_forms`. Arquivos: `risk_dashboard.py`. Testes: `test_edgar_4h2.py` (23/23). Status: aplicado (indício), sem efeito no score (scoring off).
+
+**2. Flag mestre EDGAR não travava (`or` em vez de `and`).** Causa: lógica original. Solução: `edgar_collection_enabled` com `is True and is True`. Testes: `test_edgar_4h3a.py`. Status: aplicado (indício).
+
+**3. `forced_companies` fazia o filer virar sujeito automático.** Causa: atalho no `detect_companies` que retornava direto para artigos oficiais. Solução: filer vira candidato, resolução normal de papel decide o sujeito. Testes: casos Vale/Samarco em filing oficial. Status: aplicado (indício).
+
+**4. Gate de scoring EDGAR fictício.** Causa: `edgar_scoring_enabled` nunca consultada no `main()`. Solução: roteamento em três listas (DEC-03). Testes: `test_edgar_4h3b.py` (59/59), incluindo teste de integração com monkeypatch. Status: aplicado, confirmado por artifact real do Actions.
+
+**5. Vazamento de rating entre empresas no caso misto.** Causa: atribuição por papel de artigo, não por evento. Solução: atribuição escopada por oração (DEC-06). Status: aplicado (indício), testado localmente.
+
+**6. Parsers EDGAR divergentes descartando `items`.** Causa: `sample_filings()` vs. coletor de produção. Solução: `edgar_canonical.parse_submissions()` único. Status: **não confirmado no repositório** — efeito colateral: primeiro shadow real ficou com títulos vazios e zero eventos por vacuidade (limitação restante até segunda validação real).
+
+**7. Falsos positivos semânticos (RJ/falência/fraude na empresa errada, falso M&A, históricos).** Causa raiz: atribuição por palavra-chave sem resolver sujeito/fase/tempo. Solução: `semantic_audit.py`, 8 regras nomeadas. Arquivos afetados: `risk_dashboard.py` (integração em `classify_and_attribute`), `config_risco.yaml` (12 eventos informativos `score:0`). Testes: `test_semantica.py` (102/102). Status: aplicado ao histórico real (37/572 registros alterados), usuário confirmou qualitativamente. Efeito colateral corrigido: regra de M&A ampla demais (DEC-07); vazamento Samarco→Vale por captura de entidade sem âncora de cabeça de token (corrigido); captura de "R$"/países como entidade (corrigido). Limitação restante: caso Rumo (downgrade+outlook) nunca ocorreu de fato no histórico real, mecanismo não observado em produção.
+
+**8. Emissor só-contexto sumindo do radar.** Causa: `per_company` só recebia entrada para empresas com evento pontuável. Solução: DEC-09. Status: aplicado (indício).
+
+**9. Links de corroboradoras não abrindo (v1).** Causa raiz: DEC-10. Solução: `link_debt_audit.resolve_article_url` v1 + `--repair-links-only` + `workflow_link_audit.yml`. Testes: `test_links.py` (57/57 na v1). Status: **confirmado em produção** (usuário rodou o workflow real). Limitação restante: 373 corroboradoras não resolvidas.
+
+**10. Resolvedor de Google News duplicado e incompleto (v2).** Causa raiz: DEC-11. Solução: `resolve_gnews_token` consolidado com `batchexecute`. Testes: `test_links.py` (92/92, com mocks). Status: **entregue, não confirmado aplicado nem testado com rede real**. Durante esta correção, três bugs foram introduzidos e corrigidos pelo próprio processo de consolidação (ver seção 14).
+
+# 10. Casos reais e testes de regressão
+
+| Caso | Erro ou requisito | Resultado esperado | Status | Teste existente |
+|---|---|---|---|---|
+| Vale / Samarco | RJ da Samarco atribuída à Vale | `events_by_company["Vale"]==[]`; Samarco mantém RJ; Vale recebe contexto `scoreable=false` | Corrigido (indício) | `test_semantica.py` (t01/i01), `test_edgar_4h3b.py` |
+| Gerdau / transportadoras | Falência de terceiros atribuída à Gerdau | Gerdau não recebe falência; card mantido com contexto, score 0 | Corrigido (indício) | `test_semantica.py` (t04/i02) |
+| Gerdau — recompra de ações | Recompra classificada como M&A | `event_id_corrigido=recompra_acoes`, não pontua | Corrigido (indício) | t03/i05 |
+| Cencosud / St. Marche | Cencosud (compradora) recebendo RJ do alvo | Cencosud sem RJ (contexto); M&A legítimo preservado e pontuando | Corrigido (indício) | t09/i03 |
+| BTG / Banco Digimais | Falência do Digimais atribuída ao BTG; rumor de compra tratado como M&A confirmado | BTG sem falência; M&A vira `rumor_ma`, não pontua | Corrigido (indício) | t08/i04 |
+| Santander / Esfera | Incorporação de subsidiária integral tratada como M&A externo | `reorganizacao_societaria_interna`, não pontua | Corrigido (indício) | t06/i07 |
+| Santander / TSB | Resultado pós-aquisição antiga tratado como novo M&A | `integracao_pos_aquisicao`, não pontua | Corrigido (indício) | t07/i08 |
+| JBS | Encerramento de ação sobre fraude antiga tratado como fraude nova | Fase de desfecho, não pontua como fraude crítica | Corrigido (indício) | t05/i06 |
+| LATAM — aeronaves | Financiamento de aeronaves tratado como M&A | `aquisicao_capex`, `transaction_scope=capex`, não pontua | Corrigido (indício) | t10/i09 |
+| General Motors — histórico | "This Day in History" (Chapter 11 de 2009) tratado como RJ atual | `historical_reference=true`, não pontua | Corrigido (indício) | t11/i10 |
+| Rumo — downgrade + outlook | Ação de rating pontuando duas vezes | Só o downgrade pontua | Mecanismo implementado, **nunca observado ocorrendo no histórico real** | t02/i11 |
+| M&A externo legítimo (Viterra, Kimberly-Clark, Summit ESP) | Regra ampla rejeitando M&A real | Deve continuar pontuando | Corrigido após falha própria (DEC-07) | t12/i12 |
+| RJ direta legítima (Tok&Stok) | — | Deve continuar pontuando normalmente | Preservado | t13/i13 |
+| Fraude formalmente condenada | — | Deve continuar pontuando | Preservado | t14/i14 |
+| Rumo — troca de CEO (links) | Fontes corroboradoras não abrem dentro da empresa | URL direta resolvida, ou "Link em verificação" sem botão quebrado | Parcialmente corrigido (v1); pendências reais (v2 não confirmada) | `test_links.py` (t23/t24, v12/v13) |
+| Engie / Valor (links) | Mesmo veículo abre num evento e falha em outro | Ambos devem terminar no mesmo host direto | Corrigido em teste local; não confirmado com rede real | t25/v14 |
+| Vale (links, regressão) | Fontes que já funcionavam não podem quebrar | URL direta preservada | Confirmado em teste | t22/v11 |
+
+# 11. Testes e validações
+
+- `test_edgar_4h2.py`: 23/23 — TESTADO_LOCALMENTE, também citado como parte do workflow real do Actions.
+- `test_edgar_4h3a.py`: 49/49 — TESTADO_LOCALMENTE.
+- `test_edgar_4h3b.py`: 59/59 — TESTADO_LOCALMENTE; parte do comportamento (gate) confirmada por artifact real do GitHub Actions.
+- `test_edgar_4h3c.py`: 75/75 — TESTADO_LOCALMENTE (com fixtures); nunca rodado contra SEC real neste chat.
+- `test_semantica.py`: 102/102 (20 unitários originais + testes de integração `i01`–`i20`) — TESTADO_LOCALMENTE; validado também a partir de pacote ZIP extraído em diretório limpo.
+- `test_links.py`: 57/57 na v1; **92/92** na v2 (30 originais + 16 novos com `MockSession`) — TESTADO_LOCALMENTE; a v1 foi indiretamente validada em produção real (usuário rodou o workflow), a v2 nunca foi validada com rede real.
+- `--test-attribution`: 75/75, repetido em praticamente todas as entregas.
+- `--test-cvm-fixture`: 11/11.
+- `--test-fund-coverage`: 10/10.
+- Validação a partir de pacote ZIP extraído em diretório limpo: feita para `dashboard_semantic_production_ready.zip`, `dashboard_link_fix_production_ready.zip` e `dashboard_link_resolution_v2_production_ready.zip` (rodando `py_compile` + suítes de teste depois de `unzip` em `/tmp`).
+- Validação visual manual: relatada apenas pelo usuário, uma vez, para a correção semântica ("não encontrei novos erros relevantes de classificação").
+- **Limitação de ambiente explícita e repetida**: o ambiente de desenvolvimento usado neste chat não tem acesso de rede a `data.sec.gov` nem a `news.google.com` (allowlist de rede restrita a domínios de pacotes/GitHub). Isso significa que **nenhum teste com rede real do EDGAR ou do Google News foi executado neste chat** — apenas simulações com fixtures/mocks locais, mais a análise de artifacts reais que o próprio usuário baixou do GitHub Actions e enviou de volta.
+- Testes que ainda faltam: segundo shadow real do EDGAR com o parser canônico (`edgar_canonical.py`) rodando de fato contra a SEC; execução real do `workflow_link_audit.yml` v2 em modo `repair` com rede real; qualquer teste de carga/performance.
+
+# 12. Deploy, automações e operação
+
+- **`update_risk_dashboard.yml`**: workflow principal, cron `'0 10,13,16,19 * * 1-5'` (4x/dia, dias úteis), mais `workflow_dispatch` com inputs `reclassify`, `backfill`, `audit_cvm`, `probe_sources`. Roda `risk_dashboard.py --config config_risco.yaml --strict-groups` mais os modos ativados, copia `dashboard_risco.html` para `index.html`, e commita `risk_history.json`, `dashboard_risco.html`, `index.html` (mais artefatos de telemetria). Preexistente, não alterado neste chat em conteúdo (só reincluído nos pacotes de entrega).
+- **`workflow_edgar_shadow.yml`** (fases 4H.3B/3C): `workflow_dispatch` com modo `shadow`/`dry-run`, `permissions: contents: read` (nunca commita), roda as suítes de teste antes de tocar a SEC, prova invariância por hash e `git diff`, sobe artifacts com nome `edgar-4h3b-<modo>-<run_id>-<timestamp>`. **Confirmado rodar de verdade** (artifact real analisado neste chat).
+- **`workflow_link_audit.yml`**: `workflow_dispatch` com `mode: audit|repair` e `verify_status` (booleano). Modo `repair` tem `permissions: contents: write` e commita apenas `risk_history.json`, `index.html`, `dashboard_risco.html`. v1 **confirmada rodar de verdade** pelo usuário. v2 adiciona um passo de Summary (`GITHUB_STEP_SUMMARY`) com pendentes antes/depois — **não confirmada em execução real**.
+- Comandos operacionais introduzidos neste chat: `--reclassify-semantic-only` (reclassifica histórico existente com as regras semânticas, sem fetch, sem backfill, idempotente); `--repair-links-only` (resolve e persiste URLs, sem fetch, sem backfill, idempotente); `--audit-edgar`, `--edgar-dry-run`, `--edgar-shadow-run` (diagnósticos EDGAR, isolados da matriz de flags via `force=True`).
+- Riscos de publicação: qualquer modo novo (`--reclassify-semantic-only`, `--repair-links-only`) deve rodar com `--output-history`/`--output-html` apontando para arquivos temporários antes de confiar no resultado, e só sobrescrever os arquivos de produção depois de as checagens de invariância passarem — este padrão foi seguido consistentemente neste chat.
+- Backfill: mantém-se com a regra original (só em `workflow_dispatch` manual com input explícito `true`, nunca no cron) — reafirmado, não alterado.
+
+# 13. Problemas conhecidos, limitações e riscos
+
+## Problemas confirmados
+- Antes da correção v1, 39,0% das fontes principais e 98,6% das corroboradoras tinham redirecionador do Google News não resolvido.
+- Após a v1 (executada de fato), 373 fontes corroboradoras continuaram como "Link em verificação" — comprovado por análise do `risk_history.json` real pós-workflow.
+- O primeiro shadow real do EDGAR produziu títulos vazios ("Ford Motor — 8-K: 8-K") por perda dos `items` do 8-K no parser usado — invalidando a avaliação de qualidade daquele ciclo.
+- Duas implementações divergentes do resolvedor de Google News coexistiam no código (forte para principais, fraca para corroboradoras e para todo o `--repair-links-only`).
+
+## Hipóteses ainda não comprovadas
+- Que o resolvedor `batchexecute` consolidado (v2) de fato resolve a maioria dos 356–373 pendentes com rede real — só testado com mocks.
+- Que o mecanismo de colapso de ações de rating (Rumo) funciona corretamente em um caso real ocorrendo de fato no histórico de produção (nunca observado).
+- Que `edgar_canonical.py`/4H.3C chegaram a ser mesclados no repositório de produção real.
+
+## Limitações do ambiente
+- O ambiente de desenvolvimento usado neste chat não alcança `data.sec.gov` nem `news.google.com` — toda validação de rede real dependeu de o próprio usuário rodar workflows no GitHub Actions e devolver os artifacts/arquivos.
+- Isso significa que qualquer número apresentado como "offline" (ex.: contagem de pendentes de link após rerun local) subestima o que uma execução real com rede conseguiria.
+
+## Riscos de regressão
+- Reintroduzir uma regra de M&A ampla demais (já aconteceu uma vez, DEC-07).
+- Reintroduzir o gate de scoring fictício do EDGAR (DEC-03) ao tocar em `main()`.
+- Reintroduzir parsers divergentes de EDGAR ou de links ao "consertar rápido" um caminho sem atualizar o outro (é o padrão de erro que se repetiu duas vezes neste chat — ver seção 14).
+- Perder a invariância de histórico/score ao modificar `--reclassify-semantic-only` ou `--repair-links-only` sem manter as checagens de abort automático.
+
+## Dívida técnica
+- `edgar_audit_4h2.py` (com `sample_filings()`) pode ainda existir no repositório como código morto ou, pior, ainda ser chamado por algum caminho não identificado neste chat — precisa ser verificado e removido/isolado.
+- Múltiplos configs candidatos (`config_risco_4h2/3a/3b/3c_candidato.yaml`) precisam ser consolidados ou removidos para não confundir qual é o vigente.
+
+## Questões de produto ou metodologia
+- O critério de "score real" (DEC-08) deve ser a referência única daqui para frente; qualquer relatório futuro que volte a usar soma de peso-base deve ser tratado como erro de metodologia.
+- Ainda não há decisão sobre iniciar CMF/BMV/RI — permanece em aberto, não é um "não" definitivo, apenas fora de escopo até agora.
+
+# 14. Tentativas que deram errado ou foram revertidas
+
+**1. Regra de M&A ampla demais.** O que foi tentado: exigir as palavras literais "empresa/companhia" no texto para aceitar M&A. Por que parecia razoável: parecia uma forma simples de excluir recompra de ações e compra de ativos. Por que estava errado: rejeitou 142 eventos, incluindo M&A real e citado nominalmente ("aquisição da Viterra", "Summit ESP Acquisition") que não usa essas palavras. Impacto: teria escondido eventos de risco legítimos se aplicado sem revisão. Correção: inverter o default (DEC-07). Lição geral: **regra de exclusão ampla é mais perigosa que regra de inclusão ampla** — sempre testar contra uma lista de positivos conhecidos antes de aceitar uma regra de rejeição.
+
+**2. Extração de sujeito por possessivo capturando "R$" e países como entidade.** O que foi tentado: usar regex de possessivo (`d[ao] <ENTIDADE>`) para achar o sujeito verdadeiro de um evento. Por que parecia razoável: funcionou no caso canônico Vale/Samarco. Por que estava errado: sem uma stop-list, capturava "R$" em "calote de R$ 3,6 bi do Banco do Brasil" e países como "EEUU". Pior: numa variação do próprio texto de referência (com título duplicado no resumo), o algoritmo inverteu o caso canônico, atribuindo a RJ da Samarco de volta à Vale. Impacto: quase reintroduziu, de forma automática, exatamente o bug que motivou toda a auditoria. Correção: stop-list de moedas/magnitudes/países/órgãos públicos + ancoragem da comparação no primeiro token da entidade extraída. Lição geral: **todo mecanismo de extração de entidade por regex precisa de testes negativos explícitos contra o próprio caso de referência que o motivou**, não só testes positivos.
+
+**3. Parser divergente do EDGAR (`sample_filings()` vs. coletor de produção).** O que foi tentado: criar uma função de amostragem separada (`sample_filings()`) só para fins de auditoria/diagnóstico do EDGAR. Por que parecia razoável: parecia mais simples que reusar o coletor de produção completo. Por que estava errado: essa função não capturava os `items` do 8-K nem outros campos, e depois passou a ser usada (por engano, na prática) como fonte dos artigos classificados no primeiro shadow real, produzindo títulos vazios e invalidando a avaliação de qualidade daquele ciclo. Impacto: um ciclo inteiro de shadow real (206 filings reais coletados) precisou ser descartado para fins de avaliação de qualidade. Correção: parser canônico único (`edgar_canonical.py`). Lição geral: **nunca criar um segundo caminho de extração "só para diagnóstico"** — ele eventualmente vaza para produção ou para uma avaliação que é tratada como real.
+
+**4. Resolvedor de links divergente (forte para principal, fraco para corroboradora).** O que foi tentado: implementar a resolução de URLs de corroboradoras (e todo o `--repair-links-only`) numa função nova (`link_debt_audit.resolve_article_url`), sem perceber que já existia um resolvedor mais forte (`_resolve_one_gnews`/`_gnews_batchexecute`) usado só para as principais. Por que parecia razoável: parecia consolidação suficiente ter uma função canônica nova. Por que estava errado: essa "função canônica" nova era, na verdade, mais fraca que a que já existia — não tinha decodificação `batchexecute`. Impacto: a correção v1, mesmo executada de verdade em produção, deixou 373 links sem resolver, quando uma consolidação de verdade (usar a implementação MAIS FORTE já existente) poderia ter resolvido muito mais desde o início. Correção: consolidação v2, com a implementação forte movida para o módulo compartilhado. Lição geral: **antes de escrever uma "função canônica única", procurar explicitamente se já existe uma implementação mais completa em outro lugar do código** — o usuário teve que pedir isso explicitamente ("Verifique se já existem no risk_dashboard.py funções como `_resolve_one_gnews`... Caso já existam, não crie uma segunda implementação divergente").
+
+**5. Testes vacuamente verdes no primeiro shadow EDGAR.** O que foi tentado/observado: `filings_with_event=0` e `falsos_positivos=0` foram inicialmente lidos como sinais neutros ou até positivos. Por que parecia razoável: zero eventos poderia ser um resultado legítimo de conservadorismo. Por que estava errado: era vacuidade — não havia texto/items suficientes para o classificador ter chance de gerar qualquer evento, então "zero falsos positivos" não provava precisão nenhuma. Correção: instrumentação explícita (`filings_with_sufficient_evidence` separado de `filings_with_event`), e recomendação explícita de nunca aceitar um "zero" sem confirmar que a extração de evidência funcionou. Lição geral: **um contador em zero só é evidência de qualidade se o caminho que o alimentaria foi comprovadamente exercitado.**
+
+**6. Bugs de regex/escaping autoinduzidos durante a consolidação do resolvedor de links v2.** O que aconteceu: ao inserir blocos de código Python via scripts com strings não-raw, backslashes foram silenciosamente reduzidos, corrompendo regex destinadas a casar `\"` literal dentro de respostas do `batchexecute`; e uma classe de caracteres regex ficou malformada (`[^"\]` nunca fecha, por causa do `\]` escapado). Impacto: quatro falhas de teste que pareciam indicar bugs de lógica, mas eram bugs de geração de código. Correção: reconstrução byte a byte da linha de regex, com verificação direta via `repr()`. Lição geral: **ao gerar código-fonte contendo regex complexas por meio de scripts de automação, sempre verificar o conteúdo final do arquivo (não a string de entrada) antes de assumir que a lógica está correta.**
+
+# 15. Backlog priorizado
+
+## P0 — bloqueante ou risco de produção
+- **Confirmar se `dashboard_link_resolution_v2_production_ready.zip` foi de fato subido ao repositório e rodar `workflow_link_audit.yml` em modo `repair` com rede real.** Motivação: é o único jeito de saber se o `batchexecute` resolve os pendentes de verdade. Arquivos: `link_debt_audit.py`, `risk_dashboard.py`, `.github/workflows/workflow_link_audit.yml`. Critério de aceite: Summary do workflow mostrando queda real no número de pendentes, com invariância de score/eventos comprovada. Risco: se não verificado, o próximo agente pode assumir que o problema já está resolvido. Status: pendente.
+- **Confirmar que `edgar_scoring_enabled` está `false`/ausente no `config_risco.yaml` de produção.** Motivação: é a invariante mais crítica de todo o chat. Critério de aceite: leitura direta do arquivo no repositório. Risco: ativação acidental infla score com falsos positivos não medidos. Status: pendente de verificação (não de implementação).
+
+## P1 — necessário para a próxima entrega
+- Segundo shadow real do EDGAR usando `edgar_canonical.py` (parser único), para finalmente medir falso positivo/vazamento/deduplicação de forma não-vazia. Dependência: confirmar que o parser canônico está no repositório; acesso de rede real (só via GitHub Actions). Critério de aceite: `filings_with_sufficient_evidence` > 0 e revisão manual dos itens críticos/altos.
+- Verificar se `edgar_audit_4h2.py`/`sample_filings()` ainda são chamados por algum caminho de produção e, se sim, removê-los ou isolá-los claramente como só-diagnóstico.
+- Consolidar/limpar os múltiplos `config_risco_*_candidato.yaml` remanescentes.
+
+## P2 — melhoria relevante
+- Observar o histórico real em busca de um caso genuíno de downgrade+outlook na mesma ação (Rumo) para validar o colapso de família de rating com dado real, não só sintético.
+- Ampliar a busca de conteúdo do EDGAR (Bloco F da 4H.3C) para 6-K com exhibit de press release, respeitando os limites de tamanho/tempo já definidos.
+
+## P3 — ideia futura
+- CMF (Chile) e BMV/CNBV (México) como fontes oficiais adicionais — nunca iniciado, permanece como proposta.
+- Scraping de RI (Relações com Investidores) headless — mencionado, nunca iniciado.
+
+# 16. Próximos passos recomendados
+
+1. Ler `config_risco.yaml`, `risk_dashboard.py`, `semantic_audit.py` e `link_debt_audit.py` diretamente do repositório real (não deste chat) para confirmar quais dos pacotes entregues aqui foram de fato aplicados.
+2. Verificar se `edgar_scoring_enabled` está ausente ou `false` no `config_risco.yaml` de produção.
+3. Verificar se `edgar_canonical.py` existe no repositório e se `fetch_edgar_filings` delega a ele (em vez de manter parser duplicado).
+4. Comparar o `risk_history.json` atual do repositório com os números deste relatório (572 registros, 37 alterados pela semântica, `links_repaired_at` presente) para confirmar o estado.
+5. Executar localmente (ou revisar o último run) de `test_semantica.py`, `test_links.py`, `test_edgar_4h3c.py` e as suítes `--test-attribution`/`--test-cvm-fixture`/`--test-fund-coverage`, comparando com os números deste relatório.
+6. Somente depois de 1–5, considerar rodar `workflow_link_audit.yml` em modo `repair` (idealmente primeiro em modo `audit`) para medir o efeito real do resolvedor `batchexecute` consolidado.
+7. Testar qualquer nova regra semântica contra a lista de M&A legítimos conhecidos (Viterra, Kimberly-Clark, Summit ESP, Cencosud/St. Marche) antes de aceitar.
+8. Documentar no próprio repositório (não só neste chat) o resultado de cada validação acima, para que o próximo handoff não dependa de reconstrução manual.
+
+O que deve ser validado diretamente no GitHub antes de confiar neste relatório: presença real dos arquivos citados na seção 6; conteúdo real de `config_risco.yaml` (flags EDGAR, eventos informativos `score:0`); se os workflows `workflow_edgar_shadow.yml` e `workflow_link_audit.yml` existem e com qual versão de conteúdo; histórico de commits para confirmar quais ZIPs foram efetivamente aplicados.
+
+# 17. Quickstart para o próximo agente
+
+## Leia primeiro
+Este relatório completo, depois `config_risco.yaml` e `risk_dashboard.py` do repositório real.
+
+## Arquivos centrais
+`risk_dashboard.py`, `semantic_audit.py`, `link_debt_audit.py`, `edgar_canonical.py` (se existir), `config_risco.yaml`, `risk_history.json`, `template_risco.html.j2`.
+
+## Comandos conhecidos
+```
+python risk_dashboard.py --config config_risco.yaml --strict-groups
+python risk_dashboard.py --config config_risco.yaml --history risk_history.json --reclassify-semantic-only --output-history risk_history.json --output-html index.html --audit-outdir out_semantic_production
+python risk_dashboard.py --config config_risco.yaml --history risk_history.json --repair-links-only --output-history risk_history.json --output-html index.html --audit-outdir out_link_repair
+python risk_dashboard.py --test-attribution
+python risk_dashboard.py --test-cvm-fixture
+python risk_dashboard.py --test-fund-coverage
+python test_semantica.py
+python test_links.py
+```
+
+## Não altere sem aprovação
+`edgar_scoring_enabled`, pesos-base/thresholds/tiers/meia-vida da taxonomia, regras de M&A (sem testar contra a lista de positivos conhecidos), o padrão canônico Vale/Samarco.
+
+## Verifique antes de confiar
+Se os arquivos deste relatório realmente existem no repositório real, com o conteúdo descrito; se o workflow de links v2 já rodou com rede real; se `edgar_canonical.py` está de fato integrado.
+
+## Primeira tarefa segura
+Rodar as suítes de teste existentes (`test_semantica.py`, `test_links.py`, `--test-attribution`) no repositório real e comparar os números com este relatório — é leitura/verificação, sem risco de regressão.
+
+## Definição de pronto
+Para qualquer nova mudança: todos os testes citados continuam passando; invariância de score/eventos comprovada por hash quando aplicável; nenhuma regra nova rejeitando M&A/RJ/fraude legítimos conhecidos; `edgar_scoring_enabled` permanece como estava, salvo decisão explícita em contrário.
+
+# 18. Informações conflitantes ou incertas
+
+| Tema | Versão A | Versão B | Mais recente | Confiança | Verificação necessária |
+|---|---|---|---|---|---|
+| Score removido pela auditoria semântica | −2005 pontos (soma de peso-base, relatório diagnóstico inicial) | −269 pontos (score ponderado real via `build_evolution`, entrega de produção final) | B (−269) | alta | Confirmar no repositório qual número aparece em qualquer relatório de acompanhamento futuro |
+| Nº de pendentes de link | 373 (relatado pelo usuário após v1) | 356 (medido offline nesta sessão, após v2 sem rede) | Ambíguo — B é uma medição parcial offline, não uma correção real | baixa | Rodar v2 com rede real e medir de novo |
+| M&A rejeitados pela auditoria semântica | 142 (regra inicial, errada) | 29 (regra corrigida) | B (29) | alta | Nenhuma — já corrigido e testado |
+| Universo EDGAR elegível | 32 (config) | 30 (relatório de cobertura "internacional") | Ambos corretos, definições diferentes (32 = watchlist inteira; 30 = exclui Nubank/StoneCo, brasileiras com ADR) | alta | Nenhuma — já reconciliado nominalmente |
+| Se `edgar_canonical.py` está no repositório real | Entregue como pacote (4H.3C) | Nunca confirmado como aplicado | Incerto | baixa | Ler o repositório diretamente |
+| Se `dashboard_link_resolution_v2_production_ready.zip` foi aplicado | Entregue nesta sessão | Sem resposta do usuário até o fim do chat | Não aplicado (mais provável) | média | Perguntar ao usuário / ler o repositório |
+
+# 19. Decisões e caminhos que não devem ser carregados adiante
+
+- **`edgar_audit_4h2.py` / `sample_filings()`** como fonte de artigos classificados — substituído pelo parser canônico (`edgar_canonical.py`); não deve voltar a ser usado como caminho de extração real.
+- **Regra de M&A exigindo literalmente "empresa/companhia" no texto** — descartada, substituída pela regra com default invertido (DEC-07).
+- **`resolve_article_url` v1 sem `batchexecute`** — substituída pela versão consolidada v2; não reintroduzir a versão fraca como "simplificação".
+- **`_resolve_one_gnews`/`_gnews_batchexecute` duplicados em `risk_dashboard.py`** — removidos; a implementação agora vive só em `link_debt_audit.py`.
+- **Números de score baseados em soma de peso-base da taxonomia** (−2005, tabela 255→80 / 485→310 etc.) — descartados como representação do score real do dashboard; usar sempre o resultado de `build_evolution`.
+- **Configs candidatos intermediários** (`config_risco_4h2_candidato.yaml`, `_4h3a_`, `_4h3b_`) — superados pelo `_4h3c_`, que por sua vez nunca foi confirmado como aplicado; nenhum deles deve ser confundido com o `config_risco.yaml` de produção real.
+- **A suposição de que "zero eventos" no primeiro shadow real do EDGAR provava conservadorismo correto** — refutada; era vacuidade por perda de `items`.
+
+# 20. Glossário do projeto
+
+- **Radar de Risco**: nome do sistema/dashboard de risco de crédito.
+- **Emissor / empresa monitorada**: entidade da watchlist cujo risco é acompanhado.
+- **`events_by_company`**: dicionário empresa→lista de eventos diretos e pontuáveis atribuídos a ela num registro do histórico.
+- **`context_events_by_company`**: eventos de terceiro relevantes para a empresa monitorada, não pontuáveis, exibidos como "Contexto relacionado · não pontua".
+- **`scoreable`**: booleano indicando se um evento deve contribuir ao score.
+- **`occurrence_id`**: identificador de uma ocorrência econômica única (ex.: uma emissão de dívida específica), usado para deduplicar.
+- **Shadow mode (modo sombra)**: coleta e classificação de uma fonte (EDGAR) sem que o resultado entre no histórico pontuável nem afete o score/dashboard.
+- **`edgar_scoring_enabled` / `edgar_collection_enabled`**: flags que controlam, respectivamente, se o EDGAR pode pontuar e se pode ao menos coletar.
+- **4H.2 / 4H.3A / 4H.3B.0 / 4H.3C**: fases sucessivas do trabalho de ativação do EDGAR discutidas neste chat.
+- **`batchexecute`**: endpoint interno do Google News usado para decodificar o destino real de um link `news.google.com/rss/articles/...`.
+- **`display_url`**: URL final que a interface deve usar no botão "Abrir notícia".
+- **`link_health`**: classificação do estado de um link (`url_direta_valida`, `redirect_resolvido`, `redirect_nao_resolvido`, `nao_verificado`, `removido_404_410`, `bloqueado_ou_paywall`, `homepage_generica`, `dominio_suspeito`, `bloqueio_de_ambiente`, `url_malformada`).
+- **Fonte principal vs. corroboradora**: a notícia que originou o registro no histórico vs. as demais notícias que confirmam o mesmo evento.
+- **Padrão Vale/Samarco**: o mecanismo canônico de mover evento de terceiro para contexto sem pontuar a empresa monitorada errada.
+- **Score real / score ponderado**: resultado de `build_evolution` (peso-base × decaimento × confiança + bônus de fontes), em oposição à soma simples de pesos-base da taxonomia.
+
+# 21. Handoff mínimo para IA
+
+- **Missão**: dar continuidade ao Radar de Risco, preservando as correções de atribuição semântica e de resolução de links já aplicadas, sem reativar scoring do EDGAR nem reintroduzir regras de M&A/atribuição amplas demais.
+- **Estado atual conhecido**: EDGAR em modo sombra (scoring desligado); auditoria semântica aplicada e aprovada visualmente pelo usuário; correção de links v1 aplicada e parcialmente eficaz; correção de links v2 (batchexecute) entregue mas não confirmada.
+- **Fonte de verdade**: o repositório real no GitHub — este relatório é só contexto de chat, não prova de estado implementado.
+- **Decisões que devem ser preservadas**: gate real de scoring EDGAR (DEC-03); não ativar scoring (DEC-04); regra de M&A com default invertido (DEC-07); score real via `build_evolution` (DEC-08); emissor só-contexto continua visível (DEC-09); toda fonte de link passa pela mesma função de resolução (DEC-10/11).
+- **Maior risco**: reativar scoring do EDGAR ou reintroduzir uma regra de atribuição/M&A ampla demais sem testar contra os casos de regressão listados na seção 10.
+- **Pendência mais importante**: confirmar, com rede real, se o resolvedor `batchexecute` consolidado (v2) de fato reduz os 356–373 links pendentes — isso nunca foi testado com rede real neste chat.
+- **O que verificar primeiro**: se os arquivos e o conteúdo descritos na seção 6 realmente existem no repositório, na versão descrita aqui.
+- **O que não fazer**: ativar `edgar_scoring_enabled`; criar um segundo caminho de extração/resolução "só para diagnóstico" sem verificar se já existe um mais completo; aceitar "zero eventos"/"zero falsos positivos" como prova de qualidade sem confirmar que a extração de evidência foi de fato exercitada; usar soma de peso-base como "score do dashboard".
+- **Próxima entrega esperada**: validação real do resolvedor de links v2 no GitHub Actions, e/ou um segundo shadow real do EDGAR com o parser canônico, com avaliação de qualidade não-vazia.
+
+# 22. Fontes internas deste relatório
+
+- Arquivos de código citados: `risk_dashboard.py`, `semantic_audit.py`, `link_debt_audit.py`, `edgar_canonical.py`, `edgar_audit_4h2.py`, `edgar_shadow_4h3a.py`, `edgar_shadow_4h3b.py`, `edgar_shadow_4h3c.py`, `test_semantica.py`, `test_links.py`, `test_edgar_4h2.py`, `test_edgar_4h3a.py`, `test_edgar_4h3b.py`, `test_edgar_4h3c.py`.
+- Configs: `config_risco.yaml`, `config_risco_4h2_candidato.yaml`, `config_risco_4h3a_candidato.yaml`, `config_risco_4h3b_candidato.yaml`, `config_risco_4h3c_candidato.yaml`, `fixtures_semantica/config_teste.yaml`, `fixtures_4h3b/config_teste.yaml`.
+- Dados: `risk_history.json` (várias versões enviadas pelo usuário ao longo do chat), `run_meta.json`, `international_search_history.json`.
+- Templates e saída: `template_risco.html.j2`, `index.html`, `dashboard_risco.html`.
+- Workflows: `update_risk_dashboard.yml`, `workflow_edgar_shadow.yml`, `workflow_link_audit.yml`.
+- Pacotes ZIP entregues: `dashboard_semantic_production_ready.zip`, `dashboard_link_fix_production_ready.zip`, `dashboard_link_resolution_v2_production_ready.zip`.
+- Artifact real do GitHub Actions analisado: `edgar-4h3b-shadow-30558094852-20260730T154348Z.zip`.
+- Relatórios/CSVs de auditoria citados: `relatorio_auditoria_semantica_consolidada.md`, `eventos_reclassificados_semantica.csv`, `aceite_por_empresa.csv`, `auditoria_links_dashboard_live.csv`, `resumo_link_repair.json`, `comparacao_casos_rumo_vale_engie.csv`, `CHANGELOG_SEMANTIC.md`, `CHANGELOG_LINK_FIX.md`, `CHANGELOG_LINK_RESOLUTION_V2.md`, `UPLOAD_THESE.txt`.
+- Mensagens/decisões do usuário citadas diretamente: exigência de "entrega de produção completa" (não apenas diagnóstico) para a auditoria semântica; confirmação de execução real do `workflow_link_audit.yml` em modo `repair`; relato de que "O dashboard está semanticamente muito melhor... não encontrei novos erros relevantes de classificação"; instrução para nomear arquivos exatamente como no repositório (`risk_history.json`, sem sufixos `__3_`/`__4_`).

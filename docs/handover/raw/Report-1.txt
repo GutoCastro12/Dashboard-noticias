@@ -1,0 +1,633 @@
+---
+report_type: project_chat_handoff
+suggested_filename: chat_report_radar_de_risco_fases_1_a_4a.md
+chat_scope: Radar de Risco — Emissores (dashboard de monitoramento de risco de crédito por notícias) — Fases 1 a 4A (auditoria de cobertura, expansão da watchlist, cobertura internacional, taxonomia de Gestoras/Fundos, auditoria CVM e probe de fontes oficiais)
+project_name: Radar de Risco — Emissores
+repository_name: não confirmado (nome do repositório GitHub não foi mencionado explicitamente nesta conversa; apenas o nome do workflow `update_risk_dashboard.yml` e a URL de deploy Render herdada de resumo de sessão anterior)
+report_date: 2026-07-31
+last_project_date_mentioned: 2026-07-23
+overall_confidence: média
+---
+
+# 1. Resumo executivo
+
+Este chat tratou da evolução de um dashboard interno chamado **"Radar de Risco — Emissores"**, construído para Gustavo Castro (Vinci Partners), cujo objetivo é monitorar risco de crédito de uma carteira de investimentos via notícias públicas, classificando eventos por emissor e gerando um ranking de risco atualizável periodicamente.
+
+O chat começou a partir de um resumo de sessões anteriores (já compactado pelo sistema), que descrevia um projeto em produção parcial com pipeline Python, config YAML, template HTML/JS e deploy estático no Render via GitHub Actions. A partir desse ponto, quatro fases de trabalho foram conduzidas nesta conversa: **Fase 1** (diagnóstico de cobertura + exportação CSV/Excel/resumo), **Fase 2** (expansão da watchlist de 73 para 160 emissores + criação do subgrupo "Gestoras/Fundos"), **Fase 3** (cobertura internacional via SEC/EDGAR, tradução multilíngue, taxonomia própria de veículos/gestores) e **Fase 4** (diagnóstico e implementação parcial — Fase 4A — de auditoria CVM, keywords de rating multilíngues, exportações enriquecidas, validações e uma ferramenta de diagnóstico de fontes oficiais chamada `--probe-sources`).
+
+Um padrão recorrente e estruturalmente importante neste chat é o seguinte ciclo: o assistente implementa uma fase → o usuário audita o pacote entregue com rigor técnico específico → identifica erros metodológicos ou de engenharia reais → o assistente corrige. Isso ocorreu em **três rodadas de correção formal** (uma para Fases 1+2, uma para Fase 3, uma para Fase 4A), cada uma delimitada por um documento extenso do usuário listando itens numerados. Essas correções não foram cosméticas: incluíram uma reclassificação metodológica central (subgrupo de emissor deve refletir a **natureza do emissor**, não o **instrumento** pelo qual a posição aparece na carteira), a correção do critério de elegibilidade ao EDGAR (de ~19 para 32 emissores elegíveis), a separação do campo `ticker` (cadastral) dos `aliases` (busca textual) para evitar falsos positivos, e a correção de um bug real na lógica de confiança de casamento da auditoria CVM (termos curtos como "BRF" e "TIM" quase geraram falsos positivos de alta confiança).
+
+O estado mais recente conhecido neste chat é: a Fase 4A foi implementada, testada localmente (com fixtures para as chamadas de rede bloqueadas pelo sandbox) e ajustada três vezes a pedido do usuário até `--strict-groups` rodar com **0 erros e 0 warnings** em ambiente local. **Nada neste chat comprova que o código foi de fato enviado ao GitHub, que o GitHub Actions rodou, ou que o Render publicou a versão mais recente.** O próprio usuário reafirmou múltiplas vezes "não subi nada ainda" e pediu, na penúltima mensagem, a lista consolidada de arquivos a subir — o assistente entregou 6 arquivos (`config_risco.yaml`, `risk_dashboard.py`, `template_risco.html.j2`, `README.md`, `update_risk_dashboard.yml`, `requirements.txt`) como o pacote de produção.
+
+Um ponto crítico de confiabilidade: todo o ambiente de trabalho é um sandbox efêmero (`/home/claude/risk-monitor/`), que é limpo entre sessões, e um diretório de saída persistente (`/mnt/user-data/outputs/radar-de-risco/`) que funciona como "última versão conhecida pelo assistente", mas **não é o repositório GitHub real**. Em pelo menos duas ocasiões, arquivos que existiam nesse diretório de saída (`README.md`, `fase2_candidatos_inclusao.csv`) não haviam sido efetivamente mostrados ao usuário via a ferramenta de apresentação de arquivos, e o usuário reclamou formalmente da ausência. Isso é uma lição operacional relevante para qualquer agente que continue este trabalho: **a existência de um arquivo no diretório de saída do assistente não implica que o usuário o recebeu.**
+
+A rede do ambiente de execução bloqueia os domínios reais necessários para várias funcionalidades (`sec.gov`, `data.sec.gov`, `dados.cvm.gov.br`, `cmfchile.cl`, `bmv.com.mx`, `superfinanciera.gov.co`, `cnv.gov.ar`). Por isso, **o coletor EDGAR, a auditoria CVM e o probe de fontes oficiais nunca foram executados contra endpoints reais nesta conversa** — todos foram validados com fixtures/mocks construídos manualmente pelo assistente. Isso é aceitável como validação de lógica, mas não constitui prova de que o código funciona em produção. O usuário está ciente disso e pediu explicitamente que a validação real ocorra no GitHub Actions.
+
+Nenhum scraper para CMF (Chile), CNBV/BMV (México) ou SIMEV (Colômbia) foi implementado — isso foi uma decisão explícita do usuário, condicionada ao resultado do `--probe-sources` rodado em ambiente com rede aberta (GitHub Actions). O coletor de agências de rating (S&P, Moody's, Fitch) também foi deliberadamente **não implementado**; a decisão foi reforçar palavras-chave multilíngues e confiar na imprensa com peso de confiança 0,99 para domínios de agências.
+
+Os manuais LaTeX (português e espanhol, mencionados no resumo de sessão anterior como existentes em `/home/claude/doc/` e `/mnt/user-data/outputs/radar-de-risco/documentacao/`) **não foram atualizados nesta conversa** e foram repetidamente adiados para uma "Fase 4C" ainda não iniciada. Eles refletem uma estrutura desatualizada (anterior às Fases 2, 3 e 4A) e não devem ser tratados como fonte de verdade.
+
+O principal ponto que o próximo agente precisa preservar é a regra metodológica central estabelecida e testada nesta conversa: **o subgrupo cadastral de um emissor (Empresas listadas / Não listadas / FIIs / Gestoras-Fundos) deve refletir a natureza do emissor monitorado, nunca o instrumento pelo qual a posição aparece na carteira** — e o mecanismo `applies_to` que impede que eventos da taxonomia corporativa pontuem veículos de investimento e vice-versa.
+
+# 2. Objetivo do projeto e valor de negócio
+
+O sistema é usado por **Gustavo Castro**, que trabalha na área de risco da **Vinci Partners** (gestora de investimentos brasileira). O dashboard suporta a **rotina de monitoramento de risco de crédito** de uma carteira de investimentos com exposição a mais de 1.100 emissores distintos (ações, dívida corporativa, fundos, FIIs, participações privadas), distribuídos principalmente entre Brasil, EUA, Chile, México, Colômbia e Argentina, com cauda em outros países.
+
+O problema de negócio original (herdado do resumo de sessão anterior, não reexplicado em detalhe nesta conversa) é: identificar rapidamente notícias que sinalizam deterioração de risco de crédito para os emissores da carteira, sem depender de fontes pagas (Bloomberg/Reuters), usando um pipeline automatizado que roda em cron via GitHub Actions e publica um dashboard estático no Render.
+
+Nesta conversa, o foco de negócio evoluiu para responder a uma pergunta concreta que o chefe de Gustavo fez: **"estou vendo poucas notícias — é porque não há eventos relevantes, ou porque a cobertura do dashboard ainda é limitada?"**. A resposta construída ao longo da Fase 1/2 foi que **era cobertura limitada**: a watchlist original de 73 emissores cobria apenas ~18,7% do financeiro da carteira (depois recalculado para 29,9% com metodologia unificada), e o universo elegível por materialidade (representação ≥ 0,1%) chegava a 177 emissores.
+
+O que seria considerado sucesso, segundo o padrão estabelecido pelo próprio usuário ao longo das rodadas de correção, é: (a) cobertura ampliada e auditável por materialidade; (b) classificação cadastral metodologicamente correta (natureza do emissor, não instrumento); (c) separação clara entre cobertura oficial/reforçada (RI, reguladores) e cobertura ampla (imprensa geral) — nunca confundir ausência de RI com ausência de cobertura; (d) validações automáticas que bloqueiam o deploy quando há inconsistência cadastral real; (e) documentação que não afirma nada como "pronto" sem evidência.
+
+Diferenciação objetivo técnico vs. de negócio:
+- **Objetivo técnico**: pipeline de coleta (CVM/IPE, SEC/EDGAR, RSS internacionais) → classificação por taxonomia de eventos → atribuição por emissor → scoring → dashboard exportável.
+- **Objetivo de negócio**: dar à área de risco da Vinci Partners visibilidade tempestiva e auditável sobre eventos de crédito relevantes em toda a carteira, incluindo a porção internacional, sem depender de terminal pago.
+
+Stakeholders mencionados: Gustavo Castro (usuário direto) e seu "chefe" (mencionado como origem da pergunta que motivou a Fase 1; não nomeado).
+
+# 3. Escopo deste chat
+
+**Temas centrais (trabalhados diretamente):**
+- Diagnóstico de cobertura da carteira e reconciliação de metodologia de contagem (Fase 1).
+- Expansão da watchlist (73→160) e correção metodológica de classificação cadastral por natureza do emissor (Fase 2).
+- Exportação CSV/Excel/Markdown do radar e do resumo diário, com gerador de `.xlsx` nativo sem dependência de CDN.
+- Cobertura internacional: coletor SEC/EDGAR, tradução multilíngue (translate-then-classify), taxonomia própria de risco de veículo/gestor (Fase 3).
+- Diagnóstico e implementação parcial da Fase 4: auditoria de cobertura CVM para emissores não listados, keywords de rating multilíngues, exportações com modo de cobertura, validações reforçadas, e a ferramenta `--probe-sources`.
+- Consolidação de handoff de arquivos para upload manual ao GitHub.
+
+**Temas secundários (mencionados como contexto, não retrabalhados a fundo nesta conversa):**
+- Estrutura de scoring/decaimento temporal e classificação de severidade — citada e usada, mas não redesenhada nesta conversa (herdada de sessões anteriores).
+- Deduplicação de notícias — mencionada como já existente, não alterada aqui.
+- Fusão de abas do dashboard ("O que mudou" / "Radar de emissores" / "Notícias classificadas") — citada como já implementada em sessão anterior.
+
+**Temas mencionados mas não trabalhados:**
+- Scrapers reais de CMF (Chile), CNBV/BMV (México), SIMEV (Colômbia) e CNV/AIF (Argentina) — explicitamente adiados para Fase 4B, condicionados ao resultado do `--probe-sources`.
+- Coletor dedicado de agências de rating (S&P, Moody's, Fitch, e agências locais) — deliberadamente não implementado.
+- Atualização dos manuais LaTeX (PT/ES) — adiada para "Fase 4C", não iniciada nesta conversa.
+- Uma segunda pesquisa web sobre viabilidade técnica de CMF/BMV/SIMEV foi **proposta pelo assistente e recusada pelo usuário** (`tool call declined`) — o diagnóstico da Fase 4 foi então feito só com dados locais.
+
+**Itens explicitamente fora de escopo:**
+- Monitoramento de soberanos (Tesouro Nacional, Hacienda MX, Tesorería CL) — decisão do usuário: "módulo futuro", documentar mas não implementar.
+- Scraper de RI internacional dedicado — não abordado.
+
+**Trabalhos pausados:**
+- Decisões da Fase 2 sobre 10 gestoras grandes (Vinci Compass, Kinea, BlackRock etc., R$ 25-26 bi) permaneceram pendentes de decisão do usuário até o fim da conversa.
+- Decisão sobre Pátria e Morgan Stanley (monitorar gestora vs. entidade listada vs. ambas) — pendente.
+- Decisão sobre migrar VIGT11 (FIP-IE listado) do grupo "FIIs" para "Gestoras/Fundos" — pendente.
+
+# 4. Estado atual conhecido
+
+| Componente ou funcionalidade | Estado | Evidência no chat | Observação |
+|---|---|---|---|
+| Watchlist expandida (73→160 emissores) | IMPLEMENTADO_NO_REPOSITORIO (no sentido de "no arquivo de config gerado") / TESTADO_LOCALMENTE | Múltiplas execuções de `python3 risk_dashboard.py --config config_risco.yaml --strict-groups --demo` mostrando `len(cfg['watchlist'])==160` | Só existe no `config_risco.yaml` presente em `/mnt/user-data/outputs/radar-de-risco/`; não há confirmação de push ao GitHub |
+| Classificação por natureza do emissor (não por instrumento) | IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE | Reclassificação de Ford, GM, Citigroup, Cemex, Ecopetrol etc. para "listada"; SPEs florestais e Hospital Care para "nao_listada"; validado por `validate_asset_classes` | Foi um erro real cometido pelo assistente na primeira versão da Fase 2 e corrigido após auditoria do usuário |
+| Separação `ticker` (cadastral) × `aliases` (busca) | IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE | 48 tickers curtos removidos dos aliases; depois mais alguns tickers reais preenchidos explicitamente (BPAC11, PRIO3, BRFS3, CPFE3, JBSS3, MELI, STNE, WEGE3, TIMS3, MOTV3, LTM, BTI) | Bug real intermediário: script de reconstrução chegou a remover aliases legítimos (BTG, PRIO, JBS, WEG, TIM); corrigido restaurando aliases originais |
+| Subgrupo "Gestoras/Fundos" com taxonomia própria | IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE | 11 eventos de veículo/gestor implementados; mecanismo `applies_to`; testes cruzados confirmando que evento corporativo não pontua gestora e vice-versa | Passou por 3 estados: sem taxonomia → `monitoramento_limitado` (Fase 2/3 inicial) → `taxonomia_propria` (Fase 3 revisão) |
+| Coletor SEC/EDGAR | IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE (via fixture) | `fetch_edgar_filings`, `_edgar_articles_from_submissions` testados com JSON fixture simulando `data.sec.gov/submissions/CIK...json` | **Nunca chamado contra `sec.gov` real** — domínio bloqueado no sandbox. Critério de elegibilidade corrigido de 19→32 emissores após auditoria do usuário |
+| Tradução multilíngue (translate-then-classify) | IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE (sem chave de API) | `detect_language`, `translate_articles` testados; comportamento sem `GEMINI_API_KEY` validado (não quebra, mantém texto original) | Nunca testado com chamada real ao Gemini nesta conversa |
+| Rede de segurança multilíngue nos eventos corporativos | IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE | +88 termos EN/ES adicionados após o assistente descobrir que, sem tradução, notícias internacionais não classificavam nada | Achado de teste, não pedido explícito do usuário |
+| Auditoria CVM (`--audit-cvm`) | IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE (via fixture) | `audit_cvm_coverage`, `_cvm_filers_index` testados com índice IPE simulado | **Nunca executado contra `dados.cvm.gov.br` real** nesta conversa |
+| Rastreabilidade de match da auditoria CVM (colunas `alias_casado`, `tipo_match`, `confianca_match`, `observacao`) | IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE | Teste com fixture mostrando "BRF" e "TIM Brasil" corretamente marcados como `revisar`/`baixa` após correção de ordem de precedência | Bug real corrigido nesta mesma rodada (ver seção 14) |
+| Probe de fontes oficiais (`--probe-sources`) | IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE (mock + execução real limitada) | `probe_official_sources`, `_probe_one` testados com respostas HTTP simuladas (RSS, JSON, SPA em JS, anti-bot, HTML estático); também rodado de fato no sandbox contra as URLs reais, mas todas bloqueadas pelo proxy do ambiente | Distinção `bloqueio_ambiente` × `anti_bot` foi adicionada depois que a primeira execução real reportou (falsamente) "anti-bot" para todas as 15 URLs |
+| Exportação CSV/Excel/Markdown do radar | IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE (via Playwright no sandbox) | Testes Playwright confirmando download de CSV, XLSX (6 abas) e resumo `.md`; validação com `openpyxl` | Gerador de XLSX é nativo (ZIP + XML escritos à mão em JS), sem SheetJS — decisão tomada após CDN do SheetJS falhar por bloqueio de rede |
+| Validações reforçadas (`validate_asset_classes`, `validate_sources`, `validate_docs`) | IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE | `--strict-groups --demo` retornando 0 erros e 0 warnings após as 3 rodadas de correção | `validate_docs` tem exclusão de documentos históricos (`_DOC_HISTORICOS` regex) para não gerar falso positivo |
+| Bloqueio fatal de deploy em `--strict-groups` quando há ERRO de fonte | IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE | Teste com feed sem URL injetado: `exit=1` com `--strict-groups`, `exit=0` sem a flag | Implementado na última rodada de correção da Fase 4A |
+| Workflow GitHub Actions (`update_risk_dashboard.yml`) com inputs `audit_cvm` e `probe_sources` | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO | Arquivo YAML gerado e validado sintaticamente com `yaml.safe_load`; nunca confirmado como já presente/atualizado no repositório real | — |
+| Push ao GitHub / execução real do Actions / deploy no Render | INCERTO | Nenhuma mensagem no chat confirma que o usuário fez upload; linguagem consistente de "quando subir, rode..." (futuro) | Ponto crítico — ver seção 12 |
+| Manuais LaTeX (PT/ES) atualizados | DESCARTADO nesta conversa (não tentado) / PAUSADO | Mencionados como pendentes ("Fase 4C") em múltiplos documentos | Refletem estrutura anterior às Fases 2/3/4A |
+| Scrapers CMF/BMV/SIMEV/CNV | DECIDIDO_MAS_NAO_IMPLEMENTADO | Usuário explicitamente instruiu "não implemente ainda scrapers reais... antes do resultado do --probe-sources" | Aguardando CSV real do Actions |
+| Coletor dedicado de agências de rating | DESCARTADO (para este momento) / PROPOSTO para o futuro | Decisão explícita do usuário de adiar; mantida cobertura via imprensa + peso 0,99 | — |
+
+# 5. Arquitetura e fluxo de dados
+
+O fluxo de dados conhecido nesta conversa (a arquitetura completa do pipeline foi herdada de sessões anteriores; aqui foram adicionados/alterados estágios específicos):
+
+```
+FONTES
+  ├─ CVM/IPE (Brasil)               → fetch_cvm_fatos()      [existente, confirmado varrer todo o dataset]
+  ├─ SEC/EDGAR (EUA + estrangeiros
+  │  com registro na SEC)           → fetch_edgar_filings()  [NOVO nesta conversa — Fase 3/4]
+  ├─ RSS internacionais (11 feeds)  → fetch_custom_feeds()   [expandido nesta conversa — Fase 3]
+  ├─ RI scraping (Tier 1 BR)        → fetch_ri_news_pages()  [existente, não alterado aqui]
+  └─ Busca ampla / Google News      → fetch_all()             [existente, não alterado aqui]
+        ↓
+TRADUÇÃO (translate-then-classify)   → translate_articles(), detect_language()   [NOVO — Fase 3]
+  entrada: artigo bruto (título, resumo, idioma detectado)
+  saída: artigo com title_original/summary_original preservados + texto traduzido p/ pt
+        ↓
+CLASSIFICAÇÃO POR TAXONOMIA          → classify_article()   [existente; keywords ampliadas nesta conversa]
+  entrada: artigo (traduzido ou original)
+  saída: lista de event_ids casados
+        ↓
+ATRIBUIÇÃO POR EMISSOR               → detect_companies()   [existente, não alterado na lógica central]
+        ↓
+FILTRO DE APLICABILIDADE POR NATUREZA → event_applies_to()   [NOVO — Fase 3/4]
+  entrada: evento + grupo cadastral do(s) emissor(es) citados
+  saída: evento mantido só se aplicável à natureza do emissor
+  ATENÇÃO: este filtro precisa ser aplicado tanto no Radar (build_evolution)
+  quanto no feed de notícias (build_feed) — foi um bug real corrigido nesta conversa
+        ↓
+DEDUPLICAÇÃO                         → dedupe_articles()     [existente, não alterado aqui]
+        ↓
+PERSISTÊNCIA EM HISTÓRICO             → merge_into_history()  [ajustado para preservar language/title_original]
+        ↓
+SCORING / AGREGAÇÃO POR EMISSOR       → build_evolution()     [ajustado: scoring_mode, coverage_of()]
+        ↓
+RENDERIZAÇÃO (payload JSON → HTML)    → render via Jinja2 (template_risco.html.j2)
+        ↓
+EXPORTAÇÃO (client-side, no navegador)
+  CSV / XLSX (gerador nativo) / Markdown (resumo diário)
+        ↓
+PUBLICAÇÃO ESTÁTICA NO RENDER (via GitHub Actions) — NÃO EXECUTADO NESTA CONVERSA
+```
+
+Riscos e invariantes por etapa (os identificados/reforçados nesta conversa):
+
+- **Fontes → Coleta**: fonte oficial sem resultado deve gerar log informativo, nunca falha silenciosa (invariante reafirmado pelo usuário na Fase 4). O coletor EDGAR e a auditoria CVM seguem esse padrão (try/except com print de aviso, não exceção fatal), exceto quando é erro de **configuração** (`validate_sources`), que agora é fatal em modo estrito.
+- **Tradução → Classificação**: a classificação **não pode depender exclusivamente da tradução** — por isso os termos multilíngues foram adicionados como rede de segurança. Se a tradução falhar (sem chave de API), o pipeline precisa seguir funcionando com o texto original.
+- **Atribuição → Filtro de aplicabilidade**: este filtro deve ser aplicado em **todo lugar onde eventos por emissor são exibidos como "classificados"** — Radar e aba de Notícias. Aplicá-lo só em um lugar gera inconsistência visível ao usuário (foi exatamente o bug relatado na Fase 3→4).
+- **Scoring**: `scoring_mode` do emissor (`normal` / `taxonomia_propria` / `monitoramento_limitado`) determina como o status final é calculado; gestoras/fundos com `taxonomia_propria` só recebem status Crítico/Atenção pelos eventos de veículo, nunca pelos corporativos.
+- **Exportação**: não pode depender de CDN externo (SheetJS foi tentado e falhou por bloqueio de rede tanto no sandbox quanto, presumivelmente, em produção estática) — daí o gerador `.xlsx` nativo em JS puro.
+
+A arquitetura **não está integralmente disponível nesta conversa** — partes como o motor de scoring/decaimento temporal detalhado, a lógica completa de deduplicação e a estrutura de `risk_history.json` foram tratadas como caixas-pretas já existentes, referenciadas mas não reexplicadas em profundidade neste chat.
+
+# 6. Mapa de arquivos, módulos e artefatos
+
+| Caminho ou nome | Função | Estado conhecido | Deve ser preservado? | Observações |
+|---|---|---|---|---|
+| `config_risco.yaml` | Configuração central: watchlist (160 emissores), taxonomia (40 eventos), `custom_feeds`, `source_trust`, `official_sources`, `translation`, `cvm_fatos_relevantes` | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO | Sim, é o arquivo de dados mais crítico | Reescrito diversas vezes ao longo da conversa via scripts Python de manipulação textual (não editado manualmente) |
+| `risk_dashboard.py` | Pipeline completo: coleta, classificação, scoring, validações, CLI (`--demo`, `--strict-groups`, `--reclassify`, `--backfill`, `--audit-cvm`, `--probe-sources`) | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO | Sim | Arquivo grande (~150-160KB); todas as funções novas descritas neste relatório foram inseridas nele |
+| `template_risco.html.j2` | Template Jinja2 do dashboard: filtros de subgrupo, exportação client-side, selos de idioma/país, avisos de taxonomia | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO | Sim | Contém o gerador de XLSX nativo (ZIP+XML em JS) |
+| `README.md` | Documentação técnica do repositório | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO | Sim | Foi alvo de correção por `validate_docs`, que encontrou nele um título obsoleto e uma contagem antiga (73 emissores) |
+| `update_risk_dashboard.yml` | Workflow GitHub Actions, com `workflow_dispatch` e inputs `reclassify`, `backfill`, `audit_cvm`, `probe_sources` | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO | Sim | Deve ir em `.github/workflows/` no repositório real (caminho mencionado, não confirmado) |
+| `requirements.txt` | Dependências Python (`pyyaml`, `jinja2`, `requests`; `google-generativeai` e `playwright` citados como opcionais/instalados à parte no workflow) | CONFIRMADO COMO INALTERADO nesta sessão | Sim | Usuário pediu confirmação explícita; assistente confirmou que o conteúdo não mudou |
+| `dashboard_risco.html` | Saída renderizada do pipeline (contém o payload JSON embutido) | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO | Não precisa ser versionado manualmente — é gerado pelo Actions | Usado apenas para os testes locais com Playwright nesta conversa |
+| `index.html` | Página estática (possivelmente de redirecionamento/histórico do Render) | NÃO ALTERADO nesta conversa (confirmado por timestamp mais antigo) | Não precisa reenvio | Citado como "não precisa subir" pelo próprio assistente |
+| `render.yaml` | Configuração de deploy do Render | NÃO ALTERADO nesta conversa | Não precisa reenvio | idem acima |
+| `auditoria_cobertura_carteira.csv` | Auditoria da Fase 1 (versão inicial, pré-reconciliação) | GERADO — versão SUPERSEDIDA | Não usar como fonte atual | Substituído conceitualmente por `auditoria_fase2_completa.csv` |
+| `auditoria_fase2_tratamento.csv` | Auditoria intermediária da Fase 2 (7 colunas) | GERADO — versão SUPERSEDIDA | Não usar como fonte atual | O próprio usuário pediu uma versão mais completa; substituída por `auditoria_fase2_completa.csv` (26 colunas) |
+| `auditoria_fase2_completa.csv` | Auditoria reconciliada final da Fase 2: 1.104 registros × 26 colunas, com `tratamento_sugerido`, `status`, `justificativa` | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO | Sim — é a versão de referência | — |
+| `auditoria_grupos_ativos.csv` | Snapshot da classificação cadastral (emissor, ticker, asset_class, subgrupo, país, scoring_mode etc.) | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO, regenerado 2x | Útil como auditoria de apoio, não crítico | Regenerado após correções de tickers e scoring_mode |
+| `cobertura_por_regiao.csv` | Cobertura por região com metodologia unificada (maior financeiro por emissor) | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO | Sim | Substituiu versão anterior com metodologia divergente (moda) |
+| `fase2_candidatos_inclusao.csv` | Lista dos 116 candidatos originais à expansão (referência histórica) | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO; **não apresentado ao usuário em uma rodada, causando reclamação** | Manter como referência histórica, não como número vigente | Ver conflito de números na seção 18 |
+| `fase4_cobertura_oficial.csv` | Cobertura oficial por emissor (regulador ativo, status, prioridade) — Fase 4 diagnóstico | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO | Sim | Refeito uma vez após o assistente descobrir que a lógica inicial gerava falsa lacuna de 73 emissores BR |
+| `auditoria_cobertura_cvm.csv` | Saída esperada de `--audit-cvm` | PROPOSTO / função implementada, mas o **arquivo real nunca foi gerado contra dados reais** nesta conversa | Depende de execução real no Actions | Testado só com fixture |
+| `probe_fontes_oficiais.csv` | Saída esperada de `--probe-sources` | PROPOSTO / função implementada; execução real no sandbox retornou só bloqueios de ambiente | Depende de execução real no Actions | — |
+| `DIAGNOSTICO_COBERTURA_FASE1.md` | Documento de diagnóstico da Fase 1 (reescrito após correção) | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO | Documento histórico — não é doc de produção | Excluído da validação `validate_docs` via `_DOC_HISTORICOS` |
+| `FASE2_EXPANSAO_WATCHLIST.md` | Documento da Fase 2 (reescrito após correção metodológica) | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO | Documento histórico | idem |
+| `FASE3_INTERNACIONAL.md` | Documento da Fase 3 (reescrito após correção do número EDGAR) | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO | Documento histórico | idem |
+| `FASE4_PLANO.md` | Plano/diagnóstico da Fase 4, anterior à implementação | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO | Documento histórico | idem |
+| `FASE4A_IMPLEMENTACAO.md` | Documento final da Fase 4A, com seção de "ajustes finais" anexada | GERADO_MAS_NAO_CONFIRMADO_NO_REPOSITORIO | Documento histórico | idem |
+| `/home/claude/risk-monitor/` | Diretório de trabalho efêmero do assistente | Existe só durante a sessão | N/A | É limpo entre sessões; **não confundir com o repositório real** |
+| `/mnt/user-data/outputs/radar-de-risco/` | Diretório de saída persistente do assistente (entre sessões desta conversa) | "Última versão conhecida pelo assistente" | Serve de staging, não é o repo | Contém também `documentacao/` com os manuais LaTeX/PDF, não tocados nesta conversa |
+| `/mnt/user-data/outputs/radar-de-risco/documentacao/` (main.tex, main_es.tex, PDFs) | Manuais LaTeX PT/ES | PAUSADO — não tocado nesta conversa | Sim, mas desatualizado | Estrutura anterior às Fases 2/3/4A; pendente para "Fase 4C" |
+| Deploy Render (`https://dashboard-noticias-b84b.onrender.com`) | URL de produção | **Herdada do resumo de sessão anterior — não mencionada nem verificada diretamente nesta conversa** | Verificar se ainda é a URL correta | Baixa confiança — marcar como INCERTO até confirmação |
+| Arquivos de projeto não relacionados (`maritime_logger.yml`, `maritime_updater.py`, `robotics.yaml`, `ethereum.yaml`, `bitcoin.yaml`, `ai.yaml`, `news_dashboard_github.py` etc.) | Presentes no ambiente de arquivos do projeto, mas nunca mencionados ou trabalhados nesta conversa | Fora de escopo | **Não mexer** | Aparentam pertencer a outro(s) projeto(s) dentro do mesmo workspace/Project do Claude; risco de confusão para um agente que liste o diretório sem contexto |
+
+# 7. Decisões técnicas e de produto
+
+## DEC-01 — Subgrupo cadastral por natureza do emissor, não por instrumento
+
+- Problema: a primeira versão da Fase 2 classificou o subgrupo (Empresas listadas / Não listadas / FIIs) a partir da coluna `Categoria` da base de posições (ex.: `CORPORATE BOND`, `AÇÃO (BRL)`), contaminando a classificação com o tipo de instrumento em vez da natureza do emissor.
+- Decisão: subgrupo = natureza do emissor monitorado (companhia aberta, empresa fechada, fundo listado, gestora/veículo); instrumento da posição é irrelevante para essa classificação.
+- Objetivo: evitar que companhias abertas internacionais (Ford, GM, Citigroup, Cemex, Ecopetrol) apareçam como "não listadas" só porque entraram na carteira via bond, e que SPEs privadas (florestais, Hospital Care) apareçam como "listadas" só porque entraram via ação ON.
+- Justificativa: o subgrupo determina a taxonomia aplicável e o modo de cobertura; um erro aqui propaga para score, filtros e exportação.
+- Alternativas consideradas: nenhuma alternativa foi discutida — foi tratado como correção de bug metodológico, não como escolha de design.
+- Trade-offs: exige curadoria manual por emissor (ticker, bolsa, registro), não é derivável automaticamente da base de posições.
+- Consequências: distribuição final mudou de 71 listadas/65 não-listadas para 105 listadas/31 não-listadas.
+- Invariantes: nenhuma reclassificação futura deve usar `Categoria`/instrumento como critério de subgrupo.
+- Status: IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE.
+- Evidência: `validate_asset_classes` gera warning quando "não listada" tem ticker/bolsa (sinal de erro de instrumento) e quando "listada" não tem nenhum.
+- O que verificar no repositório: se o `config_risco.yaml` real do GitHub já reflete essa classificação ou ainda tem a versão anterior.
+
+## DEC-02 — Separar `ticker` (campo cadastral) de `aliases` (termos de busca textual)
+
+- Problema: tickers curtos (F, C, GM, ET, MU, TD) inseridos como alias de busca casam com palavras comuns em manchetes, gerando falso positivo massivo.
+- Decisão: `ticker` é campo cadastral (validação, exportação, EDGAR); `aliases` só contém termos seguros para casamento de texto.
+- Objetivo: eliminar falsos positivos de atribuição de notícia a emissor.
+- Justificativa: um teste no sandbox mostrou 48 tickers curtos indevidamente presentes nos aliases após uma reconstrução automática do cadastro.
+- Trade-offs: exige lógica adicional (`has_stock_ticker`) para não perder a informação de ticker na validação/exportação mesmo sem usá-lo como termo de busca.
+- Consequências: um bug intermediário fez o script de correção remover também aliases legítimos e não-curtos (BTG, PRIO, JBS, WEG, TIM) — corrigido restaurando os aliases originais e removendo só os tickers de fato curtos.
+- Invariantes: nenhum termo com 4 caracteres ou menos deve entrar em `aliases`, salvo exceções documentadas (`alias_seguro()` na correção).
+- Status: IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE.
+- Evidência: teste mostrando `BTG Pactual aliases: ['BTG Pactual', 'BTG', 'BPAC11', 'BPAC3', 'BPAC5']` após a correção.
+- O que verificar: revisar manualmente uma amostra do `config_risco.yaml` real para confirmar que nenhum ticker curto restou em `aliases`.
+
+## DEC-03 — País/região = domicílio do emissor, nunca a praça de negociação
+
+- Problema: um BDR negociado no Brasil (ex.: MercadoLibre) poderia ser erroneamente cadastrado como Brasil.
+- Decisão: `country`/`region` refletem o domicílio do emissor monitorado, não o instrumento/praça.
+- Objetivo: evitar mascarar a exposição internacional real da carteira.
+- Justificativa: pedido explícito do usuário na correção da Fase 2 ("Se o ativo é BDR no Brasil, mas o emissor é estrangeiro, o país deve refletir o emissor, não automaticamente Brasil").
+- Trade-offs: exige fallback explícito quando o domicílio não é conhecido — resolvido com o valor sentinela `"A revisar"` (ver DEC-04).
+- Status: IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE.
+- Evidência: MercadoLibre, StoneCo, Nubank e outros marcados com `revisar_pais` no dicionário de exceções de domicílio.
+- O que verificar: se essas exceções de domicílio persistem corretamente no `config_risco.yaml` do repositório.
+
+## DEC-04 — Nenhum fallback silencioso para "Brasil"; usar sentinela "A revisar"
+
+- Problema: o payload e a exportação usavam `r.country || 'Brasil'`, o que mascararia erro de cadastro na expansão internacional.
+- Decisão: fallback explícito para `"A revisar"`, com warning de validação.
+- Justificativa: pedido explícito do usuário na correção da Fase 1/2.
+- Status: IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE.
+- Evidência: `validate_asset_classes` emite warning quando `country`/`region` está como `"A revisar"`.
+
+## DEC-05 — Tiers por materialidade + conceito separado de "cobertura oficial prioritária"
+
+- Problema: a regra de tier por materialidade geral não produz nenhum Tier 1 internacional (maior emissor internacional é Bunge, com 0,598% de representação — abaixo do corte de 1,0%).
+- Decisão do usuário: manter a regra de tier por materialidade geral **sem forçar** Tier 1 internacional; criar um conceito **separado**, "cobertura oficial prioritária" = representação ≥ 0,3% (ou relevância qualitativa definida pela área), independente do tier.
+- Objetivo: não distorcer os tiers só para "ter Tier 1 internacional", mas ainda assim ter um critério objetivo de priorização de fontes oficiais para a expansão internacional.
+- Status: DECIDIDO_MAS_NAO_IMPLEMENTADO no código como campo formal — foi usado como critério de análise no diagnóstico (`fase4_cobertura_oficial.csv`), mas não há evidência de um campo/flag `cobertura_oficial_prioritaria` persistido no cadastro.
+- O que verificar: se esse conceito precisa virar um campo explícito no `config_risco.yaml` ou permanece como critério de análise ad hoc.
+
+## DEC-06 — Gestoras/Fundos: subgrupo próprio, com taxonomia ancorada em normas reais
+
+- Problema: veículos de investimento (SPX, Kapitalo, JGP, Blackstone etc.) não são emissores de risco de crédito corporativo tradicional, mas representam risco de veículo/gestor que precisa ser monitorado com taxonomia própria.
+- Decisão: criar subgrupo `gestora_fundo`, com campos `vehicle_kind` e `tratamento`, e uma taxonomia de 11 eventos ancorados em **SEC Rule 22e-4 (17 CFR 270.22e-4)**, **ESMA (AIFMD II/UCITS — LMTs)** e **IOSCO (terminação de fundos)** — não inventados.
+- Objetivo: evitar que "recuperação judicial" ou "covenant breach" (eventos corporativos) sejam lidos como risco de um fundo, e vice-versa.
+- Mecanismo: campo `applies_to` em cada evento da taxonomia, checado por `event_applies_to()`.
+- Status: IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE. Testes cruzados confirmaram: Kapitalo + "recuperação judicial" → ignorado; Kapitalo + "suspensão de resgates" → pontua Crítico; Petrobras + "recuperação judicial" → pontua Crítico; Petrobras + "suspensão de resgates" → ignorado.
+- Evolução do `scoring_mode`: começou como `monitoramento_limitado` (Fase 2/3 inicial, sem taxonomia própria implementada) e evoluiu para `taxonomia_propria` assim que os 11 eventos foram codificados (Fase 3, após o usuário apontar contradição no texto de exportação).
+- O que verificar: se `SCORING_MODES = {"normal", "taxonomia_propria", "monitoramento_limitado"}` está sincronizado entre validação e uso real no scoring.
+
+## DEC-07 — Critério de elegibilidade ao EDGAR: relação com a SEC, não país de domicílio
+
+- Problema: a primeira versão usava `country in ("EUA", "Canadá") and ticker`, que dava apenas 19 emissores elegíveis e deixava de fora companhias estrangeiras com ações/ADR registrados na SEC (Bunge/Suíça, Cemex/México, Ecopetrol/Colômbia, MercadoLibre/Uruguai, StoneCo e Nubank/Brasil, YPF e Telecom Argentina/Argentina, Millicom/Luxemburgo).
+- Decisão: `edgar_eligible(company)` = tem `cik` OU `official.sec: true` OU listagem NYSE/Nasdaq OU (ticker + domicílio norte-americano).
+- Objetivo: refletir corretamente quem de fato reporta à SEC.
+- Justificativa: apontado pelo usuário após auditoria explícita, citando 10 exemplos concretos de emissores que ficavam de fora indevidamente.
+- Consequências: 19 → 32 emissores elegíveis; número documentado em `FASE3_INTERNACIONAL.md`/`FASE4A_IMPLEMENTACAO.md` foi reconciliado para 32.
+- Status: IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE (fixture; nunca contra `sec.gov` real).
+- Invariante nova de validação: emissor com listagem NYSE/Nasdaq mas fora do EDGAR → warning; emissor com `cik`/`official.sec` mas fora do EDGAR → **erro** (inconsistência de regra).
+
+## DEC-08 — Estratégia de tradução: translate-then-classify + rede de segurança multilíngue
+
+- Problema: a taxonomia de eventos está em português; notícias internacionais em inglês/espanhol precisam ser classificadas.
+- Decisão: traduzir **apenas título e resumo curto** (não o corpo completo) para português antes de classificar, preservando `title_original`/`summary_original` e o link original.
+- Justificativa reformulada a pedido do usuário: inicialmente o assistente descreveu isso citando "evidência recente" da literatura sem fonte concreta; o usuário pediu para reescrever como **decisão técnica interna** (padronizar classificação em um idioma só, reduzir perda de eventos), não como afirmação científica.
+- Achado de teste que gerou uma decisão adicional: se a tradução falhar (sem chave de API, cota esgotada), a classificação baseada só em termos em português perderia silenciosamente toda notícia internacional. Por isso foram adicionados +88 termos em inglês/espanhol aos eventos corporativos mais materiais e aos eventos de veículo, como rede de segurança.
+- Status: IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE (sem chamada real ao Gemini).
+- Evidência: "Ford Motor downgraded by rating agency" classificado corretamente mesmo sem tradução, graças aos termos em inglês.
+
+## DEC-09 — Coletor de agências de rating deliberadamente adiado
+
+- Problema: S&P, Moody's e Fitch não oferecem RSS/API pública estável; conteúdo profundo é pago.
+- Decisão do usuário: não construir scraper dedicado agora; reforçar apenas as palavras-chave multilíngues (CreditWatch, Rating Watch, *revisión a la baja*, *clasificación de riesgo* etc.) e manter peso de confiança 0,99 para os domínios de agências (incluindo locais: Feller Rate, Humphreys, HR Ratings, Verum, BRC, Value & Risk, Austin, SR Rating).
+- Status: DECIDIDO_MAS_NAO_IMPLEMENTADO (coletor) / IMPLEMENTADO_NO_REPOSITORIO (keywords e `source_trust`).
+- O que verificar: se um coletor dedicado deve entrar em pauta em fase futura.
+
+## DEC-10 — Argentina excluída da Fase 4A de scraping regulatório
+
+- Problema: os 2 emissores argentinos da watchlist (YPF, Telecom Argentina) já são cobertos via EDGAR (ADRs na NYSE); a fonte local (CNV/AIF) tem histórico de instabilidade relatado.
+- Decisão do usuário: confirmar exclusão da Argentina da Fase 4A; documentar como coberta via EDGAR; revisar apenas se entrar emissor argentino relevante sem essa cobertura.
+- Status: DECIDIDO_MAS_NAO_IMPLEMENTADO (nenhum scraper AIF foi cogitado para implementação futura imediata) / documentado.
+
+## DEC-11 — `--probe-sources`: medir antes de implementar scraper, distinguindo bloqueio de ambiente
+
+- Problema: o ambiente de desenvolvimento (sandbox) não alcança os portais dos reguladores latino-americanos; implementar scraper sem essa validação seria "scraper frágil" (termo do próprio usuário).
+- Decisão: criar um comando de diagnóstico que **mede sem coletar** — status HTTP, tipo de conteúdo, presença de RSS, indício de JS, sinal de anti-bot, latência — a ser rodado no GitHub Actions (rede aberta).
+- Achado crítico corrigido nesta mesma implementação: a primeira execução real (mesmo no sandbox) reportou "anti-bot" para as 15 URLs medidas — o que era **falso**: o bloqueio vinha do proxy de egresso do próprio ambiente (`x-deny-reason` / "not in allowlist"), não das fontes. Corrigido adicionando o campo `bloqueio_ambiente`, checado com precedência sobre `anti_bot`.
+- Status: IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE (mock + execução real que só mediu bloqueio de ambiente).
+- Invariante: um probe que confunde bloqueio de ambiente com anti-bot real da fonte é **pior que nenhum diagnóstico**, porque a decisão da Fase 4B depende dele.
+
+## DEC-12 — `validate_docs` só se aplica a documentação de produção, não a documentos de fase/plano
+
+- Problema: a primeira versão de `validate_docs` sinalizava como "desatualizados" os próprios documentos de fase (`FASE4A_IMPLEMENTACAO.md`, `FASE4_PLANO.md`), que citam números antigos **de propósito**, para registrar o que foi corrigido.
+- Decisão: excluir da checagem arquivos cujo nome case com `_DOC_HISTORICOS = re.compile(r"(FASE\d|PLANO|DIAGNOSTICO|CHANGELOG|HISTORICO)", re.I)`.
+- Justificativa: pedido explícito do usuário — "isso não parece ser erro metodológico, mas contradiz a frase '0 erros e 0 warnings'".
+- Status: IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE — confirmado rodar com 0 warnings mesmo com os documentos de fase presentes no diretório.
+
+## DEC-13 — ERRO de `validate_sources` deve bloquear o deploy em modo estrito
+
+- Problema: mensagens `ERRO` de `validate_sources` eram logadas mas não interrompiam a execução.
+- Decisão: em `--strict-groups`, `ERRO` de fonte gera `SystemExit` (exit code 1); sem a flag, apenas loga e segue.
+- Status: IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE — testado injetando um feed sem URL, confirmando `exit=1` com a flag e `exit=0` sem ela.
+
+## DEC-14 — Auditoria CVM: comprimento do termo tem precedência sobre a origem (nome vs. alias) na confiança do match
+
+- Problema: a primeira versão de rastreabilidade do match classificava a confiança pela **origem** do termo casado (nome do emissor vs. alias), o que permitia que "BRF" (nome do emissor, 3 caracteres) casando dentro de "BRF FOODS INDUSTRIA LTDA" recebesse confiança **média**, quando deveria ser **baixa** por risco de homônimo.
+- Decisão: inverter a regra — qualquer termo casado com menos de 6 caracteres recebe `tipo_match="revisar"` e `confianca_match="baixa"`, independentemente de ser o nome do emissor ou um alias.
+- Status: IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE — confirmado com fixture que "BRF" e "TIM Brasil" (casando com "TIM PARTICIPACOES REGIONAL LTDA") corretamente caem em `revisar`/`baixa`.
+
+## DEC-15 — Gerador de `.xlsx` nativo (ZIP+XML em JS puro), sem dependência de CDN
+
+- Problema: a primeira tentativa de exportação Excel usou SheetJS via CDN (`cdn.sheetjs.com`), que falhou no sandbox por bloqueio de rede (domínio fora da allowlist); uma segunda tentativa com `cdnjs.cloudflare.com` também falhou pelo mesmo motivo.
+- Decisão: implementar um gerador de `.xlsx` nativo em JavaScript (ZIP "stored", sem compressão, com CRC32 calculado à mão; XML mínimo de `[Content_Types].xml`, `workbook.xml`, `worksheet` etc.), sem nenhuma biblioteca externa.
+- Justificativa: um site estático não deveria depender de CDN externo para uma funcionalidade básica de exportação — risco de quebra silenciosa em produção.
+- Status: IMPLEMENTADO_NO_REPOSITORIO / TESTADO_LOCALMENTE — validado abrindo o arquivo gerado com `openpyxl` (Python), incluindo verificação de 6 abas, tipos de dados corretos (números como números).
+
+# 8. Regras de negócio e invariantes
+
+- **Atribuição de eventos por emissor**: um evento só é atribuído a um emissor se o texto casar com o nome ou um alias seguro (≥5 caracteres, salvo exceções documentadas de tickers de padrão de bolsa). Motivo: falsos positivos de tickers curtos já causaram problema real nesta conversa.
+- **Separação instrumento × emissor**: o subgrupo cadastral nunca deve ser derivado da categoria/instrumento da posição na carteira. Motivo: é a correção metodológica central desta conversa (DEC-01).
+- **Eventos pontuáveis por natureza do emissor (`applies_to`)**: eventos corporativos tradicionais (recuperação judicial, covenant breach, rebaixamento de rating etc.) não pontuam Gestoras/Fundos; eventos de veículo (suspensão de resgates, side pocket, liquidação, key person risk etc.) não pontuam companhias. Fraude, intervenção regulatória e suspensão de negociação valem para ambos os grupos (eventos "universais"). Motivo: risco de veículo/gestor é conceitualmente diferente de risco corporativo operacional.
+- **Aplicação consistente do filtro de aplicabilidade**: o filtro `applies_to` deve valer tanto no cálculo de score (Radar) quanto na exibição de "notícias classificadas" (feed). Motivo: bug real relatado pelo usuário — o Radar filtrava corretamente, mas o feed ainda exibia eventos não aplicáveis como "classificados válidos".
+- **País/região = domicílio do emissor**: nunca a praça de negociação do instrumento. Motivo: BDRs e ADRs mascarariam a exposição internacional real se o país fosse herdado da praça.
+- **Nenhum fallback geográfico silencioso**: ausência de país/região vira `"A revisar"` com warning, nunca `"Brasil"` por default. Motivo: mascarar erro de cadastro na expansão internacional.
+- **Cobertura ampla é o piso de todo emissor; ausência de RI não é ausência de cobertura**: regra reafirmada múltiplas vezes pelo usuário. A distinção entre `coverage = "ampla"` e `coverage = "oficial/reforçada"` deve ser preservada em toda comunicação (docs, dashboard, exportação).
+- **Fonte oficial sem resultado gera log informativo, nunca falha silenciosa**: invariante geral de engenharia reafirmada na Fase 4.
+- **Tier por materialidade geral não deve ser forçado para produzir Tier 1 internacional**: se nenhum emissor internacional atinge o corte, não há Tier 1 internacional — usar o conceito separado de "cobertura oficial prioritária" em vez de distorcer os tiers (DEC-05).
+- **Documentação não pode citar número desatualizado de emissores, fontes ou cobertura** — mas essa checagem só vale para documentos de **produção** (README, manuais); documentos históricos de fase/plano têm exclusão explícita, porque neles a citação ao número antigo é parte do registro histórico (DEC-12).
+- **Erro de configuração de fonte bloqueia o deploy em modo estrito** — não deve ser apenas logado (DEC-13).
+- **Confiança de match em auditorias automatizadas deve considerar o comprimento do termo casado, não sua origem** — termos curtos são a principal fonte de falso positivo por homônimo, independentemente de serem o nome do emissor ou um alias (DEC-14).
+- **Nenhum scraper deve ser escrito sem validação de viabilidade técnica real** — o `--probe-sources` existe justamente para não repetir, em CMF/BMV/SIMEV, o padrão de "scraper frágil". Instrução explícita do usuário: não implementar scraper real antes do resultado do probe.
+
+# 9. Implementações e correções realizadas
+
+| # | Problema original | Causa raiz | Solução aplicada | Arquivos afetados | Status real | Limitações restantes |
+|---|---|---|---|---|---|---|
+| 1 | Poucos emissores no dashboard, dúvida se é falta de notícia ou falta de cobertura | Watchlist de apenas 73 emissores, cobertura por financeiro ~18,7% | Diagnóstico quantitativo completo + exportação CSV/Excel/resumo | `risk_dashboard.py`, `template_risco.html.j2` | TESTADO_LOCALMENTE | Números da Fase 1 original foram depois reconciliados (ver seção 18) |
+| 2 | Subgrupo classificado pelo instrumento, não pela natureza do emissor | Uso da coluna `Categoria` da base de posições como proxy de subgrupo | Reclassificação manual curada por emissor + regra explícita no config | `config_risco.yaml`, `risk_dashboard.py` (`validate_asset_classes`) | TESTADO_LOCALMENTE | Depende de curadoria manual para novos emissores futuros |
+| 3 | Tickers curtos como alias de busca geravam risco de falso positivo | Reuso do campo de alias para armazenar ticker | Campo `ticker` separado; `aliases` restrito a termos seguros | `config_risco.yaml`, `risk_dashboard.py` (`has_stock_ticker`) | TESTADO_LOCALMENTE | Um bug intermediário removeu aliases legítimos; corrigido na mesma rodada |
+| 4 | EDGAR cobria só 19 emissores, mas documentação dizia 25 | Critério de elegibilidade baseado em país, não em relação com a SEC | `edgar_eligible()` reescrito | `risk_dashboard.py` | TESTADO_LOCALMENTE (fixture) | Nunca testado contra `sec.gov` real |
+| 5 | Notícias internacionais não classificavam nada sem tradução | Taxonomia só tinha termos em português | +88 termos EN/ES nos eventos mais materiais | `config_risco.yaml` (taxonomy) | TESTADO_LOCALMENTE | Cobertura de termos pode não ser exaustiva para todos os eventos |
+| 6 | Contradição no texto de exportação sobre Gestoras/Fundos ("monitoramento limitado" vs. taxonomia implementada) | Texto não acompanhou a evolução do `scoring_mode` | Texto e coluna "Modo" reescritos para refletir `taxonomia_propria` | `template_risco.html.j2` | TESTADO_LOCALMENTE | — |
+| 7 | Radar filtrava eventos por `applies_to`, mas o feed de notícias não | Filtro implementado só em `build_evolution`, não em `build_feed` | Mesmo filtro aplicado em `build_feed`, com marcação de "não pontua" para eventos mencionados mas não aplicáveis | `risk_dashboard.py`, `template_risco.html.j2` | TESTADO_LOCALMENTE (4 cenários cruzados) | — |
+| 8 | Auditoria CVM sem rastreabilidade de por que um emissor foi considerado filiante | Falta de colunas explicativas | 4 colunas novas (`alias_casado`, `tipo_match`, `confianca_match`, `observacao`); ordem de precedência corrigida (comprimento > origem) | `risk_dashboard.py` (`audit_cvm_coverage`) | TESTADO_LOCALMENTE (fixture) | Nunca testado contra `dados.cvm.gov.br` real |
+| 9 | Probe de fontes reportando "anti-bot" falso para todas as URLs | Confundia bloqueio do proxy do ambiente com anti-bot real da fonte | Campo `bloqueio_ambiente` com precedência sobre `anti_bot` | `risk_dashboard.py` (`_probe_one`, `probe_official_sources`) | TESTADO_LOCALMENTE (mock) + execução real limitada a medir bloqueio de ambiente | Ainda não há medição real das fontes latino-americanas |
+| 10 | `validate_docs` gerando falso positivo nos próprios documentos de fase | Checagem aplicada indiscriminadamente a todo `.md` | Exclusão via regex `_DOC_HISTORICOS` | `risk_dashboard.py` | TESTADO_LOCALMENTE | — |
+| 11 | ERRO de fonte não bloqueava deploy | Ausência de checagem fatal pós-`validate_sources` | `SystemExit` quando há `ERRO` e `--strict-groups` ativo | `risk_dashboard.py` | TESTADO_LOCALMENTE | — |
+
+# 10. Casos reais e testes de regressão
+
+| Caso | Erro ou requisito | Resultado esperado | Status | Teste existente |
+|---|---|---|---|---|
+| Kapitalo (gestora) + notícia "recuperação judicial" | Evento corporativo não deve pontuar veículo | Evento ignorado, não aparece como sinal | ✅ confirmado | Teste local com `build_evolution`/`build_feed` |
+| Kapitalo (gestora) + notícia "suspensão de resgates" | Evento de veículo deve pontuar | Status Crítico | ✅ confirmado | idem |
+| Petrobras (listada) + notícia "recuperação judicial" | Evento corporativo deve pontuar companhia | Status Crítico | ✅ confirmado | idem |
+| Petrobras (listada) + notícia "suspensão de resgates" | Evento de veículo não deve pontuar companhia | Evento ignorado | ✅ confirmado | idem |
+| Notícia de mercado sem emissor citado + evento corporativo | Deve usar grupos corporativos como padrão | Evento mantido no feed | ✅ confirmado | Teste com `companies=["__MERCADO__"]` |
+| "Ford Motor downgraded by rating agency" (inglês, sem tradução) | Rede de segurança multilíngue deve classificar mesmo sem tradução | `rebaixamento_rating` | ✅ confirmado | `classify_article` chamado diretamente |
+| "Cemex: S&P cuts rating..." (inglês) | idem | `rebaixamento_rating` | ✅ confirmado | idem |
+| "LATAM Airlines: rebaja de calificación por Fitch" (espanhol) | idem | `rebaixamento_rating` | ✅ confirmado | idem |
+| "Kapitalo suspende los rescates del fondo" (espanhol, "los rescates") | Termos em espanhol para eventos de veículo | Inicialmente **falhou** (só tinha "suspende rescates", sem "los") | ✅ corrigido após achado | Variantes adicionadas: "suspende los rescates" etc. |
+| "BRF" casando com "BRF FOODS INDUSTRIA LTDA" (fixture CVM) | Termo curto não deve gerar alta/média confiança | `tipo_match="revisar"`, `confianca_match="baixa"` | ✅ corrigido (era bug antes) | Teste com fixture de índice IPE |
+| "TIM Brasil" casando com "TIM PARTICIPACOES REGIONAL LTDA" (fixture CVM) | idem | idem | ✅ corrigido | idem |
+| "Banco Itaú" (R$ 1,9 bi na base) | Deveria ser reconhecido como duplicata do Itaú Unibanco já cadastrado | Resolvido como alias adicional, não novo emissor | ✅ confirmado | Detector de duplicatas na Fase 2 |
+| Axia Energia (ex-Eletrobras) | Deveria permanecer "listada" | Regrediu para "não listada" durante reconstrução automática do cadastro | ✅ regressão pega pela validação e corrigida | `validate_asset_classes` acusou o erro |
+| Feed sem URL em `custom_feeds` + `--strict-groups` | Deve abortar o deploy | `exit=1`, nenhum dashboard gerado | ✅ confirmado | Teste com config quebrado injetado |
+| Feed sem URL + sem `--strict-groups` | Deve logar e seguir | `exit=0`, dashboard gerado com warning | ✅ confirmado | idem |
+| `validate_docs` com `FASE4A_IMPLEMENTACAO.md`/`FASE4_PLANO.md` presentes | Não deve gerar warning falso | 0 warnings | ✅ confirmado | Execução `--strict-groups --demo` com os .md copiados para o diretório de trabalho |
+| Emissor internacional com listagem NYSE/Nasdaq mas fora do EDGAR | Deve gerar warning | Warning emitido | Implementado, não há caso real citado no chat além do mecanismo | Não há teste explícito mostrado no chat para este caso específico (apenas a regra foi codificada) |
+
+# 11. Testes e validações
+
+- **Suítes/comandos usados**: `python3 -c "import ast; ast.parse(...)"` para checagem de sintaxe; `python3 -c "import yaml; yaml.safe_load(...)"` para validação de YAML; `python3 risk_dashboard.py --config config_risco.yaml --strict-groups --demo` como principal comando de validação de pipeline; scripts Python ad hoc importando `risk_dashboard` como módulo para testar funções isoladas (`classify_article`, `detect_companies`, `build_evolution`, `build_feed`, `edgar_eligible`, `audit_cvm_coverage`, `probe_official_sources`, `validate_asset_classes` etc.).
+- **Testes de navegador**: Playwright (`playwright.async_api`) rodado dentro do sandbox, abrindo `dashboard_risco.html` local via `file://` URI, clicando em elementos (chips de filtro, botões de exportação), capturando downloads e screenshots. **Isso é teste local no sandbox do assistente, não GitHub Actions e não produção.**
+- **Fixtures usadas**: JSON simulando `data.sec.gov/submissions/CIK....json` (para EDGAR); dicionário simulando índice de filiantes do IPE/CVM (para auditoria CVM); respostas HTTP mockadas via `unittest.mock.patch` (para o probe de fontes, simulando RSS declarado, JSON, SPA em JS, anti-bot, HTML estático).
+- **Ambiente de execução**: sandbox do assistente (Ubuntu, Python 3.12), com rede restrita a uma allowlist que **não inclui** `sec.gov`, `data.sec.gov`, `dados.cvm.gov.br`, `cmfchile.cl`, `bmv.com.mx`, `superfinanciera.gov.co`, `cnv.gov.ar` — daí a necessidade de fixtures.
+- **Resultado mais recente conhecido**: `--strict-groups --demo` retornando **0 erros e 0 warnings** após as três rodadas de correção (última confirmação no fim da implementação da Fase 4A com os 3 ajustes finais).
+- **Testes que faltam** (explicitamente reconhecidos como não realizados nesta conversa): execução real do coletor EDGAR contra `sec.gov`; execução real da auditoria CVM contra `dados.cvm.gov.br`; execução real do `--probe-sources` contra CMF/BMV/SIMEV/CNV (única execução real mediu apenas bloqueio do proxy do sandbox); qualquer execução do GitHub Actions; qualquer verificação do dashboard publicado no Render; teste de tradução com chamada real ao Gemini (chave de API não disponível no ambiente).
+- Diferenciação explícita pedida pelo formato do relatório: **nenhum teste neste chat foi "teste executado no GitHub Actions"** — todos foram "teste alegado com evidência de execução local" (a maioria) ou "validação visual manual" (screenshots/Playwright).
+
+# 12. Deploy, automações e operação
+
+- **Workflow**: `update_risk_dashboard.yml`, com `workflow_dispatch` e inputs booleanos: `reclassify` (reprocessar todo o histórico), `backfill` (semear histórico com janela ampliada), e os dois novos desta conversa: `audit_cvm` e `probe_sources` (ambos opcionais, default `false`).
+- **Comando executado pelo workflow**: `python risk_dashboard.py --config config_risco.yaml --strict-groups $EXTRA`, onde `$EXTRA` acumula `--reclassify`, `--backfill`, `--audit-cvm`, `--probe-sources` conforme os inputs.
+- **Artefatos gerados e versionados pelo workflow**: `risk_history.json`, `dashboard_risco.html`, `index.html`, e (adicionado nesta conversa) `auditoria_cobertura_cvm.csv` e `probe_fontes_oficiais.csv` quando as respectivas flags estão ativas (`git add -f` com fallback silencioso se os arquivos não existirem).
+- **Plataforma de publicação**: Render (estático), redesenha automaticamente a cada commit — informação herdada do resumo de sessão anterior, não reconfirmada nesta conversa.
+- **Ritual de publicação recomendado pelo assistente** (repetido em várias respostas): subir os arquivos ao GitHub manualmente (não há integração automática de upload nesta conversa) → rodar o Actions uma vez com `reclassify=true`, `audit_cvm=true`, `probe_sources=true`, `backfill=false` → conferir no log: linha "SEC/EDGAR: 32 emissor(es) elegível(is)" e quantidade de filings; CIKs não resolvidos; quantos fatos CVM/IPE casaram; resultado da auditoria CVM dos não listados; veredito real do probe para CMF/BMV/SIMEV; 0 erros; 0 warnings; dashboard com 5 chips fixos; Excel com 6 abas.
+- **Risco de publicação identificado no histórico herdado**: não subir arquivos manualmente **durante** um run do Actions (causaria push rejeitado) — o workflow já usa `git pull --rebase --autostash` com retry, mas o risco permanece se o usuário fizer upload manual simultâneo.
+- **Nada neste chat comprova que esse ritual foi executado.** A última interação registrada é o assistente entregando os 6 arquivos de produção para o usuário subir manualmente.
+
+# 13. Problemas conhecidos, limitações e riscos
+
+## Problemas confirmados
+
+- Critério de elegibilidade EDGAR estava incorreto (por país, não por relação com a SEC) — corrigido.
+- Tickers curtos indevidamente presentes em `aliases` — corrigido, mas processo de correção introduziu uma segunda regressão (remoção de aliases legítimos), depois também corrigida.
+- Contradição textual sobre o estado de Gestoras/Fundos na exportação — corrigida.
+- Filtro `applies_to` ausente no feed de notícias — corrigido.
+- `validate_docs` gerando falso positivo em documentos históricos — corrigido.
+- `ERRO` de `validate_sources` não bloqueava deploy — corrigido.
+- Ordem de precedência errada na confiança de match da auditoria CVM (BRF/TIM) — corrigida.
+- Probe de fontes reportando "anti-bot" falso (na verdade bloqueio do ambiente) — corrigido.
+- README com título obsoleto e contagem antiga de emissores — corrigido.
+- `official_sources` sem entrada para o Brasil — corrigido.
+- Axia Energia regrediu para "não listada" durante reconstrução automática — corrigida.
+
+## Hipóteses ainda não comprovadas
+
+- Que o coletor EDGAR funcionará como esperado contra `sec.gov` real (rate limit, formato de resposta, resolução de CIK).
+- Que a auditoria CVM funcionará como esperado contra `dados.cvm.gov.br` real (tamanho do dataset anual, encoding `latin-1`, tempo de download).
+- Que os vereditos do `--probe-sources` para CMF/BMV/SIMEV corresponderão à realidade quando rodados com rede aberta.
+- Que a tradução via Gemini funcionará em produção (nunca testada com chave de API real nesta conversa).
+- Que o `README.md`/manuais realmente refletem o estado do repositório real (o `validate_docs` só valida o `README.md` **local**, no ambiente do assistente).
+
+## Limitações do ambiente
+
+- Rede do sandbox bloqueia os domínios reais de todas as fontes internacionais e brasileiras oficiais — nenhuma chamada de rede real foi feita a essas fontes nesta conversa.
+- Diretório de trabalho é efêmero entre sessões — o assistente precisa restaurar arquivos do diretório de saída no início de cada sessão.
+- Não há acesso a GitHub real nesta conversa (nenhuma ferramenta de Git/GitHub foi usada) — todo o "deploy" discutido é prescritivo, não executado.
+
+## Riscos de regressão
+
+- Qualquer nova reconstrução automática do `config_risco.yaml` via script (padrão usado repetidamente nesta conversa) tem histórico de introduzir regressões (remoção de aliases legítimos, reversão de classificação de Axia Energia). Deve ser feita com testes de diff antes/depois.
+- O mecanismo `applies_to` precisa ser verificado em qualquer novo ponto de renderização de eventos que venha a ser criado (o bug já ocorreu uma vez entre Radar e feed).
+- A validação `_DOC_HISTORICOS` é uma lista de padrões de nome de arquivo (`FASE\d`, `PLANO`, `DIAGNOSTICO`, `CHANGELOG`, `HISTORICO`) — um novo documento de produção com um desses termos no nome seria incorretamente ignorado pela validação.
+
+## Dívida técnica
+
+- Nenhum scraper para CMF, CNBV/BMV, SIMEV, CNV — cobertura desses países permanece "ampla" (imprensa), sem fonte oficial direta.
+- Nenhum coletor de agências de rating — cobertura via imprensa com peso de confiança elevado, não fonte direta.
+- Manuais LaTeX desatualizados (estrutura anterior às Fases 2/3/4A).
+- Decisões pendentes de Fase 2 nunca fechadas (10 gestoras grandes, Pátria/Morgan Stanley, VIGT11).
+
+## Questões de produto ou metodologia
+
+- O conceito de "cobertura oficial prioritária" (≥0,3%) foi aprovado como critério de análise, mas não está claro se deve virar um campo formal persistido no cadastro — não decidido nesta conversa.
+- Não há teste explícito no chat cobrindo o cenário "emissor com CIK cadastrado mas fora do coletor EDGAR" (a regra existe, o teste automatizado desse caso específico não foi mostrado).
+
+# 14. Tentativas que deram errado ou foram revertidas
+
+- **Tentativa**: usar SheetJS via CDN (`cdn.sheetjs.com`, depois `cdnjs.cloudflare.com`) para gerar Excel na exportação.
+  Por que parecia razoável: é a biblioteca padrão de mercado para gerar `.xlsx` em JavaScript.
+  Por que estava errado: ambos os domínios estão fora da allowlist de rede do ambiente (e presumivelmente também seriam um ponto de falha em produção estática, que não deveria depender de CDN externo para uma funcionalidade básica).
+  Impacto: exportação em Excel caía silenciosamente para CSV como fallback.
+  Correção: gerador de `.xlsx` nativo em JS puro (ZIP + XML manual, CRC32 calculado à mão), sem nenhuma dependência externa.
+  Lição geral: qualquer funcionalidade client-side de um site estático deve evitar dependência de CDN, e o ambiente de teste local nem sempre reflete as mesmas restrições de produção — mas neste caso a restrição do sandbox coincidiu com uma preocupação legítima de robustez em produção.
+
+- **Tentativa**: classificar subgrupo cadastral a partir da coluna `Categoria` (instrumento) da base de posições, na primeira versão da Fase 2.
+  Por que parecia razoável: era a informação mais direta disponível na base de dados exportada da carteira.
+  Por que estava errado: instrumento ≠ natureza do emissor (um bond corporativo pode ter emissor listado; uma ação ON pode ser participação privada).
+  Impacto: dezenas de emissores classificados incorretamente (Ford, GM, Citigroup como "não listadas"; SPEs florestais como "listadas").
+  Correção: reclassificação manual curada por emissor, com regra explícita documentada no topo do `config_risco.yaml`.
+  Lição geral: nunca inferir uma classificação cadastral estrutural a partir de um campo transacional/contábil sem checagem cruzada (ticker, bolsa, registro).
+
+- **Tentativa**: critério de elegibilidade EDGAR baseado em `country in ("EUA", "Canadá")`.
+  Por que parecia razoável: parecia intuitivo que só emissores "americanos" reportassem à SEC.
+  Por que estava errado: companhias estrangeiras com ações/ADR registrados na SEC também arquivam no EDGAR, independentemente do domicílio.
+  Impacto: 13 emissores elegíveis (32-19) ficavam de fora da cobertura oficial sem necessidade.
+  Correção: `edgar_eligible()` baseado em `cik`/`official.sec`/listagem NYSE-Nasdaq/ticker+domicílio.
+  Lição geral: "elegibilidade a um regulador" deve ser modelada pela relação jurídica/de registro com aquele regulador, não por proxy geográfico.
+
+- **Tentativa**: pesquisar viabilidade técnica de CMF/BMV/SIMEV e agências de rating via `launch_extended_search_task` no início da Fase 4.
+  Por que parecia razoável: era a mesma abordagem usada com sucesso na Fase 3 para levantar a matriz de fontes internacionais.
+  Por que não avançou: **o usuário recusou explicitamente essa chamada de ferramenta** (`tool call declined`).
+  Impacto: o diagnóstico da Fase 4 teve que ser feito só com dados locais (watchlist, config existente), sem validação técnica externa dos endpoints — o próprio assistente sinalizou essa limitação no plano entregue.
+  Correção/mitigação: criação do `--probe-sources` como forma de obter essa validação depois, rodando no ambiente correto (GitHub Actions).
+  Lição geral: quando pesquisa externa é recusada, o agente deve ser explícito sobre a lacuna de informação resultante, em vez de prosseguir como se tivesse validado algo que não validou.
+
+- **Tentativa**: primeira versão do `--probe-sources`, sem distinguir bloqueio de ambiente de anti-bot real.
+  Por que parecia razoável: status HTTP 403 é comumente associado a bloqueio anti-bot.
+  Por que estava errado: no ambiente do assistente, 403 vinha do próprio proxy de egresso (allowlist de rede), não das fontes reais.
+  Impacto: um diagnóstico "todas as fontes têm anti-bot" seria uma conclusão falsa e enganosa para decidir a Fase 4B.
+  Correção: campo `bloqueio_ambiente`, detectado por header `x-deny-reason` ou padrões de texto como "not in allowlist", checado com precedência sobre `anti_bot`.
+  Lição geral: uma ferramenta de diagnóstico precisa ser desenhada considerando as limitações do próprio ambiente onde ela roda primeiro, antes de rodar no ambiente-alvo.
+
+- **Tentativa**: primeira versão da rastreabilidade de match da auditoria CVM, classificando confiança por origem do termo (nome do emissor vs. alias).
+  Por que parecia razoável: pareceria mais confiável um termo ser "o próprio nome do emissor" do que um alias qualquer.
+  Por que estava errado: um nome de emissor curto (ex.: "BRF", "TIM Brasil" via alias "TIM") é tão suscetível a homônimo quanto um alias curto — o fator decisivo é o **comprimento** do termo casado, não sua origem.
+  Impacto: "BRF" casando com "BRF FOODS INDUSTRIA LTDA" teria sido reportado como confiança média, mascarando um provável falso positivo.
+  Correção: regra reordenada para que comprimento < 6 caracteres sempre gere `revisar`/`baixa`, independentemente da origem.
+  Lição geral: em regras de match textual, o comprimento/especificidade do termo é geralmente mais preditivo de confiabilidade do que sua categoria de origem.
+
+- **Tentativa (padrão recorrente, não um evento único)**: apresentar arquivos como "entregues" só por existirem no diretório de saída do assistente, sem chamar a ferramenta de apresentação de arquivos para o usuário.
+  Por que parecia razoável: o arquivo estava fisicamente presente e mencionado em texto.
+  Por que estava errado: o usuário só recebe/visualiza o que é explicitamente apresentado; documentar "arquivo X foi gerado" no texto da resposta não substitui a apresentação real.
+  Impacto: usuário reclamou formalmente da ausência de `README.md` e `fase2_candidatos_inclusao.csv` em pelo menos uma rodada.
+  Correção: nas rodadas seguintes, o assistente passou a reconferir explicitamente a lista de arquivos existentes e apresentar todos os relevantes.
+  Lição geral: para este tipo de fluxo de trabalho, a lista de arquivos efetivamente entregues ao usuário deve ser tratada como um subconjunto explícito e auditável dos arquivos gerados, nunca inferida.
+
+# 15. Backlog priorizado
+
+## P0 — bloqueante ou risco de produção
+
+- **Confirmar upload real ao GitHub e execução do Actions.** Objetivo: validar que tudo descrito neste relatório como "testado localmente" de fato funciona em produção. Arquivos prováveis: todos os 6 de produção. Dependências: acesso ao repositório real. Critério de aceite: log do Actions mostrando as 9 conferências listadas na seção 12. Risco: alto — nada foi validado em produção até o fim desta conversa. Status: PENDENTE.
+- **Rodar `--audit-cvm` e `--probe-sources` no Actions e obter os CSVs reais.** Objetivo: substituir os resultados de fixture por dados reais. Dependências: P0 anterior. Critério de aceite: `auditoria_cobertura_cvm.csv` e `probe_fontes_oficiais.csv` gerados e commitados. Risco: alto — toda a Fase 4B depende disso. Status: PENDENTE.
+
+## P1 — necessário para a próxima entrega
+
+- **Decidir a Fase 4B com base nos CSVs reais**: implementar scraper para CMF/BMV/SIMEV se o probe indicar HTML estático/RSS/API viável; caso contrário, manter preparado/desativado e avaliar headless. Dependências: P0. Critério de aceite: decisão documentada com evidência do probe real, não de suposição.
+- **Confirmar quantos dos 24 emissores brasileiros não listados são de fato filiantes na CVM**, usando `auditoria_cobertura_cvm.csv` real, e ajustar `official.cvm`/`coverage_of()` conforme o resultado. Critério de aceite: número real substituindo a estimativa de fixture.
+- **Verificar se a tradução via Gemini funciona em produção** (com `GEMINI_API_KEY` real configurada). Critério de aceite: pelo menos uma notícia internacional real traduzida e classificada corretamente em produção.
+
+## P2 — melhoria relevante
+
+- Fechar as decisões pendentes da Fase 2: as 10 gestoras grandes (Vinci Compass, Kinea, BlackRock etc.), Pátria/Morgan Stanley, migração de VIGT11.
+- Avaliar se "cobertura oficial prioritária" (≥0,3%) deve virar campo formal persistido no cadastro.
+- Revisar aliases pendentes sinalizados como `revisao: alias_a_confirmar` (ex.: AGV) e outros de menor confiança.
+
+## P3 — ideia futura
+
+- Implementar coletor dedicado de agências de rating, caso o volume de eventos de rating capturados via imprensa se mostre insuficiente.
+- Atualizar os manuais LaTeX (PT/ES) para refletir as Fases 2, 3 e 4A (Fase 4C, não iniciada).
+- Avaliar necessidade de headless/Playwright em produção para fontes com JS pesado, caso o probe indique isso para CMF ou outras.
+
+# 16. Próximos passos recomendados
+
+1. Ler o `config_risco.yaml` e o `risk_dashboard.py` do **repositório real no GitHub** e compará-los com as versões descritas neste relatório (que vieram de `/mnt/user-data/outputs/radar-de-risco/` no ambiente do assistente) — isso não foi feito nesta conversa.
+2. Verificar se os 6 arquivos de produção (`config_risco.yaml`, `risk_dashboard.py`, `template_risco.html.j2`, `README.md`, `update_risk_dashboard.yml`, `requirements.txt`) já foram de fato enviados ao repositório, ou se ainda estão pendentes de upload manual pelo usuário.
+3. Comparar a contagem de emissores, distribuição por subgrupo (105/31/8/16) e contagem de elegíveis ao EDGAR (32) entre este relatório e o estado real do repositório, para detectar divergência.
+4. Executar o workflow `update_risk_dashboard.yml` no GitHub Actions com `audit_cvm=true` e `probe_sources=true` (se ainda não foi feito) e ler os CSVs resultantes antes de tomar qualquer decisão sobre scrapers latino-americanos.
+5. Comparar o resultado real da auditoria CVM com a estimativa de fixture usada nesta conversa (24 emissores não listados brasileiros, dos quais a fixture indicava proporção baixa de filiantes).
+6. Somente depois de 1-5, alterar código — em particular, não escrever scrapers para CMF/BMV/SIMEV/CNV sem o resultado real do probe.
+7. Testar qualquer alteração com `python3 risk_dashboard.py --config config_risco.yaml --strict-groups --demo` e confirmar 0 erros/0 warnings antes de propor deploy.
+8. Documentar qualquer nova decisão seguindo o mesmo padrão de granularidade usado nesta conversa (status explícito, não afirmar "pronto" sem evidência).
+
+# 17. Quickstart para o próximo agente
+
+## Leia primeiro
+Este relatório completo; em seguida, o `README.md` e o `config_risco.yaml` do repositório real (não deste chat) para checar divergência.
+
+## Arquivos centrais
+`risk_dashboard.py` (pipeline completo), `config_risco.yaml` (dados/config), `template_risco.html.j2` (dashboard), `update_risk_dashboard.yml` (workflow).
+
+## Comandos conhecidos
+```
+python3 risk_dashboard.py --config config_risco.yaml --strict-groups --demo
+python3 risk_dashboard.py --config config_risco.yaml --strict-groups --audit-cvm
+python3 risk_dashboard.py --config config_risco.yaml --strict-groups --probe-sources
+```
+(todos validados apenas localmente/com fixture nesta conversa)
+
+## Não altere sem aprovação
+- A regra de subgrupo por natureza do emissor (DEC-01).
+- O mecanismo `applies_to` e sua aplicação simultânea em Radar e feed.
+- O critério `edgar_eligible()`.
+- A separação `ticker`/`aliases`.
+- O comportamento de bloqueio fatal em `--strict-groups`.
+
+## Verifique antes de confiar
+- Se os arquivos deste relatório correspondem ao HEAD real do repositório GitHub.
+- Se o Actions já rodou pelo menos uma vez com as flags novas.
+- Se a URL de deploy do Render mencionada em resumo de sessão anterior ainda é válida.
+
+## Primeira tarefa segura
+Ler o repositório real e produzir um diff conceitual contra este relatório — sem alterar nada — reportando divergências antes de qualquer implementação nova.
+
+## Definição de pronto
+Uma funcionalidade só deve ser tratada como "pronta" quando houver evidência de execução real no GitHub Actions e, se aplicável, confirmação visual do dashboard publicado — não apenas testes locais com fixture.
+
+# 18. Informações conflitantes ou incertas
+
+| Tema | Versão A | Versão B | Mais recente | Confiança | Verificação necessária |
+|---|---|---|---|---|---|
+| Cobertura da carteira por financeiro | 18,7% (Fase 1 original, metodologia por "moda" de região) | 29,9% (após reconciliação, metodologia por maior financeiro por emissor) | B | Alta (B foi resultado de correção explícita pedida pelo usuário) | Confirmar contra a base de posições real, se disponível no repositório |
+| Emissores elegíveis ao universo de materialidade ≥0,1% | 153 (diagnóstico original da Fase 1) | 177 (após reconciliação de metodologia) | B | Alta | — |
+| Candidatos à expansão da watchlist | 116 candidatos → 87 incluídos (contagem da Fase 2 original, baseada em snapshot daquele momento) | Não recalculado com a base de 177; documentado como "número histórico válido para aquele momento" | Ambos coexistem nos documentos, sem substituição formal | Média | Se o próximo agente precisar de um número único de "quantos foram incluídos", usar a contagem real do `config_risco.yaml` (105+31+8+16=160 menos os 73 originais = 87 novos), não recalcular do zero |
+| Emissores elegíveis ao EDGAR | 25 (primeira versão do documento `FASE3_INTERNACIONAL.md`) | 19 (contagem real do código na mesma época, antes da correção) | 32 (após correção do critério, versão final documentada) | Alta para 32 (testado e reconciliado) | Confirmar 32 contra execução real no Actions |
+| Estado do `scoring_mode` de Gestoras/Fundos | `monitoramento_limitado` (Fase 2/3 inicial — sem taxonomia própria) | `taxonomia_propria` (Fase 3 revisão — com os 11 eventos implementados) | B | Alta | Confirmar que todos os 16 emissores do grupo têm `scoring_mode: taxonomia_propria` no config real |
+| README.md e fase2_candidatos_inclusao.csv | Assistente afirmou tê-los gerado/atualizado | Usuário reclamou que não vieram no pacote entregue | Ambos os arquivos existiam no diretório de saída, mas não haviam sido apresentados via ferramenta ao usuário | Alta (episódio bem documentado) | Confirmar que a versão final entregue de fato contém esses arquivos |
+| URL de deploy Render (`dashboard-noticias-b84b.onrender.com`) | Mencionada apenas no resumo de sessão anterior (compactado) | Nunca mencionada ou reconfirmada nesta conversa | Incerto | Baixa | Confirmar diretamente com o usuário ou no painel do Render |
+| Nome do repositório GitHub | Nunca mencionado explicitamente nesta conversa | — | Não identificado | Baixa | Perguntar ao usuário ou verificar remotes do Git localmente |
+| Se o código atual (Fase 4A com os 3 ajustes finais) já foi enviado ao GitHub | Usuário disse repetidamente "não subi nada"; última mensagem pede a lista de arquivos a subir | — | Não enviado até o fim desta conversa | Alta | Confirmar diretamente com o usuário |
+
+# 19. Decisões e caminhos que não devem ser carregados adiante
+
+- **Classificação de subgrupo por instrumento/categoria da posição** — abordagem descartada e substituída pela classificação por natureza do emissor (DEC-01). Não reintroduzir.
+- **Uso de SheetJS via CDN para exportação Excel** — abandonado por bloqueio de rede e por risco de dependência externa em site estático; substituído pelo gerador nativo.
+- **`scoring_mode: monitoramento_limitado` como estado permanente de Gestoras/Fundos** — era um estado transitório da Fase 2/3 inicial, substituído por `taxonomia_propria`. `monitoramento_limitado` ainda existe como valor válido (trava manual), mas não é mais o padrão do grupo.
+- **Contagem de "153 emissores elegíveis" e "cobertura de 18,7%"** — números da Fase 1 pré-reconciliação; não usar como referência atual (ver seção 18).
+- **Critério EDGAR por país (`country in ("EUA","Canadá")`)** — descartado, substituído por `edgar_eligible()`.
+- **`auditoria_cobertura_carteira.csv`, `auditoria_fase2_tratamento.csv`** — versões intermediárias de auditoria, substituídas por `auditoria_fase2_completa.csv`. Não tratar como fonte de dados vigente.
+- **Regra de confiança de match da auditoria CVM por origem do termo (nome vs. alias)** — descartada, substituída pela regra por comprimento do termo (DEC-14).
+- **Vereditos do primeiro `--probe-sources`** (que reportou "anti-bot" para todas as 15 URLs) — são artefato de bloqueio de ambiente, não representam a realidade das fontes; não usar esses vereditos para decidir a Fase 4B.
+- **Qualquer scraper de CMF, CNBV/BMV, SIMEV ou CNV/AIF** — não existe, e não deve ser implementado sem o resultado real do `--probe-sources`.
+
+# 20. Glossário do projeto
+
+- **Emissor**: entidade (companhia, fundo, gestora) cujo risco de crédito é monitorado — distinto do "instrumento" pelo qual a posição aparece na carteira.
+- **Subgrupo / asset_class**: classificação cadastral do emissor por natureza — `listada` (Empresas listadas), `nao_listada` (Não listadas / PE / Crédito), `fii` (FIIs), `gestora_fundo` (Gestoras/Fundos).
+- **Tier**: nível de materialidade do emissor na carteira — T1 (≥1,0%), T2 (≥0,3%), T3 (≥0,1%), definido por representação financeira.
+- **Cobertura oficial prioritária**: conceito separado do tier — emissor com representação ≥0,3% (ou relevância qualitativa da área) recebe prioridade de fonte oficial, independentemente do tier.
+- **Cobertura ampla**: monitoramento por imprensa/notícias públicas — piso de cobertura de todo emissor.
+- **Cobertura oficial/reforçada**: monitoramento direto via RI, regulador ou sistema de filing (CVM/IPE, SEC/EDGAR).
+- **`applies_to`**: campo de cada evento da taxonomia que define a quais grupos de ativos (`listed_companies`, `nao_listada`, `fii`, `gestora_fundo`) aquele evento se aplica.
+- **`scoring_mode`**: modo de pontuação do emissor — `normal` (taxonomia corporativa padrão), `taxonomia_propria` (só eventos de veículo/gestor), `monitoramento_limitado` (trava manual: coleta e exibe, mas não classifica).
+- **`vehicle_kind`**: subtipo de um emissor do grupo Gestoras/Fundos — gestora, fundo, fundo_listado, veiculo_offshore, fundo_interno, fundo_terceiros.
+- **Translate-then-classify**: estratégia de traduzir título/resumo para português antes de classificar o evento, mantendo o texto original preservado.
+- **Rede de segurança multilíngue**: palavras-chave em inglês/espanhol adicionadas aos eventos mais materiais para que a classificação funcione mesmo se a tradução falhar.
+- **`edgar_eligible()`**: função que determina se um emissor deve ser buscado no coletor SEC/EDGAR (por `cik`, `official.sec`, listagem NYSE/Nasdaq, ou ticker+domicílio norte-americano).
+- **`--audit-cvm`**: comando que audita quais emissores brasileiros são efetivamente filiantes no dataset IPE da CVM.
+- **`--probe-sources`**: comando de diagnóstico que mede a acessibilidade técnica de fontes oficiais (status HTTP, RSS, JS, anti-bot) sem coletar dados.
+- **`bloqueio_ambiente`**: sinal específico do probe que indica que a indisponibilidade de uma fonte é causada pelo ambiente de execução (proxy/allowlist), não pela fonte em si.
+- **IPE**: Informações Periódicas e Eventuais, dataset público da CVM usado para identificar fatos relevantes e companhias filiantes.
+- **Fato relevante**: comunicado obrigatório de companhias abertas no Brasil, equivalente ao "material event" americano (Form 8-K/6-K).
+- **`--strict-groups`**: flag do pipeline que torna erros de validação fatais (aborta a execução).
+- **`--reclassify`**: flag que reprocessa todo o histórico com as regras/keywords atuais.
+- **`--backfill`**: flag que semeia o histórico com janela de busca ampliada, usada normalmente na primeira execução.
+
+# 21. Handoff mínimo para IA
+
+- **Missão**: dar continuidade ao desenvolvimento do "Radar de Risco — Emissores", preservando as correções metodológicas já validadas nesta conversa (classificação por natureza do emissor, filtro `applies_to`, separação ticker/alias, elegibilidade EDGAR correta), e decidir a Fase 4B (scrapers CMF/BMV/SIMEV/CNV) **somente** com base nos resultados reais de `--audit-cvm` e `--probe-sources` rodados no GitHub Actions.
+- **Estado atual conhecido**: pipeline com Fases 1 a 4A implementadas e testadas **localmente** (com fixtures para todas as chamadas de rede externas); `--strict-groups --demo` roda com 0 erros/0 warnings; **nenhuma confirmação de upload ao GitHub, execução do Actions, ou publicação no Render** dentro desta conversa.
+- **Fonte de verdade**: o repositório GitHub real (ainda não acessado nesta conversa) deve prevalecer sobre qualquer arquivo deste chat em caso de divergência.
+- **Decisões que devem ser preservadas**: as 15 listadas na seção 7 (DEC-01 a DEC-15), especialmente subgrupo por natureza do emissor, separação ticker/alias, `applies_to` aplicado consistentemente, e critério `edgar_eligible()`.
+- **Maior risco**: tratar como "pronto para produção" algo que só foi validado localmente com fixtures — em particular, EDGAR, auditoria CVM e probe de fontes nunca tocaram um endpoint real nesta conversa.
+- **Pendência mais importante**: confirmar upload real ao GitHub e rodar o Actions com `audit_cvm=true` e `probe_sources=true` para obter os dois CSVs que decidem a Fase 4B.
+- **O que verificar primeiro**: comparar o estado real do repositório GitHub com os 6 arquivos de produção descritos neste relatório antes de fazer qualquer alteração de código.
+- **O que não fazer**: não implementar scrapers para CMF/BMV/SIMEV/CNV sem o resultado real do probe; não reintroduzir classificação por instrumento; não remover o filtro `applies_to` de nenhum ponto de renderização; não tratar documentos deste chat como se fossem o estado confirmado do repositório.
+- **Próxima entrega esperada**: validação em produção (Actions + Render) dos itens já implementados localmente, seguida da decisão fundamentada sobre a Fase 4B.
+
+# 22. Fontes internas deste relatório
+
+- Resumo de sessões anteriores compactado pelo sistema, referenciando o transcript `2026-07-24-20-18-39-radar-de-risco-fases-1-4a.txt` (mencionado como fonte, não lido diretamente nesta conversa).
+- Mensagens do usuário com instruções e correções detalhadas para Fase 1/2 (documento index 5 no histórico), Fase 3 (documento index 6), Fase 4 (requisitos de diagnóstico) e Fase 4A (documento index 7, com os 3 ajustes finais).
+- Arquivos gerados e manipulados nesta conversa: `config_risco.yaml`, `risk_dashboard.py`, `template_risco.html.j2`, `README.md`, `update_risk_dashboard.yml`, `requirements.txt`.
+- Documentos de fase gerados nesta conversa: `DIAGNOSTICO_COBERTURA_FASE1.md`, `FASE2_EXPANSAO_WATCHLIST.md`, `FASE3_INTERNACIONAL.md`, `FASE4_PLANO.md`, `FASE4A_IMPLEMENTACAO.md`.
+- CSVs gerados nesta conversa: `auditoria_cobertura_carteira.csv`, `auditoria_fase2_tratamento.csv`, `auditoria_fase2_completa.csv`, `auditoria_grupos_ativos.csv`, `cobertura_por_regiao.csv`, `fase2_candidatos_inclusao.csv`, `fase4_cobertura_oficial.csv`.
+- Artefato de pesquisa da Fase 3: "Radar de Risco Internacional: Matriz de Fontes Regulatórias e de Imprensa para EUA e America Latina" (gerado via `launch_extended_search_task`, com citações a SEC, CNBV, Superfinanciera, CNV, S&P Global, ESMA, IOSCO, entre outras).
+- Chamada de ferramenta de pesquisa recusada pelo usuário no início da Fase 4 (sobre viabilidade técnica de CMF/BMV/SIMEV e agências de rating) — mencionada como eventos, não como fonte de conteúdo.
+- Testes e execuções de código mostrados no chat via `bash_tool` (saídas de `python3 risk_dashboard.py ...`, testes com `playwright`, `openpyxl`, `unittest.mock`).
+- Diretórios do ambiente: `/home/claude/risk-monitor/` (trabalho efêmero), `/mnt/user-data/outputs/radar-de-risco/` (saída persistente entre sessões desta conversa), `/mnt/user-data/outputs/radar-de-risco/documentacao/` (manuais LaTeX/PDF, não tocados).
