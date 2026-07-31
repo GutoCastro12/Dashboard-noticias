@@ -109,6 +109,40 @@ jobs:
             --audit-outdir out_link_repair
           cp index.html dashboard_risco.html
 
+      - name: Summary — pendentes antes/depois, método, arquivos alterados
+        if: always()
+        run: |
+          python - <<'PY'
+          import json, os
+          p = "out_link_repair/resumo_link_repair.json"
+          s = os.environ.get("GITHUB_STEP_SUMMARY", "")
+          if not os.path.exists(p):
+              print("resumo_link_repair.json ausente — nada a resumir.")
+              raise SystemExit(0)
+          r = json.load(open(p, encoding="utf-8"))
+          linhas = [
+              "## Reparo de links — resumo\n",
+              f"- Modo: `${{ inputs.mode }}`",
+              f"- Rede habilitada: {r.get('rede_habilitada')}",
+              f"- Links auditados: {r.get('links_auditados')}",
+              f"- Fontes principais: {r.get('fontes_principais')} · "
+              f"corroboradoras: {r.get('fontes_corroboradoras')}",
+              f"- **Pendentes antes** (redirecionadores encontrados): "
+              f"{r.get('redirecionadores_encontrados')}",
+              f"- **Resolvidos nesta execução**: {r.get('redirects_resolvidos')}",
+              f"- **Ainda pendentes**: {r.get('nao_resolvidos')}",
+              f"- 404/410: {r.get('http_404_410')} · 403/paywall: {r.get('http_403_paywall')}",
+              f"- Registros com campo de link alterado: {r.get('registros_com_campo_alterado')}",
+              "",
+              "### Saúde por grupo",
+              f"- Principais: {r.get('principais_por_saude')}",
+              f"- Corroboradoras: {r.get('corroboradoras_por_saude')}",
+          ]
+          if s:
+              open(s, "a", encoding="utf-8").write("\n".join(linhas) + "\n")
+          print("\n".join(linhas))
+          PY
+
       - name: PROVA — semântica, score e configs intactos
         run: |
           FAIL=0
