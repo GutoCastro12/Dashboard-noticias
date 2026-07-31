@@ -719,6 +719,66 @@ def build_company_query(company: dict, taxonomy: list[dict]) -> str:
     return f'"{alias}" ({terms})'
 
 
+# ── Ativação opt-in da resolução contextual de entidade ──────────────────────
+# Um emissor só usa o caminho novo (search_terms na consulta, resolve_entity_match
+# na atribuição, related_entities na relação) se declarar EXPLICITAMENTE pelo
+# menos um dos campos abaixo no cadastro. Nenhum dos 160 emissores reais de
+# config_risco.yaml declara qualquer um deles hoje — portanto esta função
+# retorna False para todos eles, e todo o código que depende dela (
+# `build_company_queries`, o hook de `classify_and_attribute`) cai para o
+# comportamento legado, byte-a-byte idêntico ao anterior.
+_ENTITY_RESOLUTION_OPT_IN_FIELDS = (
+    "search_terms", "entity_cues", "exclusion_cues", "related_entities",
+    "entity_scope", "entity_confidence",
+)
+
+
+def uses_contextual_entity_resolution(company: dict) -> bool:
+    """True só se o cadastro declarar >=1 dos campos novos de resolução de
+    entidade. Compatibilidade retroativa: ausência de todos os campos ⇒
+    False ⇒ caminho legado (mesma query, mesma detecção, mesmo score)."""
+    return any(company.get(f) for f in _ENTITY_RESOLUTION_OPT_IN_FIELDS)
+
+
+def build_company_queries(company: dict, taxonomy: list[dict]) -> list[str]:
+    """Lista de consultas de RECUPERAÇÃO para um emissor.
+
+    Legado (não opt-in, ou opt-in sem `search_terms` declarado): devolve
+    exatamente `[build_company_query(company, taxonomy)]` — mesma string,
+    mesmo comportamento de sempre. Isto é o que garante zero regressão para
+    os 160 emissores reais.
+
+    Opt-in COM `search_terms`: uma consulta por termo (mesmo padrão
+    `"{termo}" (risco OR risco OR ...)` de `build_company_query`),
+    deduplicadas por normalização (acento/caixa/pontuação) e limitadas a
+    `max_search_terms_per_run` (padrão 8) para não multiplicar chamadas de
+    rede sem controle. A ORDEM de busca é ampla — a ATRIBUIÇÃO nunca decorre
+    daqui; ela é decidida depois por `resolve_entity_match`."""
+    if not uses_contextual_entity_resolution(company) or not company.get("search_terms"):
+        return [build_company_query(company, taxonomy)]
+
+    grp = asset_group_of_company(company)
+    idioma = (company.get("language") or "pt").lower()[:2]
+    if idioma in RISK_TERMS_I18N and grp != "gestora_fundo":
+        risk_terms = RISK_TERMS_I18N[idioma]
+    else:
+        risk_terms = RISK_TERMS_BY_GROUP.get(grp, RISK_TERMS_BY_GROUP["listed_companies"])
+    terms = " OR ".join(f'"{t}"' for t in risk_terms)
+
+    seen_norm = set()
+    queries = []
+    max_terms = company.get("max_search_terms_per_run", 8)
+    for term in company["search_terms"]:
+        key = normalize(term)
+        if not key or key in seen_norm:
+            continue
+        seen_norm.add(key)
+        queries.append(f'"{term}" ({terms})')
+        if len(queries) >= max_terms:
+            break
+    return queries or [build_company_query(company, taxonomy)]
+
+
 _SEARCH_TELEMETRY: dict = {}
 # 4H.1d — telemetria dos COLETORES OFICIAIS. Elegibilidade/configuração não é
 # execução: só o que o coletor realmente tentou entra aqui.
@@ -749,6 +809,67 @@ def should_fetch_company(company: dict, cfg: dict, run_count: int) -> bool:
     return (run_count + offset) % n == 0
 
 
+def _fetch_one_query(q: str, cfg: dict, session: requests.Session,
+                     locs: list, tel: dict) -> tuple[list[dict], str]:
+    """Executa UMA query de recuperação através dos locales de fallback do
+    emissor (principal + até 2 alternativos) — corpo extraído verbatim do
+    laço que existia dentro de `fetch_all` antes da integração opt-in
+    (4H — refatoração de forma, sem mudança de comportamento).
+
+    Entradas:
+      q     — a string de query já pronta (de `build_company_queries`).
+      cfg   — config completo (usado por `fetch_query_result` para period/
+              max_articles_per_query).
+      session — `requests.Session` compartilhada entre todas as chamadas.
+      locs  — lista de locales candidatos (`locales_for_company`), na ordem
+              principal → fallback.
+      tel   — dict de telemetria do emissor (mesmo `_SEARCH_TELEMETRY[nome]`
+              de sempre) — MUTADO in-place (efeito colateral idêntico ao
+              código anterior: `queries`, `success`, `raw_articles`,
+              `errors`, `status_codes`, `locales_tentados`, `por_locale`,
+              `error_type`, `error`).
+
+    Saída: `(artigos, locale_usado)` — `artigos` é a lista de artigos do
+    PRIMEIRO locale que respondeu com sucesso técnico E teve resultado
+    (`_r["ok"] and _r["articles"]`); `locale_usado` é a string desse locale,
+    ou `""` se nenhum locale retornou artigo algum.
+
+    Exceções: nenhuma tratada aqui — `fetch_query_result` já captura
+    timeout/HTTP/conexão internamente e devolve `{"ok": False, ...}`; esta
+    função nunca levanta.
+
+    Relação com `fetch_query_result`: é o único ponto de chamada — mesma
+    assinatura, mesmos argumentos posicionais/nomeados de antes
+    (`fetch_query_result(q, cfg, session, (hl, gl))`)."""
+    arts, usado = [], ""
+    for lc in locs[:3]:
+        hl, gl = lc.split("/", 1)
+        r = fetch_query_result(q, cfg, session, (hl, gl))
+        pl = tel["por_locale"].setdefault(lc, {"attempted": 0, "success": 0,
+                                               "raw_articles": 0, "errors": 0,
+                                               "error_type": "", "error": ""})
+        pl["attempted"] += 1
+        tel["queries"] += 1
+        if lc not in tel["locales_tentados"]:
+            tel["locales_tentados"].append(lc)
+        if r["status_code"] is not None:
+            tel["status_codes"].append(r["status_code"])
+        if r["ok"]:
+            pl["success"] += 1
+            tel["success"] += 1
+            pl["raw_articles"] += len(r["articles"])
+            tel["raw_articles"] += len(r["articles"])
+            if r["articles"]:
+                arts, usado = r["articles"], lc
+                break          # principal resolveu: não usa fallback
+        else:
+            pl["errors"] += 1
+            pl.update(error_type=r["error_type"], error=r["error"])
+            tel["errors"] += 1
+            tel.update(error_type=r["error_type"], error=r["error"])
+    return arts, usado
+
+
 def fetch_all(cfg: dict, run_count: int = 0) -> list[dict]:
     session = requests.Session()
     all_articles: list[dict] = []
@@ -760,47 +881,38 @@ def fetch_all(cfg: dict, run_count: int = 0) -> list[dict]:
     print(f" 📡 Buscando notícias por emissor "
           f"({len(active)} nesta execução, {skipped} agendados p/ próximas runs)…")
     for company in active:
-        q = build_company_query(company, cfg["taxonomy"])
+        # `build_company_queries` devolve UMA única query (mesma string de
+        # sempre) para os 160 emissores reais (nenhum declara
+        # `search_terms`) — o laço abaixo executa uma única vez para eles,
+        # byte-a-byte igual ao comportamento anterior. Só emissores opt-in
+        # COM `search_terms` recebem >1 consulta aqui.
+        _queries = build_company_queries(company, cfg["taxonomy"])
         print(f"   • [T{company.get('tier', 2)}] {company['name']}")
         _locs = locales_for_company(company, cfg)
         _tel = _SEARCH_TELEMETRY.setdefault(company["name"], {
             "searched": True, "locale": _locs[0], "locales_tentados": [],
             "locale_com_resultado": "", "queries": 0, "success": 0,
             "raw_articles": 0, "errors": 0, "por_locale": {},
-            "status_codes": [], "error_type": "", "error": ""})
-        # locale principal; fallback SÓ se houver erro ou zero resultados
-        _arts, _usado = [], ""
-        for _lc in _locs[:3]:
-            _hl, _gl = _lc.split("/", 1)
-            _r = fetch_query_result(q, cfg, session, (_hl, _gl))
-            _pl = _tel["por_locale"].setdefault(_lc, {"attempted": 0, "success": 0,
-                                                      "raw_articles": 0, "errors": 0,
-                                                      "error_type": "", "error": ""})
-            _pl["attempted"] += 1
-            _tel["queries"] += 1
-            if _lc not in _tel["locales_tentados"]:
-                _tel["locales_tentados"].append(_lc)
-            if _r["status_code"] is not None:
-                _tel["status_codes"].append(_r["status_code"])
-            if _r["ok"]:
-                _pl["success"] += 1
-                _tel["success"] += 1
-                _pl["raw_articles"] += len(_r["articles"])
-                _tel["raw_articles"] += len(_r["articles"])
-                if _r["articles"]:
-                    _arts, _usado = _r["articles"], _lc
-                    break          # principal resolveu: não usa fallback
-            else:
-                _pl["errors"] += 1
-                _pl.update(error_type=_r["error_type"], error=_r["error"])
-                _tel["errors"] += 1
-                _tel.update(error_type=_r["error_type"], error=_r["error"])
-        _tel["locale_com_resultado"] = _usado
+            "status_codes": [], "error_type": "", "error": "",
+            "search_terms_used": _queries if len(_queries) > 1 else []})
+        _arts_all = []
         _seen_url = set()
-        for art in _arts:
-            if art.get("url") in _seen_url:
-                continue
-            _seen_url.add(art.get("url"))
+        for q in _queries:
+            _arts, _usado = _fetch_one_query(q, cfg, session, _locs, _tel)
+            # Só emissores opt-in com >1 query preservam o locale de uma
+            # busca anterior quando a busca seguinte não encontra nada —
+            # para os 160 legados (sempre 1 query), `_tel["locale_com_
+            # resultado"]` ainda está em "" nesta linha, então isto é
+            # idêntico a `_tel["locale_com_resultado"] = _usado`.
+            _tel["locale_com_resultado"] = _usado or _tel["locale_com_resultado"]
+            for art in _arts:
+                if art.get("url") in _seen_url:
+                    continue
+                _seen_url.add(art.get("url"))
+                _arts_all.append(art)
+            if len(_queries) > 1:
+                time.sleep(0.25)  # múltiplas search_terms: pausa extra entre elas
+        for art in _arts_all:
             if art["url"] and art["url"] not in seen:
                 seen.add(art["url"])
                 art["query_company"] = company["name"]
@@ -2625,6 +2737,214 @@ def detect_companies(art: dict, watchlist: list[dict]) -> list[str]:
     if isinstance(art, dict):
         art["mention_roles"] = papeis
     return found
+
+
+# ── Resolução contextual de entidade (genérica, configurável) ───────────────
+# Camada OPCIONAL, aditiva — NÃO substitui `detect_companies`/`mention_role`,
+# não é chamada por `main()`/`fetch_all`/`classify_and_attribute` por padrão.
+# Existe para permitir, quando o cadastro do emissor declarar os campos novos
+# (`search_terms`, `entity_cues`, `exclusion_cues`, `related_entities`,
+# `entity_scope`, `entity_confidence`), separar RECUPERAÇÃO (consulta ampla)
+# de ATRIBUIÇÃO (confirmação da entidade por evidência, sem exigir razão
+# social literal no título). Cadastros que não declaram esses campos
+# continuam funcionando exatamente como hoje — `resolve_entity_match` nunca
+# é invocada para eles em produção.
+#
+# Ordem de resolução (auditável, não é um score opaco):
+#   1) exclusion_cues tem precedência sobre qualquer outro sinal;
+#   2) alias de alta precisão (mesmo padrão de palavra inteira do
+#      `detect_companies`) confirma a entidade com confiança alta;
+#   3) >= `entity_cues_min` (padrão 2) entity_cues positivos, sem exclusão,
+#      confirma com confiança média (atribuição contextual, sem alias
+#      literal — ex.: "Cementera Yura alcanza utilidades..." sem "S.A.");
+#   4) nenhum dos anteriores: não atribuído (confiança baixa/nenhuma);
+#   5) `related_entities` é verificado à parte — menção a uma subsidiária/
+#      controladora relacionada NUNCA transfere automaticamente o evento
+#      para a empresa cadastrada; só identifica a entidade relacionada como
+#      sujeito provável, para revisão humana ou para o padrão Vale/Samarco
+#      já existente em `semantic_audit.py` decidir o roteamento.
+ENTITY_CUES_MIN_DEFAULT = 2
+
+
+def _text_of(article: dict) -> str:
+    return normalize(f"{article.get('title', '')} {article.get('summary', '')}")
+
+
+def resolve_entity_match(article: dict, company: dict, cfg: dict | None = None) -> dict:
+    """Resolução contextual de entidade — genérica e configurável (não
+    hard-coded para nenhum emissor específico). Ver cabeçalho da seção acima
+    para a ordem de precedência. Retorna um dict auditável, nunca um score
+    opaco:
+
+    matched (bool), confidence ("high"/"medium"/"low"/"none"),
+    matched_alias (str|None), positive_cues (list[str]),
+    exclusion_cues (list[str]), relation_type
+    ("direct"/"related_entity"/None), subject_company (str|None),
+    rule (str — nome da regra que decidiu), observation (str).
+
+    Compatibilidade retroativa: se `company` não declarar `entity_cues`/
+    `exclusion_cues`, o comportamento cai para "só alias de alta precisão",
+    equivalente ao que `detect_companies` já faz — nenhuma mudança de
+    resultado para cadastros antigos."""
+    text = _text_of(article)
+    name = company.get("name", "")
+    aliases = company.get("aliases") or [name]
+    exclusion_cues = company.get("exclusion_cues") or []
+    entity_cues = company.get("entity_cues") or []
+    min_cues = company.get("entity_cues_min", ENTITY_CUES_MIN_DEFAULT)
+
+    # 1) exclusion_cues — precedência absoluta, mesmo se um alias também bater
+    excl_hits = [c for c in exclusion_cues if normalize(c) and normalize(c) in text]
+    if excl_hits:
+        return {
+            "matched": False, "confidence": "none", "matched_alias": None,
+            "positive_cues": [], "exclusion_cues": excl_hits,
+            "relation_type": None, "subject_company": None,
+            "rule": "exclusion_cue_precedence",
+            "observation": (f"Sinal(is) de exclusão presente(s) ({', '.join(excl_hits)}) "
+                            f"— nunca atribuir a '{name}', mesmo com alias/cues positivos."),
+        }
+
+    # 2) alias de alta precisão — mesmo padrão de palavra inteira do detect_companies
+    alias_hit = next((a for a in aliases if _word_pattern(a).search(text)), None)
+    if alias_hit:
+        return {
+            "matched": True, "confidence": "high", "matched_alias": alias_hit,
+            "positive_cues": [c for c in entity_cues if normalize(c) in text],
+            "exclusion_cues": [], "relation_type": "direct", "subject_company": name,
+            "rule": "high_precision_alias",
+            "observation": f"Alias de alta precisão '{alias_hit}' encontrado no texto.",
+        }
+
+    # 3) entity_cues contextuais — confirma sem exigir alias literal
+    cue_hits = [c for c in entity_cues if normalize(c) in text]
+    if len(cue_hits) >= min_cues:
+        return {
+            "matched": True, "confidence": "medium", "matched_alias": None,
+            "positive_cues": cue_hits, "exclusion_cues": [],
+            "relation_type": "direct", "subject_company": name,
+            "rule": "contextual_cues_threshold",
+            "observation": (f"{len(cue_hits)} sinal(is) de contexto positivo(s) "
+                            f"({', '.join(cue_hits)}) >= mínimo exigido ({min_cues}), "
+                            f"sem alias literal no texto."),
+        }
+
+    # 4) nenhum sinal suficiente
+    return {
+        "matched": False, "confidence": "low" if cue_hits else "none",
+        "matched_alias": None, "positive_cues": cue_hits, "exclusion_cues": [],
+        "relation_type": None, "subject_company": None,
+        "rule": "insufficient_evidence",
+        "observation": (f"{len(cue_hits)} sinal(is) de contexto encontrado(s), "
+                        f"abaixo do mínimo exigido ({min_cues}); nenhum alias literal."),
+    }
+
+
+def resolve_related_entity_mentions(article: dict, company: dict) -> list[dict]:
+    """Verifica se o artigo menciona alguma `related_entity` do emissor
+    (subsidiária, controladora, marca irmã) usando os aliases próprios da
+    relacionada. NUNCA transfere o evento automaticamente — apenas identifica
+    a entidade relacionada como sujeito provável, para o consumidor (padrão
+    Vale/Samarco em `semantic_audit.py`, ou revisão humana) decidir o
+    roteamento. Retorna lista vazia se `related_entities` não estiver
+    cadastrado (compatibilidade retroativa)."""
+    text = _text_of(article)
+    hits = []
+    for rel in company.get("related_entities") or []:
+        rel_aliases = rel.get("aliases") or [rel.get("entity_name", "")]
+        hit = next((a for a in rel_aliases if a and _word_pattern(a).search(text)), None)
+        if hit:
+            hits.append({
+                "entity_name": rel.get("entity_name"),
+                "legal_name": rel.get("legal_name"),
+                "relationship": rel.get("relationship"),
+                "attribution_mode": rel.get("attribution_mode"),
+                "matched_alias": hit,
+                "observation": (f"Menção à entidade relacionada '{rel.get('entity_name')}' "
+                                f"({rel.get('relationship')}) — não transferir automaticamente "
+                                f"para '{company.get('name')}'."),
+            })
+    return hits
+
+
+def apply_contextual_entity_resolution(art: dict, cfg: dict) -> dict:
+    """Hook OPT-IN chamado por `classify_and_attribute` logo após
+    `detect_companies`. Para cada emissor da watchlist que declarar
+    `uses_contextual_entity_resolution(company) == True`, roda
+    `resolve_entity_match` (+ `resolve_related_entity_mentions`) e corrige
+    `art["companies"]` de acordo:
+
+      • matched=True e ainda não estava em `art["companies"]` → adiciona
+        (cobre o caso "atribuído por contexto, sem alias literal" — ex.:
+        'Cementera Yura alcanza utilidades...' sem 'S.A.').
+      • matched=False mas HAVIA entrado em `art["companies"]` via alias de
+        `detect_companies` → remove (exclusion_cue tem precedência mesmo
+        sobre um alias presente — ex.: 'Homicidio en Yura: Yura S.A. no
+        tiene relación con el hecho.').
+      • Emissores SEM nenhum campo novo (os 160 reais hoje) nunca entram
+        neste laço — `art["companies"]` sai exatamente como
+        `detect_companies` produziu, sem nenhuma alteração.
+
+    Registra tudo em `art["entity_resolution_trace"]` (aditivo, nunca
+    persistido em `risk_history.json` de produção por nenhum caminho
+    existente — só os scripts de shadow/candidate leem esse campo).
+    Retorna um dict `{company_name: resolve_entity_match_result}` só dos
+    emissores opt-in avaliados, para quem quiser reconciliar/depurar."""
+    watch = cfg.get("watchlist", [])
+    opt_in = [c for c in watch if uses_contextual_entity_resolution(c)]
+    if not opt_in:
+        return {}
+    art.setdefault("companies", [])
+    trace = art.setdefault("entity_resolution_trace", [])
+    results = {}
+    for company in opt_in:
+        name = company["name"]
+        res = resolve_entity_match(art, company, cfg)
+        related = resolve_related_entity_mentions(art, company)
+        results[name] = res
+        trace.append({
+            "candidate_company": name, "matched": res["matched"],
+            "confidence": res["confidence"], "matched_alias": res["matched_alias"],
+            "positive_cues": res["positive_cues"], "exclusion_cues": res["exclusion_cues"],
+            "relation_type": res["relation_type"], "subject_company": res["subject_company"],
+            "rule": res["rule"], "observation": res["observation"],
+            "related_entities_mentioned": related,
+        })
+        already_present = name in art["companies"]
+        if res["matched"] and not already_present:
+            art["companies"].append(name)
+        elif not res["matched"] and already_present:
+            # alias de detect_companies bateu, mas a exclusion_cue/insuficiência
+            # de evidência tem precedência — remove para não vazar falso positivo
+            art["companies"].remove(name)
+    return results
+
+
+def suppress_non_scoreable_entity_scopes(art: dict, cfg: dict) -> None:
+    """Pós-processamento OPT-IN chamado no fim de `classify_and_attribute`.
+    Para emissores com `entity_scope` em ('brand_group',
+    'entity_pending_confirmation') OU `scoreable: False` explícito no
+    cadastro, move os eventos já atribuídos de `events_by_company` para
+    `shadow_informational_events_by_company` (campo NOVO, só usado nos
+    outputs de shadow) — NUNCA entram em `event_ids_for`/score/status/
+    worst_event/n_critical. Emissores sem esses campos (os 160 reais) nunca
+    são tocados por esta função."""
+    wl_map = {c["name"]: c for c in cfg.get("watchlist", [])}
+    ebc = art.get("events_by_company") or {}
+    for name in list(ebc.keys()):
+        company = wl_map.get(name)
+        if not company:
+            continue
+        non_scoreable = (company.get("entity_scope") in
+                        ("brand_group", "entity_pending_confirmation")
+                        or company.get("scoreable") is False)
+        if non_scoreable:
+            evs = ebc.pop(name, [])
+            if evs:
+                art.setdefault("shadow_informational_events_by_company", {})[name] = evs
+    if not ebc and "events_by_company" in art:
+        # preserva o campo (compatibilidade), mesmo que fique vazio
+        art["events_by_company"] = ebc
 
 
 def run_attribution_tests(cfg: dict | None = None) -> int:
@@ -6775,6 +7095,15 @@ def classify_and_attribute(art: dict, cfg: dict) -> None:
     # fraude da CVS (que é ré, não autora).
     _evs = classify_article(art, cfg["taxonomy"])
     art["companies"] = detect_companies(art, cfg["watchlist"])
+    # 6) Resolução contextual de entidade — OPT-IN, aditiva. Só emissores que
+    # declaram search_terms/entity_cues/exclusion_cues/related_entities/
+    # entity_scope/entity_confidence entram neste laço (nenhum dos 160 reais
+    # de config_risco.yaml hoje); para eles, `art["companies"]` sai IDÊNTICO
+    # ao que `detect_companies` já produziu. Ver `apply_contextual_entity_
+    # resolution` — corrige falsos positivos (exclusion_cue) e recupera
+    # falsos negativos (atribuição por contexto sem alias literal) só para
+    # quem optou pelo novo caminho.
+    apply_contextual_entity_resolution(art, cfg)
     _wl = {c["name"]: c for c in cfg["watchlist"]}
     _assess, _desc_all, _por_empresa, _ctx_por_empresa = {}, [], {}, {}
     _titulo, _resumo = art.get("title", ""), art.get("summary", "")
@@ -6893,6 +7222,10 @@ def classify_and_attribute(art: dict, cfg: dict) -> None:
         print(f"   ⚠️  resolução semântica indisponível ({type(_exc).__name__}: "
               f"{str(_exc)[:120]}) — atribuição segue sem a camada semântica.")
 
+    # 8) entity_scope=brand_group/entity_pending_confirmation (ou
+    # scoreable=False explícito) nunca pontua — OPT-IN, aditivo. Emissores
+    # sem esses campos (os 160 reais) não são tocados por esta chamada.
+    suppress_non_scoreable_entity_scopes(art, cfg)
 
 
 def run_link_repair(args, cfg) -> int:
