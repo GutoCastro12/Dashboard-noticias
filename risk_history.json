@@ -1118,7 +1118,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:15:52.788584+00:00"
+     "last_checked_at": "2026-07-31T05:51:33.466230+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2652,7 +2652,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:15:52.789601+00:00"
+     "last_checked_at": "2026-07-31T05:51:33.866481+00:00"
     }
    ],
    "corrob_sources": [
@@ -9254,7 +9254,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:15:52.794747+00:00"
+     "last_checked_at": "2026-07-31T05:51:34.266766+00:00"
     },
     {
      "source": "Demarest",
@@ -9274,7 +9274,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:15:52.794777+00:00"
+     "last_checked_at": "2026-07-31T05:51:34.667046+00:00"
     }
    ],
    "corrob_sources": [
@@ -10657,7 +10657,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:15:52.796101+00:00"
+     "last_checked_at": "2026-07-31T05:51:35.067291+00:00"
     }
    ],
    "corrob_sources": [
@@ -13797,7 +13797,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:45:21.468613+00:00"
+     "last_checked_at": "2026-07-31T05:51:35.725903+00:00"
     }
    ],
    "corrob_sources": [
@@ -15913,7 +15913,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:45:25.627292+00:00"
+     "last_checked_at": "2026-07-31T05:51:36.344053+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16019,7 +16019,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:45:25.995077+00:00"
+     "last_checked_at": "2026-07-31T05:51:36.990155+00:00"
     },
     {
      "source": "Moomoo",
@@ -17244,7 +17244,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:45:27.085641+00:00"
+     "last_checked_at": "2026-07-31T05:51:37.796135+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17287,7 +17287,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:45:27.632926+00:00"
+     "last_checked_at": "2026-07-31T05:51:38.576803+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19966,7 +19966,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:45:30.760189+00:00"
+     "last_checked_at": "2026-07-31T05:51:39.199514+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20051,7 +20051,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:45:30.976779+00:00"
+     "last_checked_at": "2026-07-31T05:51:39.837878+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -25067,7 +25067,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.645256+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.645256+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdk9YaXFtODh2Z21MZEV3bWdQSU1oOWR4VkhBejJTbi1odmlWVng1Vi1Na1hfYWFMOUFWSEQyOHVidEZwU283aWU3WDczTGltaE5rOTE0TFpzX0ZuNzZ2M0JqTHA4bFRGaGdGclV6dHFBbFFOMlYwZzZFeHpvbmdRQlpiRDU0Z3RkUl9vZlhnSklVd2VJYmpYb211U0NUekhvenV4dExIaXlyUHg1dVE?oc=5": {
    "title": "Tech Sector Highlights: Salesforce Acquisition and Accenture Earnings Report",
@@ -30616,7 +30618,7 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "display_url": "",
+   "display_url": "https://businessmoment.com.br",
    "original_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBwZHY4UmFLSkg0VkJTaTVySkwyTGNjWUNJVXZ3b0hxWlVyNWhacWJGcTJ3Y3UwTFpIVWY2dlNMMnlBQ05fODhlRlhjelBkenJWaDJhQkJ0NzZNc0llTUR0NGYwSVNwQ09sM1F5RFlPTmdWUU9CQ0lFc1NuaE56Z9IBfkFVX3lxTFBwZHY4UmFLSkg0VkJTaTVySkwyTGNjWUNJVXZ3b0hxWlVyNWhacWJGcTJ3Y3UwTFpIVWY2dlNMMnlBQ05fODhlRlhjelBkenJWaDJhQkJ0NzZNc0llTUR0NGYwSVNwQ09sM1F5RFlPTmdWUU9CQ0lFc1NuaE56Zw?oc=5",
    "redirect_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBwZHY4UmFLSkg0VkJTaTVySkwyTGNjWUNJVXZ3b0hxWlVyNWhacWJGcTJ3Y3UwTFpIVWY2dlNMMnlBQ05fODhlRlhjelBkenJWaDJhQkJ0NzZNc0llTUR0NGYwSVNwQ09sM1F5RFlPTmdWUU9CQ0lFc1NuaE56Z9IBfkFVX3lxTFBwZHY4UmFLSkg0VkJTaTVySkwyTGNjWUNJVXZ3b0hxWlVyNWhacWJGcTJ3Y3UwTFpIVWY2dlNMMnlBQ05fODhlRlhjelBkenJWaDJhQkJ0NzZNc0llTUR0NGYwSVNwQ09sM1F5RFlPTmdWUU9CQ0lFc1NuaE56Zw?oc=5",
    "resolved_url": "",
@@ -30694,7 +30696,7 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "display_url": "",
+   "display_url": "https://msn.com",
    "original_url": "https://news.google.com/rss/articles/CBMipgNBVV95cUxNWmRFaTRJN3FNRkludEdQWEVmVTBnWkNkaTRjcTVPeE9HMTBZSDhXUjlZaU5VNG1pbExqVlhmT3VEdGN1UlcxNmNuSkU4emdyTU9iTXA3c0pOdzVFRGE2U3FwcTZmZEV0LXRCc0ZiaU1FOWxVMGlIdDRlRy1zMHR4dDVtVDRCeTZvQkRmc196RTd6cFNqRVdKZGM2dWpqQ09ERjRWamJSQXBKUjFCWGZEcWhCUjZaV2tpU0M2ZmcyNnZqXzR0Mk9ER0x1SXRDRUloaER4U2RnVmxHcUs1aDdUOXl5VjFETEk5VHNUNjNzVXU3UE5QVFJSZ1F4ZHdnRFFiYzM0djI4RllvbHMybUdhRFJWZVFHOEpZdWp4RDA5b0pLMzZLRGlUdjdRUHZLNVlrRlVKbVRsUF9fYzBSQU1kemJqQ0M2YUFoaGw2SmNyQVRPbUpaQXYwUWMwOU8zcEJJZVhlTzIxaklmX2ZrYmFyQWZMRFdTX3czVTlCbGhIQldlWlgwSmJsVmN3Nk1oTExuTmpBZHNha0l6R2g0ZTktZEtLU3hIUQ?oc=5",
    "redirect_url": "https://news.google.com/rss/articles/CBMipgNBVV95cUxNWmRFaTRJN3FNRkludEdQWEVmVTBnWkNkaTRjcTVPeE9HMTBZSDhXUjlZaU5VNG1pbExqVlhmT3VEdGN1UlcxNmNuSkU4emdyTU9iTXA3c0pOdzVFRGE2U3FwcTZmZEV0LXRCc0ZiaU1FOWxVMGlIdDRlRy1zMHR4dDVtVDRCeTZvQkRmc196RTd6cFNqRVdKZGM2dWpqQ09ERjRWamJSQXBKUjFCWGZEcWhCUjZaV2tpU0M2ZmcyNnZqXzR0Mk9ER0x1SXRDRUloaER4U2RnVmxHcUs1aDdUOXl5VjFETEk5VHNUNjNzVXU3UE5QVFJSZ1F4ZHdnRFFiYzM0djI4RllvbHMybUdhRFJWZVFHOEpZdWp4RDA5b0pLMzZLRGlUdjdRUHZLNVlrRlVKbVRsUF9fYzBSQU1kemJqQ0M2YUFoaGw2SmNyQVRPbUpaQXYwUWMwOU8zcEJJZVhlTzIxaklmX2ZrYmFyQWZMRFdTX3czVTlCbGhIQldlWlgwSmJsVmN3Nk1oTExuTmpBZHNha0l6R2g0ZTktZEtLU3hIUQ?oc=5",
    "resolved_url": "",
@@ -34133,7 +34135,7 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "display_url": "",
+   "display_url": "https://businessmoment.com.br",
    "original_url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQYVFTOUY4ZjJ1WC1Ddmk2R19CZTUtMkVOQ2FEM3RjcnlVZUZoWUcwdGUwb2FSMmNMa3VXeV9jS1NXQkRnSy05Z1lnVDRPbjg4X2FuUjdsaFJtZ2hISHgteUhrT2hWTXpXdmlhR0JjX2lHSTlEVmhTZWFnNXAzQUFGUDBTMlR6UnRFcmdrNGV2Ql83Yi1Yb1NaUDNwdEVWNzNLSWZNZndOc29IRXVEX3BuZzJNeFd2M3dFNENJVmVSU25femVtdWx4a2hZUlNqQ2NOWGJXU9IB1AFBVV95cUxQYVFTOUY4ZjJ1WC1Ddmk2R19CZTUtMkVOQ2FEM3RjcnlVZUZoWUcwdGUwb2FSMmNMa3VXeV9jS1NXQkRnSy05Z1lnVDRPbjg4X2FuUjdsaFJtZ2hISHgteUhrT2hWTXpXdmlhR0JjX2lHSTlEVmhTZWFnNXAzQUFGUDBTMlR6UnRFcmdrNGV2Ql83Yi1Yb1NaUDNwdEVWNzNLSWZNZndOc29IRXVEX3BuZzJNeFd2M3dFNENJVmVSU25femVtdWx4a2hZUlNqQ2NOWGJXUw?oc=5",
    "redirect_url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQYVFTOUY4ZjJ1WC1Ddmk2R19CZTUtMkVOQ2FEM3RjcnlVZUZoWUcwdGUwb2FSMmNMa3VXeV9jS1NXQkRnSy05Z1lnVDRPbjg4X2FuUjdsaFJtZ2hISHgteUhrT2hWTXpXdmlhR0JjX2lHSTlEVmhTZWFnNXAzQUFGUDBTMlR6UnRFcmdrNGV2Ql83Yi1Yb1NaUDNwdEVWNzNLSWZNZndOc29IRXVEX3BuZzJNeFd2M3dFNENJVmVSU25femVtdWx4a2hZUlNqQ2NOWGJXU9IB1AFBVV95cUxQYVFTOUY4ZjJ1WC1Ddmk2R19CZTUtMkVOQ2FEM3RjcnlVZUZoWUcwdGUwb2FSMmNMa3VXeV9jS1NXQkRnSy05Z1lnVDRPbjg4X2FuUjdsaFJtZ2hISHgteUhrT2hWTXpXdmlhR0JjX2lHSTlEVmhTZWFnNXAzQUFGUDBTMlR6UnRFcmdrNGV2Ql83Yi1Yb1NaUDNwdEVWNzNLSWZNZndOc29IRXVEX3BuZzJNeFd2M3dFNENJVmVSU25femVtdWx4a2hZUlNqQ2NOWGJXUw?oc=5",
    "resolved_url": "",
@@ -34866,7 +34868,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:45:53.622984+00:00"
+     "last_checked_at": "2026-07-31T05:51:40.637759+00:00"
     }
    ],
    "corrob_sources": [
@@ -37665,7 +37667,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:45:55.463396+00:00"
+     "last_checked_at": "2026-07-31T05:51:41.247111+00:00"
     },
     {
      "source": "Virginia Business",
@@ -37708,7 +37710,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:45:55.655741+00:00"
+     "last_checked_at": "2026-07-31T05:51:41.884778+00:00"
     },
     {
      "source": "Virginia Business",
@@ -37799,10 +37801,155 @@
    "resolution_error": "destino final não é URL direta válida",
    "link_render_anchor": false,
    "link_label": "Link em verificação",
-   "last_checked_at": "2026-07-31T05:45:56.389180+00:00"
+   "last_checked_at": "2026-07-31T05:45:56.389180+00:00",
+   "corroborations": [],
+   "corrob_sources": []
+  },
+  "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPRjJNamNkcFZmQ08xRmhoMWs4QTBiWEJ2ZTYzT0NVRG91NFJRVWdweFlmcVIzdlVIbmtSM0RDckh3a2IxYmZtbHBBQ0x2ZWQ2c1NFYjZCT0NwM2h5aWVPbDJRbGFlMGhmOE80Q0YwMEdGRF9yM3o3M2FpY1c3T1ZQNC1fZHdBRDdTUVo5dDlZRVVmLUJfSjE1bHduUHd0UTIxR0UySXV3dW1JZUdtekp5SEUtNkRPMUIyVG00d2xLM1gycXRCRlBQekpZRV9KY2QtS0VId2tB?oc=5": {
+   "title": "Prudential (PRU) Faces Customer Fraud Claims, Considers Contract Suspension",
+   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPRjJNamNkcFZmQ08xRmhoMWs4QTBiWEJ2ZTYzT0NVRG91NFJRVWdweFlmcVIzdlVIbmtSM0RDckh3a2IxYmZtbHBBQ0x2ZWQ2c1NFYjZCT0NwM2h5aWVPbDJRbGFlMGhmOE80Q0YwMEdGRF9yM3o3M2FpY1c3T1ZQNC1fZHdBRDdTUVo5dDlZRVVmLUJfSjE1bHduUHd0UTIxR0UySXV3dW1JZUdtekp5SEUtNkRPMUIyVG00d2xLM1gycXRCRlBQekpZRV9KY2QtS0VId2tB?oc=5",
+   "summary": "Prudential (PRU) Faces Customer Fraud Claims, Considers Contract Suspension &nbsp;&nbsp; GuruFocus",
+   "source": "GuruFocus",
+   "domain": "gurufocus.com",
+   "pub_ts": 1776754800,
+   "pub_iso": "2026-04-21 04:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "fraude"
+   ],
+   "captured_ts": 1785477088,
+   "cap_iso": "2026-07-31 02:51"
+  },
+  "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml": {
+   "title": "CVM abre processo para apurar renúncia de presidente do conselho da Vale",
+   "url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
+   "summary": "CVM abre processo para apurar renúncia de presidente do conselho da Vale &nbsp;&nbsp; Folha de S.Paulo",
+   "source": "Folha de S.Paulo",
+   "domain": "www1.folha.uol.com.br",
+   "pub_ts": 1783494000,
+   "pub_iso": "2026-07-08 04:00",
+   "language": "pt",
+   "companies": [
+    "Vale"
+   ],
+   "event_ids": [
+    "investigacao_regulatoria"
+   ],
+   "events_by_company": {
+    "Vale": [
+     "investigacao_regulatoria"
+    ]
+   },
+   "mention_roles": {
+    "Vale": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "companies_attributed": [
+    "Vale"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785477088,
+   "cap_iso": "2026-07-31 02:51"
+  },
+  "https://atlaspublico.com.br/cvm/noticias/banco-santander-anuncia-opa-de-permuta-para-adquirir-10pct-76234": {
+   "title": "Banco Santander anuncia intenção de lançar OPA de permuta por 10% do Santander Brasil, com prêmio de 15%",
+   "url": "https://atlaspublico.com.br/cvm/noticias/banco-santander-anuncia-opa-de-permuta-para-adquirir-10pct-76234",
+   "summary": "Banco Santander anuncia intenção de lançar OPA de permuta por 10% do Santander Brasil, com prêmio de 15% &nbsp;&nbsp; atlaspublico.com.br",
+   "source": "atlaspublico.com.br",
+   "domain": "atlaspublico.com.br",
+   "pub_ts": 1785448183,
+   "pub_iso": "2026-07-30 18:49",
+   "language": "pt",
+   "companies": [
+    "Santander Brasil"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "events_by_company": {
+    "Santander Brasil": []
+   },
+   "event_assessments": [
+    {
+     "company": "Santander Brasil",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Santander Brasil",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "neutra",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "sem_verbo_de_aquisicao_no_texto",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Santander Brasil",
+     "event_id": "ma",
+     "event_id_corrigido": "",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "sem_verbo_de_aquisicao_no_texto",
+     "subject_company": "Santander Brasil"
+    }
+   ],
+   "mention_roles": {
+    "Santander Brasil": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "anuncio",
+     "direction_hint": ""
+    }
+   },
+   "context_companies": [
+    "Santander Brasil"
+   ],
+   "context_events_by_company": {
+    "Santander Brasil": [
+     {
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Santander Brasil",
+      "relation_type": "evento_reclassificado",
+      "impact_type": "informativo",
+      "event_scope": "direto",
+      "event_phase": "",
+      "direction": "neutra",
+      "scoreable": false,
+      "event_id_corrigido": "",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "attribution_evidence": "",
+      "nota": "sem_verbo_de_aquisicao_no_texto"
+     }
+    ]
+   },
+   "companies_attributed": [],
+   "captured_ts": 1785477088,
+   "cap_iso": "2026-07-31 02:51"
   }
  },
- "run_count": 57,
+ "run_count": 58,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -38817,7 +38964,7 @@
    "exact": true
   },
   "https://news.google.com/rss/articles/CBMifkFVX3lxTFBwZHY4UmFLSkg0VkJTaTVySkwyTGNjWUNJVXZ3b0hxWlVyNWhacWJGcTJ3Y3UwTFpIVWY2dlNMMnlBQ05fODhlRlhjelBkenJWaDJhQkJ0NzZNc0llTUR0NGYwSVNwQ09sM1F5RFlPTmdWUU9CQ0lFc1NuaE56Z9IBfkFVX3lxTFBwZHY4UmFLSkg0VkJTaTVySkwyTGNjWUNJVXZ3b0hxWlVyNWhacWJGcTJ3Y3UwTFpIVWY2dlNMMnlBQ05fODhlRlhjelBkenJWaDJhQkJ0NzZNc0llTUR0NGYwSVNwQ09sM1F5RFlPTmdWUU9CQ0lFc1NuaE56Zw?oc=5": {
-   "url": "https://businessmoment.com.br",
+   "url": "",
    "exact": false
   },
   "https://news.google.com/rss/articles/CBMivwFBVV95cUxORmZaNEdxU1J1SXJONTNxZnYwU1UxOGU2bjlxbXY4OTJfOVc0THkwOEozb1J2ZjdiMzFnQ25LYVM0aHpLUEp1M3M1clJPcEk1VHM1YldBZTVHQjBCVEJCbllBbnRUcktBNF94R1h4Z3hMMGNvU3UxbXVWZVNyTnFKeFJSWHFQNXVGcDJwNUxYSmhXU3NSTWJxTHlOMFM3X2RlUUJPcTU5d1lMVFJYMGYwX3ZBMkREaThPTHVwU1poWQ?oc=5": {
@@ -38901,7 +39048,7 @@
    "exact": true
   },
   "https://news.google.com/rss/articles/CBMipgNBVV95cUxNWmRFaTRJN3FNRkludEdQWEVmVTBnWkNkaTRjcTVPeE9HMTBZSDhXUjlZaU5VNG1pbExqVlhmT3VEdGN1UlcxNmNuSkU4emdyTU9iTXA3c0pOdzVFRGE2U3FwcTZmZEV0LXRCc0ZiaU1FOWxVMGlIdDRlRy1zMHR4dDVtVDRCeTZvQkRmc196RTd6cFNqRVdKZGM2dWpqQ09ERjRWamJSQXBKUjFCWGZEcWhCUjZaV2tpU0M2ZmcyNnZqXzR0Mk9ER0x1SXRDRUloaER4U2RnVmxHcUs1aDdUOXl5VjFETEk5VHNUNjNzVXU3UE5QVFJSZ1F4ZHdnRFFiYzM0djI4RllvbHMybUdhRFJWZVFHOEpZdWp4RDA5b0pLMzZLRGlUdjdRUHZLNVlrRlVKbVRsUF9fYzBSQU1kemJqQ0M2YUFoaGw2SmNyQVRPbUpaQXYwUWMwOU8zcEJJZVhlTzIxaklmX2ZrYmFyQWZMRFdTX3czVTlCbGhIQldlWlgwSmJsVmN3Nk1oTExuTmpBZHNha0l6R2g0ZTktZEtLU3hIUQ?oc=5": {
-   "url": "https://msn.com",
+   "url": "",
    "exact": false
   },
   "https://news.google.com/rss/articles/CBMinwFBVV95cUxQdkFnSEQ2QVlMNHRTNDlSYzJMZzh6MnRmWW9lR20zWkQyelZVMXJTSGxsb3lmRDBMamFUcTdTUGRxZWRpczV2b0k2aHlQZWp1WGVQM3NjZGQtSWw4cER0Vjhfajk3ZU9ld0k0UnJBM2F2VFZHRzh2UnFsVGFPa3FqWlVaZnpqVERWRmFDWU9hVjF6TXkwTmF3Mk82alJYSUXSAa4BQVVfeXFMT1pzU2VDbzQzdTZCcWNXb3JQQklQTW02dmEtdmczTEZBRjlhYXg3aWsxRGltUnI5ejRzcHFMdmF4RVVtdFNTcV9yQkNUY0FIejh2YWlLQjNoRU9jelFtbWRMQkh4SzU5VjhRUUZPcm4td1VKcUpGa0NxcjUtN2c1bUg3LVBBRFB5VW9VdzRJOTRGT3FmWV9mZUhhYTlxcFhaN1lMa29OT3FDbzVER3l3?oc=5": {
@@ -39137,7 +39284,7 @@
    "exact": true
   },
   "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQYVFTOUY4ZjJ1WC1Ddmk2R19CZTUtMkVOQ2FEM3RjcnlVZUZoWUcwdGUwb2FSMmNMa3VXeV9jS1NXQkRnSy05Z1lnVDRPbjg4X2FuUjdsaFJtZ2hISHgteUhrT2hWTXpXdmlhR0JjX2lHSTlEVmhTZWFnNXAzQUFGUDBTMlR6UnRFcmdrNGV2Ql83Yi1Yb1NaUDNwdEVWNzNLSWZNZndOc29IRXVEX3BuZzJNeFd2M3dFNENJVmVSU25femVtdWx4a2hZUlNqQ2NOWGJXU9IB1AFBVV95cUxQYVFTOUY4ZjJ1WC1Ddmk2R19CZTUtMkVOQ2FEM3RjcnlVZUZoWUcwdGUwb2FSMmNMa3VXeV9jS1NXQkRnSy05Z1lnVDRPbjg4X2FuUjdsaFJtZ2hISHgteUhrT2hWTXpXdmlhR0JjX2lHSTlEVmhTZWFnNXAzQUFGUDBTMlR6UnRFcmdrNGV2Ql83Yi1Yb1NaUDNwdEVWNzNLSWZNZndOc29IRXVEX3BuZzJNeFd2M3dFNENJVmVSU25femVtdWx4a2hZUlNqQ2NOWGJXUw?oc=5": {
-   "url": "https://businessmoment.com.br",
+   "url": "",
    "exact": false
   },
   "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQdV82UkRJMGZNM1diTWFNYmhUMl9TWU1VOEJ2a3hoUU4xb2wtQXFVdF83aWVUOHdLYzloNXZJRkRCSUwxd2hYVmZTTDBpTUd1MmZwbGJQV3E2c3VrUU12N3JUeFZ0a29SRWs1dnNsclA3RUxmTC1CRHFTSWFyQWpYSWVxby1BOXBGV1NmWnV6M3U5a1lEVFNJNmZWaVh3V00wUm8xckVmLXJyZTBPWWd3Y0ZVLVVGZmY5TVBSeE1UY1NMRGMxUEE4eXN5S2s2RkhvV3ZzY0hwS1d5UXpiSWlvOWtBdDF3TE5HM3k0NQ?oc=5": {
@@ -40693,7 +40840,7 @@
    "exact": true
   },
   "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOR2JMQ3VEZlJRSDF6dG1XSmE0eTNHbUJKTlJIVTFveWNvaWlCdmJSdkItOTduemFnOE9Pd2s5ZDJjTFRLVm1fUTc5cDVBSERQRHJRN183cmxqdG5qMmxDWFpCX3RHS1M2c2o4TUFNSFhYWlBPS29vY3NaRDBmVXV2SnZUMlpDcWZUVjZFZVJ5YzU0R3c3eEMwV0dVMFlTOWVqcF85SnMtWkxMaW1zeVR2RVpkVTRyT0dIckJfSGg1a2U2ODNTLUR3SzBkNDZ2NnBQYkE?oc=5": {
-   "url": "https://gurufocus.com",
+   "url": "",
    "exact": false
   },
   "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPbWtpcWJZbmpKS2VCWE5IdW1FTDV4R2t2aFBBdkNLaDdkOU5KandLRTFKaVptbHNYMVBwSmlCRkQxQXJIbGlGcmg3X1hXcHI1Y0tNX2tWMXRRZzQyTzRqeUlrSUlIVk9hWWd0dWFySGJOUTRLNGxHUGNRZ2Y4LXdCeTFRLVVXWFptY190UFZLUGxJYnRUMld2TDlqd1VkVWJVYXVkUFhtc0ZQVmFiYnJCTVl0cXZnczkzTmI0?oc=5": {
@@ -42015,11 +42162,23 @@
   "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQaUpUX05jR01zVUdBeUtNdmlmTUstbno3RU9zZUVxWU9hZ0NiczNpVVBld0VTRnRYU05QYWx0SFlBYWpobWhWRHJ1b1VBSURLN0hGdE45SS1wU3BxX1l1a2tFUjI3Z24zQ2t4ZFlsZzlyX01hb1RSS2kxdzlHZGpXd0xhSGFFQmpVRm9LUHZiV1VlR0dlWGJPVTM1T2lma1Q3UE8zOUFsOEY0X2l3SE5ldmZ3cEl0VW0wd2E3MG9LOWxmM09lN00xWXBwWkRCSUh1VFFBcw?oc=5": {
    "url": "https://timesbrasil.com.br/empresas-e-negocios/aegea-aprova-aumento-de-capital-de-ate-r-21-bilhoes-com-projecao-de-forte-aporte-da-itausa/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMijwFBVV95cUxNNVpyU3dJYTRHcDAtcWU1d1o3UFJDOEZIWHhfTUQxZVk4b19fSmNmREdwUnhVbTJJaDRqazBnVUV6ZDJ0dEhtME1hU1lZN0p5VV85aGg0ZEVxakg0LWc4SG5wWmlZS2xLTkV1MWlnWnJqN3BIRXpFczVvTk40azZ1VUtvT0RWYzlsY0VaRHR0b9IBlAFBVV95cUxOLVVVdUViWElwTG9obmJ6VnFZaXNQcUlsV25pbTdFU1liZHotQVd3S29NNVM4MUxIUEtBMHRVWjhEVjNBV3Nad29mSlh0SjBXTHEtcHdfYVVnMUgyUUF4QWhhVzJMVElkYzZKUWsxcDV4Vkc0c2w1Um11aXBqd3FjaVJQcnA4UFRpOFRTZGFqc3VRVGQ5?oc=5": {
+   "url": "https://www.cnbc.com/2025/05/15/unitedhealth-group-stock-doj-investigation-report.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNR3JyMXFub24wRk03eDFGSk9aU05tdWFIVGExeFJmNTlWSk1FX3BJUU1YajlSUl9CQWJvUFctWWJVUXlMRk1nN3kwVWV4bGpsRHNjOThneTduLVVHem4zOXAxX2hwNjJJc2h3TkVtZEsxZGdCLXdFUXoxTmFxODZBa2RCZUp4OXpjYUtVelVseWh0WkVkVXVEbEdNcENUdEtTVC1TU0lUSkU?oc=5": {
+   "url": "https://atlaspublico.com.br/cvm/noticias/banco-santander-anuncia-opa-de-permuta-para-adquirir-10pct-76234",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPRjJNamNkcFZmQ08xRmhoMWs4QTBiWEJ2ZTYzT0NVRG91NFJRVWdweFlmcVIzdlVIbmtSM0RDckh3a2IxYmZtbHBBQ0x2ZWQ2c1NFYjZCT0NwM2h5aWVPbDJRbGFlMGhmOE80Q0YwMEdGRF9yM3o3M2FpY1c3T1ZQNC1fZHdBRDdTUVo5dDlZRVVmLUJfSjE1bHduUHd0UTIxR0UySXV3dW1JZUdtekp5SEUtNkRPMUIyVG00d2xLM1gycXRCRlBQekpZRV9KY2QtS0VId2tB?oc=5": {
+   "url": "",
+   "exact": false
   }
  },
  "last_run": {
-  "ts": 1785445667,
-  "iso": "30 jul 2026 · 18:07 BRT",
+  "ts": 1785477102,
+  "iso": "31 jul 2026 · 02:51 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
@@ -42027,7 +42186,7 @@
    },
    "Engie Brasil": {
     "status": "critico",
-    "score": 78
+    "score": 77
    },
    "Tok&Stok": {
     "status": "critico",
@@ -42035,7 +42194,7 @@
    },
    "Grupo Financiero Banorte": {
     "status": "critico",
-    "score": 58
+    "score": 57
    },
    "CVS Health": {
     "status": "critico",
@@ -42047,7 +42206,7 @@
    },
    "Samarco Mineração": {
     "status": "critico",
-    "score": 50
+    "score": 49
    },
    "BTG Pactual": {
     "status": "atencao",
@@ -42055,13 +42214,9 @@
    },
    "Axia Energia": {
     "status": "atencao",
-    "score": 46
+    "score": 45
    },
    "Petrobras": {
-    "status": "atencao",
-    "score": 37
-   },
-   "Energisa": {
     "status": "atencao",
     "score": 37
    },
@@ -42069,17 +42224,21 @@
     "status": "atencao",
     "score": 37
    },
+   "Energisa": {
+    "status": "atencao",
+    "score": 36
+   },
    "Vale": {
     "status": "atencao",
     "score": 34
    },
-   "Aegea Saneamento": {
-    "status": "critico",
-    "score": 31
-   },
    "Baker Hughes": {
     "status": "monitorar",
     "score": 31
+   },
+   "Aegea Saneamento": {
+    "status": "critico",
+    "score": 30
    },
    "PRIO": {
     "status": "monitorar",
@@ -42101,23 +42260,15 @@
     "status": "monitorar",
     "score": 25
    },
-   "Santander Brasil": {
-    "status": "atencao",
-    "score": 23
-   },
    "Itaúsa": {
     "status": "monitorar",
     "score": 23
    },
-   "B3": {
-    "status": "monitorar",
+   "Santander Brasil": {
+    "status": "atencao",
     "score": 22
    },
-   "Natura &Co": {
-    "status": "monitorar",
-    "score": 21
-   },
-   "EQT Corporation": {
+   "B3": {
     "status": "monitorar",
     "score": 21
    },
@@ -42125,13 +42276,21 @@
     "status": "atencao",
     "score": 20
    },
+   "Natura &Co": {
+    "status": "monitorar",
+    "score": 20
+   },
    "Albioma": {
+    "status": "monitorar",
+    "score": 20
+   },
+   "EQT Corporation": {
     "status": "monitorar",
     "score": 20
    },
    "Cemig": {
     "status": "atencao",
-    "score": 18
+    "score": 17
    },
    "Eneva": {
     "status": "monitorar",
@@ -42141,11 +42300,11 @@
     "status": "monitorar",
     "score": 17
    },
-   "Usiminas": {
-    "status": "monitorar",
-    "score": 16
-   },
    "NextEra Energy": {
+    "status": "monitorar",
+    "score": 15
+   },
+   "Usiminas": {
     "status": "monitorar",
     "score": 15
    },
