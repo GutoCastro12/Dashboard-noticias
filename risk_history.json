@@ -1120,7 +1120,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T15:27:21.683220+00:00"
+     "last_checked_at": "2026-07-31T17:49:16.634462+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2654,7 +2654,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T15:27:22.083508+00:00"
+     "last_checked_at": "2026-07-31T17:49:17.034717+00:00"
     }
    ],
    "corrob_sources": [
@@ -9256,7 +9256,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T15:27:22.483888+00:00"
+     "last_checked_at": "2026-07-31T17:49:17.435010+00:00"
     },
     {
      "source": "Demarest",
@@ -9276,7 +9276,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T15:27:22.884216+00:00"
+     "last_checked_at": "2026-07-31T17:49:17.835313+00:00"
     }
    ],
    "corrob_sources": [
@@ -10659,7 +10659,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T15:27:23.284468+00:00"
+     "last_checked_at": "2026-07-31T17:49:18.235550+00:00"
     }
    ],
    "corrob_sources": [
@@ -13805,7 +13805,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T15:27:23.814648+00:00"
+     "last_checked_at": "2026-07-31T17:49:18.778500+00:00"
     }
    ],
    "corrob_sources": [
@@ -15921,7 +15921,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T15:27:24.337866+00:00"
+     "last_checked_at": "2026-07-31T17:49:19.295037+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16027,7 +16027,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T15:27:24.857129+00:00"
+     "last_checked_at": "2026-07-31T17:49:19.808219+00:00"
     },
     {
      "source": "Moomoo",
@@ -17252,7 +17252,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T15:27:25.492824+00:00"
+     "last_checked_at": "2026-07-31T17:49:20.402055+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17295,7 +17295,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T15:27:26.204395+00:00"
+     "last_checked_at": "2026-07-31T17:49:21.040769+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19978,7 +19978,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T15:27:26.720852+00:00"
+     "last_checked_at": "2026-07-31T17:49:21.570883+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20063,7 +20063,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T15:27:27.249049+00:00"
+     "last_checked_at": "2026-07-31T17:49:22.077098+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24222,7 +24222,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.644174+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.644174+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.bloomberglinea.com.br/negocios/novo-ceo-da-pemex-vai-viajar-ao-brasil-para-avancar-agenda-de-parceria-com-a-petrobras/": {
    "title": "Novo CEO da Pemex vai viajar ao Brasil para avançar agenda de parceria com a Petrobras",
@@ -32478,6 +32480,18 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T03:04:35.654276+00:00"
+    },
+    {
+     "source": "CompressorTECH²",
+     "domain": "compressortech2.com",
+     "url": "",
+     "when": "16/07 12:33"
+    },
+    {
+     "source": "offshore-technology.com",
+     "domain": "offshore-technology.com",
+     "url": "",
+     "when": "17/07 04:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -32713,6 +32727,26 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T05:45:51.913688+00:00"
+    },
+    {
+     "source": "economia.uol.com.br",
+     "domain": "economia.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPRVc2SEhrVnN1VHhaVG9QVnNCOFdqWE43VWVwMUNSdDVYdXN3ajBka3h4Y3ZZY0Z6MU9PZEVoWXdpSlVGOUdFRTVMNmVjWGFoNHBGSm9aR0hlYWRzZnpBY0Z2SHZKV1JPcXUzNWREWU54ZjlYa2Z2YWlyZUFpRzZhQzY0Y3NRYTBMejAycnZYV1R5Rm4yRFRsUlpLSWZDbHJFTWNrTEYybWQxZmNJQ3BfaW55UHB4ZkFsc29XeUp0d3NCWHFfbnRVag?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPRVc2SEhrVnN1VHhaVG9QVnNCOFdqWE43VWVwMUNSdDVYdXN3ajBka3h4Y3ZZY0Z6MU9PZEVoWXdpSlVGOUdFRTVMNmVjWGFoNHBGSm9aR0hlYWRzZnpBY0Z2SHZKV1JPcXUzNWREWU54ZjlYa2Z2YWlyZUFpRzZhQzY0Y3NRYTBMejAycnZYV1R5Rm4yRFRsUlpLSWZDbHJFTWNrTEYybWQxZmNJQ3BfaW55UHB4ZkFsc29XeUp0d3NCWHFfbnRVag?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPRVc2SEhrVnN1VHhaVG9QVnNCOFdqWE43VWVwMUNSdDVYdXN3ajBka3h4Y3ZZY0Z6MU9PZEVoWXdpSlVGOUdFRTVMNmVjWGFoNHBGSm9aR0hlYWRzZnpBY0Z2SHZKV1JPcXUzNWREWU54ZjlYa2Z2YWlyZUFpRzZhQzY0Y3NRYTBMejAycnZYV1R5Rm4yRFRsUlpLSWZDbHJFTWNrTEYybWQxZmNJQ3BfaW55UHB4ZkFsc29XeUp0d3NCWHFfbnRVag?oc=5",
+     "resolved_url": "https://economia.uol.com.br/noticias/reuters/2026/07/15/engie-brasil-movimenta-r84-bi-em-follow-on-para-incorporacao-de-jirau.htm",
+     "canonical_url": "https://economia.uol.com.br/noticias/reuters/2026/07/15/engie-brasil-movimenta-r84-bi-em-follow-on-para-incorporacao-de-jirau.htm",
+     "display_url": "https://economia.uol.com.br/noticias/reuters/2026/07/15/engie-brasil-movimenta-r84-bi-em-follow-on-para-incorporacao-de-jirau.htm",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "economia.uol.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-07-31T17:49:22.592552+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "corrob_sources": [
@@ -32757,6 +32791,12 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T05:45:51.913769+00:00"
+    },
+    {
+     "source": "economia.uol.com.br",
+     "domain": "economia.uol.com.br",
+     "url": "",
+     "when": "15/07 04:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -34795,7 +34835,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.656714+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.656714+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQcllPWjJCdVdXR3Ria0VtSk90YUQ0TllXenhOTWZkeTlCUVhNTXVIa1JPa21mTG5lazV4MTNBUWJzSXZDS0pwbG13amxTOUZ3ZEU0bEMyTk41MmRmQmYzck8yTTI4bTBfbktpUTNUN3NxcHI0cTRPUzN5SUtmWVdyQm1YUUlCZjlVWU9DbHdYc0tzdEppbmUwNktNVHBQY3lReUlsQXN1d1lSTFlNTjRRMk1fQ0tFU1hBMUdZcWJiODlCbF9VaGFyVHQwckF0WG00YkxPRFpIb28?oc=5": {
    "title": "Rede de restaurantes entra em falência após 44 anos e fecha todas as unidades próprias de uma só vez",
@@ -34882,7 +34924,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T15:27:27.863425+00:00"
+     "last_checked_at": "2026-07-31T17:49:23.190594+00:00"
     }
    ],
    "corrob_sources": [
@@ -37683,7 +37725,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T15:27:28.386131+00:00"
+     "last_checked_at": "2026-07-31T17:49:23.706059+00:00"
     },
     {
      "source": "Virginia Business",
@@ -37726,7 +37768,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T15:27:28.923638+00:00"
+     "last_checked_at": "2026-07-31T17:49:24.238848+00:00"
     },
     {
      "source": "Virginia Business",
@@ -37839,125 +37881,6 @@
    "captured_ts": 1785477088,
    "cap_iso": "2026-07-31 02:51"
   },
-  "https://atlaspublico.com.br/cvm/noticias/banco-santander-anuncia-opa-de-permuta-para-adquirir-10pct-76234": {
-   "title": "Banco Santander anuncia intenção de lançar OPA de permuta por 10% do Santander Brasil, com prêmio de 15%",
-   "url": "https://atlaspublico.com.br/cvm/noticias/banco-santander-anuncia-opa-de-permuta-para-adquirir-10pct-76234",
-   "summary": "Banco Santander anuncia intenção de lançar OPA de permuta por 10% do Santander Brasil, com prêmio de 15% &nbsp;&nbsp; atlaspublico.com.br",
-   "source": "atlaspublico.com.br",
-   "domain": "atlaspublico.com.br",
-   "pub_ts": 1785448183,
-   "pub_iso": "2026-07-30 18:49",
-   "language": "pt",
-   "companies": [
-    "Santander Brasil"
-   ],
-   "event_ids": [
-    "ma"
-   ],
-   "events_by_company": {
-    "Santander Brasil": []
-   },
-   "event_assessments": [
-    {
-     "company": "Santander Brasil",
-     "event_id": "ma",
-     "assessed_by": "semantic_audit",
-     "subject_company": "Santander Brasil",
-     "actor_company": "",
-     "affected_company": "",
-     "transaction_object": "indefinido",
-     "transaction_scope": "indefinido",
-     "transaction_role": "",
-     "event_phase": "",
-     "event_scope": "direto",
-     "direction": "neutra",
-     "historical_reference": false,
-     "new_occurrence": true,
-     "confirmation_level": "indefinido",
-     "attribution_rule": "R_MA_OBJETO_ESCOPO",
-     "attribution_confidence": "media",
-     "scoreable": false,
-     "rejection_reason": "sem_verbo_de_aquisicao_no_texto",
-     "legal_status": "",
-     "confirmation_status": "indefinido"
-    }
-   ],
-   "semantic_discards": [
-    {
-     "empresa": "Santander Brasil",
-     "event_id": "ma",
-     "event_id_corrigido": "",
-     "regra": "R_MA_OBJETO_ESCOPO",
-     "motivo": "sem_verbo_de_aquisicao_no_texto",
-     "subject_company": "Santander Brasil"
-    }
-   ],
-   "mention_roles": {
-    "Santander Brasil": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "anuncio",
-     "direction_hint": ""
-    }
-   },
-   "context_companies": [
-    "Santander Brasil"
-   ],
-   "context_events_by_company": {
-    "Santander Brasil": [
-     {
-      "event_id": "ma",
-      "event_label": "ma",
-      "subject_company": "Santander Brasil",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "sem_verbo_de_aquisicao_no_texto"
-     }
-    ]
-   },
-   "companies_attributed": [],
-   "captured_ts": 1785477088,
-   "cap_iso": "2026-07-31 02:51",
-   "corroborations": [
-    {
-     "source": "ADVFN",
-     "domain": "br.advfn.com",
-     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOSnlMZFY3V1hZUmF5UXprNDNpeWpMZDlrRnNJeENvTG9ZZFFLN0ZfeEpyd25FYzRaWGtIMDM3WkxDM2J1bXo0c1g1M0xWZE1TWUc1VzRaOWJqbnVIakRxS3dIampQV1NhNlN1Y3dkSUFSLWVYZjRTd3RySWZOWG5fMFBXcWtJQldJb0thTkdZVGU1S1RnWUJSY29DWjdCZlFmenlCTFJQVl9aNG9VWjlZWFRHUklFU1g0TnYzTnFYdUg5cGQyNXVOSVlxMVVEWUJNWURKZDNlaWJ2bkt0b0VfWU5LZ19QdHlBZkE?oc=5",
-     "original_url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOSnlMZFY3V1hZUmF5UXprNDNpeWpMZDlrRnNJeENvTG9ZZFFLN0ZfeEpyd25FYzRaWGtIMDM3WkxDM2J1bXo0c1g1M0xWZE1TWUc1VzRaOWJqbnVIakRxS3dIampQV1NhNlN1Y3dkSUFSLWVYZjRTd3RySWZOWG5fMFBXcWtJQldJb0thTkdZVGU1S1RnWUJSY29DWjdCZlFmenlCTFJQVl9aNG9VWjlZWFRHUklFU1g0TnYzTnFYdUg5cGQyNXVOSVlxMVVEWUJNWURKZDNlaWJ2bkt0b0VfWU5LZ19QdHlBZkE?oc=5",
-     "redirect_url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOSnlMZFY3V1hZUmF5UXprNDNpeWpMZDlrRnNJeENvTG9ZZFFLN0ZfeEpyd25FYzRaWGtIMDM3WkxDM2J1bXo0c1g1M0xWZE1TWUc1VzRaOWJqbnVIakRxS3dIampQV1NhNlN1Y3dkSUFSLWVYZjRTd3RySWZOWG5fMFBXcWtJQldJb0thTkdZVGU1S1RnWUJSY29DWjdCZlFmenlCTFJQVl9aNG9VWjlZWFRHUklFU1g0TnYzTnFYdUg5cGQyNXVOSVlxMVVEWUJNWURKZDNlaWJ2bkt0b0VfWU5LZ19QdHlBZkE?oc=5",
-     "resolved_url": "https://br.advfn.com/jornal/2026/07/santander-anuncia-opa-de-ate-r-11-17-bilhoes-pelo-santander-brasil-para-ampliar-participacao-na-subsidiaria-brasileira",
-     "canonical_url": "https://br.advfn.com/jornal/2026/07/santander-anuncia-opa-de-ate-r-11-17-bilhoes-pelo-santander-brasil-para-ampliar-participacao-na-subsidiaria-brasileira",
-     "display_url": "https://br.advfn.com/jornal/2026/07/santander-anuncia-opa-de-ate-r-11-17-bilhoes-pelo-santander-brasil-para-ampliar-participacao-na-subsidiaria-brasileira",
-     "redirect_chain": "",
-     "original_host": "news.google.com",
-     "final_host": "br.advfn.com",
-     "http_status": "",
-     "link_health": "redirect_resolvido",
-     "resolution_method": "batchexecute",
-     "last_checked_at": "2026-07-31T15:27:29.446634+00:00",
-     "resolution_error": "",
-     "link_render_anchor": true,
-     "link_label": "Abrir notícia →"
-    }
-   ],
-   "corrob_sources": [
-    {
-     "source": "ADVFN",
-     "domain": "br.advfn.com",
-     "url": "",
-     "when": "31/07 09:32"
-    }
-   ]
-  },
   "https://canalsolar.com.br/cemig-sim-conclui-aquisicao-de-10mwp-em-usinas-solares/": {
    "title": "Cemig SIM conclui aquisição de 10MWp em usinas solares",
    "url": "https://canalsolar.com.br/cemig-sim-conclui-aquisicao-de-10mwp-em-usinas-solares/",
@@ -38045,7 +37968,9 @@
    },
    "companies_attributed": [],
    "captured_ts": 1785500143,
-   "cap_iso": "2026-07-31 09:15"
+   "cap_iso": "2026-07-31 09:15",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://finance.yahoo.com/news/truist-debt-issuance-supports-funding-002045354.html": {
    "title": "Emissão de dívida da Truist apoia flexibilidade de financiamento enquanto mantém retorno de capital",
@@ -38212,9 +38137,285 @@
    ],
    "captured_ts": 1785511637,
    "cap_iso": "2026-07-31 12:27"
+  },
+  "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml": {
+   "title": "CVM abre processo para apurar renúncia de presidente do conselho da Vale",
+   "url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
+   "summary": "CVM abre processo para apurar renúncia de presidente do conselho da Vale &nbsp;&nbsp; Folha de S.Paulo",
+   "source": "Folha de S.Paulo",
+   "domain": "www1.folha.uol.com.br",
+   "pub_ts": 1783494000,
+   "pub_iso": "2026-07-08 04:00",
+   "language": "pt",
+   "companies": [
+    "Vale"
+   ],
+   "event_ids": [
+    "investigacao_regulatoria"
+   ],
+   "events_by_company": {
+    "Vale": [
+     "investigacao_regulatoria"
+    ]
+   },
+   "mention_roles": {
+    "Vale": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "companies_attributed": [
+    "Vale"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785520153,
+   "cap_iso": "2026-07-31 14:49"
+  },
+  "https://news.google.com/rss/articles/CBMiogFBVV95cUxNSV85eUZ1Q3FSZmhHOXI1M3cyUVVEdDhyVDJ1bFI2MU5nWEZPYzFsZGhHSWRjSzhJVWdoSEl4eV9CdGFmcGt2MnRZNXQ1RjVLTTRKQ3A1dXRXRUc4WTNQbmVxS2dTMlZGZDRUM2swYy1ZWkowMGZnRTcxRnk3QjVfSVhvNVJhaHp1aFJFdzViRm5TZTZTZEJzUy1oNmR0ZjVZWGfSAaoBQVVfeXFMTlljSGZrZVpGbEpiRU5WdGJ0MlZFZTE4SUZNblg3cHkzZnA2WWRKSUhiWHo5V21DNnUyVlB2by1WcUlZMkEwSnNMQzZsMUcwSjFwajlUcjFwR18zTV9Rc1JLV091dW5iemRzWlhCS0hmV2lyZlV2eDRCSV9ROGRtSlcxUzBfTHJjYnhwZ3drcHNWUmJaQU13bjc4U1pnRlA4UFpfeURxR2pxVEE?oc=5": {
+   "title": "Fim do refrigerante Dolly? Pedido de falência de R$ 15,7 bilhões ameaça empresa",
+   "url": "https://atarde.com.br/economia/dona-do-guarana-dolly-pode-falir-apos-divida-de-r-157-bilhoes-1396690",
+   "summary": "Fim do refrigerante Dolly? Pedido de falência de R$ 15,7 bilhões ameaça empresa &nbsp;&nbsp; atarde.com.br",
+   "source": "atarde.com.br",
+   "domain": "atarde.com.br",
+   "pub_ts": 1785173505,
+   "pub_iso": "2026-07-27 14:31",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785520153,
+   "cap_iso": "2026-07-31 14:49"
+  },
+  "https://www.infomoney.com.br/mercados/sanb11-acoes-do-santander-brasil-saltam-13-na-b3-apos-intencao-de-opa-pela-matriz/": {
+   "title": "SANB11: ações do Santander Brasil saltam 13% na B3 após intenção de OPA pela matriz",
+   "url": "https://www.infomoney.com.br/mercados/sanb11-acoes-do-santander-brasil-saltam-13-na-b3-apos-intencao-de-opa-pela-matriz/",
+   "summary": "SANB11: ações do Santander Brasil saltam 13% na B3 após intenção de OPA pela matriz &nbsp;&nbsp; InfoMoney",
+   "source": "InfoMoney",
+   "domain": "infomoney.com.br",
+   "pub_ts": 1785514215,
+   "pub_iso": "2026-07-31 13:10",
+   "language": "pt",
+   "companies": [
+    "B3",
+    "Santander Brasil"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "events_by_company": {
+    "B3": [],
+    "Santander Brasil": []
+   },
+   "event_assessments": [
+    {
+     "company": "B3",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "B3",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "neutra",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "sem_verbo_de_aquisicao_no_texto",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    },
+    {
+     "company": "Santander Brasil",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Santander Brasil",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "neutra",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "sem_verbo_de_aquisicao_no_texto",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "B3",
+     "event_id": "ma",
+     "event_id_corrigido": "",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "sem_verbo_de_aquisicao_no_texto",
+     "subject_company": "B3"
+    },
+    {
+     "empresa": "Santander Brasil",
+     "event_id": "ma",
+     "event_id_corrigido": "",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "sem_verbo_de_aquisicao_no_texto",
+     "subject_company": "Santander Brasil"
+    }
+   ],
+   "mention_roles": {
+    "B3": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    },
+    "Santander Brasil": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "context_companies": [
+    "B3",
+    "Santander Brasil"
+   ],
+   "context_events_by_company": {
+    "B3": [
+     {
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "B3",
+      "relation_type": "evento_reclassificado",
+      "impact_type": "informativo",
+      "event_scope": "direto",
+      "event_phase": "",
+      "direction": "neutra",
+      "scoreable": false,
+      "event_id_corrigido": "",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "attribution_evidence": "",
+      "nota": "sem_verbo_de_aquisicao_no_texto"
+     }
+    ],
+    "Santander Brasil": [
+     {
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Santander Brasil",
+      "relation_type": "evento_reclassificado",
+      "impact_type": "informativo",
+      "event_scope": "direto",
+      "event_phase": "",
+      "direction": "neutra",
+      "scoreable": false,
+      "event_id_corrigido": "",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "attribution_evidence": "",
+      "nota": "sem_verbo_de_aquisicao_no_texto"
+     }
+    ]
+   },
+   "companies_attributed": [],
+   "corroborations": [
+    {
+     "source": "Exame",
+     "domain": "exame.com",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQU085R0o0WWI3Nmt3S1NyZXMya3o5czNzYU8tYnJ0QXU0bnprMlZVQW4zcnJQZ3otSTRqaE5wRzFXaUVMcEpHckJWU2tQdVd2am9iZlZibzAtS0FkV0hUam8zTWowMzFUc1FzNjJwUXJKQVo5anQ4TVdielZMQlhoRm81aVhObmpNOS1TRFIxSFptblR5YklyNzVYVnNyYjg4R0pGQTlYb1ExWER4RzVMSw?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQU085R0o0WWI3Nmt3S1NyZXMya3o5czNzYU8tYnJ0QXU0bnprMlZVQW4zcnJQZ3otSTRqaE5wRzFXaUVMcEpHckJWU2tQdVd2am9iZlZibzAtS0FkV0hUam8zTWowMzFUc1FzNjJwUXJKQVo5anQ4TVdielZMQlhoRm81aVhObmpNOS1TRFIxSFptblR5YklyNzVYVnNyYjg4R0pGQTlYb1ExWER4RzVMSw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQU085R0o0WWI3Nmt3S1NyZXMya3o5czNzYU8tYnJ0QXU0bnprMlZVQW4zcnJQZ3otSTRqaE5wRzFXaUVMcEpHckJWU2tQdVd2am9iZlZibzAtS0FkV0hUam8zTWowMzFUc1FzNjJwUXJKQVo5anQ4TVdielZMQlhoRm81aVhObmpNOS1TRFIxSFptblR5YklyNzVYVnNyYjg4R0pGQTlYb1ExWER4RzVMSw?oc=5",
+     "resolved_url": "https://exame.com/invest/mercados/santander-de-saida-da-b3-entenda-opa-que-fez-papel-do-banco-disparar-9-em-ny/",
+     "canonical_url": "https://exame.com/invest/mercados/santander-de-saida-da-b3-entenda-opa-que-fez-papel-do-banco-disparar-9-em-ny/",
+     "display_url": "https://exame.com/invest/mercados/santander-de-saida-da-b3-entenda-opa-que-fez-papel-do-banco-disparar-9-em-ny/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "exame.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-07-31T17:49:24.753578+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "atlaspublico.com.br",
+     "domain": "atlaspublico.com.br",
+     "url": "https://atlaspublico.com.br/cvm/noticias/banco-santander-anuncia-opa-de-permuta-para-adquirir-10pct-76234"
+    },
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOSnlMZFY3V1hZUmF5UXprNDNpeWpMZDlrRnNJeENvTG9ZZFFLN0ZfeEpyd25FYzRaWGtIMDM3WkxDM2J1bXo0c1g1M0xWZE1TWUc1VzRaOWJqbnVIakRxS3dIampQV1NhNlN1Y3dkSUFSLWVYZjRTd3RySWZOWG5fMFBXcWtJQldJb0thTkdZVGU1S1RnWUJSY29DWjdCZlFmenlCTFJQVl9aNG9VWjlZWFRHUklFU1g0TnYzTnFYdUg5cGQyNXVOSVlxMVVEWUJNWURKZDNlaWJ2bkt0b0VfWU5LZ19QdHlBZkE?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOSnlMZFY3V1hZUmF5UXprNDNpeWpMZDlrRnNJeENvTG9ZZFFLN0ZfeEpyd25FYzRaWGtIMDM3WkxDM2J1bXo0c1g1M0xWZE1TWUc1VzRaOWJqbnVIakRxS3dIampQV1NhNlN1Y3dkSUFSLWVYZjRTd3RySWZOWG5fMFBXcWtJQldJb0thTkdZVGU1S1RnWUJSY29DWjdCZlFmenlCTFJQVl9aNG9VWjlZWFRHUklFU1g0TnYzTnFYdUg5cGQyNXVOSVlxMVVEWUJNWURKZDNlaWJ2bkt0b0VfWU5LZ19QdHlBZkE?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOSnlMZFY3V1hZUmF5UXprNDNpeWpMZDlrRnNJeENvTG9ZZFFLN0ZfeEpyd25FYzRaWGtIMDM3WkxDM2J1bXo0c1g1M0xWZE1TWUc1VzRaOWJqbnVIakRxS3dIampQV1NhNlN1Y3dkSUFSLWVYZjRTd3RySWZOWG5fMFBXcWtJQldJb0thTkdZVGU1S1RnWUJSY29DWjdCZlFmenlCTFJQVl9aNG9VWjlZWFRHUklFU1g0TnYzTnFYdUg5cGQyNXVOSVlxMVVEWUJNWURKZDNlaWJ2bkt0b0VfWU5LZ19QdHlBZkE?oc=5",
+     "resolved_url": "https://br.advfn.com/jornal/2026/07/santander-anuncia-opa-de-ate-r-11-17-bilhoes-pelo-santander-brasil-para-ampliar-participacao-na-subsidiaria-brasileira",
+     "canonical_url": "https://br.advfn.com/jornal/2026/07/santander-anuncia-opa-de-ate-r-11-17-bilhoes-pelo-santander-brasil-para-ampliar-participacao-na-subsidiaria-brasileira",
+     "display_url": "https://br.advfn.com/jornal/2026/07/santander-anuncia-opa-de-ate-r-11-17-bilhoes-pelo-santander-brasil-para-ampliar-participacao-na-subsidiaria-brasileira",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "br.advfn.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-07-31T15:27:29.446634+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Exame",
+     "domain": "exame.com",
+     "url": "",
+     "when": "30/07 20:35"
+    }
+   ],
+   "captured_ts": 1785520153,
+   "cap_iso": "2026-07-31 14:49"
+  },
+  "https://www.marketwatch.com/story/s-p-500-heads-for-the-first-july-decline-since-2014-here-are-the-stocks-that-led-the-selloff-5677f63b?mod=mw_rss_topstories": {
+   "title": "S&P 500 heads for the first July decline since 2014. Here are the stocks that led the selloff.",
+   "url": "https://www.marketwatch.com/story/s-p-500-heads-for-the-first-july-decline-since-2014-here-are-the-stocks-that-led-the-selloff-5677f63b?mod=mw_rss_topstories",
+   "summary": "After a whipsaw end to the month, the stock market’s decline was highlighted by the worst month for chip stocks in 24 years.",
+   "source": "MarketWatch · Top Stories",
+   "domain": "marketwatch.com",
+   "pub_ts": 1785515880,
+   "pub_iso": "2026-07-31 13:38",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "perdas_relevantes_fundo"
+   ],
+   "trust_override": "imprensa",
+   "captured_ts": 1785520153,
+   "cap_iso": "2026-07-31 14:49"
   }
  },
- "run_count": 60,
+ "run_count": 61,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -42475,11 +42676,39 @@
   "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOSnlMZFY3V1hZUmF5UXprNDNpeWpMZDlrRnNJeENvTG9ZZFFLN0ZfeEpyd25FYzRaWGtIMDM3WkxDM2J1bXo0c1g1M0xWZE1TWUc1VzRaOWJqbnVIakRxS3dIampQV1NhNlN1Y3dkSUFSLWVYZjRTd3RySWZOWG5fMFBXcWtJQldJb0thTkdZVGU1S1RnWUJSY29DWjdCZlFmenlCTFJQVl9aNG9VWjlZWFRHUklFU1g0TnYzTnFYdUg5cGQyNXVOSVlxMVVEWUJNWURKZDNlaWJ2bkt0b0VfWU5LZ19QdHlBZkE?oc=5": {
    "url": "https://br.advfn.com/jornal/2026/07/santander-anuncia-opa-de-ate-r-11-17-bilhoes-pelo-santander-brasil-para-ampliar-participacao-na-subsidiaria-brasileira",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMizwFBVV95cUxNTm5qUEg2NkJrXzA2dEVxSi1zTWJtSlQxXzAwRnNfSGl1VGdwRUFqQ3kwV2NOczV4ckRabXZkcXg4Z2dfYXdEWFBxSUZLZDd6N0VRektDaGJRVURRVVdJMW56T3Y0TUtEeTRTejM0S1VGZkg1UVZHQkJoX3p1V3VfYWtMMXFXRVRJdEJrczNoS0d2OHgxWUxWZ0lFTHZvSUFjM2R4amlxMkxKazVoNEppSEE3aWY3Z0dCTnpTdzBKaU1oQk9aTk1sTzJOZXpTTDA?oc=5": {
+   "url": "https://conteudos.xpi.com.br/renda-fixa/relatorios/rating-da-construtora-tenda-e-rebaixado-de-braaa-para-bra-com-perspectiva-negativa/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMimAJBVV95cUxNUDJiSF9wSTVPSDQzMnZiRVU0X2tHaWduZktsX1VSaDlwRlNkUTg3dnN2TlZveEtTVnp6WDdvYmVXbEZYcTY3ZDJ6QmExWlRoRE9odE5NUHJwMEVkeV9jMk5SX3N4NzFkOWtNZ0YyTWlPTl9kSFZjMWhMVVZkTWU5Tjl3TE14Vm53UjZ5Z3F1eFh2N2hZR1ZVOExVM0p2SWYzVFlaMjhrRUJ5NC1iT2p4THJ0X3JycW5sQmh3b2pmVlFLd29JdzVmVldFWDhTc0RZamI3ajJCUEVJd1AzWTNYXzVSUVdMUVJvWnlCOElwWE1YWWJkVFlEcUhNcFV4Rld4REN2Zi1ic1FuaDFHdURhaWJrNFdYNjlx?oc=5": {
+   "url": "https://www.newsfilecorp.com/release/224869/FORD-STOCK-NEWS-Ford-Motor-Company-Investors-are-Notified-of-October-7-Deadline-in-Securities-Fraud-Class-Action-and-are-Urged-to-Contact-BFA-Law",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQWWJ0Tml0dXhhNzAxXzF5ci1TR0w5TUhVaEZiZXphWnRZV0llRmdQdTJOeV8wcE4wMTYzdTAzSDVOR1RyZWpBTldtTzlYbW5TNGFDNzdFa282RW1qM25saUl0Z3VzNVBOMDN0VllQX0l5TEE5SGF5Y25CajNsamZIb0JBcFdHdEZLMm9pclRUdkVFTDdPVUN0WlhqX3luYTdaWGRxOVp6Q1hWdFdpVU9xOVYxOWsxZXQwV3JLNUg5WGN2MHRKQzBZNnBpUnNiMFFHS1dmUWxoT2w0aV90RHg0UXZKVnZiQU13NnpZTWNQUQ?oc=5": {
+   "url": "https://www.ex-ante.cl/economia/perfil-el-fulminante-ascenso-de-roberto-alvo-el-ejecutivo-que-rescato-a-latam-de-la-quiebra-y-la-llevo-a-ganancias-historicas/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMivAFBVV95cUxON1JLTkpEUGlyMUxVLVBlZEZveEZ3ckV3bTQtOVRvUVhUU2YydkR0ZzhVVW84bkhMZF9ZT1B4X1RFWEhFQ192WUNicDBNQ1lreWdoOU5LVWpmc0ZpcFZFS2daVHRTeVp4SVNwcVhOMVlRdHljdXIycDJxU2NlempLTk1tSXZ0ZmFYNGZLQTBvZVZ2ejF3S3RYWWhjVkhCZ0Y4VmZNZmEweC1zOU01T3lhc2xTVllXM1NpNnBTMNIBwgFBVV95cUxOOWZIRklCYlprX3RJcW1KNEFhVE42SWl1ZmlYY1RGM3ZET010N1dHdnd6eDFaV2UycXhkNWlrVUFVeHRZUDIyVjlrNEx3NEswMUZiQjMwM0VpV3RsaEFxeEg0SzBjbjdUNkZmeXN6VjQ3cEVMZEFUbjNkV0VhOEltT3VuSm84UE1EUnlGanhnbS0tV1FLUFFaam5HOGh4dDd0WkZaTzVDaGpxUHJnWUJ5dHFQV3NCTTFKd3VqWm5GSmJiZw?oc=5": {
+   "url": "https://www.infomoney.com.br/mercados/sanb11-acoes-do-santander-brasil-saltam-13-na-b3-apos-intencao-de-opa-pela-matriz/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiogFBVV95cUxNSV85eUZ1Q3FSZmhHOXI1M3cyUVVEdDhyVDJ1bFI2MU5nWEZPYzFsZGhHSWRjSzhJVWdoSEl4eV9CdGFmcGt2MnRZNXQ1RjVLTTRKQ3A1dXRXRUc4WTNQbmVxS2dTMlZGZDRUM2swYy1ZWkowMGZnRTcxRnk3QjVfSVhvNVJhaHp1aFJFdzViRm5TZTZTZEJzUy1oNmR0ZjVZWGfSAaoBQVVfeXFMTlljSGZrZVpGbEpiRU5WdGJ0MlZFZTE4SUZNblg3cHkzZnA2WWRKSUhiWHo5V21DNnUyVlB2by1WcUlZMkEwSnNMQzZsMUcwSjFwajlUcjFwR18zTV9Rc1JLV091dW5iemRzWlhCS0hmV2lyZlV2eDRCSV9ROGRtSlcxUzBfTHJjYnhwZ3drcHNWUmJaQU13bjc4U1pnRlA4UFpfeURxR2pxVEE?oc=5": {
+   "url": "https://atarde.com.br/economia/dona-do-guarana-dolly-pode-falir-apos-divida-de-r-157-bilhoes-1396690",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPRVc2SEhrVnN1VHhaVG9QVnNCOFdqWE43VWVwMUNSdDVYdXN3ajBka3h4Y3ZZY0Z6MU9PZEVoWXdpSlVGOUdFRTVMNmVjWGFoNHBGSm9aR0hlYWRzZnpBY0Z2SHZKV1JPcXUzNWREWU54ZjlYa2Z2YWlyZUFpRzZhQzY0Y3NRYTBMejAycnZYV1R5Rm4yRFRsUlpLSWZDbHJFTWNrTEYybWQxZmNJQ3BfaW55UHB4ZkFsc29XeUp0d3NCWHFfbnRVag?oc=5": {
+   "url": "https://economia.uol.com.br/noticias/reuters/2026/07/15/engie-brasil-movimenta-r84-bi-em-follow-on-para-incorporacao-de-jirau.htm",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMisAFBVV95cUxQU085R0o0WWI3Nmt3S1NyZXMya3o5czNzYU8tYnJ0QXU0bnprMlZVQW4zcnJQZ3otSTRqaE5wRzFXaUVMcEpHckJWU2tQdVd2am9iZlZibzAtS0FkV0hUam8zTWowMzFUc1FzNjJwUXJKQVo5anQ4TVdielZMQlhoRm81aVhObmpNOS1TRFIxSFptblR5YklyNzVYVnNyYjg4R0pGQTlYb1ExWER4RzVMSw?oc=5": {
+   "url": "https://exame.com/invest/mercados/santander-de-saida-da-b3-entenda-opa-que-fez-papel-do-banco-disparar-9-em-ny/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785511650,
-  "iso": "31 jul 2026 · 12:27 BRT",
+  "ts": 1785520165,
+  "iso": "31 jul 2026 · 14:49 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
@@ -42517,13 +42746,13 @@
     "status": "atencao",
     "score": 45
    },
-   "Petrobras": {
-    "status": "atencao",
-    "score": 37
-   },
    "JBS": {
     "status": "atencao",
     "score": 37
+   },
+   "Petrobras": {
+    "status": "atencao",
+    "score": 36
    },
    "Energisa": {
     "status": "atencao",
@@ -42547,7 +42776,7 @@
    },
    "Suzano": {
     "status": "monitorar",
-    "score": 28
+    "score": 27
    },
    "Capital One Financial": {
     "status": "monitorar",
@@ -42625,12 +42854,12 @@
     "status": "atencao",
     "score": 12
    },
-   "Raia Drogasil": {
-    "status": "monitorar",
-    "score": 12
-   },
    "British American Tobacco": {
     "status": "critico",
+    "score": 11
+   },
+   "Raia Drogasil": {
+    "status": "monitorar",
     "score": 11
    },
    "Sabesp": {
