@@ -2793,31 +2793,53 @@ def resolve_entity_match(article: dict, company: dict, cfg: dict | None = None) 
     entity_cues = company.get("entity_cues") or []
     min_cues = company.get("entity_cues_min", ENTITY_CUES_MIN_DEFAULT)
 
-    # 1) exclusion_cues — precedência absoluta, mesmo se um alias também bater
+    # 1) exclusion_cues — precedência absoluta, mesmo se um alias também bater...
     excl_hits = [c for c in exclusion_cues if normalize(c) and normalize(c) in text]
+    alias_hit = next((a for a in aliases if _word_pattern(a).search(text)), None)
+    cue_hits = [c for c in entity_cues if normalize(c) in text]
     if excl_hits:
+        # [Integração 5.4] ...exceto quando o alias corporativo de alta precisão
+        # está presente JUNTO com evidência operacional suficiente (>=
+        # entity_cues_min sinais de contexto positivo) — "Incendio afecta la
+        # fábrica de Cemento Yura en el distrito de Yura" é sobre a EMPRESA
+        # (alias 'Cemento Yura' + cues operacionais 'cemento'/'fábrica'), não
+        # sobre o distrito, mesmo citando o topônimo excludente. Sem alias OU
+        # sem cues operacionais suficientes, a exclusão mantém precedência
+        # absoluta e INALTERADA (ex.: "Homicidio en Yura: Yura S.A. no tiene
+        # relación con el hecho" — só 1 cue ('yura s.a.') abaixo do mínimo —
+        # continua REJEITADO; "titularidad estatal en Yura" — sem alias —
+        # continua REJEITADO).
+        if not (alias_hit and len(cue_hits) >= min_cues):
+            return {
+                "matched": False, "confidence": "none", "matched_alias": None,
+                "positive_cues": [], "exclusion_cues": excl_hits,
+                "relation_type": None, "subject_company": None,
+                "rule": "exclusion_cue_precedence",
+                "observation": (f"Sinal(is) de exclusão presente(s) ({', '.join(excl_hits)}) "
+                                f"— nunca atribuir a '{name}', mesmo com alias/cues positivos."),
+            }
         return {
-            "matched": False, "confidence": "none", "matched_alias": None,
-            "positive_cues": [], "exclusion_cues": excl_hits,
-            "relation_type": None, "subject_company": None,
-            "rule": "exclusion_cue_precedence",
-            "observation": (f"Sinal(is) de exclusão presente(s) ({', '.join(excl_hits)}) "
-                            f"— nunca atribuir a '{name}', mesmo com alias/cues positivos."),
+            "matched": True, "confidence": "high", "matched_alias": alias_hit,
+            "positive_cues": cue_hits, "exclusion_cues": excl_hits,
+            "relation_type": "direct", "subject_company": name,
+            "rule": "alias_and_operational_cues_override_exclusion",
+            "observation": (f"Alias de alta precisão '{alias_hit}' + {len(cue_hits)} sinal(is) "
+                            f"operacional(is) ({', '.join(cue_hits)}) superam exclusion_cue(s) "
+                            f"coincidente(s) ({', '.join(excl_hits)}) — evidência corporativa "
+                            f"direta prevalece sobre o topônimo/contexto excludente."),
         }
 
     # 2) alias de alta precisão — mesmo padrão de palavra inteira do detect_companies
-    alias_hit = next((a for a in aliases if _word_pattern(a).search(text)), None)
     if alias_hit:
         return {
             "matched": True, "confidence": "high", "matched_alias": alias_hit,
-            "positive_cues": [c for c in entity_cues if normalize(c) in text],
+            "positive_cues": cue_hits,
             "exclusion_cues": [], "relation_type": "direct", "subject_company": name,
             "rule": "high_precision_alias",
             "observation": f"Alias de alta precisão '{alias_hit}' encontrado no texto.",
         }
 
     # 3) entity_cues contextuais — confirma sem exigir alias literal
-    cue_hits = [c for c in entity_cues if normalize(c) in text]
     if len(cue_hits) >= min_cues:
         return {
             "matched": True, "confidence": "medium", "matched_alias": None,
@@ -2924,24 +2946,85 @@ def suppress_non_scoreable_entity_scopes(art: dict, cfg: dict) -> None:
     """Pós-processamento OPT-IN chamado no fim de `classify_and_attribute`.
     Para emissores com `entity_scope` em ('brand_group',
     'entity_pending_confirmation') OU `scoreable: False` explícito no
-    cadastro, move os eventos já atribuídos de `events_by_company` para
-    `shadow_informational_events_by_company` (campo NOVO, só usado nos
-    outputs de shadow) — NUNCA entram em `event_ids_for`/score/status/
-    worst_event/n_critical. Emissores sem esses campos (os 160 reais) nunca
-    são tocados por esta função."""
+    cadastro, move os eventos já atribuídos de `events_by_company` — NUNCA
+    entram em `event_ids_for`/score/status/worst_event/n_critical.
+
+    [Integração] Evento direto autônomo (não family_secondary — esses já
+    saíram de `events_by_company` em `semantic_audit.apply_semantics_to_
+    record`, que roda ANTES desta função, e ficam só como metadado do
+    evento principal) de uma marca/grupo (`brand_group`) ou entidade
+    pendente de confirmação (`entity_pending_confirmation`) é COMPATÍVEL
+    com `informational_events_by_company` (regra 5.4/5.5 da integração):
+    o artigo pode ser recuperado/atribuído/exibido, mas nunca pontua. A
+    entrada registra `entity_scope`, `entity_confidence`, a entidade
+    provável (`likely_entity`) e a necessidade de confirmação
+    (`entity_pending_confirmation`). O campo legado
+    `shadow_informational_events_by_company` é preservado para quem já lia
+    esse caminho. Emissores sem `entity_scope`/`scoreable` explícito (os
+    160 reais) nunca são tocados por esta função."""
     wl_map = {c["name"]: c for c in cfg.get("watchlist", [])}
     ebc = art.get("events_by_company") or {}
+    _events_lookup = {e.get("id"): e for e in (art.get("events") or []) if isinstance(e, dict)}
     for name in list(ebc.keys()):
         company = wl_map.get(name)
         if not company:
             continue
-        non_scoreable = (company.get("entity_scope") in
-                        ("brand_group", "entity_pending_confirmation")
+        scope = company.get("entity_scope")
+        non_scoreable = (scope in ("brand_group", "entity_pending_confirmation")
                         or company.get("scoreable") is False)
         if non_scoreable:
+            # NOTA DE INTEGRAÇÃO: `.pop()` remove a CHAVE inteira de `ebc`
+            # (não só zera a lista) — se esta empresa for a única do artigo,
+            # `art["events_by_company"]` vira `{}`. Isso é seguro porque
+            # `merge_into_history` foi ajustado (ver comentário lá) para
+            # persistir `events_by_company` sempre que a CHAVE existir em
+            # `art` — mesmo com dict vazio — em vez de exigir um valor
+            # truthy; sem esse ajuste, `event_ids_for` cairia no fallback
+            # legado (`rec["event_ids"]`, global) e reintroduziria o evento
+            # suprimido como pontuável para qualquer empresa do artigo.
             evs = ebc.pop(name, [])
             if evs:
+                # compatibilidade retroativa: campo legado só de shadow
                 art.setdefault("shadow_informational_events_by_company", {})[name] = evs
+                pending = scope == "entity_pending_confirmation"
+                info = art.setdefault("informational_events_by_company", {})
+                info.setdefault(name, [])
+                _url = art.get("url", "")
+                for ev in evs:
+                    already = any(x.get("event_id") == ev and x.get("source_record_id") == _url
+                                  for x in info[name])
+                    if already:
+                        continue
+                    _ev_obj = _events_lookup.get(ev, {})
+                    _direction = _ev_obj.get("direction") or ("positiva" if is_positive(_ev_obj) else "neutra")
+                    _display = "positivo" if _direction == "positiva" else "a_revisar"
+                    info[name].append({
+                        "company": name,
+                        "event_id": ev,
+                        "event_label": (_ev_obj.get("label") or ev).replace("_", " "),
+                        "subject_company": name,
+                        "monitored_company": name,
+                        "relation_type": "direto",
+                        "event_scope": "direto",
+                        "direction": _direction,
+                        "scoreable": False,
+                        "display_category": _display,
+                        "entity_scope": scope or ("scoreable_false" if company.get("scoreable") is False else ""),
+                        "entity_confidence": company.get("entity_confidence", ""),
+                        "entity_pending_confirmation": pending,
+                        "likely_entity": company.get("likely_entity") or name,
+                        "confirmation_status": ("pendente" if pending else
+                                                ("requer_confirmacao" if company.get("entity_confidence")
+                                                 in ("media", "medium", "baixa", "low") else "")),
+                        "attribution_rule": "R_ENTITY_SCOPE_NAO_PONTUAVEL",
+                        "attribution_confidence": company.get("entity_confidence", "media"),
+                        "title": art.get("title", ""),
+                        "url": _url,
+                        "pub_ts": art.get("pub_ts"),
+                        "observation": (f"entity_scope={scope or 'scoreable_false'} — não pontuável "
+                                        "por configuração do cadastro (opt-in, aditivo)."),
+                        "source_record_id": _url,
+                    })
     if not ebc and "events_by_company" in art:
         # preserva o campo (compatibilidade), mesmo que fique vazio
         art["events_by_company"] = ebc
@@ -4038,12 +4121,26 @@ def merge_into_history(history: dict, articles: list[dict], keep_days: int = 120
         # 4H.1e — associação EMPRESA × EVENTO. Sem isto, o radar volta a aplicar
         # o evento global a todas as empresas citadas (fraude da CVS vazando
         # para quem só a processou).
-        for _k in ("events_by_company", "event_assessments", "semantic_discards",
+        for _k in ("event_assessments", "semantic_discards",
                    "secondary_events", "conflict_resolution_reason", "mention_roles",
                    "llm_divergences", "companies_attributed", "context_companies",
                    "context_events_by_company", "informational_events_by_company"):
             if art.get(_k):
                 rec[_k] = art[_k]
+        # [Integração] `events_by_company` é copiado sempre que a CHAVE
+        # existir em `art` — mesmo com dict VAZIO (`{}`) — e não só quando
+        # truthy. `suppress_non_scoreable_entity_scopes` (entity_scope=
+        # brand_group/entity_pending_confirmation/scoreable=False, opt-in)
+        # pode suprimir TODAS as empresas de um artigo, deixando `{}`; um
+        # `{}` genuinamente avaliado é diferente de "nunca avaliado" — se não
+        # for persistido, `event_ids_for` cai no fallback LEGADO
+        # (`rec["event_ids"]`, evento GLOBAL sem filtro por empresa) e
+        # reintroduz o evento suprimido como pontuável para qualquer empresa
+        # do artigo. Para os 160 emissores reais (sem opt-in) isto nunca
+        # ocorre: `events_by_company` só existe quando há ≥1 empresa com
+        # ≥1 evento (nunca fica `{}` sem essa camada opt-in).
+        if "events_by_company" in art:
+            rec["events_by_company"] = art["events_by_company"]
         # empresas ATRIBUÍDAS × empresas de CONTEXTO: quem ficou sem evento após
         # as guardas é menção, não emissor afetado (JPMorgan no caso da CVS).
         _ebc = art.get("events_by_company")
