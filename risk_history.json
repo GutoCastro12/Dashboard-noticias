@@ -509,7 +509,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.618986+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.618986+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.cnbc.com/2025/07/11/capital-one-has-more-room-to-run-after-its-acquisition-jim-cramer-says.html": {
    "title": "Capital One has more room to run after its Discover acquisition, Jim Cramer says",
@@ -1118,7 +1120,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:51:33.466230+00:00"
+     "last_checked_at": "2026-07-31T12:15:49.091144+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2652,7 +2654,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:51:33.866481+00:00"
+     "last_checked_at": "2026-07-31T12:15:49.491435+00:00"
     }
    ],
    "corrob_sources": [
@@ -9254,7 +9256,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:51:34.266766+00:00"
+     "last_checked_at": "2026-07-31T12:15:49.891721+00:00"
     },
     {
      "source": "Demarest",
@@ -9274,7 +9276,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:51:34.667046+00:00"
+     "last_checked_at": "2026-07-31T12:15:50.292021+00:00"
     }
    ],
    "corrob_sources": [
@@ -10657,7 +10659,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:51:35.067291+00:00"
+     "last_checked_at": "2026-07-31T12:15:50.692312+00:00"
     }
    ],
    "corrob_sources": [
@@ -12209,6 +12211,12 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T05:45:19.568383+00:00"
+    },
+    {
+     "source": "Tobacco Reporter",
+     "domain": "tobaccoreporter.com",
+     "url": "",
+     "when": "19/02 05:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -13797,7 +13805,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:51:35.725903+00:00"
+     "last_checked_at": "2026-07-31T12:15:51.256781+00:00"
     }
    ],
    "corrob_sources": [
@@ -15913,7 +15921,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:51:36.344053+00:00"
+     "last_checked_at": "2026-07-31T12:15:51.801678+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16019,7 +16027,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:51:36.990155+00:00"
+     "last_checked_at": "2026-07-31T12:15:52.354416+00:00"
     },
     {
      "source": "Moomoo",
@@ -17244,7 +17252,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:51:37.796135+00:00"
+     "last_checked_at": "2026-07-31T12:15:53.024489+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17287,7 +17295,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:51:38.576803+00:00"
+     "last_checked_at": "2026-07-31T12:15:53.727583+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19110,7 +19118,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.638628+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.638628+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://simpa.org.br/aegea-sob-mais-uma-suspeita-crise-financeira-fraude-contabil-e-corrupcao-colocam-em-xeque-entrega-do-dmae-a-iniciativa-privada/": {
    "title": "AEGEA SOB MAIS UMA SUSPEITA: CRISE FINANCEIRA, FRAUDE CONTÁBIL E CORRUPÇÃO COLOCAM EM XEQUE ENTREGA DO DMAE À INICIATIVA PRIVADA",
@@ -19423,7 +19433,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.638915+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.638915+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.moneytimes.com.br/suzano-suzb3-recebe-aval-da-comissao-europeia-para-aquisicao-da-kimberly-clark-ifp-pads/": {
    "title": "Suzano (SUZB3) recebe aval da Comissão Europeia para aquisição da Kimberly-Clark IFP",
@@ -19966,7 +19978,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:51:39.199514+00:00"
+     "last_checked_at": "2026-07-31T12:15:54.305508+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20051,7 +20063,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:51:39.837878+00:00"
+     "last_checked_at": "2026-07-31T12:15:54.860007+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -28646,7 +28658,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.649577+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.649577+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMimwFBVV95cUxPRjF4bUluLUgxY0VSdTdIcFo1UFlYLWNOQVdsS09DZDhHVG0zVk0ybzZzNHBZQklBaldfVy15U3ZGYkZDZHEwRmFuWnJpMGxqM3B6LUpXYVF3ZU9wOHRvNHZRR1dMbVdpbWhiZFVLZjF3UnZMdDBucHV1WHlkMDBhSmQxT3pCS0tDMl94M3dhbmdXeUlTcGV0eTBKb9IBoAFBVV95cUxQVi1OX1JPV0VWclBfWjF1YkRCMDVXMldhcmZzdy1NaUxCZXZvYkZsZjNYX25hYUFMTkU5NmRDdXdmYVJVSklrcE9Ta3hHcWRaTV9qMlR6VGhLbFktVS16SGxaOWhhOFhocTViZkoxMk4xVmpPWkM2NWVyUVhNa0tRRERHUk81Xzd6aUg2aF9ZYjlLbGZVWWdBTDZ4MkpWcTNP?oc=5": {
    "title": "BC pede para participar da recuperação judicial da Ambipar; entenda por quê",
@@ -34868,7 +34882,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:51:40.637759+00:00"
+     "last_checked_at": "2026-07-31T12:15:55.529605+00:00"
     }
    ],
    "corrob_sources": [
@@ -37667,7 +37681,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:51:41.247111+00:00"
+     "last_checked_at": "2026-07-31T12:15:56.075279+00:00"
     },
     {
      "source": "Virginia Business",
@@ -37710,7 +37724,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T05:51:41.884778+00:00"
+     "last_checked_at": "2026-07-31T12:15:56.631329+00:00"
     },
     {
      "source": "Virginia Business",
@@ -37823,42 +37837,6 @@
    "captured_ts": 1785477088,
    "cap_iso": "2026-07-31 02:51"
   },
-  "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml": {
-   "title": "CVM abre processo para apurar renúncia de presidente do conselho da Vale",
-   "url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
-   "summary": "CVM abre processo para apurar renúncia de presidente do conselho da Vale &nbsp;&nbsp; Folha de S.Paulo",
-   "source": "Folha de S.Paulo",
-   "domain": "www1.folha.uol.com.br",
-   "pub_ts": 1783494000,
-   "pub_iso": "2026-07-08 04:00",
-   "language": "pt",
-   "companies": [
-    "Vale"
-   ],
-   "event_ids": [
-    "investigacao_regulatoria"
-   ],
-   "events_by_company": {
-    "Vale": [
-     "investigacao_regulatoria"
-    ]
-   },
-   "mention_roles": {
-    "Vale": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "companies_attributed": [
-    "Vale"
-   ],
-   "context_companies": [],
-   "captured_ts": 1785477088,
-   "cap_iso": "2026-07-31 02:51"
-  },
   "https://atlaspublico.com.br/cvm/noticias/banco-santander-anuncia-opa-de-permuta-para-adquirir-10pct-76234": {
    "title": "Banco Santander anuncia intenção de lançar OPA de permuta por 10% do Santander Brasil, com prêmio de 15%",
    "url": "https://atlaspublico.com.br/cvm/noticias/banco-santander-anuncia-opa-de-permuta-para-adquirir-10pct-76234",
@@ -37947,9 +37925,228 @@
    "companies_attributed": [],
    "captured_ts": 1785477088,
    "cap_iso": "2026-07-31 02:51"
+  },
+  "https://canalsolar.com.br/cemig-sim-conclui-aquisicao-de-10mwp-em-usinas-solares/": {
+   "title": "Cemig SIM conclui aquisição de 10MWp em usinas solares",
+   "url": "https://canalsolar.com.br/cemig-sim-conclui-aquisicao-de-10mwp-em-usinas-solares/",
+   "summary": "Cemig SIM conclui aquisição de 10MWp em usinas solares &nbsp;&nbsp; canalsolar.com.br",
+   "source": "canalsolar.com.br",
+   "domain": "canalsolar.com.br",
+   "pub_ts": 1766476800,
+   "pub_iso": "2025-12-23 05:00",
+   "language": "pt",
+   "companies": [
+    "Cemig"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "events_by_company": {
+    "Cemig": []
+   },
+   "event_assessments": [
+    {
+     "company": "Cemig",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Cemig",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "capex_ativo",
+     "transaction_scope": "capex",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "neutra",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "objeto_nao_empresarial:capex_ativo",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Cemig",
+     "event_id": "ma",
+     "event_id_corrigido": "aquisicao_capex",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "objeto_nao_empresarial:capex_ativo",
+     "subject_company": "Cemig"
+    }
+   ],
+   "mention_roles": {
+    "Cemig": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "encerramento",
+     "direction_hint": ""
+    }
+   },
+   "context_companies": [
+    "Cemig"
+   ],
+   "context_events_by_company": {
+    "Cemig": [
+     {
+      "event_id": "ma",
+      "event_label": "aquisicao capex",
+      "subject_company": "Cemig",
+      "relation_type": "evento_reclassificado",
+      "impact_type": "informativo",
+      "event_scope": "direto",
+      "event_phase": "",
+      "direction": "neutra",
+      "scoreable": false,
+      "event_id_corrigido": "aquisicao_capex",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "attribution_evidence": "",
+      "nota": "objeto_nao_empresarial:capex_ativo"
+     }
+    ]
+   },
+   "companies_attributed": [],
+   "captured_ts": 1785500143,
+   "cap_iso": "2026-07-31 09:15"
+  },
+  "https://finance.yahoo.com/news/truist-debt-issuance-supports-funding-002045354.html": {
+   "title": "Emissão de dívida da Truist apoia flexibilidade de financiamento enquanto mantém retorno de capital",
+   "url": "https://finance.yahoo.com/news/truist-debt-issuance-supports-funding-002045354.html",
+   "summary": "Emissão de dívida da Truist apoia flexibilidade de financiamento enquanto mantém retorno de capital &nbsp;&nbsp; Yahoo Finance",
+   "source": "Yahoo Finance",
+   "domain": "finance.yahoo.com",
+   "pub_ts": 1769760000,
+   "pub_iso": "2026-01-30 05:00",
+   "language": "en",
+   "title_original": "Truist Debt Issuance Supports Funding Flexibility While Maintaining Capital Returns",
+   "summary_original": "Truist Debt Issuance Supports Funding Flexibility While Maintaining Capital Returns &nbsp;&nbsp; Yahoo Finance",
+   "companies": [
+    "Truist Financial"
+   ],
+   "event_ids": [
+    "emissao_divida"
+   ],
+   "events_by_company": {
+    "Truist Financial": [
+     "emissao_divida"
+    ]
+   },
+   "mention_roles": {
+    "Truist Financial": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "companies_attributed": [
+    "Truist Financial"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785500143,
+   "cap_iso": "2026-07-31 09:15"
+  },
+  "https://stocktwits.com/news-articles/markets/equity/c-stock-falls-regional-bank-acquisition-report/cZ3HaQrRImX": {
+   "title": "Citigroup Em Foco Após Banco Negar Relatório de Planos de Aquisição de Credor Regional – Ação C Cai 3%",
+   "url": "https://stocktwits.com/news-articles/markets/equity/c-stock-falls-regional-bank-acquisition-report/cZ3HaQrRImX",
+   "summary": "Citigroup Em Foco Após Banco Negar Relatório de Planos de Aquisição de Credor Regional – Ação C Cai 3% &nbsp;&nbsp; Stocktwits",
+   "source": "Stocktwits",
+   "domain": "stocktwits.com",
+   "pub_ts": 1785203586,
+   "pub_iso": "2026-07-27 22:53",
+   "language": "en",
+   "title_original": "Citigroup In Focus After Bank Denies Report Of Regional Lender Acquisition Plans – C Stock Falls 3%",
+   "summary_original": "Citigroup In Focus After Bank Denies Report Of Regional Lender Acquisition Plans – C Stock Falls 3% &nbsp;&nbsp; Stocktwits",
+   "companies": [
+    "Citigroup"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "events_by_company": {
+    "Citigroup": [
+     "ma"
+    ]
+   },
+   "mention_roles": {
+    "Citigroup": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "companies_attributed": [
+    "Citigroup"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785500143,
+   "cap_iso": "2026-07-31 09:15"
+  },
+  "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNRHRFLVlackowQlJjazJqNnJxTjZzMW9tejVVXzVLUWc5LWhXc2l5WWxTNW1lM3pVVmNsajZYNWxmR3dKUFdjVEJ6YzM0U2NlMUd3cjZmY0R5SjR6OExHWDZBZkVqUXppZmZMTDZ3TE5FUFE1M3J5bTVIcU5UbHV4VGtsNDNVb09DQWtnOVVJNTBHcFVaaktEaDR4QXFrWVZjVV8zZ2RCNHZDOW1nMlJ6U0VGb3Ziam5sMDdGbkdyUUpsdW1wb281bzhSenJoS25sR2ZHLXc2SDV6S2c4X21Fb2pkdkdmOXBFVlB5ZVBnZ1hwZlJvVkxLSTJlZ05XQdIBjAJBVV95cUxQY3FXWHc1cGpLUkxDTmlhbDVkWEVSai1QTV9fNlZqRXdHaDBDamIzR0ZtckdsNzV4VDQzOFJBaWpvY3k4R1g2NzczMXNSd3p2WlFDMF90bUtvUUdJeVMtN1pCS3ZoeThaVXh4ZGI4eXBBQ2xtZzBpMXg0ZVBzNmZiay1Lc0dNQWJjWENRdHM5NHpqZk9lQW9YVVdoV0lFSkFRd3ItSF9SNlY0Rm5fcnhaTjFGY0JUUFZjQkRDbW5jcDhBQVZWZDhCN3NaRlFQV3JLT3laM1ZLY1NxbWhkYVhpSDJRSFh2d3RpRjIwQ0oyNWpGTmR2WWRDOUNkWHUtYlpMRVRKUUZNQzBhdDlW?oc=5": {
+   "title": "Após perder processo e 'irritar' Elton John com pedido de dinheiro, Harry corre risco de falência, diz site",
+   "url": "https://revistamonet.globo.com/celebridades/noticia/2026/07/apos-perder-processo-e-irritar-elton-john-com-pedido-de-dinheiro-harry-corre-risco-de-falencia-diz-site.ghtml",
+   "summary": "Após perder processo e 'irritar' Elton John com pedido de dinheiro, Harry corre risco de falência, diz site &nbsp;&nbsp; Globo",
+   "source": "Globo",
+   "domain": "revistamonet.globo.com",
+   "pub_ts": 1785454422,
+   "pub_iso": "2026-07-30 20:33",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785500143,
+   "cap_iso": "2026-07-31 09:15"
+  },
+  "https://news.google.com/rss/articles/CBMizgFBVV95cUxQRHN3b0tYNHo1YVlTVDNmbU4zSXpETUw4TXNIanFMMW5LS1Z6TWhtbnFFYzZFZ0JjVjlSTV9oTUdjd3FKMXJnZkFfMEJfdUZoWFVaZlp3QlA5SlB3VXl3V2ktWGhuUWFBcWxjZ0JHNkl4RFdkcHIxQm1CczI1QnQ4dEpndVVzZ1dGZ291MG9LRU5UY2pfNC1HUEQ2RGNSNUJKc0VOTk9zc2tXRHJmSTkzSGlCTFFoUHpkdzBBY2VFNGZfNHVtVk1wbGZLbTNYZw?oc=5": {
+   "title": "Litigation Capital Management obtém extensão de isenção de covenant de dívida",
+   "url": "https://br.investing.com/news/company-news/litigation-capital-management-obtem-extensao-de-isencao-de-covenant-de-divida-93CH-2021282",
+   "summary": "Litigation Capital Management obtém extensão de isenção de covenant de dívida &nbsp;&nbsp; Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "domain": "br.investing.com",
+   "pub_ts": 1785479640,
+   "pub_iso": "2026-07-31 03:34",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "covenant_breach"
+   ],
+   "captured_ts": 1785500143,
+   "cap_iso": "2026-07-31 09:15"
+  },
+  "https://news.google.com/rss/articles/CBMivAFBVV95cUxQZndUcmozYkUxVlRvRk1xeFlfVXRObXlaeFA4bG5yNUJBZ3lBU3J0UGtNb0wzN2QtU2hDeFBMamRYMDBLam1GMjVlRXhlRXJMaXhvOVVvbDc3OEhsdkZmMHBZV3JYNDJ4NHlyNWNQUURKNUZpSnZxR0lBYURORmh6SGdiVGY5c3dUYkRkMFZ1c0c5QkJJOVJoVDQ2N0JmejJDNnBNdXAwYUR0TVRhY0JiUXhvUS1WNmRxcndHcNIBwgFBVV95cUxNT0ZJdU5xUllscl81QXllWHZMV1BDclFXVXhOMk05bmtwUjZVZ0VFdHloV0plRjdRZUN4WDRyaHMxdEY3NGZTODNxamZ5STFodEE0SkRfY19UQXdyLWMyaUlyVzJsOXJTMGMtNGhYTlo0VmpzSWEtcjVQRUlHOFd3XzJjMTZPV2RWOGtRTFl5MzBnTXMydk9TQXg4aDBWM05YcHVuTENtNjZsbUpWaVNyb2dmOTZqSTg0M3UzVFV5emMydw?oc=5": {
+   "title": "Passivo na Justiça agrava crise e desafia empresas em recuperação judicial",
+   "url": "https://www.infomoney.com.br/minhas-financas/passivo-na-justica-agrava-crise-e-desafia-empresas-em-recuperacao-judicial/",
+   "summary": "Passivo na Justiça agrava crise e desafia empresas em recuperação judicial &nbsp;&nbsp; InfoMoney",
+   "source": "InfoMoney",
+   "domain": "infomoney.com.br",
+   "pub_ts": 1785492000,
+   "pub_iso": "2026-07-31 07:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1785500143,
+   "cap_iso": "2026-07-31 09:15"
   }
  },
- "run_count": 58,
+ "run_count": 59,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -42174,15 +42371,39 @@
   "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPRjJNamNkcFZmQ08xRmhoMWs4QTBiWEJ2ZTYzT0NVRG91NFJRVWdweFlmcVIzdlVIbmtSM0RDckh3a2IxYmZtbHBBQ0x2ZWQ2c1NFYjZCT0NwM2h5aWVPbDJRbGFlMGhmOE80Q0YwMEdGRF9yM3o3M2FpY1c3T1ZQNC1fZHdBRDdTUVo5dDlZRVVmLUJfSjE1bHduUHd0UTIxR0UySXV3dW1JZUdtekp5SEUtNkRPMUIyVG00d2xLM1gycXRCRlBQekpZRV9KY2QtS0VId2tB?oc=5": {
    "url": "",
    "exact": false
+  },
+  "https://news.google.com/rss/articles/CBMioAJBVV95cUxNSm40d0ZZdFFQaDRhRnJZaGVkZ2d2UFZoQ3VIOHNaaERYcUpFTTU4MFNsaXpuRkRNbE5IaElHWThnemMwZ09vZW85U2ZnWHdUVG1zUlVpTlIteExNcGpkRlB4eVktSFFCUGNhZGFDUkFnZXozeTFtMVVwY0hEZ0x2czlnWG1XcGhlVmR3SzhPTmdvZ2VKVHc5X1dDYVNKZnJycEszRDRiNUVWbHFvWFU3akxnVVdlSEtJU2U1Z3BnVE9vUlM0d1JxTVktVDBiTGFBV0l5MzI4S2EydmNiZXppVEJVc3g0ODdSTkh3clExcV83ZVFiVFM4eXJyME5OMnl0bGYtWE9hRWxFbjBfR2NhWWtPTXlOSFcwcmZnZzExQ18?oc=5": {
+   "url": "https://ffnews.com/newsarticle/capital-one-announces-five-year-265-billion-community-benefits-plan-in-connection-with-discover-acquisition-to-advance-economic-opportunity-and-financial-well-being",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPZ2kyLUhYcm5BOGZvSWdfaU4wcUwtdzFzNlNYVXp2OGFKSE1Ga3V2NTltdnZNNUtHTEMybWhTRUpzQ2oxTTBxcll3RnB1WTdKOEcwRFFLVUx5d2JhMjhaeEhZVkFZcVotYmkyazhnUDRuRkRWLXpvSWY5NVVQdmpTMmhIcXEtYmx5ZHFN?oc=5": {
+   "url": "https://finance.yahoo.com/news/truist-debt-issuance-supports-funding-002045354.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMirwFBVV95cUxQQ3dTTVFhR1NjSUlKb0NBZG1vZGtZaDVKSzdqR0lKZ1hkVGs5N3pxai0tX0tpeVFHRWlmcmNOY3hoVUhobktpcEhMUWdKZGhkcEd1bE9DbUF0RFBjcVllbm9KOXcydkhWX1k1SGpMUm1ZZkF1YnBreFNzTnBvZVlLVGt5X08tcW5iaEd2dHBQdGhrM3dadEdRSjFiQXVMWFlvdERUazlPVng3cFg2SzdF?oc=5": {
+   "url": "https://stocktwits.com/news-articles/markets/equity/c-stock-falls-regional-bank-acquisition-report/cZ3HaQrRImX",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNRHRFLVlackowQlJjazJqNnJxTjZzMW9tejVVXzVLUWc5LWhXc2l5WWxTNW1lM3pVVmNsajZYNWxmR3dKUFdjVEJ6YzM0U2NlMUd3cjZmY0R5SjR6OExHWDZBZkVqUXppZmZMTDZ3TE5FUFE1M3J5bTVIcU5UbHV4VGtsNDNVb09DQWtnOVVJNTBHcFVaaktEaDR4QXFrWVZjVV8zZ2RCNHZDOW1nMlJ6U0VGb3Ziam5sMDdGbkdyUUpsdW1wb281bzhSenJoS25sR2ZHLXc2SDV6S2c4X21Fb2pkdkdmOXBFVlB5ZVBnZ1hwZlJvVkxLSTJlZ05XQdIBjAJBVV95cUxQY3FXWHc1cGpLUkxDTmlhbDVkWEVSai1QTV9fNlZqRXdHaDBDamIzR0ZtckdsNzV4VDQzOFJBaWpvY3k4R1g2NzczMXNSd3p2WlFDMF90bUtvUUdJeVMtN1pCS3ZoeThaVXh4ZGI4eXBBQ2xtZzBpMXg0ZVBzNmZiay1Lc0dNQWJjWENRdHM5NHpqZk9lQW9YVVdoV0lFSkFRd3ItSF9SNlY0Rm5fcnhaTjFGY0JUUFZjQkRDbW5jcDhBQVZWZDhCN3NaRlFQV3JLT3laM1ZLY1NxbWhkYVhpSDJRSFh2d3RpRjIwQ0oyNWpGTmR2WWRDOUNkWHUtYlpMRVRKUUZNQzBhdDlW?oc=5": {
+   "url": "https://revistamonet.globo.com/celebridades/noticia/2026/07/apos-perder-processo-e-irritar-elton-john-com-pedido-de-dinheiro-harry-corre-risco-de-falencia-diz-site.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMizgFBVV95cUxQRHN3b0tYNHo1YVlTVDNmbU4zSXpETUw4TXNIanFMMW5LS1Z6TWhtbnFFYzZFZ0JjVjlSTV9oTUdjd3FKMXJnZkFfMEJfdUZoWFVaZlp3QlA5SlB3VXl3V2ktWGhuUWFBcWxjZ0JHNkl4RFdkcHIxQm1CczI1QnQ4dEpndVVzZ1dGZ291MG9LRU5UY2pfNC1HUEQ2RGNSNUJKc0VOTk9zc2tXRHJmSTkzSGlCTFFoUHpkdzBBY2VFNGZfNHVtVk1wbGZLbTNYZw?oc=5": {
+   "url": "https://br.investing.com/news/company-news/litigation-capital-management-obtem-extensao-de-isencao-de-covenant-de-divida-93CH-2021282",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMivAFBVV95cUxQZndUcmozYkUxVlRvRk1xeFlfVXRObXlaeFA4bG5yNUJBZ3lBU3J0UGtNb0wzN2QtU2hDeFBMamRYMDBLam1GMjVlRXhlRXJMaXhvOVVvbDc3OEhsdkZmMHBZV3JYNDJ4NHlyNWNQUURKNUZpSnZxR0lBYURORmh6SGdiVGY5c3dUYkRkMFZ1c0c5QkJJOVJoVDQ2N0JmejJDNnBNdXAwYUR0TVRhY0JiUXhvUS1WNmRxcndHcNIBwgFBVV95cUxNT0ZJdU5xUllscl81QXllWHZMV1BDclFXVXhOMk05bmtwUjZVZ0VFdHloV0plRjdRZUN4WDRyaHMxdEY3NGZTODNxamZ5STFodEE0SkRfY19UQXdyLWMyaUlyVzJsOXJTMGMtNGhYTlo0VmpzSWEtcjVQRUlHOFd3XzJjMTZPV2RWOGtRTFl5MzBnTXMydk9TQXg4aDBWM05YcHVuTENtNjZsbUpWaVNyb2dmOTZqSTg0M3UzVFV5emMydw?oc=5": {
+   "url": "https://www.infomoney.com.br/minhas-financas/passivo-na-justica-agrava-crise-e-desafia-empresas-em-recuperacao-judicial/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785477102,
-  "iso": "31 jul 2026 · 02:51 BRT",
+  "ts": 1785500157,
+  "iso": "31 jul 2026 · 09:15 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
-    "score": 82
+    "score": 81
    },
    "Engie Brasil": {
     "status": "critico",
@@ -42198,11 +42419,11 @@
    },
    "CVS Health": {
     "status": "critico",
-    "score": 54
+    "score": 53
    },
    "Cosan": {
     "status": "atencao",
-    "score": 53
+    "score": 52
    },
    "Samarco Mineração": {
     "status": "critico",
@@ -42210,7 +42431,7 @@
    },
    "BTG Pactual": {
     "status": "atencao",
-    "score": 48
+    "score": 47
    },
    "Axia Energia": {
     "status": "atencao",
@@ -42230,7 +42451,7 @@
    },
    "Vale": {
     "status": "atencao",
-    "score": 34
+    "score": 33
    },
    "Baker Hughes": {
     "status": "monitorar",
@@ -42266,6 +42487,10 @@
    },
    "Santander Brasil": {
     "status": "atencao",
+    "score": 22
+   },
+   "Citigroup": {
+    "status": "monitorar",
     "score": 22
    },
    "B3": {
