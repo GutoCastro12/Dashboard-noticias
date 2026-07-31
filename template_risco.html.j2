@@ -314,6 +314,18 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);
 .context-note{font-size:.76rem;opacity:.75;margin-top:6px;line-height:1.45}
 .context-meta{font-size:.74rem;opacity:.65;margin-top:5px}
 .context-link{margin-left:8px;text-decoration:none;opacity:.9}
+.info-block{margin-top:14px;padding:12px 14px;border-radius:10px;border:1px dashed rgba(127,127,127,.35)}
+.info-block.positive{border-color:rgba(34,197,94,.35);background:rgba(34,197,94,.06)}
+.info-block.neutral{border-color:rgba(59,130,246,.3);background:rgba(59,130,246,.05)}
+.info-title{font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;opacity:.75;margin-bottom:10px}
+.info-item{padding:8px 0;border-bottom:1px dashed rgba(127,127,127,.15)}
+.info-item:last-child{border-bottom:0}
+.info-event{font-weight:600;font-size:.92rem}
+.info-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.info-tag{font-size:.7rem;padding:1px 7px;border-radius:999px;border:1px solid rgba(127,127,127,.3);background:rgba(127,127,127,.08)}
+.info-note{font-size:.76rem;opacity:.75;margin-top:6px;line-height:1.45}
+.info-meta{font-size:.74rem;opacity:.65;margin-top:5px}
+.info-link{margin-left:8px;text-decoration:none;opacity:.9}
 </style>
 </head>
 <body>
@@ -746,6 +758,30 @@ function renderRadar(){
                 ${c.url?`<a class="context-link" href="${esc(c.url)}" target="_blank" rel="noopener">Abrir comunicado →</a>`:''}</div>
             </div>`).join('')}
         </div>` : ''}
+        ${(() => {
+          const info = row.informational_events||[];
+          const pos = info.filter(c => c.display_category === 'positivo');
+          const neu = info.filter(c => c.display_category !== 'positivo');
+          const bloco = (titulo, cls, itens) => !itens.length ? '' : `
+        <div class="info-block ${cls}">
+          <div class="info-title">${titulo}</div>
+          ${itens.map(c => `
+            <div class="info-item">
+              <div class="info-event">${esc(row.company)} — ${esc(c.event_label||c.event_id||'')}</div>
+              <div class="info-tags">
+                <span class="info-tag">Escopo: ${esc(c.event_scope||'direto')}</span>
+                ${c.transaction_scope?`<span class="info-tag">Operação: ${esc(c.transaction_scope)}</span>`:''}
+                <span class="info-tag">Novo M&amp;A: não</span>
+                ${c.historical_transaction_reference?`<span class="info-tag">Referência histórica</span>`:''}
+              </div>
+              <div class="info-note">${esc(c.observation||'Evento direto do próprio emissor — informativo, não pontua e não altera o score.')}</div>
+              <div class="info-meta">${esc(c.source||'')}${c.date?' · '+esc(c.date):''}
+                ${c.url?`<a class="info-link" href="${esc(c.url)}" target="_blank" rel="noopener">Abrir notícia →</a>`:''}</div>
+            </div>`).join('')}
+        </div>`;
+          return bloco('Sinal positivo · não pontua', 'positive', pos)
+               + bloco('Evento informativo · não pontua', 'neutral', neu);
+        })()}
       </div>
     </div>`).join('');
   list.querySelectorAll('.ev-toggle').forEach(btn => btn.addEventListener('click', e => {

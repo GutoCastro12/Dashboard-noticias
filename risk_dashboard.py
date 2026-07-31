@@ -3721,7 +3721,7 @@ def merge_into_history(history: dict, articles: list[dict], keep_days: int = 120
         for _k in ("events_by_company", "event_assessments", "semantic_discards",
                    "secondary_events", "conflict_resolution_reason", "mention_roles",
                    "llm_divergences", "companies_attributed", "context_companies",
-                   "context_events_by_company"):
+                   "context_events_by_company", "informational_events_by_company"):
             if art.get(_k):
                 rec[_k] = art[_k]
         # empresas ATRIBUÍDAS × empresas de CONTEXTO: quem ficou sem evento após
@@ -4126,6 +4126,30 @@ def _build_context_events(history: dict, company: str, cutoff: int) -> list:
     return itens[:8]
 
 
+def _build_informational_events(history: dict, company: str, cutoff: int) -> list:
+    """Eventos DIRETOS não pontuáveis do próprio emissor (positivos, neutros ou
+    informativos): `subject_company == monitored_company`. Nunca uma empresa é
+    tratada como "entidade relacionada" a si própria — isso é reservado a
+    `_build_context_events` (sujeito é um TERCEIRO real). Ordenado por data
+    desc, deduplicado por evento+URL — nunca entra no breakdown nem no score."""
+    itens, vistos = [], set()
+    for r in history.get("articles", {}).values():
+        ts = r.get("pub_ts") or 0
+        if ts < cutoff:
+            continue
+        for c in ((r.get("informational_events_by_company") or {}).get(company) or []):
+            k = (c.get("event_id"), r.get("url", ""))
+            if k in vistos:
+                continue
+            vistos.add(k)
+            itens.append({**c, "pub_ts": ts, "url": r.get("url", ""),
+                          "title": r.get("title", ""), "source": r.get("source", ""),
+                          "date": (r.get("pub_iso") or "")[:10],
+                          "scoreable": False})
+    itens.sort(key=lambda x: -x["pub_ts"])
+    return itens[:8]
+
+
 
 def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
                     thresholds: dict | None = None,
@@ -4295,6 +4319,12 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
         for _co, _evs in (_rec.get("context_events_by_company") or {}).items():
             if _evs and _co != MARKET_LABEL and _co in meta:
                 per_company.setdefault(_co, [])
+        # idem para eventos diretos não pontuáveis do próprio emissor (ex.:
+        # Santander/TSB resultado positivo, Santander/Esfera reorganização
+        # interna) — o card continua visível mesmo sem ocorrência pontuável.
+        for _co, _evs in (_rec.get("informational_events_by_company") or {}).items():
+            if _evs and _co != MARKET_LABEL and _co in meta:
+                per_company.setdefault(_co, [])
 
     def best_contribs(negatives: list[dict], as_of_ts: int) -> dict[str, dict]:
         """Por tipo de evento, a ocorrência de MAIOR contribuição até as_of_ts:
@@ -4332,10 +4362,13 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
             occurrences, int(ev_cfg.get("occurrence_gap_days", 45)))
         negatives = [o for o in occurrences if not o["positive"]]
         _tem_contexto = bool(_build_context_events(history, company, cutoff))
-        if not negatives and not _tem_contexto:
-            continue  # só contexto positivo: não é linha de risco
-        # Sem evento pontuável MAS com contexto relevante: a linha é mantida
-        # com score 0 apenas para exibir "Contexto relacionado · não pontua".
+        _tem_informativo = bool(_build_informational_events(history, company, cutoff))
+        if not negatives and not _tem_contexto and not _tem_informativo:
+            continue  # só contexto/informativo: não é linha de risco
+        # Sem evento pontuável MAS com contexto ou sinal direto informativo
+        # relevante: a linha é mantida com score 0 apenas para exibir
+        # "Contexto relacionado · não pontua" / "Sinal positivo · não pontua" /
+        # "Evento informativo · não pontua".
 
         distinct: dict[str, dict] = {}
         for o in occurrences:  # chips resumem tudo, inclusive positivos
@@ -4499,6 +4532,9 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
             "events": distinct_events,
             # contexto relacionado (NÃO pontua): eventos cujo sujeito é terceiro
             "context_events": _build_context_events(history, company, cutoff),
+            # eventos DIRETOS não pontuáveis do próprio emissor (positivo/
+            # neutro/informativo) — NUNCA "entidade relacionada a si mesma"
+            "informational_events": _build_informational_events(history, company, cutoff),
             "timeline": timeline_occ,
             "breakdown": breakdown,
             "persistent": persistent,
@@ -7025,6 +7061,7 @@ def run_link_repair(args, cfg) -> int:
     def _semantico(h):
         return {u: {"events_by_company": r.get("events_by_company"),
                     "context_events_by_company": r.get("context_events_by_company"),
+                    "informational_events_by_company": r.get("informational_events_by_company"),
                     "occurrence_id": r.get("occurrence_id"),
                     "pub_ts": r.get("pub_ts"),
                     "corrob_n": len(r.get("corroborations") or [])}

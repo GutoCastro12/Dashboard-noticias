@@ -113,7 +113,12 @@ def t07_santander_pos_aquisicao():
           "Santander Brasil", ["ma"])
     d = d_de(r, "ma")
     check(d.get("scoreable") is False, "M&A removido")
-    check(d.get("event_id_corrigido") == "integracao_pos_aquisicao", "vira integração pós-aquisição")
+    # conteúdo principal é o RESULTADO (lucro acima do esperado), não a
+    # integração — a aquisição vira só `secondary_context_id` histórico
+    check(d.get("event_id_corrigido") == "resultado_acima_expectativas",
+          f"vira resultado_acima_expectativas (obtido {d.get('event_id_corrigido')})")
+    check(d.get("secondary_context_id") == "integracao_pos_aquisicao",
+          "integração pós-aquisição fica como contexto secundário, não evento principal")
     ok, mot = sa.ma_is_legitimate("O banco não avalia novas grandes aquisições", {})
     check(not ok and "negacao" in mot, "negação explícita bloqueia M&A")
 
@@ -265,7 +270,8 @@ def main():
                t10_latam_aeronaves, t11_gm_historico, t12_ma_externo_verdadeiro,
                t13_rj_direta_verdadeira, t14_fraude_nova_acusacao, t15_comunicado_terceiro,
                t16_duas_fontes_mesma_emissao, t17_duas_emissoes_distintas,
-               t18_link_valido, t19_redirect_recuperavel, t20_link_invalido] + _INTEGRACAO:
+               t18_link_valido, t19_redirect_recuperavel, t20_link_invalido] \
+              + _INTEGRACAO + _ROTEAMENTO + _FAMILIA_SECUNDARIA:
         fn()
     ok = sum(1 for r, _ in results if r)
     print("\n" + "=" * 70)
@@ -525,6 +531,487 @@ _INTEGRACAO = [i01_vale_samarco, i02_gerdau_transportadoras, i03_cencosud, i04_b
                i09_latam, i10_gm, i11_rumo, i12_ma_legitimo, i13_rj_legitima,
                i14_fraude_legitima, i15_i16_emissoes, i17_idempotencia,
                i18_sem_fetch, i19_original_preservado, i20_html_sem_chips_indevidos]
+
+
+# ═══════════════════════════════════════════════════════════════════════
+# ROTEAMENTO DE EVENTOS DIRETOS NÃO PONTUÁVEIS DO PRÓPRIO EMISSOR (r01-r20)
+#
+# fix/direct-informational-events — separa, dentro do que já é "não
+# pontuável", o evento cujo SUJEITO é a própria empresa monitorada (positivo/
+# neutro/informativo direto → informational_events_by_company) do evento cujo
+# sujeito é um TERCEIRO real (contexto → context_events_by_company).
+# Nenhuma empresa pode ser tratada como "entidade relacionada" a si mesma.
+# ═══════════════════════════════════════════════════════════════════════
+
+def _rec_com_evento(titulo, empresa, event_ids, url="https://exemplo.test/r", resumo=""):
+    rec = {"title": titulo, "summary": resumo, "url": url, "source": "Teste",
+           "domain": "exemplo.test", "pub_ts": int(__import__("time").time()) - 86400,
+           "pub_iso": "2026-07-30 10:00", "language": "pt",
+           "companies": [empresa], "events_by_company": {empresa: list(event_ids)},
+           "event_ids": list(event_ids), "mention_roles": {},
+           "companies_attributed": [empresa], "context_companies": []}
+    _sem.apply_semantics_to_record(rec, CFG)
+    return rec
+
+
+def r01_santander_tsb_informational():
+    print("\n[R1] Santander supera expectativas após aquisição antiga → informativo, não contexto")
+    rec = _rec_com_evento(
+        "Santander supera estimativas de lucro com expansão da base de clientes após aquisição",
+        "Santander Brasil", ["ma"], url="https://exemplo.test/r01")
+    info = (rec.get("informational_events_by_company") or {}).get("Santander Brasil") or []
+    ctx = (rec.get("context_events_by_company") or {}).get("Santander Brasil") or []
+    check(len(info) == 1, f"1 evento informativo registrado (obtido {len(info)})")
+    e = info[0] if info else {}
+    check(e.get("subject_company") == "Santander Brasil", "subject_company = Santander Brasil")
+    check(e.get("monitored_company") == "Santander Brasil", "monitored_company = Santander Brasil")
+    check(e.get("relation_type") == "direto", "relation_type = direto")
+    check(e.get("event_scope") == "direto", "event_scope = direto")
+    check(e.get("scoreable") is False, "scoreable = false")
+    check(e.get("direction") == "positiva", "direction = positiva")
+    check(e.get("new_ma_occurrence") is False, "new_ma_occurrence = false")
+    check(e.get("historical_transaction_reference") is True, "historical_transaction_reference = true")
+    check(e.get("display_category") == "positivo", "display_category = positivo")
+    check(e.get("event_id") == "resultado_acima_expectativas",
+          f"evento principal = resultado_acima_expectativas (obtido {e.get('event_id')})")
+    check(e.get("secondary_context") == "integracao_pos_aquisicao",
+          "integração pós-aquisição fica como contexto secundário do resultado")
+    check("Santander Brasil" not in {c for c, v in (rec.get("context_events_by_company") or {}).items() if v},
+          "Santander Brasil não aparece em context_events_by_company")
+    check(ctx == [], "context_events_by_company['Santander Brasil'] vazio")
+    check("ma" not in rec["events_by_company"].get("Santander Brasil", []),
+          "não gera evento de M&A em events_by_company")
+
+
+def r02_santander_esfera_informational():
+    print("\n[R2] Santander incorpora Esfera (subsidiária integral) → informativo, não contexto")
+    rec = _rec_com_evento(
+        "Santander Brasil aprova incorporação da Esfera Fidelidade, subsidiária integral",
+        "Santander Brasil", ["ma"], url="https://exemplo.test/r02")
+    info = (rec.get("informational_events_by_company") or {}).get("Santander Brasil") or []
+    check(len(info) == 1, f"1 evento informativo registrado (obtido {len(info)})")
+    e = info[0] if info else {}
+    check(e.get("subject_company") == "Santander Brasil", "subject_company = Santander Brasil")
+    check(e.get("event_id") == "reorganizacao_societaria_interna",
+          f"event_id = reorganizacao_societaria_interna (obtido {e.get('event_id')})")
+    check(e.get("transaction_scope") == "intragrupo", "transaction_scope = intragrupo")
+    check(e.get("scoreable") is False, "scoreable = false")
+    check(e.get("change_of_control") is False, "change_of_control = false")
+    check(e.get("external_ma") is False, "external_ma = false")
+    ctx = (rec.get("context_events_by_company") or {}).get("Santander Brasil") or []
+    check(ctx == [], "context_events_by_company['Santander Brasil'] vazio")
+    check("ma" not in rec["events_by_company"].get("Santander Brasil", []),
+          "não gera M&A externo")
+
+
+def r03_vale_samarco_contexto_preservado():
+    print("\n[R3] Vale/Samarco continua sendo contexto de TERCEIRO")
+    rec = _rec_com_evento("Vale informa sobre Plano de Recuperação Judicial da Samarco",
+                          "Vale", ["recuperacao_judicial"], url="https://exemplo.test/r03")
+    ctx = (rec.get("context_events_by_company") or {}).get("Vale") or []
+    info = (rec.get("informational_events_by_company") or {}).get("Vale") or []
+    check(len(ctx) == 1, "Vale recebe 1 evento de contexto")
+    check(ctx and "Samarco" in str(ctx[0].get("subject_company")), "sujeito = Samarco (terceiro)")
+    check(info == [], "Vale não recebe evento informativo próprio (é caso de terceiro)")
+
+
+def r04_cencosud_stmarche_contexto_preservado():
+    print("\n[R4] Cencosud/St. Marche: contexto de terceiro + M&A legítimo preservados")
+    rec = _rec_com_evento("Cencosud compra St. Marche em meio à recuperação judicial",
+                          "Cencosud", ["recuperacao_judicial", "ma"],
+                          url="https://exemplo.test/r04")
+    ctx = (rec.get("context_events_by_company") or {}).get("Cencosud") or []
+    check(any("marche" in str(c.get("subject_company", "")).lower() for c in ctx),
+          "RJ da St. Marche vira contexto de terceiro para a Cencosud")
+    check("ma" in rec["events_by_company"].get("Cencosud", []),
+          "M&A legítimo da Cencosud continua pontuável (events_by_company)")
+
+
+def r05_btg_digimais_contexto_e_rumor_informativo():
+    print("\n[R5] BTG: falência do Digimais = contexto; rumor de M&A do próprio BTG = informativo")
+    rec1 = _rec_com_evento(
+        "A falência fraudulenta do banco Digimais e a suspeita oferta de compra pelo BTG Pactual",
+        "BTG Pactual", ["falencia"], url="https://exemplo.test/r05a")
+    ctx = (rec1.get("context_events_by_company") or {}).get("BTG Pactual") or []
+    check(any("digimais" in str(c.get("subject_company", "")).lower() for c in ctx),
+          "falência do Digimais = contexto de terceiro para o BTG")
+    rec2 = _rec_com_evento("BTG Pactual mira aquisição do Banco Digimais", "BTG Pactual", ["ma"],
+                          url="https://exemplo.test/r05b")
+    info2 = (rec2.get("informational_events_by_company") or {}).get("BTG Pactual") or []
+    check(len(info2) == 1, "rumor de M&A do próprio BTG vira evento informativo (não contexto)")
+    check(info2 and info2[0].get("event_id") == "rumor_ma", "event_id = rumor_ma")
+    check(info2 and info2[0].get("subject_company") == "BTG Pactual",
+          "sujeito do rumor é o próprio BTG — não é entidade relacionada a si mesma")
+
+
+def r06_evento_direto_positivo_generico():
+    print("\n[R6] Evento direto positivo genérico de empresa monitorada")
+    rec = _rec_com_evento("Metalúrgica Gerdau aprova programa de recompra de ações próprias GOAU4",
+                          "Gerdau", ["ma"], url="https://exemplo.test/r06")
+    info = (rec.get("informational_events_by_company") or {}).get("Gerdau") or []
+    check(len(info) == 1, "1 evento informativo (recompra)")
+    check(info and info[0].get("event_id") == "recompra_acoes", "event_id = recompra_acoes")
+    check(info and info[0].get("direction") == "positiva", "direction = positiva")
+    check(info and info[0].get("display_category") == "positivo", "display_category = positivo")
+    check(info and info[0].get("subject_company") == "Gerdau", "subject_company = Gerdau (direto)")
+
+
+def r07_evento_direto_neutro_generico():
+    print("\n[R7] Evento direto neutro/informativo genérico de empresa monitorada")
+    rec = _rec_com_evento("LATAM Airlines obtém financiamento de US$ 505 milhões para aquisição de aeronaves",
+                          "LATAM Airlines", ["ma"], url="https://exemplo.test/r07")
+    info = (rec.get("informational_events_by_company") or {}).get("LATAM Airlines") or []
+    check(len(info) == 1, "1 evento informativo (aquisição de ativo, não empresa)")
+    check(info and info[0].get("event_id") == "aquisicao_capex", "event_id = aquisicao_capex")
+    check(info and info[0].get("display_category") == "informativo", "display_category = informativo")
+
+
+def r08_evento_direto_negativo_pontuavel_preservado():
+    print("\n[R8] Evento direto negativo pontuável continua pontuando (regressão)")
+    rec = _rec_com_evento("Justiça condena a empresa por fraude fiscal", "Tok&Stok", ["fraude"],
+                          url="https://exemplo.test/r08")
+    check("fraude" in rec["events_by_company"].get("Tok&Stok", []),
+          "fraude continua em events_by_company (pontuável)")
+    info = (rec.get("informational_events_by_company") or {}).get("Tok&Stok") or []
+    ctx = (rec.get("context_events_by_company") or {}).get("Tok&Stok") or []
+    check(info == [] and ctx == [], "evento pontuável não vaza para nenhum bucket não pontuável")
+
+
+def r09_nenhuma_empresa_e_relacionada_a_si_mesma():
+    print("\n[R9] Nenhuma empresa pode ser 'entidade relacionada' a si mesma")
+    casos = [
+        ("Santander supera estimativas de lucro com expansão da base de clientes após aquisição",
+         "Santander Brasil", ["ma"]),
+        ("Santander Brasil aprova incorporação da Esfera Fidelidade, subsidiária integral",
+         "Santander Brasil", ["ma"]),
+        ("Metalúrgica Gerdau aprova programa de recompra de ações próprias GOAU4",
+         "Gerdau", ["ma"]),
+        ("JBS paga R$ 174 milhões e encerra ação sobre fraude fiscal em MT", "JBS", ["fraude"]),
+    ]
+    todas_ok = True
+    for i, (titulo, empresa, evs) in enumerate(casos):
+        rec = _rec_com_evento(titulo, empresa, evs, url=f"https://exemplo.test/r09-{i}")
+        for c in (rec.get("context_events_by_company") or {}).get(empresa) or []:
+            if _sem._n(c.get("subject_company", "")) == _sem._n(empresa):
+                todas_ok = False
+        for c in (rec.get("informational_events_by_company") or {}).get(empresa) or []:
+            if c.get("subject_company") != empresa:
+                todas_ok = False
+    check(todas_ok, "nenhum registro tem subject_company==empresa dentro de context, "
+                    "nem informational com subject_company != empresa monitorada")
+
+
+def r10_informativo_nunca_entra_em_contexto():
+    print("\n[R10] Evento direto informativo NUNCA entra em context_events_by_company")
+    rec_tsb = _rec_com_evento(
+        "Santander supera estimativas de lucro com expansão da base de clientes após aquisição",
+        "Santander Brasil", ["ma"], url="https://exemplo.test/r10a")
+    rec_esf = _rec_com_evento(
+        "Santander Brasil aprova incorporação da Esfera Fidelidade, subsidiária integral",
+        "Santander Brasil", ["ma"], url="https://exemplo.test/r10b")
+    check(not (rec_tsb.get("context_events_by_company") or {}).get("Santander Brasil"),
+          "TSB: Santander Brasil sem entrada em context_events_by_company")
+    check(not (rec_esf.get("context_events_by_company") or {}).get("Santander Brasil"),
+          "Esfera: Santander Brasil sem entrada em context_events_by_company")
+
+
+def r11_pos_aquisicao_nao_gera_novo_ma():
+    print("\n[R11] Referência pós-aquisição não gera novo M&A")
+    r = R("Santander supera estimativas de lucro com expansão da base de clientes após aquisição",
+          "Santander Brasil", ["ma"])
+    d = d_de(r, "ma")
+    check(d.get("scoreable") is False, "M&A não pontua")
+    check(d.get("event_id_corrigido") == "resultado_acima_expectativas",
+          "evento principal = resultado_acima_expectativas, não M&A novo")
+    check(d.get("secondary_context_id") == "integracao_pos_aquisicao",
+          "integração pós-aquisição vira contexto secundário do resultado")
+    check(d.get("transaction_scope") == "historico_pos_aquisicao",
+          f"transaction_scope = historico_pos_aquisicao (obtido {d.get('transaction_scope')})")
+
+
+def r12_intragrupo_nao_gera_ma_externo():
+    print("\n[R12] Reorganização intragrupo não gera M&A externo")
+    r = R("Santander Brasil aprova incorporação da Esfera Fidelidade, subsidiária integral",
+          "Santander Brasil", ["ma"])
+    d = d_de(r, "ma")
+    check(d.get("scoreable") is False, "M&A não pontua")
+    check(d.get("event_id_corrigido") == "reorganizacao_societaria_interna",
+          "reclassificado como reorganização societária interna")
+    check(d.get("transaction_scope") == "intragrupo", "transaction_scope = intragrupo")
+
+
+def r13_ma_externo_legitimo_classificado():
+    print("\n[R13] M&A externo legítimo continua sendo classificado (regressão)")
+    rec = _rec_com_evento("Bunge conclui acordo de aquisição da Viterra", "Bunge", ["ma"],
+                          url="https://exemplo.test/r13")
+    check("ma" in rec["events_by_company"].get("Bunge", []), "M&A legítimo preservado")
+    info = (rec.get("informational_events_by_company") or {}).get("Bunge") or []
+    check(info == [], "M&A legítimo não vira evento informativo")
+
+
+def r14_vale_samarco_continua_contexto():
+    print("\n[R14] Vale/Samarco aparece como contexto de terceiro no card de evolução (regressão)")
+    res = _pipeline(_hist(("Vale informa sobre Plano de Recuperação Judicial da Samarco",
+                          {"Vale": ["recuperacao_judicial"],
+                           "Samarco Mineração": ["recuperacao_judicial"]})))
+    ctx = _ctx(res, "Vale")
+    check(any(c["event_id"] == "recuperacao_judicial" for c in ctx), "Vale tem context_events com a RJ")
+    info = (res["evolution"].get("Vale") or {}).get("informational_events") or []
+    check(info == [], "Vale não tem informational_events neste caso (é contexto de terceiro)")
+
+
+def r15_html_secao_sinal_positivo():
+    print("\n[R15] Evento positivo direto aparece na seção 'Sinal positivo · não pontua' do HTML")
+    hist = _hist(("Metalúrgica Gerdau aprova programa de recompra de ações próprias GOAU4",
+                 {"Gerdau": ["ma"]}))
+    res = _pipeline(hist)
+    th = _rd.calibrate_thresholds(hist, CFG)
+    dbw = {"90": {"evolution": [v for v in res["evolution"].values()], "feed": res["feed"]}}
+    html = _rd.render_html(dbw, CFG, demo=False, changes=res["changes"], payload_thresholds=th)
+    check("Sinal positivo" in html, "template contém a seção 'Sinal positivo · não pontua'")
+    check('"display_category": "positivo"' in html or '"display_category":"positivo"' in html
+          or '\\"display_category\\": \\"positivo\\"' in html,
+          "payload contém evento com display_category=positivo")
+
+
+def r16_html_secao_evento_informativo():
+    print("\n[R16] Evento neutro direto aparece na seção 'Evento informativo · não pontua' do HTML")
+    hist = _hist(("Santander Brasil aprova incorporação da Esfera Fidelidade, subsidiária integral",
+                 {"Santander Brasil": ["ma"]}))
+    res = _pipeline(hist)
+    th = _rd.calibrate_thresholds(hist, CFG)
+    dbw = {"90": {"evolution": [v for v in res["evolution"].values()], "feed": res["feed"]}}
+    html = _rd.render_html(dbw, CFG, demo=False, changes=res["changes"], payload_thresholds=th)
+    check("Evento informativo" in html, "template contém a seção 'Evento informativo · não pontua'")
+    check('"display_category": "informativo"' in html or '"display_category":"informativo"' in html
+          or '\\"display_category\\": \\"informativo\\"' in html,
+          "payload contém evento com display_category=informativo")
+
+
+def r17_nao_entra_em_event_ids_for():
+    print("\n[R17] Eventos diretos não pontuáveis nunca voltam por event_ids_for")
+    rec = _rec_com_evento(
+        "Santander supera estimativas de lucro com expansão da base de clientes após aquisição",
+        "Santander Brasil", ["ma"], url="https://exemplo.test/r17")
+    ids = _rd.event_ids_for(rec, "Santander Brasil")
+    check("ma" not in ids, "'ma' não volta por event_ids_for")
+    check("integracao_pos_aquisicao" not in ids, "evento informativo não volta por event_ids_for")
+    check(ids == [], f"event_ids_for vazio para este registro (obtido {ids})")
+
+
+def r18_nao_altera_score():
+    print("\n[R18] Eventos diretos não pontuáveis não alteram score")
+    res = _pipeline(_hist(("Santander supera estimativas de lucro com expansão da base de "
+                          "clientes após aquisição", {"Santander Brasil": ["ma"]})))
+    check(_score(res, "Santander Brasil") == 0, "score do Santander = 0 (só sinal informativo)")
+    res2 = _pipeline(_hist(("Santander Brasil aprova incorporação da Esfera Fidelidade, "
+                           "subsidiária integral", {"Santander Brasil": ["ma"]})))
+    check(_score(res2, "Santander Brasil") == 0, "score do Santander = 0 (reorganização interna)")
+
+
+def r19_registros_legados_compativeis():
+    print("\n[R19] Registros legados (sem os campos novos) continuam funcionando")
+    legado = {"title": "Notícia antiga", "summary": "", "url": "https://exemplo.test/legado",
+             "source": "Teste", "domain": "exemplo.test", "pub_ts": int(__import__("time").time()),
+             "pub_iso": "2026-01-01 10:00", "companies": ["Vale"],
+             "event_ids": ["recuperacao_judicial"]}
+    ids = _rd.event_ids_for(legado, "Vale")
+    check(ids == ["recuperacao_judicial"], "fallback para event_ids legado funciona")
+    ctx_vazio = _rd._build_context_events({"articles": {"u": legado}}, "Vale", 0)
+    info_vazio = _rd._build_informational_events({"articles": {"u": legado}}, "Vale", 0)
+    check(ctx_vazio == [], "_build_context_events não quebra em registro legado")
+    check(info_vazio == [], "_build_informational_events não quebra em registro legado")
+
+
+def r20_idempotencia_roteamento():
+    print("\n[R20] Idempotência: segunda aplicação da regra não muda o registro novamente")
+    rec = {"title": "Santander Brasil aprova incorporação da Esfera Fidelidade, subsidiária integral",
+          "summary": "", "url": "https://exemplo.test/r20", "source": "Teste",
+          "domain": "exemplo.test", "pub_ts": int(__import__("time").time()) - 86400,
+          "pub_iso": "2026-07-30 10:00", "language": "pt", "companies": ["Santander Brasil"],
+          "events_by_company": {"Santander Brasil": ["ma"]}, "event_ids": ["ma"],
+          "mention_roles": {}, "companies_attributed": ["Santander Brasil"],
+          "context_companies": []}
+    _sem.apply_semantics_to_record(rec, CFG)
+    snap1 = _json.dumps(rec, sort_keys=True, ensure_ascii=False)
+    _sem.apply_semantics_to_record(rec, CFG)
+    snap2 = _json.dumps(rec, sort_keys=True, ensure_ascii=False)
+    check(snap1 == snap2, "segunda aplicação não altera o registro")
+    check(len((rec.get("informational_events_by_company") or {}).get("Santander Brasil") or []) == 1,
+          "continua exatamente 1 evento informativo após a 2ª aplicação (sem duplicar)")
+
+
+_ROTEAMENTO = [r01_santander_tsb_informational, r02_santander_esfera_informational,
+               r03_vale_samarco_contexto_preservado, r04_cencosud_stmarche_contexto_preservado,
+               r05_btg_digimais_contexto_e_rumor_informativo, r06_evento_direto_positivo_generico,
+               r07_evento_direto_neutro_generico, r08_evento_direto_negativo_pontuavel_preservado,
+               r09_nenhuma_empresa_e_relacionada_a_si_mesma, r10_informativo_nunca_entra_em_contexto,
+               r11_pos_aquisicao_nao_gera_novo_ma, r12_intragrupo_nao_gera_ma_externo,
+               r13_ma_externo_legitimo_classificado, r14_vale_samarco_continua_contexto,
+               r15_html_secao_sinal_positivo, r16_html_secao_evento_informativo,
+               r17_nao_entra_em_event_ids_for, r18_nao_altera_score,
+               r19_registros_legados_compativeis, r20_idempotencia_roteamento]
+
+
+# ═══════════════════════════════════════════════════════════════════════
+# CORREÇÃO 2026-07-31 (2ª etapa): evento principal econômico do Santander/TSB
+# + distinção entre evento AUTÔNOMO não pontuável e componente SECUNDÁRIO de
+# uma família semântica já representada por evento principal.
+# ═══════════════════════════════════════════════════════════════════════
+
+def f01_downgrade_outlook_nao_vira_informativo_independente():
+    print("\n[F1] Downgrade + outlook negativo: só o downgrade é principal, "
+          "outlook NÃO vira card informativo independente")
+    rec = _rec_com_evento("Rumo tem rating rebaixado e perspectiva negativa pela agência",
+                          "Rumo", ["rebaixamento_rating", "outlook_negativo"],
+                          url="https://exemplo.test/f01")
+    check("rebaixamento_rating" in rec["events_by_company"].get("Rumo", []),
+          "downgrade continua pontuável (principal)")
+    check("outlook_negativo" not in rec["events_by_company"].get("Rumo", []),
+          "outlook não fica em events_by_company")
+    info = (rec.get("informational_events_by_company") or {}).get("Rumo") or []
+    ctx = (rec.get("context_events_by_company") or {}).get("Rumo") or []
+    check(not any(c.get("event_id") == "outlook_negativo" for c in info),
+          "outlook NÃO cria card em informational_events_by_company")
+    check(not any(c.get("event_id") == "outlook_negativo" for c in ctx),
+          "outlook NÃO cria card em context_events_by_company")
+    assess = next((a for a in rec.get("event_assessments", [])
+                  if a.get("company") == "Rumo" and a.get("event_id") == "outlook_negativo"), {})
+    check(assess.get("family_secondary") is True, "outlook marcado como family_secondary=true")
+    check(assess.get("primary_event_id") == "rebaixamento_rating",
+          f"primary_event_id = rebaixamento_rating (obtido {assess.get('primary_event_id')})")
+
+
+def f02_prio_rating_mais_ma_family_secondary():
+    print("\n[F2] PRIO: rating elevado (principal) + M&A pós-aquisição descartado "
+          "no MESMO artigo → componente secundário, não card independente")
+    rec = _rec_com_evento(
+        "Prio (PRIO3): S&P Global eleva nota de crédito da petrolífera após aquisição de Peregrino",
+        "PRIO", ["rating_elevado", "ma"], url="https://exemplo.test/f02")
+    check("rating_elevado" in rec["events_by_company"].get("PRIO", []),
+          "rating_elevado continua pontuável (principal do mesmo artigo)")
+    info = (rec.get("informational_events_by_company") or {}).get("PRIO") or []
+    ctx = (rec.get("context_events_by_company") or {}).get("PRIO") or []
+    check(info == [], "M&A pós-aquisição NÃO vira card informativo independente para a PRIO")
+    check(ctx == [], "M&A pós-aquisição também não vira contexto (é a própria PRIO)")
+    assess = next((a for a in rec.get("event_assessments", [])
+                  if a.get("company") == "PRIO" and a.get("event_id") == "ma"), {})
+    check(assess.get("family_secondary") is True, "'ma' marcado como family_secondary=true")
+    check(assess.get("primary_event_id") == "rating_elevado",
+          f"primary_event_id = rating_elevado (obtido {assess.get('primary_event_id')})")
+
+
+def f03_evento_neutro_autonomo_ainda_aparece():
+    print("\n[F3] Evento neutro AUTÔNOMO (sem principal concorrente) continua aparecendo como informativo")
+    rec = _rec_com_evento("Santander Brasil aprova incorporação da Esfera Fidelidade, subsidiária integral",
+                          "Santander Brasil", ["ma"], url="https://exemplo.test/f03")
+    info = (rec.get("informational_events_by_company") or {}).get("Santander Brasil") or []
+    check(len(info) == 1, "evento autônomo (sem outro evento pontuável no artigo) continua "
+                          "com card próprio em informational_events_by_company")
+
+
+def f04_family_secondary_nao_altera_score():
+    print("\n[F4] Family secondary não gera contribuição de score própria")
+    res = _pipeline(_hist(("Rumo tem rating rebaixado e perspectiva negativa pela agência",
+                          {"Rumo": ["rebaixamento_rating", "outlook_negativo"]})))
+    chips = _chips(res, "Rumo")
+    check("rebaixamento_rating" in chips, "downgrade aparece como chip")
+    check("outlook_negativo" not in chips, "outlook absorvido não aparece como chip separado")
+    info = (res["evolution"].get("Rumo") or {}).get("informational_events") or []
+    check(info == [], "Rumo não tem informational_events (outlook é secundário, não autônomo)")
+
+
+def f05_exclusividade_de_containers():
+    print("\n[F5] Exclusividade: mesma empresa/evento nunca aparece em mais de um container")
+    casos = [
+        ("Santander supera estimativas de lucro com expansão da base de clientes após aquisição",
+         "Santander Brasil", ["ma"]),
+        ("Santander Brasil aprova incorporação da Esfera Fidelidade, subsidiária integral",
+         "Santander Brasil", ["ma"]),
+        ("Prio (PRIO3): S&P Global eleva nota de crédito da petrolífera após aquisição de Peregrino",
+         "PRIO", ["rating_elevado", "ma"]),
+        ("Rumo tem rating rebaixado e perspectiva negativa pela agência",
+         "Rumo", ["rebaixamento_rating", "outlook_negativo"]),
+        ("Vale informa sobre Plano de Recuperação Judicial da Samarco",
+         "Vale", ["recuperacao_judicial"]),
+        ("Metalúrgica Gerdau aprova programa de recompra de ações próprias GOAU4",
+         "Gerdau", ["ma"]),
+    ]
+    ok = True
+    for i, (titulo, empresa, evs) in enumerate(casos):
+        rec = _rec_com_evento(titulo, empresa, evs, url=f"https://exemplo.test/f05-{i}")
+        ebc_ids = set(rec.get("events_by_company", {}).get(empresa, []))
+        ctx_ids = {c.get("event_id") for c in
+                  (rec.get("context_events_by_company") or {}).get(empresa, [])}
+        info_ids = {c.get("event_id") for c in
+                   (rec.get("informational_events_by_company") or {}).get(empresa, [])}
+        # os "event_id" em ctx/info podem já vir corrigidos (ex.: recompra_acoes),
+        # mas o critério de exclusividade é sobre o event_id ORIGINAL de entrada
+        for original_ev in evs:
+            containers = sum([
+                original_ev in ebc_ids,
+                any(c.get("event_id") == original_ev for c in
+                    (rec.get("context_events_by_company") or {}).get(empresa, [])),
+                any((rec.get("event_assessments") or []) and a.get("event_id") == original_ev
+                    and a.get("scoreable") is False and not a.get("family_secondary")
+                    and (rec.get("informational_events_by_company") or {}).get(empresa)
+                    for a in (rec.get("event_assessments") or [])
+                    if a.get("event_id") == original_ev),
+            ])
+            if containers > 1:
+                ok = False
+    check(ok, "nenhum evento original aparece em mais de um container simultaneamente")
+
+
+def f06_idempotencia_family_secondary():
+    print("\n[F6] Idempotência com a distinção autônomo × secundário de família")
+    rec = {"title": "Prio (PRIO3): S&P Global eleva nota de crédito da petrolífera após aquisição de Peregrino",
+          "summary": "", "url": "https://exemplo.test/f06", "source": "Teste",
+          "domain": "exemplo.test", "pub_ts": int(__import__("time").time()) - 86400,
+          "pub_iso": "2026-07-30 10:00", "language": "pt", "companies": ["PRIO"],
+          "events_by_company": {"PRIO": ["rating_elevado", "ma"]},
+          "event_ids": ["rating_elevado", "ma"], "mention_roles": {},
+          "companies_attributed": ["PRIO"], "context_companies": []}
+    _sem.apply_semantics_to_record(rec, CFG)
+    snap1 = _json.dumps(rec, sort_keys=True, ensure_ascii=False)
+    n_assess1 = len(rec.get("event_assessments", []))
+    _sem.apply_semantics_to_record(rec, CFG)
+    snap2 = _json.dumps(rec, sort_keys=True, ensure_ascii=False)
+    check(snap1 == snap2, "segunda aplicação não altera o registro (caso family_secondary)")
+    check(len(rec.get("event_assessments", [])) == n_assess1,
+          "não duplica event_assessments na 2ª aplicação")
+
+
+def f07_html_family_secondary_sem_bloco_independente():
+    print("\n[F7] HTML: componente secundário de família NÃO cria bloco independente; "
+          "principal, autônomo e contexto de terceiro continuam aparecendo")
+    hist = _hist(
+        ("Prio (PRIO3): S&P Global eleva nota de crédito da petrolífera após aquisição de Peregrino",
+         {"PRIO": ["rating_elevado", "ma"]}),
+        ("Santander Brasil aprova incorporação da Esfera Fidelidade, subsidiária integral",
+         {"Santander Brasil": ["ma"]}),
+        ("Vale informa sobre Plano de Recuperação Judicial da Samarco",
+         {"Vale": ["recuperacao_judicial"], "Samarco Mineração": ["recuperacao_judicial"]}),
+    )
+    res = _pipeline(hist)
+    th = _rd.calibrate_thresholds(hist, CFG)
+    dbw = {"90": {"evolution": [v for v in res["evolution"].values()], "feed": res["feed"]}}
+    html = _rd.render_html(dbw, CFG, demo=False, changes=res["changes"], payload_thresholds=th)
+    check(len(html) > 1000, "HTML renderizado")
+    prio_info = (res["evolution"].get("PRIO") or {}).get("informational_events") or []
+    check(prio_info == [], "PRIO: nenhum bloco informativo independente para o M&A secundário")
+    check("Evento informativo" in html, "seção 'Evento informativo · não pontua' existe no template "
+                                        "(usada pelo caso autônomo Santander/Esfera)")
+    check("Contexto relacionado" in html, "seção de contexto de terceiro continua no template (Vale/Samarco)")
+
+
+_FAMILIA_SECUNDARIA = [f01_downgrade_outlook_nao_vira_informativo_independente,
+                       f02_prio_rating_mais_ma_family_secondary,
+                       f03_evento_neutro_autonomo_ainda_aparece,
+                       f04_family_secondary_nao_altera_score,
+                       f05_exclusividade_de_containers,
+                       f06_idempotencia_family_secondary,
+                       f07_html_family_secondary_sem_bloco_independente]
 
 
 if __name__ == "__main__":
