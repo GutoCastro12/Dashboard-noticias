@@ -1120,7 +1120,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T12:15:49.091144+00:00"
+     "last_checked_at": "2026-07-31T15:27:21.683220+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2654,7 +2654,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T12:15:49.491435+00:00"
+     "last_checked_at": "2026-07-31T15:27:22.083508+00:00"
     }
    ],
    "corrob_sources": [
@@ -9256,7 +9256,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T12:15:49.891721+00:00"
+     "last_checked_at": "2026-07-31T15:27:22.483888+00:00"
     },
     {
      "source": "Demarest",
@@ -9276,7 +9276,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T12:15:50.292021+00:00"
+     "last_checked_at": "2026-07-31T15:27:22.884216+00:00"
     }
    ],
    "corrob_sources": [
@@ -10659,7 +10659,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T12:15:50.692312+00:00"
+     "last_checked_at": "2026-07-31T15:27:23.284468+00:00"
     }
    ],
    "corrob_sources": [
@@ -13805,7 +13805,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T12:15:51.256781+00:00"
+     "last_checked_at": "2026-07-31T15:27:23.814648+00:00"
     }
    ],
    "corrob_sources": [
@@ -15921,7 +15921,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T12:15:51.801678+00:00"
+     "last_checked_at": "2026-07-31T15:27:24.337866+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16027,7 +16027,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T12:15:52.354416+00:00"
+     "last_checked_at": "2026-07-31T15:27:24.857129+00:00"
     },
     {
      "source": "Moomoo",
@@ -17252,7 +17252,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T12:15:53.024489+00:00"
+     "last_checked_at": "2026-07-31T15:27:25.492824+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17295,7 +17295,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T12:15:53.727583+00:00"
+     "last_checked_at": "2026-07-31T15:27:26.204395+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19978,7 +19978,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T12:15:54.305508+00:00"
+     "last_checked_at": "2026-07-31T15:27:26.720852+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20063,7 +20063,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T12:15:54.860007+00:00"
+     "last_checked_at": "2026-07-31T15:27:27.249049+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -34882,7 +34882,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T12:15:55.529605+00:00"
+     "last_checked_at": "2026-07-31T15:27:27.863425+00:00"
     }
    ],
    "corrob_sources": [
@@ -37528,7 +37528,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.659418+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.659418+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQSEdlYmk2cElyNzZxS09RLXFVVjNrelE3UU1NSFhITkFSLU5GaXdwZ3FJMkZ1TDRTbU4ybWpCbzJQekN4OE9PSEw4T0t0MkRxQXFsSThTTkpNaWNPU3paOXU4TG5CckFQdlkyS2YxQmpPN0tpeGpIWVVYeWI1bzVWai1qMnhqVGo2MUxyUWQ4NkRTejBkU2pULXpxOVk5QWN0c3ZjUGFEZ1U4Ml9ZcUE2UFFicXZ6WC1sWnZmSHktSWhRRlJaTjJTWl9QYzlzUWhhXzN2WXZvRHl1OVBZLVkzV2Jkd1VWM0hwOURv0gHwAUFVX3lxTFBZblhoTXpWMGROUWNIMXJUX3J4VU5qS0NueUdSWHg4Q3A3eVAxYjBCYllPLURYa1M4WkdqalZPOEx6U3lheDVITHB3S3dTclkxR3FIYktfcjc4NHZtNktUUDljT0xHRWNBb1pHTmcxU0ZvcmhnbUdSN25uU0RkbTJlX2lFUWI0NlBtRFJ2aEgwY2JTZjlwVHR1ekRkUmVqUlF3XzhRVjlFVkNFYWExSFVLcmJTc3ZYSkpyU0lMbldJX1BadFdjZWk2aGtDREJfUzByT2hQYWdlclJQVy10MU1TOHpMaEc1dWN2R0ViWnl5Qw?oc=5": {
    "title": "3 out-of-state suspects arrested for fraud in ongoing investigation",
@@ -37681,7 +37683,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T12:15:56.075279+00:00"
+     "last_checked_at": "2026-07-31T15:27:28.386131+00:00"
     },
     {
      "source": "Virginia Business",
@@ -37724,7 +37726,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T12:15:56.631329+00:00"
+     "last_checked_at": "2026-07-31T15:27:28.923638+00:00"
     },
     {
      "source": "Virginia Business",
@@ -37924,7 +37926,37 @@
    },
    "companies_attributed": [],
    "captured_ts": 1785477088,
-   "cap_iso": "2026-07-31 02:51"
+   "cap_iso": "2026-07-31 02:51",
+   "corroborations": [
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOSnlMZFY3V1hZUmF5UXprNDNpeWpMZDlrRnNJeENvTG9ZZFFLN0ZfeEpyd25FYzRaWGtIMDM3WkxDM2J1bXo0c1g1M0xWZE1TWUc1VzRaOWJqbnVIakRxS3dIampQV1NhNlN1Y3dkSUFSLWVYZjRTd3RySWZOWG5fMFBXcWtJQldJb0thTkdZVGU1S1RnWUJSY29DWjdCZlFmenlCTFJQVl9aNG9VWjlZWFRHUklFU1g0TnYzTnFYdUg5cGQyNXVOSVlxMVVEWUJNWURKZDNlaWJ2bkt0b0VfWU5LZ19QdHlBZkE?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOSnlMZFY3V1hZUmF5UXprNDNpeWpMZDlrRnNJeENvTG9ZZFFLN0ZfeEpyd25FYzRaWGtIMDM3WkxDM2J1bXo0c1g1M0xWZE1TWUc1VzRaOWJqbnVIakRxS3dIampQV1NhNlN1Y3dkSUFSLWVYZjRTd3RySWZOWG5fMFBXcWtJQldJb0thTkdZVGU1S1RnWUJSY29DWjdCZlFmenlCTFJQVl9aNG9VWjlZWFRHUklFU1g0TnYzTnFYdUg5cGQyNXVOSVlxMVVEWUJNWURKZDNlaWJ2bkt0b0VfWU5LZ19QdHlBZkE?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOSnlMZFY3V1hZUmF5UXprNDNpeWpMZDlrRnNJeENvTG9ZZFFLN0ZfeEpyd25FYzRaWGtIMDM3WkxDM2J1bXo0c1g1M0xWZE1TWUc1VzRaOWJqbnVIakRxS3dIampQV1NhNlN1Y3dkSUFSLWVYZjRTd3RySWZOWG5fMFBXcWtJQldJb0thTkdZVGU1S1RnWUJSY29DWjdCZlFmenlCTFJQVl9aNG9VWjlZWFRHUklFU1g0TnYzTnFYdUg5cGQyNXVOSVlxMVVEWUJNWURKZDNlaWJ2bkt0b0VfWU5LZ19QdHlBZkE?oc=5",
+     "resolved_url": "https://br.advfn.com/jornal/2026/07/santander-anuncia-opa-de-ate-r-11-17-bilhoes-pelo-santander-brasil-para-ampliar-participacao-na-subsidiaria-brasileira",
+     "canonical_url": "https://br.advfn.com/jornal/2026/07/santander-anuncia-opa-de-ate-r-11-17-bilhoes-pelo-santander-brasil-para-ampliar-participacao-na-subsidiaria-brasileira",
+     "display_url": "https://br.advfn.com/jornal/2026/07/santander-anuncia-opa-de-ate-r-11-17-bilhoes-pelo-santander-brasil-para-ampliar-participacao-na-subsidiaria-brasileira",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "br.advfn.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-07-31T15:27:29.446634+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "",
+     "when": "31/07 09:32"
+    }
+   ]
   },
   "https://canalsolar.com.br/cemig-sim-conclui-aquisicao-de-10mwp-em-usinas-solares/": {
    "title": "Cemig SIM conclui aquisição de 10MWp em usinas solares",
@@ -38144,9 +38176,45 @@
    ],
    "captured_ts": 1785500143,
    "cap_iso": "2026-07-31 09:15"
+  },
+  "https://news.google.com/rss/articles/CBMisgFBVV95cUxONkJUNU9pU0Y2d0s1MHdvaUh2OEhIa1BHZG1oeDNoWUw1bWg5Rmw5UVRaRjhsNEF0NDY1dVo4SzR6VUtyU2djSTNHWUs2TEUxZXpzMEZZMHlqZTdCc1QtdWFBNjhfQXV3VjhTdmdQMHBXU3ZNWVg5Tm9qNmloY3lNUTYzY2pBaGZwY050cUFkMU1SblFMbGJYdmZNOTZoV0lZNHhaVHF5ZXpURHhlMGFqYWd3?oc=5": {
+   "title": "Micron completes acquisition of PSMC facility in Taiwan",
+   "url": "https://www.investing.com/news/company-news/micron-completes-acquisition-of-psmc-facility-in-taiwan-93CH-4561596",
+   "summary": "Micron completes acquisition of PSMC facility in Taiwan &nbsp;&nbsp; Investing.com",
+   "source": "Investing.com",
+   "domain": "investing.com",
+   "pub_ts": 1773558000,
+   "pub_iso": "2026-03-15 04:00",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1785511637,
+   "cap_iso": "2026-07-31 12:27"
+  },
+  "https://news.google.com/rss/articles/CBMivgFBVV95cUxNajZtXzdQcFp6aEp4c01XU0ZyYmUtZlZ4VmVCejdtX2JmOXdDWnpCV1c3SEZrclpPa2syWV9nN19BSUFMbGtvWWFUQTJDM0V4R2YtNmtmdjVhT2NhV1ZtNlQ3VzRndm10bWxXZHVQUTh1d08teFlUakE4aEE3RmZySDQ5WWp5Y0xFbzFFZjhFRFAyTFRvR0xDYXRUZzJ1WG93dHdUbzBJSDVoZGRxNFpQbWM0cWZBS09Sb0I5YS13?oc=5": {
+   "title": "Quando será resolvido o problema das empresas de mineração que abandonam suas operações e entram com pedido de falência?",
+   "url": "https://www.vietnam.vn/pt/vu-doanh-nghiep-khai-thac-khoang-san-xong-roi-tinh-chay-lang-xin-pha-san-bao-gio-xu-ly-dut-diem",
+   "summary": "Quando será resolvido o problema das empresas de mineração que abandonam suas operações e entram com pedido de falência? &nbsp;&nbsp; Vietnam.vn",
+   "source": "Vietnam.vn",
+   "domain": "vietnam.vn",
+   "pub_ts": 1785503936,
+   "pub_iso": "2026-07-31 10:18",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785511637,
+   "cap_iso": "2026-07-31 12:27"
   }
  },
- "run_count": 59,
+ "run_count": 60,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -42395,11 +42463,23 @@
   "https://news.google.com/rss/articles/CBMivAFBVV95cUxQZndUcmozYkUxVlRvRk1xeFlfVXRObXlaeFA4bG5yNUJBZ3lBU3J0UGtNb0wzN2QtU2hDeFBMamRYMDBLam1GMjVlRXhlRXJMaXhvOVVvbDc3OEhsdkZmMHBZV3JYNDJ4NHlyNWNQUURKNUZpSnZxR0lBYURORmh6SGdiVGY5c3dUYkRkMFZ1c0c5QkJJOVJoVDQ2N0JmejJDNnBNdXAwYUR0TVRhY0JiUXhvUS1WNmRxcndHcNIBwgFBVV95cUxNT0ZJdU5xUllscl81QXllWHZMV1BDclFXVXhOMk05bmtwUjZVZ0VFdHloV0plRjdRZUN4WDRyaHMxdEY3NGZTODNxamZ5STFodEE0SkRfY19UQXdyLWMyaUlyVzJsOXJTMGMtNGhYTlo0VmpzSWEtcjVQRUlHOFd3XzJjMTZPV2RWOGtRTFl5MzBnTXMydk9TQXg4aDBWM05YcHVuTENtNjZsbUpWaVNyb2dmOTZqSTg0M3UzVFV5emMydw?oc=5": {
    "url": "https://www.infomoney.com.br/minhas-financas/passivo-na-justica-agrava-crise-e-desafia-empresas-em-recuperacao-judicial/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMisgFBVV95cUxONkJUNU9pU0Y2d0s1MHdvaUh2OEhIa1BHZG1oeDNoWUw1bWg5Rmw5UVRaRjhsNEF0NDY1dVo4SzR6VUtyU2djSTNHWUs2TEUxZXpzMEZZMHlqZTdCc1QtdWFBNjhfQXV3VjhTdmdQMHBXU3ZNWVg5Tm9qNmloY3lNUTYzY2pBaGZwY050cUFkMU1SblFMbGJYdmZNOTZoV0lZNHhaVHF5ZXpURHhlMGFqYWd3?oc=5": {
+   "url": "https://www.investing.com/news/company-news/micron-completes-acquisition-of-psmc-facility-in-taiwan-93CH-4561596",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMivgFBVV95cUxNajZtXzdQcFp6aEp4c01XU0ZyYmUtZlZ4VmVCejdtX2JmOXdDWnpCV1c3SEZrclpPa2syWV9nN19BSUFMbGtvWWFUQTJDM0V4R2YtNmtmdjVhT2NhV1ZtNlQ3VzRndm10bWxXZHVQUTh1d08teFlUakE4aEE3RmZySDQ5WWp5Y0xFbzFFZjhFRFAyTFRvR0xDYXRUZzJ1WG93dHdUbzBJSDVoZGRxNFpQbWM0cWZBS09Sb0I5YS13?oc=5": {
+   "url": "https://www.vietnam.vn/pt/vu-doanh-nghiep-khai-thac-khoang-san-xong-roi-tinh-chay-lang-xin-pha-san-bao-gio-xu-ly-dut-diem",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOSnlMZFY3V1hZUmF5UXprNDNpeWpMZDlrRnNJeENvTG9ZZFFLN0ZfeEpyd25FYzRaWGtIMDM3WkxDM2J1bXo0c1g1M0xWZE1TWUc1VzRaOWJqbnVIakRxS3dIampQV1NhNlN1Y3dkSUFSLWVYZjRTd3RySWZOWG5fMFBXcWtJQldJb0thTkdZVGU1S1RnWUJSY29DWjdCZlFmenlCTFJQVl9aNG9VWjlZWFRHUklFU1g0TnYzTnFYdUg5cGQyNXVOSVlxMVVEWUJNWURKZDNlaWJ2bkt0b0VfWU5LZ19QdHlBZkE?oc=5": {
+   "url": "https://br.advfn.com/jornal/2026/07/santander-anuncia-opa-de-ate-r-11-17-bilhoes-pelo-santander-brasil-para-ampliar-participacao-na-subsidiaria-brasileira",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785500157,
-  "iso": "31 jul 2026 · 09:15 BRT",
+  "ts": 1785511650,
+  "iso": "31 jul 2026 · 12:27 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
@@ -42411,7 +42491,7 @@
    },
    "Tok&Stok": {
     "status": "critico",
-    "score": 67
+    "score": 66
    },
    "Grupo Financiero Banorte": {
     "status": "critico",
@@ -42497,21 +42577,21 @@
     "status": "monitorar",
     "score": 21
    },
-   "Ultrapar": {
-    "status": "atencao",
-    "score": 20
-   },
    "Natura &Co": {
-    "status": "monitorar",
-    "score": 20
-   },
-   "Albioma": {
     "status": "monitorar",
     "score": 20
    },
    "EQT Corporation": {
     "status": "monitorar",
     "score": 20
+   },
+   "Ultrapar": {
+    "status": "atencao",
+    "score": 19
+   },
+   "Albioma": {
+    "status": "monitorar",
+    "score": 19
    },
    "Cemig": {
     "status": "atencao",
@@ -42561,11 +42641,11 @@
     "status": "monitorar",
     "score": 9
    },
-   "Vibra Energia": {
-    "status": "monitorar",
-    "score": 9
-   },
    "BRF": {
+    "status": "monitorar",
+    "score": 8
+   },
+   "Vibra Energia": {
     "status": "monitorar",
     "score": 8
    },
