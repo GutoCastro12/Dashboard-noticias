@@ -76,16 +76,32 @@ q_legacy_original = rd.build_company_query(legacy_company, cfg["taxonomy"])
 check(1, "build_company_queries(legado) == [build_company_query(legado)]",
       q_legacy == [q_legacy_original])
 
-print("2) Nenhum dos 160 emissores reais é opt-in")
-check(2, "uses_contextual_entity_resolution() é False para todos os 160 "
-        "emissores de config_risco.yaml",
-      all(not rd.uses_contextual_entity_resolution(c) for c in cfg["watchlist"]))
+# [Config Peru] config_risco.yaml agora inclui 4 emissores opt-in (Yura,
+# Trupal, Coazucar, Yobel — configurados via a arquitetura genérica já
+# integrada: search_terms/entity_cues/exclusion_cues/related_entities/
+# entity_scope/entity_confidence). Os 160 emissores originais permanecem
+# 100% legados (nenhum campo novo) — só esses 4 novos são opt-in.
+_PERU_OPT_IN = {"Yura", "Trupal", "Coazucar", "Yobel"}
+_legados = [c for c in cfg["watchlist"] if c["name"] not in _PERU_OPT_IN]
+_peru = [c for c in cfg["watchlist"] if c["name"] in _PERU_OPT_IN]
 
-print("3) Nenhum dos 160 gera mais de 1 query")
-check(3, "build_company_queries devolve exatamente 1 elemento para todos os "
-        "160 emissores reais",
+print(f"2) Nenhum dos {len(_legados)} emissores legados reais é opt-in "
+      f"(só os {len(_peru)} candidatos peruanos configurados nesta etapa)")
+check(2, f"uses_contextual_entity_resolution() é False para todos os "
+        f"{len(_legados)} emissores legados de config_risco.yaml, e True para "
+        f"os {len(_peru)} candidatos peruanos opt-in",
+      all(not rd.uses_contextual_entity_resolution(c) for c in _legados)
+      and len(_peru) == 4
+      and all(rd.uses_contextual_entity_resolution(c) for c in _peru))
+
+print(f"3) Nenhum dos {len(_legados)} emissores legados gera mais de 1 query")
+check(3, f"build_company_queries devolve exatamente 1 elemento para todos os "
+        f"{len(_legados)} emissores legados reais (candidatos peruanos opt-in "
+        f"podem gerar mais, via search_terms)",
       all(len(rd.build_company_queries(c, cfg["taxonomy"])) == 1
-          for c in cfg["watchlist"]))
+          for c in _legados)
+      and all(len(rd.build_company_queries(c, cfg["taxonomy"])) >= 1
+              for c in _peru))
 
 print("4) Search terms opt-in geram múltiplas queries, limitadas")
 q_optin = rd.build_company_queries(optin_company, cfg["taxonomy"])

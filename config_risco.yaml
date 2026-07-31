@@ -2050,6 +2050,363 @@ watchlist:
   aliases:
   - Viking Global Investors
   - Viking Global
+- name: Yura
+  razao_social: Yura S.A.
+  ruc: '20312372895'
+  asset_class: nao_listada
+  country: Peru
+  region: América Latina
+  language: es
+  tier: 2
+  sector: cimento e materiais de construção
+  economic_group: Grupo Gloria
+  entity_scope: legal_entity
+  entity_confidence: high
+  scoring_mode: normal
+  official:
+    site: https://www.yura.com.pe/
+    ri: A_REVISAR
+    hechos_importancia: A_REVISAR
+    regulator: SMV
+    bvl_issuer_page: https://www.bvl.com.pe/en/issuers/detail?companyCode=58501
+    rating_reports:
+    - https://moodyslocal.com.pe/wp-content/uploads/2025/11/MLPE_Informe-PUBLICO-Yura-y-subs-05112025.pdf
+    - https://informes.ratingspcr.com/Files/informes/2017/pe-yura-bc-202412.pdf
+  revisao: fontes oficiais (site institucional, portal SMV, página BVL do emissor) CONFIGURADAS
+    e confirmadas ACESSÍVEIS por pesquisa nas fases anteriores (ver source_inventory.csv/candidate_config.yaml
+    do worktree de teste dos candidatos peruanos); nenhuma delas foi ainda EFETIVAMENTE
+    TESTADA por probe_official_sources nesta etapa. RI/página de hechos de importância
+    específica ainda a confirmar.
+  aliases:
+  - Yura S.A.
+  - Yura SA
+  - Cemento Yura
+  - Cementos Yura
+  - Cementera Yura
+  search_terms:
+  - Yura S.A.
+  - Yura SA
+  - Cemento Yura
+  - Cementos Yura
+  - Cementera Yura
+  - Yura cemento
+  - Yura cementera
+  - Yura Grupo Gloria
+  - Yura Arequipa cemento
+  - Yura Perú cemento
+  - Yura resultados
+  - Yura gerente
+  - Yura rating
+  - Yura bonos
+  - Yura deuda
+  - Yura Indecopi
+  - Yura planta
+  - Yura producción de cemento
+  entity_cues:
+  - cemento
+  - cementera
+  - clínker
+  - clinker
+  - planta de cemento
+  - producción de cemento
+  - fábrica
+  - grupo gloria
+  - resultados financieros
+  - utilidades
+  - ingresos
+  - ventas
+  - bonos
+  - clasificación de riesgo
+  - gerente general
+  - yura s.a.
+  - indecopi
+  - arequipa
+  - sancionada
+  - conducta anticompetitiva
+  - abuso de posición de dominio
+  entity_cues_min: 2
+  exclusion_cues:
+  - distrito de yura
+  - municipio de yura
+  - carretera de yura
+  - vía yura
+  - vía arequipa-yura
+  - accidente en yura
+  - homicidio en yura
+  - crimen ocurrido en yura
+  - protesta
+  - vecinos del distrito
+  - titularidad estatal en yura
+  - yura tech
+  - yura corporation
+  - south korea
+  - corea del sur
+  related_entities:
+  - entity_name: SOBOCE
+    legal_name: null
+    relationship: subsidiary_international
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - SOBOCE
+  - entity_name: UCEM
+    legal_name: null
+    relationship: subsidiary_international
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - UCEM
+  - entity_name: Yura Chile SpA
+    legal_name: null
+    relationship: subsidiary_international
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - Yura Chile
+  - entity_name: Cementos Bío Bío
+    legal_name: null
+    relationship: participation_target
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - Cementos Bío Bío
+    - Cementos Bio Bio
+- name: Trupal
+  razao_social: Trupal S.A.
+  ruc: '20418453177'
+  asset_class: nao_listada
+  country: Peru
+  region: América Latina
+  language: es
+  tier: 3
+  sector: papel, cartão e embalagens
+  economic_group: Grupo Gloria
+  entity_scope: legal_entity
+  entity_confidence: high
+  scoring_mode: normal
+  official:
+    site: A_REVISAR
+    ri: A_REVISAR
+    hechos_importancia: A_REVISAR
+    regulator: SMV
+    rating_report: A_REVISAR
+  revisao: domínio institucional próprio não confirmado nesta pesquisa (site A_REVISAR);
+    prospecto de emissão de bonos ('2ª Emisión BS') localizado no portal da SMV, mas
+    vigência do programa/rating atual não confirmada — fonte oficial ainda NÃO configurada
+    de forma confiável, só o regulador (SMV) e o achado documental estão registrados.
+  aliases:
+  - Trupal
+  - Trupal S.A.
+  - Trupal SA
+  search_terms:
+  - Trupal
+  - Trupal S.A.
+  - Trupal SA
+  - Trupal Perú
+  - Trupal Grupo Gloria
+  - Trupal papel
+  - Trupal cartón
+  - Trupal empaques
+  - Trupal resultados
+  - Trupal deuda
+  - Trupal bonos
+  - Trupal rating
+  - Trupal gerente
+  - Trupal adquisición
+  - Trupal planta
+  entity_cues:
+  - papel
+  - cartón corrugado
+  - empaques flexibles
+  - grupo gloria
+  - trujillo
+  - el agustino
+  - planta papelera
+  - bonos
+  - resultados
+  - ventas
+  entity_cues_min: 3
+  exclusion_cues:
+  - papel higiênico
+  - papel moeda
+  related_entities:
+  - entity_name: Papelsa
+    legal_name: null
+    relationship: subsidiary
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - Papelsa
+- name: Coazucar
+  razao_social: Corporación Azucarera del Perú S.A.
+  ruc: '20511866210'
+  asset_class: nao_listada
+  country: Peru
+  region: América Latina
+  language: es
+  tier: 2
+  sector: agroindustrial e açúcar
+  economic_group: Grupo Gloria
+  entity_scope: holding
+  entity_confidence: high
+  scoring_mode: normal
+  official:
+    site: https://coazucar.com/
+    ri: A_REVISAR
+    hechos_importancia: A_REVISAR
+    regulator: SMV
+    rating_report: https://www.aai.com.pe/wp-content/uploads/2024/05/Coazucar-Dic-23.pdf
+  revisao: fonte oficial (site institucional, portal SMV, relatório de rating da Apoyo
+    & Asociados) CONFIGURADA e confirmada ACESSÍVEL nas fases anteriores; ainda NÃO
+    testada por probe_official_sources nesta etapa. Página específica de hechos de
+    importância e programa/série de bonos vigente ainda a confirmar.
+  aliases:
+  - Coazucar
+  - Coazúcar
+  - Coazucar del Perú
+  - Corporación Azucarera del Perú
+  - Corporacion Azucarera del Peru
+  search_terms:
+  - Coazucar
+  - Coazúcar
+  - Coazucar del Perú
+  - Corporación Azucarera del Perú
+  - Corporacion Azucarera del Peru
+  - Coazucar Grupo Gloria
+  - Coazucar resultados
+  - Coazucar bonos
+  - Coazucar deuda
+  - Coazucar rating
+  - Coazucar subsidiarias
+  - Coazucar Casa Grande
+  - Coazucar Cartavio
+  - Coazucar San Jacinto
+  - Coazucar Agrolmos
+  entity_cues:
+  - azúcar
+  - azucarera
+  - grupo gloria
+  - casa grande
+  - cartavio
+  - chicama
+  - la libertad
+  - ingenio azucarero peruano
+  - bonos
+  - resultados consolidados
+  - holding agroindustrial
+  entity_cues_min: 2
+  exclusion_cues:
+  - la troncal
+  - ecuador
+  - ingenio san carlos
+  related_entities:
+  - entity_name: Casa Grande S.A.A.
+    legal_name: Casa Grande S.A.A.
+    relationship: subsidiary
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - Casa Grande
+  - entity_name: Cartavio S.A.A.
+    legal_name: Cartavio S.A.A.
+    relationship: subsidiary
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - Cartavio
+  - entity_name: Agroindustrias San Jacinto S.A.
+    legal_name: Agroindustrias San Jacinto S.A.
+    relationship: subsidiary
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - San Jacinto
+  - entity_name: Empresa Agrícola Sintuco S.A.
+    legal_name: Empresa Agrícola Sintuco S.A.
+    relationship: subsidiary
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - Sintuco
+  - entity_name: Agrolmos S.
+    legal_name: Agrolmos S.
+    relationship: subsidiary
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - Agrolmos
+  - entity_name: Empresa Agraria Chiquitoy S.A.
+    legal_name: Empresa Agraria Chiquitoy S.A. (em dissolução/liquidação)
+    relationship: subsidiary
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - Chiquitoy
+- name: Yobel
+  razao_social: Marca/grupo — entidade jurídica a confirmar (candidatas identificadas
+    - Yobel Supply Chain Management S.A. RUC 20100074029; Yobel SCM Logistics S.A.
+    RUC 20100181534)
+  asset_class: nao_listada
+  country: Peru
+  region: América Latina
+  language: es
+  tier: 3
+  sector: manufatura/logística terceirizada (cosméticos, higiene, farma)
+  economic_group: A_REVISAR (grupo privado, controlador final não identificado)
+  entity_scope: brand_group
+  entity_confidence: medium
+  legal_entity_status: pending_final_confirmation
+  scoring_mode: monitoramento_limitado
+  scoreable: false
+  official:
+    site: https://www.yobelscm.biz/
+    ri: null
+    hechos_importancia: null
+    regulator: null
+    rating_report: null
+  revisao: nenhum registro SMV/BVL localizado para qualquer uma das duas razões sociais
+    candidatas nas fases anteriores — consistente com empresa de capital fechado sem
+    obrigações de divulgação pública. Site institucional CONFIGURADO e confirmado ACESSÍVEL;
+    nenhuma fonte regulatória oficial existe para configurar. Entidade jurídica peruana
+    exata (manufatura vs. logística) permanece "a confirmar" — por isso entity_scope=brand_group
+    e scoreable=false.
+  aliases:
+  - Yobel
+  - Yobel Perú
+  - Yobel Peru
+  - Yobel SCM
+  - Yobel Supply Chain Management
+  - Yobel SCM Logistics
+  search_terms:
+  - Yobel
+  - Yobel Perú
+  - Yobel Peru
+  - Yobel SCM
+  - Yobel Supply Chain Management
+  - Yobel SCM Logistics
+  - Yobel Los Olivos
+  - Yobel incendio
+  - Yobel almacén
+  - Yobel planta
+  - Yobel resultados
+  - Yobel expansión
+  - Yobel gerente
+  entity_cues:
+  - cosméticos
+  - perfumería
+  - manufatura terceirizada
+  - supply chain
+  - san genaro
+  - los olivos
+  - lima, perú
+  - belcorp
+  - yanbal
+  - grupo belmont
+  - logística
+  - almacenamiento
+  - almacén
+  - fábrica
+  entity_cues_min: 2
+  exclusion_cues:
+  - yobel méxico
+  - yobel mexico
+  - yobel colombia
+  - yobel ecuador
+  - yobel el salvador
+  - yobel panamá
+  - yobel guatemala
+  - yobel costa rica
+  - yobel república dominicana
+  - yobel puerto rico
 source_trust:
   default_tier: outros
   overrides:
@@ -2618,6 +2975,15 @@ taxonomy:
   - enforcement action
   - investigación regulatoria
   - expediente sancionador
+  - sanción de Indecopi
+  - multa de Indecopi
+  - procedimiento sancionador
+  - sancionada por Indecopi
+  - infracción administrativa
+  - sanción regulatoria
+  - conducta anticompetitiva
+  - práctica anticompetitiva
+  - sanción por libre competencia
 - id: lucro_abaixo_consenso
   label: Lucro muito abaixo do consenso
   severity: alto
@@ -3774,6 +4140,20 @@ official_sources:
     bolsa: BVM
     idioma: es
     viabilidade: media
+  Peru:
+    regulador: SMV — Superintendencia del Mercado de Valores
+    filings: null
+    filings_url: https://www.smv.gob.pe/
+    api: null
+    bolsa: BVL — Bolsa de Valores de Lima
+    idioma: es
+    viabilidade: a_confirmar
+    nota: 'Portal geral do regulador (SMV) e da bolsa (BVL) CONFIGURADOS e confirmados
+      ACESSÍVEIS por pesquisa nas fases anteriores dos 4 candidatos peruanos (ver
+      source_inventory.csv/candidate_config.yaml do worktree de teste); página
+      específica de hechos de importancia por emissor e endpoint estruturado (API/RSS)
+      não localizados nesta pesquisa — nenhum deles foi ainda EFETIVAMENTE TESTADO
+      por probe_official_sources nesta etapa.'
 fund_sources:
   enabled: false
   regulador: CVM

@@ -761,7 +761,8 @@ function renderRadar(){
         ${(() => {
           const info = row.informational_events||[];
           const pos = info.filter(c => c.display_category === 'positivo');
-          const neu = info.filter(c => c.display_category !== 'positivo');
+          const revisar = info.filter(c => c.display_category === 'a_revisar');
+          const neu = info.filter(c => c.display_category !== 'positivo' && c.display_category !== 'a_revisar');
           const bloco = (titulo, cls, itens) => !itens.length ? '' : `
         <div class="info-block ${cls}">
           <div class="info-title">${titulo}</div>
@@ -780,7 +781,8 @@ function renderRadar(){
             </div>`).join('')}
         </div>`;
           return bloco('Sinal positivo · não pontua', 'positive', pos)
-               + bloco('Evento informativo · não pontua', 'neutral', neu);
+               + bloco('Evento informativo · não pontua', 'neutral', neu)
+               + bloco('Evento a revisar · não pontua', 'neutral', revisar);
         })()}
       </div>
     </div>`).join('');
