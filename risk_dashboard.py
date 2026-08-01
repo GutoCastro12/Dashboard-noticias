@@ -93,10 +93,16 @@ def link_fields(d: dict) -> dict:
     try:
         import link_debt_audit as _lk
     except Exception:
+        # [fix: complete Peru news links] mesmo sem o módulo de resolução
+        # disponível, uma URL do Google News/agregador já coletada é
+        # clicável no navegador real do usuário — não bloquear só por ser
+        # esse domínio (o usuário resolve o redirect ao clicar).
         u = d.get("url", "") or ""
-        ok = bool(u) and "news.google.com" not in u
+        ok = bool(u)
+        label = "Abrir notícia →" if "news.google.com" not in (u or "") \
+            else "Abrir notícia (via agregador) →"
         return {"href": u if ok else "", "render_anchor": ok,
-                "label": "Abrir notícia →" if ok else "Link em verificação",
+                "label": label if ok else "Link em verificação",
                 "link_health": "nao_verificado"}
     if d.get("link_health") and "link_render_anchor" in d:
         href = d.get("display_url") or ""
@@ -777,6 +783,94 @@ def build_company_queries(company: dict, taxonomy: list[dict]) -> list[str]:
         if len(queries) >= max_terms:
             break
     return queries or [build_company_query(company, taxonomy)]
+
+
+def fetch_related_entities_context(company: dict, cfg: dict,
+                                   session: "requests.Session | None" = None) -> list[dict]:
+    """[fix: complete Peru news links taxonomy and holding coverage] Busca
+    real (Google News) de cada `related_entities` do emissor (opt-in via
+    `fetch_related_entities: true`) e devolve artigos JÁ FORMATADOS como
+    CONTEXTO DA HOLDING — nunca como alias/atribuição direta.
+
+    Cada artigo retornado tem: `companies=[company["name"]]` (para
+    `merge_into_history` persistir o registro), `context_events_by_company`
+    com `subject_company=<subsidiária>`, `relationship='subsidiary'`,
+    `query_scope='related_entity'` — e `events_by_company`/`event_ids`
+    SEMPRE vazios (nunca pontua a holding). Se a subsidiária não tiver
+    nenhum evento da taxonomia no texto, o artigo é descartado (não
+    persiste ruído). Emissores sem `fetch_related_entities` continuam
+    100% inalterados — função só roda quando chamada explicitamente."""
+    if not company.get("fetch_related_entities") or not company.get("related_entities"):
+        return []
+    taxonomy = cfg.get("taxonomy", [])
+    out = []
+    for rel in company["related_entities"]:
+        rel_name = rel.get("entity_name", "")
+        if not rel_name:
+            continue
+        aliases = rel.get("aliases") or [rel_name]
+        pais = company.get("country", "")
+        termo = aliases[0]
+        query = f'"{termo}" {pais}'.strip() if pais else f'"{termo}"'
+        try:
+            loc = locale_for_company(company, cfg)
+        except Exception:
+            loc = None
+        try:
+            arts = fetch_query(query, cfg, session or requests.Session(), locale=loc)
+        except Exception as exc:
+            print(f"   ⚠️  related_entity '{rel_name}' de '{company['name']}': "
+                 f"falha na busca ({type(exc).__name__}) — ignorado nesta execução.")
+            continue
+        # sinais de relevância do SETOR da holding (ex.: "azúcar"/"grupo
+        # gloria" para a Coazucar) — o nome de uma subsidiária muitas vezes
+        # coincide com topônimo/instituição homônima sem relação nenhuma
+        # (ex.: "Casa Grande" = asilo em Rosario/Argentina, nada a ver com a
+        # subsidiária peruana) — exigir >=1 sinal de setor reduz esse ruído
+        # sem inventar nenhuma entidade de resolução nova. Usa `related_
+        # entity_relevance_cues` se declarado (mais preciso — exclui os
+        # próprios nomes das subsidiárias, que sempre "batem" trivialmente
+        # por já terem sido o termo de busca); cai para `entity_cues` da
+        # holding só como fallback, removendo os nomes das subsidiárias
+        # (senão o filtro não filtra nada — "casa grande"/"cartavio" já
+        # estavam listados como entity_cues da própria holding).
+        _nomes_subs = {normalize(a) for r in (company.get("related_entities") or [])
+                       for a in ([r.get("entity_name", "")] + list(r.get("aliases") or []))}
+        setor_cues = [normalize(c) for c in
+                     (company.get("related_entity_relevance_cues")
+                      or company.get("entity_cues") or [])
+                     if normalize(c) not in _nomes_subs]
+        for a in arts:
+            texto = normalize(f"{a.get('title','')} {a.get('summary','')}")
+            if setor_cues and not any(c and c in texto for c in setor_cues):
+                continue  # sem nenhum sinal de setor da holding — provável homônimo
+            evs = classify_article(a, taxonomy)
+            eids = [e["id"] for e in evs]
+            a["companies"] = [company["name"]]
+            a["events"] = evs or [{"id": "sem_evento_taxonomico",
+                                   "label": "Evento a revisar (sem correspondência na taxonomia atual)",
+                                   "severity": "info", "direction": "neutra", "score": 0,
+                                   "dimensions": [], "applies_to": []}]
+            a["event_ids"] = eids or ["sem_evento_taxonomico"]
+            a["events_by_company"] = {company["name"]: []}  # nunca pontua a holding
+            _ctx_eids = eids or ["sem_evento_taxonomico"]
+            a["context_events_by_company"] = {company["name"]: [{
+                "event_id": eid, "event_label": next(
+                    (e.get("label", eid) for e in evs if e["id"] == eid),
+                    "Evento a revisar (sem correspondência na taxonomia atual)" if eid == "sem_evento_taxonomico" else eid),
+                "subject_company": rel_name,
+                "relation_type": rel.get("relationship", "subsidiary"),
+                "impact_type": "indireto_material",
+                "event_scope": "indireto",
+                "event_phase": "", "direction": "neutra", "scoreable": False,
+                "attribution_confidence": "media",
+                "attribution_evidence": f"related_entity '{rel_name}' de '{company['name']}'",
+            } for eid in _ctx_eids]}
+            a["query_scope"] = "related_entity"
+            a["query_related_entity"] = rel_name
+            a["query_company"] = company["name"]
+            out.append(a)
+    return out
 
 
 _SEARCH_TELEMETRY: dict = {}
@@ -4710,7 +4804,8 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
                         "scoring_mode": c.get("scoring_mode", "normal"),
                         "coverage": coverage_of(c, cfg)[0],
                         "regulator": coverage_of(c, cfg)[1],
-                        "filing_system": coverage_of(c, cfg)[2]}
+                        "filing_system": coverage_of(c, cfg)[2],
+                        "fetch_related_entities": bool(c.get("fetch_related_entities"))}
             for c in cfg.get("watchlist", [])}
     ev_cfg = cfg.get("evolution", {})
     if window_days is None:
@@ -4908,6 +5003,17 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
             if _evs and _co != MARKET_LABEL and _co in meta:
                 per_company.setdefault(_co, [])
 
+    # [fix: complete Peru news links taxonomy and holding coverage] holding
+    # com monitoramento de related_entities configurado (`fetch_related_
+    # entities: true`) sempre tem card visível — mesmo em uma execução sem
+    # NENHUMA notícia (direta ou de subsidiária) encontrada nesta janela.
+    # "Card ausente" esconderia que a holding está sendo monitorada; "card
+    # com score 0 e 0 notícias" é a superfície de monitoramento honesta.
+    # Opt-in, aditivo — nenhum dos 160 emissores reais declara esse campo.
+    for _c in cfg.get("watchlist", []):
+        if _c.get("fetch_related_entities") and _c.get("name"):
+            per_company.setdefault(_c["name"], [])
+
     def best_contribs(negatives: list[dict], as_of_ts: int) -> dict[str, dict]:
         """Por tipo de evento, a ocorrência de MAIOR contribuição até as_of_ts:
         contribuição = peso-base × decaimento × confiança da fonte + bônus de
@@ -4945,7 +5051,12 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
         negatives = [o for o in occurrences if not o["positive"]]
         _tem_contexto = bool(_build_context_events(history, company, cutoff))
         _tem_informativo = bool(_build_informational_events(history, company, cutoff))
-        if not negatives and not _tem_contexto and not _tem_informativo:
+        # [fix: complete Peru news links taxonomy and holding coverage]
+        # holding com `fetch_related_entities` sempre mantém a linha, mesmo
+        # zerada — é a superfície de monitoramento, não "sem cobertura".
+        _meta_c = meta.get(company, {}) or {}
+        _sempre_visivel = bool(_meta_c.get("fetch_related_entities"))
+        if not negatives and not _tem_contexto and not _tem_informativo and not _sempre_visivel:
             continue  # só contexto/informativo: não é linha de risco
         # Sem evento pontuável MAS com contexto ou sinal direto informativo
         # relevante: a linha é mantida com score 0 apenas para exibir
@@ -7488,6 +7599,67 @@ def classify_and_attribute(art: dict, cfg: dict) -> None:
     # scoreable=False explícito) nunca pontua — OPT-IN, aditivo. Emissores
     # sem esses campos (os 160 reais) não são tocados por esta chamada.
     suppress_non_scoreable_entity_scopes(art, cfg)
+
+    # 9) [fix: complete Peru news links taxonomy and holding coverage]
+    # evento DIRETO de peso-base 0 na taxonomia (positivo/neutro-informativo
+    # — rating_elevado, outlook_positivo, recomendacao_positiva, e os novos
+    # retomada_operacional/expansao_capacidade/investimento_operacional)
+    # nunca precisa de card em events_by_company (score 0 não muda o total
+    # de qualquer forma) — move para informational_events_by_company para
+    # aparecer como "Sinal positivo/Evento informativo · não pontua" em vez
+    # de um chip solto. Complementa (nunca substitui) os casos específicos
+    # já tratados por semantic_audit.py e suppress_non_scoreable_entity_
+    # scopes. Aditivo e idempotente.
+    route_zero_score_direct_events_to_informational(art, cfg)
+
+
+def route_zero_score_direct_events_to_informational(art: dict, cfg: dict) -> None:
+    """[fix: complete Peru news links taxonomy and holding coverage] Move
+    para `informational_events_by_company` qualquer evento que sobrou em
+    `events_by_company` com peso-base 0 na taxonomia (positivo ou neutro/
+    informativo) — nunca precisa ficar como chip solto de `events_by_
+    company`, já que não pontua de qualquer forma; o usuário vê "Sinal
+    positivo · não pontua" ou "Evento informativo · não pontua" em vez de
+    título genérico. Generaliza (sem duplicar) os casos específicos já
+    tratados por `semantic_audit.py` (M&A/família de rating) e
+    `suppress_non_scoreable_entity_scopes` (brand_group/pending) — estes
+    já removem seus próprios eventos de `events_by_company` antes desta
+    função rodar, então não há conflito. Aditivo, idempotente (checa
+    `source_record_id` antes de duplicar)."""
+    taxonomy = {e["id"]: e for e in cfg.get("taxonomy", [])}
+    ebc = art.get("events_by_company") or {}
+    _url = art.get("url", "")
+    for name in list(ebc.keys()):
+        ids = ebc.get(name) or []
+        zero_ids = [eid for eid in ids if taxonomy.get(eid, {}).get("score", 1) == 0]
+        if not zero_ids:
+            continue
+        ebc[name] = [eid for eid in ids if eid not in zero_ids]
+        info = art.setdefault("informational_events_by_company", {})
+        info.setdefault(name, [])
+        for eid in zero_ids:
+            already = any(x.get("event_id") == eid and x.get("source_record_id") == _url
+                         for x in info[name])
+            if already:
+                continue
+            ev = taxonomy.get(eid, {})
+            direction = ev.get("direction", "neutra")
+            display = "positivo" if direction == "positiva" else "informativo"
+            info[name].append({
+                "company": name, "event_id": eid,
+                "event_label": ev.get("label", eid).replace("_", " "),
+                "subject_company": name, "monitored_company": name,
+                "relation_type": "direto", "event_scope": "direto",
+                "direction": direction, "scoreable": False,
+                "display_category": display,
+                "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+                "attribution_confidence": "media",
+                "title": art.get("title", ""), "url": _url,
+                "pub_ts": art.get("pub_ts"),
+                "observation": (f"Evento direto '{ev.get('label', eid)}' tem peso-base 0 "
+                               "na taxonomia (positivo/informativo) — não pontua."),
+                "source_record_id": _url,
+            })
 
 
 def run_link_repair(args, cfg) -> int:

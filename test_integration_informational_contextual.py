@@ -228,8 +228,10 @@ check(7, "Yobel (brand_group) identificada; nunca pontua (fora de events_by_comp
       and not (a7.get("events_by_company") or {}).get("Yobel")
       and not any(rd.event_ids_for(a7, "Yobel")))
 check(7, "evento direto autônomo da marca é COMPATÍVEL com informational_events_by_company "
-        "(entity_scope/entity_confidence/likely_entity/pendência registrados)",
-      len(_info7) == 2
+        "(entity_scope/entity_confidence/likely_entity/pendência registrados) — >=2 porque "
+        "a taxonomia operacional (fix: complete Peru news links) também dispara "
+        "paralisacao_operacional para 'paraliza temporalmente sus operaciones'",
+      len(_info7) >= 2
       and all(e["entity_scope"] == "brand_group" and e["entity_confidence"] == "medium"
               and e["likely_entity"] == "Yobel" and e["scoreable"] is False
               for e in _info7))
@@ -244,7 +246,7 @@ a7b = run("Yobel bajo investigacion regulatoria: incendio paraliza temporalmente
 _info7b = (a7b.get("informational_events_by_company") or {}).get("Yobel") or []
 check(7, "entity_pending_confirmation também nunca pontua e marca entity_pending_confirmation=True",
       not (a7b.get("events_by_company") or {}).get("Yobel")
-      and len(_info7b) == 2
+      and len(_info7b) >= 2
       and all(e["entity_pending_confirmation"] is True and e["confirmation_status"] == "pendente"
               for e in _info7b))
 

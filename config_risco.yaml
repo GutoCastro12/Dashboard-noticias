@@ -2245,6 +2245,22 @@ watchlist:
   entity_scope: holding
   entity_confidence: high
   scoring_mode: normal
+  # [fix: complete Peru news links taxonomy and holding coverage] opt-in,
+  # genérico (fetch_related_entities_context() em risk_dashboard.py): busca
+  # real das related_entities (Casa Grande, Cartavio, San Jacinto, Sintuco,
+  # Agrolmos, Chiquitoy) e roteia SEMPRE para context_events_by_company —
+  # nunca alias, nunca score transferido para a holding.
+  fetch_related_entities: true
+  # sinais de setor INDEPENDENTES do nome da subsidiária (que já é o termo de
+  # busca e sempre "bateria" trivialmente) — reduz falso positivo por
+  # homônimo (ex.: "Casa Grande" = asilo em Rosario/Argentina).
+  related_entity_relevance_cues:
+  - azúcar
+  - azucarera
+  - grupo gloria
+  - ingenio azucarero peruano
+  - holding agroindustrial
+  - agroindustrial
   official:
     site: https://coazucar.com/
     ri: A_REVISAR
@@ -3068,6 +3084,23 @@ taxonomy:
   - warehouse fire
   - industrial fire
   - operational incident
+  - fuego en almacen de
+  - fuego en almacén de
+  - incendio se reactiva
+  - se reactiva incendio
+  - incendio reactivado
+  - no se extingue
+  - incendio se registró
+  - incendio se registro
+  - se registró un incendio
+  - se registro un incendio
+  - incendio consume
+  - incendio consumió
+  - fuego consume
+  - siniestro que consumió
+  - siniestro que consumio
+  - extinción del fuego
+  - extincion del fuego
   negations:
   - simulado de incêndio
   - exercício de evacuação
@@ -3105,6 +3138,8 @@ taxonomy:
   - cierre temporal de la planta
   - operación suspendida
   - suspendió sus operaciones
+  - paraliza temporalmente sus operaciones
+  - paraliza sus operaciones
   - temporary shutdown
   - plant shutdown
   - operations suspended
@@ -3152,6 +3187,17 @@ taxonomy:
   - heridos graves
   - evacuación preventiva
   - código 4
+  - incendio de grandes proporciones
+  - colapso del techo
+  - colapso de techo
+  - destruye almacen
+  - destruye almacén
+  - destruye fabrica
+  - destruye fábrica
+  - arrasó con fábrica
+  - arraso con fabrica
+  - voraz incendio
+  - de grandes proporciones
   - major industrial fire
   - multiple explosions
   - facility destroyed
@@ -3159,6 +3205,198 @@ taxonomy:
   - prolonged shutdown
   - fatalities
   - major evacuation
+- id: retomada_operacional
+  label: Retomada operacional
+  severity: info
+  direction: positiva
+  score: 0
+  dimensions:
+  - operacional
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - retoma operaciones
+  - reanuda operaciones
+  - reinicia produccion
+  - reinicia producción
+  - normaliza sus operaciones
+  - vuelve a operar
+  - retoma la producción
+  - volta a operar
+  - retoma as operações
+  - resumes operations
+  - resumed operations
+  - back in operation
+- id: expansao_capacidade
+  label: Expansão de capacidade
+  severity: info
+  direction: positiva
+  score: 0
+  dimensions:
+  - operacional
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - amplia capacidad
+  - amplía capacidad
+  - aumenta capacidad
+  - nueva linea de produccion
+  - nueva línea de producción
+  - expande operaciones
+  - abre nuevo centro
+  - inaugura centro logistico
+  - inaugura centro logístico
+  - nuevos centros logisticos
+  - nuevos centros logísticos
+  - amplia sua capacidade
+  - nova linha de produção
+  - capacity expansion
+  - new production line
+  - acelera expansión en
+  - acelera expansion en
+  - entra al negocio de
+  - impulsa su presencia regional
+  - refuerza su capacidad operativa
+  - ingresa por primera vez al ranking
+- id: investimento_operacional
+  label: Investimento operacional
+  severity: info
+  direction: neutra
+  score: 0
+  dimensions:
+  - operacional
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - impulsa millonaria inversion
+  - impulsa millonaria inversión
+  - apuesta por la energia solar
+  - apuesta por la energía solar
+  - invierte en
+  - inversion en dos proyectos
+  - inversión en dos proyectos
+  - modernizacion de planta
+  - modernización de planta
+  - moderniza su planta
+  - investimento em energia
+  - moderniza a planta
+  - operational investment
+  - invests in
+  - impulsa proyectos de infraestructura
+  - genera ahorros por
+  - apuesta por energía solar
+  - apuesta por energia solar
+  - declaración ambiental de producto
+  - declaracion ambiental de producto
+  - alista inversión para modernizar
+  - alista inversion para modernizar
+  - convierte la sostenibilidad en ventaja
+  - modelo de triple impacto
+  - modelo de empaques sostenibles
+- id: deterioracao_operacional
+  label: Deterioração operacional
+  severity: alto
+  direction: negativa
+  score: 35
+  dimensions:
+  - operacional
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - caida relevante de la produccion
+  - caída relevante de la producción
+  - caida relevante de ventas
+  - caída relevante de ventas
+  - reduccion significativa de la utilizacion de capacidad
+  - redução significativa de utilização de capacidade
+  - queda relevante da producao
+  - queda relevante da produção
+  - significant production decline
+  - significant drop in sales
+- id: impacto_ambiental_operacional
+  label: Impacto ambiental operacional
+  severity: alto
+  direction: negativa
+  score: 45
+  dimensions:
+  - operacional
+  - regulatorio
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - dano ambiental confirmado
+  - daño ambiental confirmado
+  - contaminacion confirmada
+  - contaminación confirmada
+  - multa ambiental
+  - sancion ambiental confirmada
+  - sanción ambiental confirmada
+  - confirmed environmental damage
+  - environmental fine
+  negations:
+  - monitoreo ambiental
+  - monitoramento ambiental
+  - sin daño confirmado
+  - sin dano confirmado
+  - sem dano confirmado
+- id: resultado_acima_expectativas
+  label: Resultado acima das expectativas
+  severity: info
+  direction: positiva
+  score: 0
+  dimensions:
+  - mercado
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - alcanza utilidades de
+  - crecimiento en ventas y récords históricos
+  - crecimiento en ventas y records historicos
+  - resultado recorde
+  - resultado récord
+  - utilidades recorde
+  - lucro recorde
+  - record profit
+  - record earnings
+- id: resultado_financeiro_negativo
+  label: Resultado financeiro negativo
+  severity: alto
+  direction: negativa
+  score: 40
+  dimensions:
+  - mercado
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - caida en utilidades
+  - caída en utilidades
+  - perdidas significativas
+  - pérdidas significativas
+  - resultado muy por debajo de lo esperado
+  - queda acentuada no lucro
+  - significant loss
+  - profit collapse
+  negations:
+  - resultado dentro do esperado
+  - variação pequena
 - id: lucro_abaixo_consenso
   label: Lucro muito abaixo do consenso
   severity: alto
@@ -3322,6 +3560,14 @@ taxonomy:
   - renuncia el ceo
   - nuevo director ejecutivo
   - cambio de ceo
+  - nuevo gerente general
+  - renuncia del gerente general
+  - sale como gerente general
+  - como gerente general
+  - gerente general de
+  - deja la gerencia general
+  - nomeação de novo gerente-geral
+  - troca de gerente-geral
 - id: outlook_negativo
   label: Outlook negativo
   severity: medio
