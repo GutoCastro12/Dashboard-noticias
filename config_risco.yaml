@@ -2332,47 +2332,52 @@ watchlist:
     aliases:
     - Chiquitoy
 - name: Yobel
-  razao_social: Marca/grupo — entidade jurídica a confirmar (candidatas identificadas
-    - Yobel Supply Chain Management S.A. RUC 20100074029; Yobel SCM Logistics S.A.
-    RUC 20100181534)
+  razao_social: Yobel Supply Chain Management S.A.
+  ruc: '20100074029'
   asset_class: nao_listada
   country: Peru
   region: América Latina
   language: es
   tier: 3
-  sector: manufatura/logística terceirizada (cosméticos, higiene, farma)
+  sector: manufatura terceirizada de cosméticos, higiene e produtos de consumo
   economic_group: A_REVISAR (grupo privado, controlador final não identificado)
-  entity_scope: brand_group
-  entity_confidence: medium
-  legal_entity_status: pending_final_confirmation
-  scoring_mode: monitoramento_limitado
-  scoreable: false
+  entity_scope: legal_entity
+  entity_confidence: high
+  legal_entity_status: confirmed_for_operational_monitoring
+  scoring_mode: normal
+  scoreable: true
   official:
     site: https://www.yobelscm.biz/
     ri: null
     hechos_importancia: null
     regulator: null
     rating_report: null
-  revisao: nenhum registro SMV/BVL localizado para qualquer uma das duas razões sociais
-    candidatas nas fases anteriores — consistente com empresa de capital fechado sem
-    obrigações de divulgação pública. Site institucional CONFIGURADO e confirmado ACESSÍVEL;
-    nenhuma fonte regulatória oficial existe para configurar. Entidade jurídica peruana
-    exata (manufatura vs. logística) permanece "a confirmar" — por isso entity_scope=brand_group
-    e scoreable=false.
+  revisao: >-
+    entidade jurídica operacional CONFIRMADA — incêndio real de 24/07/2026 ocorreu
+    em planta industrial de cosméticos no endereço Av. San Genaro, Los Olivos, onde a
+    Yobel Supply Chain Management S.A. (RUC 20100074029) possui estabelecimento produtivo;
+    natureza da operação (manufatura de cosméticos) compatível com o fato relatado —
+    atribuição operacional com confiança alta. Deixa de ser brand_group/monitoramento
+    limitado/scoreable=false. Nenhum dado de posição real (razão social/RUC/garantidor/
+    devedor) foi encontrado neste repositório para confirmar a correspondência entre a
+    entidade operacional afetada e o emissor da posição na carteira — pendência aberta,
+    registrada mas não bloqueante (regra C da tarefa de configuração operacional) —
+    "Confirmar correspondência entre a entidade operacional afetada e o emissor da
+    posição." Site institucional CONFIGURADO e confirmado ACESSÍVEL; nenhuma fonte
+    regulatória oficial (SMV/BVL) localizada — consistente com empresa de capital fechado.
   aliases:
   - Yobel
   - Yobel Perú
   - Yobel Peru
-  - Yobel SCM
   - Yobel Supply Chain Management
-  - Yobel SCM Logistics
+  - Yobel Supply Chain Management S.A.
   search_terms:
   - Yobel
   - Yobel Perú
   - Yobel Peru
-  - Yobel SCM
   - Yobel Supply Chain Management
-  - Yobel SCM Logistics
+  - Yobel Supply Chain Management S.A.
+  - Yobel SCM
   - Yobel Los Olivos
   - Yobel incendio
   - Yobel almacén
@@ -2380,6 +2385,15 @@ watchlist:
   - Yobel resultados
   - Yobel expansión
   - Yobel gerente
+  related_entities:
+  - entity_name: Yobel SCM Logistics
+    legal_name: Yobel SCM Logistics S.A.
+    ruc: '20100181534'
+    relationship: related_operating_company
+    attribution_mode: context_unless_direct_impact
+    aliases:
+    - Yobel SCM Logistics
+    - Yobel Logistics
   entity_cues:
   - cosméticos
   - perfumería
@@ -2407,6 +2421,9 @@ watchlist:
   - yobel costa rica
   - yobel república dominicana
   - yobel puerto rico
+  - yobel scm logistics
+  - yobel logistics
+  - '20100181534'
 source_trust:
   default_tier: outros
   overrides:
@@ -2975,15 +2992,173 @@ taxonomy:
   - enforcement action
   - investigación regulatoria
   - expediente sancionador
-  - sanción de Indecopi
-  - multa de Indecopi
   - procedimiento sancionador
-  - sancionada por Indecopi
   - infracción administrativa
-  - sanción regulatoria
   - conducta anticompetitiva
   - práctica anticompetitiva
+  - processo administrativo aberto
+  - apuração em curso
+  - investigação da autoridade
+- id: sancao_regulatoria
+  label: Sanção regulatória
+  severity: alto
+  direction: negativa
+  score: 45
+  dimensions:
+  - regulatorio
+  - governanca
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  - gestora_fundo
+  keywords:
+  - sanción de Indecopi
+  - multa de Indecopi
+  - sancionada por Indecopi
+  - sanción regulatoria
   - sanción por libre competencia
+  - multa regulatória
+  - aplicação de multa
+  - penalidade administrativa
+  - fined by the regulator
+  - regulatory fine
+  - sanctioned by
+  - penalty imposed
+  - multa impuesta
+  - impuso una sanción
+  - confirmó la sanción
+  negations:
+  - proposta de multa
+  - possibilidade de sanção
+  - investigação aberta
+  - decisão preliminar sem efeito
+  - recurso ainda sem decisão
+  - empresa absolvida
+  - processo arquivado
+  - multa anulada
+  - sanção revogada
+- id: incidente_operacional
+  label: Incidente operacional
+  severity: medio
+  direction: negativa
+  score: 20
+  dimensions:
+  - operacional
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - incêndio em fábrica
+  - incêndio em planta
+  - incêndio em armazém
+  - incêndio industrial
+  - sinistro operacional
+  - explosão em unidade
+  - incendio en planta
+  - incendio en fábrica
+  - incendio en almacén
+  - incendio industrial
+  - siniestro en instalación
+  - fire at plant
+  - factory fire
+  - warehouse fire
+  - industrial fire
+  - operational incident
+  negations:
+  - simulado de incêndio
+  - exercício de evacuação
+  - prevenção de incêndio
+  - risco de incêndio
+  - incêndio nas proximidades
+  - incêndio florestal sem impacto na empresa
+  - fogo controlado antes de atingir a instalação
+  - capacitación contra incendios
+  - simulacro de incendio
+  - fire drill
+  - wildfire near the facility without impact
+- id: paralisacao_operacional
+  label: Paralisação operacional
+  severity: alto
+  direction: negativa
+  score: 40
+  dimensions:
+  - operacional
+  - credito
+  - liquidez
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - paralisação da fábrica
+  - planta paralisada
+  - produção suspensa
+  - operações suspensas
+  - unidade temporariamente fechada
+  - paralización temporal de operaciones
+  - planta paralizada
+  - producción suspendida
+  - cierre temporal de la planta
+  - operación suspendida
+  - suspendió sus operaciones
+  - temporary shutdown
+  - plant shutdown
+  - operations suspended
+  - production halted
+  - temporarily ceased operations
+  negations:
+  - manutenção programada
+  - parada programada
+  - manutenção preventiva
+  - férias coletivas programadas
+  - operações já retomadas sem novo fato negativo
+  - mantenimiento programado
+  - scheduled maintenance
+  - planned shutdown
+- id: incidente_operacional_grave
+  label: Incidente operacional grave
+  severity: alto
+  direction: negativa
+  score: 60
+  dimensions:
+  - operacional
+  - credito
+  - liquidez
+  - regulatorio
+  - governanca
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - incêndio de grandes proporções
+  - incêndio atinge grande parte da fábrica
+  - múltiplas explosões
+  - explosões sucessivas
+  - destruição da planta
+  - perda relevante da unidade
+  - acidente fatal
+  - vítimas fatais
+  - incendio de gran magnitud
+  - múltiples explosiones
+  - materiales altamente inflamables
+  - destrucción de la planta
+  - daños materiales graves
+  - víctimas mortales
+  - heridos graves
+  - evacuación preventiva
+  - código 4
+  - major industrial fire
+  - multiple explosions
+  - facility destroyed
+  - severe property damage
+  - prolonged shutdown
+  - fatalities
+  - major evacuation
 - id: lucro_abaixo_consenso
   label: Lucro muito abaixo do consenso
   severity: alto
@@ -4260,4 +4435,24 @@ event_resolution:
       priority:
       - pequenas_aquisicoes
       - ma
+      mode: primary_plus_metadata
+    disrupcao_operacional:
+      label: Disrupção operacional
+      members:
+      - incidente_operacional
+      - paralisacao_operacional
+      - incidente_operacional_grave
+      priority:
+      - incidente_operacional_grave
+      - paralisacao_operacional
+      - incidente_operacional
+      mode: primary_plus_metadata
+    acao_regulatoria:
+      label: Ação regulatória
+      members:
+      - investigacao_regulatoria
+      - sancao_regulatoria
+      priority:
+      - sancao_regulatoria
+      - investigacao_regulatoria
       mode: primary_plus_metadata
