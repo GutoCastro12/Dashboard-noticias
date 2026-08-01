@@ -2506,6 +2506,25 @@ def semantic_role_guard(titulo: str, resumo: str, eventos: list[dict],
     return mantidos, descartes
 
 
+def cross_article_family_map(cfg: dict) -> dict:
+    """[fix: deduplicate operational events across articles] Mapa event_id ->
+    family_id, só para famílias que declararam `merge_occurrences_across_
+    articles: true` (hoje só `disrupcao_operacional`). Usado para agrupar em
+    UMA ocorrência econômica artigos DIFERENTES que descrevem o MESMO fato
+    mas foram classificados com estágios/event_ids diferentes da mesma
+    família (ex.: 'incêndio' vs 'incêndio de grande magnitude' na mesma
+    planta). Famílias sem essa flag (credit_rating/insolvencia/inadimplencia/
+    ma) NUNCA entram neste mapa — preservam o agrupamento legado por
+    event_id, inalterado."""
+    out = {}
+    for fam_id, spec in ((cfg.get("event_resolution") or {}).get("families") or {}).items():
+        if not spec.get("merge_occurrences_across_articles"):
+            continue
+        for member in (spec.get("members") or []):
+            out[member] = fam_id
+    return out
+
+
 def resolve_event_families(eventos: list[dict], cfg: dict, titulo: str = "") -> tuple:
     """4H.0 — Resolve eventos da MESMA família semântica numa ocorrência.
 
@@ -4327,6 +4346,59 @@ _STOP_MARCADORES = {
     "capital", "social", "conselho", "diretoria", "resultado", "lucro", "receita",
 }
 
+# [fix: deduplicate operational events across articles] vocabulário genérico
+# de incidente/incêndio que NÃO identifica a instalação/local (ex.: "Incendio"
+# maiúsculo por estar no início da frase não é um marcador de LOCAL — usar
+# isso na comparação faria "Los Olivos" x "Comas" parecerem o mesmo fato só
+# por ambos começarem com "Incendio"). Usado SÓ pela função dedicada abaixo
+# (`_marcadores_locais_operacionais`), nunca por `_marcadores_operacao()` —
+# não altera a união por marcador já existente para M&A ('Jirau') nem
+# nenhum outro emissor/família fora de `disrupcao_operacional`.
+_STOP_MARCADORES_LOCAL_OPERACIONAL = {
+    "incendio", "incendios", "emergencia", "alarma", "siniestro", "explosion",
+    "explosiones", "planta", "almacen", "fabrica", "instalacion",
+    "instalaciones", "unidad", "unidades", "bomberos", "humo", "humareda",
+    "evacuacion", "evacuación", "operacion", "operaciones", "empresa",
+    "extincion", "extinción", "reactiva", "reactivado", "controlado",
+    "confirma", "alerta", "voraz", "detalles", "video",
+    # qualificadores regionais/direcionais GENÉRICOS DEMAIS para identificar
+    # uma instalação específica (ex.: 'Lima Norte' é uma macrozona que CONTÉM
+    # 'Los Olivos' — duas notícias do MESMO incêndio, uma citando o distrito
+    # e outra a macrozona, não podem parecer 'locais diferentes' só por isso).
+    "lima", "norte", "sur", "sul", "centro", "este", "oeste", "peru", "perú",
+}
+
+
+def _marcadores_locais_operacionais(titulo: str, emissor: str, aliases) -> set:
+    """[fix: deduplicate operational events across articles] Extrai do
+    TÍTULO um conjunto de marcadores plausíveis de INSTALAÇÃO/LOCAL (ex.:
+    'olivos', 'comas'), para o gate de agrupamento entre artigos da família
+    `disrupcao_operacional`. Função TOTALMENTE independente de
+    `_marcadores_operacao()` (usada pelo passo 3 legado de união por
+    marcador — 'Jirau' — para TODAS as famílias/emissores): não a reutiliza
+    nem a altera, para não mudar nada fora do escopo desta correção.
+
+    Descarta: (a) vocabulário genérico de incidente (`_STOP_MARCADORES_
+    LOCAL_OPERACIONAL` — 'incendio', 'planta', 'bomberos'...) que não
+    identifica o LOCAL; (b) fragmentos de URL/slug encurtada (ex.: 'MgIVM'
+    de 'shorturl.at/MgIVM' — padrão minúscula-seguida-de-maiúscula no MEIO
+    da palavra não ocorre em nome próprio normal); (c) aliases do próprio
+    emissor. Sem cap de quantidade (o uso aqui é comparar por interseção,
+    não rotular)."""
+    t = titulo or ""
+    proprios = re.findall(r"\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][\wÀ-ÿ]{3,}", t)
+    ali = {normalize(a) for a in (list(aliases or []) + [emissor])}
+    out = set()
+    for p in proprios:
+        if re.search(r"[a-záéíóúâêôãõç][A-ZÁÉÍÓÚÂÊÔÃÕÇ]", p):
+            continue  # fragmento de URL/slug (ex.: 'MgIVM')
+        n = normalize(p)
+        if (n in _STOP_MARCADORES or n in _STOP_MARCADORES_LOCAL_OPERACIONAL
+                or n in ali or any(n in a or a in n for a in ali if a)):
+            continue
+        out.add(n)
+    return out
+
 
 def _marcadores_operacao(titulo: str, emissor: str, aliases) -> str:
     t = titulo or ""
@@ -4457,7 +4529,8 @@ def mention_role(titulo: str, emissor: str, aliases, outros: list[str]) -> dict:
             "event_phase": fase, "direction_hint": ""}
 
 
-def assign_occurrence_clusters(occurrences: list[dict], gap_days: int = 45) -> None:
+def assign_occurrence_clusters(occurrences: list[dict], gap_days: int = 45,
+                               fam_map: dict | None = None) -> None:
     """Define a OCORRÊNCIA econômica (unidade do dashboard). Ordem de decisão:
 
     1. **Separadores determinísticos** — série/número da operação (16ª × 17ª
@@ -4469,12 +4542,32 @@ def assign_occurrence_clusters(occurrences: list[dict], gap_days: int = 45) -> N
        operação (ex.: 'Jirau') são reunidos, mesmo acima do gap.
 
     Na dúvida, separa: fundir fatos econômicos distintos é o erro mais caro.
-    Grava `_occ_key` em cada ocorrência."""
+
+    [fix: deduplicate operational events across articles] `fam_map` (de
+    `cross_article_family_map(cfg)`) é opt-in, só para famílias que
+    declararam `merge_occurrences_across_articles: true` (hoje só
+    `disrupcao_operacional`). Para os EVENTOS dessas famílias, o separador
+    (1) usa `family_id` em vez de `event_id` — artigos com estágios
+    diferentes (incêndio leve × incêndio grave) da MESMA família viram
+    candidatos à MESMA ocorrência. Dentro do gap temporal, se ambos os
+    lados tiverem marcador de local/instalação identificável (ex.: 'Los
+    Olivos') e ELES NÃO COINCIDIREM, a ocorrência é separada mesmo dentro
+    do gap (conservador: não funde incêndios em unidades diferentes só por
+    pertencerem à mesma família). A união por marcador ACIMA do gap (passo
+    3) é DESLIGADA para grupos de família — dois incêndios na MESMA planta
+    em datas distantes continuam sendo ocorrências distintas (exigido:
+    'incêndios em datas diferentes → 2 ocorrências'). Sem `fam_map` (ou
+    para eventos fora de qualquer família opt-in), o comportamento é
+    IDÊNTICO ao legado (chave por `event_id` puro)."""
     limite = gap_days * 86400
+    fam_map = fam_map or {}
     grupos: dict[tuple, list[dict]] = {}
     for o in occurrences:
         ident = o.get("_ident") or {}
-        grupos.setdefault((ident.get("emissor", ""), o.get("event_id", ""),
+        eid = o.get("event_id", "")
+        group_ev = fam_map.get(eid, eid)
+        o["_grouped_by_family"] = group_ev != eid
+        grupos.setdefault((ident.get("emissor", ""), group_ev,
                            ident.get("serie", ""), ident.get("objeto", "")), []).append(o)
 
     for (emissor, ev, serie, objeto), itens in grupos.items():
@@ -4484,29 +4577,45 @@ def assign_occurrence_clusters(occurrences: list[dict], gap_days: int = 45) -> N
             base += f"|serie:{serie}"
         if objeto:
             base += f"|obj:{objeto}"
-        # (2) clusters temporais
+        is_family_group = bool(itens) and itens[0].get("_grouped_by_family")
+        # (2) clusters temporais (+ para grupos de família: gate conservador
+        # de marcador de local/instalação)
         clusters: list[list[dict]] = []
         anterior = None
+        cluster_marcas: set = set()
         for o in itens:
             ts = o.get("pub_ts", 0)
-            if anterior is None or (ts - anterior) > limite:
+            _id_o = o.get("_ident") or {}
+            marcas_o = _marcadores_locais_operacionais(o.get("title", ""), _id_o.get("emissor", ""), None)
+            novo = anterior is None or (ts - anterior) > limite
+            if (not novo and is_family_group and marcas_o and cluster_marcas
+                    and not (marcas_o & cluster_marcas)):
+                novo = True  # mesma família/janela, marcador de local diverge
+            if novo:
                 clusters.append([])
+                cluster_marcas = set()
             clusters[-1].append(o)
             anterior = ts
-        # (3) une clusters que dividem marcador da operação
-        marcas = []
-        for cl in clusters:
-            ms = set()
-            for o in cl:
-                ms |= {m for m in ((o.get("_ident") or {}).get("marcadores") or "").split("|") if m}
-            marcas.append(ms)
-        destino = list(range(len(clusters)))
-        for a in range(len(clusters)):
-            for b in range(a + 1, len(clusters)):
-                if marcas[a] and marcas[b] and (marcas[a] & marcas[b]):
-                    destino[b] = destino[a]
+            if marcas_o:
+                cluster_marcas |= marcas_o
+        # (3) une clusters que dividem marcador da operação — DESLIGADO para
+        # grupos de família (fatos distantes no tempo continuam separados).
+        if is_family_group:
+            destino = list(range(len(clusters)))
+        else:
+            marcas = []
+            for cl in clusters:
+                ms = set()
+                for o in cl:
+                    ms |= {m for m in ((o.get("_ident") or {}).get("marcadores") or "").split("|") if m}
+                marcas.append(ms)
+            destino = list(range(len(clusters)))
+            for a in range(len(clusters)):
+                for b in range(a + 1, len(clusters)):
+                    if marcas[a] and marcas[b] and (marcas[a] & marcas[b]):
+                        destino[b] = destino[a]
         for n, cl in enumerate(clusters):
-            k = f"{base}#{destino[n]}" if (serie or objeto) is None else f"{base}#{destino[n]}"
+            k = f"{base}#{destino[n]}"
             for o in cl:
                 o["_occ_key"] = k
 
@@ -4583,6 +4692,10 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
       • Trajetória do score reconstruída dia a dia a partir do histórico,
         para a sparkline mostrar a INCLINAÇÃO da deterioração."""
     taxonomy = {e["id"]: e for e in cfg["taxonomy"]}
+    # [fix: deduplicate operational events across articles] opt-in, só para
+    # famílias com merge_occurrences_across_articles=true (hoje só
+    # disrupcao_operacional) — ver cross_article_family_map().
+    fam_map = cross_article_family_map(cfg)
     meta = {c["name"]: {"tier": c.get("tier", 2),
                         "type": c.get("type", "empresa"),
                         "asset_group": asset_group_of_company(c),
@@ -4692,36 +4805,88 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
     # demais fontes viradas corroboração. Sem isso, "RJ ×3" da mesma cobertura
     # infla a contagem de sinais e some com a credibilidade multi-fonte.
     collapse_days = ev_cfg.get("same_event_window_days", 10)
+
+    def _fam_key_ev(eid):
+        return fam_map.get(eid, eid)
+
+    def _marcadores_de(o):
+        _id_o = o.get("_ident") or {}
+        return _marcadores_locais_operacionais(o.get("title", ""), _id_o.get("emissor", ""), None)
+
     for company, occs in list(per_company.items()):
         occs.sort(key=lambda o: (-o.get("trust_w", 1.0), o["pub_ts"]))
         merged: list[dict] = []
         for o in occs:
+            # [fix: deduplicate operational events across articles] para
+            # eventos de família opt-in, o "twin" é procurado por FAMÍLIA
+            # (não só event_id exato) — artigos com estágios diferentes do
+            # MESMO fato (incêndio leve × incêndio grave) viram a MESMA
+            # ocorrência. Gate conservador (SÓ para grupos de família): se
+            # ambos os lados têm marcador de local/instalação identificável
+            # e eles DIVERGEM, não é considerado "twin" (evita fundir
+            # incidentes em unidades diferentes). Para eventos fora de
+            # família opt-in, a comparação continua EXATA por event_id, SEM
+            # nenhum gate de marcador — comportamento legado 100% intacto
+            # (o gate de marcador nunca existiu para esses eventos antes
+            # desta correção e não pode passar a existir agora).
+            o_is_family = _fam_key_ev(o["event_id"]) != o["event_id"]
+            o_marcas = _marcadores_de(o) if o_is_family else set()
             twin = next((m for m in merged
-                         if m["event_id"] == o["event_id"]
-                         and abs(m["pub_ts"] - o["pub_ts"]) <= collapse_days * 86400), None)
+                         if _fam_key_ev(m["event_id"]) == _fam_key_ev(o["event_id"])
+                         and abs(m["pub_ts"] - o["pub_ts"]) <= collapse_days * 86400
+                         and not (o_is_family and o_marcas and _marcadores_de(m)
+                                  and not (o_marcas & _marcadores_de(m)))), None)
             if twin is None:
                 # começa já com as fontes corroborantes persistidas no histórico
                 o["corrob"] = list(o.get("persisted_corrob", []))
                 merged.append(o)
-            else:
-                dom = o.get("domain", "")
-                if dom and dom != twin.get("domain") and \
-                   all(c.get("domain") != dom for c in twin["corrob"]):
-                    o_iso = (datetime.fromtimestamp(o["pub_ts"], tz=timezone.utc)
-                             - timedelta(hours=3)).strftime("%d/%m %H:%M") if o.get("pub_ts") else ""
-                    twin["corrob"].append({
-                        "source": o.get("source", ""), "domain": dom,
-                        "url": o.get("url", ""), "when": o_iso,
-                        # preserva a resolução já persistida pelo reparo
-                        **{k: o.get(k) for k in
+                continue
+            if (o["event_id"] != twin["event_id"]
+                    and taxonomy.get(o["event_id"], {}).get("score", 0)
+                        > taxonomy.get(twin["event_id"], {}).get("score", 0)):
+                # [fix: deduplicate operational events across articles]
+                # promoção de estágio: o artigo NOVO descreve um estágio mais
+                # grave (score-base maior) da MESMA família/ocorrência —
+                # ele vira o representante; o antigo representante (e todas
+                # as fontes que já tinha acumulado) vira corroborante do
+                # novo. Nenhum score adicional: best_contribs() usa 1 só
+                # score-base por _occ_key (o do estágio mais grave).
+                o["corrob"] = list(o.get("persisted_corrob", []))
+                dom_prev = twin.get("domain", "")
+                if dom_prev and all(c.get("domain") != dom_prev for c in o["corrob"]):
+                    prev_iso = (datetime.fromtimestamp(twin["pub_ts"], tz=timezone.utc)
+                               - timedelta(hours=3)).strftime("%d/%m %H:%M") if twin.get("pub_ts") else ""
+                    o["corrob"].append({
+                        "source": twin.get("source", ""), "domain": dom_prev,
+                        "url": twin.get("url", ""), "when": prev_iso,
+                        **{k: twin.get(k) for k in
                            ("display_url", "canonical_url", "resolved_url",
                             "link_health", "link_render_anchor", "link_label")
-                           if o.get(k) is not None}})
-                # herda também as fontes que a duplicata já tinha persistido
-                for c in o.get("persisted_corrob", []):
-                    if c.get("domain") and c["domain"] != twin.get("domain") and \
-                       all(x.get("domain") != c["domain"] for x in twin["corrob"]):
-                        twin["corrob"].append(c)
+                           if twin.get(k) is not None}})
+                for c in twin.get("corrob", []):
+                    if c.get("domain") and c["domain"] != dom_prev and \
+                       all(x.get("domain") != c["domain"] for x in o["corrob"]):
+                        o["corrob"].append(c)
+                merged[merged.index(twin)] = o
+                continue
+            dom = o.get("domain", "")
+            if dom and dom != twin.get("domain") and \
+               all(c.get("domain") != dom for c in twin["corrob"]):
+                o_iso = (datetime.fromtimestamp(o["pub_ts"], tz=timezone.utc)
+                         - timedelta(hours=3)).strftime("%d/%m %H:%M") if o.get("pub_ts") else ""
+                twin["corrob"].append({
+                    "source": o.get("source", ""), "domain": dom,
+                    "url": o.get("url", ""), "when": o_iso,
+                    # preserva a resolução já persistida pelo reparo
+                    **{k: o.get(k) for k in
+                       ("display_url", "canonical_url", "resolved_url",
+                        "link_health", "link_render_anchor", "link_label")
+                       if o.get(k) is not None}})
+            # herda também as fontes que a duplicata já tinha persistido
+            for c in o.get("persisted_corrob", []):
+                if c.get("domain") and c["domain"] != twin.get("domain") and \
+                   all(x.get("domain") != c["domain"] for x in twin["corrob"]):
+                    twin["corrob"].append(c)
         per_company[company] = merged
 
     # ── Emissor com APENAS contexto continua visível ──
@@ -4776,7 +4941,7 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
     for company, occurrences in per_company.items():
         occurrences.sort(key=lambda o: o["pub_ts"])
         assign_occurrence_clusters(
-            occurrences, int(ev_cfg.get("occurrence_gap_days", 45)))
+            occurrences, int(ev_cfg.get("occurrence_gap_days", 45)), fam_map=fam_map)
         negatives = [o for o in occurrences if not o["positive"]]
         _tem_contexto = bool(_build_context_events(history, company, cutoff))
         _tem_informativo = bool(_build_informational_events(history, company, cutoff))

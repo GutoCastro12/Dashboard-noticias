@@ -4447,6 +4447,14 @@ event_resolution:
       - paralisacao_operacional
       - incidente_operacional
       mode: primary_plus_metadata
+      # [fix: deduplicate operational events across articles] opt-in,
+      # exclusivo desta família: artigos DIFERENTES sobre o MESMO fato
+      # (mesmo emissor + mesma família + proximidade temporal + local/
+      # marcador compartilhado quando identificável) compartilham 1
+      # occurrence_id, mesmo com event_id inicial diferente por artigo.
+      # NÃO aplicado a nenhuma outra família (credit_rating/insolvencia/
+      # inadimplencia/ma mantêm o comportamento legado, só por event_id).
+      merge_occurrences_across_articles: true
     acao_regulatoria:
       label: Ação regulatória
       members:
