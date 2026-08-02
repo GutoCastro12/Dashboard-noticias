@@ -1,58 +1,5 @@
 {
  "articles": {
-  "https://www.informador.mx/economia/Lavado-de-dinero-Que-pasaria-si-CIBanco-e-Intercam-se-declaran-en-quiebra-20250627-0061.html": {
-   "title": "¿Qué pasaría si CIBanco e Intercam se declaran en quiebra?",
-   "url": "https://www.informador.mx/economia/Lavado-de-dinero-Que-pasaria-si-CIBanco-e-Intercam-se-declaran-en-quiebra-20250627-0061.html",
-   "summary": "¿Qué pasaría si CIBanco e Intercam se declaran en quiebra? &nbsp;&nbsp; El Informador",
-   "source": "El Informador",
-   "domain": "informador.mx",
-   "pub_ts": 1751007600,
-   "pub_iso": "2025-06-27 04:00",
-   "language": "es",
-   "companies": [
-    "CIBanco"
-   ],
-   "event_ids": [
-    "falencia"
-   ],
-   "events_by_company": {
-    "CIBanco": [
-     "falencia"
-    ]
-   },
-   "mention_roles": {
-    "CIBanco": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "companies_attributed": [
-    "CIBanco"
-   ],
-   "context_companies": [],
-   "captured_ts": 1785345276,
-   "cap_iso": "2026-07-29 14:14",
-   "corroborations": [],
-   "corrob_sources": [],
-   "original_url": "https://www.informador.mx/economia/Lavado-de-dinero-Que-pasaria-si-CIBanco-e-Intercam-se-declaran-en-quiebra-20250627-0061.html",
-   "redirect_url": "",
-   "resolved_url": "https://www.informador.mx/economia/Lavado-de-dinero-Que-pasaria-si-CIBanco-e-Intercam-se-declaran-en-quiebra-20250627-0061.html",
-   "canonical_url": "https://www.informador.mx/economia/Lavado-de-dinero-Que-pasaria-si-CIBanco-e-Intercam-se-declaran-en-quiebra-20250627-0061.html",
-   "display_url": "https://www.informador.mx/economia/Lavado-de-dinero-Que-pasaria-si-CIBanco-e-Intercam-se-declaran-en-quiebra-20250627-0061.html",
-   "redirect_chain": "",
-   "original_host": "www.informador.mx",
-   "final_host": "www.informador.mx",
-   "http_status": "",
-   "link_health": "url_direta_valida",
-   "resolution_method": "direto",
-   "resolution_error": "",
-   "link_render_anchor": true,
-   "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.618563+00:00"
-  },
   "https://www.clarin.com/economia/segundo-fallo-jueza-loretta-preska-habilito-fondo-buitre-cobrarse-acciones-ypf-reclamo-deuda-default_0_elto2F58gn.html": {
    "title": "En un segundo fallo, la jueza Loretta Preska también habilitó a un fondo buitre a cobrarse con acciones de YPF por un reclamo de la deuda en default",
    "url": "https://www.clarin.com/economia/segundo-fallo-jueza-loretta-preska-habilito-fondo-buitre-cobrarse-acciones-ypf-reclamo-deuda-default_0_elto2F58gn.html",
@@ -405,7 +352,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.618913+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.618913+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.clarin.com/economia/nuevos-acreedores-reclaman-acciones-ypf-cobrar-deudas-default-crece-presion-judicial-argentina_0_qTtMHGSoys.html": {
    "title": "Nuevos acreedores reclaman acciones de YPF para cobrar deudas en default: crece la presión judicial sobre Argentina",
@@ -1118,9 +1067,9 @@
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
      "resolution_error": "token não resolvido",
-     "link_render_anchor": false,
-     "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T20:27:10.601002+00:00"
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →",
+     "last_checked_at": "2026-08-02T04:36:21.470503+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2652,9 +2601,9 @@
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
      "resolution_error": "token não resolvido",
-     "link_render_anchor": false,
-     "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T20:27:11.001282+00:00"
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →",
+     "last_checked_at": "2026-08-02T04:36:21.870760+00:00"
     }
    ],
    "corrob_sources": [
@@ -5767,7 +5716,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.623745+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.623745+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.moneytimes.com.br/eneva-enev3-anuncia-compra-de-participacoes-em-termicas-do-btg-e-follow-on-bilionario-vinp/": {
    "title": "Eneva (ENEV3) anuncia compra de térmicas do BTG e follow on de até R$ 4,2 bilhões",
@@ -9255,9 +9206,9 @@
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
      "resolution_error": "token não resolvido",
-     "link_render_anchor": false,
-     "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T20:27:11.401564+00:00"
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →",
+     "last_checked_at": "2026-08-02T04:36:22.271108+00:00"
     },
     {
      "source": "Demarest",
@@ -9275,9 +9226,9 @@
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
      "resolution_error": "token não resolvido",
-     "link_render_anchor": false,
-     "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T20:27:11.801864+00:00"
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →",
+     "last_checked_at": "2026-08-02T04:36:22.671419+00:00"
     }
    ],
    "corrob_sources": [
@@ -10659,9 +10610,9 @@
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
      "resolution_error": "token não resolvido",
-     "link_render_anchor": false,
-     "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T20:27:12.202147+00:00"
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →",
+     "last_checked_at": "2026-08-02T04:36:23.071725+00:00"
     }
    ],
    "corrob_sources": [
@@ -13805,9 +13756,9 @@
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
      "resolution_error": "token não resolvido",
-     "link_render_anchor": false,
-     "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T20:27:12.839972+00:00"
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →",
+     "last_checked_at": "2026-08-02T04:36:23.645005+00:00"
     }
    ],
    "corrob_sources": [
@@ -15464,7 +15415,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.634511+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.634511+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.tradingview.com/news/tradingview:4e3744b222f23:0-janus-henderson-agrees-52-share-all-cash-merger-offer-delivering-upper-end-intrinsic-value/": {
    "title": "Janus Henderson agrees $52/share all-cash merger offer delivering upper-end intrinsic value",
@@ -15921,9 +15874,9 @@
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
      "resolution_error": "token não resolvido",
-     "link_render_anchor": false,
-     "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T20:27:13.482461+00:00"
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →",
+     "last_checked_at": "2026-08-02T04:36:24.193112+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16027,9 +15980,9 @@
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
      "resolution_error": "token não resolvido",
-     "link_render_anchor": false,
-     "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T20:27:14.116976+00:00"
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →",
+     "last_checked_at": "2026-08-02T04:36:24.777119+00:00"
     },
     {
      "source": "Moomoo",
@@ -16368,7 +16321,8 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.635416+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.635416+00:00",
+   "corrob_sources": []
   },
   "https://www.prnewswire.com/news-releases/spire-completes-acquisition-of-tennessee-piedmont-natural-gas-business-from-duke-energy-302730161.html": {
    "title": "Spire completes acquisition of Tennessee Piedmont Natural Gas business from Duke Energy",
@@ -17252,9 +17206,9 @@
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "nenhum",
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
-     "link_render_anchor": false,
-     "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T20:27:14.927286+00:00"
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →",
+     "last_checked_at": "2026-08-02T04:36:25.445468+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17295,9 +17249,9 @@
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "nenhum",
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
-     "link_render_anchor": false,
-     "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T20:27:15.764159+00:00"
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →",
+     "last_checked_at": "2026-08-02T04:36:26.118021+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19978,9 +19932,9 @@
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
      "resolution_error": "token não resolvido",
-     "link_render_anchor": false,
-     "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T20:27:16.416214+00:00"
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →",
+     "last_checked_at": "2026-08-02T04:36:26.669639+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20063,9 +20017,9 @@
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
      "resolution_error": "token não resolvido",
-     "link_render_anchor": false,
-     "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T20:27:17.046114+00:00"
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →",
+     "last_checked_at": "2026-08-02T04:36:27.218984+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22010,7 +21964,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.641807+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.641807+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://finance.yahoo.com/sectors/energy/articles/nextera-energy-inc-nee-sets-234858811.html": {
    "title": "NextEra Energy, Inc. (NEE) Sets Sights on Growing Data Center Opportunity on Dominion Energy Acquisition",
@@ -32149,6 +32105,27 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T03:04:35.653885+00:00"
+    },
+    {
+     "source": "Cenário Energia",
+     "domain": "cenarioenergia.com.br",
+     "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNT2Z4LWlSMnBfRGRaRnJ1QzRLUkJka0U5NkNRZEpncjJEc3A5NU9zUFlzUlI1SHFZaU1yS0ptMzJXUEVnY1ZuUEpDby0wblRURlhpM05TWmZZNW5MN2RmQXA1LVJReW1OaFZtRUpIQUZEeDNoR0JJVTVXb1YwQzNsY2NvZGhzc2F2MG9CbkViaHBYaWZfS3piLTNnckZZR09LNEJ6ZnhZTWJWdnl0SW9xZkZzZTl5d21hWG5rMk5QaUNmMDdIOVFIUTY3X29zQQ?oc=5",
+     "when": "17/07 13:29",
+     "original_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNT2Z4LWlSMnBfRGRaRnJ1QzRLUkJka0U5NkNRZEpncjJEc3A5NU9zUFlzUlI1SHFZaU1yS0ptMzJXUEVnY1ZuUEpDby0wblRURlhpM05TWmZZNW5MN2RmQXA1LVJReW1OaFZtRUpIQUZEeDNoR0JJVTVXb1YwQzNsY2NvZGhzc2F2MG9CbkViaHBYaWZfS3piLTNnckZZR09LNEJ6ZnhZTWJWdnl0SW9xZkZzZTl5d21hWG5rMk5QaUNmMDdIOVFIUTY3X29zQQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNT2Z4LWlSMnBfRGRaRnJ1QzRLUkJka0U5NkNRZEpncjJEc3A5NU9zUFlzUlI1SHFZaU1yS0ptMzJXUEVnY1ZuUEpDby0wblRURlhpM05TWmZZNW5MN2RmQXA1LVJReW1OaFZtRUpIQUZEeDNoR0JJVTVXb1YwQzNsY2NvZGhzc2F2MG9CbkViaHBYaWZfS3piLTNnckZZR09LNEJ6ZnhZTWJWdnl0SW9xZkZzZTl5d21hWG5rMk5QaUNmMDdIOVFIUTY3X29zQQ?oc=5",
+     "resolved_url": "https://cenarioenergia.com.br/2026/07/17/engie-brasil-conclui-follow-on-de-r-836-bilhoes-e-incorpora-participacao-de-40-na-uhe-jirau/",
+     "canonical_url": "https://cenarioenergia.com.br/2026/07/17/engie-brasil-conclui-follow-on-de-r-836-bilhoes-e-incorpora-participacao-de-40-na-uhe-jirau/",
+     "display_url": "https://cenarioenergia.com.br/2026/07/17/engie-brasil-conclui-follow-on-de-r-836-bilhoes-e-incorpora-participacao-de-40-na-uhe-jirau/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "cenarioenergia.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-02T04:36:27.619262+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "original_url": "https://borainvestir.b3.com.br/tipos-de-investimentos/renda-variavel/acoes/follow-on-engie-brasil-realiza-oferta-subsequente-de-acoes-na-b3/",
@@ -34936,9 +34913,9 @@
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "nenhum",
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
-     "link_render_anchor": false,
-     "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T20:27:17.859861+00:00"
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →",
+     "last_checked_at": "2026-08-02T04:36:28.316708+00:00"
     }
    ],
    "corrob_sources": [
@@ -37737,9 +37714,9 @@
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
      "resolution_error": "token não resolvido",
-     "link_render_anchor": false,
-     "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T20:27:18.488842+00:00"
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →",
+     "last_checked_at": "2026-08-02T04:36:28.886309+00:00"
     },
     {
      "source": "Virginia Business",
@@ -37780,9 +37757,9 @@
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
      "resolution_error": "token não resolvido",
-     "link_render_anchor": false,
-     "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T20:27:19.104721+00:00"
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →",
+     "last_checked_at": "2026-08-02T04:36:29.438064+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38022,7 +37999,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785500143,
-   "cap_iso": "2026-07-31 09:15"
+   "cap_iso": "2026-07-31 09:15",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://stocktwits.com/news-articles/markets/equity/c-stock-falls-regional-bank-acquisition-report/cZ3HaQrRImX": {
    "title": "Citigroup Em Foco Após Banco Negar Relatório de Planos de Aquisição de Credor Regional – Ação C Cai 3%",
@@ -38421,9 +38400,391 @@
    ],
    "captured_ts": 1785529625,
    "cap_iso": "2026-07-31 17:27"
+  },
+  "https://news.google.com/rss/articles/CBMioAFBVV95cUxOT3ZzdG9mc1JDWVgtcE5tbEREbTUyTEl1dVpkSm4xWG0xekZ0X2RBTF8zUktoWHlEazdGVk0ydTlmWlo1emZSTm5leTg1RkUxRl9NbWdxRDdyMHpsNWU5UTFRUlpIX0RaT3F4SUtsMU9HaVhiazdrSHEyTTFVOXlHX3hLenhob1JhNmV1WEdSTTR5bGplLUZCZ1V3cVVuUDRE?oc=5": {
+   "title": "Incêndio em fábrica da Yura gerou intensa fumaça e mobilizou bombeiros",
+   "url": "https://prensaregional.pe/incendio-en-planta-de-yura-genero-intensa-humareda-y-movilizo-a-bomberos/",
+   "summary": "Incêndio em fábrica da Yura gerou intensa fumaça e mobilizou bombeiros &nbsp;&nbsp; La Prensa Regional",
+   "source": "La Prensa Regional",
+   "domain": "prensaregional.pe",
+   "pub_ts": 1781938800,
+   "pub_iso": "2026-06-20 04:00",
+   "language": "es",
+   "title_original": "Incendio en planta de Yura generó intensa humareda y movilizó a bomberos",
+   "summary_original": "Incendio en planta de Yura generó intensa humareda y movilizó a bomberos &nbsp;&nbsp; La Prensa Regional",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "incidente_operacional"
+   ],
+   "captured_ts": 1785645374,
+   "cap_iso": "2026-08-02 01:36"
+  },
+  "https://diarioviral.pe/norte/incendio-consume-almacn-de-cementos-yura-57326": {
+   "title": "Incendio consume almacén de Cementos Yura",
+   "url": "https://diarioviral.pe/norte/incendio-consume-almacn-de-cementos-yura-57326",
+   "summary": "Incendio consume almacén de Cementos Yura &nbsp;&nbsp; DIARIO VIRAL",
+   "source": "DIARIO VIRAL",
+   "domain": "diarioviral.pe",
+   "pub_ts": 1781969754,
+   "pub_iso": "2026-06-20 12:35",
+   "language": "pt",
+   "companies": [
+    "Yura"
+   ],
+   "event_ids": [
+    "incidente_operacional"
+   ],
+   "mention_roles": {
+    "Yura": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Yura": [
+     "incidente_operacional"
+    ]
+   },
+   "companies_attributed": [
+    "Yura"
+   ],
+   "context_companies": [],
+   "corroborations": [
+    {
+     "source": "Panamericana TV",
+     "domain": "panamericana.pe",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZUFuQVZtV0FEelk4dWhMdkw0S0drTVNDVl9XTTFqVzR4MzNYRFNqcHNTM0ZjcXVrUDl6SGhEbjVqYUxNTkhENFZCdVg3c3lRMzZqVjkxNGhQaWh0RW9iNDFXbDgxWHc3T3h1VFNVWTNEdk1mUnRtdWZlSno4ZEhRRFA3cWRGZkNuZ2k4YlFRYm5JZWI0VGYwOHh6MERIVzBfQlJEUEx0YUp1Zm52cTZwdGtrWTZFMW0yVVBv0gHAAUFVX3lxTE13WVI3czlHVXB3c0dtRTU4YzlWT21DdFdSY2VfMEVUc2N6RVQ5R2RxMlRmQVlMNmNiVGlGQXVqRkJiSTE2WG53dktsWVVCaWNsT09hVGVMdUVrdVhYVnBlcWlpLXdjb1ZVZENjSkNnWlNhYWRQV19jZHFSdGo5ZE1LRUxiT0tqM1hrQlZ0VTE0Wk9WYXUweXgwZ2MzQWZHcTl3bGJreGxGQnM2NDZlbEYySkhZVG9MenF0azhURnZsSA?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZUFuQVZtV0FEelk4dWhMdkw0S0drTVNDVl9XTTFqVzR4MzNYRFNqcHNTM0ZjcXVrUDl6SGhEbjVqYUxNTkhENFZCdVg3c3lRMzZqVjkxNGhQaWh0RW9iNDFXbDgxWHc3T3h1VFNVWTNEdk1mUnRtdWZlSno4ZEhRRFA3cWRGZkNuZ2k4YlFRYm5JZWI0VGYwOHh6MERIVzBfQlJEUEx0YUp1Zm52cTZwdGtrWTZFMW0yVVBv0gHAAUFVX3lxTE13WVI3czlHVXB3c0dtRTU4YzlWT21DdFdSY2VfMEVUc2N6RVQ5R2RxMlRmQVlMNmNiVGlGQXVqRkJiSTE2WG53dktsWVVCaWNsT09hVGVMdUVrdVhYVnBlcWlpLXdjb1ZVZENjSkNnWlNhYWRQV19jZHFSdGo5ZE1LRUxiT0tqM1hrQlZ0VTE0Wk9WYXUweXgwZ2MzQWZHcTl3bGJreGxGQnM2NDZlbEYySkhZVG9MenF0azhURnZsSA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZUFuQVZtV0FEelk4dWhMdkw0S0drTVNDVl9XTTFqVzR4MzNYRFNqcHNTM0ZjcXVrUDl6SGhEbjVqYUxNTkhENFZCdVg3c3lRMzZqVjkxNGhQaWh0RW9iNDFXbDgxWHc3T3h1VFNVWTNEdk1mUnRtdWZlSno4ZEhRRFA3cWRGZkNuZ2k4YlFRYm5JZWI0VGYwOHh6MERIVzBfQlJEUEx0YUp1Zm52cTZwdGtrWTZFMW0yVVBv0gHAAUFVX3lxTE13WVI3czlHVXB3c0dtRTU4YzlWT21DdFdSY2VfMEVUc2N6RVQ5R2RxMlRmQVlMNmNiVGlGQXVqRkJiSTE2WG53dktsWVVCaWNsT09hVGVMdUVrdVhYVnBlcWlpLXdjb1ZVZENjSkNnWlNhYWRQV19jZHFSdGo5ZE1LRUxiT0tqM1hrQlZ0VTE0Wk9WYXUweXgwZ2MzQWZHcTl3bGJreGxGQnM2NDZlbEYySkhZVG9MenF0azhURnZsSA?oc=5",
+     "resolved_url": "https://panamericana.pe/nacionales/470132-incendio-consumio-almacen-cemento-yura-arequipa-siniestro-prolongo-tres-horas",
+     "canonical_url": "https://panamericana.pe/nacionales/470132-incendio-consumio-almacen-cemento-yura-arequipa-siniestro-prolongo-tres-horas",
+     "display_url": "https://panamericana.pe/nacionales/470132-incendio-consumio-almacen-cemento-yura-arequipa-siniestro-prolongo-tres-horas",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "panamericana.pe",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-02T04:36:30.011324+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Panamericana TV",
+     "domain": "panamericana.pe",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZUFuQVZtV0FEelk4dWhMdkw0S0drTVNDVl9XTTFqVzR4MzNYRFNqcHNTM0ZjcXVrUDl6SGhEbjVqYUxNTkhENFZCdVg3c3lRMzZqVjkxNGhQaWh0RW9iNDFXbDgxWHc3T3h1VFNVWTNEdk1mUnRtdWZlSno4ZEhRRFA3cWRGZkNuZ2k4YlFRYm5JZWI0VGYwOHh6MERIVzBfQlJEUEx0YUp1Zm52cTZwdGtrWTZFMW0yVVBv0gHAAUFVX3lxTE13WVI3czlHVXB3c0dtRTU4YzlWT21DdFdSY2VfMEVUc2N6RVQ5R2RxMlRmQVlMNmNiVGlGQXVqRkJiSTE2WG53dktsWVVCaWNsT09hVGVMdUVrdVhYVnBlcWlpLXdjb1ZVZENjSkNnWlNhYWRQV19jZHFSdGo5ZE1LRUxiT0tqM1hrQlZ0VTE0Wk9WYXUweXgwZ2MzQWZHcTl3bGJreGxGQnM2NDZlbEYySkhZVG9MenF0azhURnZsSA?oc=5",
+     "when": "21/06 12:00",
+     "original_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZUFuQVZtV0FEelk4dWhMdkw0S0drTVNDVl9XTTFqVzR4MzNYRFNqcHNTM0ZjcXVrUDl6SGhEbjVqYUxNTkhENFZCdVg3c3lRMzZqVjkxNGhQaWh0RW9iNDFXbDgxWHc3T3h1VFNVWTNEdk1mUnRtdWZlSno4ZEhRRFA3cWRGZkNuZ2k4YlFRYm5JZWI0VGYwOHh6MERIVzBfQlJEUEx0YUp1Zm52cTZwdGtrWTZFMW0yVVBv0gHAAUFVX3lxTE13WVI3czlHVXB3c0dtRTU4YzlWT21DdFdSY2VfMEVUc2N6RVQ5R2RxMlRmQVlMNmNiVGlGQXVqRkJiSTE2WG53dktsWVVCaWNsT09hVGVMdUVrdVhYVnBlcWlpLXdjb1ZVZENjSkNnWlNhYWRQV19jZHFSdGo5ZE1LRUxiT0tqM1hrQlZ0VTE0Wk9WYXUweXgwZ2MzQWZHcTl3bGJreGxGQnM2NDZlbEYySkhZVG9MenF0azhURnZsSA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZUFuQVZtV0FEelk4dWhMdkw0S0drTVNDVl9XTTFqVzR4MzNYRFNqcHNTM0ZjcXVrUDl6SGhEbjVqYUxNTkhENFZCdVg3c3lRMzZqVjkxNGhQaWh0RW9iNDFXbDgxWHc3T3h1VFNVWTNEdk1mUnRtdWZlSno4ZEhRRFA3cWRGZkNuZ2k4YlFRYm5JZWI0VGYwOHh6MERIVzBfQlJEUEx0YUp1Zm52cTZwdGtrWTZFMW0yVVBv0gHAAUFVX3lxTE13WVI3czlHVXB3c0dtRTU4YzlWT21DdFdSY2VfMEVUc2N6RVQ5R2RxMlRmQVlMNmNiVGlGQXVqRkJiSTE2WG53dktsWVVCaWNsT09hVGVMdUVrdVhYVnBlcWlpLXdjb1ZVZENjSkNnWlNhYWRQV19jZHFSdGo5ZE1LRUxiT0tqM1hrQlZ0VTE0Wk9WYXUweXgwZ2MzQWZHcTl3bGJreGxGQnM2NDZlbEYySkhZVG9MenF0azhURnZsSA?oc=5",
+     "resolved_url": "https://panamericana.pe/nacionales/470132-incendio-consumio-almacen-cemento-yura-arequipa-siniestro-prolongo-tres-horas",
+     "canonical_url": "https://panamericana.pe/nacionales/470132-incendio-consumio-almacen-cemento-yura-arequipa-siniestro-prolongo-tres-horas",
+     "display_url": "https://panamericana.pe/nacionales/470132-incendio-consumio-almacen-cemento-yura-arequipa-siniestro-prolongo-tres-horas",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "panamericana.pe",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-02T04:36:30.411592+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1785645374,
+   "cap_iso": "2026-08-02 01:36"
+  },
+  "https://diarioviral.pe/arequipa/norte/controlan-incendio-en-planta-de-cementos-yura-en-arequipa-57333": {
+   "title": "Controlan incendio en planta de Cementos Yura en Arequipa",
+   "url": "https://diarioviral.pe/arequipa/norte/controlan-incendio-en-planta-de-cementos-yura-en-arequipa-57333",
+   "summary": "Controlan incendio en planta de Cementos Yura en Arequipa &nbsp;&nbsp; DIARIO VIRAL",
+   "source": "DIARIO VIRAL",
+   "domain": "diarioviral.pe",
+   "pub_ts": 1781992056,
+   "pub_iso": "2026-06-20 18:47",
+   "language": "pt",
+   "companies": [
+    "Yura"
+   ],
+   "event_ids": [
+    "incidente_operacional"
+   ],
+   "mention_roles": {
+    "Yura": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Yura": [
+     "incidente_operacional"
+    ]
+   },
+   "companies_attributed": [
+    "Yura"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785645374,
+   "cap_iso": "2026-08-02 01:36"
+  },
+  "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNOGtBVUsyTWh1Y1lHVGZXeDN4VjNTQkdGQ016Vmdod3Bfc2xqTjBtbFVBdzNwcjR5VmR1bmU5UzhiVW9HUzNNSkJ3OG9pZVB4cVdfaUVaRnJmZ0hQMElXOVpNYndWQ0tmSmYzUldkdXZhcDZsU2R3QjNuSllIdkw0WWtEY3hCMkJn?oc=5": {
+   "title": "Concessionária em falência de St. Louis fecha após Ford cortar repasses de dinheiro",
+   "url": "https://www.bizjournals.com/stlouis/news/2026/06/23/ford-closed-cut-off-cash.html",
+   "summary": "Concessionária em falência de St. Louis fecha após Ford cortar repasses de dinheiro &nbsp;&nbsp; The Business Journals",
+   "source": "The Business Journals",
+   "domain": "bizjournals.com",
+   "pub_ts": 1782198000,
+   "pub_iso": "2026-06-23 04:00",
+   "language": "en",
+   "title_original": "Bankrupt St. Louis dealership closes after Ford cut off cash",
+   "summary_original": "Bankrupt St. Louis dealership closes after Ford cut off cash &nbsp;&nbsp; The Business Journals",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785645374,
+   "cap_iso": "2026-08-02 01:36"
+  },
+  "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml": {
+   "title": "CVM abre processo para apurar renúncia de presidente do conselho da Vale",
+   "url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
+   "summary": "CVM abre processo para apurar renúncia de presidente do conselho da Vale &nbsp;&nbsp; Folha de S.Paulo",
+   "source": "Folha de S.Paulo",
+   "domain": "www1.folha.uol.com.br",
+   "pub_ts": 1783494000,
+   "pub_iso": "2026-07-08 04:00",
+   "language": "pt",
+   "companies": [
+    "Vale"
+   ],
+   "event_ids": [
+    "investigacao_regulatoria"
+   ],
+   "mention_roles": {
+    "Vale": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Vale": [
+     "investigacao_regulatoria"
+    ]
+   },
+   "companies_attributed": [
+    "Vale"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785645374,
+   "cap_iso": "2026-08-02 01:36"
+  },
+  "https://news.google.com/rss/articles/CBMickFVX3lxTE4wR0xEcHB3anZOcHozSmlJaWxKelhwRXIwRmszUUxYMXd4QzMzRkhHQzdyaDlacnU5cFEzSkNTeVdIUk9DYmJZSGVrcU5yczNndzB1b050aTZwMDhhQzBqbWhudzdyaDBldXp1OHdUaWdQdw?oc=5": {
+   "title": "Thopen, uma das gigantes da GD, prepara pedido de recuperação judicial",
+   "url": "https://canalsolar.com.br/thopen-gd-pedido-recuperacao-judicial/",
+   "summary": "Thopen, uma das gigantes da GD, prepara pedido de recuperação judicial &nbsp;&nbsp; Canal Solar",
+   "source": "Canal Solar",
+   "domain": "canalsolar.com.br",
+   "pub_ts": 1785153240,
+   "pub_iso": "2026-07-27 08:54",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1785645374,
+   "cap_iso": "2026-08-02 01:36"
+  },
+  "https://news.google.com/rss/articles/CBMikwFBVV95cUxOUE5oOENOS3lTOFk0M3BKdkY5S1A0aGM0NEZ2U0ROWUlrazhvT25yenR4V3gwUGlMZkVDOENUcWE1cDhuQlczNXgtNEctYlhUaEY4dlk0cmRnVnF6a0lTVXY2YzFLU2VjUEpEYnM5UVdnQUZhQ2Y4Nll1bUNHWHQ5Nk1GdFE0eWZ6bzlXcTlkLVVhMms?oc=5": {
+   "title": "Pernambucanas anuncia Marcelo Pimentel como novo CEO",
+   "url": "https://gironews.com/redes-shopping/pernambucanas-anuncia-marcelo-pimentel-como-novo-ceo/",
+   "summary": "Pernambucanas anuncia Marcelo Pimentel como novo CEO &nbsp;&nbsp; Giro News",
+   "source": "Giro News",
+   "domain": "gironews.com",
+   "pub_ts": 1785415590,
+   "pub_iso": "2026-07-30 09:46",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "corroborations": [
+    {
+     "source": "Mercado&Consumo",
+     "domain": "mercadoeconsumo.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPVnppcmF6X1ZkckJVc0h3bGJKNG5nRkc1XzNkWTRkNUh0ZnNHNXJCcGotXzZ0YkN1cHFxcVZJV2VNbEpsLWN2SEdsT0hQY002UlpTdkxlY1RVSG1HRGNrc3NMNHU4eGplbm03NjVCcGNmczJNQmI0Njd6V28zTkhFUUllS1QzQVpVaS1JUFFGeGNza3hBRVhmelZzcWhVNi10MHfSAacBQVVfeXFMUF90N1NPSXpGT0ZWaTNZdUFLZ0Iyd0k0UFRMaVlGWVpGZGJGTTV5U0lnU0d0TFZoekpHUjFtVUt5bHFtNDFrRy1aRkpPTXRNd1pDcUFYN3U0ZjdxNGZnSnZ5REY0UEc4U2gzNnM4T3FHVjV6TFFhT3JJUHlTbko2U1BVc1BsX3gtM0YzdTh2Rm9uS2RhUl9oX2NVdUJ4Qm1XQ05DckpubzQ?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPVnppcmF6X1ZkckJVc0h3bGJKNG5nRkc1XzNkWTRkNUh0ZnNHNXJCcGotXzZ0YkN1cHFxcVZJV2VNbEpsLWN2SEdsT0hQY002UlpTdkxlY1RVSG1HRGNrc3NMNHU4eGplbm03NjVCcGNmczJNQmI0Njd6V28zTkhFUUllS1QzQVpVaS1JUFFGeGNza3hBRVhmelZzcWhVNi10MHfSAacBQVVfeXFMUF90N1NPSXpGT0ZWaTNZdUFLZ0Iyd0k0UFRMaVlGWVpGZGJGTTV5U0lnU0d0TFZoekpHUjFtVUt5bHFtNDFrRy1aRkpPTXRNd1pDcUFYN3U0ZjdxNGZnSnZ5REY0UEc4U2gzNnM4T3FHVjV6TFFhT3JJUHlTbko2U1BVc1BsX3gtM0YzdTh2Rm9uS2RhUl9oX2NVdUJ4Qm1XQ05DckpubzQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPVnppcmF6X1ZkckJVc0h3bGJKNG5nRkc1XzNkWTRkNUh0ZnNHNXJCcGotXzZ0YkN1cHFxcVZJV2VNbEpsLWN2SEdsT0hQY002UlpTdkxlY1RVSG1HRGNrc3NMNHU4eGplbm03NjVCcGNmczJNQmI0Njd6V28zTkhFUUllS1QzQVpVaS1JUFFGeGNza3hBRVhmelZzcWhVNi10MHfSAacBQVVfeXFMUF90N1NPSXpGT0ZWaTNZdUFLZ0Iyd0k0UFRMaVlGWVpGZGJGTTV5U0lnU0d0TFZoekpHUjFtVUt5bHFtNDFrRy1aRkpPTXRNd1pDcUFYN3U0ZjdxNGZnSnZ5REY0UEc4U2gzNnM4T3FHVjV6TFFhT3JJUHlTbko2U1BVc1BsX3gtM0YzdTh2Rm9uS2RhUl9oX2NVdUJ4Qm1XQ05DckpubzQ?oc=5",
+     "resolved_url": "https://mercadoeconsumo.com.br/01/08/2026/gestao/pernambucanas-tem-novo-ceo-confira-outras-mudancas/",
+     "canonical_url": "https://mercadoeconsumo.com.br/01/08/2026/gestao/pernambucanas-tem-novo-ceo-confira-outras-mudancas/",
+     "display_url": "https://mercadoeconsumo.com.br/01/08/2026/gestao/pernambucanas-tem-novo-ceo-confira-outras-mudancas/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "mercadoeconsumo.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-02T04:36:30.959584+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Mercado&Consumo",
+     "domain": "mercadoeconsumo.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPVnppcmF6X1ZkckJVc0h3bGJKNG5nRkc1XzNkWTRkNUh0ZnNHNXJCcGotXzZ0YkN1cHFxcVZJV2VNbEpsLWN2SEdsT0hQY002UlpTdkxlY1RVSG1HRGNrc3NMNHU4eGplbm03NjVCcGNmczJNQmI0Njd6V28zTkhFUUllS1QzQVpVaS1JUFFGeGNza3hBRVhmelZzcWhVNi10MHfSAacBQVVfeXFMUF90N1NPSXpGT0ZWaTNZdUFLZ0Iyd0k0UFRMaVlGWVpGZGJGTTV5U0lnU0d0TFZoekpHUjFtVUt5bHFtNDFrRy1aRkpPTXRNd1pDcUFYN3U0ZjdxNGZnSnZ5REY0UEc4U2gzNnM4T3FHVjV6TFFhT3JJUHlTbko2U1BVc1BsX3gtM0YzdTh2Rm9uS2RhUl9oX2NVdUJ4Qm1XQ05DckpubzQ?oc=5",
+     "when": "01/08 07:00",
+     "original_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPVnppcmF6X1ZkckJVc0h3bGJKNG5nRkc1XzNkWTRkNUh0ZnNHNXJCcGotXzZ0YkN1cHFxcVZJV2VNbEpsLWN2SEdsT0hQY002UlpTdkxlY1RVSG1HRGNrc3NMNHU4eGplbm03NjVCcGNmczJNQmI0Njd6V28zTkhFUUllS1QzQVpVaS1JUFFGeGNza3hBRVhmelZzcWhVNi10MHfSAacBQVVfeXFMUF90N1NPSXpGT0ZWaTNZdUFLZ0Iyd0k0UFRMaVlGWVpGZGJGTTV5U0lnU0d0TFZoekpHUjFtVUt5bHFtNDFrRy1aRkpPTXRNd1pDcUFYN3U0ZjdxNGZnSnZ5REY0UEc4U2gzNnM4T3FHVjV6TFFhT3JJUHlTbko2U1BVc1BsX3gtM0YzdTh2Rm9uS2RhUl9oX2NVdUJ4Qm1XQ05DckpubzQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPVnppcmF6X1ZkckJVc0h3bGJKNG5nRkc1XzNkWTRkNUh0ZnNHNXJCcGotXzZ0YkN1cHFxcVZJV2VNbEpsLWN2SEdsT0hQY002UlpTdkxlY1RVSG1HRGNrc3NMNHU4eGplbm03NjVCcGNmczJNQmI0Njd6V28zTkhFUUllS1QzQVpVaS1JUFFGeGNza3hBRVhmelZzcWhVNi10MHfSAacBQVVfeXFMUF90N1NPSXpGT0ZWaTNZdUFLZ0Iyd0k0UFRMaVlGWVpGZGJGTTV5U0lnU0d0TFZoekpHUjFtVUt5bHFtNDFrRy1aRkpPTXRNd1pDcUFYN3U0ZjdxNGZnSnZ5REY0UEc4U2gzNnM4T3FHVjV6TFFhT3JJUHlTbko2U1BVc1BsX3gtM0YzdTh2Rm9uS2RhUl9oX2NVdUJ4Qm1XQ05DckpubzQ?oc=5",
+     "resolved_url": "https://mercadoeconsumo.com.br/01/08/2026/gestao/pernambucanas-tem-novo-ceo-confira-outras-mudancas/",
+     "canonical_url": "https://mercadoeconsumo.com.br/01/08/2026/gestao/pernambucanas-tem-novo-ceo-confira-outras-mudancas/",
+     "display_url": "https://mercadoeconsumo.com.br/01/08/2026/gestao/pernambucanas-tem-novo-ceo-confira-outras-mudancas/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "mercadoeconsumo.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-02T04:36:31.359832+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1785645374,
+   "cap_iso": "2026-08-02 01:36"
+  },
+  "https://forcaaerea.com.br/grecia-investira-600-milhoes-de-euros-na-aquisicao-dos-tres-embraer-kc-390-millennium/": {
+   "title": "Grécia investirá 600 milhões de euros na aquisição dos três Embraer KC-390 Millennium",
+   "url": "https://forcaaerea.com.br/grecia-investira-600-milhoes-de-euros-na-aquisicao-dos-tres-embraer-kc-390-millennium/",
+   "summary": "Grécia investirá 600 milhões de euros na aquisição dos três Embraer KC-390 Millennium &nbsp;&nbsp; Revista Forca Aérea",
+   "source": "Revista Forca Aérea",
+   "domain": "forcaaerea.com.br",
+   "pub_ts": 1785441642,
+   "pub_iso": "2026-07-30 17:00",
+   "language": "pt",
+   "companies": [
+    "Embraer"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "mention_roles": {
+    "Embraer": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Embraer": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "Embraer"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785645374,
+   "cap_iso": "2026-08-02 01:36"
+  },
+  "https://news.google.com/rss/articles/CBMijgFBVV95cUxQSnVjQ0tjRVdtQk9kMThERUFzNjJpUm5nR1VPQldCdG5Gd0dqODV0QkRYYUZxSVNjZHRpbDdFRzVmR0hmejRad3Yzc1ZIUlZXVEpBTTZwQzNlb0xMaDNDVlZKZmZMMDZfYVBDTDZLbkNBMXRMNkVTSWpHMHVXWGRaUWlaZ0xvcnFJSmp5WUZ30gGTAUFVX3lxTE8wdDY0RU1wX3Bidm0yUHhLeHFiWFlXREV1V1ZDY1pUbWQ2ZmRaSGFZNmtIcEVsVTE5OEVCMWdOQ0hpOFhjbllMX1RGb2NIS28xRnlaRjNYY3lSYWxQSlNKZjVsUzBianM5UFNtbThucUVkR05fWVZ0MGF0RDVmV190M2V4NHlrdGNFS3V4a3BQS19waw?oc=5": {
+   "title": "Justiça nega que BC participe da recuperação judicial da Ambipar",
+   "url": "https://www.estadao.com.br/economia/negocios/justica-bc-recuperacao-judicial-ambipar/",
+   "summary": "Justiça nega que BC participe da recuperação judicial da Ambipar &nbsp;&nbsp; Estadão",
+   "source": "Estadão",
+   "domain": "estadao.com.br",
+   "pub_ts": 1785511740,
+   "pub_iso": "2026-07-31 12:29",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1785645374,
+   "cap_iso": "2026-08-02 01:36"
+  },
+  "https://atlaspublico.com.br/cvm/noticias/braskem-responde-a-b3-e-diz-nao-haver-decisao-sobre-76443": {
+   "title": "Braskem responde à B3 e diz não haver decisão sobre recuperação judicial; tutela cautelar segue em vigor",
+   "url": "https://atlaspublico.com.br/cvm/noticias/braskem-responde-a-b3-e-diz-nao-haver-decisao-sobre-76443",
+   "summary": "Braskem responde à B3 e diz não haver decisão sobre recuperação judicial; tutela cautelar segue em vigor &nbsp;&nbsp; atlaspublico.com.br",
+   "source": "atlaspublico.com.br",
+   "domain": "atlaspublico.com.br",
+   "pub_ts": 1785539836,
+   "pub_iso": "2026-07-31 20:17",
+   "language": "pt",
+   "companies": [
+    "B3"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "mention_roles": {
+    "B3": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "B3": [
+     "recuperacao_judicial"
+    ]
+   },
+   "companies_attributed": [
+    "B3"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785645374,
+   "cap_iso": "2026-08-02 01:36"
+  },
+  "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQZkNBbG8yTWJKalR5UVMyajdJSEtlVWtQVDFoakhkaWdSYUQ3cHpmbHNtX2xDdXpxa0wxTlRkb0RTb2hic1ZJTUxWcjVCNk1OR2c0ZmFTZW9rMFJmZjd5R0xQSVN1MGFTWlI0RmRzX0p1UVBpYjRmWDUwUDY1VGhUWkVBZjV0Tkl5VUs4bkYyTzJKUmJrRVVwVHd1T19uZ0NEaUM0V0tTUHNZT25LYnVvYi1BNXBDa0haZVBJMFVnTmNEMlMxTGlVbURxNWtSbXJ5Y184WjItdmpnamg3WmdOb2ZhNE1HSlh5ZHgwUHNacGpnZG1IaHpodTAtcGLSAYICQVVfeXFMTWRwQXlVWWQ5N0ljUlhuc0xDTjFKQ2NhZl9KaFU4bFNzTkh1QnJ6OTRodlNSVjFhYTJGdEdjaWh3aW9sc0NseVNzUm8yTjNlWGNlVDdnRlpOYUVHQ0tBNE01XzF0SmdRTnF4UXdFSllkMFpIcExSMXJfbm9wakktcGptcnQ0VEIwSkxpRkx4b2FTRTJRYnhpUGN6OGsyeDRQNlVjeW5udjhDZF84WGFRNk5PeVo5aFg3UmR1dC1wRVdGZjBkT0piZ09YU1JRdzhFNEh0b0FycmwwcW1RUjJFNTR6LWpnWldQSXhZcThYRWpTSUxUeEhRSTczaXZkWVRYcG5n?oc=5": {
+   "title": "Saritur tem recuperação judicial concedida; entenda o passo a passo da decisão e o que acontece a partir de agora – EXCLUSIVO",
+   "url": "https://diariodotransporte.com.br/2026/08/01/saritur-tem-recuperacao-judicial-concedida-entenda-o-passo-a-passo-da-decisao-e-o-que-acontece-a-partir-de-agora-exclusivo/",
+   "summary": "Saritur tem recuperação judicial concedida; entenda o passo a passo da decisão e o que acontece a partir de agora – EXCLUSIVO &nbsp;&nbsp; Diário do Transporte",
+   "source": "Diário do Transporte",
+   "domain": "diariodotransporte.com.br",
+   "pub_ts": 1785586109,
+   "pub_iso": "2026-08-01 09:08",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1785645374,
+   "cap_iso": "2026-08-02 01:36"
   }
  },
- "run_count": 62,
+ "run_count": 63,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -42716,83 +43077,135 @@
   "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQeU1GTlNZdHc0NVlSMWdXRXpZcFdfNkpaSVdQb0RuT2JLaUhCNzgyWHctYWJ4TDhndWxsZy10NW81Z3dxcUEwcEhWYm5RMmRYVmpnaWtrcUlyVU0xcUdzWHczTUN6eW51X1VmNXlWLW01d1Npb25JMFpqQURNN3AzN3pRbTJkV3VqODdhUEFMbjZhRkh5NVF1SGJUNmJEclNELXYwLWtVZzlNZ2doUGxFdHpfM2JkcVRGQ3VFemFjUXhyUkhLVlN1RnIwdVdJN2xsc21TZGhobE9uQVnSAeoBQVVfeXFMTTU0ZjhzRVU1NlEyTzk3dVFxM0pFMDQ4cGt1NHdXNXVKS2xteXAxWEFoM2xaN19jcVJWdGlZbGJEak1RTjV6dy1XbXUyU25PNzBhQmpOOVRPclAtY21tNDJTMXVRNnY3Y2d3dWpESlYzd0pYaVhrMFRUcGI4emFtSGRiMHc4S2Z2WmZIeGtZRU1DNzVOYlhzYkhYSzJXZTViZjZYdXRDeDVXNzBXQ1doMFhxd0VxRHJxYVlPU1VzaVNCS1MyODgwMmRUc05Jdi0zN25TR3pzb1l6WVAtWHF3WkNYUTdMbzZCTUVn?oc=5": {
    "url": "https://valor.globo.com/financas/noticia/2026/07/31/acoes-do-santander-brasil-tem-maior-alta-em-seis-anos-com-oferta-publica-de-aquisicao.ghtml",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMihgFBVV95cUxQU3ByQUpNczRNc1FJV1owU0NBa2NGc1NUX05uV2dNOFE3TldSajFEd0k5WmhQMjBrelN5UzA4cF9TZEljRExTWTBnNGtuYTg5Q3Z6VVp6M01BWEtISE1NRWpjT0xOME5jX2owWTRUdmhhS2hxLWU1djhXODVNaEFHTkFYajFHUQ?oc=5": {
+   "url": "https://fiis.com.br/noticias/vilg11-divulga-resultados-detalha-aquisicao-ativo/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMigAFBVV95cUxNVE1BRGZqWWxPZnFwU0o3THpZbmJsNU1fRWtfSE00bWl5OU9mNjNKanJwR3g3MnpxZzBVcFY5c3NEUVJJR1hRUDR4U2ppeFoxQlg4NEhYSlFjaUtEUk9aUkI4ZDh2YVZPY3N2SldaWmdEN24teEo3MmhBa05weHZZWQ?oc=5": {
+   "url": "https://diarioviral.pe/norte/incendio-consume-almacn-de-cementos-yura-57326",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiowFBVV95cUxPSHN2QlViUmlfeHFGWURodFVmV0VLc2tQMzVnbklOTWhsRXNpTllzb014cWdKeTFiMzUxc0wzbGtwTXJrNFFIeWl2bHJDLV9MY1dsR2dpLXZaX2Z1MDZ6bjBDdkpvTFZadzFvOXlIMzUybjVhLVZsQ0dxY1ZSX3NBUlVaUUZVTEt6YUVfQXdKa2N3MU9GaS1feHZaWVZZV2lZZVQw?oc=5": {
+   "url": "https://diarioviral.pe/arequipa/norte/controlan-incendio-en-planta-de-cementos-yura-en-arequipa-57333",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMisgFBVV95cUxQanVKc19TQ0I3YTB2SFJJbFIyWHNmRktnR19FMXRtV3M2QzhtYkNoS1g3YlRnWG4yaTkxdEw2czlqcEJ5ZlN1RzVLZzRwemdoSUpueER0aS1CZ2hyZ3Y0dUJLc0t0OWRJaTl4czFDcUp2MVJBaU5CRHFVbTNIZ3dSLXloZFdOUWF0NWtZMGJqaC1JMTZKby1Kc1JFMGl6eFhxUGtDRHV0SUhLUDFIY1ZCNmVB?oc=5": {
+   "url": "https://forcaaerea.com.br/grecia-investira-600-milhoes-de-euros-na-aquisicao-dos-tres-embraer-kc-390-millennium/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMinwFBVV95cUxQaS1VYXRlTHk1NnNtWDJOcVB2bXBNVHl5X1NVNWFGNXgydUI4aVpWMWhBMTU1QUJfN0d5NnBKM1RXXzVFUXFsazlMeGpVX2FqUzV1WUJlTzdUdjdUOHVLeDhvNE5kOGlCdEl5cU5SZ1dNbXRJZ3BmUGJudkZ1WDlVX2pkaDAtaDdKTmhjSGp4YXB0Q0tmdHktbGtYM2ZNVmM?oc=5": {
+   "url": "https://atlaspublico.com.br/cvm/noticias/braskem-responde-a-b3-e-diz-nao-haver-decisao-sobre-76443",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMioAFBVV95cUxOT3ZzdG9mc1JDWVgtcE5tbEREbTUyTEl1dVpkSm4xWG0xekZ0X2RBTF8zUktoWHlEazdGVk0ydTlmWlo1emZSTm5leTg1RkUxRl9NbWdxRDdyMHpsNWU5UTFRUlpIX0RaT3F4SUtsMU9HaVhiazdrSHEyTTFVOXlHX3hLenhob1JhNmV1WEdSTTR5bGplLUZCZ1V3cVVuUDRE?oc=5": {
+   "url": "https://prensaregional.pe/incendio-en-planta-de-yura-genero-intensa-humareda-y-movilizo-a-bomberos/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNOGtBVUsyTWh1Y1lHVGZXeDN4VjNTQkdGQ016Vmdod3Bfc2xqTjBtbFVBdzNwcjR5VmR1bmU5UzhiVW9HUzNNSkJ3OG9pZVB4cVdfaUVaRnJmZ0hQMElXOVpNYndWQ0tmSmYzUldkdXZhcDZsU2R3QjNuSllIdkw0WWtEY3hCMkJn?oc=5": {
+   "url": "https://www.bizjournals.com/stlouis/news/2026/06/23/ford-closed-cut-off-cash.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMikwFBVV95cUxOUE5oOENOS3lTOFk0M3BKdkY5S1A0aGM0NEZ2U0ROWUlrazhvT25yenR4V3gwUGlMZkVDOENUcWE1cDhuQlczNXgtNEctYlhUaEY4dlk0cmRnVnF6a0lTVXY2YzFLU2VjUEpEYnM5UVdnQUZhQ2Y4Nll1bUNHWHQ5Nk1GdFE0eWZ6bzlXcTlkLVVhMms?oc=5": {
+   "url": "https://gironews.com/redes-shopping/pernambucanas-anuncia-marcelo-pimentel-como-novo-ceo/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMijgFBVV95cUxQSnVjQ0tjRVdtQk9kMThERUFzNjJpUm5nR1VPQldCdG5Gd0dqODV0QkRYYUZxSVNjZHRpbDdFRzVmR0hmejRad3Yzc1ZIUlZXVEpBTTZwQzNlb0xMaDNDVlZKZmZMMDZfYVBDTDZLbkNBMXRMNkVTSWpHMHVXWGRaUWlaZ0xvcnFJSmp5WUZ30gGTAUFVX3lxTE8wdDY0RU1wX3Bidm0yUHhLeHFiWFlXREV1V1ZDY1pUbWQ2ZmRaSGFZNmtIcEVsVTE5OEVCMWdOQ0hpOFhjbllMX1RGb2NIS28xRnlaRjNYY3lSYWxQSlNKZjVsUzBianM5UFNtbThucUVkR05fWVZ0MGF0RDVmV190M2V4NHlrdGNFS3V4a3BQS19waw?oc=5": {
+   "url": "https://www.estadao.com.br/economia/negocios/justica-bc-recuperacao-judicial-ambipar/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQZkNBbG8yTWJKalR5UVMyajdJSEtlVWtQVDFoakhkaWdSYUQ3cHpmbHNtX2xDdXpxa0wxTlRkb0RTb2hic1ZJTUxWcjVCNk1OR2c0ZmFTZW9rMFJmZjd5R0xQSVN1MGFTWlI0RmRzX0p1UVBpYjRmWDUwUDY1VGhUWkVBZjV0Tkl5VUs4bkYyTzJKUmJrRVVwVHd1T19uZ0NEaUM0V0tTUHNZT25LYnVvYi1BNXBDa0haZVBJMFVnTmNEMlMxTGlVbURxNWtSbXJ5Y184WjItdmpnamg3WmdOb2ZhNE1HSlh5ZHgwUHNacGpnZG1IaHpodTAtcGLSAYICQVVfeXFMTWRwQXlVWWQ5N0ljUlhuc0xDTjFKQ2NhZl9KaFU4bFNzTkh1QnJ6OTRodlNSVjFhYTJGdEdjaWh3aW9sc0NseVNzUm8yTjNlWGNlVDdnRlpOYUVHQ0tBNE01XzF0SmdRTnF4UXdFSllkMFpIcExSMXJfbm9wakktcGptcnQ0VEIwSkxpRkx4b2FTRTJRYnhpUGN6OGsyeDRQNlVjeW5udjhDZF84WGFRNk5PeVo5aFg3UmR1dC1wRVdGZjBkT0piZ09YU1JRdzhFNEh0b0FycmwwcW1RUjJFNTR6LWpnWldQSXhZcThYRWpTSUxUeEhRSTczaXZkWVRYcG5n?oc=5": {
+   "url": "https://diariodotransporte.com.br/2026/08/01/saritur-tem-recuperacao-judicial-concedida-entenda-o-passo-a-passo-da-decisao-e-o-que-acontece-a-partir-de-agora-exclusivo/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZUFuQVZtV0FEelk4dWhMdkw0S0drTVNDVl9XTTFqVzR4MzNYRFNqcHNTM0ZjcXVrUDl6SGhEbjVqYUxNTkhENFZCdVg3c3lRMzZqVjkxNGhQaWh0RW9iNDFXbDgxWHc3T3h1VFNVWTNEdk1mUnRtdWZlSno4ZEhRRFA3cWRGZkNuZ2k4YlFRYm5JZWI0VGYwOHh6MERIVzBfQlJEUEx0YUp1Zm52cTZwdGtrWTZFMW0yVVBv0gHAAUFVX3lxTE13WVI3czlHVXB3c0dtRTU4YzlWT21DdFdSY2VfMEVUc2N6RVQ5R2RxMlRmQVlMNmNiVGlGQXVqRkJiSTE2WG53dktsWVVCaWNsT09hVGVMdUVrdVhYVnBlcWlpLXdjb1ZVZENjSkNnWlNhYWRQV19jZHFSdGo5ZE1LRUxiT0tqM1hrQlZ0VTE0Wk9WYXUweXgwZ2MzQWZHcTl3bGJreGxGQnM2NDZlbEYySkhZVG9MenF0azhURnZsSA?oc=5": {
+   "url": "https://panamericana.pe/nacionales/470132-incendio-consumio-almacen-cemento-yura-arequipa-siniestro-prolongo-tres-horas",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiogFBVV95cUxPVnppcmF6X1ZkckJVc0h3bGJKNG5nRkc1XzNkWTRkNUh0ZnNHNXJCcGotXzZ0YkN1cHFxcVZJV2VNbEpsLWN2SEdsT0hQY002UlpTdkxlY1RVSG1HRGNrc3NMNHU4eGplbm03NjVCcGNmczJNQmI0Njd6V28zTkhFUUllS1QzQVpVaS1JUFFGeGNza3hBRVhmelZzcWhVNi10MHfSAacBQVVfeXFMUF90N1NPSXpGT0ZWaTNZdUFLZ0Iyd0k0UFRMaVlGWVpGZGJGTTV5U0lnU0d0TFZoekpHUjFtVUt5bHFtNDFrRy1aRkpPTXRNd1pDcUFYN3U0ZjdxNGZnSnZ5REY0UEc4U2gzNnM4T3FHVjV6TFFhT3JJUHlTbko2U1BVc1BsX3gtM0YzdTh2Rm9uS2RhUl9oX2NVdUJ4Qm1XQ05DckpubzQ?oc=5": {
+   "url": "https://mercadoeconsumo.com.br/01/08/2026/gestao/pernambucanas-tem-novo-ceo-confira-outras-mudancas/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785529639,
-  "iso": "31 jul 2026 · 17:27 BRT",
+  "ts": 1785645392,
+  "iso": "02 ago 2026 · 01:36 BRT",
   "status": {
+   "B3": {
+    "status": "critico",
+    "score": 79
+   },
    "Rumo": {
     "status": "critico",
-    "score": 81
+    "score": 78
    },
    "Engie Brasil": {
-    "status": "critico",
-    "score": 77
+    "status": "atencao",
+    "score": 75
    },
    "Tok&Stok": {
     "status": "critico",
-    "score": 66
+    "score": 64
    },
    "Grupo Financiero Banorte": {
     "status": "critico",
-    "score": 57
+    "score": 55
    },
    "CVS Health": {
     "status": "critico",
-    "score": 53
+    "score": 51
    },
    "Cosan": {
     "status": "atencao",
-    "score": 52
+    "score": 50
    },
    "Samarco Mineração": {
     "status": "critico",
-    "score": 48
+    "score": 47
    },
    "BTG Pactual": {
     "status": "atencao",
-    "score": 47
+    "score": 45
    },
    "Axia Energia": {
     "status": "atencao",
-    "score": 45
+    "score": 43
    },
    "JBS": {
     "status": "atencao",
-    "score": 37
+    "score": 36
    },
    "Petrobras": {
     "status": "atencao",
-    "score": 36
+    "score": 35
    },
    "Energisa": {
     "status": "atencao",
-    "score": 36
+    "score": 35
    },
    "Vale": {
     "status": "atencao",
-    "score": 33
+    "score": 32
    },
    "Baker Hughes": {
     "status": "monitorar",
-    "score": 31
+    "score": 30
    },
    "Aegea Saneamento": {
     "status": "critico",
-    "score": 30
+    "score": 29
    },
    "PRIO": {
     "status": "monitorar",
-    "score": 29
+    "score": 28
+   },
+   "Embraer": {
+    "status": "atencao",
+    "score": 28
    },
    "Suzano": {
     "status": "monitorar",
     "score": 27
-   },
-   "Embraer": {
-    "status": "atencao",
-    "score": 26
    },
    "Capital One Financial": {
     "status": "monitorar",
@@ -42800,27 +43213,19 @@
    },
    "ISA Energia Brasil": {
     "status": "monitorar",
-    "score": 25
+    "score": 24
    },
    "Itaúsa": {
     "status": "monitorar",
-    "score": 23
+    "score": 22
    },
    "Santander Brasil": {
     "status": "atencao",
-    "score": 22
+    "score": 21
    },
    "Citigroup": {
     "status": "monitorar",
-    "score": 22
-   },
-   "B3": {
-    "status": "monitorar",
     "score": 21
-   },
-   "Natura &Co": {
-    "status": "monitorar",
-    "score": 20
    },
    "EQT Corporation": {
     "status": "monitorar",
@@ -42828,6 +43233,10 @@
    },
    "Ultrapar": {
     "status": "atencao",
+    "score": 19
+   },
+   "Natura &Co": {
+    "status": "monitorar",
     "score": 19
    },
    "Albioma": {
@@ -42844,19 +43253,19 @@
    },
    "Ecopetrol": {
     "status": "monitorar",
-    "score": 17
-   },
-   "NextEra Energy": {
-    "status": "monitorar",
-    "score": 15
+    "score": 16
    },
    "Usiminas": {
     "status": "monitorar",
     "score": 15
    },
+   "NextEra Energy": {
+    "status": "monitorar",
+    "score": 14
+   },
    "Bradesco": {
     "status": "atencao",
-    "score": 14
+    "score": 13
    },
    "Copel": {
     "status": "monitorar",
@@ -42890,19 +43299,7 @@
     "status": "monitorar",
     "score": 8
    },
-   "Localiza": {
-    "status": "monitorar",
-    "score": 8
-   },
    "Pemex (Petróleos Mexicanos)": {
-    "status": "monitorar",
-    "score": 8
-   },
-   "Truist Financial": {
-    "status": "monitorar",
-    "score": 8
-   },
-   "Itaú Unibanco": {
     "status": "monitorar",
     "score": 8
    },
@@ -42910,11 +43307,27 @@
     "status": "atencao",
     "score": 7
    },
+   "Localiza": {
+    "status": "monitorar",
+    "score": 7
+   },
    "Halliburton": {
     "status": "monitorar",
     "score": 7
    },
+   "Truist Financial": {
+    "status": "monitorar",
+    "score": 7
+   },
+   "Itaú Unibanco": {
+    "status": "monitorar",
+    "score": 7
+   },
    "Caixa Seguridade": {
+    "status": "monitorar",
+    "score": 6
+   },
+   "Yura": {
     "status": "monitorar",
     "score": 6
    },
@@ -42963,6 +43376,10 @@
     "score": 0
    },
    "LATAM Airlines": {
+    "status": "monitorar",
+    "score": 0
+   },
+   "Coazucar": {
     "status": "monitorar",
     "score": 0
    }
