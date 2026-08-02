@@ -1120,7 +1120,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T17:49:16.634462+00:00"
+     "last_checked_at": "2026-07-31T20:27:10.601002+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2654,7 +2654,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T17:49:17.034717+00:00"
+     "last_checked_at": "2026-07-31T20:27:11.001282+00:00"
     }
    ],
    "corrob_sources": [
@@ -5634,7 +5634,8 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.623518+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.623518+00:00",
+   "corrob_sources": []
   },
   "https://www.moneytimes.com.br/prio-prio3-sp-global-eleva-nota-de-credito-da-petrolifera-apos-aquisicao-de-peregrino-lmrs/": {
    "title": "Prio (PRIO3): S&P Global eleva nota de crédito da petrolífera após aquisição de Peregrino",
@@ -9256,7 +9257,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T17:49:17.435010+00:00"
+     "last_checked_at": "2026-07-31T20:27:11.401564+00:00"
     },
     {
      "source": "Demarest",
@@ -9276,7 +9277,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T17:49:17.835313+00:00"
+     "last_checked_at": "2026-07-31T20:27:11.801864+00:00"
     }
    ],
    "corrob_sources": [
@@ -10585,7 +10586,8 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.629199+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.629199+00:00",
+   "corrob_sources": []
   },
   "https://visnoinvest.com.br/news/11689/eneva-enev3-conclui-processo-de-emissao-de-debentures-de-r-24-bi": {
    "title": "Eneva (ENEV3) conclui processo de emissão de debêntures de R$ 2,4 bi",
@@ -10659,7 +10661,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T17:49:18.235550+00:00"
+     "last_checked_at": "2026-07-31T20:27:12.202147+00:00"
     }
    ],
    "corrob_sources": [
@@ -13805,7 +13807,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T17:49:18.778500+00:00"
+     "last_checked_at": "2026-07-31T20:27:12.839972+00:00"
     }
    ],
    "corrob_sources": [
@@ -15921,7 +15923,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T17:49:19.295037+00:00"
+     "last_checked_at": "2026-07-31T20:27:13.482461+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16027,7 +16029,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T17:49:19.808219+00:00"
+     "last_checked_at": "2026-07-31T20:27:14.116976+00:00"
     },
     {
      "source": "Moomoo",
@@ -17252,7 +17254,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T17:49:20.402055+00:00"
+     "last_checked_at": "2026-07-31T20:27:14.927286+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17295,7 +17297,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T17:49:21.040769+00:00"
+     "last_checked_at": "2026-07-31T20:27:15.764159+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19978,7 +19980,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T17:49:21.570883+00:00"
+     "last_checked_at": "2026-07-31T20:27:16.416214+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20063,7 +20065,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T17:49:22.077098+00:00"
+     "last_checked_at": "2026-07-31T20:27:17.046114+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -28238,6 +28240,12 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T05:45:42.414793+00:00"
+    },
+    {
+     "source": "MegaWhat",
+     "domain": "megawhat.uol.com.br",
+     "url": "",
+     "when": "03/07 04:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -33572,6 +33580,12 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T05:45:52.745361+00:00"
+    },
+    {
+     "source": "Folha de S.Paulo",
+     "domain": "www1.folha.uol.com.br",
+     "url": "",
+     "when": "23/07 04:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -34924,7 +34938,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T17:49:23.190594+00:00"
+     "last_checked_at": "2026-07-31T20:27:17.859861+00:00"
     }
    ],
    "corrob_sources": [
@@ -37725,7 +37739,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T17:49:23.706059+00:00"
+     "last_checked_at": "2026-07-31T20:27:18.488842+00:00"
     },
     {
      "source": "Virginia Business",
@@ -37768,7 +37782,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": false,
      "link_label": "Link em verificação",
-     "last_checked_at": "2026-07-31T17:49:24.238848+00:00"
+     "last_checked_at": "2026-07-31T20:27:19.104721+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38138,42 +38152,6 @@
    "captured_ts": 1785511637,
    "cap_iso": "2026-07-31 12:27"
   },
-  "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml": {
-   "title": "CVM abre processo para apurar renúncia de presidente do conselho da Vale",
-   "url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
-   "summary": "CVM abre processo para apurar renúncia de presidente do conselho da Vale &nbsp;&nbsp; Folha de S.Paulo",
-   "source": "Folha de S.Paulo",
-   "domain": "www1.folha.uol.com.br",
-   "pub_ts": 1783494000,
-   "pub_iso": "2026-07-08 04:00",
-   "language": "pt",
-   "companies": [
-    "Vale"
-   ],
-   "event_ids": [
-    "investigacao_regulatoria"
-   ],
-   "events_by_company": {
-    "Vale": [
-     "investigacao_regulatoria"
-    ]
-   },
-   "mention_roles": {
-    "Vale": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "companies_attributed": [
-    "Vale"
-   ],
-   "context_companies": [],
-   "captured_ts": 1785520153,
-   "cap_iso": "2026-07-31 14:49"
-  },
   "https://news.google.com/rss/articles/CBMiogFBVV95cUxNSV85eUZ1Q3FSZmhHOXI1M3cyUVVEdDhyVDJ1bFI2MU5nWEZPYzFsZGhHSWRjSzhJVWdoSEl4eV9CdGFmcGt2MnRZNXQ1RjVLTTRKQ3A1dXRXRUc4WTNQbmVxS2dTMlZGZDRUM2swYy1ZWkowMGZnRTcxRnk3QjVfSVhvNVJhaHp1aFJFdzViRm5TZTZTZEJzUy1oNmR0ZjVZWGfSAaoBQVVfeXFMTlljSGZrZVpGbEpiRU5WdGJ0MlZFZTE4SUZNblg3cHkzZnA2WWRKSUhiWHo5V21DNnUyVlB2by1WcUlZMkEwSnNMQzZsMUcwSjFwajlUcjFwR18zTV9Rc1JLV091dW5iemRzWlhCS0hmV2lyZlV2eDRCSV9ROGRtSlcxUzBfTHJjYnhwZ3drcHNWUmJaQU13bjc4U1pnRlA4UFpfeURxR2pxVEE?oc=5": {
    "title": "Fim do refrigerante Dolly? Pedido de falência de R$ 15,7 bilhões ameaça empresa",
    "url": "https://atarde.com.br/economia/dona-do-guarana-dolly-pode-falir-apos-divida-de-r-157-bilhoes-1396690",
@@ -38390,6 +38368,18 @@
      "domain": "exame.com",
      "url": "",
      "when": "30/07 20:35"
+    },
+    {
+     "source": "atlaspublico.com.br",
+     "domain": "atlaspublico.com.br",
+     "url": "",
+     "when": "30/07 18:49"
+    },
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "",
+     "when": "31/07 09:32"
     }
    ],
    "captured_ts": 1785520153,
@@ -38413,9 +38403,27 @@
    "trust_override": "imprensa",
    "captured_ts": 1785520153,
    "cap_iso": "2026-07-31 14:49"
+  },
+  "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQeU1GTlNZdHc0NVlSMWdXRXpZcFdfNkpaSVdQb0RuT2JLaUhCNzgyWHctYWJ4TDhndWxsZy10NW81Z3dxcUEwcEhWYm5RMmRYVmpnaWtrcUlyVU0xcUdzWHczTUN6eW51X1VmNXlWLW01d1Npb25JMFpqQURNN3AzN3pRbTJkV3VqODdhUEFMbjZhRkh5NVF1SGJUNmJEclNELXYwLWtVZzlNZ2doUGxFdHpfM2JkcVRGQ3VFemFjUXhyUkhLVlN1RnIwdVdJN2xsc21TZGhobE9uQVnSAeoBQVVfeXFMTTU0ZjhzRVU1NlEyTzk3dVFxM0pFMDQ4cGt1NHdXNXVKS2xteXAxWEFoM2xaN19jcVJWdGlZbGJEak1RTjV6dy1XbXUyU25PNzBhQmpOOVRPclAtY21tNDJTMXVRNnY3Y2d3dWpESlYzd0pYaVhrMFRUcGI4emFtSGRiMHc4S2Z2WmZIeGtZRU1DNzVOYlhzYkhYSzJXZTViZjZYdXRDeDVXNzBXQ1doMFhxd0VxRHJxYVlPU1VzaVNCS1MyODgwMmRUc05Jdi0zN25TR3pzb1l6WVAtWHF3WkNYUTdMbzZCTUVn?oc=5": {
+   "title": "Ações do Santander Brasil têm maior alta em seis anos com oferta pública de aquisição",
+   "url": "https://valor.globo.com/financas/noticia/2026/07/31/acoes-do-santander-brasil-tem-maior-alta-em-seis-anos-com-oferta-publica-de-aquisicao.ghtml",
+   "summary": "Ações do Santander Brasil têm maior alta em seis anos com oferta pública de aquisição &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1785521096,
+   "pub_iso": "2026-07-31 15:04",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1785529625,
+   "cap_iso": "2026-07-31 17:27"
   }
  },
- "run_count": 61,
+ "run_count": 62,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -42704,11 +42712,15 @@
   "https://news.google.com/rss/articles/CBMisAFBVV95cUxQU085R0o0WWI3Nmt3S1NyZXMya3o5czNzYU8tYnJ0QXU0bnprMlZVQW4zcnJQZ3otSTRqaE5wRzFXaUVMcEpHckJWU2tQdVd2am9iZlZibzAtS0FkV0hUam8zTWowMzFUc1FzNjJwUXJKQVo5anQ4TVdielZMQlhoRm81aVhObmpNOS1TRFIxSFptblR5YklyNzVYVnNyYjg4R0pGQTlYb1ExWER4RzVMSw?oc=5": {
    "url": "https://exame.com/invest/mercados/santander-de-saida-da-b3-entenda-opa-que-fez-papel-do-banco-disparar-9-em-ny/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQeU1GTlNZdHc0NVlSMWdXRXpZcFdfNkpaSVdQb0RuT2JLaUhCNzgyWHctYWJ4TDhndWxsZy10NW81Z3dxcUEwcEhWYm5RMmRYVmpnaWtrcUlyVU0xcUdzWHczTUN6eW51X1VmNXlWLW01d1Npb25JMFpqQURNN3AzN3pRbTJkV3VqODdhUEFMbjZhRkh5NVF1SGJUNmJEclNELXYwLWtVZzlNZ2doUGxFdHpfM2JkcVRGQ3VFemFjUXhyUkhLVlN1RnIwdVdJN2xsc21TZGhobE9uQVnSAeoBQVVfeXFMTTU0ZjhzRVU1NlEyTzk3dVFxM0pFMDQ4cGt1NHdXNXVKS2xteXAxWEFoM2xaN19jcVJWdGlZbGJEak1RTjV6dy1XbXUyU25PNzBhQmpOOVRPclAtY21tNDJTMXVRNnY3Y2d3dWpESlYzd0pYaVhrMFRUcGI4emFtSGRiMHc4S2Z2WmZIeGtZRU1DNzVOYlhzYkhYSzJXZTViZjZYdXRDeDVXNzBXQ1doMFhxd0VxRHJxYVlPU1VzaVNCS1MyODgwMmRUc05Jdi0zN25TR3pzb1l6WVAtWHF3WkNYUTdMbzZCTUVn?oc=5": {
+   "url": "https://valor.globo.com/financas/noticia/2026/07/31/acoes-do-santander-brasil-tem-maior-alta-em-seis-anos-com-oferta-publica-de-aquisicao.ghtml",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785520165,
-  "iso": "31 jul 2026 · 14:49 BRT",
+  "ts": 1785529639,
+  "iso": "31 jul 2026 · 17:27 BRT",
   "status": {
    "Rumo": {
     "status": "critico",
@@ -42736,7 +42748,7 @@
    },
    "Samarco Mineração": {
     "status": "critico",
-    "score": 49
+    "score": 48
    },
    "BTG Pactual": {
     "status": "atencao",
@@ -42778,12 +42790,12 @@
     "status": "monitorar",
     "score": 27
    },
-   "Capital One Financial": {
-    "status": "monitorar",
-    "score": 27
-   },
    "Embraer": {
     "status": "atencao",
+    "score": 26
+   },
+   "Capital One Financial": {
+    "status": "monitorar",
     "score": 26
    },
    "ISA Energia Brasil": {
