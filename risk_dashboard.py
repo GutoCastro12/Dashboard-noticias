@@ -93,10 +93,16 @@ def link_fields(d: dict) -> dict:
     try:
         import link_debt_audit as _lk
     except Exception:
+        # [fix: complete Peru news links] mesmo sem o módulo de resolução
+        # disponível, uma URL do Google News/agregador já coletada é
+        # clicável no navegador real do usuário — não bloquear só por ser
+        # esse domínio (o usuário resolve o redirect ao clicar).
         u = d.get("url", "") or ""
-        ok = bool(u) and "news.google.com" not in u
+        ok = bool(u)
+        label = "Abrir notícia →" if "news.google.com" not in (u or "") \
+            else "Abrir notícia (via agregador) →"
         return {"href": u if ok else "", "render_anchor": ok,
-                "label": "Abrir notícia →" if ok else "Link em verificação",
+                "label": label if ok else "Link em verificação",
                 "link_health": "nao_verificado"}
     if d.get("link_health") and "link_render_anchor" in d:
         href = d.get("display_url") or ""
@@ -719,6 +725,195 @@ def build_company_query(company: dict, taxonomy: list[dict]) -> str:
     return f'"{alias}" ({terms})'
 
 
+# ── Ativação opt-in da resolução contextual de entidade ──────────────────────
+# Um emissor só usa o caminho novo (search_terms na consulta, resolve_entity_match
+# na atribuição, related_entities na relação) se declarar EXPLICITAMENTE pelo
+# menos um dos campos abaixo no cadastro. Nenhum dos 160 emissores reais de
+# config_risco.yaml declara qualquer um deles hoje — portanto esta função
+# retorna False para todos eles, e todo o código que depende dela (
+# `build_company_queries`, o hook de `classify_and_attribute`) cai para o
+# comportamento legado, byte-a-byte idêntico ao anterior.
+_ENTITY_RESOLUTION_OPT_IN_FIELDS = (
+    "search_terms", "entity_cues", "exclusion_cues", "related_entities",
+    "entity_scope", "entity_confidence",
+)
+
+
+def uses_contextual_entity_resolution(company: dict) -> bool:
+    """True só se o cadastro declarar >=1 dos campos novos de resolução de
+    entidade. Compatibilidade retroativa: ausência de todos os campos ⇒
+    False ⇒ caminho legado (mesma query, mesma detecção, mesmo score)."""
+    return any(company.get(f) for f in _ENTITY_RESOLUTION_OPT_IN_FIELDS)
+
+
+def build_company_queries(company: dict, taxonomy: list[dict]) -> list[str]:
+    """Lista de consultas de RECUPERAÇÃO para um emissor.
+
+    Legado (não opt-in, ou opt-in sem `search_terms` declarado): devolve
+    exatamente `[build_company_query(company, taxonomy)]` — mesma string,
+    mesmo comportamento de sempre. Isto é o que garante zero regressão para
+    os 160 emissores reais.
+
+    Opt-in COM `search_terms`: uma consulta por termo (mesmo padrão
+    `"{termo}" (risco OR risco OR ...)` de `build_company_query`),
+    deduplicadas por normalização (acento/caixa/pontuação) e limitadas a
+    `max_search_terms_per_run` (padrão 8) para não multiplicar chamadas de
+    rede sem controle. A ORDEM de busca é ampla — a ATRIBUIÇÃO nunca decorre
+    daqui; ela é decidida depois por `resolve_entity_match`."""
+    if not uses_contextual_entity_resolution(company) or not company.get("search_terms"):
+        return [build_company_query(company, taxonomy)]
+
+    grp = asset_group_of_company(company)
+    idioma = (company.get("language") or "pt").lower()[:2]
+    if idioma in RISK_TERMS_I18N and grp != "gestora_fundo":
+        risk_terms = RISK_TERMS_I18N[idioma]
+    else:
+        risk_terms = RISK_TERMS_BY_GROUP.get(grp, RISK_TERMS_BY_GROUP["listed_companies"])
+    terms = " OR ".join(f'"{t}"' for t in risk_terms)
+
+    seen_norm = set()
+    queries = []
+    max_terms = company.get("max_search_terms_per_run", 8)
+    for term in company["search_terms"]:
+        key = normalize(term)
+        if not key or key in seen_norm:
+            continue
+        seen_norm.add(key)
+        queries.append(f'"{term}" ({terms})')
+        if len(queries) >= max_terms:
+            break
+    return queries or [build_company_query(company, taxonomy)]
+
+
+def fetch_related_entities_context(company: dict, cfg: dict,
+                                   session: "requests.Session | None" = None) -> list[dict]:
+    """[fix: complete Peru news links taxonomy and holding coverage] Busca
+    real (Google News) de cada `related_entities` do emissor (opt-in via
+    `fetch_related_entities: true`) e devolve artigos JÁ FORMATADOS como
+    CONTEXTO DA HOLDING — nunca como alias/atribuição direta.
+
+    Cada artigo retornado tem: `companies=[company["name"]]` (para
+    `merge_into_history` persistir o registro), `context_events_by_company`
+    com `subject_company=<subsidiária>`, `relationship='subsidiary'`,
+    `query_scope='related_entity'` — e `events_by_company`/`event_ids`
+    SEMPRE vazios (nunca pontua a holding). Se a subsidiária não tiver
+    nenhum evento da taxonomia no texto, o artigo é descartado (não
+    persiste ruído). Emissores sem `fetch_related_entities` continuam
+    100% inalterados — função só roda quando chamada explicitamente.
+
+    Também popula `art["_related_entities_coverage"]` (lista, 1 item por
+    related_entity) com a telemetria completa da auditoria: query executada,
+    locale, janela, nº de resultados brutos, deduplicados, rejeitados (com
+    motivo de cada rejeição), e nº finalmente atribuído. Cada artigo
+    retornado carrega a MESMA lista completa (redundante, mas simples de
+    consumir sem precisar de um segundo valor de retorno) — quem monta o
+    payload final lê `arts[0]["_related_entities_coverage"]` uma vez."""
+    coverage: list[dict] = []
+    if not company.get("fetch_related_entities") or not company.get("related_entities"):
+        return []
+    taxonomy = cfg.get("taxonomy", [])
+    out = []
+    now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    try:
+        loc = locale_for_company(company, cfg)
+    except Exception:
+        loc = None
+    for rel in company["related_entities"]:
+        rel_name = rel.get("entity_name", "")
+        if not rel_name:
+            continue
+        aliases = rel.get("aliases") or [rel_name]
+        pais = company.get("country", "")
+        termo = aliases[0]
+        query = f'"{termo}" {pais}'.strip() if pais else f'"{termo}"'
+        cov = {"subsidiary": rel_name, "legal_name": rel.get("legal_name", ""),
+              "query": query, "locale": f"{loc[0]}/{loc[1]}" if loc else "",
+              "search_window_days": 180, "searched_at": now_iso,
+              "raw_results": 0, "deduped_results": 0, "rejected": [],
+              "attributed": 0, "official_sources_checked": ["SMV", "BVL"],
+              "error": ""}
+        try:
+            arts = fetch_query(query, cfg, session or requests.Session(), locale=loc)
+        except Exception as exc:
+            cov["error"] = f"{type(exc).__name__}: {str(exc)[:160]}"
+            coverage.append(cov)
+            print(f"   ⚠️  related_entity '{rel_name}' de '{company['name']}': "
+                 f"falha na busca ({type(exc).__name__}) — ignorado nesta execução.")
+            continue
+        cov["raw_results"] = len(arts)
+        _seen_urls = set()
+        arts_dedup = []
+        for a in arts:
+            u = a.get("url", "")
+            if u in _seen_urls:
+                continue
+            _seen_urls.add(u)
+            arts_dedup.append(a)
+        cov["deduped_results"] = len(arts_dedup)
+        # sinais de relevância do SETOR da holding (ex.: "azúcar"/"grupo
+        # gloria" para a Coazucar) — o nome de uma subsidiária muitas vezes
+        # coincide com topônimo/instituição homônima sem relação nenhuma
+        # (ex.: "Casa Grande" = asilo em Rosario/Argentina, nada a ver com a
+        # subsidiária peruana) — exigir >=1 sinal de setor reduz esse ruído
+        # sem inventar nenhuma entidade de resolução nova. Usa `related_
+        # entity_relevance_cues` se declarado (mais preciso — exclui os
+        # próprios nomes das subsidiárias, que sempre "batem" trivialmente
+        # por já terem sido o termo de busca); cai para `entity_cues` da
+        # holding só como fallback, removendo os nomes das subsidiárias
+        # (senão o filtro não filtra nada — "casa grande"/"cartavio" já
+        # estavam listados como entity_cues da própria holding).
+        _nomes_subs = {normalize(a) for r in (company.get("related_entities") or [])
+                       for a in ([r.get("entity_name", "")] + list(r.get("aliases") or []))}
+        setor_cues = [normalize(c) for c in
+                     (company.get("related_entity_relevance_cues")
+                      or company.get("entity_cues") or [])
+                     if normalize(c) not in _nomes_subs]
+        for a in arts_dedup:
+            texto = normalize(f"{a.get('title','')} {a.get('summary','')}")
+            if setor_cues and not any(c and c in texto for c in setor_cues):
+                cov["rejected"].append({"title": a.get("title", ""), "url": a.get("url", ""),
+                                        "reason": "sem_sinal_de_setor_provavel_homonimo"})
+                continue
+            evs = classify_article(a, taxonomy)
+            eids = [e["id"] for e in evs]
+            a["companies"] = [company["name"]]
+            a["events"] = evs or [{"id": "sem_evento_taxonomico",
+                                   "label": "Evento a revisar (sem correspondência na taxonomia atual)",
+                                   "severity": "info", "direction": "neutra", "score": 0,
+                                   "dimensions": [], "applies_to": []}]
+            a["event_ids"] = eids or ["sem_evento_taxonomico"]
+            a["events_by_company"] = {company["name"]: []}  # nunca pontua a holding
+            _ctx_eids = eids or ["sem_evento_taxonomico"]
+            a["context_events_by_company"] = {company["name"]: [{
+                "event_id": eid, "event_label": next(
+                    (e.get("label", eid) for e in evs if e["id"] == eid),
+                    "Evento a revisar (sem correspondência na taxonomia atual)" if eid == "sem_evento_taxonomico" else eid),
+                "subject_company": rel_name,
+                "relation_type": rel.get("relationship", "subsidiary"),
+                "impact_type": "indireto_material",
+                "event_scope": "indireto",
+                "event_phase": "", "direction": "neutra", "scoreable": False,
+                "attribution_confidence": "media",
+                "attribution_evidence": f"related_entity '{rel_name}' de '{company['name']}'",
+            } for eid in _ctx_eids]}
+            a["query_scope"] = "related_entity"
+            a["query_related_entity"] = rel_name
+            a["query_company"] = company["name"]
+            out.append(a)
+            cov["attributed"] += 1
+        coverage.append(cov)
+    for a in out:
+        a["_related_entities_coverage"] = coverage
+    # se NENHUM artigo foi atribuído (nenhuma subsidiária rendeu notícia
+    # relevante), a telemetria ainda precisa ficar disponível para quem
+    # monta o payload/HTML — devolve num "artigo" vazio, marcador, que quem
+    # chama pode descartar do merge_into_history (sem events reais) mas usar
+    # só para ler `_related_entities_coverage`.
+    if not out and coverage:
+        out.append({"_related_entities_coverage": coverage, "_coverage_only": True})
+    return out
+
+
 _SEARCH_TELEMETRY: dict = {}
 # 4H.1d — telemetria dos COLETORES OFICIAIS. Elegibilidade/configuração não é
 # execução: só o que o coletor realmente tentou entra aqui.
@@ -749,6 +944,67 @@ def should_fetch_company(company: dict, cfg: dict, run_count: int) -> bool:
     return (run_count + offset) % n == 0
 
 
+def _fetch_one_query(q: str, cfg: dict, session: requests.Session,
+                     locs: list, tel: dict) -> tuple[list[dict], str]:
+    """Executa UMA query de recuperação através dos locales de fallback do
+    emissor (principal + até 2 alternativos) — corpo extraído verbatim do
+    laço que existia dentro de `fetch_all` antes da integração opt-in
+    (4H — refatoração de forma, sem mudança de comportamento).
+
+    Entradas:
+      q     — a string de query já pronta (de `build_company_queries`).
+      cfg   — config completo (usado por `fetch_query_result` para period/
+              max_articles_per_query).
+      session — `requests.Session` compartilhada entre todas as chamadas.
+      locs  — lista de locales candidatos (`locales_for_company`), na ordem
+              principal → fallback.
+      tel   — dict de telemetria do emissor (mesmo `_SEARCH_TELEMETRY[nome]`
+              de sempre) — MUTADO in-place (efeito colateral idêntico ao
+              código anterior: `queries`, `success`, `raw_articles`,
+              `errors`, `status_codes`, `locales_tentados`, `por_locale`,
+              `error_type`, `error`).
+
+    Saída: `(artigos, locale_usado)` — `artigos` é a lista de artigos do
+    PRIMEIRO locale que respondeu com sucesso técnico E teve resultado
+    (`_r["ok"] and _r["articles"]`); `locale_usado` é a string desse locale,
+    ou `""` se nenhum locale retornou artigo algum.
+
+    Exceções: nenhuma tratada aqui — `fetch_query_result` já captura
+    timeout/HTTP/conexão internamente e devolve `{"ok": False, ...}`; esta
+    função nunca levanta.
+
+    Relação com `fetch_query_result`: é o único ponto de chamada — mesma
+    assinatura, mesmos argumentos posicionais/nomeados de antes
+    (`fetch_query_result(q, cfg, session, (hl, gl))`)."""
+    arts, usado = [], ""
+    for lc in locs[:3]:
+        hl, gl = lc.split("/", 1)
+        r = fetch_query_result(q, cfg, session, (hl, gl))
+        pl = tel["por_locale"].setdefault(lc, {"attempted": 0, "success": 0,
+                                               "raw_articles": 0, "errors": 0,
+                                               "error_type": "", "error": ""})
+        pl["attempted"] += 1
+        tel["queries"] += 1
+        if lc not in tel["locales_tentados"]:
+            tel["locales_tentados"].append(lc)
+        if r["status_code"] is not None:
+            tel["status_codes"].append(r["status_code"])
+        if r["ok"]:
+            pl["success"] += 1
+            tel["success"] += 1
+            pl["raw_articles"] += len(r["articles"])
+            tel["raw_articles"] += len(r["articles"])
+            if r["articles"]:
+                arts, usado = r["articles"], lc
+                break          # principal resolveu: não usa fallback
+        else:
+            pl["errors"] += 1
+            pl.update(error_type=r["error_type"], error=r["error"])
+            tel["errors"] += 1
+            tel.update(error_type=r["error_type"], error=r["error"])
+    return arts, usado
+
+
 def fetch_all(cfg: dict, run_count: int = 0) -> list[dict]:
     session = requests.Session()
     all_articles: list[dict] = []
@@ -760,47 +1016,38 @@ def fetch_all(cfg: dict, run_count: int = 0) -> list[dict]:
     print(f" 📡 Buscando notícias por emissor "
           f"({len(active)} nesta execução, {skipped} agendados p/ próximas runs)…")
     for company in active:
-        q = build_company_query(company, cfg["taxonomy"])
+        # `build_company_queries` devolve UMA única query (mesma string de
+        # sempre) para os 160 emissores reais (nenhum declara
+        # `search_terms`) — o laço abaixo executa uma única vez para eles,
+        # byte-a-byte igual ao comportamento anterior. Só emissores opt-in
+        # COM `search_terms` recebem >1 consulta aqui.
+        _queries = build_company_queries(company, cfg["taxonomy"])
         print(f"   • [T{company.get('tier', 2)}] {company['name']}")
         _locs = locales_for_company(company, cfg)
         _tel = _SEARCH_TELEMETRY.setdefault(company["name"], {
             "searched": True, "locale": _locs[0], "locales_tentados": [],
             "locale_com_resultado": "", "queries": 0, "success": 0,
             "raw_articles": 0, "errors": 0, "por_locale": {},
-            "status_codes": [], "error_type": "", "error": ""})
-        # locale principal; fallback SÓ se houver erro ou zero resultados
-        _arts, _usado = [], ""
-        for _lc in _locs[:3]:
-            _hl, _gl = _lc.split("/", 1)
-            _r = fetch_query_result(q, cfg, session, (_hl, _gl))
-            _pl = _tel["por_locale"].setdefault(_lc, {"attempted": 0, "success": 0,
-                                                      "raw_articles": 0, "errors": 0,
-                                                      "error_type": "", "error": ""})
-            _pl["attempted"] += 1
-            _tel["queries"] += 1
-            if _lc not in _tel["locales_tentados"]:
-                _tel["locales_tentados"].append(_lc)
-            if _r["status_code"] is not None:
-                _tel["status_codes"].append(_r["status_code"])
-            if _r["ok"]:
-                _pl["success"] += 1
-                _tel["success"] += 1
-                _pl["raw_articles"] += len(_r["articles"])
-                _tel["raw_articles"] += len(_r["articles"])
-                if _r["articles"]:
-                    _arts, _usado = _r["articles"], _lc
-                    break          # principal resolveu: não usa fallback
-            else:
-                _pl["errors"] += 1
-                _pl.update(error_type=_r["error_type"], error=_r["error"])
-                _tel["errors"] += 1
-                _tel.update(error_type=_r["error_type"], error=_r["error"])
-        _tel["locale_com_resultado"] = _usado
+            "status_codes": [], "error_type": "", "error": "",
+            "search_terms_used": _queries if len(_queries) > 1 else []})
+        _arts_all = []
         _seen_url = set()
-        for art in _arts:
-            if art.get("url") in _seen_url:
-                continue
-            _seen_url.add(art.get("url"))
+        for q in _queries:
+            _arts, _usado = _fetch_one_query(q, cfg, session, _locs, _tel)
+            # Só emissores opt-in com >1 query preservam o locale de uma
+            # busca anterior quando a busca seguinte não encontra nada —
+            # para os 160 legados (sempre 1 query), `_tel["locale_com_
+            # resultado"]` ainda está em "" nesta linha, então isto é
+            # idêntico a `_tel["locale_com_resultado"] = _usado`.
+            _tel["locale_com_resultado"] = _usado or _tel["locale_com_resultado"]
+            for art in _arts:
+                if art.get("url") in _seen_url:
+                    continue
+                _seen_url.add(art.get("url"))
+                _arts_all.append(art)
+            if len(_queries) > 1:
+                time.sleep(0.25)  # múltiplas search_terms: pausa extra entre elas
+        for art in _arts_all:
             if art["url"] and art["url"] not in seen:
                 seen.add(art["url"])
                 art["query_company"] = company["name"]
@@ -2394,6 +2641,25 @@ def semantic_role_guard(titulo: str, resumo: str, eventos: list[dict],
     return mantidos, descartes
 
 
+def cross_article_family_map(cfg: dict) -> dict:
+    """[fix: deduplicate operational events across articles] Mapa event_id ->
+    family_id, só para famílias que declararam `merge_occurrences_across_
+    articles: true` (hoje só `disrupcao_operacional`). Usado para agrupar em
+    UMA ocorrência econômica artigos DIFERENTES que descrevem o MESMO fato
+    mas foram classificados com estágios/event_ids diferentes da mesma
+    família (ex.: 'incêndio' vs 'incêndio de grande magnitude' na mesma
+    planta). Famílias sem essa flag (credit_rating/insolvencia/inadimplencia/
+    ma) NUNCA entram neste mapa — preservam o agrupamento legado por
+    event_id, inalterado."""
+    out = {}
+    for fam_id, spec in ((cfg.get("event_resolution") or {}).get("families") or {}).items():
+        if not spec.get("merge_occurrences_across_articles"):
+            continue
+        for member in (spec.get("members") or []):
+            out[member] = fam_id
+    return out
+
+
 def resolve_event_families(eventos: list[dict], cfg: dict, titulo: str = "") -> tuple:
     """4H.0 — Resolve eventos da MESMA família semântica numa ocorrência.
 
@@ -2625,6 +2891,297 @@ def detect_companies(art: dict, watchlist: list[dict]) -> list[str]:
     if isinstance(art, dict):
         art["mention_roles"] = papeis
     return found
+
+
+# ── Resolução contextual de entidade (genérica, configurável) ───────────────
+# Camada OPCIONAL, aditiva — NÃO substitui `detect_companies`/`mention_role`,
+# não é chamada por `main()`/`fetch_all`/`classify_and_attribute` por padrão.
+# Existe para permitir, quando o cadastro do emissor declarar os campos novos
+# (`search_terms`, `entity_cues`, `exclusion_cues`, `related_entities`,
+# `entity_scope`, `entity_confidence`), separar RECUPERAÇÃO (consulta ampla)
+# de ATRIBUIÇÃO (confirmação da entidade por evidência, sem exigir razão
+# social literal no título). Cadastros que não declaram esses campos
+# continuam funcionando exatamente como hoje — `resolve_entity_match` nunca
+# é invocada para eles em produção.
+#
+# Ordem de resolução (auditável, não é um score opaco):
+#   1) exclusion_cues tem precedência sobre qualquer outro sinal;
+#   2) alias de alta precisão (mesmo padrão de palavra inteira do
+#      `detect_companies`) confirma a entidade com confiança alta;
+#   3) >= `entity_cues_min` (padrão 2) entity_cues positivos, sem exclusão,
+#      confirma com confiança média (atribuição contextual, sem alias
+#      literal — ex.: "Cementera Yura alcanza utilidades..." sem "S.A.");
+#   4) nenhum dos anteriores: não atribuído (confiança baixa/nenhuma);
+#   5) `related_entities` é verificado à parte — menção a uma subsidiária/
+#      controladora relacionada NUNCA transfere automaticamente o evento
+#      para a empresa cadastrada; só identifica a entidade relacionada como
+#      sujeito provável, para revisão humana ou para o padrão Vale/Samarco
+#      já existente em `semantic_audit.py` decidir o roteamento.
+ENTITY_CUES_MIN_DEFAULT = 2
+
+
+def _text_of(article: dict) -> str:
+    return normalize(f"{article.get('title', '')} {article.get('summary', '')}")
+
+
+def resolve_entity_match(article: dict, company: dict, cfg: dict | None = None) -> dict:
+    """Resolução contextual de entidade — genérica e configurável (não
+    hard-coded para nenhum emissor específico). Ver cabeçalho da seção acima
+    para a ordem de precedência. Retorna um dict auditável, nunca um score
+    opaco:
+
+    matched (bool), confidence ("high"/"medium"/"low"/"none"),
+    matched_alias (str|None), positive_cues (list[str]),
+    exclusion_cues (list[str]), relation_type
+    ("direct"/"related_entity"/None), subject_company (str|None),
+    rule (str — nome da regra que decidiu), observation (str).
+
+    Compatibilidade retroativa: se `company` não declarar `entity_cues`/
+    `exclusion_cues`, o comportamento cai para "só alias de alta precisão",
+    equivalente ao que `detect_companies` já faz — nenhuma mudança de
+    resultado para cadastros antigos."""
+    text = _text_of(article)
+    name = company.get("name", "")
+    aliases = company.get("aliases") or [name]
+    exclusion_cues = company.get("exclusion_cues") or []
+    entity_cues = company.get("entity_cues") or []
+    min_cues = company.get("entity_cues_min", ENTITY_CUES_MIN_DEFAULT)
+
+    # 1) exclusion_cues — precedência absoluta, mesmo se um alias também bater...
+    excl_hits = [c for c in exclusion_cues if normalize(c) and normalize(c) in text]
+    alias_hit = next((a for a in aliases if _word_pattern(a).search(text)), None)
+    cue_hits = [c for c in entity_cues if normalize(c) in text]
+    if excl_hits:
+        # [Integração 5.4] ...exceto quando o alias corporativo de alta precisão
+        # está presente JUNTO com evidência operacional suficiente (>=
+        # entity_cues_min sinais de contexto positivo) — "Incendio afecta la
+        # fábrica de Cemento Yura en el distrito de Yura" é sobre a EMPRESA
+        # (alias 'Cemento Yura' + cues operacionais 'cemento'/'fábrica'), não
+        # sobre o distrito, mesmo citando o topônimo excludente. Sem alias OU
+        # sem cues operacionais suficientes, a exclusão mantém precedência
+        # absoluta e INALTERADA (ex.: "Homicidio en Yura: Yura S.A. no tiene
+        # relación con el hecho" — só 1 cue ('yura s.a.') abaixo do mínimo —
+        # continua REJEITADO; "titularidad estatal en Yura" — sem alias —
+        # continua REJEITADO).
+        if not (alias_hit and len(cue_hits) >= min_cues):
+            return {
+                "matched": False, "confidence": "none", "matched_alias": None,
+                "positive_cues": [], "exclusion_cues": excl_hits,
+                "relation_type": None, "subject_company": None,
+                "rule": "exclusion_cue_precedence",
+                "observation": (f"Sinal(is) de exclusão presente(s) ({', '.join(excl_hits)}) "
+                                f"— nunca atribuir a '{name}', mesmo com alias/cues positivos."),
+            }
+        return {
+            "matched": True, "confidence": "high", "matched_alias": alias_hit,
+            "positive_cues": cue_hits, "exclusion_cues": excl_hits,
+            "relation_type": "direct", "subject_company": name,
+            "rule": "alias_and_operational_cues_override_exclusion",
+            "observation": (f"Alias de alta precisão '{alias_hit}' + {len(cue_hits)} sinal(is) "
+                            f"operacional(is) ({', '.join(cue_hits)}) superam exclusion_cue(s) "
+                            f"coincidente(s) ({', '.join(excl_hits)}) — evidência corporativa "
+                            f"direta prevalece sobre o topônimo/contexto excludente."),
+        }
+
+    # 2) alias de alta precisão — mesmo padrão de palavra inteira do detect_companies
+    if alias_hit:
+        return {
+            "matched": True, "confidence": "high", "matched_alias": alias_hit,
+            "positive_cues": cue_hits,
+            "exclusion_cues": [], "relation_type": "direct", "subject_company": name,
+            "rule": "high_precision_alias",
+            "observation": f"Alias de alta precisão '{alias_hit}' encontrado no texto.",
+        }
+
+    # 3) entity_cues contextuais — confirma sem exigir alias literal
+    if len(cue_hits) >= min_cues:
+        return {
+            "matched": True, "confidence": "medium", "matched_alias": None,
+            "positive_cues": cue_hits, "exclusion_cues": [],
+            "relation_type": "direct", "subject_company": name,
+            "rule": "contextual_cues_threshold",
+            "observation": (f"{len(cue_hits)} sinal(is) de contexto positivo(s) "
+                            f"({', '.join(cue_hits)}) >= mínimo exigido ({min_cues}), "
+                            f"sem alias literal no texto."),
+        }
+
+    # 4) nenhum sinal suficiente
+    return {
+        "matched": False, "confidence": "low" if cue_hits else "none",
+        "matched_alias": None, "positive_cues": cue_hits, "exclusion_cues": [],
+        "relation_type": None, "subject_company": None,
+        "rule": "insufficient_evidence",
+        "observation": (f"{len(cue_hits)} sinal(is) de contexto encontrado(s), "
+                        f"abaixo do mínimo exigido ({min_cues}); nenhum alias literal."),
+    }
+
+
+def resolve_related_entity_mentions(article: dict, company: dict) -> list[dict]:
+    """Verifica se o artigo menciona alguma `related_entity` do emissor
+    (subsidiária, controladora, marca irmã) usando os aliases próprios da
+    relacionada. NUNCA transfere o evento automaticamente — apenas identifica
+    a entidade relacionada como sujeito provável, para o consumidor (padrão
+    Vale/Samarco em `semantic_audit.py`, ou revisão humana) decidir o
+    roteamento. Retorna lista vazia se `related_entities` não estiver
+    cadastrado (compatibilidade retroativa)."""
+    text = _text_of(article)
+    hits = []
+    for rel in company.get("related_entities") or []:
+        rel_aliases = rel.get("aliases") or [rel.get("entity_name", "")]
+        hit = next((a for a in rel_aliases if a and _word_pattern(a).search(text)), None)
+        if hit:
+            hits.append({
+                "entity_name": rel.get("entity_name"),
+                "legal_name": rel.get("legal_name"),
+                "relationship": rel.get("relationship"),
+                "attribution_mode": rel.get("attribution_mode"),
+                "matched_alias": hit,
+                "observation": (f"Menção à entidade relacionada '{rel.get('entity_name')}' "
+                                f"({rel.get('relationship')}) — não transferir automaticamente "
+                                f"para '{company.get('name')}'."),
+            })
+    return hits
+
+
+def apply_contextual_entity_resolution(art: dict, cfg: dict) -> dict:
+    """Hook OPT-IN chamado por `classify_and_attribute` logo após
+    `detect_companies`. Para cada emissor da watchlist que declarar
+    `uses_contextual_entity_resolution(company) == True`, roda
+    `resolve_entity_match` (+ `resolve_related_entity_mentions`) e corrige
+    `art["companies"]` de acordo:
+
+      • matched=True e ainda não estava em `art["companies"]` → adiciona
+        (cobre o caso "atribuído por contexto, sem alias literal" — ex.:
+        'Cementera Yura alcanza utilidades...' sem 'S.A.').
+      • matched=False mas HAVIA entrado em `art["companies"]` via alias de
+        `detect_companies` → remove (exclusion_cue tem precedência mesmo
+        sobre um alias presente — ex.: 'Homicidio en Yura: Yura S.A. no
+        tiene relación con el hecho.').
+      • Emissores SEM nenhum campo novo (os 160 reais hoje) nunca entram
+        neste laço — `art["companies"]` sai exatamente como
+        `detect_companies` produziu, sem nenhuma alteração.
+
+    Registra tudo em `art["entity_resolution_trace"]` (aditivo, nunca
+    persistido em `risk_history.json` de produção por nenhum caminho
+    existente — só os scripts de shadow/candidate leem esse campo).
+    Retorna um dict `{company_name: resolve_entity_match_result}` só dos
+    emissores opt-in avaliados, para quem quiser reconciliar/depurar."""
+    watch = cfg.get("watchlist", [])
+    opt_in = [c for c in watch if uses_contextual_entity_resolution(c)]
+    if not opt_in:
+        return {}
+    art.setdefault("companies", [])
+    trace = art.setdefault("entity_resolution_trace", [])
+    results = {}
+    for company in opt_in:
+        name = company["name"]
+        res = resolve_entity_match(art, company, cfg)
+        related = resolve_related_entity_mentions(art, company)
+        results[name] = res
+        trace.append({
+            "candidate_company": name, "matched": res["matched"],
+            "confidence": res["confidence"], "matched_alias": res["matched_alias"],
+            "positive_cues": res["positive_cues"], "exclusion_cues": res["exclusion_cues"],
+            "relation_type": res["relation_type"], "subject_company": res["subject_company"],
+            "rule": res["rule"], "observation": res["observation"],
+            "related_entities_mentioned": related,
+        })
+        already_present = name in art["companies"]
+        if res["matched"] and not already_present:
+            art["companies"].append(name)
+        elif not res["matched"] and already_present:
+            # alias de detect_companies bateu, mas a exclusion_cue/insuficiência
+            # de evidência tem precedência — remove para não vazar falso positivo
+            art["companies"].remove(name)
+    return results
+
+
+def suppress_non_scoreable_entity_scopes(art: dict, cfg: dict) -> None:
+    """Pós-processamento OPT-IN chamado no fim de `classify_and_attribute`.
+    Para emissores com `entity_scope` em ('brand_group',
+    'entity_pending_confirmation') OU `scoreable: False` explícito no
+    cadastro, move os eventos já atribuídos de `events_by_company` — NUNCA
+    entram em `event_ids_for`/score/status/worst_event/n_critical.
+
+    [Integração] Evento direto autônomo (não family_secondary — esses já
+    saíram de `events_by_company` em `semantic_audit.apply_semantics_to_
+    record`, que roda ANTES desta função, e ficam só como metadado do
+    evento principal) de uma marca/grupo (`brand_group`) ou entidade
+    pendente de confirmação (`entity_pending_confirmation`) é COMPATÍVEL
+    com `informational_events_by_company` (regra 5.4/5.5 da integração):
+    o artigo pode ser recuperado/atribuído/exibido, mas nunca pontua. A
+    entrada registra `entity_scope`, `entity_confidence`, a entidade
+    provável (`likely_entity`) e a necessidade de confirmação
+    (`entity_pending_confirmation`). O campo legado
+    `shadow_informational_events_by_company` é preservado para quem já lia
+    esse caminho. Emissores sem `entity_scope`/`scoreable` explícito (os
+    160 reais) nunca são tocados por esta função."""
+    wl_map = {c["name"]: c for c in cfg.get("watchlist", [])}
+    ebc = art.get("events_by_company") or {}
+    _events_lookup = {e.get("id"): e for e in (art.get("events") or []) if isinstance(e, dict)}
+    for name in list(ebc.keys()):
+        company = wl_map.get(name)
+        if not company:
+            continue
+        scope = company.get("entity_scope")
+        non_scoreable = (scope in ("brand_group", "entity_pending_confirmation")
+                        or company.get("scoreable") is False)
+        if non_scoreable:
+            # NOTA DE INTEGRAÇÃO: `.pop()` remove a CHAVE inteira de `ebc`
+            # (não só zera a lista) — se esta empresa for a única do artigo,
+            # `art["events_by_company"]` vira `{}`. Isso é seguro porque
+            # `merge_into_history` foi ajustado (ver comentário lá) para
+            # persistir `events_by_company` sempre que a CHAVE existir em
+            # `art` — mesmo com dict vazio — em vez de exigir um valor
+            # truthy; sem esse ajuste, `event_ids_for` cairia no fallback
+            # legado (`rec["event_ids"]`, global) e reintroduziria o evento
+            # suprimido como pontuável para qualquer empresa do artigo.
+            evs = ebc.pop(name, [])
+            if evs:
+                # compatibilidade retroativa: campo legado só de shadow
+                art.setdefault("shadow_informational_events_by_company", {})[name] = evs
+                pending = scope == "entity_pending_confirmation"
+                info = art.setdefault("informational_events_by_company", {})
+                info.setdefault(name, [])
+                _url = art.get("url", "")
+                for ev in evs:
+                    already = any(x.get("event_id") == ev and x.get("source_record_id") == _url
+                                  for x in info[name])
+                    if already:
+                        continue
+                    _ev_obj = _events_lookup.get(ev, {})
+                    _direction = _ev_obj.get("direction") or ("positiva" if is_positive(_ev_obj) else "neutra")
+                    _display = "positivo" if _direction == "positiva" else "a_revisar"
+                    info[name].append({
+                        "company": name,
+                        "event_id": ev,
+                        "event_label": (_ev_obj.get("label") or ev).replace("_", " "),
+                        "subject_company": name,
+                        "monitored_company": name,
+                        "relation_type": "direto",
+                        "event_scope": "direto",
+                        "direction": _direction,
+                        "scoreable": False,
+                        "display_category": _display,
+                        "entity_scope": scope or ("scoreable_false" if company.get("scoreable") is False else ""),
+                        "entity_confidence": company.get("entity_confidence", ""),
+                        "entity_pending_confirmation": pending,
+                        "likely_entity": company.get("likely_entity") or name,
+                        "confirmation_status": ("pendente" if pending else
+                                                ("requer_confirmacao" if company.get("entity_confidence")
+                                                 in ("media", "medium", "baixa", "low") else "")),
+                        "attribution_rule": "R_ENTITY_SCOPE_NAO_PONTUAVEL",
+                        "attribution_confidence": company.get("entity_confidence", "media"),
+                        "title": art.get("title", ""),
+                        "url": _url,
+                        "pub_ts": art.get("pub_ts"),
+                        "observation": (f"entity_scope={scope or 'scoreable_false'} — não pontuável "
+                                        "por configuração do cadastro (opt-in, aditivo)."),
+                        "source_record_id": _url,
+                    })
+    if not ebc and "events_by_company" in art:
+        # preserva o campo (compatibilidade), mesmo que fique vazio
+        art["events_by_company"] = ebc
 
 
 def run_attribution_tests(cfg: dict | None = None) -> int:
@@ -3718,12 +4275,26 @@ def merge_into_history(history: dict, articles: list[dict], keep_days: int = 120
         # 4H.1e — associação EMPRESA × EVENTO. Sem isto, o radar volta a aplicar
         # o evento global a todas as empresas citadas (fraude da CVS vazando
         # para quem só a processou).
-        for _k in ("events_by_company", "event_assessments", "semantic_discards",
+        for _k in ("event_assessments", "semantic_discards",
                    "secondary_events", "conflict_resolution_reason", "mention_roles",
                    "llm_divergences", "companies_attributed", "context_companies",
-                   "context_events_by_company"):
+                   "context_events_by_company", "informational_events_by_company"):
             if art.get(_k):
                 rec[_k] = art[_k]
+        # [Integração] `events_by_company` é copiado sempre que a CHAVE
+        # existir em `art` — mesmo com dict VAZIO (`{}`) — e não só quando
+        # truthy. `suppress_non_scoreable_entity_scopes` (entity_scope=
+        # brand_group/entity_pending_confirmation/scoreable=False, opt-in)
+        # pode suprimir TODAS as empresas de um artigo, deixando `{}`; um
+        # `{}` genuinamente avaliado é diferente de "nunca avaliado" — se não
+        # for persistido, `event_ids_for` cai no fallback LEGADO
+        # (`rec["event_ids"]`, evento GLOBAL sem filtro por empresa) e
+        # reintroduz o evento suprimido como pontuável para qualquer empresa
+        # do artigo. Para os 160 emissores reais (sem opt-in) isto nunca
+        # ocorre: `events_by_company` só existe quando há ≥1 empresa com
+        # ≥1 evento (nunca fica `{}` sem essa camada opt-in).
+        if "events_by_company" in art:
+            rec["events_by_company"] = art["events_by_company"]
         # empresas ATRIBUÍDAS × empresas de CONTEXTO: quem ficou sem evento após
         # as guardas é menção, não emissor afetado (JPMorgan no caso da CVS).
         _ebc = art.get("events_by_company")
@@ -3910,6 +4481,59 @@ _STOP_MARCADORES = {
     "capital", "social", "conselho", "diretoria", "resultado", "lucro", "receita",
 }
 
+# [fix: deduplicate operational events across articles] vocabulário genérico
+# de incidente/incêndio que NÃO identifica a instalação/local (ex.: "Incendio"
+# maiúsculo por estar no início da frase não é um marcador de LOCAL — usar
+# isso na comparação faria "Los Olivos" x "Comas" parecerem o mesmo fato só
+# por ambos começarem com "Incendio"). Usado SÓ pela função dedicada abaixo
+# (`_marcadores_locais_operacionais`), nunca por `_marcadores_operacao()` —
+# não altera a união por marcador já existente para M&A ('Jirau') nem
+# nenhum outro emissor/família fora de `disrupcao_operacional`.
+_STOP_MARCADORES_LOCAL_OPERACIONAL = {
+    "incendio", "incendios", "emergencia", "alarma", "siniestro", "explosion",
+    "explosiones", "planta", "almacen", "fabrica", "instalacion",
+    "instalaciones", "unidad", "unidades", "bomberos", "humo", "humareda",
+    "evacuacion", "evacuación", "operacion", "operaciones", "empresa",
+    "extincion", "extinción", "reactiva", "reactivado", "controlado",
+    "confirma", "alerta", "voraz", "detalles", "video",
+    # qualificadores regionais/direcionais GENÉRICOS DEMAIS para identificar
+    # uma instalação específica (ex.: 'Lima Norte' é uma macrozona que CONTÉM
+    # 'Los Olivos' — duas notícias do MESMO incêndio, uma citando o distrito
+    # e outra a macrozona, não podem parecer 'locais diferentes' só por isso).
+    "lima", "norte", "sur", "sul", "centro", "este", "oeste", "peru", "perú",
+}
+
+
+def _marcadores_locais_operacionais(titulo: str, emissor: str, aliases) -> set:
+    """[fix: deduplicate operational events across articles] Extrai do
+    TÍTULO um conjunto de marcadores plausíveis de INSTALAÇÃO/LOCAL (ex.:
+    'olivos', 'comas'), para o gate de agrupamento entre artigos da família
+    `disrupcao_operacional`. Função TOTALMENTE independente de
+    `_marcadores_operacao()` (usada pelo passo 3 legado de união por
+    marcador — 'Jirau' — para TODAS as famílias/emissores): não a reutiliza
+    nem a altera, para não mudar nada fora do escopo desta correção.
+
+    Descarta: (a) vocabulário genérico de incidente (`_STOP_MARCADORES_
+    LOCAL_OPERACIONAL` — 'incendio', 'planta', 'bomberos'...) que não
+    identifica o LOCAL; (b) fragmentos de URL/slug encurtada (ex.: 'MgIVM'
+    de 'shorturl.at/MgIVM' — padrão minúscula-seguida-de-maiúscula no MEIO
+    da palavra não ocorre em nome próprio normal); (c) aliases do próprio
+    emissor. Sem cap de quantidade (o uso aqui é comparar por interseção,
+    não rotular)."""
+    t = titulo or ""
+    proprios = re.findall(r"\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][\wÀ-ÿ]{3,}", t)
+    ali = {normalize(a) for a in (list(aliases or []) + [emissor])}
+    out = set()
+    for p in proprios:
+        if re.search(r"[a-záéíóúâêôãõç][A-ZÁÉÍÓÚÂÊÔÃÕÇ]", p):
+            continue  # fragmento de URL/slug (ex.: 'MgIVM')
+        n = normalize(p)
+        if (n in _STOP_MARCADORES or n in _STOP_MARCADORES_LOCAL_OPERACIONAL
+                or n in ali or any(n in a or a in n for a in ali if a)):
+            continue
+        out.add(n)
+    return out
+
 
 def _marcadores_operacao(titulo: str, emissor: str, aliases) -> str:
     t = titulo or ""
@@ -4040,7 +4664,9 @@ def mention_role(titulo: str, emissor: str, aliases, outros: list[str]) -> dict:
             "event_phase": fase, "direction_hint": ""}
 
 
-def assign_occurrence_clusters(occurrences: list[dict], gap_days: int = 45) -> None:
+def assign_occurrence_clusters(occurrences: list[dict], gap_days: int = 45,
+                               fam_map: dict | None = None,
+                               aliases_by_company: dict | None = None) -> None:
     """Define a OCORRÊNCIA econômica (unidade do dashboard). Ordem de decisão:
 
     1. **Separadores determinísticos** — série/número da operação (16ª × 17ª
@@ -4052,12 +4678,33 @@ def assign_occurrence_clusters(occurrences: list[dict], gap_days: int = 45) -> N
        operação (ex.: 'Jirau') são reunidos, mesmo acima do gap.
 
     Na dúvida, separa: fundir fatos econômicos distintos é o erro mais caro.
-    Grava `_occ_key` em cada ocorrência."""
+
+    [fix: deduplicate operational events across articles] `fam_map` (de
+    `cross_article_family_map(cfg)`) é opt-in, só para famílias que
+    declararam `merge_occurrences_across_articles: true` (hoje só
+    `disrupcao_operacional`). Para os EVENTOS dessas famílias, o separador
+    (1) usa `family_id` em vez de `event_id` — artigos com estágios
+    diferentes (incêndio leve × incêndio grave) da MESMA família viram
+    candidatos à MESMA ocorrência. Dentro do gap temporal, se ambos os
+    lados tiverem marcador de local/instalação identificável (ex.: 'Los
+    Olivos') e ELES NÃO COINCIDIREM, a ocorrência é separada mesmo dentro
+    do gap (conservador: não funde incêndios em unidades diferentes só por
+    pertencerem à mesma família). A união por marcador ACIMA do gap (passo
+    3) é DESLIGADA para grupos de família — dois incêndios na MESMA planta
+    em datas distantes continuam sendo ocorrências distintas (exigido:
+    'incêndios em datas diferentes → 2 ocorrências'). Sem `fam_map` (ou
+    para eventos fora de qualquer família opt-in), o comportamento é
+    IDÊNTICO ao legado (chave por `event_id` puro)."""
     limite = gap_days * 86400
+    fam_map = fam_map or {}
+    aliases_by_company = aliases_by_company or {}
     grupos: dict[tuple, list[dict]] = {}
     for o in occurrences:
         ident = o.get("_ident") or {}
-        grupos.setdefault((ident.get("emissor", ""), o.get("event_id", ""),
+        eid = o.get("event_id", "")
+        group_ev = fam_map.get(eid, eid)
+        o["_grouped_by_family"] = group_ev != eid
+        grupos.setdefault((ident.get("emissor", ""), group_ev,
                            ident.get("serie", ""), ident.get("objeto", "")), []).append(o)
 
     for (emissor, ev, serie, objeto), itens in grupos.items():
@@ -4067,29 +4714,47 @@ def assign_occurrence_clusters(occurrences: list[dict], gap_days: int = 45) -> N
             base += f"|serie:{serie}"
         if objeto:
             base += f"|obj:{objeto}"
-        # (2) clusters temporais
+        is_family_group = bool(itens) and itens[0].get("_grouped_by_family")
+        # (2) clusters temporais (+ para grupos de família: gate conservador
+        # de marcador de local/instalação)
         clusters: list[list[dict]] = []
         anterior = None
+        cluster_marcas: set = set()
         for o in itens:
             ts = o.get("pub_ts", 0)
-            if anterior is None or (ts - anterior) > limite:
+            _id_o = o.get("_ident") or {}
+            _emissor_o = _id_o.get("emissor", "")
+            marcas_o = _marcadores_locais_operacionais(o.get("title", ""), _emissor_o,
+                                                       aliases_by_company.get(_emissor_o))
+            novo = anterior is None or (ts - anterior) > limite
+            if (not novo and is_family_group and marcas_o and cluster_marcas
+                    and not (marcas_o & cluster_marcas)):
+                novo = True  # mesma família/janela, marcador de local diverge
+            if novo:
                 clusters.append([])
+                cluster_marcas = set()
             clusters[-1].append(o)
             anterior = ts
-        # (3) une clusters que dividem marcador da operação
-        marcas = []
-        for cl in clusters:
-            ms = set()
-            for o in cl:
-                ms |= {m for m in ((o.get("_ident") or {}).get("marcadores") or "").split("|") if m}
-            marcas.append(ms)
-        destino = list(range(len(clusters)))
-        for a in range(len(clusters)):
-            for b in range(a + 1, len(clusters)):
-                if marcas[a] and marcas[b] and (marcas[a] & marcas[b]):
-                    destino[b] = destino[a]
+            if marcas_o:
+                cluster_marcas |= marcas_o
+        # (3) une clusters que dividem marcador da operação — DESLIGADO para
+        # grupos de família (fatos distantes no tempo continuam separados).
+        if is_family_group:
+            destino = list(range(len(clusters)))
+        else:
+            marcas = []
+            for cl in clusters:
+                ms = set()
+                for o in cl:
+                    ms |= {m for m in ((o.get("_ident") or {}).get("marcadores") or "").split("|") if m}
+                marcas.append(ms)
+            destino = list(range(len(clusters)))
+            for a in range(len(clusters)):
+                for b in range(a + 1, len(clusters)):
+                    if marcas[a] and marcas[b] and (marcas[a] & marcas[b]):
+                        destino[b] = destino[a]
         for n, cl in enumerate(clusters):
-            k = f"{base}#{destino[n]}" if (serie or objeto) is None else f"{base}#{destino[n]}"
+            k = f"{base}#{destino[n]}"
             for o in cl:
                 o["_occ_key"] = k
 
@@ -4126,6 +4791,30 @@ def _build_context_events(history: dict, company: str, cutoff: int) -> list:
     return itens[:8]
 
 
+def _build_informational_events(history: dict, company: str, cutoff: int) -> list:
+    """Eventos DIRETOS não pontuáveis do próprio emissor (positivos, neutros ou
+    informativos): `subject_company == monitored_company`. Nunca uma empresa é
+    tratada como "entidade relacionada" a si própria — isso é reservado a
+    `_build_context_events` (sujeito é um TERCEIRO real). Ordenado por data
+    desc, deduplicado por evento+URL — nunca entra no breakdown nem no score."""
+    itens, vistos = [], set()
+    for r in history.get("articles", {}).values():
+        ts = r.get("pub_ts") or 0
+        if ts < cutoff:
+            continue
+        for c in ((r.get("informational_events_by_company") or {}).get(company) or []):
+            k = (c.get("event_id"), r.get("url", ""))
+            if k in vistos:
+                continue
+            vistos.add(k)
+            itens.append({**c, "pub_ts": ts, "url": r.get("url", ""),
+                          "title": r.get("title", ""), "source": r.get("source", ""),
+                          "date": (r.get("pub_iso") or "")[:10],
+                          "scoreable": False})
+    itens.sort(key=lambda x: -x["pub_ts"])
+    return itens[:8]
+
+
 
 def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
                     thresholds: dict | None = None,
@@ -4142,6 +4831,10 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
       • Trajetória do score reconstruída dia a dia a partir do histórico,
         para a sparkline mostrar a INCLINAÇÃO da deterioração."""
     taxonomy = {e["id"]: e for e in cfg["taxonomy"]}
+    # [fix: deduplicate operational events across articles] opt-in, só para
+    # famílias com merge_occurrences_across_articles=true (hoje só
+    # disrupcao_operacional) — ver cross_article_family_map().
+    fam_map = cross_article_family_map(cfg)
     meta = {c["name"]: {"tier": c.get("tier", 2),
                         "type": c.get("type", "empresa"),
                         "asset_group": asset_group_of_company(c),
@@ -4156,7 +4849,8 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
                         "scoring_mode": c.get("scoring_mode", "normal"),
                         "coverage": coverage_of(c, cfg)[0],
                         "regulator": coverage_of(c, cfg)[1],
-                        "filing_system": coverage_of(c, cfg)[2]}
+                        "filing_system": coverage_of(c, cfg)[2],
+                        "fetch_related_entities": bool(c.get("fetch_related_entities"))}
             for c in cfg.get("watchlist", [])}
     ev_cfg = cfg.get("evolution", {})
     if window_days is None:
@@ -4251,36 +4945,93 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
     # demais fontes viradas corroboração. Sem isso, "RJ ×3" da mesma cobertura
     # infla a contagem de sinais e some com a credibilidade multi-fonte.
     collapse_days = ev_cfg.get("same_event_window_days", 10)
+
+    def _fam_key_ev(eid):
+        return fam_map.get(eid, eid)
+
+    _aliases_by_company = {c["name"]: (c.get("aliases") or [c["name"]])
+                          for c in cfg.get("watchlist", [])}
+
+    def _marcadores_de(o):
+        _id_o = o.get("_ident") or {}
+        _emissor = _id_o.get("emissor", "")
+        return _marcadores_locais_operacionais(o.get("title", ""), _emissor,
+                                               _aliases_by_company.get(_emissor))
+
     for company, occs in list(per_company.items()):
         occs.sort(key=lambda o: (-o.get("trust_w", 1.0), o["pub_ts"]))
         merged: list[dict] = []
         for o in occs:
+            # [fix: deduplicate operational events across articles] para
+            # eventos de família opt-in, o "twin" é procurado por FAMÍLIA
+            # (não só event_id exato) — artigos com estágios diferentes do
+            # MESMO fato (incêndio leve × incêndio grave) viram a MESMA
+            # ocorrência. Gate conservador (SÓ para grupos de família): se
+            # ambos os lados têm marcador de local/instalação identificável
+            # e eles DIVERGEM, não é considerado "twin" (evita fundir
+            # incidentes em unidades diferentes). Para eventos fora de
+            # família opt-in, a comparação continua EXATA por event_id, SEM
+            # nenhum gate de marcador — comportamento legado 100% intacto
+            # (o gate de marcador nunca existiu para esses eventos antes
+            # desta correção e não pode passar a existir agora).
+            o_is_family = _fam_key_ev(o["event_id"]) != o["event_id"]
+            o_marcas = _marcadores_de(o) if o_is_family else set()
             twin = next((m for m in merged
-                         if m["event_id"] == o["event_id"]
-                         and abs(m["pub_ts"] - o["pub_ts"]) <= collapse_days * 86400), None)
+                         if _fam_key_ev(m["event_id"]) == _fam_key_ev(o["event_id"])
+                         and abs(m["pub_ts"] - o["pub_ts"]) <= collapse_days * 86400
+                         and not (o_is_family and o_marcas and _marcadores_de(m)
+                                  and not (o_marcas & _marcadores_de(m)))), None)
             if twin is None:
                 # começa já com as fontes corroborantes persistidas no histórico
                 o["corrob"] = list(o.get("persisted_corrob", []))
                 merged.append(o)
-            else:
-                dom = o.get("domain", "")
-                if dom and dom != twin.get("domain") and \
-                   all(c.get("domain") != dom for c in twin["corrob"]):
-                    o_iso = (datetime.fromtimestamp(o["pub_ts"], tz=timezone.utc)
-                             - timedelta(hours=3)).strftime("%d/%m %H:%M") if o.get("pub_ts") else ""
-                    twin["corrob"].append({
-                        "source": o.get("source", ""), "domain": dom,
-                        "url": o.get("url", ""), "when": o_iso,
-                        # preserva a resolução já persistida pelo reparo
-                        **{k: o.get(k) for k in
+                continue
+            if (o["event_id"] != twin["event_id"]
+                    and taxonomy.get(o["event_id"], {}).get("score", 0)
+                        > taxonomy.get(twin["event_id"], {}).get("score", 0)):
+                # [fix: deduplicate operational events across articles]
+                # promoção de estágio: o artigo NOVO descreve um estágio mais
+                # grave (score-base maior) da MESMA família/ocorrência —
+                # ele vira o representante; o antigo representante (e todas
+                # as fontes que já tinha acumulado) vira corroborante do
+                # novo. Nenhum score adicional: best_contribs() usa 1 só
+                # score-base por _occ_key (o do estágio mais grave).
+                o["corrob"] = list(o.get("persisted_corrob", []))
+                dom_prev = twin.get("domain", "")
+                if dom_prev and all(c.get("domain") != dom_prev for c in o["corrob"]):
+                    prev_iso = (datetime.fromtimestamp(twin["pub_ts"], tz=timezone.utc)
+                               - timedelta(hours=3)).strftime("%d/%m %H:%M") if twin.get("pub_ts") else ""
+                    o["corrob"].append({
+                        "source": twin.get("source", ""), "domain": dom_prev,
+                        "url": twin.get("url", ""), "when": prev_iso,
+                        **{k: twin.get(k) for k in
                            ("display_url", "canonical_url", "resolved_url",
                             "link_health", "link_render_anchor", "link_label")
-                           if o.get(k) is not None}})
-                # herda também as fontes que a duplicata já tinha persistido
-                for c in o.get("persisted_corrob", []):
-                    if c.get("domain") and c["domain"] != twin.get("domain") and \
-                       all(x.get("domain") != c["domain"] for x in twin["corrob"]):
-                        twin["corrob"].append(c)
+                           if twin.get(k) is not None}})
+                for c in twin.get("corrob", []):
+                    if c.get("domain") and c["domain"] != dom_prev and \
+                       all(x.get("domain") != c["domain"] for x in o["corrob"]):
+                        o["corrob"].append(c)
+                merged[merged.index(twin)] = o
+                continue
+            dom = o.get("domain", "")
+            if dom and dom != twin.get("domain") and \
+               all(c.get("domain") != dom for c in twin["corrob"]):
+                o_iso = (datetime.fromtimestamp(o["pub_ts"], tz=timezone.utc)
+                         - timedelta(hours=3)).strftime("%d/%m %H:%M") if o.get("pub_ts") else ""
+                twin["corrob"].append({
+                    "source": o.get("source", ""), "domain": dom,
+                    "url": o.get("url", ""), "when": o_iso,
+                    # preserva a resolução já persistida pelo reparo
+                    **{k: o.get(k) for k in
+                       ("display_url", "canonical_url", "resolved_url",
+                        "link_health", "link_render_anchor", "link_label")
+                       if o.get(k) is not None}})
+            # herda também as fontes que a duplicata já tinha persistido
+            for c in o.get("persisted_corrob", []):
+                if c.get("domain") and c["domain"] != twin.get("domain") and \
+                   all(x.get("domain") != c["domain"] for x in twin["corrob"]):
+                    twin["corrob"].append(c)
         per_company[company] = merged
 
     # ── Emissor com APENAS contexto continua visível ──
@@ -4295,6 +5046,23 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
         for _co, _evs in (_rec.get("context_events_by_company") or {}).items():
             if _evs and _co != MARKET_LABEL and _co in meta:
                 per_company.setdefault(_co, [])
+        # idem para eventos diretos não pontuáveis do próprio emissor (ex.:
+        # Santander/TSB resultado positivo, Santander/Esfera reorganização
+        # interna) — o card continua visível mesmo sem ocorrência pontuável.
+        for _co, _evs in (_rec.get("informational_events_by_company") or {}).items():
+            if _evs and _co != MARKET_LABEL and _co in meta:
+                per_company.setdefault(_co, [])
+
+    # [fix: complete Peru news links taxonomy and holding coverage] holding
+    # com monitoramento de related_entities configurado (`fetch_related_
+    # entities: true`) sempre tem card visível — mesmo em uma execução sem
+    # NENHUMA notícia (direta ou de subsidiária) encontrada nesta janela.
+    # "Card ausente" esconderia que a holding está sendo monitorada; "card
+    # com score 0 e 0 notícias" é a superfície de monitoramento honesta.
+    # Opt-in, aditivo — nenhum dos 160 emissores reais declara esse campo.
+    for _c in cfg.get("watchlist", []):
+        if _c.get("fetch_related_entities") and _c.get("name"):
+            per_company.setdefault(_c["name"], [])
 
     def best_contribs(negatives: list[dict], as_of_ts: int) -> dict[str, dict]:
         """Por tipo de evento, a ocorrência de MAIOR contribuição até as_of_ts:
@@ -4329,13 +5097,22 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
     for company, occurrences in per_company.items():
         occurrences.sort(key=lambda o: o["pub_ts"])
         assign_occurrence_clusters(
-            occurrences, int(ev_cfg.get("occurrence_gap_days", 45)))
+            occurrences, int(ev_cfg.get("occurrence_gap_days", 45)), fam_map=fam_map,
+            aliases_by_company=_aliases_by_company)
         negatives = [o for o in occurrences if not o["positive"]]
         _tem_contexto = bool(_build_context_events(history, company, cutoff))
-        if not negatives and not _tem_contexto:
-            continue  # só contexto positivo: não é linha de risco
-        # Sem evento pontuável MAS com contexto relevante: a linha é mantida
-        # com score 0 apenas para exibir "Contexto relacionado · não pontua".
+        _tem_informativo = bool(_build_informational_events(history, company, cutoff))
+        # [fix: complete Peru news links taxonomy and holding coverage]
+        # holding com `fetch_related_entities` sempre mantém a linha, mesmo
+        # zerada — é a superfície de monitoramento, não "sem cobertura".
+        _meta_c = meta.get(company, {}) or {}
+        _sempre_visivel = bool(_meta_c.get("fetch_related_entities"))
+        if not negatives and not _tem_contexto and not _tem_informativo and not _sempre_visivel:
+            continue  # só contexto/informativo: não é linha de risco
+        # Sem evento pontuável MAS com contexto ou sinal direto informativo
+        # relevante: a linha é mantida com score 0 apenas para exibir
+        # "Contexto relacionado · não pontua" / "Sinal positivo · não pontua" /
+        # "Evento informativo · não pontua".
 
         distinct: dict[str, dict] = {}
         for o in occurrences:  # chips resumem tudo, inclusive positivos
@@ -4499,6 +5276,9 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
             "events": distinct_events,
             # contexto relacionado (NÃO pontua): eventos cujo sujeito é terceiro
             "context_events": _build_context_events(history, company, cutoff),
+            # eventos DIRETOS não pontuáveis do próprio emissor (positivo/
+            # neutro/informativo) — NUNCA "entidade relacionada a si mesma"
+            "informational_events": _build_informational_events(history, company, cutoff),
             "timeline": timeline_occ,
             "breakdown": breakdown,
             "persistent": persistent,
@@ -6739,6 +7519,15 @@ def classify_and_attribute(art: dict, cfg: dict) -> None:
     # fraude da CVS (que é ré, não autora).
     _evs = classify_article(art, cfg["taxonomy"])
     art["companies"] = detect_companies(art, cfg["watchlist"])
+    # 6) Resolução contextual de entidade — OPT-IN, aditiva. Só emissores que
+    # declaram search_terms/entity_cues/exclusion_cues/related_entities/
+    # entity_scope/entity_confidence entram neste laço (nenhum dos 160 reais
+    # de config_risco.yaml hoje); para eles, `art["companies"]` sai IDÊNTICO
+    # ao que `detect_companies` já produziu. Ver `apply_contextual_entity_
+    # resolution` — corrige falsos positivos (exclusion_cue) e recupera
+    # falsos negativos (atribuição por contexto sem alias literal) só para
+    # quem optou pelo novo caminho.
+    apply_contextual_entity_resolution(art, cfg)
     _wl = {c["name"]: c for c in cfg["watchlist"]}
     _assess, _desc_all, _por_empresa, _ctx_por_empresa = {}, [], {}, {}
     _titulo, _resumo = art.get("title", ""), art.get("summary", "")
@@ -6857,6 +7646,71 @@ def classify_and_attribute(art: dict, cfg: dict) -> None:
         print(f"   ⚠️  resolução semântica indisponível ({type(_exc).__name__}: "
               f"{str(_exc)[:120]}) — atribuição segue sem a camada semântica.")
 
+    # 8) entity_scope=brand_group/entity_pending_confirmation (ou
+    # scoreable=False explícito) nunca pontua — OPT-IN, aditivo. Emissores
+    # sem esses campos (os 160 reais) não são tocados por esta chamada.
+    suppress_non_scoreable_entity_scopes(art, cfg)
+
+    # 9) [fix: complete Peru news links taxonomy and holding coverage]
+    # evento DIRETO de peso-base 0 na taxonomia (positivo/neutro-informativo
+    # — rating_elevado, outlook_positivo, recomendacao_positiva, e os novos
+    # retomada_operacional/expansao_capacidade/investimento_operacional)
+    # nunca precisa de card em events_by_company (score 0 não muda o total
+    # de qualquer forma) — move para informational_events_by_company para
+    # aparecer como "Sinal positivo/Evento informativo · não pontua" em vez
+    # de um chip solto. Complementa (nunca substitui) os casos específicos
+    # já tratados por semantic_audit.py e suppress_non_scoreable_entity_
+    # scopes. Aditivo e idempotente.
+    route_zero_score_direct_events_to_informational(art, cfg)
+
+
+def route_zero_score_direct_events_to_informational(art: dict, cfg: dict) -> None:
+    """[fix: complete Peru news links taxonomy and holding coverage] Move
+    para `informational_events_by_company` qualquer evento que sobrou em
+    `events_by_company` com peso-base 0 na taxonomia (positivo ou neutro/
+    informativo) — nunca precisa ficar como chip solto de `events_by_
+    company`, já que não pontua de qualquer forma; o usuário vê "Sinal
+    positivo · não pontua" ou "Evento informativo · não pontua" em vez de
+    título genérico. Generaliza (sem duplicar) os casos específicos já
+    tratados por `semantic_audit.py` (M&A/família de rating) e
+    `suppress_non_scoreable_entity_scopes` (brand_group/pending) — estes
+    já removem seus próprios eventos de `events_by_company` antes desta
+    função rodar, então não há conflito. Aditivo, idempotente (checa
+    `source_record_id` antes de duplicar)."""
+    taxonomy = {e["id"]: e for e in cfg.get("taxonomy", [])}
+    ebc = art.get("events_by_company") or {}
+    _url = art.get("url", "")
+    for name in list(ebc.keys()):
+        ids = ebc.get(name) or []
+        zero_ids = [eid for eid in ids if taxonomy.get(eid, {}).get("score", 1) == 0]
+        if not zero_ids:
+            continue
+        ebc[name] = [eid for eid in ids if eid not in zero_ids]
+        info = art.setdefault("informational_events_by_company", {})
+        info.setdefault(name, [])
+        for eid in zero_ids:
+            already = any(x.get("event_id") == eid and x.get("source_record_id") == _url
+                         for x in info[name])
+            if already:
+                continue
+            ev = taxonomy.get(eid, {})
+            direction = ev.get("direction", "neutra")
+            display = "positivo" if direction == "positiva" else "informativo"
+            info[name].append({
+                "company": name, "event_id": eid,
+                "event_label": ev.get("label", eid).replace("_", " "),
+                "subject_company": name, "monitored_company": name,
+                "relation_type": "direto", "event_scope": "direto",
+                "direction": direction, "scoreable": False,
+                "display_category": display,
+                "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+                "attribution_confidence": "media",
+                "title": art.get("title", ""), "url": _url,
+                "pub_ts": art.get("pub_ts"),
+                "observation": (f"Evento direto '{ev.get('label', eid)}' tem peso-base 0 "
+                               "na taxonomia (positivo/informativo) — não pontua."),
+                "source_record_id": _url,
+            })
 
 
 def run_link_repair(args, cfg) -> int:
@@ -7025,6 +7879,7 @@ def run_link_repair(args, cfg) -> int:
     def _semantico(h):
         return {u: {"events_by_company": r.get("events_by_company"),
                     "context_events_by_company": r.get("context_events_by_company"),
+                    "informational_events_by_company": r.get("informational_events_by_company"),
                     "occurrence_id": r.get("occurrence_id"),
                     "pub_ts": r.get("pub_ts"),
                     "corrob_n": len(r.get("corroborations") or [])}

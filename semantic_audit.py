@@ -128,6 +128,26 @@ INTRAGRUPO = [
     r"reorganiza[çc][ãa]o\s+societ[áa]ria", r"simplifica[çc][ãa]o\s+societ[áa]ria",
     r"sob\s+controle\s+comum",
 ]
+# item 3 da correção 2026-07-31: quando um M&A é rejeitado por ser apenas
+# "contexto pós-aquisição" MAS o texto também descreve um resultado econômico
+# acima do esperado, o EVENTO PRINCIPAL é o resultado, não a integração —
+# a aquisição vira só `secondary_context`. Taxonomia real (config_risco.yaml)
+# NÃO tem hoje `resultado_acima_expectativas`/`outlook_positivo` para lucro
+# (outlook_positivo é sobre rating de crédito, não resultado operacional) —
+# usamos este id como rótulo informativo (scoreable=False, não participa de
+# `event_ids_for`/taxonomy lookup) até uma decisão formal de cadastrá-lo.
+EARNINGS_BEAT_MARKERS = [
+    r"supera\s+(?:as\s+)?estimativas", r"supera\s+(?:as\s+)?expectativas",
+    r"acima\s+d[ao]s?\s+expectativas", r"acima\s+d[ao]s?\s+estimativas",
+    r"resultado\s+acima\s+d[ao]\s+esperado", r"lucro\s+acima\s+d[ao]s?\s+expectativas",
+    r"beats?\s+estimates", r"better[- ]than[- ]expected", r"surpasses?\s+expectations",
+    r"supera\s+las\s+expectativas", r"supera\s+las\s+estimaciones",
+]
+
+
+def detect_earnings_beat(text: str) -> bool:
+    t = _n(text)
+    return any(re.search(p, t) for p in EARNINGS_BEAT_MARKERS)
 
 
 def detect_transaction(text: str) -> dict:
@@ -147,6 +167,12 @@ def detect_transaction(text: str) -> dict:
     intra = any(re.search(p, t) for p in INTRAGRUPO)
     if intra:
         escopo = "intragrupo"
+    elif pos:
+        # Referência pós-transação (ex.: "resultado após aquisição
+        # concluída") não é uma operação externa em andamento — mesmo quando
+        # nenhuma entidade nomeada aparece no texto (o objeto/escopo bruto
+        # ficaria "indefinido"), o escopo real é histórico/pós-aquisição.
+        escopo = "historico_pos_aquisicao"
     fase = ("integracao" if pos else
             ("rumor" if rumor else
              ("intragrupo" if intra else ("anuncio" if obj == "empresa" else ""))))
@@ -596,11 +622,20 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                         }.get(motivo)
                 if motivo.startswith("objeto_nao_empresarial"):
                     novo = "aquisicao_capex"
+                secondary_context_id = ""
+                # o CONTEÚDO PRINCIPAL da notícia pode ser um resultado econômico
+                # (lucro/rating acima do esperado), não a integração em si — a
+                # aquisição então vira só referência secundária/histórica.
+                if novo == "integracao_pos_aquisicao" and detect_earnings_beat(texto):
+                    secondary_context_id = "integracao_pos_aquisicao"
+                    novo = "resultado_acima_expectativas"
                 d.update(scoreable=False, attribution_rule="R_MA_OBJETO_ESCOPO",
                          rejection_reason=motivo,
                          event_id_corrigido=novo or "",
+                         secondary_context_id=secondary_context_id,
                          direction=("positiva" if novo in ("recompra_acoes",
-                                                           "integracao_pos_aquisicao")
+                                                           "integracao_pos_aquisicao",
+                                                           "resultado_acima_expectativas")
                                     else "neutra"),
                          confirmation_level=("nao_confirmada" if novo == "rumor_ma"
                                              else d["confirmation_level"]))
@@ -688,6 +723,7 @@ def apply_semantics_to_record(rec: dict, cfg: dict, *, aliases: dict | None = No
     resumo = rec.get("summary", "") or ""
     ano = _ano_do_registro(rec)
     ctx = rec.get("context_events_by_company") or {}
+    info = rec.get("informational_events_by_company") or {}
     descartes = rec.get("semantic_discards") or []
     # `event_assessments` é uma LISTA de dicts com chaves company/event_id —
     # formato consumido por build_evolution. Preservar exatamente.
@@ -703,16 +739,28 @@ def apply_semantics_to_record(rec: dict, cfg: dict, *, aliases: dict | None = No
                                       article_year=ano,
                                       source_domain=rec.get("domain", "") or "")
         manter = []
+        # Eventos que PERMANECEM pontuáveis nesta empresa/artigo — qualquer
+        # outro evento descartado da MESMA empresa neste MESMO artigo, cujo
+        # sujeito também seja a própria empresa, é um COMPONENTE SECUNDÁRIO
+        # daquela ocorrência (ex.: outlook absorvido pelo downgrade da mesma
+        # ação; "ma"→integração descartado no mesmo artigo em que o rating
+        # já pontua para a mesma empresa, caso PRIO/S&P) — não é um sinal
+        # autônomo e NÃO deve ganhar card próprio em nenhum bucket de
+        # exibição (nem contexto, nem informativo).
+        scoreable_ids_empresa = {dd["event_id"] for dd in r["decisoes"] if dd["scoreable"]}
         for d in r["decisoes"]:
             todas.append(d)
             ev = d["event_id"]
             # idempotência: substitui a avaliação anterior da mesma
-            # (empresa, evento) em vez de acumular duplicatas a cada execução
-            assessments[:] = [x for x in assessments
-                              if not (x.get("company") == empresa
-                                      and x.get("event_id") == ev
-                                      and x.get("assessed_by") == "semantic_audit")]
-            assessments.append({
+            # (empresa, evento) NA MESMA POSIÇÃO em vez de acumular
+            # duplicatas ou reordenar a lista a cada execução (uma segunda
+            # aplicação em que só um SUBCONJUNTO de eventos é reprocessado —
+            # porque os demais já saíram de `events_by_company` — não pode
+            # mudar a ordem dos que ficaram parados).
+            _idx_existente = next((i for i, x in enumerate(assessments)
+                                   if x.get("company") == empresa and x.get("event_id") == ev
+                                   and x.get("assessed_by") == "semantic_audit"), None)
+            _nova_assessment = {
                 "company": empresa, "event_id": ev,
                 "assessed_by": "semantic_audit",
                 "subject_company": d["subject_company"],
@@ -733,33 +781,106 @@ def apply_semantics_to_record(rec: dict, cfg: dict, *, aliases: dict | None = No
                 "rejection_reason": d["rejection_reason"],
                 "legal_status": d["event_phase"] or "",
                 "confirmation_status": d["confirmation_level"] or "",
-            })
+            }
+            if _idx_existente is not None:
+                assessments[_idx_existente] = _nova_assessment
+                _assess_idx = _idx_existente
+            else:
+                assessments.append(_nova_assessment)
+                _assess_idx = len(assessments) - 1
             if d["scoreable"]:
                 manter.append(ev)
                 continue
             mudou = True
             corrigido = d.get("event_id_corrigido") or ""
-            # evento de TERCEIRO ou reclassificação informativa → contexto
-            ctx.setdefault(empresa, [])
-            if not any(c.get("event_id") == ev for c in ctx[empresa]):
-                ctx[empresa].append({
-                    "event_id": ev,
-                    "event_label": (corrigido or ev).replace("_", " "),
-                    "subject_company": d["subject_company"],
-                    "relation_type": d["relation_type"] or "evento_reclassificado",
-                    "impact_type": ("indireto_material" if d["event_scope"] == "indireto"
-                                    else "informativo"),
-                    "event_scope": d["event_scope"] or "informativo",
-                    "event_phase": d["event_phase"],
-                    "direction": d["direction"] or "neutra",
-                    "scoreable": False,
+            # Destino do evento NÃO PONTUÁVEL depende do SUJEITO REAL:
+            #   subject_company != empresa monitorada → contexto de TERCEIRO
+            #     real (Vale/Samarco, Gerdau/transportadoras, Cencosud/St.
+            #     Marche, BTG/Digimais) — vai para `context_events_by_company`.
+            #   subject_company == empresa monitorada  → evento DIRETO do
+            #     próprio emissor, apenas não pontuável (positivo, neutro,
+            #     informativo, ou absorvido pela família de rating) — vai
+            #     para `informational_events_by_company`. NUNCA tratar a
+            #     própria empresa como "entidade relacionada" a si mesma.
+            is_direct = _n(d["subject_company"]) == _n(empresa)
+            if is_direct and scoreable_ids_empresa:
+                # componente SECUNDÁRIO de uma ocorrência já pontuável da
+                # MESMA empresa neste artigo (família de rating, ou evento
+                # co-detectado no mesmo texto) — fica só como metadado do
+                # evento principal em `event_assessments`/`semantic_discards`,
+                # NUNCA como card independente em informational/context.
+                assessments[_assess_idx]["family_secondary"] = True
+                assessments[_assess_idx]["primary_event_id"] = sorted(scoreable_ids_empresa)[0]
+                descartes.append({
+                    "empresa": empresa, "event_id": ev,
                     "event_id_corrigido": corrigido,
-                    "attribution_rule": d["attribution_rule"],
-                    "attribution_confidence": d["attribution_confidence"],
-                    "attribution_evidence": (d.get("subject_evidence")
-                                             or d.get("temporal_evidence") or "")[:160],
-                    "nota": d["rejection_reason"][:220],
+                    "regra": d["attribution_rule"],
+                    "motivo": d["rejection_reason"][:220],
+                    "subject_company": d["subject_company"],
+                    "family_secondary": True,
+                    "primary_event_id": sorted(scoreable_ids_empresa)[0],
                 })
+                continue
+            if not is_direct:
+                ctx.setdefault(empresa, [])
+                if not any(c.get("event_id") == ev for c in ctx[empresa]):
+                    ctx[empresa].append({
+                        "event_id": ev,
+                        "event_label": (corrigido or ev).replace("_", " "),
+                        "subject_company": d["subject_company"],
+                        "relation_type": d["relation_type"] or "evento_reclassificado",
+                        "impact_type": ("indireto_material" if d["event_scope"] == "indireto"
+                                        else "informativo"),
+                        "event_scope": d["event_scope"] or "informativo",
+                        "event_phase": d["event_phase"],
+                        "direction": d["direction"] or "neutra",
+                        "scoreable": False,
+                        "event_id_corrigido": corrigido,
+                        "attribution_rule": d["attribution_rule"],
+                        "attribution_confidence": d["attribution_confidence"],
+                        "attribution_evidence": (d.get("subject_evidence")
+                                                 or d.get("temporal_evidence") or "")[:160],
+                        "nota": d["rejection_reason"][:220],
+                    })
+            else:
+                final_id = corrigido or ev
+                secondary_ctx_id = d.get("secondary_context_id") or ""
+                direction_final = d["direction"] or "neutra"
+                display_category = "positivo" if direction_final == "positiva" else "informativo"
+                pos_aquisicao = (final_id == "integracao_pos_aquisicao"
+                                  or secondary_ctx_id == "integracao_pos_aquisicao"
+                                  or "pos_aquisicao" in (d["rejection_reason"] or ""))
+                hist_ref = bool(d["historical_reference"]) or pos_aquisicao
+                info.setdefault(empresa, [])
+                if not any(c.get("event_id") == final_id and c.get("source_record_id") == rec.get("url", "")
+                           for c in info[empresa]):
+                    info[empresa].append({
+                        "company": empresa,
+                        "event_id": final_id,
+                        "event_label": (corrigido or ev).replace("_", " "),
+                        "subject_company": empresa,
+                        "monitored_company": empresa,
+                        "relation_type": "direto",
+                        "event_scope": "direto",
+                        "direction": direction_final,
+                        "scoreable": False,
+                        "display_category": display_category,
+                        "new_ma_occurrence": False,
+                        "change_of_control": False,
+                        "external_ma": False,
+                        "historical_transaction_reference": hist_ref,
+                        "secondary_context": secondary_ctx_id or corrigido or "",
+                        "transaction_scope": d.get("transaction_scope") or "",
+                        "confirmation_status": ("confirmado" if hist_ref
+                                                 else (d.get("confirmation_level") or "indefinido")),
+                        "attribution_rule": d["attribution_rule"],
+                        "attribution_confidence": d["attribution_confidence"],
+                        "title": titulo,
+                        "url": rec.get("url", ""),
+                        "pub_ts": rec.get("pub_ts"),
+                        "observation": d["rejection_reason"][:220],
+                        "source_record_id": rec.get("url", ""),
+                    })
             descartes.append({
                 "empresa": empresa, "event_id": ev,
                 "event_id_corrigido": corrigido,
@@ -771,6 +892,7 @@ def apply_semantics_to_record(rec: dict, cfg: dict, *, aliases: dict | None = No
 
     if mudou:
         rec["context_events_by_company"] = ctx
+        rec["informational_events_by_company"] = info
         rec["semantic_discards"] = descartes
         rec["event_assessments"] = assessments
         rec["companies_attributed"] = [c for c, v in ebc.items() if v]

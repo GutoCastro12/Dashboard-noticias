@@ -107,7 +107,15 @@ def t11_gnews_nao_resolvido():
     check(r["link_health"] in ("redirect_nao_resolvido", "nao_verificado"), r["link_health"])
     check(r["display_url"] == "", "sem display_url")
     d = lk.interface_decision(r)
-    check(not d["render_anchor"], "sem âncora sem rede")
+    # [fix: complete Peru news links] sem resolução do destino final, a URL
+    # ORIGINAL do Google News (já coletada, estruturalmente válida) vira
+    # fallback clicável — nunca "Link indisponível"/sem âncora quando existe
+    # uma URL original recuperável. HTTP 200 do agregador nunca provou
+    # resolução, mas a ausência de resolução OFFLINE também não prova que o
+    # link do agregador esteja quebrado.
+    check(d["render_anchor"], "com âncora (fallback para a URL original do agregador)")
+    check(d["href"] == GN, "href = URL original do Google News")
+    check(d["label"] == "Abrir notícia (via agregador) →", "rótulo distingue fallback de agregador")
 
 
 def t12_13_404_410():
@@ -210,10 +218,13 @@ def t23_rumo_resolvida():
 
 
 def t24_rumo_nao_resolvida():
-    print("\n[24] Fonte da Rumo não resolvida não gera <a>")
+    print("\n[24] Fonte da Rumo não resolvida cai no fallback do agregador")
     r = lk.resolve_article_url(GN)
     d = lk.interface_decision(r)
-    check(not d["render_anchor"] and d["href"] == "", "sem âncora e sem href")
+    # [fix: complete Peru news links] mesma regra do teste 11: sem resolução
+    # do destino final, usa a URL original do Google News como fallback
+    # clicável em vez de "sem âncora"/"Link indisponível".
+    check(d["render_anchor"] and d["href"] == GN, "âncora com fallback para a URL original")
 
 
 def t25_engie_valor():
@@ -412,14 +423,17 @@ def v03_fallback_batchexecute_para_redirect():
 
 
 def v04_fallback_redirect_para_pendente():
-    print("\n[v4] Tudo falha → permanece pendente (não gera <a>)")
+    print("\n[v4] Tudo falha → destino final pendente, mas fallback para a URL "
+         "original do agregador gera <a>")
     s = MockSession(sig="", ts="", redirect_final="https://news.google.com/rss/articles/x")
     r = lk.resolve_article_url(GN2, session=s, allow_network=True)
     check(r["link_health"] == "redirect_nao_resolvido", r["link_health"])
     check(r["display_url"] == "", "sem display_url")
     check(r["resolution_method"] == "nenhum", r["resolution_method"])
     d = lk.interface_decision(r)
-    check(not d["render_anchor"], "sem âncora")
+    # [fix: complete Peru news links] destino final pendente não significa
+    # link indisponível — GN2 (URL original válida) vira fallback clicável.
+    check(d["render_anchor"] and d["href"] == GN2, "âncora com fallback para a URL original")
 
 
 def v05_cache_evita_rede():
@@ -517,10 +531,15 @@ def v12_rumo_batchexecute():
 
 
 def v13_rumo_nao_resolvida_v2():
-    print("\n[v13] Rumo: token que não resolve fica sem <a>")
+    print("\n[v13] Rumo: token que não resolve cai no fallback do agregador")
     s = MockSession(sig="", ts="", redirect_final="https://news.google.com/still")
     r = lk.resolve_article_url(GN2, session=s, allow_network=True)
-    check(not lk.interface_decision(r)["render_anchor"], "sem âncora")
+    # [fix: complete Peru news links] mesmo com rede, se o destino final
+    # ainda é o próprio agregador (não resolveu de fato), a URL ORIGINAL do
+    # Google News (GN2) continua sendo um fallback clicável válido — não
+    # "Link indisponível".
+    d = lk.interface_decision(r)
+    check(d["render_anchor"] and d["href"] == GN2, "âncora com fallback para a URL original")
 
 
 def v14_engie_valor_batchexecute():

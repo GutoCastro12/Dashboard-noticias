@@ -2050,6 +2050,396 @@ watchlist:
   aliases:
   - Viking Global Investors
   - Viking Global
+- name: Yura
+  razao_social: Yura S.A.
+  ruc: '20312372895'
+  asset_class: nao_listada
+  country: Peru
+  region: América Latina
+  language: es
+  tier: 2
+  sector: cimento e materiais de construção
+  economic_group: Grupo Gloria
+  entity_scope: legal_entity
+  entity_confidence: high
+  scoring_mode: normal
+  official:
+    site: https://www.yura.com.pe/
+    ri: A_REVISAR
+    hechos_importancia: A_REVISAR
+    regulator: SMV
+    bvl_issuer_page: https://www.bvl.com.pe/en/issuers/detail?companyCode=58501
+    rating_reports:
+    - https://moodyslocal.com.pe/wp-content/uploads/2025/11/MLPE_Informe-PUBLICO-Yura-y-subs-05112025.pdf
+    - https://informes.ratingspcr.com/Files/informes/2017/pe-yura-bc-202412.pdf
+  revisao: fontes oficiais (site institucional, portal SMV, página BVL do emissor) CONFIGURADAS
+    e confirmadas ACESSÍVEIS por pesquisa nas fases anteriores (ver source_inventory.csv/candidate_config.yaml
+    do worktree de teste dos candidatos peruanos); nenhuma delas foi ainda EFETIVAMENTE
+    TESTADA por probe_official_sources nesta etapa. RI/página de hechos de importância
+    específica ainda a confirmar.
+  aliases:
+  - Yura S.A.
+  - Yura SA
+  - Cemento Yura
+  - Cementos Yura
+  - Cementera Yura
+  search_terms:
+  - Yura S.A.
+  - Yura SA
+  - Cemento Yura
+  - Cementos Yura
+  - Cementera Yura
+  - Yura cemento
+  - Yura cementera
+  - Yura Grupo Gloria
+  - Yura Arequipa cemento
+  - Yura Perú cemento
+  - Yura resultados
+  - Yura gerente
+  - Yura rating
+  - Yura bonos
+  - Yura deuda
+  - Yura Indecopi
+  - Yura planta
+  - Yura producción de cemento
+  entity_cues:
+  - cemento
+  - cementera
+  - clínker
+  - clinker
+  - planta de cemento
+  - producción de cemento
+  - fábrica
+  - grupo gloria
+  - resultados financieros
+  - utilidades
+  - ingresos
+  - ventas
+  - bonos
+  - clasificación de riesgo
+  - gerente general
+  - yura s.a.
+  - indecopi
+  - arequipa
+  - sancionada
+  - conducta anticompetitiva
+  - abuso de posición de dominio
+  entity_cues_min: 2
+  exclusion_cues:
+  - distrito de yura
+  - municipio de yura
+  - carretera de yura
+  - vía yura
+  - vía arequipa-yura
+  - accidente en yura
+  - homicidio en yura
+  - crimen ocurrido en yura
+  - protesta
+  - vecinos del distrito
+  - titularidad estatal en yura
+  - yura tech
+  - yura corporation
+  - south korea
+  - corea del sur
+  related_entities:
+  - entity_name: SOBOCE
+    legal_name: null
+    relationship: subsidiary_international
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - SOBOCE
+  - entity_name: UCEM
+    legal_name: null
+    relationship: subsidiary_international
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - UCEM
+  - entity_name: Yura Chile SpA
+    legal_name: null
+    relationship: subsidiary_international
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - Yura Chile
+  - entity_name: Cementos Bío Bío
+    legal_name: null
+    relationship: participation_target
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - Cementos Bío Bío
+    - Cementos Bio Bio
+- name: Trupal
+  razao_social: Trupal S.A.
+  ruc: '20418453177'
+  asset_class: nao_listada
+  country: Peru
+  region: América Latina
+  language: es
+  tier: 3
+  sector: papel, cartão e embalagens
+  economic_group: Grupo Gloria
+  entity_scope: legal_entity
+  entity_confidence: high
+  scoring_mode: normal
+  official:
+    site: A_REVISAR
+    ri: A_REVISAR
+    hechos_importancia: A_REVISAR
+    regulator: SMV
+    rating_report: A_REVISAR
+  revisao: domínio institucional próprio não confirmado nesta pesquisa (site A_REVISAR);
+    prospecto de emissão de bonos ('2ª Emisión BS') localizado no portal da SMV, mas
+    vigência do programa/rating atual não confirmada — fonte oficial ainda NÃO configurada
+    de forma confiável, só o regulador (SMV) e o achado documental estão registrados.
+  aliases:
+  - Trupal
+  - Trupal S.A.
+  - Trupal SA
+  search_terms:
+  - Trupal
+  - Trupal S.A.
+  - Trupal SA
+  - Trupal Perú
+  - Trupal Grupo Gloria
+  - Trupal papel
+  - Trupal cartón
+  - Trupal empaques
+  - Trupal resultados
+  - Trupal deuda
+  - Trupal bonos
+  - Trupal rating
+  - Trupal gerente
+  - Trupal adquisición
+  - Trupal planta
+  entity_cues:
+  - papel
+  - cartón corrugado
+  - empaques flexibles
+  - grupo gloria
+  - trujillo
+  - el agustino
+  - planta papelera
+  - bonos
+  - resultados
+  - ventas
+  entity_cues_min: 3
+  exclusion_cues:
+  - papel higiênico
+  - papel moeda
+  related_entities:
+  - entity_name: Papelsa
+    legal_name: null
+    relationship: subsidiary
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - Papelsa
+- name: Coazucar
+  razao_social: Corporación Azucarera del Perú S.A.
+  ruc: '20511866210'
+  asset_class: nao_listada
+  country: Peru
+  region: América Latina
+  language: es
+  tier: 2
+  sector: agroindustrial e açúcar
+  economic_group: Grupo Gloria
+  entity_scope: holding
+  entity_confidence: high
+  scoring_mode: normal
+  # [fix: complete Peru news links taxonomy and holding coverage] opt-in,
+  # genérico (fetch_related_entities_context() em risk_dashboard.py): busca
+  # real das related_entities (Casa Grande, Cartavio, San Jacinto, Sintuco,
+  # Agrolmos, Chiquitoy) e roteia SEMPRE para context_events_by_company —
+  # nunca alias, nunca score transferido para a holding.
+  fetch_related_entities: true
+  # sinais de setor INDEPENDENTES do nome da subsidiária (que já é o termo de
+  # busca e sempre "bateria" trivialmente) — reduz falso positivo por
+  # homônimo (ex.: "Casa Grande" = asilo em Rosario/Argentina).
+  related_entity_relevance_cues:
+  - azúcar
+  - azucarera
+  - grupo gloria
+  - ingenio azucarero peruano
+  - holding agroindustrial
+  - agroindustrial
+  official:
+    site: https://coazucar.com/
+    ri: A_REVISAR
+    hechos_importancia: A_REVISAR
+    regulator: SMV
+    rating_report: https://www.aai.com.pe/wp-content/uploads/2024/05/Coazucar-Dic-23.pdf
+  revisao: fonte oficial (site institucional, portal SMV, relatório de rating da Apoyo
+    & Asociados) CONFIGURADA e confirmada ACESSÍVEL nas fases anteriores; ainda NÃO
+    testada por probe_official_sources nesta etapa. Página específica de hechos de
+    importância e programa/série de bonos vigente ainda a confirmar.
+  aliases:
+  - Coazucar
+  - Coazúcar
+  - Coazucar del Perú
+  - Corporación Azucarera del Perú
+  - Corporacion Azucarera del Peru
+  search_terms:
+  - Coazucar
+  - Coazúcar
+  - Coazucar del Perú
+  - Corporación Azucarera del Perú
+  - Corporacion Azucarera del Peru
+  - Coazucar Grupo Gloria
+  - Coazucar resultados
+  - Coazucar bonos
+  - Coazucar deuda
+  - Coazucar rating
+  - Coazucar subsidiarias
+  - Coazucar Casa Grande
+  - Coazucar Cartavio
+  - Coazucar San Jacinto
+  - Coazucar Agrolmos
+  entity_cues:
+  - azúcar
+  - azucarera
+  - grupo gloria
+  - casa grande
+  - cartavio
+  - chicama
+  - la libertad
+  - ingenio azucarero peruano
+  - bonos
+  - resultados consolidados
+  - holding agroindustrial
+  entity_cues_min: 2
+  exclusion_cues:
+  - la troncal
+  - ecuador
+  - ingenio san carlos
+  related_entities:
+  - entity_name: Casa Grande S.A.A.
+    legal_name: Casa Grande S.A.A.
+    relationship: subsidiary
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - Casa Grande
+  - entity_name: Cartavio S.A.A.
+    legal_name: Cartavio S.A.A.
+    relationship: subsidiary
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - Cartavio
+  - entity_name: Agroindustrias San Jacinto S.A.
+    legal_name: Agroindustrias San Jacinto S.A.
+    relationship: subsidiary
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - San Jacinto
+  - entity_name: Empresa Agrícola Sintuco S.A.
+    legal_name: Empresa Agrícola Sintuco S.A.
+    relationship: subsidiary
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - Sintuco
+  - entity_name: Agrolmos S.
+    legal_name: Agrolmos S.
+    relationship: subsidiary
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - Agrolmos
+  - entity_name: Empresa Agraria Chiquitoy S.A.
+    legal_name: Empresa Agraria Chiquitoy S.A. (em dissolução/liquidação)
+    relationship: subsidiary
+    attribution_mode: context_unless_direct_holding_impact
+    aliases:
+    - Chiquitoy
+- name: Yobel
+  razao_social: Yobel Supply Chain Management S.A.
+  ruc: '20100074029'
+  asset_class: nao_listada
+  country: Peru
+  region: América Latina
+  language: es
+  tier: 3
+  sector: manufatura terceirizada de cosméticos, higiene e produtos de consumo
+  economic_group: A_REVISAR (grupo privado, controlador final não identificado)
+  entity_scope: legal_entity
+  entity_confidence: high
+  legal_entity_status: confirmed_for_operational_monitoring
+  scoring_mode: normal
+  scoreable: true
+  official:
+    site: https://www.yobelscm.biz/
+    ri: null
+    hechos_importancia: null
+    regulator: null
+    rating_report: null
+  revisao: >-
+    entidade jurídica operacional CONFIRMADA — incêndio real de 24/07/2026 ocorreu
+    em planta industrial de cosméticos no endereço Av. San Genaro, Los Olivos, onde a
+    Yobel Supply Chain Management S.A. (RUC 20100074029) possui estabelecimento produtivo;
+    natureza da operação (manufatura de cosméticos) compatível com o fato relatado —
+    atribuição operacional com confiança alta. Deixa de ser brand_group/monitoramento
+    limitado/scoreable=false. Nenhum dado de posição real (razão social/RUC/garantidor/
+    devedor) foi encontrado neste repositório para confirmar a correspondência entre a
+    entidade operacional afetada e o emissor da posição na carteira — pendência aberta,
+    registrada mas não bloqueante (regra C da tarefa de configuração operacional) —
+    "Confirmar correspondência entre a entidade operacional afetada e o emissor da
+    posição." Site institucional CONFIGURADO e confirmado ACESSÍVEL; nenhuma fonte
+    regulatória oficial (SMV/BVL) localizada — consistente com empresa de capital fechado.
+  aliases:
+  - Yobel
+  - Yobel Perú
+  - Yobel Peru
+  - Yobel Supply Chain Management
+  - Yobel Supply Chain Management S.A.
+  search_terms:
+  - Yobel
+  - Yobel Perú
+  - Yobel Peru
+  - Yobel Supply Chain Management
+  - Yobel Supply Chain Management S.A.
+  - Yobel SCM
+  - Yobel Los Olivos
+  - Yobel incendio
+  - Yobel almacén
+  - Yobel planta
+  - Yobel resultados
+  - Yobel expansión
+  - Yobel gerente
+  related_entities:
+  - entity_name: Yobel SCM Logistics
+    legal_name: Yobel SCM Logistics S.A.
+    ruc: '20100181534'
+    relationship: related_operating_company
+    attribution_mode: context_unless_direct_impact
+    aliases:
+    - Yobel SCM Logistics
+    - Yobel Logistics
+  entity_cues:
+  - cosméticos
+  - perfumería
+  - manufatura terceirizada
+  - supply chain
+  - san genaro
+  - los olivos
+  - lima, perú
+  - belcorp
+  - yanbal
+  - grupo belmont
+  - logística
+  - almacenamiento
+  - almacén
+  - fábrica
+  entity_cues_min: 2
+  exclusion_cues:
+  - yobel méxico
+  - yobel mexico
+  - yobel colombia
+  - yobel ecuador
+  - yobel el salvador
+  - yobel panamá
+  - yobel guatemala
+  - yobel costa rica
+  - yobel república dominicana
+  - yobel puerto rico
+  - yobel scm logistics
+  - yobel logistics
+  - '20100181534'
 source_trust:
   default_tier: outros
   overrides:
@@ -2618,6 +3008,395 @@ taxonomy:
   - enforcement action
   - investigación regulatoria
   - expediente sancionador
+  - procedimiento sancionador
+  - infracción administrativa
+  - conducta anticompetitiva
+  - práctica anticompetitiva
+  - processo administrativo aberto
+  - apuração em curso
+  - investigação da autoridade
+- id: sancao_regulatoria
+  label: Sanção regulatória
+  severity: alto
+  direction: negativa
+  score: 45
+  dimensions:
+  - regulatorio
+  - governanca
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  - gestora_fundo
+  keywords:
+  - sanción de Indecopi
+  - multa de Indecopi
+  - sancionada por Indecopi
+  - sanción regulatoria
+  - sanción por libre competencia
+  - multa regulatória
+  - aplicação de multa
+  - penalidade administrativa
+  - fined by the regulator
+  - regulatory fine
+  - sanctioned by
+  - penalty imposed
+  - multa impuesta
+  - impuso una sanción
+  - confirmó la sanción
+  negations:
+  - proposta de multa
+  - possibilidade de sanção
+  - investigação aberta
+  - decisão preliminar sem efeito
+  - recurso ainda sem decisão
+  - empresa absolvida
+  - processo arquivado
+  - multa anulada
+  - sanção revogada
+- id: incidente_operacional
+  label: Incidente operacional
+  severity: medio
+  direction: negativa
+  score: 20
+  dimensions:
+  - operacional
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - incêndio em fábrica
+  - incêndio em planta
+  - incêndio em armazém
+  - incêndio industrial
+  - sinistro operacional
+  - explosão em unidade
+  - incendio en planta
+  - incendio en fábrica
+  - incendio en almacén
+  - incendio industrial
+  - siniestro en instalación
+  - fire at plant
+  - factory fire
+  - warehouse fire
+  - industrial fire
+  - operational incident
+  - fuego en almacen de
+  - fuego en almacén de
+  - incendio se reactiva
+  - se reactiva incendio
+  - incendio reactivado
+  - no se extingue
+  - incendio se registró
+  - incendio se registro
+  - se registró un incendio
+  - se registro un incendio
+  - incendio consume
+  - incendio consumió
+  - fuego consume
+  - siniestro que consumió
+  - siniestro que consumio
+  - extinción del fuego
+  - extincion del fuego
+  negations:
+  - simulado de incêndio
+  - exercício de evacuação
+  - prevenção de incêndio
+  - risco de incêndio
+  - incêndio nas proximidades
+  - incêndio florestal sem impacto na empresa
+  - fogo controlado antes de atingir a instalação
+  - capacitación contra incendios
+  - simulacro de incendio
+  - fire drill
+  - wildfire near the facility without impact
+- id: paralisacao_operacional
+  label: Paralisação operacional
+  severity: alto
+  direction: negativa
+  score: 40
+  dimensions:
+  - operacional
+  - credito
+  - liquidez
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - paralisação da fábrica
+  - planta paralisada
+  - produção suspensa
+  - operações suspensas
+  - unidade temporariamente fechada
+  - paralización temporal de operaciones
+  - planta paralizada
+  - producción suspendida
+  - cierre temporal de la planta
+  - operación suspendida
+  - suspendió sus operaciones
+  - paraliza temporalmente sus operaciones
+  - paraliza sus operaciones
+  - temporary shutdown
+  - plant shutdown
+  - operations suspended
+  - production halted
+  - temporarily ceased operations
+  negations:
+  - manutenção programada
+  - parada programada
+  - manutenção preventiva
+  - férias coletivas programadas
+  - operações já retomadas sem novo fato negativo
+  - mantenimiento programado
+  - scheduled maintenance
+  - planned shutdown
+- id: incidente_operacional_grave
+  label: Incidente operacional grave
+  severity: alto
+  direction: negativa
+  score: 60
+  dimensions:
+  - operacional
+  - credito
+  - liquidez
+  - regulatorio
+  - governanca
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - incêndio de grandes proporções
+  - incêndio atinge grande parte da fábrica
+  - múltiplas explosões
+  - explosões sucessivas
+  - destruição da planta
+  - perda relevante da unidade
+  - acidente fatal
+  - vítimas fatais
+  - incendio de gran magnitud
+  - múltiples explosiones
+  - materiales altamente inflamables
+  - destrucción de la planta
+  - daños materiales graves
+  - víctimas mortales
+  - heridos graves
+  - evacuación preventiva
+  - código 4
+  - incendio de grandes proporciones
+  - colapso del techo
+  - colapso de techo
+  - destruye almacen
+  - destruye almacén
+  - destruye fabrica
+  - destruye fábrica
+  - arrasó con fábrica
+  - arraso con fabrica
+  - voraz incendio
+  - de grandes proporciones
+  - major industrial fire
+  - multiple explosions
+  - facility destroyed
+  - severe property damage
+  - prolonged shutdown
+  - fatalities
+  - major evacuation
+- id: retomada_operacional
+  label: Retomada operacional
+  severity: info
+  direction: positiva
+  score: 0
+  dimensions:
+  - operacional
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - retoma operaciones
+  - reanuda operaciones
+  - reinicia produccion
+  - reinicia producción
+  - normaliza sus operaciones
+  - vuelve a operar
+  - retoma la producción
+  - volta a operar
+  - retoma as operações
+  - resumes operations
+  - resumed operations
+  - back in operation
+- id: expansao_capacidade
+  label: Expansão de capacidade
+  severity: info
+  direction: positiva
+  score: 0
+  dimensions:
+  - operacional
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - amplia capacidad
+  - amplía capacidad
+  - aumenta capacidad
+  - nueva linea de produccion
+  - nueva línea de producción
+  - expande operaciones
+  - abre nuevo centro
+  - inaugura centro logistico
+  - inaugura centro logístico
+  - nuevos centros logisticos
+  - nuevos centros logísticos
+  - amplia sua capacidade
+  - nova linha de produção
+  - capacity expansion
+  - new production line
+  - acelera expansión en
+  - acelera expansion en
+  - entra al negocio de
+  - impulsa su presencia regional
+  - refuerza su capacidad operativa
+  - ingresa por primera vez al ranking
+- id: investimento_operacional
+  label: Investimento operacional
+  severity: info
+  direction: neutra
+  score: 0
+  dimensions:
+  - operacional
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - impulsa millonaria inversion
+  - impulsa millonaria inversión
+  - apuesta por la energia solar
+  - apuesta por la energía solar
+  - invierte en
+  - inversion en dos proyectos
+  - inversión en dos proyectos
+  - modernizacion de planta
+  - modernización de planta
+  - moderniza su planta
+  - investimento em energia
+  - moderniza a planta
+  - operational investment
+  - invests in
+  - impulsa proyectos de infraestructura
+  - genera ahorros por
+  - apuesta por energía solar
+  - apuesta por energia solar
+  - declaración ambiental de producto
+  - declaracion ambiental de producto
+  - alista inversión para modernizar
+  - alista inversion para modernizar
+  - convierte la sostenibilidad en ventaja
+  - modelo de triple impacto
+  - modelo de empaques sostenibles
+- id: deterioracao_operacional
+  label: Deterioração operacional
+  severity: alto
+  direction: negativa
+  score: 35
+  dimensions:
+  - operacional
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - caida relevante de la produccion
+  - caída relevante de la producción
+  - caida relevante de ventas
+  - caída relevante de ventas
+  - reduccion significativa de la utilizacion de capacidad
+  - redução significativa de utilização de capacidade
+  - queda relevante da producao
+  - queda relevante da produção
+  - significant production decline
+  - significant drop in sales
+- id: impacto_ambiental_operacional
+  label: Impacto ambiental operacional
+  severity: alto
+  direction: negativa
+  score: 45
+  dimensions:
+  - operacional
+  - regulatorio
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - dano ambiental confirmado
+  - daño ambiental confirmado
+  - contaminacion confirmada
+  - contaminación confirmada
+  - multa ambiental
+  - sancion ambiental confirmada
+  - sanción ambiental confirmada
+  - confirmed environmental damage
+  - environmental fine
+  negations:
+  - monitoreo ambiental
+  - monitoramento ambiental
+  - sin daño confirmado
+  - sin dano confirmado
+  - sem dano confirmado
+- id: resultado_acima_expectativas
+  label: Resultado acima das expectativas
+  severity: info
+  direction: positiva
+  score: 0
+  dimensions:
+  - mercado
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - alcanza utilidades de
+  - crecimiento en ventas y récords históricos
+  - crecimiento en ventas y records historicos
+  - resultado recorde
+  - resultado récord
+  - utilidades recorde
+  - lucro recorde
+  - record profit
+  - record earnings
+- id: resultado_financeiro_negativo
+  label: Resultado financeiro negativo
+  severity: alto
+  direction: negativa
+  score: 40
+  dimensions:
+  - mercado
+  - credito
+  applies_to:
+  - listed_companies
+  - nao_listada
+  - fii
+  keywords:
+  - caida en utilidades
+  - caída en utilidades
+  - perdidas significativas
+  - pérdidas significativas
+  - resultado muy por debajo de lo esperado
+  - queda acentuada no lucro
+  - significant loss
+  - profit collapse
+  negations:
+  - resultado dentro do esperado
+  - variação pequena
 - id: lucro_abaixo_consenso
   label: Lucro muito abaixo do consenso
   severity: alto
@@ -2781,6 +3560,14 @@ taxonomy:
   - renuncia el ceo
   - nuevo director ejecutivo
   - cambio de ceo
+  - nuevo gerente general
+  - renuncia del gerente general
+  - sale como gerente general
+  - como gerente general
+  - gerente general de
+  - deja la gerencia general
+  - nomeação de novo gerente-geral
+  - troca de gerente-geral
 - id: outlook_negativo
   label: Outlook negativo
   severity: medio
@@ -3774,6 +4561,20 @@ official_sources:
     bolsa: BVM
     idioma: es
     viabilidade: media
+  Peru:
+    regulador: SMV — Superintendencia del Mercado de Valores
+    filings: null
+    filings_url: https://www.smv.gob.pe/
+    api: null
+    bolsa: BVL — Bolsa de Valores de Lima
+    idioma: es
+    viabilidade: a_confirmar
+    nota: 'Portal geral do regulador (SMV) e da bolsa (BVL) CONFIGURADOS e confirmados
+      ACESSÍVEIS por pesquisa nas fases anteriores dos 4 candidatos peruanos (ver
+      source_inventory.csv/candidate_config.yaml do worktree de teste); página
+      específica de hechos de importancia por emissor e endpoint estruturado (API/RSS)
+      não localizados nesta pesquisa — nenhum deles foi ainda EFETIVAMENTE TESTADO
+      por probe_official_sources nesta etapa.'
 fund_sources:
   enabled: false
   regulador: CVM
@@ -3880,4 +4681,32 @@ event_resolution:
       priority:
       - pequenas_aquisicoes
       - ma
+      mode: primary_plus_metadata
+    disrupcao_operacional:
+      label: Disrupção operacional
+      members:
+      - incidente_operacional
+      - paralisacao_operacional
+      - incidente_operacional_grave
+      priority:
+      - incidente_operacional_grave
+      - paralisacao_operacional
+      - incidente_operacional
+      mode: primary_plus_metadata
+      # [fix: deduplicate operational events across articles] opt-in,
+      # exclusivo desta família: artigos DIFERENTES sobre o MESMO fato
+      # (mesmo emissor + mesma família + proximidade temporal + local/
+      # marcador compartilhado quando identificável) compartilham 1
+      # occurrence_id, mesmo com event_id inicial diferente por artigo.
+      # NÃO aplicado a nenhuma outra família (credit_rating/insolvencia/
+      # inadimplencia/ma mantêm o comportamento legado, só por event_id).
+      merge_occurrences_across_articles: true
+    acao_regulatoria:
+      label: Ação regulatória
+      members:
+      - investigacao_regulatoria
+      - sancao_regulatoria
+      priority:
+      - sancao_regulatoria
+      - investigacao_regulatoria
       mode: primary_plus_metadata

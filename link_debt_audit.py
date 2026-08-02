@@ -365,6 +365,29 @@ def is_direct_valid(url: str) -> bool:
     return True
 
 
+def _is_well_formed_url(url: str) -> bool:
+    """[fix: complete Peru news links] Validação ESTRUTURAL fraca (esquema +
+    host com ponto), SEM excluir redirecionadores — ao contrário de
+    `is_direct_valid` (que exige destino final), esta função valida a URL
+    ORIGINAL do agregador (Google News/rede social) para uso como fallback
+    clicável quando a resolução do destino final falhou ou não foi tentada.
+    Não inventa nada: só confirma que a URL já coletada é sintaticamente
+    válida para ir ao `href`."""
+    if not url or not isinstance(url, str):
+        return False
+    u = url.strip()
+    if any(u.lower().startswith(e) for e in ESQUEMAS_PERIGOSOS):
+        return False
+    if not u.lower().startswith(("http://", "https://")):
+        return False
+    p = urlsplit(u)
+    if not p.netloc or "." not in p.netloc:
+        return False
+    if any(d in p.netloc.lower() for d in DOMINIOS_SUSPEITOS):
+        return False
+    return True
+
+
 def extract_destination(url: str) -> tuple[str, str]:
     """Extrai o destino de um redirecionador por parâmetro, com decodificação
     controlada (HTML entities + percent-encoding, no máximo N rodadas).
@@ -777,6 +800,17 @@ def interface_decision(res: dict) -> dict:
     if lh == "removido_404_410":
         return {"render_anchor": False, "label": "Link indisponível", "href": ""}
     if lh in ("redirect_nao_resolvido", "bloqueio_de_ambiente", "nao_verificado"):
+        # [fix: complete Peru news links] resolução não confirmou o destino
+        # final (offline, rate-limit, ou o resolvedor genuinamente não achou
+        # o artigo direto) — mas a URL ORIGINAL do Google News/agregador que
+        # já chegou até aqui é clicável no navegador real do usuário (ele
+        # resolve o redirect no clique). Não marcar "indisponível"/"em
+        # verificação" quando ela existe e é estruturalmente válida — só
+        # quando não há NENHUMA url original recuperável.
+        original = res.get("redirect_url") or ""
+        if original and _is_well_formed_url(original):
+            return {"render_anchor": True,
+                    "label": "Abrir notícia (via agregador) →", "href": original}
         return {"render_anchor": False, "label": "Link em verificação", "href": ""}
     if du:
         return {"render_anchor": True, "label": "Abrir notícia →", "href": du}
