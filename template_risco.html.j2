@@ -321,6 +321,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);
 .info-item{padding:8px 0;border-bottom:1px dashed rgba(127,127,127,.15)}
 .info-item:last-child{border-bottom:0}
 .info-event{font-weight:600;font-size:.92rem}
+.info-classification{font-size:.74rem;opacity:.72;margin-top:2px}
 .info-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
 .info-tag{font-size:.7rem;padding:1px 7px;border-radius:999px;border:1px solid rgba(127,127,127,.3);background:rgba(127,127,127,.08)}
 .info-note{font-size:.76rem;opacity:.75;margin-top:6px;line-height:1.45}
@@ -458,22 +459,41 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c =>
   ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Link a exibir: se o url ainda for o redirecionador do Google News (não
 // resolvido), usa display_url (home do veículo) como fallback de exibição.
-// Link a exibir. O href NUNCA pode ser um endereço intermediário: dentro da
-// rede corporativa o proxy recusa news.google.com/rss/articles/... com
-// "endereço da Web inválido". Sem destino direto, não geramos <a>.
-const REDIR_RX = /(news\.google\.com|google\.com\/url|\/t\.co\/|bit\.ly|lnkd\.in|flip\.it)/i;
+// Link a exibir. Preferência: destino DIRETO (display_url/canonical_url/
+// resolved_url/href já resolvidos) sempre que existir.
+// [fix: complete Peru news links taxonomy and holding coverage] Google News
+// (news.google.com) deixou de ser bloqueado incondicionalmente aqui — antes
+// esta função rejeitava QUALQUER url desse host mesmo quando o Python já
+// tinha decidido (`link_debt_audit.interface_decision`) usá-la como
+// fallback clicável, produzindo "Link em verificação" mesmo com uma URL
+// original válida disponível (o mesmo problema corrigido no lado Python,
+// mas reintroduzido aqui por esta função JS reimplementar a decisão de
+// forma independente, sem usar `href`/`link_label` já resolvidos). Mantido
+// só como ÚLTIMO recurso (nunca preferido sobre um destino direto): a nota
+// histórica de que o proxy de certas redes corporativas recusa esse host
+// permanece válida, mas a ausência de link é pior que um link que funciona
+// para a maioria dos usuários — o navegador resolve o redirect ao clicar.
+const REDIR_RX = /(google\.com\/url|\/t\.co\/|bit\.ly|lnkd\.in|flip\.it)/i;
 const isDirect = u => !!u && /^https?:\/\//i.test(u) && !REDIR_RX.test(u);
+const isGNewsFallback = u => !!u && /^https?:\/\//i.test(u) && /news\.google\.com/i.test(u);
 const linkOf = o => {
   if (!o) return '';
   const h = o.href || o.display_url || o.canonical_url || o.resolved_url || '';
   if (isDirect(h)) return h;
   const u = o.url || '';
-  return isDirect(u) ? u : '';
+  if (isDirect(u)) return u;
+  if (isGNewsFallback(h)) return h;
+  if (isGNewsFallback(u)) return u;
+  return '';
 };
 // Decisão por fonte (item 12): âncora, rótulo ou aviso sem botão.
 const linkDecision = o => {
   const href = linkOf(o);
-  if (href) return { anchor: true, label: (o && o.link_label) || 'Abrir notícia →', href };
+  if (href) {
+    const label = (o && o.link_label) ||
+      (isGNewsFallback(href) ? 'Abrir notícia (via agregador) →' : 'Abrir notícia →');
+    return { anchor: true, label, href };
+  }
   const lh = (o && o.link_health) || '';
   if (lh === 'removido_404_410') return { anchor: false, label: 'Link indisponível', href: '' };
   if (lh === 'url_malformada' || lh === 'homepage_generica' || lh === 'dominio_suspeito')
@@ -742,10 +762,11 @@ function renderRadar(){
         ${(row.context_events||[]).length ? `
         <div class="context-block">
           <div class="context-title">Contexto relacionado · não pontua</div>
-          ${row.context_events.map(c => `
+          ${row.context_events.map(c => { const ld = linkDecision(c); return `
             <div class="context-item">
-              <div class="context-subject">${esc(c.subject_company||'—')}</div>
-              <div class="context-event">${esc(c.event_label||c.event_id||'')}</div>
+              <div class="context-event">${esc(c.title || (c.event_label||c.event_id||''))}</div>
+              <div class="info-classification">Classificação: ${esc(c.event_label||c.event_id||'')} · Contexto relacionado · não pontua</div>
+              <div class="context-subject">Sujeito real: ${esc(c.subject_company||'—')}</div>
               <div class="context-tags">
                 ${c.relation_label?`<span class="context-tag">${esc(c.relation_label)}</span>`:''}
                 ${c.impact_label?`<span class="context-tag">${esc(c.impact_label)}</span>`:''}
@@ -755,7 +776,33 @@ function renderRadar(){
               </div>
               <div class="context-note">Evento da ${esc(c.subject_company||'empresa relacionada')}, ${esc(c.relation_label||'entidade relacionada')} de ${esc(row.company)}. Não representa ${esc((c.event_label||'o evento').toLowerCase())} d${esc(row.company)==='Vale'?'a':'e'} ${esc(row.company)} e não altera seu score.</div>
               <div class="context-meta">${esc(c.source||'')}${c.date?' · '+esc(c.date):''}
-                ${c.url?`<a class="context-link" href="${esc(c.url)}" target="_blank" rel="noopener">Abrir comunicado →</a>`:''}</div>
+                ${ld.anchor?`<a class="context-link" href="${esc(ld.href)}" target="_blank" rel="noopener">${esc(ld.label)}</a>`
+                    :`<span class="context-link src-link-off">${esc(ld.label)}</span>`}</div>
+            </div>`; }).join('')}
+        </div>` : ''}
+        ${(row.related_entities_coverage||[]).length ? `
+        <div class="context-block coverage-block">
+          <div class="context-title">Cobertura de subsidiárias verificada</div>
+          <div class="info-classification">Subsidiárias monitoradas: ${row.related_entities_coverage.length} ·
+            última busca: ${esc(row.related_entities_coverage[0].searched_at||'—')} ·
+            fontes verificadas: ${esc((row.related_entities_coverage[0].official_sources_checked||[]).join(', '))}</div>
+          ${row.related_entities_coverage.map(cv => `
+            <div class="info-item">
+              <div class="info-event">${esc(cv.subsidiary)}${cv.legal_name?` (${esc(cv.legal_name)})`:''}</div>
+              <div class="info-tags">
+                <span class="info-tag">Query: ${esc(cv.query)}</span>
+                <span class="info-tag">Locale: ${esc(cv.locale||'—')}</span>
+                <span class="info-tag">Janela: ${cv.search_window_days||180} dias</span>
+                <span class="info-tag">Brutos: ${cv.raw_results||0}</span>
+                <span class="info-tag">Deduplicados: ${cv.deduped_results||0}</span>
+                <span class="info-tag">Rejeitados: ${(cv.rejected||[]).length}</span>
+                <span class="info-tag">Atribuídos: ${cv.attributed||0}</span>
+              </div>
+              <div class="info-note">${cv.error ? `Erro na busca: ${esc(cv.error)}` :
+                (cv.attributed>0 ? `${cv.attributed} notícia(s) relevante(s) atribuída(s) como contexto — ver bloco acima.`
+                                  : 'Zero eventos relevantes encontrados nesta busca — todos os resultados brutos foram homônimos/sem sinal de setor, ou não houve resultado.')}</div>
+              ${(cv.rejected||[]).length ? `<div class="info-note" style="opacity:.7">Rejeitados: ${
+                cv.rejected.slice(0,3).map(r => esc(r.title.slice(0,70)) + ' — ' + esc(r.reason)).join(' · ')}${cv.rejected.length>3?' …':''}</div>` : ''}
             </div>`).join('')}
         </div>` : ''}
         ${(() => {
@@ -766,9 +813,10 @@ function renderRadar(){
           const bloco = (titulo, cls, itens) => !itens.length ? '' : `
         <div class="info-block ${cls}">
           <div class="info-title">${titulo}</div>
-          ${itens.map(c => `
+          ${itens.map(c => { const ld = linkDecision(c); return `
             <div class="info-item">
-              <div class="info-event">${esc(row.company)} — ${esc(c.event_label||c.event_id||'')}</div>
+              <div class="info-event">${esc(c.title || (row.company + ' — ' + (c.event_label||c.event_id||'')))}</div>
+              <div class="info-classification">Classificação: ${esc(c.event_label||c.event_id||'')} · ${titulo}</div>
               <div class="info-tags">
                 <span class="info-tag">Escopo: ${esc(c.event_scope||'direto')}</span>
                 ${c.transaction_scope?`<span class="info-tag">Operação: ${esc(c.transaction_scope)}</span>`:''}
@@ -777,8 +825,9 @@ function renderRadar(){
               </div>
               <div class="info-note">${esc(c.observation||'Evento direto do próprio emissor — informativo, não pontua e não altera o score.')}</div>
               <div class="info-meta">${esc(c.source||'')}${c.date?' · '+esc(c.date):''}
-                ${c.url?`<a class="info-link" href="${esc(c.url)}" target="_blank" rel="noopener">Abrir notícia →</a>`:''}</div>
-            </div>`).join('')}
+                ${ld.anchor?`<a class="info-link" href="${esc(ld.href)}" target="_blank" rel="noopener">${esc(ld.label)}</a>`
+                    :`<span class="info-link src-link-off">${esc(ld.label)}</span>`}</div>
+            </div>`; }).join('')}
         </div>`;
           return bloco('Sinal positivo · não pontua', 'positive', pos)
                + bloco('Evento informativo · não pontua', 'neutral', neu)

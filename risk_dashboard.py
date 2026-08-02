@@ -799,11 +799,25 @@ def fetch_related_entities_context(company: dict, cfg: dict,
     SEMPRE vazios (nunca pontua a holding). Se a subsidiária não tiver
     nenhum evento da taxonomia no texto, o artigo é descartado (não
     persiste ruído). Emissores sem `fetch_related_entities` continuam
-    100% inalterados — função só roda quando chamada explicitamente."""
+    100% inalterados — função só roda quando chamada explicitamente.
+
+    Também popula `art["_related_entities_coverage"]` (lista, 1 item por
+    related_entity) com a telemetria completa da auditoria: query executada,
+    locale, janela, nº de resultados brutos, deduplicados, rejeitados (com
+    motivo de cada rejeição), e nº finalmente atribuído. Cada artigo
+    retornado carrega a MESMA lista completa (redundante, mas simples de
+    consumir sem precisar de um segundo valor de retorno) — quem monta o
+    payload final lê `arts[0]["_related_entities_coverage"]` uma vez."""
+    coverage: list[dict] = []
     if not company.get("fetch_related_entities") or not company.get("related_entities"):
         return []
     taxonomy = cfg.get("taxonomy", [])
     out = []
+    now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    try:
+        loc = locale_for_company(company, cfg)
+    except Exception:
+        loc = None
     for rel in company["related_entities"]:
         rel_name = rel.get("entity_name", "")
         if not rel_name:
@@ -812,16 +826,30 @@ def fetch_related_entities_context(company: dict, cfg: dict,
         pais = company.get("country", "")
         termo = aliases[0]
         query = f'"{termo}" {pais}'.strip() if pais else f'"{termo}"'
-        try:
-            loc = locale_for_company(company, cfg)
-        except Exception:
-            loc = None
+        cov = {"subsidiary": rel_name, "legal_name": rel.get("legal_name", ""),
+              "query": query, "locale": f"{loc[0]}/{loc[1]}" if loc else "",
+              "search_window_days": 180, "searched_at": now_iso,
+              "raw_results": 0, "deduped_results": 0, "rejected": [],
+              "attributed": 0, "official_sources_checked": ["SMV", "BVL"],
+              "error": ""}
         try:
             arts = fetch_query(query, cfg, session or requests.Session(), locale=loc)
         except Exception as exc:
+            cov["error"] = f"{type(exc).__name__}: {str(exc)[:160]}"
+            coverage.append(cov)
             print(f"   ⚠️  related_entity '{rel_name}' de '{company['name']}': "
                  f"falha na busca ({type(exc).__name__}) — ignorado nesta execução.")
             continue
+        cov["raw_results"] = len(arts)
+        _seen_urls = set()
+        arts_dedup = []
+        for a in arts:
+            u = a.get("url", "")
+            if u in _seen_urls:
+                continue
+            _seen_urls.add(u)
+            arts_dedup.append(a)
+        cov["deduped_results"] = len(arts_dedup)
         # sinais de relevância do SETOR da holding (ex.: "azúcar"/"grupo
         # gloria" para a Coazucar) — o nome de uma subsidiária muitas vezes
         # coincide com topônimo/instituição homônima sem relação nenhuma
@@ -840,10 +868,12 @@ def fetch_related_entities_context(company: dict, cfg: dict,
                      (company.get("related_entity_relevance_cues")
                       or company.get("entity_cues") or [])
                      if normalize(c) not in _nomes_subs]
-        for a in arts:
+        for a in arts_dedup:
             texto = normalize(f"{a.get('title','')} {a.get('summary','')}")
             if setor_cues and not any(c and c in texto for c in setor_cues):
-                continue  # sem nenhum sinal de setor da holding — provável homônimo
+                cov["rejected"].append({"title": a.get("title", ""), "url": a.get("url", ""),
+                                        "reason": "sem_sinal_de_setor_provavel_homonimo"})
+                continue
             evs = classify_article(a, taxonomy)
             eids = [e["id"] for e in evs]
             a["companies"] = [company["name"]]
@@ -870,6 +900,17 @@ def fetch_related_entities_context(company: dict, cfg: dict,
             a["query_related_entity"] = rel_name
             a["query_company"] = company["name"]
             out.append(a)
+            cov["attributed"] += 1
+        coverage.append(cov)
+    for a in out:
+        a["_related_entities_coverage"] = coverage
+    # se NENHUM artigo foi atribuído (nenhuma subsidiária rendeu notícia
+    # relevante), a telemetria ainda precisa ficar disponível para quem
+    # monta o payload/HTML — devolve num "artigo" vazio, marcador, que quem
+    # chama pode descartar do merge_into_history (sem events reais) mas usar
+    # só para ler `_related_entities_coverage`.
+    if not out and coverage:
+        out.append({"_related_entities_coverage": coverage, "_coverage_only": True})
     return out
 
 
@@ -4624,7 +4665,8 @@ def mention_role(titulo: str, emissor: str, aliases, outros: list[str]) -> dict:
 
 
 def assign_occurrence_clusters(occurrences: list[dict], gap_days: int = 45,
-                               fam_map: dict | None = None) -> None:
+                               fam_map: dict | None = None,
+                               aliases_by_company: dict | None = None) -> None:
     """Define a OCORRÊNCIA econômica (unidade do dashboard). Ordem de decisão:
 
     1. **Separadores determinísticos** — série/número da operação (16ª × 17ª
@@ -4655,6 +4697,7 @@ def assign_occurrence_clusters(occurrences: list[dict], gap_days: int = 45,
     IDÊNTICO ao legado (chave por `event_id` puro)."""
     limite = gap_days * 86400
     fam_map = fam_map or {}
+    aliases_by_company = aliases_by_company or {}
     grupos: dict[tuple, list[dict]] = {}
     for o in occurrences:
         ident = o.get("_ident") or {}
@@ -4680,7 +4723,9 @@ def assign_occurrence_clusters(occurrences: list[dict], gap_days: int = 45,
         for o in itens:
             ts = o.get("pub_ts", 0)
             _id_o = o.get("_ident") or {}
-            marcas_o = _marcadores_locais_operacionais(o.get("title", ""), _id_o.get("emissor", ""), None)
+            _emissor_o = _id_o.get("emissor", "")
+            marcas_o = _marcadores_locais_operacionais(o.get("title", ""), _emissor_o,
+                                                       aliases_by_company.get(_emissor_o))
             novo = anterior is None or (ts - anterior) > limite
             if (not novo and is_family_group and marcas_o and cluster_marcas
                     and not (marcas_o & cluster_marcas)):
@@ -4904,9 +4949,14 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
     def _fam_key_ev(eid):
         return fam_map.get(eid, eid)
 
+    _aliases_by_company = {c["name"]: (c.get("aliases") or [c["name"]])
+                          for c in cfg.get("watchlist", [])}
+
     def _marcadores_de(o):
         _id_o = o.get("_ident") or {}
-        return _marcadores_locais_operacionais(o.get("title", ""), _id_o.get("emissor", ""), None)
+        _emissor = _id_o.get("emissor", "")
+        return _marcadores_locais_operacionais(o.get("title", ""), _emissor,
+                                               _aliases_by_company.get(_emissor))
 
     for company, occs in list(per_company.items()):
         occs.sort(key=lambda o: (-o.get("trust_w", 1.0), o["pub_ts"]))
@@ -5047,7 +5097,8 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
     for company, occurrences in per_company.items():
         occurrences.sort(key=lambda o: o["pub_ts"])
         assign_occurrence_clusters(
-            occurrences, int(ev_cfg.get("occurrence_gap_days", 45)), fam_map=fam_map)
+            occurrences, int(ev_cfg.get("occurrence_gap_days", 45)), fam_map=fam_map,
+            aliases_by_company=_aliases_by_company)
         negatives = [o for o in occurrences if not o["positive"]]
         _tem_contexto = bool(_build_context_events(history, company, cutoff))
         _tem_informativo = bool(_build_informational_events(history, company, cutoff))
