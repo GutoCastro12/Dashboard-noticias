@@ -1069,7 +1069,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T15:54:12.707684+00:00"
+     "last_checked_at": "2026-08-03T18:00:38.374926+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2603,7 +2603,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T15:54:13.107929+00:00"
+     "last_checked_at": "2026-08-03T18:00:38.775169+00:00"
     }
    ],
    "corrob_sources": [
@@ -9208,7 +9208,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T15:54:13.508215+00:00"
+     "last_checked_at": "2026-08-03T18:00:39.175477+00:00"
     },
     {
      "source": "Demarest",
@@ -9228,7 +9228,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T15:54:13.908533+00:00"
+     "last_checked_at": "2026-08-03T18:00:39.575769+00:00"
     }
    ],
    "corrob_sources": [
@@ -10612,7 +10612,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T15:54:14.308828+00:00"
+     "last_checked_at": "2026-08-03T18:00:39.976013+00:00"
     }
    ],
    "corrob_sources": [
@@ -13758,7 +13758,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T15:54:14.880342+00:00"
+     "last_checked_at": "2026-08-03T18:00:40.564303+00:00"
     }
    ],
    "corrob_sources": [
@@ -13884,7 +13884,9 @@
    "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
    "link_render_anchor": false,
    "link_label": "Link em verificação",
-   "last_checked_at": "2026-07-31T05:45:21.811226+00:00"
+   "last_checked_at": "2026-07-31T05:45:21.811226+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQalloeWhTOTZPWmQ3WWlEbk93R0tvd1RVd2ZUaXdVSnhCUW9idlUxY3VaUTBHRWpxM29vN0s2bmhKLUpaeDRnV191bzY3N3ZneWVoUWxDbENLMHpnZi11UjhyWXd4N0ZBQ21XTlFwWTFEMUxBeVZHeXJjUWJNX1VyLVhENUxhRVNXRXBYbnpYWWxGTlRxVHBHUW5NMW1KZ1lHaGUxZExubFdPZzgzQUpuZUZKWnlmd2FVR0Uwd0toZ0RvajVIZThLUXNXWlBXOGNZVzhyb0k3TVRjaU8wUXAzRkVR0gH8AUFVX3lxTE44eDVSeVcyUHY0Mm9PcnpUOGJ2aVJSYnl3SDliZkc1Mm1aZlNXb1J6ZURycUoxOFowdm8zajhyRVhfQ1hnMnVCSjFCRlVuY0ZYWTBqQllVOHhTak9ncmo0ZHJlN0JIdGVfekE2cWk1MnZtYWlVeU5uTlVEWDJ4TnB3M29FWTVwVEgwRVprci1wOExtaGszRGV5RjRuOU9UNkttcVlXQzhyTXhJODFVSGJKeEUyYTZQU1o1QUlFU2VUcnE1SURmTzBYV21kUEw2MThOOEM0OUswSGdpOUJpYUlRT1BuOUU2dThWZV8wOWZzQlNWemtpc3hhS1c3UA?oc=5": {
    "title": "La Argentina alcanzó un principio de acuerdo con dos fondos buitre que litigaban por el default de 2001",
@@ -15898,7 +15900,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T15:54:15.856033+00:00"
+     "last_checked_at": "2026-08-03T18:00:41.131441+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16004,7 +16006,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T15:54:16.435006+00:00"
+     "last_checked_at": "2026-08-03T18:00:41.710549+00:00"
     },
     {
      "source": "Moomoo",
@@ -17230,7 +17232,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T15:54:17.150477+00:00"
+     "last_checked_at": "2026-08-03T18:00:42.399512+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17273,7 +17275,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T15:54:17.845938+00:00"
+     "last_checked_at": "2026-08-03T18:00:43.114614+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19958,7 +19960,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T15:54:18.423511+00:00"
+     "last_checked_at": "2026-08-03T18:00:43.698274+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20043,7 +20045,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T15:54:19.000459+00:00"
+     "last_checked_at": "2026-08-03T18:00:44.273819+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -34854,7 +34856,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T15:54:20.087602+00:00"
+     "last_checked_at": "2026-08-03T18:00:45.041371+00:00"
     }
    ],
    "corrob_sources": [
@@ -37655,7 +37657,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T15:54:20.648132+00:00"
+     "last_checked_at": "2026-08-03T18:00:45.638030+00:00"
     },
     {
      "source": "Virginia Business",
@@ -37698,7 +37700,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T15:54:21.210670+00:00"
+     "last_checked_at": "2026-08-03T18:00:46.194159+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38509,7 +38511,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785762394,
-   "cap_iso": "2026-08-03 10:06"
+   "cap_iso": "2026-08-03 10:06",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://cenarioenergia.com.br/2026/04/02/isa-energia-brasil-capta-r-1-bilhao-em-debentures-e-reforca-posicao-como-porto-seguro-do-setor-de-transmissao/": {
    "title": "ISA Energia Brasil capta R$ 1 bilhão em debêntures e reforça posição como “porto seguro” do setor de transmissão",
@@ -38557,7 +38561,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785762394,
-   "cap_iso": "2026-08-03 10:06"
+   "cap_iso": "2026-08-03 10:06",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMihgFBVV95cUxQQXNGN1RpSTY2U1JUVmRBOTNaUkJRRDdvMXFlQk5KOUgzYnRMVllRYm9BMWJ5TjFBekdRT0Fnb0xqQkZHNUYzdmpyc3hvNFN3TzNxM2RNc0cwTDJNVzFWdDQ2NHFJV1JRM2tjMnNrNDNQWkZaVHY2LXVHNHhqdF9NbzZpcXRNUQ?oc=5": {
    "title": "TPG-backed Jana Holdings bond rating downgraded after repayment extension",
@@ -39198,42 +39204,6 @@
    "captured_ts": 1785772446,
    "cap_iso": "2026-08-03 12:54"
   },
-  "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml": {
-   "title": "CVM abre processo para apurar renúncia de presidente do conselho da Vale",
-   "url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
-   "summary": "CVM abre processo para apurar renúncia de presidente do conselho da Vale &nbsp;&nbsp; Folha de S.Paulo",
-   "source": "Folha de S.Paulo",
-   "domain": "www1.folha.uol.com.br",
-   "pub_ts": 1783494000,
-   "pub_iso": "2026-07-08 04:00",
-   "language": "pt",
-   "companies": [
-    "Vale"
-   ],
-   "event_ids": [
-    "investigacao_regulatoria"
-   ],
-   "mention_roles": {
-    "Vale": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "events_by_company": {
-    "Vale": [
-     "investigacao_regulatoria"
-    ]
-   },
-   "companies_attributed": [
-    "Vale"
-   ],
-   "context_companies": [],
-   "captured_ts": 1785772446,
-   "cap_iso": "2026-08-03 12:54"
-  },
   "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/sabesp-assembleia-para-aquisicao-das-acoes-da-emae-nao-sera-remarcada-apesar-de-acao-cautelar/": {
    "title": "Sabesp: assembleia para aquisição das ações da EMAE não será remarcada, apesar de ação cautelar",
    "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/sabesp-assembleia-para-aquisicao-das-acoes-da-emae-nao-sera-remarcada-apesar-de-acao-cautelar/",
@@ -39414,9 +39384,530 @@
    ],
    "captured_ts": 1785772446,
    "cap_iso": "2026-08-03 12:54"
+  },
+  "https://www.latercera.com/pulso/noticia/fernando-salinas-deja-la-gerencia-general-de-grupo-security-tras-fusion-con-bice/": {
+   "title": "Fernando Salinas deja la gerencia general de Grupo Security tras fusión con Bice",
+   "url": "https://www.latercera.com/pulso/noticia/fernando-salinas-deja-la-gerencia-general-de-grupo-security-tras-fusion-con-bice/",
+   "summary": "Fernando Salinas deja la gerencia general de Grupo Security tras fusión con Bice &nbsp;&nbsp; La Tercera",
+   "source": "La Tercera",
+   "domain": "latercera.com",
+   "pub_ts": 1756796400,
+   "pub_iso": "2025-09-02 04:00",
+   "language": "es",
+   "companies": [
+    "Grupo Security"
+   ],
+   "event_ids": [
+    "ma",
+    "troca_ceo"
+   ],
+   "event_assessments": [
+    {
+     "company": "Grupo Security",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Grupo Security",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "neutra",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "sem_verbo_de_aquisicao_no_texto",
+     "legal_status": "",
+     "confirmation_status": "indefinido",
+     "family_secondary": true,
+     "primary_event_id": "troca_ceo"
+    },
+    {
+     "company": "Grupo Security",
+     "event_id": "troca_ceo",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Grupo Security",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "",
+     "attribution_confidence": "media",
+     "scoreable": true,
+     "rejection_reason": "",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Grupo Security",
+     "event_id": "ma",
+     "event_id_corrigido": "",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "sem_verbo_de_aquisicao_no_texto",
+     "subject_company": "Grupo Security",
+     "family_secondary": true,
+     "primary_event_id": "troca_ceo"
+    }
+   ],
+   "mention_roles": {
+    "Grupo Security": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "companies_attributed": [
+    "Grupo Security"
+   ],
+   "events_by_company": {
+    "Grupo Security": [
+     "troca_ceo"
+    ]
+   },
+   "context_companies": [],
+   "captured_ts": 1785780032,
+   "cap_iso": "2026-08-03 15:00"
+  },
+  "https://www.latercera.com/pulso/noticia/bice-sera-la-marca-continuadora-tras-la-fusion-de-bicecorp-y-grupo-security/": {
+   "title": "Adiós al Grupo Security: Bice será la marca que seguirá tras la fusión con Bicecorp",
+   "url": "https://www.latercera.com/pulso/noticia/bice-sera-la-marca-continuadora-tras-la-fusion-de-bicecorp-y-grupo-security/",
+   "summary": "Adiós al Grupo Security: Bice será la marca que seguirá tras la fusión con Bicecorp &nbsp;&nbsp; La Tercera",
+   "source": "La Tercera",
+   "domain": "latercera.com",
+   "pub_ts": 1756796400,
+   "pub_iso": "2025-09-02 04:00",
+   "language": "es",
+   "companies": [
+    "Grupo Security"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "event_assessments": [
+    {
+     "company": "Grupo Security",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Grupo Security",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "neutra",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "sem_verbo_de_aquisicao_no_texto",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Grupo Security",
+     "event_id": "ma",
+     "event_id_corrigido": "",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "sem_verbo_de_aquisicao_no_texto",
+     "subject_company": "Grupo Security"
+    }
+   ],
+   "mention_roles": {
+    "Grupo Security": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Grupo Security": [
+     {
+      "company": "Grupo Security",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Grupo Security",
+      "monitored_company": "Grupo Security",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Adiós al Grupo Security: Bice será la marca que seguirá tras la fusión con Bicecorp",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONmIwWmIzUUdjV0dCOThpMmFUMFBJQnFodmJmaDczaUFudzB2TmV2S0JhQkZqbFFEMTF0UTVpS3I1TnNHMFdrQ1Zndnpxd0pVN0E1a01sQkZFb0t0NWRjVVR3cmUtSzRVTDFMU1FjTm9NT2FTX1JPdHY1RHh4MmxtVm5DeUppSmpqNmFMSG5LdWQ2TDVqaUdXckZyTjdiamNQMFJxUU44SHh5ZjhnTjVXX0puRmFpSEXSAdgBQVVfeXFMT2pxZU9JZDczYy1Fa0FINGFsdk45bzJXb0NCR2RycGNpcWFlYk44dW5EMjRpNGJERDUwamt4RGtwbmZwZDhFLW9HVEQzeVVjV21YSGw4QkI4Y3hfTEdzSFhVMDQtOHhhcW5EYmZvY25Kbl9QQVYxcGxJbVJteGR3Y0t3TjVEUm1vSjJDbmJaZHVnbUxRencwSEcwaWhPQ09zZmhXNWZnd0tfVmwtS0RPQklsOFJMTGRaSVBONlJtTXZEVjV4RUs3ZjRwTWpLOUtZVTlGRDZYZ2lh?oc=5",
+      "pub_ts": 1756796400,
+      "observation": "sem_verbo_de_aquisicao_no_texto",
+      "source_record_id": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONmIwWmIzUUdjV0dCOThpMmFUMFBJQnFodmJmaDczaUFudzB2TmV2S0JhQkZqbFFEMTF0UTVpS3I1TnNHMFdrQ1Zndnpxd0pVN0E1a01sQkZFb0t0NWRjVVR3cmUtSzRVTDFMU1FjTm9NT2FTX1JPdHY1RHh4MmxtVm5DeUppSmpqNmFMSG5LdWQ2TDVqaUdXckZyTjdiamNQMFJxUU44SHh5ZjhnTjVXX0puRmFpSEXSAdgBQVVfeXFMT2pxZU9JZDczYy1Fa0FINGFsdk45bzJXb0NCR2RycGNpcWFlYk44dW5EMjRpNGJERDUwamt4RGtwbmZwZDhFLW9HVEQzeVVjV21YSGw4QkI4Y3hfTEdzSFhVMDQtOHhhcW5EYmZvY25Kbl9QQVYxcGxJbVJteGR3Y0t3TjVEUm1vSjJDbmJaZHVnbUxRencwSEcwaWhPQ09zZmhXNWZnd0tfVmwtS0RPQklsOFJMTGRaSVBONlJtTXZEVjV4RUs3ZjRwTWpLOUtZVTlGRDZYZ2lh?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Grupo Security": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Grupo Security"
+   ],
+   "corroborations": [
+    {
+     "source": "BioBioChile",
+     "domain": "biobiochile.cl",
+     "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxOSkh2aFFwM0Q2MURiUUwzQjBnOUZaMU14Y0pNSF9mNFotdVZzd183ZXVpNFBiTlJib1NLZTR5SFRuOTRnWGZtYnJDWnc1QWs0aElRajRXN3pNZGdIbjMzdWhpc3hKamlMZGVkWGtWSnNpN3Q1NnFzZHVnN2V0WlRqSnMzNDc5dFhSSmdkem1uSDk1MjlGb1RpRl90aElwOXVjOXRFemhjSEFnRnhMYjVJM0MtQW5fckFVY0xlTGxVMldZVDZyeGN2RkJOVUJTYnlITXBUUkxlUzhOanpzUGJFUEZ6aERnTENkLXljaUZKUWlBOEp0anllcExuY3c0dnlQTXlRODNiOTZtWHBv0gGSAkFVX3lxTFBINFJqUGpIN19ESEdnQVBGaVgzUzZGZDJSMW9oaGVDS2pkanJZWWlWaDZDV0xWNjdZUUtUN1cwY0R1QjZnOFFNNnJEQTQtWlFtTWdJM2V0U0VnY1l1b0x0YTVpSjRQSWJobS1iOFBEYUdZbmF2LXN0dk14N3JsY2g2VWNLYzdJOXFzSzNkV2hZX0lMN2NoN2pUNmprdm1BaU41S1VRZ1F6dzE4ZUpYWWhPalgzMVRSRjFjOTQ5S0RBVUZxY0tVLWc0Nm9zOXo5Zy10Nl9MR2RuT09ua3dfQm1mUUVjSVZaMVNKaEVxczJHN1hnaE9FYWNDU1BYUzhzQjVyREZuWFNvTDFjNFo2SGpqd3c?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxOSkh2aFFwM0Q2MURiUUwzQjBnOUZaMU14Y0pNSF9mNFotdVZzd183ZXVpNFBiTlJib1NLZTR5SFRuOTRnWGZtYnJDWnc1QWs0aElRajRXN3pNZGdIbjMzdWhpc3hKamlMZGVkWGtWSnNpN3Q1NnFzZHVnN2V0WlRqSnMzNDc5dFhSSmdkem1uSDk1MjlGb1RpRl90aElwOXVjOXRFemhjSEFnRnhMYjVJM0MtQW5fckFVY0xlTGxVMldZVDZyeGN2RkJOVUJTYnlITXBUUkxlUzhOanpzUGJFUEZ6aERnTENkLXljaUZKUWlBOEp0anllcExuY3c0dnlQTXlRODNiOTZtWHBv0gGSAkFVX3lxTFBINFJqUGpIN19ESEdnQVBGaVgzUzZGZDJSMW9oaGVDS2pkanJZWWlWaDZDV0xWNjdZUUtUN1cwY0R1QjZnOFFNNnJEQTQtWlFtTWdJM2V0U0VnY1l1b0x0YTVpSjRQSWJobS1iOFBEYUdZbmF2LXN0dk14N3JsY2g2VWNLYzdJOXFzSzNkV2hZX0lMN2NoN2pUNmprdm1BaU41S1VRZ1F6dzE4ZUpYWWhPalgzMVRSRjFjOTQ5S0RBVUZxY0tVLWc0Nm9zOXo5Zy10Nl9MR2RuT09ua3dfQm1mUUVjSVZaMVNKaEVxczJHN1hnaE9FYWNDU1BYUzhzQjVyREZuWFNvTDFjNFo2SGpqd3c?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxOSkh2aFFwM0Q2MURiUUwzQjBnOUZaMU14Y0pNSF9mNFotdVZzd183ZXVpNFBiTlJib1NLZTR5SFRuOTRnWGZtYnJDWnc1QWs0aElRajRXN3pNZGdIbjMzdWhpc3hKamlMZGVkWGtWSnNpN3Q1NnFzZHVnN2V0WlRqSnMzNDc5dFhSSmdkem1uSDk1MjlGb1RpRl90aElwOXVjOXRFemhjSEFnRnhMYjVJM0MtQW5fckFVY0xlTGxVMldZVDZyeGN2RkJOVUJTYnlITXBUUkxlUzhOanpzUGJFUEZ6aERnTENkLXljaUZKUWlBOEp0anllcExuY3c0dnlQTXlRODNiOTZtWHBv0gGSAkFVX3lxTFBINFJqUGpIN19ESEdnQVBGaVgzUzZGZDJSMW9oaGVDS2pkanJZWWlWaDZDV0xWNjdZUUtUN1cwY0R1QjZnOFFNNnJEQTQtWlFtTWdJM2V0U0VnY1l1b0x0YTVpSjRQSWJobS1iOFBEYUdZbmF2LXN0dk14N3JsY2g2VWNLYzdJOXFzSzNkV2hZX0lMN2NoN2pUNmprdm1BaU41S1VRZ1F6dzE4ZUpYWWhPalgzMVRSRjFjOTQ5S0RBVUZxY0tVLWc0Nm9zOXo5Zy10Nl9MR2RuT09ua3dfQm1mUUVjSVZaMVNKaEVxczJHN1hnaE9FYWNDU1BYUzhzQjVyREZuWFNvTDFjNFo2SGpqd3c?oc=5",
+     "resolved_url": "https://www.biobiochile.cl/noticias/economia/negocios-y-empresas/2025/09/02/bicecorp-y-security-concretan-fusion-legal-apuntan-a-seguir-siendo-segmento-de-banca-de-excelencia.shtml",
+     "canonical_url": "https://www.biobiochile.cl/noticias/economia/negocios-y-empresas/2025/09/02/bicecorp-y-security-concretan-fusion-legal-apuntan-a-seguir-siendo-segmento-de-banca-de-excelencia.shtml",
+     "display_url": "https://www.biobiochile.cl/noticias/economia/negocios-y-empresas/2025/09/02/bicecorp-y-security-concretan-fusion-legal-apuntan-a-seguir-siendo-segmento-de-banca-de-excelencia.shtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.biobiochile.cl",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-03T18:00:46.594458+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "BioBioChile",
+     "domain": "biobiochile.cl",
+     "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxOSkh2aFFwM0Q2MURiUUwzQjBnOUZaMU14Y0pNSF9mNFotdVZzd183ZXVpNFBiTlJib1NLZTR5SFRuOTRnWGZtYnJDWnc1QWs0aElRajRXN3pNZGdIbjMzdWhpc3hKamlMZGVkWGtWSnNpN3Q1NnFzZHVnN2V0WlRqSnMzNDc5dFhSSmdkem1uSDk1MjlGb1RpRl90aElwOXVjOXRFemhjSEFnRnhMYjVJM0MtQW5fckFVY0xlTGxVMldZVDZyeGN2RkJOVUJTYnlITXBUUkxlUzhOanpzUGJFUEZ6aERnTENkLXljaUZKUWlBOEp0anllcExuY3c0dnlQTXlRODNiOTZtWHBv0gGSAkFVX3lxTFBINFJqUGpIN19ESEdnQVBGaVgzUzZGZDJSMW9oaGVDS2pkanJZWWlWaDZDV0xWNjdZUUtUN1cwY0R1QjZnOFFNNnJEQTQtWlFtTWdJM2V0U0VnY1l1b0x0YTVpSjRQSWJobS1iOFBEYUdZbmF2LXN0dk14N3JsY2g2VWNLYzdJOXFzSzNkV2hZX0lMN2NoN2pUNmprdm1BaU41S1VRZ1F6dzE4ZUpYWWhPalgzMVRSRjFjOTQ5S0RBVUZxY0tVLWc0Nm9zOXo5Zy10Nl9MR2RuT09ua3dfQm1mUUVjSVZaMVNKaEVxczJHN1hnaE9FYWNDU1BYUzhzQjVyREZuWFNvTDFjNFo2SGpqd3c?oc=5",
+     "when": "02/09 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxOSkh2aFFwM0Q2MURiUUwzQjBnOUZaMU14Y0pNSF9mNFotdVZzd183ZXVpNFBiTlJib1NLZTR5SFRuOTRnWGZtYnJDWnc1QWs0aElRajRXN3pNZGdIbjMzdWhpc3hKamlMZGVkWGtWSnNpN3Q1NnFzZHVnN2V0WlRqSnMzNDc5dFhSSmdkem1uSDk1MjlGb1RpRl90aElwOXVjOXRFemhjSEFnRnhMYjVJM0MtQW5fckFVY0xlTGxVMldZVDZyeGN2RkJOVUJTYnlITXBUUkxlUzhOanpzUGJFUEZ6aERnTENkLXljaUZKUWlBOEp0anllcExuY3c0dnlQTXlRODNiOTZtWHBv0gGSAkFVX3lxTFBINFJqUGpIN19ESEdnQVBGaVgzUzZGZDJSMW9oaGVDS2pkanJZWWlWaDZDV0xWNjdZUUtUN1cwY0R1QjZnOFFNNnJEQTQtWlFtTWdJM2V0U0VnY1l1b0x0YTVpSjRQSWJobS1iOFBEYUdZbmF2LXN0dk14N3JsY2g2VWNLYzdJOXFzSzNkV2hZX0lMN2NoN2pUNmprdm1BaU41S1VRZ1F6dzE4ZUpYWWhPalgzMVRSRjFjOTQ5S0RBVUZxY0tVLWc0Nm9zOXo5Zy10Nl9MR2RuT09ua3dfQm1mUUVjSVZaMVNKaEVxczJHN1hnaE9FYWNDU1BYUzhzQjVyREZuWFNvTDFjNFo2SGpqd3c?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxOSkh2aFFwM0Q2MURiUUwzQjBnOUZaMU14Y0pNSF9mNFotdVZzd183ZXVpNFBiTlJib1NLZTR5SFRuOTRnWGZtYnJDWnc1QWs0aElRajRXN3pNZGdIbjMzdWhpc3hKamlMZGVkWGtWSnNpN3Q1NnFzZHVnN2V0WlRqSnMzNDc5dFhSSmdkem1uSDk1MjlGb1RpRl90aElwOXVjOXRFemhjSEFnRnhMYjVJM0MtQW5fckFVY0xlTGxVMldZVDZyeGN2RkJOVUJTYnlITXBUUkxlUzhOanpzUGJFUEZ6aERnTENkLXljaUZKUWlBOEp0anllcExuY3c0dnlQTXlRODNiOTZtWHBv0gGSAkFVX3lxTFBINFJqUGpIN19ESEdnQVBGaVgzUzZGZDJSMW9oaGVDS2pkanJZWWlWaDZDV0xWNjdZUUtUN1cwY0R1QjZnOFFNNnJEQTQtWlFtTWdJM2V0U0VnY1l1b0x0YTVpSjRQSWJobS1iOFBEYUdZbmF2LXN0dk14N3JsY2g2VWNLYzdJOXFzSzNkV2hZX0lMN2NoN2pUNmprdm1BaU41S1VRZ1F6dzE4ZUpYWWhPalgzMVRSRjFjOTQ5S0RBVUZxY0tVLWc0Nm9zOXo5Zy10Nl9MR2RuT09ua3dfQm1mUUVjSVZaMVNKaEVxczJHN1hnaE9FYWNDU1BYUzhzQjVyREZuWFNvTDFjNFo2SGpqd3c?oc=5",
+     "resolved_url": "https://www.biobiochile.cl/noticias/economia/negocios-y-empresas/2025/09/02/bicecorp-y-security-concretan-fusion-legal-apuntan-a-seguir-siendo-segmento-de-banca-de-excelencia.shtml",
+     "canonical_url": "https://www.biobiochile.cl/noticias/economia/negocios-y-empresas/2025/09/02/bicecorp-y-security-concretan-fusion-legal-apuntan-a-seguir-siendo-segmento-de-banca-de-excelencia.shtml",
+     "display_url": "https://www.biobiochile.cl/noticias/economia/negocios-y-empresas/2025/09/02/bicecorp-y-security-concretan-fusion-legal-apuntan-a-seguir-siendo-segmento-de-banca-de-excelencia.shtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.biobiochile.cl",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-03T18:00:46.994730+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1785780032,
+   "cap_iso": "2026-08-03 15:00"
+  },
+  "https://forbes.co/2026/04/24/economia-y-finanzas/moodys-rebaja-calificacion-crediticia-de-ecopetrol-a-ba2-y-cambia-perspectiva-a-negativa/": {
+   "title": "Moody’s rebaja calificación crediticia de Ecopetrol a Ba2 y cambia perspectiva a negativa",
+   "url": "https://forbes.co/2026/04/24/economia-y-finanzas/moodys-rebaja-calificacion-crediticia-de-ecopetrol-a-ba2-y-cambia-perspectiva-a-negativa/",
+   "summary": "Moody’s rebaja calificación crediticia de Ecopetrol a Ba2 y cambia perspectiva a negativa &nbsp;&nbsp; Forbes Colombia",
+   "source": "Forbes Colombia",
+   "domain": "forbes.co",
+   "pub_ts": 1777014000,
+   "pub_iso": "2026-04-24 04:00",
+   "language": "pt",
+   "companies": [
+    "Ecopetrol"
+   ],
+   "event_ids": [
+    "outlook_negativo"
+   ],
+   "mention_roles": {
+    "Ecopetrol": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Ecopetrol": [
+     "outlook_negativo"
+    ]
+   },
+   "companies_attributed": [
+    "Ecopetrol"
+   ],
+   "context_companies": [],
+   "corroborations": [
+    {
+     "source": "ELHERALDO.CO",
+     "domain": "elheraldo.co",
+     "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQTGlKRU81YXlGRElHb1Z6NFpsWkpwTEpLZjhXSmNwWnQ0dnBLdWFvQlNMbDhlWElTVlhfZ2ExbkFBTmhOeEFqWVBnclBlOVBkaHVkelFFbmVtNFFSUmhsM1g3dU51SFBKVTVDVVR6YzgyWlY2WFlEclUxTG1zY0NXejZ2bzNGN3hnZndvUXMtdHROSmt6dXZTYWFwX3NBY1NUeGhwaUNINlgzQ21STXhCNk1YRnBYcWFrLUEteDVnSkNqaFFSR0dXTi1fMUxkRUhzbnJfTDZHb05COWhjWUczadIB-wFBVV95cUxNTUFEdXFzQjdqRUJVeGdWZUFDS1JfcTVJQUNsOTR4Tk1CLTBuZWlPR0E4ZUdZeWlNdmRrcjRjVGZyRzBXV3hQTmFUMmNqbllvTk1kY21Na3BncnZVdmxteFlxc25fMnhjZ3NhNGU4ZDNLOVpuUnM0Z2huZEFQVV9haWZ0ZVJOTXp1VWRPSXdSeUJFUHVmREFDeFVfTmpBZzcxLVdYTGZrdjlXOEpYRFlXaXV2OFhPbkJTNlVpaEk1clQ2ZmVpRDl1VXJzd2JtZFl4dGFSUXJSc29oQW5pTVF2eDJHWVFHOTZQMzhGOFhLNGk5RENPVUh5UHA4OA?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQTGlKRU81YXlGRElHb1Z6NFpsWkpwTEpLZjhXSmNwWnQ0dnBLdWFvQlNMbDhlWElTVlhfZ2ExbkFBTmhOeEFqWVBnclBlOVBkaHVkelFFbmVtNFFSUmhsM1g3dU51SFBKVTVDVVR6YzgyWlY2WFlEclUxTG1zY0NXejZ2bzNGN3hnZndvUXMtdHROSmt6dXZTYWFwX3NBY1NUeGhwaUNINlgzQ21STXhCNk1YRnBYcWFrLUEteDVnSkNqaFFSR0dXTi1fMUxkRUhzbnJfTDZHb05COWhjWUczadIB-wFBVV95cUxNTUFEdXFzQjdqRUJVeGdWZUFDS1JfcTVJQUNsOTR4Tk1CLTBuZWlPR0E4ZUdZeWlNdmRrcjRjVGZyRzBXV3hQTmFUMmNqbllvTk1kY21Na3BncnZVdmxteFlxc25fMnhjZ3NhNGU4ZDNLOVpuUnM0Z2huZEFQVV9haWZ0ZVJOTXp1VWRPSXdSeUJFUHVmREFDeFVfTmpBZzcxLVdYTGZrdjlXOEpYRFlXaXV2OFhPbkJTNlVpaEk1clQ2ZmVpRDl1VXJzd2JtZFl4dGFSUXJSc29oQW5pTVF2eDJHWVFHOTZQMzhGOFhLNGk5RENPVUh5UHA4OA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQTGlKRU81YXlGRElHb1Z6NFpsWkpwTEpLZjhXSmNwWnQ0dnBLdWFvQlNMbDhlWElTVlhfZ2ExbkFBTmhOeEFqWVBnclBlOVBkaHVkelFFbmVtNFFSUmhsM1g3dU51SFBKVTVDVVR6YzgyWlY2WFlEclUxTG1zY0NXejZ2bzNGN3hnZndvUXMtdHROSmt6dXZTYWFwX3NBY1NUeGhwaUNINlgzQ21STXhCNk1YRnBYcWFrLUEteDVnSkNqaFFSR0dXTi1fMUxkRUhzbnJfTDZHb05COWhjWUczadIB-wFBVV95cUxNTUFEdXFzQjdqRUJVeGdWZUFDS1JfcTVJQUNsOTR4Tk1CLTBuZWlPR0E4ZUdZeWlNdmRrcjRjVGZyRzBXV3hQTmFUMmNqbllvTk1kY21Na3BncnZVdmxteFlxc25fMnhjZ3NhNGU4ZDNLOVpuUnM0Z2huZEFQVV9haWZ0ZVJOTXp1VWRPSXdSeUJFUHVmREFDeFVfTmpBZzcxLVdYTGZrdjlXOEpYRFlXaXV2OFhPbkJTNlVpaEk1clQ2ZmVpRDl1VXJzd2JtZFl4dGFSUXJSc29oQW5pTVF2eDJHWVFHOTZQMzhGOFhLNGk5RENPVUh5UHA4OA?oc=5",
+     "resolved_url": "https://www.elheraldo.co/economia/2026/04/24/moodys-le-rebajo-la-calificacion-crediticia-a-ecopetrol-y-ajusto-su-perspectiva-de-estable-a-negativa/",
+     "canonical_url": "https://www.elheraldo.co/economia/2026/04/24/moodys-le-rebajo-la-calificacion-crediticia-a-ecopetrol-y-ajusto-su-perspectiva-de-estable-a-negativa/",
+     "display_url": "https://www.elheraldo.co/economia/2026/04/24/moodys-le-rebajo-la-calificacion-crediticia-a-ecopetrol-y-ajusto-su-perspectiva-de-estable-a-negativa/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.elheraldo.co",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-03T18:00:47.572466+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "ELHERALDO.CO",
+     "domain": "elheraldo.co",
+     "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQTGlKRU81YXlGRElHb1Z6NFpsWkpwTEpLZjhXSmNwWnQ0dnBLdWFvQlNMbDhlWElTVlhfZ2ExbkFBTmhOeEFqWVBnclBlOVBkaHVkelFFbmVtNFFSUmhsM1g3dU51SFBKVTVDVVR6YzgyWlY2WFlEclUxTG1zY0NXejZ2bzNGN3hnZndvUXMtdHROSmt6dXZTYWFwX3NBY1NUeGhwaUNINlgzQ21STXhCNk1YRnBYcWFrLUEteDVnSkNqaFFSR0dXTi1fMUxkRUhzbnJfTDZHb05COWhjWUczadIB-wFBVV95cUxNTUFEdXFzQjdqRUJVeGdWZUFDS1JfcTVJQUNsOTR4Tk1CLTBuZWlPR0E4ZUdZeWlNdmRrcjRjVGZyRzBXV3hQTmFUMmNqbllvTk1kY21Na3BncnZVdmxteFlxc25fMnhjZ3NhNGU4ZDNLOVpuUnM0Z2huZEFQVV9haWZ0ZVJOTXp1VWRPSXdSeUJFUHVmREFDeFVfTmpBZzcxLVdYTGZrdjlXOEpYRFlXaXV2OFhPbkJTNlVpaEk1clQ2ZmVpRDl1VXJzd2JtZFl4dGFSUXJSc29oQW5pTVF2eDJHWVFHOTZQMzhGOFhLNGk5RENPVUh5UHA4OA?oc=5",
+     "when": "24/04 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQTGlKRU81YXlGRElHb1Z6NFpsWkpwTEpLZjhXSmNwWnQ0dnBLdWFvQlNMbDhlWElTVlhfZ2ExbkFBTmhOeEFqWVBnclBlOVBkaHVkelFFbmVtNFFSUmhsM1g3dU51SFBKVTVDVVR6YzgyWlY2WFlEclUxTG1zY0NXejZ2bzNGN3hnZndvUXMtdHROSmt6dXZTYWFwX3NBY1NUeGhwaUNINlgzQ21STXhCNk1YRnBYcWFrLUEteDVnSkNqaFFSR0dXTi1fMUxkRUhzbnJfTDZHb05COWhjWUczadIB-wFBVV95cUxNTUFEdXFzQjdqRUJVeGdWZUFDS1JfcTVJQUNsOTR4Tk1CLTBuZWlPR0E4ZUdZeWlNdmRrcjRjVGZyRzBXV3hQTmFUMmNqbllvTk1kY21Na3BncnZVdmxteFlxc25fMnhjZ3NhNGU4ZDNLOVpuUnM0Z2huZEFQVV9haWZ0ZVJOTXp1VWRPSXdSeUJFUHVmREFDeFVfTmpBZzcxLVdYTGZrdjlXOEpYRFlXaXV2OFhPbkJTNlVpaEk1clQ2ZmVpRDl1VXJzd2JtZFl4dGFSUXJSc29oQW5pTVF2eDJHWVFHOTZQMzhGOFhLNGk5RENPVUh5UHA4OA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQTGlKRU81YXlGRElHb1Z6NFpsWkpwTEpLZjhXSmNwWnQ0dnBLdWFvQlNMbDhlWElTVlhfZ2ExbkFBTmhOeEFqWVBnclBlOVBkaHVkelFFbmVtNFFSUmhsM1g3dU51SFBKVTVDVVR6YzgyWlY2WFlEclUxTG1zY0NXejZ2bzNGN3hnZndvUXMtdHROSmt6dXZTYWFwX3NBY1NUeGhwaUNINlgzQ21STXhCNk1YRnBYcWFrLUEteDVnSkNqaFFSR0dXTi1fMUxkRUhzbnJfTDZHb05COWhjWUczadIB-wFBVV95cUxNTUFEdXFzQjdqRUJVeGdWZUFDS1JfcTVJQUNsOTR4Tk1CLTBuZWlPR0E4ZUdZeWlNdmRrcjRjVGZyRzBXV3hQTmFUMmNqbllvTk1kY21Na3BncnZVdmxteFlxc25fMnhjZ3NhNGU4ZDNLOVpuUnM0Z2huZEFQVV9haWZ0ZVJOTXp1VWRPSXdSeUJFUHVmREFDeFVfTmpBZzcxLVdYTGZrdjlXOEpYRFlXaXV2OFhPbkJTNlVpaEk1clQ2ZmVpRDl1VXJzd2JtZFl4dGFSUXJSc29oQW5pTVF2eDJHWVFHOTZQMzhGOFhLNGk5RENPVUh5UHA4OA?oc=5",
+     "resolved_url": "https://www.elheraldo.co/economia/2026/04/24/moodys-le-rebajo-la-calificacion-crediticia-a-ecopetrol-y-ajusto-su-perspectiva-de-estable-a-negativa/",
+     "canonical_url": "https://www.elheraldo.co/economia/2026/04/24/moodys-le-rebajo-la-calificacion-crediticia-a-ecopetrol-y-ajusto-su-perspectiva-de-estable-a-negativa/",
+     "display_url": "https://www.elheraldo.co/economia/2026/04/24/moodys-le-rebajo-la-calificacion-crediticia-a-ecopetrol-y-ajusto-su-perspectiva-de-estable-a-negativa/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.elheraldo.co",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-03T18:00:47.972711+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1785780032,
+   "cap_iso": "2026-08-03 15:00"
+  },
+  "https://www.xtb.com/int/market-analysis/news-and-research/morgan-stanley-delivers-a-blockbuster-quarter-record-earnings-spark-wall-street-rally": {
+   "title": "Morgan Stanley delivers a blockbuster quarter. Record earnings spark Wall Street rally",
+   "url": "https://www.xtb.com/int/market-analysis/news-and-research/morgan-stanley-delivers-a-blockbuster-quarter-record-earnings-spark-wall-street-rally",
+   "summary": "Morgan Stanley delivers a blockbuster quarter. Record earnings spark Wall Street rally &nbsp;&nbsp; XTB.com",
+   "source": "XTB.com",
+   "domain": "xtb.com",
+   "pub_ts": 1784117962,
+   "pub_iso": "2026-07-15 09:19",
+   "language": "pt",
+   "companies": [
+    "Morgan Stanley"
+   ],
+   "event_ids": [
+    "resultado_acima_expectativas"
+   ],
+   "mention_roles": {
+    "Morgan Stanley": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Morgan Stanley": [
+     {
+      "company": "Morgan Stanley",
+      "event_id": "resultado_acima_expectativas",
+      "event_label": "Resultado acima das expectativas",
+      "subject_company": "Morgan Stanley",
+      "monitored_company": "Morgan Stanley",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Morgan Stanley delivers a blockbuster quarter. Record earnings spark Wall Street rally",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOVlJCZVRxSnJudHZFNDFIaGpnSEo4OGdYanEyZ2JrTWJWOG5YZHZudlBnVnd5QVpYd0RLT29qSWZuY0I4Rk5VN3dlaDA2TThZeVlFWFZabGZvRVd6SjloYTMwdnlVeDNRR1VNcHdIVWNPRDJJNGk1SFlGbU5hU3dEUi1HQUhDaVlFSGJLdTRVVmJ4dE96cE5ETEJSbTE4cS0wOEJkOTFHYTdMaERET21tRWw3X3B6NWdOeTVyOXRXeVJ4MzZMNUpjMVAtaDJvVU1zbXl5bVRKMkFuNnM?oc=5",
+      "pub_ts": 1784117962,
+      "observation": "Evento direto 'Resultado acima das expectativas' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOVlJCZVRxSnJudHZFNDFIaGpnSEo4OGdYanEyZ2JrTWJWOG5YZHZudlBnVnd5QVpYd0RLT29qSWZuY0I4Rk5VN3dlaDA2TThZeVlFWFZabGZvRVd6SjloYTMwdnlVeDNRR1VNcHdIVWNPRDJJNGk1SFlGbU5hU3dEUi1HQUhDaVlFSGJLdTRVVmJ4dE96cE5ETEJSbTE4cS0wOEJkOTFHYTdMaERET21tRWw3X3B6NWdOeTVyOXRXeVJ4MzZMNUpjMVAtaDJvVU1zbXl5bVRKMkFuNnM?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Morgan Stanley": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Morgan Stanley"
+   ],
+   "captured_ts": 1785780032,
+   "cap_iso": "2026-08-03 15:00"
+  },
+  "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNcEdDZ3Y4NWxEdU9UdjJsdU9SZ0RkSUhwbEdkZ2lKbTdnVjQ5azhNMnpkY1hvUWVySEkwZGVXMlFOdDJjX0QzYjVEUGp6LWo5QzF1dnRNVVYycnBnRnZLejZnTHVVcnc0NXpPbXgwWmdQeWhYbnYzQ3BXbDVVTHVKS0VxbGpWRjJmUkh6amhJdENMU1RwY1dhaUlhblMtM2V2Ti1yMTFPQ0U5cDJFVVhUWk9kSW5NcjRwTWQ1REZrWVJnaXZjUENuckh5aHg4T2Y3SkNzX1dSYU5IWmJ1YlY5MlBtZi1YcXJT0gH3AUFVX3lxTFA4cXF3dlFRSG1tZjlyWXEzTS1vb0FoRmY5RzRSeW9MR2ktNFYtRjBBR01qaDlQc1AxZDh4M2VOVVZJbndIY2JQYkk0TFpYakVUeU1VQUZBNWpVQ3lZaVhLRWw0OWxpOE83MTViMXZGeXF6Z1l5N0trUDI5bUR2XzlWTWl0YUxtX05VSlIyQkQ2UTNsVXd1Vzd1MlVtbEpYYTU2QzB4eEg5WHJHWW1mVTE4Vk9SMDRSUld0TzZwWFBsdlJsbnNZRnlwNmJ6SlZhcUJqUFFTV3BZcnNIREQxeW94bWpkYlRqUUQxUHQ4TDFUUk0yQXM3YW8?oc=5": {
+   "title": "Justiça aceita pedido de recuperação judicial do Grupo Saritur; dívida chega a R$ 959 milhões",
+   "url": "https://g1.globo.com/mg/minas-gerais/noticia/2026/08/03/justica-aceita-pedido-de-recuperacao-judicial-do-grupo-saritur-divida-chega-a-r-959-milhoes.ghtml",
+   "summary": "Justiça aceita pedido de recuperação judicial do Grupo Saritur; dívida chega a R$ 959 milhões &nbsp;&nbsp; G1",
+   "source": "G1",
+   "domain": "g1.globo.com",
+   "pub_ts": 1785764850,
+   "pub_iso": "2026-08-03 10:47",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "corroborations": [
+    {
+     "source": "Diário do Transporte",
+     "domain": "diariodotransporte.com.br",
+     "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQZkNBbG8yTWJKalR5UVMyajdJSEtlVWtQVDFoakhkaWdSYUQ3cHpmbHNtX2xDdXpxa0wxTlRkb0RTb2hic1ZJTUxWcjVCNk1OR2c0ZmFTZW9rMFJmZjd5R0xQSVN1MGFTWlI0RmRzX0p1UVBpYjRmWDUwUDY1VGhUWkVBZjV0Tkl5VUs4bkYyTzJKUmJrRVVwVHd1T19uZ0NEaUM0V0tTUHNZT25LYnVvYi1BNXBDa0haZVBJMFVnTmNEMlMxTGlVbURxNWtSbXJ5Y184WjItdmpnamg3WmdOb2ZhNE1HSlh5ZHgwUHNacGpnZG1IaHpodTAtcGLSAYICQVVfeXFMTWRwQXlVWWQ5N0ljUlhuc0xDTjFKQ2NhZl9KaFU4bFNzTkh1QnJ6OTRodlNSVjFhYTJGdEdjaWh3aW9sc0NseVNzUm8yTjNlWGNlVDdnRlpOYUVHQ0tBNE01XzF0SmdRTnF4UXdFSllkMFpIcExSMXJfbm9wakktcGptcnQ0VEIwSkxpRkx4b2FTRTJRYnhpUGN6OGsyeDRQNlVjeW5udjhDZF84WGFRNk5PeVo5aFg3UmR1dC1wRVdGZjBkT0piZ09YU1JRdzhFNEh0b0FycmwwcW1RUjJFNTR6LWpnWldQSXhZcThYRWpTSUxUeEhRSTczaXZkWVRYcG5n?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQZkNBbG8yTWJKalR5UVMyajdJSEtlVWtQVDFoakhkaWdSYUQ3cHpmbHNtX2xDdXpxa0wxTlRkb0RTb2hic1ZJTUxWcjVCNk1OR2c0ZmFTZW9rMFJmZjd5R0xQSVN1MGFTWlI0RmRzX0p1UVBpYjRmWDUwUDY1VGhUWkVBZjV0Tkl5VUs4bkYyTzJKUmJrRVVwVHd1T19uZ0NEaUM0V0tTUHNZT25LYnVvYi1BNXBDa0haZVBJMFVnTmNEMlMxTGlVbURxNWtSbXJ5Y184WjItdmpnamg3WmdOb2ZhNE1HSlh5ZHgwUHNacGpnZG1IaHpodTAtcGLSAYICQVVfeXFMTWRwQXlVWWQ5N0ljUlhuc0xDTjFKQ2NhZl9KaFU4bFNzTkh1QnJ6OTRodlNSVjFhYTJGdEdjaWh3aW9sc0NseVNzUm8yTjNlWGNlVDdnRlpOYUVHQ0tBNE01XzF0SmdRTnF4UXdFSllkMFpIcExSMXJfbm9wakktcGptcnQ0VEIwSkxpRkx4b2FTRTJRYnhpUGN6OGsyeDRQNlVjeW5udjhDZF84WGFRNk5PeVo5aFg3UmR1dC1wRVdGZjBkT0piZ09YU1JRdzhFNEh0b0FycmwwcW1RUjJFNTR6LWpnWldQSXhZcThYRWpTSUxUeEhRSTczaXZkWVRYcG5n?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQZkNBbG8yTWJKalR5UVMyajdJSEtlVWtQVDFoakhkaWdSYUQ3cHpmbHNtX2xDdXpxa0wxTlRkb0RTb2hic1ZJTUxWcjVCNk1OR2c0ZmFTZW9rMFJmZjd5R0xQSVN1MGFTWlI0RmRzX0p1UVBpYjRmWDUwUDY1VGhUWkVBZjV0Tkl5VUs4bkYyTzJKUmJrRVVwVHd1T19uZ0NEaUM0V0tTUHNZT25LYnVvYi1BNXBDa0haZVBJMFVnTmNEMlMxTGlVbURxNWtSbXJ5Y184WjItdmpnamg3WmdOb2ZhNE1HSlh5ZHgwUHNacGpnZG1IaHpodTAtcGLSAYICQVVfeXFMTWRwQXlVWWQ5N0ljUlhuc0xDTjFKQ2NhZl9KaFU4bFNzTkh1QnJ6OTRodlNSVjFhYTJGdEdjaWh3aW9sc0NseVNzUm8yTjNlWGNlVDdnRlpOYUVHQ0tBNE01XzF0SmdRTnF4UXdFSllkMFpIcExSMXJfbm9wakktcGptcnQ0VEIwSkxpRkx4b2FTRTJRYnhpUGN6OGsyeDRQNlVjeW5udjhDZF84WGFRNk5PeVo5aFg3UmR1dC1wRVdGZjBkT0piZ09YU1JRdzhFNEh0b0FycmwwcW1RUjJFNTR6LWpnWldQSXhZcThYRWpTSUxUeEhRSTczaXZkWVRYcG5n?oc=5",
+     "resolved_url": "https://diariodotransporte.com.br/2026/08/01/saritur-tem-recuperacao-judicial-concedida-entenda-o-passo-a-passo-da-decisao-e-o-que-acontece-a-partir-de-agora-exclusivo/",
+     "canonical_url": "https://diariodotransporte.com.br/2026/08/01/saritur-tem-recuperacao-judicial-concedida-entenda-o-passo-a-passo-da-decisao-e-o-que-acontece-a-partir-de-agora-exclusivo/",
+     "display_url": "https://diariodotransporte.com.br/2026/08/01/saritur-tem-recuperacao-judicial-concedida-entenda-o-passo-a-passo-da-decisao-e-o-que-acontece-a-partir-de-agora-exclusivo/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "diariodotransporte.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-03T18:00:48.372966+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Diário do Comércio",
+     "domain": "diariodocomercio.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQY1NGSWhEOFUxdS1VOEJxc3hGbXVKbENfdS10bUhGQ2FwZjVTS3lfeUEwUlpzQUhVaWdfM2liY0RIUzNvWEcxZnQyZXpnT0wtQ0FmNkFlMUoxX083UDFVSU9uQXFWVGVFV1p3em15c25QN1IwMkFINHR1QXZjalh4Z3ln?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQY1NGSWhEOFUxdS1VOEJxc3hGbXVKbENfdS10bUhGQ2FwZjVTS3lfeUEwUlpzQUhVaWdfM2liY0RIUzNvWEcxZnQyZXpnT0wtQ0FmNkFlMUoxX083UDFVSU9uQXFWVGVFV1p3em15c25QN1IwMkFINHR1QXZjalh4Z3ln?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQY1NGSWhEOFUxdS1VOEJxc3hGbXVKbENfdS10bUhGQ2FwZjVTS3lfeUEwUlpzQUhVaWdfM2liY0RIUzNvWEcxZnQyZXpnT0wtQ0FmNkFlMUoxX083UDFVSU9uQXFWVGVFV1p3em15c25QN1IwMkFINHR1QXZjalh4Z3ln?oc=5",
+     "resolved_url": "https://diariodocomercio.com.br/negocios/grupo-saritur-recuperacao-judicial/",
+     "canonical_url": "https://diariodocomercio.com.br/negocios/grupo-saritur-recuperacao-judicial/",
+     "display_url": "https://diariodocomercio.com.br/negocios/grupo-saritur-recuperacao-judicial/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "diariodocomercio.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-03T18:00:48.958860+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Diário do Transporte",
+     "domain": "diariodotransporte.com.br",
+     "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQZkNBbG8yTWJKalR5UVMyajdJSEtlVWtQVDFoakhkaWdSYUQ3cHpmbHNtX2xDdXpxa0wxTlRkb0RTb2hic1ZJTUxWcjVCNk1OR2c0ZmFTZW9rMFJmZjd5R0xQSVN1MGFTWlI0RmRzX0p1UVBpYjRmWDUwUDY1VGhUWkVBZjV0Tkl5VUs4bkYyTzJKUmJrRVVwVHd1T19uZ0NEaUM0V0tTUHNZT25LYnVvYi1BNXBDa0haZVBJMFVnTmNEMlMxTGlVbURxNWtSbXJ5Y184WjItdmpnamg3WmdOb2ZhNE1HSlh5ZHgwUHNacGpnZG1IaHpodTAtcGLSAYICQVVfeXFMTWRwQXlVWWQ5N0ljUlhuc0xDTjFKQ2NhZl9KaFU4bFNzTkh1QnJ6OTRodlNSVjFhYTJGdEdjaWh3aW9sc0NseVNzUm8yTjNlWGNlVDdnRlpOYUVHQ0tBNE01XzF0SmdRTnF4UXdFSllkMFpIcExSMXJfbm9wakktcGptcnQ0VEIwSkxpRkx4b2FTRTJRYnhpUGN6OGsyeDRQNlVjeW5udjhDZF84WGFRNk5PeVo5aFg3UmR1dC1wRVdGZjBkT0piZ09YU1JRdzhFNEh0b0FycmwwcW1RUjJFNTR6LWpnWldQSXhZcThYRWpTSUxUeEhRSTczaXZkWVRYcG5n?oc=5",
+     "when": "01/08 09:08",
+     "original_url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQZkNBbG8yTWJKalR5UVMyajdJSEtlVWtQVDFoakhkaWdSYUQ3cHpmbHNtX2xDdXpxa0wxTlRkb0RTb2hic1ZJTUxWcjVCNk1OR2c0ZmFTZW9rMFJmZjd5R0xQSVN1MGFTWlI0RmRzX0p1UVBpYjRmWDUwUDY1VGhUWkVBZjV0Tkl5VUs4bkYyTzJKUmJrRVVwVHd1T19uZ0NEaUM0V0tTUHNZT25LYnVvYi1BNXBDa0haZVBJMFVnTmNEMlMxTGlVbURxNWtSbXJ5Y184WjItdmpnamg3WmdOb2ZhNE1HSlh5ZHgwUHNacGpnZG1IaHpodTAtcGLSAYICQVVfeXFMTWRwQXlVWWQ5N0ljUlhuc0xDTjFKQ2NhZl9KaFU4bFNzTkh1QnJ6OTRodlNSVjFhYTJGdEdjaWh3aW9sc0NseVNzUm8yTjNlWGNlVDdnRlpOYUVHQ0tBNE01XzF0SmdRTnF4UXdFSllkMFpIcExSMXJfbm9wakktcGptcnQ0VEIwSkxpRkx4b2FTRTJRYnhpUGN6OGsyeDRQNlVjeW5udjhDZF84WGFRNk5PeVo5aFg3UmR1dC1wRVdGZjBkT0piZ09YU1JRdzhFNEh0b0FycmwwcW1RUjJFNTR6LWpnWldQSXhZcThYRWpTSUxUeEhRSTczaXZkWVRYcG5n?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQZkNBbG8yTWJKalR5UVMyajdJSEtlVWtQVDFoakhkaWdSYUQ3cHpmbHNtX2xDdXpxa0wxTlRkb0RTb2hic1ZJTUxWcjVCNk1OR2c0ZmFTZW9rMFJmZjd5R0xQSVN1MGFTWlI0RmRzX0p1UVBpYjRmWDUwUDY1VGhUWkVBZjV0Tkl5VUs4bkYyTzJKUmJrRVVwVHd1T19uZ0NEaUM0V0tTUHNZT25LYnVvYi1BNXBDa0haZVBJMFVnTmNEMlMxTGlVbURxNWtSbXJ5Y184WjItdmpnamg3WmdOb2ZhNE1HSlh5ZHgwUHNacGpnZG1IaHpodTAtcGLSAYICQVVfeXFMTWRwQXlVWWQ5N0ljUlhuc0xDTjFKQ2NhZl9KaFU4bFNzTkh1QnJ6OTRodlNSVjFhYTJGdEdjaWh3aW9sc0NseVNzUm8yTjNlWGNlVDdnRlpOYUVHQ0tBNE01XzF0SmdRTnF4UXdFSllkMFpIcExSMXJfbm9wakktcGptcnQ0VEIwSkxpRkx4b2FTRTJRYnhpUGN6OGsyeDRQNlVjeW5udjhDZF84WGFRNk5PeVo5aFg3UmR1dC1wRVdGZjBkT0piZ09YU1JRdzhFNEh0b0FycmwwcW1RUjJFNTR6LWpnWldQSXhZcThYRWpTSUxUeEhRSTczaXZkWVRYcG5n?oc=5",
+     "resolved_url": "https://diariodotransporte.com.br/2026/08/01/saritur-tem-recuperacao-judicial-concedida-entenda-o-passo-a-passo-da-decisao-e-o-que-acontece-a-partir-de-agora-exclusivo/",
+     "canonical_url": "https://diariodotransporte.com.br/2026/08/01/saritur-tem-recuperacao-judicial-concedida-entenda-o-passo-a-passo-da-decisao-e-o-que-acontece-a-partir-de-agora-exclusivo/",
+     "display_url": "https://diariodotransporte.com.br/2026/08/01/saritur-tem-recuperacao-judicial-concedida-entenda-o-passo-a-passo-da-decisao-e-o-que-acontece-a-partir-de-agora-exclusivo/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "diariodotransporte.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-03T18:00:49.359119+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Diário do Comércio",
+     "domain": "diariodocomercio.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQY1NGSWhEOFUxdS1VOEJxc3hGbXVKbENfdS10bUhGQ2FwZjVTS3lfeUEwUlpzQUhVaWdfM2liY0RIUzNvWEcxZnQyZXpnT0wtQ0FmNkFlMUoxX083UDFVSU9uQXFWVGVFV1p3em15c25QN1IwMkFINHR1QXZjalh4Z3ln?oc=5",
+     "when": "03/08 13:07",
+     "original_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQY1NGSWhEOFUxdS1VOEJxc3hGbXVKbENfdS10bUhGQ2FwZjVTS3lfeUEwUlpzQUhVaWdfM2liY0RIUzNvWEcxZnQyZXpnT0wtQ0FmNkFlMUoxX083UDFVSU9uQXFWVGVFV1p3em15c25QN1IwMkFINHR1QXZjalh4Z3ln?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQY1NGSWhEOFUxdS1VOEJxc3hGbXVKbENfdS10bUhGQ2FwZjVTS3lfeUEwUlpzQUhVaWdfM2liY0RIUzNvWEcxZnQyZXpnT0wtQ0FmNkFlMUoxX083UDFVSU9uQXFWVGVFV1p3em15c25QN1IwMkFINHR1QXZjalh4Z3ln?oc=5",
+     "resolved_url": "https://diariodocomercio.com.br/negocios/grupo-saritur-recuperacao-judicial/",
+     "canonical_url": "https://diariodocomercio.com.br/negocios/grupo-saritur-recuperacao-judicial/",
+     "display_url": "https://diariodocomercio.com.br/negocios/grupo-saritur-recuperacao-judicial/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "diariodocomercio.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-03T18:00:49.759389+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1785780032,
+   "cap_iso": "2026-08-03 15:00"
+  },
+  "https://news.google.com/rss/articles/CBMiakFVX3lxTE94OVoySHUxZjBCaUl0RTFHSnpyOHBYYmtmS19FQ1NnVFVmWVBROTh1cWlVa2xPbHZwY09VMWhkdGFWSHlud1dHYWdaa0pVT01DOUI5aHlQUzZsM2hnaGxfdjMtdmJGc2R6VWc?oc=5": {
+   "title": "Fitch rebaixa rating da CSN para CCC+ e alerta sobre dívida acima de R$ 60 bilhões",
+   "url": "https://br.advfn.com/noticias/PAPERBR/2026/artigo/99032991",
+   "summary": "Fitch rebaixa rating da CSN para CCC+ e alerta sobre dívida acima de R$ 60 bilhões &nbsp;&nbsp; ADVFN",
+   "source": "ADVFN",
+   "domain": "br.advfn.com",
+   "pub_ts": 1785760268,
+   "pub_iso": "2026-08-03 09:31",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "rebaixamento_rating"
+   ],
+   "captured_ts": 1785780032,
+   "cap_iso": "2026-08-03 15:00"
+  },
+  "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQWGJMeWJoeXI5d2luQ1ZBM1RmSU9TMWllQlJuSVg4WVg0Tkc0eWRwem00X1BvQVJQMHAzMy1fWF9FUTFpOXNMd3dCM2xWWUh3ZEEyX1gtbXhBUEhVSjczcUxsQ0N1NEdKNENjNldidFNDaVdGaTZNOFZFYkVFSFQ1RkdUU2pwVU95UU5fNk82Nm5KcmdNRTJZbllxM050Y0F4YTBQbWp6ZjE?oc=5": {
+   "title": "O que acontece se a Braskem entrar em recuperação judicial? Entenda os próximos passos",
+   "url": "https://timesbrasil.com.br/empresas-e-negocios/entenda-que-acontece-em-caso-recuperacao-judicial-braskem/",
+   "summary": "O que acontece se a Braskem entrar em recuperação judicial? Entenda os próximos passos &nbsp;&nbsp; Times Brasil | CNBC",
+   "source": "Times Brasil | CNBC",
+   "domain": "timesbrasil.com.br",
+   "pub_ts": 1785769327,
+   "pub_iso": "2026-08-03 12:02",
+   "language": "es",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1785780032,
+   "cap_iso": "2026-08-03 15:00"
   }
  },
- "run_count": 65,
+ "run_count": 66,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -43837,19 +44328,63 @@
   "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPeEhvVzRadEJBY0N4Y1F3WW9yWUh6cXo5RG9ZS205NFZRNEJYVTE4dHdwZ09vUE5SREN3bXJ1RG9SSXBMYnF4OTlmeFFEUHkwRy10VGRuUjBSTV9ZTkFtZ2xJcGVJSVA1ZklxeDl4LVJhbk9VTk1NVnVwZDBwOVBCTHN1d0JvMDF3bTZWYWdxZ1ZsZWhiUEU1MVg1ajVxcWhUZldzQ3VIbENzdGp3RHF4U3VTbHRnMUdOU2xqYThpX3o5Mlh5OHlmXzFpV21JTE1UcEHSAeABQVVfeXFMT21aUDJkY3ZHSnhZckxaZHM5M21UZFZmU2plTFV1UXk1TktubjN4Z2k3UVFvejZHc2pINlpZbWxNUkQ5akFZdnR1Wmk2WHgzMUpHQ2RtZkdHS1BGbjNnb1NYR1FBN2EyejJ6c0dLcnY3aDA4TFBkOUJXV291QURZY05Hd3dvQ0NsNEJpMTJlcktqMW85di1hLUlMRUE5alE3T3UyWWRuVTNRUTVLanBvdzMwallhZ2FCUzZHcmFKb0tHbzhabHhpTFRvMEFHclJLRWxQaEhXNnplbXFwbi1mZU8?oc=5": {
    "url": "https://oglobo.globo.com/economia/negocios/noticia/2026/08/03/receio-de-calote-e-dificuldade-de-comprovar-renda-travam-move-brasil.ghtml",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPalVkUDk1OExSNHlRT0dkdXpuQk45WE5mQkZzdTlpUWxrTS1NWGQtWWVja29XMmk4NWlhY21ERU9yTlhOMHYzdGlkRGYtZ0RPMnNIRFE0VnpIb1pMQ1BId2VvdDRjZzBqTkFXNzkzaTM3dTVDTG5KOWZZYWNLbkxYNkdVaHRNaWpMckZmcEgtTFFFcjg1ZDJtU3VEcGZnX2pWZHljdGNrYjJzNk1lZ0U0Rm1DNlZSQWgtZ2UxOTd2TFA1UjVUbm1VRldzalRwYWw4dzNqTDIzMms3YW83VkZvVmxzY0FNcjg?oc=5": {
+   "url": "https://www.newswire.ca/news-releases/great-west-lifeco-subsidiary-empower-closes-acquisition-of-prudential-financial-retirement-business-891265135.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMihAJBVV95cUxPUjE0TFVORkhEamFiVDNjUmUwTUJqVE03emNlemJ1STZhZU9VYlJWT2Niei1UWEtyd3RhTktpUzhMNlJidDZMY084N05vQTRTczE3MWgzLWVhWmJWcFltWUJvZ2VpNlhrQUhta00xZHJ3RTIxR2RHb3VaLUFrSC1wOF9XS25wOFpoZUFBU3dMNzl4VEJXa3JsbWJ0ZHNhZmMxWjRlbVRnMlNDSk1Pci1vNTBjemstcHVBQWJsbGE2Y1NrTnRfTEd6NEZnMXNfSnAxNkNUWHZFVkhJYzlOTnljTFBUQXFXeUs1V3k4bE9xeGVfOGRVWjJSWVc3WXV5YVY5OW9VaNIBpgJBVV95cUxPcFNWMV9BZHpYMjFaMUo2bzRXNHFvd2lNb1BkdzROcEtFSm1Zb2NlU2wzNG1HUGxPa3ZTSjVGMXktc1lxbkNQdHEtRWItaGllSHFhQ0ltaFJpa01WT09ZcExENXhvRVM2d1lVMXRHTFo2R214aWtSTDk5enZFYS1HOTEwbmY4YU1KX3hGSHp1TFh1RE8xWHVXQzBvSHhEaTR6RXBrb0dxWVhKdkpnb1BaRk5JVTRiV2ZTeE54R1plNEEza3hOVkNIbFVuaHlWclVORnpmV1k3N19NMXBteW5BcTRBcjZTd214T3JEOXU3a0lhVEgybkotanh2eTNITlFNYzlCalJsMXRvV1BFa0w4elRZaWhRRnRLQUYzNDhlY3dOb2o1Ync?oc=5": {
+   "url": "https://www.latercera.com/pulso/noticia/fiscalia-nacional-economica-inicia-primera-fase-de-investigacion-en-la-fusion-de-bicecorp-y-grupo-security/JNUAGJ2YBBC3XNQILKA7X4EX5E/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOR2FqdE5DNkNlN01ybjFCR1M0SmFXTTlsQTZfaDRJMHJxeVAwcWtqTTdRTGNtT1pOYWRJNWdfUjZZbUZVTmVxN1l6TGx3SFZyR0laekJGd0g0S19UQ0RUM1VyRTBkd0FLREFZeTZiZmRzeGo2YnljS0RtNlFDbThsbnlmM0s1RUt1Y1FPUTFjdm9qMGhlQTJxb2RBVF8wbnlmbHZjUG80QkxMd3FoY20yQl90c2FrQno5NG5zb2F3MXYtNFU4R0lXdm9SU0pBakxkaVFZejVGc9IB-AFBVV95cUxQNVZUX1VQZmw0U19JdFNtSmpRdXpETFM2azJnendYUGdhcWxwOUpqeHV2d0VuV0Q5bHltRGxwR2RiUDhubHhSaW43Z0Rsd1pjMS1zbEZYamw0OHBrQkJoQ1YxTjl5UFBTVEtWc2lncnhKeC1hN3hYM2UwNVVmVkJ5TU5oejFEMXBpbm1fSC1HSTZqcjZUQWplVk1iZGE1cGZSc0dIaHpXNEVnWEFmTjYtQ0hDSEZqaHFwc0l5ekRxekpWY2lIMU1LNFU5eVZhaXBleTZTeUhsSHJyRHVwOFJKbklERmswdUtpR3hkRUVzaGpXWks1MXBwNA?oc=5": {
+   "url": "https://www.latercera.com/pulso-pm/noticia/llegan-las-primeras-aceptaciones-de-la-opa-de-bice-por-grupo-security/AV6ML3SAIFGRHLODGGJRSWQOMQ/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMitwFBVV95cUxONmIwWmIzUUdjV0dCOThpMmFUMFBJQnFodmJmaDczaUFudzB2TmV2S0JhQkZqbFFEMTF0UTVpS3I1TnNHMFdrQ1Zndnpxd0pVN0E1a01sQkZFb0t0NWRjVVR3cmUtSzRVTDFMU1FjTm9NT2FTX1JPdHY1RHh4MmxtVm5DeUppSmpqNmFMSG5LdWQ2TDVqaUdXckZyTjdiamNQMFJxUU44SHh5ZjhnTjVXX0puRmFpSEXSAdgBQVVfeXFMT2pxZU9JZDczYy1Fa0FINGFsdk45bzJXb0NCR2RycGNpcWFlYk44dW5EMjRpNGJERDUwamt4RGtwbmZwZDhFLW9HVEQzeVVjV21YSGw4QkI4Y3hfTEdzSFhVMDQtOHhhcW5EYmZvY25Kbl9QQVYxcGxJbVJteGR3Y0t3TjVEUm1vSjJDbmJaZHVnbUxRencwSEcwaWhPQ09zZmhXNWZnd0tfVmwtS0RPQklsOFJMTGRaSVBONlJtTXZEVjV4RUs3ZjRwTWpLOUtZVTlGRDZYZ2lh?oc=5": {
+   "url": "https://www.latercera.com/pulso/noticia/bice-sera-la-marca-continuadora-tras-la-fusion-de-bicecorp-y-grupo-security/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNMkk5R2RvTW5SeUpUeW56T2hYVEFGSVhlbEU0RlVKVXdBbmhyLWVOTHI4OGVvVGtiOFctcTNFVnVkWnMxM25UdGFjNTFOcF82Mk5PdFBEdWlIOUlmbS1LZ0FoTjU0cmZvVVJDLUpkdlRBRWtiUXQ3R3pLdUw4TkZ4bE1XbFFuT21KTk1QWmhsd1prYlhrSm5QWTY1RjROSXdEZ3RYVzZVYUhIaEYtNTVKU29HanhSaUl2ODZDYmw2dkdMWU1TTnFQbmRlSy12SzlFSXN3Qg?oc=5": {
+   "url": "https://forbes.co/2026/04/24/economia-y-finanzas/moodys-rebaja-calificacion-crediticia-de-ecopetrol-a-ba2-y-cambia-perspectiva-a-negativa/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOVlJCZVRxSnJudHZFNDFIaGpnSEo4OGdYanEyZ2JrTWJWOG5YZHZudlBnVnd5QVpYd0RLT29qSWZuY0I4Rk5VN3dlaDA2TThZeVlFWFZabGZvRVd6SjloYTMwdnlVeDNRR1VNcHdIVWNPRDJJNGk1SFlGbU5hU3dEUi1HQUhDaVlFSGJLdTRVVmJ4dE96cE5ETEJSbTE4cS0wOEJkOTFHYTdMaERET21tRWw3X3B6NWdOeTVyOXRXeVJ4MzZMNUpjMVAtaDJvVU1zbXl5bVRKMkFuNnM?oc=5": {
+   "url": "https://www.xtb.com/int/market-analysis/news-and-research/morgan-stanley-delivers-a-blockbuster-quarter-record-earnings-spark-wall-street-rally",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNcEdDZ3Y4NWxEdU9UdjJsdU9SZ0RkSUhwbEdkZ2lKbTdnVjQ5azhNMnpkY1hvUWVySEkwZGVXMlFOdDJjX0QzYjVEUGp6LWo5QzF1dnRNVVYycnBnRnZLejZnTHVVcnc0NXpPbXgwWmdQeWhYbnYzQ3BXbDVVTHVKS0VxbGpWRjJmUkh6amhJdENMU1RwY1dhaUlhblMtM2V2Ti1yMTFPQ0U5cDJFVVhUWk9kSW5NcjRwTWQ1REZrWVJnaXZjUENuckh5aHg4T2Y3SkNzX1dSYU5IWmJ1YlY5MlBtZi1YcXJT0gH3AUFVX3lxTFA4cXF3dlFRSG1tZjlyWXEzTS1vb0FoRmY5RzRSeW9MR2ktNFYtRjBBR01qaDlQc1AxZDh4M2VOVVZJbndIY2JQYkk0TFpYakVUeU1VQUZBNWpVQ3lZaVhLRWw0OWxpOE83MTViMXZGeXF6Z1l5N0trUDI5bUR2XzlWTWl0YUxtX05VSlIyQkQ2UTNsVXd1Vzd1MlVtbEpYYTU2QzB4eEg5WHJHWW1mVTE4Vk9SMDRSUld0TzZwWFBsdlJsbnNZRnlwNmJ6SlZhcUJqUFFTV3BZcnNIREQxeW94bWpkYlRqUUQxUHQ4TDFUUk0yQXM3YW8?oc=5": {
+   "url": "https://g1.globo.com/mg/minas-gerais/noticia/2026/08/03/justica-aceita-pedido-de-recuperacao-judicial-do-grupo-saritur-divida-chega-a-r-959-milhoes.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiakFVX3lxTE94OVoySHUxZjBCaUl0RTFHSnpyOHBYYmtmS19FQ1NnVFVmWVBROTh1cWlVa2xPbHZwY09VMWhkdGFWSHlud1dHYWdaa0pVT01DOUI5aHlQUzZsM2hnaGxfdjMtdmJGc2R6VWc?oc=5": {
+   "url": "https://br.advfn.com/noticias/PAPERBR/2026/artigo/99032991",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQWGJMeWJoeXI5d2luQ1ZBM1RmSU9TMWllQlJuSVg4WVg0Tkc0eWRwem00X1BvQVJQMHAzMy1fWF9FUTFpOXNMd3dCM2xWWUh3ZEEyX1gtbXhBUEhVSjczcUxsQ0N1NEdKNENjNldidFNDaVdGaTZNOFZFYkVFSFQ1RkdUU2pwVU95UU5fNk82Nm5KcmdNRTJZbllxM050Y0F4YTBQbWp6ZjE?oc=5": {
+   "url": "https://timesbrasil.com.br/empresas-e-negocios/entenda-que-acontece-em-caso-recuperacao-judicial-braskem/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQTGlKRU81YXlGRElHb1Z6NFpsWkpwTEpLZjhXSmNwWnQ0dnBLdWFvQlNMbDhlWElTVlhfZ2ExbkFBTmhOeEFqWVBnclBlOVBkaHVkelFFbmVtNFFSUmhsM1g3dU51SFBKVTVDVVR6YzgyWlY2WFlEclUxTG1zY0NXejZ2bzNGN3hnZndvUXMtdHROSmt6dXZTYWFwX3NBY1NUeGhwaUNINlgzQ21STXhCNk1YRnBYcWFrLUEteDVnSkNqaFFSR0dXTi1fMUxkRUhzbnJfTDZHb05COWhjWUczadIB-wFBVV95cUxNTUFEdXFzQjdqRUJVeGdWZUFDS1JfcTVJQUNsOTR4Tk1CLTBuZWlPR0E4ZUdZeWlNdmRrcjRjVGZyRzBXV3hQTmFUMmNqbllvTk1kY21Na3BncnZVdmxteFlxc25fMnhjZ3NhNGU4ZDNLOVpuUnM0Z2huZEFQVV9haWZ0ZVJOTXp1VWRPSXdSeUJFUHVmREFDeFVfTmpBZzcxLVdYTGZrdjlXOEpYRFlXaXV2OFhPbkJTNlVpaEk1clQ2ZmVpRDl1VXJzd2JtZFl4dGFSUXJSc29oQW5pTVF2eDJHWVFHOTZQMzhGOFhLNGk5RENPVUh5UHA4OA?oc=5": {
+   "url": "https://www.elheraldo.co/economia/2026/04/24/moodys-le-rebajo-la-calificacion-crediticia-a-ecopetrol-y-ajusto-su-perspectiva-de-estable-a-negativa/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiggFBVV95cUxQY1NGSWhEOFUxdS1VOEJxc3hGbXVKbENfdS10bUhGQ2FwZjVTS3lfeUEwUlpzQUhVaWdfM2liY0RIUzNvWEcxZnQyZXpnT0wtQ0FmNkFlMUoxX083UDFVSU9uQXFWVGVFV1p3em15c25QN1IwMkFINHR1QXZjalh4Z3ln?oc=5": {
+   "url": "https://diariodocomercio.com.br/negocios/grupo-saritur-recuperacao-judicial/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785772462,
-  "iso": "03 ago 2026 · 12:54 BRT",
+  "ts": 1785780050,
+  "iso": "03 ago 2026 · 15:00 BRT",
   "status": {
-   "Rumo": {
-    "status": "critico",
-    "score": 76
-   },
    "B3": {
     "status": "critico",
     "score": 76
+   },
+   "Rumo": {
+    "status": "critico",
+    "score": 75
    },
    "Engie Brasil": {
     "status": "atencao",
@@ -43859,11 +44394,11 @@
     "status": "atencao",
     "score": 67
    },
-   "CVS Health": {
-    "status": "critico",
-    "score": 63
-   },
    "Tok&Stok": {
+    "status": "critico",
+    "score": 62
+   },
+   "CVS Health": {
     "status": "critico",
     "score": 62
    },
@@ -43895,13 +44430,13 @@
     "status": "atencao",
     "score": 34
    },
-   "Energisa": {
-    "status": "atencao",
-    "score": 34
-   },
    "JBS": {
     "status": "atencao",
     "score": 34
+   },
+   "Energisa": {
+    "status": "atencao",
+    "score": 33
    },
    "Baker Hughes": {
     "status": "monitorar",
@@ -44088,6 +44623,10 @@
     "score": 0
    },
    "LATAM Airlines": {
+    "status": "monitorar",
+    "score": 0
+   },
+   "Morgan Stanley": {
     "status": "monitorar",
     "score": 0
    },
