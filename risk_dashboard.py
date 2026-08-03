@@ -2739,9 +2739,15 @@ def classify_article(art: dict, taxonomy: list[dict]) -> list[dict]:
 _CONTEXT_PATTERNS = (
     # emissor como praça/veículo de negociação
     r"(?:listad\w*|negociad\w*|cotad\w*|registrad\w*|abriu capital|estreia\w*)\s+(?:n[ao]|em)\s+{A}\b",
+    # OBS: só "n[ao]" (na/no) aqui — "d[ao]" (da/do) é ambíguo com posse
+    # ("ações DA Vale" = ações QUE A VALE EMITE, Vale é sujeito; não é o
+    # mesmo caso de "ações listadas NA B3"). A variante "d[ao]" fica
+    # restrita a emissores com papel de infraestrutura/índice/regulador
+    # via `mention_guard.contexto_patterns` (ex.: B3 — "índice da B3"),
+    # nunca aplicada genericamente a toda a watchlist.
     r"\b(?:empresas|companhias|firmas|acoes|papeis|ativos|emissores|emissoras|fundos|"
     r"cotacoes|investidores|indice|ibovespa|pregao|bolsa|mercado)\b(?:\s+\w+){0,3}\s+"
-    r"(?:d[ao]|n[ao])\s+{A}\b",
+    r"n[ao]\s+{A}\b",
     # emissor como fonte de informação
     r"\b(?:segundo|conforme|de acordo com)\s+(?:[ao]\s+)?{A}\b",
     r"\b(?:dados|levantamento|balanco|pesquisa|estudo|relatorio|ranking)\s+d[ao]\s+{A}\b",
@@ -4874,10 +4880,128 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
         days = max(0.0, (as_of_ts - pub_ts) / 86400)
         return 0.5 ** (days / half_life)
 
+    # [fix: cross-window republication dedup] Duas entradas do histórico podem
+    # ser o MESMO artigo capturado duas vezes (mesmo veículo, mesmo slug final
+    # de URL — ex.: reestruturação de path do site entre coletas). Quando isso
+    # acontece, uma das duas pode cair FORA da janela da vez (7/30/90/365d)
+    # enquanto a outra fica dentro — sem este passo, a sobrevivente perderia
+    # as fontes corroborantes que só a outra tinha persistido. Por isso este
+    # levantamento roda sobre o histórico INTEIRO, sem o corte de janela: para
+    # cada grupo de registros que compartilham slug de URL (própria ou de
+    # qualquer corroborante já persistido), cada membro do grupo recebe a
+    # UNIÃO das fontes de todos os outros (dedup por domínio, nunca a si
+    # mesmo) — assim, qualquer que seja o registro que sobreviva ao corte de
+    # janela, ele já carrega a lista completa de fontes conhecidas. Genérico,
+    # não específico de nenhum emissor/evento.
+    def _repub_url_slug(u):
+        try:
+            path = urlparse(u).path.strip("/")
+        except Exception:
+            return ""
+        if not path:
+            return ""
+        seg = path.split("/")[-1]
+        return seg if len(seg) >= 20 else ""
+
+    def _repub_all_urls(rec):
+        urls = set()
+        for k in ("url", "canonical_url", "resolved_url", "display_url"):
+            v = rec.get(k)
+            if v:
+                urls.add(v)
+        for c in list(rec.get("corrob_sources", []) or []) + list(rec.get("corroborations", []) or []):
+            for k in ("url", "canonical_url", "resolved_url", "display_url"):
+                v = c.get(k)
+                if v:
+                    urls.add(v)
+        return urls
+
+    # Escopo estrito, OPT-IN por emissor (mesmo padrão de
+    # `merge_occurrences_across_articles` da família disrupcao_operacional):
+    # só roda para emissores que declaram `dedup_republished_sources: true`
+    # no cadastro da watchlist — hoje só a B3. Sem isso, qualquer slug de URL
+    # de 20+ caracteres reutilizado por acaso entre artigos NÃO relacionados
+    # de outros emissores (fonte de dados comum, agregador, etc.) mudaria
+    # score de emissores fora do escopo desta correção — o que violaria a
+    # invariância "nenhum outro emissor muda". Além do opt-in, só agrupa
+    # registros que compartilham o MESMO emissor E o MESMO event_id (além do
+    # slug) — nunca entre emissores/eventos diferentes.
+    _dedup_republish_companies = {c["name"] for c in cfg.get("watchlist", [])
+                                  if c.get("dedup_republished_sources")}
+    _slug_groups: dict[tuple, list] = {}
+    if _dedup_republish_companies:
+        for _rec in history["articles"].values():
+            _slugs = {s for u in _repub_all_urls(_rec) if (s := _repub_url_slug(u))}
+            if not _slugs:
+                continue
+            for _co in (_rec.get("companies_attributed") or _rec.get("companies") or []):
+                if _co not in _dedup_republish_companies:
+                    continue
+                for _eid in (_rec.get("events_by_company") or {}).get(_co, []):
+                    for _s in _slugs:
+                        _slug_groups.setdefault((_s, _co, _eid), []).append(_rec)
+
+    # Chave (id(registro), emissor, event_id) — NUNCA só id(registro) — porque
+    # um mesmo artigo pode estar atribuído a mais de um emissor/evento (ex.:
+    # o artigo do Estadão cita B3 E Usiminas); sem a chave composta, fontes
+    # agrupadas para o caso B3 vazariam para o troca_ceo da Usiminas no MESMO
+    # artigo, mudando o score de um emissor fora do escopo desta correção.
+    # [fix: contribuição idêntica em toda janela onde a ocorrência aparece]
+    # A janela (7/30/90/365d) só pode decidir SE a ocorrência aparece — nunca
+    # mudar sua data econômica, decaimento ou contribuição. Sem isto, o
+    # registro que "sobrevive" ao corte de janela vira a âncora de data por
+    # acidente (o artigo mais recente do grupo, só porque o mais antigo caiu
+    # fora do corte) e o mesmo fato passa a decair de forma diferente
+    # dependendo da janela. A data econômica canônica do grupo é a do
+    # relato CONFIRMADO mais antigo (pub_ts mínimo) — é o primeiro registro
+    # do fato, não uma reindexação/recaptura posterior do mesmo artigo.
+    extra_corrob_by_key: dict[tuple, list] = {}
+    canonical_pub_ts_by_key: dict[tuple, int] = {}
+    canonical_date_by_key: dict[tuple, str] = {}
+    for (_s_key, _co_key, _eid_key), _recs in _slug_groups.items():
+        _uniq, _seen = [], set()
+        for _r in _recs:
+            if id(_r) not in _seen:
+                _seen.add(id(_r))
+                _uniq.append(_r)
+        if len(_uniq) < 2:
+            continue
+        _canon = min(_uniq, key=lambda r: r.get("pub_ts", 0) or 0)
+        _canon_ts = _canon.get("pub_ts", 0) or 0
+        _canon_date = (_canon.get("pub_iso") or "")[:10]
+        for _target in _uniq:
+            canonical_pub_ts_by_key[(id(_target), _co_key, _eid_key)] = _canon_ts
+            canonical_date_by_key[(id(_target), _co_key, _eid_key)] = _canon_date
+            _merged = list(_target.get("corrob_sources", []) or [])
+            _merged_domains = {c.get("domain") for c in _merged if c.get("domain")}
+            _target_domain = _target.get("domain")
+            if _target_domain:
+                _merged_domains.add(_target_domain)
+            for _other in _uniq:
+                if _other is _target:
+                    continue
+                _other_domain = _other.get("domain")
+                if _other_domain and _other_domain not in _merged_domains:
+                    _o_ts = _other.get("pub_ts")
+                    _o_iso = ((datetime.fromtimestamp(_o_ts, tz=timezone.utc)
+                              - timedelta(hours=3)).strftime("%d/%m %H:%M")) if _o_ts else ""
+                    _merged.append({
+                        "source": _other.get("source", ""), "domain": _other_domain,
+                        "url": _other.get("url", ""), "when": _o_iso,
+                        **{k: _other.get(k) for k in
+                           ("display_url", "canonical_url", "resolved_url", "link_health",
+                            "link_render_anchor", "link_label") if _other.get(k) is not None}})
+                    _merged_domains.add(_other_domain)
+                for _c in (_other.get("corrob_sources") or []):
+                    _cd = _c.get("domain")
+                    if _cd and _cd not in _merged_domains:
+                        _merged.append(_c)
+                        _merged_domains.add(_cd)
+            extra_corrob_by_key[(id(_target), _co_key, _eid_key)] = _merged
+
     per_company: dict[str, list[dict]] = {}
     for rec in history["articles"].values():
-        if rec.get("pub_ts", 0) < cutoff:
-            continue
+        _rec_pub_ts = rec.get("pub_ts", 0)
         for company in rec.get("companies", []):
             if company == MARKET_LABEL:
                 continue
@@ -4889,7 +5013,17 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
                 # o evento precisa fazer sentido para a natureza do emissor
                 if not event_applies_to(ev, _grp):
                     continue
-                days_ago = max(0.0, (now_ts - rec["pub_ts"]) / 86400)
+                # data efetiva: canônica do grupo (se este registro faz parte
+                # de um grupo de republicação opt-in), senão a própria — o
+                # corte de janela usa SEMPRE a data efetiva, nunca a bruta,
+                # senão o mesmo fato entra/sai da janela de forma inconsistente
+                # entre os registros que o compõem.
+                eff_pub_ts = canonical_pub_ts_by_key.get((id(rec), company, eid), _rec_pub_ts)
+                eff_date = canonical_date_by_key.get((id(rec), company, eid),
+                                                      (rec.get("pub_iso") or "")[:10])
+                if eff_pub_ts < cutoff:
+                    continue
+                days_ago = max(0.0, (now_ts - eff_pub_ts) / 86400)
                 t_id, t_w, t_label = trust_of_rec(rec, cfg)
                 per_company.setdefault(company, []).append({
                     "event_id": eid,
@@ -4902,18 +5036,19 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
                     "trust_label": t_label,
                     "source": rec.get("source", ""),
                     "positive": is_positive(ev),
-                    "pub_ts": rec["pub_ts"],
-                    "date": (rec.get("pub_iso") or "")[:10],
+                    "pub_ts": eff_pub_ts,
+                    "date": eff_date,
                     "title": rec.get("title", ""),
                         "url": link_for_display(rec),
                     "domain": rec.get("domain", ""),
-                    "persisted_corrob": rec.get("corrob_sources", []),
+                    "persisted_corrob": extra_corrob_by_key.get((id(rec), company, eid),
+                                                                rec.get("corrob_sources", [])),
                     # campos de link persistidos pelo reparo (--repair-links-only)
                     **{k: rec.get(k) for k in
                        ("display_url", "canonical_url", "resolved_url", "link_health",
                         "link_render_anchor", "link_label") if rec.get(k) is not None},
                     "pos_pct": round(100.0 * (window_days - days_ago) / window_days, 2),
-                    "opacity": round(0.35 + 0.65 * decay_weight(rec["pub_ts"], now_ts), 2),
+                    "opacity": round(0.35 + 0.65 * decay_weight(eff_pub_ts, now_ts), 2),
                     # identidade econômica da ocorrência + papel do emissor
                     "_ident": occurrence_identity(
                         rec.get("title", ""), eid, company,
@@ -4958,6 +5093,45 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
         return _marcadores_locais_operacionais(o.get("title", ""), _emissor,
                                                _aliases_by_company.get(_emissor))
 
+    # [fix: same-article republication dedup] Duas ocorrências do MESMO
+    # emissor+evento podem ser, na verdade, o MESMO artigo capturado duas
+    # vezes (uma vez como corroboração de outro principal, outra vez como
+    # principal independente — ex.: reestruturação de URL do veículo entre
+    # coletas). Isso escapa da janela `collapse_days` quando a segunda
+    # captura acontece muito depois. Genérico, não específico de nenhum
+    # evento/emissor: se o SLUG final (último segmento de path, só quando
+    # longo o bastante para ser um identificador de artigo, não uma home
+    # page) da URL de uma ocorrência aparece entre as URLs (própria ou de
+    # qualquer corroborante já persistido) da outra, é o mesmo artigo —
+    # funde independentemente da distância temporal. Colisão de slug entre
+    # artigos diferentes é praticamente impossível (string longa e
+    # específica do título).
+    def _url_variants(o):
+        urls = set()
+        for k in ("url", "canonical_url", "resolved_url", "display_url"):
+            v = o.get(k)
+            if v:
+                urls.add(v)
+        for c in list(o.get("persisted_corrob", []) or []) + list(o.get("corrob", []) or []):
+            for k in ("url", "canonical_url", "resolved_url", "display_url"):
+                v = c.get(k)
+                if v:
+                    urls.add(v)
+        return urls
+
+    def _url_slug(u):
+        try:
+            path = urlparse(u).path.strip("/")
+        except Exception:
+            return ""
+        if not path:
+            return ""
+        seg = path.split("/")[-1]
+        return seg if len(seg) >= 20 else ""
+
+    def _slugs_de(o):
+        return {s for s in (_url_slug(u) for u in _url_variants(o)) if s}
+
     for company, occs in list(per_company.items()):
         occs.sort(key=lambda o: (-o.get("trust_w", 1.0), o["pub_ts"]))
         merged: list[dict] = []
@@ -4976,9 +5150,15 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
             # desta correção e não pode passar a existir agora).
             o_is_family = _fam_key_ev(o["event_id"]) != o["event_id"]
             o_marcas = _marcadores_de(o) if o_is_family else set()
+            # slug de URL como critério ADICIONAL de "twin" (mesmo artigo
+            # republicado com URL ligeiramente diferente) — mesmo opt-in
+            # `dedup_republished_sources` do pré-cálculo acima, para não
+            # fundir por coincidência de slug em emissores fora do escopo.
+            o_slugs = _slugs_de(o) if company in _dedup_republish_companies else set()
             twin = next((m for m in merged
                          if _fam_key_ev(m["event_id"]) == _fam_key_ev(o["event_id"])
-                         and abs(m["pub_ts"] - o["pub_ts"]) <= collapse_days * 86400
+                         and (abs(m["pub_ts"] - o["pub_ts"]) <= collapse_days * 86400
+                              or (o_slugs and o_slugs & _slugs_de(m)))
                          and not (o_is_family and o_marcas and _marcadores_de(m)
                                   and not (o_marcas & _marcadores_de(m)))), None)
             if twin is None:

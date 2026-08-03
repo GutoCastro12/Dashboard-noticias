@@ -38516,32 +38516,15 @@
    "pub_ts": 1785539836,
    "pub_iso": "2026-07-31 20:17",
    "language": "pt",
-   "companies": [
-    "B3"
-   ],
-   "event_ids": [
-    "recuperacao_judicial"
-   ],
-   "mention_roles": {
-    "B3": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "events_by_company": {
-    "B3": [
-     "recuperacao_judicial"
-    ]
-   },
-   "companies_attributed": [
-    "B3"
-   ],
+   "companies": [],
+   "event_ids": [],
+   "mention_roles": {},
+   "events_by_company": {},
+   "companies_attributed": [],
    "context_companies": [],
    "captured_ts": 1785645374,
-   "cap_iso": "2026-08-02 01:36"
+   "cap_iso": "2026-08-02 01:36",
+   "_correction_note": "Bug fix (fix/b3-entity-role-ceo-dedup): B3 era a bolsa destinataria do comunicado da Braskem, nao a companhia B3 S.A.; RJ nunca foi um evento da B3. Braskem nao esta na watchlist deste config, entao nenhuma empresa fica atribuida a este artigo apos a correcao. Artigo preservado no historico para auditoria."
   },
   "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQZkNBbG8yTWJKalR5UVMyajdJSEtlVWtQVDFoakhkaWdSYUQ3cHpmbHNtX2xDdXpxa0wxTlRkb0RTb2hic1ZJTUxWcjVCNk1OR2c0ZmFTZW9rMFJmZjd5R0xQSVN1MGFTWlI0RmRzX0p1UVBpYjRmWDUwUDY1VGhUWkVBZjV0Tkl5VUs4bkYyTzJKUmJrRVVwVHd1T19uZ0NEaUM0V0tTUHNZT25LYnVvYi1BNXBDa0haZVBJMFVnTmNEMlMxTGlVbURxNWtSbXJ5Y184WjItdmpnamg3WmdOb2ZhNE1HSlh5ZHgwUHNacGpnZG1IaHpodTAtcGLSAYICQVVfeXFMTWRwQXlVWWQ5N0ljUlhuc0xDTjFKQ2NhZl9KaFU4bFNzTkh1QnJ6OTRodlNSVjFhYTJGdEdjaWh3aW9sc0NseVNzUm8yTjNlWGNlVDdnRlpOYUVHQ0tBNE01XzF0SmdRTnF4UXdFSllkMFpIcExSMXJfbm9wakktcGptcnQ0VEIwSkxpRkx4b2FTRTJRYnhpUGN6OGsyeDRQNlVjeW5udjhDZF84WGFRNk5PeVo5aFg3UmR1dC1wRVdGZjBkT0piZ09YU1JRdzhFNEh0b0FycmwwcW1RUjJFNTR6LWpnWldQSXhZcThYRWpTSUxUeEhRSTczaXZkWVRYcG5n?oc=5": {
    "title": "Saritur tem recuperação judicial concedida; entenda o passo a passo da decisão e o que acontece a partir de agora – EXCLUSIVO",

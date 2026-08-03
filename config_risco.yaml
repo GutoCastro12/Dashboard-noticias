@@ -42,11 +42,35 @@ watchlist:
   - Ambev
   - ABEV3
 - name: B3
+  # [fix/b3-entity-role-ceo-dedup] opt-in, só a B3: quando o mesmo artigo é
+  # capturado 2x com URLs diferentes (ex.: reestruturação de path do site
+  # entre coletas), agrupa as fontes corroborantes independentemente de qual
+  # cópia sobrevive ao corte de janela (7/30/90/365d) — sem isso, a troca de
+  # CEO de 2026 aparecia como 2 ocorrências (Bora Investir sozinha + Estadão
+  # sozinho) em vez de 1 ocorrência com as 5 fontes reais agrupadas.
+  dedup_republished_sources: true
   mention_guard:
     role: infraestrutura_mercado
     contexto_patterns:
     - (?:pregao|balcao|indice|segmento|listagem|camara)\s+d[ao]\s+{A}\b
     - \bem\s+bolsa\b(?:\s+\w+){0,3}\s+{A}\b
+    # variante "d[ao]" (da/do) do padrão praça/veículo, restrita à B3 (papel
+    # de infraestrutura de mercado) — não é aplicada genericamente a toda a
+    # watchlist porque "ações DA <empresa>" normalmente indica posse (a
+    # empresa é sujeito), não localização
+    - \b(?:empresas|companhias|firmas|acoes|papeis|ativos|emissores|emissoras|fundos|cotacoes|investidores|indice|ibovespa|pregao|bolsa|mercado)\b(?:\s+\w+){0,3}\s+d[ao]\s+{A}\b
+    # B3 como DESTINATÁRIA de comunicado/ofício/esclarecimento de uma
+    # companhia listada — o sujeito do evento é quem responde/foi
+    # questionado, não a bolsa que recebeu/solicitou (mecanismo genérico,
+    # reutilizável por qualquer emissor com `mention_guard.role:
+    # infraestrutura_mercado`/`regulador`).
+    - (?:respond\w+|envia\w*|enviou|encaminh\w+|protocol\w+|apresent\w+)\s+(?:[ao]s?\s+)?(?:esclarecimentos?|comunicado\w*|resposta\w*|questionamentos?|oficio\w*)?\s*(?:a|ao|para)\s+{A}\b
+    - \bprotocolad\w*\s+n[ao]\s+{A}\b
+    # B3 como SOLICITANTE/questionadora de esclarecimentos de terceiros —
+    # {A} aqui é quem pede, não quem sofre o evento noticiado
+    - "{A}\\b(?:\\s*(?:,|e)\\s*\\w+){0,2}\\s+(?:pede\\w*|pediu|cobra\\w*|cobrou|solicita\\w*|solicitou|questiona\\w*|questionou)\\s+(?:[ao]s?\\s+)?(?:esclarecimentos?|explicac\\w+|informacoes?)\\b"
+    - \b(?:solicitad\w*|questionad\w*|cobrad\w*)\s+pel[ao]\s+{A}\b
+    - \b(?:oficio|questionamento)\s+d[ao]\s+{A}\b
   asset_class: listada
   ticker: B3SA3
   listing: B3
