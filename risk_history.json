@@ -1069,7 +1069,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T18:00:38.374926+00:00"
+     "last_checked_at": "2026-08-03T20:39:52.473917+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2603,7 +2603,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T18:00:38.775169+00:00"
+     "last_checked_at": "2026-08-03T20:39:52.874123+00:00"
     }
    ],
    "corrob_sources": [
@@ -9208,7 +9208,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T18:00:39.175477+00:00"
+     "last_checked_at": "2026-08-03T20:39:53.274355+00:00"
     },
     {
      "source": "Demarest",
@@ -9228,7 +9228,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T18:00:39.575769+00:00"
+     "last_checked_at": "2026-08-03T20:39:53.674582+00:00"
     }
    ],
    "corrob_sources": [
@@ -10612,7 +10612,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T18:00:39.976013+00:00"
+     "last_checked_at": "2026-08-03T20:39:54.074774+00:00"
     }
    ],
    "corrob_sources": [
@@ -13758,7 +13758,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T18:00:40.564303+00:00"
+     "last_checked_at": "2026-08-03T20:39:54.689924+00:00"
     }
    ],
    "corrob_sources": [
@@ -15900,7 +15900,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T18:00:41.131441+00:00"
+     "last_checked_at": "2026-08-03T20:39:55.290763+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16006,7 +16006,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T18:00:41.710549+00:00"
+     "last_checked_at": "2026-08-03T20:39:55.872367+00:00"
     },
     {
      "source": "Moomoo",
@@ -16125,8 +16125,51 @@
    "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "corroborations": [],
-   "corrob_sources": [],
+   "corroborations": [
+    {
+     "source": "24 HORAS | El Diario sin Límites",
+     "domain": "24-horas.mx",
+     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNd21qMndMNjRwVDRIa1ZxNmVFZXR3OWJnRzdqWjN0QmRnN1lwX0lNcTJ6aWoyMUxDNWtkQ05tMXRoMmNrUExYU2ZIeEZYRGhuZDhCWE9UejRrWWpQbXB6QVM0cE5yaVdWZ1U4c3ZxWGVZV2tPUTVoTDJpRmV0RmRJRFRzRllfSTZfVVFkTUp6SmR0UUhnMWZyMGNaZTlyS3VtM2x0N0o1cmI?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNd21qMndMNjRwVDRIa1ZxNmVFZXR3OWJnRzdqWjN0QmRnN1lwX0lNcTJ6aWoyMUxDNWtkQ05tMXRoMmNrUExYU2ZIeEZYRGhuZDhCWE9UejRrWWpQbXB6QVM0cE5yaVdWZ1U4c3ZxWGVZV2tPUTVoTDJpRmV0RmRJRFRzRllfSTZfVVFkTUp6SmR0UUhnMWZyMGNaZTlyS3VtM2x0N0o1cmI?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNd21qMndMNjRwVDRIa1ZxNmVFZXR3OWJnRzdqWjN0QmRnN1lwX0lNcTJ6aWoyMUxDNWtkQ05tMXRoMmNrUExYU2ZIeEZYRGhuZDhCWE9UejRrWWpQbXB6QVM0cE5yaVdWZ1U4c3ZxWGVZV2tPUTVoTDJpRmV0RmRJRFRzRllfSTZfVVFkTUp6SmR0UUhnMWZyMGNaZTlyS3VtM2x0N0o1cmI?oc=5",
+     "resolved_url": "https://24-horas.mx/cdmx/fiscalia-cdmx-abre-investigacion-por-muerte-de-aficionado-en-el-estadio-banorte/",
+     "canonical_url": "https://24-horas.mx/cdmx/fiscalia-cdmx-abre-investigacion-por-muerte-de-aficionado-en-el-estadio-banorte/",
+     "display_url": "https://24-horas.mx/cdmx/fiscalia-cdmx-abre-investigacion-por-muerte-de-aficionado-en-el-estadio-banorte/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "24-horas.mx",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-03T20:39:56.465011+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "24 HORAS | El Diario sin Límites",
+     "domain": "24-horas.mx",
+     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNd21qMndMNjRwVDRIa1ZxNmVFZXR3OWJnRzdqWjN0QmRnN1lwX0lNcTJ6aWoyMUxDNWtkQ05tMXRoMmNrUExYU2ZIeEZYRGhuZDhCWE9UejRrWWpQbXB6QVM0cE5yaVdWZ1U4c3ZxWGVZV2tPUTVoTDJpRmV0RmRJRFRzRllfSTZfVVFkTUp6SmR0UUhnMWZyMGNaZTlyS3VtM2x0N0o1cmI?oc=5",
+     "when": "28/03 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNd21qMndMNjRwVDRIa1ZxNmVFZXR3OWJnRzdqWjN0QmRnN1lwX0lNcTJ6aWoyMUxDNWtkQ05tMXRoMmNrUExYU2ZIeEZYRGhuZDhCWE9UejRrWWpQbXB6QVM0cE5yaVdWZ1U4c3ZxWGVZV2tPUTVoTDJpRmV0RmRJRFRzRllfSTZfVVFkTUp6SmR0UUhnMWZyMGNaZTlyS3VtM2x0N0o1cmI?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNd21qMndMNjRwVDRIa1ZxNmVFZXR3OWJnRzdqWjN0QmRnN1lwX0lNcTJ6aWoyMUxDNWtkQ05tMXRoMmNrUExYU2ZIeEZYRGhuZDhCWE9UejRrWWpQbXB6QVM0cE5yaVdWZ1U4c3ZxWGVZV2tPUTVoTDJpRmV0RmRJRFRzRllfSTZfVVFkTUp6SmR0UUhnMWZyMGNaZTlyS3VtM2x0N0o1cmI?oc=5",
+     "resolved_url": "https://24-horas.mx/cdmx/fiscalia-cdmx-abre-investigacion-por-muerte-de-aficionado-en-el-estadio-banorte/",
+     "canonical_url": "https://24-horas.mx/cdmx/fiscalia-cdmx-abre-investigacion-por-muerte-de-aficionado-en-el-estadio-banorte/",
+     "display_url": "https://24-horas.mx/cdmx/fiscalia-cdmx-abre-investigacion-por-muerte-de-aficionado-en-el-estadio-banorte/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "24-horas.mx",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-03T20:39:56.865198+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
    "original_url": "https://www.record.com.mx/historia/fiscalia-cdmx-abre-investigacion-por-muerte-en-el-estadio-banorte-previo-al-mexico-vs-portugal-2026032906081088330",
    "redirect_url": "",
    "resolved_url": "https://www.record.com.mx/historia/fiscalia-cdmx-abre-investigacion-por-muerte-en-el-estadio-banorte-previo-al-mexico-vs-portugal-2026032906081088330",
@@ -17232,7 +17275,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T18:00:42.399512+00:00"
+     "last_checked_at": "2026-08-03T20:39:57.598671+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17275,7 +17318,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T18:00:43.114614+00:00"
+     "last_checked_at": "2026-08-03T20:39:58.354073+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -18987,6 +19030,26 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T05:45:29.560234+00:00"
+    },
+    {
+     "source": "Visno Invest",
+     "domain": "visnoinvest.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNRkF2RmU2TGdUZE94R3lNOWFzR054c2g5Y2Y5a0tHZE5rMy10TC1ZVlZSeWFvaTFOTU5zbi0tOEx4RkVHTWxUNzA3U1BGdktCTWh2cm12WjZfbGNPRklmSmtPMjlJbVhfaWNWWWpJbXg5UHVNWmJwSTA3LWdhYWFmTGt5RkV3bDd3Wnc?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNRkF2RmU2TGdUZE94R3lNOWFzR054c2g5Y2Y5a0tHZE5rMy10TC1ZVlZSeWFvaTFOTU5zbi0tOEx4RkVHTWxUNzA3U1BGdktCTWh2cm12WjZfbGNPRklmSmtPMjlJbVhfaWNWWWpJbXg5UHVNWmJwSTA3LWdhYWFmTGt5RkV3bDd3Wnc?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNRkF2RmU2TGdUZE94R3lNOWFzR054c2g5Y2Y5a0tHZE5rMy10TC1ZVlZSeWFvaTFOTU5zbi0tOEx4RkVHTWxUNzA3U1BGdktCTWh2cm12WjZfbGNPRklmSmtPMjlJbVhfaWNWWWpJbXg5UHVNWmJwSTA3LWdhYWFmTGt5RkV3bDd3Wnc?oc=5",
+     "resolved_url": "",
+     "canonical_url": "",
+     "display_url": "",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "",
+     "http_status": "",
+     "link_health": "redirect_nao_resolvido",
+     "resolution_method": "cache",
+     "last_checked_at": "2026-08-03T20:39:58.754300+00:00",
+     "resolution_error": "token não resolvido",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →"
     }
    ],
    "corrob_sources": [
@@ -19031,6 +19094,27 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T05:45:29.560313+00:00"
+    },
+    {
+     "source": "Visno Invest",
+     "domain": "visnoinvest.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNRkF2RmU2TGdUZE94R3lNOWFzR054c2g5Y2Y5a0tHZE5rMy10TC1ZVlZSeWFvaTFOTU5zbi0tOEx4RkVHTWxUNzA3U1BGdktCTWh2cm12WjZfbGNPRklmSmtPMjlJbVhfaWNWWWpJbXg5UHVNWmJwSTA3LWdhYWFmTGt5RkV3bDd3Wnc?oc=5",
+     "when": "04/05 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNRkF2RmU2TGdUZE94R3lNOWFzR054c2g5Y2Y5a0tHZE5rMy10TC1ZVlZSeWFvaTFOTU5zbi0tOEx4RkVHTWxUNzA3U1BGdktCTWh2cm12WjZfbGNPRklmSmtPMjlJbVhfaWNWWWpJbXg5UHVNWmJwSTA3LWdhYWFmTGt5RkV3bDd3Wnc?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNRkF2RmU2TGdUZE94R3lNOWFzR054c2g5Y2Y5a0tHZE5rMy10TC1ZVlZSeWFvaTFOTU5zbi0tOEx4RkVHTWxUNzA3U1BGdktCTWh2cm12WjZfbGNPRklmSmtPMjlJbVhfaWNWWWpJbXg5UHVNWmJwSTA3LWdhYWFmTGt5RkV3bDd3Wnc?oc=5",
+     "resolved_url": "",
+     "canonical_url": "",
+     "display_url": "",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "",
+     "http_status": "",
+     "link_health": "redirect_nao_resolvido",
+     "resolution_method": "cache",
+     "last_checked_at": "2026-08-03T20:39:59.154502+00:00",
+     "resolution_error": "token não resolvido",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →"
     }
    ],
    "captured_ts": 1785345276,
@@ -19960,7 +20044,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T18:00:43.698274+00:00"
+     "last_checked_at": "2026-08-03T20:39:59.746853+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20045,7 +20129,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T18:00:44.273819+00:00"
+     "last_checked_at": "2026-08-03T20:40:00.337694+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -34856,7 +34940,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T18:00:45.041371+00:00"
+     "last_checked_at": "2026-08-03T20:40:01.082905+00:00"
     }
    ],
    "corrob_sources": [
@@ -37657,7 +37741,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T18:00:45.638030+00:00"
+     "last_checked_at": "2026-08-03T20:40:01.691539+00:00"
     },
     {
      "source": "Virginia Business",
@@ -37700,7 +37784,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T18:00:46.194159+00:00"
+     "last_checked_at": "2026-08-03T20:40:02.323836+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38986,7 +39070,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785772446,
-   "cap_iso": "2026-08-03 12:54"
+   "cap_iso": "2026-08-03 12:54",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://prensaregional.pe/cementera-yura-alcanza-utilidades-de-s-301-6-millones-en-2025/": {
    "title": "Cementera Yura alcanza utilidades de S/ 301.6 millones en 2025",
@@ -39043,7 +39129,9 @@
     "Yura"
    ],
    "captured_ts": 1785772446,
-   "cap_iso": "2026-08-03 12:54"
+   "cap_iso": "2026-08-03 12:54",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://diariocorreo.pe/edicion/arequipa/arequipa-incendio-consumio-almacen-de-cementos-yura-por-mas-de-tres-horas-video-noticia/": {
    "title": "Arequipa: Incendio consumió almacén de empresa Cemento Yura por más de tres horas (VIDEO)",
@@ -39151,7 +39239,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785772446,
-   "cap_iso": "2026-08-03 12:54"
+   "cap_iso": "2026-08-03 12:54",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://neofeed.com.br/negocios/engie-brasil-pode-buscar-ate-r-105-bilhoes-em-follow-on/": {
    "title": "Engie Brasil pode buscar até R$ 10,5 bilhões em follow on",
@@ -39238,7 +39328,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785772446,
-   "cap_iso": "2026-08-03 12:54"
+   "cap_iso": "2026-08-03 12:54",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMikwJBVV95cUxPRTFTT2x0cDcyaXlQM3RuSHZHb0Nvd203VFR3UUZsNllQN3h0bnRkTGdiYWUtdVVFa05sX1BEVWRwbEtuWno1RmFZZU41R0VXOURoSnJNR1VuNS1Bem1teGJxcDN3WXBMeDZIaUplby1jSEdxRnpsN1hWa0lMRDdhQzYyODZrek9CMUtiNTkzTnVjT0VVSjZmZVhrSTR6SFpwQzZPSXJRaHFfZlNCc1A4am9hTHRYel9FdURpMjZIdTVUcXN0NlhDUXJ4aFNtYU9fZTVXcGxKamRHNS1CQ1JMSWJ6NC1mT3NtblJHaktrSzhERWdFQ0drSG1TczNIV1VVaVZqZ2R2bEotbEN1WWg0ZFV6RdIBmAJBVV95cUxNQ0xleFVTaFJwR1NZaWZCSjVjMm45OUNNRTF0dDM2UU96UzRrUmJBZXkzZDFMSGxEQ1g5ZlV4SnBCQl9jVzZPRE9MZi11VlNiaW9kdElfbHVVV3ZLdUl0WmJUcm1TSHdYUXVjMlFvZ1BaN1FnZUxEVk1KdTNtd0JxTU1pbDk2cy1iSlBJMlZZX1lDdHlmNm9pVHloSmVFVUoxUU53Ukx4eE9NbVUzVFZmWFJqWlFUa0hRVmM4bUpvTnJaZElZeHE5cHFLTHRGOHk4N1JSUGhuZS10cmlQbjBGX2ZPS0FTMTVQYVQyMmNnYjN5WVNvMUNxbzVVeHBkMHhFbjl0U2Y2MURfTnhFa3hzNW1feWNYcG9n?oc=5": {
    "title": "EXCLUSIVO: Administradora da falência da Itapemirim pede rapidez para que leilão ocorra e cita insegurança jurídica e prejuízos aos credores",
@@ -39310,7 +39402,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785772446,
-   "cap_iso": "2026-08-03 12:54"
+   "cap_iso": "2026-08-03 12:54",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.bloomberglaw.com/pharma-and-life-sciences/cvs-health-defeats-whistleblowers-drug-collusion-fraud-suit": {
    "title": "CVS Health Defeats Whistleblower’s Drug Collusion Fraud Suit",
@@ -39346,7 +39440,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785772446,
-   "cap_iso": "2026-08-03 12:54"
+   "cap_iso": "2026-08-03 12:54",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.marketwatch.com/story/they-spent-tens-of-thousands-of-dollars-on-home-remodels-only-to-regret-it-8cfa23e6?mod=mw_rss_topstories": {
    "title": "They spent tens of thousands of dollars on home remodels — only to regret it. ‘It’s just been so much.’",
@@ -39905,9 +40001,428 @@
    ],
    "captured_ts": 1785780032,
    "cap_iso": "2026-08-03 15:00"
+  },
+  "https://news.google.com/rss/articles/CBMixAFBVV95cUxPMjRvLTBTVHNDRXNZU2RNdlhZVmFVVFcyQWs2WGs4TDM2WUlQaThldWUtbGtCbGpWYlFRR3U2X2swS0xDMS1aZWtncnc2UFhyaEdUUDRuTlY2ZHF2SVNMYzd3bzZsbGRyRG9IV0VGOVkwUkYzTnNlZWk4N2c1aHlNQXpqdmpPUnVpUE9qTlVUaExSWmlnQ20tcDVnLXRIY1FVekpyZVhfUVQwSlNQVXNZdzVFSlB2ZlBRRVlrX3dGNjZ6WmhQ?oc=5": {
+   "title": "BofA reiterates Citi stock Buy rating amid acquisition speculation",
+   "url": "https://www.investing.com/news/analyst-ratings/bofa-reiterates-citi-stock-buy-rating-amid-acquisition-speculation-93CH-4585901",
+   "summary": "BofA reiterates Citi stock Buy rating amid acquisition speculation &nbsp;&nbsp; Investing.com",
+   "source": "Investing.com",
+   "domain": "investing.com",
+   "pub_ts": 1774594800,
+   "pub_iso": "2026-03-27 04:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1785789585,
+   "cap_iso": "2026-08-03 17:39"
+  },
+  "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml": {
+   "title": "CVM abre processo para apurar renúncia de presidente do conselho da Vale",
+   "url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
+   "summary": "CVM abre processo para apurar renúncia de presidente do conselho da Vale &nbsp;&nbsp; Folha de S.Paulo",
+   "source": "Folha de S.Paulo",
+   "domain": "www1.folha.uol.com.br",
+   "pub_ts": 1783494000,
+   "pub_iso": "2026-07-08 04:00",
+   "language": "pt",
+   "companies": [
+    "Vale"
+   ],
+   "event_ids": [
+    "investigacao_regulatoria"
+   ],
+   "mention_roles": {
+    "Vale": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Vale": [
+     "investigacao_regulatoria"
+    ]
+   },
+   "companies_attributed": [
+    "Vale"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785789585,
+   "cap_iso": "2026-08-03 17:39"
+  },
+  "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPbkJQV1Zjemg4SHVDWGRRZWtReVM1V0w1Y2ZCeDRwT3N4alpqVjZjZnctdkFGOUR6SkNCenpCZ0NDNHlLQmdYeGxMNkRXTjFsQWdIWW9IQ2pHT25ZbVR4SjNzM2sxUTlMWEpCakF3aUpIRE1RbVpoanU3d19Lb2U3RHN4elFiZTBiSHFGdm94dWp2OTJKTHlhaHNuYmxCREtOdl85c1FDeEpPdw?oc=5": {
+   "title": "Lucid Motors Hired Bankruptcy Specialists, Then Watched Its Stock Collapse 50%",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/lucid-motors-hired-bankruptcy-specialists-180813148.html",
+   "summary": "Lucid Motors Hired Bankruptcy Specialists, Then Watched Its Stock Collapse 50% &nbsp;&nbsp; Yahoo Finance",
+   "source": "Yahoo Finance",
+   "domain": "finance.yahoo.com",
+   "pub_ts": 1784098800,
+   "pub_iso": "2026-07-15 04:00",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "corroborations": [
+    {
+     "source": "TechCrunch",
+     "domain": "techcrunch.com",
+     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOZGE2eVI4b1FXbVlicHVFczFZS2w2d2U1dEJjSWpPNEUydGFDdGJyMHZfWjA2RG5VcTh5NENHYnl3R0xzUFBkb3lTRGF3Z21uNlNQcmJUQzRuaDl0MnF5UWVFNURIZXpueXYzNlhGZG12aktRZ1I4dmtiUmtvUF8yNk9na1VuN3NCSlRiMzVFZDN0QQ?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOZGE2eVI4b1FXbVlicHVFczFZS2w2d2U1dEJjSWpPNEUydGFDdGJyMHZfWjA2RG5VcTh5NENHYnl3R0xzUFBkb3lTRGF3Z21uNlNQcmJUQzRuaDl0MnF5UWVFNURIZXpueXYzNlhGZG12aktRZ1I4dmtiUmtvUF8yNk9na1VuN3NCSlRiMzVFZDN0QQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOZGE2eVI4b1FXbVlicHVFczFZS2w2d2U1dEJjSWpPNEUydGFDdGJyMHZfWjA2RG5VcTh5NENHYnl3R0xzUFBkb3lTRGF3Z21uNlNQcmJUQzRuaDl0MnF5UWVFNURIZXpueXYzNlhGZG12aktRZ1I4dmtiUmtvUF8yNk9na1VuN3NCSlRiMzVFZDN0QQ?oc=5",
+     "resolved_url": "https://techcrunch.com/2026/07/14/lucid-motors-denies-report-its-considering-bankruptcy/",
+     "canonical_url": "https://techcrunch.com/2026/07/14/lucid-motors-denies-report-its-considering-bankruptcy/",
+     "display_url": "https://techcrunch.com/2026/07/14/lucid-motors-denies-report-its-considering-bankruptcy/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "techcrunch.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-03T20:40:02.929720+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "TechCrunch",
+     "domain": "techcrunch.com",
+     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOZGE2eVI4b1FXbVlicHVFczFZS2w2d2U1dEJjSWpPNEUydGFDdGJyMHZfWjA2RG5VcTh5NENHYnl3R0xzUFBkb3lTRGF3Z21uNlNQcmJUQzRuaDl0MnF5UWVFNURIZXpueXYzNlhGZG12aktRZ1I4dmtiUmtvUF8yNk9na1VuN3NCSlRiMzVFZDN0QQ?oc=5",
+     "when": "14/07 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOZGE2eVI4b1FXbVlicHVFczFZS2w2d2U1dEJjSWpPNEUydGFDdGJyMHZfWjA2RG5VcTh5NENHYnl3R0xzUFBkb3lTRGF3Z21uNlNQcmJUQzRuaDl0MnF5UWVFNURIZXpueXYzNlhGZG12aktRZ1I4dmtiUmtvUF8yNk9na1VuN3NCSlRiMzVFZDN0QQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOZGE2eVI4b1FXbVlicHVFczFZS2w2d2U1dEJjSWpPNEUydGFDdGJyMHZfWjA2RG5VcTh5NENHYnl3R0xzUFBkb3lTRGF3Z21uNlNQcmJUQzRuaDl0MnF5UWVFNURIZXpueXYzNlhGZG12aktRZ1I4dmtiUmtvUF8yNk9na1VuN3NCSlRiMzVFZDN0QQ?oc=5",
+     "resolved_url": "https://techcrunch.com/2026/07/14/lucid-motors-denies-report-its-considering-bankruptcy/",
+     "canonical_url": "https://techcrunch.com/2026/07/14/lucid-motors-denies-report-its-considering-bankruptcy/",
+     "display_url": "https://techcrunch.com/2026/07/14/lucid-motors-denies-report-its-considering-bankruptcy/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "techcrunch.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-03T20:40:03.329902+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1785789585,
+   "cap_iso": "2026-08-03 17:39"
+  },
+  "https://www.infobae.com/peru/2026/07/24/incendio-en-los-olivos-voraz-fuego-consume-planta-de-productos-quimicos/": {
+   "title": "Incendio en Los Olivos: fuego en almacen de Yobel no se extingue, el techo colapsó y bomberos hablan de tres días más de batalla",
+   "url": "https://www.infobae.com/peru/2026/07/24/incendio-en-los-olivos-voraz-fuego-consume-planta-de-productos-quimicos/",
+   "summary": "Incendio en Los Olivos: fuego en almacen de Yobel no se extingue, el techo colapsó y bomberos hablan de tres días más de batalla &nbsp;&nbsp; Infobae",
+   "source": "Infobae",
+   "domain": "infobae.com",
+   "pub_ts": 1784876400,
+   "pub_iso": "2026-07-24 04:00",
+   "language": "es",
+   "companies": [
+    "Yobel"
+   ],
+   "event_ids": [
+    "incidente_operacional"
+   ],
+   "mention_roles": {
+    "Yobel": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Yobel": [
+     "incidente_operacional"
+    ]
+   },
+   "companies_attributed": [
+    "Yobel"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785789585,
+   "cap_iso": "2026-08-03 17:39"
+  },
+  "https://www.americatv.com.pe/noticias/actualidad/incendio-gran-magnitud-consume-fabrica-cosmeticos-olivos-n520694": {
+   "title": "Los Olivos: Incendio de gran magnitud consume fábrica de cosméticos",
+   "url": "https://www.americatv.com.pe/noticias/actualidad/incendio-gran-magnitud-consume-fabrica-cosmeticos-olivos-n520694",
+   "summary": "Los Olivos: Incendio de gran magnitud consume fábrica de cosméticos &nbsp;&nbsp; americatv.com.pe",
+   "source": "americatv.com.pe",
+   "domain": "americatv.com.pe",
+   "pub_ts": 1784876400,
+   "pub_iso": "2026-07-24 04:00",
+   "language": "es",
+   "companies": [
+    "Yobel"
+   ],
+   "event_ids": [
+    "incidente_operacional_grave"
+   ],
+   "events_by_company": {
+    "Yobel": [
+     "incidente_operacional_grave"
+    ]
+   },
+   "companies_attributed": [
+    "Yobel"
+   ],
+   "context_companies": [],
+   "corroborations": [
+    {
+     "source": "Gestión",
+     "domain": "gestion.pe",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMzlqV0c3Y2haa3lHM2EyMHl2WDRTTHBqZk81QWVkbldOSGZfS2VwUWYxUUZaaUxPbzY4NlluS2t0RTRxbUlucy0zSHI3aGJrMmtzUVl6TTVNcGVDY0hjMnVhYlp6dWY5OFBVMnFYLVFzWDVXR0ktcUVwaVhvbEFHSTZCYzI0Qml5RVQ4SUpmRDBsaWlaX1N4Si1maGhMUTdKanBpajFYY1BXOEVjRUlUbzRB?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMzlqV0c3Y2haa3lHM2EyMHl2WDRTTHBqZk81QWVkbldOSGZfS2VwUWYxUUZaaUxPbzY4NlluS2t0RTRxbUlucy0zSHI3aGJrMmtzUVl6TTVNcGVDY0hjMnVhYlp6dWY5OFBVMnFYLVFzWDVXR0ktcUVwaVhvbEFHSTZCYzI0Qml5RVQ4SUpmRDBsaWlaX1N4Si1maGhMUTdKanBpajFYY1BXOEVjRUlUbzRB?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMzlqV0c3Y2haa3lHM2EyMHl2WDRTTHBqZk81QWVkbldOSGZfS2VwUWYxUUZaaUxPbzY4NlluS2t0RTRxbUlucy0zSHI3aGJrMmtzUVl6TTVNcGVDY0hjMnVhYlp6dWY5OFBVMnFYLVFzWDVXR0ktcUVwaVhvbEFHSTZCYzI0Qml5RVQ4SUpmRDBsaWlaX1N4Si1maGhMUTdKanBpajFYY1BXOEVjRUlUbzRB?oc=5",
+     "resolved_url": "https://gestion.pe/peru/los-olivos-incendio-de-grandes-proporciones-consume-fabrica-de-cosmeticos-yobel-noticia/",
+     "canonical_url": "https://gestion.pe/peru/los-olivos-incendio-de-grandes-proporciones-consume-fabrica-de-cosmeticos-yobel-noticia/",
+     "display_url": "https://gestion.pe/peru/los-olivos-incendio-de-grandes-proporciones-consume-fabrica-de-cosmeticos-yobel-noticia/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "gestion.pe",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-03T20:40:03.922245+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "soltvperu.com",
+     "domain": "soltvperu.com",
+     "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAtVVA0aWVpOFNzNGVMb0dRZkRRVGx6aHh2amdlMEc4OU5xdGhGNlVOUUxLRmxITUJoV0kzbnhVYmhPenpDdllCNXJDMERCQ0RNSGRRMzdLUGJVY0dYYlh3b3JjVy1WNFU?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAtVVA0aWVpOFNzNGVMb0dRZkRRVGx6aHh2amdlMEc4OU5xdGhGNlVOUUxLRmxITUJoV0kzbnhVYmhPenpDdllCNXJDMERCQ0RNSGRRMzdLUGJVY0dYYlh3b3JjVy1WNFU?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAtVVA0aWVpOFNzNGVMb0dRZkRRVGx6aHh2amdlMEc4OU5xdGhGNlVOUUxLRmxITUJoV0kzbnhVYmhPenpDdllCNXJDMERCQ0RNSGRRMzdLUGJVY0dYYlh3b3JjVy1WNFU?oc=5",
+     "resolved_url": "https://soltvperu.com/incendio-fabrica-yobel-los-olivos/",
+     "canonical_url": "https://soltvperu.com/incendio-fabrica-yobel-los-olivos/",
+     "display_url": "https://soltvperu.com/incendio-fabrica-yobel-los-olivos/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "soltvperu.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-03T20:40:04.516388+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Gestión",
+     "domain": "gestion.pe",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMzlqV0c3Y2haa3lHM2EyMHl2WDRTTHBqZk81QWVkbldOSGZfS2VwUWYxUUZaaUxPbzY4NlluS2t0RTRxbUlucy0zSHI3aGJrMmtzUVl6TTVNcGVDY0hjMnVhYlp6dWY5OFBVMnFYLVFzWDVXR0ktcUVwaVhvbEFHSTZCYzI0Qml5RVQ4SUpmRDBsaWlaX1N4Si1maGhMUTdKanBpajFYY1BXOEVjRUlUbzRB?oc=5",
+     "when": "24/07 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMzlqV0c3Y2haa3lHM2EyMHl2WDRTTHBqZk81QWVkbldOSGZfS2VwUWYxUUZaaUxPbzY4NlluS2t0RTRxbUlucy0zSHI3aGJrMmtzUVl6TTVNcGVDY0hjMnVhYlp6dWY5OFBVMnFYLVFzWDVXR0ktcUVwaVhvbEFHSTZCYzI0Qml5RVQ4SUpmRDBsaWlaX1N4Si1maGhMUTdKanBpajFYY1BXOEVjRUlUbzRB?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMzlqV0c3Y2haa3lHM2EyMHl2WDRTTHBqZk81QWVkbldOSGZfS2VwUWYxUUZaaUxPbzY4NlluS2t0RTRxbUlucy0zSHI3aGJrMmtzUVl6TTVNcGVDY0hjMnVhYlp6dWY5OFBVMnFYLVFzWDVXR0ktcUVwaVhvbEFHSTZCYzI0Qml5RVQ4SUpmRDBsaWlaX1N4Si1maGhMUTdKanBpajFYY1BXOEVjRUlUbzRB?oc=5",
+     "resolved_url": "https://gestion.pe/peru/los-olivos-incendio-de-grandes-proporciones-consume-fabrica-de-cosmeticos-yobel-noticia/",
+     "canonical_url": "https://gestion.pe/peru/los-olivos-incendio-de-grandes-proporciones-consume-fabrica-de-cosmeticos-yobel-noticia/",
+     "display_url": "https://gestion.pe/peru/los-olivos-incendio-de-grandes-proporciones-consume-fabrica-de-cosmeticos-yobel-noticia/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "gestion.pe",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-03T20:40:04.916575+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "soltvperu.com",
+     "domain": "soltvperu.com",
+     "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAtVVA0aWVpOFNzNGVMb0dRZkRRVGx6aHh2amdlMEc4OU5xdGhGNlVOUUxLRmxITUJoV0kzbnhVYmhPenpDdllCNXJDMERCQ0RNSGRRMzdLUGJVY0dYYlh3b3JjVy1WNFU?oc=5",
+     "when": "24/07 17:41",
+     "original_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAtVVA0aWVpOFNzNGVMb0dRZkRRVGx6aHh2amdlMEc4OU5xdGhGNlVOUUxLRmxITUJoV0kzbnhVYmhPenpDdllCNXJDMERCQ0RNSGRRMzdLUGJVY0dYYlh3b3JjVy1WNFU?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAtVVA0aWVpOFNzNGVMb0dRZkRRVGx6aHh2amdlMEc4OU5xdGhGNlVOUUxLRmxITUJoV0kzbnhVYmhPenpDdllCNXJDMERCQ0RNSGRRMzdLUGJVY0dYYlh3b3JjVy1WNFU?oc=5",
+     "resolved_url": "https://soltvperu.com/incendio-fabrica-yobel-los-olivos/",
+     "canonical_url": "https://soltvperu.com/incendio-fabrica-yobel-los-olivos/",
+     "display_url": "https://soltvperu.com/incendio-fabrica-yobel-los-olivos/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "soltvperu.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-03T20:40:05.316758+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1785789585,
+   "cap_iso": "2026-08-03 17:39"
+  },
+  "https://larepublica.pe/sociedad/2026/07/24/enorme-incendio-en-fabrica-de-cosmeticos-en-los-olivos-24-unidades-de-bomberos-atienden-emergencia-1441056": {
+   "title": "Incendio en Los Olivos: alertan que extinción del fuego en fábrica de cosméticos se extendería hasta 3 días",
+   "url": "https://larepublica.pe/sociedad/2026/07/24/enorme-incendio-en-fabrica-de-cosmeticos-en-los-olivos-24-unidades-de-bomberos-atienden-emergencia-1441056",
+   "summary": "Incendio en Los Olivos: alertan que extinción del fuego en fábrica de cosméticos se extendería hasta 3 días &nbsp;&nbsp; La República",
+   "source": "La República",
+   "domain": "larepublica.pe",
+   "pub_ts": 1785144480,
+   "pub_iso": "2026-07-27 06:28",
+   "language": "es",
+   "companies": [
+    "Yobel"
+   ],
+   "event_ids": [
+    "incidente_operacional"
+   ],
+   "events_by_company": {
+    "Yobel": [
+     "incidente_operacional"
+    ]
+   },
+   "companies_attributed": [
+    "Yobel"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785789585,
+   "cap_iso": "2026-08-03 17:39"
+  },
+  "https://www.peru-retail.com/yobel-paraliza-temporalmente-sus-operaciones-tras-el-incendio-en-su-planta-de-los-olivos/": {
+   "title": "Yobel paraliza temporalmente sus operaciones tras el incendio en su planta de Los Olivos",
+   "url": "https://www.peru-retail.com/yobel-paraliza-temporalmente-sus-operaciones-tras-el-incendio-en-su-planta-de-los-olivos/",
+   "summary": "Yobel paraliza temporalmente sus operaciones tras el incendio en su planta de Los Olivos &nbsp;&nbsp; Perú Retail",
+   "source": "Perú Retail",
+   "domain": "peru-retail.com",
+   "pub_ts": 1785161339,
+   "pub_iso": "2026-07-27 11:08",
+   "language": "es",
+   "companies": [
+    "Yobel"
+   ],
+   "event_ids": [
+    "paralisacao_operacional"
+   ],
+   "mention_roles": {
+    "Yobel": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Yobel": [
+     "paralisacao_operacional"
+    ]
+   },
+   "companies_attributed": [
+    "Yobel"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785789585,
+   "cap_iso": "2026-08-03 17:39"
+  },
+  "https://news.google.com/rss/articles/CBMiogFBVV95cUxPVnppcmF6X1ZkckJVc0h3bGJKNG5nRkc1XzNkWTRkNUh0ZnNHNXJCcGotXzZ0YkN1cHFxcVZJV2VNbEpsLWN2SEdsT0hQY002UlpTdkxlY1RVSG1HRGNrc3NMNHU4eGplbm03NjVCcGNmczJNQmI0Njd6V28zTkhFUUllS1QzQVpVaS1JUFFGeGNza3hBRVhmelZzcWhVNi10MHfSAacBQVVfeXFMUF90N1NPSXpGT0ZWaTNZdUFLZ0Iyd0k0UFRMaVlGWVpGZGJGTTV5U0lnU0d0TFZoekpHUjFtVUt5bHFtNDFrRy1aRkpPTXRNd1pDcUFYN3U0ZjdxNGZnSnZ5REY0UEc4U2gzNnM4T3FHVjV6TFFhT3JJUHlTbko2U1BVc1BsX3gtM0YzdTh2Rm9uS2RhUl9oX2NVdUJ4Qm1XQ05DckpubzQ?oc=5": {
+   "title": "Pernambucanas tem novo CEO; confira outras mudanças",
+   "url": "https://mercadoeconsumo.com.br/01/08/2026/gestao/pernambucanas-tem-novo-ceo-confira-outras-mudancas/",
+   "summary": "Pernambucanas tem novo CEO; confira outras mudanças &nbsp;&nbsp; mercadoeconsumo.com.br",
+   "source": "mercadoeconsumo.com.br",
+   "domain": "mercadoeconsumo.com.br",
+   "pub_ts": 1785578453,
+   "pub_iso": "2026-08-01 07:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "captured_ts": 1785789585,
+   "cap_iso": "2026-08-03 17:39"
+  },
+  "https://news.google.com/rss/articles/CBMiugFBVV95cUxPTFZ5ZmdhMWloTWhQRUxoeDRxSjE2dkpuMlRWVXZZVVpnYXM1b3pKXzVkMkM3NzFGMnVWZ25IMkMtLUozdnFpQTVLeEFvT0QydmRPcnlIbmdJSWItY053UnljR2I3U3R6c0J5VVYyMUVWSnhGWjQ1WWVVOHJZcWVKeWYycjMwRHZwcmtGMlpyd2VPcmlHRVNTUUt4ajhiX0ZJdnBUdnIxZEh1dVFHR3A5cWVFZzRHZWZDNXc?oc=5": {
+   "title": "Is SoundHound AI in Play? The Acquisition Case for This Voice-AI Specialist",
+   "url": "https://247wallst.com/investing/2026/08/03/is-soundhound-ai-in-play-the-acquisition-case-for-this-voice-ai-specialist/",
+   "summary": "Is SoundHound AI in Play? The Acquisition Case for This Voice-AI Specialist &nbsp;&nbsp; 247wallst.com",
+   "source": "247wallst.com",
+   "domain": "247wallst.com",
+   "pub_ts": 1785759616,
+   "pub_iso": "2026-08-03 09:20",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1785789585,
+   "cap_iso": "2026-08-03 17:39"
+  },
+  "https://news.google.com/rss/articles/CBMivwFBVV95cUxPeWduLXd6S1ZlekxBVDRJNWZIT0t2MlZsYkxwWW56dmFCYkc0cXRicG1Xek1zSzZBVFRhNll4TFBCNGRvMENlUEItWmIzaURfR3AtTmMxRWh0ZWthbjJjWHpycUl0UWFFV3hyQ0czMTY0NWstOG9ObEozR0g2Y2UzRDR4TE81ZHkzcU9NOTdQbnY4djNwTFdwUlZQcWZKVGhIdWZETjZza3NWVXFFZHF1bmluOVNHQWh1azBOS0FTbw?oc=5": {
+   "title": "Gigante das vendas pela TV pede proteção contra falência com dívida de 6,6 bilhões",
+   "url": "https://www.em.com.br/emfoco/2026/08/03/gigante-das-vendas-pela-tv-pede-protecao-contra-falencia-com-divida-de-66-bilhoes/",
+   "summary": "Gigante das vendas pela TV pede proteção contra falência com dívida de 6,6 bilhões &nbsp;&nbsp; Estado de Minas",
+   "source": "Estado de Minas",
+   "domain": "em.com.br",
+   "pub_ts": 1785768900,
+   "pub_iso": "2026-08-03 11:55",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785789585,
+   "cap_iso": "2026-08-03 17:39"
+  },
+  "https://news.google.com/rss/articles/CBMirgFBVV95cUxPajdUMy00bXA1cEpEUWNTam9iQXJBcTYyTGdKT21qd193MnN2YXFtSU9kbll3QjFIT2hJWWpjQ01QSl9kUG5FYWZVNFlKbWJpMXR5LV9ObGRtT2h3QnRxdHBLWFE5VkhVaDdDUzVRTVFhbTBHNHJaWE1tQzNHXzFfOWJsQjdMUkhtUFBoTHJjeE15QWlDZk9nMDBiUTFOREVnTHhEaE9JRFVkT0JBTGc?oc=5": {
+   "title": "Recuperação judicial: Por que ela protege a empresa, mas não o patrimônio do sócio",
+   "url": "https://www.migalhas.com.br/depeso/459362/recuperacao-judicial-por-que-a-protege-a-empresa-e-nao-o-patrimonio",
+   "summary": "Recuperação judicial: Por que ela protege a empresa, mas não o patrimônio do sócio &nbsp;&nbsp; Migalhas",
+   "source": "Migalhas",
+   "domain": "migalhas.com.br",
+   "pub_ts": 1785781737,
+   "pub_iso": "2026-08-03 15:28",
+   "language": "es",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1785789585,
+   "cap_iso": "2026-08-03 17:39"
+  },
+  "https://news.google.com/rss/articles/CBMimgFBVV95cUxORkV4amhjLXQxRnBlUHFSbWtIbEtESzBrY1BMc1JKamhod2dFNUhkV0JvVmN5M3JKQjlJSUNicXhldzB1NEpjRXpTRWh5a3haLUp0X0NsSndYYkMzTThSdG1pUmFYQ0NSWmZGZHFrUzFlU29jamZXa0UtdE5TWE9TNDFXdk16cnAwaDNMTlZMazFMLVdqcHhUR3ZR?oc=5": {
+   "title": "Toky já tem votos para derrubar trava de OPA",
+   "url": "https://veja.abril.com.br/coluna/radar-economico/toky-ja-tem-votos-para-derrubar-trava-de-opa/",
+   "summary": "Toky já tem votos para derrubar trava de OPA &nbsp;&nbsp; VEJA",
+   "source": "VEJA",
+   "domain": "veja.abril.com.br",
+   "pub_ts": 1785787240,
+   "pub_iso": "2026-08-03 17:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1785789585,
+   "cap_iso": "2026-08-03 17:39"
   }
  },
- "run_count": 66,
+ "run_count": 67,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -44372,11 +44887,75 @@
   "https://news.google.com/rss/articles/CBMiggFBVV95cUxQY1NGSWhEOFUxdS1VOEJxc3hGbXVKbENfdS10bUhGQ2FwZjVTS3lfeUEwUlpzQUhVaWdfM2liY0RIUzNvWEcxZnQyZXpnT0wtQ0FmNkFlMUoxX083UDFVSU9uQXFWVGVFV1p3em15c25QN1IwMkFINHR1QXZjalh4Z3ln?oc=5": {
    "url": "https://diariodocomercio.com.br/negocios/grupo-saritur-recuperacao-judicial/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMixAFBVV95cUxPWnJOTTBDelBCSXN1b21hTmJ0VXB0bUJpZ1NpVkFpcXRYaFdLX1hiWVNBN1VWZEJHZHpydkxsa28xYlF5ZDJ2Q1VNMHdIZl9xWXB3SlRpTXp0OUUySU1pSHFsRXBuLXlDZ01EZl9ZSC1IZE92Skhudjh1dXRuNEZGWTFLYmFXMldYcHVZMTNzZHhsSWsyX0UyZVRUZV9HZTRRUFk4ZnFJeFRtcUItYmh6VmZ5T2hDMEJ0ZmlrUFVBQzFkNmVR?oc=5": {
+   "url": "https://analisa.genialinvestimentos.com.br/acoes/petrorio/prio-prio3-uma-aquisicao-fora-da-caixa-incorporacao-da-dommo-energia",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipAFBVV95cUxNV0NJTXQ3LTJNUGJQbm1qMDJIcjJ0WWxwVXlwS3RrT25nUjJHc3VQVzV1aGxLU3FZYndhSWZoNHNiU1MzMUFpaHJFTHVhQlNubVBTYVRQUDIySVVfQ2o0QUsxLWRxcWx1dUFwX3dBRTVsTnY2a3QxNi1fbkotRnV3WFRDcGpJOVcwQnlNNnBoSE0xN0NkNHh5YndSZEtoVm1tekNJQg?oc=5": {
+   "url": "https://riconnect.rico.com.vc/analises/caixa-seguridade-cxse3-anunciou-follow-on-o-que-isso-significa/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMisgFBVV95cUxPd3g5RDNKbmN4azhFSTBENzlEZEtGdFA3LWRyZGNoSmlpNGxQQkJSbGJwaEZUYXRLX2FfYW55c2M1NGNkWlJWRXZlTnB4OEs0QnE4Tk9WdFROSXVMem94RFVDX3B1c05rM0M5a29ZWWl6LW9ib0xUSGRER29fUTNkUk1yTlR5OWlGMDJnZHVDTDZ4N19Tc2NZa2l3Rms5MXRoNEo0WGI4RlcxN2FueHJzWkFR0gHMAUFVX3lxTE9yWW85c3haVElWbGRBNlBoRzhfa0lTaVM0RVVJXzZjLW5KUXZzalFLMDgzV2lraGU5U29KWW1HcURDOUt2NVZaeThGVnlUNEQwN2xkUTBmWDRQYUdxS1EwNG80amItQjVEU1JVUm5PaWY2Ty1TSVA0VnJjcjZLZlN5V0RoTS1KaG1XR0I0MFhpV19lMmV5VEd4WnF6SXlmcGtKeUdpdU5NUTBnTVVxUnBTamE3TEpVb0hkWU5XWHZlSlFvSjk4bnVDekFHZA?oc=5": {
+   "url": "https://www.infobae.com/peru/2026/07/24/incendio-en-los-olivos-voraz-fuego-consume-planta-de-productos-quimicos/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiswFBVV95cUxPQ1hkSW12Skg1LVBOdEY0SEw1aHl4dWNVZHR5MVVhNnBFazVnUE5aaWp5cWpQNXpZMk16WEQ0bGVkWUk0V3NxMkNIT0N5cl9BbmhwM2FMaktzbWZQeFNkUHZXeTVNQThVY290bmowZWdtMjdmeGMzWGIyWV8zQXJkcDA1TG5mQVNrblMyNlRWZnlKYlVRb1VyNnJBNjJ4UkFhcFpEb3d4NVl3QjIxZGpBSkotTdIBuAFBVV95cUxPQkVIaHJGMUwwbTlZRWtRUDhRTnVtOHNkajByQ1A1c3Axd05NazdKemdWTWRVdU52Z0psTGpSRFBPOFJlSktZZlRCUThvN2sxWE80RnVxdlBYc2ptSXdmSXMyYlZwWjB4SGxzNlZDN2ZlWWpxZmJhX3dnWHdvOU1WMFdpUHVkQlJYQjhUUlBKbHJ0SVlZaVJlbFBNVHUwNWd4OFN1dTA2c3pkUlgzZGZUWFRZSEVjTUxj?oc=5": {
+   "url": "https://www.americatv.com.pe/noticias/actualidad/incendio-gran-magnitud-consume-fabrica-cosmeticos-olivos-n520694",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOV1pqd1owYjg2VTZqR2RjUFhaRENnaDg1VE1abUFMVGFsby1VZlY3ZmZPcVNiTkJFOTBacmNFT2JKUXBaYVV4S1JGSmFVTmhJVkVfTjA5WmtvWnJYemdXa2dMaWZCc3AzT3NqZ0xSTnBhQ210VDdPMkdobnh4Nk1EeHNUMkRyd0hIYmwwaDRSNUdHSXF3c05HaTVBSnJxdzgxSjBqY19pWU5JVVMzWDV0UXE2bWp5R25OdlkyREtRT0s0UHV3WjZKYjAwSmdGN0l3d25rVVhJS2dtVGcxNWdlWXgwUdIB6AFBVV95cUxOdHZRdnMzZnRoUTNoZy1qTG5GZUlYSXotaG03Wm9qcWxDeGZ5UllBRjhpQXdNQUlCdnNUc2NvUXlpNy1aMTJ3TUl4ZXRtcGhEcTVTclkzbnlhODVoVE84cklEMVpXZTJLV1RyRmNPZXNCckZldmNNR2xDZFo5RHBZQ3VzcU9xeUFYMlV6OWlzLWkzcVBTb0xTYmx4NF9aRmxOLVVtVG43TTZfRWJsY3pTREFDdDlLTVRTNU1oT1BFaUlTWU9aOWFqNU5BOGFIdkV3cUdfVG9HdGYtd1dfQ2l6RHNjdFkwR0tH?oc=5": {
+   "url": "https://larepublica.pe/sociedad/2026/07/24/enorme-incendio-en-fabrica-de-cosmeticos-en-los-olivos-24-unidades-de-bomberos-atienden-emergencia-1441056",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPNjVnTDM1Ym9hbzBqMkkwN1V6aVlkWnJsZUs4NThwMUtSUjltcHZONUd4S0FMenFfMG9menFXSFNIQ0J4ME1RN09LNDZmMUw4UG1VNUEta25mN0JrQ1ZkbV9NczFzMmlZS2U1SFhMUXMtZlRKOFFOenNMdzVETjV0NXVOUFFoUk4tQzJJWGhhbXF1NWRuRnBwaG9FWmNyNFIzN05aTkdhV0lPaGYxb3poU1hra2x0QWQy?oc=5": {
+   "url": "https://www.peru-retail.com/yobel-paraliza-temporalmente-sus-operaciones-tras-el-incendio-en-su-planta-de-los-olivos/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMixAFBVV95cUxPMjRvLTBTVHNDRXNZU2RNdlhZVmFVVFcyQWs2WGs4TDM2WUlQaThldWUtbGtCbGpWYlFRR3U2X2swS0xDMS1aZWtncnc2UFhyaEdUUDRuTlY2ZHF2SVNMYzd3bzZsbGRyRG9IV0VGOVkwUkYzTnNlZWk4N2c1aHlNQXpqdmpPUnVpUE9qTlVUaExSWmlnQ20tcDVnLXRIY1FVekpyZVhfUVQwSlNQVXNZdzVFSlB2ZlBRRVlrX3dGNjZ6WmhQ?oc=5": {
+   "url": "https://www.investing.com/news/analyst-ratings/bofa-reiterates-citi-stock-buy-rating-amid-acquisition-speculation-93CH-4585901",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPbkJQV1Zjemg4SHVDWGRRZWtReVM1V0w1Y2ZCeDRwT3N4alpqVjZjZnctdkFGOUR6SkNCenpCZ0NDNHlLQmdYeGxMNkRXTjFsQWdIWW9IQ2pHT25ZbVR4SjNzM2sxUTlMWEpCakF3aUpIRE1RbVpoanU3d19Lb2U3RHN4elFiZTBiSHFGdm94dWp2OTJKTHlhaHNuYmxCREtOdl85c1FDeEpPdw?oc=5": {
+   "url": "https://finance.yahoo.com/markets/stocks/articles/lucid-motors-hired-bankruptcy-specialists-180813148.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiugFBVV95cUxPTFZ5ZmdhMWloTWhQRUxoeDRxSjE2dkpuMlRWVXZZVVpnYXM1b3pKXzVkMkM3NzFGMnVWZ25IMkMtLUozdnFpQTVLeEFvT0QydmRPcnlIbmdJSWItY053UnljR2I3U3R6c0J5VVYyMUVWSnhGWjQ1WWVVOHJZcWVKeWYycjMwRHZwcmtGMlpyd2VPcmlHRVNTUUt4ajhiX0ZJdnBUdnIxZEh1dVFHR3A5cWVFZzRHZWZDNXc?oc=5": {
+   "url": "https://247wallst.com/investing/2026/08/03/is-soundhound-ai-in-play-the-acquisition-case-for-this-voice-ai-specialist/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMivwFBVV95cUxPeWduLXd6S1ZlekxBVDRJNWZIT0t2MlZsYkxwWW56dmFCYkc0cXRicG1Xek1zSzZBVFRhNll4TFBCNGRvMENlUEItWmIzaURfR3AtTmMxRWh0ZWthbjJjWHpycUl0UWFFV3hyQ0czMTY0NWstOG9ObEozR0g2Y2UzRDR4TE81ZHkzcU9NOTdQbnY4djNwTFdwUlZQcWZKVGhIdWZETjZza3NWVXFFZHF1bmluOVNHQWh1azBOS0FTbw?oc=5": {
+   "url": "https://www.em.com.br/emfoco/2026/08/03/gigante-das-vendas-pela-tv-pede-protecao-contra-falencia-com-divida-de-66-bilhoes/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMirgFBVV95cUxPajdUMy00bXA1cEpEUWNTam9iQXJBcTYyTGdKT21qd193MnN2YXFtSU9kbll3QjFIT2hJWWpjQ01QSl9kUG5FYWZVNFlKbWJpMXR5LV9ObGRtT2h3QnRxdHBLWFE5VkhVaDdDUzVRTVFhbTBHNHJaWE1tQzNHXzFfOWJsQjdMUkhtUFBoTHJjeE15QWlDZk9nMDBiUTFOREVnTHhEaE9JRFVkT0JBTGc?oc=5": {
+   "url": "https://www.migalhas.com.br/depeso/459362/recuperacao-judicial-por-que-a-protege-a-empresa-e-nao-o-patrimonio",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMimgFBVV95cUxORkV4amhjLXQxRnBlUHFSbWtIbEtESzBrY1BMc1JKamhod2dFNUhkV0JvVmN5M3JKQjlJSUNicXhldzB1NEpjRXpTRWh5a3haLUp0X0NsSndYYkMzTThSdG1pUmFYQ0NSWmZGZHFrUzFlU29jamZXa0UtdE5TWE9TNDFXdk16cnAwaDNMTlZMazFMLVdqcHhUR3ZR?oc=5": {
+   "url": "https://veja.abril.com.br/coluna/radar-economico/toky-ja-tem-votos-para-derrubar-trava-de-opa/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNd21qMndMNjRwVDRIa1ZxNmVFZXR3OWJnRzdqWjN0QmRnN1lwX0lNcTJ6aWoyMUxDNWtkQ05tMXRoMmNrUExYU2ZIeEZYRGhuZDhCWE9UejRrWWpQbXB6QVM0cE5yaVdWZ1U4c3ZxWGVZV2tPUTVoTDJpRmV0RmRJRFRzRllfSTZfVVFkTUp6SmR0UUhnMWZyMGNaZTlyS3VtM2x0N0o1cmI?oc=5": {
+   "url": "https://24-horas.mx/cdmx/fiscalia-cdmx-abre-investigacion-por-muerte-de-aficionado-en-el-estadio-banorte/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMikgFBVV95cUxOZGE2eVI4b1FXbVlicHVFczFZS2w2d2U1dEJjSWpPNEUydGFDdGJyMHZfWjA2RG5VcTh5NENHYnl3R0xzUFBkb3lTRGF3Z21uNlNQcmJUQzRuaDl0MnF5UWVFNURIZXpueXYzNlhGZG12aktRZ1I4dmtiUmtvUF8yNk9na1VuN3NCSlRiMzVFZDN0QQ?oc=5": {
+   "url": "https://techcrunch.com/2026/07/14/lucid-motors-denies-report-its-considering-bankruptcy/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMzlqV0c3Y2haa3lHM2EyMHl2WDRTTHBqZk81QWVkbldOSGZfS2VwUWYxUUZaaUxPbzY4NlluS2t0RTRxbUlucy0zSHI3aGJrMmtzUVl6TTVNcGVDY0hjMnVhYlp6dWY5OFBVMnFYLVFzWDVXR0ktcUVwaVhvbEFHSTZCYzI0Qml5RVQ4SUpmRDBsaWlaX1N4Si1maGhMUTdKanBpajFYY1BXOEVjRUlUbzRB?oc=5": {
+   "url": "https://gestion.pe/peru/los-olivos-incendio-de-grandes-proporciones-consume-fabrica-de-cosmeticos-yobel-noticia/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAtVVA0aWVpOFNzNGVMb0dRZkRRVGx6aHh2amdlMEc4OU5xdGhGNlVOUUxLRmxITUJoV0kzbnhVYmhPenpDdllCNXJDMERCQ0RNSGRRMzdLUGJVY0dYYlh3b3JjVy1WNFU?oc=5": {
+   "url": "https://soltvperu.com/incendio-fabrica-yobel-los-olivos/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785780050,
-  "iso": "03 ago 2026 · 15:00 BRT",
+  "ts": 1785789606,
+  "iso": "03 ago 2026 · 17:40 BRT",
   "status": {
    "B3": {
     "status": "critico",
@@ -44432,6 +45011,10 @@
    },
    "JBS": {
     "status": "atencao",
+    "score": 34
+   },
+   "Yobel": {
+    "status": "monitorar",
     "score": 34
    },
    "Energisa": {
