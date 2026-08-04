@@ -1,56 +1,5 @@
 {
  "articles": {
-  "https://www.clarin.com/economia/segundo-fallo-jueza-loretta-preska-habilito-fondo-buitre-cobrarse-acciones-ypf-reclamo-deuda-default_0_elto2F58gn.html": {
-   "title": "En un segundo fallo, la jueza Loretta Preska también habilitó a un fondo buitre a cobrarse con acciones de YPF por un reclamo de la deuda en default",
-   "url": "https://www.clarin.com/economia/segundo-fallo-jueza-loretta-preska-habilito-fondo-buitre-cobrarse-acciones-ypf-reclamo-deuda-default_0_elto2F58gn.html",
-   "summary": "En un segundo fallo, la jueza Loretta Preska también habilitó a un fondo buitre a cobrarse con acciones de YPF por un reclamo de la deuda en default &nbsp;&nbsp; Clarin.com",
-   "source": "Clarin.com",
-   "domain": "clarin.com",
-   "pub_ts": 1751266800,
-   "pub_iso": "2025-06-30 04:00",
-   "language": "es",
-   "companies": [
-    "YPF"
-   ],
-   "event_ids": [
-    "default"
-   ],
-   "events_by_company": {
-    "YPF": [
-     "default"
-    ]
-   },
-   "mention_roles": {
-    "YPF": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "companies_attributed": [
-    "YPF"
-   ],
-   "context_companies": [],
-   "captured_ts": 1785345276,
-   "cap_iso": "2026-07-29 14:14",
-   "original_url": "https://www.clarin.com/economia/segundo-fallo-jueza-loretta-preska-habilito-fondo-buitre-cobrarse-acciones-ypf-reclamo-deuda-default_0_elto2F58gn.html",
-   "redirect_url": "",
-   "resolved_url": "https://www.clarin.com/economia/segundo-fallo-jueza-loretta-preska-habilito-fondo-buitre-cobrarse-acciones-ypf-reclamo-deuda-default_0_elto2F58gn.html",
-   "canonical_url": "https://www.clarin.com/economia/segundo-fallo-jueza-loretta-preska-habilito-fondo-buitre-cobrarse-acciones-ypf-reclamo-deuda-default_0_elto2F58gn.html",
-   "display_url": "https://www.clarin.com/economia/segundo-fallo-jueza-loretta-preska-habilito-fondo-buitre-cobrarse-acciones-ypf-reclamo-deuda-default_0_elto2F58gn.html",
-   "redirect_chain": "",
-   "original_host": "www.clarin.com",
-   "final_host": "www.clarin.com",
-   "http_status": "",
-   "link_health": "url_direta_valida",
-   "resolution_method": "direto",
-   "resolution_error": "",
-   "link_render_anchor": true,
-   "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.618665+00:00"
-  },
   "https://investnews.com.br/negocios/dasa-amanhece-com-novo-ceo-rafael-lucchesi-assume-apos-renuncia-de-licio-cintra/": {
    "title": "Dasa amanhece com novo CEO: Rafael Lucchesi assume após renúncia de Lício Cintra",
    "url": "https://investnews.com.br/negocios/dasa-amanhece-com-novo-ceo-rafael-lucchesi-assume-apos-renuncia-de-licio-cintra/",
@@ -1069,7 +1018,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:43:30.569360+00:00"
+     "last_checked_at": "2026-08-04T12:19:41.135862+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2603,7 +2552,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:43:30.969642+00:00"
+     "last_checked_at": "2026-08-04T12:19:41.536063+00:00"
     }
    ],
    "corrob_sources": [
@@ -6969,7 +6918,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.624677+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.624677+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.suno.com.br/noticias/fitch-rebaixa-rating-hapvida-hapv3-2026-mt/": {
    "title": "Hapvida (HAPV3): Fitch corta rating e liga o alerta para 2026",
@@ -9208,7 +9159,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:43:31.369945+00:00"
+     "last_checked_at": "2026-08-04T12:19:41.936229+00:00"
     },
     {
      "source": "Demarest",
@@ -9228,7 +9179,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:43:31.770247+00:00"
+     "last_checked_at": "2026-08-04T12:19:42.336472+00:00"
     }
    ],
    "corrob_sources": [
@@ -10612,7 +10563,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:43:32.170514+00:00"
+     "last_checked_at": "2026-08-04T12:19:42.736638+00:00"
     }
    ],
    "corrob_sources": [
@@ -13758,7 +13709,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:43:32.712794+00:00"
+     "last_checked_at": "2026-08-04T12:19:43.291148+00:00"
     }
    ],
    "corrob_sources": [
@@ -15900,7 +15851,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:43:33.241547+00:00"
+     "last_checked_at": "2026-08-04T12:19:43.868019+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16006,7 +15957,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:43:33.754006+00:00"
+     "last_checked_at": "2026-08-04T12:19:44.422187+00:00"
     },
     {
      "source": "Moomoo",
@@ -17275,7 +17226,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:43:34.371419+00:00"
+     "last_checked_at": "2026-08-04T12:19:45.083462+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17318,7 +17269,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:43:34.971939+00:00"
+     "last_checked_at": "2026-08-04T12:19:45.791866+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19046,7 +18997,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-04T00:43:35.372238+00:00",
+     "last_checked_at": "2026-08-04T12:19:46.192087+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19111,7 +19062,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-04T00:43:35.772527+00:00",
+     "last_checked_at": "2026-08-04T12:19:46.592287+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20044,7 +19995,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:43:36.294181+00:00"
+     "last_checked_at": "2026-08-04T12:19:47.160195+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20129,7 +20080,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:43:36.813291+00:00"
+     "last_checked_at": "2026-08-04T12:19:47.737991+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24430,7 +24381,8 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.644263+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.644263+00:00",
+   "corrob_sources": []
   },
   "https://www.wsj.com/business/c-suite/truist-financial-names-fiservs-michael-lyons-president-ceo-7fafa1f0": {
    "title": "Truist Names New CEO as Regional Bank Pushes to Boost Performance",
@@ -29426,6 +29378,27 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T05:45:44.767760+00:00"
+    },
+    {
+     "source": "Money Times",
+     "domain": "moneytimes.com.br",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQQmZDM2NzbEpxRTg4STM2V214QUpmSWhDNVF0dUNPMWVjbjdVeDVIYXhUWUgzXy1NeHFYN1BtdHlqR2YxeHhhRnhUTGxWLTVsLXdDNlhsUU1hX2N3OXUtX3ktSE5tc2ZUZmExcTEtZkROenhaVUltQURSUnQ0akw2NnIxNWxnRTZJU1hBLUpwaEc5bURqU2Zwek5yVjJjSmdyWThvcUIycUF2MWpCZEE?oc=5",
+     "when": "09/07 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQQmZDM2NzbEpxRTg4STM2V214QUpmSWhDNVF0dUNPMWVjbjdVeDVIYXhUWUgzXy1NeHFYN1BtdHlqR2YxeHhhRnhUTGxWLTVsLXdDNlhsUU1hX2N3OXUtX3ktSE5tc2ZUZmExcTEtZkROenhaVUltQURSUnQ0akw2NnIxNWxnRTZJU1hBLUpwaEc5bURqU2Zwek5yVjJjSmdyWThvcUIycUF2MWpCZEE?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQQmZDM2NzbEpxRTg4STM2V214QUpmSWhDNVF0dUNPMWVjbjdVeDVIYXhUWUgzXy1NeHFYN1BtdHlqR2YxeHhhRnhUTGxWLTVsLXdDNlhsUU1hX2N3OXUtX3ktSE5tc2ZUZmExcTEtZkROenhaVUltQURSUnQ0akw2NnIxNWxnRTZJU1hBLUpwaEc5bURqU2Zwek5yVjJjSmdyWThvcUIycUF2MWpCZEE?oc=5",
+     "resolved_url": "https://www.moneytimes.com.br/petrobras-petr4-conclui-aquisicao-de-bloco-exploratorio-em-sao-tome-e-principe/",
+     "canonical_url": "https://www.moneytimes.com.br/petrobras-petr4-conclui-aquisicao-de-bloco-exploratorio-em-sao-tome-e-principe/",
+     "display_url": "https://www.moneytimes.com.br/petrobras-petr4-conclui-aquisicao-de-bloco-exploratorio-em-sao-tome-e-principe/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.moneytimes.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-04T12:19:48.138235+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "captured_ts": 1785345276,
@@ -34940,7 +34913,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:43:37.397862+00:00"
+     "last_checked_at": "2026-08-04T12:19:48.803550+00:00"
     }
    ],
    "corrob_sources": [
@@ -37741,7 +37714,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:43:37.929533+00:00"
+     "last_checked_at": "2026-08-04T12:19:49.362718+00:00"
     },
     {
      "source": "Virginia Business",
@@ -37784,7 +37757,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:43:38.445029+00:00"
+     "last_checked_at": "2026-08-04T12:19:49.919926+00:00"
     },
     {
      "source": "Virginia Business",
@@ -41943,9 +41916,202 @@
    ],
    "captured_ts": 1785804206,
    "cap_iso": "2026-08-03 21:43"
+  },
+  "https://www.latercera.com/pulso/noticia/codelco-zublin-salfacorp-y-constructora-gardilcic-fueron-multadas-por-accidente-fatal-en-el-teniente/": {
+   "title": "Codelco, Zublin, Salfacorp e Constructora Gardilcic foram multadas por acidente fatal em El Teniente",
+   "url": "https://www.latercera.com/pulso/noticia/codelco-zublin-salfacorp-y-constructora-gardilcic-fueron-multadas-por-accidente-fatal-en-el-teniente/",
+   "summary": "Codelco, Zublin, Salfacorp e Constructora Gardilcic foram multadas por acidente fatal em El Teniente &nbsp;&nbsp; La Tercera",
+   "source": "La Tercera",
+   "domain": "latercera.com",
+   "pub_ts": 1776063600,
+   "pub_iso": "2026-04-13 04:00",
+   "language": "es",
+   "title_original": "Codelco, Zublin, Salfacorp y Constructora Gardilcic fueron multadas por accidente fatal en El Teniente",
+   "summary_original": "Codelco, Zublin, Salfacorp y Constructora Gardilcic fueron multadas por accidente fatal en El Teniente &nbsp;&nbsp; La Tercera",
+   "companies": [
+    "Salfacorp"
+   ],
+   "event_ids": [
+    "incidente_operacional_grave"
+   ],
+   "mention_roles": {
+    "Salfacorp": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Salfacorp": [
+     "incidente_operacional_grave"
+    ]
+   },
+   "companies_attributed": [
+    "Salfacorp"
+   ],
+   "context_companies": [],
+   "corroborations": [
+    {
+     "source": "Reporte Minero",
+     "domain": "reporteminero.cl",
+     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQektlVkxfckd1bGJMeXRoRW9UWnhIMUgzbFV4Tk9jYld4UE0zR0oyM0NtS3ZKQUZ1ekVyOUExdHhHZi1SdnBEREl1UEFqeEJtMVQzeXlyck1aWnZlVVl3OXNDRV9BX2FJWHVweGFqQ2dYTlVsTGt2d2FETDFoUEI1NDBESWFFVHV1bEFKVW9UYUF3LTFUNGh3TTJUYkQ4ekQyd1ZyZ2pwNTdpaTNHZm0zT1Vkb1pSZw?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQektlVkxfckd1bGJMeXRoRW9UWnhIMUgzbFV4Tk9jYld4UE0zR0oyM0NtS3ZKQUZ1ekVyOUExdHhHZi1SdnBEREl1UEFqeEJtMVQzeXlyck1aWnZlVVl3OXNDRV9BX2FJWHVweGFqQ2dYTlVsTGt2d2FETDFoUEI1NDBESWFFVHV1bEFKVW9UYUF3LTFUNGh3TTJUYkQ4ekQyd1ZyZ2pwNTdpaTNHZm0zT1Vkb1pSZw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQektlVkxfckd1bGJMeXRoRW9UWnhIMUgzbFV4Tk9jYld4UE0zR0oyM0NtS3ZKQUZ1ekVyOUExdHhHZi1SdnBEREl1UEFqeEJtMVQzeXlyck1aWnZlVVl3OXNDRV9BX2FJWHVweGFqQ2dYTlVsTGt2d2FETDFoUEI1NDBESWFFVHV1bEFKVW9UYUF3LTFUNGh3TTJUYkQ4ekQyd1ZyZ2pwNTdpaTNHZm0zT1Vkb1pSZw?oc=5",
+     "resolved_url": "https://www.reporteminero.cl/noticia/noticias/2026/04/multa-codelco-zublin-salfacorp-gardilcic-derrumbe-el-teniente",
+     "canonical_url": "https://www.reporteminero.cl/noticia/noticias/2026/04/multa-codelco-zublin-salfacorp-gardilcic-derrumbe-el-teniente",
+     "display_url": "https://www.reporteminero.cl/noticia/noticias/2026/04/multa-codelco-zublin-salfacorp-gardilcic-derrumbe-el-teniente",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.reporteminero.cl",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-04T12:19:50.484005+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Reporte Minero",
+     "domain": "reporteminero.cl",
+     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQektlVkxfckd1bGJMeXRoRW9UWnhIMUgzbFV4Tk9jYld4UE0zR0oyM0NtS3ZKQUZ1ekVyOUExdHhHZi1SdnBEREl1UEFqeEJtMVQzeXlyck1aWnZlVVl3OXNDRV9BX2FJWHVweGFqQ2dYTlVsTGt2d2FETDFoUEI1NDBESWFFVHV1bEFKVW9UYUF3LTFUNGh3TTJUYkQ4ekQyd1ZyZ2pwNTdpaTNHZm0zT1Vkb1pSZw?oc=5",
+     "when": "13/04 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQektlVkxfckd1bGJMeXRoRW9UWnhIMUgzbFV4Tk9jYld4UE0zR0oyM0NtS3ZKQUZ1ekVyOUExdHhHZi1SdnBEREl1UEFqeEJtMVQzeXlyck1aWnZlVVl3OXNDRV9BX2FJWHVweGFqQ2dYTlVsTGt2d2FETDFoUEI1NDBESWFFVHV1bEFKVW9UYUF3LTFUNGh3TTJUYkQ4ekQyd1ZyZ2pwNTdpaTNHZm0zT1Vkb1pSZw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQektlVkxfckd1bGJMeXRoRW9UWnhIMUgzbFV4Tk9jYld4UE0zR0oyM0NtS3ZKQUZ1ekVyOUExdHhHZi1SdnBEREl1UEFqeEJtMVQzeXlyck1aWnZlVVl3OXNDRV9BX2FJWHVweGFqQ2dYTlVsTGt2d2FETDFoUEI1NDBESWFFVHV1bEFKVW9UYUF3LTFUNGh3TTJUYkQ4ekQyd1ZyZ2pwNTdpaTNHZm0zT1Vkb1pSZw?oc=5",
+     "resolved_url": "https://www.reporteminero.cl/noticia/noticias/2026/04/multa-codelco-zublin-salfacorp-gardilcic-derrumbe-el-teniente",
+     "canonical_url": "https://www.reporteminero.cl/noticia/noticias/2026/04/multa-codelco-zublin-salfacorp-gardilcic-derrumbe-el-teniente",
+     "display_url": "https://www.reporteminero.cl/noticia/noticias/2026/04/multa-codelco-zublin-salfacorp-gardilcic-derrumbe-el-teniente",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.reporteminero.cl",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-04T12:19:50.884159+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1785845977,
+   "cap_iso": "2026-08-04 09:19"
+  },
+  "https://www.clubefii.com.br/noticias/acoes/transmissora-alianca-energia-eletrica-anuncia-aquisicao-ativos-energisa": {
+   "title": "Transmissora Aliança de Energia Elétrica anuncia aquisição de ativos da Energisa",
+   "url": "https://www.clubefii.com.br/noticias/acoes/transmissora-alianca-energia-eletrica-anuncia-aquisicao-ativos-energisa",
+   "summary": "Transmissora Aliança de Energia Elétrica anuncia aquisição de ativos da Energisa &nbsp;&nbsp; Clube FII",
+   "source": "Clube FII",
+   "domain": "clubefii.com.br",
+   "pub_ts": 1779346800,
+   "pub_iso": "2026-05-21 04:00",
+   "language": "pt",
+   "companies": [
+    "Energisa"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "mention_roles": {
+    "Energisa": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "anuncio",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Energisa": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "Energisa"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785845977,
+   "cap_iso": "2026-08-04 09:19"
+  },
+  "https://news.google.com/rss/articles/CBMijwFBVV95cUxPc0ZzampMWlZDRlNNMFhaS1dUUjNqdjBKOUQtSFRkakhMbFYycmVxU0N2NnZoZGppa2ZxTUF0bFltNTRjWDRvRGhodEk3TEF4dENOR0NYRzNabUtkSGhuSWpqbXJmNkY0Rkg1eS1tZ1J2ZzFxdmFHZDNnT0RKdU04eG9KcjlrektFYVR0RXc5cw?oc=5": {
+   "title": "JPMorgan poderia gastar até US$ 20 bilhões em aquisição, diz Jamie Dimon",
+   "url": "https://www.privatebankerinternational.com/news/jpmorgan-could-spend-20bn-acquisition/",
+   "summary": "JPMorgan poderia gastar até US$ 20 bilhões em aquisição, diz Jamie Dimon &nbsp;&nbsp; Private Banker International",
+   "source": "Private Banker International",
+   "domain": "privatebankerinternational.com",
+   "pub_ts": 1780038000,
+   "pub_iso": "2026-05-29 04:00",
+   "language": "en",
+   "title_original": "JPMorgan could spend up to $20bn on acquisition, says Jamie Dimon",
+   "summary_original": "JPMorgan could spend up to $20bn on acquisition, says Jamie Dimon &nbsp;&nbsp; Private Banker International",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1785845977,
+   "cap_iso": "2026-08-04 09:19"
+  },
+  "https://valor.globo.com/financas/noticia/2026/07/31/acoes-do-santander-brasil-tem-maior-alta-em-seis-anos-com-oferta-publica-de-aquisicao.ghtml": {
+   "title": "Ações do Santander Brasil têm maior alta em seis anos com oferta pública de aquisição",
+   "url": "https://valor.globo.com/financas/noticia/2026/07/31/acoes-do-santander-brasil-tem-maior-alta-em-seis-anos-com-oferta-publica-de-aquisicao.ghtml",
+   "summary": "Ações do Santander Brasil têm maior alta em seis anos com oferta pública de aquisição &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1785521096,
+   "pub_iso": "2026-07-31 15:04",
+   "language": "pt",
+   "companies": [
+    "Santander Brasil"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "mention_roles": {
+    "Santander Brasil": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Santander Brasil": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "Santander Brasil"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785845977,
+   "cap_iso": "2026-08-04 09:19"
+  },
+  "https://news.google.com/rss/articles/CBMihgFBVV95cUxNSFNsLXNMZWtEVGdPVWxGZFltVW9wbkV6aTRTcXh1Mm1VLTNGRjJ6eWhiNDRkSHVvSzBkbEE3T2tBVFkzdlFsMDZueThFRnduVnhxVFUtTUtnSDZHbDNYb3Izd3VqTmRQM2R3b003SC03dEhOR1puWjU0SnlCTm5XX1FvaU1qUQ?oc=5": {
+   "title": "Hughes pede recuperação judicial nos Estados Unidos",
+   "url": "https://telesintese.com.br/hughes-pede-recuperacao-judicial-nos-estados-unidos/",
+   "summary": "Hughes pede recuperação judicial nos Estados Unidos &nbsp;&nbsp; TeleSíntese",
+   "source": "TeleSíntese",
+   "domain": "telesintese.com.br",
+   "pub_ts": 1785797713,
+   "pub_iso": "2026-08-03 19:55",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1785845977,
+   "cap_iso": "2026-08-04 09:19"
   }
  },
- "run_count": 68,
+ "run_count": 69,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -46618,35 +46784,51 @@
   "https://news.google.com/rss/articles/CBMirAFBVV95cUxNSGpBQnN3ejR2RFBXanhQQllWXzJDXzZSci1rRDRuTzNkQzBuaVRsM2gwYi1FS2JBQk56SDdYZ1VJMnY2eGUwbVRwU0FkNTl3N3lYdGQtazVKZ09IYkUwZnVocTVKeGtLZHV0UkVYdzJ3Q2xOVUhyOHN1UXJlaENjRGw2bTdWOHlENE5MTVh4S2NJa0Z2ZDdFU0ZUa1dabGNpcTlLRXNCeTN6RXhL?oc=5": {
    "url": "https://www.theagribiz.com/empresas/frigorificos/com-r-35-bi-em-dividas-bmg-foods-pede-recuperacao-judicial/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPck5kSXZVZ05aWlUxbzlOR2tUa05qUnhtRHZUNkItQ0JOOS1OZFdEcGlCMDZQNmg2MGFQZFg5MjJMMUZTRUJuWDZ6dngwTU1WMFhfTTY3VEkwRWJNYlExZWp2dzRUV2xKTGJqMy1Wb28ycG9IekNnZzJhTDhwcUdNSVF5c0xtV1c5b0lkY0xFaXp5YzBFOGpIMTNXeXNUTndONm1MVzA4RmpRU1JVQ1VnMHM3Y3dfbHdNb2NLNzRBS29TNUNnYXhOaDVtSUxRdmNWdHNlMjB4UUfSAfoBQVVfeXFMTmZnMHRpdkJWbHpKRmtKZFRTbjE1TWpwVl9YY0FRaVZEcG9QTmlZei1WYVB0NFowQWFpazBYUFdkb2swS3hhZ0h5SExXeDBVTUd2bl9yYm5HTDV4N093UEZyd29ZSzRRdy1YdWZPV29xd3I5cENTd3RxU0JPRGx0RUlFdDZKV2hqaDZJRmgwU0MxU18tVFJlVEhIUDlKaVp0bU95TkJ4Wk1KdXVVSjhCQ3NBOVhvWnpGZ1FUYTVCYWhWcE5fWEpyMGY1WldRT2ZyYUxFOVFWTjVaV0dHcG1PRFVTRVA0Y0tDamFDZUJ1VWFmQkZwaEQ4cUNidw?oc=5": {
+   "url": "https://www.latercera.com/pulso/noticia/codelco-zublin-salfacorp-y-constructora-gardilcic-fueron-multadas-por-accidente-fatal-en-el-teniente/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMihgFBVV95cUxNSFNsLXNMZWtEVGdPVWxGZFltVW9wbkV6aTRTcXh1Mm1VLTNGRjJ6eWhiNDRkSHVvSzBkbEE3T2tBVFkzdlFsMDZueThFRnduVnhxVFUtTUtnSDZHbDNYb3Izd3VqTmRQM2R3b003SC03dEhOR1puWjU0SnlCTm5XX1FvaU1qUQ?oc=5": {
+   "url": "https://telesintese.com.br/hughes-pede-recuperacao-judicial-nos-estados-unidos/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMitgFBVV95cUxQektlVkxfckd1bGJMeXRoRW9UWnhIMUgzbFV4Tk9jYld4UE0zR0oyM0NtS3ZKQUZ1ekVyOUExdHhHZi1SdnBEREl1UEFqeEJtMVQzeXlyck1aWnZlVVl3OXNDRV9BX2FJWHVweGFqQ2dYTlVsTGt2d2FETDFoUEI1NDBESWFFVHV1bEFKVW9UYUF3LTFUNGh3TTJUYkQ4ekQyd1ZyZ2pwNTdpaTNHZm0zT1Vkb1pSZw?oc=5": {
+   "url": "https://www.reporteminero.cl/noticia/noticias/2026/04/multa-codelco-zublin-salfacorp-gardilcic-derrumbe-el-teniente",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785804219,
-  "iso": "03 ago 2026 · 21:43 BRT",
+  "ts": 1785845991,
+  "iso": "04 ago 2026 · 09:19 BRT",
   "status": {
    "Rumo": {
     "status": "atencao",
-    "score": 75
+    "score": 74
    },
    "Engie Brasil": {
     "status": "atencao",
-    "score": 72
+    "score": 71
    },
    "Vale": {
     "status": "atencao",
     "score": 66
    },
-   "CVS Health": {
-    "status": "critico",
-    "score": 62
-   },
    "Tok&Stok": {
     "status": "critico",
     "score": 61
    },
+   "CVS Health": {
+    "status": "critico",
+    "score": 61
+   },
+   "Santander Brasil": {
+    "status": "atencao",
+    "score": 56
+   },
    "Grupo Financiero Banorte": {
     "status": "critico",
-    "score": 53
+    "score": 52
    },
    "Cosan": {
     "status": "atencao",
@@ -46658,47 +46840,47 @@
    },
    "BTG Pactual": {
     "status": "atencao",
-    "score": 44
+    "score": 43
    },
    "Axia Energia": {
     "status": "atencao",
-    "score": 42
+    "score": 41
    },
-   "Sabesp": {
+   "Energisa": {
     "status": "atencao",
     "score": 39
    },
-   "Petrobras": {
+   "Sabesp": {
     "status": "atencao",
-    "score": 34
+    "score": 38
    },
    "JBS": {
     "status": "atencao",
     "score": 34
    },
+   "Petrobras": {
+    "status": "atencao",
+    "score": 33
+   },
    "Yobel": {
     "status": "monitorar",
-    "score": 34
-   },
-   "Energisa": {
-    "status": "atencao",
     "score": 33
    },
    "Baker Hughes": {
     "status": "monitorar",
-    "score": 29
+    "score": 28
    },
    "TIM Brasil": {
     "status": "monitorar",
-    "score": 28
+    "score": 27
    },
    "PRIO": {
     "status": "monitorar",
-    "score": 27
+    "score": 26
    },
    "Embraer": {
     "status": "atencao",
-    "score": 27
+    "score": 26
    },
    "Suzano": {
     "status": "monitorar",
@@ -46706,15 +46888,11 @@
    },
    "Capital One Financial": {
     "status": "monitorar",
-    "score": 25
+    "score": 24
    },
    "ISA Energia Brasil": {
     "status": "monitorar",
     "score": 23
-   },
-   "Santander Brasil": {
-    "status": "atencao",
-    "score": 21
    },
    "Itaúsa": {
     "status": "monitorar",
@@ -46732,16 +46910,16 @@
     "status": "monitorar",
     "score": 20
    },
-   "Natura &Co": {
-    "status": "monitorar",
-    "score": 19
-   },
    "EQT Corporation": {
     "status": "monitorar",
     "score": 19
    },
    "Ultrapar": {
     "status": "atencao",
+    "score": 18
+   },
+   "Natura &Co": {
+    "status": "monitorar",
     "score": 18
    },
    "Albioma": {
@@ -46792,13 +46970,13 @@
     "status": "monitorar",
     "score": 8
    },
-   "BRF": {
-    "status": "monitorar",
-    "score": 8
-   },
    "Vibra Energia": {
     "status": "monitorar",
     "score": 8
+   },
+   "BRF": {
+    "status": "monitorar",
+    "score": 7
    },
    "Localiza": {
     "status": "monitorar",
