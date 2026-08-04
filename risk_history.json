@@ -1069,7 +1069,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:27:02.982592+00:00"
+     "last_checked_at": "2026-08-04T00:43:30.569360+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2603,7 +2603,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:27:03.394491+00:00"
+     "last_checked_at": "2026-08-04T00:43:30.969642+00:00"
     }
    ],
    "corrob_sources": [
@@ -9208,7 +9208,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:27:03.808382+00:00"
+     "last_checked_at": "2026-08-04T00:43:31.369945+00:00"
     },
     {
      "source": "Demarest",
@@ -9228,7 +9228,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:27:04.209970+00:00"
+     "last_checked_at": "2026-08-04T00:43:31.770247+00:00"
     }
    ],
    "corrob_sources": [
@@ -10612,7 +10612,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:27:04.610024+00:00"
+     "last_checked_at": "2026-08-04T00:43:32.170514+00:00"
     }
    ],
    "corrob_sources": [
@@ -13758,7 +13758,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:27:05.424634+00:00"
+     "last_checked_at": "2026-08-04T00:43:32.712794+00:00"
     }
    ],
    "corrob_sources": [
@@ -15900,7 +15900,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:27:06.199898+00:00"
+     "last_checked_at": "2026-08-04T00:43:33.241547+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16006,7 +16006,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:27:07.017812+00:00"
+     "last_checked_at": "2026-08-04T00:43:33.754006+00:00"
     },
     {
      "source": "Moomoo",
@@ -17275,7 +17275,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:27:08.047655+00:00"
+     "last_checked_at": "2026-08-04T00:43:34.371419+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17318,7 +17318,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:27:09.115175+00:00"
+     "last_checked_at": "2026-08-04T00:43:34.971939+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19046,7 +19046,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-04T00:27:09.527547+00:00",
+     "last_checked_at": "2026-08-04T00:43:35.372238+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19111,7 +19111,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-04T00:27:09.931005+00:00",
+     "last_checked_at": "2026-08-04T00:43:35.772527+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20044,7 +20044,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:27:10.840216+00:00"
+     "last_checked_at": "2026-08-04T00:43:36.294181+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20129,7 +20129,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:27:11.611222+00:00"
+     "last_checked_at": "2026-08-04T00:43:36.813291+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -34940,7 +34940,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:27:12.658394+00:00"
+     "last_checked_at": "2026-08-04T00:43:37.397862+00:00"
     }
    ],
    "corrob_sources": [
@@ -37741,7 +37741,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:27:13.477531+00:00"
+     "last_checked_at": "2026-08-04T00:43:37.929533+00:00"
     },
     {
      "source": "Virginia Business",
@@ -37784,7 +37784,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T00:27:14.246469+00:00"
+     "last_checked_at": "2026-08-04T00:43:38.445029+00:00"
     },
     {
      "source": "Virginia Business",
@@ -40003,42 +40003,6 @@
    "captured_ts": 1785789585,
    "cap_iso": "2026-08-03 17:39"
   },
-  "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml": {
-   "title": "CVM abre processo para apurar renúncia de presidente do conselho da Vale",
-   "url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
-   "summary": "CVM abre processo para apurar renúncia de presidente do conselho da Vale &nbsp;&nbsp; Folha de S.Paulo",
-   "source": "Folha de S.Paulo",
-   "domain": "www1.folha.uol.com.br",
-   "pub_ts": 1783494000,
-   "pub_iso": "2026-07-08 04:00",
-   "language": "pt",
-   "companies": [
-    "Vale"
-   ],
-   "event_ids": [
-    "investigacao_regulatoria"
-   ],
-   "mention_roles": {
-    "Vale": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "events_by_company": {
-    "Vale": [
-     "investigacao_regulatoria"
-    ]
-   },
-   "companies_attributed": [
-    "Vale"
-   ],
-   "context_companies": [],
-   "captured_ts": 1785789585,
-   "cap_iso": "2026-08-03 17:39"
-  },
   "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPbkJQV1Zjemg4SHVDWGRRZWtReVM1V0w1Y2ZCeDRwT3N4alpqVjZjZnctdkFGOUR6SkNCenpCZ0NDNHlLQmdYeGxMNkRXTjFsQWdIWW9IQ2pHT25ZbVR4SjNzM2sxUTlMWEpCakF3aUpIRE1RbVpoanU3d19Lb2U3RHN4elFiZTBiSHFGdm94dWp2OTJKTHlhaHNuYmxCREtOdl85c1FDeEpPdw?oc=5": {
    "title": "Lucid Motors Hired Bankruptcy Specialists, Then Watched Its Stock Collapse 50%",
    "url": "https://finance.yahoo.com/markets/stocks/articles/lucid-motors-hired-bankruptcy-specialists-180813148.html",
@@ -41895,9 +41859,93 @@
    ],
    "captured_ts": 1785803192,
    "cap_iso": "2026-08-03 21:26"
+  },
+  "https://www.tiempo.com.mx/economia/detuvo-grupo-mexico-sus-plataformas-petroleras-impago-pemex-noviembre-2025/": {
+   "title": "Detuvo Grupo México sus plataformas petroleras por impago de Pemex",
+   "url": "https://www.tiempo.com.mx/economia/detuvo-grupo-mexico-sus-plataformas-petroleras-impago-pemex-noviembre-2025/",
+   "summary": "Detuvo Grupo México sus plataformas petroleras por impago de Pemex &nbsp;&nbsp; Tiempo La Noticia Digital",
+   "source": "Tiempo La Noticia Digital",
+   "domain": "tiempo.com.mx",
+   "pub_ts": 1762502400,
+   "pub_iso": "2025-11-07 05:00",
+   "language": "es",
+   "companies": [
+    "Grupo México",
+    "Pemex (Petróleos Mexicanos)"
+   ],
+   "event_ids": [
+    "default"
+   ],
+   "mention_roles": {
+    "Grupo México": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    },
+    "Pemex (Petróleos Mexicanos)": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Grupo México": [
+     "default"
+    ],
+    "Pemex (Petróleos Mexicanos)": [
+     "default"
+    ]
+   },
+   "companies_attributed": [
+    "Grupo México",
+    "Pemex (Petróleos Mexicanos)"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785804206,
+   "cap_iso": "2026-08-03 21:43"
+  },
+  "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOVTZUTUptNms2bzVrbEg4UG5kVGEtUVUxamp2UFhaVDYyMUVaZnRMNVhxRVpvVFd4UnRuR2dKV01pc0gwZTktYTBYb1pmTXEyTk9BMmFfN19kLWtYYzlhbGpVXzRVRHZkajJNNHlVa2l3Q1BFSm43TDVFc0sxNkZYcGo3QzQwWXNyaHhsQ1BwOF91enNhWmlCSFB4VG9IRmk4MzJteUpJUHNMRGJ3QTY2VDdpY1dmeXdLU1hGTFZKN1gzWUJGc1RtSGptbGNneEp2MWlod3JRSEM?oc=5": {
+   "title": "Spirit Airlines Was Set To Exit Bankruptcy This Summer. Now High Fuel Prices Could Force It To Liquidate.",
+   "url": "https://www.investopedia.com/spirit-airlines-was-set-to-exit-bankruptcy-this-summer-now-high-fuel-prices-could-force-it-to-liquidate-11951136",
+   "summary": "Spirit Airlines Was Set To Exit Bankruptcy This Summer. Now High Fuel Prices Could Force It To Liquidate. &nbsp;&nbsp; Investopedia",
+   "source": "Investopedia",
+   "domain": "investopedia.com",
+   "pub_ts": 1776322800,
+   "pub_iso": "2026-04-16 04:00",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785804206,
+   "cap_iso": "2026-08-03 21:43"
+  },
+  "https://news.google.com/rss/articles/CBMirAFBVV95cUxNSGpBQnN3ejR2RFBXanhQQllWXzJDXzZSci1rRDRuTzNkQzBuaVRsM2gwYi1FS2JBQk56SDdYZ1VJMnY2eGUwbVRwU0FkNTl3N3lYdGQtazVKZ09IYkUwZnVocTVKeGtLZHV0UkVYdzJ3Q2xOVUhyOHN1UXJlaENjRGw2bTdWOHlENE5MTVh4S2NJa0Z2ZDdFU0ZUa1dabGNpcTlLRXNCeTN6RXhL?oc=5": {
+   "title": "BREAKING: Com 3,5 bi em dívidas, BMG Foods pede recuperação judicial",
+   "url": "https://www.theagribiz.com/empresas/frigorificos/com-r-35-bi-em-dividas-bmg-foods-pede-recuperacao-judicial/",
+   "summary": "BREAKING: Com 3,5 bi em dívidas, BMG Foods pede recuperação judicial &nbsp;&nbsp; The AgriBiz",
+   "source": "The AgriBiz",
+   "domain": "theagribiz.com",
+   "pub_ts": 1785786394,
+   "pub_iso": "2026-08-03 16:46",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1785804206,
+   "cap_iso": "2026-08-03 21:43"
   }
  },
- "run_count": 67,
+ "run_count": 68,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -46550,11 +46598,31 @@
   "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNRUZvUXFweFJtazVHaXNBTjdqUEpSOUFWcUhZSHo5NXNZX3VQbTZsNWFQS1p3Z1N5QW1yNWNaN1V4aFpHajBRU1ZZdEhCdVVPX3hMakgtUlJrVmJFdXkyTmQ0Wk4yOUdOeWV6STdBRERBdUdOODJ1Z2g1ZmVrNGtjcWN3c1FlV3hZNmZ4R1lKR25QYlpzeE9URXhsYWZ6YURjS3kwSnRGZjhHbnlEbmw2dnR6YUlmRmZDZTVNNHNNMFhIQkR2S2c5VG1id3VYNTRnN2ptYXdKQlZGY0NDNG4taA?oc=5": {
    "url": "https://elcomercio.pe/lima/sucesos/los-olivos-bomberos-estiman-que-extincion-del-incendio-en-fabrica-podria-tardar-hasta-tres-dias-ultimas-noticia/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMihgFBVV95cUxQX2dFXzlyaExPQmJNMnladURJZHdpdzdKT3p3MWNHS21VRjc4djhDbFRaZnNjYlR3ZTJFMndpeXpaM05UNHBpbEJuNXNOVjgwLUNKMFNiS1FaR0RXNjhNSElUMElrS0dxa1lHYUxWYlZTU0NqOTFfczc5N3pUS3Y4aDhKVUdTZw?oc=5": {
+   "url": "https://braziljournal.com/brf-lanca-follow-on-acionistas-extinguem-poison-pill/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMigAFBVV95cUxNQkxjczU4S3VuSjZwa3FlZk5BVTBEQTBaODd3Q2lXZlNUNjIyRXAyTjlmMV9XLWM5NGlROVlfOFJNTzViMzVMQy1kWHJfRWsxT2Fxc3dzMUE4dlljMmFXdFk2NVphWGthQkNrOVRwb19QdHBCVUVXRTlZQ3NRbS1tZ9IBhgFBVV95cUxNbkZ1c0ZfQVNPWWlFQkFMWWI0OHJaRi15czhxQXI1XzNfbVY5V29nS2xSMzQwUE5CLXNGNUsyeTJpZEdUTmZhLWZ0QU1SaGtna2xvSkplWjFGR0N3bmxEVnMxVnJadldZN2dXWWxlQjEwaS1EWXk1OHE4OEZmRkRsNjVwVnJlQQ?oc=5": {
+   "url": "https://www.infomoney.com.br/negocios/brf-brfs3-follow-on-2023-alavancagem/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMirwFBVV95cUxPa3oxVkR6ajRTRXV2akJTWmYwbmx5LTk4RWZxMXFMR01lcmw0TkVKa1ZzMnZ5dHdiZ2Ywd3JLV29kU1FGWldrOGZ3bThObV9zMmRQUjVkUjlQeVVBTHdNUWJtT2FqTnpIZ3lFNVMtems5RmVJbXdZNDBvcXRnck9pdmd6M3g2UTBxNm12cHJ2aER4MC03d01ZaWNZaTNEeTBUbHJtZ1hYeTNPQ1VmVDVj?oc=5": {
+   "url": "https://www.tiempo.com.mx/economia/detuvo-grupo-mexico-sus-plataformas-petroleras-impago-pemex-noviembre-2025/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOVTZUTUptNms2bzVrbEg4UG5kVGEtUVUxamp2UFhaVDYyMUVaZnRMNVhxRVpvVFd4UnRuR2dKV01pc0gwZTktYTBYb1pmTXEyTk9BMmFfN19kLWtYYzlhbGpVXzRVRHZkajJNNHlVa2l3Q1BFSm43TDVFc0sxNkZYcGo3QzQwWXNyaHhsQ1BwOF91enNhWmlCSFB4VG9IRmk4MzJteUpJUHNMRGJ3QTY2VDdpY1dmeXdLU1hGTFZKN1gzWUJGc1RtSGptbGNneEp2MWlod3JRSEM?oc=5": {
+   "url": "https://www.investopedia.com/spirit-airlines-was-set-to-exit-bankruptcy-this-summer-now-high-fuel-prices-could-force-it-to-liquidate-11951136",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMirAFBVV95cUxNSGpBQnN3ejR2RFBXanhQQllWXzJDXzZSci1rRDRuTzNkQzBuaVRsM2gwYi1FS2JBQk56SDdYZ1VJMnY2eGUwbVRwU0FkNTl3N3lYdGQtazVKZ09IYkUwZnVocTVKeGtLZHV0UkVYdzJ3Q2xOVUhyOHN1UXJlaENjRGw2bTdWOHlENE5MTVh4S2NJa0Z2ZDdFU0ZUa1dabGNpcTlLRXNCeTN6RXhL?oc=5": {
+   "url": "https://www.theagribiz.com/empresas/frigorificos/com-r-35-bi-em-dividas-bmg-foods-pede-recuperacao-judicial/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785803238,
-  "iso": "03 ago 2026 · 21:27 BRT",
+  "ts": 1785804219,
+  "iso": "03 ago 2026 · 21:43 BRT",
   "status": {
    "Rumo": {
     "status": "atencao",
