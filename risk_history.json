@@ -1018,7 +1018,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T12:19:41.135862+00:00"
+     "last_checked_at": "2026-08-04T15:32:02.898791+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -1873,7 +1873,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.620400+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.620400+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://investidor10.com.br/noticias/ambev-abev3-esclarece-sobre-pedido-de-falencia-confira-105852/": {
    "title": "Ambev (ABEV3) esclarece sobre ‘pedido de falência’; confira",
@@ -2552,7 +2554,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T12:19:41.536063+00:00"
+     "last_checked_at": "2026-08-04T15:32:03.299064+00:00"
     }
    ],
    "corrob_sources": [
@@ -9159,7 +9161,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T12:19:41.936229+00:00"
+     "last_checked_at": "2026-08-04T15:32:03.699405+00:00"
     },
     {
      "source": "Demarest",
@@ -9179,7 +9181,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T12:19:42.336472+00:00"
+     "last_checked_at": "2026-08-04T15:32:04.099714+00:00"
     }
    ],
    "corrob_sources": [
@@ -10563,7 +10565,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T12:19:42.736638+00:00"
+     "last_checked_at": "2026-08-04T15:32:04.499919+00:00"
     }
    ],
    "corrob_sources": [
@@ -13709,7 +13711,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T12:19:43.291148+00:00"
+     "last_checked_at": "2026-08-04T15:32:05.022378+00:00"
     }
    ],
    "corrob_sources": [
@@ -15851,7 +15853,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T12:19:43.868019+00:00"
+     "last_checked_at": "2026-08-04T15:32:05.564357+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -15957,7 +15959,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T12:19:44.422187+00:00"
+     "last_checked_at": "2026-08-04T15:32:06.112568+00:00"
     },
     {
      "source": "Moomoo",
@@ -17226,7 +17228,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T12:19:45.083462+00:00"
+     "last_checked_at": "2026-08-04T15:32:06.716900+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17269,7 +17271,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T12:19:45.791866+00:00"
+     "last_checked_at": "2026-08-04T15:32:07.319231+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -18997,7 +18999,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-04T12:19:46.192087+00:00",
+     "last_checked_at": "2026-08-04T15:32:07.719560+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19062,7 +19064,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-04T12:19:46.592287+00:00",
+     "last_checked_at": "2026-08-04T15:32:08.119839+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19995,7 +19997,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T12:19:47.160195+00:00"
+     "last_checked_at": "2026-08-04T15:32:08.688110+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20080,7 +20082,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T12:19:47.737991+00:00"
+     "last_checked_at": "2026-08-04T15:32:09.214718+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -34913,7 +34915,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T12:19:48.803550+00:00"
+     "last_checked_at": "2026-08-04T15:32:09.841283+00:00"
     }
    ],
    "corrob_sources": [
@@ -37714,7 +37716,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T12:19:49.362718+00:00"
+     "last_checked_at": "2026-08-04T15:32:10.364682+00:00"
     },
     {
      "source": "Virginia Business",
@@ -37757,7 +37759,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T12:19:49.919926+00:00"
+     "last_checked_at": "2026-08-04T15:32:10.872560+00:00"
     },
     {
      "source": "Virginia Business",
@@ -39534,7 +39536,9 @@
    },
    "context_companies": [],
    "captured_ts": 1785780032,
-   "cap_iso": "2026-08-03 15:00"
+   "cap_iso": "2026-08-03 15:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.latercera.com/pulso/noticia/bice-sera-la-marca-continuadora-tras-la-fusion-de-bicecorp-y-grupo-security/": {
    "title": "Adiós al Grupo Security: Bice será la marca que seguirá tras la fusión con Bicecorp",
@@ -39816,7 +39820,9 @@
     "Morgan Stanley"
    ],
    "captured_ts": 1785780032,
-   "cap_iso": "2026-08-03 15:00"
+   "cap_iso": "2026-08-03 15:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNcEdDZ3Y4NWxEdU9UdjJsdU9SZ0RkSUhwbEdkZ2lKbTdnVjQ5azhNMnpkY1hvUWVySEkwZGVXMlFOdDJjX0QzYjVEUGp6LWo5QzF1dnRNVVYycnBnRnZLejZnTHVVcnc0NXpPbXgwWmdQeWhYbnYzQ3BXbDVVTHVKS0VxbGpWRjJmUkh6amhJdENMU1RwY1dhaUlhblMtM2V2Ti1yMTFPQ0U5cDJFVVhUWk9kSW5NcjRwTWQ1REZrWVJnaXZjUENuckh5aHg4T2Y3SkNzX1dSYU5IWmJ1YlY5MlBtZi1YcXJT0gH3AUFVX3lxTFA4cXF3dlFRSG1tZjlyWXEzTS1vb0FoRmY5RzRSeW9MR2ktNFYtRjBBR01qaDlQc1AxZDh4M2VOVVZJbndIY2JQYkk0TFpYakVUeU1VQUZBNWpVQ3lZaVhLRWw0OWxpOE83MTViMXZGeXF6Z1l5N0trUDI5bUR2XzlWTWl0YUxtX05VSlIyQkQ2UTNsVXd1Vzd1MlVtbEpYYTU2QzB4eEg5WHJHWW1mVTE4Vk9SMDRSUld0TzZwWFBsdlJsbnNZRnlwNmJ6SlZhcUJqUFFTV3BZcnNIREQxeW94bWpkYlRqUUQxUHQ4TDFUUk0yQXM3YW8?oc=5": {
    "title": "Justiça aceita pedido de recuperação judicial do Grupo Saritur; dívida chega a R$ 959 milhões",
@@ -42109,9 +42115,182 @@
    ],
    "captured_ts": 1785845977,
    "cap_iso": "2026-08-04 09:19"
+  },
+  "https://www.statnews.com/pharmalot/2025/10/27/cigna-rebates-organon-intellia-novartis-fraud-generics/": {
+   "title": "Pharmalittle: Estamos lendo sobre a renúncia do CEO da Organon, a Cigna encerrando alguns reembolsos e mais",
+   "url": "https://www.statnews.com/pharmalot/2025/10/27/cigna-rebates-organon-intellia-novartis-fraud-generics/",
+   "summary": "Pharmalittle: Estamos lendo sobre a renúncia do CEO da Organon, a Cigna encerrando alguns reembolsos e mais &nbsp;&nbsp; STAT",
+   "source": "STAT",
+   "domain": "statnews.com",
+   "pub_ts": 1761548400,
+   "pub_iso": "2025-10-27 04:00",
+   "language": "en",
+   "title_original": "Pharmalittle: We're reading about Organon's CEO resigning, Cigna ending some rebates, and more",
+   "summary_original": "Pharmalittle: We're reading about Organon's CEO resigning, Cigna ending some rebates, and more &nbsp;&nbsp; STAT",
+   "companies": [
+    "Cigna Group"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "mention_roles": {
+    "Cigna Group": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "encerramento",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Cigna Group": [
+     "troca_ceo"
+    ]
+   },
+   "companies_attributed": [
+    "Cigna Group"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785857519,
+   "cap_iso": "2026-08-04 12:31"
+  },
+  "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRXZ3Rm1waXBRR05YX1otUG9XdTlKWTF3MWs4M3ZyTllReFNYRm40VGNwUkEwSVRxVktsOFptV0hKbEZYOHlZRUE1TXkydFRuVEVMV09SUzFmUHctR0JQZVh3WDRfdzJvSUJPcXhpQkM0OVFabVM1cVdLMDlQRTZfZHJrdUNNaVN5blVicHhoMTRVMEQ5SEhB?oc=5": {
+   "title": "Efeito colateral na decisão sobre falência de estatais",
+   "url": "https://conjur.com.br/2026-jul-08/brb-stf-e-a-falencia-das-estatais-atirou-no-que-viu-mas-2/",
+   "summary": "Efeito colateral na decisão sobre falência de estatais &nbsp;&nbsp; Consultor Jurídico",
+   "source": "Consultor Jurídico",
+   "domain": "conjur.com.br",
+   "pub_ts": 1783494000,
+   "pub_iso": "2026-07-08 04:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785857519,
+   "cap_iso": "2026-08-04 12:31"
+  },
+  "https://exame.com/invest/mercados/follow-on-foi-oportunidade-nao-necessidade-diz-cfo-da-isa-energia/": {
+   "title": "Follow-on foi oportunidade, não necessidade, diz CFO da Isa Energia",
+   "url": "https://exame.com/invest/mercados/follow-on-foi-oportunidade-nao-necessidade-diz-cfo-da-isa-energia/",
+   "summary": "Follow-on foi oportunidade, não necessidade, diz CFO da Isa Energia &nbsp;&nbsp; Exame",
+   "source": "Exame",
+   "domain": "exame.com",
+   "pub_ts": 1785830441,
+   "pub_iso": "2026-08-04 05:00",
+   "language": "pt",
+   "companies": [
+    "ISA Energia Brasil"
+   ],
+   "event_ids": [
+    "follow_on"
+   ],
+   "mention_roles": {
+    "ISA Energia Brasil": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "ISA Energia Brasil": [
+     "follow_on"
+    ]
+   },
+   "companies_attributed": [
+    "ISA Energia Brasil"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785857519,
+   "cap_iso": "2026-08-04 12:31"
+  },
+  "https://valor.globo.com/empresas/noticia/2026/08/04/smart-fit-conclui-aquisio-da-evolve-rede-de-academias-com-presena-no-df.ghtml": {
+   "title": "Smart Fit conclui aquisição da Evolve, rede de academias com presença no DF",
+   "url": "https://valor.globo.com/empresas/noticia/2026/08/04/smart-fit-conclui-aquisio-da-evolve-rede-de-academias-com-presena-no-df.ghtml",
+   "summary": "Smart Fit conclui aquisição da Evolve, rede de academias com presença no DF &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1785845002,
+   "pub_iso": "2026-08-04 09:03",
+   "language": "pt",
+   "companies": [
+    "Smart Fit"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "mention_roles": {
+    "Smart Fit": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "encerramento",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Smart Fit": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "Smart Fit"
+   ],
+   "context_companies": [],
+   "corroborations": [
+    {
+     "source": "moneytimes.com.br",
+     "domain": "moneytimes.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTjBFYWIwZGNCUF96YXJTQkFHNnZSWmxtaXl2Y0hYOTJiaW5wX2ZhVEZKSDJBdXdkb3BTWkFYMDdKdGN3c0c5cTYwcU11dDJDcmNoTGhBTzl1MmF6SkNoRWJwNnZJNlFmM2NZT3ZYOUdRVzh3QW9aUTBxZXphdzB4blJyMklOUE5kM19LelpkQWd4S0V2dExNMTZtRGlNUG04YlVVSkEzTnVDdjBzQjF1VVROa3lHeWFLbXg0WTVBMl8?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTjBFYWIwZGNCUF96YXJTQkFHNnZSWmxtaXl2Y0hYOTJiaW5wX2ZhVEZKSDJBdXdkb3BTWkFYMDdKdGN3c0c5cTYwcU11dDJDcmNoTGhBTzl1MmF6SkNoRWJwNnZJNlFmM2NZT3ZYOUdRVzh3QW9aUTBxZXphdzB4blJyMklOUE5kM19LelpkQWd4S0V2dExNMTZtRGlNUG04YlVVSkEzTnVDdjBzQjF1VVROa3lHeWFLbXg0WTVBMl8?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTjBFYWIwZGNCUF96YXJTQkFHNnZSWmxtaXl2Y0hYOTJiaW5wX2ZhVEZKSDJBdXdkb3BTWkFYMDdKdGN3c0c5cTYwcU11dDJDcmNoTGhBTzl1MmF6SkNoRWJwNnZJNlFmM2NZT3ZYOUdRVzh3QW9aUTBxZXphdzB4blJyMklOUE5kM19LelpkQWd4S0V2dExNMTZtRGlNUG04YlVVSkEzTnVDdjBzQjF1VVROa3lHeWFLbXg0WTVBMl8?oc=5",
+     "resolved_url": "https://www.moneytimes.com.br/smart-fit-smft3-conclui-aquisicao-da-rede-de-academias-evolve-veja-detalhes-da-operacao-lmrs/",
+     "canonical_url": "https://www.moneytimes.com.br/smart-fit-smft3-conclui-aquisicao-da-rede-de-academias-evolve-veja-detalhes-da-operacao-lmrs/",
+     "display_url": "https://www.moneytimes.com.br/smart-fit-smft3-conclui-aquisicao-da-rede-de-academias-evolve-veja-detalhes-da-operacao-lmrs/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.moneytimes.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-04T15:32:11.421824+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "moneytimes.com.br",
+     "domain": "moneytimes.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTjBFYWIwZGNCUF96YXJTQkFHNnZSWmxtaXl2Y0hYOTJiaW5wX2ZhVEZKSDJBdXdkb3BTWkFYMDdKdGN3c0c5cTYwcU11dDJDcmNoTGhBTzl1MmF6SkNoRWJwNnZJNlFmM2NZT3ZYOUdRVzh3QW9aUTBxZXphdzB4blJyMklOUE5kM19LelpkQWd4S0V2dExNMTZtRGlNUG04YlVVSkEzTnVDdjBzQjF1VVROa3lHeWFLbXg0WTVBMl8?oc=5",
+     "when": "04/08 09:10",
+     "original_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTjBFYWIwZGNCUF96YXJTQkFHNnZSWmxtaXl2Y0hYOTJiaW5wX2ZhVEZKSDJBdXdkb3BTWkFYMDdKdGN3c0c5cTYwcU11dDJDcmNoTGhBTzl1MmF6SkNoRWJwNnZJNlFmM2NZT3ZYOUdRVzh3QW9aUTBxZXphdzB4blJyMklOUE5kM19LelpkQWd4S0V2dExNMTZtRGlNUG04YlVVSkEzTnVDdjBzQjF1VVROa3lHeWFLbXg0WTVBMl8?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTjBFYWIwZGNCUF96YXJTQkFHNnZSWmxtaXl2Y0hYOTJiaW5wX2ZhVEZKSDJBdXdkb3BTWkFYMDdKdGN3c0c5cTYwcU11dDJDcmNoTGhBTzl1MmF6SkNoRWJwNnZJNlFmM2NZT3ZYOUdRVzh3QW9aUTBxZXphdzB4blJyMklOUE5kM19LelpkQWd4S0V2dExNMTZtRGlNUG04YlVVSkEzTnVDdjBzQjF1VVROa3lHeWFLbXg0WTVBMl8?oc=5",
+     "resolved_url": "https://www.moneytimes.com.br/smart-fit-smft3-conclui-aquisicao-da-rede-de-academias-evolve-veja-detalhes-da-operacao-lmrs/",
+     "canonical_url": "https://www.moneytimes.com.br/smart-fit-smft3-conclui-aquisicao-da-rede-de-academias-evolve-veja-detalhes-da-operacao-lmrs/",
+     "display_url": "https://www.moneytimes.com.br/smart-fit-smft3-conclui-aquisicao-da-rede-de-academias-evolve-veja-detalhes-da-operacao-lmrs/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.moneytimes.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-04T15:32:11.822110+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1785857519,
+   "cap_iso": "2026-08-04 12:31"
   }
  },
- "run_count": 69,
+ "run_count": 70,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -46796,11 +46975,31 @@
   "https://news.google.com/rss/articles/CBMitgFBVV95cUxQektlVkxfckd1bGJMeXRoRW9UWnhIMUgzbFV4Tk9jYld4UE0zR0oyM0NtS3ZKQUZ1ekVyOUExdHhHZi1SdnBEREl1UEFqeEJtMVQzeXlyck1aWnZlVVl3OXNDRV9BX2FJWHVweGFqQ2dYTlVsTGt2d2FETDFoUEI1NDBESWFFVHV1bEFKVW9UYUF3LTFUNGh3TTJUYkQ4ekQyd1ZyZ2pwNTdpaTNHZm0zT1Vkb1pSZw?oc=5": {
    "url": "https://www.reporteminero.cl/noticia/noticias/2026/04/multa-codelco-zublin-salfacorp-gardilcic-derrumbe-el-teniente",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiowFBVV95cUxOckpUSEpJaHJJMnBHdHdFTHBiajZlcS1IMmN1c2FSRjFvNHF3dWtVbDZDdFJtX1RGVkJENUhtRjZYLTFNQ25Ea0J3MDZaM1Y1XzItS1hLWFBDYlpzTkJITWxES0N0WXk5eXg0QnBaZnZJWXBfUXctRzg1ak12cllZNzc3T2lnTjUzYnRLS0dHZlUwa2d4RW9GRHBMWnFmendoS2E4?oc=5": {
+   "url": "https://www.statnews.com/pharmalot/2025/10/27/cigna-rebates-organon-intellia-novartis-fraud-generics/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiogFBVV95cUxQb2hOMmxTZU1kTmtWdFpod2pQZ05tUnlDa2tWYmw1ZVNKdU8zWjJNRXdHY1Y0X1ByZE41bWozclhnd1NnOFYtWmVwRXFCZnB6eXV2U0s0ZEt3WDZXYWZOX2FpclBwc2RWUy1yUHZaUW1jb2VLYk5wUlJIck1sbXp4UnlWSUh3MFJYcmJkc05zWlNwTGtLODBjcnA0LU1LbXRsWXc?oc=5": {
+   "url": "https://exame.com/invest/mercados/follow-on-foi-oportunidade-nao-necessidade-diz-cfo-da-isa-energia/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNTVB3TVdYZUNnY1VXN3hUMmtzc0xyLWxzM0tmTnNCem5VaTM3dVJhYkwzOG5td05heDJmcWNVOW5lZFplVFZpMFN3WUl4SVZLbm93LUxYb2dVaTEwS3VzRGdTZnc1TGFUd1VLcVFqSHVBem1pbDEzT3VmeDNnaTB2bWdKTjFhRnBNSThuMEt6VTh2OEdXaFZJYW1pVl9TV09pZzVEeXlnaGpSN2dfZFV4cWZOTEF6RTdnMjRGZUMzdkNiMmlwalVMU9IB1wFBVV95cUxNYlNpRXRSUXJ4bmd4aVpGelBUUHpYVC1TT3lnSzVleXpCWDlpaUtKaXk5QXFzMzJhV2FQVkNTREFJcTVJTl9KZVdDX1p6Mjl0SEtnVDI0UFVEekRaS3ozaE9LR3hhcmU3WFA0dEJkNy1LU1kxZkIwcTZmV29uQV9kUHotTU9DNU91UjRQTnBzOU55dUNGWGoxWlNwakVWUW5QNU9KdVhPWlB2MTJuSUhDZ0VHaVg1UUhsS2Yzamc1ZGNjZjY4bndPeHJ1OFlSeDd0VkF3UVZOOA?oc=5": {
+   "url": "https://valor.globo.com/empresas/noticia/2026/08/04/smart-fit-conclui-aquisio-da-evolve-rede-de-academias-com-presena-no-df.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRXZ3Rm1waXBRR05YX1otUG9XdTlKWTF3MWs4M3ZyTllReFNYRm40VGNwUkEwSVRxVktsOFptV0hKbEZYOHlZRUE1TXkydFRuVEVMV09SUzFmUHctR0JQZVh3WDRfdzJvSUJPcXhpQkM0OVFabVM1cVdLMDlQRTZfZHJrdUNNaVN5blVicHhoMTRVMEQ5SEhB?oc=5": {
+   "url": "https://conjur.com.br/2026-jul-08/brb-stf-e-a-falencia-das-estatais-atirou-no-que-viu-mas-2/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTjBFYWIwZGNCUF96YXJTQkFHNnZSWmxtaXl2Y0hYOTJiaW5wX2ZhVEZKSDJBdXdkb3BTWkFYMDdKdGN3c0c5cTYwcU11dDJDcmNoTGhBTzl1MmF6SkNoRWJwNnZJNlFmM2NZT3ZYOUdRVzh3QW9aUTBxZXphdzB4blJyMklOUE5kM19LelpkQWd4S0V2dExNMTZtRGlNUG04YlVVSkEzTnVDdjBzQjF1VVROa3lHeWFLbXg0WTVBMl8?oc=5": {
+   "url": "https://www.moneytimes.com.br/smart-fit-smft3-conclui-aquisicao-da-rede-de-academias-evolve-veja-detalhes-da-operacao-lmrs/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785845991,
-  "iso": "04 ago 2026 · 09:19 BRT",
+  "ts": 1785857532,
+  "iso": "04 ago 2026 · 12:32 BRT",
   "status": {
    "Rumo": {
     "status": "atencao",
@@ -46812,15 +47011,15 @@
    },
    "Vale": {
     "status": "atencao",
-    "score": 66
-   },
-   "Tok&Stok": {
-    "status": "critico",
-    "score": 61
+    "score": 65
    },
    "CVS Health": {
     "status": "critico",
     "score": 61
+   },
+   "Tok&Stok": {
+    "status": "critico",
+    "score": 60
    },
    "Santander Brasil": {
     "status": "atencao",
@@ -46836,9 +47035,13 @@
    },
    "Samarco Mineração": {
     "status": "critico",
-    "score": 45
+    "score": 44
    },
    "BTG Pactual": {
+    "status": "atencao",
+    "score": 43
+   },
+   "Smart Fit": {
     "status": "atencao",
     "score": 43
    },
@@ -46874,6 +47077,10 @@
     "status": "monitorar",
     "score": 27
    },
+   "ISA Energia Brasil": {
+    "status": "monitorar",
+    "score": 27
+   },
    "PRIO": {
     "status": "monitorar",
     "score": 26
@@ -46889,10 +47096,6 @@
    "Capital One Financial": {
     "status": "monitorar",
     "score": 24
-   },
-   "ISA Energia Brasil": {
-    "status": "monitorar",
-    "score": 23
    },
    "Itaúsa": {
     "status": "monitorar",
@@ -46910,10 +47113,6 @@
     "status": "monitorar",
     "score": 20
    },
-   "EQT Corporation": {
-    "status": "monitorar",
-    "score": 19
-   },
    "Ultrapar": {
     "status": "atencao",
     "score": 18
@@ -46923,6 +47122,10 @@
     "score": 18
    },
    "Albioma": {
+    "status": "monitorar",
+    "score": 18
+   },
+   "EQT Corporation": {
     "status": "monitorar",
     "score": 18
    },
@@ -46936,7 +47139,7 @@
    },
    "Ecopetrol": {
     "status": "monitorar",
-    "score": 16
+    "score": 15
    },
    "NextEra Energy": {
     "status": "monitorar",
@@ -46958,12 +47161,12 @@
     "status": "atencao",
     "score": 11
    },
-   "Raia Drogasil": {
-    "status": "monitorar",
-    "score": 11
-   },
    "British American Tobacco": {
     "status": "critico",
+    "score": 10
+   },
+   "Raia Drogasil": {
+    "status": "monitorar",
     "score": 10
    },
    "JPMorgan Chase": {
