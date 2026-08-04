@@ -1069,7 +1069,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T20:39:52.473917+00:00"
+     "last_checked_at": "2026-08-04T00:27:02.982592+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2603,7 +2603,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T20:39:52.874123+00:00"
+     "last_checked_at": "2026-08-04T00:27:03.394491+00:00"
     }
    ],
    "corrob_sources": [
@@ -9208,7 +9208,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T20:39:53.274355+00:00"
+     "last_checked_at": "2026-08-04T00:27:03.808382+00:00"
     },
     {
      "source": "Demarest",
@@ -9228,7 +9228,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T20:39:53.674582+00:00"
+     "last_checked_at": "2026-08-04T00:27:04.209970+00:00"
     }
    ],
    "corrob_sources": [
@@ -10612,7 +10612,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T20:39:54.074774+00:00"
+     "last_checked_at": "2026-08-04T00:27:04.610024+00:00"
     }
    ],
    "corrob_sources": [
@@ -13758,7 +13758,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T20:39:54.689924+00:00"
+     "last_checked_at": "2026-08-04T00:27:05.424634+00:00"
     }
    ],
    "corrob_sources": [
@@ -15900,7 +15900,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T20:39:55.290763+00:00"
+     "last_checked_at": "2026-08-04T00:27:06.199898+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16006,7 +16006,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T20:39:55.872367+00:00"
+     "last_checked_at": "2026-08-04T00:27:07.017812+00:00"
     },
     {
      "source": "Moomoo",
@@ -17275,7 +17275,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T20:39:57.598671+00:00"
+     "last_checked_at": "2026-08-04T00:27:08.047655+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17318,7 +17318,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T20:39:58.354073+00:00"
+     "last_checked_at": "2026-08-04T00:27:09.115175+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19046,7 +19046,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-03T20:39:58.754300+00:00",
+     "last_checked_at": "2026-08-04T00:27:09.527547+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19111,7 +19111,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-03T20:39:59.154502+00:00",
+     "last_checked_at": "2026-08-04T00:27:09.931005+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20044,7 +20044,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T20:39:59.746853+00:00"
+     "last_checked_at": "2026-08-04T00:27:10.840216+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20129,7 +20129,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T20:40:00.337694+00:00"
+     "last_checked_at": "2026-08-04T00:27:11.611222+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -34940,7 +34940,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T20:40:01.082905+00:00"
+     "last_checked_at": "2026-08-04T00:27:12.658394+00:00"
     }
    ],
    "corrob_sources": [
@@ -37741,7 +37741,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T20:40:01.691539+00:00"
+     "last_checked_at": "2026-08-04T00:27:13.477531+00:00"
     },
     {
      "source": "Virginia Business",
@@ -37784,7 +37784,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-03T20:40:02.323836+00:00"
+     "last_checked_at": "2026-08-04T00:27:14.246469+00:00"
     },
     {
      "source": "Virginia Business",
@@ -40403,6 +40403,1498 @@
    ],
    "captured_ts": 1785789585,
    "cap_iso": "2026-08-03 17:39"
+  },
+  "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQZ1JROFB3cFlzQ1Z0ZTE0SzhETW1JWTUyZTNySXo5T2ZMcng3eXUzMEIxbzI4b09KNWwxSTVQbGYzRTRTSWlSNi1tX1d5UEhSQXpNQVllRVNsUW84LVp4RGxhNjd2WUplRXdpeXpwdVdkUnlmLXoxWXBoQnFnbThkTld4SUpqM2pacWlJaFBXVEQwX0I0Q3F6Y1BkaThFallBUXRHaE9TSDNiUEZfYUp2bFVUWTNVSkIyR3Z3RTJHa3duRzlnc3pjUHlhX2JfcEJh?oc=5": {
+   "title": "Yobel inaugura nuevo almacén logístico en Guatemala y refuerza su capacidad operativa en Centroamérica",
+   "url": "https://www.revistaeconomia.com/yobel-inaugura-nuevo-almacen-logistico-en-guatemala-y-refuerza-su-capacidad-operativa-en-centroamerica/",
+   "summary": "Yobel inaugura nuevo almacén logístico en Guatemala y refuerza su capacidad operativa en Centroamérica &nbsp;&nbsp; revistaeconomia.com",
+   "source": "revistaeconomia.com",
+   "domain": "revistaeconomia.com",
+   "pub_ts": 1770278400,
+   "pub_iso": "2026-02-05 05:00",
+   "language": "pt",
+   "companies": [
+    "Yobel"
+   ],
+   "event_ids": [
+    "expansao_capacidade"
+   ],
+   "mention_roles": {
+    "Yobel": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Yobel": [
+     {
+      "company": "Yobel",
+      "event_id": "expansao_capacidade",
+      "event_label": "Expansão de capacidade",
+      "subject_company": "Yobel",
+      "monitored_company": "Yobel",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Yobel inaugura nuevo almacén logístico en Guatemala y refuerza su capacidad operativa en Centroamérica",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQZ1JROFB3cFlzQ1Z0ZTE0SzhETW1JWTUyZTNySXo5T2ZMcng3eXUzMEIxbzI4b09KNWwxSTVQbGYzRTRTSWlSNi1tX1d5UEhSQXpNQVllRVNsUW84LVp4RGxhNjd2WUplRXdpeXpwdVdkUnlmLXoxWXBoQnFnbThkTld4SUpqM2pacWlJaFBXVEQwX0I0Q3F6Y1BkaThFallBUXRHaE9TSDNiUEZfYUp2bFVUWTNVSkIyR3Z3RTJHa3duRzlnc3pjUHlhX2JfcEJh?oc=5",
+      "pub_ts": 1770278400,
+      "observation": "Evento direto 'Expansão de capacidade' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQZ1JROFB3cFlzQ1Z0ZTE0SzhETW1JWTUyZTNySXo5T2ZMcng3eXUzMEIxbzI4b09KNWwxSTVQbGYzRTRTSWlSNi1tX1d5UEhSQXpNQVllRVNsUW84LVp4RGxhNjd2WUplRXdpeXpwdVdkUnlmLXoxWXBoQnFnbThkTld4SUpqM2pacWlJaFBXVEQwX0I0Q3F6Y1BkaThFallBUXRHaE9TSDNiUEZfYUp2bFVUWTNVSkIyR3Z3RTJHa3duRzlnc3pjUHlhX2JfcEJh?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Yobel": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Yobel"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMizAFBVV95cUxQend3a0l6eEtVbTZrcUhYWUN1amtkbmR5NklIUlJELWZzMTRBTllIWkhHd05ndlBkOHBFZUlkakVKMWFVS1Brc2g3Z0NLOTAzUFFTcUUwLWJQc3Z5VnowWi1Yb2hCNjhacGlBTXQwUW90MnBCYVZ0bjV1bmp0TGMxbmMyQ2VWTGJiMklkcFcwTE9nNjNyWmlaZDhnaHFzcUxDaXZqaG5oNnRwdkhjblRvTWVmQ1N2cTQ4MWRGa3pIZXZpd3Y1Sm1GSmxlTTM?oc=5": {
+   "title": "Yobel inaugura centro logístico en Guatemala e impulsa expansión en Centroamérica",
+   "url": "https://gestion.pe/economia/empresas/yobel-inaugura-almacen-logistico-en-guatemala-y-refuerza-su-operacion-en-centroamerica-noticia/",
+   "summary": "Yobel inaugura centro logístico en Guatemala e impulsa expansión en Centroamérica &nbsp;&nbsp; Gestión",
+   "source": "Gestión",
+   "domain": "gestion.pe",
+   "pub_ts": 1770624000,
+   "pub_iso": "2026-02-09 05:00",
+   "language": "pt",
+   "companies": [
+    "Yobel"
+   ],
+   "event_ids": [
+    "expansao_capacidade"
+   ],
+   "mention_roles": {
+    "Yobel": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Yobel": [
+     {
+      "company": "Yobel",
+      "event_id": "expansao_capacidade",
+      "event_label": "Expansão de capacidade",
+      "subject_company": "Yobel",
+      "monitored_company": "Yobel",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Yobel inaugura centro logístico en Guatemala e impulsa expansión en Centroamérica",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQend3a0l6eEtVbTZrcUhYWUN1amtkbmR5NklIUlJELWZzMTRBTllIWkhHd05ndlBkOHBFZUlkakVKMWFVS1Brc2g3Z0NLOTAzUFFTcUUwLWJQc3Z5VnowWi1Yb2hCNjhacGlBTXQwUW90MnBCYVZ0bjV1bmp0TGMxbmMyQ2VWTGJiMklkcFcwTE9nNjNyWmlaZDhnaHFzcUxDaXZqaG5oNnRwdkhjblRvTWVmQ1N2cTQ4MWRGa3pIZXZpd3Y1Sm1GSmxlTTM?oc=5",
+      "pub_ts": 1770624000,
+      "observation": "Evento direto 'Expansão de capacidade' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQend3a0l6eEtVbTZrcUhYWUN1amtkbmR5NklIUlJELWZzMTRBTllIWkhHd05ndlBkOHBFZUlkakVKMWFVS1Brc2g3Z0NLOTAzUFFTcUUwLWJQc3Z5VnowWi1Yb2hCNjhacGlBTXQwUW90MnBCYVZ0bjV1bmp0TGMxbmMyQ2VWTGJiMklkcFcwTE9nNjNyWmlaZDhnaHFzcUxDaXZqaG5oNnRwdkhjblRvTWVmQ1N2cTQ4MWRGa3pIZXZpd3Y1Sm1GSmxlTTM?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Yobel": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Yobel"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM2FFQVdYUUdKMGRkU2RISElpM2Q4V0RrZFFlYzZnOEhFRTJMeUZCc2lQaG5rR0dQMWxxNWNIOHhVTF83NTFNMlU5NDBoNU9CMlhnYl9GVDE3NHVKU3p5ZTJyZXh3OHJvWjBDOUM0R2xaekRnWi1wUktLSDFMbEdBRmxFeFlvZU1ORWVtSkFoNldweVZHbDlGQWRMdTJQWXlrcThfRHU0VHNfa0NLQ2hfS1Mwb1UzZw?oc=5": {
+   "title": "TRUPAL ingresa por primera vez al ranking de empresas líderes en ESG de Merco en Perú",
+   "url": "https://cartonycorrugado.com/trupal-ingresa-por-primera-vez-al-ranking-de-empresas-lideres-en-esg-de-merco-en-peru/",
+   "summary": "TRUPAL ingresa por primera vez al ranking de empresas líderes en ESG de Merco en Perú &nbsp;&nbsp; cartonycorrugado.com",
+   "source": "cartonycorrugado.com",
+   "domain": "cartonycorrugado.com",
+   "pub_ts": 1772006400,
+   "pub_iso": "2026-02-25 05:00",
+   "language": "es",
+   "companies": [
+    "Trupal"
+   ],
+   "event_ids": [
+    "expansao_capacidade"
+   ],
+   "mention_roles": {
+    "Trupal": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Trupal": [
+     {
+      "company": "Trupal",
+      "event_id": "expansao_capacidade",
+      "event_label": "Expansão de capacidade",
+      "subject_company": "Trupal",
+      "monitored_company": "Trupal",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "TRUPAL ingresa por primera vez al ranking de empresas líderes en ESG de Merco en Perú",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM2FFQVdYUUdKMGRkU2RISElpM2Q4V0RrZFFlYzZnOEhFRTJMeUZCc2lQaG5rR0dQMWxxNWNIOHhVTF83NTFNMlU5NDBoNU9CMlhnYl9GVDE3NHVKU3p5ZTJyZXh3OHJvWjBDOUM0R2xaekRnWi1wUktLSDFMbEdBRmxFeFlvZU1ORWVtSkFoNldweVZHbDlGQWRMdTJQWXlrcThfRHU0VHNfa0NLQ2hfS1Mwb1UzZw?oc=5",
+      "pub_ts": 1772006400,
+      "observation": "Evento direto 'Expansão de capacidade' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM2FFQVdYUUdKMGRkU2RISElpM2Q4V0RrZFFlYzZnOEhFRTJMeUZCc2lQaG5rR0dQMWxxNWNIOHhVTF83NTFNMlU5NDBoNU9CMlhnYl9GVDE3NHVKU3p5ZTJyZXh3OHJvWjBDOUM0R2xaekRnWi1wUktLSDFMbEdBRmxFeFlvZU1ORWVtSkFoNldweVZHbDlGQWRMdTJQWXlrcThfRHU0VHNfa0NLQ2hfS1Mwb1UzZw?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Trupal": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Trupal"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMirAJBVV95cUxNTFlpZ2Z1dEJqSWVXdnNWalMzRnFYYXBuNzhfZ1dzTjd1cWlNbVZwaHotd0Vmc1RBaFQwZUtZaklyVC1wVnlYNlhHdjBZS2dIN2ozUi1VdkEtMDQ3M2JYVHp2VGVLSDZyYVNPRGI1dldFUkp5cEwwT0NpNGdKM0ZJcVZoM25tOGlrRy1SRkcwa2xnUVpybEw2Y01iNUJoNzhzaldydmFjYlBYY3h0OFhmYUtmTUl1UVExQWtPYUlHV0p1SFlnZzhTVllFd0JDdWJ0NXloVnRva29sTGNaOXBHaGRTZTdqTk1GNGJZeGpGWVdFMXZlallydFVXd1BYYzhQajBkVnU3aFFCbEFDZ1luOGoxS1RoN2t2YmwxQzlQMnQ0UkpIU05JVTYwYlk?oc=5": {
+   "title": "Cemento Yura obtiene su primera Declaración Ambiental de Producto y posiciona su producto Yura MAX como referente en ecoeficiencia en el sector construcción",
+   "url": "https://www.corresponsables.com/per/actualidad/cemento-yura-obtiene-su-primera-declaracion-ambiental-de-producto-y-posiciona-su-producto-yura-max-como-referente-en-ecoeficiencia-en-el-sector-construccion/",
+   "summary": "Cemento Yura obtiene su primera Declaración Ambiental de Producto y posiciona su producto Yura MAX como referente en ecoeficiencia en el sector construcción &nbsp;&nbsp; Corresponsables",
+   "source": "Corresponsables",
+   "domain": "corresponsables.com",
+   "pub_ts": 1772092800,
+   "pub_iso": "2026-02-26 05:00",
+   "language": "es",
+   "companies": [
+    "Yura"
+   ],
+   "event_ids": [
+    "investimento_operacional"
+   ],
+   "mention_roles": {
+    "Yura": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Yura": [
+     {
+      "company": "Yura",
+      "event_id": "investimento_operacional",
+      "event_label": "Investimento operacional",
+      "subject_company": "Yura",
+      "monitored_company": "Yura",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Cemento Yura obtiene su primera Declaración Ambiental de Producto y posiciona su producto Yura MAX como referente en ecoeficiencia en el sector construcción",
+      "url": "https://news.google.com/rss/articles/CBMirAJBVV95cUxNTFlpZ2Z1dEJqSWVXdnNWalMzRnFYYXBuNzhfZ1dzTjd1cWlNbVZwaHotd0Vmc1RBaFQwZUtZaklyVC1wVnlYNlhHdjBZS2dIN2ozUi1VdkEtMDQ3M2JYVHp2VGVLSDZyYVNPRGI1dldFUkp5cEwwT0NpNGdKM0ZJcVZoM25tOGlrRy1SRkcwa2xnUVpybEw2Y01iNUJoNzhzaldydmFjYlBYY3h0OFhmYUtmTUl1UVExQWtPYUlHV0p1SFlnZzhTVllFd0JDdWJ0NXloVnRva29sTGNaOXBHaGRTZTdqTk1GNGJZeGpGWVdFMXZlallydFVXd1BYYzhQajBkVnU3aFFCbEFDZ1luOGoxS1RoN2t2YmwxQzlQMnQ0UkpIU05JVTYwYlk?oc=5",
+      "pub_ts": 1772092800,
+      "observation": "Evento direto 'Investimento operacional' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMirAJBVV95cUxNTFlpZ2Z1dEJqSWVXdnNWalMzRnFYYXBuNzhfZ1dzTjd1cWlNbVZwaHotd0Vmc1RBaFQwZUtZaklyVC1wVnlYNlhHdjBZS2dIN2ozUi1VdkEtMDQ3M2JYVHp2VGVLSDZyYVNPRGI1dldFUkp5cEwwT0NpNGdKM0ZJcVZoM25tOGlrRy1SRkcwa2xnUVpybEw2Y01iNUJoNzhzaldydmFjYlBYY3h0OFhmYUtmTUl1UVExQWtPYUlHV0p1SFlnZzhTVllFd0JDdWJ0NXloVnRva29sTGNaOXBHaGRTZTdqTk1GNGJZeGpGWVdFMXZlallydFVXd1BYYzhQajBkVnU3aFFCbEFDZ1luOGoxS1RoN2t2YmwxQzlQMnQ0UkpIU05JVTYwYlk?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Yura": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Yura"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPcEFmNm9zS2cwM3BLTm1YemNqMzZSUVRTMHBvaktZVktWdTVBaWhsWl9vUGVfbHhmbEtWLTVfWk9yRVZqMGJ3TXcyOVZGOElmN2FrQUV3ZEk2d2FIQzJVX2JwWHZpMUxDSDNFREdDVzdsS2VPNVNQTlQ2QVAwd1JVU1BXeU1ib2ZqeGJzc0hBZTd4eDVOdm9NRVh5Tk12d1pGRU5wSDJfbWRGMzBMQ3F4V1VsRTBPZHRmNGdYbUFnUkNTbnQyQTN2aElMRXQ5elVk?oc=5": {
+   "title": "Yobel entra al negocio de courier en América Latina: servicio arranca en dos países claves",
+   "url": "https://gestion.pe/economia/empresas/yobel-entra-al-negocio-de-courier-en-america-latina-servicio-arranca-en-dos-paises-claves-noticia/",
+   "summary": "Yobel entra al negocio de courier en América Latina: servicio arranca en dos países claves &nbsp;&nbsp; Gestión",
+   "source": "Gestión",
+   "domain": "gestion.pe",
+   "pub_ts": 1774249200,
+   "pub_iso": "2026-03-23 04:00",
+   "language": "pt",
+   "companies": [
+    "Yobel"
+   ],
+   "event_ids": [
+    "expansao_capacidade"
+   ],
+   "mention_roles": {
+    "Yobel": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Yobel": [
+     {
+      "company": "Yobel",
+      "event_id": "expansao_capacidade",
+      "event_label": "Expansão de capacidade",
+      "subject_company": "Yobel",
+      "monitored_company": "Yobel",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Yobel entra al negocio de courier en América Latina: servicio arranca en dos países claves",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPcEFmNm9zS2cwM3BLTm1YemNqMzZSUVRTMHBvaktZVktWdTVBaWhsWl9vUGVfbHhmbEtWLTVfWk9yRVZqMGJ3TXcyOVZGOElmN2FrQUV3ZEk2d2FIQzJVX2JwWHZpMUxDSDNFREdDVzdsS2VPNVNQTlQ2QVAwd1JVU1BXeU1ib2ZqeGJzc0hBZTd4eDVOdm9NRVh5Tk12d1pGRU5wSDJfbWRGMzBMQ3F4V1VsRTBPZHRmNGdYbUFnUkNTbnQyQTN2aElMRXQ5elVk?oc=5",
+      "pub_ts": 1774249200,
+      "observation": "Evento direto 'Expansão de capacidade' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPcEFmNm9zS2cwM3BLTm1YemNqMzZSUVRTMHBvaktZVktWdTVBaWhsWl9vUGVfbHhmbEtWLTVfWk9yRVZqMGJ3TXcyOVZGOElmN2FrQUV3ZEk2d2FIQzJVX2JwWHZpMUxDSDNFREdDVzdsS2VPNVNQTlQ2QVAwd1JVU1BXeU1ib2ZqeGJzc0hBZTd4eDVOdm9NRVh5Tk12d1pGRU5wSDJfbWRGMzBMQ3F4V1VsRTBPZHRmNGdYbUFnUkNTbnQyQTN2aElMRXQ5elVk?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Yobel": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Yobel"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMijAFBVV95cUxNcFB2aXVWMlpwT3ZhT0RyclZFbkJUOElCU09VeU5lNGRWVHJDS2ZWZlM4a2RWQS13dGUxN3k0TWNlUDlocE1Qa3dWWGhpTzBWQUZHUlVpakZrZmxwN1huS0ZHWHgzMkZiMHN1OF93VzFLWkxXUlpZajZjRkdhTDJodGxESXVCbVNZOS1KMw?oc=5": {
+   "title": "Yobel impulsa su presencia regional en courier con Yobel Express",
+   "url": "https://logista.pe/yobel-impulsa-su-presencia-regional-en-courier-con-yobel-express/",
+   "summary": "Yobel impulsa su presencia regional en courier con Yobel Express &nbsp;&nbsp; logista.pe",
+   "source": "logista.pe",
+   "domain": "logista.pe",
+   "pub_ts": 1774422000,
+   "pub_iso": "2026-03-25 04:00",
+   "language": "es",
+   "companies": [
+    "Yobel"
+   ],
+   "event_ids": [
+    "expansao_capacidade"
+   ],
+   "mention_roles": {
+    "Yobel": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Yobel": [
+     {
+      "company": "Yobel",
+      "event_id": "expansao_capacidade",
+      "event_label": "Expansão de capacidade",
+      "subject_company": "Yobel",
+      "monitored_company": "Yobel",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Yobel impulsa su presencia regional en courier con Yobel Express",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNcFB2aXVWMlpwT3ZhT0RyclZFbkJUOElCU09VeU5lNGRWVHJDS2ZWZlM4a2RWQS13dGUxN3k0TWNlUDlocE1Qa3dWWGhpTzBWQUZHUlVpakZrZmxwN1huS0ZHWHgzMkZiMHN1OF93VzFLWkxXUlpZajZjRkdhTDJodGxESXVCbVNZOS1KMw?oc=5",
+      "pub_ts": 1774422000,
+      "observation": "Evento direto 'Expansão de capacidade' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNcFB2aXVWMlpwT3ZhT0RyclZFbkJUOElCU09VeU5lNGRWVHJDS2ZWZlM4a2RWQS13dGUxN3k0TWNlUDlocE1Qa3dWWGhpTzBWQUZHUlVpakZrZmxwN1huS0ZHWHgzMkZiMHN1OF93VzFLWkxXUlpZajZjRkdhTDJodGxESXVCbVNZOS1KMw?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Yobel": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Yobel"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNQi00ZTBxYk9kR2phckpXcy0ybzY0UTJ0MmdCYjdwTk04bDhRcGo1eF8teDNsNnc4V19COWtpdUZwakdtd2pRaXpMRjhwVnhYWmhCUE04OHJjMTM1NWVYN012RTkxQWJHUmpXdnJlR0lScTZ3b3kwVmJKWkVXSmhEZDZLU0FWajVQUnFKMFo4YVpfTHdPVGFqUnFOUTY3R3NfMXNoTERpMHRpYkU2T0h1dHNVZElEUDlBUkJNMDRrSDNfWnVaUFRfNEk5SGNMbFBldjRUdUY0U3VJdUhON2JfTjZoWkRnUnJ3cFhLelVGY1Aydw?oc=5": {
+   "title": "Yobel continúa su expansión en Centroamérica y abre nuevos centros logísticos en El Salvador y Costa Rica",
+   "url": "https://elcomercio.pe/economia/peru/yobel-continua-su-expansion-en-centroamerica-y-abre-nuevos-centros-logisticos-en-el-salvador-y-costa-rica-l-ultimas-noticia/",
+   "summary": "Yobel continúa su expansión en Centroamérica y abre nuevos centros logísticos en El Salvador y Costa Rica &nbsp;&nbsp; El Comercio Perú",
+   "source": "El Comercio Perú",
+   "domain": "elcomercio.pe",
+   "pub_ts": 1775199600,
+   "pub_iso": "2026-04-03 04:00",
+   "language": "es",
+   "companies": [
+    "Yobel"
+   ],
+   "event_ids": [
+    "expansao_capacidade"
+   ],
+   "mention_roles": {
+    "Yobel": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Yobel": [
+     {
+      "company": "Yobel",
+      "event_id": "expansao_capacidade",
+      "event_label": "Expansão de capacidade",
+      "subject_company": "Yobel",
+      "monitored_company": "Yobel",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Yobel continúa su expansión en Centroamérica y abre nuevos centros logísticos en El Salvador y Costa Rica",
+      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNQi00ZTBxYk9kR2phckpXcy0ybzY0UTJ0MmdCYjdwTk04bDhRcGo1eF8teDNsNnc4V19COWtpdUZwakdtd2pRaXpMRjhwVnhYWmhCUE04OHJjMTM1NWVYN012RTkxQWJHUmpXdnJlR0lScTZ3b3kwVmJKWkVXSmhEZDZLU0FWajVQUnFKMFo4YVpfTHdPVGFqUnFOUTY3R3NfMXNoTERpMHRpYkU2T0h1dHNVZElEUDlBUkJNMDRrSDNfWnVaUFRfNEk5SGNMbFBldjRUdUY0U3VJdUhON2JfTjZoWkRnUnJ3cFhLelVGY1Aydw?oc=5",
+      "pub_ts": 1775199600,
+      "observation": "Evento direto 'Expansão de capacidade' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNQi00ZTBxYk9kR2phckpXcy0ybzY0UTJ0MmdCYjdwTk04bDhRcGo1eF8teDNsNnc4V19COWtpdUZwakdtd2pRaXpMRjhwVnhYWmhCUE04OHJjMTM1NWVYN012RTkxQWJHUmpXdnJlR0lScTZ3b3kwVmJKWkVXSmhEZDZLU0FWajVQUnFKMFo4YVpfTHdPVGFqUnFOUTY3R3NfMXNoTERpMHRpYkU2T0h1dHNVZElEUDlBUkJNMDRrSDNfWnVaUFRfNEk5SGNMbFBldjRUdUY0U3VJdUhON2JfTjZoWkRnUnJ3cFhLelVGY1Aydw?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Yobel": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Yobel"
+   ],
+   "corroborations": [
+    {
+     "source": "Gestión",
+     "domain": "gestion.pe",
+     "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNMTFNaFpqZUhoN1IxalJIaGdLQnYxdE85aUFFTG1XdmU5WGRDOXNuLUZUek1CUHVYZDQ4X3ppMDA0dDI0b3ZmX1Z4b1JWNkRTM0tGeFlRRFFfczFUSXVaS0xlRHVTZk95b29hZHkxNHpCNnU4Y19KZnMxOHdPa0pPRm5fNlk0VldpR3NkelpTX0hvOXJfS2U4OFN2YUxNR3BZQU1IX05mMHFkSkN0Qlg2bVVGamtlU0xIa2NGYXByLWltSFVYalVGNWhldWNRd0R3M3BxVGlYc1FpMERhenc?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNMTFNaFpqZUhoN1IxalJIaGdLQnYxdE85aUFFTG1XdmU5WGRDOXNuLUZUek1CUHVYZDQ4X3ppMDA0dDI0b3ZmX1Z4b1JWNkRTM0tGeFlRRFFfczFUSXVaS0xlRHVTZk95b29hZHkxNHpCNnU4Y19KZnMxOHdPa0pPRm5fNlk0VldpR3NkelpTX0hvOXJfS2U4OFN2YUxNR3BZQU1IX05mMHFkSkN0Qlg2bVVGamtlU0xIa2NGYXByLWltSFVYalVGNWhldWNRd0R3M3BxVGlYc1FpMERhenc?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNMTFNaFpqZUhoN1IxalJIaGdLQnYxdE85aUFFTG1XdmU5WGRDOXNuLUZUek1CUHVYZDQ4X3ppMDA0dDI0b3ZmX1Z4b1JWNkRTM0tGeFlRRFFfczFUSXVaS0xlRHVTZk95b29hZHkxNHpCNnU4Y19KZnMxOHdPa0pPRm5fNlk0VldpR3NkelpTX0hvOXJfS2U4OFN2YUxNR3BZQU1IX05mMHFkSkN0Qlg2bVVGamtlU0xIa2NGYXByLWltSFVYalVGNWhldWNRd0R3M3BxVGlYc1FpMERhenc?oc=5",
+     "resolved_url": "https://gestion.pe/economia/empresas/yobel-acelera-expansion-en-centroamerica-abre-nuevos-centros-logisticos-en-el-salvador-y-costa-rica-noticia/",
+     "canonical_url": "https://gestion.pe/economia/empresas/yobel-acelera-expansion-en-centroamerica-abre-nuevos-centros-logisticos-en-el-salvador-y-costa-rica-noticia/",
+     "display_url": "https://gestion.pe/economia/empresas/yobel-acelera-expansion-en-centroamerica-abre-nuevos-centros-logisticos-en-el-salvador-y-costa-rica-noticia/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "gestion.pe",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-04T00:27:15.018902+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Gestión",
+     "domain": "gestion.pe",
+     "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNMTFNaFpqZUhoN1IxalJIaGdLQnYxdE85aUFFTG1XdmU5WGRDOXNuLUZUek1CUHVYZDQ4X3ppMDA0dDI0b3ZmX1Z4b1JWNkRTM0tGeFlRRFFfczFUSXVaS0xlRHVTZk95b29hZHkxNHpCNnU4Y19KZnMxOHdPa0pPRm5fNlk0VldpR3NkelpTX0hvOXJfS2U4OFN2YUxNR3BZQU1IX05mMHFkSkN0Qlg2bVVGamtlU0xIa2NGYXByLWltSFVYalVGNWhldWNRd0R3M3BxVGlYc1FpMERhenc?oc=5",
+     "when": "06/04 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNMTFNaFpqZUhoN1IxalJIaGdLQnYxdE85aUFFTG1XdmU5WGRDOXNuLUZUek1CUHVYZDQ4X3ppMDA0dDI0b3ZmX1Z4b1JWNkRTM0tGeFlRRFFfczFUSXVaS0xlRHVTZk95b29hZHkxNHpCNnU4Y19KZnMxOHdPa0pPRm5fNlk0VldpR3NkelpTX0hvOXJfS2U4OFN2YUxNR3BZQU1IX05mMHFkSkN0Qlg2bVVGamtlU0xIa2NGYXByLWltSFVYalVGNWhldWNRd0R3M3BxVGlYc1FpMERhenc?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNMTFNaFpqZUhoN1IxalJIaGdLQnYxdE85aUFFTG1XdmU5WGRDOXNuLUZUek1CUHVYZDQ4X3ppMDA0dDI0b3ZmX1Z4b1JWNkRTM0tGeFlRRFFfczFUSXVaS0xlRHVTZk95b29hZHkxNHpCNnU4Y19KZnMxOHdPa0pPRm5fNlk0VldpR3NkelpTX0hvOXJfS2U4OFN2YUxNR3BZQU1IX05mMHFkSkN0Qlg2bVVGamtlU0xIa2NGYXByLWltSFVYalVGNWhldWNRd0R3M3BxVGlYc1FpMERhenc?oc=5",
+     "resolved_url": "https://gestion.pe/economia/empresas/yobel-acelera-expansion-en-centroamerica-abre-nuevos-centros-logisticos-en-el-salvador-y-costa-rica-noticia/",
+     "canonical_url": "https://gestion.pe/economia/empresas/yobel-acelera-expansion-en-centroamerica-abre-nuevos-centros-logisticos-en-el-salvador-y-costa-rica-noticia/",
+     "display_url": "https://gestion.pe/economia/empresas/yobel-acelera-expansion-en-centroamerica-abre-nuevos-centros-logisticos-en-el-salvador-y-costa-rica-noticia/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "gestion.pe",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-04T00:27:15.431092+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOYVAyZnZwU0J1WlRRbmZiWERRNTF3VHJQaUI2UE9HeVh0dnk3TXFFNVlNMU9vdnpGT2tNMWhQenoyMHdrYnl2N2tuN3hLV29lWFNITlYxU0I3aVNxbXVEMVdiQnZZWktwdm9INGNFZlFLMW4tb2xLRFVGSzBoVWdOLTBGQ3FTN1hBRy1yV3l5czkxY0VJRk1yUFUyYXh4VmlVM3BtZ09BTGpZczNTdGFpaTZMeFl5NmhZeE04cHlqWkZmYkdxRXh3ZmN3U2ZFS1NCRG51UlhkNWFSejdqMEE?oc=5": {
+   "title": "Yobel continúa su expansión en Centroamérica y abre nuevos centros logísticos en El Salvador y Costa Rica",
+   "url": "https://www.businessempresarial.com.pe/yobel-continua-su-expansion-en-centroamerica-y-abre-nuevos-centros-logisticos-en-el-salvador-y-costa-rica/",
+   "summary": "Yobel continúa su expansión en Centroamérica y abre nuevos centros logísticos en El Salvador y Costa Rica &nbsp;&nbsp; Business Empresarial",
+   "source": "Business Empresarial",
+   "domain": "businessempresarial.com.pe",
+   "pub_ts": 1775718000,
+   "pub_iso": "2026-04-09 04:00",
+   "language": "es",
+   "companies": [
+    "Yobel"
+   ],
+   "event_ids": [
+    "expansao_capacidade"
+   ],
+   "mention_roles": {
+    "Yobel": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Yobel": [
+     {
+      "company": "Yobel",
+      "event_id": "expansao_capacidade",
+      "event_label": "Expansão de capacidade",
+      "subject_company": "Yobel",
+      "monitored_company": "Yobel",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Yobel continúa su expansión en Centroamérica y abre nuevos centros logísticos en El Salvador y Costa Rica",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOYVAyZnZwU0J1WlRRbmZiWERRNTF3VHJQaUI2UE9HeVh0dnk3TXFFNVlNMU9vdnpGT2tNMWhQenoyMHdrYnl2N2tuN3hLV29lWFNITlYxU0I3aVNxbXVEMVdiQnZZWktwdm9INGNFZlFLMW4tb2xLRFVGSzBoVWdOLTBGQ3FTN1hBRy1yV3l5czkxY0VJRk1yUFUyYXh4VmlVM3BtZ09BTGpZczNTdGFpaTZMeFl5NmhZeE04cHlqWkZmYkdxRXh3ZmN3U2ZFS1NCRG51UlhkNWFSejdqMEE?oc=5",
+      "pub_ts": 1775718000,
+      "observation": "Evento direto 'Expansão de capacidade' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOYVAyZnZwU0J1WlRRbmZiWERRNTF3VHJQaUI2UE9HeVh0dnk3TXFFNVlNMU9vdnpGT2tNMWhQenoyMHdrYnl2N2tuN3hLV29lWFNITlYxU0I3aVNxbXVEMVdiQnZZWktwdm9INGNFZlFLMW4tb2xLRFVGSzBoVWdOLTBGQ3FTN1hBRy1yV3l5czkxY0VJRk1yUFUyYXh4VmlVM3BtZ09BTGpZczNTdGFpaTZMeFl5NmhZeE04cHlqWkZmYkdxRXh3ZmN3U2ZFS1NCRG51UlhkNWFSejdqMEE?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Yobel": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Yobel"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNc2lDdzg1ME5HV3VTX2xCc2VLZG5JRER1ckZxXzFFc0czTThzeTYxOGs3TXp6U2lzeUQtLUJUazVYOWJqVXZPMDBtNnJtQTJwc19jekRjbl9OUXFlWWRqTzh1TWUwSHVjRHBqb01RTkF0Wmx0OG5UVHRfSEN4TERac0NwMGdCYnZmSWZLNExiRzEwYm1Cc2FXbzNnZ1dpUDVaOGh5NkNTb1BCeEFSMWlSZmtRWGZMMXowVjFoeWdQVmhkTnBkaEF2WnBLVi1ta3JN?oc=5": {
+   "title": "Yobel designa a Sergio Torrico como gerente general para liderar su operación en Latinoamérica",
+   "url": "https://gestion.pe/economia/empresas/yobel-designa-nuevo-gerente-general-para-fortalecer-su-crecimiento-logistico-en-la-region-noticia/",
+   "summary": "Yobel designa a Sergio Torrico como gerente general para liderar su operación en Latinoamérica &nbsp;&nbsp; Gestión",
+   "source": "Gestión",
+   "domain": "gestion.pe",
+   "pub_ts": 1776409200,
+   "pub_iso": "2026-04-17 04:00",
+   "language": "es",
+   "companies": [
+    "Yobel"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "mention_roles": {
+    "Yobel": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Yobel": [
+     "troca_ceo"
+    ]
+   },
+   "companies_attributed": [
+    "Yobel"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQQ05fTnc4UUFic0FJOE5vTEM2QnY3cTZoLUlNeEJBeEdvRVhmOHZsYXBHZUp3ZWR6OTFFaU1Td2NWd2xkdUZ2UXUtZmtuOUJCaXdMay02QkJUS3pfSzJZT3YtdC1HMzd0QmktREt1dmlSYkx6Z3ZLeERrNmFXS2pxWDBiOWlHaEVJVldzUHVWbzBaRENxbk45ZFN4SGxBam1XZUNlV2NqVWNEWm0tbXNqUUNJSklOTkg1NU15M0dldnI4OVZPQ2ZnTA?oc=5": {
+   "title": "Trupal de Grupo Gloria alista inversión para modernizar su planta en El Agustino",
+   "url": "https://gestion.pe/economia/empresas/trupal-alista-mejora-de-su-planta-de-tratamiento-de-aguas-residuales-en-el-agustino-noticia/",
+   "summary": "Trupal de Grupo Gloria alista inversión para modernizar su planta en El Agustino &nbsp;&nbsp; Gestión",
+   "source": "Gestión",
+   "domain": "gestion.pe",
+   "pub_ts": 1776754800,
+   "pub_iso": "2026-04-21 04:00",
+   "language": "es",
+   "companies": [
+    "Trupal"
+   ],
+   "event_ids": [
+    "investimento_operacional"
+   ],
+   "mention_roles": {
+    "Trupal": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Trupal": [
+     {
+      "company": "Trupal",
+      "event_id": "investimento_operacional",
+      "event_label": "Investimento operacional",
+      "subject_company": "Trupal",
+      "monitored_company": "Trupal",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Trupal de Grupo Gloria alista inversión para modernizar su planta en El Agustino",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQQ05fTnc4UUFic0FJOE5vTEM2QnY3cTZoLUlNeEJBeEdvRVhmOHZsYXBHZUp3ZWR6OTFFaU1Td2NWd2xkdUZ2UXUtZmtuOUJCaXdMay02QkJUS3pfSzJZT3YtdC1HMzd0QmktREt1dmlSYkx6Z3ZLeERrNmFXS2pxWDBiOWlHaEVJVldzUHVWbzBaRENxbk45ZFN4SGxBam1XZUNlV2NqVWNEWm0tbXNqUUNJSklOTkg1NU15M0dldnI4OVZPQ2ZnTA?oc=5",
+      "pub_ts": 1776754800,
+      "observation": "Evento direto 'Investimento operacional' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQQ05fTnc4UUFic0FJOE5vTEM2QnY3cTZoLUlNeEJBeEdvRVhmOHZsYXBHZUp3ZWR6OTFFaU1Td2NWd2xkdUZ2UXUtZmtuOUJCaXdMay02QkJUS3pfSzJZT3YtdC1HMzd0QmktREt1dmlSYkx6Z3ZLeERrNmFXS2pxWDBiOWlHaEVJVldzUHVWbzBaRENxbk45ZFN4SGxBam1XZUNlV2NqVWNEWm0tbXNqUUNJSklOTkg1NU15M0dldnI4OVZPQ2ZnTA?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Trupal": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Trupal"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNdWlTUUlVWFBtZUkwNklpRnVsbV9yRTEyejBDLUlWWGkwQjFkWXFWNVBidE5UYl9zaDU0dE0zM2VzVFhyaDdJZ1R4cW9uQVZLUHY1STJpenJMTS02U3lIdkt3SUE4UGU2R0JZX0ZDUGxNR0pXS3JTaUx0QTNfdGtSUjFESG5ZMVdPTDkxemh2Y2dmcks3MUtVOEhpSWxQdXIxXzRNVHlIeXR3WkQ0X0ZpMnJVSjZEVTNnLWYwZG1qQVhud0o2SWx5UGp4ZWFGbXNiQ0psemZmMVRVLXlNcWpjaUVDSFkwSGkwUkEtZUxxb9IB9AFBVV95cUxPYWtMemdra3NZdWZxeHc4cmpNYzY3WFZ4UjRad21GQzNYNTEzNzhDOUFRdnRnV01zT0xHS3EzdW05QTVfNGdsRzJFS2hBZjJfSlFqZllLMzU5VUpGQUx5SDdfMHJRa29CYnRSelBTbFJRYkd2WDM0T0RySTVFbG8wMGRsc1RnTkYzS0xqYmw3QTVrcHhRZlNCWlRwSFhBdHhuMlNscHVsT3ZhWmZhR0hvM3NZRjFxV0I5dGE3T1JuWjhncXgxWVdNZGZwQ3NacjZPaGU1cGpVM2dsUlpQNndzQ1hLREUtb25pdk5vdGlhLWhWUHlt?oc=5": {
+   "title": "YURA S.A. impulsa millonaria inversión en dos proyectos viales para mejorar la movilidad urbana en Cerro",
+   "url": "https://diariosinfronteras.com.pe/2026/05/29/yura-s-a-impulsa-millonaria-inversion-en-dos-proyectos-viales-para-mejorar-la-movilidad-urbana-en-cerro-colorado/",
+   "summary": "YURA S.A. impulsa millonaria inversión en dos proyectos viales para mejorar la movilidad urbana en Cerro &nbsp;&nbsp; Diario Sin Fronteras",
+   "source": "Diario Sin Fronteras",
+   "domain": "diariosinfronteras.com.pe",
+   "pub_ts": 1780038000,
+   "pub_iso": "2026-05-29 04:00",
+   "language": "es",
+   "companies": [
+    "Yura"
+   ],
+   "event_ids": [
+    "investimento_operacional"
+   ],
+   "mention_roles": {
+    "Yura": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Yura": [
+     {
+      "company": "Yura",
+      "event_id": "investimento_operacional",
+      "event_label": "Investimento operacional",
+      "subject_company": "Yura",
+      "monitored_company": "Yura",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "YURA S.A. impulsa millonaria inversión en dos proyectos viales para mejorar la movilidad urbana en Cerro",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNdWlTUUlVWFBtZUkwNklpRnVsbV9yRTEyejBDLUlWWGkwQjFkWXFWNVBidE5UYl9zaDU0dE0zM2VzVFhyaDdJZ1R4cW9uQVZLUHY1STJpenJMTS02U3lIdkt3SUE4UGU2R0JZX0ZDUGxNR0pXS3JTaUx0QTNfdGtSUjFESG5ZMVdPTDkxemh2Y2dmcks3MUtVOEhpSWxQdXIxXzRNVHlIeXR3WkQ0X0ZpMnJVSjZEVTNnLWYwZG1qQVhud0o2SWx5UGp4ZWFGbXNiQ0psemZmMVRVLXlNcWpjaUVDSFkwSGkwUkEtZUxxb9IB9AFBVV95cUxPYWtMemdra3NZdWZxeHc4cmpNYzY3WFZ4UjRad21GQzNYNTEzNzhDOUFRdnRnV01zT0xHS3EzdW05QTVfNGdsRzJFS2hBZjJfSlFqZllLMzU5VUpGQUx5SDdfMHJRa29CYnRSelBTbFJRYkd2WDM0T0RySTVFbG8wMGRsc1RnTkYzS0xqYmw3QTVrcHhRZlNCWlRwSFhBdHhuMlNscHVsT3ZhWmZhR0hvM3NZRjFxV0I5dGE3T1JuWjhncXgxWVdNZGZwQ3NacjZPaGU1cGpVM2dsUlpQNndzQ1hLREUtb25pdk5vdGlhLWhWUHlt?oc=5",
+      "pub_ts": 1780038000,
+      "observation": "Evento direto 'Investimento operacional' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNdWlTUUlVWFBtZUkwNklpRnVsbV9yRTEyejBDLUlWWGkwQjFkWXFWNVBidE5UYl9zaDU0dE0zM2VzVFhyaDdJZ1R4cW9uQVZLUHY1STJpenJMTS02U3lIdkt3SUE4UGU2R0JZX0ZDUGxNR0pXS3JTaUx0QTNfdGtSUjFESG5ZMVdPTDkxemh2Y2dmcks3MUtVOEhpSWxQdXIxXzRNVHlIeXR3WkQ0X0ZpMnJVSjZEVTNnLWYwZG1qQVhud0o2SWx5UGp4ZWFGbXNiQ0psemZmMVRVLXlNcWpjaUVDSFkwSGkwUkEtZUxxb9IB9AFBVV95cUxPYWtMemdra3NZdWZxeHc4cmpNYzY3WFZ4UjRad21GQzNYNTEzNzhDOUFRdnRnV01zT0xHS3EzdW05QTVfNGdsRzJFS2hBZjJfSlFqZllLMzU5VUpGQUx5SDdfMHJRa29CYnRSelBTbFJRYkd2WDM0T0RySTVFbG8wMGRsc1RnTkYzS0xqYmw3QTVrcHhRZlNCWlRwSFhBdHhuMlNscHVsT3ZhWmZhR0hvM3NZRjFxV0I5dGE3T1JuWjhncXgxWVdNZGZwQ3NacjZPaGU1cGpVM2dsUlpQNndzQ1hLREUtb25pdk5vdGlhLWhWUHlt?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Yura": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Yura"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2ZVWlVHMmY0aVlrcHZjU2JVZ0lCR09fVnVXa2tDUXBlODlFaUNYNXh0dTN1RlVKRVdMSGlxWTF4TEJjeEM2QW4zVzhueWtST2JUR1lwemN0Q0ZPaElnRkVqenVtdUJxYUpXYnF3SHllMnR4TXVCb29vUWJGb0NQZTRISUxDSnU3bWNtVEIzVjdETzhRQXFHdUxLdWxQQ3pmQzFqM1BMWDV0N2NtQmtUdzZHc1FJNUJKeHVIOEh3?oc=5": {
+   "title": "Cemento Yura apuesta por energía solar y ahorra US$ 2.7 millones en su primer año",
+   "url": "https://stakeholders.com.pe/noticias-sh/cemento-yura-apuesta-por-energia-solar-y-ahorra-us-2-7-millones-en-su-primer-ano/",
+   "summary": "Cemento Yura apuesta por energía solar y ahorra US$ 2.7 millones en su primer año &nbsp;&nbsp; stakeholders.com.pe",
+   "source": "stakeholders.com.pe",
+   "domain": "stakeholders.com.pe",
+   "pub_ts": 1780642800,
+   "pub_iso": "2026-06-05 04:00",
+   "language": "es",
+   "companies": [
+    "Yura"
+   ],
+   "event_ids": [
+    "investimento_operacional"
+   ],
+   "mention_roles": {
+    "Yura": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Yura": [
+     {
+      "company": "Yura",
+      "event_id": "investimento_operacional",
+      "event_label": "Investimento operacional",
+      "subject_company": "Yura",
+      "monitored_company": "Yura",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Cemento Yura apuesta por energía solar y ahorra US$ 2.7 millones en su primer año",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2ZVWlVHMmY0aVlrcHZjU2JVZ0lCR09fVnVXa2tDUXBlODlFaUNYNXh0dTN1RlVKRVdMSGlxWTF4TEJjeEM2QW4zVzhueWtST2JUR1lwemN0Q0ZPaElnRkVqenVtdUJxYUpXYnF3SHllMnR4TXVCb29vUWJGb0NQZTRISUxDSnU3bWNtVEIzVjdETzhRQXFHdUxLdWxQQ3pmQzFqM1BMWDV0N2NtQmtUdzZHc1FJNUJKeHVIOEh3?oc=5",
+      "pub_ts": 1780642800,
+      "observation": "Evento direto 'Investimento operacional' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2ZVWlVHMmY0aVlrcHZjU2JVZ0lCR09fVnVXa2tDUXBlODlFaUNYNXh0dTN1RlVKRVdMSGlxWTF4TEJjeEM2QW4zVzhueWtST2JUR1lwemN0Q0ZPaElnRkVqenVtdUJxYUpXYnF3SHllMnR4TXVCb29vUWJGb0NQZTRISUxDSnU3bWNtVEIzVjdETzhRQXFHdUxLdWxQQ3pmQzFqM1BMWDV0N2NtQmtUdzZHc1FJNUJKeHVIOEh3?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Yura": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Yura"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQUkpGbDRmUW9UVk1OOUVjZGpoWVo1WnRuazRUemo5WjF6RXBxMzRaY2ltb2lrTHJjOFVoSWJjSm44MWhleWs1eGZ6VDlWekt6aU9EOU9vX1FHOVQ4Rk9vdmZvSVRLMzhQSGVTOC1RYmd5Q1hsVklUVHI5WjBpMjMwTEN3bzZ6OE5GQ2x6elRubE9QNF9NM0NlNFVmbmp0cW53MUpBT0lVWkZhcXl5eG5fMjhnai1JMlFHU3dJTUlRSmhJbXpsSl9saHB6ek5YLW9JeHFfcUZuWnk?oc=5": {
+   "title": "Innovación sostenible de Trupal: el modelo de triple impacto que fortalece la agroexportación peruana",
+   "url": "https://stakeholders.com.pe/noticias-sh/innovacion-sostenible-de-trupal-el-modelo-de-triple-impacto-que-fortalece-la-agroexportacion-peruana/",
+   "summary": "Innovación sostenible de Trupal: el modelo de triple impacto que fortalece la agroexportación peruana &nbsp;&nbsp; stakeholders.com.pe",
+   "source": "stakeholders.com.pe",
+   "domain": "stakeholders.com.pe",
+   "pub_ts": 1780988400,
+   "pub_iso": "2026-06-09 04:00",
+   "language": "es",
+   "companies": [
+    "Trupal"
+   ],
+   "event_ids": [
+    "investimento_operacional"
+   ],
+   "mention_roles": {
+    "Trupal": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Trupal": [
+     {
+      "company": "Trupal",
+      "event_id": "investimento_operacional",
+      "event_label": "Investimento operacional",
+      "subject_company": "Trupal",
+      "monitored_company": "Trupal",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Innovación sostenible de Trupal: el modelo de triple impacto que fortalece la agroexportación peruana",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQUkpGbDRmUW9UVk1OOUVjZGpoWVo1WnRuazRUemo5WjF6RXBxMzRaY2ltb2lrTHJjOFVoSWJjSm44MWhleWs1eGZ6VDlWekt6aU9EOU9vX1FHOVQ4Rk9vdmZvSVRLMzhQSGVTOC1RYmd5Q1hsVklUVHI5WjBpMjMwTEN3bzZ6OE5GQ2x6elRubE9QNF9NM0NlNFVmbmp0cW53MUpBT0lVWkZhcXl5eG5fMjhnai1JMlFHU3dJTUlRSmhJbXpsSl9saHB6ek5YLW9JeHFfcUZuWnk?oc=5",
+      "pub_ts": 1780988400,
+      "observation": "Evento direto 'Investimento operacional' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQUkpGbDRmUW9UVk1OOUVjZGpoWVo1WnRuazRUemo5WjF6RXBxMzRaY2ltb2lrTHJjOFVoSWJjSm44MWhleWs1eGZ6VDlWekt6aU9EOU9vX1FHOVQ4Rk9vdmZvSVRLMzhQSGVTOC1RYmd5Q1hsVklUVHI5WjBpMjMwTEN3bzZ6OE5GQ2x6elRubE9QNF9NM0NlNFVmbmp0cW53MUpBT0lVWkZhcXl5eG5fMjhnai1JMlFHU3dJTUlRSmhJbXpsSl9saHB6ek5YLW9JeHFfcUZuWnk?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Trupal": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Trupal"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMixAFBVV95cUxQbHhxWExMWkh5VkZua19rbXFqaE5PajZWODBCb2ZDV0hZUVJEdXdGOV9MMW8tdGZZOWF4RU1JVWVZS2FiSDNsRWNScDd3UWdTWTJPa1lvdWh2OW1id0V3Y2VGQVVoNGVTMGs2bE95d1psYWNfQXprRGY2NzFCaTdNNVQtbUJKWnBsS25ESGFlNENyNUticFJfVWNHLU82RTNXel9IYjJYUGJPc1h3S254UFpiWTlud2N1eWZjLWtWV1RTWVB2?oc=5": {
+   "title": "La apuesta de Cemento Yura por la energía solar genera ahorros por US$ 2.7 millones en su primer año",
+   "url": "https://peru21.pe/economia/la-apuesta-de-cemento-yura-por-la-energia-solar-genera-ahorros-por-us-27-millones-en-su-primer-ano/",
+   "summary": "La apuesta de Cemento Yura por la energía solar genera ahorros por US$ 2.7 millones en su primer año &nbsp;&nbsp; Perú 21",
+   "source": "Perú 21",
+   "domain": "peru21.pe",
+   "pub_ts": 1781074800,
+   "pub_iso": "2026-06-10 04:00",
+   "language": "es",
+   "companies": [
+    "Yura"
+   ],
+   "event_ids": [
+    "investimento_operacional"
+   ],
+   "mention_roles": {
+    "Yura": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Yura": [
+     {
+      "company": "Yura",
+      "event_id": "investimento_operacional",
+      "event_label": "Investimento operacional",
+      "subject_company": "Yura",
+      "monitored_company": "Yura",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "La apuesta de Cemento Yura por la energía solar genera ahorros por US$ 2.7 millones en su primer año",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQbHhxWExMWkh5VkZua19rbXFqaE5PajZWODBCb2ZDV0hZUVJEdXdGOV9MMW8tdGZZOWF4RU1JVWVZS2FiSDNsRWNScDd3UWdTWTJPa1lvdWh2OW1id0V3Y2VGQVVoNGVTMGs2bE95d1psYWNfQXprRGY2NzFCaTdNNVQtbUJKWnBsS25ESGFlNENyNUticFJfVWNHLU82RTNXel9IYjJYUGJPc1h3S254UFpiWTlud2N1eWZjLWtWV1RTWVB2?oc=5",
+      "pub_ts": 1781074800,
+      "observation": "Evento direto 'Investimento operacional' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQbHhxWExMWkh5VkZua19rbXFqaE5PajZWODBCb2ZDV0hZUVJEdXdGOV9MMW8tdGZZOWF4RU1JVWVZS2FiSDNsRWNScDd3UWdTWTJPa1lvdWh2OW1id0V3Y2VGQVVoNGVTMGs2bE95d1psYWNfQXprRGY2NzFCaTdNNVQtbUJKWnBsS25ESGFlNENyNUticFJfVWNHLU82RTNXel9IYjJYUGJPc1h3S254UFpiWTlud2N1eWZjLWtWV1RTWVB2?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Yura": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Yura"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMilwFBVV95cUxQUWk3Q3BmTG8tZlNnUWl4MGNrWEZBeGZpWkN4YjY0VGl4YTM5N2ZUMC1ab2ZabVBDLW53TWxpYXpJaUxRTHl1ZlhLS0tfbWV1bUkzQkFTckFTZWRVTUlFUklfa1lpSnFNSlRlVnlLVkRLWW9yeVNIOXdUX2FjSUVEamRhamlnMWNwQWVmNkNaeE9rRzROR01J?oc=5": {
+   "title": "Incendio en planta de Cementos Yura fue controlado sin dejar heridos",
+   "url": "https://hbanoticias.pe/incendio-en-planta-de-cementos-yura-fue-controlado-sin-dejar-heridos/",
+   "summary": "Incendio en planta de Cementos Yura fue controlado sin dejar heridos &nbsp;&nbsp; hbanoticias.pe",
+   "source": "hbanoticias.pe",
+   "domain": "hbanoticias.pe",
+   "pub_ts": 1781938800,
+   "pub_iso": "2026-06-20 04:00",
+   "language": "pt",
+   "companies": [
+    "Yura"
+   ],
+   "event_ids": [
+    "incidente_operacional"
+   ],
+   "mention_roles": {
+    "Yura": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Yura": [
+     "incidente_operacional"
+    ]
+   },
+   "companies_attributed": [
+    "Yura"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMiywFBVV95cUxPMUE4RldZOUFTVndLYmh3SUNyb1lCRkhpbmtLNDhoeXVhWmRIX0ZVUnVfV19RTE9SYmlQQlQxbER0WmhYLW9ndjlVNDdyYXdBMk44UjFlSER0QWtKb1g5QUxvc1l5blRfUVlaeHhXZ2g5eHRHRksxc1o3dGxna0NNZW1iQWd1ZFFoNHVSbXd4SFBGV2ZPRE9JUXZaV1hSSUVOc09keHQtcnkydi15WlVqNWFucV9HNElrbGJ6Y3hoZkNRMmZvZEZXWERhUQ?oc=5": {
+   "title": "TRUPAL Perú fortalece su modelo de empaques sostenibles con materiales reciclados y economía circular",
+   "url": "https://cartonycorrugado.com/trupal-peru-fortalece-su-modelo-de-empaques-sostenibles-con-materiales-reciclados-y-economia-circular/",
+   "summary": "TRUPAL Perú fortalece su modelo de empaques sostenibles con materiales reciclados y economía circular &nbsp;&nbsp; cartonycorrugado.com",
+   "source": "cartonycorrugado.com",
+   "domain": "cartonycorrugado.com",
+   "pub_ts": 1782198000,
+   "pub_iso": "2026-06-23 04:00",
+   "language": "es",
+   "companies": [
+    "Trupal"
+   ],
+   "event_ids": [
+    "investimento_operacional"
+   ],
+   "mention_roles": {
+    "Trupal": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Trupal": [
+     {
+      "company": "Trupal",
+      "event_id": "investimento_operacional",
+      "event_label": "Investimento operacional",
+      "subject_company": "Trupal",
+      "monitored_company": "Trupal",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "TRUPAL Perú fortalece su modelo de empaques sostenibles con materiales reciclados y economía circular",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPMUE4RldZOUFTVndLYmh3SUNyb1lCRkhpbmtLNDhoeXVhWmRIX0ZVUnVfV19RTE9SYmlQQlQxbER0WmhYLW9ndjlVNDdyYXdBMk44UjFlSER0QWtKb1g5QUxvc1l5blRfUVlaeHhXZ2g5eHRHRksxc1o3dGxna0NNZW1iQWd1ZFFoNHVSbXd4SFBGV2ZPRE9JUXZaV1hSSUVOc09keHQtcnkydi15WlVqNWFucV9HNElrbGJ6Y3hoZkNRMmZvZEZXWERhUQ?oc=5",
+      "pub_ts": 1782198000,
+      "observation": "Evento direto 'Investimento operacional' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPMUE4RldZOUFTVndLYmh3SUNyb1lCRkhpbmtLNDhoeXVhWmRIX0ZVUnVfV19RTE9SYmlQQlQxbER0WmhYLW9ndjlVNDdyYXdBMk44UjFlSER0QWtKb1g5QUxvc1l5blRfUVlaeHhXZ2g5eHRHRksxc1o3dGxna0NNZW1iQWd1ZFFoNHVSbXd4SFBGV2ZPRE9JUXZaV1hSSUVOc09keHQtcnkydi15WlVqNWFucV9HNElrbGJ6Y3hoZkNRMmZvZEZXWERhUQ?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Trupal": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Trupal"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQRGpoREs3Vml4Y214UlljcVUzRlVfbFVPMXZTOXFTOE9DWklrcFl0ZzhSN2FtelQ3WGE1eGxSTjBjUFJrRi1tMFBNcmRBb0x0OFZyM25xODdWNVZvMFRwYlZrVXFLOE91dUZEOXNid3hWdm5TV0FwYmpDR1haZkJRWXFvdGh1SFpxaG1yelBMLW8yb0xPQV8zSGlrY0hkRXB0YjFEVmdGYjlGV1MwVjNENkhjaWNfNDlrcE4tQTZCN2xWaURLazNoY0FLaXIxQUl2d1VvSXJVRXBDOFJuWVo1VzhkLWFpODA?oc=5": {
+   "title": "¿Competencia para Trupal?: multinacional de empaques acelera expansión en Perú",
+   "url": "https://gestion.pe/economia/empresas/multinacional-de-empaques-que-compite-con-trupal-ampliara-su-capacidad-en-peru-con-foco-en-agroexportacion-noticia/",
+   "summary": "¿Competencia para Trupal?: multinacional de empaques acelera expansión en Perú &nbsp;&nbsp; Gestión",
+   "source": "Gestión",
+   "domain": "gestion.pe",
+   "pub_ts": 1783407600,
+   "pub_iso": "2026-07-07 04:00",
+   "language": "pt",
+   "companies": [
+    "Trupal"
+   ],
+   "event_ids": [
+    "expansao_capacidade"
+   ],
+   "mention_roles": {
+    "Trupal": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Trupal": [
+     {
+      "company": "Trupal",
+      "event_id": "expansao_capacidade",
+      "event_label": "Expansão de capacidade",
+      "subject_company": "Trupal",
+      "monitored_company": "Trupal",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "¿Competencia para Trupal?: multinacional de empaques acelera expansión en Perú",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQRGpoREs3Vml4Y214UlljcVUzRlVfbFVPMXZTOXFTOE9DWklrcFl0ZzhSN2FtelQ3WGE1eGxSTjBjUFJrRi1tMFBNcmRBb0x0OFZyM25xODdWNVZvMFRwYlZrVXFLOE91dUZEOXNid3hWdm5TV0FwYmpDR1haZkJRWXFvdGh1SFpxaG1yelBMLW8yb0xPQV8zSGlrY0hkRXB0YjFEVmdGYjlGV1MwVjNENkhjaWNfNDlrcE4tQTZCN2xWaURLazNoY0FLaXIxQUl2d1VvSXJVRXBDOFJuWVo1VzhkLWFpODA?oc=5",
+      "pub_ts": 1783407600,
+      "observation": "Evento direto 'Expansão de capacidade' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQRGpoREs3Vml4Y214UlljcVUzRlVfbFVPMXZTOXFTOE9DWklrcFl0ZzhSN2FtelQ3WGE1eGxSTjBjUFJrRi1tMFBNcmRBb0x0OFZyM25xODdWNVZvMFRwYlZrVXFLOE91dUZEOXNid3hWdm5TV0FwYmpDR1haZkJRWXFvdGh1SFpxaG1yelBMLW8yb0xPQV8zSGlrY0hkRXB0YjFEVmdGYjlGV1MwVjNENkhjaWNfNDlrcE4tQTZCN2xWaURLazNoY0FLaXIxQUl2d1VvSXJVRXBDOFJuWVo1VzhkLWFpODA?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Trupal": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Trupal"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPaC1PSlRpT18ySXNteU55YmZYX3o0LVV4ZmlFaVpxWEZIWVlOYTZzd1Jlb2VHeUdjWEZ5SVoyUk9UOXdFeHpwVGNuS1d5dWw2OEJKbWZaNjVZczZHZFJZMGNsd3F4T3VkWDQ1Njh5ZGVEOFJtNTlSbk9Ia3FGOUVwd0dMbEgzdUMxUjR1UDBxWk1FeHFpLU9lZ3JMdEpFMG5fWVhZel9UMjlYTWJVd2pUV09tUnVMVTU4dmsw?oc=5": {
+   "title": "Cemento Yura impulsa proyectos de infraestructura clave en Arequipa por más de S/350 millones",
+   "url": "https://peru21.pe/colab21/cemento-yura-impulsa-proyectos-de-infraestructura-clave-en-arequipa-por-mas-de-s350-millones/",
+   "summary": "Cemento Yura impulsa proyectos de infraestructura clave en Arequipa por más de S/350 millones &nbsp;&nbsp; Perú 21",
+   "source": "Perú 21",
+   "domain": "peru21.pe",
+   "pub_ts": 1784550264,
+   "pub_iso": "2026-07-20 09:24",
+   "language": "es",
+   "companies": [
+    "Yura"
+   ],
+   "event_ids": [
+    "investimento_operacional"
+   ],
+   "mention_roles": {
+    "Yura": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Yura": [
+     {
+      "company": "Yura",
+      "event_id": "investimento_operacional",
+      "event_label": "Investimento operacional",
+      "subject_company": "Yura",
+      "monitored_company": "Yura",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Cemento Yura impulsa proyectos de infraestructura clave en Arequipa por más de S/350 millones",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPaC1PSlRpT18ySXNteU55YmZYX3o0LVV4ZmlFaVpxWEZIWVlOYTZzd1Jlb2VHeUdjWEZ5SVoyUk9UOXdFeHpwVGNuS1d5dWw2OEJKbWZaNjVZczZHZFJZMGNsd3F4T3VkWDQ1Njh5ZGVEOFJtNTlSbk9Ia3FGOUVwd0dMbEgzdUMxUjR1UDBxWk1FeHFpLU9lZ3JMdEpFMG5fWVhZel9UMjlYTWJVd2pUV09tUnVMVTU4dmsw?oc=5",
+      "pub_ts": 1784550264,
+      "observation": "Evento direto 'Investimento operacional' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPaC1PSlRpT18ySXNteU55YmZYX3o0LVV4ZmlFaVpxWEZIWVlOYTZzd1Jlb2VHeUdjWEZ5SVoyUk9UOXdFeHpwVGNuS1d5dWw2OEJKbWZaNjVZczZHZFJZMGNsd3F4T3VkWDQ1Njh5ZGVEOFJtNTlSbk9Ia3FGOUVwd0dMbEgzdUMxUjR1UDBxWk1FeHFpLU9lZ3JMdEpFMG5fWVhZel9UMjlYTWJVd2pUV09tUnVMVTU4dmsw?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Yura": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Yura"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOdUlkdG84Vm1uZFpRWVlzRGhIQ1JwZUx3NmRvTEF5TnI2MXBGQzBtTHdQSXVhdkdKNlM0SzRZZW9Kb2dQYkVKY0NUYllMMTMxTlZpUGdINHJQc1hpNW13LVhIbGFpNTByTTMtaTBQNjRjWUR1cmR5ZkxtVEdoRW5DbkVBelpONFpLQ3R6cjFGVndRLUVXNzFNRTZrZEhpZFFrV0s4WktZdVY?oc=5": {
+   "title": "Gonzalo Rueda Castillo es el nuevo gerente general de Cemento Yura",
+   "url": "https://forbes.pe/negocios/2026-07-20/gonzalo-rueda-castillo-es-el-nuevo-gerente-general-de-cemento-yura/",
+   "summary": "Gonzalo Rueda Castillo es el nuevo gerente general de Cemento Yura &nbsp;&nbsp; Forbes Perú",
+   "source": "Forbes Perú",
+   "domain": "forbes.pe",
+   "pub_ts": 1784586716,
+   "pub_iso": "2026-07-20 19:31",
+   "language": "es",
+   "companies": [
+    "Yura"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "mention_roles": {
+    "Yura": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Yura": [
+     "troca_ceo"
+    ]
+   },
+   "companies_attributed": [
+    "Yura"
+   ],
+   "context_companies": [],
+   "corroborations": [
+    {
+     "source": "El Comercio Perú",
+     "domain": "elcomercio.pe",
+     "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQa3Q2SjFTMGtudmlmVjZ5UDdLR0dhQmpBb1FrWHU2V3p3eE5NV0UzRzVVVWpOZmxKcFBUSVk4VXFKS3FFUktBeFhiRkdmcUZUaXJnZDdYczRxY1hXMlA5enVhUXgwallzZ2I4b21CSTZHeUFzalJzMXh5STJPUU9DakVzb0lTWTdtLWRlWVJJWjJPOG44azJKanB6UlltWjBFVFN0eEdwdDNkeWtGaldQWGVtSjlOOEE4ZEY5TEREUDd1WFUxaFdsM2d0ZXNhSDl4TWthV0huSTNnUWN1Wmd1NHk4Q3NiSWRkVldCRTE3MjBfaDd4UmozbWltUHo4WmR4Y1F4YmN2b0tjTEE?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQa3Q2SjFTMGtudmlmVjZ5UDdLR0dhQmpBb1FrWHU2V3p3eE5NV0UzRzVVVWpOZmxKcFBUSVk4VXFKS3FFUktBeFhiRkdmcUZUaXJnZDdYczRxY1hXMlA5enVhUXgwallzZ2I4b21CSTZHeUFzalJzMXh5STJPUU9DakVzb0lTWTdtLWRlWVJJWjJPOG44azJKanB6UlltWjBFVFN0eEdwdDNkeWtGaldQWGVtSjlOOEE4ZEY5TEREUDd1WFUxaFdsM2d0ZXNhSDl4TWthV0huSTNnUWN1Wmd1NHk4Q3NiSWRkVldCRTE3MjBfaDd4UmozbWltUHo4WmR4Y1F4YmN2b0tjTEE?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQa3Q2SjFTMGtudmlmVjZ5UDdLR0dhQmpBb1FrWHU2V3p3eE5NV0UzRzVVVWpOZmxKcFBUSVk4VXFKS3FFUktBeFhiRkdmcUZUaXJnZDdYczRxY1hXMlA5enVhUXgwallzZ2I4b21CSTZHeUFzalJzMXh5STJPUU9DakVzb0lTWTdtLWRlWVJJWjJPOG44azJKanB6UlltWjBFVFN0eEdwdDNkeWtGaldQWGVtSjlOOEE4ZEY5TEREUDd1WFUxaFdsM2d0ZXNhSDl4TWthV0huSTNnUWN1Wmd1NHk4Q3NiSWRkVldCRTE3MjBfaDd4UmozbWltUHo4WmR4Y1F4YmN2b0tjTEE?oc=5",
+     "resolved_url": "https://elcomercio.pe/economia/dia-1/nombramientos-de-la-semana-presidencia-del-directorio-de-efectibank-gerente-general-de-cemento-yura-y-mas-nombramientos-designaciones-noticia/",
+     "canonical_url": "https://elcomercio.pe/economia/dia-1/nombramientos-de-la-semana-presidencia-del-directorio-de-efectibank-gerente-general-de-cemento-yura-y-mas-nombramientos-designaciones-noticia/",
+     "display_url": "https://elcomercio.pe/economia/dia-1/nombramientos-de-la-semana-presidencia-del-directorio-de-efectibank-gerente-general-de-cemento-yura-y-mas-nombramientos-designaciones-noticia/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "elcomercio.pe",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-04T00:27:16.220654+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "El Comercio Perú",
+     "domain": "elcomercio.pe",
+     "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQa3Q2SjFTMGtudmlmVjZ5UDdLR0dhQmpBb1FrWHU2V3p3eE5NV0UzRzVVVWpOZmxKcFBUSVk4VXFKS3FFUktBeFhiRkdmcUZUaXJnZDdYczRxY1hXMlA5enVhUXgwallzZ2I4b21CSTZHeUFzalJzMXh5STJPUU9DakVzb0lTWTdtLWRlWVJJWjJPOG44azJKanB6UlltWjBFVFN0eEdwdDNkeWtGaldQWGVtSjlOOEE4ZEY5TEREUDd1WFUxaFdsM2d0ZXNhSDl4TWthV0huSTNnUWN1Wmd1NHk4Q3NiSWRkVldCRTE3MjBfaDd4UmozbWltUHo4WmR4Y1F4YmN2b0tjTEE?oc=5",
+     "when": "22/07 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQa3Q2SjFTMGtudmlmVjZ5UDdLR0dhQmpBb1FrWHU2V3p3eE5NV0UzRzVVVWpOZmxKcFBUSVk4VXFKS3FFUktBeFhiRkdmcUZUaXJnZDdYczRxY1hXMlA5enVhUXgwallzZ2I4b21CSTZHeUFzalJzMXh5STJPUU9DakVzb0lTWTdtLWRlWVJJWjJPOG44azJKanB6UlltWjBFVFN0eEdwdDNkeWtGaldQWGVtSjlOOEE4ZEY5TEREUDd1WFUxaFdsM2d0ZXNhSDl4TWthV0huSTNnUWN1Wmd1NHk4Q3NiSWRkVldCRTE3MjBfaDd4UmozbWltUHo4WmR4Y1F4YmN2b0tjTEE?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQa3Q2SjFTMGtudmlmVjZ5UDdLR0dhQmpBb1FrWHU2V3p3eE5NV0UzRzVVVWpOZmxKcFBUSVk4VXFKS3FFUktBeFhiRkdmcUZUaXJnZDdYczRxY1hXMlA5enVhUXgwallzZ2I4b21CSTZHeUFzalJzMXh5STJPUU9DakVzb0lTWTdtLWRlWVJJWjJPOG44azJKanB6UlltWjBFVFN0eEdwdDNkeWtGaldQWGVtSjlOOEE4ZEY5TEREUDd1WFUxaFdsM2d0ZXNhSDl4TWthV0huSTNnUWN1Wmd1NHk4Q3NiSWRkVldCRTE3MjBfaDd4UmozbWltUHo4WmR4Y1F4YmN2b0tjTEE?oc=5",
+     "resolved_url": "https://elcomercio.pe/economia/dia-1/nombramientos-de-la-semana-presidencia-del-directorio-de-efectibank-gerente-general-de-cemento-yura-y-mas-nombramientos-designaciones-noticia/",
+     "canonical_url": "https://elcomercio.pe/economia/dia-1/nombramientos-de-la-semana-presidencia-del-directorio-de-efectibank-gerente-general-de-cemento-yura-y-mas-nombramientos-designaciones-noticia/",
+     "display_url": "https://elcomercio.pe/economia/dia-1/nombramientos-de-la-semana-presidencia-del-directorio-de-efectibank-gerente-general-de-cemento-yura-y-mas-nombramientos-designaciones-noticia/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "elcomercio.pe",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-04T00:27:16.628960+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMirgFBVV95cUxNSU5MQzE3UWx5N29pajNJbGI0aTlqZFFfZ0ctZ3VNYnYzWlg1MjNkNlN5Wm85Wk9SME1lZmVGWllMLVJfRVNycnNaMU1sQXltdzU3QWVVVWQ1ejdPSjZoUS1BaVM2MVhRWGl3WllJMkZ3VVc3WmczakhMTm9jVENTY1U5Vy1EOXRzWnVkQzRvcVZpVU5fMlRfQ1dfQlRWTk5NZ3ZzNEs5ZDVjQjlEQWc?oc=5": {
+   "title": "Trupal convierte la sostenibilidad en ventaja competitiva",
+   "url": "https://stakeholders.com.pe/compromiso-empresarial/trupal-convierte-la-sostenibilidad-en-ventaja-competitiva/",
+   "summary": "Trupal convierte la sostenibilidad en ventaja competitiva &nbsp;&nbsp; stakeholders.com.pe",
+   "source": "stakeholders.com.pe",
+   "domain": "stakeholders.com.pe",
+   "pub_ts": 1784759590,
+   "pub_iso": "2026-07-22 19:33",
+   "language": "es",
+   "companies": [
+    "Trupal"
+   ],
+   "event_ids": [
+    "investimento_operacional"
+   ],
+   "mention_roles": {
+    "Trupal": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Trupal": [
+     {
+      "company": "Trupal",
+      "event_id": "investimento_operacional",
+      "event_label": "Investimento operacional",
+      "subject_company": "Trupal",
+      "monitored_company": "Trupal",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Trupal convierte la sostenibilidad en ventaja competitiva",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNSU5MQzE3UWx5N29pajNJbGI0aTlqZFFfZ0ctZ3VNYnYzWlg1MjNkNlN5Wm85Wk9SME1lZmVGWllMLVJfRVNycnNaMU1sQXltdzU3QWVVVWQ1ejdPSjZoUS1BaVM2MVhRWGl3WllJMkZ3VVc3WmczakhMTm9jVENTY1U5Vy1EOXRzWnVkQzRvcVZpVU5fMlRfQ1dfQlRWTk5NZ3ZzNEs5ZDVjQjlEQWc?oc=5",
+      "pub_ts": 1784759590,
+      "observation": "Evento direto 'Investimento operacional' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNSU5MQzE3UWx5N29pajNJbGI0aTlqZFFfZ0ctZ3VNYnYzWlg1MjNkNlN5Wm85Wk9SME1lZmVGWllMLVJfRVNycnNaMU1sQXltdzU3QWVVVWQ1ejdPSjZoUS1BaVM2MVhRWGl3WllJMkZ3VVc3WmczakhMTm9jVENTY1U5Vy1EOXRzWnVkQzRvcVZpVU5fMlRfQ1dfQlRWTk5NZ3ZzNEs5ZDVjQjlEQWc?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Trupal": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Trupal"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOU19CaExYUGJGTHo5RFlsYm5vX2ZQaFpzQWdyWkJQN1dfMnV4OEllek5Kbl9ZWmp2cFRTSVBXUGFlbDd1X2s1S3BYd1Jxd0VOWVdDMzhrT0pRSm5CcTRXUXJtYjlJTTJuVlluWXB3bmY4aUFNVTZvZ3BEV0tHazh4ZlktWWcwbThlaFc3LVhOYUhiaEpuRmhtdnBmLVl4SGx4azZCbV9JQS1QZFJPQldTZzNsOENqclZGcE9fMXVINEFkZ2JhbXN4QXpaWjZDbWtkZ2JMZW5VeGhBRnRXSV9rbl9B?oc=5": {
+   "title": "Extinción de incendio en fábrica de cosméticos de Los Olivos podría tomar hasta tres días, según los bomberos",
+   "url": "https://rpp.pe/lima/actualidad/los-olivos-extincion-de-incendio-en-fabrica-de-cosmeticos-podria-tomar-hasta-tres-dias-segun-bomberos-noticia-1698689",
+   "summary": "Extinción de incendio en fábrica de cosméticos de Los Olivos podría tomar hasta tres días, según los bomberos &nbsp;&nbsp; rpp.pe",
+   "source": "rpp.pe",
+   "domain": "rpp.pe",
+   "pub_ts": 1784917488,
+   "pub_iso": "2026-07-24 15:24",
+   "language": "es",
+   "companies": [
+    "Yobel"
+   ],
+   "event_ids": [
+    "incidente_operacional"
+   ],
+   "events_by_company": {
+    "Yobel": [
+     "incidente_operacional"
+    ]
+   },
+   "companies_attributed": [
+    "Yobel"
+   ],
+   "context_companies": [],
+   "corroborations": [
+    {
+     "source": "El Comercio Perú",
+     "domain": "elcomercio.pe",
+     "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNRUZvUXFweFJtazVHaXNBTjdqUEpSOUFWcUhZSHo5NXNZX3VQbTZsNWFQS1p3Z1N5QW1yNWNaN1V4aFpHajBRU1ZZdEhCdVVPX3hMakgtUlJrVmJFdXkyTmQ0Wk4yOUdOeWV6STdBRERBdUdOODJ1Z2g1ZmVrNGtjcWN3c1FlV3hZNmZ4R1lKR25QYlpzeE9URXhsYWZ6YURjS3kwSnRGZjhHbnlEbmw2dnR6YUlmRmZDZTVNNHNNMFhIQkR2S2c5VG1id3VYNTRnN2ptYXdKQlZGY0NDNG4taA?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNRUZvUXFweFJtazVHaXNBTjdqUEpSOUFWcUhZSHo5NXNZX3VQbTZsNWFQS1p3Z1N5QW1yNWNaN1V4aFpHajBRU1ZZdEhCdVVPX3hMakgtUlJrVmJFdXkyTmQ0Wk4yOUdOeWV6STdBRERBdUdOODJ1Z2g1ZmVrNGtjcWN3c1FlV3hZNmZ4R1lKR25QYlpzeE9URXhsYWZ6YURjS3kwSnRGZjhHbnlEbmw2dnR6YUlmRmZDZTVNNHNNMFhIQkR2S2c5VG1id3VYNTRnN2ptYXdKQlZGY0NDNG4taA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNRUZvUXFweFJtazVHaXNBTjdqUEpSOUFWcUhZSHo5NXNZX3VQbTZsNWFQS1p3Z1N5QW1yNWNaN1V4aFpHajBRU1ZZdEhCdVVPX3hMakgtUlJrVmJFdXkyTmQ0Wk4yOUdOeWV6STdBRERBdUdOODJ1Z2g1ZmVrNGtjcWN3c1FlV3hZNmZ4R1lKR25QYlpzeE9URXhsYWZ6YURjS3kwSnRGZjhHbnlEbmw2dnR6YUlmRmZDZTVNNHNNMFhIQkR2S2c5VG1id3VYNTRnN2ptYXdKQlZGY0NDNG4taA?oc=5",
+     "resolved_url": "https://elcomercio.pe/lima/sucesos/los-olivos-bomberos-estiman-que-extincion-del-incendio-en-fabrica-podria-tardar-hasta-tres-dias-ultimas-noticia/",
+     "canonical_url": "https://elcomercio.pe/lima/sucesos/los-olivos-bomberos-estiman-que-extincion-del-incendio-en-fabrica-podria-tardar-hasta-tres-dias-ultimas-noticia/",
+     "display_url": "https://elcomercio.pe/lima/sucesos/los-olivos-bomberos-estiman-que-extincion-del-incendio-en-fabrica-podria-tardar-hasta-tres-dias-ultimas-noticia/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "elcomercio.pe",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-04T00:27:17.382080+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "El Comercio Perú",
+     "domain": "elcomercio.pe",
+     "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNRUZvUXFweFJtazVHaXNBTjdqUEpSOUFWcUhZSHo5NXNZX3VQbTZsNWFQS1p3Z1N5QW1yNWNaN1V4aFpHajBRU1ZZdEhCdVVPX3hMakgtUlJrVmJFdXkyTmQ0Wk4yOUdOeWV6STdBRERBdUdOODJ1Z2g1ZmVrNGtjcWN3c1FlV3hZNmZ4R1lKR25QYlpzeE9URXhsYWZ6YURjS3kwSnRGZjhHbnlEbmw2dnR6YUlmRmZDZTVNNHNNMFhIQkR2S2c5VG1id3VYNTRnN2ptYXdKQlZGY0NDNG4taA?oc=5",
+     "when": "24/07 16:53",
+     "original_url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNRUZvUXFweFJtazVHaXNBTjdqUEpSOUFWcUhZSHo5NXNZX3VQbTZsNWFQS1p3Z1N5QW1yNWNaN1V4aFpHajBRU1ZZdEhCdVVPX3hMakgtUlJrVmJFdXkyTmQ0Wk4yOUdOeWV6STdBRERBdUdOODJ1Z2g1ZmVrNGtjcWN3c1FlV3hZNmZ4R1lKR25QYlpzeE9URXhsYWZ6YURjS3kwSnRGZjhHbnlEbmw2dnR6YUlmRmZDZTVNNHNNMFhIQkR2S2c5VG1id3VYNTRnN2ptYXdKQlZGY0NDNG4taA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNRUZvUXFweFJtazVHaXNBTjdqUEpSOUFWcUhZSHo5NXNZX3VQbTZsNWFQS1p3Z1N5QW1yNWNaN1V4aFpHajBRU1ZZdEhCdVVPX3hMakgtUlJrVmJFdXkyTmQ0Wk4yOUdOeWV6STdBRERBdUdOODJ1Z2g1ZmVrNGtjcWN3c1FlV3hZNmZ4R1lKR25QYlpzeE9URXhsYWZ6YURjS3kwSnRGZjhHbnlEbmw2dnR6YUlmRmZDZTVNNHNNMFhIQkR2S2c5VG1id3VYNTRnN2ptYXdKQlZGY0NDNG4taA?oc=5",
+     "resolved_url": "https://elcomercio.pe/lima/sucesos/los-olivos-bomberos-estiman-que-extincion-del-incendio-en-fabrica-podria-tardar-hasta-tres-dias-ultimas-noticia/",
+     "canonical_url": "https://elcomercio.pe/lima/sucesos/los-olivos-bomberos-estiman-que-extincion-del-incendio-en-fabrica-podria-tardar-hasta-tres-dias-ultimas-noticia/",
+     "display_url": "https://elcomercio.pe/lima/sucesos/los-olivos-bomberos-estiman-que-extincion-del-incendio-en-fabrica-podria-tardar-hasta-tres-dias-ultimas-noticia/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "elcomercio.pe",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-04T00:27:17.795294+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZHFfUmxNazdIOVBwYkNGdmw3N2hCWDJ5eVVPYjFyNF8tSzNPUEdmX1M5UUt2SG5Mc1ZxblFtbmJ1OHY1UGhUMVJ5LTdMNlNCcHg5Y1VPSkcwMDFGcFhVYUJaLUR5VXV1aG9ySDNoUEZpTTBBQ2E0QjBVX1ZHY0gxc1kxbDM1ekF0Wmg2TTZJd05mNXdpYXpfLVhLTUI5YWZGUVpDU1l1WkVsYm90Z0MxSVhrcV9lcWh3SWRrYm1lSks5LVhKd3hvS3pKTnFxMXZFYkUzNDZyUVBSQ2Na0gHwAUFVX3lxTE0zdGRYUHZHblc3OHd2Ym03cHNZVTdSNk1FVHpiU0JfUGhPR0owb2JzNUYzdG0teWdiMVJXMkM0ZmtrSEVUYnFld1Q3WkNUX29XazVpajNmMHQ0RUVXN2hhdUJYSlRNSEFtdUFUZGxlcXpucGdTYUR3U0hmN0k5ekkwOXBNZUFZMzA1dHZmVW9aUkplZHhXV1BEVU5xTGFEejkxcmhTS0g5WUtPRlhocGNMbnZsRVdyWW5zWDFxbXUtaTlsbFNUZG9MZDAzUm5nX0Q3aUxreHdSMzdITmM5YmRWWUNOV3FxTG0zQnRuZWc5MQ?oc=5": {
+   "title": "Incendio en Los Olivos: Fuertes imágenes del siniestro que consumió enorme fábrica de cosméticos",
+   "url": "https://trome.com/actualidad/incendio-en-los-olivos-fuertes-imagenes-del-incendio-que-consumio-enorme-fabrica-de-cosmeticos-video-fotos-noticia/",
+   "summary": "Incendio en Los Olivos: Fuertes imágenes del siniestro que consumió enorme fábrica de cosméticos &nbsp;&nbsp; Trome.com",
+   "source": "Trome.com",
+   "domain": "trome.com",
+   "pub_ts": 1784919610,
+   "pub_iso": "2026-07-24 16:00",
+   "language": "es",
+   "companies": [
+    "Yobel"
+   ],
+   "event_ids": [
+    "incidente_operacional"
+   ],
+   "events_by_company": {
+    "Yobel": [
+     "incidente_operacional"
+    ]
+   },
+   "companies_attributed": [
+    "Yobel"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMiowFBVV95cUxQWTNkX2g2MnhuMTF5UF83dTF4Qy1FUW9oYXV2TF9qaVcwUHpsYjhPay04djBqbGpfYkpBUXQzOGhuNFFOYWM0M1NwQTF2eTBUek9ndURYcGtFak91TVdIZkNpbWR3N2pmbGRTazA2WVEzWU56bjZ6Wi1MR0tKOHkybVd6WDcyZUc1MTB4a1otU3hKVm1tRjFqS1V5TVRTVzYtZjgw?oc=5": {
+   "title": "Incendio en fábrica Yobel genera humareda y alarma en Lima Norte",
+   "url": "https://gacetaperutv.pe/2026/07/incendio-en-fabrica-yobel-genera-humareda-y-alarma-en-lima-norte.html",
+   "summary": "Incendio en fábrica Yobel genera humareda y alarma en Lima Norte &nbsp;&nbsp; Gaceta Perú TV",
+   "source": "Gaceta Perú TV",
+   "domain": "gacetaperutv.pe",
+   "pub_ts": 1784928471,
+   "pub_iso": "2026-07-24 18:27",
+   "language": "pt",
+   "companies": [
+    "Yobel"
+   ],
+   "event_ids": [
+    "incidente_operacional"
+   ],
+   "mention_roles": {
+    "Yobel": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Yobel": [
+     "incidente_operacional"
+    ]
+   },
+   "companies_attributed": [
+    "Yobel"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMi1gFBVV95cUxONG83Z01fVGVpanpmY1hLMGE2WFdXWXo0eDFaZEE1bm00bUk0RkxUX3NmYWJjUkdCVkhrSjhfbFNaT2hnRWc0RzhnSF90ckJhV09hWi1ENnp1MkJJTF8tY0pRazlSb3lIckh0UTBWN0ZjVFBVSWF1N0lzQlJZcEJreG01LU5TcmVLOHNDNVJtNFVpMHkxdnVuRGdSREUycU5QWUJtY21INzBxaHFDbDYteDk1a3UyaWg4S0Z4TUo1bFBVZ2lIRHoyd2Nnb3FwYVJ0d1FadXhn?oc=5": {
+   "title": "Los Olivos: incendio se reactiva en fábrica de cosméticos Yobel y moviliza a cuatro unidades de bomberos",
+   "url": "https://www.exitosanoticias.pe/espectaculos/los-olivos-incendio-reactiva-fabrica-cosmeticos-yobel-moviliza-cuatro-unidades-bomberos-n180456",
+   "summary": "Los Olivos: incendio se reactiva en fábrica de cosméticos Yobel y moviliza a cuatro unidades de bomberos &nbsp;&nbsp; Exitosa Noticias",
+   "source": "Exitosa Noticias",
+   "domain": "exitosanoticias.pe",
+   "pub_ts": 1785233880,
+   "pub_iso": "2026-07-28 07:18",
+   "language": "es",
+   "companies": [
+    "Yobel"
+   ],
+   "event_ids": [
+    "incidente_operacional"
+   ],
+   "mention_roles": {
+    "Yobel": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Yobel": [
+     "incidente_operacional"
+    ]
+   },
+   "companies_attributed": [
+    "Yobel"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQRzY1alpwXy16ZlVZTXlUbXBjWTRwMk9SZjVQa0FqMHpCYU44MXNXVHk3VUVycGJ3QU1YUzluMXFGT0oxWlBldW5WUDJEVDBGNFBOUFU2R2hzNXVNdFBjcVFvYmVRNE9DX2ExVkpSNzdMeGh1VUxLNnQ2M3lzZF9HT1RXU3c3ZUl1RDNiRkpNc0g3bmU3SEdXaDVSZ2djZ3NkNng1RzIzZTFhNVBxQTl6eVRJODZicXFfdjhybGpxZXgtVDhzX18wRlJDa3I3dFdpM1NkZ3NTY2lHYjZsZU93WVpFT1F6Zw?oc=5": {
+   "title": "Exitosa Noticias. . 🔴🔵 Los Olivos: se reactiva incendio en la empresa Yobel. 📻 95.5 FM 📡 6.1 señal digital abierta 📺 Movistar: 552 SD - 774 HD 🌐 exitosanoticias.pe",
+   "url": "https://www.facebook.com/Exitosanoticias/videos/-los-olivos-se-reactiva-incendio-en-la-empresa-yobel-955-fm-61-se%C3%B1al-digital-abi/2134581650744861/",
+   "summary": "Exitosa Noticias. . 🔴🔵 Los Olivos: se reactiva incendio en la empresa Yobel. 📻 95.5 FM 📡 6.1 señal digital abierta 📺 Movistar: 552 SD - 774 HD 🌐 exitosanoticias.pe &nbsp;&nbsp; facebook.com",
+   "source": "facebook.com",
+   "domain": "facebook.com",
+   "pub_ts": 1785233885,
+   "pub_iso": "2026-07-28 07:18",
+   "language": "es",
+   "companies": [
+    "Yobel"
+   ],
+   "event_ids": [
+    "incidente_operacional"
+   ],
+   "mention_roles": {
+    "Yobel": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Yobel": [
+     "incidente_operacional"
+    ]
+   },
+   "companies_attributed": [
+    "Yobel"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMivgFBVV95cUxNaE9YU0ZXYzFKT3EyYkd6RVpSWUV4aWhlUGJMTkJ4dTdjVl9XVVpnSUR0aW1Wcm1BUkxkWXl6UzdfbFV2RjE1Vy1tZ2ZPek9GS1ZnVl9aTnFxb2NDYTNWSlBTQkJhajgyekJhcDdTdHZYbFRjbFJmTGFVVXBQOTJwY0Q5cTd6TVpVb1FUWGhzb0Jvd3E2TG03REZWeDR1Nm9Oeko5dkljSUg5V29IOWpLbXpjdE1BeExUMVUyOWVR0gHSAUFVX3lxTE0wTFR1MExTUGxLbEtFVHF0RU9xYXFRMjBONXNqTnFpYWpfeHlZb05hckF5ZlN1dXVGNWJqQWpCRVEzS0ZtYjZyX2xFeGtlRjBUZmw1U1ZxSm5uNTBKd1JfZGpEZWxoTnlURjFmSERFWGQxMU9CcUQxOVg5clZ2OTBPX1JaM05aOEZrQWJ4cU1SVmhLeEdrYjNNaGlBcEhPUWROQ1Z5ZG9qZS1kYTFlX0hnUnV5YjlwMW9BRGZpMnN6ZW1HMFVQSlQzWWxKSEdRcW94QQ?oc=5": {
+   "title": "Los Olivos: incendio reactivado en fábrica Yobel fue controlado por los bomberos",
+   "url": "https://diariocorreo.pe/edicion/lima/los-olivos-incendio-reactivado-en-fabrica-yobel-fue-controlado-por-bomberos-noticia/",
+   "summary": "Los Olivos: incendio reactivado en fábrica Yobel fue controlado por los bomberos &nbsp;&nbsp; diariocorreo.pe",
+   "source": "diariocorreo.pe",
+   "domain": "diariocorreo.pe",
+   "pub_ts": 1785242424,
+   "pub_iso": "2026-07-28 09:40",
+   "language": "es",
+   "companies": [
+    "Yobel"
+   ],
+   "event_ids": [
+    "incidente_operacional"
+   ],
+   "mention_roles": {
+    "Yobel": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Yobel": [
+     "incidente_operacional"
+    ]
+   },
+   "companies_attributed": [
+    "Yobel"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPODBVQlpSUUdsX2pfcXI5cnRLdG1lNy1JeEZKbXVDeDhna0ZJU1NmMk9WLUF5Xy1QaDdBNXB5SmFDWmwwTk1ILUk4emZUcVZBQ0RFdTE2TTFuNUItQ1RWbmd3aDJrckEtRmh4MWp0SEFjdlJHa2xBRmRwRi1ZWkx5eWNCcU9XUy1Tb29qV0NOVEJzZFl2anpQTGpHSHRkRlFzOW1pNFpXdHBzV3BqYmdJRzZQclFHYUxmcGROc2hYaGV1TTV4VFJobGxRM3d6Y1FGUm44Umw0SmlHM0XSAfYBQVVfeXFMTXpWNXN0Mmdhb2JLcldWdHZjT3RjOTJQc2V6REI0LUFlOThQSG1OdzAxUXlRYlRzSERZVmItOWFjTDhDbENHN0xFTi1wUmdPMnZkWXR5LTRIMDNIUEg2T05xVXc0eUh1cm5UM01SWldFdVNZVzRONzFNUHlfVlpOb0VXOHBwR0ZrNTZsc0QxOEZSMVFlSV9KdHNKeHgzV1JXTWxVNHBSUTExTEwzTWpJajJib1hKUHhHMWtDNk5aWHpIWWEyU0NXX19BdEkxN21QTkx1WnZEeUplMnIyWWpqbWVvWjQ2RDRoMjVhU1BkX1ZxRGpUZDNB?oc=5": {
+   "title": "¿Otro paro agrario en camino? La caída global del azúcar pone contra las cuerdas a los productores peruanos",
+   "url": "https://www.infobae.com/peru/2026/06/17/nuevo-paro-a-la-vista-el-desplome-del-precio-de-la-cana-de-azucar-pone-en-jaque-a-productores-peruanos/",
+   "summary": "¿Otro paro agrario en camino? La caída global del azúcar pone contra las cuerdas a los productores peruanos &nbsp;&nbsp; Infobae",
+   "source": "Infobae",
+   "domain": "infobae.com",
+   "pub_ts": 1781679600,
+   "pub_iso": "2026-06-17 04:00",
+   "companies": [
+    "Coazucar"
+   ],
+   "event_ids": [
+    "sem_evento_taxonomico"
+   ],
+   "context_events_by_company": {
+    "Coazucar": [
+     {
+      "event_id": "sem_evento_taxonomico",
+      "event_label": "Evento a revisar (sem correspondência na taxonomia atual)",
+      "subject_company": "Casa Grande S.A.A.",
+      "relation_type": "subsidiary",
+      "impact_type": "indireto_material",
+      "event_scope": "indireto",
+      "event_phase": "",
+      "direction": "neutra",
+      "scoreable": false,
+      "attribution_confidence": "media",
+      "attribution_evidence": "related_entity 'Casa Grande S.A.A.' de 'Coazucar'"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Coazucar": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Coazucar"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
+  },
+  "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNXzlvbk1fWWI2NGtQYU52RmZ4MmVmZHU4Y085VVk4Wk1vcHVxeTFiNVFadTVXTUpzbDNKclE5VVJaQmxvTW81OTFWMmRCLXBMVjVSd1hSNHRDNzhRRXlWMXpCcmdPZHBjMmFhR3BrVGxDV0RXT0RqYXk2dUFFQ2dhYWZSdGVLVW9CcGFnV0RhN1dRWUw2YlNkeW13cWJIRTNVQUJfZk1wNi1wSGxITDRxa01BQjFzeTdFQUR1WVBrM1hxNGZCdVhJbkZSd0Q1bklVdExvYk5DVnVneUoyS0xPUUgxZHVROXA2SEpV?oc=5": {
+   "title": "🔴🔵Un grave accidente de tránsito se registró en la carretera Panamericana Norte, en La Libertad, entre dos buses que aparentemente trasladaba a trabajares de una empresa agroindustrial, dejando 55 personas heridas. #ExitosaNoticias #LaLibertad #Acci",
+   "url": "https://www.facebook.com/Exitosanoticias/posts/un-grave-accidente-de-tr%C3%A1nsito-se-registr%C3%B3-en-la-carretera-panamericana-norte-en/1485338396962547/",
+   "summary": "🔴🔵Un grave accidente de tránsito se registró en la carretera Panamericana Norte, en La Libertad, entre dos buses que aparentemente trasladaba a trabajares de una empresa agroindustrial, dejando 55 personas heridas. #ExitosaNoticias #LaLibertad #Acci &nbsp;&nbsp; facebook.com",
+   "source": "facebook.com",
+   "domain": "facebook.com",
+   "pub_ts": 1783666800,
+   "pub_iso": "2026-07-10 04:00",
+   "companies": [
+    "Coazucar"
+   ],
+   "event_ids": [
+    "sem_evento_taxonomico"
+   ],
+   "context_events_by_company": {
+    "Coazucar": [
+     {
+      "event_id": "sem_evento_taxonomico",
+      "event_label": "Evento a revisar (sem correspondência na taxonomia atual)",
+      "subject_company": "Casa Grande S.A.A.",
+      "relation_type": "subsidiary",
+      "impact_type": "indireto_material",
+      "event_scope": "indireto",
+      "event_phase": "",
+      "direction": "neutra",
+      "scoreable": false,
+      "attribution_confidence": "media",
+      "attribution_evidence": "related_entity 'Casa Grande S.A.A.' de 'Coazucar'"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Coazucar": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Coazucar"
+   ],
+   "captured_ts": 1785803192,
+   "cap_iso": "2026-08-03 21:26"
   }
  },
  "run_count": 67,
@@ -44934,18 +46426,138 @@
   "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAtVVA0aWVpOFNzNGVMb0dRZkRRVGx6aHh2amdlMEc4OU5xdGhGNlVOUUxLRmxITUJoV0kzbnhVYmhPenpDdllCNXJDMERCQ0RNSGRRMzdLUGJVY0dYYlh3b3JjVy1WNFU?oc=5": {
    "url": "https://soltvperu.com/incendio-fabrica-yobel-los-olivos/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQZ1JROFB3cFlzQ1Z0ZTE0SzhETW1JWTUyZTNySXo5T2ZMcng3eXUzMEIxbzI4b09KNWwxSTVQbGYzRTRTSWlSNi1tX1d5UEhSQXpNQVllRVNsUW84LVp4RGxhNjd2WUplRXdpeXpwdVdkUnlmLXoxWXBoQnFnbThkTld4SUpqM2pacWlJaFBXVEQwX0I0Q3F6Y1BkaThFallBUXRHaE9TSDNiUEZfYUp2bFVUWTNVSkIyR3Z3RTJHa3duRzlnc3pjUHlhX2JfcEJh?oc=5": {
+   "url": "https://www.revistaeconomia.com/yobel-inaugura-nuevo-almacen-logistico-en-guatemala-y-refuerza-su-capacidad-operativa-en-centroamerica/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMizAFBVV95cUxQend3a0l6eEtVbTZrcUhYWUN1amtkbmR5NklIUlJELWZzMTRBTllIWkhHd05ndlBkOHBFZUlkakVKMWFVS1Brc2g3Z0NLOTAzUFFTcUUwLWJQc3Z5VnowWi1Yb2hCNjhacGlBTXQwUW90MnBCYVZ0bjV1bmp0TGMxbmMyQ2VWTGJiMklkcFcwTE9nNjNyWmlaZDhnaHFzcUxDaXZqaG5oNnRwdkhjblRvTWVmQ1N2cTQ4MWRGa3pIZXZpd3Y1Sm1GSmxlTTM?oc=5": {
+   "url": "https://gestion.pe/economia/empresas/yobel-inaugura-almacen-logistico-en-guatemala-y-refuerza-su-operacion-en-centroamerica-noticia/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMitgFBVV95cUxNM2FFQVdYUUdKMGRkU2RISElpM2Q4V0RrZFFlYzZnOEhFRTJMeUZCc2lQaG5rR0dQMWxxNWNIOHhVTF83NTFNMlU5NDBoNU9CMlhnYl9GVDE3NHVKU3p5ZTJyZXh3OHJvWjBDOUM0R2xaekRnWi1wUktLSDFMbEdBRmxFeFlvZU1ORWVtSkFoNldweVZHbDlGQWRMdTJQWXlrcThfRHU0VHNfa0NLQ2hfS1Mwb1UzZw?oc=5": {
+   "url": "https://cartonycorrugado.com/trupal-ingresa-por-primera-vez-al-ranking-de-empresas-lideres-en-esg-de-merco-en-peru/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMirAJBVV95cUxNTFlpZ2Z1dEJqSWVXdnNWalMzRnFYYXBuNzhfZ1dzTjd1cWlNbVZwaHotd0Vmc1RBaFQwZUtZaklyVC1wVnlYNlhHdjBZS2dIN2ozUi1VdkEtMDQ3M2JYVHp2VGVLSDZyYVNPRGI1dldFUkp5cEwwT0NpNGdKM0ZJcVZoM25tOGlrRy1SRkcwa2xnUVpybEw2Y01iNUJoNzhzaldydmFjYlBYY3h0OFhmYUtmTUl1UVExQWtPYUlHV0p1SFlnZzhTVllFd0JDdWJ0NXloVnRva29sTGNaOXBHaGRTZTdqTk1GNGJZeGpGWVdFMXZlallydFVXd1BYYzhQajBkVnU3aFFCbEFDZ1luOGoxS1RoN2t2YmwxQzlQMnQ0UkpIU05JVTYwYlk?oc=5": {
+   "url": "https://www.corresponsables.com/per/actualidad/cemento-yura-obtiene-su-primera-declaracion-ambiental-de-producto-y-posiciona-su-producto-yura-max-como-referente-en-ecoeficiencia-en-el-sector-construccion/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPcEFmNm9zS2cwM3BLTm1YemNqMzZSUVRTMHBvaktZVktWdTVBaWhsWl9vUGVfbHhmbEtWLTVfWk9yRVZqMGJ3TXcyOVZGOElmN2FrQUV3ZEk2d2FIQzJVX2JwWHZpMUxDSDNFREdDVzdsS2VPNVNQTlQ2QVAwd1JVU1BXeU1ib2ZqeGJzc0hBZTd4eDVOdm9NRVh5Tk12d1pGRU5wSDJfbWRGMzBMQ3F4V1VsRTBPZHRmNGdYbUFnUkNTbnQyQTN2aElMRXQ5elVk?oc=5": {
+   "url": "https://gestion.pe/economia/empresas/yobel-entra-al-negocio-de-courier-en-america-latina-servicio-arranca-en-dos-paises-claves-noticia/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMijAFBVV95cUxNcFB2aXVWMlpwT3ZhT0RyclZFbkJUOElCU09VeU5lNGRWVHJDS2ZWZlM4a2RWQS13dGUxN3k0TWNlUDlocE1Qa3dWWGhpTzBWQUZHUlVpakZrZmxwN1huS0ZHWHgzMkZiMHN1OF93VzFLWkxXUlpZajZjRkdhTDJodGxESXVCbVNZOS1KMw?oc=5": {
+   "url": "https://logista.pe/yobel-impulsa-su-presencia-regional-en-courier-con-yobel-express/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNQi00ZTBxYk9kR2phckpXcy0ybzY0UTJ0MmdCYjdwTk04bDhRcGo1eF8teDNsNnc4V19COWtpdUZwakdtd2pRaXpMRjhwVnhYWmhCUE04OHJjMTM1NWVYN012RTkxQWJHUmpXdnJlR0lScTZ3b3kwVmJKWkVXSmhEZDZLU0FWajVQUnFKMFo4YVpfTHdPVGFqUnFOUTY3R3NfMXNoTERpMHRpYkU2T0h1dHNVZElEUDlBUkJNMDRrSDNfWnVaUFRfNEk5SGNMbFBldjRUdUY0U3VJdUhON2JfTjZoWkRnUnJ3cFhLelVGY1Aydw?oc=5": {
+   "url": "https://elcomercio.pe/economia/peru/yobel-continua-su-expansion-en-centroamerica-y-abre-nuevos-centros-logisticos-en-el-salvador-y-costa-rica-l-ultimas-noticia/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOYVAyZnZwU0J1WlRRbmZiWERRNTF3VHJQaUI2UE9HeVh0dnk3TXFFNVlNMU9vdnpGT2tNMWhQenoyMHdrYnl2N2tuN3hLV29lWFNITlYxU0I3aVNxbXVEMVdiQnZZWktwdm9INGNFZlFLMW4tb2xLRFVGSzBoVWdOLTBGQ3FTN1hBRy1yV3l5czkxY0VJRk1yUFUyYXh4VmlVM3BtZ09BTGpZczNTdGFpaTZMeFl5NmhZeE04cHlqWkZmYkdxRXh3ZmN3U2ZFS1NCRG51UlhkNWFSejdqMEE?oc=5": {
+   "url": "https://www.businessempresarial.com.pe/yobel-continua-su-expansion-en-centroamerica-y-abre-nuevos-centros-logisticos-en-el-salvador-y-costa-rica/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNc2lDdzg1ME5HV3VTX2xCc2VLZG5JRER1ckZxXzFFc0czTThzeTYxOGs3TXp6U2lzeUQtLUJUazVYOWJqVXZPMDBtNnJtQTJwc19jekRjbl9OUXFlWWRqTzh1TWUwSHVjRHBqb01RTkF0Wmx0OG5UVHRfSEN4TERac0NwMGdCYnZmSWZLNExiRzEwYm1Cc2FXbzNnZ1dpUDVaOGh5NkNTb1BCeEFSMWlSZmtRWGZMMXowVjFoeWdQVmhkTnBkaEF2WnBLVi1ta3JN?oc=5": {
+   "url": "https://gestion.pe/economia/empresas/yobel-designa-nuevo-gerente-general-para-fortalecer-su-crecimiento-logistico-en-la-region-noticia/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQQ05fTnc4UUFic0FJOE5vTEM2QnY3cTZoLUlNeEJBeEdvRVhmOHZsYXBHZUp3ZWR6OTFFaU1Td2NWd2xkdUZ2UXUtZmtuOUJCaXdMay02QkJUS3pfSzJZT3YtdC1HMzd0QmktREt1dmlSYkx6Z3ZLeERrNmFXS2pxWDBiOWlHaEVJVldzUHVWbzBaRENxbk45ZFN4SGxBam1XZUNlV2NqVWNEWm0tbXNqUUNJSklOTkg1NU15M0dldnI4OVZPQ2ZnTA?oc=5": {
+   "url": "https://gestion.pe/economia/empresas/trupal-alista-mejora-de-su-planta-de-tratamiento-de-aguas-residuales-en-el-agustino-noticia/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNdWlTUUlVWFBtZUkwNklpRnVsbV9yRTEyejBDLUlWWGkwQjFkWXFWNVBidE5UYl9zaDU0dE0zM2VzVFhyaDdJZ1R4cW9uQVZLUHY1STJpenJMTS02U3lIdkt3SUE4UGU2R0JZX0ZDUGxNR0pXS3JTaUx0QTNfdGtSUjFESG5ZMVdPTDkxemh2Y2dmcks3MUtVOEhpSWxQdXIxXzRNVHlIeXR3WkQ0X0ZpMnJVSjZEVTNnLWYwZG1qQVhud0o2SWx5UGp4ZWFGbXNiQ0psemZmMVRVLXlNcWpjaUVDSFkwSGkwUkEtZUxxb9IB9AFBVV95cUxPYWtMemdra3NZdWZxeHc4cmpNYzY3WFZ4UjRad21GQzNYNTEzNzhDOUFRdnRnV01zT0xHS3EzdW05QTVfNGdsRzJFS2hBZjJfSlFqZllLMzU5VUpGQUx5SDdfMHJRa29CYnRSelBTbFJRYkd2WDM0T0RySTVFbG8wMGRsc1RnTkYzS0xqYmw3QTVrcHhRZlNCWlRwSFhBdHhuMlNscHVsT3ZhWmZhR0hvM3NZRjFxV0I5dGE3T1JuWjhncXgxWVdNZGZwQ3NacjZPaGU1cGpVM2dsUlpQNndzQ1hLREUtb25pdk5vdGlhLWhWUHlt?oc=5": {
+   "url": "https://diariosinfronteras.com.pe/2026/05/29/yura-s-a-impulsa-millonaria-inversion-en-dos-proyectos-viales-para-mejorar-la-movilidad-urbana-en-cerro-colorado/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2ZVWlVHMmY0aVlrcHZjU2JVZ0lCR09fVnVXa2tDUXBlODlFaUNYNXh0dTN1RlVKRVdMSGlxWTF4TEJjeEM2QW4zVzhueWtST2JUR1lwemN0Q0ZPaElnRkVqenVtdUJxYUpXYnF3SHllMnR4TXVCb29vUWJGb0NQZTRISUxDSnU3bWNtVEIzVjdETzhRQXFHdUxLdWxQQ3pmQzFqM1BMWDV0N2NtQmtUdzZHc1FJNUJKeHVIOEh3?oc=5": {
+   "url": "https://stakeholders.com.pe/noticias-sh/cemento-yura-apuesta-por-energia-solar-y-ahorra-us-2-7-millones-en-su-primer-ano/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQUkpGbDRmUW9UVk1OOUVjZGpoWVo1WnRuazRUemo5WjF6RXBxMzRaY2ltb2lrTHJjOFVoSWJjSm44MWhleWs1eGZ6VDlWekt6aU9EOU9vX1FHOVQ4Rk9vdmZvSVRLMzhQSGVTOC1RYmd5Q1hsVklUVHI5WjBpMjMwTEN3bzZ6OE5GQ2x6elRubE9QNF9NM0NlNFVmbmp0cW53MUpBT0lVWkZhcXl5eG5fMjhnai1JMlFHU3dJTUlRSmhJbXpsSl9saHB6ek5YLW9JeHFfcUZuWnk?oc=5": {
+   "url": "https://stakeholders.com.pe/noticias-sh/innovacion-sostenible-de-trupal-el-modelo-de-triple-impacto-que-fortalece-la-agroexportacion-peruana/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMixAFBVV95cUxQbHhxWExMWkh5VkZua19rbXFqaE5PajZWODBCb2ZDV0hZUVJEdXdGOV9MMW8tdGZZOWF4RU1JVWVZS2FiSDNsRWNScDd3UWdTWTJPa1lvdWh2OW1id0V3Y2VGQVVoNGVTMGs2bE95d1psYWNfQXprRGY2NzFCaTdNNVQtbUJKWnBsS25ESGFlNENyNUticFJfVWNHLU82RTNXel9IYjJYUGJPc1h3S254UFpiWTlud2N1eWZjLWtWV1RTWVB2?oc=5": {
+   "url": "https://peru21.pe/economia/la-apuesta-de-cemento-yura-por-la-energia-solar-genera-ahorros-por-us-27-millones-en-su-primer-ano/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMilwFBVV95cUxQUWk3Q3BmTG8tZlNnUWl4MGNrWEZBeGZpWkN4YjY0VGl4YTM5N2ZUMC1ab2ZabVBDLW53TWxpYXpJaUxRTHl1ZlhLS0tfbWV1bUkzQkFTckFTZWRVTUlFUklfa1lpSnFNSlRlVnlLVkRLWW9yeVNIOXdUX2FjSUVEamRhamlnMWNwQWVmNkNaeE9rRzROR01J?oc=5": {
+   "url": "https://hbanoticias.pe/incendio-en-planta-de-cementos-yura-fue-controlado-sin-dejar-heridos/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiywFBVV95cUxPMUE4RldZOUFTVndLYmh3SUNyb1lCRkhpbmtLNDhoeXVhWmRIX0ZVUnVfV19RTE9SYmlQQlQxbER0WmhYLW9ndjlVNDdyYXdBMk44UjFlSER0QWtKb1g5QUxvc1l5blRfUVlaeHhXZ2g5eHRHRksxc1o3dGxna0NNZW1iQWd1ZFFoNHVSbXd4SFBGV2ZPRE9JUXZaV1hSSUVOc09keHQtcnkydi15WlVqNWFucV9HNElrbGJ6Y3hoZkNRMmZvZEZXWERhUQ?oc=5": {
+   "url": "https://cartonycorrugado.com/trupal-peru-fortalece-su-modelo-de-empaques-sostenibles-con-materiales-reciclados-y-economia-circular/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQRGpoREs3Vml4Y214UlljcVUzRlVfbFVPMXZTOXFTOE9DWklrcFl0ZzhSN2FtelQ3WGE1eGxSTjBjUFJrRi1tMFBNcmRBb0x0OFZyM25xODdWNVZvMFRwYlZrVXFLOE91dUZEOXNid3hWdm5TV0FwYmpDR1haZkJRWXFvdGh1SFpxaG1yelBMLW8yb0xPQV8zSGlrY0hkRXB0YjFEVmdGYjlGV1MwVjNENkhjaWNfNDlrcE4tQTZCN2xWaURLazNoY0FLaXIxQUl2d1VvSXJVRXBDOFJuWVo1VzhkLWFpODA?oc=5": {
+   "url": "https://gestion.pe/economia/empresas/multinacional-de-empaques-que-compite-con-trupal-ampliara-su-capacidad-en-peru-con-foco-en-agroexportacion-noticia/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPaC1PSlRpT18ySXNteU55YmZYX3o0LVV4ZmlFaVpxWEZIWVlOYTZzd1Jlb2VHeUdjWEZ5SVoyUk9UOXdFeHpwVGNuS1d5dWw2OEJKbWZaNjVZczZHZFJZMGNsd3F4T3VkWDQ1Njh5ZGVEOFJtNTlSbk9Ia3FGOUVwd0dMbEgzdUMxUjR1UDBxWk1FeHFpLU9lZ3JMdEpFMG5fWVhZel9UMjlYTWJVd2pUV09tUnVMVTU4dmsw?oc=5": {
+   "url": "https://peru21.pe/colab21/cemento-yura-impulsa-proyectos-de-infraestructura-clave-en-arequipa-por-mas-de-s350-millones/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOdUlkdG84Vm1uZFpRWVlzRGhIQ1JwZUx3NmRvTEF5TnI2MXBGQzBtTHdQSXVhdkdKNlM0SzRZZW9Kb2dQYkVKY0NUYllMMTMxTlZpUGdINHJQc1hpNW13LVhIbGFpNTByTTMtaTBQNjRjWUR1cmR5ZkxtVEdoRW5DbkVBelpONFpLQ3R6cjFGVndRLUVXNzFNRTZrZEhpZFFrV0s4WktZdVY?oc=5": {
+   "url": "https://forbes.pe/negocios/2026-07-20/gonzalo-rueda-castillo-es-el-nuevo-gerente-general-de-cemento-yura/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMirgFBVV95cUxNSU5MQzE3UWx5N29pajNJbGI0aTlqZFFfZ0ctZ3VNYnYzWlg1MjNkNlN5Wm85Wk9SME1lZmVGWllMLVJfRVNycnNaMU1sQXltdzU3QWVVVWQ1ejdPSjZoUS1BaVM2MVhRWGl3WllJMkZ3VVc3WmczakhMTm9jVENTY1U5Vy1EOXRzWnVkQzRvcVZpVU5fMlRfQ1dfQlRWTk5NZ3ZzNEs5ZDVjQjlEQWc?oc=5": {
+   "url": "https://stakeholders.com.pe/compromiso-empresarial/trupal-convierte-la-sostenibilidad-en-ventaja-competitiva/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOU19CaExYUGJGTHo5RFlsYm5vX2ZQaFpzQWdyWkJQN1dfMnV4OEllek5Kbl9ZWmp2cFRTSVBXUGFlbDd1X2s1S3BYd1Jxd0VOWVdDMzhrT0pRSm5CcTRXUXJtYjlJTTJuVlluWXB3bmY4aUFNVTZvZ3BEV0tHazh4ZlktWWcwbThlaFc3LVhOYUhiaEpuRmhtdnBmLVl4SGx4azZCbV9JQS1QZFJPQldTZzNsOENqclZGcE9fMXVINEFkZ2JhbXN4QXpaWjZDbWtkZ2JMZW5VeGhBRnRXSV9rbl9B?oc=5": {
+   "url": "https://rpp.pe/lima/actualidad/los-olivos-extincion-de-incendio-en-fabrica-de-cosmeticos-podria-tomar-hasta-tres-dias-segun-bomberos-noticia-1698689",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZHFfUmxNazdIOVBwYkNGdmw3N2hCWDJ5eVVPYjFyNF8tSzNPUEdmX1M5UUt2SG5Mc1ZxblFtbmJ1OHY1UGhUMVJ5LTdMNlNCcHg5Y1VPSkcwMDFGcFhVYUJaLUR5VXV1aG9ySDNoUEZpTTBBQ2E0QjBVX1ZHY0gxc1kxbDM1ekF0Wmg2TTZJd05mNXdpYXpfLVhLTUI5YWZGUVpDU1l1WkVsYm90Z0MxSVhrcV9lcWh3SWRrYm1lSks5LVhKd3hvS3pKTnFxMXZFYkUzNDZyUVBSQ2Na0gHwAUFVX3lxTE0zdGRYUHZHblc3OHd2Ym03cHNZVTdSNk1FVHpiU0JfUGhPR0owb2JzNUYzdG0teWdiMVJXMkM0ZmtrSEVUYnFld1Q3WkNUX29XazVpajNmMHQ0RUVXN2hhdUJYSlRNSEFtdUFUZGxlcXpucGdTYUR3U0hmN0k5ekkwOXBNZUFZMzA1dHZmVW9aUkplZHhXV1BEVU5xTGFEejkxcmhTS0g5WUtPRlhocGNMbnZsRVdyWW5zWDFxbXUtaTlsbFNUZG9MZDAzUm5nX0Q3aUxreHdSMzdITmM5YmRWWUNOV3FxTG0zQnRuZWc5MQ?oc=5": {
+   "url": "https://trome.com/actualidad/incendio-en-los-olivos-fuertes-imagenes-del-incendio-que-consumio-enorme-fabrica-de-cosmeticos-video-fotos-noticia/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiowFBVV95cUxQWTNkX2g2MnhuMTF5UF83dTF4Qy1FUW9oYXV2TF9qaVcwUHpsYjhPay04djBqbGpfYkpBUXQzOGhuNFFOYWM0M1NwQTF2eTBUek9ndURYcGtFak91TVdIZkNpbWR3N2pmbGRTazA2WVEzWU56bjZ6Wi1MR0tKOHkybVd6WDcyZUc1MTB4a1otU3hKVm1tRjFqS1V5TVRTVzYtZjgw?oc=5": {
+   "url": "https://gacetaperutv.pe/2026/07/incendio-en-fabrica-yobel-genera-humareda-y-alarma-en-lima-norte.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi1gFBVV95cUxONG83Z01fVGVpanpmY1hLMGE2WFdXWXo0eDFaZEE1bm00bUk0RkxUX3NmYWJjUkdCVkhrSjhfbFNaT2hnRWc0RzhnSF90ckJhV09hWi1ENnp1MkJJTF8tY0pRazlSb3lIckh0UTBWN0ZjVFBVSWF1N0lzQlJZcEJreG01LU5TcmVLOHNDNVJtNFVpMHkxdnVuRGdSREUycU5QWUJtY21INzBxaHFDbDYteDk1a3UyaWg4S0Z4TUo1bFBVZ2lIRHoyd2Nnb3FwYVJ0d1FadXhn?oc=5": {
+   "url": "https://www.exitosanoticias.pe/espectaculos/los-olivos-incendio-reactiva-fabrica-cosmeticos-yobel-moviliza-cuatro-unidades-bomberos-n180456",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQRzY1alpwXy16ZlVZTXlUbXBjWTRwMk9SZjVQa0FqMHpCYU44MXNXVHk3VUVycGJ3QU1YUzluMXFGT0oxWlBldW5WUDJEVDBGNFBOUFU2R2hzNXVNdFBjcVFvYmVRNE9DX2ExVkpSNzdMeGh1VUxLNnQ2M3lzZF9HT1RXU3c3ZUl1RDNiRkpNc0g3bmU3SEdXaDVSZ2djZ3NkNng1RzIzZTFhNVBxQTl6eVRJODZicXFfdjhybGpxZXgtVDhzX18wRlJDa3I3dFdpM1NkZ3NTY2lHYjZsZU93WVpFT1F6Zw?oc=5": {
+   "url": "https://www.facebook.com/Exitosanoticias/videos/-los-olivos-se-reactiva-incendio-en-la-empresa-yobel-955-fm-61-se%C3%B1al-digital-abi/2134581650744861/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMivgFBVV95cUxNaE9YU0ZXYzFKT3EyYkd6RVpSWUV4aWhlUGJMTkJ4dTdjVl9XVVpnSUR0aW1Wcm1BUkxkWXl6UzdfbFV2RjE1Vy1tZ2ZPek9GS1ZnVl9aTnFxb2NDYTNWSlBTQkJhajgyekJhcDdTdHZYbFRjbFJmTGFVVXBQOTJwY0Q5cTd6TVpVb1FUWGhzb0Jvd3E2TG03REZWeDR1Nm9Oeko5dkljSUg5V29IOWpLbXpjdE1BeExUMVUyOWVR0gHSAUFVX3lxTE0wTFR1MExTUGxLbEtFVHF0RU9xYXFRMjBONXNqTnFpYWpfeHlZb05hckF5ZlN1dXVGNWJqQWpCRVEzS0ZtYjZyX2xFeGtlRjBUZmw1U1ZxSm5uNTBKd1JfZGpEZWxoTnlURjFmSERFWGQxMU9CcUQxOVg5clZ2OTBPX1JaM05aOEZrQWJ4cU1SVmhLeEdrYjNNaGlBcEhPUWROQ1Z5ZG9qZS1kYTFlX0hnUnV5YjlwMW9BRGZpMnN6ZW1HMFVQSlQzWWxKSEdRcW94QQ?oc=5": {
+   "url": "https://diariocorreo.pe/edicion/lima/los-olivos-incendio-reactivado-en-fabrica-yobel-fue-controlado-por-bomberos-noticia/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPODBVQlpSUUdsX2pfcXI5cnRLdG1lNy1JeEZKbXVDeDhna0ZJU1NmMk9WLUF5Xy1QaDdBNXB5SmFDWmwwTk1ILUk4emZUcVZBQ0RFdTE2TTFuNUItQ1RWbmd3aDJrckEtRmh4MWp0SEFjdlJHa2xBRmRwRi1ZWkx5eWNCcU9XUy1Tb29qV0NOVEJzZFl2anpQTGpHSHRkRlFzOW1pNFpXdHBzV3BqYmdJRzZQclFHYUxmcGROc2hYaGV1TTV4VFJobGxRM3d6Y1FGUm44Umw0SmlHM0XSAfYBQVVfeXFMTXpWNXN0Mmdhb2JLcldWdHZjT3RjOTJQc2V6REI0LUFlOThQSG1OdzAxUXlRYlRzSERZVmItOWFjTDhDbENHN0xFTi1wUmdPMnZkWXR5LTRIMDNIUEg2T05xVXc0eUh1cm5UM01SWldFdVNZVzRONzFNUHlfVlpOb0VXOHBwR0ZrNTZsc0QxOEZSMVFlSV9KdHNKeHgzV1JXTWxVNHBSUTExTEwzTWpJajJib1hKUHhHMWtDNk5aWHpIWWEyU0NXX19BdEkxN21QTkx1WnZEeUplMnIyWWpqbWVvWjQ2RDRoMjVhU1BkX1ZxRGpUZDNB?oc=5": {
+   "url": "https://www.infobae.com/peru/2026/06/17/nuevo-paro-a-la-vista-el-desplome-del-precio-de-la-cana-de-azucar-pone-en-jaque-a-productores-peruanos/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNXzlvbk1fWWI2NGtQYU52RmZ4MmVmZHU4Y085VVk4Wk1vcHVxeTFiNVFadTVXTUpzbDNKclE5VVJaQmxvTW81OTFWMmRCLXBMVjVSd1hSNHRDNzhRRXlWMXpCcmdPZHBjMmFhR3BrVGxDV0RXT0RqYXk2dUFFQ2dhYWZSdGVLVW9CcGFnV0RhN1dRWUw2YlNkeW13cWJIRTNVQUJfZk1wNi1wSGxITDRxa01BQjFzeTdFQUR1WVBrM1hxNGZCdVhJbkZSd0Q1bklVdExvYk5DVnVneUoyS0xPUUgxZHVROXA2SEpV?oc=5": {
+   "url": "https://www.facebook.com/Exitosanoticias/posts/un-grave-accidente-de-tr%C3%A1nsito-se-registr%C3%B3-en-la-carretera-panamericana-norte-en/1485338396962547/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNMTFNaFpqZUhoN1IxalJIaGdLQnYxdE85aUFFTG1XdmU5WGRDOXNuLUZUek1CUHVYZDQ4X3ppMDA0dDI0b3ZmX1Z4b1JWNkRTM0tGeFlRRFFfczFUSXVaS0xlRHVTZk95b29hZHkxNHpCNnU4Y19KZnMxOHdPa0pPRm5fNlk0VldpR3NkelpTX0hvOXJfS2U4OFN2YUxNR3BZQU1IX05mMHFkSkN0Qlg2bVVGamtlU0xIa2NGYXByLWltSFVYalVGNWhldWNRd0R3M3BxVGlYc1FpMERhenc?oc=5": {
+   "url": "https://gestion.pe/economia/empresas/yobel-acelera-expansion-en-centroamerica-abre-nuevos-centros-logisticos-en-el-salvador-y-costa-rica-noticia/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQa3Q2SjFTMGtudmlmVjZ5UDdLR0dhQmpBb1FrWHU2V3p3eE5NV0UzRzVVVWpOZmxKcFBUSVk4VXFKS3FFUktBeFhiRkdmcUZUaXJnZDdYczRxY1hXMlA5enVhUXgwallzZ2I4b21CSTZHeUFzalJzMXh5STJPUU9DakVzb0lTWTdtLWRlWVJJWjJPOG44azJKanB6UlltWjBFVFN0eEdwdDNkeWtGaldQWGVtSjlOOEE4ZEY5TEREUDd1WFUxaFdsM2d0ZXNhSDl4TWthV0huSTNnUWN1Wmd1NHk4Q3NiSWRkVldCRTE3MjBfaDd4UmozbWltUHo4WmR4Y1F4YmN2b0tjTEE?oc=5": {
+   "url": "https://elcomercio.pe/economia/dia-1/nombramientos-de-la-semana-presidencia-del-directorio-de-efectibank-gerente-general-de-cemento-yura-y-mas-nombramientos-designaciones-noticia/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNRUZvUXFweFJtazVHaXNBTjdqUEpSOUFWcUhZSHo5NXNZX3VQbTZsNWFQS1p3Z1N5QW1yNWNaN1V4aFpHajBRU1ZZdEhCdVVPX3hMakgtUlJrVmJFdXkyTmQ0Wk4yOUdOeWV6STdBRERBdUdOODJ1Z2g1ZmVrNGtjcWN3c1FlV3hZNmZ4R1lKR25QYlpzeE9URXhsYWZ6YURjS3kwSnRGZjhHbnlEbmw2dnR6YUlmRmZDZTVNNHNNMFhIQkR2S2c5VG1id3VYNTRnN2ptYXdKQlZGY0NDNG4taA?oc=5": {
+   "url": "https://elcomercio.pe/lima/sucesos/los-olivos-bomberos-estiman-que-extincion-del-incendio-en-fabrica-podria-tardar-hasta-tres-dias-ultimas-noticia/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785789606,
-  "iso": "03 ago 2026 · 17:40 BRT",
+  "ts": 1785803238,
+  "iso": "03 ago 2026 · 21:27 BRT",
   "status": {
-   "B3": {
-    "status": "critico",
-    "score": 76
-   },
    "Rumo": {
-    "status": "critico",
+    "status": "atencao",
     "score": 75
    },
    "Engie Brasil": {
@@ -44954,15 +46566,15 @@
    },
    "Vale": {
     "status": "atencao",
-    "score": 67
-   },
-   "Tok&Stok": {
-    "status": "critico",
-    "score": 62
+    "score": 66
    },
    "CVS Health": {
     "status": "critico",
     "score": 62
+   },
+   "Tok&Stok": {
+    "status": "critico",
+    "score": 61
    },
    "Grupo Financiero Banorte": {
     "status": "critico",
@@ -44970,7 +46582,7 @@
    },
    "Cosan": {
     "status": "atencao",
-    "score": 49
+    "score": 48
    },
    "Samarco Mineração": {
     "status": "critico",
@@ -45022,7 +46634,7 @@
    },
    "Suzano": {
     "status": "monitorar",
-    "score": 26
+    "score": 25
    },
    "Capital One Financial": {
     "status": "monitorar",
@@ -45036,10 +46648,6 @@
     "status": "atencao",
     "score": 21
    },
-   "Citigroup": {
-    "status": "monitorar",
-    "score": 21
-   },
    "Itaúsa": {
     "status": "monitorar",
     "score": 21
@@ -45047,6 +46655,14 @@
    "Aegea Saneamento": {
     "status": "monitorar",
     "score": 21
+   },
+   "Yura": {
+    "status": "atencao",
+    "score": 20
+   },
+   "Citigroup": {
+    "status": "monitorar",
+    "score": 20
    },
    "Natura &Co": {
     "status": "monitorar",
@@ -45116,11 +46732,11 @@
     "status": "monitorar",
     "score": 8
    },
-   "Pemex (Petróleos Mexicanos)": {
-    "status": "monitorar",
-    "score": 8
-   },
    "Localiza": {
+    "status": "monitorar",
+    "score": 7
+   },
+   "Pemex (Petróleos Mexicanos)": {
     "status": "monitorar",
     "score": 7
    },
@@ -45132,10 +46748,6 @@
     "status": "monitorar",
     "score": 7
    },
-   "Yura": {
-    "status": "monitorar",
-    "score": 7
-   },
    "Caixa Seguridade": {
     "status": "monitorar",
     "score": 6
@@ -45143,6 +46755,10 @@
    "Halliburton": {
     "status": "monitorar",
     "score": 6
+   },
+   "B3": {
+    "status": "monitorar",
+    "score": 5
    },
    "Klabin": {
     "status": "monitorar",
@@ -45193,6 +46809,10 @@
     "score": 0
    },
    "Morgan Stanley": {
+    "status": "monitorar",
+    "score": 0
+   },
+   "Trupal": {
     "status": "monitorar",
     "score": 0
    },
