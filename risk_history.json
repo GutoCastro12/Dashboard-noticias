@@ -460,7 +460,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.619078+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.619078+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.infomoney.com.br/mercados/telefonica-assume-100-da-fibrasil-e-reforca-estrategia-de-infraestrutura-propria/": {
    "title": "Vivo acelera estratégia no setor de banda larga com aquisição integral da FiBrasil",
@@ -1018,7 +1020,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T15:32:02.898791+00:00"
+     "last_checked_at": "2026-08-04T17:57:13.545204+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2554,7 +2556,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T15:32:03.299064+00:00"
+     "last_checked_at": "2026-08-04T17:57:13.945429+00:00"
     }
    ],
    "corrob_sources": [
@@ -9161,7 +9163,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T15:32:03.699405+00:00"
+     "last_checked_at": "2026-08-04T17:57:14.345736+00:00"
     },
     {
      "source": "Demarest",
@@ -9181,7 +9183,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T15:32:04.099714+00:00"
+     "last_checked_at": "2026-08-04T17:57:14.746008+00:00"
     }
    ],
    "corrob_sources": [
@@ -10565,7 +10567,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T15:32:04.499919+00:00"
+     "last_checked_at": "2026-08-04T17:57:15.146245+00:00"
     }
    ],
    "corrob_sources": [
@@ -13711,7 +13713,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T15:32:05.022378+00:00"
+     "last_checked_at": "2026-08-04T17:57:15.732612+00:00"
     }
    ],
    "corrob_sources": [
@@ -15853,7 +15855,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T15:32:05.564357+00:00"
+     "last_checked_at": "2026-08-04T17:57:16.331403+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -15959,7 +15961,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T15:32:06.112568+00:00"
+     "last_checked_at": "2026-08-04T17:57:16.898258+00:00"
     },
     {
      "source": "Moomoo",
@@ -17228,7 +17230,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T15:32:06.716900+00:00"
+     "last_checked_at": "2026-08-04T17:57:17.571839+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17271,7 +17273,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T15:32:07.319231+00:00"
+     "last_checked_at": "2026-08-04T17:57:18.243735+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -18999,7 +19001,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-04T15:32:07.719560+00:00",
+     "last_checked_at": "2026-08-04T17:57:18.643995+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19064,7 +19066,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-04T15:32:08.119839+00:00",
+     "last_checked_at": "2026-08-04T17:57:19.044222+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19997,7 +19999,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T15:32:08.688110+00:00"
+     "last_checked_at": "2026-08-04T17:57:19.588859+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20082,7 +20084,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T15:32:09.214718+00:00"
+     "last_checked_at": "2026-08-04T17:57:20.152663+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -34915,7 +34917,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T15:32:09.841283+00:00"
+     "last_checked_at": "2026-08-04T17:57:20.822853+00:00"
     }
    ],
    "corrob_sources": [
@@ -37716,7 +37718,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T15:32:10.364682+00:00"
+     "last_checked_at": "2026-08-04T17:57:21.384168+00:00"
     },
     {
      "source": "Virginia Business",
@@ -37759,7 +37761,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T15:32:10.872560+00:00"
+     "last_checked_at": "2026-08-04T17:57:21.943081+00:00"
     },
     {
      "source": "Virginia Business",
@@ -40079,7 +40081,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785789585,
-   "cap_iso": "2026-08-03 17:39"
+   "cap_iso": "2026-08-03 17:39",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.americatv.com.pe/noticias/actualidad/incendio-gran-magnitud-consume-fabrica-cosmeticos-olivos-n520694": {
    "title": "Los Olivos: Incendio de gran magnitud consume fábrica de cosméticos",
@@ -40219,7 +40223,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785789585,
-   "cap_iso": "2026-08-03 17:39"
+   "cap_iso": "2026-08-03 17:39",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.peru-retail.com/yobel-paraliza-temporalmente-sus-operaciones-tras-el-incendio-en-su-planta-de-los-olivos/": {
    "title": "Yobel paraliza temporalmente sus operaciones tras el incendio en su planta de Los Olivos",
@@ -40255,7 +40261,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1785789585,
-   "cap_iso": "2026-08-03 17:39"
+   "cap_iso": "2026-08-03 17:39",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMiogFBVV95cUxPVnppcmF6X1ZkckJVc0h3bGJKNG5nRkc1XzNkWTRkNUh0ZnNHNXJCcGotXzZ0YkN1cHFxcVZJV2VNbEpsLWN2SEdsT0hQY002UlpTdkxlY1RVSG1HRGNrc3NMNHU4eGplbm03NjVCcGNmczJNQmI0Njd6V28zTkhFUUllS1QzQVpVaS1JUFFGeGNza3hBRVhmelZzcWhVNi10MHfSAacBQVVfeXFMUF90N1NPSXpGT0ZWaTNZdUFLZ0Iyd0k0UFRMaVlGWVpGZGJGTTV5U0lnU0d0TFZoekpHUjFtVUt5bHFtNDFrRy1aRkpPTXRNd1pDcUFYN3U0ZjdxNGZnSnZ5REY0UEc4U2gzNnM4T3FHVjV6TFFhT3JJUHlTbko2U1BVc1BsX3gtM0YzdTh2Rm9uS2RhUl9oX2NVdUJ4Qm1XQ05DckpubzQ?oc=5": {
    "title": "Pernambucanas tem novo CEO; confira outras mudanças",
@@ -42288,9 +42296,99 @@
    ],
    "captured_ts": 1785857519,
    "cap_iso": "2026-08-04 12:31"
+  },
+  "https://news.google.com/rss/articles/CBMikwFBVV95cUxPU1NJU0J4Y2FLaFJsT0NNUXF1S3c0d3JtRy1uX2I3Nk9YRW1yRnlzakROZmx4WjhVSUNOMXlzejY3YlQ3MGJpQ0ZsVW9sNExSYkxXQ2lRYWhxN2EtOEdWVll5LWU0eHBNRjFtSkwwd3BuSU1mTzd5MnNwby1rcmUyYW9WaEdJd0I4d0dabDNOelV6ZHM?oc=5": {
+   "title": "Auto industry veteran to lead Marelli through bankruptcy process",
+   "url": "https://www.plasticsnews.com/end-markets/automotive/pn-marelli-henderson-automotive-news/",
+   "summary": "Auto industry veteran to lead Marelli through bankruptcy process &nbsp;&nbsp; Plastics News",
+   "source": "Plastics News",
+   "domain": "plasticsnews.com",
+   "pub_ts": 1776236400,
+   "pub_iso": "2026-04-15 04:00",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785866228,
+   "cap_iso": "2026-08-04 14:57"
+  },
+  "https://news.google.com/rss/articles/CBMitgFBVV95cUxOcjhuVmVFc0J2SzF4QUFaU3Y5alFJTlJYQ1JZUnd3QVh5cm1JWExFanpUNGpGQTktZDlXYk1IOWJYYUhMZzBTOGhEZjNQR0wxb2IxMFlaQ1lKS3daVXBoM3k1eVVrV0dqa2NaVXNQWlQzWG8yOFFoZGNNaG1Sb3FqekRnMHRDSExXMDM2ZXpLeWZkM1cweFRaWW9sa19VcVV5bG5PU1R2a1MyQW5OTnNLZEpZcGZId9IBckFVX3lxTE9iZDZQX3lHU3FqVUhyQjJCa09STHRJQk5fTXo5aHR5OHR1LUtmZmJjdlhKN2tNb1FreWdDOGZCR3M4NnI2RlpSY3dzRmM1b0RHbHFlLTBUWmstMTdhaXhPNnpZUHVGbkVuTjJfcmJLT1lydw?oc=5": {
+   "title": "Texas AG Targets CVS DEI Program, Threatens Fraud Probe",
+   "url": "https://www.law360.com/healthcare-authority/articles/2476688/texas-ag-targets-cvs-dei-program-threatens-fraud-probe",
+   "summary": "Texas AG Targets CVS DEI Program, Threatens Fraud Probe &nbsp;&nbsp; Law360",
+   "source": "Law360",
+   "domain": "law360.com",
+   "pub_ts": 1778569200,
+   "pub_iso": "2026-05-12 04:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "fraude"
+   ],
+   "captured_ts": 1785866228,
+   "cap_iso": "2026-08-04 14:57"
+  },
+  "https://www.infomoney.com.br/mercados/por-que-as-acoes-da-engie-brasil-despencaram-com-a-aquisicao-de-jirau/": {
+   "title": "Por que as ações da Engie Brasil despencaram com a aquisição de Jirau?",
+   "url": "https://www.infomoney.com.br/mercados/por-que-as-acoes-da-engie-brasil-despencaram-com-a-aquisicao-de-jirau/",
+   "summary": "Por que as ações da Engie Brasil despencaram com a aquisição de Jirau? &nbsp;&nbsp; InfoMoney",
+   "source": "InfoMoney",
+   "domain": "infomoney.com.br",
+   "pub_ts": 1783062000,
+   "pub_iso": "2026-07-03 04:00",
+   "language": "pt",
+   "companies": [
+    "Engie Brasil"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "mention_roles": {
+    "Engie Brasil": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Engie Brasil": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "Engie Brasil"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785866228,
+   "cap_iso": "2026-08-04 14:57"
+  },
+  "https://news.google.com/rss/articles/CBMipwFBVV95cUxNX1VUMHF0Vi1aa0xSWjE2NEhGc0RnS1hGVnl0Xzg4NXNySHVoLTBKSVg4RGlxa1dnN2JaS253M2VNMjl3aDFIRGZxbE9Rc3dVU1pRYW5tSmNFdzJGcEJiZVg5SEs5SGFrLXBaU3ZBb3NKWTctZkNCWGVhdmx5N0FGZ09WTlF2TDZjbXlYck1hVW1wem9tQVRaR3o5SWluUGNpS2stSmpXQQ?oc=5": {
+   "title": "Pedidos de recuperação judicial batem recorde no 1º semestre",
+   "url": "https://www.poder360.com.br/poder-economia/pedidos-de-recuperacao-judicial-batem-recorde-no-1o-semestre/",
+   "summary": "Pedidos de recuperação judicial batem recorde no 1º semestre &nbsp;&nbsp; Poder360",
+   "source": "Poder360",
+   "domain": "poder360.com.br",
+   "pub_ts": 1785865843,
+   "pub_iso": "2026-08-04 14:50",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1785866228,
+   "cap_iso": "2026-08-04 14:57"
   }
  },
- "run_count": 70,
+ "run_count": 71,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -46995,11 +47093,23 @@
   "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTjBFYWIwZGNCUF96YXJTQkFHNnZSWmxtaXl2Y0hYOTJiaW5wX2ZhVEZKSDJBdXdkb3BTWkFYMDdKdGN3c0c5cTYwcU11dDJDcmNoTGhBTzl1MmF6SkNoRWJwNnZJNlFmM2NZT3ZYOUdRVzh3QW9aUTBxZXphdzB4blJyMklOUE5kM19LelpkQWd4S0V2dExNMTZtRGlNUG04YlVVSkEzTnVDdjBzQjF1VVROa3lHeWFLbXg0WTVBMl8?oc=5": {
    "url": "https://www.moneytimes.com.br/smart-fit-smft3-conclui-aquisicao-da-rede-de-academias-evolve-veja-detalhes-da-operacao-lmrs/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMikwFBVV95cUxPU1NJU0J4Y2FLaFJsT0NNUXF1S3c0d3JtRy1uX2I3Nk9YRW1yRnlzakROZmx4WjhVSUNOMXlzejY3YlQ3MGJpQ0ZsVW9sNExSYkxXQ2lRYWhxN2EtOEdWVll5LWU0eHBNRjFtSkwwd3BuSU1mTzd5MnNwby1rcmUyYW9WaEdJd0I4d0dabDNOelV6ZHM?oc=5": {
+   "url": "https://www.plasticsnews.com/end-markets/automotive/pn-marelli-henderson-automotive-news/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMitgFBVV95cUxOcjhuVmVFc0J2SzF4QUFaU3Y5alFJTlJYQ1JZUnd3QVh5cm1JWExFanpUNGpGQTktZDlXYk1IOWJYYUhMZzBTOGhEZjNQR0wxb2IxMFlaQ1lKS3daVXBoM3k1eVVrV0dqa2NaVXNQWlQzWG8yOFFoZGNNaG1Sb3FqekRnMHRDSExXMDM2ZXpLeWZkM1cweFRaWW9sa19VcVV5bG5PU1R2a1MyQW5OTnNLZEpZcGZId9IBckFVX3lxTE9iZDZQX3lHU3FqVUhyQjJCa09STHRJQk5fTXo5aHR5OHR1LUtmZmJjdlhKN2tNb1FreWdDOGZCR3M4NnI2RlpSY3dzRmM1b0RHbHFlLTBUWmstMTdhaXhPNnpZUHVGbkVuTjJfcmJLT1lydw?oc=5": {
+   "url": "https://www.law360.com/healthcare-authority/articles/2476688/texas-ag-targets-cvs-dei-program-threatens-fraud-probe",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipwFBVV95cUxNX1VUMHF0Vi1aa0xSWjE2NEhGc0RnS1hGVnl0Xzg4NXNySHVoLTBKSVg4RGlxa1dnN2JaS253M2VNMjl3aDFIRGZxbE9Rc3dVU1pRYW5tSmNFdzJGcEJiZVg5SEs5SGFrLXBaU3ZBb3NKWTctZkNCWGVhdmx5N0FGZ09WTlF2TDZjbXlYck1hVW1wem9tQVRaR3o5SWluUGNpS2stSmpXQQ?oc=5": {
+   "url": "https://www.poder360.com.br/poder-economia/pedidos-de-recuperacao-judicial-batem-recorde-no-1o-semestre/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785857532,
-  "iso": "04 ago 2026 · 12:32 BRT",
+  "ts": 1785866242,
+  "iso": "04 ago 2026 · 14:57 BRT",
   "status": {
    "Rumo": {
     "status": "atencao",
@@ -47007,7 +47117,7 @@
    },
    "Engie Brasil": {
     "status": "atencao",
-    "score": 71
+    "score": 70
    },
    "Vale": {
     "status": "atencao",
