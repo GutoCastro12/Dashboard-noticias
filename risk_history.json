@@ -1031,7 +1031,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T20:41:29.991558+00:00"
+     "last_checked_at": "2026-08-05T01:11:38.854957+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2670,7 +2670,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T20:41:30.391810+00:00"
+     "last_checked_at": "2026-08-05T01:11:39.255267+00:00"
     }
    ],
    "corrob_sources": [
@@ -9461,7 +9461,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T20:41:30.792090+00:00"
+     "last_checked_at": "2026-08-05T01:11:39.655578+00:00"
     },
     {
      "source": "Demarest",
@@ -9481,7 +9481,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T20:41:31.192426+00:00"
+     "last_checked_at": "2026-08-05T01:11:40.055924+00:00"
     }
    ],
    "corrob_sources": [
@@ -10898,7 +10898,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T20:41:31.592710+00:00"
+     "last_checked_at": "2026-08-05T01:11:40.456227+00:00"
     }
    ],
    "corrob_sources": [
@@ -14086,7 +14086,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T20:41:32.185290+00:00"
+     "last_checked_at": "2026-08-05T01:11:41.081614+00:00"
     }
    ],
    "corrob_sources": [
@@ -16324,7 +16324,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T20:41:32.772221+00:00"
+     "last_checked_at": "2026-08-05T01:11:41.717203+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16430,7 +16430,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T20:41:33.469784+00:00"
+     "last_checked_at": "2026-08-05T01:11:42.360912+00:00"
     },
     {
      "source": "Moomoo",
@@ -17723,7 +17723,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T20:41:34.181488+00:00"
+     "last_checked_at": "2026-08-05T01:11:43.180614+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17766,7 +17766,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T20:41:34.887839+00:00"
+     "last_checked_at": "2026-08-05T01:11:44.016483+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19518,7 +19518,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-04T20:41:35.288146+00:00",
+     "last_checked_at": "2026-08-05T01:11:44.416786+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19583,7 +19583,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-04T20:41:35.688354+00:00",
+     "last_checked_at": "2026-08-05T01:11:44.817075+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20556,7 +20556,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T20:41:36.273894+00:00"
+     "last_checked_at": "2026-08-05T01:11:45.461939+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20641,7 +20641,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T20:41:36.870321+00:00"
+     "last_checked_at": "2026-08-05T01:11:46.111014+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -26141,6 +26141,26 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T05:45:37.639503+00:00"
+    },
+    {
+     "source": "suno.com.br",
+     "domain": "suno.com.br",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFB6UnhOQUY5UnVjeEFQMjIxbWJwTHBlQ2RzTzZiMjZtN0FWdzVYUV9HQ0VBYzZXTHRHNV9qb09kemZWbTNTa3BiUXpmSlhFanJOR2xuaGZGU2g3VFpGcmpOUzNFT29BTnltTVJLTHpERnBEc0RLQkE?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFB6UnhOQUY5UnVjeEFQMjIxbWJwTHBlQ2RzTzZiMjZtN0FWdzVYUV9HQ0VBYzZXTHRHNV9qb09kemZWbTNTa3BiUXpmSlhFanJOR2xuaGZGU2g3VFpGcmpOUzNFT29BTnltTVJLTHpERnBEc0RLQkE?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFB6UnhOQUY5UnVjeEFQMjIxbWJwTHBlQ2RzTzZiMjZtN0FWdzVYUV9HQ0VBYzZXTHRHNV9qb09kemZWbTNTa3BiUXpmSlhFanJOR2xuaGZGU2g3VFpGcmpOUzNFT29BTnltTVJLTHpERnBEc0RLQkE?oc=5",
+     "resolved_url": "https://www.suno.com.br/noticias/rumo-rail3-ceo-btg-compra-alta-mt/",
+     "canonical_url": "https://www.suno.com.br/noticias/rumo-rail3-ceo-btg-compra-alta-mt/",
+     "display_url": "https://www.suno.com.br/noticias/rumo-rail3-ceo-btg-compra-alta-mt/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.suno.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-05T01:11:46.751734+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "corrob_sources": [
@@ -26227,6 +26247,27 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T05:45:37.639629+00:00"
+    },
+    {
+     "source": "suno.com.br",
+     "domain": "suno.com.br",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFB6UnhOQUY5UnVjeEFQMjIxbWJwTHBlQ2RzTzZiMjZtN0FWdzVYUV9HQ0VBYzZXTHRHNV9qb09kemZWbTNTa3BiUXpmSlhFanJOR2xuaGZGU2g3VFpGcmpOUzNFT29BTnltTVJLTHpERnBEc0RLQkE?oc=5",
+     "when": "23/06 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFB6UnhOQUY5UnVjeEFQMjIxbWJwTHBlQ2RzTzZiMjZtN0FWdzVYUV9HQ0VBYzZXTHRHNV9qb09kemZWbTNTa3BiUXpmSlhFanJOR2xuaGZGU2g3VFpGcmpOUzNFT29BTnltTVJLTHpERnBEc0RLQkE?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFB6UnhOQUY5UnVjeEFQMjIxbWJwTHBlQ2RzTzZiMjZtN0FWdzVYUV9HQ0VBYzZXTHRHNV9qb09kemZWbTNTa3BiUXpmSlhFanJOR2xuaGZGU2g3VFpGcmpOUzNFT29BTnltTVJLTHpERnBEc0RLQkE?oc=5",
+     "resolved_url": "https://www.suno.com.br/noticias/rumo-rail3-ceo-btg-compra-alta-mt/",
+     "canonical_url": "https://www.suno.com.br/noticias/rumo-rail3-ceo-btg-compra-alta-mt/",
+     "display_url": "https://www.suno.com.br/noticias/rumo-rail3-ceo-btg-compra-alta-mt/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.suno.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-05T01:11:47.151991+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "captured_ts": 1785345276,
@@ -35685,7 +35726,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T20:41:37.600116+00:00"
+     "last_checked_at": "2026-08-05T01:11:47.978698+00:00"
     }
    ],
    "corrob_sources": [
@@ -38542,7 +38583,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T20:41:38.186970+00:00"
+     "last_checked_at": "2026-08-05T01:11:48.602546+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38585,7 +38626,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-04T20:41:38.764070+00:00"
+     "last_checked_at": "2026-08-05T01:11:49.230835+00:00"
     },
     {
      "source": "Virginia Business",
@@ -43405,9 +43446,63 @@
    ],
    "captured_ts": 1785876083,
    "cap_iso": "2026-08-04 17:41"
+  },
+  "https://news.google.com/rss/articles/CBMiiAJBVV95cUxPVklja1p6N05zZ3dnQ2lMVllHTURKZDBqUVBvQlNFXzJlV1NXUEpoM3NlOUh1M1NrMTJ2VU4zTXNrbHJHZkt4UWdZd1NSbXAzek15UzM3c3dXdkJWaXF4Mk4tYTgtQWVGSFA3WVh2RWNKS2ZJWkhCaENWVjUzUVJOeUE3UmkteWdmVTNSWjczdVdJWmNDTWgwU3hRMGRLSjhFaWdtMWd3UURWdzVWMVRtY3RjRGVOWkNBYWtPOTc5THMybjVhOFp1anVXT0VQdUl2X2V1ZlRXQnJmZjFxeWJldEQ4bVUxV3RKZldsckFjXzVjU1dMaUpXQjNqSTM0R0hPVmpVNnhfRHA?oc=5": {
+   "title": "Clean Virginia: The NextEra-Dominion merger is about more than energy; it’s a test of whether Virginia will put its people above monopoly power",
+   "url": "https://cardinalnews.org/2026/05/22/clean-virginia-the-nextera-dominion-merger-is-about-more-than-energy-its-a-test-of-whether-virginia-will-put-its-people-above-monopoly-power/",
+   "summary": "Clean Virginia: The NextEra-Dominion merger is about more than energy; it’s a test of whether Virginia will put its people above monopoly power &nbsp;&nbsp; Cardinal News",
+   "source": "Cardinal News",
+   "domain": "cardinalnews.org",
+   "pub_ts": 1779433200,
+   "pub_iso": "2026-05-22 04:00",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1785892293,
+   "cap_iso": "2026-08-04 22:11"
+  },
+  "https://globorural.globo.com/credito-e-investimento/noticia/2026/08/banco-do-brasil-passa-a-operar-nova-linha-para-aquisicao-de-maquinas-agricolas.ghtml": {
+   "title": "Banco do Brasil passa a operar nova linha para aquisição de máquinas agrícolas",
+   "url": "https://globorural.globo.com/credito-e-investimento/noticia/2026/08/banco-do-brasil-passa-a-operar-nova-linha-para-aquisicao-de-maquinas-agricolas.ghtml",
+   "summary": "Banco do Brasil passa a operar nova linha para aquisição de máquinas agrícolas &nbsp;&nbsp; Globo Rural",
+   "source": "Globo Rural",
+   "domain": "globorural.globo.com",
+   "pub_ts": 1785874204,
+   "pub_iso": "2026-08-04 17:10",
+   "language": "pt",
+   "companies": [
+    "Banco do Brasil"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "mention_roles": {
+    "Banco do Brasil": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Banco do Brasil": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "Banco do Brasil"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785892293,
+   "cap_iso": "2026-08-04 22:11"
   }
  },
- "run_count": 72,
+ "run_count": 73,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -48152,11 +48247,23 @@
   "https://news.google.com/rss/articles/CBMilAFBVV95cUxQajNNeFNXUTAwUHdxS2s2Ti1Hck5ub3FZWWdBQUc3NmtwR0E1NkxSVFpCbXdMckZNR3VNOXFtcE5HTkNPNEhCNjRkU3RBTGRqQXUxbmdRS1dSbnYtM0ZHRmxKWHgwWHhsVlNQVnFJZHpIX3VZbk9EMWwwVlFTMDF6X252UjRLWTNUWGs4NHdOQmlDMjBW?oc=5": {
    "url": "https://painelpolitico.com/addiante-pede-a-falencia-da-ambipar-por-divida-de-r-187-milhoes",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOY3c2aENTQUdLV211dE5QemplSVVIT3FPOVYzSWlSdTBnZXZ5a0NvdHRqN0dIaU55TFY4ZDJualNTUm9QZzZod1FNMUR0R1JiWHMtSnZ3YTQ3OUJJSDBZZ2FqZGlJNzR3OW50enFCbmFFMGFzOEdWbGNMd0p3UmdvMHdybVVIZkdUTmJ0U3FDRjZoNTlWSW5hWjhDWTNPMDhSWmxiZ3ZOSXVxREdTb3VvRDdWTlQ4Zk5RTXRGcGwzUE9mbDlOallPV2hQS3hfcEtCTjFraVI1VzlaQnpSUUNtRTBadkh1cmPSAfYBQVVfeXFMTTFDNlZxT0ozNzJyZ1J6NF9HbWw3VVRyLXBJdkp5Z2FEQS1RWjN4RkZRUFFfRjgtek50R3hld3pJeHZHbkE1aW4tQ0MwV19Eb0o5RmJWQV9mZFp4U1BrMkhuWjY5NXR1VkdoZzkxUFJfdzg0Q3FUR1dKY2hmWHR2QnlIQVk1bWlwU0gyR05CMU95VWFiS1BZbUpBN21TSFVrV21CNHJhaHNzQjJpV1Z1VE1EYVFfUE5WbXJYNjVDUnlLWFpWSGtMTEh6cWk0dS1lT0ZQN2tKY0xVdGw3S29ZSFlZUjZzOXVHUGtwa21lcVE5MzFORVJR?oc=5": {
+   "url": "https://globorural.globo.com/credito-e-investimento/noticia/2026/08/banco-do-brasil-passa-a-operar-nova-linha-para-aquisicao-de-maquinas-agricolas.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiiAJBVV95cUxPVklja1p6N05zZ3dnQ2lMVllHTURKZDBqUVBvQlNFXzJlV1NXUEpoM3NlOUh1M1NrMTJ2VU4zTXNrbHJHZkt4UWdZd1NSbXAzek15UzM3c3dXdkJWaXF4Mk4tYTgtQWVGSFA3WVh2RWNKS2ZJWkhCaENWVjUzUVJOeUE3UmkteWdmVTNSWjczdVdJWmNDTWgwU3hRMGRLSjhFaWdtMWd3UURWdzVWMVRtY3RjRGVOWkNBYWtPOTc5THMybjVhOFp1anVXT0VQdUl2X2V1ZlRXQnJmZjFxeWJldEQ4bVUxV3RKZldsckFjXzVjU1dMaUpXQjNqSTM0R0hPVmpVNnhfRHA?oc=5": {
+   "url": "https://cardinalnews.org/2026/05/22/clean-virginia-the-nextera-dominion-merger-is-about-more-than-energy-its-a-test-of-whether-virginia-will-put-its-people-above-monopoly-power/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMidkFVX3lxTFB6UnhOQUY5UnVjeEFQMjIxbWJwTHBlQ2RzTzZiMjZtN0FWdzVYUV9HQ0VBYzZXTHRHNV9qb09kemZWbTNTa3BiUXpmSlhFanJOR2xuaGZGU2g3VFpGcmpOUzNFT29BTnltTVJLTHpERnBEc0RLQkE?oc=5": {
+   "url": "https://www.suno.com.br/noticias/rumo-rail3-ceo-btg-compra-alta-mt/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785890317,
-  "iso": "04 ago 2026 · 21:38 BRT",
+  "ts": 1785892310,
+  "iso": "04 ago 2026 · 22:11 BRT",
   "status": {
    "Rumo": {
     "status": "atencao",
@@ -48238,6 +48345,10 @@
     "status": "monitorar",
     "score": 27
    },
+   "Banco do Brasil": {
+    "status": "atencao",
+    "score": 27
+   },
    "PRIO": {
     "status": "monitorar",
     "score": 26
@@ -48292,7 +48403,7 @@
    },
    "Eneva": {
     "status": "monitorar",
-    "score": 16
+    "score": 15
    },
    "Ecopetrol": {
     "status": "monitorar",
@@ -48375,10 +48486,6 @@
     "score": 4
    },
    "Hapvida": {
-    "status": "monitorar",
-    "score": 3
-   },
-   "Banco do Brasil": {
     "status": "monitorar",
     "score": 3
    },
