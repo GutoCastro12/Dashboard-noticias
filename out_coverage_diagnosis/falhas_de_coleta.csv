@@ -1,0 +1,9 @@
+﻿company,source,source_type,method,error,last_attempt,link
+Trupal,RI_NEWS,official_site,manual_research (WebSearch),site oficial não localizado,2026-08-05T00:00:00+00:00,
+Yobel,RI_NEWS,official_site,manual_research (curl + nslookup contra resolver local e 8.8.8.8),falha de resolução DNS (NXDOMAIN),2026-08-05T00:00:00+00:00,https://www.yobelscm.biz/
+Casa Grande S.A.A.,RI_NEWS,official_site,manual_research (WebSearch),fonte própria não localizada,2026-08-05T00:00:00+00:00,
+Cartavio S.A.A.,RI_NEWS,official_site,manual_research (WebSearch),fonte própria não localizada,2026-08-05T00:00:00+00:00,
+Agroindustrias San Jacinto S.A.,RI_NEWS,official_site,manual_research (WebSearch),fonte própria não localizada,2026-08-05T00:00:00+00:00,
+Empresa Agrícola Sintuco S.A.,RI_NEWS,official_site,manual_research (WebSearch),fonte própria não localizada,2026-08-05T00:00:00+00:00,
+Agrolmos S.,RI_NEWS,official_site,manual_research (WebSearch),fonte própria não localizada,2026-08-05T00:00:00+00:00,
+Empresa Agraria Chiquitoy S.A.,RI_NEWS,official_site,manual_research (WebSearch),fonte própria não localizada,2026-08-05T00:00:00+00:00,

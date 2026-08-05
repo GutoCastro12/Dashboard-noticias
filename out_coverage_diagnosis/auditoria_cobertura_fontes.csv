@@ -1,0 +1,131 @@
+﻿company,coverage_status,source,source_type,method,configured,attempted,technical_success,items_found,validated,last_attempt,last_success,error,link,note
+Ambev,COVERAGE_OK_EVENTS_FOUND,GNEWS,,,True,True,True,15,False,,,,,
+Ambev,COVERAGE_OK_EVENTS_FOUND,RI_RSS,,,False,False,False,0,False,,,,,
+Ambev,COVERAGE_OK_EVENTS_FOUND,RI_NEWS,,,True,True,True,5,True,,,,,
+Ambev,COVERAGE_OK_EVENTS_FOUND,EDGAR,,,False,False,False,0,False,,,,,
+Ambev,COVERAGE_OK_EVENTS_FOUND,REGULADOR_LOCAL,regulator,ipe_dataset_match_por_identificador_forte,True,True,True,57,True,2026-08-05T01:39:39.371015+00:00,2026-08-05T01:39:39.371015+00:00,,,"identificador=23264 (razao_social); 57 documento(s) retornado(s), 57 aceito(s)."
+B3,ONLY_INFORMATIONAL_FOUND,GNEWS,,,True,True,True,15,False,,,,,
+B3,ONLY_INFORMATIONAL_FOUND,RI_RSS,,,False,False,False,0,False,,,,,
+B3,ONLY_INFORMATIONAL_FOUND,RI_NEWS,,,True,True,True,3,True,,,,,
+B3,ONLY_INFORMATIONAL_FOUND,EDGAR,,,False,False,False,0,False,,,,,
+B3,ONLY_INFORMATIONAL_FOUND,REGULADOR_LOCAL,regulator,ipe_dataset_match_por_identificador_forte,True,True,True,81,True,2026-08-05T01:39:39.371015+00:00,2026-08-05T01:39:39.371015+00:00,,,"identificador=cod_cvm:21610 (codigo_cvm); 81 documento(s) retornado(s), 81 aceito(s)."
+BTG Pactual,COVERAGE_OK_EVENTS_FOUND,GNEWS,,,True,True,True,15,False,,,,,
+BTG Pactual,COVERAGE_OK_EVENTS_FOUND,RI_RSS,,,False,False,False,0,False,,,,,
+BTG Pactual,COVERAGE_OK_EVENTS_FOUND,RI_NEWS,,,True,True,True,8,True,,,,,
+BTG Pactual,COVERAGE_OK_EVENTS_FOUND,EDGAR,,,False,False,False,0,False,,,,,
+BTG Pactual,COVERAGE_OK_EVENTS_FOUND,REGULADOR_LOCAL,regulator,ipe_dataset_match_por_identificador_forte,True,True,True,65,True,2026-08-05T01:39:39.371015+00:00,2026-08-05T01:39:39.371015+00:00,,,"identificador=cod_cvm:22616 (codigo_cvm); 65 documento(s) retornado(s), 65 aceito(s)."
+Banco do Brasil,ONLY_INFORMATIONAL_FOUND,GNEWS,,,True,True,True,15,False,,,,,
+Banco do Brasil,ONLY_INFORMATIONAL_FOUND,RI_RSS,,,False,False,False,0,False,,,,,
+Banco do Brasil,ONLY_INFORMATIONAL_FOUND,RI_NEWS,,,True,True,True,10,True,,,,,
+Banco do Brasil,ONLY_INFORMATIONAL_FOUND,EDGAR,,,False,False,False,0,False,,,,,
+Banco do Brasil,ONLY_INFORMATIONAL_FOUND,REGULADOR_LOCAL,regulator,ipe_dataset_match_por_identificador_forte,True,True,True,133,True,2026-08-05T01:39:39.371015+00:00,2026-08-05T01:39:39.371015+00:00,,,"identificador=cod_cvm:1023 (codigo_cvm); 133 documento(s) retornado(s), 133 aceito(s)."
+Bradesco,ONLY_INFORMATIONAL_FOUND,GNEWS,,,True,True,True,15,False,,,,,
+Bradesco,ONLY_INFORMATIONAL_FOUND,RI_RSS,,,False,False,False,0,False,,,,,
+Bradesco,ONLY_INFORMATIONAL_FOUND,RI_NEWS,,,True,True,True,7,True,,,,,
+Bradesco,ONLY_INFORMATIONAL_FOUND,EDGAR,,,False,False,False,0,False,,,,,
+Bradesco,ONLY_INFORMATIONAL_FOUND,REGULADOR_LOCAL,regulator,ipe_dataset_match_por_identificador_forte,True,True,True,141,True,2026-08-05T01:39:39.371015+00:00,2026-08-05T01:39:39.371015+00:00,,,"identificador=cod_cvm:906 (codigo_cvm); 141 documento(s) retornado(s), 141 aceito(s)."
+Eletrobras,COVERAGE_OK_EVENTS_FOUND,GNEWS,,,True,True,True,15,False,,,,,
+Eletrobras,COVERAGE_OK_EVENTS_FOUND,RI_RSS,,,False,False,False,0,False,,,,,
+Eletrobras,COVERAGE_OK_EVENTS_FOUND,RI_NEWS,,,True,True,True,7,True,,,,,
+Eletrobras,COVERAGE_OK_EVENTS_FOUND,EDGAR,,,False,False,False,0,False,,,,,
+Eletrobras,COVERAGE_OK_EVENTS_FOUND,REGULADOR_LOCAL,regulator,ipe_dataset_match_por_identificador_forte,True,True,True,0,False,2026-08-05T01:39:39.371015+00:00,,"Identificador forte resolvido, mas 0 protocolo(s) IPE no ano corrente — pode ser janela do dataset, não necessariamente ausência de filiação.",,"identificador=cod_cvm:15784 (id_forte_sem_protocolo); 0 documento(s) retornado(s), 0 aceito(s)."
+Equatorial Energia,COVERAGE_OK_EVENTS_FOUND,GNEWS,,,True,True,True,15,False,,,,,
+Equatorial Energia,COVERAGE_OK_EVENTS_FOUND,RI_RSS,,,False,False,False,0,False,,,,,
+Equatorial Energia,COVERAGE_OK_EVENTS_FOUND,RI_NEWS,,,True,True,True,9,True,,,,,
+Equatorial Energia,COVERAGE_OK_EVENTS_FOUND,EDGAR,,,False,False,False,0,False,,,,,
+Equatorial Energia,COVERAGE_OK_EVENTS_FOUND,REGULADOR_LOCAL,regulator,ipe_dataset_match_por_identificador_forte,True,True,True,92,True,2026-08-05T01:39:39.371015+00:00,2026-08-05T01:39:39.371015+00:00,,,"identificador=cod_cvm:20010 (codigo_cvm); 92 documento(s) retornado(s), 92 aceito(s)."
+Itaú Unibanco,ONLY_INFORMATIONAL_FOUND,GNEWS,,,True,True,True,15,False,,,,,
+Itaú Unibanco,ONLY_INFORMATIONAL_FOUND,RI_RSS,,,False,False,False,0,False,,,,,
+Itaú Unibanco,ONLY_INFORMATIONAL_FOUND,RI_NEWS,,,True,True,True,0,True,,,,,
+Itaú Unibanco,ONLY_INFORMATIONAL_FOUND,EDGAR,,,False,False,False,0,False,,,,,
+Itaú Unibanco,ONLY_INFORMATIONAL_FOUND,REGULADOR_LOCAL,regulator,ipe_dataset_match_por_identificador_forte,True,True,True,114,True,2026-08-05T01:39:39.371015+00:00,2026-08-05T01:39:39.371015+00:00,,,"identificador=cod_cvm:19348 (codigo_cvm); 114 documento(s) retornado(s), 114 aceito(s)."
+Localiza,ONLY_INFORMATIONAL_FOUND,GNEWS,,,True,True,True,15,False,,,,,
+Localiza,ONLY_INFORMATIONAL_FOUND,RI_RSS,,,False,False,False,0,False,,,,,
+Localiza,ONLY_INFORMATIONAL_FOUND,RI_NEWS,,,True,True,True,4,True,,,,,
+Localiza,ONLY_INFORMATIONAL_FOUND,EDGAR,,,False,False,False,0,False,,,,,
+Localiza,ONLY_INFORMATIONAL_FOUND,REGULADOR_LOCAL,regulator,ipe_dataset_match_por_identificador_forte,True,True,True,97,True,2026-08-05T01:39:39.371015+00:00,2026-08-05T01:39:39.371015+00:00,,,"identificador=cod_cvm:19739 (codigo_cvm); 97 documento(s) retornado(s), 97 aceito(s)."
+PRIO,COVERAGE_OK_EVENTS_FOUND,GNEWS,,,True,True,True,15,False,,,,,
+PRIO,COVERAGE_OK_EVENTS_FOUND,RI_RSS,,,False,False,False,0,False,,,,,
+PRIO,COVERAGE_OK_EVENTS_FOUND,RI_NEWS,,,True,True,True,19,True,,,,,
+PRIO,COVERAGE_OK_EVENTS_FOUND,EDGAR,,,False,False,False,0,False,,,,,
+PRIO,COVERAGE_OK_EVENTS_FOUND,REGULADOR_LOCAL,regulator,ipe_dataset_match_por_identificador_forte,True,True,True,70,True,2026-08-05T01:39:39.371015+00:00,2026-08-05T01:39:39.371015+00:00,,,"identificador=22187 (razao_social); 70 documento(s) retornado(s), 70 aceito(s)."
+Petrobras,ONLY_INFORMATIONAL_FOUND,GNEWS,,,True,True,True,15,False,,,,,
+Petrobras,ONLY_INFORMATIONAL_FOUND,RI_RSS,,,False,False,False,0,False,,,,,
+Petrobras,ONLY_INFORMATIONAL_FOUND,RI_NEWS,,,True,True,True,6,True,,,,,
+Petrobras,ONLY_INFORMATIONAL_FOUND,EDGAR,,,False,False,False,0,False,,,,,
+Petrobras,ONLY_INFORMATIONAL_FOUND,REGULADOR_LOCAL,regulator,ipe_dataset_match_por_identificador_forte,True,True,True,194,True,2026-08-05T01:39:39.371015+00:00,2026-08-05T01:39:39.371015+00:00,,,"identificador=cod_cvm:9512 (codigo_cvm); 194 documento(s) retornado(s), 194 aceito(s)."
+Raia Drogasil,COVERAGE_OK_EVENTS_FOUND,GNEWS,,,True,True,True,15,False,,,,,
+Raia Drogasil,COVERAGE_OK_EVENTS_FOUND,RI_RSS,,,False,False,False,0,False,,,,,
+Raia Drogasil,COVERAGE_OK_EVENTS_FOUND,RI_NEWS,,,True,True,True,7,True,,,,,
+Raia Drogasil,COVERAGE_OK_EVENTS_FOUND,EDGAR,,,False,False,False,0,False,,,,,
+Raia Drogasil,COVERAGE_OK_EVENTS_FOUND,REGULADOR_LOCAL,regulator,ipe_dataset_match_por_identificador_forte,True,True,True,69,True,2026-08-05T01:39:39.371015+00:00,2026-08-05T01:39:39.371015+00:00,,,"identificador=cod_cvm:5258 (codigo_cvm); 69 documento(s) retornado(s), 69 aceito(s)."
+Rede D'Or,ONLY_INFORMATIONAL_FOUND,GNEWS,,,True,True,True,15,False,,,,,
+Rede D'Or,ONLY_INFORMATIONAL_FOUND,RI_RSS,,,False,False,False,0,False,,,,,
+Rede D'Or,ONLY_INFORMATIONAL_FOUND,RI_NEWS,,,True,True,True,3,True,,,,,
+Rede D'Or,ONLY_INFORMATIONAL_FOUND,EDGAR,,,False,False,False,0,False,,,,,
+Rede D'Or,ONLY_INFORMATIONAL_FOUND,REGULADOR_LOCAL,regulator,ipe_dataset_match_por_identificador_forte,True,True,True,63,True,2026-08-05T01:39:39.371015+00:00,2026-08-05T01:39:39.371015+00:00,,,"identificador=cod_cvm:24821 (codigo_cvm); 63 documento(s) retornado(s), 63 aceito(s)."
+Suzano,COVERAGE_OK_EVENTS_FOUND,GNEWS,,,True,True,True,15,False,,,,,
+Suzano,COVERAGE_OK_EVENTS_FOUND,RI_RSS,,,False,False,False,0,False,,,,,
+Suzano,COVERAGE_OK_EVENTS_FOUND,RI_NEWS,,,True,True,True,5,True,,,,,
+Suzano,COVERAGE_OK_EVENTS_FOUND,EDGAR,,,False,False,False,0,False,,,,,
+Suzano,COVERAGE_OK_EVENTS_FOUND,REGULADOR_LOCAL,regulator,ipe_dataset_match_por_identificador_forte,True,True,True,81,True,2026-08-05T01:39:39.371015+00:00,2026-08-05T01:39:39.371015+00:00,,,"identificador=cod_cvm:13986 (codigo_cvm); 81 documento(s) retornado(s), 81 aceito(s)."
+Vale,COVERAGE_OK_EVENTS_FOUND,GNEWS,,,True,True,True,15,False,,,,,
+Vale,COVERAGE_OK_EVENTS_FOUND,RI_RSS,,,False,False,False,0,False,,,,,
+Vale,COVERAGE_OK_EVENTS_FOUND,RI_NEWS,,,True,True,True,15,True,,,,,
+Vale,COVERAGE_OK_EVENTS_FOUND,EDGAR,,,False,False,False,0,False,,,,,
+Vale,COVERAGE_OK_EVENTS_FOUND,REGULADOR_LOCAL,regulator,ipe_dataset_match_por_identificador_forte,True,True,True,185,True,2026-08-05T01:39:39.371015+00:00,2026-08-05T01:39:39.371015+00:00,,,"identificador=cod_cvm:4170 (codigo_cvm); 185 documento(s) retornado(s), 185 aceito(s)."
+Vibra Energia,ONLY_INFORMATIONAL_FOUND,GNEWS,,,True,True,True,15,False,,,,,
+Vibra Energia,ONLY_INFORMATIONAL_FOUND,RI_RSS,,,False,False,False,0,False,,,,,
+Vibra Energia,ONLY_INFORMATIONAL_FOUND,RI_NEWS,,,True,True,True,6,True,,,,,
+Vibra Energia,ONLY_INFORMATIONAL_FOUND,EDGAR,,,False,False,False,0,False,,,,,
+Vibra Energia,ONLY_INFORMATIONAL_FOUND,REGULADOR_LOCAL,regulator,ipe_dataset_match_por_identificador_forte,True,True,True,74,True,2026-08-05T01:39:39.371015+00:00,2026-08-05T01:39:39.371015+00:00,,,"identificador=cod_cvm:24295 (codigo_cvm); 74 documento(s) retornado(s), 74 aceito(s)."
+Yura,PARTIAL_COVERAGE,GNEWS,,,True,False,False,0,False,,,,,Emissor fora do bucket desta execução (sem entrada em international_search_execution).
+Yura,PARTIAL_COVERAGE,RI_RSS,,,False,False,False,0,False,,,,,
+Yura,PARTIAL_COVERAGE,RI_NEWS,official_site,"manual_research (curl direto: HTTP 200; WebFetch automatizado: HTTP 403); manual_research (curl: HTTP 200; WebFetch: conteúdo genérico, sem filings/datas extraídos)",True,True,True,0,False,2026-08-05T00:00:00+00:00,,"403 para user-agent automatizado; conteúdo dinâmico (JS), sem API estática",https://www.yura.com.pe/; https://www.bvl.com.pe/en/issuers/detail?companyCode=58501,"Validação manual (pesquisa dirigida, não telemetria automática de execução do pipeline) — ver PERU_SOURCE_VALIDATION."
+Yura,PARTIAL_COVERAGE,EDGAR,,,False,False,False,0,False,,,,,
+Yura,PARTIAL_COVERAGE,REGULADOR_LOCAL,regulator,,False,False,False,0,False,,,,,
+Trupal,NO_VALIDATED_OFFICIAL_SOURCE,GNEWS,,,True,False,False,0,False,,,,,Emissor fora do bucket desta execução (sem entrada em international_search_execution).
+Trupal,NO_VALIDATED_OFFICIAL_SOURCE,RI_RSS,,,False,False,False,0,False,,,,,
+Trupal,NO_VALIDATED_OFFICIAL_SOURCE,RI_NEWS,official_site,manual_research (WebSearch),False,True,False,0,False,2026-08-05T00:00:00+00:00,,site oficial não localizado,,"Validação manual (pesquisa dirigida, não telemetria automática de execução do pipeline) — ver PERU_SOURCE_VALIDATION."
+Trupal,NO_VALIDATED_OFFICIAL_SOURCE,EDGAR,,,False,False,False,0,False,,,,,
+Trupal,NO_VALIDATED_OFFICIAL_SOURCE,REGULADOR_LOCAL,regulator,,False,False,False,0,False,,,,,
+Coazucar,FALLBACK_ONLY,GNEWS,,,True,True,True,3,False,,,,,
+Coazucar,FALLBACK_ONLY,RI_RSS,,,False,False,False,0,False,,,,,
+Coazucar,FALLBACK_ONLY,RI_NEWS,official_site,manual_research (WebFetch),True,True,True,0,False,2026-08-05T00:00:00+00:00,,,https://coazucar.com/,"Validação manual (pesquisa dirigida, não telemetria automática de execução do pipeline) — ver PERU_SOURCE_VALIDATION."
+Coazucar,FALLBACK_ONLY,EDGAR,,,False,False,False,0,False,,,,,
+Coazucar,FALLBACK_ONLY,REGULADOR_LOCAL,regulator,,False,False,False,0,False,,,,,
+Yobel,COLLECTION_FAILURE,GNEWS,,,True,False,False,0,False,,,,,Emissor fora do bucket desta execução (sem entrada em international_search_execution).
+Yobel,COLLECTION_FAILURE,RI_RSS,,,False,False,False,0,False,,,,,
+Yobel,COLLECTION_FAILURE,RI_NEWS,official_site,manual_research (curl + nslookup contra resolver local e 8.8.8.8),True,True,False,0,False,2026-08-05T00:00:00+00:00,,falha de resolução DNS (NXDOMAIN),https://www.yobelscm.biz/,"Validação manual (pesquisa dirigida, não telemetria automática de execução do pipeline) — ver PERU_SOURCE_VALIDATION."
+Yobel,COLLECTION_FAILURE,EDGAR,,,False,False,False,0,False,,,,,
+Yobel,COLLECTION_FAILURE,REGULADOR_LOCAL,regulator,,False,False,False,0,False,,,,,
+Casa Grande S.A.A.,NO_VALIDATED_OFFICIAL_SOURCE,GNEWS,,,True,False,False,0,False,,,,,Emissor fora do bucket desta execução (sem entrada em international_search_execution).
+Casa Grande S.A.A.,NO_VALIDATED_OFFICIAL_SOURCE,RI_RSS,,,False,False,False,0,False,,,,,
+Casa Grande S.A.A.,NO_VALIDATED_OFFICIAL_SOURCE,RI_NEWS,official_site,manual_research (WebSearch),False,True,False,0,False,2026-08-05T00:00:00+00:00,,fonte própria não localizada,,"Validação manual (pesquisa dirigida, não telemetria automática de execução do pipeline) — ver PERU_SOURCE_VALIDATION."
+Casa Grande S.A.A.,NO_VALIDATED_OFFICIAL_SOURCE,EDGAR,,,False,False,False,0,False,,,,,
+Casa Grande S.A.A.,NO_VALIDATED_OFFICIAL_SOURCE,REGULADOR_LOCAL,regulator,,False,False,False,0,False,,,,,
+Cartavio S.A.A.,NO_VALIDATED_OFFICIAL_SOURCE,GNEWS,,,True,False,False,0,False,,,,,Emissor fora do bucket desta execução (sem entrada em international_search_execution).
+Cartavio S.A.A.,NO_VALIDATED_OFFICIAL_SOURCE,RI_RSS,,,False,False,False,0,False,,,,,
+Cartavio S.A.A.,NO_VALIDATED_OFFICIAL_SOURCE,RI_NEWS,official_site,manual_research (WebSearch),False,True,False,0,False,2026-08-05T00:00:00+00:00,,fonte própria não localizada,,"Validação manual (pesquisa dirigida, não telemetria automática de execução do pipeline) — ver PERU_SOURCE_VALIDATION."
+Cartavio S.A.A.,NO_VALIDATED_OFFICIAL_SOURCE,EDGAR,,,False,False,False,0,False,,,,,
+Cartavio S.A.A.,NO_VALIDATED_OFFICIAL_SOURCE,REGULADOR_LOCAL,regulator,,False,False,False,0,False,,,,,
+Agroindustrias San Jacinto S.A.,NO_VALIDATED_OFFICIAL_SOURCE,GNEWS,,,True,False,False,0,False,,,,,Emissor fora do bucket desta execução (sem entrada em international_search_execution).
+Agroindustrias San Jacinto S.A.,NO_VALIDATED_OFFICIAL_SOURCE,RI_RSS,,,False,False,False,0,False,,,,,
+Agroindustrias San Jacinto S.A.,NO_VALIDATED_OFFICIAL_SOURCE,RI_NEWS,official_site,manual_research (WebSearch),False,True,False,0,False,2026-08-05T00:00:00+00:00,,fonte própria não localizada,,"Validação manual (pesquisa dirigida, não telemetria automática de execução do pipeline) — ver PERU_SOURCE_VALIDATION."
+Agroindustrias San Jacinto S.A.,NO_VALIDATED_OFFICIAL_SOURCE,EDGAR,,,False,False,False,0,False,,,,,
+Agroindustrias San Jacinto S.A.,NO_VALIDATED_OFFICIAL_SOURCE,REGULADOR_LOCAL,regulator,,False,False,False,0,False,,,,,
+Empresa Agrícola Sintuco S.A.,NO_VALIDATED_OFFICIAL_SOURCE,GNEWS,,,True,False,False,0,False,,,,,Emissor fora do bucket desta execução (sem entrada em international_search_execution).
+Empresa Agrícola Sintuco S.A.,NO_VALIDATED_OFFICIAL_SOURCE,RI_RSS,,,False,False,False,0,False,,,,,
+Empresa Agrícola Sintuco S.A.,NO_VALIDATED_OFFICIAL_SOURCE,RI_NEWS,official_site,manual_research (WebSearch),False,True,False,0,False,2026-08-05T00:00:00+00:00,,fonte própria não localizada,,"Validação manual (pesquisa dirigida, não telemetria automática de execução do pipeline) — ver PERU_SOURCE_VALIDATION."
+Empresa Agrícola Sintuco S.A.,NO_VALIDATED_OFFICIAL_SOURCE,EDGAR,,,False,False,False,0,False,,,,,
+Empresa Agrícola Sintuco S.A.,NO_VALIDATED_OFFICIAL_SOURCE,REGULADOR_LOCAL,regulator,,False,False,False,0,False,,,,,
+Agrolmos S.,NO_VALIDATED_OFFICIAL_SOURCE,GNEWS,,,True,False,False,0,False,,,,,Emissor fora do bucket desta execução (sem entrada em international_search_execution).
+Agrolmos S.,NO_VALIDATED_OFFICIAL_SOURCE,RI_RSS,,,False,False,False,0,False,,,,,
+Agrolmos S.,NO_VALIDATED_OFFICIAL_SOURCE,RI_NEWS,official_site,manual_research (WebSearch),False,True,False,0,False,2026-08-05T00:00:00+00:00,,fonte própria não localizada,,"Validação manual (pesquisa dirigida, não telemetria automática de execução do pipeline) — ver PERU_SOURCE_VALIDATION."
+Agrolmos S.,NO_VALIDATED_OFFICIAL_SOURCE,EDGAR,,,False,False,False,0,False,,,,,
+Agrolmos S.,NO_VALIDATED_OFFICIAL_SOURCE,REGULADOR_LOCAL,regulator,,False,False,False,0,False,,,,,
+Empresa Agraria Chiquitoy S.A.,NO_VALIDATED_OFFICIAL_SOURCE,GNEWS,,,True,False,False,0,False,,,,,Emissor fora do bucket desta execução (sem entrada em international_search_execution).
+Empresa Agraria Chiquitoy S.A.,NO_VALIDATED_OFFICIAL_SOURCE,RI_RSS,,,False,False,False,0,False,,,,,
+Empresa Agraria Chiquitoy S.A.,NO_VALIDATED_OFFICIAL_SOURCE,RI_NEWS,official_site,manual_research (WebSearch),False,True,False,0,False,2026-08-05T00:00:00+00:00,,fonte própria não localizada,,"Validação manual (pesquisa dirigida, não telemetria automática de execução do pipeline) — ver PERU_SOURCE_VALIDATION."
+Empresa Agraria Chiquitoy S.A.,NO_VALIDATED_OFFICIAL_SOURCE,EDGAR,,,False,False,False,0,False,,,,,
+Empresa Agraria Chiquitoy S.A.,NO_VALIDATED_OFFICIAL_SOURCE,REGULADOR_LOCAL,regulator,,False,False,False,0,False,,,,,

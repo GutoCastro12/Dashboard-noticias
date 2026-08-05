@@ -6372,7 +6372,8 @@ def build_asset_groups_meta(cfg: dict) -> list[dict]:
 
 def render_html(data_by_window: dict, cfg: dict, demo: bool,
                 changes: dict | None = None,
-                payload_thresholds: dict | None = None) -> str:
+                payload_thresholds: dict | None = None,
+                run_meta: dict | None = None) -> str:
     template_path = Path(__file__).parent / "template_risco.html.j2"
     with open(template_path, "r", encoding="utf-8") as f:
         template = Template(f.read())
@@ -6397,6 +6398,62 @@ def render_html(data_by_window: dict, cfg: dict, demo: bool,
         "generated_ts": int(datetime.now(timezone.utc).timestamp()),
         "demo": demo,
     }
+
+    # 4H.2 — diagnóstico de cobertura oficial/ausência de notícia: dimensão
+    # SEPARADA do score, nunca lida por event_ids_for/build_evolution (já
+    # rodaram acima, sem ver isto). Só roda quando `run_meta` é fornecido;
+    # qualquer falha aqui é 100% cosmética — nunca derruba o dashboard.
+    if run_meta is not None:
+        try:
+            import coverage_diagnosis as _covdiag
+            _cov_rows = _covdiag.diagnose_coverage(cfg, run_meta)
+            _cov_by_name = {r["company"]: _covdiag.to_dashboard_view(r) for r in _cov_rows}
+            for _win_data in data_by_window.values():
+                for _row in _win_data.get("evolution", []):
+                    _cv = _cov_by_name.get(_row.get("company"))
+                    if _cv is not None:
+                        _row["coverage_diagnosis"] = _cv
+            payload["coverage_diagnosis_summary"] = _covdiag.build_executive_coverage_summary(_cov_rows)
+        except Exception as _cov_exc:
+            print(f"   ⚠️  Diagnóstico de cobertura (4H.2) não pôde ser anexado ao "
+                 f"dashboard nesta execução: {_cov_exc}")
+    else:
+        # `run_meta=None` mas o chamador já anexou `coverage_diagnosis` a
+        # algumas linhas manualmente (ex.: prévias que precisam da
+        # telemetria CVM real, calculada fora daqui) — ainda assim monta o
+        # resumo executivo a partir do que já está anexado, sem refazer o
+        # diagnóstico (e sem sobrescrever o que o chamador calculou).
+        try:
+            import coverage_diagnosis as _covdiag
+            # dedup por empresa — a mesma empresa aparece em várias janelas
+            # (7/30/90/365d); o resumo executivo conta cada emissor 1 vez.
+            _attached_by_company = {}
+            for _win_data in data_by_window.values():
+                for _row in _win_data.get("evolution", []):
+                    _cv = _row.get("coverage_diagnosis")
+                    if _cv is not None and _row.get("company") not in _attached_by_company:
+                        _attached_by_company[_row["company"]] = _cv
+            _attached = list(_attached_by_company.values())
+            if _attached:
+                _counts = {s: 0 for s in _covdiag.COVERAGE_STATUSES}
+                _counts[_covdiag.COVERAGE_OK_EVENTS_FOUND] = 0
+                for _cv in _attached:
+                    _counts[_cv["status"]] = _counts.get(_cv["status"], 0) + 1
+                payload["coverage_diagnosis_summary"] = {
+                    "cobertura_confirmada": _counts.get(_covdiag.NO_RELEVANT_NEWS_AFTER_SUCCESSFUL_RUN, 0)
+                                           + _counts.get(_covdiag.COVERAGE_OK_EVENTS_FOUND, 0)
+                                           + _counts.get(_covdiag.ONLY_INFORMATIONAL_FOUND, 0),
+                    "cobertura_parcial": _counts.get(_covdiag.PARTIAL_COVERAGE, 0),
+                    "falha_de_coleta": _counts.get(_covdiag.COLLECTION_FAILURE, 0),
+                    "somente_fallback": _counts.get(_covdiag.FALLBACK_ONLY, 0),
+                    "sem_fonte_oficial": _counts.get(_covdiag.NO_VALIDATED_OFFICIAL_SOURCE, 0),
+                    "fonte_configurada_nao_executada": _counts.get(_covdiag.SOURCE_CONFIGURED_NOT_EXECUTED, 0),
+                    "total_diagnosticado": len(_attached),
+                    "status_counts": _counts,
+                }
+        except Exception:
+            pass
+
     payload_json = json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
 
     return template.render(
@@ -9203,8 +9260,18 @@ def main():
                   f"{row['company']}: {seq}")
 
     # 4) Render
+    # 4H.2 — telemetria de cobertura AO VIVO desta execução (globals já
+    # populados pelos coletores acima); run_meta.json em disco só é
+    # regravado com esta telemetria alguns passos abaixo, então passamos os
+    # dicts em memória diretamente em vez de reler o arquivo (que ainda
+    # teria a telemetria da execução ANTERIOR neste ponto do fluxo).
+    _live_run_meta_for_coverage = {
+        "international_search_execution": _SEARCH_TELEMETRY,
+        "official_source_execution": _OFFICIAL_SOURCE_TELEMETRY,
+    }
     html = render_html(data_by_window, cfg, demo=args.demo, changes=changes,
-                       payload_thresholds=thresholds)
+                       payload_thresholds=thresholds,
+                       run_meta=_live_run_meta_for_coverage)
     out_file = Path(out_cfg.get("filename", "dashboard_risco.html"))
     out_file.write_text(html, encoding="utf-8")
     # regrava run_meta ao FIM, agora com a telemetria de execução por emissor

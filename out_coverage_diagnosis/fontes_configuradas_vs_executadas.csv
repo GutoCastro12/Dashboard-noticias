@@ -1,0 +1,131 @@
+﻿company,source,configured,executed,gap_configured_not_executed
+Ambev,GNEWS,True,True,False
+Ambev,RI_RSS,False,False,False
+Ambev,RI_NEWS,True,True,False
+Ambev,EDGAR,False,False,False
+Ambev,REGULADOR_LOCAL,True,True,False
+B3,GNEWS,True,True,False
+B3,RI_RSS,False,False,False
+B3,RI_NEWS,True,True,False
+B3,EDGAR,False,False,False
+B3,REGULADOR_LOCAL,True,True,False
+BTG Pactual,GNEWS,True,True,False
+BTG Pactual,RI_RSS,False,False,False
+BTG Pactual,RI_NEWS,True,True,False
+BTG Pactual,EDGAR,False,False,False
+BTG Pactual,REGULADOR_LOCAL,True,True,False
+Banco do Brasil,GNEWS,True,True,False
+Banco do Brasil,RI_RSS,False,False,False
+Banco do Brasil,RI_NEWS,True,True,False
+Banco do Brasil,EDGAR,False,False,False
+Banco do Brasil,REGULADOR_LOCAL,True,True,False
+Bradesco,GNEWS,True,True,False
+Bradesco,RI_RSS,False,False,False
+Bradesco,RI_NEWS,True,True,False
+Bradesco,EDGAR,False,False,False
+Bradesco,REGULADOR_LOCAL,True,True,False
+Eletrobras,GNEWS,True,True,False
+Eletrobras,RI_RSS,False,False,False
+Eletrobras,RI_NEWS,True,True,False
+Eletrobras,EDGAR,False,False,False
+Eletrobras,REGULADOR_LOCAL,True,True,False
+Equatorial Energia,GNEWS,True,True,False
+Equatorial Energia,RI_RSS,False,False,False
+Equatorial Energia,RI_NEWS,True,True,False
+Equatorial Energia,EDGAR,False,False,False
+Equatorial Energia,REGULADOR_LOCAL,True,True,False
+Itaú Unibanco,GNEWS,True,True,False
+Itaú Unibanco,RI_RSS,False,False,False
+Itaú Unibanco,RI_NEWS,True,True,False
+Itaú Unibanco,EDGAR,False,False,False
+Itaú Unibanco,REGULADOR_LOCAL,True,True,False
+Localiza,GNEWS,True,True,False
+Localiza,RI_RSS,False,False,False
+Localiza,RI_NEWS,True,True,False
+Localiza,EDGAR,False,False,False
+Localiza,REGULADOR_LOCAL,True,True,False
+PRIO,GNEWS,True,True,False
+PRIO,RI_RSS,False,False,False
+PRIO,RI_NEWS,True,True,False
+PRIO,EDGAR,False,False,False
+PRIO,REGULADOR_LOCAL,True,True,False
+Petrobras,GNEWS,True,True,False
+Petrobras,RI_RSS,False,False,False
+Petrobras,RI_NEWS,True,True,False
+Petrobras,EDGAR,False,False,False
+Petrobras,REGULADOR_LOCAL,True,True,False
+Raia Drogasil,GNEWS,True,True,False
+Raia Drogasil,RI_RSS,False,False,False
+Raia Drogasil,RI_NEWS,True,True,False
+Raia Drogasil,EDGAR,False,False,False
+Raia Drogasil,REGULADOR_LOCAL,True,True,False
+Rede D'Or,GNEWS,True,True,False
+Rede D'Or,RI_RSS,False,False,False
+Rede D'Or,RI_NEWS,True,True,False
+Rede D'Or,EDGAR,False,False,False
+Rede D'Or,REGULADOR_LOCAL,True,True,False
+Suzano,GNEWS,True,True,False
+Suzano,RI_RSS,False,False,False
+Suzano,RI_NEWS,True,True,False
+Suzano,EDGAR,False,False,False
+Suzano,REGULADOR_LOCAL,True,True,False
+Vale,GNEWS,True,True,False
+Vale,RI_RSS,False,False,False
+Vale,RI_NEWS,True,True,False
+Vale,EDGAR,False,False,False
+Vale,REGULADOR_LOCAL,True,True,False
+Vibra Energia,GNEWS,True,True,False
+Vibra Energia,RI_RSS,False,False,False
+Vibra Energia,RI_NEWS,True,True,False
+Vibra Energia,EDGAR,False,False,False
+Vibra Energia,REGULADOR_LOCAL,True,True,False
+Yura,GNEWS,True,False,True
+Yura,RI_RSS,False,False,False
+Yura,RI_NEWS,True,True,False
+Yura,EDGAR,False,False,False
+Yura,REGULADOR_LOCAL,False,False,False
+Trupal,GNEWS,True,False,True
+Trupal,RI_RSS,False,False,False
+Trupal,RI_NEWS,False,True,False
+Trupal,EDGAR,False,False,False
+Trupal,REGULADOR_LOCAL,False,False,False
+Coazucar,GNEWS,True,True,False
+Coazucar,RI_RSS,False,False,False
+Coazucar,RI_NEWS,True,True,False
+Coazucar,EDGAR,False,False,False
+Coazucar,REGULADOR_LOCAL,False,False,False
+Yobel,GNEWS,True,False,True
+Yobel,RI_RSS,False,False,False
+Yobel,RI_NEWS,True,True,False
+Yobel,EDGAR,False,False,False
+Yobel,REGULADOR_LOCAL,False,False,False
+Casa Grande S.A.A.,GNEWS,True,False,True
+Casa Grande S.A.A.,RI_RSS,False,False,False
+Casa Grande S.A.A.,RI_NEWS,False,True,False
+Casa Grande S.A.A.,EDGAR,False,False,False
+Casa Grande S.A.A.,REGULADOR_LOCAL,False,False,False
+Cartavio S.A.A.,GNEWS,True,False,True
+Cartavio S.A.A.,RI_RSS,False,False,False
+Cartavio S.A.A.,RI_NEWS,False,True,False
+Cartavio S.A.A.,EDGAR,False,False,False
+Cartavio S.A.A.,REGULADOR_LOCAL,False,False,False
+Agroindustrias San Jacinto S.A.,GNEWS,True,False,True
+Agroindustrias San Jacinto S.A.,RI_RSS,False,False,False
+Agroindustrias San Jacinto S.A.,RI_NEWS,False,True,False
+Agroindustrias San Jacinto S.A.,EDGAR,False,False,False
+Agroindustrias San Jacinto S.A.,REGULADOR_LOCAL,False,False,False
+Empresa Agrícola Sintuco S.A.,GNEWS,True,False,True
+Empresa Agrícola Sintuco S.A.,RI_RSS,False,False,False
+Empresa Agrícola Sintuco S.A.,RI_NEWS,False,True,False
+Empresa Agrícola Sintuco S.A.,EDGAR,False,False,False
+Empresa Agrícola Sintuco S.A.,REGULADOR_LOCAL,False,False,False
+Agrolmos S.,GNEWS,True,False,True
+Agrolmos S.,RI_RSS,False,False,False
+Agrolmos S.,RI_NEWS,False,True,False
+Agrolmos S.,EDGAR,False,False,False
+Agrolmos S.,REGULADOR_LOCAL,False,False,False
+Empresa Agraria Chiquitoy S.A.,GNEWS,True,False,True
+Empresa Agraria Chiquitoy S.A.,RI_RSS,False,False,False
+Empresa Agraria Chiquitoy S.A.,RI_NEWS,False,True,False
+Empresa Agraria Chiquitoy S.A.,EDGAR,False,False,False
+Empresa Agraria Chiquitoy S.A.,REGULADOR_LOCAL,False,False,False
