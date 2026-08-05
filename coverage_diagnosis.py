@@ -1244,6 +1244,15 @@ def classify_company_coverage_consolidated(company: dict, base_rec: dict,
 
     items_total = sum(s["items_found"] for s in eff_succeeded)
     official_items = sum(s["items_found"] for s in eff_succeeded if s["source"] != "GNEWS")
+    # Sucesso TÉCNICO (HTTP 200, dataset cruzado sem erro) nunca prova conteúdo
+    # real — mesma regra de `link_debt_audit`/invariante 10 do CLAUDE.md.
+    # `validated` (já calculado por fonte em `build_source_records`/validação
+    # peru/CVM) é o único sinal aceito de que uma fonte OFICIAL realmente
+    # confirmou algo. Sem isso, "0 item" não pode virar "cobertura oficial
+    # confirmada sem notícia" (caso real: Yura — RI/BVL respondem HTTP 200,
+    # zero hecho relevante extraído; sem essa checagem, o status consolidado
+    # lia isso como confirmação oficial).
+    official_ever_validated = any(s.get("validated") for s in official_configured)
 
     reasons = []
     if not official_configured:
@@ -1268,14 +1277,29 @@ def classify_company_coverage_consolidated(company: dict, base_rec: dict,
         reasons.append(f"Cobertura mista consolidada: {ok} com evidência válida "
                        f"(atual ou recente dentro da janela de frescor); {bad} sem "
                        f"evidência válida.")
+    elif not official_ever_validated:
+        # Fonte oficial nunca teve extração VALIDADA (só sucesso técnico —
+        # HTTP 200/dataset cruzado — sem conteúdo real demonstrado). Sucesso
+        # técnico isolado NUNCA vira "cobertura oficial confirmada".
+        if items_total > 0:
+            status = FALLBACK_ONLY
+            reasons.append("Fonte(s) oficial(is) com sucesso técnico mas SEM extração "
+                           "validada (HTTP 200 sem conteúdo real demonstrado); item(ns) "
+                           "encontrado(s) vieram do fallback (Google News).")
+        else:
+            status = PARTIAL_COVERAGE
+            reasons.append("Fonte(s) oficial(is) configurada(s) nunca tiveram extração "
+                           "validada (sucesso técnico sem conteúdo real) e nenhum item "
+                           "veio do fallback — cobertura permanece incompleta, não pode "
+                           "ser lida como 'sem notícia após execução bem-sucedida'.")
     elif official_items == 0 and items_total > 0:
         status = FALLBACK_ONLY
         reasons.append("Fonte(s) oficial(is) com evidência válida, mas 0 item nesta "
                        "execução; único conteúdo veio do fallback (Google News).")
     elif items_total == 0:
         status = NO_RELEVANT_NEWS_AFTER_SUCCESSFUL_RUN
-        reasons.append("Todas as fontes com evidência válida (atual ou recente) e "
-                       "nenhuma retornou item nesta execução.")
+        reasons.append("Fonte(s) oficial(is)/regulatória(s) com sucesso VALIDADO e "
+                       "recente, e nenhuma retornou item nesta execução.")
     elif base_rec.get("scored_events", 0) == 0:
         status = ONLY_INFORMATIONAL_FOUND
         reasons.append("Item(ns) encontrado(s), 0 evento(s) pontuável(is) nesta execução.")
@@ -1288,10 +1312,28 @@ def classify_company_coverage_consolidated(company: dict, base_rec: dict,
                       if s["freshness_status"] in ("obsoleta", "sem_evidencia")]
     company_last_success = max((s["last_success_at"] for s in enriched if s["last_success_at"]),
                                default="")
+    # Origem da evidência que sustenta o status consolidado — item 3 da
+    # correção: o texto do dashboard tem que deixar claro se o sucesso vem
+    # de fonte oficial (RI), regulador (CVM/EDGAR), ou só do fallback
+    # genérico (Google News) — nunca apresentar sucesso técnico não
+    # validado como se fosse confirmação oficial.
+    regulator_validated_success = any(
+        s["source"] == "REGULADOR_LOCAL" and s.get("validated") and s in eff_succeeded
+        for s in enriched)
+    if regulator_validated_success:
+        evidence_kind = "regulador"
+    elif official_ever_validated and official_items > 0:
+        evidence_kind = "oficial"
+    elif items_total > 0:
+        evidence_kind = "fallback"
+    else:
+        evidence_kind = "sem_evidencia"
     return {
         "coverage_status_consolidated": status,
         "coverage_status_consolidated_label": status_label(status),
         "coverage_status_consolidated_ui": status_ui_phrase(status),
+        "coverage_evidence_kind_consolidated": evidence_kind,
+        "official_ever_validated": official_ever_validated,
         "reasons_consolidated": reasons,
         "sources_consolidated": enriched,
         "attempted_current_run": any(s["attempted_current_run"] for s in all_configured),
@@ -1317,25 +1359,127 @@ def compute_payload_hash(rows: list, meta: dict) -> str:
     return hashlib.sha256(blob.encode("utf-8")).hexdigest()
 
 
+# ── Persistência da telemetria CVM (item 1 do bloqueio operacional) ──────
+# `audit_cvm_coverage` (risk_dashboard.py) só roda via `--audit-cvm`
+# (workflow_dispatch manual OU cadência semanal dedicada — ver
+# .github/workflows/update_risk_dashboard.yml), nunca em toda execução do
+# cron principal. Sem persistir o resultado, o status CONSOLIDADO de
+# REGULADOR_LOCAL nunca teria evidência para os 16 Tier 1 até a próxima
+# auditoria "orgânica" — inaceitável para emissores com evidência CVM já
+# validada e real (Fase 4H.2, `out_coverage_diagnosis/cvm_audit_real.csv`).
+# `build_cvm_telemetry_seed`/`persist_cvm_telemetry` fecham esse laço: tanto
+# a migração ÚNICA do resultado 4H.2 quanto toda execução FUTURA de
+# `--audit-cvm` alimentam o MESMO armazém persistido
+# (`international_search_history.json["cvm_telemetry"]`).
+def build_cvm_telemetry_seed(cvm_audit_rows: list, generated_at: str | None = None,
+                             origin: str = "") -> dict:
+    """Converte a saída de `audit_cvm_coverage()` (ou as linhas equivalentes
+    de `cvm_audit_real.csv`) no formato persistido por emissor, reaproveitando
+    `build_cvm_telemetry` (mesmos campos) e acrescentando `codigo_cvm`/`cnpj`
+    (não presentes no dict compacto) mais os marcadores de proveniência
+    exigidos: `seeded_from_existing_telemetry=True`, `origem_migracao`."""
+    generated_at = generated_at or datetime.now(timezone.utc).isoformat()
+    base = build_cvm_telemetry(cvm_audit_rows, generated_at=generated_at)
+    by_name = {r.get("emissor"): r for r in cvm_audit_rows}
+    seed = {}
+    for name, rec in base.items():
+        row = by_name.get(name, {})
+        rec = dict(rec)
+        rec["codigo_cvm"] = row.get("codigo_cvm_casado", "")
+        rec["cnpj"] = row.get("cnpj_casado", "")
+        rec["seeded_from_existing_telemetry"] = True
+        rec["origem_migracao"] = origin
+        seed[name] = rec
+    return seed
+
+
+def load_cvm_telemetry_seed_from_audit_csv(csv_path: str, generated_at: str | None = None,
+                                           origin: str | None = None) -> dict:
+    """Lê um `cvm_audit_real.csv`/`auditoria_cobertura_cvm.csv` já gravado
+    (mesmas colunas produzidas por `audit_cvm_coverage`) e monta o seed —
+    usado pela migração única (Opção A) a partir da evidência real da 4H.2."""
+    with open(csv_path, encoding="utf-8-sig") as f:
+        rows = list(csv.DictReader(f))
+    origin = origin or f"{csv_path} (migração única)"
+    return build_cvm_telemetry_seed(rows, generated_at=generated_at, origin=origin)
+
+
+def load_persisted_cvm_telemetry(history_path: str = "international_search_history.json") -> dict:
+    """Lê `international_search_history.json["cvm_telemetry"]` — telemetria
+    CVM persistida (migrada e/ou de execuções reais de `--audit-cvm`), usada
+    como fallback de frescor para REGULADOR_LOCAL quando a auditoria não
+    rodou NESTA execução."""
+    if not os.path.exists(history_path):
+        return {}
+    try:
+        with open(history_path, encoding="utf-8") as f:
+            sh = json.load(f)
+    except Exception:
+        return {}
+    return sh.get("cvm_telemetry") or {}
+
+
+def persist_cvm_telemetry(seed: dict, history_path: str = "international_search_history.json") -> dict:
+    """Faz upsert de `seed` (por emissor) em
+    `international_search_history.json["cvm_telemetry"]`, PRESERVANDO
+    qualquer emissor não presente em `seed` (uma falha pontual da auditoria
+    — dataset indisponível, `audit_cvm_coverage` retorna `[]` — produz
+    `seed={}`; o laço abaixo não executa, e o armazenado anteriormente
+    permanece intocado — nunca apagado por uma falha transitória)."""
+    sh: dict = {}
+    if os.path.exists(history_path):
+        try:
+            with open(history_path, encoding="utf-8") as f:
+                sh = json.load(f)
+        except Exception:
+            sh = {}
+    sh.setdefault("runs", [])
+    existing = dict(sh.get("cvm_telemetry") or {})
+    added, updated = [], []
+    for name, rec in (seed or {}).items():
+        if name in existing:
+            updated.append(name)
+        else:
+            added.append(name)
+        existing[name] = rec
+    sh["cvm_telemetry"] = existing
+    with open(history_path, "w", encoding="utf-8") as f:
+        json.dump(sh, f, ensure_ascii=False)
+    return {"added": added, "updated": updated, "total": len(existing)}
+
+
 def build_canonical_coverage_result(cfg: dict, run_meta: dict, history_runs: list | None = None,
                                     companies: list | None = None, run_id: str | None = None,
                                     generated_at: str | None = None, commit_base: str | None = None,
                                     cvm_status_map: dict | None = None,
                                     cvm_telemetry_map: dict | None = None,
-                                    peru_validation_map: dict | None = None) -> dict:
+                                    peru_validation_map: dict | None = None,
+                                    cvm_persisted_telemetry: dict | None = None) -> dict:
     """FONTE CANÔNICA ÚNICA de cobertura para uma execução: calcula, para
     cada emissor priorizado, o status do CICLO ATUAL (`classify_company_coverage`,
     inalterado) e o status CONSOLIDADO (`classify_company_coverage_consolidated`,
     usando telemetria persistida). Retorna `{"rows": [...], "meta": {...}}` —
     este É o objeto que `risk_dashboard.render_html` embute no HTML E que os
-    6 exports gravam; nunca dois cálculos separados (correção da pendência 1)."""
+    6 exports gravam; nunca dois cálculos separados (correção da pendência 1).
+
+    `cvm_persisted_telemetry` é a telemetria CVM por emissor persistida em
+    `international_search_history.json["cvm_telemetry"]` (via
+    `persist_cvm_telemetry`/migração de `cvm_audit_real.csv`) — usada como
+    FALLBACK para emissores sem telemetria CVM NESTA execução (a auditoria
+    `--audit-cvm` roda esporadicamente, não em toda execução). `cvm_telemetry_map`
+    (desta execução, quando fornecido) sempre tem prioridade sobre o
+    persistido — dado mais fresco vence, nunca o inverso."""
     generated_at = generated_at or datetime.now(timezone.utc).isoformat()
     run_id = run_id or generated_at
     history_runs = history_runs or []
     companies = companies if companies is not None else priority_companies(cfg)
 
+    merged_cvm_telemetry_map = dict(cvm_persisted_telemetry or {})
+    merged_cvm_telemetry_map.update(cvm_telemetry_map or {})
+
     base_rows = diagnose_coverage(cfg, run_meta, cvm_status_map=cvm_status_map,
-                                  companies=companies, cvm_telemetry_map=cvm_telemetry_map,
+                                  companies=companies,
+                                  cvm_telemetry_map=merged_cvm_telemetry_map or None,
                                   peru_validation_map=peru_validation_map)
     rows = []
     for base_rec, company in zip(base_rows, companies):
@@ -1373,6 +1517,8 @@ def to_dashboard_view_v2(rec: dict) -> dict:
         "last_success_at": rec.get("last_success_at", ""),
         "freshness_status": rec.get("freshness_status", "sem_evidencia"),
         "is_stale": rec.get("is_stale", True),
+        "evidence_kind_consolidated": rec.get("coverage_evidence_kind_consolidated", "sem_evidencia"),
+        "official_ever_validated": rec.get("official_ever_validated", False),
     })
     src_cons = rec.get("sources_consolidated") or rec["sources"]
     base["sources"] = [
@@ -1411,6 +1557,7 @@ def export_auditoria_cobertura_emissores_csv_v2(rows: list, meta: dict, path: st
                    "company", "tier", "country", "is_subsidiary", "parent_company",
                    "coverage_status", "coverage_status_ui",
                    "coverage_status_consolidated", "coverage_status_consolidated_ui",
+                   "evidence_kind_consolidated", "official_ever_validated",
                    "execution_status_current_run", "attempted_current_run",
                    "scheduled_current_run", "last_success_at", "freshness_status",
                    "is_stale", "sources_configured", "sources_executed", "sources_success",
@@ -1422,7 +1569,8 @@ def export_auditoria_cobertura_emissores_csv_v2(rows: list, meta: dict, path: st
                        r.get("country", ""), r.get("is_subsidiary", False),
                        r.get("parent_company", ""), r["coverage_status"], v["status_ui"],
                        r.get("coverage_status_consolidated", r["coverage_status"]),
-                       v["status_consolidated_ui"], v["status_current_run"],
+                       v["status_consolidated_ui"], v["evidence_kind_consolidated"],
+                       v["official_ever_validated"], v["status_current_run"],
                        v["attempted_current_run"], v["scheduled_current_run"],
                        v["last_success_at"], v["freshness_status"], v["is_stale"],
                        v["sources_configured"], v["sources_executed"], v["sources_success"],
@@ -1694,17 +1842,27 @@ def run_production_coverage(cfg: dict, run_meta: dict, history_runs: list | None
                             run_id: str | None = None, generated_at: str | None = None,
                             commit_base: str | None = None, cvm_status_map: dict | None = None,
                             cvm_telemetry_map: dict | None = None,
-                            peru_validation_map: dict | None = None) -> dict:
+                            peru_validation_map: dict | None = None,
+                            cvm_persisted_telemetry: dict | None = None) -> dict:
     """Ponto de entrada ÚNICO chamado por `risk_dashboard.main()` em TODA
     execução de produção (item 1/2/3 da correção): calcula o resultado
     canônico, grava os 6 exports obrigatórios e roda o gate de reconciliação
     — quebra (`ReconciliationError`) ANTES da publicação/commit se algo não
     bater. Retorna `{"rows", "meta", "exports"}`; `rows`/`meta` são o MESMO
-    objeto que o chamador deve passar para `render_html`."""
+    objeto que o chamador deve passar para `render_html`.
+
+    `cvm_persisted_telemetry` (opcional): telemetria CVM persistida — quando
+    omitido, é carregada automaticamente de
+    `international_search_history.json["cvm_telemetry"]` (mesmo arquivo lido
+    para `history_runs`), fechando o laço da migração/execuções de
+    `--audit-cvm` sem exigir que todo chamador a passe explicitamente."""
+    if cvm_persisted_telemetry is None:
+        cvm_persisted_telemetry = load_persisted_cvm_telemetry()
     result = build_canonical_coverage_result(
         cfg, run_meta, history_runs=history_runs, companies=companies, run_id=run_id,
         generated_at=generated_at, commit_base=commit_base, cvm_status_map=cvm_status_map,
-        cvm_telemetry_map=cvm_telemetry_map, peru_validation_map=peru_validation_map)
+        cvm_telemetry_map=cvm_telemetry_map, peru_validation_map=peru_validation_map,
+        cvm_persisted_telemetry=cvm_persisted_telemetry)
     rows, meta = result["rows"], result["meta"]
     os.makedirs(out_dir, exist_ok=True)
 

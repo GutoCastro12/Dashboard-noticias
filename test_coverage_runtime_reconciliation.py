@@ -414,5 +414,149 @@ class TestNoImpactOnScoreOrEventIdsFor(unittest.TestCase):
             shutil.rmtree(tmp, ignore_errors=True)
 
 
+class TestOfficialTechnicalSuccessWithoutValidationNotConfirmed(unittest.TestCase):
+    """Bloqueio operacional #3 — caso real Yura: fonte oficial (RI/BVL) com
+    HTTP 200 (sucesso técnico) mas SEM extração validada nunca vira
+    'cobertura oficial confirmada sem notícia'. Sem GNEWS de apoio, deve
+    ficar PARTIAL_COVERAGE (fonte oficial conhecida, sem extração); com
+    GNEWS de apoio, deve virar FALLBACK_ONLY — nunca
+    NO_RELEVANT_NEWS_AFTER_SUCCESSFUL_RUN."""
+
+    def _yura_like_company(self):
+        return _company(
+            name="Yura", tier=2, country="Peru",
+            official={"news": "https://www.yura.com.pe/"})
+
+    def _peru_validation_unvalidated(self):
+        # replica PERU_SOURCE_VALIDATION['Yura']: HTTP 200 em site/BVL, mas
+        # conteudo_validado=False em TODOS os candidatos — igual ao caso real.
+        return [
+            {"source_name": "Site institucional Yura", "source_type": "official_site",
+             "url_configurada": "https://www.yura.com.pe/", "http_status": 200,
+             "conteudo_validado": False, "itens_encontrados": 0,
+             "bloqueio_tecnico": "403 para user-agent automatizado", "metodo": "manual_research"},
+            {"source_name": "BVL — ficha do emissor Yura", "source_type": "exchange",
+             "url_configurada": "https://www.bvl.com.pe/x", "http_status": 200,
+             "conteudo_validado": False, "itens_encontrados": 0,
+             "bloqueio_tecnico": "", "metodo": "manual_research"},
+        ]
+
+    def test_no_gnews_support_stays_partial_not_confirmed(self):
+        cfg = _cfg()
+        company = self._yura_like_company()
+        run_meta = {"international_search_execution": {},  # GNEWS não escalado neste ciclo
+                   "official_source_execution": {}}
+        result = cd.build_canonical_coverage_result(
+            cfg, run_meta, history_runs=[], companies=[company],
+            generated_at="2026-08-05T00:00:00+00:00",
+            peru_validation_map={"Yura": self._peru_validation_unvalidated()})
+        row = result["rows"][0]
+        self.assertNotEqual(row["coverage_status_consolidated"],
+                            cd.NO_RELEVANT_NEWS_AFTER_SUCCESSFUL_RUN)
+        self.assertFalse(row["official_ever_validated"])
+        self.assertIn(row["coverage_status_consolidated"],
+                      (cd.PARTIAL_COVERAGE, cd.SOURCE_CONFIGURED_NOT_EXECUTED))
+
+    def test_gnews_recent_success_with_unvalidated_official_is_fallback_only(self):
+        cfg = _cfg()
+        company = self._yura_like_company()
+        run_meta = {"international_search_execution": {},
+                   "official_source_execution": {}}
+        # GNEWS teve sucesso técnico recente e válido (dentro da janela) com
+        # itens — mas a fonte oficial nunca foi validada.
+        history_runs = [{"run_id": "prev", "finished_at": "2026-08-04T20:00:00+00:00",
+                         "emitters": {"Yura": {"searched": True, "success": 1, "raw_articles": 2}}}]
+        result = cd.build_canonical_coverage_result(
+            cfg, run_meta, history_runs=history_runs, companies=[company],
+            generated_at="2026-08-05T00:00:00+00:00",
+            peru_validation_map={"Yura": self._peru_validation_unvalidated()})
+        row = result["rows"][0]
+        self.assertNotEqual(row["coverage_status_consolidated"],
+                            cd.NO_RELEVANT_NEWS_AFTER_SUCCESSFUL_RUN)
+        self.assertEqual(row.get("coverage_evidence_kind_consolidated"), "sem_evidencia")
+
+    def test_evidence_kind_is_regulador_when_cvm_validated(self):
+        cfg = _cfg()
+        company = _company(country="Brasil", ri_feeds=["x"])
+        run_meta = {"international_search_execution": {},
+                   "official_source_execution": {}}
+        cvm_map = {"ACME": {"tentativa_realizada": True, "resultado_consulta": "filiante_cvm",
+                            "documentos_aceitos": 3, "ultima_tentativa": "2026-08-05T00:00:00+00:00",
+                            "ultimo_sucesso": "2026-08-05T00:00:00+00:00", "identificador_usado": "1",
+                            "identificador_tipo": "cnpj", "metodo_consulta": "ipe_dataset_match_por_identificador_forte",
+                            "documentos_retornados": 3, "data_ultimo_documento": "2026-08-01", "erro": ""}}
+        result = cd.build_canonical_coverage_result(
+            cfg, run_meta, history_runs=[], companies=[company],
+            generated_at="2026-08-05T00:00:00+00:00", cvm_telemetry_map=cvm_map)
+        row = result["rows"][0]
+        self.assertEqual(row.get("coverage_evidence_kind_consolidated"), "regulador")
+        self.assertTrue(row["official_ever_validated"])
+
+
+class TestCvmTelemetrySeedMigration(unittest.TestCase):
+    """Bloqueio operacional #1 — migração da telemetria CVM real (4H.2)
+    para `international_search_history.json`, sem fabricar sucesso."""
+
+    def test_seed_from_audit_rows_preserves_real_fields_and_marks_provenance(self):
+        cvm_rows = [{"emissor": "Ambev", "status": "filiante_cvm",
+                    "codigo_cvm_casado": "23264", "cnpj_casado": "07526557000100",
+                    "identificador_usado": "cod_cvm:23264", "tipo_match": "codigo_cvm",
+                    "protocolos_no_ano": "57", "ultima_entrega": "2026-07-30",
+                    "confianca_match": "alta", "companhia_casada": "AMBEV S.A.", "n_candidatos": "0"}]
+        seed = cd.build_cvm_telemetry_seed(cvm_rows, generated_at="2026-08-05T01:39:39+00:00",
+                                           origin="cvm_audit_real.csv (4H.2, commit b8d502c)")
+        rec = seed["Ambev"]
+        self.assertTrue(rec["seeded_from_existing_telemetry"])
+        self.assertEqual(rec["codigo_cvm"], "23264")
+        self.assertEqual(rec["documentos_aceitos"], 57)
+        self.assertEqual(rec["data_ultimo_documento"], "2026-07-30")
+        self.assertEqual(rec["ultimo_sucesso"], "2026-08-05T01:39:39+00:00")
+        self.assertIn("4H.2", rec["origem_migracao"])
+
+    def test_persist_does_not_wipe_existing_on_empty_seed(self):
+        tmp = tempfile.mkdtemp()
+        try:
+            path = os.path.join(tmp, "international_search_history.json")
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump({"runs": [], "cvm_telemetry": {"Ambev": {"documentos_aceitos": 57}}}, f)
+            result = cd.persist_cvm_telemetry({}, history_path=path)  # falha pontual = seed vazio
+            self.assertEqual(result["added"], [])
+            persisted = cd.load_persisted_cvm_telemetry(path)
+            self.assertEqual(persisted["Ambev"]["documentos_aceitos"], 57)  # preservado
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_persist_upserts_and_round_trips_through_consolidated_status(self):
+        tmp = tempfile.mkdtemp()
+        try:
+            path = os.path.join(tmp, "international_search_history.json")
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump({"runs": []}, f)
+            seed = cd.build_cvm_telemetry_seed(
+                [{"emissor": "Ambev", "status": "filiante_cvm", "codigo_cvm_casado": "23264",
+                 "cnpj_casado": "1", "identificador_usado": "cod_cvm:23264",
+                 "tipo_match": "codigo_cvm", "protocolos_no_ano": "57",
+                 "ultima_entrega": "2026-07-30", "confianca_match": "alta",
+                 "companhia_casada": "AMBEV S.A.", "n_candidatos": "0"}],
+                generated_at="2026-08-05T01:39:39+00:00", origin="test")
+            cd.persist_cvm_telemetry(seed, history_path=path)
+            persisted = cd.load_persisted_cvm_telemetry(path)
+            self.assertIn("Ambev", persisted)
+
+            cfg = _cfg()
+            company = _company(name="Ambev", country="Brasil", ri_feeds=["x"])
+            run_meta = {"international_search_execution": {}, "official_source_execution": {}}
+            result = cd.build_canonical_coverage_result(
+                cfg, run_meta, history_runs=[], companies=[company],
+                generated_at="2026-08-05T10:00:00+00:00",  # ~8h depois, dentro da janela 30d
+                cvm_persisted_telemetry=persisted)
+            row = result["rows"][0]
+            reg = next(s for s in row["sources_consolidated"] if s["source"] == "REGULADOR_LOCAL")
+            self.assertEqual(reg["freshness_status"], "valida")
+            self.assertTrue(row["official_ever_validated"])
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

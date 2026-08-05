@@ -9116,7 +9116,32 @@ def main():
             print(f"    {m}")
 
     if args.audit_cvm:
-        audit_cvm_coverage(cfg, out_csv="auditoria_cobertura_cvm.csv")
+        _cvm_audit_rows = audit_cvm_coverage(cfg, out_csv="auditoria_cobertura_cvm.csv")
+        # Persiste a telemetria CVM por emissor em
+        # international_search_history.json["cvm_telemetry"] — é o que
+        # alimenta o frescor consolidado de REGULADOR_LOCAL entre execuções
+        # (a auditoria roda esporadicamente, não em toda execução do cron).
+        # Retorno vazio (dataset indisponível) NÃO apaga o que já estava
+        # persistido — `persist_cvm_telemetry` só faz upsert do que veio.
+        if _cvm_audit_rows:
+            try:
+                import coverage_diagnosis as _covdiag_cvm
+                _cvm_seed = _covdiag_cvm.build_cvm_telemetry_seed(
+                    _cvm_audit_rows, generated_at=datetime.now(timezone.utc).isoformat(),
+                    origin="risk_dashboard.main() --audit-cvm (execução real)")
+                _cvm_persist_res = _covdiag_cvm.persist_cvm_telemetry(
+                    _cvm_seed, "international_search_history.json")
+                print(f" 💾 Telemetria CVM persistida: {len(_cvm_persist_res['added'])} novo(s), "
+                      f"{len(_cvm_persist_res['updated'])} atualizado(s), "
+                      f"{_cvm_persist_res['total']} emissor(es) no total em "
+                      f"international_search_history.json.")
+            except Exception as _cvm_exc:
+                print(f"   ⚠️  Telemetria CVM não pôde ser persistida "
+                      f"({type(_cvm_exc).__name__}: {str(_cvm_exc)[:160]}); "
+                      f"auditoria_cobertura_cvm.csv ainda foi gerado normalmente.")
+        else:
+            print("   ℹ️  Auditoria CVM retornou vazia nesta execução (dataset indisponível) "
+                 "— telemetria CVM persistida anteriormente PRESERVADA (nenhuma sobrescrita).")
     if args.probe_sources:
         probe_official_sources(cfg, out_csv="probe_fontes_oficiais.csv")
     if args.backfill:
@@ -9322,7 +9347,11 @@ def main():
         _coverage_result = _covdiag.run_production_coverage(
             cfg, _live_run_meta_for_coverage, history_runs=_sh_prev.get("runs", []),
             out_dir="out_coverage_diagnosis", run_id=_fim, generated_at=_fim,
-            commit_base=_commit_base)
+            commit_base=_commit_base,
+            # telemetria CVM persistida (migração 4H.2 + execuções reais de
+            # --audit-cvm anteriores) — mesma leitura já feita para
+            # history_runs, sem reabrir o arquivo.
+            cvm_persisted_telemetry=_sh_prev.get("cvm_telemetry", {}))
         print(f" ✅ Cobertura reconciliada nesta execução: "
               f"{_coverage_result['meta']['companies_count']} emissor(es) · "
               f"run_id={_fim} · hash={_coverage_result['meta']['payload_hash'][:12]}…")

@@ -362,6 +362,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);
 .cov-source-link{margin-left:6px;font-size:.72rem;text-decoration:none}
 .cov-disclaimer{font-size:.7rem;opacity:.55;margin-top:8px;line-height:1.4}
 .cov-status-line-secondary{font-weight:400;opacity:.8;font-size:.78rem}
+.cov-evidence-line{font-size:.74rem;opacity:.75;margin-bottom:6px}
 .cov-stale-warning{font-size:.72rem;color:#b45309;background:rgba(180,83,9,.1);
   border:1px solid rgba(180,83,9,.3);border-radius:6px;padding:4px 8px;margin-bottom:8px}
 .cov-freshness{font-size:.62rem;padding:0 5px;border-radius:999px;margin-left:4px;
@@ -722,6 +723,14 @@ function coverageBlockHtml(cov){
   const freshnessTxt = hasV2 && cov.is_stale
     ? `<div class="cov-stale-warning">⏳ evidência consolidada obsoleta ou próxima de expirar (${esc(cov.freshness_status)}).</div>`
     : '';
+  // Origem da evidência que sustenta o status consolidado — nunca deixa
+  // "sucesso técnico" (HTTP 200 sem conteúdo) parecer confirmação oficial.
+  const EVID_LABEL = {oficial: 'fonte oficial (RI) validada', regulador: 'regulador (CVM/EDGAR) validado',
+                      fallback: 'só fallback (Google News) — fonte oficial sem extração validada',
+                      sem_evidencia: 'sem evidência validada'};
+  const evidTxt = hasV2 && cov.evidence_kind_consolidated
+    ? `<div class="cov-evidence-line">Evidência: ${esc(EVID_LABEL[cov.evidence_kind_consolidated] || cov.evidence_kind_consolidated)}</div>`
+    : '';
   const srcRows = (cov.sources||[]).map(s => `
     <div class="cov-source-row">
       <span class="cov-source-name">${esc(s.name)}</span>
@@ -745,6 +754,7 @@ function coverageBlockHtml(cov){
       ${hasV2 ? `
       <div class="cov-status-line">Cobertura consolidada: <b>${esc(consLabel)}</b></div>
       <div class="cov-status-line cov-status-line-secondary">Neste ciclo: <b>${esc(curLabel)}</b> — ${scheduledTxt}</div>
+      ${evidTxt}
       ${freshnessTxt}
       ` : `<div class="cov-status-line">${esc(cov.status_ui)}</div>`}
       <div class="cov-mini-stats">
