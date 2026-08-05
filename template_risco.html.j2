@@ -361,6 +361,16 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);
 .cov-source-status.n-o-tentada{border-color:rgba(127,127,127,.4);background:rgba(127,127,127,.1)}
 .cov-source-link{margin-left:6px;font-size:.72rem;text-decoration:none}
 .cov-disclaimer{font-size:.7rem;opacity:.55;margin-top:8px;line-height:1.4}
+.cov-status-line-secondary{font-weight:400;opacity:.8;font-size:.78rem}
+.cov-stale-warning{font-size:.72rem;color:#b45309;background:rgba(180,83,9,.1);
+  border:1px solid rgba(180,83,9,.3);border-radius:6px;padding:4px 8px;margin-bottom:8px}
+.cov-freshness{font-size:.62rem;padding:0 5px;border-radius:999px;margin-left:4px;
+  border:1px solid rgba(127,127,127,.3)}
+.cov-freshness-valida{border-color:rgba(34,197,94,.4);background:rgba(34,197,94,.1)}
+.cov-freshness-obsoleta{border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.1)}
+.cov-freshness-sem_evidencia{border-color:rgba(127,127,127,.4);background:rgba(127,127,127,.08)}
+.cov-not-scheduled{font-size:.62rem;padding:0 5px;border-radius:999px;margin-left:4px;
+  border:1px solid rgba(107,114,128,.35);background:rgba(107,114,128,.08);opacity:.85}
 </style>
 </head>
 <body>
@@ -695,15 +705,34 @@ function renderCoverageExecSummary(){
 }
 function coverageBlockHtml(cov){
   if (!cov) return '';
-  const cls = COV_STATUS_CLASS[cov.status] || '';
+  // Reconciliação runtime: separa "status consolidado" (telemetria persistida
+  // recente, por fonte) de "execução deste ciclo" (só o que rodou AGORA) —
+  // nunca apresenta "não escalada neste ciclo" como erro.
+  const hasV2 = cov.status_consolidated !== undefined;
+  const cls = COV_STATUS_CLASS[hasV2 ? cov.status_consolidated : cov.status] || '';
+  const consLabel = hasV2 ? (cov.status_consolidated_ui || cov.status_consolidated) : null;
+  const curLabel = hasV2 ? (cov.status_current_run_ui || cov.status_current_run) : null;
+  const notScheduled = hasV2 ? (cov.not_scheduled_current_run_sources||[]) : [];
+  const scheduledTxt = hasV2
+    ? `Neste ciclo: ${esc((cov.sources||[]).filter(s=>s.execution_status_current_run &&
+        s.execution_status_current_run!=='nao_escalada_neste_ciclo').length)} de ` +
+      `${esc(cov.scheduled_current_run||0)} fonte(s) escalada(s)` +
+      (notScheduled.length ? `; ${esc(notScheduled.length)} fonte(s) não programada(s) nesta execução (${esc(notScheduled.join(', '))}).` : '.')
+    : '';
+  const freshnessTxt = hasV2 && cov.is_stale
+    ? `<div class="cov-stale-warning">⏳ evidência consolidada obsoleta ou próxima de expirar (${esc(cov.freshness_status)}).</div>`
+    : '';
   const srcRows = (cov.sources||[]).map(s => `
     <div class="cov-source-row">
       <span class="cov-source-name">${esc(s.name)}</span>
       <span class="cov-source-status ${(s.status||'').replace(/[^a-z]/g,'-')}">${esc(s.status)}</span>
+      ${s.freshness_status ? `<span class="cov-freshness cov-freshness-${esc(s.freshness_status)}">${esc(s.freshness_status)}</span>` : ''}
+      ${s.not_scheduled_this_run ? `<span class="cov-not-scheduled">não escalada neste ciclo</span>` : ''}
       ${s.link ? `<a class="cov-source-link" href="${esc(s.link.split(';')[0].trim())}" target="_blank" rel="noopener">fonte ↗</a>` : ''}
       <div class="cov-source-meta">
         tipo: ${esc(s.type||'—')} · método: ${esc(s.method||'—')} ·
         última tentativa: ${esc(s.last_attempt||'—')} · último sucesso: ${esc(s.last_success||'—')} ·
+        ${s.last_success_at ? `evidência válida desde: ${esc(s.last_success_at)} · ` : ''}
         itens: ${s.items_found||0}${s.latest_item_date?` · notícia mais recente: ${esc(s.latest_item_date)}`:''}
         ${s.error ? `<br>erro: ${esc(s.error)}` : ''}
       </div>
@@ -711,9 +740,13 @@ function coverageBlockHtml(cov){
   return `
   <details class="coverage-block-cov">
     <summary><span>📡 Cobertura das fontes<span class="cov-arrow">▶</span></span>
-      <span class="cov-source-status ${cls}">${esc(cov.status_ui)}</span></summary>
+      <span class="cov-source-status ${cls}">${esc(hasV2 ? consLabel : cov.status_ui)}</span></summary>
     <div class="cov-body">
-      <div class="cov-status-line">${esc(cov.status_ui)}</div>
+      ${hasV2 ? `
+      <div class="cov-status-line">Cobertura consolidada: <b>${esc(consLabel)}</b></div>
+      <div class="cov-status-line cov-status-line-secondary">Neste ciclo: <b>${esc(curLabel)}</b> — ${scheduledTxt}</div>
+      ${freshnessTxt}
+      ` : `<div class="cov-status-line">${esc(cov.status_ui)}</div>`}
       <div class="cov-mini-stats">
         <span>última execução: ${esc(cov.last_run||'—')}</span>
         <span>fontes configuradas: ${cov.sources_configured}</span>

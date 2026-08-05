@@ -67,6 +67,7 @@ normal com sinal). Não faz parte dos 7 status pedidos; é reportado à parte.
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import os
 from datetime import datetime, timezone
@@ -1026,3 +1027,709 @@ def run_retroactive_diagnosis(cfg_path: str = "config_risco.yaml",
     with open(os.path.join(out_dir, "summary.json"), "w", encoding="utf-8") as f:
         json.dump({"summary": summary, "rows": rows}, f, ensure_ascii=False, indent=2)
     return {"rows": rows, "summary": summary}
+
+
+# ═══════════════════════════════════════════════════════════════════════
+# RECONCILIAÇÃO RUNTIME (correção de 2 pendências reais de produção):
+#
+#   1) Os exports (`out_coverage_diagnosis/*.csv`, `.md`, `summary.json`)
+#      eram gerados por um script SEPARADO e desconectado do fluxo real de
+#      produção (`build_coverage_dashboard_preview.py`) — congelavam no
+#      commit do merge e nunca eram regenerados a cada execução real do
+#      workflow, enquanto o payload embutido no HTML (calculado dentro de
+#      `render_html`, via `diagnose_coverage`) seguia fresco a cada run.
+#      Dois caminhos de código, duas fontes de verdade, sem garantia de
+#      reconciliação. CORREÇÃO: `build_canonical_coverage_result` abaixo é
+#      o ÚNICO ponto de cálculo; `risk_dashboard.main()` o chama uma vez por
+#      execução e passa o MESMO objeto para `render_html` (payload do HTML)
+#      e para os 6 exports — nunca dois cálculos separados.
+#
+#   2) O diagnóstico tratava "fonte não escalada neste ciclo" (rotação
+#      normal de tier — Tier 2 roda a cada ~2 execuções, Tier 3 a cada ~4,
+#      ver `should_fetch_company` em risk_dashboard.py) como se fosse
+#      "cobertura parcial"/falha. Isso produzia `PARTIAL_COVERAGE` alto
+#      sempre que o ciclo de rotação simplesmente não escalava aquela fonte
+#      neste run específico, mesmo com sucesso recente válido dentro de uma
+#      janela de frescor razoável. CORREÇÃO: `classify_company_coverage_consolidated`
+#      calcula um status CONSOLIDADO usando telemetria PERSISTIDA recente
+#      (via `international_search_history.json`), distinto do status de
+#      EXECUÇÃO DO CICLO ATUAL (que continua sendo exatamente
+#      `classify_company_coverage`, sem alteração de comportamento).
+#
+# Nada aqui pontua, nada escreve em events_by_company/context_events_by_company,
+# nada é lido por event_ids_for/build_evolution — mesma garantia do módulo
+# original (ver docstring do topo do arquivo).
+# ═══════════════════════════════════════════════════════════════════════
+
+# ── Frescor por tipo de fonte ─────────────────────────────────────────────
+# Calibrado pela cadência REAL do pipeline, não por valor arbitrário:
+#   - O workflow de produção roda 4x/dia (`.github/workflows/
+#     update_risk_dashboard.yml`, cron) → intervalo esperado entre
+#     execuções ≈ 6h (`RUN_INTERVAL_HOURS`).
+#   - GNEWS (busca genérica) é rotacionado por tier via `should_fetch_company`
+#     (`config_risco.yaml: tiers.<n>.fetch_every_n_runs`): Tier 1 roda TODA
+#     execução (n=1), Tier 2 a cada ~2 execuções (n=2), Tier 3 a cada ~4
+#     (n=4). O prazo de validade tem que ser MAIOR que o ciclo de rotação
+#     esperado, nunca menor — por isso aplicamos `FRESHNESS_SAFETY_FACTOR`
+#     (2x) sobre `n * RUN_INTERVAL_HOURS`: Tier 1 → 12h, Tier 2 → 24h,
+#     Tier 3 → 48h. Sem essa margem, uma fonte Tier 3 recém-rotacionada
+#     ficaria "obsoleta" antes mesmo do próximo ciclo em que ela É esperada
+#     rodar — o mesmo erro que estamos corrigindo, só que deslocado.
+#   - RI_RSS/RI_NEWS/EDGAR: o código de coleta (`fetch_ri_news_pages`,
+#     `fetch_edgar_filings`) NÃO usa `should_fetch_company` — tenta todo
+#     emissor elegível em TODA execução. O prazo de validade é o mesmo de
+#     um Tier 1 (12h) — se uma fonte oficial não teve sucesso técnico
+#     dentro de 2 execuções (~12h), isso é sinal real de degradação, não
+#     rotação esperada.
+#   - REGULADOR_LOCAL (CVM/IPE): não é telemetria por execução — é um
+#     cruzamento em lote contra um dataset anual (`audit_cvm_coverage`),
+#     hoje disparado manualmente via `--audit-cvm`, não em toda execução
+#     do workflow principal. Tratar isso com a mesma janela de 12h geraria
+#     "obsoleto" em quase toda execução normal, mascarando o que é uma
+#     característica real do método (lote, não streaming). Usamos uma
+#     janela de 30 dias — compatível com a cadência observada de reemissão
+#     de protocolos IPE e com o fato de o dataset ser anual.
+WORKFLOW_RUNS_PER_DAY = 4
+RUN_INTERVAL_HOURS = 24.0 / WORKFLOW_RUNS_PER_DAY  # 6h
+FRESHNESS_SAFETY_FACTOR = 2.0
+CVM_FRESHNESS_DAYS = 30
+OFFICIAL_SOURCE_FRESHNESS_RUNS = 2  # RI_RSS/RI_NEWS/EDGAR: tentados toda execução
+
+FRESHNESS_RULE_NOTES = {
+    "GNEWS": "janela = fetch_every_n_runs(tier) × 6h × 2 (margem de segurança) — "
+             "deriva da rotação real por tier em should_fetch_company/config_risco.yaml.",
+    "RI_RSS": "janela fixa de 2 execuções (~12h) — coletor tenta todo emissor elegível "
+              "em toda execução, sem rotação de tier.",
+    "RI_NEWS": "janela fixa de 2 execuções (~12h) — mesmo motivo de RI_RSS.",
+    "EDGAR": "janela fixa de 2 execuções (~12h) — fetch_edgar_filings tenta todo "
+             "emissor elegível em toda execução, sem rotação de tier.",
+    "REGULADOR_LOCAL": "janela de 30 dias — cruzamento em lote contra dataset IPE/CVM "
+                       "anual, disparado via --audit-cvm, não em toda execução do "
+                       "workflow principal; janela curta geraria 'obsoleto' artificial.",
+}
+
+
+def freshness_deadline_hours(source_name: str, company: dict, cfg: dict) -> float:
+    """Prazo de validade (em horas) de uma evidência de sucesso técnico para
+    esta fonte/emissor, calibrado pela cadência real do pipeline (ver notas
+    acima). Nunca um valor arbitrário — sempre derivado de
+    `fetch_every_n_runs`/cadência de coleta observada."""
+    if source_name == "REGULADOR_LOCAL":
+        return CVM_FRESHNESS_DAYS * 24.0
+    if source_name == "GNEWS":
+        tier = company.get("tier", 2)
+        n = (cfg.get("tiers", {}) or {}).get(tier, {}) or {}
+        n = n.get("fetch_every_n_runs", 1) or 1
+        return n * RUN_INTERVAL_HOURS * FRESHNESS_SAFETY_FACTOR
+    # RI_RSS, RI_NEWS, EDGAR
+    return OFFICIAL_SOURCE_FRESHNESS_RUNS * RUN_INTERVAL_HOURS * FRESHNESS_SAFETY_FACTOR
+
+
+def _parse_iso(ts: str):
+    if not ts:
+        return None
+    try:
+        t = ts.replace("Z", "+00:00")
+        dt = datetime.fromisoformat(t)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt
+    except Exception:
+        return None
+
+
+def _source_history_last_success(source_name: str, company_name: str,
+                                 history_runs: list) -> str:
+    """Varre `history_runs` (mais recente primeiro) por sucesso técnico
+    PERSISTIDO para esta fonte/emissor. GNEWS usa `emitters` (a mesma
+    telemetria de busca já persistida em `international_search_history.json`
+    antes desta correção); fontes oficiais usam a chave `official_sources`
+    (NOVA, persistida a partir desta correção — runs antigos não têm essa
+    chave e são tratados como 'sem histórico', nunca como sucesso — não
+    inventa cobertura para trás)."""
+    for run in reversed(history_runs or []):
+        ts = run.get("finished_at") or run.get("run_id") or ""
+        if source_name == "GNEWS":
+            rec = (run.get("emitters") or {}).get(company_name)
+            if rec and rec.get("searched") and (rec.get("success", 0) or 0) > 0:
+                return ts
+        else:
+            off = run.get("official_sources") or {}
+            rec = (off.get(source_name) or {}).get(company_name)
+            if rec and rec.get("attempted") and rec.get("success"):
+                return ts
+    return ""
+
+
+def compute_source_freshness(source_name: str, company: dict, current_record: dict,
+                             history_runs: list, cfg: dict, now_iso: str) -> dict:
+    """Frescor de UMA fonte/emissor: cruza sucesso desta execução com
+    sucesso persistido mais recente (histórico real, nunca inventado)."""
+    last_success_at = ""
+    if current_record.get("attempted") and current_record.get("technical_success"):
+        last_success_at = now_iso
+    else:
+        hs = _source_history_last_success(source_name, company["name"], history_runs)
+        if hs:
+            last_success_at = hs
+        elif current_record.get("last_success"):
+            last_success_at = current_record["last_success"]
+    deadline_h = freshness_deadline_hours(source_name, company, cfg)
+    is_stale = True
+    if last_success_at:
+        now_dt, last_dt = _parse_iso(now_iso), _parse_iso(last_success_at)
+        if now_dt is not None and last_dt is not None:
+            age_h = (now_dt - last_dt).total_seconds() / 3600.0
+            is_stale = age_h > deadline_h
+    if not last_success_at:
+        freshness_status = "sem_evidencia"
+    elif is_stale:
+        freshness_status = "obsoleta"
+    else:
+        freshness_status = "valida"
+    return {
+        "last_success_at": last_success_at,
+        "expected_cadence_hours": deadline_h,
+        "freshness_deadline_hours": deadline_h,
+        "freshness_status": freshness_status,
+        "is_stale": bool(is_stale),
+    }
+
+
+def classify_company_coverage_consolidated(company: dict, base_rec: dict,
+                                            history_runs: list, cfg: dict,
+                                            now_iso: str) -> dict:
+    """Status CONSOLIDADO de cobertura: mesma árvore de decisão de
+    `classify_company_coverage`, mas usando telemetria PERSISTIDA recente
+    por fonte (não só o ciclo atual). Uma fonte não escalada neste ciclo,
+    mas com sucesso recente válido dentro da janela de frescor, conta como
+    efetivamente coberta — NUNCA como falha/parcial só por rotação normal.
+    Uma falha nesta execução com sucesso recente ainda válido preserva o
+    histórico de sucesso (não é apagado), mas a falha do ciclo atual
+    continua visível no detalhe operacional (`execution_status_current_run`
+    por fonte). NÃO força status positivo artificialmente: sem evidência
+    válida (nem atual nem recente), a fonte conta como não coberta."""
+    sources_now = base_rec["sources"]
+    enriched = []
+    for s in sources_now:
+        fr = compute_source_freshness(s["source"], company, s, history_runs, cfg, now_iso)
+        attempted_now = bool(s["attempted"])
+        succeeded_now = bool(s["technical_success"])
+        fresh_recent = bool(fr["last_success_at"]) and not fr["is_stale"]
+        effective_success = succeeded_now or fresh_recent
+        if attempted_now and succeeded_now:
+            exec_status = "sucesso_neste_ciclo"
+        elif attempted_now and not succeeded_now:
+            exec_status = "falhou_neste_ciclo"
+        else:
+            exec_status = "nao_escalada_neste_ciclo"
+        enriched.append({
+            **s, **fr,
+            "attempted_current_run": attempted_now,
+            "scheduled_current_run": bool(s["configured"]),
+            "success_current_run": succeeded_now,
+            "not_scheduled_this_run": not attempted_now,
+            "execution_status_current_run": exec_status,
+            "consolidated_effective_success": effective_success,
+        })
+
+    all_configured = [s for s in enriched if s["configured"]]
+    official_configured = [s for s in all_configured if s["source"] != "GNEWS"]
+    eff_attempted = [s for s in all_configured
+                     if s["attempted_current_run"]
+                     or (bool(s["last_success_at"]) and not s["is_stale"])]
+    eff_not_attempted = [s for s in all_configured if s not in eff_attempted]
+    eff_failed = [s for s in eff_attempted if not s["consolidated_effective_success"]]
+    eff_succeeded = [s for s in eff_attempted if s["consolidated_effective_success"]]
+
+    items_total = sum(s["items_found"] for s in eff_succeeded)
+    official_items = sum(s["items_found"] for s in eff_succeeded if s["source"] != "GNEWS")
+
+    reasons = []
+    if not official_configured:
+        status = NO_VALIDATED_OFFICIAL_SOURCE
+        reasons.append("Nenhuma fonte oficial configurada/validada para este emissor "
+                       "(status consolidado — mesma avaliação do ciclo atual, pois "
+                       "'configurado' não muda entre execuções).")
+    elif not eff_attempted:
+        status = SOURCE_CONFIGURED_NOT_EXECUTED
+        cfgd = ", ".join(s["source"] for s in eff_not_attempted)
+        reasons.append(f"Fonte(s) configurada(s) ({cfgd}) sem execução válida NESTE "
+                       f"ciclo e sem sucesso recente dentro da janela de frescor.")
+    elif eff_failed and not eff_succeeded:
+        status = COLLECTION_FAILURE
+        errd = ", ".join(s["source"] for s in eff_failed)
+        reasons.append(f"Todas as fontes com tentativa válida ({errd}) falharam e não "
+                       f"têm sucesso recente ainda dentro da janela de frescor.")
+    elif eff_not_attempted or eff_failed:
+        status = PARTIAL_COVERAGE
+        ok = ", ".join(s["source"] for s in eff_succeeded) or "—"
+        bad = ", ".join(s["source"] for s in (eff_not_attempted + eff_failed)) or "—"
+        reasons.append(f"Cobertura mista consolidada: {ok} com evidência válida "
+                       f"(atual ou recente dentro da janela de frescor); {bad} sem "
+                       f"evidência válida.")
+    elif official_items == 0 and items_total > 0:
+        status = FALLBACK_ONLY
+        reasons.append("Fonte(s) oficial(is) com evidência válida, mas 0 item nesta "
+                       "execução; único conteúdo veio do fallback (Google News).")
+    elif items_total == 0:
+        status = NO_RELEVANT_NEWS_AFTER_SUCCESSFUL_RUN
+        reasons.append("Todas as fontes com evidência válida (atual ou recente) e "
+                       "nenhuma retornou item nesta execução.")
+    elif base_rec.get("scored_events", 0) == 0:
+        status = ONLY_INFORMATIONAL_FOUND
+        reasons.append("Item(ns) encontrado(s), 0 evento(s) pontuável(is) nesta execução.")
+    else:
+        status = COVERAGE_OK_EVENTS_FOUND
+        reasons.append("Cobertura normal — evento(s) pontuável(is) nesta execução.")
+
+    not_scheduled_sources = [s["source"] for s in enriched if s["not_scheduled_this_run"]]
+    stale_official = [s for s in official_configured
+                      if s["freshness_status"] in ("obsoleta", "sem_evidencia")]
+    company_last_success = max((s["last_success_at"] for s in enriched if s["last_success_at"]),
+                               default="")
+    return {
+        "coverage_status_consolidated": status,
+        "coverage_status_consolidated_label": status_label(status),
+        "coverage_status_consolidated_ui": status_ui_phrase(status),
+        "reasons_consolidated": reasons,
+        "sources_consolidated": enriched,
+        "attempted_current_run": any(s["attempted_current_run"] for s in all_configured),
+        "scheduled_current_run": len(all_configured),
+        "not_scheduled_current_run_sources": not_scheduled_sources,
+        "last_success_at": company_last_success,
+        "is_stale": bool(stale_official) and not bool(eff_succeeded),
+        "freshness_status": ("obsoleta" if (stale_official and not eff_succeeded)
+                             else ("parcial" if stale_official else "valida")),
+    }
+
+
+def _canonical_json(obj) -> str:
+    return json.dumps(obj, sort_keys=True, ensure_ascii=False, default=str)
+
+
+def compute_payload_hash(rows: list, meta: dict) -> str:
+    """Hash estável (sha256) do conteúdo de cobertura — usado para provar
+    que o payload embutido no HTML e os 6 exports vieram do MESMO cálculo
+    nesta execução (item 2/7 da correção)."""
+    meta_for_hash = {k: v for k, v in meta.items() if k != "payload_hash"}
+    blob = _canonical_json({"rows": rows, "meta": meta_for_hash})
+    return hashlib.sha256(blob.encode("utf-8")).hexdigest()
+
+
+def build_canonical_coverage_result(cfg: dict, run_meta: dict, history_runs: list | None = None,
+                                    companies: list | None = None, run_id: str | None = None,
+                                    generated_at: str | None = None, commit_base: str | None = None,
+                                    cvm_status_map: dict | None = None,
+                                    cvm_telemetry_map: dict | None = None,
+                                    peru_validation_map: dict | None = None) -> dict:
+    """FONTE CANÔNICA ÚNICA de cobertura para uma execução: calcula, para
+    cada emissor priorizado, o status do CICLO ATUAL (`classify_company_coverage`,
+    inalterado) e o status CONSOLIDADO (`classify_company_coverage_consolidated`,
+    usando telemetria persistida). Retorna `{"rows": [...], "meta": {...}}` —
+    este É o objeto que `risk_dashboard.render_html` embute no HTML E que os
+    6 exports gravam; nunca dois cálculos separados (correção da pendência 1)."""
+    generated_at = generated_at or datetime.now(timezone.utc).isoformat()
+    run_id = run_id or generated_at
+    history_runs = history_runs or []
+    companies = companies if companies is not None else priority_companies(cfg)
+
+    base_rows = diagnose_coverage(cfg, run_meta, cvm_status_map=cvm_status_map,
+                                  companies=companies, cvm_telemetry_map=cvm_telemetry_map,
+                                  peru_validation_map=peru_validation_map)
+    rows = []
+    for base_rec, company in zip(base_rows, companies):
+        consolidated = classify_company_coverage_consolidated(
+            company, base_rec, history_runs, cfg, generated_at)
+        row = dict(base_rec)
+        row["execution_status_current_run"] = base_rec["coverage_status"]
+        row.update(consolidated)
+        rows.append(row)
+
+    meta = {
+        "run_id": run_id,
+        "generated_at": generated_at,
+        "commit_base": commit_base or "unknown",
+        "companies_count": len(rows),
+    }
+    meta["payload_hash"] = compute_payload_hash(rows, meta)
+    return {"rows": rows, "meta": meta}
+
+
+def to_dashboard_view_v2(rec: dict) -> dict:
+    """Como `to_dashboard_view`, mas para uma linha produzida por
+    `build_canonical_coverage_result` (com campos consolidado/ciclo-atual
+    separados) — é o que a seção 'Cobertura das fontes' do template usa."""
+    base = to_dashboard_view(rec)
+    base.update({
+        "status_consolidated": rec.get("coverage_status_consolidated", rec["coverage_status"]),
+        "status_consolidated_ui": rec.get("coverage_status_consolidated_ui", base["status_ui"]),
+        "status_current_run": rec.get("execution_status_current_run", rec["coverage_status"]),
+        "status_current_run_ui": rec.get("coverage_status_ui", base["status_ui"]),
+        "reasons_consolidated": rec.get("reasons_consolidated", rec.get("reasons", [])),
+        "attempted_current_run": rec.get("attempted_current_run", False),
+        "scheduled_current_run": rec.get("scheduled_current_run", 0),
+        "not_scheduled_current_run_sources": rec.get("not_scheduled_current_run_sources", []),
+        "last_success_at": rec.get("last_success_at", ""),
+        "freshness_status": rec.get("freshness_status", "sem_evidencia"),
+        "is_stale": rec.get("is_stale", True),
+    })
+    src_cons = rec.get("sources_consolidated") or rec["sources"]
+    base["sources"] = [
+        {
+            "name": s["source"],
+            "type": s.get("source_type") or s["source"],
+            "method": s.get("method", ""),
+            "status": ("sucesso" if s.get("technical_success") else
+                      ("falhou" if s.get("attempted") else "não tentada")),
+            "execution_status_current_run": s.get("execution_status_current_run", ""),
+            "last_attempt": s.get("last_attempt", ""),
+            "last_success": s.get("last_success", ""),
+            "last_success_at": s.get("last_success_at", ""),
+            "freshness_status": s.get("freshness_status", "sem_evidencia"),
+            "is_stale": s.get("is_stale", True),
+            "not_scheduled_this_run": s.get("not_scheduled_this_run", False),
+            "items_found": s["items_found"],
+            "latest_item_date": s.get("latest_item_date", ""),
+            "latest_item_title": s.get("latest_item_title", ""),
+            "error": s.get("error", ""),
+            "link": s.get("link", ""),
+            "note": s.get("note", ""),
+        } for s in src_cons
+    ]
+    return base
+
+
+# ── Exports (v2) — mesmas 6 tabelas exigidas, com colunas de reconciliação
+# (run_id, generated_at, commit_base, payload_hash) e os novos campos de
+# consolidado/ciclo-atual/frescor. Mantém as colunas originais + acrescenta.
+def export_auditoria_cobertura_emissores_csv_v2(rows: list, meta: dict, path: str) -> str:
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    with open(path, "w", newline="", encoding="utf-8-sig") as f:
+        w = csv.writer(f)
+        w.writerow(["run_id", "generated_at", "commit_base", "payload_hash",
+                   "company", "tier", "country", "is_subsidiary", "parent_company",
+                   "coverage_status", "coverage_status_ui",
+                   "coverage_status_consolidated", "coverage_status_consolidated_ui",
+                   "execution_status_current_run", "attempted_current_run",
+                   "scheduled_current_run", "last_success_at", "freshness_status",
+                   "is_stale", "sources_configured", "sources_executed", "sources_success",
+                   "items_found", "events_found", "failures_count"])
+        for r in rows:
+            v = to_dashboard_view_v2(r)
+            w.writerow([meta["run_id"], meta["generated_at"], meta["commit_base"],
+                       meta["payload_hash"], r["company"], r.get("tier", ""),
+                       r.get("country", ""), r.get("is_subsidiary", False),
+                       r.get("parent_company", ""), r["coverage_status"], v["status_ui"],
+                       r.get("coverage_status_consolidated", r["coverage_status"]),
+                       v["status_consolidated_ui"], v["status_current_run"],
+                       v["attempted_current_run"], v["scheduled_current_run"],
+                       v["last_success_at"], v["freshness_status"], v["is_stale"],
+                       v["sources_configured"], v["sources_executed"], v["sources_success"],
+                       v["items_found"], v["events_found"], v["failures_count"]])
+    return path
+
+
+def export_auditoria_cobertura_fontes_csv_v2(rows: list, meta: dict, path: str) -> str:
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    with open(path, "w", newline="", encoding="utf-8-sig") as f:
+        w = csv.writer(f)
+        w.writerow(["run_id", "generated_at", "commit_base", "payload_hash",
+                   "company", "coverage_status", "coverage_status_consolidated",
+                   "source", "source_type", "method", "configured", "attempted",
+                   "technical_success", "execution_status_current_run",
+                   "not_scheduled_this_run", "items_found", "validated",
+                   "last_attempt", "last_success", "last_success_at",
+                   "freshness_status", "is_stale", "error", "link", "note"])
+        for r in rows:
+            src_cons = r.get("sources_consolidated") or r["sources"]
+            for s in src_cons:
+                w.writerow([meta["run_id"], meta["generated_at"], meta["commit_base"],
+                           meta["payload_hash"], r["company"], r["coverage_status"],
+                           r.get("coverage_status_consolidated", r["coverage_status"]),
+                           s["source"], s.get("source_type", ""), s.get("method", ""),
+                           s["configured"], s["attempted"], s["technical_success"],
+                           s.get("execution_status_current_run", ""),
+                           s.get("not_scheduled_this_run", False), s["items_found"],
+                           s["validated"], s.get("last_attempt", ""),
+                           s.get("last_success", ""), s.get("last_success_at", ""),
+                           s.get("freshness_status", "sem_evidencia"), s.get("is_stale", True),
+                           s.get("error", ""), s.get("link", ""), s.get("note", "")])
+    return path
+
+
+def export_fontes_configuradas_vs_executadas_csv_v2(rows: list, meta: dict, path: str) -> str:
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    with open(path, "w", newline="", encoding="utf-8-sig") as f:
+        w = csv.writer(f)
+        w.writerow(["run_id", "generated_at", "commit_base", "payload_hash",
+                   "company", "source", "configured", "executed_current_run",
+                   "gap_configured_not_executed_current_run", "not_scheduled_this_run",
+                   "fresh_recent_evidence", "gap_configured_not_covered_consolidated"])
+        for r in rows:
+            src_cons = r.get("sources_consolidated") or r["sources"]
+            for s in src_cons:
+                gap_now = bool(s["configured"] and not s["attempted"])
+                fresh = bool(s.get("last_success_at")) and not s.get("is_stale", True)
+                gap_consolidated = bool(s["configured"] and not s["attempted"] and not fresh)
+                w.writerow([meta["run_id"], meta["generated_at"], meta["commit_base"],
+                           meta["payload_hash"], r["company"], s["source"], s["configured"],
+                           s["attempted"], gap_now, s.get("not_scheduled_this_run", False),
+                           fresh, gap_consolidated])
+    return path
+
+
+def export_falhas_de_coleta_csv_v2(rows: list, meta: dict, path: str) -> str:
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    with open(path, "w", newline="", encoding="utf-8-sig") as f:
+        w = csv.writer(f)
+        w.writerow(["run_id", "generated_at", "commit_base", "payload_hash",
+                   "company", "source", "source_type", "method", "error", "last_attempt",
+                   "link", "fresh_recent_evidence_preserved"])
+        for r in rows:
+            src_cons = r.get("sources_consolidated") or r["sources"]
+            for s in src_cons:
+                if s["attempted"] and not s["technical_success"]:
+                    fresh = bool(s.get("last_success_at")) and not s.get("is_stale", True)
+                    w.writerow([meta["run_id"], meta["generated_at"], meta["commit_base"],
+                               meta["payload_hash"], r["company"], s["source"],
+                               s.get("source_type", ""), s.get("method", ""),
+                               s.get("error", ""), s.get("last_attempt", ""),
+                               s.get("link", ""), fresh])
+    return path
+
+
+def export_relatorio_cobertura_oficial_md_v2(rows: list, meta: dict, path: str) -> str:
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    counts_current = summarize_status_counts(rows)
+    counts_consolidated: dict = {}
+    for r in rows:
+        st = r.get("coverage_status_consolidated", r["coverage_status"])
+        counts_consolidated[st] = counts_consolidated.get(st, 0) + 1
+    exec_sum_current = build_executive_coverage_summary(rows)
+    lines = [
+        "# Relatório de cobertura oficial (reconciliação runtime)", "",
+        f"run_id: {meta['run_id']}",
+        f"generated_at: {meta['generated_at']}",
+        f"commit_base: {meta['commit_base']}",
+        f"payload_hash: {meta['payload_hash']}",
+        f"companies_count: {meta['companies_count']}", "",
+        "## Resumo executivo — CICLO ATUAL", "",
+        f"- Cobertura confirmada: **{exec_sum_current['cobertura_confirmada']}**",
+        f"- Cobertura parcial: **{exec_sum_current['cobertura_parcial']}**",
+        f"- Falha de coleta: **{exec_sum_current['falha_de_coleta']}**",
+        f"- Somente fallback: **{exec_sum_current['somente_fallback']}**",
+        f"- Sem fonte oficial validada: **{exec_sum_current['sem_fonte_oficial']}**",
+        f"- Fonte configurada, não executada: **{exec_sum_current['fonte_configurada_nao_executada']}**",
+        "", "## Resumo executivo — CONSOLIDADO (janela de frescor por fonte)", "",
+    ]
+    for st in COVERAGE_STATUSES + (COVERAGE_OK_EVENTS_FOUND,):
+        lines.append(f"- {status_label(st)}: **{counts_consolidated.get(st, 0)}**")
+    lines += ["", "## Detalhe por emissor", "",
+             "| Emissor | Ciclo atual | Consolidado | Não escaladas neste ciclo | "
+             "Última evidência | Frescor |",
+             "|---|---|---|---|---|---|"]
+    for r in rows:
+        v = to_dashboard_view_v2(r)
+        lines.append(f"| {r['company']} | {v['status_current_run']} | "
+                     f"{v['status_consolidated']} | "
+                     f"{', '.join(v['not_scheduled_current_run_sources']) or '—'} | "
+                     f"{v['last_success_at'] or '—'} | {v['freshness_status']} |")
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+    return path
+
+
+def export_matriz_cobertura_prioritarios_md_v2(rows: list, meta: dict, path: str) -> str:
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    lines = ["# Matriz de cobertura — emissores priorizados (reconciliação runtime)", "",
+             f"run_id: {meta['run_id']} · generated_at: {meta['generated_at']} · "
+             f"commit_base: {meta['commit_base']} · payload_hash: {meta['payload_hash']}", "",
+             "| Emissor | Tipo | Ciclo atual | Consolidado | Frescor |",
+             "|---|---|---|---|---|"]
+    for r in rows:
+        v = to_dashboard_view_v2(r)
+        tipo = "Subsidiária Coazucar" if r.get("is_subsidiary") else (
+              "Tier 1" if r.get("tier") == 1 else "Peru")
+        lines.append(f"| {r['company']} | {tipo} | {v['status_current_run']} | "
+                     f"{v['status_consolidated']} | {v['freshness_status']} |")
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+    return path
+
+
+def assert_exports_reconcile_v2(rows: list, meta: dict, out_dir: str) -> None:
+    """Gate de reconciliação (bloqueia publicação): reabre os 6 exports
+    recém-gravados e confere, campo a campo, contra `rows`/`meta` — o MESMO
+    objeto usado para montar o payload embutido no HTML. Levanta
+    `ReconciliationError` (subclasse de AssertionError) na primeira
+    divergência — nunca um warning silencioso."""
+    def _p(name):
+        return os.path.join(out_dir, name)
+
+    with open(_p("auditoria_cobertura_emissores.csv"), encoding="utf-8-sig") as f:
+        emissores_csv = list(csv.DictReader(f))
+    with open(_p("auditoria_cobertura_fontes.csv"), encoding="utf-8-sig") as f:
+        fontes_csv = list(csv.DictReader(f))
+    with open(_p("fontes_configuradas_vs_executadas.csv"), encoding="utf-8-sig") as f:
+        cfg_exec_csv = list(csv.DictReader(f))
+    with open(_p("falhas_de_coleta.csv"), encoding="utf-8-sig") as f:
+        falhas_csv = list(csv.DictReader(f))
+
+    # 1) total de emissores
+    if len(emissores_csv) != len(rows):
+        raise ReconciliationError(
+            f"auditoria_cobertura_emissores.csv tem {len(emissores_csv)} linha(s), "
+            f"esperado {len(rows)} (1 por emissor diagnosticado nesta execução).")
+    if len(emissores_csv) != meta["companies_count"]:
+        raise ReconciliationError(
+            f"companies_count do meta ({meta['companies_count']}) diverge do CSV "
+            f"({len(emissores_csv)}).")
+
+    by_company = {r["company"]: r for r in rows}
+    total_sources_expected = 0
+    total_items_expected = 0
+    total_events_expected = 0
+    total_failures_expected = 0
+    total_fallback_expected = 0
+    status_counts_expected: dict = {}
+    status_consolidated_counts_expected: dict = {}
+    for r in rows:
+        status_counts_expected[r["coverage_status"]] = status_counts_expected.get(
+            r["coverage_status"], 0) + 1
+        cst = r.get("coverage_status_consolidated", r["coverage_status"])
+        status_consolidated_counts_expected[cst] = status_consolidated_counts_expected.get(
+            cst, 0) + 1
+        if r["coverage_status"] == FALLBACK_ONLY:
+            total_fallback_expected += 1
+        srcs = r.get("sources_consolidated") or r["sources"]
+        total_sources_expected += len(srcs)
+        total_items_expected += sum(s["items_found"] for s in srcs)
+        total_events_expected += r.get("scored_events", 0)
+        total_failures_expected += sum(1 for s in srcs
+                                       if s["attempted"] and not s["technical_success"])
+
+    # 2) run_id/hash/commit_base idênticos em TODAS as linhas de TODOS os exports
+    for label, csv_rows in (("auditoria_cobertura_emissores.csv", emissores_csv),
+                            ("auditoria_cobertura_fontes.csv", fontes_csv),
+                            ("fontes_configuradas_vs_executadas.csv", cfg_exec_csv)):
+        for row in csv_rows:
+            if row.get("run_id") != meta["run_id"]:
+                raise ReconciliationError(
+                    f"{label}: run_id divergente ({row.get('run_id')} != {meta['run_id']}).")
+            if row.get("payload_hash") != meta["payload_hash"]:
+                raise ReconciliationError(
+                    f"{label}: payload_hash divergente ({row.get('payload_hash')} != "
+                    f"{meta['payload_hash']}).")
+            if row.get("commit_base") != meta["commit_base"]:
+                raise ReconciliationError(
+                    f"{label}: commit_base divergente ({row.get('commit_base')} != "
+                    f"{meta['commit_base']}).")
+
+    # 3) status por emissor (ciclo atual e consolidado)
+    for row in emissores_csv:
+        rec = by_company.get(row["company"])
+        if rec is None:
+            raise ReconciliationError(f"{row['company']} está no CSV mas não em `rows`.")
+        if row["coverage_status"] != rec["coverage_status"]:
+            raise ReconciliationError(
+                f"{row['company']}: CSV (ciclo atual) diz {row['coverage_status']}, "
+                f"payload diz {rec['coverage_status']}.")
+        exp_cons = rec.get("coverage_status_consolidated", rec["coverage_status"])
+        if row["coverage_status_consolidated"] != exp_cons:
+            raise ReconciliationError(
+                f"{row['company']}: CSV (consolidado) diz "
+                f"{row['coverage_status_consolidated']}, payload diz {exp_cons}.")
+
+    # 4) totais por status (ciclo atual e consolidado)
+    for st, n in status_counts_expected.items():
+        n_csv = sum(1 for row in emissores_csv if row["coverage_status"] == st)
+        if n_csv != n:
+            raise ReconciliationError(
+                f"Total do status (ciclo atual) {st}: CSV={n_csv}, esperado={n}.")
+    for st, n in status_consolidated_counts_expected.items():
+        n_csv = sum(1 for row in emissores_csv if row["coverage_status_consolidated"] == st)
+        if n_csv != n:
+            raise ReconciliationError(
+                f"Total do status (consolidado) {st}: CSV={n_csv}, esperado={n}.")
+
+    # 5) fontes configuradas/executadas
+    if len(cfg_exec_csv) != total_sources_expected:
+        raise ReconciliationError(
+            f"fontes_configuradas_vs_executadas.csv tem {len(cfg_exec_csv)} linha(s), "
+            f"esperado {total_sources_expected} (soma de fontes por emissor).")
+    if len(fontes_csv) != total_sources_expected:
+        raise ReconciliationError(
+            f"auditoria_cobertura_fontes.csv tem {len(fontes_csv)} linha(s), "
+            f"esperado {total_sources_expected}.")
+
+    # 6) itens encontrados / eventos relevantes
+    items_csv = sum(int(row["items_found"] or 0) for row in fontes_csv)
+    if items_csv != total_items_expected:
+        raise ReconciliationError(
+            f"Soma de items_found no CSV de fontes ({items_csv}) diverge do payload "
+            f"({total_items_expected}).")
+    events_csv = sum(int(row["events_found"] or 0) for row in emissores_csv)
+    if events_csv != total_events_expected:
+        raise ReconciliationError(
+            f"Soma de events_found no CSV de emissores ({events_csv}) diverge do payload "
+            f"({total_events_expected}).")
+
+    # 7) falhas
+    if len(falhas_csv) != total_failures_expected:
+        raise ReconciliationError(
+            f"falhas_de_coleta.csv tem {len(falhas_csv)} linha(s), esperado "
+            f"{total_failures_expected} (fontes com attempted=True e technical_success=False).")
+
+    # 8) fallback (ciclo atual)
+    fallback_csv = sum(1 for row in emissores_csv if row["coverage_status"] == FALLBACK_ONLY)
+    if fallback_csv != total_fallback_expected:
+        raise ReconciliationError(
+            f"Total FALLBACK_ONLY (ciclo atual): CSV={fallback_csv}, "
+            f"esperado={total_fallback_expected}.")
+
+
+def run_production_coverage(cfg: dict, run_meta: dict, history_runs: list | None = None,
+                            companies: list | None = None, out_dir: str = "out_coverage_diagnosis",
+                            run_id: str | None = None, generated_at: str | None = None,
+                            commit_base: str | None = None, cvm_status_map: dict | None = None,
+                            cvm_telemetry_map: dict | None = None,
+                            peru_validation_map: dict | None = None) -> dict:
+    """Ponto de entrada ÚNICO chamado por `risk_dashboard.main()` em TODA
+    execução de produção (item 1/2/3 da correção): calcula o resultado
+    canônico, grava os 6 exports obrigatórios e roda o gate de reconciliação
+    — quebra (`ReconciliationError`) ANTES da publicação/commit se algo não
+    bater. Retorna `{"rows", "meta", "exports"}`; `rows`/`meta` são o MESMO
+    objeto que o chamador deve passar para `render_html`."""
+    result = build_canonical_coverage_result(
+        cfg, run_meta, history_runs=history_runs, companies=companies, run_id=run_id,
+        generated_at=generated_at, commit_base=commit_base, cvm_status_map=cvm_status_map,
+        cvm_telemetry_map=cvm_telemetry_map, peru_validation_map=peru_validation_map)
+    rows, meta = result["rows"], result["meta"]
+    os.makedirs(out_dir, exist_ok=True)
+
+    exports = {
+        "auditoria_cobertura_fontes_csv": export_auditoria_cobertura_fontes_csv_v2(
+            rows, meta, os.path.join(out_dir, "auditoria_cobertura_fontes.csv")),
+        "auditoria_cobertura_emissores_csv": export_auditoria_cobertura_emissores_csv_v2(
+            rows, meta, os.path.join(out_dir, "auditoria_cobertura_emissores.csv")),
+        "fontes_configuradas_vs_executadas_csv": export_fontes_configuradas_vs_executadas_csv_v2(
+            rows, meta, os.path.join(out_dir, "fontes_configuradas_vs_executadas.csv")),
+        "falhas_de_coleta_csv": export_falhas_de_coleta_csv_v2(
+            rows, meta, os.path.join(out_dir, "falhas_de_coleta.csv")),
+        "relatorio_cobertura_oficial_md": export_relatorio_cobertura_oficial_md_v2(
+            rows, meta, os.path.join(out_dir, "relatorio_cobertura_oficial.md")),
+        "matriz_cobertura_prioritarios_md": export_matriz_cobertura_prioritarios_md_v2(
+            [r for r in rows if r.get("tier") == 1 or r.get("is_subsidiary")
+             or r["company"] in _PERU_ONBOARDING],
+            meta, os.path.join(out_dir, "matriz_cobertura_prioritarios.md")),
+    }
+
+    # ── Gate de reconciliação (item 3) — quebra ANTES de qualquer publicação ──
+    assert_exports_reconcile_v2(rows, meta, out_dir)
+
+    with open(os.path.join(out_dir, "summary.json"), "w", encoding="utf-8") as f:
+        json.dump({"meta": meta, "rows": rows, "exports": exports}, f,
+                  ensure_ascii=False, indent=2)
+
+    return {"rows": rows, "meta": meta, "exports": exports}
