@@ -177,8 +177,9 @@ class TestNotScheduledAndExpiredCausesPartial(unittest.TestCase):
         company = _company(tier=3, ri_feeds=["https://ri.acme.com/feed"])
         run_meta = {"international_search_execution": {},
                    "official_source_execution": {"RI_RSS": {"ACME": {"attempted": True, "success": True, "items_found": 1}}}}
-        # último sucesso de GNEWS há 200h — muito além da janela Tier3 (4*6*2=48h)
-        history_runs = [{"run_id": "old", "finished_at": "2026-07-27T12:00:00+00:00",
+        # último sucesso de GNEWS há ~26 dias (624h) — muito além da janela
+        # Tier3 (4 x BASE_FRESHNESS_HOURS(96h) = 384h/16 dias).
+        history_runs = [{"run_id": "old", "finished_at": "2026-07-10T00:00:00+00:00",
                          "emitters": {"ACME": {"searched": True, "success": 1, "raw_articles": 2}}}]
         result = cd.build_canonical_coverage_result(
             cfg, run_meta, history_runs=history_runs, companies=[company],

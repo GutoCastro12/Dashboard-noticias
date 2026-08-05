@@ -1062,67 +1062,91 @@ def run_retroactive_diagnosis(cfg_path: str = "config_risco.yaml",
 # ═══════════════════════════════════════════════════════════════════════
 
 # ── Frescor por tipo de fonte ─────────────────────────────────────────────
-# Calibrado pela cadência REAL do pipeline, não por valor arbitrário:
-#   - O workflow de produção roda 4x/dia (`.github/workflows/
-#     update_risk_dashboard.yml`, cron) → intervalo esperado entre
-#     execuções ≈ 6h (`RUN_INTERVAL_HOURS`).
+# Calibrado pela cadência REAL observada do workflow, não por um intervalo
+# nominal (24h/4 execuções = 6h) que ignora o desenho real do cron.
+#
+# [ACTIONS] Evidência real (`gh run list --workflow=update_risk_dashboard.yml`,
+# consultado em 2026-08-05): o cron é `0 10,13,16,19 * * 1-5` — 4x/dia, SÓ EM
+# DIAS ÚTEIS. Intervalo entre execuções agendadas consecutivas medido nos
+# últimos runs reais:
+#   - intraday (mesmo dia útil): ~2.1h – 3.4h (jitter normal de fila do
+#     GitHub Actions em torno dos horários alvo 10/13/16/19 UTC);
+#   - overnight (última execução de um dia útil → primeira do dia seguinte):
+#     ~15.4h – 15.5h (ex.: 2026-08-04T20:36:57Z → 2026-08-05T12:02:12Z);
+#   - FIM DE SEMANA (sexta → segunda, sem cron sábado/domingo): **64.57h**
+#     medido de fato (2026-07-31T20:22:36Z → 2026-08-03T12:56:56Z) — o maior
+#     intervalo real entre duas execuções agendadas válidas.
+# Esse gap de fim de semana é o que causava os Tier 1 aparecerem parciais de
+# novo numa prévia gerada ~13h após a última coleta com uma janela de 12h
+# (12h < intervalo overnight de ~15.5h, e MUITO menor que o de fim de semana).
+# A janela tem que superar o MAIOR gap operacional real (64.57h), não a
+# média/intraday. `BASE_FRESHNESS_HOURS` = 96h (4 dias): ~1.5x de margem
+# sobre os 64.57h medidos — absorve jitter do Actions e um feriado de 3 dias
+# emendado a um fim de semana (~88h), sem esconder uma falha real de vários
+# dias seguidos (um apagão de 4+ dias ainda estoura a janela e aparece como
+# 'obsoleta', que é o comportamento correto).
+#
 #   - GNEWS (busca genérica) é rotacionado por tier via `should_fetch_company`
 #     (`config_risco.yaml: tiers.<n>.fetch_every_n_runs`): Tier 1 roda TODA
-#     execução (n=1), Tier 2 a cada ~2 execuções (n=2), Tier 3 a cada ~4
-#     (n=4). O prazo de validade tem que ser MAIOR que o ciclo de rotação
-#     esperado, nunca menor — por isso aplicamos `FRESHNESS_SAFETY_FACTOR`
-#     (2x) sobre `n * RUN_INTERVAL_HOURS`: Tier 1 → 12h, Tier 2 → 24h,
-#     Tier 3 → 48h. Sem essa margem, uma fonte Tier 3 recém-rotacionada
-#     ficaria "obsoleta" antes mesmo do próximo ciclo em que ela É esperada
-#     rodar — o mesmo erro que estamos corrigindo, só que deslocado.
+#     execução agendada (n=1) → usa `BASE_FRESHNESS_HOURS` (96h) direto.
+#     Tier 2 (n=2)/Tier 3 (n=4) rodam com metade/um quarto da frequência —
+#     a janela escala pelo mesmo fator (`n × BASE_FRESHNESS_HOURS`): Tier 2 →
+#     192h (8 dias), Tier 3 → 384h (16 dias). Sem esse escalonamento, uma
+#     fonte Tier 3 recém-rotacionada ficaria "obsoleta" antes do próximo
+#     ciclo em que ELA é esperada rodar — o mesmo erro que estamos
+#     corrigindo, só que deslocado para as fontes de rotação mais lenta.
 #   - RI_RSS/RI_NEWS/EDGAR: o código de coleta (`fetch_ri_news_pages`,
 #     `fetch_edgar_filings`) NÃO usa `should_fetch_company` — tenta todo
-#     emissor elegível em TODA execução. O prazo de validade é o mesmo de
-#     um Tier 1 (12h) — se uma fonte oficial não teve sucesso técnico
-#     dentro de 2 execuções (~12h), isso é sinal real de degradação, não
-#     rotação esperada.
+#     emissor elegível em TODA execução agendada, exatamente como GNEWS
+#     Tier 1. Usa a MESMA `BASE_FRESHNESS_HOURS` (96h) — não uma janela
+#     menor, que reproduziria o mesmo bug do fim de semana só que para as
+#     fontes oficiais em vez do fallback.
 #   - REGULADOR_LOCAL (CVM/IPE): não é telemetria por execução — é um
 #     cruzamento em lote contra um dataset anual (`audit_cvm_coverage`),
-#     hoje disparado manualmente via `--audit-cvm`, não em toda execução
-#     do workflow principal. Tratar isso com a mesma janela de 12h geraria
-#     "obsoleto" em quase toda execução normal, mascarando o que é uma
-#     característica real do método (lote, não streaming). Usamos uma
-#     janela de 30 dias — compatível com a cadência observada de reemissão
-#     de protocolos IPE e com o fato de o dataset ser anual.
-WORKFLOW_RUNS_PER_DAY = 4
-RUN_INTERVAL_HOURS = 24.0 / WORKFLOW_RUNS_PER_DAY  # 6h
-FRESHNESS_SAFETY_FACTOR = 2.0
+#     hoje disparado por `--audit-cvm` num CRON SEMANAL DEDICADO
+#     (`.github/workflows/update_risk_dashboard.yml`, `0 6 * * 1`, toda
+#     segunda-feira), não em toda execução do workflow principal. A janela
+#     de 30 dias já tem ~4x de margem sobre a cadência semanal real (7 dias)
+#     — mantida sem alteração (nenhuma evidência de incompatibilidade com o
+#     cron semanal recém-adicionado; ao contrário, 30 dias >> 7 dias dá
+#     folga de sobra para uma falha pontual até a próxima segunda-feira).
+MAX_OBSERVED_SCHEDULED_GAP_HOURS = 64.57  # [ACTIONS] medido, ver nota acima
+BASE_FRESHNESS_HOURS = 96.0               # ~1.5x de margem sobre o gap real
 CVM_FRESHNESS_DAYS = 30
-OFFICIAL_SOURCE_FRESHNESS_RUNS = 2  # RI_RSS/RI_NEWS/EDGAR: tentados toda execução
 
 FRESHNESS_RULE_NOTES = {
-    "GNEWS": "janela = fetch_every_n_runs(tier) × 6h × 2 (margem de segurança) — "
-             "deriva da rotação real por tier em should_fetch_company/config_risco.yaml.",
-    "RI_RSS": "janela fixa de 2 execuções (~12h) — coletor tenta todo emissor elegível "
-              "em toda execução, sem rotação de tier.",
-    "RI_NEWS": "janela fixa de 2 execuções (~12h) — mesmo motivo de RI_RSS.",
-    "EDGAR": "janela fixa de 2 execuções (~12h) — fetch_edgar_filings tenta todo "
-             "emissor elegível em toda execução, sem rotação de tier.",
+    "GNEWS": "janela = fetch_every_n_runs(tier) × 96h (BASE_FRESHNESS_HOURS) — Tier 1 "
+             "roda toda execução agendada (96h); Tier 2/3 escalam pelo fator de rotação "
+             "(192h/384h). 96h = ~1.5x o maior gap real medido entre execuções "
+             "agendadas (64.57h, sexta→segunda, cron só em dias úteis).",
+    "RI_RSS": "janela de 96h (BASE_FRESHNESS_HOURS) — coletor tenta todo emissor "
+              "elegível em toda execução agendada, sem rotação de tier; mesma janela "
+              "de GNEWS Tier 1 pelo mesmo motivo (cadência idêntica).",
+    "RI_NEWS": "janela de 96h — mesmo motivo de RI_RSS.",
+    "EDGAR": "janela de 96h — fetch_edgar_filings tenta todo emissor elegível em toda "
+             "execução agendada, sem rotação de tier.",
     "REGULADOR_LOCAL": "janela de 30 dias — cruzamento em lote contra dataset IPE/CVM "
-                       "anual, disparado via --audit-cvm, não em toda execução do "
-                       "workflow principal; janela curta geraria 'obsoleto' artificial.",
+                       "anual, renovado pelo cron semanal dedicado (toda segunda-feira); "
+                       "30 dias dá ~4x de margem sobre essa cadência semanal.",
 }
 
 
 def freshness_deadline_hours(source_name: str, company: dict, cfg: dict) -> float:
     """Prazo de validade (em horas) de uma evidência de sucesso técnico para
-    esta fonte/emissor, calibrado pela cadência real do pipeline (ver notas
-    acima). Nunca um valor arbitrário — sempre derivado de
-    `fetch_every_n_runs`/cadência de coleta observada."""
+    esta fonte/emissor, calibrado pela cadência REAL observada do workflow
+    (`gh run list` — ver notas acima), não por um intervalo nominal ingênuo.
+    Nunca um valor arbitrário — sempre derivado de `fetch_every_n_runs`/
+    cadência de coleta observada de fato em produção."""
     if source_name == "REGULADOR_LOCAL":
         return CVM_FRESHNESS_DAYS * 24.0
     if source_name == "GNEWS":
         tier = company.get("tier", 2)
         n = (cfg.get("tiers", {}) or {}).get(tier, {}) or {}
         n = n.get("fetch_every_n_runs", 1) or 1
-        return n * RUN_INTERVAL_HOURS * FRESHNESS_SAFETY_FACTOR
-    # RI_RSS, RI_NEWS, EDGAR
-    return OFFICIAL_SOURCE_FRESHNESS_RUNS * RUN_INTERVAL_HOURS * FRESHNESS_SAFETY_FACTOR
+        return n * BASE_FRESHNESS_HOURS
+    # RI_RSS, RI_NEWS, EDGAR — tentados toda execução agendada, mesma
+    # cadência de GNEWS Tier 1.
+    return BASE_FRESHNESS_HOURS
 
 
 def _parse_iso(ts: str):
