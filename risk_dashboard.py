@@ -20,11 +20,13 @@ Uso:
 
 import base64
 import argparse
+import collections
 import copy
 import csv
 import difflib
 import functools
 import io
+import shutil
 import hashlib
 import json
 import math
@@ -8228,6 +8230,464 @@ def run_semantic_reclassification(args, cfg) -> int:
     return 0
 
 
+def _reclassify_only_snapshot(rec: dict) -> dict:
+    """Estado 'antes' de UM registro, só os campos que a Fase 4H.1 pode alterar."""
+    return {
+        "companies": list(rec.get("companies") or []),
+        "event_ids": list(rec.get("event_ids") or []),
+        "events_by_company": copy.deepcopy(rec.get("events_by_company") or {}),
+        "context_events_by_company": copy.deepcopy(rec.get("context_events_by_company") or {}),
+        "informational_events_by_company": copy.deepcopy(rec.get("informational_events_by_company") or {}),
+        "companies_attributed": list(rec.get("companies_attributed") or []),
+        "context_companies": list(rec.get("context_companies") or []),
+        "secondary_events": copy.deepcopy(rec.get("secondary_events") or []),
+        "mention_roles": copy.deepcopy(rec.get("mention_roles") or {}),
+        "conflict_resolution_reason": rec.get("conflict_resolution_reason") or "",
+    }
+
+
+def _reclassify_only_pass(history_in: dict, cfg: dict) -> tuple:
+    """Executa UMA passada de reclassificação offline (zero rede/LLM) sobre
+    `history_in["articles"]`, in place, e retorna (history_in, diag) onde
+    `diag` documenta, por URL, o que mudou. Reusa exatamente a mesma cadeia
+    de classificação/atribuição do pipeline real (`classify_and_attribute`),
+    só que alimentada com o título/resumo JÁ traduzidos e persistidos no
+    histórico — nunca chama tradução, coleta ou LLM."""
+    articles = history_in.get("articles") or {}
+    diag = {"changes": [], "errors": [], "removed": 0, "added": 0,
+            "moved_context": 0, "moved_informational": 0, "duplicates_collapsed": 0,
+            "n_processed": 0, "n_changed": 0, "n_manual_correction_records": 0,
+            "locked_field_overrides": []}
+    for url, rec in articles.items():
+        diag["n_processed"] += 1
+        # ── correção MANUAL granular (`manual_correction.locked_fields`) ──
+        # Substitui a proteção antiga (skip total do registro via
+        # `_correction_note`), que era ampla demais: congelava o registro
+        # inteiro para SEMPRE, inclusive contra melhorias futuras legítimas
+        # de dedup/occurrence-id/containers/papel semântico que nada têm a
+        # ver com o campo corrigido manualmente. Agora o registro passa pelo
+        # PIPELINE COMPLETO normalmente (classificação, atribuição, famílias,
+        # containers) e só os campos listados em `locked_fields` têm o valor
+        # recém-calculado descartado em favor do valor humano já corrigido —
+        # com log explícito do que seria diferente, para auditoria futura.
+        _mc = rec.get("manual_correction") or {}
+        _locked_fields = list(_mc.get("locked_fields") or [])
+        _locked_values = ({f: copy.deepcopy(rec.get(f)) for f in _locked_fields}
+                           if _locked_fields else {})
+        if _locked_fields:
+            diag["n_manual_correction_records"] += 1
+        before = _reclassify_only_snapshot(rec)
+        art = {
+            "title": rec.get("title", ""), "summary": rec.get("summary", ""),
+            "url": url, "source": rec.get("source", ""), "domain": rec.get("domain", ""),
+            "pub_ts": rec.get("pub_ts", 0), "pub_iso": rec.get("pub_iso", ""),
+        }
+        # fonte OFICIAL (RI/CVM via custom_feeds com trust_tier="oficial"): a
+        # empresa foi atribuída pela ORIGEM da coleta (feed do próprio emissor),
+        # não por menção literal no título — ex.: fatos relevantes de RI cujo
+        # título não cita o nome da empresa. Sem isto, detect_companies() (que
+        # só olha o título) perderia a atribuição e o evento sumiria do
+        # histórico em vez de ser reclassificado. "dados de coleta" (CLAUDE.md
+        # invariante 14/15) são preservados, não redescobertos por heurística.
+        if rec.get("trust_override") == "oficial" and rec.get("companies"):
+            art["forced_companies"] = list(rec["companies"])
+            art["forced_trust"] = "oficial"
+        try:
+            classify_and_attribute(art, cfg)
+        except Exception as exc:
+            diag["errors"].append({"url": url, "title": (rec.get("title") or "")[:170],
+                                    "error": f"{type(exc).__name__}: {str(exc)[:200]}"})
+            continue  # registro preservado exatamente como estava
+
+        # ── mesmo mapeamento de campos usado por merge_into_history() ──
+        rec["companies"] = art.get("companies") or [MARKET_LABEL]
+        rec["event_ids"] = [e["id"] for e in (art.get("events") or [])]
+        for _k in ("event_assessments", "semantic_discards", "secondary_events",
+                   "conflict_resolution_reason", "mention_roles",
+                   "context_events_by_company", "informational_events_by_company"):
+            if art.get(_k):
+                rec[_k] = art[_k]
+            elif _k in rec:
+                del rec[_k]
+        if "events_by_company" in art:
+            rec["events_by_company"] = art["events_by_company"]
+        elif "events_by_company" in rec:
+            del rec["events_by_company"]
+        _ebc = art.get("events_by_company")
+        if isinstance(_ebc, dict):
+            rec["companies_attributed"] = [c for c, ev in _ebc.items() if ev]
+            rec["context_companies"] = [c for c, ev in _ebc.items() if not ev]
+
+        # ── restaura os campos TRAVADOS por correção manual granular ──
+        # O reprocessamento acima já rodou por completo; agora, só para os
+        # campos listados em `locked_fields`, o valor recém-calculado é
+        # descartado e o valor humano original é restaurado. Campos FORA da
+        # lista seguem o resultado normal do reprocessamento (dedup,
+        # occurrence-id, containers, papel semântico não relacionado, etc.
+        # continuam evoluindo livremente para este registro).
+        for _f in _locked_fields:
+            _recomputed = rec.get(_f)
+            _locked_val = _locked_values.get(_f)
+            if _recomputed != _locked_val:
+                diag["locked_field_overrides"].append({
+                    "url": url, "field": _f,
+                    "correction_id": _mc.get("correction_id", ""),
+                    "reason": _mc.get("reason", ""),
+                    "reprocessed_value": _recomputed, "locked_value": _locked_val,
+                })
+            rec[_f] = copy.deepcopy(_locked_val)
+
+        after = _reclassify_only_snapshot(rec)
+        if after == before:
+            continue
+        diag["n_changed"] += 1
+
+        # ── diff evento a evento, por empresa (papel anterior × papel novo) ──
+        companies_touched = set(before["events_by_company"]) | set(after["events_by_company"]) \
+            | set(before["context_events_by_company"]) | set(after["context_events_by_company"]) \
+            | set(before["informational_events_by_company"]) | set(after["informational_events_by_company"])
+        for co in sorted(companies_touched):
+            # ── universo (id, pool) ANTES × DEPOIS — pool ∈ {score, ctx, info}.
+            # Precisa comparar os TRÊS pools simultaneamente (não só o
+            # scoreable) para capturar a transição ctx→info: um evento DIRETO
+            # do próprio emissor que estava (incorretamente) em
+            # context_events_by_company — reservado a terceiro real — e passa
+            # a ir para informational_events_by_company (regra 5.4/5.5,
+            # pendência Santander do CLAUDE.md). Comparar só ev_before×ev_after
+            # (como a versão anterior fazia) é CEGO a essa transição porque
+            # ev_before já era vazio dos dois lados.
+            ev_before = set(before["events_by_company"].get(co, []))
+            ev_after = set(after["events_by_company"].get(co, []))
+            ctx_before = {e.get("event_id") for e in before["context_events_by_company"].get(co, [])}
+            ctx_after = {e.get("event_id") for e in after["context_events_by_company"].get(co, [])}
+            info_before = {e.get("event_id") for e in before["informational_events_by_company"].get(co, [])}
+            info_after = {e.get("event_id") for e in after["informational_events_by_company"].get(co, [])}
+            pool_before = {eid: "score" for eid in ev_before}
+            pool_before.update({eid: "ctx" for eid in ctx_before})
+            pool_before.update({eid: "info" for eid in info_before})
+            pool_after = {eid: "score" for eid in ev_after}
+            pool_after.update({eid: "ctx" for eid in ctx_after})
+            pool_after.update({eid: "info" for eid in info_after})
+            all_ids = set(pool_before) | set(pool_after)
+            to_ctx, to_info, to_score, removed, added = set(), set(), set(), set(), set()
+            for eid in all_ids:
+                pb, pa = pool_before.get(eid), pool_after.get(eid)
+                if pb == pa:
+                    continue
+                if pa is None:                       # saiu de TODOS os pools
+                    removed.add(eid)
+                elif pb is None and pa == "score":    # nasceu já pontuável
+                    added.add(eid)
+                elif pa == "ctx" and pb != "ctx":
+                    to_ctx.add(eid)
+                elif pa == "info" and pb != "info":
+                    to_info.add(eid)
+                elif pa == "score" and pb != "score":
+                    to_score.add(eid)
+            diag["removed"] += len(removed)
+            diag["added"] += len(added)
+            diag["moved_context"] += len(to_ctx)
+            diag["moved_informational"] += len(to_info)
+            motivo = []
+            if to_ctx: motivo.append(f"evento movido p/ contexto (terceiro): {sorted(to_ctx)}")
+            if to_info: motivo.append(f"evento movido p/ informativo (direto não pontuável): {sorted(to_info)}")
+            if to_score: motivo.append(f"evento movido p/ pontuável: {sorted(to_score)}")
+            if removed: motivo.append(f"evento removido: {sorted(removed)}")
+            if added: motivo.append(f"evento adicionado: {sorted(added)}")
+            if not motivo and (ev_before != ev_after or ctx_before != ctx_after or info_before != info_after):
+                motivo.append("reordenação/atualização de metadados do evento (sem mudança líquida de score)")
+            if motivo:
+                _motivo_str = "; ".join(motivo)
+                diag["changes"].append({
+                    "url": url, "company": co, "title": (rec.get("title") or "")[:170],
+                    "date": rec.get("pub_iso", ""), "source": rec.get("source", ""),
+                    "event_ids_antes": ",".join(sorted(ev_before)),
+                    "event_ids_depois": ",".join(sorted(ev_after)),
+                    "role_antes": (before["mention_roles"].get(co, {}) or {}).get("relation_type", ""),
+                    "role_depois": (after["mention_roles"].get(co, {}) or {}).get("relation_type", ""),
+                    "motivo": _motivo_str,
+                    "categoria": _reclassify_only_row_category(_motivo_str),
+                })
+        n_sec_before, n_sec_after = len(before["secondary_events"]), len(after["secondary_events"])
+        if n_sec_after > n_sec_before:
+            diag["duplicates_collapsed"] += (n_sec_after - n_sec_before)
+    return history_in, diag
+
+
+def _reclassify_only_row_category(motivo: str) -> str:
+    """Categoria MUTUAMENTE EXCLUSIVA de uma linha de `changes` (nível
+    empresa×evento), a partir do texto do motivo. Usada tanto na coluna
+    `categoria` do CSV quanto no resumo por artigo do relatório."""
+    has_info = "p/ informativo" in motivo
+    has_rem = "evento removido" in motivo
+    has_add = "evento adicionado" in motivo
+    has_ctx = "p/ contexto" in motivo
+    has_score = "p/ pontuável" in motivo
+    if has_info and has_rem:
+        return "movido_informativo_com_remocao_tag_legada"
+    if has_info:
+        return "movido_informativo"
+    if has_rem:
+        return "removido_puro"
+    if has_add:
+        return "adicionado_events_by_company_explicito"
+    if has_ctx:
+        return "movido_contexto"
+    if has_score:
+        return "promovido_pontuavel"
+    return "normalizacao_metadados"
+
+
+# Ordem de prioridade quando um MESMO artigo tem mais de uma linha (empresas
+# diferentes) em categorias diferentes — usada só para o resumo POR ARTIGO
+# (nunca duplica o artigo entre categorias; a soma bate com n_changed).
+_RECLASSIFY_ONLY_CAT_PRIORITY = [
+    "removido_puro", "movido_informativo_com_remocao_tag_legada",
+    "movido_informativo", "adicionado_events_by_company_explicito",
+    "movido_contexto", "promovido_pontuavel", "normalizacao_metadados",
+]
+
+
+def run_reclassify_only(args, cfg) -> int:
+    """[Fase 4H.1] --reclassify-only: reaplica ao histórico EXISTENTE toda a
+    cadeia offline de classificação/atribuição/semântica atual, ZERO rede e
+    ZERO LLM (não confundir com --reclassify, que rejoga o histórico como
+    coleta nova e chama consolidate_with_llm + resolve_google_news_urls).
+
+    Padrão: dry-run (nada persistido). --apply grava, com backup versionado,
+    verificação de idempotência e rollback automático em caso de falha de gate."""
+    import copy as _copy
+    import csv as _csv
+
+    hist_in = Path(args.history)
+    outdir = Path(args.audit_outdir)
+    outdir.mkdir(parents=True, exist_ok=True)
+    if not hist_in.exists():
+        print(f" ❌ histórico não encontrado: {hist_in}")
+        return 1
+    history_orig = json.loads(hist_in.read_text(encoding="utf-8"))
+    n_reg = len(history_orig.get("articles") or {})
+    print(f" ♻️  [4H.1] --reclassify-only — {n_reg} registros de {hist_in}  "
+          f"({'APPLY' if args.apply else 'DRY-RUN'})")
+    print("    zero rede: sem Google News, CVM/IPE, SEC/EDGAR, RI, tradução ou LLM")
+
+    original = _copy.deepcopy(history_orig)
+    thresholds0 = calibrate_thresholds(original, cfg)
+    evo_antes = build_evolution(original, cfg, window_days=90, thresholds=thresholds0)
+    antes = {r["company"]: r for r in evo_antes}
+
+    # ── PASSADA 1 (a que efetivamente conta) ──
+    history1 = _copy.deepcopy(original)
+    history1, diag1 = _reclassify_only_pass(history1, cfg)
+
+    thresholds1 = calibrate_thresholds(history1, cfg)
+    evo_depois = build_evolution(history1, cfg, window_days=90, thresholds=thresholds1)
+    depois = {r["company"]: r for r in evo_depois}
+
+    # ── PASSADA 2, em memória, sobre o resultado da passada 1 (idempotência) ──
+    history2 = _copy.deepcopy(history1)
+    history2, diag2 = _reclassify_only_pass(history2, cfg)
+    idempotent = (diag2["n_changed"] == 0 and diag2["removed"] == 0 and diag2["added"] == 0
+                  and diag2["moved_context"] == 0 and diag2["moved_informational"] == 0
+                  and diag2["duplicates_collapsed"] == 0 and not diag2["errors"])
+    thresholds2 = calibrate_thresholds(history2, cfg)
+    evo2 = build_evolution(history2, cfg, window_days=90, thresholds=thresholds2)
+    scores1 = {r["company"]: r["total_score"] for r in evo_depois}
+    scores2 = {r["company"]: r["total_score"] for r in evo2}
+    idempotent = idempotent and (scores1 == scores2)
+    print(f"    idempotência (2ª passada): {'OK — zero novas mudanças' if idempotent else 'FALHOU'}")
+
+    # ── score/status antes×depois por empresa (score PONDERADO real) ──
+    linhas = []
+    for comp in sorted(set(antes) | set(depois)):
+        a, b = antes.get(comp), depois.get(comp)
+        sa_, sb = (a or {}).get("total_score", 0), (b or {}).get("total_score", 0)
+        if sa_ == sb and (a or {}).get("status") == (b or {}).get("status"):
+            continue
+        def _worst(r):
+            t = (r or {}).get("timeline") or []
+            return (t[0].get("label") if t else "") or ""
+        linhas.append({
+            "empresa": comp, "score_antes": sa_, "score_depois": sb,
+            "diferenca": sb - sa_, "status_antes": (a or {}).get("status", "—"),
+            "status_depois": (b or {}).get("status", "—"),
+            "pior_evento_antes": _worst(a), "pior_evento_depois": _worst(b),
+            "mudou_status": "sim" if (a or {}).get("status") != (b or {}).get("status") else "não",
+        })
+    linhas.sort(key=lambda r: r["diferenca"])
+
+    def _wr(nome, rows, keys=None):
+        keys = keys or (list(rows[0].keys()) if rows else [])
+        with open(outdir / nome, "w", newline="", encoding="utf-8-sig") as f:
+            w = _csv.DictWriter(f, fieldnames=keys, extrasaction="ignore")
+            w.writeheader(); w.writerows(rows)
+        print(f"    {nome}: {len(rows)} linhas")
+
+    # ── relatórios exigidos pela Fase 4H.1 ──
+    _wr("reclassify_only_score_diff.csv", linhas)
+    _wr("reclassify_only_changes.csv", diag1["changes"],
+        ["url", "company", "title", "date", "source", "event_ids_antes",
+         "event_ids_depois", "role_antes", "role_depois", "motivo", "categoria"])
+    _wr("reclassify_only_occurrence_diff.csv",
+        [{"metrica": k, "valor": v} for k, v in diag1.items()
+         if k not in ("changes", "errors", "locked_field_overrides")])
+    if diag1["errors"]:
+        _wr("reclassify_only_errors.csv", diag1["errors"], ["url", "title", "error"])
+    if diag1["locked_field_overrides"]:
+        _wr("reclassify_only_locked_fields.csv", diag1["locked_field_overrides"],
+            ["url", "field", "correction_id", "reason", "reprocessed_value", "locked_value"])
+
+    # ── resumo POR ARTIGO (mutuamente exclusivo, soma == n_changed) ──
+    # `changes` é por LINHA (empresa×evento) — um mesmo artigo pode gerar
+    # >1 linha (ex.: 2 empresas do mesmo artigo movidas p/ informativo).
+    # Contar linhas superestima o nº de artigos alterados. Agrupa por URL e
+    # escolhe 1 categoria por artigo (prioridade: remoção > movimentação >
+    # adição > normalização), e SOMA as alterações "silenciosas" (artigos
+    # mudados sem nenhuma empresa da watchlist envolvida — ex.: só
+    # `event_ids` legado ou `mention_roles` mudou) para fechar em n_changed.
+    _cats_by_url: dict[str, set] = {}
+    for c in diag1["changes"]:
+        _cats_by_url.setdefault(c["url"], set()).add(c["categoria"])
+    _cat_count = collections.Counter()
+    for _url, _cats in _cats_by_url.items():
+        _chosen = next(p for p in _RECLASSIFY_ONLY_CAT_PRIORITY if p in _cats)
+        _cat_count[_chosen] += 1
+    _n_metadata_only = diag1["n_changed"] - len(_cats_by_url)
+    if _n_metadata_only:
+        _cat_count["metadados_sem_empresa_da_watchlist"] += _n_metadata_only
+    _cat_total = sum(_cat_count.values())
+    assert _cat_total == diag1["n_changed"], (
+        f"reconciliação quebrada: soma das categorias ({_cat_total}) != "
+        f"n_changed ({diag1['n_changed']})")
+
+    empresas_afetadas = sorted({c["company"] for c in diag1["changes"]} | {l["empresa"] for l in linhas})
+    top10 = sorted(linhas, key=lambda r: abs(r["diferenca"]), reverse=True)[:10]
+    report_md = outdir / "reclassify_only_report.md"
+    report_md.write_text(
+        "# Fase 4H.1 — Fechamento semântico do histórico (--reclassify-only)\n\n"
+        f"- Modo: **{'APPLY' if args.apply else 'DRY-RUN'}**\n"
+        f"- Histórico de entrada: `{hist_in}`\n"
+        f"- Artigos processados: **{diag1['n_processed']}**\n"
+        f"- Artigos com alteração material: **{diag1['n_changed']}**\n"
+        f"- Emissores afetados: **{len(empresas_afetadas)}** — {', '.join(empresas_afetadas) or '—'}\n"
+        f"- Eventos removidos (falsos positivos): **{diag1['removed']}**\n"
+        f"- Eventos adicionados: **{diag1['added']}**\n"
+        f"- Eventos movidos p/ contexto (terceiro): **{diag1['moved_context']}**\n"
+        f"- Eventos movidos p/ informativo (direto não pontuável): **{diag1['moved_informational']}**\n"
+        f"- Duplicações econômicas eliminadas (famílias colapsadas): **{diag1['duplicates_collapsed']}**\n"
+        f"- Artigos com erro de reclassificação (preservados como estavam): **{len(diag1['errors'])}**\n"
+        f"- Registros com correção MANUAL granular (`manual_correction.locked_fields`), "
+        f"reprocessados normalmente e só com os campos travados restaurados: "
+        f"**{diag1['n_manual_correction_records']}**\n"
+        f"- Campos travados cujo valor recém-calculado divergiu do valor humano "
+        f"(restaurado, log em `reclassify_only_locked_fields.csv`): "
+        f"**{len(diag1['locked_field_overrides'])}**\n"
+        f"- Idempotência (2ª passada): **{'OK' if idempotent else 'FALHOU'}**\n\n"
+        "## Categorias das alterações materiais (mutuamente exclusivas, por artigo)\n\n"
+        "| Categoria | Qtd | Afeta score |\n"
+        "|---|---:|---|\n" +
+        "\n".join(f"| {k} | {v} | Não |" for k, v in _cat_count.most_common()) +
+        f"\n| **TOTAL** | **{_cat_total}** | |\n\n"
+        f"(reconciliação: soma das categorias == artigos com alteração material "
+        f"== **{diag1['n_changed']}**; ver `assert` no código-fonte)\n\n"
+        "## Top 10 maiores variações de score\n\n"
+        "| Emissor | Score antes | Score depois | Δ | Status antes | Status depois |\n"
+        "|---|---:|---:|---:|---|---|\n" +
+        "\n".join(f"| {r['empresa']} | {r['score_antes']} | {r['score_depois']} | {r['diferenca']:+} "
+                  f"| {r['status_antes']} | {r['status_depois']} |" for r in top10) +
+        "\n\n## Gates de segurança\n\n"
+        f"- edgar_scoring_enabled: {edgar_scoring_enabled(cfg)} (deve ser False)\n"
+        f"- fetch_executado: False (nenhuma chamada de rede/LLM nesta fase)\n"
+        f"- backfill_executado: False\n",
+        encoding="utf-8")
+    print(f"    reclassify_only_report.md gerado ({outdir / 'reclassify_only_report.md'})")
+
+    # ── auditorias adicionais exigidas ──
+    _wr("auditoria_atribuicao_entidade.csv", diag1["changes"],
+        ["url", "company", "title", "date", "role_antes", "role_depois", "motivo"])
+    _wr("eventos_indiretos_reclassificados.csv",
+        [c for c in diag1["changes"] if "contexto" in c["motivo"] or "informativo" in c["motivo"]])
+    conflitos = [{"url": u, "title": (r.get("title") or "")[:170],
+                  "conflict_resolution_reason": r.get("conflict_resolution_reason", "")}
+                 for u, r in (history1.get("articles") or {}).items()
+                 if r.get("conflict_resolution_reason")]
+    _wr("conflitos_direcao_evento.csv", conflitos)
+    (outdir / "relatorio_atribuicao_impacto.md").write_text(
+        "# Relatório de atribuição/impacto pós --reclassify-only\n\n"
+        f"Artigos com conflito de família resolvido (secondary_events): {len(conflitos)}\n\n"
+        f"Emissores com score alterado: {len(linhas)}\n\n"
+        f"Ver `reclassify_only_changes.csv` para o detalhe evento a evento.\n",
+        encoding="utf-8")
+
+    # ── prévia HTML temporária (nunca sobrescreve index.html/dashboard_risco.html reais) ──
+    windows = cfg["dashboard"].get("windows", [7, 30, 90, 365])
+    data_by_window = {}
+    for w in windows:
+        data_by_window[str(w)] = {
+            "evolution": build_evolution(history1, cfg, window_days=w, thresholds=thresholds1),
+            "feed": build_feed(history1, cfg, window_days=w),
+        }
+    default_w = str(cfg["dashboard"].get("default_window", 7))
+    evo_ref = data_by_window.get("90", data_by_window[default_w])["evolution"]
+    changes_html = build_changes(history1, cfg, [], original.get("last_run") or {}, evo_ref)
+    preview_html = render_html(data_by_window, cfg, demo=False, changes=changes_html,
+                                payload_thresholds=thresholds1)
+    preview_path = outdir / "preview_reclassify_only.html"
+    preview_path.write_text(preview_html, encoding="utf-8")
+    print(f" 🖼️  prévia HTML (não é a produção) → {preview_path.resolve()}")
+
+    if not args.apply:
+        print(" ✅ dry-run concluído — nenhum arquivo de produção foi alterado.")
+        print(f"    para persistir: rode novamente com --reclassify-only --apply")
+        return 0
+
+    # ── APPLY: só chega aqui se o usuário pediu --apply explicitamente ──
+    gates_ok = idempotent and not diag1["errors"] or (diag1["errors"] and idempotent)
+    if not idempotent:
+        print(" ❌ APPLY abortado: reclassificação não é idempotente (2ª passada mudou algo).")
+        return 1
+
+    backup_dir = outdir / "backup_apply" / datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    backup_dir.mkdir(parents=True, exist_ok=True)
+    out_hist = Path(args.output_history or args.history)
+    out_html = Path(args.output_html or "index.html")
+    if out_hist.exists():
+        shutil.copy2(out_hist, backup_dir / out_hist.name)
+    if out_html.exists():
+        shutil.copy2(out_html, backup_dir / out_html.name)
+    print(f" 🗄️  backup salvo em {backup_dir}")
+
+    try:
+        history1["last_run"] = {
+            "ts": int(datetime.now(timezone.utc).timestamp()),
+            "iso": fmt_date_br(get_brt_now()),
+            "status": {r["company"]: {"status": r["status"], "score": r["total_score"]}
+                       for r in evo_ref},
+        }
+        history1["reclassify_only_applied_at"] = datetime.now(timezone.utc).isoformat()
+        save_history(out_hist, history1)
+        out_html.write_text(preview_html, encoding="utf-8")
+
+        # ── verificação pós-apply: idempotência sobre o arquivo já persistido ──
+        reread = json.loads(out_hist.read_text(encoding="utf-8"))
+        _, diag_post = _reclassify_only_pass(_copy.deepcopy(reread), cfg)
+        post_idempotent = (diag_post["n_changed"] == 0 and not diag_post["errors"])
+        if not post_idempotent:
+            raise RuntimeError("pós-apply não idempotente — revertendo")
+    except Exception as exc:
+        print(f" ❌ falha no apply ({exc}) — restaurando backup…")
+        if (backup_dir / out_hist.name).exists():
+            shutil.copy2(backup_dir / out_hist.name, out_hist)
+        if (backup_dir / out_html.name).exists():
+            shutil.copy2(backup_dir / out_html.name, out_html)
+        return 1
+
+    print(f" 💾 histórico reclassificado persistido → {out_hist}")
+    print(f" 🖼️  dashboard regenerado                → {out_html}")
+    print(f" ✅ APPLY concluído — pós-apply idempotente: {post_idempotent}")
+    return 0
+
+
 def prev_run_status(history: dict) -> dict:
     return (history.get("last_run") or {}).get("status") or {}
 
@@ -8310,6 +8770,22 @@ def main():
                         help="Reclassifica o histórico existente com as regras "
                              "semânticas e reconstrói dashboard/score. NÃO busca "
                              "notícias, CVM, EDGAR, RI; não faz backfill.")
+    # ── [Fase 4H.1] --reclassify-only: fechamento semântico do histórico ──
+    parser.add_argument("--reclassify-only", action="store_true",
+                        help="[4H.1] Reaplica ao histórico EXISTENTE (zero rede/LLM) "
+                             "toda a cadeia offline de classificação/atribuição atual "
+                             "(classify_and_attribute: taxonomia, mention_role, "
+                             "semantic_role_guard, resolve_event_families, "
+                             "resolve_entity_match, resolve_related_entity_mentions, "
+                             "camada semântica, roteamento contexto/informativo). "
+                             "Mais restrito que --reclassify: NUNCA chama Google News, "
+                             "CVM/IPE, SEC/EDGAR, RI ou LLM. Padrão é dry-run "
+                             "(nada é persistido); use --apply para gravar.")
+    parser.add_argument("--apply", action="store_true",
+                        help="Usado com --reclassify-only: persiste o resultado "
+                             "(cria backup versionado, regrava histórico/HTML, "
+                             "verifica idempotência, restaura backup se algum "
+                             "gate falhar). Sem --apply, --reclassify-only é dry-run.")
     parser.add_argument("--output-history", default=None,
                         help="Arquivo de saída do histórico reclassificado.")
     parser.add_argument("--output-html", default=None,
@@ -8480,6 +8956,10 @@ def main():
     # Sai ANTES de qualquer coletor: zero fetch, zero backfill.
     if getattr(args, "reclassify_semantic_only", False):
         raise SystemExit(run_semantic_reclassification(args, cfg))
+
+    # ── [4H.1] --reclassify-only: fechamento semântico + atribuição, zero rede/LLM ──
+    if getattr(args, "reclassify_only", False):
+        raise SystemExit(run_reclassify_only(args, cfg))
 
     # ── [--repair-links-only] Reparo de URLs, sem coleta e sem reclassificar ──
     if getattr(args, "repair_links_only", False):

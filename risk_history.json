@@ -65,7 +65,9 @@
    "companies": [
     "Copel"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Copel": []
    },
@@ -84,26 +86,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "Copel": [
-     {
-      "event_id": "ma",
-      "event_label": "aquisicao capex",
-      "subject_company": "Copel",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "aquisicao_capex",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "objeto_nao_empresarial:capex_ativo"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Copel",
@@ -154,7 +136,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.618751+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.618751+00:00",
+   "informational_events_by_company": {
+    "Copel": [
+     {
+      "company": "Copel",
+      "event_id": "aquisicao_capex",
+      "event_label": "aquisicao capex",
+      "subject_company": "Copel",
+      "monitored_company": "Copel",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "aquisicao_capex",
+      "transaction_scope": "capex",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Copel (CPLE6) conclui aquisição da usina Baixo Iguaçu da Neoenergia por R$ 1,05 bi",
+      "url": "https://www.infomoney.com.br/mercados/copel-cple6-conclui-aquisicao-da-usina-baixo-iguacu-da-neoenergia-por-r-105-bi/",
+      "pub_ts": 1751353200,
+      "observation": "objeto_nao_empresarial:capex_ativo",
+      "source_record_id": "https://www.infomoney.com.br/mercados/copel-cple6-conclui-aquisicao-da-usina-baixo-iguacu-da-neoenergia-por-r-105-bi/"
+     }
+    ]
+   }
   },
   "https://globorural.globo.com/negocios/noticia/2025/07/bunge-conclui-acordo-de-aquisicao-da-viterra.ghtml": {
    "title": "Bunge conclui acordo de aquisição da Viterra",
@@ -964,8 +976,7 @@
    ],
    "events_by_company": {
     "BRF": [
-     "ma",
-     "rating_elevado"
+     "ma"
     ]
    },
    "mention_roles": {
@@ -1039,7 +1050,30 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.619613+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.619613+00:00",
+   "informational_events_by_company": {
+    "BRF": [
+     {
+      "company": "BRF",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "BRF",
+      "monitored_company": "BRF",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "S&P eleva rating global da BRF (BRFS3) após fusão com a Marfrig (MRFG3); confira os detalhes",
+      "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/marfrig-mrfg3-brf-brfs3-fusao-rating-sp-global/",
+      "pub_ts": 1754636400,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/marfrig-mrfg3-brf-brfs3-fusao-rating-sp-global/"
+     }
+    ]
+   }
   },
   "https://www.suno.com.br/noticias/samarco-encerra-recuperacao-judicial-mt/": {
    "title": "Samarco informa encerramento da recuperação judicial: entenda o caso",
@@ -1308,7 +1342,9 @@
    "companies": [
     "Grupo Security"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Grupo Security": []
    },
@@ -1454,26 +1490,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "Grupo Security": [
-     {
-      "event_id": "ma",
-      "event_label": "ma",
-      "subject_company": "Grupo Security",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "sem_verbo_de_aquisicao_no_texto"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Grupo Security",
@@ -1524,7 +1540,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.619958+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.619958+00:00",
+   "informational_events_by_company": {
+    "Grupo Security": [
+     {
+      "company": "Grupo Security",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Grupo Security",
+      "monitored_company": "Grupo Security",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Fusión Bicecorp y Grupo Security ya tiene nombre: la marca elegida para el grupo financiero es BICE",
+      "url": "https://www.df.cl/mercados/banca-fintech/fusion-bicecorp-y-grupo-security-ya-tiene-nombre-la-marca-elegida-para-el",
+      "pub_ts": 1756796400,
+      "observation": "sem_verbo_de_aquisicao_no_texto",
+      "source_record_id": "https://www.df.cl/mercados/banca-fintech/fusion-bicecorp-y-grupo-security-ya-tiene-nombre-la-marca-elegida-para-el"
+     }
+    ]
+   }
   },
   "https://ma.equatorialenergia.com.br/equatorial-investe-mais-de-r-170-milhoes-em-modernizacao-do-gerenciamento-de-rede-de-distribuicao-com-aquisicao-do-sistema-adms/": {
    "title": "Equatorial investe mais de R$ 170 milhões em modernização do gerenciamento de rede de distribuição com aquisição do sistema ADMS – Equatorial Energia Maranhão",
@@ -1689,9 +1735,7 @@
     "rating_elevado"
    ],
    "events_by_company": {
-    "Cemig": [
-     "rating_elevado"
-    ]
+    "Cemig": []
    },
    "mention_roles": {
     "Cemig": {
@@ -1702,10 +1746,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Cemig"
    ],
-   "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "original_url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/cemig-cmig4-rating-de-credito-moodys-alto-grau-qualidade/",
@@ -1722,7 +1766,30 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.620271+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.620271+00:00",
+   "informational_events_by_company": {
+    "Cemig": [
+     {
+      "company": "Cemig",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "Cemig",
+      "monitored_company": "Cemig",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Moody's eleva rating da Cemig (CMIG4) para o mais alto grau de qualidade; veja o motivo",
+      "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/cemig-cmig4-rating-de-credito-moodys-alto-grau-qualidade/",
+      "pub_ts": 1756969200,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/cemig-cmig4-rating-de-credito-moodys-alto-grau-qualidade/"
+     }
+    ]
+   }
   },
   "https://www.suno.com.br/noticias/acoes-cemig-cmig4-sobem-apos-rating-moodys-go/": {
    "title": "Ações da Cemig (CMIG4) sobem quase 2% após elevação de rating; entenda",
@@ -1740,9 +1807,7 @@
     "rating_elevado"
    ],
    "events_by_company": {
-    "Cemig": [
-     "rating_elevado"
-    ]
+    "Cemig": []
    },
    "mention_roles": {
     "Cemig": {
@@ -1753,10 +1818,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Cemig"
    ],
-   "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "original_url": "https://www.suno.com.br/noticias/acoes-cemig-cmig4-sobem-apos-rating-moodys-go/",
@@ -1773,7 +1838,30 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.620324+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.620324+00:00",
+   "informational_events_by_company": {
+    "Cemig": [
+     {
+      "company": "Cemig",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "Cemig",
+      "monitored_company": "Cemig",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Ações da Cemig (CMIG4) sobem quase 2% após elevação de rating; entenda",
+      "url": "https://www.suno.com.br/noticias/acoes-cemig-cmig4-sobem-apos-rating-moodys-go/",
+      "pub_ts": 1756969200,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://www.suno.com.br/noticias/acoes-cemig-cmig4-sobem-apos-rating-moodys-go/"
+     }
+    ]
+   }
   },
   "https://www.infomoney.com.br/mercados/aegea-capta-r-227-bilhoes-em-23a-emissao-de-debentures-para-alongar-divida/": {
    "title": "Aegea capta R$ 2,27 bilhões em 23ª emissão de debêntures para alongar dívida",
@@ -1891,7 +1979,9 @@
    "companies": [
     "Ambev"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "falencia"
+   ],
    "events_by_company": {
     "Ambev": []
    },
@@ -2153,7 +2243,9 @@
    "companies": [
     "Energisa"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Energisa": []
    },
@@ -2172,26 +2264,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "Energisa": [
-     {
-      "event_id": "ma",
-      "event_label": "ma",
-      "subject_company": "Energisa",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "objeto_financeiro_nao_empresarial"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Energisa",
@@ -2242,7 +2314,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.620597+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.620597+00:00",
+   "informational_events_by_company": {
+    "Energisa": [
+     {
+      "company": "Energisa",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Energisa",
+      "monitored_company": "Energisa",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Energisa (ENGI11) fará aquisição facultativa de debêntures; veja o valor a ser pago",
+      "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/energisa-engi11-aquisicao-facultativa-debentures-preco/",
+      "pub_ts": 1757919600,
+      "observation": "objeto_financeiro_nao_empresarial",
+      "source_record_id": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/energisa-engi11-aquisicao-facultativa-debentures-preco/"
+     }
+    ]
+   }
   },
   "https://www.bloomberglinea.com.br/negocios/ouro-urbano-os-planos-por-tras-da-aquisicao-bilionaria-da-aegea-em-residuos-solidos/": {
    "title": "Ouro urbano? Os planos por trás da aquisição bilionária da Aegea em resíduos sólidos",
@@ -2393,7 +2495,9 @@
    "companies": [
     "BRF"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "BRF": []
    },
@@ -2412,26 +2516,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "BRF": [
-     {
-      "event_id": "ma",
-      "event_label": "recompra acoes",
-      "subject_company": "BRF",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "positiva",
-      "scoreable": false,
-      "event_id_corrigido": "recompra_acoes",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "recompra_de_acoes_proprias_nao_e_ma"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "BRF",
@@ -2482,7 +2566,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.620731+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.620731+00:00",
+   "informational_events_by_company": {
+    "BRF": [
+     {
+      "company": "BRF",
+      "event_id": "recompra_acoes",
+      "event_label": "recompra acoes",
+      "subject_company": "BRF",
+      "monitored_company": "BRF",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "recompra_acoes",
+      "transaction_scope": "capital_proprio",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "BRF aprova cancelamento de ações e pede mudança de registro na CVM para concretizar fusão com Marfrig na Bolsa",
+      "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/brf-cancelamento-acoes-registro-cvm-fusao-marfrig/",
+      "pub_ts": 1758178800,
+      "observation": "recompra_de_acoes_proprias_nao_e_ma",
+      "source_record_id": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/brf-cancelamento-acoes-registro-cvm-fusao-marfrig/"
+     }
+    ]
+   }
   },
   "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/mbrf-mbrf3-fusao-marfrig-mrfg3-brf-brfs3-estreia/": {
    "title": "MBRF (MBRF3), fusão entre Marfrig e BRF, estreia na B3 nesta terça (23); o que esperar da ação?",
@@ -4238,9 +4352,7 @@
     "rating_elevado"
    ],
    "events_by_company": {
-    "Vale": [
-     "rating_elevado"
-    ]
+    "Vale": []
    },
    "mention_roles": {
     "Vale": {
@@ -4251,10 +4363,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Vale"
    ],
-   "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "original_url": "https://br.advfn.com/jornal/2025/10/fitch-eleva-rating-da-vale-para-bbb-e-reforca-confianca-na-mineradora-listada-na-b3",
@@ -4271,7 +4383,30 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.622300+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.622300+00:00",
+   "informational_events_by_company": {
+    "Vale": [
+     {
+      "company": "Vale",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "Vale",
+      "monitored_company": "Vale",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Fitch eleva rating da Vale para BBB+ e reforça confiança na mineradora listada na B3",
+      "url": "https://br.advfn.com/jornal/2025/10/fitch-eleva-rating-da-vale-para-bbb-e-reforca-confianca-na-mineradora-listada-na-b3",
+      "pub_ts": 1761289200,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://br.advfn.com/jornal/2025/10/fitch-eleva-rating-da-vale-para-bbb-e-reforca-confianca-na-mineradora-listada-na-b3"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMimgJBVV95cUxNX01hLU5qRjNGVGU4a1FCclhmX3RoWjlSbXBHeHczSVNRT096cFpFbTJpMTlmZF8xRnFQZjU2WjRWYWFDY1BGdU9hY3RxZG1XWjF4eFl5MUlnbmp3TVg3cmcwUEM0dm5mU2VDdF82Y3pEWFRnSC1PaGtiVUxWR1IyelUxUVBhLVZKMGN4N205d2tQQkswRzRtVy00emhVbWt4SDdoNUNoV3dwNkRXbl9CSmE4bUJlejhYeWRfY2ctdUtpYkFfSElHRU95LTNUZ0FacFMyTG13eHdvaDdjTnZQVGFWdVRSUVdqc1dSajl5S3RQVWZ4Z3NZd0UxMEtmQ2tNaENxOFRhY1ZaYTFNSllyNWVaSWtmRnc1QWc?oc=5": {
    "title": "Sunoco LP Anuncia Data de Fechamento Prevista para Aquisição da Parkland Corporation e Informações de Listagem na NYSE para a SunocoCorp LLC (\"SUNC\")",
@@ -4804,7 +4939,9 @@
    "companies": [
     "BRF"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "BRF": []
    },
@@ -4846,26 +4983,6 @@
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "corrob_sources": [],
-   "context_events_by_company": {
-    "BRF": [
-     {
-      "event_id": "ma",
-      "event_label": "ma",
-      "subject_company": "BRF",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "sem_verbo_de_aquisicao_no_texto"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "BRF",
@@ -4916,7 +5033,37 @@
    "resolution_error": "destino final não é URL direta válida",
    "link_render_anchor": false,
    "link_label": "Link em verificação",
-   "last_checked_at": "2026-07-31T05:45:11.674904+00:00"
+   "last_checked_at": "2026-07-31T05:45:11.674904+00:00",
+   "informational_events_by_company": {
+    "BRF": [
+     {
+      "company": "BRF",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "BRF",
+      "monitored_company": "BRF",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Decisão da CVM sobre BRF e Marfrig: quais informações devem ser disponibilizadas aos acionistas para uma assembleia de combinação de negócios?",
+      "url": "https://www.demarest.com.br/decisao-da-cvm-sobre-brf-e-marfrig-quais-informacoes-devem-ser-disponibilizadas-aos-acionistas-para-uma-assembleia-de-combinacao-de-negocios/",
+      "pub_ts": 1762463586,
+      "observation": "sem_verbo_de_aquisicao_no_texto",
+      "source_record_id": "https://www.demarest.com.br/decisao-da-cvm-sobre-brf-e-marfrig-quais-informacoes-devem-ser-disponibilizadas-aos-acionistas-para-uma-assembleia-de-combinacao-de-negocios/"
+     }
+    ]
+   }
   },
   "https://expansion.mx/empresas/2025/11/10/asi-logro-aeromexico-salir-de-la-quiebra-y-cotizar-en-bolsa": {
    "title": "De tocar fondo a recuperar el vuelo: Así logró Aeroméxico salir de la quiebra y volver a cotizar en Bolsa",
@@ -5294,9 +5441,7 @@
     "rating_elevado"
    ],
    "events_by_company": {
-    "PRIO": [
-     "rating_elevado"
-    ]
+    "PRIO": []
    },
    "mention_roles": {
     "PRIO": {
@@ -5307,10 +5452,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "PRIO"
    ],
-   "context_companies": [],
    "corroborations": [
     {
      "source": "Money Times",
@@ -5389,7 +5534,30 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.623297+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.623297+00:00",
+   "informational_events_by_company": {
+    "PRIO": [
+     {
+      "company": "PRIO",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "PRIO",
+      "monitored_company": "PRIO",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "S&P eleva rating da Prio (PRIO3)",
+      "url": "https://financenews.com.br/2025/11/sp-eleva-rating-da-prio-prio3/",
+      "pub_ts": 1763020800,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://financenews.com.br/2025/11/sp-eleva-rating-da-prio-prio3/"
+     }
+    ]
+   }
   },
   "https://br.advfn.com/jornal/2025/11/s-amp-p-eleva-rating-da-prio-e-projeta-producao-recorde": {
    "title": "S&P eleva rating da Prio e projeta produção recorde",
@@ -5407,9 +5575,7 @@
     "rating_elevado"
    ],
    "events_by_company": {
-    "PRIO": [
-     "rating_elevado"
-    ]
+    "PRIO": []
    },
    "mention_roles": {
     "PRIO": {
@@ -5420,10 +5586,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "PRIO"
    ],
-   "context_companies": [],
    "corroborations": [
     {
      "source": "Money Times",
@@ -5463,7 +5629,30 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.623453+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.623453+00:00",
+   "informational_events_by_company": {
+    "PRIO": [
+     {
+      "company": "PRIO",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "PRIO",
+      "monitored_company": "PRIO",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "S&P eleva rating da Prio e projeta produção recorde",
+      "url": "https://br.advfn.com/jornal/2025/11/s-amp-p-eleva-rating-da-prio-e-projeta-producao-recorde",
+      "pub_ts": 1763107200,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://br.advfn.com/jornal/2025/11/s-amp-p-eleva-rating-da-prio-e-projeta-producao-recorde"
+     }
+    ]
+   }
   },
   "https://www.infomoney.com.br/mercados/axia-axia3-ex-eletrobras-aprova-emissao-de-debentures-no-valor-de-r-3-bi/": {
    "title": "Axia (AXIA3), ex-Eletrobras, aprova emissão de debêntures no valor de R$ 3 bi",
@@ -5552,12 +5741,11 @@
     "PRIO"
    ],
    "event_ids": [
+    "ma",
     "rating_elevado"
    ],
    "events_by_company": {
-    "PRIO": [
-     "rating_elevado"
-    ]
+    "PRIO": []
    },
    "mention_roles": {
     "PRIO": {
@@ -5568,34 +5756,12 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
-    "PRIO"
-   ],
+   "companies_attributed": [],
    "context_companies": [
     "PRIO"
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "PRIO": [
-     {
-      "event_id": "ma",
-      "event_label": "integracao pos aquisicao",
-      "subject_company": "PRIO",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "integracao",
-      "direction": "positiva",
-      "scoreable": false,
-      "event_id_corrigido": "integracao_pos_aquisicao",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "contexto_pos_aquisicao_nao_e_nova_ocorrencia"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "PRIO",
@@ -5603,7 +5769,9 @@
      "event_id_corrigido": "integracao_pos_aquisicao",
      "regra": "R_MA_OBJETO_ESCOPO",
      "motivo": "contexto_pos_aquisicao_nao_e_nova_ocorrencia",
-     "subject_company": "PRIO"
+     "subject_company": "PRIO",
+     "family_secondary": true,
+     "primary_event_id": "rating_elevado"
     }
    ],
    "event_assessments": [
@@ -5615,7 +5783,7 @@
      "actor_company": "",
      "affected_company": "",
      "transaction_object": "indefinido",
-     "transaction_scope": "indefinido",
+     "transaction_scope": "historico_pos_aquisicao",
      "transaction_role": "",
      "event_phase": "integracao",
      "event_scope": "direto",
@@ -5628,7 +5796,9 @@
      "scoreable": false,
      "rejection_reason": "contexto_pos_aquisicao_nao_e_nova_ocorrencia",
      "legal_status": "integracao",
-     "confirmation_status": "indefinido"
+     "confirmation_status": "indefinido",
+     "family_secondary": true,
+     "primary_event_id": "rating_elevado"
     },
     {
      "company": "PRIO",
@@ -5638,7 +5808,7 @@
      "actor_company": "",
      "affected_company": "",
      "transaction_object": "indefinido",
-     "transaction_scope": "indefinido",
+     "transaction_scope": "historico_pos_aquisicao",
      "transaction_role": "",
      "event_phase": "integracao",
      "event_scope": "direto",
@@ -5671,7 +5841,30 @@
    "link_label": "Abrir notícia →",
    "last_checked_at": "2026-07-31T03:04:35.623745+00:00",
    "corroborations": [],
-   "corrob_sources": []
+   "corrob_sources": [],
+   "informational_events_by_company": {
+    "PRIO": [
+     {
+      "company": "PRIO",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "PRIO",
+      "monitored_company": "PRIO",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Prio (PRIO3): S&P Global eleva nota de crédito da petrolífera após aquisição de Peregrino",
+      "url": "https://www.moneytimes.com.br/prio-prio3-sp-global-eleva-nota-de-credito-da-petrolifera-apos-aquisicao-de-peregrino-lmrs/",
+      "pub_ts": 1763107200,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://www.moneytimes.com.br/prio-prio3-sp-global-eleva-nota-de-credito-da-petrolifera-apos-aquisicao-de-peregrino-lmrs/"
+     }
+    ]
+   }
   },
   "https://www.moneytimes.com.br/eneva-enev3-anuncia-compra-de-participacoes-em-termicas-do-btg-e-follow-on-bilionario-vinp/": {
    "title": "Eneva (ENEV3) anuncia compra de térmicas do BTG e follow on de até R$ 4,2 bilhões",
@@ -6049,7 +6242,9 @@
    "companies": [
     "Grupo Security"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Grupo Security": []
    },
@@ -6070,26 +6265,6 @@
    "cap_iso": "2026-07-29 14:14",
    "corroborations": [],
    "corrob_sources": [],
-   "context_events_by_company": {
-    "Grupo Security": [
-     {
-      "event_id": "ma",
-      "event_label": "ma",
-      "subject_company": "Grupo Security",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "sem_verbo_de_aquisicao_no_texto"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Grupo Security",
@@ -6140,7 +6315,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.624053+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.624053+00:00",
+   "informational_events_by_company": {
+    "Grupo Security": [
+     {
+      "company": "Grupo Security",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Grupo Security",
+      "monitored_company": "Grupo Security",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "La fusión entre Banco BICE y Security toma forma: la 42 sucursales ya funcionan como una sola red para todos los clientes",
+      "url": "https://www.theclinic.cl/2025/11/24/la-fusion-entre-banco-bice-y-security-toma-forma-la-42-sucursales-ya-funcionan-como-una-sola-red-para-todos-los-clientes/",
+      "pub_ts": 1763971200,
+      "observation": "sem_verbo_de_aquisicao_no_texto",
+      "source_record_id": "https://www.theclinic.cl/2025/11/24/la-fusion-entre-banco-bice-y-security-toma-forma-la-42-sucursales-ya-funcionan-como-una-sola-red-para-todos-los-clientes/"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMijAFBVV95cUxQR2l2UnZpWVVrWU1rZHh6RVdyMC0yQUVfYnhDRFc3RGVYcDgxcjdEdXhuRTdIRnhJZW5qTHVWLVQ3MEROb25PVVpIMEdCY1c1T19GZXpQbmhpQl83Rm9neFNhVmg1M0tZSy0xR1FUb2NuX2p3M1dhNnBGNnFNWjRPbFZGTmtiNEpQaHMxcg?oc=5": {
    "title": "Ford loses $300 million fraud case in California",
@@ -6283,7 +6488,9 @@
    "companies": [
     "Grupo Security"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Grupo Security": []
    },
@@ -6302,26 +6509,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "Grupo Security": [
-     {
-      "event_id": "ma",
-      "event_label": "ma",
-      "subject_company": "Grupo Security",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "sem_verbo_de_aquisicao_no_texto"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Grupo Security",
@@ -6372,7 +6559,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.624212+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.624212+00:00",
+   "informational_events_by_company": {
+    "Grupo Security": [
+     {
+      "company": "Grupo Security",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Grupo Security",
+      "monitored_company": "Grupo Security",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Grupo Bice reporta resultados al tercer trimestre tras fusión con Security",
+      "url": "https://www.latercera.com/pulso/noticia/grupo-bice-reporta-resultados-al-tercer-trimestre-tras-fusion-con-security/",
+      "pub_ts": 1764316800,
+      "observation": "sem_verbo_de_aquisicao_no_texto",
+      "source_record_id": "https://www.latercera.com/pulso/noticia/grupo-bice-reporta-resultados-al-tercer-trimestre-tras-fusion-con-security/"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMic0FVX3lxTFBlbmdTTkcxWlJ3SDRId21aeTFSak53RDRKYmtyUjk0Uno4YXJodlRsYmtJUEZXTDg1a3JPTXFpdFF4MERWQzBWZ2RwQ1hYRUd6NW9hZkN4NF9qb3lnbHRhdW5XYzRoRjZTSEt0aDJBSGc2YWM?oc=5": {
    "title": "10 companies that bounced back after bankruptcy",
@@ -6452,7 +6669,9 @@
    "companies": [
     "Smart Fit"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Smart Fit": []
    },
@@ -6494,26 +6713,6 @@
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "corrob_sources": [],
-   "context_events_by_company": {
-    "Smart Fit": [
-     {
-      "event_id": "ma",
-      "event_label": "ma",
-      "subject_company": "Smart Fit",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "sem_verbo_de_aquisicao_no_texto"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Smart Fit",
@@ -6564,7 +6763,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.624366+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.624366+00:00",
+   "informational_events_by_company": {
+    "Smart Fit": [
+     {
+      "company": "Smart Fit",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Smart Fit",
+      "monitored_company": "Smart Fit",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Smart Fit faz novo exercício em M&A e fortalece presença no Centro-Oeste",
+      "url": "https://neofeed.com.br/negocios/smart-fit-faz-novo-exercicio-em-ma-e-fortalece-presenca-no-centro-oeste/",
+      "pub_ts": 1764662400,
+      "observation": "sem_verbo_de_aquisicao_no_texto",
+      "source_record_id": "https://neofeed.com.br/negocios/smart-fit-faz-novo-exercicio-em-ma-e-fortalece-presenca-no-centro-oeste/"
+     }
+    ]
+   }
   },
   "https://www.fiercehealthcare.com/providers/cvs-health-agrees-pay-378m-settle-fraud-allegations-over-insulin-pens": {
    "title": "CVS Health agrees to pay $37.8M to settle fraud allegations over insulin pens",
@@ -6578,7 +6807,9 @@
    "companies": [
     "CVS Health"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "fraude"
+   ],
    "events_by_company": {
     "CVS Health": []
    },
@@ -6597,26 +6828,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "CVS Health": [
-     {
-      "event_id": "fraude",
-      "event_label": "encerramento litigio",
-      "subject_company": "CVS Health",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "encerramento",
-      "direction": "mitigadora",
-      "scoreable": false,
-      "event_id_corrigido": "encerramento_litigio",
-      "attribution_rule": "R_FASE_JURIDICA_MITIGADORA",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "fase encerramento (desfecho, não nova acusação)"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "CVS Health",
@@ -6667,7 +6878,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.624443+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.624443+00:00",
+   "informational_events_by_company": {
+    "CVS Health": [
+     {
+      "company": "CVS Health",
+      "event_id": "encerramento_litigio",
+      "event_label": "encerramento litigio",
+      "subject_company": "CVS Health",
+      "monitored_company": "CVS Health",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "mitigadora",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "encerramento_litigio",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "desfecho_confirmado",
+      "attribution_rule": "R_FASE_JURIDICA_MITIGADORA",
+      "attribution_confidence": "media",
+      "title": "CVS Health agrees to pay $37.8M to settle fraud allegations over insulin pens",
+      "url": "https://www.fiercehealthcare.com/providers/cvs-health-agrees-pay-378m-settle-fraud-allegations-over-insulin-pens",
+      "pub_ts": 1764662400,
+      "observation": "fase encerramento (desfecho, não nova acusação)",
+      "source_record_id": "https://www.fiercehealthcare.com/providers/cvs-health-agrees-pay-378m-settle-fraud-allegations-over-insulin-pens"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMirwFBVV95cUxPLW9WWEhxa0ZTSVJleVlKbzY4RXFvMzZOcGhiQzhQd1RtRnhxWHdmVGIyT21ZNU9LSGtxTVFneTk2ckI1R0lTbFFDZlNKNDdqb2FNVkpCQjVaTTE0UTNOSTFBU2NGZ2NjVWtHUkV5VjJMbkpld1lEeTEwTXR3OTFKU2NUODJ3b2V3MlI0d0FOT1Z0empsQjhqeXpOQWotVmFMMnQ0WVBHQS1yVEQ3RTg4?oc=5": {
    "title": "Villemor Amaral Advogados assessora Energisa em aquisição da Lurean",
@@ -6833,7 +7074,9 @@
    "companies": [
     "Banco Davivienda"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Banco Davivienda": []
    },
@@ -6852,26 +7095,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "Banco Davivienda": [
-     {
-      "event_id": "ma",
-      "event_label": "ma",
-      "subject_company": "Banco Davivienda",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "sem_verbo_de_aquisicao_no_texto"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Banco Davivienda",
@@ -6924,7 +7147,37 @@
    "link_label": "Abrir notícia →",
    "last_checked_at": "2026-07-31T03:04:35.624677+00:00",
    "corroborations": [],
-   "corrob_sources": []
+   "corrob_sources": [],
+   "informational_events_by_company": {
+    "Banco Davivienda": [
+     {
+      "company": "Banco Davivienda",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Banco Davivienda",
+      "monitored_company": "Banco Davivienda",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Estafas por la fusión Davivienda y ScotiaBank: así delincuentes engañan a los clientes",
+      "url": "https://www.lafm.com.co/economia/estafas-se-aprovechan-de-la-fusion-entre-davivienda-y-scotia-bank-asi-aprovechan-para-enganar-385089",
+      "pub_ts": 1765612800,
+      "observation": "sem_verbo_de_aquisicao_no_texto",
+      "source_record_id": "https://www.lafm.com.co/economia/estafas-se-aprovechan-de-la-fusion-entre-davivienda-y-scotia-bank-asi-aprovechan-para-enganar-385089"
+     }
+    ]
+   }
   },
   "https://www.suno.com.br/noticias/fitch-rebaixa-rating-hapvida-hapv3-2026-mt/": {
    "title": "Hapvida (HAPV3): Fitch corta rating e liga o alerta para 2026",
@@ -7551,7 +7804,9 @@
    "companies": [
     "Cemig"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Cemig": []
    },
@@ -7656,26 +7911,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "Cemig": [
-     {
-      "event_id": "ma",
-      "event_label": "aquisicao capex",
-      "subject_company": "Cemig",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "aquisicao_capex",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "objeto_nao_empresarial:capex_ativo"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Cemig",
@@ -7726,7 +7961,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.625391+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.625391+00:00",
+   "informational_events_by_company": {
+    "Cemig": [
+     {
+      "company": "Cemig",
+      "event_id": "aquisicao_capex",
+      "event_label": "aquisicao capex",
+      "subject_company": "Cemig",
+      "monitored_company": "Cemig",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "aquisicao_capex",
+      "transaction_scope": "capex",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Controlada da Cemig (CMIG4) conclui aquisição de usinas fotovoltaicas por R$ 52,8 mi",
+      "url": "https://www.infomoney.com.br/mercados/controlada-da-cemig-cmig4-conclui-aquisicao-de-usinas-fotovoltaicas-por-r-528-mi/",
+      "pub_ts": 1766390400,
+      "observation": "objeto_nao_empresarial:capex_ativo",
+      "source_record_id": "https://www.infomoney.com.br/mercados/controlada-da-cemig-cmig4-conclui-aquisicao-de-usinas-fotovoltaicas-por-r-528-mi/"
+     }
+    ]
+   }
   },
   "https://www.revistaceara.com.br/crise-na-hapvida-derruba-jorge-pinheiro-do-comando-novo-ceo-e-anunciado/": {
    "title": "Crise na Hapvida derruba Jorge Pinheiro do comando; novo CEO é anunciado",
@@ -8687,7 +8952,9 @@
    "companies": [
     "BTG Pactual"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "BTG Pactual": []
    },
@@ -8706,26 +8973,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "BTG Pactual": [
-     {
-      "event_id": "ma",
-      "event_label": "reorganizacao societaria interna",
-      "subject_company": "BTG Pactual",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "intragrupo",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "reorganizacao_societaria_interna",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "reorganizacao_intragrupo_sob_controle_comum"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "BTG Pactual",
@@ -8776,7 +9023,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.626874+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.626874+00:00",
+   "informational_events_by_company": {
+    "BTG Pactual": [
+     {
+      "company": "BTG Pactual",
+      "event_id": "reorganizacao_societaria_interna",
+      "event_label": "reorganizacao societaria interna",
+      "subject_company": "BTG Pactual",
+      "monitored_company": "BTG Pactual",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "reorganizacao_societaria_interna",
+      "transaction_scope": "intragrupo",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "[Fato Relevante] BTG Pactual: Reorganização Societária",
+      "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1469758&numSequencia=994464&numVersao=1",
+      "pub_ts": 1769126400,
+      "observation": "reorganizacao_intragrupo_sob_controle_comum",
+      "source_record_id": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1469758&numSequencia=994464&numVersao=1"
+     }
+    ]
+   }
   },
   "https://www.infomoney.com.br/mercados/copel-realiza-bookbuilding-da-11a-emissao-de-debentures-no-valor-de-r-2-bilhoes/": {
    "title": "Copel realiza bookbuilding da 11ª emissão de debêntures no valor de R$ 2 bilhões",
@@ -8890,9 +9167,7 @@
     "rating_elevado"
    ],
    "events_by_company": {
-    "PRIO": [
-     "rating_elevado"
-    ]
+    "PRIO": []
    },
    "mention_roles": {
     "PRIO": {
@@ -8903,10 +9178,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "PRIO"
    ],
-   "context_companies": [],
    "corroborations": [
     {
      "source": "Money Times",
@@ -9009,7 +9284,30 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.627117+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.627117+00:00",
+   "informational_events_by_company": {
+    "PRIO": [
+     {
+      "company": "PRIO",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "PRIO",
+      "monitored_company": "PRIO",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Moody’s eleva nota de crédito da Prio (PRIO3) após compra de Peregrino e reforço de produção",
+      "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/moodys-eleva-rating-prio-prio3-compra-peregrino/",
+      "pub_ts": 1769414400,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/moodys-eleva-rating-prio-prio3-compra-peregrino/"
+     }
+    ]
+   }
   },
   "https://www.infomoney.com.br/mercados/eneva-enev3-anuncia-14a-emissao-de-debentures-no-valor-de-r-2-bilhoes/": {
    "title": "Eneva (ENEV3) anuncia 14ª emissão de debêntures no valor de R$ 2 bilhões",
@@ -9357,9 +9655,7 @@
     "outlook_positivo"
    ],
    "events_by_company": {
-    "Suzano": [
-     "outlook_positivo"
-    ]
+    "Suzano": []
    },
    "mention_roles": {
     "Suzano": {
@@ -9370,10 +9666,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Suzano"
    ],
-   "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "corroborations": [],
@@ -9392,7 +9688,30 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.627756+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.627756+00:00",
+   "informational_events_by_company": {
+    "Suzano": [
+     {
+      "company": "Suzano",
+      "event_id": "outlook_positivo",
+      "event_label": "Outlook positivo",
+      "subject_company": "Suzano",
+      "monitored_company": "Suzano",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Moody's reafirma rating e perspectiva positiva da nota da Suzano",
+      "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/moodys-ratings-baa3-nota-suzano-papel-celulose-ebitda/",
+      "pub_ts": 1769587200,
+      "observation": "Evento direto 'Outlook positivo' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/moodys-ratings-baa3-nota-suzano-papel-celulose-ebitda/"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMisAFBVV95cUxPc2hlU3g3OHZxUk9CWi1kVDlHOHZHRVAzX2RVbm5yM2ZyVkpNbEstOFRkcVlHVHgyOTA2WE42WnhRUDF1WmpqNWtSQl92LWdHT2FtNUhVMmRiUFUtLS1qYUUtT1F5dFBDU1pTaUR1a2FZWUpvSGZTbXlfSW1PaFhwZk41SVRyWHlZdmROYWdXSmxwOGNxdVI3WldkcUtlRjhFeS1weGJjc002OEVxb3VRWA?oc=5": {
    "title": "Prudential's Japan life insurance unit faces probe over employee fraud",
@@ -9816,7 +10135,9 @@
    "companies": [
     "CPFL Energia"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "CPFL Energia": []
    },
@@ -9835,26 +10156,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "CPFL Energia": [
-     {
-      "event_id": "ma",
-      "event_label": "reorganizacao societaria interna",
-      "subject_company": "CPFL Energia",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "intragrupo",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "reorganizacao_societaria_interna",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "reorganizacao_intragrupo_sob_controle_comum"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "CPFL Energia",
@@ -9905,7 +10206,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.628401+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.628401+00:00",
+   "informational_events_by_company": {
+    "CPFL Energia": [
+     {
+      "company": "CPFL Energia",
+      "event_id": "reorganizacao_societaria_interna",
+      "event_label": "reorganizacao societaria interna",
+      "subject_company": "CPFL Energia",
+      "monitored_company": "CPFL Energia",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "reorganizacao_societaria_interna",
+      "transaction_scope": "intragrupo",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "[Fato Relevante] CPFL Energia: Reorganização Societária",
+      "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1472129&numSequencia=996835&numVersao=1",
+      "pub_ts": 1769990400,
+      "observation": "reorganizacao_intragrupo_sob_controle_comum",
+      "source_record_id": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1472129&numSequencia=996835&numVersao=1"
+     }
+    ]
+   }
   },
   "https://cenarioenergia.com.br/2026/02/02/fitch-atribui-rating-aaabra-a-14a-emissao-de-debentures-da-eneva-e-reforca-solidez-financeira-da-companhia/": {
    "title": "Fitch atribui rating AAA(bra) à 14ª emissão de debêntures da Eneva e reforça solidez financeira da companhia",
@@ -10940,7 +11271,7 @@
    "pub_iso": "2026-02-10 05:00",
    "language": "pt",
    "companies": [
-    "Mercado (geral)"
+    "Usiminas"
    ],
    "event_ids": [
     "ma"
@@ -10961,7 +11292,25 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.629746+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.629746+00:00",
+   "mention_roles": {
+    "Usiminas": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "encerramento",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Usiminas": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "Usiminas"
+   ],
+   "context_companies": []
   },
   "https://news.google.com/rss/articles/CBMikwFBVV95cUxOQlBwM09HME9QdjhDcGRldkJWMy1oMURoeVRreE5PZkxnb3M0UGFORTJjOWRCcXg4Um8xM1IxTjd5M3ZIb0w4dDItODN4dEhiZ3JpUS1PN2VXOU5IZEh4U1RUWThFVVdfNi1XTXdaLURsakM4VEdxLWEyaTd4SXlXYU85eG9vNVg3UlhYRy0wRGVlWG_SAZgBQVVfeXFMT3BWYnBjNlMwNzdmWmptb00tb1lXanNzRkVqY3hydE5Qam9WUEJhZzRLc0xRTzl5VndjS05xWDFuUTVPMEh5QzBoVkY3WFNvVG50MzdwUEdiSGY4M2xlNmo4aGpNSHZUQlEwVDczM183a194anU2aVlGUzcyb3RhaXNldnhkRERNbnFtTjdrTGxsV0twc2VoOFY?oc=5": {
    "title": "Empresa chilena de lácteos solicita su quiebra: vendía a grandes supermercados",
@@ -11519,7 +11868,9 @@
    "companies": [
     "Vale"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Vale": []
    },
@@ -11538,26 +11889,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "Vale": [
-     {
-      "event_id": "ma",
-      "event_label": "ma",
-      "subject_company": "Vale",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "sem_verbo_de_aquisicao_no_texto"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Vale",
@@ -11608,7 +11939,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.630337+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.630337+00:00",
+   "informational_events_by_company": {
+    "Vale": [
+     {
+      "company": "Vale",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Vale",
+      "monitored_company": "Vale",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Vale aposta em reserva própria para crescer em cobre. ‘Não precisamos de M&A’, diz CEO",
+      "url": "https://www.bloomberglinea.com.br/negocios/vale-aposta-em-reserva-propria-para-crescer-em-cobre-nao-precisamos-de-ma-diz-ceo/",
+      "pub_ts": 1770969600,
+      "observation": "sem_verbo_de_aquisicao_no_texto",
+      "source_record_id": "https://www.bloomberglinea.com.br/negocios/vale-aposta-em-reserva-propria-para-crescer-em-cobre-nao-precisamos-de-ma-diz-ceo/"
+     }
+    ]
+   }
   },
   "https://www1.folha.uol.com.br/colunas/painelsa/2026/02/vazamento-sobre-calote-de-r-36-bi-do-banco-do-brasil-esta-na-mira-da-cvm.shtml": {
    "title": "Vazamento sobre calote de R$ 3,6 bi do Banco do Brasil está na mira da CVM",
@@ -12241,7 +12602,9 @@
    "companies": [
     "Gerdau"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Gerdau": []
    },
@@ -12260,26 +12623,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "Gerdau": [
-     {
-      "event_id": "ma",
-      "event_label": "recompra acoes",
-      "subject_company": "Gerdau",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "positiva",
-      "scoreable": false,
-      "event_id_corrigido": "recompra_acoes",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "recompra_de_acoes_proprias_nao_e_ma"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Gerdau",
@@ -12330,7 +12673,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.631054+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.631054+00:00",
+   "informational_events_by_company": {
+    "Gerdau": [
+     {
+      "company": "Gerdau",
+      "event_id": "recompra_acoes",
+      "event_label": "recompra acoes",
+      "subject_company": "Gerdau",
+      "monitored_company": "Gerdau",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "recompra_acoes",
+      "transaction_scope": "capital_proprio",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "[Fato Relevante] Gerdau: Aquisição de Ações de Emissão da Própria Companhia||Cancelamento de Ações de Emissão da Própria Companhia",
+      "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1480641&numSequencia=1005347&numVersao=1",
+      "pub_ts": 1771804800,
+      "observation": "recompra_de_acoes_proprias_nao_e_ma",
+      "source_record_id": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1480641&numSequencia=1005347&numVersao=1"
+     }
+    ]
+   }
   },
   "https://www.bloomberg.com/news/articles/2026-02-23/tras-la-quiebra-latam-se-dispara-un-76-y-domina-entre-aerolineas-rivales": {
    "title": "Tras la quiebra, Latam se dispara un 76% y domina entre aerolíneas rivales",
@@ -14078,7 +14451,9 @@
    "companies": [
     "Sabesp"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Sabesp": []
    },
@@ -14097,26 +14472,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "Sabesp": [
-     {
-      "event_id": "ma",
-      "event_label": "ma",
-      "subject_company": "Sabesp",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "objeto_financeiro_nao_empresarial"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Sabesp",
@@ -14167,7 +14522,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.633454+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.633454+00:00",
+   "informational_events_by_company": {
+    "Sabesp": [
+     {
+      "company": "Sabesp",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Sabesp",
+      "monitored_company": "Sabesp",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Sabesp Anuncia Aquisição de Cotas do Oceania Fundo de Investimento",
+      "url": "https://www.clubefii.com.br/noticias/acoes/sabesp-anuncia-aquisicao-de-cotas-do-oceania-fundo-de-investimento-por-r-171-milhoes",
+      "pub_ts": 1773385200,
+      "observation": "objeto_financeiro_nao_empresarial",
+      "source_record_id": "https://www.clubefii.com.br/noticias/acoes/sabesp-anuncia-aquisicao-de-cotas-do-oceania-fundo-de-investimento-por-r-171-milhoes"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMitAFBVV95cUxOSWdUdjdJN05uWWplN0dBNEJhcEZYVXRTekF1cTAzemlOVTY1X0wwSmEwX2ZxQll2Q2lnMFRYbnA3VG1UOUpuSFB5X0ZzMjEyY0JpWlNsYWJqQ2d5SFNuanNiOEhONEJKMVZocHlmRFJiWlplNmlTTWdHUHRlY1phRkpTUXBWXzhCZ3p4TWlIbnpqWWhILXllRUNPZ3Nla0UxR0VPaExueUs4X1kzS2VlblZzVGk?oc=5": {
    "title": "Changes are imminent in semiconductor equipment! Applied Materials and Lam Research are targeting Besi, aiming to acquire the critical 'hybrid bonding' technology that is vital for AI and memory.",
@@ -14838,7 +15223,7 @@
    "pub_iso": "2026-03-20 04:00",
    "language": "pt",
    "companies": [
-    "Mercado (geral)"
+    "Santander Brasil"
    ],
    "event_ids": [
     "troca_ceo"
@@ -14859,7 +15244,25 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.634121+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.634121+00:00",
+   "mention_roles": {
+    "Santander Brasil": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Santander Brasil": [
+     "troca_ceo"
+    ]
+   },
+   "companies_attributed": [
+    "Santander Brasil"
+   ],
+   "context_companies": []
   },
   "https://financenews.com.br/2026/03/s-perspectiva-negativa/": {
    "title": "S&P rebaixa rating da Tupy; perspectiva negativa",
@@ -15063,7 +15466,9 @@
    "companies": [
     "Embraer"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Embraer": []
    },
@@ -15082,26 +15487,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "Embraer": [
-     {
-      "event_id": "ma",
-      "event_label": "aquisicao capex",
-      "subject_company": "Embraer",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "aquisicao_capex",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "objeto_nao_empresarial:aeronaves"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Embraer",
@@ -15152,7 +15537,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.634305+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.634305+00:00",
+   "informational_events_by_company": {
+    "Embraer": [
+     {
+      "company": "Embraer",
+      "event_id": "aquisicao_capex",
+      "event_label": "aquisicao capex",
+      "subject_company": "Embraer",
+      "monitored_company": "Embraer",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "aquisicao_capex",
+      "transaction_scope": "capex",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Embraer firma acordo com a Finnair para aquisição de até 46 jatos Embraer E195-E2",
+      "url": "https://aeroin.net/embraer-firma-acordo-com-a-finnair-para-aquisicao-de-ate-46-jatos-embraer-e195-e2/",
+      "pub_ts": 1774249200,
+      "observation": "objeto_nao_empresarial:aeronaves",
+      "source_record_id": "https://aeroin.net/embraer-firma-acordo-com-a-finnair-para-aquisicao-de-ate-46-jatos-embraer-e195-e2/"
+     }
+    ]
+   }
   },
   "https://br.advfn.com/jornal/2026/03/santander-brasil-reforca-continuidade-estrategica-com-troca-de-ceo-e-mira-roe-acima-de-20-ate-2028": {
    "title": "Santander Brasil reforça continuidade estratégica com troca de CEO e mira ROE acima de 20% até 2028",
@@ -15287,9 +15702,7 @@
     "outlook_positivo"
    ],
    "events_by_company": {
-    "Klabin": [
-     "outlook_positivo"
-    ]
+    "Klabin": []
    },
    "mention_roles": {
     "Klabin": {
@@ -15300,10 +15713,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Klabin"
    ],
-   "context_companies": [],
    "corroborations": [
     {
      "source": "Money Times",
@@ -15343,7 +15756,30 @@
    "resolution_error": "destino final não é URL direta válida",
    "link_render_anchor": false,
    "link_label": "Link em verificação",
-   "last_checked_at": "2026-07-31T05:45:24.452271+00:00"
+   "last_checked_at": "2026-07-31T05:45:24.452271+00:00",
+   "informational_events_by_company": {
+    "Klabin": [
+     {
+      "company": "Klabin",
+      "event_id": "outlook_positivo",
+      "event_label": "Outlook positivo",
+      "subject_company": "Klabin",
+      "monitored_company": "Klabin",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Klabin (KLBN11) registra rating BB+ da Fitch com perspectiva positiva",
+      "url": "https://visnoinvest.com.br/news/12291/klabin-klbn11-registra-rating-bb-da-fitch-com-perspectiva-positiva",
+      "pub_ts": 1774422000,
+      "observation": "Evento direto 'Outlook positivo' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://visnoinvest.com.br/news/12291/klabin-klbn11-registra-rating-bb-da-fitch-com-perspectiva-positiva"
+     }
+    ]
+   }
   },
   "https://www.moneytimes.com.br/klabin-klbn11-tem-perspectiva-elevada-para-positiva-pela-fitch-com-desalavancagem-e-forte-geracao-de-caixa-pads/": {
    "title": "Klabin (KLBN11) tem perspectiva elevada para positiva pela Fitch, com desalavancagem e forte geração de caixa",
@@ -15361,9 +15797,7 @@
     "outlook_positivo"
    ],
    "events_by_company": {
-    "Klabin": [
-     "outlook_positivo"
-    ]
+    "Klabin": []
    },
    "mention_roles": {
     "Klabin": {
@@ -15374,10 +15808,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Klabin"
    ],
-   "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "original_url": "https://www.moneytimes.com.br/klabin-klbn11-tem-perspectiva-elevada-para-positiva-pela-fitch-com-desalavancagem-e-forte-geracao-de-caixa-pads/",
@@ -15396,7 +15830,30 @@
    "link_label": "Abrir notícia →",
    "last_checked_at": "2026-07-31T03:04:35.634511+00:00",
    "corroborations": [],
-   "corrob_sources": []
+   "corrob_sources": [],
+   "informational_events_by_company": {
+    "Klabin": [
+     {
+      "company": "Klabin",
+      "event_id": "outlook_positivo",
+      "event_label": "Outlook positivo",
+      "subject_company": "Klabin",
+      "monitored_company": "Klabin",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Klabin (KLBN11) tem perspectiva elevada para positiva pela Fitch, com desalavancagem e forte geração de caixa",
+      "url": "https://www.moneytimes.com.br/klabin-klbn11-tem-perspectiva-elevada-para-positiva-pela-fitch-com-desalavancagem-e-forte-geracao-de-caixa-pads/",
+      "pub_ts": 1774422000,
+      "observation": "Evento direto 'Outlook positivo' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://www.moneytimes.com.br/klabin-klbn11-tem-perspectiva-elevada-para-positiva-pela-fitch-com-desalavancagem-e-forte-geracao-de-caixa-pads/"
+     }
+    ]
+   }
   },
   "https://www.tradingview.com/news/tradingview:4e3744b222f23:0-janus-henderson-agrees-52-share-all-cash-merger-offer-delivering-upper-end-intrinsic-value/": {
    "title": "Janus Henderson agrees $52/share all-cash merger offer delivering upper-end intrinsic value",
@@ -15612,7 +16069,9 @@
    "companies": [
     "Dasa"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Dasa": []
    },
@@ -15631,26 +16090,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "Dasa": [
-     {
-      "event_id": "ma",
-      "event_label": "reorganizacao societaria interna",
-      "subject_company": "Dasa",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "intragrupo",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "reorganizacao_societaria_interna",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "reorganizacao_intragrupo_sob_controle_comum"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Dasa",
@@ -15701,7 +16140,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.634769+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.634769+00:00",
+   "informational_events_by_company": {
+    "Dasa": [
+     {
+      "company": "Dasa",
+      "event_id": "reorganizacao_societaria_interna",
+      "event_label": "reorganizacao societaria interna",
+      "subject_company": "Dasa",
+      "monitored_company": "Dasa",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "reorganizacao_societaria_interna",
+      "transaction_scope": "intragrupo",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "[Fato Relevante] Dasa: Reorganização Societária",
+      "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1497406&numSequencia=1022112&numVersao=1",
+      "pub_ts": 1774569600,
+      "observation": "reorganizacao_intragrupo_sob_controle_comum",
+      "source_record_id": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1497406&numSequencia=1022112&numVersao=1"
+     }
+    ]
+   }
   },
   "https://www.reuters.com/business/finance/citigroup-said-weigh-buying-us-regional-bank-bloomberg-news-reports-2026-03-27/": {
    "title": "Citigroup dismisses report of potential US regional bank acquisition",
@@ -16487,7 +16956,9 @@
    "companies": [
     "Halliburton"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Halliburton": []
    },
@@ -16508,26 +16979,6 @@
    "cap_iso": "2026-07-29 14:14",
    "corroborations": [],
    "corrob_sources": [],
-   "context_events_by_company": {
-    "Halliburton": [
-     {
-      "event_id": "ma",
-      "event_label": "ma",
-      "subject_company": "Halliburton",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "sem_verbo_de_aquisicao_no_texto"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Halliburton",
@@ -16578,7 +17029,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.635682+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.635682+00:00",
+   "informational_events_by_company": {
+    "Halliburton": [
+     {
+      "company": "Halliburton",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Halliburton",
+      "monitored_company": "Halliburton",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Halliburton Buys Sekal from Sumitomo as Oil, Gas Service Company M&A Continues",
+      "url": "https://www.hartenergy.com/energy-market-transactions/acquisitions-and-divestitures/he-halliburton-ofs-ma/",
+      "pub_ts": 1775026800,
+      "observation": "sem_verbo_de_aquisicao_no_texto",
+      "source_record_id": "https://www.hartenergy.com/energy-market-transactions/acquisitions-and-divestitures/he-halliburton-ofs-ma/"
+     }
+    ]
+   }
   },
   "https://economia.uol.com.br/colunas/graciliano-rocha/2026/04/01/agencia-de-rating-rebaixa-nota-de-credito-da-aegea-gigante-do-saneamento.htm": {
    "title": "Graciliano Rocha: Agência de rating rebaixa nota de crédito da Aegea, gigante do saneamento",
@@ -16643,7 +17124,9 @@
    "companies": [
     "Energisa"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Energisa": []
    },
@@ -16662,26 +17145,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "Energisa": [
-     {
-      "event_id": "ma",
-      "event_label": "reorganizacao societaria interna",
-      "subject_company": "Energisa",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "intragrupo",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "reorganizacao_societaria_interna",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "reorganizacao_intragrupo_sob_controle_comum"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Energisa",
@@ -16732,7 +17195,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.635813+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.635813+00:00",
+   "informational_events_by_company": {
+    "Energisa": [
+     {
+      "company": "Energisa",
+      "event_id": "reorganizacao_societaria_interna",
+      "event_label": "reorganizacao societaria interna",
+      "subject_company": "Energisa",
+      "monitored_company": "Energisa",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "reorganizacao_societaria_interna",
+      "transaction_scope": "intragrupo",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "[Fato Relevante] Energisa: Reorganização Societária",
+      "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1500341&numSequencia=1025047&numVersao=2",
+      "pub_ts": 1775088000,
+      "observation": "reorganizacao_intragrupo_sob_controle_comum",
+      "source_record_id": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1500341&numSequencia=1025047&numVersao=2"
+     }
+    ]
+   }
   },
   "https://finance.yahoo.com/markets/stocks/articles/fitch-ratings-upgrades-term-issuer-134117597.html": {
    "title": "Fitch Ratings Upgrades Term Issuer Default Rating on British American Tobacco (BTI)",
@@ -17380,7 +17873,9 @@
    "companies": [
     "BTG Pactual"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "BTG Pactual": []
    },
@@ -17399,26 +17894,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "BTG Pactual": [
-     {
-      "event_id": "ma",
-      "event_label": "rumor ma",
-      "subject_company": "BTG Pactual",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "rumor",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "rumor_ma",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "rumor_ou_oferta_nao_confirmada"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "BTG Pactual",
@@ -17471,7 +17946,37 @@
    "link_label": "Abrir notícia →",
    "last_checked_at": "2026-07-31T03:04:35.636592+00:00",
    "corroborations": [],
-   "corrob_sources": []
+   "corrob_sources": [],
+   "informational_events_by_company": {
+    "BTG Pactual": [
+     {
+      "company": "BTG Pactual",
+      "event_id": "rumor_ma",
+      "event_label": "rumor ma",
+      "subject_company": "BTG Pactual",
+      "monitored_company": "BTG Pactual",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "rumor_ma",
+      "transaction_scope": "externo",
+      "confirmation_status": "nao_confirmada",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "BTG Pactual mira aquisição do Banco Digimais e acelera expansão no banking digital",
+      "url": "https://br.advfn.com/jornal/2026/04/btg-pactual-mira-aquisicao-do-banco-digimais-e-acelera-expansao-no-banking-digital",
+      "pub_ts": 1775718000,
+      "observation": "rumor_ou_oferta_nao_confirmada",
+      "source_record_id": "https://br.advfn.com/jornal/2026/04/btg-pactual-mira-aquisicao-do-banco-digimais-e-acelera-expansao-no-banking-digital"
+     }
+    ]
+   }
   },
   "https://www.valoraanalitik.com/rebaja-de-calificacion-de-colombia-a-manos-de-sp-tambien-arrastro-a-ecopetrol/": {
    "title": "Rebaja de calificación de Colombia a manos de S&P también arrastró a Ecopetrol",
@@ -18616,7 +19121,9 @@
    "companies": [
     "Grupo México"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Grupo México": []
    },
@@ -18637,26 +19144,6 @@
    "cap_iso": "2026-07-29 14:14",
    "corroborations": [],
    "corrob_sources": [],
-   "context_events_by_company": {
-    "Grupo México": [
-     {
-      "event_id": "ma",
-      "event_label": "ma",
-      "subject_company": "Grupo México",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "sem_verbo_de_aquisicao_no_texto"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Grupo México",
@@ -18707,7 +19194,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.638122+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.638122+00:00",
+   "informational_events_by_company": {
+    "Grupo México": [
+     {
+      "company": "Grupo México",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Grupo México",
+      "monitored_company": "Grupo México",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Grupo México y BlackRock crean gigante de la electricidad en México: ¿Qué sabemos de la fusión?",
+      "url": "https://www.elfinanciero.com.mx/economia/2026/04/27/grupo-mexico-y-blackrock-crean-gigante-de-la-electricidad-en-mexico-que-sabemos-de-la-fusion/",
+      "pub_ts": 1777273200,
+      "observation": "sem_verbo_de_aquisicao_no_texto",
+      "source_record_id": "https://www.elfinanciero.com.mx/economia/2026/04/27/grupo-mexico-y-blackrock-crean-gigante-de-la-electricidad-en-mexico-que-sabemos-de-la-fusion/"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMicEFVX3lxTE1LdUVnQlhkS3VTRUtTa25nd1FyZ2dLbHkzRlpITEVTb0J0eVpsejRVUWlkMDFSM2Q3NS1BdC1FMjJMLWxLZ2RwUzN4RTNWdjZObmZPR25rN2kyNUE3bTJrU293ZXVIdUtEc1pDVkNTWUU?oc=5": {
    "title": "Guia de FIIs: BTLG11 anuncia nova emissão de cotas no valor de R$ 1,6 bilhão",
@@ -19722,12 +20239,8 @@
     "recomendacao_positiva"
    ],
    "events_by_company": {
-    "BTG Pactual": [
-     "recomendacao_positiva"
-    ],
-    "JBS": [
-     "recomendacao_positiva"
-    ]
+    "BTG Pactual": [],
+    "JBS": []
    },
    "mention_roles": {
     "BTG Pactual": {
@@ -19745,11 +20258,11 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "BTG Pactual",
     "JBS"
    ],
-   "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "original_url": "https://br.investing.com",
@@ -19766,7 +20279,51 @@
    "resolution_error": "",
    "link_render_anchor": false,
    "link_label": "Link indisponível",
-   "last_checked_at": ""
+   "last_checked_at": "",
+   "informational_events_by_company": {
+    "BTG Pactual": [
+     {
+      "company": "BTG Pactual",
+      "event_id": "recomendacao_positiva",
+      "event_label": "Recomendação elevada",
+      "subject_company": "BTG Pactual",
+      "monitored_company": "BTG Pactual",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "JBS (JBSS32): mesmo com resultado fraco nos EUA, BTG mantém recomendação de compra",
+      "url": "https://br.investing.com",
+      "pub_ts": 1778655600,
+      "observation": "Evento direto 'Recomendação elevada' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://br.investing.com"
+     }
+    ],
+    "JBS": [
+     {
+      "company": "JBS",
+      "event_id": "recomendacao_positiva",
+      "event_label": "Recomendação elevada",
+      "subject_company": "JBS",
+      "monitored_company": "JBS",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "JBS (JBSS32): mesmo com resultado fraco nos EUA, BTG mantém recomendação de compra",
+      "url": "https://br.investing.com",
+      "pub_ts": 1778655600,
+      "observation": "Evento direto 'Recomendação elevada' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://br.investing.com"
+     }
+    ]
+   }
   },
   "https://investidor10.com.br/noticias/banco-do-brasil-bbas3-reduz-guidance-e-preocupa-mercado-apos-balanco-120384/": {
    "title": "Banco do Brasil (BBAS3) reduz guidance e preocupa mercado após balanço",
@@ -20781,7 +21338,7 @@
    "pub_iso": "2026-05-21 04:00",
    "language": "pt",
    "companies": [
-    "Mercado (geral)"
+    "Energisa"
    ],
    "event_ids": [
     "ma"
@@ -20802,7 +21359,25 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.640414+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.640414+00:00",
+   "mention_roles": {
+    "Energisa": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "anuncio",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Energisa": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "Energisa"
+   ],
+   "context_companies": []
   },
   "https://agfeed.com.br/negocios/justica-do-mato-grosso-mantem-aquisicao-de-fazenda-bilionaria-por-banco-do-btg/": {
    "title": "Justiça do Mato Grosso mantém aquisição de fazenda bilionária por banco do BTG",
@@ -21194,7 +21769,9 @@
    "companies": [
     "BTG Pactual"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "falencia"
+   ],
    "events_by_company": {
     "BTG Pactual": []
    },
@@ -21889,7 +22466,9 @@
    "companies": [
     "Santander Brasil"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Santander Brasil": []
    },
@@ -21908,26 +22487,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "Santander Brasil": [
-     {
-      "event_id": "ma",
-      "event_label": "reorganizacao societaria interna",
-      "subject_company": "Santander Brasil",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "intragrupo",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "reorganizacao_societaria_interna",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "reorganizacao_intragrupo_sob_controle_comum"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Santander Brasil",
@@ -21978,7 +22537,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.641720+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.641720+00:00",
+   "informational_events_by_company": {
+    "Santander Brasil": [
+     {
+      "company": "Santander Brasil",
+      "event_id": "reorganizacao_societaria_interna",
+      "event_label": "reorganizacao societaria interna",
+      "subject_company": "Santander Brasil",
+      "monitored_company": "Santander Brasil",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "reorganizacao_societaria_interna",
+      "transaction_scope": "intragrupo",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "[Fato Relevante] Santander Brasil: Reorganização Societária",
+      "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1528060&numSequencia=1052766&numVersao=1",
+      "pub_ts": 1779926400,
+      "observation": "reorganizacao_intragrupo_sob_controle_comum",
+      "source_record_id": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1528060&numSequencia=1052766&numVersao=1"
+     }
+    ]
+   }
   },
   "https://finance.yahoo.com/markets/stocks/articles/capital-one-discover-card-migration-010256165.html": {
    "title": "Capital One’s Discover Card Migration Reshapes Payments Economics And Merger Story",
@@ -22523,9 +23112,7 @@
     "rating_elevado"
    ],
    "events_by_company": {
-    "Embraer": [
-     "rating_elevado"
-    ]
+    "Embraer": []
    },
    "mention_roles": {
     "Embraer": {
@@ -22536,10 +23123,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Embraer"
    ],
-   "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "original_url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/sp-eleva-rating-embraer-bbb-perspectiva-estavel/",
@@ -22556,7 +23143,30 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.642268+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.642268+00:00",
+   "informational_events_by_company": {
+    "Embraer": [
+     {
+      "company": "Embraer",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "Embraer",
+      "monitored_company": "Embraer",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "S&P eleva rating da Embraer (EMBR3) e mantém perspectiva estável",
+      "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/sp-eleva-rating-embraer-bbb-perspectiva-estavel/",
+      "pub_ts": 1780077899,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/sp-eleva-rating-embraer-bbb-perspectiva-estavel/"
+     }
+    ]
+   }
   },
   "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/rumo-rail3-emissao-de-debentures/": {
    "title": "Rumo (RAIL3) fará a 1ª emissão de debêntures no valor de R$ 1,5 bilhão",
@@ -23178,7 +23788,9 @@
    "companies": [
     "General Motors"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
    "events_by_company": {
     "General Motors": []
    },
@@ -23199,26 +23811,6 @@
    "cap_iso": "2026-07-29 14:14",
    "corroborations": [],
    "corrob_sources": [],
-   "context_events_by_company": {
-    "General Motors": [
-     {
-      "event_id": "recuperacao_judicial",
-      "event_label": "recuperacao judicial",
-      "subject_company": "General Motors",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "",
-      "attribution_rule": "R_HISTORICO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "this day in history",
-      "nota": "referência histórica (this day in history); evento econômico de 2009"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "General Motors",
@@ -23269,7 +23861,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.642880+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.642880+00:00",
+   "informational_events_by_company": {
+    "General Motors": [
+     {
+      "company": "General Motors",
+      "event_id": "recuperacao_judicial",
+      "event_label": "recuperacao judicial",
+      "subject_company": "General Motors",
+      "monitored_company": "General Motors",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": true,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "confirmado",
+      "attribution_rule": "R_HISTORICO",
+      "attribution_confidence": "media",
+      "title": "This Day in History: June 1, 2009 - General Motors files for Chapter 11 reorganization",
+      "url": "https://www.wsaw.com/video/2026/06/01/this-day-history-june-1-2009-general-motors-files-chapter-11-reorganization/",
+      "pub_ts": 1780297200,
+      "observation": "referência histórica (this day in history); evento econômico de 2009",
+      "source_record_id": "https://www.wsaw.com/video/2026/06/01/this-day-history-june-1-2009-general-motors-files-chapter-11-reorganization/"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMihAFBVV95cUxPNjE0WXVsTlpTZUp0NndrOElaenlRdnBzNFlReC1KY0oxLV9nWmpoenl3eDl5Y0dkN3Y2Y3UxZkY0V0c1ZHlxVWhyZ1hqTFVjSXlrajZ6YW45SmF3OU1wNXpRQlowZ3RvZWQtSTRUNmUteWJ2Uk9SdzI3bk9Nd1k0VWQ0QljSAZgBQVVfeXFMUF8wYTkwRENUbWJVNGdxR0FhQUR0NWRZU1g2ZmxtbGlpOGRUZHhfcEZQaTdtXzRGR2N2RUdiYjVoNVJwTWhzaF9ISTJMLVNKZl92UjRZNmJSWGpTcjh5d2dRV05QUW5OUjRGank3SFZpNEl0Zi1rNm04Q0pvZ0g3WUxyUkVBNW5wYXlPQklPRmd0QmFXOWhub0Q?oc=5": {
    "title": "This Day in Michigan History: GM files for bankruptcy",
@@ -23498,7 +24120,9 @@
    "companies": [
     "Cyrela Brazil Realty"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Cyrela Brazil Realty": []
    },
@@ -23517,26 +24141,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "Cyrela Brazil Realty": [
-     {
-      "event_id": "ma",
-      "event_label": "recompra acoes",
-      "subject_company": "Cyrela Brazil Realty",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "positiva",
-      "scoreable": false,
-      "event_id_corrigido": "recompra_acoes",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "recompra_de_acoes_proprias_nao_e_ma"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Cyrela Brazil Realty",
@@ -23587,7 +24191,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.643186+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.643186+00:00",
+   "informational_events_by_company": {
+    "Cyrela Brazil Realty": [
+     {
+      "company": "Cyrela Brazil Realty",
+      "event_id": "recompra_acoes",
+      "event_label": "recompra acoes",
+      "subject_company": "Cyrela Brazil Realty",
+      "monitored_company": "Cyrela Brazil Realty",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "recompra_acoes",
+      "transaction_scope": "capital_proprio",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "[Fato Relevante] Cyrela Brazil Realty: Aquisição de Ações de Emissão da Própria Companhia||Cancelamento de Ações em Tesouraria",
+      "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1531487&numSequencia=1056193&numVersao=1",
+      "pub_ts": 1780790400,
+      "observation": "recompra_de_acoes_proprias_nao_e_ma",
+      "source_record_id": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1531487&numSequencia=1056193&numVersao=1"
+     }
+    ]
+   }
   },
   "https://finance.yahoo.com/sectors/energy/articles/nextera-energy-nee-offers-potential-054200471.html": {
    "title": "NextEra Energy (NEE) Offers Potential Following Dominion Acquisition Announcement",
@@ -23654,7 +24288,9 @@
    "companies": [
     "Orizon Valorização de Resíduos"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Orizon Valorização de Resíduos": []
    },
@@ -23673,26 +24309,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "Orizon Valorização de Resíduos": [
-     {
-      "event_id": "ma",
-      "event_label": "reorganizacao societaria interna",
-      "subject_company": "Orizon Valorização de Resíduos",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "intragrupo",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "reorganizacao_societaria_interna",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "reorganizacao_intragrupo_sob_controle_comum"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Orizon Valorização de Resíduos",
@@ -23743,7 +24359,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.643346+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.643346+00:00",
+   "informational_events_by_company": {
+    "Orizon Valorização de Resíduos": [
+     {
+      "company": "Orizon Valorização de Resíduos",
+      "event_id": "reorganizacao_societaria_interna",
+      "event_label": "reorganizacao societaria interna",
+      "subject_company": "Orizon Valorização de Resíduos",
+      "monitored_company": "Orizon Valorização de Resíduos",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "reorganizacao_societaria_interna",
+      "transaction_scope": "intragrupo",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "[Fato Relevante] Orizon Valorização de Resíduos: Reorganização Societária",
+      "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1533891&numSequencia=1058597&numVersao=2",
+      "pub_ts": 1781136000,
+      "observation": "reorganizacao_intragrupo_sob_controle_comum",
+      "source_record_id": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1533891&numSequencia=1058597&numVersao=2"
+     }
+    ]
+   }
   },
   "https://valor.globo.com/empresas/noticia/2026/06/11/aquisicao-da-grecia-pode-adicionar-us-690-milhoes-a-carteira-da-embraer.ghtml": {
    "title": "Aquisição da Grécia pode adicionar US$ 690 milhões à carteira da Embraer",
@@ -25072,9 +25718,7 @@
     "rating_elevado"
    ],
    "events_by_company": {
-    "EQT Corporation": [
-     "rating_elevado"
-    ]
+    "EQT Corporation": []
    },
    "mention_roles": {
     "EQT Corporation": {
@@ -25085,10 +25729,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "EQT Corporation"
    ],
-   "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "original_url": "https://finance.yahoo.com/energy/articles/eqt-corporation-eqt-high-growth-185010244.html",
@@ -25107,7 +25751,30 @@
    "link_label": "Abrir notícia →",
    "last_checked_at": "2026-07-31T03:04:35.645256+00:00",
    "corroborations": [],
-   "corrob_sources": []
+   "corrob_sources": [],
+   "informational_events_by_company": {
+    "EQT Corporation": [
+     {
+      "company": "EQT Corporation",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "EQT Corporation",
+      "monitored_company": "EQT Corporation",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "EQT Corporation (EQT): A High-Growth Large Cap Stock Upgraded at Moody’s Ratings",
+      "url": "https://finance.yahoo.com/energy/articles/eqt-corporation-eqt-high-growth-185010244.html",
+      "pub_ts": 1781938800,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://finance.yahoo.com/energy/articles/eqt-corporation-eqt-high-growth-185010244.html"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdk9YaXFtODh2Z21MZEV3bWdQSU1oOWR4VkhBejJTbi1odmlWVng1Vi1Na1hfYWFMOUFWSEQyOHVidEZwU283aWU3WDczTGltaE5rOTE0TFpzX0ZuNzZ2M0JqTHA4bFRGaGdGclV6dHFBbFFOMlYwZzZFeHpvbmdRQlpiRDU0Z3RkUl9vZlhnSklVd2VJYmpYb211U0NUekhvenV4dExIaXlyUHg1dVE?oc=5": {
    "title": "Tech Sector Highlights: Salesforce Acquisition and Accenture Earnings Report",
@@ -25649,9 +26316,7 @@
     "rating_elevado"
    ],
    "events_by_company": {
-    "EQT Corporation": [
-     "rating_elevado"
-    ]
+    "EQT Corporation": []
    },
    "mention_roles": {
     "EQT Corporation": {
@@ -25662,10 +26327,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "EQT Corporation"
    ],
-   "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "original_url": "http://www.dars.gov.et/first-dry/EQT-Corporation-Receives-Moodys-Upgrade-Potential-Tailwind-for-Natural-Gas-Producer-32-13375",
@@ -25682,7 +26347,30 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.646060+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.646060+00:00",
+   "informational_events_by_company": {
+    "EQT Corporation": [
+     {
+      "company": "EQT Corporation",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "EQT Corporation",
+      "monitored_company": "EQT Corporation",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "EQT Corporation Receives Moody's Upgrade: Potential Tailwind for Natural Gas Producer",
+      "url": "http://www.dars.gov.et/first-dry/EQT-Corporation-Receives-Moodys-Upgrade-Potential-Tailwind-for-Natural-Gas-Producer-32-13375",
+      "pub_ts": 1782111600,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "http://www.dars.gov.et/first-dry/EQT-Corporation-Receives-Moodys-Upgrade-Potential-Tailwind-for-Natural-Gas-Producer-32-13375"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMixgFBVV95cUxPUnduMU5OVXhEMDk5NkJpZjFsbFpGckVUT3FCb3NsS3duVThDczBLZHdEZnhqVUF3am9fLWV1VGZFOUtfNk1GbXFPQ2tDaUVZdjU0d2tycGM3cEtaVHlFSzFuN253SkNWeFhzYWlvbHlHSllWUGZRSzlGZGEyN1hIOU9zRnN2WGpBSGdSZmxjNElVQ1hDQkZJaEVKd01md29fQ0Y0Z2xydVFxOS1Xa3ZtWFFLWnAxWTJsdUtHZkVGMTRxV3pHQ0HSAdQBQVVfeXFMTm9VYzhKUC16UHpsVGFUV0NIUmVCUGY1ZUd3ZlJ5SWRVQUNqODBRdjdvNFU1UUh5cU1fbHdNcFlEcTF6c0FnVDVGMl9oRkZYek05UF9EcTllN0R6a00xclhHT3dxMFJBT1RhbFVMNkNCZE5xYWpQdVBibmg1cG8zd09GMlZfMXFYVjZFVWFySjR4ZVJJNGF6X1FxUzRMR2phcngtSDFUM3VnTV9sV1BCRzVPMXFmaTVvWE9QUy1MOXJZWkRDanNKLVowRUtweHplUFdhWlk?oc=5": {
    "title": "Recuperação judicial do Grupo KWA é suspensa por suspeita de fraude",
@@ -26012,7 +26700,9 @@
    "companies": [
     "Cencosud"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
    "events_by_company": {
     "Cencosud": []
    },
@@ -26456,7 +27146,9 @@
    "companies": [
     "Embraer"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Embraer": []
    },
@@ -26475,26 +27167,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "Embraer": [
-     {
-      "event_id": "ma",
-      "event_label": "aquisicao capex",
-      "subject_company": "Embraer",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "aquisicao_capex",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "objeto_nao_empresarial:aeronaves"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Embraer",
@@ -26545,7 +27217,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.647002+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.647002+00:00",
+   "informational_events_by_company": {
+    "Embraer": [
+     {
+      "company": "Embraer",
+      "event_id": "aquisicao_capex",
+      "event_label": "aquisicao capex",
+      "subject_company": "Embraer",
+      "monitored_company": "Embraer",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "aquisicao_capex",
+      "transaction_scope": "capex",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Azorra conclui a aquisição de 13 aeronaves Embraer E190 e 36 motores GE da americana JetBlue",
+      "url": "https://aeroin.net/azorra-conclui-a-aquisicao-de-13-aeronaves-embraer-e190-e-36-motores-ge-da-americana-jetblue/",
+      "pub_ts": 1782457200,
+      "observation": "objeto_nao_empresarial:aeronaves",
+      "source_record_id": "https://aeroin.net/azorra-conclui-a-aquisicao-de-13-aeronaves-embraer-e190-e-36-motores-ge-da-americana-jetblue/"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOMG5hSVNoNXhaRER6enVrVmd0Qi00X0J6a0VBbHNxU0JlVUxabHlCdlJXellnNGUzT0pWb19sRVFNa1RWaUZnM0lxejVYWF9VczNoVWJEeFJZNlV3bnMwZkpnVW5xb0hhQ3VjamFGZUI3NnpuaGtQZ2NCcjFMcjA4UXJkMGtIUW95TDU3WUt5R0VIczlmOUQ5LUlRdGJVWmdlMGE2MXFVNFlXMWtVMDhkNGZ1UEgyUzVJYzdISjdLVmJ1b1V4Y3hQWjlOOVpzdHdyUnVv?oc=5": {
    "title": "Nova legislação pode mudar futuro de empresas em crise; entenda o debate sobre recuperação judicial",
@@ -28298,7 +29000,7 @@
    "pub_iso": "2026-07-03 04:00",
    "language": "pt",
    "companies": [
-    "Mercado (geral)"
+    "Engie Brasil"
    ],
    "event_ids": [
     "ma"
@@ -28319,7 +29021,25 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.649154+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.649154+00:00",
+   "mention_roles": {
+    "Engie Brasil": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Engie Brasil": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "Engie Brasil"
+   ],
+   "context_companies": []
   },
   "https://br.advfn.com/noticias/PAPERBR/2026/artigo/98866589": {
    "title": "Engie Brasil aprova aquisição de fatia de 40% da Jirau Energia, avaliada em R$ 5,74 bilhões",
@@ -28548,7 +29268,9 @@
    "companies": [
     "CVS Health"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "fraude"
+   ],
    "events_by_company": {
     "CVS Health": []
    },
@@ -28569,26 +29291,6 @@
    "cap_iso": "2026-07-29 14:14",
    "corroborations": [],
    "corrob_sources": [],
-   "context_events_by_company": {
-    "CVS Health": [
-     {
-      "event_id": "fraude",
-      "event_label": "encerramento litigio",
-      "subject_company": "CVS Health",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "encerramento",
-      "direction": "mitigadora",
-      "scoreable": false,
-      "event_id_corrigido": "encerramento_litigio",
-      "attribution_rule": "R_FASE_JURIDICA_MITIGADORA",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "fase encerramento (desfecho, não nova acusação)"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "CVS Health",
@@ -28639,7 +29341,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.649505+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.649505+00:00",
+   "informational_events_by_company": {
+    "CVS Health": [
+     {
+      "company": "CVS Health",
+      "event_id": "encerramento_litigio",
+      "event_label": "encerramento litigio",
+      "subject_company": "CVS Health",
+      "monitored_company": "CVS Health",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "mitigadora",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "encerramento_litigio",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "desfecho_confirmado",
+      "attribution_rule": "R_FASE_JURIDICA_MITIGADORA",
+      "attribution_confidence": "media",
+      "title": "Omnicare, CVS Health reach $440 million settlement in senior living prescription fraud case",
+      "url": "https://www.mcknightsseniorliving.com/news/omnicare-cvs-health-reach-440-million-settlement-in-senior-living-prescription-fraud-case/",
+      "pub_ts": 1783321200,
+      "observation": "fase encerramento (desfecho, não nova acusação)",
+      "source_record_id": "https://www.mcknightsseniorliving.com/news/omnicare-cvs-health-reach-440-million-settlement-in-senior-living-prescription-fraud-case/"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMimwFBVV95cUxPRjF4bUluLUgxY0VSdTdIcFo1UFlYLWNOQVdsS09DZDhHVG0zVk0ybzZzNHBZQklBaldfVy15U3ZGYkZDZHEwRmFuWnJpMGxqM3B6LUpXYVF3ZU9wOHRvNHZRR1dMbVdpbWhiZFVLZjF3UnZMdDBucHV1WHlkMDBhSmQxT3pCS0tDMl94M3dhbmdXeUlTcGV0eTBKb9IBoAFBVV95cUxQVi1OX1JPV0VWclBfWjF1YkRCMDVXMldhcmZzdy1NaUxCZXZvYkZsZjNYX25hYUFMTkU5NmRDdXdmYVJVSklrcE9Ta3hHcWRaTV9qMlR6VGhLbFktVS16SGxaOWhhOFhocTViZkoxMk4xVmpPWkM2NWVyUVhNa0tRRERHUk81Xzd6aUg2aF9ZYjlLbGZVWWdBTDZ4MkpWcTNP?oc=5": {
    "title": "BC pede para participar da recuperação judicial da Ambipar; entenda por quê",
@@ -33597,7 +34329,9 @@
    "companies": [
     "Gerdau"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Gerdau": []
    },
@@ -33618,26 +34352,6 @@
    "cap_iso": "2026-07-29 14:14",
    "corroborations": [],
    "corrob_sources": [],
-   "context_events_by_company": {
-    "Gerdau": [
-     {
-      "event_id": "ma",
-      "event_label": "aquisicao capex",
-      "subject_company": "Gerdau",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "aquisicao_capex",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "objeto_nao_empresarial:capex_ativo"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Gerdau",
@@ -33688,7 +34402,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.655556+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.655556+00:00",
+   "informational_events_by_company": {
+    "Gerdau": [
+     {
+      "company": "Gerdau",
+      "event_id": "aquisicao_capex",
+      "event_label": "aquisicao capex",
+      "subject_company": "Gerdau",
+      "monitored_company": "Gerdau",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "aquisicao_capex",
+      "transaction_scope": "capex",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Gerdau (GGBR4) conclui aquisição da usina Dona Francisca",
+      "url": "https://www.infomoney.com.br/mercados/gerdau-ggbr4-conclui-aquisicao-da-usina-dona-francisca/",
+      "pub_ts": 1784632939,
+      "observation": "objeto_nao_empresarial:capex_ativo",
+      "source_record_id": "https://www.infomoney.com.br/mercados/gerdau-ggbr4-conclui-aquisicao-da-usina-dona-francisca/"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaG5mX0M4TFQ0Z0kzTVRoQk8yd1UxSGx6a0lZZVh1ZUFjTXkxWW9sXzdlNnlBVzBzVkZQT0hidHgtaW52YWhHTnVjcUtwTDVGZElubUxqSWlOa2hIcFd2ZGtmNGFfTlhZeFNDdDJYLWRibmhXZ3dtOHNoaFR1SkhnbjNuSkFuOVNNNFZILTBDektKLXV0cWo4OUFSeTc1c190YlgzajJQcmM3WFdmLTVkNlRpeGhQSGhZTktLYTdRUk1MZ2o2UWhvMlpSWGJQbjA?oc=5": {
    "title": "Nova Iguaçu: Empresa em recuperação judicial já recebeu cerca R$ 425 milhões da Prefeitura",
@@ -34072,7 +34816,9 @@
    "companies": [
     "Santander Brasil"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "Santander Brasil": []
    },
@@ -34093,31 +34839,11 @@
    "cap_iso": "2026-07-29 14:14",
    "corroborations": [],
    "corrob_sources": [],
-   "context_events_by_company": {
-    "Santander Brasil": [
-     {
-      "event_id": "ma",
-      "event_label": "integracao pos aquisicao",
-      "subject_company": "Santander Brasil",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "integracao",
-      "direction": "positiva",
-      "scoreable": false,
-      "event_id_corrigido": "integracao_pos_aquisicao",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "contexto_pos_aquisicao_nao_e_nova_ocorrencia"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "Santander Brasil",
      "event_id": "ma",
-     "event_id_corrigido": "integracao_pos_aquisicao",
+     "event_id_corrigido": "resultado_acima_expectativas",
      "regra": "R_MA_OBJETO_ESCOPO",
      "motivo": "contexto_pos_aquisicao_nao_e_nova_ocorrencia",
      "subject_company": "Santander Brasil"
@@ -34132,7 +34858,7 @@
      "actor_company": "",
      "affected_company": "",
      "transaction_object": "indefinido",
-     "transaction_scope": "indefinido",
+     "transaction_scope": "historico_pos_aquisicao",
      "transaction_role": "",
      "event_phase": "integracao",
      "event_scope": "direto",
@@ -34163,7 +34889,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.656166+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.656166+00:00",
+   "informational_events_by_company": {
+    "Santander Brasil": [
+     {
+      "company": "Santander Brasil",
+      "event_id": "resultado_acima_expectativas",
+      "event_label": "resultado acima expectativas",
+      "subject_company": "Santander Brasil",
+      "monitored_company": "Santander Brasil",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": true,
+      "secondary_context": "integracao_pos_aquisicao",
+      "transaction_scope": "historico_pos_aquisicao",
+      "confirmation_status": "confirmado",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Santander supera estimativas de lucro com expansão da base de clientes após aquisição",
+      "url": "https://www.bloomberglinea.com.br/negocios/santander-supera-estimativas-de-lucro-com-expansao-da-base-de-clientes-apos-aquisicao/",
+      "pub_ts": 1784718737,
+      "observation": "contexto_pos_aquisicao_nao_e_nova_ocorrencia",
+      "source_record_id": "https://www.bloomberglinea.com.br/negocios/santander-supera-estimativas-de-lucro-com-expansao-da-base-de-clientes-apos-aquisicao/"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQYVFTOUY4ZjJ1WC1Ddmk2R19CZTUtMkVOQ2FEM3RjcnlVZUZoWUcwdGUwb2FSMmNMa3VXeV9jS1NXQkRnSy05Z1lnVDRPbjg4X2FuUjdsaFJtZ2hISHgteUhrT2hWTXpXdmlhR0JjX2lHSTlEVmhTZWFnNXAzQUFGUDBTMlR6UnRFcmdrNGV2Ql83Yi1Yb1NaUDNwdEVWNzNLSWZNZndOc29IRXVEX3BuZzJNeFd2M3dFNENJVmVSU25femVtdWx4a2hZUlNqQ2NOWGJXU9IB1AFBVV95cUxQYVFTOUY4ZjJ1WC1Ddmk2R19CZTUtMkVOQ2FEM3RjcnlVZUZoWUcwdGUwb2FSMmNMa3VXeV9jS1NXQkRnSy05Z1lnVDRPbjg4X2FuUjdsaFJtZ2hISHgteUhrT2hWTXpXdmlhR0JjX2lHSTlEVmhTZWFnNXAzQUFGUDBTMlR6UnRFcmdrNGV2Ql83Yi1Yb1NaUDNwdEVWNzNLSWZNZndOc29IRXVEX3BuZzJNeFd2M3dFNENJVmVSU25femVtdWx4a2hZUlNqQ2NOWGJXUw?oc=5": {
    "title": "Venda.ai capta R$ 2 milhões em rodada anjo para acelerar expansão da inteligência artificial no varejo",
@@ -34243,16 +34999,16 @@
     "Vale": [
      {
       "event_id": "recuperacao_judicial",
-      "event_label": "Recuperação Judicial",
+      "event_label": "recuperacao_judicial",
       "subject_company": "Samarco Mineração",
-      "relation_type": "investida_jv",
+      "relation_type": "evento_de_terceiro_por_evidencia",
       "impact_type": "indireto_material",
       "event_scope": "indireto",
-      "event_phase": "aprovacao",
-      "direction": "mitigadora",
+      "event_phase": "",
+      "direction": "neutra",
       "scoreable": false,
       "attribution_confidence": "alta",
-      "attribution_evidence": "Plano de Recuperação Judicial da Samarco"
+      "attribution_evidence": "Vale informa sobre Plano de Recuperação Judicial da Samarco Vale informa sobre Plano de Recuperaçã"
      }
     ]
    },
@@ -34686,7 +35442,9 @@
    "companies": [
     "JBS"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "fraude"
+   ],
    "events_by_company": {
     "JBS": []
    },
@@ -34707,26 +35465,6 @@
    "cap_iso": "2026-07-29 14:14",
    "corroborations": [],
    "corrob_sources": [],
-   "context_events_by_company": {
-    "JBS": [
-     {
-      "event_id": "fraude",
-      "event_label": "encerramento litigio",
-      "subject_company": "JBS",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "encerramento",
-      "direction": "mitigadora",
-      "scoreable": false,
-      "event_id_corrigido": "encerramento_litigio",
-      "attribution_rule": "R_FASE_JURIDICA_MITIGADORA",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "fase encerramento (desfecho, não nova acusação)"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "JBS",
@@ -34777,7 +35515,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.656677+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.656677+00:00",
+   "informational_events_by_company": {
+    "JBS": [
+     {
+      "company": "JBS",
+      "event_id": "encerramento_litigio",
+      "event_label": "encerramento litigio",
+      "subject_company": "JBS",
+      "monitored_company": "JBS",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "mitigadora",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "encerramento_litigio",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "desfecho_confirmado",
+      "attribution_rule": "R_FASE_JURIDICA_MITIGADORA",
+      "attribution_confidence": "media",
+      "title": "JBS paga R$ 174 milhões e encerra ação sobre fraude fiscal em MT",
+      "url": "https://www.vgnoticias.com.br/vgnjur/jbs-paga-r-174-milhoes-e-encerra-acao-sobre-fraude-fiscal-em-mt/149407",
+      "pub_ts": 1784820900,
+      "observation": "fase encerramento (desfecho, não nova acusação)",
+      "source_record_id": "https://www.vgnoticias.com.br/vgnjur/jbs-paga-r-174-milhoes-e-encerra-acao-sobre-fraude-fiscal-em-mt/149407"
+     }
+    ]
+   }
   },
   "https://www.canalenergia.com.br/noticias/53352151/energisa-mato-grosso-capta-r-350-milhoes-em-debentures": {
    "title": "Energisa Mato Grosso capta R$ 350 milhões em debêntures",
@@ -35485,7 +36253,9 @@
    "companies": [
     "LATAM Airlines"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "ma"
+   ],
    "events_by_company": {
     "LATAM Airlines": []
    },
@@ -35504,26 +36274,6 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "context_events_by_company": {
-    "LATAM Airlines": [
-     {
-      "event_id": "ma",
-      "event_label": "aquisicao capex",
-      "subject_company": "LATAM Airlines",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "aquisicao_capex",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "objeto_nao_empresarial:aeronaves"
-     }
-    ]
-   },
    "semantic_discards": [
     {
      "empresa": "LATAM Airlines",
@@ -35574,7 +36324,37 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.657332+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.657332+00:00",
+   "informational_events_by_company": {
+    "LATAM Airlines": [
+     {
+      "company": "LATAM Airlines",
+      "event_id": "aquisicao_capex",
+      "event_label": "aquisicao capex",
+      "subject_company": "LATAM Airlines",
+      "monitored_company": "LATAM Airlines",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "aquisicao_capex",
+      "transaction_scope": "capex",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "LATAM Airlines obtém financiamento de US$ 505 milhões vinculado à sustentabilidade para aquisição de aeronaves",
+      "url": "https://aeroin.net/latam-airlines-obtem-financiamento-de-us-505-milhoes-vinculado-a-sustentabilidade-para-aquisicao-de-aeronaves/",
+      "pub_ts": 1784917978,
+      "observation": "objeto_nao_empresarial:aeronaves",
+      "source_record_id": "https://aeroin.net/latam-airlines-obtem-financiamento-de-us-505-milhoes-vinculado-a-sustentabilidade-para-aquisicao-de-aeronaves/"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMijwFBVV95cUxOSUNKR2VURnp1b3JFTXBfcnNMVG9OUkF2RE1IQ0ZCZVFRWE42ak9RdUszTW5CWHVUcmIwdV9SMG9vWEJMbUJCUFhQQWlGTVo3Q2ZadEJ1ZVVyOUpXb2Q2alBnQUFBLTRfV2dEd2dhbkpNMjlNWndIdDJ1V2kzSGlzdEhqWnBLSlQ5bUZYYlRkYw?oc=5": {
    "title": "CVM suspende oferta de cotas do NTZ Financiamentos Longo Prazo FIDC",
@@ -36258,7 +37038,9 @@
    "companies": [
     "Gerdau"
    ],
-   "event_ids": [],
+   "event_ids": [
+    "falencia"
+   ],
    "events_by_company": {
     "Gerdau": []
    },
@@ -37469,9 +38251,7 @@
     "rating_elevado"
    ],
    "events_by_company": {
-    "Samarco Mineração": [
-     "rating_elevado"
-    ]
+    "Samarco Mineração": []
    },
    "secondary_events": [
     {
@@ -37492,10 +38272,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Samarco Mineração"
    ],
-   "context_companies": [],
    "captured_ts": 1785432503,
    "cap_iso": "2026-07-30 14:28",
    "original_url": "https://diariodocomercio.com.br/economia/fitch-rating-samarco-perspectiva-positiva/",
@@ -37512,7 +38292,30 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.659375+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.659375+00:00",
+   "informational_events_by_company": {
+    "Samarco Mineração": [
+     {
+      "company": "Samarco Mineração",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "Samarco Mineração",
+      "monitored_company": "Samarco Mineração",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Fitch eleva rating da Samarco para B e mantém perspectiva positiva",
+      "url": "https://diariodocomercio.com.br/economia/fitch-rating-samarco-perspectiva-positiva/",
+      "pub_ts": 1756969200,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://diariodocomercio.com.br/economia/fitch-rating-samarco-perspectiva-positiva/"
+     }
+    ]
+   }
   },
   "https://www.otempo.com.br/economia/2026/1/7/usiminas-cade-aprova-aquisicao-de-fatia-da-nippon-e-mitsubishi-pela-ternium": {
    "title": "Usiminas: Cade aprova aquisição de fatia da Nippon e Mitsubishi pela Ternium",
@@ -37649,9 +38452,7 @@
     "rating_elevado"
    ],
    "events_by_company": {
-    "Pemex (Petróleos Mexicanos)": [
-     "rating_elevado"
-    ]
+    "Pemex (Petróleos Mexicanos)": []
    },
    "mention_roles": {
     "Pemex (Petróleos Mexicanos)": {
@@ -37662,10 +38463,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Pemex (Petróleos Mexicanos)"
    ],
-   "context_companies": [],
    "captured_ts": 1785442709,
    "cap_iso": "2026-07-30 17:18",
    "original_url": "https://www.proceso.com.mx/economia/2025/8/19/nuevo-apoyo-pemex-no-mejora-la-calificacion-de-mexico-se-suma-una-deuda-ya-elevada-fitch-355328.html",
@@ -37682,7 +38483,30 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.659549+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.659549+00:00",
+   "informational_events_by_company": {
+    "Pemex (Petróleos Mexicanos)": [
+     {
+      "company": "Pemex (Petróleos Mexicanos)",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "Pemex (Petróleos Mexicanos)",
+      "monitored_company": "Pemex (Petróleos Mexicanos)",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Nuevo apoyo a Pemex no mejora la calificación de México y se suma a una deuda ya elevada: Fitch",
+      "url": "https://www.proceso.com.mx/economia/2025/8/19/nuevo-apoyo-pemex-no-mejora-la-calificacion-de-mexico-se-suma-una-deuda-ya-elevada-fitch-355328.html",
+      "pub_ts": 1755586800,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://www.proceso.com.mx/economia/2025/8/19/nuevo-apoyo-pemex-no-mejora-la-calificacion-de-mexico-se-suma-una-deuda-ya-elevada-fitch-355328.html"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMipwFBVV95cUxPaS1sSHdvQ2JmUERkWGlYaVN3cUl5aEpZdWEwMHpBQzg3NEYtU3h2d0F3LWdmdW1fem9qLXJaZV9fUkdTdnJPZXJoa1phVW40S2tmdzV1LUJ5dEx6aFVVcWh3RExGSnB1akktRTZKS2FucGRBUnN6S1poSWh0bUo3N1NUcmo3dHA3TnhrVG9XT1lwcjJYVU5nV0JvS2FmV3g5UlJoQU5Zaw?oc=5": {
    "title": "Florida-based NextEra agrees to $67B Dominion Energy acquisition",
@@ -37939,31 +38763,41 @@
    "context_companies": [
     "Cemig"
    ],
-   "context_events_by_company": {
-    "Cemig": [
-     {
-      "event_id": "ma",
-      "event_label": "aquisicao capex",
-      "subject_company": "Cemig",
-      "relation_type": "evento_reclassificado",
-      "impact_type": "informativo",
-      "event_scope": "direto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "aquisicao_capex",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "",
-      "nota": "objeto_nao_empresarial:capex_ativo"
-     }
-    ]
-   },
    "companies_attributed": [],
    "captured_ts": 1785500143,
    "cap_iso": "2026-07-31 09:15",
    "corroborations": [],
-   "corrob_sources": []
+   "corrob_sources": [],
+   "informational_events_by_company": {
+    "Cemig": [
+     {
+      "company": "Cemig",
+      "event_id": "aquisicao_capex",
+      "event_label": "aquisicao capex",
+      "subject_company": "Cemig",
+      "monitored_company": "Cemig",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "aquisicao_capex",
+      "transaction_scope": "capex",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Cemig SIM conclui aquisição de 10MWp em usinas solares",
+      "url": "https://canalsolar.com.br/cemig-sim-conclui-aquisicao-de-10mwp-em-usinas-solares/",
+      "pub_ts": 1766476800,
+      "observation": "objeto_nao_empresarial:capex_ativo",
+      "source_record_id": "https://canalsolar.com.br/cemig-sim-conclui-aquisicao-de-10mwp-em-usinas-solares/"
+     }
+    ]
+   }
   },
   "https://finance.yahoo.com/news/truist-debt-issuance-supports-funding-002045354.html": {
    "title": "Emissão de dívida da Truist apoia flexibilidade de financiamento enquanto mantém retorno de capital",
@@ -38180,13 +39014,31 @@
    "pub_iso": "2026-07-31 15:04",
    "language": "pt",
    "companies": [
-    "Mercado (geral)"
+    "Santander Brasil"
    ],
    "event_ids": [
     "ma"
    ],
    "captured_ts": 1785529625,
-   "cap_iso": "2026-07-31 17:27"
+   "cap_iso": "2026-07-31 17:27",
+   "mention_roles": {
+    "Santander Brasil": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Santander Brasil": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "Santander Brasil"
+   ],
+   "context_companies": []
   },
   "https://news.google.com/rss/articles/CBMioAFBVV95cUxOT3ZzdG9mc1JDWVgtcE5tbEREbTUyTEl1dVpkSm4xWG0xekZ0X2RBTF8zUktoWHlEazdGVk0ydTlmWlo1emZSTm5leTg1RkUxRl9NbWdxRDdyMHpsNWU5UTFRUlpIX0RaT3F4SUtsMU9HaVhiazdrSHEyTTFVOXlHX3hLenhob1JhNmV1WEdSTTR5bGplLUZCZ1V3cVVuUDRE?oc=5": {
    "title": "Incêndio em fábrica da Yura gerou intensa fumaça e mobilizou bombeiros",
@@ -38495,13 +39347,25 @@
    "language": "pt",
    "companies": [],
    "event_ids": [],
-   "mention_roles": {},
-   "events_by_company": {},
    "companies_attributed": [],
    "context_companies": [],
    "captured_ts": 1785645374,
    "cap_iso": "2026-08-02 01:36",
-   "_correction_note": "Bug fix (fix/b3-entity-role-ceo-dedup): B3 era a bolsa destinataria do comunicado da Braskem, nao a companhia B3 S.A.; RJ nunca foi um evento da B3. Braskem nao esta na watchlist deste config, entao nenhuma empresa fica atribuida a este artigo apos a correcao. Artigo preservado no historico para auditoria."
+   "manual_correction": {
+    "locked_fields": [
+     "companies",
+     "event_ids",
+     "mention_roles",
+     "events_by_company",
+     "companies_attributed",
+     "context_companies"
+    ],
+    "reason": "B3 aparece como bolsa/destinataria do comunicado da Braskem, nao como sujeito; RJ nunca foi um evento da B3. Braskem nao esta na watchlist deste config, entao nenhuma empresa fica atribuida a este artigo apos a correcao. Artigo preservado no historico para auditoria.",
+    "corrected_at": "2026-08-03T20:58:55-03:00",
+    "correction_id": "b3_exchange_braskem_rj"
+   },
+   "mention_roles": {},
+   "events_by_company": {}
   },
   "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQZkNBbG8yTWJKalR5UVMyajdJSEtlVWtQVDFoakhkaWdSYUQ3cHpmbHNtX2xDdXpxa0wxTlRkb0RTb2hic1ZJTUxWcjVCNk1OR2c0ZmFTZW9rMFJmZjd5R0xQSVN1MGFTWlI0RmRzX0p1UVBpYjRmWDUwUDY1VGhUWkVBZjV0Tkl5VUs4bkYyTzJKUmJrRVVwVHd1T19uZ0NEaUM0V0tTUHNZT25LYnVvYi1BNXBDa0haZVBJMFVnTmNEMlMxTGlVbURxNWtSbXJ5Y184WjItdmpnamg3WmdOb2ZhNE1HSlh5ZHgwUHNacGpnZG1IaHpodTAtcGLSAYICQVVfeXFMTWRwQXlVWWQ5N0ljUlhuc0xDTjFKQ2NhZl9KaFU4bFNzTkh1QnJ6OTRodlNSVjFhYTJGdEdjaWh3aW9sc0NseVNzUm8yTjNlWGNlVDdnRlpOYUVHQ0tBNE01XzF0SmdRTnF4UXdFSllkMFpIcExSMXJfbm9wakktcGptcnQ0VEIwSkxpRkx4b2FTRTJRYnhpUGN6OGsyeDRQNlVjeW5udjhDZF84WGFRNk5PeVo5aFg3UmR1dC1wRVdGZjBkT0piZ09YU1JRdzhFNEh0b0FycmwwcW1RUjJFNTR6LWpnWldQSXhZcThYRWpTSUxUeEhRSTczaXZkWVRYcG5n?oc=5": {
    "title": "Saritur tem recuperação judicial concedida; entenda o passo a passo da decisão e o que acontece a partir de agora – EXCLUSIVO",
@@ -38652,7 +39516,16 @@
    ],
    "context_companies": [],
    "captured_ts": 1785762394,
-   "cap_iso": "2026-08-03 10:06"
+   "cap_iso": "2026-08-03 10:06",
+   "mention_roles": {
+    "Vale": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   }
   },
   "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1549941&numSequencia=1074647&numVersao=1": {
    "title": "[Fato Relevante] Santander Brasil: OPA",
@@ -38865,7 +39738,16 @@
     }
    ],
    "captured_ts": 1785762394,
-   "cap_iso": "2026-08-03 10:06"
+   "cap_iso": "2026-08-03 10:06",
+   "mention_roles": {
+    "Santander Brasil": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   }
   },
   "https://news.google.com/rss/articles/CBMidEFVX3lxTE9TVUs4WjVqR0c0eEk5OGw0QWZfTHJrM3VIdnVKaktEc1UzVngtck5VTGRNUWxTRlEtRXdBRmlZUjh3SkpIWFJHYVdEc09Wcjc5czN3eHBDMk1xOWZORlh4RnNZS1h0a1N6OUpZLVJrTlkySnBE?oc=5": {
    "title": "Harry Pode Enfrentar Falência Após Derrota Em Processo, Afirma Site",
@@ -39074,10 +39956,10 @@
       "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
       "attribution_confidence": "media",
       "title": "Cementera Yura alcanza utilidades de S/ 301.6 millones en 2025",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPeFFSSVZLVE5SOE1HT0xPTVpwSktQbmNqeFE1aTMyUGNrSDdVMHUwU0lfVS0wVmMxYkhncnhiN3NoVlhIOHBPbThzSE5RQ2FKQkw5aXV3aVRtR2xiOWh6bE5EQWhFN0tpVjNxQUhkWlVzLWxxVjl0Nk5XczZuWnlFbWJ0YmhYQVBKSUxFWXVxR1hLUQ?oc=5",
+      "url": "https://prensaregional.pe/cementera-yura-alcanza-utilidades-de-s-301-6-millones-en-2025/",
       "pub_ts": 1774854000,
       "observation": "Evento direto 'Resultado acima das expectativas' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
-      "source_record_id": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPeFFSSVZLVE5SOE1HT0xPTVpwSktQbmNqeFE1aTMyUGNrSDdVMHUwU0lfVS0wVmMxYkhncnhiN3NoVlhIOHBPbThzSE5RQ2FKQkw5aXV3aVRtR2xiOWh6bE5EQWhFN0tpVjNxQUhkWlVzLWxxVjl0Nk5XczZuWnlFbWJ0YmhYQVBKSUxFWXVxR1hLUQ?oc=5"
+      "source_record_id": "https://prensaregional.pe/cementera-yura-alcanza-utilidades-de-s-301-6-millones-en-2025/"
      }
     ]
    },
@@ -39624,10 +40506,10 @@
       "attribution_rule": "R_MA_OBJETO_ESCOPO",
       "attribution_confidence": "media",
       "title": "Adiós al Grupo Security: Bice será la marca que seguirá tras la fusión con Bicecorp",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONmIwWmIzUUdjV0dCOThpMmFUMFBJQnFodmJmaDczaUFudzB2TmV2S0JhQkZqbFFEMTF0UTVpS3I1TnNHMFdrQ1Zndnpxd0pVN0E1a01sQkZFb0t0NWRjVVR3cmUtSzRVTDFMU1FjTm9NT2FTX1JPdHY1RHh4MmxtVm5DeUppSmpqNmFMSG5LdWQ2TDVqaUdXckZyTjdiamNQMFJxUU44SHh5ZjhnTjVXX0puRmFpSEXSAdgBQVVfeXFMT2pxZU9JZDczYy1Fa0FINGFsdk45bzJXb0NCR2RycGNpcWFlYk44dW5EMjRpNGJERDUwamt4RGtwbmZwZDhFLW9HVEQzeVVjV21YSGw4QkI4Y3hfTEdzSFhVMDQtOHhhcW5EYmZvY25Kbl9QQVYxcGxJbVJteGR3Y0t3TjVEUm1vSjJDbmJaZHVnbUxRencwSEcwaWhPQ09zZmhXNWZnd0tfVmwtS0RPQklsOFJMTGRaSVBONlJtTXZEVjV4RUs3ZjRwTWpLOUtZVTlGRDZYZ2lh?oc=5",
+      "url": "https://www.latercera.com/pulso/noticia/bice-sera-la-marca-continuadora-tras-la-fusion-de-bicecorp-y-grupo-security/",
       "pub_ts": 1756796400,
       "observation": "sem_verbo_de_aquisicao_no_texto",
-      "source_record_id": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONmIwWmIzUUdjV0dCOThpMmFUMFBJQnFodmJmaDczaUFudzB2TmV2S0JhQkZqbFFEMTF0UTVpS3I1TnNHMFdrQ1Zndnpxd0pVN0E1a01sQkZFb0t0NWRjVVR3cmUtSzRVTDFMU1FjTm9NT2FTX1JPdHY1RHh4MmxtVm5DeUppSmpqNmFMSG5LdWQ2TDVqaUdXckZyTjdiamNQMFJxUU44SHh5ZjhnTjVXX0puRmFpSEXSAdgBQVVfeXFMT2pxZU9JZDczYy1Fa0FINGFsdk45bzJXb0NCR2RycGNpcWFlYk44dW5EMjRpNGJERDUwamt4RGtwbmZwZDhFLW9HVEQzeVVjV21YSGw4QkI4Y3hfTEdzSFhVMDQtOHhhcW5EYmZvY25Kbl9QQVYxcGxJbVJteGR3Y0t3TjVEUm1vSjJDbmJaZHVnbUxRencwSEcwaWhPQ09zZmhXNWZnd0tfVmwtS0RPQklsOFJMTGRaSVBONlJtTXZEVjV4RUs3ZjRwTWpLOUtZVTlGRDZYZ2lh?oc=5"
+      "source_record_id": "https://www.latercera.com/pulso/noticia/bice-sera-la-marca-continuadora-tras-la-fusion-de-bicecorp-y-grupo-security/"
      }
     ]
    },
@@ -39807,10 +40689,10 @@
       "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
       "attribution_confidence": "media",
       "title": "Morgan Stanley delivers a blockbuster quarter. Record earnings spark Wall Street rally",
-      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOVlJCZVRxSnJudHZFNDFIaGpnSEo4OGdYanEyZ2JrTWJWOG5YZHZudlBnVnd5QVpYd0RLT29qSWZuY0I4Rk5VN3dlaDA2TThZeVlFWFZabGZvRVd6SjloYTMwdnlVeDNRR1VNcHdIVWNPRDJJNGk1SFlGbU5hU3dEUi1HQUhDaVlFSGJLdTRVVmJ4dE96cE5ETEJSbTE4cS0wOEJkOTFHYTdMaERET21tRWw3X3B6NWdOeTVyOXRXeVJ4MzZMNUpjMVAtaDJvVU1zbXl5bVRKMkFuNnM?oc=5",
+      "url": "https://www.xtb.com/int/market-analysis/news-and-research/morgan-stanley-delivers-a-blockbuster-quarter-record-earnings-spark-wall-street-rally",
       "pub_ts": 1784117962,
       "observation": "Evento direto 'Resultado acima das expectativas' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
-      "source_record_id": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOVlJCZVRxSnJudHZFNDFIaGpnSEo4OGdYanEyZ2JrTWJWOG5YZHZudlBnVnd5QVpYd0RLT29qSWZuY0I4Rk5VN3dlaDA2TThZeVlFWFZabGZvRVd6SjloYTMwdnlVeDNRR1VNcHdIVWNPRDJJNGk1SFlGbU5hU3dEUi1HQUhDaVlFSGJLdTRVVmJ4dE96cE5ETEJSbTE4cS0wOEJkOTFHYTdMaERET21tRWw3X3B6NWdOeTVyOXRXeVJ4MzZMNUpjMVAtaDJvVU1zbXl5bVRKMkFuNnM?oc=5"
+      "source_record_id": "https://www.xtb.com/int/market-analysis/news-and-research/morgan-stanley-delivers-a-blockbuster-quarter-record-earnings-spark-wall-street-rally"
      }
     ]
    },
@@ -41774,31 +42656,9 @@
    "pub_ts": 1781679600,
    "pub_iso": "2026-06-17 04:00",
    "companies": [
-    "Coazucar"
+    "Mercado (geral)"
    ],
-   "event_ids": [
-    "sem_evento_taxonomico"
-   ],
-   "context_events_by_company": {
-    "Coazucar": [
-     {
-      "event_id": "sem_evento_taxonomico",
-      "event_label": "Evento a revisar (sem correspondência na taxonomia atual)",
-      "subject_company": "Casa Grande S.A.A.",
-      "relation_type": "subsidiary",
-      "impact_type": "indireto_material",
-      "event_scope": "indireto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "attribution_confidence": "media",
-      "attribution_evidence": "related_entity 'Casa Grande S.A.A.' de 'Coazucar'"
-     }
-    ]
-   },
-   "events_by_company": {
-    "Coazucar": []
-   },
+   "event_ids": [],
    "companies_attributed": [],
    "context_companies": [
     "Coazucar"
@@ -41815,31 +42675,9 @@
    "pub_ts": 1783666800,
    "pub_iso": "2026-07-10 04:00",
    "companies": [
-    "Coazucar"
+    "Mercado (geral)"
    ],
-   "event_ids": [
-    "sem_evento_taxonomico"
-   ],
-   "context_events_by_company": {
-    "Coazucar": [
-     {
-      "event_id": "sem_evento_taxonomico",
-      "event_label": "Evento a revisar (sem correspondência na taxonomia atual)",
-      "subject_company": "Casa Grande S.A.A.",
-      "relation_type": "subsidiary",
-      "impact_type": "indireto_material",
-      "event_scope": "indireto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "attribution_confidence": "media",
-      "attribution_evidence": "related_entity 'Casa Grande S.A.A.' de 'Coazucar'"
-     }
-    ]
-   },
-   "events_by_company": {
-    "Coazucar": []
-   },
+   "event_ids": [],
    "companies_attributed": [],
    "context_companies": [
     "Coazucar"
@@ -47317,12 +48155,12 @@
   }
  },
  "last_run": {
-  "ts": 1785876101,
-  "iso": "04 ago 2026 · 17:41 BRT",
+  "ts": 1785890317,
+  "iso": "04 ago 2026 · 21:38 BRT",
   "status": {
    "Rumo": {
     "status": "atencao",
-    "score": 74
+    "score": 73
    },
    "Engie Brasil": {
     "status": "atencao",
@@ -47346,7 +48184,7 @@
    },
    "Grupo Financiero Banorte": {
     "status": "critico",
-    "score": 52
+    "score": 51
    },
    "Cosan": {
     "status": "atencao",
@@ -47592,5 +48430,6 @@
  },
  "semantic_reclassified_at": "2026-07-30T21:07:47.714609+00:00",
  "semantic_version": "1.0",
- "links_repaired_at": "2026-07-31T05:45:56.701137+00:00"
+ "links_repaired_at": "2026-07-31T05:45:56.701137+00:00",
+ "reclassify_only_applied_at": "2026-08-05T00:38:37.114606+00:00"
 }
