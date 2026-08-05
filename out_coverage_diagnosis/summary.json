@@ -1,0 +1,1556 @@
+{
+  "summary": {
+    "generated_at": "2026-08-05T01:15:48.272185+00:00",
+    "run_meta_generated_at": "2026-08-04T20:37:53.254133+00:00",
+    "run_meta_run_finished_at": "2026-08-04T20:41:41.758328+00:00",
+    "companies_diagnosed": 26,
+    "status_counts": {
+      "NO_RELEVANT_NEWS_AFTER_SUCCESSFUL_RUN": 0,
+      "ONLY_INFORMATIONAL_FOUND": 0,
+      "PARTIAL_COVERAGE": 16,
+      "SOURCE_CONFIGURED_NOT_EXECUTED": 0,
+      "COLLECTION_FAILURE": 0,
+      "NO_VALIDATED_OFFICIAL_SOURCE": 10,
+      "FALLBACK_ONLY": 0,
+      "COVERAGE_OK_EVENTS_FOUND": 0
+    },
+    "coverage_csv": "out_coverage_diagnosis\\coverage_status_by_company.csv",
+    "source_csv": "out_coverage_diagnosis\\coverage_status_by_source.csv"
+  },
+  "rows": [
+    {
+      "company": "Ambev",
+      "tier": 1,
+      "country": "Brasil",
+      "coverage_status": "PARTIAL_COVERAGE",
+      "coverage_status_label": "Cobertura parcial",
+      "reasons": [
+        "Cobertura mista: GNEWS, RI_NEWS rodou(aram) com sucesso; REGULADOR_LOCAL não foi(ram) tentada(s) ou falhou(aram) nesta execução."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 15,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 5,
+          "validated": true,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "B3",
+      "tier": 1,
+      "country": "Brasil",
+      "coverage_status": "PARTIAL_COVERAGE",
+      "coverage_status_label": "Cobertura parcial",
+      "reasons": [
+        "Cobertura mista: GNEWS, RI_NEWS rodou(aram) com sucesso; REGULADOR_LOCAL não foi(ram) tentada(s) ou falhou(aram) nesta execução."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 15,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 3,
+          "validated": true,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "BTG Pactual",
+      "tier": 1,
+      "country": "Brasil",
+      "coverage_status": "PARTIAL_COVERAGE",
+      "coverage_status_label": "Cobertura parcial",
+      "reasons": [
+        "Cobertura mista: GNEWS, RI_NEWS rodou(aram) com sucesso; REGULADOR_LOCAL não foi(ram) tentada(s) ou falhou(aram) nesta execução."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 15,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 8,
+          "validated": true,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "Banco do Brasil",
+      "tier": 1,
+      "country": "Brasil",
+      "coverage_status": "PARTIAL_COVERAGE",
+      "coverage_status_label": "Cobertura parcial",
+      "reasons": [
+        "Cobertura mista: GNEWS, RI_NEWS rodou(aram) com sucesso; REGULADOR_LOCAL não foi(ram) tentada(s) ou falhou(aram) nesta execução."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 15,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 10,
+          "validated": true,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "Bradesco",
+      "tier": 1,
+      "country": "Brasil",
+      "coverage_status": "PARTIAL_COVERAGE",
+      "coverage_status_label": "Cobertura parcial",
+      "reasons": [
+        "Cobertura mista: GNEWS, RI_NEWS rodou(aram) com sucesso; REGULADOR_LOCAL não foi(ram) tentada(s) ou falhou(aram) nesta execução."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 15,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 7,
+          "validated": true,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "Eletrobras",
+      "tier": 1,
+      "country": "Brasil",
+      "coverage_status": "PARTIAL_COVERAGE",
+      "coverage_status_label": "Cobertura parcial",
+      "reasons": [
+        "Cobertura mista: GNEWS, RI_NEWS rodou(aram) com sucesso; REGULADOR_LOCAL não foi(ram) tentada(s) ou falhou(aram) nesta execução."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 15,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 7,
+          "validated": true,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "Equatorial Energia",
+      "tier": 1,
+      "country": "Brasil",
+      "coverage_status": "PARTIAL_COVERAGE",
+      "coverage_status_label": "Cobertura parcial",
+      "reasons": [
+        "Cobertura mista: GNEWS, RI_NEWS rodou(aram) com sucesso; REGULADOR_LOCAL não foi(ram) tentada(s) ou falhou(aram) nesta execução."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 15,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 9,
+          "validated": true,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "Itaú Unibanco",
+      "tier": 1,
+      "country": "Brasil",
+      "coverage_status": "PARTIAL_COVERAGE",
+      "coverage_status_label": "Cobertura parcial",
+      "reasons": [
+        "Cobertura mista: GNEWS, RI_NEWS rodou(aram) com sucesso; REGULADOR_LOCAL não foi(ram) tentada(s) ou falhou(aram) nesta execução."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 15,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 0,
+          "validated": true,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "Localiza",
+      "tier": 1,
+      "country": "Brasil",
+      "coverage_status": "PARTIAL_COVERAGE",
+      "coverage_status_label": "Cobertura parcial",
+      "reasons": [
+        "Cobertura mista: GNEWS, RI_NEWS rodou(aram) com sucesso; REGULADOR_LOCAL não foi(ram) tentada(s) ou falhou(aram) nesta execução."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 15,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 4,
+          "validated": true,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "PRIO",
+      "tier": 1,
+      "country": "Brasil",
+      "coverage_status": "PARTIAL_COVERAGE",
+      "coverage_status_label": "Cobertura parcial",
+      "reasons": [
+        "Cobertura mista: GNEWS, RI_NEWS rodou(aram) com sucesso; REGULADOR_LOCAL não foi(ram) tentada(s) ou falhou(aram) nesta execução."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 15,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 19,
+          "validated": true,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "Petrobras",
+      "tier": 1,
+      "country": "Brasil",
+      "coverage_status": "PARTIAL_COVERAGE",
+      "coverage_status_label": "Cobertura parcial",
+      "reasons": [
+        "Cobertura mista: GNEWS, RI_NEWS rodou(aram) com sucesso; REGULADOR_LOCAL não foi(ram) tentada(s) ou falhou(aram) nesta execução."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 15,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 6,
+          "validated": true,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "Raia Drogasil",
+      "tier": 1,
+      "country": "Brasil",
+      "coverage_status": "PARTIAL_COVERAGE",
+      "coverage_status_label": "Cobertura parcial",
+      "reasons": [
+        "Cobertura mista: GNEWS, RI_NEWS rodou(aram) com sucesso; REGULADOR_LOCAL não foi(ram) tentada(s) ou falhou(aram) nesta execução."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 15,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 7,
+          "validated": true,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "Rede D'Or",
+      "tier": 1,
+      "country": "Brasil",
+      "coverage_status": "PARTIAL_COVERAGE",
+      "coverage_status_label": "Cobertura parcial",
+      "reasons": [
+        "Cobertura mista: GNEWS, RI_NEWS rodou(aram) com sucesso; REGULADOR_LOCAL não foi(ram) tentada(s) ou falhou(aram) nesta execução."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 15,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 3,
+          "validated": true,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "Suzano",
+      "tier": 1,
+      "country": "Brasil",
+      "coverage_status": "PARTIAL_COVERAGE",
+      "coverage_status_label": "Cobertura parcial",
+      "reasons": [
+        "Cobertura mista: GNEWS, RI_NEWS rodou(aram) com sucesso; REGULADOR_LOCAL não foi(ram) tentada(s) ou falhou(aram) nesta execução."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 15,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 5,
+          "validated": true,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "Vale",
+      "tier": 1,
+      "country": "Brasil",
+      "coverage_status": "PARTIAL_COVERAGE",
+      "coverage_status_label": "Cobertura parcial",
+      "reasons": [
+        "Cobertura mista: GNEWS, RI_NEWS rodou(aram) com sucesso; REGULADOR_LOCAL não foi(ram) tentada(s) ou falhou(aram) nesta execução."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 15,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 15,
+          "validated": true,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "Vibra Energia",
+      "tier": 1,
+      "country": "Brasil",
+      "coverage_status": "PARTIAL_COVERAGE",
+      "coverage_status_label": "Cobertura parcial",
+      "reasons": [
+        "Cobertura mista: GNEWS, RI_NEWS rodou(aram) com sucesso; REGULADOR_LOCAL não foi(ram) tentada(s) ou falhou(aram) nesta execução."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 15,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 6,
+          "validated": true,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "Yura",
+      "tier": 2,
+      "country": "Peru",
+      "coverage_status": "NO_VALIDATED_OFFICIAL_SOURCE",
+      "coverage_status_label": "Sem fonte oficial validada",
+      "reasons": [
+        "Nenhuma fonte oficial (RI RSS/página de notícias, SEC/EDGAR, CVM/IPE filiante) configurada ou validada para este emissor."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": "Emissor fora do bucket desta execução (sem entrada em international_search_execution)."
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "Trupal",
+      "tier": 3,
+      "country": "Peru",
+      "coverage_status": "NO_VALIDATED_OFFICIAL_SOURCE",
+      "coverage_status_label": "Sem fonte oficial validada",
+      "reasons": [
+        "Nenhuma fonte oficial (RI RSS/página de notícias, SEC/EDGAR, CVM/IPE filiante) configurada ou validada para este emissor."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": "Emissor fora do bucket desta execução (sem entrada em international_search_execution)."
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "Coazucar",
+      "tier": 2,
+      "country": "Peru",
+      "coverage_status": "NO_VALIDATED_OFFICIAL_SOURCE",
+      "coverage_status_label": "Sem fonte oficial validada",
+      "reasons": [
+        "Nenhuma fonte oficial (RI RSS/página de notícias, SEC/EDGAR, CVM/IPE filiante) configurada ou validada para este emissor."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": true,
+          "technical_success": true,
+          "items_found": 3,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "Yobel",
+      "tier": 3,
+      "country": "Peru",
+      "coverage_status": "NO_VALIDATED_OFFICIAL_SOURCE",
+      "coverage_status_label": "Sem fonte oficial validada",
+      "reasons": [
+        "Nenhuma fonte oficial (RI RSS/página de notícias, SEC/EDGAR, CVM/IPE filiante) configurada ou validada para este emissor."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": "Emissor fora do bucket desta execução (sem entrada em international_search_execution)."
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": false,
+      "parent_company": ""
+    },
+    {
+      "company": "Casa Grande S.A.A.",
+      "tier": 2,
+      "country": "Peru",
+      "coverage_status": "NO_VALIDATED_OFFICIAL_SOURCE",
+      "coverage_status_label": "Sem fonte oficial validada",
+      "reasons": [
+        "Nenhuma fonte oficial (RI RSS/página de notícias, SEC/EDGAR, CVM/IPE filiante) configurada ou validada para este emissor."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": "Emissor fora do bucket desta execução (sem entrada em international_search_execution)."
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": true,
+      "parent_company": "Coazucar"
+    },
+    {
+      "company": "Cartavio S.A.A.",
+      "tier": 2,
+      "country": "Peru",
+      "coverage_status": "NO_VALIDATED_OFFICIAL_SOURCE",
+      "coverage_status_label": "Sem fonte oficial validada",
+      "reasons": [
+        "Nenhuma fonte oficial (RI RSS/página de notícias, SEC/EDGAR, CVM/IPE filiante) configurada ou validada para este emissor."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": "Emissor fora do bucket desta execução (sem entrada em international_search_execution)."
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": true,
+      "parent_company": "Coazucar"
+    },
+    {
+      "company": "Agroindustrias San Jacinto S.A.",
+      "tier": 2,
+      "country": "Peru",
+      "coverage_status": "NO_VALIDATED_OFFICIAL_SOURCE",
+      "coverage_status_label": "Sem fonte oficial validada",
+      "reasons": [
+        "Nenhuma fonte oficial (RI RSS/página de notícias, SEC/EDGAR, CVM/IPE filiante) configurada ou validada para este emissor."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": "Emissor fora do bucket desta execução (sem entrada em international_search_execution)."
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": true,
+      "parent_company": "Coazucar"
+    },
+    {
+      "company": "Empresa Agrícola Sintuco S.A.",
+      "tier": 2,
+      "country": "Peru",
+      "coverage_status": "NO_VALIDATED_OFFICIAL_SOURCE",
+      "coverage_status_label": "Sem fonte oficial validada",
+      "reasons": [
+        "Nenhuma fonte oficial (RI RSS/página de notícias, SEC/EDGAR, CVM/IPE filiante) configurada ou validada para este emissor."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": "Emissor fora do bucket desta execução (sem entrada em international_search_execution)."
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": true,
+      "parent_company": "Coazucar"
+    },
+    {
+      "company": "Agrolmos S.",
+      "tier": 2,
+      "country": "Peru",
+      "coverage_status": "NO_VALIDATED_OFFICIAL_SOURCE",
+      "coverage_status_label": "Sem fonte oficial validada",
+      "reasons": [
+        "Nenhuma fonte oficial (RI RSS/página de notícias, SEC/EDGAR, CVM/IPE filiante) configurada ou validada para este emissor."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": "Emissor fora do bucket desta execução (sem entrada em international_search_execution)."
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": true,
+      "parent_company": "Coazucar"
+    },
+    {
+      "company": "Empresa Agraria Chiquitoy S.A.",
+      "tier": 2,
+      "country": "Peru",
+      "coverage_status": "NO_VALIDATED_OFFICIAL_SOURCE",
+      "coverage_status_label": "Sem fonte oficial validada",
+      "reasons": [
+        "Nenhuma fonte oficial (RI RSS/página de notícias, SEC/EDGAR, CVM/IPE filiante) configurada ou validada para este emissor."
+      ],
+      "sources": [
+        {
+          "source": "GNEWS",
+          "configured": true,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": "Emissor fora do bucket desta execução (sem entrada em international_search_execution)."
+        },
+        {
+          "source": "RI_RSS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "RI_NEWS",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "EDGAR",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        },
+        {
+          "source": "REGULADOR_LOCAL",
+          "configured": false,
+          "attempted": false,
+          "technical_success": false,
+          "items_found": 0,
+          "validated": false,
+          "note": ""
+        }
+      ],
+      "is_subsidiary": true,
+      "parent_company": "Coazucar"
+    }
+  ]
+}
