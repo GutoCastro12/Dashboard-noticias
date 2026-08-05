@@ -863,7 +863,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T12:23:58.102105+00:00"
+     "last_checked_at": "2026-08-05T15:23:26.773262+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2502,7 +2502,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T12:23:58.502383+00:00"
+     "last_checked_at": "2026-08-05T15:23:27.173551+00:00"
     }
    ],
    "corrob_sources": [
@@ -9293,7 +9293,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T12:23:58.902681+00:00"
+     "last_checked_at": "2026-08-05T15:23:27.573871+00:00"
     },
     {
      "source": "Demarest",
@@ -9313,7 +9313,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T12:23:59.302964+00:00"
+     "last_checked_at": "2026-08-05T15:23:27.974199+00:00"
     }
    ],
    "corrob_sources": [
@@ -10730,7 +10730,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T12:23:59.703215+00:00"
+     "last_checked_at": "2026-08-05T15:23:28.374493+00:00"
     }
    ],
    "corrob_sources": [
@@ -13918,7 +13918,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T12:24:00.241486+00:00"
+     "last_checked_at": "2026-08-05T15:23:28.968392+00:00"
     }
    ],
    "corrob_sources": [
@@ -16156,7 +16156,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T12:24:00.761607+00:00"
+     "last_checked_at": "2026-08-05T15:23:29.565577+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16262,7 +16262,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T12:24:01.292225+00:00"
+     "last_checked_at": "2026-08-05T15:23:30.180819+00:00"
     },
     {
      "source": "Moomoo",
@@ -17555,7 +17555,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T12:24:01.909181+00:00"
+     "last_checked_at": "2026-08-05T15:23:30.910855+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17598,7 +17598,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T12:24:02.507224+00:00"
+     "last_checked_at": "2026-08-05T15:23:31.644195+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19350,7 +19350,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-05T12:24:02.907540+00:00",
+     "last_checked_at": "2026-08-05T15:23:32.044529+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19415,7 +19415,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-05T12:24:03.307799+00:00",
+     "last_checked_at": "2026-08-05T15:23:32.444794+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20388,7 +20388,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T12:24:03.842731+00:00"
+     "last_checked_at": "2026-08-05T15:23:33.053803+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20473,7 +20473,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T12:24:04.377393+00:00"
+     "last_checked_at": "2026-08-05T15:23:33.654250+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -35601,7 +35601,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T12:24:05.956641+00:00"
+     "last_checked_at": "2026-08-05T15:23:34.370279+00:00"
     }
    ],
    "corrob_sources": [
@@ -38458,7 +38458,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T12:24:06.467755+00:00"
+     "last_checked_at": "2026-08-05T15:23:34.961323+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38501,7 +38501,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T12:24:06.990353+00:00"
+     "last_checked_at": "2026-08-05T15:23:35.555252+00:00"
     },
     {
      "source": "Virginia Business",
@@ -43375,8 +43375,51 @@
    "context_companies": [],
    "captured_ts": 1785892293,
    "cap_iso": "2026-08-04 22:11",
-   "corroborations": [],
-   "corrob_sources": []
+   "corroborations": [
+    {
+     "source": "Canal Rural",
+     "domain": "canalrural.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOa2lMRUhsUWE2cGRHRW41N2VYX2s3WFphalMydzVKNWE1c0ZQa0QybFpJNG5ESVRucEZEX0ZlWi15dTY1WnRtbmN6MlJlSG1lRm9aQzd3WnZqRVdYQXdONnlXWU9QRnZHcXFlVG5YZzVIWnk5VXl3ZkFsSUt4WWlTX0UycnJFOE1JUENCeDV5OUdsMzNkOEZHaWFJY2p1OHhhZ0lxRExxNmlzTGF2R1VrS2RVYmlJbG92cldKMEdHVXVUTkd4akhvTQ?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOa2lMRUhsUWE2cGRHRW41N2VYX2s3WFphalMydzVKNWE1c0ZQa0QybFpJNG5ESVRucEZEX0ZlWi15dTY1WnRtbmN6MlJlSG1lRm9aQzd3WnZqRVdYQXdONnlXWU9QRnZHcXFlVG5YZzVIWnk5VXl3ZkFsSUt4WWlTX0UycnJFOE1JUENCeDV5OUdsMzNkOEZHaWFJY2p1OHhhZ0lxRExxNmlzTGF2R1VrS2RVYmlJbG92cldKMEdHVXVUTkd4akhvTQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOa2lMRUhsUWE2cGRHRW41N2VYX2s3WFphalMydzVKNWE1c0ZQa0QybFpJNG5ESVRucEZEX0ZlWi15dTY1WnRtbmN6MlJlSG1lRm9aQzd3WnZqRVdYQXdONnlXWU9QRnZHcXFlVG5YZzVIWnk5VXl3ZkFsSUt4WWlTX0UycnJFOE1JUENCeDV5OUdsMzNkOEZHaWFJY2p1OHhhZ0lxRExxNmlzTGF2R1VrS2RVYmlJbG92cldKMEdHVXVUTkd4akhvTQ?oc=5",
+     "resolved_url": "https://www.canalrural.com.br/economia/banco-do-brasil-abre-contratacoes-da-linha-aquisicao-inovadora-do-move-maquinas-agricolas/",
+     "canonical_url": "https://www.canalrural.com.br/economia/banco-do-brasil-abre-contratacoes-da-linha-aquisicao-inovadora-do-move-maquinas-agricolas/",
+     "display_url": "https://www.canalrural.com.br/economia/banco-do-brasil-abre-contratacoes-da-linha-aquisicao-inovadora-do-move-maquinas-agricolas/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.canalrural.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-05T15:23:36.151332+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Canal Rural",
+     "domain": "canalrural.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOa2lMRUhsUWE2cGRHRW41N2VYX2s3WFphalMydzVKNWE1c0ZQa0QybFpJNG5ESVRucEZEX0ZlWi15dTY1WnRtbmN6MlJlSG1lRm9aQzd3WnZqRVdYQXdONnlXWU9QRnZHcXFlVG5YZzVIWnk5VXl3ZkFsSUt4WWlTX0UycnJFOE1JUENCeDV5OUdsMzNkOEZHaWFJY2p1OHhhZ0lxRExxNmlzTGF2R1VrS2RVYmlJbG92cldKMEdHVXVUTkd4akhvTQ?oc=5",
+     "when": "05/08 09:41",
+     "original_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOa2lMRUhsUWE2cGRHRW41N2VYX2s3WFphalMydzVKNWE1c0ZQa0QybFpJNG5ESVRucEZEX0ZlWi15dTY1WnRtbmN6MlJlSG1lRm9aQzd3WnZqRVdYQXdONnlXWU9QRnZHcXFlVG5YZzVIWnk5VXl3ZkFsSUt4WWlTX0UycnJFOE1JUENCeDV5OUdsMzNkOEZHaWFJY2p1OHhhZ0lxRExxNmlzTGF2R1VrS2RVYmlJbG92cldKMEdHVXVUTkd4akhvTQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOa2lMRUhsUWE2cGRHRW41N2VYX2s3WFphalMydzVKNWE1c0ZQa0QybFpJNG5ESVRucEZEX0ZlWi15dTY1WnRtbmN6MlJlSG1lRm9aQzd3WnZqRVdYQXdONnlXWU9QRnZHcXFlVG5YZzVIWnk5VXl3ZkFsSUt4WWlTX0UycnJFOE1JUENCeDV5OUdsMzNkOEZHaWFJY2p1OHhhZ0lxRExxNmlzTGF2R1VrS2RVYmlJbG92cldKMEdHVXVUTkd4akhvTQ?oc=5",
+     "resolved_url": "https://www.canalrural.com.br/economia/banco-do-brasil-abre-contratacoes-da-linha-aquisicao-inovadora-do-move-maquinas-agricolas/",
+     "canonical_url": "https://www.canalrural.com.br/economia/banco-do-brasil-abre-contratacoes-da-linha-aquisicao-inovadora-do-move-maquinas-agricolas/",
+     "display_url": "https://www.canalrural.com.br/economia/banco-do-brasil-abre-contratacoes-da-linha-aquisicao-inovadora-do-move-maquinas-agricolas/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.canalrural.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-05T15:23:36.551612+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ]
   },
   "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTThBZ09ZOU5fYTBQa0NWUWRteDMzeEItek16REUwNzdMQ2xsNURxU2pzU3hrd1pIQ0tXUzh0d1F5LTFRVmF6dkozMzhySTVXZEROdWkxd2pTRmlReGVZQlpZdUZnRkZyN1R4aEY2ZjUwTVJ1T1dZaTU0VnY4MVd6UXIzeHdMYVly?oc=5": {
    "title": "Explainer: What are credit default swaps and why are they spooking AI investors?",
@@ -43395,9 +43438,163 @@
    ],
    "captured_ts": 1785895478,
    "cap_iso": "2026-08-04 23:04"
+  },
+  "https://news.google.com/rss/articles/CBMigAFBVV95cUxNd0NOSjJEWEJlcHZENGtpaTZLdVJ0a2h6RTRhUTVVRWlWMXA2WG5BUVpYeHNJRnZZVnQ3eGN2aUl0VFA4b21iR3ZJdVQwX0w3UkhIZXFwZVN5VGRWNFg4dW1sWHE1RVJuUTFkcFlhNmZhUFFXOEVURnZOdUlTOUo5MQ?oc=5": {
+   "title": "Saks se declara en quiebra en EU y revive el fallido negocio de lujo de Carlos Slim en México",
+   "url": "https://elceo.com/negocios/saks-quiebra-fallido-negocio-carlos-slim-mexico/",
+   "summary": "Saks se declara en quiebra en EU y revive el fallido negocio de lujo de Carlos Slim en México &nbsp;&nbsp; EL CEO",
+   "source": "EL CEO",
+   "domain": "elceo.com",
+   "pub_ts": 1769414400,
+   "pub_iso": "2026-01-26 05:00",
+   "language": "es",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785943401,
+   "cap_iso": "2026-08-05 12:23"
+  },
+  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOOXRRS0F1Qko4Y2diZnBQRGloRDktTENYUjFVeFNNVm96bjU0M3Y0UWdUMXJ6TFB2Mm10SEI0ZHBueE1paDk2a0RySTVCSW5rLVZtT3ZzQUJBck1DWWtfdjZGYjREOHh3VkM5SmhEZkJrNDRhTXJKWXdEc0doVzNFNUpHSkFIdE1uV0VrMEY3bTBSTGxvUmg3Ylk2Vlg4YmVqaHN2aGhGa2g2Qi1YcnJGanVjYVcwU3liSkFF?oc=5": {
+   "title": "TRT2 suspende execução trabalhista contra BASF por recuperação judicial de terceirizadas",
+   "url": "https://www.jota.info/trabalho/trt2-suspende-execucao-trabalhista-contra-basf-por-recuperacao-judicial-de-terceirizadas",
+   "summary": "TRT2 suspende execução trabalhista contra BASF por recuperação judicial de terceirizadas &nbsp;&nbsp; JOTA Info",
+   "source": "JOTA Info",
+   "domain": "jota.info",
+   "pub_ts": 1785934806,
+   "pub_iso": "2026-08-05 10:00",
+   "language": "es",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1785943401,
+   "cap_iso": "2026-08-05 12:23"
+  },
+  "https://ncnews.com.br/2026/08/05/opa-ecopetrol-brava-redefine-controle-petroleira/": {
+   "title": "Ecopetrol realiza OPA da Brava e redefine controle da petroleira; veja atualizações",
+   "url": "https://ncnews.com.br/2026/08/05/opa-ecopetrol-brava-redefine-controle-petroleira/",
+   "summary": "Ecopetrol realiza OPA da Brava e redefine controle da petroleira; veja atualizações &nbsp;&nbsp; ncnews.com.br",
+   "source": "ncnews.com.br",
+   "domain": "ncnews.com.br",
+   "pub_ts": 1785935362,
+   "pub_iso": "2026-08-05 10:09",
+   "language": "pt",
+   "companies": [
+    "Ecopetrol"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "event_assessments": [
+    {
+     "company": "Ecopetrol",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Ecopetrol",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "neutra",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "sem_verbo_de_aquisicao_no_texto",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Ecopetrol",
+     "event_id": "ma",
+     "event_id_corrigido": "",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "sem_verbo_de_aquisicao_no_texto",
+     "subject_company": "Ecopetrol"
+    }
+   ],
+   "mention_roles": {
+    "Ecopetrol": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Ecopetrol": [
+     {
+      "company": "Ecopetrol",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Ecopetrol",
+      "monitored_company": "Ecopetrol",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Ecopetrol realiza OPA da Brava e redefine controle da petroleira; veja atualizações",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOLUQzd1hoMjZtM0IwckptaDhUdDlLZ1ZGUmx2allZYTJwZzdfSktlVkhsMnRmaHVSRDN3Q2RYWExhcXRZSHozekVaSTlSQnBMWko4OXlGaGdmQm9mVXNyM3VTUUU2RndDeE81cklqWWhuMkJQRUE3NEtjbUxIeXFXNUVldEo5XzZNeVE?oc=5",
+      "pub_ts": 1785935362,
+      "observation": "sem_verbo_de_aquisicao_no_texto",
+      "source_record_id": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOLUQzd1hoMjZtM0IwckptaDhUdDlLZ1ZGUmx2allZYTJwZzdfSktlVkhsMnRmaHVSRDN3Q2RYWExhcXRZSHozekVaSTlSQnBMWko4OXlGaGdmQm9mVXNyM3VTUUU2RndDeE81cklqWWhuMkJQRUE3NEtjbUxIeXFXNUVldEo5XzZNeVE?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Ecopetrol": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Ecopetrol"
+   ],
+   "captured_ts": 1785943401,
+   "cap_iso": "2026-08-05 12:23"
+  },
+  "https://www.cnbc.com/2026/08/05/private-companies-added-just-44000-workers-in-july-below-expectations-adp-reports.html": {
+   "title": "Private companies added just 44,000 workers in July, below expectations, ADP reports",
+   "url": "https://www.cnbc.com/2026/08/05/private-companies-added-just-44000-workers-in-july-below-expectations-adp-reports.html",
+   "summary": "Hiring at private companies slowed considerably in July, with most of the job growth coming health care.",
+   "source": "CNBC · Economy",
+   "domain": "cnbc.com",
+   "pub_ts": 1785942526,
+   "pub_iso": "2026-08-05 12:08",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "lucro_abaixo_consenso"
+   ],
+   "trust_override": "imprensa",
+   "captured_ts": 1785943401,
+   "cap_iso": "2026-08-05 12:23"
   }
  },
- "run_count": 75,
+ "run_count": 76,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -48178,11 +48375,31 @@
   "https://news.google.com/rss/articles/CBMifkFVX3lxTE5ZQWtJLVhRT0Z5T0hqdWhmUzlETFI3d1JOdkx1U3NKeHkydmVHM1FfWTFNZjd4dGlUTThGQjQybDlzZ29Ubk5BbFgtYWJqV2I2THctVm44d0tZejFVdEhmZWxlT2pOVUw1UFM5MU55a0k2bjdjTVVTR080N0EtQQ?oc=5": {
    "url": "https://www.spacemoney.com.br/investimentos/vamos-vamo3-anuncia-novo-ceo/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMidkFVX3lxTE9ZNFpmTGkwbTZyaENrZ25Fc3p6QjNRdlBzQ0pDUGpKbzVmTGl4Tk0xR1owY2NRbE5pemgxaWJrY25OLW5SM3QtUk9xTFZtamduY3R4NmtNWi1McE9VSy1jWVo2M2l1OXF1VVg4MFRqTG9fUUZnSXfSAawCQVVfeXFMUE5JTXZ5YU1wMERqMFdJRk0zeWYxRTh4aDZqc1pwQmN0MkFPYkpkTzloLTg1a185dmVkNnV2emRob1FkeDA1c1djYVRERXhwOUVmMWo4bnJUaGZFd2tmcnhKR1dXMUtxWWtFX3BpTG5IMHJlTzJoV2VZZXZHRGJrb0swRnJUa3VDTlFFdGQtUEZnUm5uWWluS3ZNekVoUzlGWWZTVF9DVEhtbUstTUJlVENxX21XUHhpWkJvVVdVZ3l2alJRbFl5RE1mWU5zbVRiNmlUSFRJR2w1Z0lKNndZMG9jUkxHaEFOWUExb3NmQkNMX2FVTzBKVGdHd3lVaTlEWE1pdnpjMXJRNjI4UXFVMXY5TmlnSnN4VzF3SmZjWUc0Zmp6a0x1LTk2eGNH?oc=5": {
+   "url": "https://www.suno.com.br/noticias/ambev-abev3-ceo-skol-retomada-gss/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiigFBVV95cUxOLUQzd1hoMjZtM0IwckptaDhUdDlLZ1ZGUmx2allZYTJwZzdfSktlVkhsMnRmaHVSRDN3Q2RYWExhcXRZSHozekVaSTlSQnBMWko4OXlGaGdmQm9mVXNyM3VTUUU2RndDeE81cklqWWhuMkJQRUE3NEtjbUxIeXFXNUVldEo5XzZNeVE?oc=5": {
+   "url": "https://ncnews.com.br/2026/08/05/opa-ecopetrol-brava-redefine-controle-petroleira/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMigAFBVV95cUxNd0NOSjJEWEJlcHZENGtpaTZLdVJ0a2h6RTRhUTVVRWlWMXA2WG5BUVpYeHNJRnZZVnQ3eGN2aUl0VFA4b21iR3ZJdVQwX0w3UkhIZXFwZVN5VGRWNFg4dW1sWHE1RVJuUTFkcFlhNmZhUFFXOEVURnZOdUlTOUo5MQ?oc=5": {
+   "url": "https://elceo.com/negocios/saks-quiebra-fallido-negocio-carlos-slim-mexico/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOOXRRS0F1Qko4Y2diZnBQRGloRDktTENYUjFVeFNNVm96bjU0M3Y0UWdUMXJ6TFB2Mm10SEI0ZHBueE1paDk2a0RySTVCSW5rLVZtT3ZzQUJBck1DWWtfdjZGYjREOHh3VkM5SmhEZkJrNDRhTXJKWXdEc0doVzNFNUpHSkFIdE1uV0VrMEY3bTBSTGxvUmg3Ylk2Vlg4YmVqaHN2aGhGa2g2Qi1YcnJGanVjYVcwU3liSkFF?oc=5": {
+   "url": "https://www.jota.info/trabalho/trt2-suspende-execucao-trabalhista-contra-basf-por-recuperacao-judicial-de-terceirizadas",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOa2lMRUhsUWE2cGRHRW41N2VYX2s3WFphalMydzVKNWE1c0ZQa0QybFpJNG5ESVRucEZEX0ZlWi15dTY1WnRtbmN6MlJlSG1lRm9aQzd3WnZqRVdYQXdONnlXWU9QRnZHcXFlVG5YZzVIWnk5VXl3ZkFsSUt4WWlTX0UycnJFOE1JUENCeDV5OUdsMzNkOEZHaWFJY2p1OHhhZ0lxRExxNmlzTGF2R1VrS2RVYmlJbG92cldKMEdHVXVUTkd4akhvTQ?oc=5": {
+   "url": "https://www.canalrural.com.br/economia/banco-do-brasil-abre-contratacoes-da-linha-aquisicao-inovadora-do-move-maquinas-agricolas/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785932647,
-  "iso": "05 ago 2026 · 09:24 BRT",
+  "ts": 1785943417,
+  "iso": "05 ago 2026 · 12:23 BRT",
   "status": {
    "Rumo": {
     "status": "atencao",
@@ -48206,7 +48423,7 @@
    },
    "Santander Brasil": {
     "status": "atencao",
-    "score": 55
+    "score": 54
    },
    "Grupo Financiero Banorte": {
     "status": "critico",
@@ -48252,16 +48469,16 @@
     "status": "monitorar",
     "score": 32
    },
-   "Baker Hughes": {
-    "status": "monitorar",
-    "score": 28
+   "Banco do Brasil": {
+    "status": "atencao",
+    "score": 31
    },
-   "ISA Energia Brasil": {
+   "Baker Hughes": {
     "status": "monitorar",
     "score": 27
    },
-   "Banco do Brasil": {
-    "status": "atencao",
+   "ISA Energia Brasil": {
+    "status": "monitorar",
     "score": 27
    },
    "PRIO": {
