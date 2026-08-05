@@ -327,6 +327,40 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);
 .info-note{font-size:.76rem;opacity:.75;margin-top:6px;line-height:1.45}
 .info-meta{font-size:.74rem;opacity:.65;margin-top:5px}
 .info-link{margin-left:8px;text-decoration:none;opacity:.9}
+/* ── 4H.2 — diagnóstico de cobertura oficial (dimensão separada do score) ── */
+.coverage-exec-summary{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px}
+.coverage-exec-summary .cov-chip{font-size:.72rem;padding:4px 10px;border-radius:999px;
+  border:1px solid rgba(127,127,127,.3);background:rgba(127,127,127,.07);opacity:.92}
+.coverage-exec-summary .cov-chip b{font-size:.86rem;margin-right:4px}
+.coverage-exec-summary .cov-chip.confirmada{border-color:rgba(34,197,94,.4);background:rgba(34,197,94,.08)}
+.coverage-exec-summary .cov-chip.parcial{border-color:rgba(234,179,8,.4);background:rgba(234,179,8,.08)}
+.coverage-exec-summary .cov-chip.falha{border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.08)}
+.coverage-exec-summary .cov-chip.fallback{border-color:rgba(234,179,8,.3);background:rgba(234,179,8,.05)}
+.coverage-exec-summary .cov-chip.sem-fonte{border-color:rgba(168,85,247,.4);background:rgba(168,85,247,.08)}
+.coverage-block-cov{margin-top:14px;padding:0;border-radius:10px;border:1px solid rgba(127,127,127,.25);
+  background:rgba(127,127,127,.04);overflow:hidden}
+.coverage-block-cov summary{cursor:pointer;padding:10px 14px;font-size:.78rem;
+  text-transform:uppercase;letter-spacing:.05em;opacity:.85;list-style:none;
+  display:flex;align-items:center;gap:8px;justify-content:space-between}
+.coverage-block-cov summary::-webkit-details-marker{display:none}
+.coverage-block-cov summary .cov-arrow{transition:transform .15s;opacity:.6}
+.coverage-block-cov[open] summary .cov-arrow{transform:rotate(90deg)}
+.coverage-block-cov .cov-body{padding:2px 14px 12px}
+.cov-status-line{font-size:.86rem;font-weight:600;margin-bottom:6px}
+.cov-mini-stats{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.cov-mini-stats span{font-size:.68rem;padding:1px 7px;border-radius:999px;
+  border:1px solid rgba(127,127,127,.3);background:rgba(127,127,127,.08)}
+.cov-source-row{padding:7px 0;border-bottom:1px dashed rgba(127,127,127,.15);font-size:.78rem}
+.cov-source-row:last-child{border-bottom:0}
+.cov-source-name{font-weight:600}
+.cov-source-meta{opacity:.7;font-size:.72rem;margin-top:2px}
+.cov-source-status{font-size:.66rem;padding:0 6px;border-radius:999px;margin-left:6px;
+  border:1px solid rgba(127,127,127,.3)}
+.cov-source-status.sucesso{border-color:rgba(34,197,94,.4);background:rgba(34,197,94,.1)}
+.cov-source-status.falhou{border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.1)}
+.cov-source-status.n-o-tentada{border-color:rgba(127,127,127,.4);background:rgba(127,127,127,.1)}
+.cov-source-link{margin-left:6px;font-size:.72rem;text-decoration:none}
+.cov-disclaimer{font-size:.7rem;opacity:.55;margin-top:8px;line-height:1.4}
 </style>
 </head>
 <body>
@@ -387,6 +421,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);
   </div>
   <div class="group-filter" id="groupFilter" role="group" aria-label="Filtrar por grupo de ativos"></div>
   <div class="radar-notice" id="radar-notice" role="note" style="display:none"></div>
+  <div class="coverage-exec-summary" id="coverage-exec-summary"></div>
   <div class="evo-summary" id="radar-summary"></div>
   <div class="evo" id="radar-list"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
   <div class="evo-legend" id="radar-legend"></div>
@@ -636,6 +671,64 @@ function renderGroupFilter(){
 }
 
 /* ── Radar de emissores (visão completa: ranking + evolução + decomposição) ── */
+/* ── 4H.2 — diagnóstico de cobertura oficial (NUNCA é severidade de risco;
+   fica separado do score, mostrado ao lado como metadado de auditoria) ── */
+const COV_STATUS_CLASS = {
+  NO_RELEVANT_NEWS_AFTER_SUCCESSFUL_RUN: 'confirmada', COVERAGE_OK_EVENTS_FOUND: 'confirmada',
+  ONLY_INFORMATIONAL_FOUND: 'confirmada', PARTIAL_COVERAGE: 'parcial',
+  COLLECTION_FAILURE: 'falha', FALLBACK_ONLY: 'fallback',
+  NO_VALIDATED_OFFICIAL_SOURCE: 'sem-fonte', SOURCE_CONFIGURED_NOT_EXECUTED: 'sem-fonte',
+};
+function renderCoverageExecSummary(){
+  const el = document.getElementById('coverage-exec-summary');
+  if (!el) return;
+  const s = P.coverage_diagnosis_summary;
+  if (!s){ el.innerHTML = ''; return; }
+  const chip = (cls, n, label) => `<span class="cov-chip ${cls}"><b>${n}</b>${esc(label)}</span>`;
+  el.innerHTML =
+    chip('confirmada', s.cobertura_confirmada, 'cobertura confirmada') +
+    chip('parcial', s.cobertura_parcial, 'cobertura parcial') +
+    chip('falha', s.falha_de_coleta, 'falha de coleta') +
+    chip('fallback', s.somente_fallback, 'somente fallback') +
+    chip('sem-fonte', s.sem_fonte_oficial, 'sem fonte oficial validada') +
+    `<span class="cov-chip"><b>${s.total_diagnosticado}</b>emissor(es) diagnosticado(s) — cobertura ≠ risco, dimensão separada</span>`;
+}
+function coverageBlockHtml(cov){
+  if (!cov) return '';
+  const cls = COV_STATUS_CLASS[cov.status] || '';
+  const srcRows = (cov.sources||[]).map(s => `
+    <div class="cov-source-row">
+      <span class="cov-source-name">${esc(s.name)}</span>
+      <span class="cov-source-status ${(s.status||'').replace(/[^a-z]/g,'-')}">${esc(s.status)}</span>
+      ${s.link ? `<a class="cov-source-link" href="${esc(s.link.split(';')[0].trim())}" target="_blank" rel="noopener">fonte ↗</a>` : ''}
+      <div class="cov-source-meta">
+        tipo: ${esc(s.type||'—')} · método: ${esc(s.method||'—')} ·
+        última tentativa: ${esc(s.last_attempt||'—')} · último sucesso: ${esc(s.last_success||'—')} ·
+        itens: ${s.items_found||0}${s.latest_item_date?` · notícia mais recente: ${esc(s.latest_item_date)}`:''}
+        ${s.error ? `<br>erro: ${esc(s.error)}` : ''}
+      </div>
+    </div>`).join('');
+  return `
+  <details class="coverage-block-cov">
+    <summary><span>📡 Cobertura das fontes<span class="cov-arrow">▶</span></span>
+      <span class="cov-source-status ${cls}">${esc(cov.status_ui)}</span></summary>
+    <div class="cov-body">
+      <div class="cov-status-line">${esc(cov.status_ui)}</div>
+      <div class="cov-mini-stats">
+        <span>última execução: ${esc(cov.last_run||'—')}</span>
+        <span>fontes configuradas: ${cov.sources_configured}</span>
+        <span>executadas: ${cov.sources_executed}</span>
+        <span>bem-sucedidas: ${cov.sources_success}</span>
+        <span>itens encontrados: ${cov.items_found}</span>
+        <span>eventos relevantes: ${cov.events_found}</span>
+        <span>uso de fallback: ${cov.fallback_used ? 'sim' : 'não'}</span>
+        <span>falhas: ${cov.failures_count}</span>
+      </div>
+      ${srcRows}
+      <div class="cov-disclaimer">Diagnóstico de cobertura/ausência de notícia — não é severidade de risco e não altera o score do emissor.</div>
+    </div>
+  </details>`;
+}
 function renderRadar(){
   renderGroupFilter();
   let rows = D().evolution;
@@ -833,6 +926,7 @@ function renderRadar(){
                + bloco('Evento informativo · não pontua', 'neutral', neu)
                + bloco('Evento a revisar · não pontua', 'neutral', revisar);
         })()}
+        ${coverageBlockHtml(row.coverage_diagnosis)}
       </div>
     </div>`).join('');
   list.querySelectorAll('.ev-toggle').forEach(btn => btn.addEventListener('click', e => {
@@ -1199,7 +1293,7 @@ function downloadCoberturaXLSX(){
   } catch(e){ alert('Falha ao gerar Excel de cobertura: '+(e&&e.message||e)); }
 }
 
-function renderAll(){ renderTotals(); renderChanges(); renderRadar(); renderFeed(); renderFreshness(); renderCobertura(); syncControls(); }
+function renderAll(){ renderTotals(); renderChanges(); renderRadar(); renderFeed(); renderFreshness(); renderCobertura(); renderCoverageExecSummary(); syncControls(); }
 
 /* ─────────────── Exportação (radar + resumo) ───────────────
    Gerada 100% no front-end a partir do payload — funciona em site

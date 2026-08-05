@@ -19,6 +19,7 @@ Cobre:
 import json
 import os
 import sys
+import tempfile
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -250,6 +251,276 @@ class TestRetroactiveDiagnosisOnRealArtifacts(unittest.TestCase):
         tier1_names = {c["name"] for c in cfg["watchlist"] if c.get("tier") == 1}
         diagnosed_names = {r["company"] for r in rows}
         self.assertTrue(tier1_names.issubset(diagnosed_names))
+
+
+# ══════════════════════════════════════════════════════════════════════
+# Fase 4H.2 (fechamento) — 16 testes adicionais exigidos pelo coordenador,
+# além dos 16 já existentes acima. Cobrem: telemetria CVM real por
+# emissor, fontes peruanas (SMV/BVL/homepage), rejeição de "HTTP 200 sem
+# conteúdo", subsidiárias sem transferência de score, reconciliação
+# dashboard/CSV, recálculo de status, renderização da seção recolhível, e
+# ausência de impacto em event_ids_for/score.
+# ══════════════════════════════════════════════════════════════════════
+
+def _cvm_row(emissor, status="filiante_cvm", protocolos=5, ultima="2026-06-30",
+            tipo_match="codigo_cvm", id_usado="1234", motivo="", n_cand=1,
+            confianca="alta"):
+    return {"emissor": emissor, "status": status, "protocolos_no_ano": protocolos,
+           "ultima_entrega": ultima, "tipo_match": tipo_match,
+           "identificador_usado": id_usado, "motivo_decisao": motivo,
+           "n_candidatos": n_cand, "confianca_match": confianca,
+           "companhia_casada": emissor.upper() + " S.A.", "codigo_cvm_casado": id_usado,
+           "cnpj_casado": "", "asset_class": "listada", "grupo": "listed_companies", "tier": 1}
+
+
+class Test01CvmTelemetryReconciledPerCompany(unittest.TestCase):
+    def test_each_company_gets_its_own_identifier_and_counts(self):
+        rows = [_cvm_row("Ambev", protocolos=57, id_usado="23264", ultima="2026-07-30"),
+               _cvm_row("Vale", protocolos=185, id_usado="4170", ultima="2026-07-31")]
+        tel = cd.build_cvm_telemetry(rows)
+        self.assertNotEqual(tel["Ambev"]["identificador_usado"], tel["Vale"]["identificador_usado"])
+        self.assertNotEqual(tel["Ambev"]["documentos_retornados"], tel["Vale"]["documentos_retornados"])
+        self.assertEqual(tel["Ambev"]["company_name"], "Ambev")
+        self.assertEqual(tel["Ambev"]["source_name"], "CVM")
+        self.assertEqual(tel["Ambev"]["source_type"], "regulator")
+
+
+class Test02CvmQueryWithoutDocuments(unittest.TestCase):
+    def test_esperado_filiante_sem_protocolo_gives_zero_accepted_and_error_note(self):
+        rows = [_cvm_row("Eletrobras", status="esperado_filiante_sem_protocolo_no_ano",
+                        protocolos=0, ultima="")]
+        tel = cd.build_cvm_telemetry(rows)
+        rec = tel["Eletrobras"]
+        self.assertEqual(rec["documentos_retornados"], 0)
+        self.assertEqual(rec["documentos_aceitos"], 0)
+        self.assertTrue(rec["tentativa_realizada"])
+        self.assertNotEqual(rec["erro"], "")
+
+
+class Test03CvmQueryWithDocuments(unittest.TestCase):
+    def test_filiante_cvm_gives_accepted_documents_and_last_date(self):
+        rows = [_cvm_row("Petrobras", status="filiante_cvm", protocolos=194,
+                        ultima="2026-07-31", id_usado="9512")]
+        tel = cd.build_cvm_telemetry(rows)
+        rec = tel["Petrobras"]
+        self.assertEqual(rec["documentos_retornados"], 194)
+        self.assertEqual(rec["documentos_aceitos"], 194)
+        self.assertEqual(rec["data_ultimo_documento"], "2026-07-31")
+        self.assertNotEqual(rec["ultimo_sucesso"], "")
+
+
+class Test04CvmErrorDoesNotContaminateOthers(unittest.TestCase):
+    def test_one_ambiguous_company_does_not_affect_siblings(self):
+        rows = [_cvm_row("BRF", status="revisar", protocolos=12, tipo_match="alias",
+                        motivo="termo curto"),
+               _cvm_row("Suzano", status="filiante_cvm", protocolos=81, id_usado="13986")]
+        tel = cd.build_cvm_telemetry(rows)
+        self.assertNotEqual(tel["BRF"]["erro"], "")
+        self.assertEqual(tel["BRF"]["documentos_aceitos"], 0)
+        self.assertEqual(tel["Suzano"]["erro"], "")
+        self.assertEqual(tel["Suzano"]["documentos_aceitos"], 81)
+        # o erro de BRF não vaza para o registro de Suzano
+        self.assertNotIn("BRF", tel["Suzano"]["erro"])
+
+
+class Test05SmvBvlSourceExecuted(unittest.TestCase):
+    def test_bvl_candidate_marked_as_exchange_and_executed(self):
+        cands = cd.PERU_SOURCE_VALIDATION["Yura"]
+        bvl = next(c for c in cands if c["source_type"] == "exchange")
+        self.assertEqual(bvl["http_status"], 200)
+        self.assertIn("bvl.com.pe", bvl["url_configurada"])
+        # HTTP 200 sozinho NÃO valida conteúdo (ver teste 08).
+        self.assertFalse(bvl["conteudo_validado"])
+
+
+class Test06PeruSourceConfiguredNotExecuted(unittest.TestCase):
+    def test_smv_hechos_de_importancia_not_a_stable_url_documented_as_gap(self):
+        cands = cd.PERU_SOURCE_VALIDATION["Trupal"]
+        smv = next(c for c in cands if c["source_type"] == "regulator")
+        self.assertFalse(smv["entidade_confirmada"])
+        self.assertIn("token", smv["bloqueio_tecnico"].lower() + smv["nota_validacao"].lower())
+
+
+class Test07GenericHomepageRejected(unittest.TestCase):
+    def test_coazucar_homepage_200_but_zero_items_is_fallback_only_not_confirmed(self):
+        company = {"name": "Coazucar", "tier": 2, "country": "Peru", "official": {}}
+        search_tel = {"searched": True, "queries": 1, "success": 1, "raw_articles": 3,
+                      "errors": 0, "eventos_classificados": 0}
+        rec = cd.classify_company_coverage(company, search_tel, {},
+                                           peru_validation=cd.PERU_SOURCE_VALIDATION["Coazucar"])
+        ri_news = next(s for s in rec["sources"] if s["source"] == "RI_NEWS")
+        self.assertTrue(ri_news["technical_success"])   # HTTP 200 real
+        self.assertEqual(ri_news["items_found"], 0)      # mas ZERO itens
+        self.assertFalse(ri_news["validated"])
+        self.assertNotEqual(rec["coverage_status"], cd.NO_VALIDATED_OFFICIAL_SOURCE)
+        self.assertIn(rec["coverage_status"], (cd.FALLBACK_ONLY,
+                                               cd.NO_RELEVANT_NEWS_AFTER_SUCCESSFUL_RUN))
+
+
+class Test08Http200IncompatibleContent(unittest.TestCase):
+    def test_http_200_without_content_validation_never_counts_as_relevant(self):
+        for cands in cd.PERU_SOURCE_VALIDATION.values():
+            for c in cands:
+                if c.get("http_status") == 200:
+                    self.assertFalse(c["conteudo_validado"],
+                                     f"{c['source_name']}: HTTP 200 não pode implicar "
+                                     f"conteudo_validado=True sem extração demonstrada")
+
+
+class Test09OfficialSourceNoRecentItems(unittest.TestCase):
+    def test_official_source_success_zero_items_recent(self):
+        official_tel = {"RI_NEWS": {"ACME": {"attempted": True, "success": True,
+                                             "items_found": 0}}}
+        c = _company(ri_feeds=[], official={"news": "https://ri.acme.com/news"})
+        rec = cd.classify_company_coverage(c, {"searched": True, "queries": 1, "success": 1,
+                                               "raw_articles": 0, "errors": 0,
+                                               "eventos_classificados": 0}, official_tel)
+        ri_news = next(s for s in rec["sources"] if s["source"] == "RI_NEWS")
+        self.assertEqual(ri_news["items_found"], 0)
+        self.assertEqual(rec["coverage_status"], cd.NO_RELEVANT_NEWS_AFTER_SUCCESSFUL_RUN)
+
+
+class Test10OfficialItemOnlyInformational(unittest.TestCase):
+    def test_official_item_found_but_not_scored(self):
+        official_tel = {"RI_NEWS": {"ACME": {"attempted": True, "success": True,
+                                             "items_found": 2}}}
+        c = _company(ri_feeds=[], official={"news": "https://ri.acme.com/news"})
+        rec = cd.classify_company_coverage(c, {"searched": True, "queries": 1, "success": 1,
+                                               "raw_articles": 1, "errors": 0,
+                                               "eventos_classificados": 0}, official_tel,
+                                           scored_events=0)
+        self.assertEqual(rec["coverage_status"], cd.ONLY_INFORMATIONAL_FOUND)
+
+
+class Test11RelevantEventInOfficialSource(unittest.TestCase):
+    def test_official_item_found_and_scored_is_not_an_absence_status(self):
+        official_tel = {"RI_NEWS": {"ACME": {"attempted": True, "success": True,
+                                             "items_found": 2}}}
+        c = _company(ri_feeds=[], official={"news": "https://ri.acme.com/news"})
+        rec = cd.classify_company_coverage(c, {"searched": True, "queries": 1, "success": 1,
+                                               "raw_articles": 1, "errors": 0,
+                                               "eventos_classificados": 1}, official_tel,
+                                           scored_events=1)
+        self.assertEqual(rec["coverage_status"], cd.COVERAGE_OK_EVENTS_FOUND)
+        self.assertNotIn(rec["coverage_status"], cd.COVERAGE_STATUSES)  # não é status de ausência
+
+
+class Test12SubsidiaryOwnSourceNoScoreTransfer(unittest.TestCase):
+    def test_subsidiary_validation_dict_exists_and_never_carries_score(self):
+        for name, cands in cd.COAZUCAR_SUBSIDIARY_SOURCE_VALIDATION.items():
+            for c in cands:
+                self.assertNotIn("score", c)
+                self.assertNotIn("score_transferido", c)
+        cfg = {"watchlist": [
+            {"name": "Coazucar", "tier": 2, "country": "Peru",
+             "related_entities": [{"entity_name": "Casa Grande S.A.A.",
+                                   "relationship": "subsidiary"}]}]}
+        run_meta = {"international_search_execution": {}, "official_source_execution": {}}
+        rows = cd.diagnose_coverage(cfg, run_meta)
+        sub = next(r for r in rows if r["company"] == "Casa Grande S.A.A.")
+        holding = next(r for r in rows if r["company"] == "Coazucar")
+        self.assertNotEqual(sub["coverage_status"], "score_herdado")
+        self.assertTrue(sub["is_subsidiary"])
+        self.assertFalse(holding["is_subsidiary"])
+
+
+class Test13DashboardAndCsvSameTotals(unittest.TestCase):
+    def test_reconciliation_passes_for_matching_data_and_fails_for_tampered_csv(self):
+        rows = [
+            cd.classify_company_coverage(_company("A"), None, {}),
+            cd.classify_company_coverage(_company("B"), None, {}),
+        ]
+        tmp = tempfile.mkdtemp()
+        cov_csv = cd.export_auditoria_cobertura_emissores_csv(
+            rows, os.path.join(tmp, "auditoria_cobertura_emissores.csv"))
+        src_csv = cd.export_auditoria_cobertura_fontes_csv(
+            rows, os.path.join(tmp, "auditoria_cobertura_fontes.csv"))
+        cd.assert_exports_reconcile(rows, cov_csv, src_csv)  # não deve levantar
+
+        # agora adultera o CSV e confirma que a reconciliação QUEBRA
+        with open(cov_csv, "a", encoding="utf-8-sig") as f:
+            f.write("Fantasma,1,Chile,False,,NO_VALIDATED_OFFICIAL_SOURCE,x,y\n")
+        with self.assertRaises(cd.ReconciliationError):
+            cd.assert_exports_reconcile(rows, cov_csv, src_csv)
+
+
+class Test14StatusRecalculatedAfterNewTelemetry(unittest.TestCase):
+    def test_status_changes_when_cvm_telemetry_is_added(self):
+        c = _company("BancoX", country="Brasil")
+        search_tel = {"searched": True, "queries": 1, "success": 1, "raw_articles": 2,
+                      "errors": 0, "eventos_classificados": 0}
+        official_tel = {"RI_NEWS": {"BancoX": {"attempted": True, "success": True,
+                                               "items_found": 2}}}
+        before = cd.classify_company_coverage(c, search_tel, official_tel)
+        cvm_tel = cd.build_cvm_telemetry([_cvm_row("BancoX", status="filiante_cvm",
+                                                    protocolos=10)])
+        after = cd.classify_company_coverage(c, search_tel, official_tel,
+                                             cvm_telemetry=cvm_tel)
+        # antes: sem telemetria CVM, REGULADOR_LOCAL nem aparece como
+        # configurado (heurística por país só ativa p/ Brasil sem
+        # telemetria explícita cai em 'configured=is_brasil' mas
+        # 'attempted=False') — depois: CVM real muda o quadro de fontes.
+        reg_before = next(s for s in before["sources"] if s["source"] == "REGULADOR_LOCAL")
+        reg_after = next(s for s in after["sources"] if s["source"] == "REGULADOR_LOCAL")
+        self.assertFalse(reg_before["attempted"])
+        self.assertTrue(reg_after["attempted"])
+        self.assertTrue(reg_after["technical_success"])
+
+
+class Test15CollapsibleSectionRenders(unittest.TestCase):
+    def test_template_contains_coverage_section_markers(self):
+        base = os.path.dirname(os.path.abspath(__file__))
+        tpl_path = os.path.join(base, "template_risco.html.j2")
+        with open(tpl_path, encoding="utf-8") as f:
+            tpl = f.read()
+        self.assertIn("coverageBlockHtml", tpl)
+        self.assertIn("coverage-block-cov", tpl)
+        self.assertIn("Cobertura das fontes", tpl)
+        self.assertIn("renderCoverageExecSummary", tpl)
+        self.assertIn("coverage_diagnosis_summary", tpl)
+        # nunca ao lado do score como severidade
+        self.assertIn("não é severidade de risco e não altera o score", tpl)
+
+    def test_render_html_attaches_coverage_diagnosis_when_run_meta_given(self):
+        import risk_dashboard as rd
+        cfg = {"dashboard": {"title": "t", "windows": [7], "default_window": 7},
+              "scoring": {"attention_threshold": 80},
+              "watchlist": [{"name": "ACME", "tier": 1, "country": "Chile"}]}
+        data_by_window = {"7": {"evolution": [{"company": "ACME", "status": "monitorar",
+                                              "total_score": 0, "timeline": [], "events": [],
+                                              "breakdown": [], "spark_points": "",
+                                              "first_date": "", "last_date": "", "tier": 1}],
+                               "feed": []}}
+        run_meta = {"international_search_execution": {
+            "ACME": {"searched": True, "queries": 1, "success": 1, "raw_articles": 0,
+                     "errors": 0, "eventos_classificados": 0}},
+            "official_source_execution": {}}
+        html = rd.render_html(data_by_window, cfg, demo=True, changes={},
+                              payload_thresholds={}, run_meta=run_meta)
+        self.assertIn("coverage_diagnosis", html)
+
+
+class Test16NoImpactOnEventIdsForOrScore(unittest.TestCase):
+    def test_render_html_coverage_wiring_does_not_touch_score_fields(self):
+        import risk_dashboard as rd
+        cfg = {"dashboard": {"title": "t", "windows": [7], "default_window": 7},
+              "scoring": {"attention_threshold": 80},
+              "watchlist": [{"name": "ACME", "tier": 1, "country": "Chile"}]}
+        row = {"company": "ACME", "status": "monitorar", "total_score": 42, "timeline": [],
+              "events": [], "breakdown": [], "spark_points": "", "first_date": "",
+              "last_date": "", "tier": 1}
+        data_by_window = {"7": {"evolution": [row], "feed": []}}
+        run_meta = {"international_search_execution": {}, "official_source_execution": {}}
+        rd.render_html(data_by_window, cfg, demo=True, changes={}, payload_thresholds={},
+                       run_meta=run_meta)
+        self.assertEqual(row["total_score"], 42, "coverage_diagnosis não pode alterar total_score")
+        self.assertEqual(row["status"], "monitorar", "coverage_diagnosis não pode alterar status")
+
+    def test_coverage_diagnosis_module_still_never_touches_event_ids_for(self):
+        import inspect
+        src = inspect.getsource(cd)
+        self.assertNotIn("event_ids_for(", src)
+        self.assertNotIn("build_evolution(", src)
 
 
 if __name__ == "__main__":
