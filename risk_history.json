@@ -863,7 +863,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T17:50:12.783654+00:00"
+     "last_checked_at": "2026-08-05T20:39:38.923815+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2502,7 +2502,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T17:50:13.183936+00:00"
+     "last_checked_at": "2026-08-05T20:39:39.324071+00:00"
     }
    ],
    "corrob_sources": [
@@ -9293,7 +9293,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T17:50:13.584237+00:00"
+     "last_checked_at": "2026-08-05T20:39:39.724415+00:00"
     },
     {
      "source": "Demarest",
@@ -9313,7 +9313,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T17:50:13.984540+00:00"
+     "last_checked_at": "2026-08-05T20:39:40.124746+00:00"
     }
    ],
    "corrob_sources": [
@@ -10730,7 +10730,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T17:50:14.384890+00:00"
+     "last_checked_at": "2026-08-05T20:39:40.525012+00:00"
     }
    ],
    "corrob_sources": [
@@ -13918,7 +13918,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T17:50:14.958016+00:00"
+     "last_checked_at": "2026-08-05T20:39:41.123217+00:00"
     }
    ],
    "corrob_sources": [
@@ -16156,7 +16156,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T17:50:15.508362+00:00"
+     "last_checked_at": "2026-08-05T20:39:41.729898+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16262,7 +16262,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T17:50:16.060985+00:00"
+     "last_checked_at": "2026-08-05T20:39:42.385600+00:00"
     },
     {
      "source": "Moomoo",
@@ -17555,7 +17555,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T17:50:16.734270+00:00"
+     "last_checked_at": "2026-08-05T20:39:43.165890+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17598,7 +17598,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T17:50:17.409446+00:00"
+     "last_checked_at": "2026-08-05T20:39:43.956232+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19350,7 +19350,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-05T17:50:17.809757+00:00",
+     "last_checked_at": "2026-08-05T20:39:44.356583+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19415,7 +19415,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-05T17:50:18.210065+00:00",
+     "last_checked_at": "2026-08-05T20:39:44.756841+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20388,7 +20388,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T17:50:18.784382+00:00"
+     "last_checked_at": "2026-08-05T20:39:45.385655+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20473,7 +20473,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T17:50:19.349249+00:00"
+     "last_checked_at": "2026-08-05T20:39:46.003488+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -28953,7 +28953,52 @@
    "companies_attributed": [
     "Engie Brasil"
    ],
-   "context_companies": []
+   "context_companies": [],
+   "corroborations": [
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1rbU5IdDhRc2FaT0pvYU90X2ZTLUxSVUprWGNJdjJ2NXM0eTc5UjZ1ZTJWYWRMNDcxTHVIVFBoSVFWOXg2Ujc4WXdEa3lkcnlKR01rNFVUSFU5Z0tKQmw5eF9pdEswS0FlcVE?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1rbU5IdDhRc2FaT0pvYU90X2ZTLUxSVUprWGNJdjJ2NXM0eTc5UjZ1ZTJWYWRMNDcxTHVIVFBoSVFWOXg2Ujc4WXdEa3lkcnlKR01rNFVUSFU5Z0tKQmw5eF9pdEswS0FlcVE?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1rbU5IdDhRc2FaT0pvYU90X2ZTLUxSVUprWGNJdjJ2NXM0eTc5UjZ1ZTJWYWRMNDcxTHVIVFBoSVFWOXg2Ujc4WXdEa3lkcnlKR01rNFVUSFU5Z0tKQmw5eF9pdEswS0FlcVE?oc=5",
+     "resolved_url": "https://br.advfn.com/noticias/PAPERBR/2026/artigo/98866589",
+     "canonical_url": "https://br.advfn.com/noticias/PAPERBR/2026/artigo/98866589",
+     "display_url": "https://br.advfn.com/noticias/PAPERBR/2026/artigo/98866589",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "br.advfn.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-05T20:39:46.403775+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1rbU5IdDhRc2FaT0pvYU90X2ZTLUxSVUprWGNJdjJ2NXM0eTc5UjZ1ZTJWYWRMNDcxTHVIVFBoSVFWOXg2Ujc4WXdEa3lkcnlKR01rNFVUSFU5Z0tKQmw5eF9pdEswS0FlcVE?oc=5",
+     "when": "03/07 16:05",
+     "original_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1rbU5IdDhRc2FaT0pvYU90X2ZTLUxSVUprWGNJdjJ2NXM0eTc5UjZ1ZTJWYWRMNDcxTHVIVFBoSVFWOXg2Ujc4WXdEa3lkcnlKR01rNFVUSFU5Z0tKQmw5eF9pdEswS0FlcVE?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1rbU5IdDhRc2FaT0pvYU90X2ZTLUxSVUprWGNJdjJ2NXM0eTc5UjZ1ZTJWYWRMNDcxTHVIVFBoSVFWOXg2Ujc4WXdEa3lkcnlKR01rNFVUSFU5Z0tKQmw5eF9pdEswS0FlcVE?oc=5",
+     "resolved_url": "https://br.advfn.com/noticias/PAPERBR/2026/artigo/98866589",
+     "canonical_url": "https://br.advfn.com/noticias/PAPERBR/2026/artigo/98866589",
+     "display_url": "https://br.advfn.com/noticias/PAPERBR/2026/artigo/98866589",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "br.advfn.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-05T20:39:46.804050+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ]
   },
   "https://br.advfn.com/noticias/PAPERBR/2026/artigo/98866589": {
    "title": "Engie Brasil aprova aquisição de fatia de 40% da Jirau Energia, avaliada em R$ 5,74 bilhões",
@@ -35601,7 +35646,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T17:50:20.015678+00:00"
+     "last_checked_at": "2026-08-05T20:39:47.582632+00:00"
     }
    ],
    "corrob_sources": [
@@ -38458,7 +38503,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T17:50:20.588377+00:00"
+     "last_checked_at": "2026-08-05T20:39:48.184474+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38501,7 +38546,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T17:50:21.159035+00:00"
+     "last_checked_at": "2026-08-05T20:39:48.804773+00:00"
     },
     {
      "source": "Virginia Business",
@@ -43719,10 +43764,30 @@
    ],
    "context_companies": [],
    "captured_ts": 1785952208,
-   "cap_iso": "2026-08-05 14:50"
+   "cap_iso": "2026-08-05 14:50",
+   "corroborations": [],
+   "corrob_sources": []
+  },
+  "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYzNLZUdNay00MS1Eckg5b3NXbE1YNG9MRUI2UGFWOXExSWcyV0RsTEJXblBDeHR2UHljOTFnWk9sNjE2aC1wdWZEcFBjSXA0bWhoWE5zTzJSdDRVbWo5T19NTThCVUR2OFFkdEFjTUJFd0lCdHJCOWtncnRPektDYUNuMGpEa1ZKclFwYmQ2RlRBc1RMdU0yUFhxUnJfcmVTb3daY3RSZ9IBtgFBVV95cUxOYnQtUGpUNTRCRl9LSFI0cGVoQklzUGpQaDZOYXJXeXZGcHJKRS1qTGxmaFBkN0RlMUprc0h4ZVp1UUFnTE9fdGJFMVBYM2JWd1BLRWhZQjkyMm9nTWl2ZkFaUFNEOWNnUF94ZW5kYktQak5LbUZFMGdZTm5kdzdjaUU4RldFekJXOVhtdHlmWjMtZTZNWFJlVzh1OVdramhSaVJOZ2ZkUkgwOVVycmFzTDNCOFRzQQ?oc=5": {
+   "title": "Papéis da Braskem precificam recuperação judicial",
+   "url": "https://pipelinevalor.globo.com/negocios/noticia/papeis-da-braskem-precificam-recuperacao-judicial.ghtml",
+   "summary": "Papéis da Braskem precificam recuperação judicial &nbsp;&nbsp; Pipeline",
+   "source": "Pipeline",
+   "domain": "pipelinevalor.globo.com",
+   "pub_ts": 1785431994,
+   "pub_iso": "2026-07-30 14:19",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1785962374,
+   "cap_iso": "2026-08-05 17:39"
   }
  },
- "run_count": 78,
+ "run_count": 79,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -48547,11 +48612,15 @@
   "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQekhuZ2FWZDlMWlV6eG1Nbk85a28yOTNVcV9tX09DaTJBc3MtbmI5SkgtZ3pyaFR2Yzd3bk01RjhGUzVHYTNnSzJuRWlCa1ZSRG1qbnU3Y0VIREtQUHp5Z2xwRUh3T3F3QWpMUHkzU2NGTmxESWprRGtXeG10WVNxaGpJUUJDampweFVOSW1lMmJadGZzS3BUbFNjajFpYTVUN1RraE9TX1laMU9SUnFHVmhKclpHNWNTWVJBbHBrZF9rNy15VHNCUXFYZVF6OWtqUEE?oc=5": {
    "url": "https://www.moneylife.in/article/optums-former-sr-director-karan-gupta-found-guilty-in-12mn-kickback-and-ghost-employee-fraud/79714.html",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYzNLZUdNay00MS1Eckg5b3NXbE1YNG9MRUI2UGFWOXExSWcyV0RsTEJXblBDeHR2UHljOTFnWk9sNjE2aC1wdWZEcFBjSXA0bWhoWE5zTzJSdDRVbWo5T19NTThCVUR2OFFkdEFjTUJFd0lCdHJCOWtncnRPektDYUNuMGpEa1ZKclFwYmQ2RlRBc1RMdU0yUFhxUnJfcmVTb3daY3RSZ9IBtgFBVV95cUxOYnQtUGpUNTRCRl9LSFI0cGVoQklzUGpQaDZOYXJXeXZGcHJKRS1qTGxmaFBkN0RlMUprc0h4ZVp1UUFnTE9fdGJFMVBYM2JWd1BLRWhZQjkyMm9nTWl2ZkFaUFNEOWNnUF94ZW5kYktQak5LbUZFMGdZTm5kdzdjaUU4RldFekJXOVhtdHlmWjMtZTZNWFJlVzh1OVdramhSaVJOZ2ZkUkgwOVVycmFzTDNCOFRzQQ?oc=5": {
+   "url": "https://pipelinevalor.globo.com/negocios/noticia/papeis-da-braskem-precificam-recuperacao-judicial.ghtml",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785952221,
-  "iso": "05 ago 2026 · 14:50 BRT",
+  "ts": 1785962389,
+  "iso": "05 ago 2026 · 17:39 BRT",
   "status": {
    "Rumo": {
     "status": "atencao",
@@ -48565,11 +48634,11 @@
     "status": "atencao",
     "score": 64
    },
-   "CVS Health": {
-    "status": "critico",
-    "score": 60
-   },
    "Tok&Stok": {
+    "status": "critico",
+    "score": 59
+   },
+   "CVS Health": {
     "status": "critico",
     "score": 59
    },
@@ -48579,18 +48648,18 @@
    },
    "Grupo Financiero Banorte": {
     "status": "critico",
-    "score": 51
+    "score": 50
    },
    "Cosan": {
     "status": "atencao",
     "score": 46
    },
-   "Smart Fit": {
-    "status": "atencao",
-    "score": 44
-   },
    "Samarco Mineração": {
     "status": "critico",
+    "score": 43
+   },
+   "Smart Fit": {
+    "status": "atencao",
     "score": 43
    },
    "BTG Pactual": {
@@ -48635,7 +48704,7 @@
    },
    "PRIO": {
     "status": "monitorar",
-    "score": 26
+    "score": 25
    },
    "Embraer": {
     "status": "atencao",
