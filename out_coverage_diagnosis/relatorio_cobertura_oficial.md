@@ -1,9 +1,12 @@
-# Relatório de cobertura oficial (Fase 4H.2)
+# Relatório de cobertura oficial (reconciliação runtime)
 
-Gerado em: 2026-08-05T01:39:39.382985+00:00
-Execução de referência (run_meta): 2026-08-04T20:41:41.758328+00:00
+run_id: 2026-08-05T15:57:45.860789+00:00
+generated_at: 2026-08-05T15:57:45.860789+00:00
+commit_base: 339bcc35d4ebcd9a18fab412a1d469fc8cb19252
+payload_hash: 8a9273f8478af5d5d3a7cd709d9762c4f3ecc6f586cba4f9addfbd6eef580134
+companies_count: 26
 
-## Resumo executivo
+## Resumo executivo — CICLO ATUAL
 
 - Cobertura confirmada: **16**
 - Cobertura parcial: **1**
@@ -11,46 +14,45 @@ Execução de referência (run_meta): 2026-08-04T20:41:41.758328+00:00
 - Somente fallback: **1**
 - Sem fonte oficial validada: **7**
 - Fonte configurada, não executada: **0**
-- Total de emissores diagnosticados: **26**
+
+## Resumo executivo — CONSOLIDADO (janela de frescor por fonte)
+
+- Sem notícia relevante após execução bem-sucedida: **0**
+- Só notícia informativa (sem evento pontuável): **8**
+- Cobertura parcial: **2**
+- Fonte configurada, não executada neste ciclo: **0**
+- Falha de coleta: **0**
+- Sem fonte oficial validada: **7**
+- Só fallback (Google News genérico): **1**
+- Cobertura normal — evento real encontrado: **8**
 
 ## Detalhe por emissor
 
-| Emissor | Tier | País | Status | Fontes config. | Executadas | Sucesso | Itens | Eventos |
-|---|---|---|---|---|---|---|---|---|
-| Ambev | 1 | Brasil | Cobertura confirmada, evento relevante encontrado | 3 | 3 | 3 | 77 | 1 |
-| B3 | 1 | Brasil | Notícias encontradas, apenas informativas | 3 | 3 | 3 | 99 | 0 |
-| BTG Pactual | 1 | Brasil | Cobertura confirmada, evento relevante encontrado | 3 | 3 | 3 | 88 | 1 |
-| Banco do Brasil | 1 | Brasil | Notícias encontradas, apenas informativas | 3 | 3 | 3 | 158 | 0 |
-| Bradesco | 1 | Brasil | Notícias encontradas, apenas informativas | 3 | 3 | 3 | 163 | 0 |
-| Eletrobras | 1 | Brasil | Cobertura confirmada, evento relevante encontrado | 3 | 3 | 3 | 22 | 2 |
-| Equatorial Energia | 1 | Brasil | Cobertura confirmada, evento relevante encontrado | 3 | 3 | 3 | 116 | 2 |
-| Itaú Unibanco | 1 | Brasil | Notícias encontradas, apenas informativas | 3 | 3 | 3 | 129 | 0 |
-| Localiza | 1 | Brasil | Notícias encontradas, apenas informativas | 3 | 3 | 3 | 116 | 0 |
-| PRIO | 1 | Brasil | Cobertura confirmada, evento relevante encontrado | 3 | 3 | 3 | 104 | 2 |
-| Petrobras | 1 | Brasil | Notícias encontradas, apenas informativas | 3 | 3 | 3 | 215 | 0 |
-| Raia Drogasil | 1 | Brasil | Cobertura confirmada, evento relevante encontrado | 3 | 3 | 3 | 91 | 1 |
-| Rede D'Or | 1 | Brasil | Notícias encontradas, apenas informativas | 3 | 3 | 3 | 81 | 0 |
-| Suzano | 1 | Brasil | Cobertura confirmada, evento relevante encontrado | 3 | 3 | 3 | 101 | 3 |
-| Vale | 1 | Brasil | Cobertura confirmada, evento relevante encontrado | 3 | 3 | 3 | 215 | 2 |
-| Vibra Energia | 1 | Brasil | Notícias encontradas, apenas informativas | 3 | 3 | 3 | 95 | 0 |
-| Yura | 2 | Peru | Cobertura parcial | 2 | 1 | 1 | 0 | 0 |
-| Trupal | 3 | Peru | Sem fonte oficial validada | 1 | 1 | 0 | 0 | 0 |
-| Coazucar | 2 | Peru | Somente fontes complementares | 2 | 2 | 2 | 3 | 0 |
-| Yobel | 3 | Peru | Falha de coleta | 2 | 1 | 0 | 0 | 0 |
-| Casa Grande S.A.A. | 2 | Peru | Sem fonte oficial validada | 1 | 1 | 0 | 0 | 0 |
-| Cartavio S.A.A. | 2 | Peru | Sem fonte oficial validada | 1 | 1 | 0 | 0 | 0 |
-| Agroindustrias San Jacinto S.A. | 2 | Peru | Sem fonte oficial validada | 1 | 1 | 0 | 0 | 0 |
-| Empresa Agrícola Sintuco S.A. | 2 | Peru | Sem fonte oficial validada | 1 | 1 | 0 | 0 | 0 |
-| Agrolmos S. | 2 | Peru | Sem fonte oficial validada | 1 | 1 | 0 | 0 | 0 |
-| Empresa Agraria Chiquitoy S.A. | 2 | Peru | Sem fonte oficial validada | 1 | 1 | 0 | 0 | 0 |
-
-## Lacunas documentadas (não preenchidas artificialmente)
-
-- **Trupal** (NO_VALIDATED_OFFICIAL_SOURCE): Nenhuma fonte oficial (RI RSS/página de notícias, SEC/EDGAR, CVM/IPE filiante) configurada ou validada para este emissor.
-- **Yobel** (COLLECTION_FAILURE): Todas as fontes tentadas (RI_NEWS) falharam tecnicamente nesta execução (erro de rede/parsing/timeout).
-- **Casa Grande S.A.A.** (NO_VALIDATED_OFFICIAL_SOURCE): Nenhuma fonte oficial (RI RSS/página de notícias, SEC/EDGAR, CVM/IPE filiante) configurada ou validada para este emissor.
-- **Cartavio S.A.A.** (NO_VALIDATED_OFFICIAL_SOURCE): Nenhuma fonte oficial (RI RSS/página de notícias, SEC/EDGAR, CVM/IPE filiante) configurada ou validada para este emissor.
-- **Agroindustrias San Jacinto S.A.** (NO_VALIDATED_OFFICIAL_SOURCE): Nenhuma fonte oficial (RI RSS/página de notícias, SEC/EDGAR, CVM/IPE filiante) configurada ou validada para este emissor.
-- **Empresa Agrícola Sintuco S.A.** (NO_VALIDATED_OFFICIAL_SOURCE): Nenhuma fonte oficial (RI RSS/página de notícias, SEC/EDGAR, CVM/IPE filiante) configurada ou validada para este emissor.
-- **Agrolmos S.** (NO_VALIDATED_OFFICIAL_SOURCE): Nenhuma fonte oficial (RI RSS/página de notícias, SEC/EDGAR, CVM/IPE filiante) configurada ou validada para este emissor.
-- **Empresa Agraria Chiquitoy S.A.** (NO_VALIDATED_OFFICIAL_SOURCE): Nenhuma fonte oficial (RI RSS/página de notícias, SEC/EDGAR, CVM/IPE filiante) configurada ou validada para este emissor.
+| Emissor | Ciclo atual | Consolidado | Não escaladas neste ciclo | Última evidência | Frescor |
+|---|---|---|---|---|---|
+| Ambev | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | RI_RSS, EDGAR | 2026-08-05T15:57:45.860789+00:00 | valida |
+| B3 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | RI_RSS, EDGAR | 2026-08-05T15:57:45.860789+00:00 | valida |
+| BTG Pactual | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | RI_RSS, EDGAR | 2026-08-05T15:57:45.860789+00:00 | valida |
+| Banco do Brasil | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | RI_RSS, EDGAR | 2026-08-05T15:57:45.860789+00:00 | valida |
+| Bradesco | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | RI_RSS, EDGAR | 2026-08-05T15:57:45.860789+00:00 | valida |
+| Eletrobras | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | RI_RSS, EDGAR | 2026-08-05T15:57:45.860789+00:00 | valida |
+| Equatorial Energia | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | RI_RSS, EDGAR | 2026-08-05T15:57:45.860789+00:00 | valida |
+| Itaú Unibanco | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | RI_RSS, EDGAR | 2026-08-05T15:57:45.860789+00:00 | valida |
+| Localiza | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | RI_RSS, EDGAR | 2026-08-05T15:57:45.860789+00:00 | valida |
+| PRIO | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | RI_RSS, EDGAR | 2026-08-05T15:57:45.860789+00:00 | valida |
+| Petrobras | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | RI_RSS, EDGAR | 2026-08-05T15:57:45.860789+00:00 | valida |
+| Raia Drogasil | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | RI_RSS, EDGAR | 2026-08-05T15:57:45.860789+00:00 | valida |
+| Rede D'Or | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | RI_RSS, EDGAR | 2026-08-05T15:57:45.860789+00:00 | valida |
+| Suzano | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | RI_RSS, EDGAR | 2026-08-05T15:57:45.860789+00:00 | valida |
+| Vale | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | RI_RSS, EDGAR | 2026-08-05T15:57:45.860789+00:00 | valida |
+| Vibra Energia | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | RI_RSS, EDGAR | 2026-08-05T15:57:45.860789+00:00 | valida |
+| Yura | FALLBACK_ONLY | FALLBACK_ONLY | RI_RSS, EDGAR, REGULADOR_LOCAL | 2026-08-05T15:57:45.860789+00:00 | valida |
+| Trupal | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | RI_RSS, EDGAR, REGULADOR_LOCAL | 2026-08-05T15:57:45.860789+00:00 | valida |
+| Coazucar | PARTIAL_COVERAGE | PARTIAL_COVERAGE | GNEWS, RI_RSS, EDGAR, REGULADOR_LOCAL | 2026-08-05T15:57:45.860789+00:00 | valida |
+| Yobel | COLLECTION_FAILURE | PARTIAL_COVERAGE | GNEWS, RI_RSS, EDGAR, REGULADOR_LOCAL | 2026-08-05T12:24:08.089710+00:00 | parcial |
+| Casa Grande S.A.A. | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | GNEWS, RI_RSS, EDGAR, REGULADOR_LOCAL | — | valida |
+| Cartavio S.A.A. | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | GNEWS, RI_RSS, EDGAR, REGULADOR_LOCAL | — | valida |
+| Agroindustrias San Jacinto S.A. | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | GNEWS, RI_RSS, EDGAR, REGULADOR_LOCAL | — | valida |
+| Empresa Agrícola Sintuco S.A. | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | GNEWS, RI_RSS, EDGAR, REGULADOR_LOCAL | — | valida |
+| Agrolmos S. | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | GNEWS, RI_RSS, EDGAR, REGULADOR_LOCAL | — | valida |
+| Empresa Agraria Chiquitoy S.A. | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | GNEWS, RI_RSS, EDGAR, REGULADOR_LOCAL | — | valida |

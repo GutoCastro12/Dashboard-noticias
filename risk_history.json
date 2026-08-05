@@ -863,7 +863,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:23:26.773262+00:00"
+     "last_checked_at": "2026-08-05T15:57:36.366597+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2502,7 +2502,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:23:27.173551+00:00"
+     "last_checked_at": "2026-08-05T15:57:36.766877+00:00"
     }
    ],
    "corrob_sources": [
@@ -9293,7 +9293,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:23:27.573871+00:00"
+     "last_checked_at": "2026-08-05T15:57:37.167184+00:00"
     },
     {
      "source": "Demarest",
@@ -9313,7 +9313,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:23:27.974199+00:00"
+     "last_checked_at": "2026-08-05T15:57:37.567476+00:00"
     }
    ],
    "corrob_sources": [
@@ -10730,7 +10730,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:23:28.374493+00:00"
+     "last_checked_at": "2026-08-05T15:57:37.967746+00:00"
     }
    ],
    "corrob_sources": [
@@ -13918,7 +13918,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:23:28.968392+00:00"
+     "last_checked_at": "2026-08-05T15:57:38.562345+00:00"
     }
    ],
    "corrob_sources": [
@@ -16156,7 +16156,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:23:29.565577+00:00"
+     "last_checked_at": "2026-08-05T15:57:39.163603+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16262,7 +16262,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:23:30.180819+00:00"
+     "last_checked_at": "2026-08-05T15:57:39.751037+00:00"
     },
     {
      "source": "Moomoo",
@@ -17555,7 +17555,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:23:30.910855+00:00"
+     "last_checked_at": "2026-08-05T15:57:40.460524+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17598,7 +17598,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:23:31.644195+00:00"
+     "last_checked_at": "2026-08-05T15:57:41.199542+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19350,7 +19350,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-05T15:23:32.044529+00:00",
+     "last_checked_at": "2026-08-05T15:57:41.599845+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19415,7 +19415,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-05T15:23:32.444794+00:00",
+     "last_checked_at": "2026-08-05T15:57:42.000116+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20388,7 +20388,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:23:33.053803+00:00"
+     "last_checked_at": "2026-08-05T15:57:42.575740+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20473,7 +20473,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:23:33.654250+00:00"
+     "last_checked_at": "2026-08-05T15:57:43.156499+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -35601,7 +35601,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:23:34.370279+00:00"
+     "last_checked_at": "2026-08-05T15:57:43.874320+00:00"
     }
    ],
    "corrob_sources": [
@@ -38458,7 +38458,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:23:34.961323+00:00"
+     "last_checked_at": "2026-08-05T15:57:44.443771+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38501,7 +38501,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:23:35.555252+00:00"
+     "last_checked_at": "2026-08-05T15:57:45.023107+00:00"
     },
     {
      "source": "Virginia Business",
@@ -43572,7 +43572,9 @@
     "Ecopetrol"
    ],
    "captured_ts": 1785943401,
-   "cap_iso": "2026-08-05 12:23"
+   "cap_iso": "2026-08-05 12:23",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.cnbc.com/2026/08/05/private-companies-added-just-44000-workers-in-july-below-expectations-adp-reports.html": {
    "title": "Private companies added just 44,000 workers in July, below expectations, ADP reports",
@@ -43592,9 +43594,81 @@
    "trust_override": "imprensa",
    "captured_ts": 1785943401,
    "cap_iso": "2026-08-05 12:23"
+  },
+  "https://news.google.com/rss/articles/CBMivgFBVV95cUxQV05aelZ1bmxyREhvZU1idmZDZ1pSNU02VXZuaGZMeElwSFZKTVpCZk1Da19XeWQ4OVFYMmxpc0kzNnplRjlqZDFJT3VJdDhFVTZ2WEplOEZxbVV2WHktVVVPNjFqbmp1cnVCSEpBanNnaEFPSENXbDQ3RTRmN3M5MnVwNnBQSGRRRWxVTmdDUEYtbmVQaFZ0bXVvQnNBM1NFR2QwZE1PTnBFYktCT2tNZjlCYTZDQVkzUE9OYkV30gHDAUFVX3lxTE02UGktcS1xNHExdndzNUNnRDItUno3X2Q3czJvNUp1Y0FIYnM0aWJiNzY4WjVWSDJuSVFKaVVvS3NUT0NRRHBVZzNVR1I0Q0ZxaHVjUnUxMnVETHNiVmpEbjJ3UWpKOTJSYzBYZTVUR2tIVUpkdlZ5azUzdHpkaTNKQ2IxMVNQcl9yV2EwTzRkUnNFS1o4SHl0b3dqR1lSODVrZWF1bmpyYjZQbGY4V3pIaERCN1psc1FYVDNZdE1IOHRFYw?oc=5": {
+   "title": "Empresa chilena de lácteos pide su quiebra tras millonarias deudas: Ofrecía sus productos en grandes supermercados",
+   "url": "https://www.meganoticias.cl/nacional/514265-quiebra-empresa-lacteos-altas-cumbres-abastecia-supermercados-10-02-2026.html",
+   "summary": "Empresa chilena de lácteos pide su quiebra tras millonarias deudas: Ofrecía sus productos en grandes supermercados &nbsp;&nbsp; Meganoticias",
+   "source": "Meganoticias",
+   "domain": "meganoticias.cl",
+   "pub_ts": 1770710400,
+   "pub_iso": "2026-02-10 05:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785945450,
+   "cap_iso": "2026-08-05 12:57"
+  },
+  "https://news.google.com/rss/articles/CBMiowFBVV95cUxPR01pR3FnUUxjZDZ4OXVReDRRcE1HNkIxaDBZXzNGWThjYTRBcnV4RC1HSGxfbzBieHEtbU1DT1ZHdzY0aGpyTlB1TFFYaWJqdVZ2YWR5bGxXRXVLbFpMNUd5WWl5MTJoYTltWkdhYWprNnRIVTA3Sy03RkwwcTJiTTJJQng3RGY4M293LUxBaW5ET0tZUnhVeEEzQnFvQURQQmow?oc=5": {
+   "title": "Banco Mercantil (BMEB3, BMEB4) anuncia aumento de capital aprovado",
+   "url": "https://visnoinvest.com.br/news/12007/banco-mercantil-bmeb3-bmeb4-anuncia-aumento-de-capital-aprovado",
+   "summary": "Banco Mercantil (BMEB3, BMEB4) anuncia aumento de capital aprovado &nbsp;&nbsp; Visno Invest",
+   "source": "Visno Invest",
+   "domain": "visnoinvest.com.br",
+   "pub_ts": 1771920000,
+   "pub_iso": "2026-02-24 05:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "follow_on"
+   ],
+   "captured_ts": 1785945450,
+   "cap_iso": "2026-08-05 12:57"
+  },
+  "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQQU5odlVOSTk5MXNHZk5VV3VrbHl5alF3SWxpdzZoZWEyNllQTGtxVVgtVzhqX1FacWxLV1lPQ0s1WERIUTA1Tk80UWpXclFBMUdjUzVwbVZGRnBEUmthQTZrV0pQRGJHTzBjQ1dlWEpzZ1RCcmFpSlYwcnVTZFM0YmVQbGVHYmZtWWMyMTEyMHRiY3Y0YktHY0FremRIMVVTandHTHBlenhzVmZDLXFsem9iVEdoNFYxN1NZcUdKR0VXYTM4X3M1OS1JTTk2MnVwVk5Nbw?oc=5": {
+   "title": "Spirit Airlines quiebra y cancela todos sus vuelos: más de 600 mil pasajeros afectados",
+   "url": "https://citytv.eltiempo.com/noticias/movilidad/spirit-airlines-quiebra-y-cancela-todos-sus-vuelos-mas-de-600-mil-pasajeros-afectados_91581",
+   "summary": "Spirit Airlines quiebra y cancela todos sus vuelos: más de 600 mil pasajeros afectados &nbsp;&nbsp; ▷ City Tv | Noticias",
+   "source": "▷ City Tv | Noticias",
+   "domain": "citytv.eltiempo.com",
+   "pub_ts": 1777705200,
+   "pub_iso": "2026-05-02 04:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1785945450,
+   "cap_iso": "2026-08-05 12:57"
+  },
+  "https://news.google.com/rss/articles/CBMirwFBVV95cUxPTUd3LW5zcE0wQU94bUxJWWczb20xOFFNUUFzdHRQUTJnNzJRNWMxRi1NZllNUExFNFhnZkJmSFlhTEJHZEVXNmJYX3JsaktOcDBoYkRYdzNRbWUzNXRnRUQ3U1RKeFM3cG9XWHBocDhSSzMzQkVtQkVHMjNpX0NKbTF0QzBvbjNDYzJCcjR5bnVuSmVaVF95U0IySUFTWWdFXzFFS0dHbmFLbURfaWxJ?oc=5": {
+   "title": "Recuperação judicial: Quando reorganizar é a decisão mais responsável",
+   "url": "https://www.migalhas.com.br/depeso/461308/recuperacao-judicial-quando-reorganizar-e-a-decisao-mais-responsavel",
+   "summary": "Recuperação judicial: Quando reorganizar é a decisão mais responsável &nbsp;&nbsp; Migalhas",
+   "source": "Migalhas",
+   "domain": "migalhas.com.br",
+   "pub_ts": 1785493534,
+   "pub_iso": "2026-07-31 07:25",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1785945450,
+   "cap_iso": "2026-08-05 12:57"
   }
  },
- "run_count": 76,
+ "run_count": 77,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -48395,11 +48469,27 @@
   "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOa2lMRUhsUWE2cGRHRW41N2VYX2s3WFphalMydzVKNWE1c0ZQa0QybFpJNG5ESVRucEZEX0ZlWi15dTY1WnRtbmN6MlJlSG1lRm9aQzd3WnZqRVdYQXdONnlXWU9QRnZHcXFlVG5YZzVIWnk5VXl3ZkFsSUt4WWlTX0UycnJFOE1JUENCeDV5OUdsMzNkOEZHaWFJY2p1OHhhZ0lxRExxNmlzTGF2R1VrS2RVYmlJbG92cldKMEdHVXVUTkd4akhvTQ?oc=5": {
    "url": "https://www.canalrural.com.br/economia/banco-do-brasil-abre-contratacoes-da-linha-aquisicao-inovadora-do-move-maquinas-agricolas/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMivgFBVV95cUxQV05aelZ1bmxyREhvZU1idmZDZ1pSNU02VXZuaGZMeElwSFZKTVpCZk1Da19XeWQ4OVFYMmxpc0kzNnplRjlqZDFJT3VJdDhFVTZ2WEplOEZxbVV2WHktVVVPNjFqbmp1cnVCSEpBanNnaEFPSENXbDQ3RTRmN3M5MnVwNnBQSGRRRWxVTmdDUEYtbmVQaFZ0bXVvQnNBM1NFR2QwZE1PTnBFYktCT2tNZjlCYTZDQVkzUE9OYkV30gHDAUFVX3lxTE02UGktcS1xNHExdndzNUNnRDItUno3X2Q3czJvNUp1Y0FIYnM0aWJiNzY4WjVWSDJuSVFKaVVvS3NUT0NRRHBVZzNVR1I0Q0ZxaHVjUnUxMnVETHNiVmpEbjJ3UWpKOTJSYzBYZTVUR2tIVUpkdlZ5azUzdHpkaTNKQ2IxMVNQcl9yV2EwTzRkUnNFS1o4SHl0b3dqR1lSODVrZWF1bmpyYjZQbGY4V3pIaERCN1psc1FYVDNZdE1IOHRFYw?oc=5": {
+   "url": "https://www.meganoticias.cl/nacional/514265-quiebra-empresa-lacteos-altas-cumbres-abastecia-supermercados-10-02-2026.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiowFBVV95cUxPR01pR3FnUUxjZDZ4OXVReDRRcE1HNkIxaDBZXzNGWThjYTRBcnV4RC1HSGxfbzBieHEtbU1DT1ZHdzY0aGpyTlB1TFFYaWJqdVZ2YWR5bGxXRXVLbFpMNUd5WWl5MTJoYTltWkdhYWprNnRIVTA3Sy03RkwwcTJiTTJJQng3RGY4M293LUxBaW5ET0tZUnhVeEEzQnFvQURQQmow?oc=5": {
+   "url": "https://visnoinvest.com.br/news/12007/banco-mercantil-bmeb3-bmeb4-anuncia-aumento-de-capital-aprovado",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQQU5odlVOSTk5MXNHZk5VV3VrbHl5alF3SWxpdzZoZWEyNllQTGtxVVgtVzhqX1FacWxLV1lPQ0s1WERIUTA1Tk80UWpXclFBMUdjUzVwbVZGRnBEUmthQTZrV0pQRGJHTzBjQ1dlWEpzZ1RCcmFpSlYwcnVTZFM0YmVQbGVHYmZtWWMyMTEyMHRiY3Y0YktHY0FremRIMVVTandHTHBlenhzVmZDLXFsem9iVEdoNFYxN1NZcUdKR0VXYTM4X3M1OS1JTTk2MnVwVk5Nbw?oc=5": {
+   "url": "https://citytv.eltiempo.com/noticias/movilidad/spirit-airlines-quiebra-y-cancela-todos-sus-vuelos-mas-de-600-mil-pasajeros-afectados_91581",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMirwFBVV95cUxPTUd3LW5zcE0wQU94bUxJWWczb20xOFFNUUFzdHRQUTJnNzJRNWMxRi1NZllNUExFNFhnZkJmSFlhTEJHZEVXNmJYX3JsaktOcDBoYkRYdzNRbWUzNXRnRUQ3U1RKeFM3cG9XWHBocDhSSzMzQkVtQkVHMjNpX0NKbTF0QzBvbjNDYzJCcjR5bnVuSmVaVF95U0IySUFTWWdFXzFFS0dHbmFLbURfaWxJ?oc=5": {
+   "url": "https://www.migalhas.com.br/depeso/461308/recuperacao-judicial-quando-reorganizar-e-a-decisao-mais-responsavel",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785943417,
-  "iso": "05 ago 2026 · 12:23 BRT",
+  "ts": 1785945465,
+  "iso": "05 ago 2026 · 12:57 BRT",
   "status": {
    "Rumo": {
     "status": "atencao",
