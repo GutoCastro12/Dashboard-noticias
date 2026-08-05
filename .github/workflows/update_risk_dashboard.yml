@@ -3,6 +3,14 @@ name: Update Risk Dashboard
 on:
   schedule:
     - cron: '0 10,13,16,19 * * 1-5'   # 07h, 10h, 13h e 16h BRT, dias úteis
+    # Renovação semanal da telemetria CVM/IPE (REGULADOR_LOCAL): a auditoria
+    # --audit-cvm NÃO roda nos 4 ciclos diários acima (custo/rede de baixar
+    # o dataset IPE inteiro não justifica 4x/dia) — só neste cron dedicado.
+    # Cadência semanal dá ~4x de margem sobre a janela de frescor de 30 dias
+    # usada por coverage_diagnosis.CVM_FRESHNESS_DAYS, então uma falha
+    # pontual (dataset indisponível) tem folga de sobra até a próxima
+    # tentativa sem a telemetria CVM expirar.
+    - cron: '0 6 * * 1'                # 03h BRT, segunda-feira — só auditoria CVM
   workflow_dispatch:
     inputs:
       reclassify:
@@ -68,7 +76,10 @@ jobs:
           fi
           if [ "${{ github.event.inputs.audit_cvm }}" = "true" ]; then
             EXTRA="$EXTRA --audit-cvm"
-            echo "🔎 Auditoria CVM/IPE ativada"
+            echo "🔎 Auditoria CVM/IPE ativada (workflow_dispatch manual)"
+          elif [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" = "0 6 * * 1" ]; then
+            EXTRA="$EXTRA --audit-cvm"
+            echo "🔎 Auditoria CVM/IPE ativada (cron semanal dedicado — renovação de frescor REGULADOR_LOCAL)"
           fi
           if [ "${{ github.event.inputs.probe_sources }}" = "true" ]; then
             EXTRA="$EXTRA --probe-sources"
@@ -91,8 +102,16 @@ jobs:
           git add risk_history.json dashboard_risco.html index.html
           # 4H.1c — o runner do Actions é efêmero: sem commitar a telemetria, o
           # histórico cumulativo se perde e os 4 ciclos nunca podem ser provados.
-          # international_search_history.json é OBRIGATÓRIO para a continuidade.
+          # international_search_history.json é OBRIGATÓRIO para a continuidade
+          # (agora também carrega cvm_telemetry — telemetria CVM persistida —
+          # e o campo official_sources por run, usados no frescor consolidado).
           git add -f international_search_history.json run_meta.json 2>/dev/null || true
+          # Reconciliação runtime: os 6 exports de cobertura são regenerados
+          # do ZERO em toda execução (risk_dashboard.main() via
+          # coverage_diagnosis.run_production_coverage) e têm que entrar no
+          # MESMO commit automático que o HTML — nunca um export desatualizado
+          # sobrevivendo sozinho no histórico do repositório.
+          git add -f out_coverage_diagnosis/ 2>/dev/null || true
           # CSVs de diagnóstico, quando gerados nesta execução
           git add -f auditoria_cobertura_cvm.csv probe_fontes_oficiais.csv \
                      auditoria_cobertura_internacional.csv \

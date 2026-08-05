@@ -6373,7 +6373,8 @@ def build_asset_groups_meta(cfg: dict) -> list[dict]:
 def render_html(data_by_window: dict, cfg: dict, demo: bool,
                 changes: dict | None = None,
                 payload_thresholds: dict | None = None,
-                run_meta: dict | None = None) -> str:
+                run_meta: dict | None = None,
+                coverage_result: dict | None = None) -> str:
     template_path = Path(__file__).parent / "template_risco.html.j2"
     with open(template_path, "r", encoding="utf-8") as f:
         template = Template(f.read())
@@ -6403,7 +6404,37 @@ def render_html(data_by_window: dict, cfg: dict, demo: bool,
     # SEPARADA do score, nunca lida por event_ids_for/build_evolution (já
     # rodaram acima, sem ver isto). Só roda quando `run_meta` é fornecido;
     # qualquer falha aqui é 100% cosmética — nunca derruba o dashboard.
-    if run_meta is not None:
+    #
+    # Correção de reconciliação runtime: quando `coverage_result` é passado
+    # (produção real, via `coverage_diagnosis.run_production_coverage`
+    # chamado em `main()`), este É o payload usado — NENHUM recálculo
+    # separado acontece aqui. É o mesmo objeto que gerou os 6 exports
+    # (`out_coverage_diagnosis/*.csv`/`.md`) nesta mesma execução, garantindo
+    # que HTML e exports tenham run_id/hash/status idênticos (correção da
+    # pendência 1 — dois caminhos de cálculo separados).
+    if coverage_result is not None:
+        try:
+            import coverage_diagnosis as _covdiag
+            _cov_rows = coverage_result["rows"]
+            _cov_meta = coverage_result["meta"]
+            _cov_by_name = {r["company"]: _covdiag.to_dashboard_view_v2(r) for r in _cov_rows}
+            for _win_data in data_by_window.values():
+                for _row in _win_data.get("evolution", []):
+                    _cv = _cov_by_name.get(_row.get("company"))
+                    if _cv is not None:
+                        _row["coverage_diagnosis"] = _cv
+            payload["coverage_diagnosis_summary"] = _covdiag.build_executive_coverage_summary(_cov_rows)
+            payload["coverage_run_meta"] = {
+                "run_id": _cov_meta["run_id"],
+                "generated_at": _cov_meta["generated_at"],
+                "commit_base": _cov_meta["commit_base"],
+                "companies_count": _cov_meta["companies_count"],
+                "payload_hash": _cov_meta["payload_hash"],
+            }
+        except Exception as _cov_exc:
+            print(f"   ⚠️  Diagnóstico de cobertura (reconciliação runtime) não pôde ser "
+                 f"anexado ao dashboard nesta execução: {_cov_exc}")
+    elif run_meta is not None:
         try:
             import coverage_diagnosis as _covdiag
             _cov_rows = _covdiag.diagnose_coverage(cfg, run_meta)
@@ -9085,7 +9116,32 @@ def main():
             print(f"    {m}")
 
     if args.audit_cvm:
-        audit_cvm_coverage(cfg, out_csv="auditoria_cobertura_cvm.csv")
+        _cvm_audit_rows = audit_cvm_coverage(cfg, out_csv="auditoria_cobertura_cvm.csv")
+        # Persiste a telemetria CVM por emissor em
+        # international_search_history.json["cvm_telemetry"] — é o que
+        # alimenta o frescor consolidado de REGULADOR_LOCAL entre execuções
+        # (a auditoria roda esporadicamente, não em toda execução do cron).
+        # Retorno vazio (dataset indisponível) NÃO apaga o que já estava
+        # persistido — `persist_cvm_telemetry` só faz upsert do que veio.
+        if _cvm_audit_rows:
+            try:
+                import coverage_diagnosis as _covdiag_cvm
+                _cvm_seed = _covdiag_cvm.build_cvm_telemetry_seed(
+                    _cvm_audit_rows, generated_at=datetime.now(timezone.utc).isoformat(),
+                    origin="risk_dashboard.main() --audit-cvm (execução real)")
+                _cvm_persist_res = _covdiag_cvm.persist_cvm_telemetry(
+                    _cvm_seed, "international_search_history.json")
+                print(f" 💾 Telemetria CVM persistida: {len(_cvm_persist_res['added'])} novo(s), "
+                      f"{len(_cvm_persist_res['updated'])} atualizado(s), "
+                      f"{_cvm_persist_res['total']} emissor(es) no total em "
+                      f"international_search_history.json.")
+            except Exception as _cvm_exc:
+                print(f"   ⚠️  Telemetria CVM não pôde ser persistida "
+                      f"({type(_cvm_exc).__name__}: {str(_cvm_exc)[:160]}); "
+                      f"auditoria_cobertura_cvm.csv ainda foi gerado normalmente.")
+        else:
+            print("   ℹ️  Auditoria CVM retornou vazia nesta execução (dataset indisponível) "
+                 "— telemetria CVM persistida anteriormente PRESERVADA (nenhuma sobrescrita).")
     if args.probe_sources:
         probe_official_sources(cfg, out_csv="probe_fontes_oficiais.csv")
     if args.backfill:
@@ -9269,28 +9325,77 @@ def main():
         "international_search_execution": _SEARCH_TELEMETRY,
         "official_source_execution": _OFFICIAL_SOURCE_TELEMETRY,
     }
+
+    # ── Reconciliação runtime (correção das 2 pendências 4H.2) ──
+    # `run_id`/`generated_at` fixados AQUI (antes do render) para serem
+    # idênticos entre o payload do HTML e os 6 exports gerados logo abaixo
+    # — nenhum dos dois recalcula timestamp separadamente.
+    _fim = datetime.now(timezone.utc).isoformat()
+    try:
+        import subprocess as _subprocess
+        _commit_base = _subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], cwd=str(Path(__file__).parent),
+            stderr=_subprocess.DEVNULL, timeout=10).decode().strip()
+    except Exception:
+        _commit_base = os.environ.get("GITHUB_SHA", "unknown")
+    # histórico PERSISTIDO de execuções anteriores (não inclui esta execução
+    # ainda) — usado para calcular frescor consolidado por fonte/emissor.
+    _sh_prev = _read_json("international_search_history.json") or {"runs": []}
+    _coverage_result = None
+    import coverage_diagnosis as _covdiag
+    try:
+        _coverage_result = _covdiag.run_production_coverage(
+            cfg, _live_run_meta_for_coverage, history_runs=_sh_prev.get("runs", []),
+            out_dir="out_coverage_diagnosis", run_id=_fim, generated_at=_fim,
+            commit_base=_commit_base,
+            # telemetria CVM persistida (migração 4H.2 + execuções reais de
+            # --audit-cvm anteriores) — mesma leitura já feita para
+            # history_runs, sem reabrir o arquivo.
+            cvm_persisted_telemetry=_sh_prev.get("cvm_telemetry", {}))
+        print(f" ✅ Cobertura reconciliada nesta execução: "
+              f"{_coverage_result['meta']['companies_count']} emissor(es) · "
+              f"run_id={_fim} · hash={_coverage_result['meta']['payload_hash'][:12]}…")
+    except _covdiag.ReconciliationError:
+        # Gate de publicação (item 3): NÃO deve gerar HTML nem permitir
+        # commit automático quando os exports não reconciliam com o
+        # payload canônico. Propaga — falha a execução.
+        raise
+    except Exception as _exc:
+        print(f"   ⚠️  Reconciliação de cobertura runtime não pôde ser calculada "
+              f"nesta execução ({type(_exc).__name__}: {str(_exc)[:160]}); "
+              f"dashboard segue com a cobertura embutida no HTML apenas "
+              f"(sem exports desta execução).")
+
     html = render_html(data_by_window, cfg, demo=args.demo, changes=changes,
                        payload_thresholds=thresholds,
-                       run_meta=_live_run_meta_for_coverage)
+                       run_meta=_live_run_meta_for_coverage,
+                       coverage_result=_coverage_result)
     out_file = Path(out_cfg.get("filename", "dashboard_risco.html"))
     out_file.write_text(html, encoding="utf-8")
     # regrava run_meta ao FIM, agora com a telemetria de execução por emissor
     try:
-        _fim = datetime.now(timezone.utc).isoformat()
         _rm = _read_json("run_meta.json") or {}
         _rm["international_search_execution"] = _SEARCH_TELEMETRY
         _rm["official_source_execution"] = _OFFICIAL_SOURCE_TELEMETRY
         _rm["run_finished_at"] = _fim
         _rm["run_count"] = history.get("run_count", 0)
+        if _coverage_result is not None:
+            _rm["coverage_run_id"] = _coverage_result["meta"]["run_id"]
+            _rm["coverage_payload_hash"] = _coverage_result["meta"]["payload_hash"]
         with open("run_meta.json", "w", encoding="utf-8") as _f:
             json.dump(_rm, _f, ensure_ascii=False)
         # 4H.1b — histórico CUMULATIVO: o run_meta representa só a execução
         # atual; sem isto era impossível provar que os 4 ciclos cobriram os 62.
         # Mantém as últimas 8 execuções, sem sobrescrever as anteriores.
+        # A partir desta correção, cada entrada também guarda
+        # `official_sources` (snapshot de _OFFICIAL_SOURCE_TELEMETRY) —
+        # sem isso, o cálculo de frescor consolidado de RI/EDGAR/CVM não
+        # teria telemetria persistida para olhar para trás (só GNEWS tinha).
         _sh = _read_json("international_search_history.json") or {"runs": []}
         _sh["runs"] = ([r for r in _sh.get("runs", []) if r.get("run_id") != _fim]
                        + [{"run_id": _fim, "run_count": history.get("run_count", 0),
-                           "finished_at": _fim, "emitters": _SEARCH_TELEMETRY}])[-8:]
+                           "finished_at": _fim, "emitters": _SEARCH_TELEMETRY,
+                           "official_sources": _OFFICIAL_SOURCE_TELEMETRY}])[-8:]
         with open("international_search_history.json", "w", encoding="utf-8") as _f:
             json.dump(_sh, _f, ensure_ascii=False)
         print(f" 📈 Telemetria de busca: {len(_SEARCH_TELEMETRY)} emissor(es) nesta execução; "
