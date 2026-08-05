@@ -863,7 +863,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:57:36.366597+00:00"
+     "last_checked_at": "2026-08-05T17:50:12.783654+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2502,7 +2502,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:57:36.766877+00:00"
+     "last_checked_at": "2026-08-05T17:50:13.183936+00:00"
     }
    ],
    "corrob_sources": [
@@ -9293,7 +9293,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:57:37.167184+00:00"
+     "last_checked_at": "2026-08-05T17:50:13.584237+00:00"
     },
     {
      "source": "Demarest",
@@ -9313,7 +9313,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:57:37.567476+00:00"
+     "last_checked_at": "2026-08-05T17:50:13.984540+00:00"
     }
    ],
    "corrob_sources": [
@@ -10730,7 +10730,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:57:37.967746+00:00"
+     "last_checked_at": "2026-08-05T17:50:14.384890+00:00"
     }
    ],
    "corrob_sources": [
@@ -13918,7 +13918,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:57:38.562345+00:00"
+     "last_checked_at": "2026-08-05T17:50:14.958016+00:00"
     }
    ],
    "corrob_sources": [
@@ -16156,7 +16156,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:57:39.163603+00:00"
+     "last_checked_at": "2026-08-05T17:50:15.508362+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16262,7 +16262,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:57:39.751037+00:00"
+     "last_checked_at": "2026-08-05T17:50:16.060985+00:00"
     },
     {
      "source": "Moomoo",
@@ -17555,7 +17555,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:57:40.460524+00:00"
+     "last_checked_at": "2026-08-05T17:50:16.734270+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17598,7 +17598,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:57:41.199542+00:00"
+     "last_checked_at": "2026-08-05T17:50:17.409446+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19350,7 +19350,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-05T15:57:41.599845+00:00",
+     "last_checked_at": "2026-08-05T17:50:17.809757+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19415,7 +19415,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-05T15:57:42.000116+00:00",
+     "last_checked_at": "2026-08-05T17:50:18.210065+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20388,7 +20388,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:57:42.575740+00:00"
+     "last_checked_at": "2026-08-05T17:50:18.784382+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20473,7 +20473,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:57:43.156499+00:00"
+     "last_checked_at": "2026-08-05T17:50:19.349249+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -35601,7 +35601,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:57:43.874320+00:00"
+     "last_checked_at": "2026-08-05T17:50:20.015678+00:00"
     }
    ],
    "corrob_sources": [
@@ -38458,7 +38458,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:57:44.443771+00:00"
+     "last_checked_at": "2026-08-05T17:50:20.588377+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38501,7 +38501,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T15:57:45.023107+00:00"
+     "last_checked_at": "2026-08-05T17:50:21.159035+00:00"
     },
     {
      "source": "Virginia Business",
@@ -43666,9 +43666,63 @@
    ],
    "captured_ts": 1785945450,
    "cap_iso": "2026-08-05 12:57"
+  },
+  "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQekhuZ2FWZDlMWlV6eG1Nbk85a28yOTNVcV9tX09DaTJBc3MtbmI5SkgtZ3pyaFR2Yzd3bk01RjhGUzVHYTNnSzJuRWlCa1ZSRG1qbnU3Y0VIREtQUHp5Z2xwRUh3T3F3QWpMUHkzU2NGTmxESWprRGtXeG10WVNxaGpJUUJDampweFVOSW1lMmJadGZzS3BUbFNjajFpYTVUN1RraE9TX1laMU9SUnFHVmhKclpHNWNTWVJBbHBrZF9rNy15VHNCUXFYZVF6OWtqUEE?oc=5": {
+   "title": "Optum’s Former Sr Director Karan Gupta Found Guilty in $1.2Mn Kickback and Ghost Employee Fraud",
+   "url": "https://www.moneylife.in/article/optums-former-sr-director-karan-gupta-found-guilty-in-12mn-kickback-and-ghost-employee-fraud/79714.html",
+   "summary": "Optum’s Former Sr Director Karan Gupta Found Guilty in $1.2Mn Kickback and Ghost Employee Fraud &nbsp;&nbsp; Moneylife",
+   "source": "Moneylife",
+   "domain": "moneylife.in",
+   "pub_ts": 1771477105,
+   "pub_iso": "2026-02-19 01:58",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "fraude"
+   ],
+   "captured_ts": 1785952208,
+   "cap_iso": "2026-08-05 14:50"
+  },
+  "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/": {
+   "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
+   "url": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/",
+   "summary": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal &nbsp;&nbsp; InfoMoney",
+   "source": "InfoMoney",
+   "domain": "infomoney.com.br",
+   "pub_ts": 1783494000,
+   "pub_iso": "2026-07-08 04:00",
+   "language": "pt",
+   "companies": [
+    "Vale"
+   ],
+   "event_ids": [
+    "investigacao_regulatoria"
+   ],
+   "mention_roles": {
+    "Vale": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Vale": [
+     "investigacao_regulatoria"
+    ]
+   },
+   "companies_attributed": [
+    "Vale"
+   ],
+   "context_companies": [],
+   "captured_ts": 1785952208,
+   "cap_iso": "2026-08-05 14:50"
   }
  },
- "run_count": 77,
+ "run_count": 78,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -48485,11 +48539,19 @@
   "https://news.google.com/rss/articles/CBMirwFBVV95cUxPTUd3LW5zcE0wQU94bUxJWWczb20xOFFNUUFzdHRQUTJnNzJRNWMxRi1NZllNUExFNFhnZkJmSFlhTEJHZEVXNmJYX3JsaktOcDBoYkRYdzNRbWUzNXRnRUQ3U1RKeFM3cG9XWHBocDhSSzMzQkVtQkVHMjNpX0NKbTF0QzBvbjNDYzJCcjR5bnVuSmVaVF95U0IySUFTWWdFXzFFS0dHbmFLbURfaWxJ?oc=5": {
    "url": "https://www.migalhas.com.br/depeso/461308/recuperacao-judicial-quando-reorganizar-e-a-decisao-mais-responsavel",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMisAFBVV95cUxNX1Y5STJGcUVmT2dFNkRJYUI5WjU1TnRfQXpXell3ODNhc2ExUlhJOWEtTDM2RnNHWkZERVJSeWh6WG52X1lRWlBOajNuYldYaUdwZ0hyNTFnR25qa28wcjVCSkY2SlEyVnpBMG9aUFZBYmQ5dHptd2tEazlrcm9lcU5DVk5aNlo0Z3JNZVdRVEZ4YlZpbjNidXJKVWdWQVFNcFJGOVVzdFMzUlRNV2w5bg?oc=5": {
+   "url": "https://www.df.cl/mercados/banca-fintech/presidente-de-grupo-security-y-fusion-con-bicecorp-nos-da-una-posicion",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQekhuZ2FWZDlMWlV6eG1Nbk85a28yOTNVcV9tX09DaTJBc3MtbmI5SkgtZ3pyaFR2Yzd3bk01RjhGUzVHYTNnSzJuRWlCa1ZSRG1qbnU3Y0VIREtQUHp5Z2xwRUh3T3F3QWpMUHkzU2NGTmxESWprRGtXeG10WVNxaGpJUUJDampweFVOSW1lMmJadGZzS3BUbFNjajFpYTVUN1RraE9TX1laMU9SUnFHVmhKclpHNWNTWVJBbHBrZF9rNy15VHNCUXFYZVF6OWtqUEE?oc=5": {
+   "url": "https://www.moneylife.in/article/optums-former-sr-director-karan-gupta-found-guilty-in-12mn-kickback-and-ghost-employee-fraud/79714.html",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785945465,
-  "iso": "05 ago 2026 · 12:57 BRT",
+  "ts": 1785952221,
+  "iso": "05 ago 2026 · 14:50 BRT",
   "status": {
    "Rumo": {
     "status": "atencao",
@@ -48521,7 +48583,7 @@
    },
    "Cosan": {
     "status": "atencao",
-    "score": 47
+    "score": 46
    },
    "Smart Fit": {
     "status": "atencao",
@@ -48547,13 +48609,13 @@
     "status": "atencao",
     "score": 37
    },
-   "Petrobras": {
-    "status": "atencao",
-    "score": 33
-   },
    "JBS": {
     "status": "atencao",
     "score": 33
+   },
+   "Petrobras": {
+    "status": "atencao",
+    "score": 32
    },
    "Yobel": {
     "status": "monitorar",
@@ -48561,7 +48623,7 @@
    },
    "Banco do Brasil": {
     "status": "atencao",
-    "score": 31
+    "score": 30
    },
    "Baker Hughes": {
     "status": "monitorar",
@@ -48577,11 +48639,11 @@
    },
    "Embraer": {
     "status": "atencao",
-    "score": 26
+    "score": 25
    },
    "Suzano": {
     "status": "monitorar",
-    "score": 25
+    "score": 24
    },
    "Capital One Financial": {
     "status": "monitorar",
