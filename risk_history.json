@@ -1,173 +1,5 @@
 {
  "articles": {
-  "https://investnews.com.br/negocios/dasa-amanhece-com-novo-ceo-rafael-lucchesi-assume-apos-renuncia-de-licio-cintra/": {
-   "title": "Dasa amanhece com novo CEO: Rafael Lucchesi assume após renúncia de Lício Cintra",
-   "url": "https://investnews.com.br/negocios/dasa-amanhece-com-novo-ceo-rafael-lucchesi-assume-apos-renuncia-de-licio-cintra/",
-   "summary": "Dasa amanhece com novo CEO: Rafael Lucchesi assume após renúncia de Lício Cintra &nbsp;&nbsp; InvestNews",
-   "source": "InvestNews",
-   "domain": "investnews.com.br",
-   "pub_ts": 1751353200,
-   "pub_iso": "2025-07-01 04:00",
-   "language": "pt",
-   "companies": [
-    "Dasa"
-   ],
-   "event_ids": [
-    "troca_ceo"
-   ],
-   "events_by_company": {
-    "Dasa": [
-     "troca_ceo"
-    ]
-   },
-   "mention_roles": {
-    "Dasa": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "companies_attributed": [
-    "Dasa"
-   ],
-   "context_companies": [],
-   "captured_ts": 1785345276,
-   "cap_iso": "2026-07-29 14:14",
-   "corroborations": [],
-   "corrob_sources": [],
-   "original_url": "https://investnews.com.br/negocios/dasa-amanhece-com-novo-ceo-rafael-lucchesi-assume-apos-renuncia-de-licio-cintra/",
-   "redirect_url": "",
-   "resolved_url": "https://investnews.com.br/negocios/dasa-amanhece-com-novo-ceo-rafael-lucchesi-assume-apos-renuncia-de-licio-cintra/",
-   "canonical_url": "https://investnews.com.br/negocios/dasa-amanhece-com-novo-ceo-rafael-lucchesi-assume-apos-renuncia-de-licio-cintra/",
-   "display_url": "https://investnews.com.br/negocios/dasa-amanhece-com-novo-ceo-rafael-lucchesi-assume-apos-renuncia-de-licio-cintra/",
-   "redirect_chain": "",
-   "original_host": "investnews.com.br",
-   "final_host": "investnews.com.br",
-   "http_status": "",
-   "link_health": "url_direta_valida",
-   "resolution_method": "direto",
-   "resolution_error": "",
-   "link_render_anchor": true,
-   "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.618711+00:00"
-  },
-  "https://www.infomoney.com.br/mercados/copel-cple6-conclui-aquisicao-da-usina-baixo-iguacu-da-neoenergia-por-r-105-bi/": {
-   "title": "Copel (CPLE6) conclui aquisição da usina Baixo Iguaçu da Neoenergia por R$ 1,05 bi",
-   "url": "https://www.infomoney.com.br/mercados/copel-cple6-conclui-aquisicao-da-usina-baixo-iguacu-da-neoenergia-por-r-105-bi/",
-   "summary": "Copel (CPLE6) conclui aquisição da usina Baixo Iguaçu da Neoenergia por R$ 1,05 bi &nbsp;&nbsp; InfoMoney",
-   "source": "InfoMoney",
-   "domain": "infomoney.com.br",
-   "pub_ts": 1751353200,
-   "pub_iso": "2025-07-01 04:00",
-   "language": "es",
-   "companies": [
-    "Copel"
-   ],
-   "event_ids": [
-    "ma"
-   ],
-   "events_by_company": {
-    "Copel": []
-   },
-   "mention_roles": {
-    "Copel": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "encerramento",
-     "direction_hint": ""
-    }
-   },
-   "companies_attributed": [],
-   "context_companies": [
-    "Copel"
-   ],
-   "captured_ts": 1785345276,
-   "cap_iso": "2026-07-29 14:14",
-   "semantic_discards": [
-    {
-     "empresa": "Copel",
-     "event_id": "ma",
-     "event_id_corrigido": "aquisicao_capex",
-     "regra": "R_MA_OBJETO_ESCOPO",
-     "motivo": "objeto_nao_empresarial:capex_ativo",
-     "subject_company": "Copel"
-    }
-   ],
-   "event_assessments": [
-    {
-     "company": "Copel",
-     "event_id": "ma",
-     "assessed_by": "semantic_audit",
-     "subject_company": "Copel",
-     "actor_company": "",
-     "affected_company": "",
-     "transaction_object": "capex_ativo",
-     "transaction_scope": "capex",
-     "transaction_role": "",
-     "event_phase": "",
-     "event_scope": "direto",
-     "direction": "neutra",
-     "historical_reference": false,
-     "new_occurrence": true,
-     "confirmation_level": "indefinido",
-     "attribution_rule": "R_MA_OBJETO_ESCOPO",
-     "attribution_confidence": "media",
-     "scoreable": false,
-     "rejection_reason": "objeto_nao_empresarial:capex_ativo",
-     "legal_status": "",
-     "confirmation_status": "indefinido"
-    }
-   ],
-   "semantic_version": "1.0",
-   "original_url": "https://www.infomoney.com.br/mercados/copel-cple6-conclui-aquisicao-da-usina-baixo-iguacu-da-neoenergia-por-r-105-bi/",
-   "redirect_url": "",
-   "resolved_url": "https://www.infomoney.com.br/mercados/copel-cple6-conclui-aquisicao-da-usina-baixo-iguacu-da-neoenergia-por-r-105-bi/",
-   "canonical_url": "https://www.infomoney.com.br/mercados/copel-cple6-conclui-aquisicao-da-usina-baixo-iguacu-da-neoenergia-por-r-105-bi/",
-   "display_url": "https://www.infomoney.com.br/mercados/copel-cple6-conclui-aquisicao-da-usina-baixo-iguacu-da-neoenergia-por-r-105-bi/",
-   "redirect_chain": "",
-   "original_host": "www.infomoney.com.br",
-   "final_host": "www.infomoney.com.br",
-   "http_status": "",
-   "link_health": "url_direta_valida",
-   "resolution_method": "direto",
-   "resolution_error": "",
-   "link_render_anchor": true,
-   "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.618751+00:00",
-   "informational_events_by_company": {
-    "Copel": [
-     {
-      "company": "Copel",
-      "event_id": "aquisicao_capex",
-      "event_label": "aquisicao capex",
-      "subject_company": "Copel",
-      "monitored_company": "Copel",
-      "relation_type": "direto",
-      "event_scope": "direto",
-      "direction": "neutra",
-      "scoreable": false,
-      "display_category": "informativo",
-      "new_ma_occurrence": false,
-      "change_of_control": false,
-      "external_ma": false,
-      "historical_transaction_reference": false,
-      "secondary_context": "aquisicao_capex",
-      "transaction_scope": "capex",
-      "confirmation_status": "indefinido",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "title": "Copel (CPLE6) conclui aquisição da usina Baixo Iguaçu da Neoenergia por R$ 1,05 bi",
-      "url": "https://www.infomoney.com.br/mercados/copel-cple6-conclui-aquisicao-da-usina-baixo-iguacu-da-neoenergia-por-r-105-bi/",
-      "pub_ts": 1751353200,
-      "observation": "objeto_nao_empresarial:capex_ativo",
-      "source_record_id": "https://www.infomoney.com.br/mercados/copel-cple6-conclui-aquisicao-da-usina-baixo-iguacu-da-neoenergia-por-r-105-bi/"
-     }
-    ]
-   }
-  },
   "https://globorural.globo.com/negocios/noticia/2025/07/bunge-conclui-acordo-de-aquisicao-da-viterra.ghtml": {
    "title": "Bunge conclui acordo de aquisição da Viterra",
    "url": "https://globorural.globo.com/negocios/noticia/2025/07/bunge-conclui-acordo-de-aquisicao-da-viterra.ghtml",
@@ -1031,7 +863,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T02:04:50.537105+00:00"
+     "last_checked_at": "2026-08-05T12:23:58.102105+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2670,7 +2502,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T02:04:50.937406+00:00"
+     "last_checked_at": "2026-08-05T12:23:58.502383+00:00"
     }
    ],
    "corrob_sources": [
@@ -9461,7 +9293,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T02:04:51.337731+00:00"
+     "last_checked_at": "2026-08-05T12:23:58.902681+00:00"
     },
     {
      "source": "Demarest",
@@ -9481,7 +9313,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T02:04:51.738023+00:00"
+     "last_checked_at": "2026-08-05T12:23:59.302964+00:00"
     }
    ],
    "corrob_sources": [
@@ -10898,7 +10730,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T02:04:52.138281+00:00"
+     "last_checked_at": "2026-08-05T12:23:59.703215+00:00"
     }
    ],
    "corrob_sources": [
@@ -14086,7 +13918,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T02:04:52.941464+00:00"
+     "last_checked_at": "2026-08-05T12:24:00.241486+00:00"
     }
    ],
    "corrob_sources": [
@@ -16324,7 +16156,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T02:04:53.948990+00:00"
+     "last_checked_at": "2026-08-05T12:24:00.761607+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16430,7 +16262,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T02:04:54.857199+00:00"
+     "last_checked_at": "2026-08-05T12:24:01.292225+00:00"
     },
     {
      "source": "Moomoo",
@@ -17723,7 +17555,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T02:04:56.086443+00:00"
+     "last_checked_at": "2026-08-05T12:24:01.909181+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17766,7 +17598,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T02:04:57.592217+00:00"
+     "last_checked_at": "2026-08-05T12:24:02.507224+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19518,7 +19350,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-05T02:04:57.992536+00:00",
+     "last_checked_at": "2026-08-05T12:24:02.907540+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19583,7 +19415,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-05T02:04:58.392818+00:00",
+     "last_checked_at": "2026-08-05T12:24:03.307799+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20556,7 +20388,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T02:04:59.572551+00:00"
+     "last_checked_at": "2026-08-05T12:24:03.842731+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20641,7 +20473,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T02:05:00.408636+00:00"
+     "last_checked_at": "2026-08-05T12:24:04.377393+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22306,6 +22138,26 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T05:45:34.704114+00:00"
+    },
+    {
+     "source": "SpaceMoney",
+     "domain": "spacemoney.com.br",
+     "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5ZQWtJLVhRT0Z5T0hqdWhmUzlETFI3d1JOdkx1U3NKeHkydmVHM1FfWTFNZjd4dGlUTThGQjQybDlzZ29Ubk5BbFgtYWJqV2I2THctVm44d0tZejFVdEhmZWxlT2pOVUw1UFM5MU55a0k2bjdjTVVTR080N0EtQQ?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5ZQWtJLVhRT0Z5T0hqdWhmUzlETFI3d1JOdkx1U3NKeHkydmVHM1FfWTFNZjd4dGlUTThGQjQybDlzZ29Ubk5BbFgtYWJqV2I2THctVm44d0tZejFVdEhmZWxlT2pOVUw1UFM5MU55a0k2bjdjTVVTR080N0EtQQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5ZQWtJLVhRT0Z5T0hqdWhmUzlETFI3d1JOdkx1U3NKeHkydmVHM1FfWTFNZjd4dGlUTThGQjQybDlzZ29Ubk5BbFgtYWJqV2I2THctVm44d0tZejFVdEhmZWxlT2pOVUw1UFM5MU55a0k2bjdjTVVTR080N0EtQQ?oc=5",
+     "resolved_url": "https://www.spacemoney.com.br/investimentos/vamos-vamo3-anuncia-novo-ceo/",
+     "canonical_url": "https://www.spacemoney.com.br/investimentos/vamos-vamo3-anuncia-novo-ceo/",
+     "display_url": "https://www.spacemoney.com.br/investimentos/vamos-vamo3-anuncia-novo-ceo/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.spacemoney.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-05T12:24:04.895316+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "corrob_sources": [
@@ -22434,6 +22286,27 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T05:45:34.704299+00:00"
+    },
+    {
+     "source": "SpaceMoney",
+     "domain": "spacemoney.com.br",
+     "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5ZQWtJLVhRT0Z5T0hqdWhmUzlETFI3d1JOdkx1U3NKeHkydmVHM1FfWTFNZjd4dGlUTThGQjQybDlzZ29Ubk5BbFgtYWJqV2I2THctVm44d0tZejFVdEhmZWxlT2pOVUw1UFM5MU55a0k2bjdjTVVTR080N0EtQQ?oc=5",
+     "when": "28/05 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5ZQWtJLVhRT0Z5T0hqdWhmUzlETFI3d1JOdkx1U3NKeHkydmVHM1FfWTFNZjd4dGlUTThGQjQybDlzZ29Ubk5BbFgtYWJqV2I2THctVm44d0tZejFVdEhmZWxlT2pOVUw1UFM5MU55a0k2bjdjTVVTR080N0EtQQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5ZQWtJLVhRT0Z5T0hqdWhmUzlETFI3d1JOdkx1U3NKeHkydmVHM1FfWTFNZjd4dGlUTThGQjQybDlzZ29Ubk5BbFgtYWJqV2I2THctVm44d0tZejFVdEhmZWxlT2pOVUw1UFM5MU55a0k2bjdjTVVTR080N0EtQQ?oc=5",
+     "resolved_url": "https://www.spacemoney.com.br/investimentos/vamos-vamo3-anuncia-novo-ceo/",
+     "canonical_url": "https://www.spacemoney.com.br/investimentos/vamos-vamo3-anuncia-novo-ceo/",
+     "display_url": "https://www.spacemoney.com.br/investimentos/vamos-vamo3-anuncia-novo-ceo/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.spacemoney.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-05T12:24:05.295565+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "captured_ts": 1785345276,
@@ -30475,7 +30348,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.650819+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.650819+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMirgFBVV95cUxQOTI2cldxem05MTN6elg4N0R1RmJaQzhBR3c3U3h6bVd3T20wZUl5cGpZOVpCcjlVRW9Xa1BnTzMtRUhxUjhHMzQzR1p0QWxLWF9JU05tQV83aGx5ZGJwYXctbG9EOW1TU0dTeE5QMUxhUDZQbXl0bkJpbkVaNUVpY3ptZ1p6OU9XTXduRlF3eFE4Rlh6U2c4UFlrTmZxdzdrMGQ1aDRnUU9kUTNla1E?oc=5": {
    "title": "NextEra’s Acquisition of Dominion Energy Would Result in Corporate Mega-Utility",
@@ -35726,7 +35601,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T02:05:02.515858+00:00"
+     "last_checked_at": "2026-08-05T12:24:05.956641+00:00"
     }
    ],
    "corrob_sources": [
@@ -38583,7 +38458,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T02:05:04.227283+00:00"
+     "last_checked_at": "2026-08-05T12:24:06.467755+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38626,7 +38501,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T02:05:06.265191+00:00"
+     "last_checked_at": "2026-08-05T12:24:06.990353+00:00"
     },
     {
      "source": "Virginia Business",
@@ -43503,42 +43378,6 @@
    "corroborations": [],
    "corrob_sources": []
   },
-  "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/": {
-   "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
-   "url": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/",
-   "summary": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal &nbsp;&nbsp; infomoney.com.br",
-   "source": "infomoney.com.br",
-   "domain": "infomoney.com.br",
-   "pub_ts": 1783494000,
-   "pub_iso": "2026-07-08 04:00",
-   "language": "pt",
-   "companies": [
-    "Vale"
-   ],
-   "event_ids": [
-    "investigacao_regulatoria"
-   ],
-   "mention_roles": {
-    "Vale": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "events_by_company": {
-    "Vale": [
-     "investigacao_regulatoria"
-    ]
-   },
-   "companies_attributed": [
-    "Vale"
-   ],
-   "context_companies": [],
-   "captured_ts": 1785895478,
-   "cap_iso": "2026-08-04 23:04"
-  },
   "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTThBZ09ZOU5fYTBQa0NWUWRteDMzeEItek16REUwNzdMQ2xsNURxU2pzU3hrd1pIQ0tXUzh0d1F5LTFRVmF6dkozMzhySTVXZEROdWkxd2pTRmlReGVZQlpZdUZnRkZyN1R4aEY2ZjUwTVJ1T1dZaTU0VnY4MVd6UXIzeHdMYVly?oc=5": {
    "title": "Explainer: What are credit default swaps and why are they spooking AI investors?",
    "url": "https://www.reuters.com/business/finance/global-markets-cds-explainer-2026-07-29/",
@@ -43558,7 +43397,7 @@
    "cap_iso": "2026-08-04 23:04"
   }
  },
- "run_count": 74,
+ "run_count": 75,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -48327,31 +48166,43 @@
   "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTThBZ09ZOU5fYTBQa0NWUWRteDMzeEItek16REUwNzdMQ2xsNURxU2pzU3hrd1pIQ0tXUzh0d1F5LTFRVmF6dkozMzhySTVXZEROdWkxd2pTRmlReGVZQlpZdUZnRkZyN1R4aEY2ZjUwTVJ1T1dZaTU0VnY4MVd6UXIzeHdMYVly?oc=5": {
    "url": "https://www.reuters.com/business/finance/global-markets-cds-explainer-2026-07-29/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMikgFBVV95cUxNVEJwTXdyYkFqVnptRG1ZcjBucENUUTZDVWZKOUZWblUtWlNZeGRpX19zQmtMSG5sbjlHY21acVlMNGZaOVZhUklnUkx4dDc0dm00MHFGVTU4WjZLenBaTHZiR1pkemxkMkU1cHZ2czA0VDNtVWEyc3dHbE5WY2tuTWd3T29DRjFUenk2QkZOOFpXUQ?oc=5": {
+   "url": "https://www.connectas.org/la-aerolinea-latam-se-declara-en-bancarrota-en-estados-unidos/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMinAFBVV95cUxOUzR3QVFvanpzM0pjdTFpelFKY0tSTVNMTVJzancwaGpub050OUVfVy1oZkx0bmlEVFFEc0owdVVqWUpqREJTZnpaMWpVRmlqMEE1ay1jbFVIVEFleUxIRUFfczFhZndIYmRXSnF4dlpSdUpnbFRiM3RZUlAwLUtFTklXYjZqX2d6dTZTLWpKelYxSno5Ym5vMkJ4LWo?oc=5": {
+   "url": "https://eixos.com.br/empresas/cade-da-aval-para-aquisicao-de-40-do-campo-de-peregrino-pela-prio/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMifkFVX3lxTE5ZQWtJLVhRT0Z5T0hqdWhmUzlETFI3d1JOdkx1U3NKeHkydmVHM1FfWTFNZjd4dGlUTThGQjQybDlzZ29Ubk5BbFgtYWJqV2I2THctVm44d0tZejFVdEhmZWxlT2pOVUw1UFM5MU55a0k2bjdjTVVTR080N0EtQQ?oc=5": {
+   "url": "https://www.spacemoney.com.br/investimentos/vamos-vamo3-anuncia-novo-ceo/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785895507,
-  "iso": "04 ago 2026 · 23:05 BRT",
+  "ts": 1785932647,
+  "iso": "05 ago 2026 · 09:24 BRT",
   "status": {
    "Rumo": {
     "status": "atencao",
-    "score": 73
+    "score": 72
    },
    "Engie Brasil": {
     "status": "atencao",
-    "score": 70
+    "score": 69
    },
    "Vale": {
     "status": "atencao",
-    "score": 65
+    "score": 64
    },
    "CVS Health": {
     "status": "critico",
-    "score": 61
+    "score": 60
    },
    "Tok&Stok": {
     "status": "critico",
-    "score": 60
+    "score": 59
    },
    "Santander Brasil": {
     "status": "atencao",
@@ -48365,13 +48216,13 @@
     "status": "atencao",
     "score": 47
    },
-   "Samarco Mineração": {
-    "status": "critico",
-    "score": 44
-   },
    "Smart Fit": {
     "status": "atencao",
     "score": 44
+   },
+   "Samarco Mineração": {
+    "status": "critico",
+    "score": 43
    },
    "BTG Pactual": {
     "status": "atencao",
@@ -48379,15 +48230,15 @@
    },
    "Axia Energia": {
     "status": "atencao",
-    "score": 41
+    "score": 40
    },
    "Energisa": {
     "status": "atencao",
-    "score": 39
+    "score": 38
    },
    "Sabesp": {
     "status": "atencao",
-    "score": 38
+    "score": 37
    },
    "Petrobras": {
     "status": "atencao",
@@ -48399,15 +48250,11 @@
    },
    "Yobel": {
     "status": "monitorar",
-    "score": 33
+    "score": 32
    },
    "Baker Hughes": {
     "status": "monitorar",
     "score": 28
-   },
-   "TIM Brasil": {
-    "status": "monitorar",
-    "score": 27
    },
    "ISA Energia Brasil": {
     "status": "monitorar",
@@ -48433,13 +48280,9 @@
     "status": "monitorar",
     "score": 24
    },
-   "Itaúsa": {
+   "TIM Brasil": {
     "status": "monitorar",
-    "score": 21
-   },
-   "Aegea Saneamento": {
-    "status": "monitorar",
-    "score": 21
+    "score": 22
    },
    "Yura": {
     "status": "atencao",
@@ -48449,15 +48292,15 @@
     "status": "monitorar",
     "score": 20
    },
-   "Ultrapar": {
-    "status": "atencao",
-    "score": 18
+   "Itaúsa": {
+    "status": "monitorar",
+    "score": 20
+   },
+   "Aegea Saneamento": {
+    "status": "monitorar",
+    "score": 20
    },
    "Natura &Co": {
-    "status": "monitorar",
-    "score": 18
-   },
-   "Albioma": {
     "status": "monitorar",
     "score": 18
    },
@@ -48465,9 +48308,13 @@
     "status": "monitorar",
     "score": 18
    },
-   "Cemig": {
+   "Ultrapar": {
     "status": "atencao",
-    "score": 16
+    "score": 17
+   },
+   "Albioma": {
+    "status": "monitorar",
+    "score": 17
    },
    "Eneva": {
     "status": "monitorar",
@@ -48477,17 +48324,21 @@
     "status": "monitorar",
     "score": 15
    },
-   "NextEra Energy": {
-    "status": "monitorar",
-    "score": 14
-   },
    "Usiminas": {
     "status": "monitorar",
     "score": 14
    },
+   "NextEra Energy": {
+    "status": "monitorar",
+    "score": 13
+   },
+   "Cemig": {
+    "status": "atencao",
+    "score": 12
+   },
    "Bradesco": {
     "status": "atencao",
-    "score": 13
+    "score": 12
    },
    "Copel": {
     "status": "monitorar",
