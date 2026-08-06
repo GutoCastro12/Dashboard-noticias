@@ -1,101 +1,5 @@
 {
  "articles": {
-  "https://globorural.globo.com/negocios/noticia/2025/07/bunge-conclui-acordo-de-aquisicao-da-viterra.ghtml": {
-   "title": "Bunge conclui acordo de aquisição da Viterra",
-   "url": "https://globorural.globo.com/negocios/noticia/2025/07/bunge-conclui-acordo-de-aquisicao-da-viterra.ghtml",
-   "summary": "Bunge conclui acordo de aquisição da Viterra &nbsp;&nbsp; Globo Rural",
-   "source": "Globo Rural",
-   "domain": "globorural.globo.com",
-   "pub_ts": 1751439600,
-   "pub_iso": "2025-07-02 04:00",
-   "language": "pt",
-   "companies": [
-    "Bunge"
-   ],
-   "event_ids": [
-    "ma"
-   ],
-   "events_by_company": {
-    "Bunge": [
-     "ma"
-    ]
-   },
-   "mention_roles": {
-    "Bunge": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "encerramento",
-     "direction_hint": ""
-    }
-   },
-   "companies_attributed": [
-    "Bunge"
-   ],
-   "context_companies": [],
-   "corroborations": [
-    {
-     "source": "Revista Cultivar",
-     "domain": "revistacultivar.com.br",
-     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQcWZXXzNfY3VEallDb0JNX0dfZzRJYk1nM09TVm4wMU1pMThBSEJHTU9mQXJkdG1jLW1idU9MblJUZExpY2xTV2tQZkFWT1F4WHktYklZZzNsUzNJaG5GTVoxRzZMVm1MTWVUYVFtYXdtZWFKS09BQnRpMGVqamhhRkNHdjllcVAzcHZCaTlKMTlSYXBpYUtPQUM5MDlGVkZqQU1jVGQzdFp6aW9UYmc?oc=5",
-     "original_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQcWZXXzNfY3VEallDb0JNX0dfZzRJYk1nM09TVm4wMU1pMThBSEJHTU9mQXJkdG1jLW1idU9MblJUZExpY2xTV2tQZkFWT1F4WHktYklZZzNsUzNJaG5GTVoxRzZMVm1MTWVUYVFtYXdtZWFKS09BQnRpMGVqamhhRkNHdjllcVAzcHZCaTlKMTlSYXBpYUtPQUM5MDlGVkZqQU1jVGQzdFp6aW9UYmc?oc=5",
-     "redirect_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQcWZXXzNfY3VEallDb0JNX0dfZzRJYk1nM09TVm4wMU1pMThBSEJHTU9mQXJkdG1jLW1idU9MblJUZExpY2xTV2tQZkFWT1F4WHktYklZZzNsUzNJaG5GTVoxRzZMVm1MTWVUYVFtYXdtZWFKS09BQnRpMGVqamhhRkNHdjllcVAzcHZCaTlKMTlSYXBpYUtPQUM5MDlGVkZqQU1jVGQzdFp6aW9UYmc?oc=5",
-     "resolved_url": "https://revistacultivar.com.br/noticias/bunge-conclui-fusao-com-viterra-e-forma-gigante-global-do-agronegocio",
-     "canonical_url": "https://revistacultivar.com.br/noticias/bunge-conclui-fusao-com-viterra-e-forma-gigante-global-do-agronegocio",
-     "display_url": "https://revistacultivar.com.br/noticias/bunge-conclui-fusao-com-viterra-e-forma-gigante-global-do-agronegocio",
-     "redirect_chain": "",
-     "original_host": "news.google.com",
-     "final_host": "revistacultivar.com.br",
-     "http_status": "",
-     "link_health": "redirect_resolvido",
-     "resolution_method": "batchexecute",
-     "resolution_error": "",
-     "link_render_anchor": true,
-     "link_label": "Abrir notícia →",
-     "last_checked_at": "2026-07-31T05:45:06.642593+00:00"
-    }
-   ],
-   "corrob_sources": [
-    {
-     "source": "Revista Cultivar",
-     "domain": "revistacultivar.com.br",
-     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQcWZXXzNfY3VEallDb0JNX0dfZzRJYk1nM09TVm4wMU1pMThBSEJHTU9mQXJkdG1jLW1idU9MblJUZExpY2xTV2tQZkFWT1F4WHktYklZZzNsUzNJaG5GTVoxRzZMVm1MTWVUYVFtYXdtZWFKS09BQnRpMGVqamhhRkNHdjllcVAzcHZCaTlKMTlSYXBpYUtPQUM5MDlGVkZqQU1jVGQzdFp6aW9UYmc?oc=5",
-     "when": "02/07 04:00",
-     "original_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQcWZXXzNfY3VEallDb0JNX0dfZzRJYk1nM09TVm4wMU1pMThBSEJHTU9mQXJkdG1jLW1idU9MblJUZExpY2xTV2tQZkFWT1F4WHktYklZZzNsUzNJaG5GTVoxRzZMVm1MTWVUYVFtYXdtZWFKS09BQnRpMGVqamhhRkNHdjllcVAzcHZCaTlKMTlSYXBpYUtPQUM5MDlGVkZqQU1jVGQzdFp6aW9UYmc?oc=5",
-     "redirect_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQcWZXXzNfY3VEallDb0JNX0dfZzRJYk1nM09TVm4wMU1pMThBSEJHTU9mQXJkdG1jLW1idU9MblJUZExpY2xTV2tQZkFWT1F4WHktYklZZzNsUzNJaG5GTVoxRzZMVm1MTWVUYVFtYXdtZWFKS09BQnRpMGVqamhhRkNHdjllcVAzcHZCaTlKMTlSYXBpYUtPQUM5MDlGVkZqQU1jVGQzdFp6aW9UYmc?oc=5",
-     "resolved_url": "https://revistacultivar.com.br/noticias/bunge-conclui-fusao-com-viterra-e-forma-gigante-global-do-agronegocio",
-     "canonical_url": "https://revistacultivar.com.br/noticias/bunge-conclui-fusao-com-viterra-e-forma-gigante-global-do-agronegocio",
-     "display_url": "https://revistacultivar.com.br/noticias/bunge-conclui-fusao-com-viterra-e-forma-gigante-global-do-agronegocio",
-     "redirect_chain": "",
-     "original_host": "news.google.com",
-     "final_host": "revistacultivar.com.br",
-     "http_status": "",
-     "link_health": "redirect_resolvido",
-     "resolution_method": "cache_historico",
-     "resolution_error": "",
-     "link_render_anchor": true,
-     "link_label": "Abrir notícia →",
-     "last_checked_at": "2026-07-31T05:45:06.642646+00:00"
-    }
-   ],
-   "captured_ts": 1785345276,
-   "cap_iso": "2026-07-29 14:14",
-   "original_url": "https://globorural.globo.com/negocios/noticia/2025/07/bunge-conclui-acordo-de-aquisicao-da-viterra.ghtml",
-   "redirect_url": "",
-   "resolved_url": "https://globorural.globo.com/negocios/noticia/2025/07/bunge-conclui-acordo-de-aquisicao-da-viterra.ghtml",
-   "canonical_url": "https://globorural.globo.com/negocios/noticia/2025/07/bunge-conclui-acordo-de-aquisicao-da-viterra.ghtml",
-   "display_url": "https://globorural.globo.com/negocios/noticia/2025/07/bunge-conclui-acordo-de-aquisicao-da-viterra.ghtml",
-   "redirect_chain": "",
-   "original_host": "globorural.globo.com",
-   "final_host": "globorural.globo.com",
-   "http_status": "",
-   "link_health": "url_direta_valida",
-   "resolution_method": "direto",
-   "resolution_error": "",
-   "link_render_anchor": true,
-   "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.618796+00:00"
-  },
   "https://www.estadao.com.br/einvestidor/onde-investir/debentures-simples-fisia-grupo-sbf/": {
    "title": "Fisia, do Grupo SBF (SBFG3), fará 5ª emissão de debêntures milionários; veja valor total",
    "url": "https://www.estadao.com.br/einvestidor/onde-investir/debentures-simples-fisia-grupo-sbf/",
@@ -863,7 +767,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T20:39:38.923815+00:00"
+     "last_checked_at": "2026-08-06T12:18:10.643990+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2502,7 +2406,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T20:39:39.324071+00:00"
+     "last_checked_at": "2026-08-06T12:18:11.044283+00:00"
     }
    ],
    "corrob_sources": [
@@ -9293,7 +9197,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T20:39:39.724415+00:00"
+     "last_checked_at": "2026-08-06T12:18:11.444712+00:00"
     },
     {
      "source": "Demarest",
@@ -9313,7 +9217,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T20:39:40.124746+00:00"
+     "last_checked_at": "2026-08-06T12:18:11.844966+00:00"
     }
    ],
    "corrob_sources": [
@@ -10730,7 +10634,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T20:39:40.525012+00:00"
+     "last_checked_at": "2026-08-06T12:18:12.245243+00:00"
     }
    ],
    "corrob_sources": [
@@ -13918,7 +13822,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T20:39:41.123217+00:00"
+     "last_checked_at": "2026-08-06T12:18:12.857782+00:00"
     }
    ],
    "corrob_sources": [
@@ -16156,7 +16060,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T20:39:41.729898+00:00"
+     "last_checked_at": "2026-08-06T12:18:13.467236+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16262,7 +16166,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T20:39:42.385600+00:00"
+     "last_checked_at": "2026-08-06T12:18:14.097130+00:00"
     },
     {
      "source": "Moomoo",
@@ -17555,7 +17459,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T20:39:43.165890+00:00"
+     "last_checked_at": "2026-08-06T12:18:14.916617+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17598,7 +17502,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T20:39:43.956232+00:00"
+     "last_checked_at": "2026-08-06T12:18:15.691408+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -18420,11 +18324,53 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T05:45:28.980324+00:00"
+    },
+    {
+     "source": "Visno Invest",
+     "domain": "visnoinvest.com.br",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOYnU3QTd5S25vQm81SGxKMWQwejdNdUdpTVFtWWVRQWRQLU05OWUwdFVMUXUwd0s5Rm9CZ3NpVE9pNVNXRzEzM0RRdUlVWmR0MzhJaDlSTFZ2cmxQdTdWejhWZ1drUmVBaHZfRktWblN2N3AzOFM4T2JoSXNrMnFuei1XQm9vSXQ5T0dHalBnelUtd1pY?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOYnU3QTd5S25vQm81SGxKMWQwejdNdUdpTVFtWWVRQWRQLU05OWUwdFVMUXUwd0s5Rm9CZ3NpVE9pNVNXRzEzM0RRdUlVWmR0MzhJaDlSTFZ2cmxQdTdWejhWZ1drUmVBaHZfRktWblN2N3AzOFM4T2JoSXNrMnFuei1XQm9vSXQ5T0dHalBnelUtd1pY?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOYnU3QTd5S25vQm81SGxKMWQwejdNdUdpTVFtWWVRQWRQLU05OWUwdFVMUXUwd0s5Rm9CZ3NpVE9pNVNXRzEzM0RRdUlVWmR0MzhJaDlSTFZ2cmxQdTdWejhWZ1drUmVBaHZfRktWblN2N3AzOFM4T2JoSXNrMnFuei1XQm9vSXQ5T0dHalBnelUtd1pY?oc=5",
+     "resolved_url": "",
+     "canonical_url": "",
+     "display_url": "",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "",
+     "http_status": "",
+     "link_health": "redirect_nao_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-06T12:18:16.305589+00:00",
+     "resolution_error": "token não resolvido",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →"
     }
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "corrob_sources": [],
+   "corrob_sources": [
+    {
+     "source": "Visno Invest",
+     "domain": "visnoinvest.com.br",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOYnU3QTd5S25vQm81SGxKMWQwejdNdUdpTVFtWWVRQWRQLU05OWUwdFVMUXUwd0s5Rm9CZ3NpVE9pNVNXRzEzM0RRdUlVWmR0MzhJaDlSTFZ2cmxQdTdWejhWZ1drUmVBaHZfRktWblN2N3AzOFM4T2JoSXNrMnFuei1XQm9vSXQ5T0dHalBnelUtd1pY?oc=5",
+     "when": "16/04 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOYnU3QTd5S25vQm81SGxKMWQwejdNdUdpTVFtWWVRQWRQLU05OWUwdFVMUXUwd0s5Rm9CZ3NpVE9pNVNXRzEzM0RRdUlVWmR0MzhJaDlSTFZ2cmxQdTdWejhWZ1drUmVBaHZfRktWblN2N3AzOFM4T2JoSXNrMnFuei1XQm9vSXQ5T0dHalBnelUtd1pY?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOYnU3QTd5S25vQm81SGxKMWQwejdNdUdpTVFtWWVRQWRQLU05OWUwdFVMUXUwd0s5Rm9CZ3NpVE9pNVNXRzEzM0RRdUlVWmR0MzhJaDlSTFZ2cmxQdTdWejhWZ1drUmVBaHZfRktWblN2N3AzOFM4T2JoSXNrMnFuei1XQm9vSXQ5T0dHalBnelUtd1pY?oc=5",
+     "resolved_url": "",
+     "canonical_url": "",
+     "display_url": "",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "",
+     "http_status": "",
+     "link_health": "redirect_nao_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-06T12:18:16.933632+00:00",
+     "resolution_error": "token não resolvido",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →"
+    }
+   ],
    "original_url": "https://megawhat.uol.com.br/economia-e-politica/empresas/gerdau-negocia-aquisicao-de-hidreletrica-da-celesc-e-reforca-autoproducao/",
    "redirect_url": "",
    "resolved_url": "https://megawhat.uol.com.br/economia-e-politica/empresas/gerdau-negocia-aquisicao-de-hidreletrica-da-celesc-e-reforca-autoproducao/",
@@ -19350,7 +19296,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-05T20:39:44.356583+00:00",
+     "last_checked_at": "2026-08-06T12:18:17.333897+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19415,7 +19361,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-05T20:39:44.756841+00:00",
+     "last_checked_at": "2026-08-06T12:18:17.734138+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20388,7 +20334,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T20:39:45.385655+00:00"
+     "last_checked_at": "2026-08-06T12:18:18.383144+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20473,7 +20419,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T20:39:46.003488+00:00"
+     "last_checked_at": "2026-08-06T12:18:18.982892+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22158,6 +22104,26 @@
      "resolution_error": "",
      "link_render_anchor": true,
      "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Visno Invest",
+     "domain": "visnoinvest.com.br",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNR19VQ3FXLXFENkpxcmRsRmZrUWZVVTFLU0JMdFB4STdReFdrOU50MmhnSS1ObVFERVF2UDgtY3Q0YnRjRjcwaUJySmp4ZHBYV1FvX19UcGpYSDU3WWxXZkNBZXUxajd4MnAyRFpJQVdKeS1zbmpwMWx6b1NPb1BnMXFmd1JPMWxxd0FubVRhZw?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNR19VQ3FXLXFENkpxcmRsRmZrUWZVVTFLU0JMdFB4STdReFdrOU50MmhnSS1ObVFERVF2UDgtY3Q0YnRjRjcwaUJySmp4ZHBYV1FvX19UcGpYSDU3WWxXZkNBZXUxajd4MnAyRFpJQVdKeS1zbmpwMWx6b1NPb1BnMXFmd1JPMWxxd0FubVRhZw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNR19VQ3FXLXFENkpxcmRsRmZrUWZVVTFLU0JMdFB4STdReFdrOU50MmhnSS1ObVFERVF2UDgtY3Q0YnRjRjcwaUJySmp4ZHBYV1FvX19UcGpYSDU3WWxXZkNBZXUxajd4MnAyRFpJQVdKeS1zbmpwMWx6b1NPb1BnMXFmd1JPMWxxd0FubVRhZw?oc=5",
+     "resolved_url": "",
+     "canonical_url": "",
+     "display_url": "",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "",
+     "http_status": "",
+     "link_health": "redirect_nao_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-06T12:18:19.621893+00:00",
+     "resolution_error": "token não resolvido",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →"
     }
    ],
    "corrob_sources": [
@@ -22307,6 +22273,27 @@
      "resolution_error": "",
      "link_render_anchor": true,
      "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Visno Invest",
+     "domain": "visnoinvest.com.br",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNR19VQ3FXLXFENkpxcmRsRmZrUWZVVTFLU0JMdFB4STdReFdrOU50MmhnSS1ObVFERVF2UDgtY3Q0YnRjRjcwaUJySmp4ZHBYV1FvX19UcGpYSDU3WWxXZkNBZXUxajd4MnAyRFpJQVdKeS1zbmpwMWx6b1NPb1BnMXFmd1JPMWxxd0FubVRhZw?oc=5",
+     "when": "28/05 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNR19VQ3FXLXFENkpxcmRsRmZrUWZVVTFLU0JMdFB4STdReFdrOU50MmhnSS1ObVFERVF2UDgtY3Q0YnRjRjcwaUJySmp4ZHBYV1FvX19UcGpYSDU3WWxXZkNBZXUxajd4MnAyRFpJQVdKeS1zbmpwMWx6b1NPb1BnMXFmd1JPMWxxd0FubVRhZw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNR19VQ3FXLXFENkpxcmRsRmZrUWZVVTFLU0JMdFB4STdReFdrOU50MmhnSS1ObVFERVF2UDgtY3Q0YnRjRjcwaUJySmp4ZHBYV1FvX19UcGpYSDU3WWxXZkNBZXUxajd4MnAyRFpJQVdKeS1zbmpwMWx6b1NPb1BnMXFmd1JPMWxxd0FubVRhZw?oc=5",
+     "resolved_url": "",
+     "canonical_url": "",
+     "display_url": "",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "",
+     "http_status": "",
+     "link_health": "redirect_nao_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-06T12:18:20.228449+00:00",
+     "resolution_error": "token não resolvido",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →"
     }
    ],
    "captured_ts": 1785345276,
@@ -33743,8 +33730,51 @@
    "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "corroborations": [],
-   "corrob_sources": [],
+   "corroborations": [
+    {
+     "source": "Investidor10",
+     "domain": "investidor10.com.br",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPWWJaVFJRb0l2ZUVvVVFFSHNmWGZjRDRNRWxyM2JOU0V6V01QV1BfcElYTmxGajFuX21tV3VhY3U0MG1XN3NlWEd6TUpoTVRIUm5ZQVRqR1VPZldhdlJiZ3VFUzJubFNKamhaOVk1OGxYbnRkM3doekNhSnROLXBRcWxjMnZSV0duRlRkbFUxalVYTjBMcjM4c2x5bnMxMlFOcl9MYVl4QlNqMzZQRkFnRk930gG3AUFVX3lxTE1Xc3JrU1dnd1RuVlEtek85VXhzRlI2X2dycWZmZ3U3UWllc2FtQ21Cd3BNYngwSFJFdDZmQTA3b2FHczktaGVKdzlVQnBCVk01R0I1eTg4cU9HOV80UEJyMk5yTGZSM1lBT0ZablhuOGpQZGg1ODk2V2xEcHBxUlpCcFh1NlJvNERNZ0tBX0NBNHBUVkUyRl9jcTY4VWhmaE1UUHpqMFNxbU85aXJJd0ktQjNlWV85MA?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPWWJaVFJRb0l2ZUVvVVFFSHNmWGZjRDRNRWxyM2JOU0V6V01QV1BfcElYTmxGajFuX21tV3VhY3U0MG1XN3NlWEd6TUpoTVRIUm5ZQVRqR1VPZldhdlJiZ3VFUzJubFNKamhaOVk1OGxYbnRkM3doekNhSnROLXBRcWxjMnZSV0duRlRkbFUxalVYTjBMcjM4c2x5bnMxMlFOcl9MYVl4QlNqMzZQRkFnRk930gG3AUFVX3lxTE1Xc3JrU1dnd1RuVlEtek85VXhzRlI2X2dycWZmZ3U3UWllc2FtQ21Cd3BNYngwSFJFdDZmQTA3b2FHczktaGVKdzlVQnBCVk01R0I1eTg4cU9HOV80UEJyMk5yTGZSM1lBT0ZablhuOGpQZGg1ODk2V2xEcHBxUlpCcFh1NlJvNERNZ0tBX0NBNHBUVkUyRl9jcTY4VWhmaE1UUHpqMFNxbU85aXJJd0ktQjNlWV85MA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPWWJaVFJRb0l2ZUVvVVFFSHNmWGZjRDRNRWxyM2JOU0V6V01QV1BfcElYTmxGajFuX21tV3VhY3U0MG1XN3NlWEd6TUpoTVRIUm5ZQVRqR1VPZldhdlJiZ3VFUzJubFNKamhaOVk1OGxYbnRkM3doekNhSnROLXBRcWxjMnZSV0duRlRkbFUxalVYTjBMcjM4c2x5bnMxMlFOcl9MYVl4QlNqMzZQRkFnRk930gG3AUFVX3lxTE1Xc3JrU1dnd1RuVlEtek85VXhzRlI2X2dycWZmZ3U3UWllc2FtQ21Cd3BNYngwSFJFdDZmQTA3b2FHczktaGVKdzlVQnBCVk01R0I1eTg4cU9HOV80UEJyMk5yTGZSM1lBT0ZablhuOGpQZGg1ODk2V2xEcHBxUlpCcFh1NlJvNERNZ0tBX0NBNHBUVkUyRl9jcTY4VWhmaE1UUHpqMFNxbU85aXJJd0ktQjNlWV85MA?oc=5",
+     "resolved_url": "https://investidor10.com.br/noticias/axia-energia-axia3-aprova-11-emissao-de-r-500-milhoes-em-debentures-121557/",
+     "canonical_url": "https://investidor10.com.br/noticias/axia-energia-axia3-aprova-11-emissao-de-r-500-milhoes-em-debentures-121557/",
+     "display_url": "https://investidor10.com.br/noticias/axia-energia-axia3-aprova-11-emissao-de-r-500-milhoes-em-debentures-121557/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "investidor10.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-06T12:18:20.862717+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Investidor10",
+     "domain": "investidor10.com.br",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPWWJaVFJRb0l2ZUVvVVFFSHNmWGZjRDRNRWxyM2JOU0V6V01QV1BfcElYTmxGajFuX21tV3VhY3U0MG1XN3NlWEd6TUpoTVRIUm5ZQVRqR1VPZldhdlJiZ3VFUzJubFNKamhaOVk1OGxYbnRkM3doekNhSnROLXBRcWxjMnZSV0duRlRkbFUxalVYTjBMcjM4c2x5bnMxMlFOcl9MYVl4QlNqMzZQRkFnRk930gG3AUFVX3lxTE1Xc3JrU1dnd1RuVlEtek85VXhzRlI2X2dycWZmZ3U3UWllc2FtQ21Cd3BNYngwSFJFdDZmQTA3b2FHczktaGVKdzlVQnBCVk01R0I1eTg4cU9HOV80UEJyMk5yTGZSM1lBT0ZablhuOGpQZGg1ODk2V2xEcHBxUlpCcFh1NlJvNERNZ0tBX0NBNHBUVkUyRl9jcTY4VWhmaE1UUHpqMFNxbU85aXJJd0ktQjNlWV85MA?oc=5",
+     "when": "20/07 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPWWJaVFJRb0l2ZUVvVVFFSHNmWGZjRDRNRWxyM2JOU0V6V01QV1BfcElYTmxGajFuX21tV3VhY3U0MG1XN3NlWEd6TUpoTVRIUm5ZQVRqR1VPZldhdlJiZ3VFUzJubFNKamhaOVk1OGxYbnRkM3doekNhSnROLXBRcWxjMnZSV0duRlRkbFUxalVYTjBMcjM4c2x5bnMxMlFOcl9MYVl4QlNqMzZQRkFnRk930gG3AUFVX3lxTE1Xc3JrU1dnd1RuVlEtek85VXhzRlI2X2dycWZmZ3U3UWllc2FtQ21Cd3BNYngwSFJFdDZmQTA3b2FHczktaGVKdzlVQnBCVk01R0I1eTg4cU9HOV80UEJyMk5yTGZSM1lBT0ZablhuOGpQZGg1ODk2V2xEcHBxUlpCcFh1NlJvNERNZ0tBX0NBNHBUVkUyRl9jcTY4VWhmaE1UUHpqMFNxbU85aXJJd0ktQjNlWV85MA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPWWJaVFJRb0l2ZUVvVVFFSHNmWGZjRDRNRWxyM2JOU0V6V01QV1BfcElYTmxGajFuX21tV3VhY3U0MG1XN3NlWEd6TUpoTVRIUm5ZQVRqR1VPZldhdlJiZ3VFUzJubFNKamhaOVk1OGxYbnRkM3doekNhSnROLXBRcWxjMnZSV0duRlRkbFUxalVYTjBMcjM4c2x5bnMxMlFOcl9MYVl4QlNqMzZQRkFnRk930gG3AUFVX3lxTE1Xc3JrU1dnd1RuVlEtek85VXhzRlI2X2dycWZmZ3U3UWllc2FtQ21Cd3BNYngwSFJFdDZmQTA3b2FHczktaGVKdzlVQnBCVk01R0I1eTg4cU9HOV80UEJyMk5yTGZSM1lBT0ZablhuOGpQZGg1ODk2V2xEcHBxUlpCcFh1NlJvNERNZ0tBX0NBNHBUVkUyRl9jcTY4VWhmaE1UUHpqMFNxbU85aXJJd0ktQjNlWV85MA?oc=5",
+     "resolved_url": "https://investidor10.com.br/noticias/axia-energia-axia3-aprova-11-emissao-de-r-500-milhoes-em-debentures-121557/",
+     "canonical_url": "https://investidor10.com.br/noticias/axia-energia-axia3-aprova-11-emissao-de-r-500-milhoes-em-debentures-121557/",
+     "display_url": "https://investidor10.com.br/noticias/axia-energia-axia3-aprova-11-emissao-de-r-500-milhoes-em-debentures-121557/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "investidor10.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-06T12:18:21.262962+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
    "original_url": "https://www.infomoney.com.br/mercados/axia-energia-axia3-aprovou-captacao-de-debentures-simples-no-valor-de-r-500-mi/",
    "redirect_url": "",
    "resolved_url": "https://www.infomoney.com.br/mercados/axia-energia-axia3-aprovou-captacao-de-debentures-simples-no-valor-de-r-500-mi/",
@@ -35646,7 +35676,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T20:39:47.582632+00:00"
+     "last_checked_at": "2026-08-06T12:18:22.032309+00:00"
     }
    ],
    "corrob_sources": [
@@ -38503,7 +38533,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T20:39:48.184474+00:00"
+     "last_checked_at": "2026-08-06T12:18:22.620446+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38546,7 +38576,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-05T20:39:48.804773+00:00"
+     "last_checked_at": "2026-08-06T12:18:23.230625+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38999,7 +39029,93 @@
    "companies_attributed": [
     "Santander Brasil"
    ],
-   "context_companies": []
+   "context_companies": [],
+   "corroborations": [
+    {
+     "source": "Exame",
+     "domain": "exame.com",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQU085R0o0WWI3Nmt3S1NyZXMya3o5czNzYU8tYnJ0QXU0bnprMlZVQW4zcnJQZ3otSTRqaE5wRzFXaUVMcEpHckJWU2tQdVd2am9iZlZibzAtS0FkV0hUam8zTWowMzFUc1FzNjJwUXJKQVo5anQ4TVdielZMQlhoRm81aVhObmpNOS1TRFIxSFptblR5YklyNzVYVnNyYjg4R0pGQTlYb1ExWER4RzVMSw?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQU085R0o0WWI3Nmt3S1NyZXMya3o5czNzYU8tYnJ0QXU0bnprMlZVQW4zcnJQZ3otSTRqaE5wRzFXaUVMcEpHckJWU2tQdVd2am9iZlZibzAtS0FkV0hUam8zTWowMzFUc1FzNjJwUXJKQVo5anQ4TVdielZMQlhoRm81aVhObmpNOS1TRFIxSFptblR5YklyNzVYVnNyYjg4R0pGQTlYb1ExWER4RzVMSw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQU085R0o0WWI3Nmt3S1NyZXMya3o5czNzYU8tYnJ0QXU0bnprMlZVQW4zcnJQZ3otSTRqaE5wRzFXaUVMcEpHckJWU2tQdVd2am9iZlZibzAtS0FkV0hUam8zTWowMzFUc1FzNjJwUXJKQVo5anQ4TVdielZMQlhoRm81aVhObmpNOS1TRFIxSFptblR5YklyNzVYVnNyYjg4R0pGQTlYb1ExWER4RzVMSw?oc=5",
+     "resolved_url": "https://exame.com/invest/mercados/santander-de-saida-da-b3-entenda-opa-que-fez-papel-do-banco-disparar-9-em-ny/",
+     "canonical_url": "https://exame.com/invest/mercados/santander-de-saida-da-b3-entenda-opa-que-fez-papel-do-banco-disparar-9-em-ny/",
+     "display_url": "https://exame.com/invest/mercados/santander-de-saida-da-b3-entenda-opa-que-fez-papel-do-banco-disparar-9-em-ny/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "exame.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-06T12:18:23.630884+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOSnlMZFY3V1hZUmF5UXprNDNpeWpMZDlrRnNJeENvTG9ZZFFLN0ZfeEpyd25FYzRaWGtIMDM3WkxDM2J1bXo0c1g1M0xWZE1TWUc1VzRaOWJqbnVIakRxS3dIampQV1NhNlN1Y3dkSUFSLWVYZjRTd3RySWZOWG5fMFBXcWtJQldJb0thTkdZVGU1S1RnWUJSY29DWjdCZlFmenlCTFJQVl9aNG9VWjlZWFRHUklFU1g0TnYzTnFYdUg5cGQyNXVOSVlxMVVEWUJNWURKZDNlaWJ2bkt0b0VfWU5LZ19QdHlBZkE?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOSnlMZFY3V1hZUmF5UXprNDNpeWpMZDlrRnNJeENvTG9ZZFFLN0ZfeEpyd25FYzRaWGtIMDM3WkxDM2J1bXo0c1g1M0xWZE1TWUc1VzRaOWJqbnVIakRxS3dIampQV1NhNlN1Y3dkSUFSLWVYZjRTd3RySWZOWG5fMFBXcWtJQldJb0thTkdZVGU1S1RnWUJSY29DWjdCZlFmenlCTFJQVl9aNG9VWjlZWFRHUklFU1g0TnYzTnFYdUg5cGQyNXVOSVlxMVVEWUJNWURKZDNlaWJ2bkt0b0VfWU5LZ19QdHlBZkE?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOSnlMZFY3V1hZUmF5UXprNDNpeWpMZDlrRnNJeENvTG9ZZFFLN0ZfeEpyd25FYzRaWGtIMDM3WkxDM2J1bXo0c1g1M0xWZE1TWUc1VzRaOWJqbnVIakRxS3dIampQV1NhNlN1Y3dkSUFSLWVYZjRTd3RySWZOWG5fMFBXcWtJQldJb0thTkdZVGU1S1RnWUJSY29DWjdCZlFmenlCTFJQVl9aNG9VWjlZWFRHUklFU1g0TnYzTnFYdUg5cGQyNXVOSVlxMVVEWUJNWURKZDNlaWJ2bkt0b0VfWU5LZ19QdHlBZkE?oc=5",
+     "resolved_url": "https://br.advfn.com/jornal/2026/07/santander-anuncia-opa-de-ate-r-11-17-bilhoes-pelo-santander-brasil-para-ampliar-participacao-na-subsidiaria-brasileira",
+     "canonical_url": "https://br.advfn.com/jornal/2026/07/santander-anuncia-opa-de-ate-r-11-17-bilhoes-pelo-santander-brasil-para-ampliar-participacao-na-subsidiaria-brasileira",
+     "display_url": "https://br.advfn.com/jornal/2026/07/santander-anuncia-opa-de-ate-r-11-17-bilhoes-pelo-santander-brasil-para-ampliar-participacao-na-subsidiaria-brasileira",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "br.advfn.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-06T12:18:24.031157+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Exame",
+     "domain": "exame.com",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQU085R0o0WWI3Nmt3S1NyZXMya3o5czNzYU8tYnJ0QXU0bnprMlZVQW4zcnJQZ3otSTRqaE5wRzFXaUVMcEpHckJWU2tQdVd2am9iZlZibzAtS0FkV0hUam8zTWowMzFUc1FzNjJwUXJKQVo5anQ4TVdielZMQlhoRm81aVhObmpNOS1TRFIxSFptblR5YklyNzVYVnNyYjg4R0pGQTlYb1ExWER4RzVMSw?oc=5",
+     "when": "30/07 20:35",
+     "original_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQU085R0o0WWI3Nmt3S1NyZXMya3o5czNzYU8tYnJ0QXU0bnprMlZVQW4zcnJQZ3otSTRqaE5wRzFXaUVMcEpHckJWU2tQdVd2am9iZlZibzAtS0FkV0hUam8zTWowMzFUc1FzNjJwUXJKQVo5anQ4TVdielZMQlhoRm81aVhObmpNOS1TRFIxSFptblR5YklyNzVYVnNyYjg4R0pGQTlYb1ExWER4RzVMSw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQU085R0o0WWI3Nmt3S1NyZXMya3o5czNzYU8tYnJ0QXU0bnprMlZVQW4zcnJQZ3otSTRqaE5wRzFXaUVMcEpHckJWU2tQdVd2am9iZlZibzAtS0FkV0hUam8zTWowMzFUc1FzNjJwUXJKQVo5anQ4TVdielZMQlhoRm81aVhObmpNOS1TRFIxSFptblR5YklyNzVYVnNyYjg4R0pGQTlYb1ExWER4RzVMSw?oc=5",
+     "resolved_url": "https://exame.com/invest/mercados/santander-de-saida-da-b3-entenda-opa-que-fez-papel-do-banco-disparar-9-em-ny/",
+     "canonical_url": "https://exame.com/invest/mercados/santander-de-saida-da-b3-entenda-opa-que-fez-papel-do-banco-disparar-9-em-ny/",
+     "display_url": "https://exame.com/invest/mercados/santander-de-saida-da-b3-entenda-opa-que-fez-papel-do-banco-disparar-9-em-ny/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "exame.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-06T12:18:24.431465+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOSnlMZFY3V1hZUmF5UXprNDNpeWpMZDlrRnNJeENvTG9ZZFFLN0ZfeEpyd25FYzRaWGtIMDM3WkxDM2J1bXo0c1g1M0xWZE1TWUc1VzRaOWJqbnVIakRxS3dIampQV1NhNlN1Y3dkSUFSLWVYZjRTd3RySWZOWG5fMFBXcWtJQldJb0thTkdZVGU1S1RnWUJSY29DWjdCZlFmenlCTFJQVl9aNG9VWjlZWFRHUklFU1g0TnYzTnFYdUg5cGQyNXVOSVlxMVVEWUJNWURKZDNlaWJ2bkt0b0VfWU5LZ19QdHlBZkE?oc=5",
+     "when": "31/07 09:32",
+     "original_url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOSnlMZFY3V1hZUmF5UXprNDNpeWpMZDlrRnNJeENvTG9ZZFFLN0ZfeEpyd25FYzRaWGtIMDM3WkxDM2J1bXo0c1g1M0xWZE1TWUc1VzRaOWJqbnVIakRxS3dIampQV1NhNlN1Y3dkSUFSLWVYZjRTd3RySWZOWG5fMFBXcWtJQldJb0thTkdZVGU1S1RnWUJSY29DWjdCZlFmenlCTFJQVl9aNG9VWjlZWFRHUklFU1g0TnYzTnFYdUg5cGQyNXVOSVlxMVVEWUJNWURKZDNlaWJ2bkt0b0VfWU5LZ19QdHlBZkE?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOSnlMZFY3V1hZUmF5UXprNDNpeWpMZDlrRnNJeENvTG9ZZFFLN0ZfeEpyd25FYzRaWGtIMDM3WkxDM2J1bXo0c1g1M0xWZE1TWUc1VzRaOWJqbnVIakRxS3dIampQV1NhNlN1Y3dkSUFSLWVYZjRTd3RySWZOWG5fMFBXcWtJQldJb0thTkdZVGU1S1RnWUJSY29DWjdCZlFmenlCTFJQVl9aNG9VWjlZWFRHUklFU1g0TnYzTnFYdUg5cGQyNXVOSVlxMVVEWUJNWURKZDNlaWJ2bkt0b0VfWU5LZ19QdHlBZkE?oc=5",
+     "resolved_url": "https://br.advfn.com/jornal/2026/07/santander-anuncia-opa-de-ate-r-11-17-bilhoes-pelo-santander-brasil-para-ampliar-participacao-na-subsidiaria-brasileira",
+     "canonical_url": "https://br.advfn.com/jornal/2026/07/santander-anuncia-opa-de-ate-r-11-17-bilhoes-pelo-santander-brasil-para-ampliar-participacao-na-subsidiaria-brasileira",
+     "display_url": "https://br.advfn.com/jornal/2026/07/santander-anuncia-opa-de-ate-r-11-17-bilhoes-pelo-santander-brasil-para-ampliar-participacao-na-subsidiaria-brasileira",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "br.advfn.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-06T12:18:24.831710+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ]
   },
   "https://news.google.com/rss/articles/CBMioAFBVV95cUxOT3ZzdG9mc1JDWVgtcE5tbEREbTUyTEl1dVpkSm4xWG0xekZ0X2RBTF8zUktoWHlEazdGVk0ydTlmWlo1emZSTm5leTg1RkUxRl9NbWdxRDdyMHpsNWU5UTFRUlpIX0RaT3F4SUtsMU9HaVhiazdrSHEyTTFVOXlHX3hLenhob1JhNmV1WEdSTTR5bGplLUZCZ1V3cVVuUDRE?oc=5": {
    "title": "Incêndio em fábrica da Yura gerou intensa fumaça e mobilizou bombeiros",
@@ -43730,44 +43846,6 @@
    "captured_ts": 1785952208,
    "cap_iso": "2026-08-05 14:50"
   },
-  "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/": {
-   "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
-   "url": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/",
-   "summary": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal &nbsp;&nbsp; InfoMoney",
-   "source": "InfoMoney",
-   "domain": "infomoney.com.br",
-   "pub_ts": 1783494000,
-   "pub_iso": "2026-07-08 04:00",
-   "language": "pt",
-   "companies": [
-    "Vale"
-   ],
-   "event_ids": [
-    "investigacao_regulatoria"
-   ],
-   "mention_roles": {
-    "Vale": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "events_by_company": {
-    "Vale": [
-     "investigacao_regulatoria"
-    ]
-   },
-   "companies_attributed": [
-    "Vale"
-   ],
-   "context_companies": [],
-   "captured_ts": 1785952208,
-   "cap_iso": "2026-08-05 14:50",
-   "corroborations": [],
-   "corrob_sources": []
-  },
   "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYzNLZUdNay00MS1Eckg5b3NXbE1YNG9MRUI2UGFWOXExSWcyV0RsTEJXblBDeHR2UHljOTFnWk9sNjE2aC1wdWZEcFBjSXA0bWhoWE5zTzJSdDRVbWo5T19NTThCVUR2OFFkdEFjTUJFd0lCdHJCOWtncnRPektDYUNuMGpEa1ZKclFwYmQ2RlRBc1RMdU0yUFhxUnJfcmVTb3daY3RSZ9IBtgFBVV95cUxOYnQtUGpUNTRCRl9LSFI0cGVoQklzUGpQaDZOYXJXeXZGcHJKRS1qTGxmaFBkN0RlMUprc0h4ZVp1UUFnTE9fdGJFMVBYM2JWd1BLRWhZQjkyMm9nTWl2ZkFaUFNEOWNnUF94ZW5kYktQak5LbUZFMGdZTm5kdzdjaUU4RldFekJXOVhtdHlmWjMtZTZNWFJlVzh1OVdramhSaVJOZ2ZkUkgwOVVycmFzTDNCOFRzQQ?oc=5": {
    "title": "Papéis da Braskem precificam recuperação judicial",
    "url": "https://pipelinevalor.globo.com/negocios/noticia/papeis-da-braskem-precificam-recuperacao-judicial.ghtml",
@@ -43785,9 +43863,133 @@
    ],
    "captured_ts": 1785962374,
    "cap_iso": "2026-08-05 17:39"
+  },
+  "https://news.google.com/rss/articles/CBMivAFBVV95cUxOMTJSdWJrekR5elVvTWNpWml2WExGeXlOdDlVYjFld0hvYTNOM1dLVHdZOWZTUFhQWVJYQTFhejltZGNlVjJaLTZkYUpJVGNmaS14R0tjcENFQU5NQm1WTFJ1Ri1DS2hvR0tLenRvbWZrWUFwQzFETzNoYXdLTXhrdnFhendVNnJUSmNNUlVuN19VeXNjcVg1Wk9WZ3NaWWxxcjNTXzNtUkU3Z2RWUXV3cFlMM283U0JucDRETdIBvAFBVV95cUxOMTJSdWJrekR5elVvTWNpWml2WExGeXlOdDlVYjFld0hvYTNOM1dLVHdZOWZTUFhQWVJYQTFhejltZGNlVjJaLTZkYUpJVGNmaS14R0tjcENFQU5NQm1WTFJ1Ri1DS2hvR0tLenRvbWZrWUFwQzFETzNoYXdLTXhrdnFhendVNnJUSmNNUlVuN19VeXNjcVg1Wk9WZ3NaWWxxcjNTXzNtUkU3Z2RWUXV3cFlMM283U0JucDRETQ?oc=5": {
+   "title": "Estado do Rio pede falência de Manguinhos, atual Refit",
+   "url": "https://valor.globo.com/google/amp/brasil/noticia/2026/08/06/estado-do-rio-pede-falencia-de-manguinhos-atual-refit.ghtml",
+   "summary": "Estado do Rio pede falência de Manguinhos, atual Refit &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1786003279,
+   "pub_iso": "2026-08-06 05:01",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "corroborations": [
+    {
+     "source": "G1",
+     "domain": "g1.globo.com",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMNIBswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMA?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMNIBswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMNIBswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMA?oc=5",
+     "resolved_url": "https://g1.globo.com/google/amp/politica/blog/octavio-guedes/post/2026/08/05/governo-rj-pede-falencia-refit.ghtml",
+     "canonical_url": "https://g1.globo.com/google/amp/politica/blog/octavio-guedes/post/2026/08/05/governo-rj-pede-falencia-refit.ghtml",
+     "display_url": "https://g1.globo.com/google/amp/politica/blog/octavio-guedes/post/2026/08/05/governo-rj-pede-falencia-refit.ghtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "g1.globo.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-06T12:18:25.438109+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "diariodorio.com",
+     "domain": "diariodorio.com",
+     "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxObkgwSDVSWjNwNGZXMnhJUkNaU1BtT1BuZkNKSGhycGUxbF9yYTZYOUc1dTl2bERpaUppNTk1bmQzOUFLcnhwYWhrOXVwclcxMXkweVdBWldoXzAzRmgyZzRYN3FlQ0lqcV9jQ09aczZ5M2hLdVNPTUt3bE9BZHlBQ19RYUNvS3BWSzRVbw?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxObkgwSDVSWjNwNGZXMnhJUkNaU1BtT1BuZkNKSGhycGUxbF9yYTZYOUc1dTl2bERpaUppNTk1bmQzOUFLcnhwYWhrOXVwclcxMXkweVdBWldoXzAzRmgyZzRYN3FlQ0lqcV9jQ09aczZ5M2hLdVNPTUt3bE9BZHlBQ19RYUNvS3BWSzRVbw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxObkgwSDVSWjNwNGZXMnhJUkNaU1BtT1BuZkNKSGhycGUxbF9yYTZYOUc1dTl2bERpaUppNTk1bmQzOUFLcnhwYWhrOXVwclcxMXkweVdBWldoXzAzRmgyZzRYN3FlQ0lqcV9jQ09aczZ5M2hLdVNPTUt3bE9BZHlBQ19RYUNvS3BWSzRVbw?oc=5",
+     "resolved_url": "https://diariodorio.com/governo-do-rio-pede-falencia-da-refit-por-divida-milionaria/",
+     "canonical_url": "https://diariodorio.com/governo-do-rio-pede-falencia-da-refit-por-divida-milionaria/",
+     "display_url": "https://diariodorio.com/governo-do-rio-pede-falencia-da-refit-por-divida-milionaria/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "diariodorio.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-06T12:18:26.051389+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "tmc.com.br",
+     "domain": "tmc.com.br",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPaUVGUS1xc09QZ2pYZWV4Um5vRi0xY2pZd0sxUVRIc0lvMnVkdzZTcDJOVTlhMnlpUGFHX3lpaWxISDZPT19TTmdkTWVEdHg3ZXExX0ZMUnNHc0lMQ3R5bUhnYVZxUENhaDVBV1VGMXE2RXZwaWR0YnptNkt2TlBSNTQzSFNmT2oxd0VWUG5oaTVMNlNvMDRpelllMVBLLURNNXAyaA?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPaUVGUS1xc09QZ2pYZWV4Um5vRi0xY2pZd0sxUVRIc0lvMnVkdzZTcDJOVTlhMnlpUGFHX3lpaWxISDZPT19TTmdkTWVEdHg3ZXExX0ZMUnNHc0lMQ3R5bUhnYVZxUENhaDVBV1VGMXE2RXZwaWR0YnptNkt2TlBSNTQzSFNmT2oxd0VWUG5oaTVMNlNvMDRpelllMVBLLURNNXAyaA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPaUVGUS1xc09QZ2pYZWV4Um5vRi0xY2pZd0sxUVRIc0lvMnVkdzZTcDJOVTlhMnlpUGFHX3lpaWxISDZPT19TTmdkTWVEdHg3ZXExX0ZMUnNHc0lMQ3R5bUhnYVZxUENhaDVBV1VGMXE2RXZwaWR0YnptNkt2TlBSNTQzSFNmT2oxd0VWUG5oaTVMNlNvMDRpelllMVBLLURNNXAyaA?oc=5",
+     "resolved_url": "https://tmc.com.br/brasil/governo-do-rj-pede-falencia-do-grupo-manguinhos-por-divida-de-r-257-bilhoes/",
+     "canonical_url": "https://tmc.com.br/brasil/governo-do-rj-pede-falencia-do-grupo-manguinhos-por-divida-de-r-257-bilhoes/",
+     "display_url": "https://tmc.com.br/brasil/governo-do-rj-pede-falencia-do-grupo-manguinhos-por-divida-de-r-257-bilhoes/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "tmc.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-06T12:18:26.754701+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "G1",
+     "domain": "g1.globo.com",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMNIBswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMA?oc=5",
+     "when": "05/08 17:13",
+     "original_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMNIBswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMNIBswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMA?oc=5",
+     "resolved_url": "https://g1.globo.com/google/amp/politica/blog/octavio-guedes/post/2026/08/05/governo-rj-pede-falencia-refit.ghtml",
+     "canonical_url": "https://g1.globo.com/google/amp/politica/blog/octavio-guedes/post/2026/08/05/governo-rj-pede-falencia-refit.ghtml",
+     "display_url": "https://g1.globo.com/google/amp/politica/blog/octavio-guedes/post/2026/08/05/governo-rj-pede-falencia-refit.ghtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "g1.globo.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-06T12:18:27.154928+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "tmc.com.br",
+     "domain": "tmc.com.br",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPaUVGUS1xc09QZ2pYZWV4Um5vRi0xY2pZd0sxUVRIc0lvMnVkdzZTcDJOVTlhMnlpUGFHX3lpaWxISDZPT19TTmdkTWVEdHg3ZXExX0ZMUnNHc0lMQ3R5bUhnYVZxUENhaDVBV1VGMXE2RXZwaWR0YnptNkt2TlBSNTQzSFNmT2oxd0VWUG5oaTVMNlNvMDRpelllMVBLLURNNXAyaA?oc=5",
+     "when": "06/08 06:15",
+     "original_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPaUVGUS1xc09QZ2pYZWV4Um5vRi0xY2pZd0sxUVRIc0lvMnVkdzZTcDJOVTlhMnlpUGFHX3lpaWxISDZPT19TTmdkTWVEdHg3ZXExX0ZMUnNHc0lMQ3R5bUhnYVZxUENhaDVBV1VGMXE2RXZwaWR0YnptNkt2TlBSNTQzSFNmT2oxd0VWUG5oaTVMNlNvMDRpelllMVBLLURNNXAyaA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPaUVGUS1xc09QZ2pYZWV4Um5vRi0xY2pZd0sxUVRIc0lvMnVkdzZTcDJOVTlhMnlpUGFHX3lpaWxISDZPT19TTmdkTWVEdHg3ZXExX0ZMUnNHc0lMQ3R5bUhnYVZxUENhaDVBV1VGMXE2RXZwaWR0YnptNkt2TlBSNTQzSFNmT2oxd0VWUG5oaTVMNlNvMDRpelllMVBLLURNNXAyaA?oc=5",
+     "resolved_url": "https://tmc.com.br/brasil/governo-do-rj-pede-falencia-do-grupo-manguinhos-por-divida-de-r-257-bilhoes/",
+     "canonical_url": "https://tmc.com.br/brasil/governo-do-rj-pede-falencia-do-grupo-manguinhos-por-divida-de-r-257-bilhoes/",
+     "display_url": "https://tmc.com.br/brasil/governo-do-rj-pede-falencia-do-grupo-manguinhos-por-divida-de-r-257-bilhoes/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "tmc.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-06T12:18:27.555166+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1786018685,
+   "cap_iso": "2026-08-06 09:18"
   }
  },
- "run_count": 79,
+ "run_count": 80,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -48616,27 +48818,43 @@
   "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYzNLZUdNay00MS1Eckg5b3NXbE1YNG9MRUI2UGFWOXExSWcyV0RsTEJXblBDeHR2UHljOTFnWk9sNjE2aC1wdWZEcFBjSXA0bWhoWE5zTzJSdDRVbWo5T19NTThCVUR2OFFkdEFjTUJFd0lCdHJCOWtncnRPektDYUNuMGpEa1ZKclFwYmQ2RlRBc1RMdU0yUFhxUnJfcmVTb3daY3RSZ9IBtgFBVV95cUxOYnQtUGpUNTRCRl9LSFI0cGVoQklzUGpQaDZOYXJXeXZGcHJKRS1qTGxmaFBkN0RlMUprc0h4ZVp1UUFnTE9fdGJFMVBYM2JWd1BLRWhZQjkyMm9nTWl2ZkFaUFNEOWNnUF94ZW5kYktQak5LbUZFMGdZTm5kdzdjaUU4RldFekJXOVhtdHlmWjMtZTZNWFJlVzh1OVdramhSaVJOZ2ZkUkgwOVVycmFzTDNCOFRzQQ?oc=5": {
    "url": "https://pipelinevalor.globo.com/negocios/noticia/papeis-da-braskem-precificam-recuperacao-judicial.ghtml",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMivAFBVV95cUxOMTJSdWJrekR5elVvTWNpWml2WExGeXlOdDlVYjFld0hvYTNOM1dLVHdZOWZTUFhQWVJYQTFhejltZGNlVjJaLTZkYUpJVGNmaS14R0tjcENFQU5NQm1WTFJ1Ri1DS2hvR0tLenRvbWZrWUFwQzFETzNoYXdLTXhrdnFhendVNnJUSmNNUlVuN19VeXNjcVg1Wk9WZ3NaWWxxcjNTXzNtUkU3Z2RWUXV3cFlMM283U0JucDRETdIBvAFBVV95cUxOMTJSdWJrekR5elVvTWNpWml2WExGeXlOdDlVYjFld0hvYTNOM1dLVHdZOWZTUFhQWVJYQTFhejltZGNlVjJaLTZkYUpJVGNmaS14R0tjcENFQU5NQm1WTFJ1Ri1DS2hvR0tLenRvbWZrWUFwQzFETzNoYXdLTXhrdnFhendVNnJUSmNNUlVuN19VeXNjcVg1Wk9WZ3NaWWxxcjNTXzNtUkU3Z2RWUXV3cFlMM283U0JucDRETQ?oc=5": {
+   "url": "https://valor.globo.com/google/amp/brasil/noticia/2026/08/06/estado-do-rio-pede-falencia-de-manguinhos-atual-refit.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMisgFBVV95cUxPWWJaVFJRb0l2ZUVvVVFFSHNmWGZjRDRNRWxyM2JOU0V6V01QV1BfcElYTmxGajFuX21tV3VhY3U0MG1XN3NlWEd6TUpoTVRIUm5ZQVRqR1VPZldhdlJiZ3VFUzJubFNKamhaOVk1OGxYbnRkM3doekNhSnROLXBRcWxjMnZSV0duRlRkbFUxalVYTjBMcjM4c2x5bnMxMlFOcl9MYVl4QlNqMzZQRkFnRk930gG3AUFVX3lxTE1Xc3JrU1dnd1RuVlEtek85VXhzRlI2X2dycWZmZ3U3UWllc2FtQ21Cd3BNYngwSFJFdDZmQTA3b2FHczktaGVKdzlVQnBCVk01R0I1eTg4cU9HOV80UEJyMk5yTGZSM1lBT0ZablhuOGpQZGg1ODk2V2xEcHBxUlpCcFh1NlJvNERNZ0tBX0NBNHBUVkUyRl9jcTY4VWhmaE1UUHpqMFNxbU85aXJJd0ktQjNlWV85MA?oc=5": {
+   "url": "https://investidor10.com.br/noticias/axia-energia-axia3-aprova-11-emissao-de-r-500-milhoes-em-debentures-121557/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMNIBswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMA?oc=5": {
+   "url": "https://g1.globo.com/google/amp/politica/blog/octavio-guedes/post/2026/08/05/governo-rj-pede-falencia-refit.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMijAFBVV95cUxObkgwSDVSWjNwNGZXMnhJUkNaU1BtT1BuZkNKSGhycGUxbF9yYTZYOUc1dTl2bERpaUppNTk1bmQzOUFLcnhwYWhrOXVwclcxMXkweVdBWldoXzAzRmgyZzRYN3FlQ0lqcV9jQ09aczZ5M2hLdVNPTUt3bE9BZHlBQ19RYUNvS3BWSzRVbw?oc=5": {
+   "url": "https://diariodorio.com/governo-do-rio-pede-falencia-da-refit-por-divida-milionaria/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipAFBVV95cUxPaUVGUS1xc09QZ2pYZWV4Um5vRi0xY2pZd0sxUVRIc0lvMnVkdzZTcDJOVTlhMnlpUGFHX3lpaWxISDZPT19TTmdkTWVEdHg3ZXExX0ZMUnNHc0lMQ3R5bUhnYVZxUENhaDVBV1VGMXE2RXZwaWR0YnptNkt2TlBSNTQzSFNmT2oxd0VWUG5oaTVMNlNvMDRpelllMVBLLURNNXAyaA?oc=5": {
+   "url": "https://tmc.com.br/brasil/governo-do-rj-pede-falencia-do-grupo-manguinhos-por-divida-de-r-257-bilhoes/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1785962389,
-  "iso": "05 ago 2026 · 17:39 BRT",
+  "ts": 1786018708,
+  "iso": "06 ago 2026 · 09:18 BRT",
   "status": {
    "Rumo": {
     "status": "atencao",
-    "score": 72
+    "score": 71
    },
    "Engie Brasil": {
     "status": "atencao",
-    "score": 69
+    "score": 68
    },
    "Vale": {
     "status": "atencao",
-    "score": 64
-   },
-   "Tok&Stok": {
-    "status": "critico",
-    "score": 59
+    "score": 63
    },
    "CVS Health": {
     "status": "critico",
@@ -48644,7 +48862,11 @@
    },
    "Santander Brasil": {
     "status": "atencao",
-    "score": 54
+    "score": 59
+   },
+   "Tok&Stok": {
+    "status": "critico",
+    "score": 58
    },
    "Grupo Financiero Banorte": {
     "status": "critico",
@@ -48662,27 +48884,27 @@
     "status": "atencao",
     "score": 43
    },
-   "BTG Pactual": {
-    "status": "atencao",
-    "score": 42
-   },
    "Axia Energia": {
     "status": "atencao",
-    "score": 40
+    "score": 41
+   },
+   "BTG Pactual": {
+    "status": "atencao",
+    "score": 41
    },
    "Energisa": {
     "status": "atencao",
-    "score": 38
+    "score": 37
    },
    "Sabesp": {
     "status": "atencao",
-    "score": 37
-   },
-   "JBS": {
-    "status": "atencao",
-    "score": 33
+    "score": 36
    },
    "Petrobras": {
+    "status": "atencao",
+    "score": 32
+   },
+   "JBS": {
     "status": "atencao",
     "score": 32
    },
@@ -48700,7 +48922,7 @@
    },
    "ISA Energia Brasil": {
     "status": "monitorar",
-    "score": 27
+    "score": 26
    },
    "PRIO": {
     "status": "monitorar",
@@ -48716,19 +48938,11 @@
    },
    "Capital One Financial": {
     "status": "monitorar",
-    "score": 24
+    "score": 23
    },
    "TIM Brasil": {
     "status": "monitorar",
     "score": 22
-   },
-   "Yura": {
-    "status": "atencao",
-    "score": 20
-   },
-   "Citigroup": {
-    "status": "monitorar",
-    "score": 20
    },
    "Itaúsa": {
     "status": "monitorar",
@@ -48737,6 +48951,14 @@
    "Aegea Saneamento": {
     "status": "monitorar",
     "score": 20
+   },
+   "Yura": {
+    "status": "atencao",
+    "score": 19
+   },
+   "Citigroup": {
+    "status": "monitorar",
+    "score": 19
    },
    "Natura &Co": {
     "status": "monitorar",
@@ -48762,28 +48984,28 @@
     "status": "monitorar",
     "score": 15
    },
-   "Usiminas": {
-    "status": "monitorar",
-    "score": 14
-   },
    "NextEra Energy": {
     "status": "monitorar",
     "score": 13
    },
-   "Cemig": {
-    "status": "atencao",
-    "score": 12
+   "Usiminas": {
+    "status": "monitorar",
+    "score": 13
    },
    "Bradesco": {
     "status": "atencao",
     "score": 12
    },
-   "Copel": {
-    "status": "monitorar",
-    "score": 12
-   },
    "Vamos": {
     "status": "atencao",
+    "score": 11
+   },
+   "Cemig": {
+    "status": "atencao",
+    "score": 11
+   },
+   "Copel": {
+    "status": "monitorar",
     "score": 11
    },
    "British American Tobacco": {
@@ -48798,11 +49020,11 @@
     "status": "monitorar",
     "score": 8
    },
-   "Vibra Energia": {
-    "status": "monitorar",
-    "score": 8
-   },
    "BRF": {
+    "status": "monitorar",
+    "score": 7
+   },
+   "Vibra Energia": {
     "status": "monitorar",
     "score": 7
    },
@@ -48822,10 +49044,6 @@
     "status": "monitorar",
     "score": 7
    },
-   "Caixa Seguridade": {
-    "status": "monitorar",
-    "score": 6
-   },
    "Halliburton": {
     "status": "monitorar",
     "score": 6
@@ -48834,11 +49052,15 @@
     "status": "monitorar",
     "score": 5
    },
-   "Klabin": {
+   "Caixa Seguridade": {
     "status": "monitorar",
     "score": 5
    },
    "MercadoLibre": {
+    "status": "monitorar",
+    "score": 4
+   },
+   "Klabin": {
     "status": "monitorar",
     "score": 4
    },
