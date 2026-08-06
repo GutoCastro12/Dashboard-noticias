@@ -88,8 +88,51 @@
    "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "corroborations": [],
-   "corrob_sources": [],
+   "corroborations": [
+    {
+     "source": "El Economista - Últimas noticias económicas y financieras",
+     "domain": "eleconomista.com.ar",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPajE1dHZtQVBlaWhpQWUtMk9vOWd5bU9kQ0ZkdUhReUNjTUNuLVp4S1kwTU1La1hPQUJFUEZNbUJBdEY2bjgtNWdMWFJhVEJzNnhSSHZ4NjliX3gxNVExWlplWFBNeUpyX3k4b2R4VHFma19JdGhvNGNpemkxdGpSbjlYbEVRc0tweDlDVkFLQVhQbkU0ajkxTXdYdkRNZGRqYXVWWWtwMUZmTEh0QkxGTlItVdIBuAFBVV95cUxPYlA1d0JGb3plbWl1Z0Q3NERRTVBpMzRtOWhCMWtQQ05vZlIyRmljYWEtOWg5eDFOVU1ubHBEZmZfTWZqVHVNeUV3V05MZFk5Tzh0SlBla0tJaTJpcnZyT0tXaTFsN0l5a3FGTlpkSnlVQjZyUzNTT3EzbDJ5VjBvNTFkNXgwa3c1XzByQW9aMHJvQlpyR0tmTExJWW9uaDFOREdFTEo4T19IY3dHUEpVbUFEb2I2QXRD?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPajE1dHZtQVBlaWhpQWUtMk9vOWd5bU9kQ0ZkdUhReUNjTUNuLVp4S1kwTU1La1hPQUJFUEZNbUJBdEY2bjgtNWdMWFJhVEJzNnhSSHZ4NjliX3gxNVExWlplWFBNeUpyX3k4b2R4VHFma19JdGhvNGNpemkxdGpSbjlYbEVRc0tweDlDVkFLQVhQbkU0ajkxTXdYdkRNZGRqYXVWWWtwMUZmTEh0QkxGTlItVdIBuAFBVV95cUxPYlA1d0JGb3plbWl1Z0Q3NERRTVBpMzRtOWhCMWtQQ05vZlIyRmljYWEtOWg5eDFOVU1ubHBEZmZfTWZqVHVNeUV3V05MZFk5Tzh0SlBla0tJaTJpcnZyT0tXaTFsN0l5a3FGTlpkSnlVQjZyUzNTT3EzbDJ5VjBvNTFkNXgwa3c1XzByQW9aMHJvQlpyR0tmTExJWW9uaDFOREdFTEo4T19IY3dHUEpVbUFEb2I2QXRD?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPajE1dHZtQVBlaWhpQWUtMk9vOWd5bU9kQ0ZkdUhReUNjTUNuLVp4S1kwTU1La1hPQUJFUEZNbUJBdEY2bjgtNWdMWFJhVEJzNnhSSHZ4NjliX3gxNVExWlplWFBNeUpyX3k4b2R4VHFma19JdGhvNGNpemkxdGpSbjlYbEVRc0tweDlDVkFLQVhQbkU0ajkxTXdYdkRNZGRqYXVWWWtwMUZmTEh0QkxGTlItVdIBuAFBVV95cUxPYlA1d0JGb3plbWl1Z0Q3NERRTVBpMzRtOWhCMWtQQ05vZlIyRmljYWEtOWg5eDFOVU1ubHBEZmZfTWZqVHVNeUV3V05MZFk5Tzh0SlBla0tJaTJpcnZyT0tXaTFsN0l5a3FGTlpkSnlVQjZyUzNTT3EzbDJ5VjBvNTFkNXgwa3c1XzByQW9aMHJvQlpyR0tmTExJWW9uaDFOREdFTEo4T19IY3dHUEpVbUFEb2I2QXRD?oc=5",
+     "resolved_url": "https://eleconomista.com.ar/economia/mas-presion-sobre-ypf-fondos-default-piden-prioridad-quieren-parte-51-n86310",
+     "canonical_url": "https://eleconomista.com.ar/economia/mas-presion-sobre-ypf-fondos-default-piden-prioridad-quieren-parte-51-n86310",
+     "display_url": "https://eleconomista.com.ar/economia/mas-presion-sobre-ypf-fondos-default-piden-prioridad-quieren-parte-51-n86310",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "eleconomista.com.ar",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-06T15:24:55.468292+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "El Economista - Últimas noticias económicas y financieras",
+     "domain": "eleconomista.com.ar",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPajE1dHZtQVBlaWhpQWUtMk9vOWd5bU9kQ0ZkdUhReUNjTUNuLVp4S1kwTU1La1hPQUJFUEZNbUJBdEY2bjgtNWdMWFJhVEJzNnhSSHZ4NjliX3gxNVExWlplWFBNeUpyX3k4b2R4VHFma19JdGhvNGNpemkxdGpSbjlYbEVRc0tweDlDVkFLQVhQbkU0ajkxTXdYdkRNZGRqYXVWWWtwMUZmTEh0QkxGTlItVdIBuAFBVV95cUxPYlA1d0JGb3plbWl1Z0Q3NERRTVBpMzRtOWhCMWtQQ05vZlIyRmljYWEtOWg5eDFOVU1ubHBEZmZfTWZqVHVNeUV3V05MZFk5Tzh0SlBla0tJaTJpcnZyT0tXaTFsN0l5a3FGTlpkSnlVQjZyUzNTT3EzbDJ5VjBvNTFkNXgwa3c1XzByQW9aMHJvQlpyR0tmTExJWW9uaDFOREdFTEo4T19IY3dHUEpVbUFEb2I2QXRD?oc=5",
+     "when": "04/07 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPajE1dHZtQVBlaWhpQWUtMk9vOWd5bU9kQ0ZkdUhReUNjTUNuLVp4S1kwTU1La1hPQUJFUEZNbUJBdEY2bjgtNWdMWFJhVEJzNnhSSHZ4NjliX3gxNVExWlplWFBNeUpyX3k4b2R4VHFma19JdGhvNGNpemkxdGpSbjlYbEVRc0tweDlDVkFLQVhQbkU0ajkxTXdYdkRNZGRqYXVWWWtwMUZmTEh0QkxGTlItVdIBuAFBVV95cUxPYlA1d0JGb3plbWl1Z0Q3NERRTVBpMzRtOWhCMWtQQ05vZlIyRmljYWEtOWg5eDFOVU1ubHBEZmZfTWZqVHVNeUV3V05MZFk5Tzh0SlBla0tJaTJpcnZyT0tXaTFsN0l5a3FGTlpkSnlVQjZyUzNTT3EzbDJ5VjBvNTFkNXgwa3c1XzByQW9aMHJvQlpyR0tmTExJWW9uaDFOREdFTEo4T19IY3dHUEpVbUFEb2I2QXRD?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPajE1dHZtQVBlaWhpQWUtMk9vOWd5bU9kQ0ZkdUhReUNjTUNuLVp4S1kwTU1La1hPQUJFUEZNbUJBdEY2bjgtNWdMWFJhVEJzNnhSSHZ4NjliX3gxNVExWlplWFBNeUpyX3k4b2R4VHFma19JdGhvNGNpemkxdGpSbjlYbEVRc0tweDlDVkFLQVhQbkU0ajkxTXdYdkRNZGRqYXVWWWtwMUZmTEh0QkxGTlItVdIBuAFBVV95cUxPYlA1d0JGb3plbWl1Z0Q3NERRTVBpMzRtOWhCMWtQQ05vZlIyRmljYWEtOWg5eDFOVU1ubHBEZmZfTWZqVHVNeUV3V05MZFk5Tzh0SlBla0tJaTJpcnZyT0tXaTFsN0l5a3FGTlpkSnlVQjZyUzNTT3EzbDJ5VjBvNTFkNXgwa3c1XzByQW9aMHJvQlpyR0tmTExJWW9uaDFOREdFTEo4T19IY3dHUEpVbUFEb2I2QXRD?oc=5",
+     "resolved_url": "https://eleconomista.com.ar/economia/mas-presion-sobre-ypf-fondos-default-piden-prioridad-quieren-parte-51-n86310",
+     "canonical_url": "https://eleconomista.com.ar/economia/mas-presion-sobre-ypf-fondos-default-piden-prioridad-quieren-parte-51-n86310",
+     "display_url": "https://eleconomista.com.ar/economia/mas-presion-sobre-ypf-fondos-default-piden-prioridad-quieren-parte-51-n86310",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "eleconomista.com.ar",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-06T15:24:55.868524+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
    "original_url": "https://www.clarin.com/economia/nuevos-acreedores-reclaman-acciones-ypf-cobrar-deudas-default-crece-presion-judicial-argentina_0_qTtMHGSoys.html",
    "redirect_url": "",
    "resolved_url": "https://www.clarin.com/economia/nuevos-acreedores-reclaman-acciones-ypf-cobrar-deudas-default-crece-presion-judicial-argentina_0_qTtMHGSoys.html",
@@ -767,7 +810,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T12:18:10.643990+00:00"
+     "last_checked_at": "2026-08-06T15:24:56.268819+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2406,7 +2449,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T12:18:11.044283+00:00"
+     "last_checked_at": "2026-08-06T15:24:56.669064+00:00"
     }
    ],
    "corrob_sources": [
@@ -9197,7 +9240,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T12:18:11.444712+00:00"
+     "last_checked_at": "2026-08-06T15:24:57.069354+00:00"
     },
     {
      "source": "Demarest",
@@ -9217,7 +9260,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T12:18:11.844966+00:00"
+     "last_checked_at": "2026-08-06T15:24:57.469651+00:00"
     }
    ],
    "corrob_sources": [
@@ -10634,7 +10677,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T12:18:12.245243+00:00"
+     "last_checked_at": "2026-08-06T15:24:57.869883+00:00"
     }
    ],
    "corrob_sources": [
@@ -13822,7 +13865,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T12:18:12.857782+00:00"
+     "last_checked_at": "2026-08-06T15:24:58.440201+00:00"
     }
    ],
    "corrob_sources": [
@@ -16060,7 +16103,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T12:18:13.467236+00:00"
+     "last_checked_at": "2026-08-06T15:24:59.009284+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16166,7 +16209,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T12:18:14.097130+00:00"
+     "last_checked_at": "2026-08-06T15:24:59.582911+00:00"
     },
     {
      "source": "Moomoo",
@@ -17459,7 +17502,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T12:18:14.916617+00:00"
+     "last_checked_at": "2026-08-06T15:25:00.265972+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17502,7 +17545,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T12:18:15.691408+00:00"
+     "last_checked_at": "2026-08-06T15:25:00.944049+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -18340,7 +18383,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-06T12:18:16.305589+00:00",
+     "last_checked_at": "2026-08-06T15:25:01.522060+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -18365,7 +18408,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-06T12:18:16.933632+00:00",
+     "last_checked_at": "2026-08-06T15:25:02.086406+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19296,7 +19339,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-06T12:18:17.333897+00:00",
+     "last_checked_at": "2026-08-06T15:25:02.486701+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19361,7 +19404,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-06T12:18:17.734138+00:00",
+     "last_checked_at": "2026-08-06T15:25:02.886932+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20334,7 +20377,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T12:18:18.383144+00:00"
+     "last_checked_at": "2026-08-06T15:25:03.506881+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20419,7 +20462,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T12:18:18.982892+00:00"
+     "last_checked_at": "2026-08-06T15:25:04.095785+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22120,7 +22163,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-06T12:18:19.621893+00:00",
+     "last_checked_at": "2026-08-06T15:25:04.658842+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22290,7 +22333,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-06T12:18:20.228449+00:00",
+     "last_checked_at": "2026-08-06T15:25:05.235566+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -35676,7 +35719,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T12:18:22.032309+00:00"
+     "last_checked_at": "2026-08-06T15:25:05.936832+00:00"
     }
    ],
    "corrob_sources": [
@@ -38533,7 +38576,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T12:18:22.620446+00:00"
+     "last_checked_at": "2026-08-06T15:25:06.508803+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38576,7 +38619,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T12:18:23.230625+00:00"
+     "last_checked_at": "2026-08-06T15:25:07.076348+00:00"
     },
     {
      "source": "Virginia Business",
@@ -43987,9 +44030,255 @@
    ],
    "captured_ts": 1786018685,
    "cap_iso": "2026-08-06 09:18"
+  },
+  "https://visnoinvest.com.br/news/13111/tenda-tend3-registra-elevacao-de-rating-para-braa-pela-s-p": {
+   "title": "Tenda (TEND3) registra elevação de rating para brAA- pela S&P",
+   "url": "https://visnoinvest.com.br/news/13111/tenda-tend3-registra-elevacao-de-rating-para-braa-pela-s-p",
+   "summary": "Tenda (TEND3) registra elevação de rating para brAA- pela S&P &nbsp;&nbsp; Visno Invest",
+   "source": "Visno Invest",
+   "domain": "visnoinvest.com.br",
+   "pub_ts": 1778137200,
+   "pub_iso": "2026-05-07 04:00",
+   "language": "pt",
+   "companies": [
+    "Construtora Tenda"
+   ],
+   "event_ids": [
+    "rating_elevado"
+   ],
+   "mention_roles": {
+    "Construtora Tenda": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Construtora Tenda": [
+     {
+      "company": "Construtora Tenda",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "Construtora Tenda",
+      "monitored_company": "Construtora Tenda",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Tenda (TEND3) registra elevação de rating para brAA- pela S&P",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPaThlb1FVeEdoVnZTeEFvb2dPbXVqbFFrMkhJZUpyRTk0dU9DMTY0V0VUS0tiVGQyczYxNVN0SUdtMzRfT0taNmZXUXBCaE1KU0w1X25PRFI1aXVEeUZVTDUxZVEtcUtyTXVMMkg3LXhJdnhJWnFyWkx5XzBJQ3YtMnpRWU9TU29ZN2ZxVHlfVzdvWXZ5Y2R1LWdSaHg?oc=5",
+      "pub_ts": 1778137200,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPaThlb1FVeEdoVnZTeEFvb2dPbXVqbFFrMkhJZUpyRTk0dU9DMTY0V0VUS0tiVGQyczYxNVN0SUdtMzRfT0taNmZXUXBCaE1KU0w1X25PRFI1aXVEeUZVTDUxZVEtcUtyTXVMMkg3LXhJdnhJWnFyWkx5XzBJQ3YtMnpRWU9TU29ZN2ZxVHlfVzdvWXZ5Y2R1LWdSaHg?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Construtora Tenda": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Construtora Tenda"
+   ],
+   "captured_ts": 1786029890,
+   "cap_iso": "2026-08-06 12:24"
+  },
+  "https://news.google.com/rss/articles/CBMipwFBVV95cUxOMzZWSVdEMlNaSVVrcWNabFplekt1eXJleVVEZm42bXhlV2hEUG1vaVZCeU1yT0hNeVl4VDB2alcwUTZycG9Mb2FPRWJnaHlxMmNOellzRVhOMThXZDhUb3gzMExEb3dkQ0hUN2xueUpESkpXTFZFZ2tpTDcyeUY2T0owUy1HeDIyc3hwR1QtbUFVa05NQjVYMjdlOHhlcG4wQUpoZEpQUQ?oc=5": {
+   "title": "Dominion Energy files application for 67-billion-dollar acquisition",
+   "url": "https://rocktownnow.com/news/218812-dominion-energy-files-application-for-67-billion-dollar-acquisition/",
+   "summary": "Dominion Energy files application for 67-billion-dollar acquisition &nbsp;&nbsp; Rocktown Now",
+   "source": "Rocktown Now",
+   "domain": "rocktownnow.com",
+   "pub_ts": 1784185200,
+   "pub_iso": "2026-07-16 04:00",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1786029890,
+   "cap_iso": "2026-08-06 12:24"
+  },
+  "https://news.google.com/rss/articles/CBMipgFBVV95cUxNTjFJZWdoaGJJdWcySFhlRG9semR2RGpEdzdHVFFRNnVQN05qTldQRW5CY2poZ2tsYXVlTTU1c2JPZlNsSVdJcVREaEtsMnJCdXZNbVN2WmNkMVdESXc4S1VCOVl0QlB6OHFqSEo4akxoaVdyMi0tWXZzMUp5bk10LXNabUY0Z2x6TDBKMjBUdUF4V0RDYkZfSzZOR2kyaEN0a1JPNVBn0gG0AUFVX3lxTE1jOThCMVlLaUxhcHFRU1NmRzM0V0k3M1BRMDFBZ3NHQ3BCcHI5X1JPZDVQV0ZLM1BLdk1jYzVjLTk3MDl5eWRjMW11QjZwUE5BZVVmb0Q1Rm5pTkJ0QlMzWm9HN0cxLUlYWlEzNmlkdmgxNS13OGc2MmI5bGlTUm9teHJPTktScWtXQmJQNy1KOU03bDF2TEVJcnlZU0lhUWhCbFhrOHFCVnZCRnNHQ1ZMX3h0NQ?oc=5": {
+   "title": "Exclusivo: Farmaervas tem a falência decretada",
+   "url": "https://valor.globo.com/empresas/noticia/2026/08/04/exclusivo-farmaervas-tem-a-falencia-decretada.ghtml",
+   "summary": "Exclusivo: Farmaervas tem a falência decretada &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1785862037,
+   "pub_iso": "2026-08-04 13:47",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1786029890,
+   "cap_iso": "2026-08-06 12:24"
+  },
+  "https://www.spacemoney.com.br/investimentos/engie-brasil-lucra-694-mi-2-tri-conclui-follow-on/": {
+   "title": "Engie Brasil lucra R$ 694 mi no 2º tri e conclui follow-on",
+   "url": "https://www.spacemoney.com.br/investimentos/engie-brasil-lucra-694-mi-2-tri-conclui-follow-on/",
+   "summary": "Engie Brasil lucra R$ 694 mi no 2º tri e conclui follow-on &nbsp;&nbsp; SpaceMoney",
+   "source": "SpaceMoney",
+   "domain": "spacemoney.com.br",
+   "pub_ts": 1785965358,
+   "pub_iso": "2026-08-05 18:29",
+   "language": "pt",
+   "companies": [
+    "Engie Brasil"
+   ],
+   "event_ids": [
+    "follow_on"
+   ],
+   "mention_roles": {
+    "Engie Brasil": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "encerramento",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Engie Brasil": [
+     "follow_on"
+    ]
+   },
+   "companies_attributed": [
+    "Engie Brasil"
+   ],
+   "context_companies": [],
+   "corroborations": [
+    {
+     "source": "bpmoney.com.br",
+     "domain": "bpmoney.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPd2V3VGc0RzRaVURBZjhwX09HOHNxUUNCWDRpWmdpa295VUFQRkRlNmV3X2g5bVVWQmNPXzU4SUxjV1JlaFVsUEdSclpQbWwtc3l5YlZOcElXb0YzdlV1Sk1jSmxtRVpjZU51c2FNV3Q5ZTFEZDlOa0tXNzBHalVCaTFPbjdhbjRhSTVYQmoxOTR1YnRrSUZIQk9feHh5X3N2a0I3a29kMVNMSElwN3dMZzQ1SDdCSFNYa21Z?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPd2V3VGc0RzRaVURBZjhwX09HOHNxUUNCWDRpWmdpa295VUFQRkRlNmV3X2g5bVVWQmNPXzU4SUxjV1JlaFVsUEdSclpQbWwtc3l5YlZOcElXb0YzdlV1Sk1jSmxtRVpjZU51c2FNV3Q5ZTFEZDlOa0tXNzBHalVCaTFPbjdhbjRhSTVYQmoxOTR1YnRrSUZIQk9feHh5X3N2a0I3a29kMVNMSElwN3dMZzQ1SDdCSFNYa21Z?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPd2V3VGc0RzRaVURBZjhwX09HOHNxUUNCWDRpWmdpa295VUFQRkRlNmV3X2g5bVVWQmNPXzU4SUxjV1JlaFVsUEdSclpQbWwtc3l5YlZOcElXb0YzdlV1Sk1jSmxtRVpjZU51c2FNV3Q5ZTFEZDlOa0tXNzBHalVCaTFPbjdhbjRhSTVYQmoxOTR1YnRrSUZIQk9feHh5X3N2a0I3a29kMVNMSElwN3dMZzQ1SDdCSFNYa21Z?oc=5",
+     "resolved_url": "https://bpmoney.com.br/negocios/engie-brasil-egie3-tem-lucro-de-r-694-milhoes-no-2o-tri-e-conclui-follow-on-bilionario/",
+     "canonical_url": "https://bpmoney.com.br/negocios/engie-brasil-egie3-tem-lucro-de-r-694-milhoes-no-2o-tri-e-conclui-follow-on-bilionario/",
+     "display_url": "https://bpmoney.com.br/negocios/engie-brasil-egie3-tem-lucro-de-r-694-milhoes-no-2o-tri-e-conclui-follow-on-bilionario/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "bpmoney.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-06T15:25:07.647088+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "bpmoney.com.br",
+     "domain": "bpmoney.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPd2V3VGc0RzRaVURBZjhwX09HOHNxUUNCWDRpWmdpa295VUFQRkRlNmV3X2g5bVVWQmNPXzU4SUxjV1JlaFVsUEdSclpQbWwtc3l5YlZOcElXb0YzdlV1Sk1jSmxtRVpjZU51c2FNV3Q5ZTFEZDlOa0tXNzBHalVCaTFPbjdhbjRhSTVYQmoxOTR1YnRrSUZIQk9feHh5X3N2a0I3a29kMVNMSElwN3dMZzQ1SDdCSFNYa21Z?oc=5",
+     "when": "05/08 18:22",
+     "original_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPd2V3VGc0RzRaVURBZjhwX09HOHNxUUNCWDRpWmdpa295VUFQRkRlNmV3X2g5bVVWQmNPXzU4SUxjV1JlaFVsUEdSclpQbWwtc3l5YlZOcElXb0YzdlV1Sk1jSmxtRVpjZU51c2FNV3Q5ZTFEZDlOa0tXNzBHalVCaTFPbjdhbjRhSTVYQmoxOTR1YnRrSUZIQk9feHh5X3N2a0I3a29kMVNMSElwN3dMZzQ1SDdCSFNYa21Z?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPd2V3VGc0RzRaVURBZjhwX09HOHNxUUNCWDRpWmdpa295VUFQRkRlNmV3X2g5bVVWQmNPXzU4SUxjV1JlaFVsUEdSclpQbWwtc3l5YlZOcElXb0YzdlV1Sk1jSmxtRVpjZU51c2FNV3Q5ZTFEZDlOa0tXNzBHalVCaTFPbjdhbjRhSTVYQmoxOTR1YnRrSUZIQk9feHh5X3N2a0I3a29kMVNMSElwN3dMZzQ1SDdCSFNYa21Z?oc=5",
+     "resolved_url": "https://bpmoney.com.br/negocios/engie-brasil-egie3-tem-lucro-de-r-694-milhoes-no-2o-tri-e-conclui-follow-on-bilionario/",
+     "canonical_url": "https://bpmoney.com.br/negocios/engie-brasil-egie3-tem-lucro-de-r-694-milhoes-no-2o-tri-e-conclui-follow-on-bilionario/",
+     "display_url": "https://bpmoney.com.br/negocios/engie-brasil-egie3-tem-lucro-de-r-694-milhoes-no-2o-tri-e-conclui-follow-on-bilionario/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "bpmoney.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-06T15:25:08.047336+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1786029890,
+   "cap_iso": "2026-08-06 12:24"
+  },
+  "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOaWw2dGZOTFVwSzJmd3VjVkd0MXpSUUtzeERaUUJCbmhDLU5MbkJnZWxiLUJVVkFsc1JwVWpIdmo0RHJKcDlEb0MyY0p0TnlWUDZqWGVTWEo0MXlhM3h0a0VTUnkxOXk3VXJaZlNMcDFrUlVDeEtHQk1VOGpXRHh5cU5xNERlUTBER2RyeGVfYXFralJTc3lnYU11Y1k2QURUT01OYW9sT3RTWllqY3poQzdHU2JjR2l0YmRRUVlvNTR6QQ?oc=5": {
+   "title": "Exclusive | Prosecutors Probed Whistleblower Claims That JPMorgan Mishandled Fraud Cases",
+   "url": "https://www.wsj.com/finance/regulation/prosecutors-probed-whistleblower-claims-that-jpmorgan-mishandled-fraud-cases-3f941dc9",
+   "summary": "Exclusive | Prosecutors Probed Whistleblower Claims That JPMorgan Mishandled Fraud Cases &nbsp;&nbsp; WSJ",
+   "source": "WSJ",
+   "domain": "wsj.com",
+   "pub_ts": 1785970800,
+   "pub_iso": "2026-08-05 20:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "fraude"
+   ],
+   "captured_ts": 1786029890,
+   "cap_iso": "2026-08-06 12:24"
+  },
+  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPdmpTVkZ0S3VZWlBXaXY0dTdvU0ZBS0Q4V0FWWDZQRk9fQU02cGdPNWlLbHdJemxyLTE2ZEhQWE1QWmQ5MjE1Sk1YcDBrakljQ2xfVkw1bmpxUzU2R1JVb0RIWkhMNVViWnhoMXFyOTZiZFhGQXNJdjJfeTdYY0NYU0NfNTZTNkZMSHRyemphZVlGSnRhc3ZVWWdVRDgwLXZ4QWFRWVNCdDN2RExVTS10NkkxYTlRVjNsemdJ0gHAAUFVX3lxTE14aWFRU2Y0RVdzajBidFVzNzVYSXlnQTVrTVhOZTRaV3ZVbE1ITGZkV0xzc3FYVWxlT25TYnozN1NxNk00dzJxWl91MGREdnNYQ3ZTeEszT1VQYUIwbVUtaERpMW95OWl5Q0R5eHMySzM4eFpVb21qOEZQM2s3WVpUTm8yYzRoUFBNUTEyQVFCYUtfR3QtZC16S1FZWTJhclJ4c1UxZERtR0Fsb1pmU1E3ZWNBX2lHMFB2YVA1V2hQRw?oc=5": {
+   "title": "Governo do Rio pede falência do Grupo Manguinhos por dívida fiscal",
+   "url": "https://odia.ig.com.br/economia/2026/08/7287101-governo-do-rio-pede-falencia-do-grupo-manguinhos-por-divida-fiscal.html",
+   "summary": "Governo do Rio pede falência do Grupo Manguinhos por dívida fiscal &nbsp;&nbsp; O Dia",
+   "source": "O Dia",
+   "domain": "odia.ig.com.br",
+   "pub_ts": 1785978774,
+   "pub_iso": "2026-08-05 22:12",
+   "language": "es",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1786029890,
+   "cap_iso": "2026-08-06 12:24"
+  },
+  "https://ts2.tech/en/jpmorgan-chase-nysejpm-fraud-claim-scrutiny-weighs-on-stock-at-analysts-target/": {
+   "title": "JPMorgan Chase (NYSE:JPM) fraud-claim scrutiny weighs on stock at analysts’ target",
+   "url": "https://ts2.tech/en/jpmorgan-chase-nysejpm-fraud-claim-scrutiny-weighs-on-stock-at-analysts-target/",
+   "summary": "JPMorgan Chase (NYSE:JPM) fraud-claim scrutiny weighs on stock at analysts’ target &nbsp;&nbsp; TechStock²",
+   "source": "TechStock²",
+   "domain": "ts2.tech",
+   "pub_ts": 1786008966,
+   "pub_iso": "2026-08-06 06:36",
+   "language": "pt",
+   "companies": [
+    "JPMorgan Chase"
+   ],
+   "event_ids": [
+    "fraude"
+   ],
+   "mention_roles": {
+    "JPMorgan Chase": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "JPMorgan Chase": [
+     "fraude"
+    ]
+   },
+   "companies_attributed": [
+    "JPMorgan Chase"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786029890,
+   "cap_iso": "2026-08-06 12:24"
   }
  },
- "run_count": 80,
+ "run_count": 81,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -48838,34 +49127,70 @@
   "https://news.google.com/rss/articles/CBMipAFBVV95cUxPaUVGUS1xc09QZ2pYZWV4Um5vRi0xY2pZd0sxUVRIc0lvMnVkdzZTcDJOVTlhMnlpUGFHX3lpaWxISDZPT19TTmdkTWVEdHg3ZXExX0ZMUnNHc0lMQ3R5bUhnYVZxUENhaDVBV1VGMXE2RXZwaWR0YnptNkt2TlBSNTQzSFNmT2oxd0VWUG5oaTVMNlNvMDRpelllMVBLLURNNXAyaA?oc=5": {
    "url": "https://tmc.com.br/brasil/governo-do-rj-pede-falencia-do-grupo-manguinhos-por-divida-de-r-257-bilhoes/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMinAFBVV95cUxPaThlb1FVeEdoVnZTeEFvb2dPbXVqbFFrMkhJZUpyRTk0dU9DMTY0V0VUS0tiVGQyczYxNVN0SUdtMzRfT0taNmZXUXBCaE1KU0w1X25PRFI1aXVEeUZVTDUxZVEtcUtyTXVMMkg3LXhJdnhJWnFyWkx5XzBJQ3YtMnpRWU9TU29ZN2ZxVHlfVzdvWXZ5Y2R1LWdSaHg?oc=5": {
+   "url": "https://visnoinvest.com.br/news/13111/tenda-tend3-registra-elevacao-de-rating-para-braa-pela-s-p",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMimgFBVV95cUxQazJkLWEzV0JKNm5aQ24yRFlKUE9tQlFVaVg2cXdibDRuX3BxRDFIdUM1T1ZQUm9hZUo2dU1BYVplNko2NHdfSlBXWElhU05ZaHpoOEt5R2hVLVg2LTY2djE0WUdOcjF6end4M01EelluZkw3OWtKdExxWWs0SnFiT2ozdWo2Wk5jNTNOcDJOY2o4cTBMQmotMVNR?oc=5": {
+   "url": "https://www.spacemoney.com.br/investimentos/engie-brasil-lucra-694-mi-2-tri-conclui-follow-on/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMioAFBVV95cUxPbnJvSkgwNW9oMDVPSW9KdGJoX0t3OV82LWVkd29sTzZkS3B6ekNCWHY1Tko2T25lNmRlWXY1V0xJOFRPY3ZKeXhQYm9yMlpGSGtLN01wUDRLT1h4V2g2aWU2QVVoQm5SQ0ZwQ1VPX1dlb3J5SWlveUljVGxsZ1pRYWhJQVFRWUdDalpzakd1UFZlVkh2Ym4yVWVSWk04NWU1?oc=5": {
+   "url": "https://ts2.tech/en/jpmorgan-chase-nysejpm-fraud-claim-scrutiny-weighs-on-stock-at-analysts-target/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipgFBVV95cUxNTjFJZWdoaGJJdWcySFhlRG9semR2RGpEdzdHVFFRNnVQN05qTldQRW5CY2poZ2tsYXVlTTU1c2JPZlNsSVdJcVREaEtsMnJCdXZNbVN2WmNkMVdESXc4S1VCOVl0QlB6OHFqSEo4akxoaVdyMi0tWXZzMUp5bk10LXNabUY0Z2x6TDBKMjBUdUF4V0RDYkZfSzZOR2kyaEN0a1JPNVBn0gG0AUFVX3lxTE1jOThCMVlLaUxhcHFRU1NmRzM0V0k3M1BRMDFBZ3NHQ3BCcHI5X1JPZDVQV0ZLM1BLdk1jYzVjLTk3MDl5eWRjMW11QjZwUE5BZVVmb0Q1Rm5pTkJ0QlMzWm9HN0cxLUlYWlEzNmlkdmgxNS13OGc2MmI5bGlTUm9teHJPTktScWtXQmJQNy1KOU03bDF2TEVJcnlZU0lhUWhCbFhrOHFCVnZCRnNHQ1ZMX3h0NQ?oc=5": {
+   "url": "https://valor.globo.com/empresas/noticia/2026/08/04/exclusivo-farmaervas-tem-a-falencia-decretada.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOaWw2dGZOTFVwSzJmd3VjVkd0MXpSUUtzeERaUUJCbmhDLU5MbkJnZWxiLUJVVkFsc1JwVWpIdmo0RHJKcDlEb0MyY0p0TnlWUDZqWGVTWEo0MXlhM3h0a0VTUnkxOXk3VXJaZlNMcDFrUlVDeEtHQk1VOGpXRHh5cU5xNERlUTBER2RyeGVfYXFralJTc3lnYU11Y1k2QURUT01OYW9sT3RTWllqY3poQzdHU2JjR2l0YmRRUVlvNTR6QQ?oc=5": {
+   "url": "https://www.wsj.com/finance/regulation/prosecutors-probed-whistleblower-claims-that-jpmorgan-mishandled-fraud-cases-3f941dc9",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPdmpTVkZ0S3VZWlBXaXY0dTdvU0ZBS0Q4V0FWWDZQRk9fQU02cGdPNWlLbHdJemxyLTE2ZEhQWE1QWmQ5MjE1Sk1YcDBrakljQ2xfVkw1bmpxUzU2R1JVb0RIWkhMNVViWnhoMXFyOTZiZFhGQXNJdjJfeTdYY0NYU0NfNTZTNkZMSHRyemphZVlGSnRhc3ZVWWdVRDgwLXZ4QWFRWVNCdDN2RExVTS10NkkxYTlRVjNsemdJ0gHAAUFVX3lxTE14aWFRU2Y0RVdzajBidFVzNzVYSXlnQTVrTVhOZTRaV3ZVbE1ITGZkV0xzc3FYVWxlT25TYnozN1NxNk00dzJxWl91MGREdnNYQ3ZTeEszT1VQYUIwbVUtaERpMW95OWl5Q0R5eHMySzM4eFpVb21qOEZQM2s3WVpUTm8yYzRoUFBNUTEyQVFCYUtfR3QtZC16S1FZWTJhclJ4c1UxZERtR0Fsb1pmU1E3ZWNBX2lHMFB2YVA1V2hQRw?oc=5": {
+   "url": "https://odia.ig.com.br/economia/2026/08/7287101-governo-do-rio-pede-falencia-do-grupo-manguinhos-por-divida-fiscal.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiswFBVV95cUxPajE1dHZtQVBlaWhpQWUtMk9vOWd5bU9kQ0ZkdUhReUNjTUNuLVp4S1kwTU1La1hPQUJFUEZNbUJBdEY2bjgtNWdMWFJhVEJzNnhSSHZ4NjliX3gxNVExWlplWFBNeUpyX3k4b2R4VHFma19JdGhvNGNpemkxdGpSbjlYbEVRc0tweDlDVkFLQVhQbkU0ajkxTXdYdkRNZGRqYXVWWWtwMUZmTEh0QkxGTlItVdIBuAFBVV95cUxPYlA1d0JGb3plbWl1Z0Q3NERRTVBpMzRtOWhCMWtQQ05vZlIyRmljYWEtOWg5eDFOVU1ubHBEZmZfTWZqVHVNeUV3V05MZFk5Tzh0SlBla0tJaTJpcnZyT0tXaTFsN0l5a3FGTlpkSnlVQjZyUzNTT3EzbDJ5VjBvNTFkNXgwa3c1XzByQW9aMHJvQlpyR0tmTExJWW9uaDFOREdFTEo4T19IY3dHUEpVbUFEb2I2QXRD?oc=5": {
+   "url": "https://eleconomista.com.ar/economia/mas-presion-sobre-ypf-fondos-default-piden-prioridad-quieren-parte-51-n86310",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPd2V3VGc0RzRaVURBZjhwX09HOHNxUUNCWDRpWmdpa295VUFQRkRlNmV3X2g5bVVWQmNPXzU4SUxjV1JlaFVsUEdSclpQbWwtc3l5YlZOcElXb0YzdlV1Sk1jSmxtRVpjZU51c2FNV3Q5ZTFEZDlOa0tXNzBHalVCaTFPbjdhbjRhSTVYQmoxOTR1YnRrSUZIQk9feHh5X3N2a0I3a29kMVNMSElwN3dMZzQ1SDdCSFNYa21Z?oc=5": {
+   "url": "https://bpmoney.com.br/negocios/engie-brasil-egie3-tem-lucro-de-r-694-milhoes-no-2o-tri-e-conclui-follow-on-bilionario/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786018708,
-  "iso": "06 ago 2026 · 09:18 BRT",
+  "ts": 1786029908,
+  "iso": "06 ago 2026 · 12:25 BRT",
   "status": {
+   "Engie Brasil": {
+    "status": "critico",
+    "score": 76
+   },
    "Rumo": {
     "status": "atencao",
     "score": 71
-   },
-   "Engie Brasil": {
-    "status": "atencao",
-    "score": 68
    },
    "Vale": {
     "status": "atencao",
     "score": 63
    },
-   "CVS Health": {
+   "JPMorgan Chase": {
     "status": "critico",
-    "score": 59
-   },
-   "Santander Brasil": {
-    "status": "atencao",
-    "score": 59
+    "score": 61
    },
    "Tok&Stok": {
     "status": "critico",
+    "score": 58
+   },
+   "CVS Health": {
+    "status": "critico",
+    "score": 58
+   },
+   "Santander Brasil": {
+    "status": "atencao",
     "score": 58
    },
    "Grupo Financiero Banorte": {
@@ -48876,21 +49201,21 @@
     "status": "atencao",
     "score": 46
    },
-   "Samarco Mineração": {
-    "status": "critico",
-    "score": 43
-   },
    "Smart Fit": {
     "status": "atencao",
     "score": 43
    },
-   "Axia Energia": {
-    "status": "atencao",
-    "score": 41
+   "Samarco Mineração": {
+    "status": "critico",
+    "score": 42
    },
    "BTG Pactual": {
     "status": "atencao",
     "score": 41
+   },
+   "Axia Energia": {
+    "status": "atencao",
+    "score": 40
    },
    "Energisa": {
     "status": "atencao",
@@ -49015,10 +49340,6 @@
    "Raia Drogasil": {
     "status": "monitorar",
     "score": 10
-   },
-   "JPMorgan Chase": {
-    "status": "monitorar",
-    "score": 8
    },
    "BRF": {
     "status": "monitorar",
