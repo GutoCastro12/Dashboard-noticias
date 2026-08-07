@@ -381,6 +381,14 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
                                        if r["acao"] == "nova_ocorrencia"),
         "lag_distribuicao": _lag_dist(dedup_rows),
         "ocorrencias_conhecidas_na_janela": len(existentes),
+        # BLOQUEADOR ESTRUTURAL: o boilerplate legal da SEC cita "Securities Act
+        # of 1933" e "Securities Exchange Act of 1934". O detector de referência
+        # histórica do semantic_audit lê 1933/1934 como ano do fato e neutraliza
+        # o evento. Não é ajuste desta fase: mexe em regra semântica aprovada
+        # que também serve o pipeline de notícias.
+        "bloqueados_por_ano_antigo_sec": sum(
+            1 for r in class_rows
+            if "ano_antigo_citado:193" in str(r.get("motivo", ""))),
         # invariantes duras
         "scoring_enabled": rd.edgar_scoring_enabled(cfg),
         "persisted_records": 0,
@@ -499,7 +507,18 @@ def _relatorio(meta, por_emissor, class_rows, fp_rows, dedup_rows) -> str:
     prec_pont = (100.0 * (pont - fp_pont) / pont) if pont else None
     prec_geral = (100.0 * (tot_evt - fp) / tot_evt) if tot_evt else 0.0
 
-    if meta["filings_aceitos"] == 0 or meta["corpos_recuperados"] == 0:
+    # Bloqueador estrutural domina qualquer outra leitura: se a maioria dos
+    # eventos é neutralizada por boilerplate legal, não há o que medir.
+    bloq = meta.get("bloqueados_por_ano_antigo_sec", 0)
+    if tot_evt and bloq >= 0.5 * tot_evt:
+        rec, just = "A", (
+            f"defeito estrutural: {bloq}/{tot_evt} eventos "
+            f"({100.0 * bloq / tot_evt:.0f}%) neutralizados como referência "
+            f"histórica pelo boilerplate 'Securities Act of 1933/1934'. A "
+            f"extração ({cobertura_corpo:.0f}% de corpo) e a atribuição "
+            f"funcionam, mas a classificação não pode ser avaliada enquanto o "
+            f"corpus inteiro for lido como fato de 1933.")
+    elif meta["filings_aceitos"] == 0 or meta["corpos_recuperados"] == 0:
         rec, just = "A", ("nenhum corpo de documento recuperado — sem conteúdo real "
                           "não há como medir precisão")
     elif cobertura_corpo < 70:
@@ -580,6 +599,16 @@ def _relatorio(meta, por_emissor, class_rows, fp_rows, dedup_rows) -> str:
         f"- `history_changed`: **{meta['history_changed']}**",
         f"- `backfill`: **{meta['backfill']}**",
         f"- Arquivos alterados: **{meta['arquivos_alterados'] or 'nenhum'}**", "",
+        "## Bloqueador estrutural detectado", "",
+        f"- Eventos neutralizados como *referência histórica* por causa de "
+        f"`1933`/`1934`: **{meta['bloqueados_por_ano_antigo_sec']}** de {tot_evt}",
+        "",
+        "Todo filing da SEC cita `Securities Act of 1933` e `Securities Exchange "
+        "Act of 1934` no boilerplate legal. O detector de referência histórica do "
+        "`semantic_audit` lê esses anos como data do fato e marca o evento como "
+        "econômico de 1933/1934. Corrigir isso mexe em regra semântica aprovada "
+        "que também serve o pipeline de notícias — exige aprovação explícita e "
+        "regressão própria, fora do escopo desta fase.", "",
         f"## Recomendação: **{rec}**", "", just, "",
         "| Classificação | Significado |", "|---|---|",
         "| A | shadow ainda insuficiente |",

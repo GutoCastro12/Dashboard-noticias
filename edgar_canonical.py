@@ -787,21 +787,37 @@ def economic_date_from_text(text: str, near: int | None = None,
     return cands[0][1]
 
 
+#
+
+# Um filing só pode descrever fato PRÓXIMO do seu protocolo. Sem esse limite, a
+# recitação do contrato original ("dated as of July 28, 2025") vira a data
+# econômica do 8-K de conclusão de 2026 — foi o que aconteceu no run
+# 31143754520: Baker Hughes/Chart Industries casou com lag de 354 dias.
+MAX_DIAS_DATA_EXPLICITA = 120
+
+
 def economic_date(filing: dict, text: str = "", near: int | None = None) -> str:
     """Data do FATO, por ordem de confiabilidade (§2 do pedido 4H.3C):
 
-    1. data econômica explícita no corpo do documento;
-    2. `filing_date` (protocolo — sempre existe e é do fato recente em 8-K/6-K);
-    3. `report_date` APENAS quando semanticamente aplicável — ou seja, nunca
-       em formulário periódico, onde ele é fechamento contábil.
+    1. data econômica explícita no corpo, DESDE QUE plausível em relação ao
+       protocolo (ver `MAX_DIAS_DATA_EXPLICITA`);
+    2. `filing_date` (protocolo — sempre existe);
+    3. `report_date` APENAS quando semanticamente aplicável — nunca em
+       formulário periódico, onde ele é fechamento contábil.
     """
-    explicita = economic_date_from_text(text, near) if text else ""
-    if explicita:
-        return explicita
     form = _clean(filing.get("form"))
-    if form in PERIODIC_FORMS:
-        return _clean(filing.get("filing_date"))
-    return (_clean(filing.get("report_date")) or _clean(filing.get("filing_date")))
+    fdate = _clean(filing.get("filing_date"))
+    fallback = (fdate if form in PERIODIC_FORMS
+                else (_clean(filing.get("report_date")) or fdate))
+
+    explicita = economic_date_from_text(text, near) if text else ""
+    if not explicita:
+        return fallback
+    d = _dias(explicita, fdate)
+    if d is None or d > MAX_DIAS_DATA_EXPLICITA:
+        # data do corpo é recitação de contrato antigo / referência histórica
+        return fallback
+    return explicita
 
 
 # ── impressão digital de contraparte ─────────────────────────────────────────

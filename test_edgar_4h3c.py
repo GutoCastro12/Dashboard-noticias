@@ -472,6 +472,15 @@ def t25_data_economica():
           "sem data explícita não inventa")
     check(ec.economic_date(per, corpo) == "2026-07-16",
           "corpo vence até no periódico")
+    # REGRESSÃO run 31143754520: recitação do contrato original virava a data
+    # econômica do 8-K de conclusão (Baker Hughes/Chart, lag de 354 dias).
+    antigo = ("The Merger Agreement, dated as of July 28, 2025, by and among "
+              "the Company and Chart Industries, Inc.")
+    d = ec.economic_date(oito, antigo)
+    check(d == "2026-07-16",
+          f"data de contrato antigo é descartada (obtido {d}, esperado report_date)")
+    check(ec.MAX_DIAS_DATA_EXPLICITA <= 180,
+          "limite de plausibilidade da data explícita é estreito")
 
 
 def t26_matching_hierarquico():
