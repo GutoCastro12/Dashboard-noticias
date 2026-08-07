@@ -394,17 +394,45 @@ def _window(text: str, m: re.Match, before: int = 90, after: int = 140) -> str:
     return text[max(0, m.start() - before):min(len(text), m.end() + after)].strip()
 
 
+# Estrutura burocrática do documento — índice, capa, rodapé. Uma âncora que cai
+# aqui NÃO é fato econômico. Medido no run 31142988539: "Item 3. Defaults Upon
+# Senior Securities" (título de seção padrão de todo 10-Q) e a capa listando
+# "6.200% Notes due 2059" produziram 13 de 13 eventos pontuáveis — todos falsos.
+_BOILERPLATE = re.compile(
+    r"Item\s*3\.?\s*Defaults\s+Upon\s+Senior\s+Securities"
+    r"|Mine\s+Safety\s+Disclosures"
+    r"|Unregistered\s+Sales\s+of\s+Equity\s+Securities"
+    r"|Securities\s+registered\s+pursuant\s+to\s+Section\s+12"
+    r"|Title\s+of\s+each\s+class"
+    r"|Name\s+of\s+each\s+exchange\s+on\s+which\s+registered"
+    r"|Trading\s+Symbol\(?s?\)?"
+    r"|Table\s+of\s+Contents"
+    r"|Index\s+to\s+(?:Condensed\s+)?(?:Consolidated\s+)?Financial\s+Statements",
+    re.I)
+
+
+def is_boilerplate(text: str, start: int, end: int, raio: int = 220) -> bool:
+    """A âncora está dentro de estrutura burocrática (índice/capa/rodapé)?"""
+    jan = str(text)[max(0, start - raio):min(len(str(text)), end + raio)]
+    return bool(_BOILERPLATE.search(jan))
+
+
 def find_evidence(text: str, event_id: str) -> dict | None:
-    """Procura âncora textual do evento. Devolve trecho e offsets, ou None."""
+    """Procura âncora textual do evento, IGNORANDO estrutura burocrática.
+
+    Percorre todas as ocorrências e devolve a primeira que não esteja em
+    índice/capa — uma âncora dentro do sumário do 10-Q não é evidência.
+    """
     pats = EVENT_EVIDENCE.get(event_id)
     if not pats or not text:
         return None
     rx = re.compile("|".join(pats), re.I)
-    m = rx.search(text)
-    if not m:
-        return None
-    return {"evidence_text": _window(text, m), "evidence_match": m.group(0),
-            "evidence_start": m.start(), "evidence_end": m.end()}
+    for m in rx.finditer(text):
+        if is_boilerplate(text, m.start(), m.end()):
+            continue
+        return {"evidence_text": _window(text, m), "evidence_match": m.group(0),
+                "evidence_start": m.start(), "evidence_end": m.end()}
+    return None
 
 
 # Tokens capitalizados que NÃO são nome de pessoa. Sem isso, "On July 20, 2026,
@@ -605,9 +633,19 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str) -> dict:
             base["motivo_decisao"] = "âncora de rebaixamento aparece NEGADA no texto"
             return base
 
+    # Formulário PERIÓDICO (10-K/10-Q/20-F/40-F) é relatório, não fato
+    # relevante: descreve o negócio inteiro, inclusive fatores de risco e
+    # dívida já existente. Deixá-lo sustentar evento MATERIAL pontuável foi a
+    # origem de 13/13 falsos positivos no run 31142988539. Ele permanece como
+    # CORROBORAÇÃO informativa, nunca como prova de fato novo.
+    if ev in MATERIAL_EVENTS and filing.get("form") in PERIODIC_FORMS and not item:
+        base.update({"aceito": True, "decisao": "aceito_nao_pontuavel",
+                     "confianca": "baixa", "nao_pontuavel_por_forma": True,
+                     "motivo_decisao": (f"{filing.get('form')} é relatório periódico: "
+                                        f"corrobora '{ev}', não prova fato novo")})
+        return base
+
     conf = "alta" if forca == "forte" else ("alta" if item else "media")
-    if ev in MATERIAL_EVENTS and not item and filing.get("form") in PERIODIC_FORMS:
-        conf = "baixa"
     base.update({"aceito": True, "decisao": "aceito", "confianca": conf,
                  "motivo_decisao": f"evidência textual compatível com '{ev}'"})
     return base

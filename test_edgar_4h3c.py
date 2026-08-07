@@ -408,6 +408,53 @@ def t20_shadow_nao_altera_historico():
               "artifacts de sombra gravados em diretório separado")
 
 
+def t23_boilerplate_do_10q():
+    print("\n[23] REGRESSÃO — sumário/capa do 10-Q não é evidência")
+    fs = _parse({"form": "10-Q", "items": ""})
+    # texto REAL que produziu falso positivo no run 31142988539
+    toc = ("60 Item2. Unregistered Sales of Equity Securities and Use of Proceeds 61 "
+           "Item3. Defaults Upon Senior Securities 61 Item4. Mine Safety Disclosures")
+    an = ec.analyze_filing(fs[0], toc)
+    check("default" not in an["event_ids"],
+          "'Item 3. Defaults Upon Senior Securities' (título de seção) não é default")
+    capa = ("Title of each class Trading Symbol Name of each exchange on which "
+            "registered Common Stock F New York Stock Exchange 6.200% Notes due "
+            "June 1, 2059 New York Stock Exchange")
+    an2 = ec.analyze_filing(fs[0], capa)
+    check("emissao_divida" not in an2["event_ids"],
+          "capa listando notes registradas não é emissão nova")
+    check(ec.is_boilerplate(toc, toc.index("Defaults"), toc.index("Defaults") + 8),
+          "is_boilerplate reconhece o contexto de sumário")
+    # e o texto REAL de um default continua passando
+    an3 = ec.analyze_filing(_parse({"items": "2.04"})[0],
+                            "The Company failed to pay the principal due on the "
+                            "notes, constituting an event of default under the "
+                            "indenture.")
+    check("default" in an3["event_ids"], "default real continua reconhecido")
+
+
+def t24_periodico_nunca_pontua():
+    print("\n[24] REGRESSÃO — formulário periódico corrobora, não prova fato novo")
+    for form in ("10-Q", "10-K", "20-F"):
+        fs = _parse({"form": form, "items": ""})
+        an = ec.analyze_filing(fs[0], "The Company issued $1.5 billion aggregate "
+                                      "principal amount of senior notes under an "
+                                      "indenture during the quarter.")
+        a = next((c for c in an["aceitos"] if c["event_id"] == "emissao_divida"), None)
+        check(a is not None, f"{form}: evento ainda é RECONHECIDO (não some)")
+        check(a and a.get("nao_pontuavel_por_forma") is True,
+              f"{form}: marcado como não pontuável por forma")
+        check(a and a["decisao"] == "aceito_nao_pontuavel",
+              f"{form}: decisão = aceito_nao_pontuavel")
+    # 8-K com item continua pontuando normalmente
+    an8 = ec.analyze_filing(_parse({"items": "2.03"})[0],
+                            "issued $1.5 billion aggregate principal amount of "
+                            "senior notes under an indenture")
+    a8 = next(c for c in an8["aceitos"] if c["event_id"] == "emissao_divida")
+    check(not a8.get("nao_pontuavel_por_forma"), "8-K com item 2.03 continua pontuável")
+    check(a8["confianca"] == "alta", "8-K mantém confiança alta")
+
+
 def t22_headers_dos_archives():
     print("\n[22] REGRESSÃO — Archives nunca recebe Host=data.sec.gov")
     h = ec.archive_headers(rd._EDGAR_UA)
@@ -490,7 +537,8 @@ TESTES = [t01_parser_preserva_items, t02_parser_preserva_report_date,
           t17_dedup_edgar_x_ri, t18_filer_nao_vira_sujeito,
           t19_scoring_desligado_impede_persistencia,
           t20_shadow_nao_altera_historico, t21_orquestrador_offline,
-          t22_headers_dos_archives]
+          t22_headers_dos_archives, t23_boilerplate_do_10q,
+          t24_periodico_nunca_pontua]
 
 
 def main():

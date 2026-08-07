@@ -237,6 +237,12 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
             art = ec.to_article(f, texto, an)
             for ev in an["event_ids"]:
                 veredito = _atribuir(rd, cfg, art, nome, ev)
+                # forma periódica nunca pontua, qualquer que seja o veredito
+                _c = next((x for x in an["aceitos"] if x["event_id"] == ev), {})
+                if _c.get("nao_pontuavel_por_forma"):
+                    veredito["scoreable"] = False
+                    veredito["categoria"] = "informativo"
+                    veredito["motivo"] = _c.get("motivo_decisao", "")
                 linha["eventos_classificados"] += 1
                 if veredito["categoria"] == "direto":
                     linha["eventos_diretos"] += 1
@@ -418,9 +424,17 @@ def _suspeito(veredito: dict, cand: dict, filing: dict, texto: str) -> str:
 def _relatorio(meta, por_emissor, class_rows, fp_rows, dedup_rows) -> str:
     tot_evt = meta["eventos_classificados"]
     fp = meta["falsos_positivos_para_revisao"]
-    prec = (100.0 * (tot_evt - fp) / tot_evt) if tot_evt else 0.0
     cobertura_corpo = (100.0 * meta["corpos_recuperados"] / meta["filings_aceitos"]
                        if meta["filings_aceitos"] else 0.0)
+
+    # A precisão que decide scoring é sobre os eventos que PONTUARIAM, não sobre
+    # o total. Diluir os falsos positivos entre eventos informativos (que nunca
+    # pontuam) produziu "91,1% → C" no run 31142988539 quando a precisão real
+    # sobre pontuáveis era 0/13. Métrica errada é pior que métrica ausente.
+    pont = meta["eventos_diretos"]
+    fp_pont = sum(1 for r in fp_rows if r.get("scoreable_simulado"))
+    prec_pont = (100.0 * (pont - fp_pont) / pont) if pont else None
+    prec_geral = (100.0 * (tot_evt - fp) / tot_evt) if tot_evt else 0.0
 
     if meta["filings_aceitos"] == 0 or meta["corpos_recuperados"] == 0:
         rec, just = "A", ("nenhum corpo de documento recuperado — sem conteúdo real "
@@ -429,16 +443,23 @@ def _relatorio(meta, por_emissor, class_rows, fp_rows, dedup_rows) -> str:
         rec, just = "A", (f"apenas {cobertura_corpo:.0f}% dos filings tiveram corpo "
                           f"recuperado; evidência insuficiente")
     elif tot_evt == 0:
-        rec, just = "B", ("nenhum evento material no período — pipeline estruturalmente "
-                          "correto, sem falso positivo, mas sem massa para medir recall")
-    elif prec >= 90:
-        rec, just = "C", (f"precisão simulada {prec:.1f}% com cobertura de corpo "
-                          f"{cobertura_corpo:.0f}% — candidato a avaliação futura de scoring")
-    elif prec >= 75:
-        rec, just = "B", (f"precisão simulada {prec:.1f}% — confiável como corroboração, "
-                          f"insuficiente para score")
+        rec, just = "B", ("nenhum evento no período — pipeline estruturalmente correto, "
+                          "sem falso positivo, mas sem massa para medir recall")
+    elif pont == 0:
+        rec, just = "B", (f"{tot_evt} evento(s) classificado(s), NENHUM pontuável: o "
+                          f"EDGAR corrobora sem inflar risco. Confiável como fonte "
+                          f"oficial/corroborante; sem massa pontuável, não há base "
+                          f"para avaliar scoring.")
+    elif prec_pont >= 90:
+        rec, just = "C", (f"precisão sobre PONTUÁVEIS {prec_pont:.1f}% ({pont - fp_pont}"
+                          f"/{pont}) com cobertura de corpo {cobertura_corpo:.0f}% — "
+                          f"candidato a avaliação futura de scoring")
+    elif prec_pont >= 75:
+        rec, just = "B", (f"precisão sobre pontuáveis {prec_pont:.1f}% — confiável como "
+                          f"corroboração, insuficiente para score")
     else:
-        rec, just = "A", f"precisão simulada {prec:.1f}% — abaixo do aceitável"
+        rec, just = "A", (f"precisão sobre pontuáveis {prec_pont:.1f}% "
+                          f"({pont - fp_pont}/{pont}) — abaixo do aceitável")
 
     L = [
         "# Relatório 4H.3C — EDGAR canônico em modo sombra", "",
@@ -463,7 +484,11 @@ def _relatorio(meta, por_emissor, class_rows, fp_rows, dedup_rows) -> str:
         f"| Contextuais (terceiro) | {meta['eventos_contextuais']} |",
         f"| Informativos | {meta['eventos_informativos']} |",
         f"| Suspeitas de falso positivo | {fp} |",
-        f"| Precisão simulada | {prec:.1f}% |",
+        f"| **Eventos PONTUÁVEIS** | **{pont}** |",
+        f"| Falsos positivos entre pontuáveis | {fp_pont} |",
+        f"| **Precisão sobre PONTUÁVEIS** | "
+        f"**{f'{prec_pont:.1f}%' if prec_pont is not None else 'n/a (nenhum pontuável)'}** |",
+        f"| Precisão geral (diluída — NÃO usar para decidir scoring) | {prec_geral:.1f}% |",
         "",
         "## Deduplicação", "",
         f"- Documentos repetidos descartados: **{meta['dedup_documentos_repetidos']}**",
