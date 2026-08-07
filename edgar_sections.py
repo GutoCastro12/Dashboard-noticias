@@ -94,9 +94,33 @@ def _secao(kind, heading, texto, a, b, form, item="", prioridade=2) -> dict:
     }
 
 
+# "Item N.NN" nem sempre é cabeçalho de seção: com frequência é REFERÊNCIA
+# CRUZADA no meio de uma frase ("as described in Item 5.03 below", "the
+# information set forth in Item 2.02"). Medido no corpus: o 8-K da Truist
+# declara os items 3.03/5.03/8.01/9.01 no metadata da SEC e o texto extraído
+# tem UM único marcador — uma referência cruzada — a partir da qual a "seção"
+# engolia capa e assinatura. Tratar isso como cabeçalho é pior que não
+# segmentar.
+_XREF_ANTES = re.compile(
+    r"(?:described|set\s+forth|referred\s+to|included|disclosed|reported|see|under|"
+    r"in|of|to|per)\s+$", re.I)
+_XREF_DEPOIS = re.compile(r"^\s*(?:below|above)\b", re.I)
+
+
+def _eh_referencia_cruzada(raw: str, m: re.Match) -> bool:
+    antes = raw[max(0, m.start() - 40):m.start()]
+    depois = raw[m.end():m.end() + 12]
+    return bool(_XREF_ANTES.search(antes) or _XREF_DEPOIS.match(depois))
+
+
 def split_8k_items(raw: str, form: str = "8-K") -> list[dict]:
-    """Fatia um 8-K em seções por `Item N.NN`, cada uma até o próximo item."""
-    marcas = list(_ITEM_MARK.finditer(raw))
+    """Fatia um 8-K em seções por `Item N.NN`, cada uma até o próximo item.
+
+    Marcadores que são referência cruzada não abrem seção — ver
+    `_eh_referencia_cruzada`.
+    """
+    marcas = [m for m in _ITEM_MARK.finditer(raw)
+              if not _eh_referencia_cruzada(raw, m)]
     if not marcas:
         return []
     out = []

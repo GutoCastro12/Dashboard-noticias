@@ -621,6 +621,17 @@ def candidate_events(filing: dict) -> list[dict]:
     return cands
 
 
+def _restrito(texto: str, a: int, b: int) -> str:
+    """Mantém só o intervalo [a,b), branqueando o resto e PRESERVANDO offsets.
+
+    Assim a busca de âncora fica confinada à seção sem que os offsets
+    encontrados deixem de valer no documento bruto.
+    """
+    t = str(texto or "")
+    a, b = max(0, a), min(len(t), b)
+    return (" " * a) + t[a:b] + (" " * (len(t) - b))
+
+
 def _kinds_pontuaveis() -> frozenset:
     try:
         import edgar_sections as _es
@@ -689,6 +700,22 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str,
                      **_janela(bruto, achado_p),
                      "motivo_decisao": (f"{filing.get('form')} é relatório periódico: "
                                         f"corrobora '{ev}', não prova fato novo")})
+        return base
+
+    # ═══ TODAS as guardas ESTRUTURAIS ficam AQUI, antes de qualquer ramo por
+    # evento. Três vezes nesta fase um guard colocado adiante ficou inalcançável
+    # porque `troca_ceo`/`1.03` retornam cedo: o CODM da Halliburton (4H.3C), a
+    # manchete pontuando (4H.3E) e o item sem seção (4H.3E). Guard novo entra
+    # neste bloco, não depois. ═══
+
+    # âncora fora de qualquer seção econômica → corrobora, não prova
+    if ev in MATERIAL_EVENTS and candidate.get("fora_de_secao"):
+        base.update({"aceito": True, "decisao": "aceito_nao_pontuavel",
+                     "confianca": "baixa", "nao_pontuavel_por_forma": True,
+                     "fora_de_secao": True,
+                     "motivo_decisao": (f"'{ev}' sem seção econômica localizável "
+                                        f"({candidate.get('cobertura') or 'sem seção'}) "
+                                        f"— corrobora, não prova")})
         return base
 
     # ── guarda de SEÇÃO, junto das demais guardas estruturais ──
@@ -805,15 +832,6 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str,
     # falso positivo do run 31193786617 (capa, assinatura, balanço, biografia).
     # A âncora encontrada fora de item/release continua VISÍVEL como
     # corroboração informativa, mas nunca sustenta evento pontuável.
-    if ev in MATERIAL_EVENTS and candidate.get("fora_de_secao"):
-        base.update({"aceito": True, "decisao": "aceito_nao_pontuavel",
-                     "confianca": "baixa", "nao_pontuavel_por_forma": True,
-                     "fora_de_secao": True,
-                     "motivo_decisao": (f"'{ev}' encontrado FORA de seção econômica "
-                                        f"({candidate.get('cobertura') or 'sem seção'}) "
-                                        f"— corrobora, não prova")})
-        return base
-
     conf = "alta" if forca == "forte" else ("alta" if item else "media")
     base.update({"aceito": True, "decisao": "aceito", "confianca": conf,
                  "section_kind": candidate.get("section_kind", ""),
@@ -834,7 +852,33 @@ def analyze_filing(filing: dict, text: str = "",
     raw = text or ""
     sem = raw if semantic_text is None else semantic_text
     cands = candidate_events(filing)
-    avaliados = [evaluate_candidate(filing, c, sem, raw=raw) for c in cands]
+
+    # 4H.3E: o candidato vindo de ITEM também precisa ser avaliado DENTRO da
+    # sua seção. Sem isto ele continuava buscando a âncora no documento
+    # inteiro — e foi exatamente daí que vieram os 4 falsos `troca_ceo` do run
+    # 31205791805, todos com evidência de capa ("indicate by check mark",
+    # "Co-Registrant City Juno Beach").
+    avaliados = []
+    for c in cands:
+        alvo = sem
+        if sections is not None and c.get("item"):
+            sec = next((s for s in sections
+                        if s.get("kind") == "item" and s.get("item") == c["item"]),
+                       None)
+            if sec:
+                alvo = _restrito(sem, sec["start_offset"], sec["end_offset"])
+                c = {**c, "section_kind": "item",
+                     "section_heading": sec.get("heading", "")}
+            else:
+                # O metadata da SEC declara o item, mas o texto extraído não
+                # tem a seção correspondente — a estrutura de items não
+                # sobrevive à conversão HTML→texto. Sem poder localizar a
+                # evidência, não há como provar o evento: ele fica visível como
+                # corroboração, nunca pontuável. Era daqui que vinham os 4
+                # falsos `troca_ceo` do run 31205791805.
+                c = {**c, "fora_de_secao": True,
+                     "cobertura": "item declarado sem seção no texto"}
+        avaliados.append(evaluate_candidate(filing, c, alvo, raw=raw))
     aceitos = [a for a in avaliados if a["aceito"]]
 
     # ── evento revelado pelo TEXTO (6-K não tem item; 8-K pode omitir) ──
