@@ -1,0 +1,175 @@
+name: EDGAR 4H.3C — parser canônico em sombra (diagnóstico, não publica)
+
+# 4H.3C — ciclo REAL contra data.sec.gov / www.sec.gov usando o PARSER CANÔNICO
+# (edgar_canonical.py) e o corpo real dos documentos. Mede QUALIDADE da
+# classificação; não ativa score, não persiste, não publica, não faz backfill.
+#
+# O config candidato é GERADO a partir de config_risco.yaml no próprio run —
+# nunca versionado — para que não exista uma segunda fonte de verdade. O
+# config de produção é lido, jamais escrito, e a invariância é provada por
+# hash sha256 e por `git diff --exit-code`.
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_companies:
+        description: "Limite de emissores (vazio = universo elegível completo)"
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  edgar-4h3c:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Definir timestamp
+        id: ts
+        run: echo "stamp=$(date -u +%Y%m%dT%H%M%SZ)" >> "$GITHUB_OUTPUT"
+
+      - name: Suíte completa (obrigatória antes de tocar a SEC)
+        run: |
+          python -m py_compile risk_dashboard.py semantic_audit.py \
+                 link_debt_audit.py coverage_diagnosis.py \
+                 edgar_canonical.py edgar_shadow_4h3c.py test_edgar_4h3c.py
+          for t in test_*.py; do
+            echo "── $t ──"
+            python "$t"
+          done
+          python risk_dashboard.py --test-attribution
+          python risk_dashboard.py --test-cvm-fixture
+          python risk_dashboard.py --test-fund-coverage
+
+      - name: Gerar config candidato (coleta ON, scoring OFF)
+        run: |
+          python edgar_shadow_4h3c.py \
+            --emit-candidate-config config_risco_4h3c_candidato.yaml
+
+      - name: Sanidade — candidato NÃO pode ligar scoring
+        run: |
+          python - <<'PY'
+          import yaml
+          c = yaml.safe_load(open("config_risco_4h3c_candidato.yaml", encoding="utf-8"))
+          assert c.get("edgar_scoring_enabled") is False, "scoring DEVE ser false"
+          assert c.get("international_official_sources_enabled") is True
+          assert (c.get("official_sources") or {}).get("EUA", {}).get("enabled") is True
+          p = yaml.safe_load(open("config_risco.yaml", encoding="utf-8"))
+          assert not p.get("edgar_scoring_enabled"), "produção NÃO pode ter scoring"
+          assert not p.get("international_official_sources_enabled"), \
+              "produção NÃO pode ter coleta internacional ligada"
+          print("OK — shadow: fontes=true, scoring=false; produção intacta")
+          PY
+
+      - name: Hashes ANTES
+        run: |
+          mkdir -p out_4h3c
+          : > out_4h3c/hashes_antes.txt
+          for f in risk_history.json config_risco.yaml index.html \
+                   dashboard_risco.html run_meta.json \
+                   international_search_history.json; do
+            [ -f "$f" ] && echo "$f=$(sha256sum "$f" | cut -d' ' -f1)" >> out_4h3c/hashes_antes.txt
+          done
+          cat out_4h3c/hashes_antes.txt
+
+      - name: Ciclo REAL 4H.3C (sombra)
+        env:
+          MAXC: ${{ inputs.max_companies }}
+        run: |
+          ARGS=""
+          if [ -n "$MAXC" ]; then ARGS="--max-companies $MAXC"; fi
+          python edgar_shadow_4h3c.py \
+            --config config_risco_4h3c_candidato.yaml \
+            --history risk_history.json \
+            --outdir out_4h3c $ARGS
+
+      - name: Provar que houve CONTEÚDO real (não só HTTP 200)
+        run: |
+          python - <<'PY'
+          import json, pathlib, sys
+          m = json.loads(pathlib.Path("out_4h3c/edgar_4h3c_run_meta.json")
+                         .read_text(encoding="utf-8"))
+          print(json.dumps(m, ensure_ascii=False, indent=2)[:2500])
+          if m["emissores_com_http_200"] == 0:
+              print("::error::nenhum emissor alcançou a SEC — runner sem acesso")
+              sys.exit(1)
+          if m["filings_aceitos"] == 0:
+              print("::warning::0 filings na janela — nada a classificar")
+          elif m["corpos_recuperados"] == 0:
+              print("::error::HTTP 200 sem NENHUM corpo extraído — "
+                    "isso é exatamente o falso sucesso que a 4H.3C proíbe")
+              sys.exit(1)
+          for k, exp in [("scoring_enabled", False), ("persisted_records", 0),
+                         ("history_changed", False), ("backfill", False)]:
+              assert m.get(k) == exp, f"{k}={m.get(k)!r}, esperado {exp!r}"
+          assert m["arquivos_alterados"] == [], m["arquivos_alterados"]
+          print("OK — conteúdo real extraído e invariantes satisfeitas")
+          PY
+
+      - name: PROVA de invariância — hashes DEPOIS
+        run: |
+          FAIL=0
+          while IFS='=' read -r f old; do
+            [ -z "$f" ] && continue
+            new=$(sha256sum "$f" | cut -d' ' -f1)
+            if [ "$new" != "$old" ]; then
+              echo "::error::$f FOI ALTERADO"; FAIL=1
+            else
+              echo "OK inalterado: $f"
+            fi
+          done < out_4h3c/hashes_antes.txt
+          exit $FAIL
+
+      - name: PROVA de invariância — git diff
+        run: |
+          git diff --exit-code -- risk_history.json config_risco.yaml \
+            index.html dashboard_risco.html run_meta.json \
+            international_search_history.json
+          rm -f .cik_cache.json config_risco_4h3c_candidato.yaml
+          find . -type d -name "__pycache__" -prune -exec rm -rf {} +
+          git status --porcelain | grep -v '^?? out_4h3c/' > /tmp/dirty || true
+          if [ -s /tmp/dirty ]; then
+            echo "::error::Arquivos alterados fora de out_4h3c/"; cat /tmp/dirty; exit 1
+          fi
+          echo "OK — árvore limpa fora de out_4h3c/"
+
+      - name: Resumo no job
+        if: always()
+        run: |
+          if [ -f out_4h3c/relatorio_edgar_4h3c.md ]; then
+            cat out_4h3c/relatorio_edgar_4h3c.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload dos artifacts reais
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: edgar-4h3c-${{ github.run_id }}-${{ steps.ts.outputs.stamp }}
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            out_4h3c/edgar_4h3c_por_emissor.csv
+            out_4h3c/edgar_4h3c_filings.csv
+            out_4h3c/edgar_4h3c_event_candidates.csv
+            out_4h3c/edgar_4h3c_classification.csv
+            out_4h3c/edgar_4h3c_false_positive_review.csv
+            out_4h3c/edgar_4h3c_dedup.csv
+            out_4h3c/relatorio_edgar_4h3c.md
+            out_4h3c/edgar_4h3c_run_meta.json
+            out_4h3c/hashes_antes.txt

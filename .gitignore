@@ -1,0 +1,13 @@
+# Bytecode — os testes geram isso no workspace; nunca versionar.
+__pycache__/
+*.py[cod]
+
+# Cache local do mapa de CIK da SEC (regenerável).
+.cik_cache.json
+
+# Saídas de diagnóstico do 4H.3C (o artifact do Actions é a fonte oficial).
+out_4h3c/
+
+# Config candidato: é GERADO a partir de config_risco.yaml, nunca versionado,
+# para não virar uma segunda fonte de verdade ao lado do config de produção.
+config_risco_4h3c_candidato.yaml
