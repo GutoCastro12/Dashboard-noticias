@@ -9,7 +9,12 @@ name: EDGAR 4H.3C — parser canônico em sombra (diagnóstico, não publica)
 # config de produção é lido, jamais escrito, e a invariância é provada por
 # hash sha256 e por `git diff --exit-code`.
 
+# `workflow_dispatch` só fica despachável depois que o arquivo existir na branch
+# default. Enquanto a 4H.3C não for mesclada, o gatilho de `push` NESTA branch é
+# o único caminho para executar contra a SEC real sem antecipar o merge.
 on:
+  push:
+    branches: ["feature/edgar-4h3c-canonical-shadow"]
   workflow_dispatch:
     inputs:
       max_companies:
