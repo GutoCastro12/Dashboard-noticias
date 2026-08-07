@@ -455,6 +455,68 @@ def t24_periodico_nunca_pontua():
     check(a8["confianca"] == "alta", "8-K mantém confiança alta")
 
 
+def t25_data_economica():
+    print("\n[25] reportDate NÃO é data econômica universal")
+    per = _parse({"form": "10-Q", "filingDate": "2026-08-05",
+                  "reportDate": "2026-06-30"})[0]
+    check(ec.economic_date(per) == "2026-08-05",
+          "10-Q usa filing_date, não o fechamento contábil 2026-06-30")
+    oito = _parse({"form": "8-K", "filingDate": "2026-07-20",
+                   "reportDate": "2026-07-16"})[0]
+    check(ec.economic_date(oito) == "2026-07-16", "8-K pode usar report_date")
+    corpo = ("On July 16, 2026, the Company completed the acquisition of Chart "
+             "Industries, Inc. for $13.6 billion.")
+    check(ec.economic_date(oito, corpo) == "2026-07-16",
+          "data explícita do corpo tem precedência")
+    check(ec.economic_date_from_text("nothing here") == "",
+          "sem data explícita não inventa")
+    check(ec.economic_date(per, corpo) == "2026-07-16",
+          "corpo vence até no periódico")
+
+
+def t26_matching_hierarquico():
+    print("\n[26] Matching hierárquico exige contraparte, não só data")
+    conhecidas = [{
+        "company": "Baker Hughes", "event_id": "ma", "date": "2026-07-17",
+        "fingerprint": ec.entity_fingerprint(
+            "Baker Hughes wraps up $13.6bn Chart Industries acquisition",
+            exclude=["Baker Hughes"]),
+        "source": "Yahoo Finance", "title": "Chart Industries acquisition",
+        "occurrence_id": "oc-1",
+    }]
+    fp_ok = ec.entity_fingerprint(
+        "completed the acquisition of Chart Industries, Inc.",
+        exclude=["Baker Hughes"])
+    r1 = ec.match_occurrence("Baker Hughes", "ma", "2026-07-16", fp_ok, conhecidas)
+    check(r1["acao"] == "corroborar", "mesma contraparte + lag 1d → corrobora")
+    check(r1["match"]["nivel"] == 1, f"nível 1 (obtido {r1['match']['nivel']})")
+    check(r1["cria_ocorrencia"] is False, "não cria ocorrência nova")
+
+    # MESMA empresa e família, contraparte DIFERENTE → rejeitar
+    fp_outro = ec.entity_fingerprint("acquisition of Waygate Technologies",
+                                     exclude=["Baker Hughes"])
+    r2 = ec.match_occurrence("Baker Hughes", "ma", "2026-07-18", fp_outro, conhecidas)
+    check(r2["acao"] == "nova_ocorrencia",
+          "aquisição DIFERENTE no mesmo período NÃO é a mesma ocorrência")
+    check(r2["rejeitados"] and "sem contraparte em comum" in r2["rejeitados"][0]["motivo"],
+          "rejeição registrada com motivo econômico")
+
+    # contraparte igual, data muito distante → nível 2, nunca descartada
+    r3 = ec.match_occurrence("Baker Hughes", "ma", "2026-04-01", fp_ok, conhecidas)
+    check(r3["acao"] == "corroborar" and r3["match"]["nivel"] == 2,
+          "contraparte igual + data distante → nível 2")
+
+    # empresa diferente nunca casa
+    r4 = ec.match_occurrence("Halliburton", "ma", "2026-07-16", fp_ok, conhecidas)
+    check(r4["acao"] == "nova_ocorrencia", "empresa diferente não casa")
+
+    # tolerância calibrada por família
+    check(ec.TOLERANCIA_DIAS["ma"] > ec.TOLERANCIA_DIAS["rebaixamento_rating"],
+          "M&A tolera mais que rating (anúncio/assinatura/fechamento)")
+    check(ec.entity_fingerprint("The Company and the Board of Directors") == set(),
+          "boilerplate societário não vira contraparte")
+
+
 def t22_headers_dos_archives():
     print("\n[22] REGRESSÃO — Archives nunca recebe Host=data.sec.gov")
     h = ec.archive_headers(rd._EDGAR_UA)
@@ -538,7 +600,8 @@ TESTES = [t01_parser_preserva_items, t02_parser_preserva_report_date,
           t19_scoring_desligado_impede_persistencia,
           t20_shadow_nao_altera_historico, t21_orquestrador_offline,
           t22_headers_dos_archives, t23_boilerplate_do_10q,
-          t24_periodico_nunca_pontua]
+          t24_periodico_nunca_pontua, t25_data_economica,
+          t26_matching_hierarquico]
 
 
 def main():

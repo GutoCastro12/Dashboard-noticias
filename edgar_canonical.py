@@ -555,6 +555,26 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str) -> dict:
         base["motivo_decisao"] = f"item genérico {item} nunca prova evento"
         return base
 
+    # ── guarda de FORMA, antes de qualquer ramo por evento ──
+    # Precisa vir aqui, não no fim: no run 31143302974 ela estava depois do ramo
+    # de `troca_ceo` e por isso nunca era alcançada — a divulgação de segmento
+    # do 10-Q da Halliburton ("our chief operating decision maker (CODM) is
+    # Jeffrey Miller, ... Chief Executive Officer", ASC 280) passou como troca
+    # de CEO com confiança ALTA. Formulário periódico corrobora, não prova.
+    if ev in MATERIAL_EVENTS and filing.get("form") in PERIODIC_FORMS and not item:
+        achado_p = find_evidence(text, ev)
+        if not achado_p:
+            base["motivo_decisao"] = (f"sem evidência textual para '{ev}' em "
+                                      f"{filing.get('form')}")
+            return base
+        base.update({"aceito": True, "decisao": "aceito_nao_pontuavel",
+                     "confianca": "baixa", "nao_pontuavel_por_forma": True,
+                     "evidence_text": achado_p["evidence_text"],
+                     "evidence_match": achado_p["evidence_match"],
+                     "motivo_decisao": (f"{filing.get('form')} é relatório periódico: "
+                                        f"corrobora '{ev}', não prova fato novo")})
+        return base
+
     # 5.02 é, por definição, sobre administradores: a pergunta não é "o texto
     # fala de executivo?" e sim "é executivo RELEVANTE e houve movimento?".
     # Avaliar antes da âncora genérica produz motivo de rejeição útil no CSV
@@ -632,18 +652,6 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str) -> dict:
         if _anchor_negada(text, achado):
             base["motivo_decisao"] = "âncora de rebaixamento aparece NEGADA no texto"
             return base
-
-    # Formulário PERIÓDICO (10-K/10-Q/20-F/40-F) é relatório, não fato
-    # relevante: descreve o negócio inteiro, inclusive fatores de risco e
-    # dívida já existente. Deixá-lo sustentar evento MATERIAL pontuável foi a
-    # origem de 13/13 falsos positivos no run 31142988539. Ele permanece como
-    # CORROBORAÇÃO informativa, nunca como prova de fato novo.
-    if ev in MATERIAL_EVENTS and filing.get("form") in PERIODIC_FORMS and not item:
-        base.update({"aceito": True, "decisao": "aceito_nao_pontuavel",
-                     "confianca": "baixa", "nao_pontuavel_por_forma": True,
-                     "motivo_decisao": (f"{filing.get('form')} é relatório periódico: "
-                                        f"corrobora '{ev}', não prova fato novo")})
-        return base
 
     conf = "alta" if forca == "forte" else ("alta" if item else "media")
     base.update({"aceito": True, "decisao": "aceito", "confianca": conf,
@@ -725,15 +733,182 @@ def to_article(filing: dict, text: str = "", analysis: dict | None = None) -> di
 
 # ───────────────────────────────── deduplicação ──────────────────────────────
 def occurrence_key(company: str, event_id: str, filing: dict) -> str:
-    """Chave da OCORRÊNCIA ECONÔMICA (não do documento).
+    """Chave EXATA da ocorrência — usada só para dedup de documento idêntico.
 
-    Deliberadamente NÃO inclui o accession: dois filings distintos sobre o
-    mesmo fato (o 8-K e o 8-K/A, ou o 8-K e o 10-Q que o repete) são UMA
-    ocorrência. Usa `report_date` quando existe — é a data do FATO, enquanto
-    `filing_date` é a data do protocolo.
+    ATENÇÃO: NÃO usar para decidir corroboração contra notícia/RI. Medido no
+    run 31143302974: entre 49 pares comparáveis (mesma empresa + mesma família)
+    NENHUM tinha lag 0 — o menor era 1 dia. Igualdade exata de data produz
+    0 corroborações por construção, não por ausência de fato. Para corroborar,
+    usar `match_occurrence`.
     """
-    data = _clean(filing.get("report_date")) or _clean(filing.get("filing_date"))
+    data = economic_date(filing)
     return f"{_clean(company).lower()}|{_clean(event_id)}|{data}"
+
+
+# ── data econômica ───────────────────────────────────────────────────────────
+# `reportDate` NÃO é data do fato universalmente. Nos periódicos ele é o
+# FECHAMENTO CONTÁBIL: no run 31143302974 todo 10-Q trazia report_date
+# 2026-06-30 (fim do trimestre), qualquer que fosse o assunto. Usá-lo como
+# identidade de ocorrência funde fatos distintos do mesmo trimestre.
+_DATE_IN_TEXT = re.compile(
+    r"\b(?:on|effective(?:\s+as\s+of)?|dated)\s+"
+    r"(January|February|March|April|May|June|July|August|September|October|"
+    r"November|December)\s+(\d{1,2}),?\s+(\d{4})", re.I)
+_MESES = {m: i for i, m in enumerate(
+    ["january", "february", "march", "april", "may", "june", "july", "august",
+     "september", "october", "november", "december"], start=1)}
+
+
+def economic_date_from_text(text: str, near: int | None = None,
+                            raio: int = 400) -> str:
+    """Data econômica EXPLÍCITA do corpo ("On July 16, 2026, the Company…").
+
+    Quando `near` é dado, prefere a data mais próxima da âncora do evento.
+    """
+    t = str(text or "")
+    if not t:
+        return ""
+    cands = []
+    for m in _DATE_IN_TEXT.finditer(t):
+        mes = _MESES.get(m.group(1).lower())
+        if not mes:
+            continue
+        try:
+            d = datetime(int(m.group(3)), mes, int(m.group(2)), tzinfo=timezone.utc)
+        except ValueError:
+            continue
+        cands.append((abs((near if near is not None else m.start()) - m.start()),
+                      d.strftime("%Y-%m-%d")))
+    if not cands:
+        return ""
+    if near is not None:
+        cands = [c for c in cands if c[0] <= raio] or cands
+    cands.sort()
+    return cands[0][1]
+
+
+def economic_date(filing: dict, text: str = "", near: int | None = None) -> str:
+    """Data do FATO, por ordem de confiabilidade (§2 do pedido 4H.3C):
+
+    1. data econômica explícita no corpo do documento;
+    2. `filing_date` (protocolo — sempre existe e é do fato recente em 8-K/6-K);
+    3. `report_date` APENAS quando semanticamente aplicável — ou seja, nunca
+       em formulário periódico, onde ele é fechamento contábil.
+    """
+    explicita = economic_date_from_text(text, near) if text else ""
+    if explicita:
+        return explicita
+    form = _clean(filing.get("form"))
+    if form in PERIODIC_FORMS:
+        return _clean(filing.get("filing_date"))
+    return (_clean(filing.get("report_date")) or _clean(filing.get("filing_date")))
+
+
+# ── impressão digital de contraparte ─────────────────────────────────────────
+_STOP_ENT = frozenset("""
+the company companies inc incorporated corp corporation ltd limited llc lp plc
+sa s.a holdings holding group co nv ag the board of directors common stock
+new york stock exchange nasdaq securities and exchange commission form item
+united states january february march april may june july august september
+october november december chief executive officer financial president
+""".split())
+_ENTIDADE = re.compile(r"\b([A-Z][A-Za-z&.\-]+(?:\s+[A-Z][A-Za-z&.\-]+){0,3})\b")
+
+
+def entity_fingerprint(text: str, exclude: list[str] | None = None) -> set[str]:
+    """Entidades/pessoas próprias citadas — a CONTRAPARTE do fato.
+
+    É o que distingue "Baker Hughes adquire Chart Industries" de qualquer
+    outra aquisição da Baker Hughes no mesmo trimestre. Sem isso, uma janela
+    de dias funde ocorrências economicamente distintas.
+    """
+    ex = {_clean(e).lower() for e in (exclude or []) if _clean(e)}
+    ex_tokens = {w for e in ex for w in e.split()}
+    out = set()
+    for m in _ENTIDADE.finditer(str(text or "")):
+        frag = m.group(1).strip()
+        toks = [w.strip(".,;&").lower() for w in frag.split()]
+        toks = [w for w in toks if w and w not in _STOP_ENT and w not in ex_tokens]
+        if not toks:
+            continue
+        nome = " ".join(toks)
+        if len(nome) < 4 or nome in ex:
+            continue
+        out.add(nome)
+    return out
+
+
+# Tolerância por família, CALIBRADA nos lags medidos no run 31143302974
+# (|lag| observado: 1,3,4×4,7,8,9,11×2,12×2,13×2,17,18×2,19,20,22,23×3,24×2,…).
+# A janela sozinha NÃO decide nada: ela é filtro secundário, aplicado só depois
+# que a contraparte bate. M&A é a mais larga porque anúncio, assinatura e
+# fechamento são datas distintas do MESMO fato econômico.
+TOLERANCIA_DIAS = {
+    "ma": 30, "troca_ceo": 10, "rebaixamento_rating": 3, "rating_elevado": 3,
+    "recuperacao_judicial": 7, "falencia": 7, "default": 7, "covenant_breach": 7,
+    "emissao_divida": 15, "fraude": 15, "investigacao_regulatoria": 15,
+    "incidente_operacional": 7, "suspensao_negociacao": 5, "renuncia_auditor": 10,
+}
+TOLERANCIA_PADRAO = 7
+
+
+def _dias(a: str, b: str) -> int | None:
+    try:
+        da = datetime.strptime(_clean(a), "%Y-%m-%d")
+        db = datetime.strptime(_clean(b), "%Y-%m-%d")
+    except Exception:
+        return None
+    return abs((da - db).days)
+
+
+def match_occurrence(company: str, event_id: str, data_edgar: str,
+                     fingerprint: set[str], conhecidas: list[dict]) -> dict:
+    """Matching HIERÁRQUICO contra ocorrências já conhecidas (notícia/RI).
+
+    Nível 1 — forte: mesma empresa + mesma família + contraparte em comum +
+                     datas dentro da tolerância da família.
+    Nível 2 — provável: mesma empresa + mesma família + contraparte em comum,
+                     porém fora da tolerância (fato x filing distantes).
+    Rejeitado: mesma empresa + mesma família apenas, sem contraparte comum —
+                     proximidade temporal NUNCA basta.
+    """
+    emp = _clean(company).lower()
+    tol = TOLERANCIA_DIAS.get(event_id, TOLERANCIA_PADRAO)
+    rejeitados = []
+    melhor = None
+
+    for oc in conhecidas:
+        if _clean(oc.get("company")).lower() != emp:
+            continue
+        if _clean(oc.get("event_id")) != _clean(event_id):
+            continue
+        comum = fingerprint & set(oc.get("fingerprint") or set())
+        lag = _dias(data_edgar, oc.get("date", ""))
+        if not comum:
+            rejeitados.append({
+                "occurrence_id": oc.get("occurrence_id", ""), "lag": lag,
+                "motivo": "mesma empresa e família, sem contraparte em comum — "
+                          "proximidade temporal não basta"})
+            continue
+        nivel = 1 if (lag is not None and lag <= tol) else 2
+        cand = {"nivel": nivel, "occurrence_id": oc.get("occurrence_id", ""),
+                "lag": lag, "entidades_comuns": sorted(comum)[:4],
+                "source": oc.get("source", ""), "title": oc.get("title", "")}
+        if melhor is None or cand["nivel"] < melhor["nivel"] or (
+                cand["nivel"] == melhor["nivel"]
+                and (cand["lag"] or 10**6) < (melhor["lag"] or 10**6)):
+            melhor = cand
+
+    if melhor:
+        return {"acao": "corroborar", "cria_ocorrencia": False, "match": melhor,
+                "rejeitados": rejeitados,
+                "motivo": (f"nível {melhor['nivel']}: contraparte em comum "
+                           f"{melhor['entidades_comuns']}, lag {melhor['lag']}d "
+                           f"(tolerância {tol}d)")}
+    return {"acao": "nova_ocorrencia", "cria_ocorrencia": True, "match": None,
+            "rejeitados": rejeitados,
+            "motivo": ("nenhuma ocorrência conhecida com a mesma contraparte"
+                       if rejeitados else "ocorrência não vista por outras fontes")}
 
 
 def dedup_filings(filings: list[dict]) -> tuple[list[dict], list[dict]]:

@@ -132,7 +132,7 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
     todos_filings: list[dict] = []
 
     # ocorrências já conhecidas por OUTRAS fontes (Google News / RI / CVM)
-    existentes = _occurrences_from_history(history or {}, rd)
+    existentes = _occurrences_from_history(history or {}, rd, cutoff_ts=cutoff)
 
     for c in alvos:
         nome = c.get("name", "")
@@ -251,17 +251,39 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
                 else:
                     linha["eventos_informativos"] += 1
 
-                dd = ec.corroborates(existentes, veredito["subject_company"] or nome, ev, f)
+                cand_do_ev = next((x for x in an["aceitos"] if x["event_id"] == ev), {})
+                # data ECONÔMICA (corpo > filing_date > report_date se aplicável)
+                _near = cand_do_ev.get("evidence_start")
+                data_econ = ec.economic_date(f, texto, _near if isinstance(_near, int) else None)
+                fp_edgar = ec.entity_fingerprint(
+                    (cand_do_ev.get("evidence_text") or "") + " " + ec.canonical_title(f),
+                    exclude=[nome, f.get("company", "")])
+                dd = ec.match_occurrence(veredito["subject_company"] or nome, ev,
+                                         data_econ, fp_edgar, existentes)
+                _m = dd.get("match") or {}
                 dedup_rows.append({
                     "emissor": nome, "tipo": "ocorrencia_economica",
                     "accession": f["accession_number"], "duplicate_of": "",
                     "form": f["form"], "event_id": ev,
                     "acao": dd["acao"], "cria_ocorrencia": dd["cria_ocorrencia"],
-                    "motivo": dd["motivo"] + (f" (fonte: {dd['existing_source']})"
-                                              if dd["existing_source"] else ""),
+                    "nivel": _m.get("nivel", ""), "lag_dias": _m.get("lag", ""),
+                    "data_economica": data_econ,
+                    "occurrence_id": _m.get("occurrence_id", ""),
+                    "entidades_comuns": ", ".join(_m.get("entidades_comuns", [])),
+                    "rejeitados": len(dd.get("rejeitados") or []),
+                    "motivo": _cut(dd["motivo"], 220),
                 })
-
-                cand_do_ev = next((x for x in an["aceitos"] if x["event_id"] == ev), {})
+                for rj in (dd.get("rejeitados") or [])[:3]:
+                    dedup_rows.append({
+                        "emissor": nome, "tipo": "match_rejeitado",
+                        "accession": f["accession_number"], "duplicate_of": "",
+                        "form": f["form"], "event_id": ev, "acao": "rejeitado",
+                        "cria_ocorrencia": "", "nivel": "", "lag_dias": rj.get("lag", ""),
+                        "data_economica": data_econ,
+                        "occurrence_id": rj.get("occurrence_id", ""),
+                        "entidades_comuns": "", "rejeitados": "",
+                        "motivo": _cut(rj.get("motivo"), 220),
+                    })
                 row = {
                     "empresa_monitorada": nome,
                     "filer": f["company"],
@@ -276,8 +298,13 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
                     "motivo": _cut(veredito["motivo"], 200),
                     "accession": f["accession_number"],
                     "report_date": f["report_date"],
+                    "data_economica": data_econ,
                     "url": f["url"],
                     "corroboracao": dd["acao"],
+                    "nivel_match": _m.get("nivel", ""),
+                    "lag_dias": _m.get("lag", ""),
+                    "nao_pontuavel_por_forma": bool(
+                        cand_do_ev.get("nao_pontuavel_por_forma")),
                 }
                 class_rows.append(row)
 
@@ -302,14 +329,16 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
     _write_csv(out / "edgar_4h3c_classification.csv", class_rows, [
         "empresa_monitorada", "filer", "sujeito_economico", "evento", "form", "item",
         "evidencia", "confianca", "scoreable_simulado", "decisao_final", "motivo",
-        "accession", "report_date", "url", "corroboracao"])
+        "accession", "report_date", "data_economica", "url", "corroboracao",
+        "nivel_match", "lag_dias", "nao_pontuavel_por_forma"])
     _write_csv(out / "edgar_4h3c_false_positive_review.csv", fp_rows, [
         "empresa_monitorada", "filer", "sujeito_economico", "evento", "form", "item",
         "evidencia", "confianca", "scoreable_simulado", "decisao_final", "suspeita",
         "accession", "url"])
     _write_csv(out / "edgar_4h3c_dedup.csv", dedup_rows, [
         "emissor", "tipo", "accession", "duplicate_of", "form", "event_id",
-        "acao", "cria_ocorrencia", "motivo"])
+        "acao", "cria_ocorrencia", "nivel", "lag_dias", "data_economica",
+        "occurrence_id", "entidades_comuns", "rejeitados", "motivo"])
 
     hashes_depois = {f: _sha(f) for f in watch}
     alterados = [f for f in watch if hashes_antes[f] != hashes_depois[f]]
@@ -332,11 +361,26 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
         "eventos_informativos": sum(1 for r in class_rows
                                     if r["decisao_final"] == "informativo"),
         "falsos_positivos_para_revisao": len(fp_rows),
+        # ── métricas separadas (§6): pontuável nunca se mistura com informativo ──
+        "eventos_potencialmente_pontuaveis": sum(1 for r in class_rows
+                                                 if r["scoreable_simulado"]),
+        "falsos_positivos_pontuaveis": sum(1 for r in fp_rows
+                                           if r.get("scoreable_simulado")),
+        "pontuaveis_confirmados_verdadeiros": (
+            sum(1 for r in class_rows if r["scoreable_simulado"])
+            - sum(1 for r in fp_rows if r.get("scoreable_simulado"))),
+        "nao_pontuavel_por_forma": sum(1 for r in class_rows
+                                       if r.get("nao_pontuavel_por_forma")),
         "dedup_documentos_repetidos": sum(1 for r in dedup_rows
                                           if r["tipo"] == "documento_repetido"),
         "dedup_corroboracoes": sum(1 for r in dedup_rows if r["acao"] == "corroborar"),
+        "corroboracoes_nivel_1": sum(1 for r in dedup_rows if r.get("nivel") == 1),
+        "corroboracoes_nivel_2": sum(1 for r in dedup_rows if r.get("nivel") == 2),
+        "matches_rejeitados": sum(1 for r in dedup_rows if r["tipo"] == "match_rejeitado"),
         "dedup_novas_ocorrencias": sum(1 for r in dedup_rows
                                        if r["acao"] == "nova_ocorrencia"),
+        "lag_distribuicao": _lag_dist(dedup_rows),
+        "ocorrencias_conhecidas_na_janela": len(existentes),
         # invariantes duras
         "scoring_enabled": rd.edgar_scoring_enabled(cfg),
         "persisted_records": 0,
@@ -358,23 +402,42 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
     return meta
 
 
-def _occurrences_from_history(history: dict, rd) -> dict:
+def _lag_dist(dedup_rows: list[dict]) -> dict:
+    """Distribuição real de |lag| entre data econômica do filing e da notícia.
+    É o dado que justifica (ou não) a tolerância por família — nunca escolher
+    ±7/±14/±30 por gosto."""
+    d = {}
+    for r in dedup_rows:
+        lag = r.get("lag_dias")
+        if isinstance(lag, int):
+            d[abs(lag)] = d.get(abs(lag), 0) + 1
+    return dict(sorted(d.items()))
+
+
+def _occurrences_from_history(history: dict, rd, cutoff_ts: int = 0) -> list[dict]:
     """Ocorrências econômicas já conhecidas por Google News / RI / CVM.
 
-    Chave idêntica à de `ec.occurrence_key`, para que o EDGAR reconheça o
-    mesmo fato e CORROBORE em vez de criar ocorrência nova (invariante 6).
+    Cada ocorrência carrega a IMPRESSÃO DIGITAL de contraparte extraída do
+    título — é ela, não a data, que decide identidade econômica.
     """
-    out = {}
-    for rec in (history.get("articles") or {}).values():
+    out = []
+    for url, rec in (history.get("articles") or {}).items():
+        ts = int(rec.get("pub_ts") or 0)
+        if cutoff_ts and ts and ts < cutoff_ts:
+            continue
         data = str(rec.get("date") or "")[:10]
-        if not data:
-            ts = rec.get("pub_ts")
-            if ts:
-                data = datetime.fromtimestamp(int(ts), timezone.utc).strftime("%Y-%m-%d")
+        if not data and ts:
+            data = datetime.fromtimestamp(ts, timezone.utc).strftime("%Y-%m-%d")
+        titulo = rec.get("title") or ""
         for empresa, evs in (rec.get("events_by_company") or {}).items():
+            fp = ec.entity_fingerprint(titulo, exclude=[empresa])
             for ev in (evs or []):
-                out[f"{str(empresa).lower()}|{ev}|{data}"] = {
-                    "source": rec.get("source", ""), "url": rec.get("url", "")}
+                out.append({
+                    "company": empresa, "event_id": ev, "date": data,
+                    "fingerprint": fp, "source": rec.get("source", ""),
+                    "title": titulo[:120], "url": url,
+                    "occurrence_id": f"{empresa}|{ev}|{data}|{str(url)[-24:]}",
+                })
     return out
 
 
@@ -446,14 +509,21 @@ def _relatorio(meta, por_emissor, class_rows, fp_rows, dedup_rows) -> str:
         rec, just = "B", ("nenhum evento no período — pipeline estruturalmente correto, "
                           "sem falso positivo, mas sem massa para medir recall")
     elif pont == 0:
-        rec, just = "B", (f"{tot_evt} evento(s) classificado(s), NENHUM pontuável: o "
-                          f"EDGAR corrobora sem inflar risco. Confiável como fonte "
-                          f"oficial/corroborante; sem massa pontuável, não há base "
-                          f"para avaliar scoring.")
-    elif prec_pont >= 90:
+        # Bloquear TODO evento pontuável e depois exibir "zero falso positivo"
+        # não é evidência de qualidade — é ausência de medição. Nunca C aqui.
+        rec, just = "B", (
+            f"{tot_evt} evento(s) classificado(s) e NENHUM pontuável. Extração "
+            f"real estável ({cobertura_corpo:.0f}% de corpo) e atribuição correta, "
+            f"mas zero falso positivo depois de bloquear todos os pontuáveis é "
+            f"AUSÊNCIA DE MEDIÇÃO, não precisão. Sem massa pontuável verdadeira, "
+            f"C está descartado por construção.")
+    elif prec_pont >= 90 and pont >= 10:
         rec, just = "C", (f"precisão sobre PONTUÁVEIS {prec_pont:.1f}% ({pont - fp_pont}"
-                          f"/{pont}) com cobertura de corpo {cobertura_corpo:.0f}% — "
-                          f"candidato a avaliação futura de scoring")
+                          f"/{pont}, massa n={pont}) com cobertura de corpo "
+                          f"{cobertura_corpo:.0f}% — candidato a avaliação futura")
+    elif prec_pont >= 90:
+        rec, just = "B", (f"precisão sobre pontuáveis {prec_pont:.1f}%, mas massa "
+                          f"pequena demais (n={pont} < 10) para sustentar C")
     elif prec_pont >= 75:
         rec, just = "B", (f"precisão sobre pontuáveis {prec_pont:.1f}% — confiável como "
                           f"corroboração, insuficiente para score")
@@ -490,10 +560,20 @@ def _relatorio(meta, por_emissor, class_rows, fp_rows, dedup_rows) -> str:
         f"**{f'{prec_pont:.1f}%' if prec_pont is not None else 'n/a (nenhum pontuável)'}** |",
         f"| Precisão geral (diluída — NÃO usar para decidir scoring) | {prec_geral:.1f}% |",
         "",
-        "## Deduplicação", "",
+        "## Deduplicação e corroboração", "",
+        f"- Ocorrências conhecidas na janela (News/RI): **{meta['ocorrencias_conhecidas_na_janela']}**",
         f"- Documentos repetidos descartados: **{meta['dedup_documentos_repetidos']}**",
-        f"- Ocorrências corroboradas (já vistas por News/RI): **{meta['dedup_corroboracoes']}**",
-        f"- Ocorrências novas: **{meta['dedup_novas_ocorrencias']}**", "",
+        f"- **Corroborações nível 1** (contraparte + data compatível): "
+        f"**{meta['corroboracoes_nivel_1']}**",
+        f"- **Corroborações nível 2** (contraparte, data fora da tolerância): "
+        f"**{meta['corroboracoes_nivel_2']}**",
+        f"- **Matches rejeitados** (empresa+família sem contraparte comum): "
+        f"**{meta['matches_rejeitados']}**",
+        f"- Ocorrências novas: **{meta['dedup_novas_ocorrencias']}**",
+        f"- Não pontuável por forma (periódico): **{meta['nao_pontuavel_por_forma']}**",
+        "",
+        f"Distribuição de |lag| (dias entre data econômica do filing e da "
+        f"notícia): `{meta['lag_distribuicao'] or 'sem pares comparáveis'}`", "",
         "## Invariância de produção", "",
         f"- `scoring_enabled`: **{meta['scoring_enabled']}**",
         f"- `persisted_records`: **{meta['persisted_records']}**",
