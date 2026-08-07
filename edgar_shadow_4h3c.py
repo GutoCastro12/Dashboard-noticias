@@ -33,6 +33,7 @@ from pathlib import Path
 
 import edgar_canonical as ec
 import edgar_normalizer as en
+import edgar_sections as es
 
 ARTIFACTS = [
     "edgar_4h3c_por_emissor.csv",
@@ -145,7 +146,8 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
             "candidatos_evento": 0, "eventos_classificados": 0,
             "eventos_diretos": 0, "eventos_contextuais": 0, "eventos_informativos": 0,
             "rejeitados": 0, "motivo_rejeicao": "", "corpos_baixados": 0,
-            "erro_corpo": "", "chars_neutralizados": 0, "elapsed_ms": 0,
+            "erro_corpo": "", "chars_neutralizados": 0, "secoes": 0,
+            "sem_secao": 0, "elapsed_ms": 0,
         }
         cik10 = c.get("cik") or cikmap.get(str(c.get("ticker") or "").upper())
         if not cik10:
@@ -207,7 +209,12 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
             norm = en.normalize_edgar_semantic_text(texto, provenance="EDGAR")
             semantico = norm["semantic_text"]
             linha["chars_neutralizados"] += norm["stats"].get("chars_neutralizados", 0)
-            an = ec.analyze_filing(f, texto, semantico)
+            # 4H.3E: evidência escopada por seção econômica do filing.
+            _sec = es.evidence_sections(texto, form=f["form"], items=f["items"])
+            linha["secoes"] += len(_sec["sections"])
+            if _sec["cobertura"] == "documento_inteiro":
+                linha["sem_secao"] += 1
+            an = ec.analyze_filing(f, texto, semantico, sections=_sec["sections"])
 
             filings_rows.append({
                 "emissor": nome, "cik": f["cik"], "ticker": f["ticker"],

@@ -417,6 +417,32 @@ def is_boilerplate(text: str, start: int, end: int, raio: int = 220) -> bool:
     return bool(_BOILERPLATE.search(jan))
 
 
+def find_evidence_in_sections(text: str, event_id: str,
+                              sections: list[dict]) -> dict | None:
+    """Procura a âncora APENAS dentro das seções econômicas (4H.3E).
+
+    Restringir a busca é o ponto da fase: no run 31193786617 os falsos
+    positivos vinham de capa, assinatura, balanço e biografia — regiões que
+    não são seção econômica de nenhum filing.
+    """
+    if not sections:
+        return None
+    for s in sorted(sections, key=lambda x: (x.get("prioridade", 9),
+                                             x.get("start_offset", 0))):
+        a, b = s.get("start_offset", 0), s.get("end_offset", 0)
+        trecho = text[a:b]
+        achado = find_evidence(trecho, event_id)
+        if not achado:
+            continue
+        return {**achado,
+                "evidence_start": achado["evidence_start"] + a,
+                "evidence_end": achado["evidence_end"] + a,
+                "section_kind": s.get("kind", ""),
+                "section_item": s.get("item", ""),
+                "section_heading": s.get("heading", "")}
+    return None
+
+
 def find_evidence(text: str, event_id: str) -> dict | None:
     """Procura âncora textual do evento, IGNORANDO estrutura burocrática.
 
@@ -595,6 +621,17 @@ def candidate_events(filing: dict) -> list[dict]:
     return cands
 
 
+def _kinds_pontuaveis() -> frozenset:
+    try:
+        import edgar_sections as _es
+        return _es.KINDS_PONTUAVEIS
+    except Exception:
+        return frozenset({"item"})
+
+
+_KINDS_PONTUAVEIS = _kinds_pontuaveis()
+
+
 def _janela(raw: str, achado: dict | None) -> dict:
     """Janela LOCAL de evidência no BRUTO, com heading da seção (4H.3D §6)."""
     if not achado or not raw:
@@ -652,6 +689,21 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str,
                      **_janela(bruto, achado_p),
                      "motivo_decisao": (f"{filing.get('form')} é relatório periódico: "
                                         f"corrobora '{ev}', não prova fato novo")})
+        return base
+
+    # ── guarda de SEÇÃO, junto das demais guardas estruturais ──
+    # Precisa vir ANTES dos ramos por evento: colocada depois, o ramo de
+    # `troca_ceo` retornava primeiro e a manchete voltava a pontuar. É o mesmo
+    # erro de ordenação que deixou o CODM da Halliburton passar na 4H.3C.
+    # Só seção com estrutura garantida por regra da SEC sustenta pontuável.
+    _kind = _clean(candidate.get("section_kind"))
+    if ev in MATERIAL_EVENTS and _kind and _kind not in _KINDS_PONTUAVEIS:
+        base.update({"aceito": True, "decisao": "aceito_nao_pontuavel",
+                     "confianca": "baixa", "nao_pontuavel_por_forma": True,
+                     "section_kind": _kind,
+                     "motivo_decisao": (f"seção '{_kind}' é heurística de layout, "
+                                        f"não estrutura garantida pela SEC — "
+                                        f"corrobora '{ev}', não prova")})
         return base
 
     # 5.02 é, por definição, sobre administradores: a pergunta não é "o texto
@@ -748,14 +800,30 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str,
             base["motivo_decisao"] = "âncora de rebaixamento aparece NEGADA no texto"
             return base
 
+    # ── 4H.3E: fora de seção econômica não pontua ──
+    # A varredura livre do documento inteiro foi a origem de praticamente todo
+    # falso positivo do run 31193786617 (capa, assinatura, balanço, biografia).
+    # A âncora encontrada fora de item/release continua VISÍVEL como
+    # corroboração informativa, mas nunca sustenta evento pontuável.
+    if ev in MATERIAL_EVENTS and candidate.get("fora_de_secao"):
+        base.update({"aceito": True, "decisao": "aceito_nao_pontuavel",
+                     "confianca": "baixa", "nao_pontuavel_por_forma": True,
+                     "fora_de_secao": True,
+                     "motivo_decisao": (f"'{ev}' encontrado FORA de seção econômica "
+                                        f"({candidate.get('cobertura') or 'sem seção'}) "
+                                        f"— corrobora, não prova")})
+        return base
+
     conf = "alta" if forca == "forte" else ("alta" if item else "media")
     base.update({"aceito": True, "decisao": "aceito", "confianca": conf,
+                 "section_kind": candidate.get("section_kind", ""),
                  "motivo_decisao": f"evidência textual compatível com '{ev}'"})
     return base
 
 
 def analyze_filing(filing: dict, text: str = "",
-                   semantic_text: str | None = None) -> dict:
+                   semantic_text: str | None = None,
+                   sections: list[dict] | None = None) -> dict:
     """Pipeline canônico de um filing: candidatos → evidência → decisão.
 
     `text` é o BRUTO (`raw_document_text`); `semantic_text` é o derivado pelo
@@ -769,17 +837,40 @@ def analyze_filing(filing: dict, text: str = "",
     avaliados = [evaluate_candidate(filing, c, sem, raw=raw) for c in cands]
     aceitos = [a for a in avaliados if a["aceito"]]
 
-    # texto pode revelar evento material que o item não anunciou (ex.: 6-K)
+    # ── evento revelado pelo TEXTO (6-K não tem item; 8-K pode omitir) ──
+    # 4H.3E: procura primeiro DENTRO das seções econômicas. Só cai na varredura
+    # livre quando não há seção — e aí o candidato nasce marcado
+    # `fora_de_secao`, o que o impede de pontuar.
     ja = {a["event_id"] for a in avaliados if a.get("event_id")}
     for ev in sorted(MATERIAL_EVENTS):
         if ev in ja:
             continue
-        if not find_evidence(sem, ev):
+        achado, fora = None, False
+        if sections:
+            achado = find_evidence_in_sections(sem, ev, sections)
+        if not achado:
+            achado = find_evidence(sem, ev)
+            # "fora de seção" só faz sentido quando HOUVE segmentação. Sem
+            # `sections`, marcar tudo como fora penalizava a linha de base e
+            # tornava a comparação 4H.3D × 4H.3E inválida.
+            fora = bool(achado) and sections is not None
+        if not achado:
             continue
         extra = evaluate_candidate(filing, {
-            "event_id": ev, "item": "", "form": filing.get("form", ""),
-            "origem": "texto_do_documento", "forca": "candidato",
-            "motivo": f"âncora textual de '{ev}' sem item correspondente",
+            "event_id": ev, "item": achado.get("section_item", ""),
+            "form": filing.get("form", ""),
+            # a origem reflete de ONDE a evidência veio: só é "secao_*" quando
+            # a âncora foi de fato encontrada dentro de uma seção segmentada.
+            "origem": ("secao_" + achado["section_kind"]
+                       if achado.get("section_kind") else "texto_do_documento"),
+            "forca": "candidato",
+            "section_kind": achado.get("section_kind", ""),
+            "section_heading": achado.get("section_heading", ""),
+            "fora_de_secao": fora,
+            "cobertura": "documento_inteiro" if fora else "por_secao",
+            "motivo": f"âncora de '{ev}' em "
+                      + ("varredura livre" if fora
+                         else f"seção {achado.get('section_kind')}"),
         }, sem, raw=raw)
         avaliados.append(extra)
         if extra["aceito"]:
@@ -792,6 +883,11 @@ def analyze_filing(filing: dict, text: str = "",
         "event_ids": sorted({a["event_id"] for a in aceitos if a["event_id"]}),
         "tem_texto": bool(raw),
         "normalizado": semantic_text is not None,
+        "secoes": len(sections or []),
+        # `is not None`: houve segmentação, ainda que ela não tenha achado
+        # nenhuma seção. Usar truthiness confundia "não segmentado" com
+        # "segmentado e vazio" — e são coisas diferentes para a auditoria.
+        "escopo": "por_secao" if sections is not None else "documento_inteiro",
     }
 
 
