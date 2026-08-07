@@ -810,7 +810,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T15:24:56.268819+00:00"
+     "last_checked_at": "2026-08-07T00:57:20.867456+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2449,7 +2449,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T15:24:56.669064+00:00"
+     "last_checked_at": "2026-08-07T00:57:21.267780+00:00"
     }
    ],
    "corrob_sources": [
@@ -9240,7 +9240,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T15:24:57.069354+00:00"
+     "last_checked_at": "2026-08-07T00:57:21.668121+00:00"
     },
     {
      "source": "Demarest",
@@ -9260,7 +9260,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T15:24:57.469651+00:00"
+     "last_checked_at": "2026-08-07T00:57:22.068452+00:00"
     }
    ],
    "corrob_sources": [
@@ -10677,7 +10677,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T15:24:57.869883+00:00"
+     "last_checked_at": "2026-08-07T00:57:22.468759+00:00"
     }
    ],
    "corrob_sources": [
@@ -13865,7 +13865,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T15:24:58.440201+00:00"
+     "last_checked_at": "2026-08-07T00:57:23.077521+00:00"
     }
    ],
    "corrob_sources": [
@@ -16103,7 +16103,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T15:24:59.009284+00:00"
+     "last_checked_at": "2026-08-07T00:57:23.697894+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16209,7 +16209,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T15:24:59.582911+00:00"
+     "last_checked_at": "2026-08-07T00:57:24.308029+00:00"
     },
     {
      "source": "Moomoo",
@@ -17502,7 +17502,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T15:25:00.265972+00:00"
+     "last_checked_at": "2026-08-07T00:57:30.822203+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17545,7 +17545,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T15:25:00.944049+00:00"
+     "last_checked_at": "2026-08-07T00:57:38.701939+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -18383,7 +18383,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-06T15:25:01.522060+00:00",
+     "last_checked_at": "2026-08-07T00:57:39.307401+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -18408,7 +18408,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-06T15:25:02.086406+00:00",
+     "last_checked_at": "2026-08-07T00:57:39.909238+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19339,7 +19339,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-06T15:25:02.486701+00:00",
+     "last_checked_at": "2026-08-07T00:57:40.309578+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19404,7 +19404,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-06T15:25:02.886932+00:00",
+     "last_checked_at": "2026-08-07T00:57:40.709883+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20377,7 +20377,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T15:25:03.506881+00:00"
+     "last_checked_at": "2026-08-07T00:57:41.311220+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20462,7 +20462,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T15:25:04.095785+00:00"
+     "last_checked_at": "2026-08-07T00:57:41.919406+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22163,7 +22163,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-06T15:25:04.658842+00:00",
+     "last_checked_at": "2026-08-07T00:57:42.512477+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22333,7 +22333,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-06T15:25:05.235566+00:00",
+     "last_checked_at": "2026-08-07T00:57:43.113253+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -35719,7 +35719,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T15:25:05.936832+00:00"
+     "last_checked_at": "2026-08-07T00:57:51.800440+00:00"
     }
    ],
    "corrob_sources": [
@@ -38576,7 +38576,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T15:25:06.508803+00:00"
+     "last_checked_at": "2026-08-07T00:57:52.395748+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38619,7 +38619,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-06T15:25:07.076348+00:00"
+     "last_checked_at": "2026-08-07T00:57:52.992837+00:00"
     },
     {
      "source": "Virginia Business",
@@ -44276,9 +44276,28 @@
    "context_companies": [],
    "captured_ts": 1786029890,
    "cap_iso": "2026-08-06 12:24"
+  },
+  "https://www.marketwatch.com/story/trade-desk-shares-tumble-on-earnings-miss-and-weak-outlook-9f4640e9?mod=mw_rss_topstories": {
+   "title": "Trade Desk shares tumble on earnings miss and weak outlook",
+   "url": "https://www.marketwatch.com/story/trade-desk-shares-tumble-on-earnings-miss-and-weak-outlook-9f4640e9?mod=mw_rss_topstories",
+   "summary": "Trade Desk’s growth struggles deepened in the second quarter, as the company posted an earnings and revenue miss combined with disappointing guidance.",
+   "source": "MarketWatch · Top Stories",
+   "domain": "marketwatch.com",
+   "pub_ts": 1786057140,
+   "pub_iso": "2026-08-06 19:59",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "lucro_abaixo_consenso"
+   ],
+   "trust_override": "imprensa",
+   "captured_ts": 1786064197,
+   "cap_iso": "2026-08-06 21:56"
   }
  },
- "run_count": 81,
+ "run_count": 82,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -49162,8 +49181,8 @@
   }
  },
  "last_run": {
-  "ts": 1786029908,
-  "iso": "06 ago 2026 · 12:25 BRT",
+  "ts": 1786064273,
+  "iso": "06 ago 2026 · 21:57 BRT",
   "status": {
    "Engie Brasil": {
     "status": "critico",
@@ -49171,19 +49190,15 @@
    },
    "Rumo": {
     "status": "atencao",
-    "score": 71
+    "score": 70
    },
    "Vale": {
     "status": "atencao",
-    "score": 63
+    "score": 62
    },
    "JPMorgan Chase": {
     "status": "critico",
     "score": 61
-   },
-   "Tok&Stok": {
-    "status": "critico",
-    "score": 58
    },
    "CVS Health": {
     "status": "critico",
@@ -49193,20 +49208,24 @@
     "status": "atencao",
     "score": 58
    },
+   "Tok&Stok": {
+    "status": "critico",
+    "score": 57
+   },
    "Grupo Financiero Banorte": {
     "status": "critico",
-    "score": 50
+    "score": 49
    },
    "Cosan": {
     "status": "atencao",
-    "score": 46
-   },
-   "Smart Fit": {
-    "status": "atencao",
-    "score": 43
+    "score": 45
    },
    "Samarco Mineração": {
     "status": "critico",
+    "score": 42
+   },
+   "Smart Fit": {
+    "status": "atencao",
     "score": 42
    },
    "BTG Pactual": {
@@ -49235,7 +49254,7 @@
    },
    "Yobel": {
     "status": "monitorar",
-    "score": 32
+    "score": 31
    },
    "Banco do Brasil": {
     "status": "atencao",
@@ -49285,19 +49304,19 @@
     "status": "monitorar",
     "score": 19
    },
-   "Natura &Co": {
-    "status": "monitorar",
-    "score": 18
-   },
-   "EQT Corporation": {
-    "status": "monitorar",
-    "score": 18
-   },
    "Ultrapar": {
     "status": "atencao",
     "score": 17
    },
+   "Natura &Co": {
+    "status": "monitorar",
+    "score": 17
+   },
    "Albioma": {
+    "status": "monitorar",
+    "score": 17
+   },
+   "EQT Corporation": {
     "status": "monitorar",
     "score": 17
    },
