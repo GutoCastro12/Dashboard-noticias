@@ -245,16 +245,29 @@ def section_of(raw: str, pos: int) -> str:
 
 
 def evidence_window(raw: str, start: int, end: int, *,
-                    antes: int = 320, depois: int = 480) -> dict:
+                    antes: int = 320, depois: int = 480,
+                    limite: tuple[int, int] | None = None) -> dict:
     """Janela LOCAL de evidência ao redor da âncora, com heading da seção.
 
     Classificar a janela em vez dos 30 mil chars do filing inteiro elimina a
     interferência de boilerplate distante — que é o que gerava o falso
     positivo de troca de CEO a partir de divulgação de segmento.
+
+    `limite` (a,b), quando informado, TRAVA a janela dentro de uma seção
+    conhecida (ex.: os offsets do item_dom). Sem isso, uma âncora perto do
+    início de uma seção curta puxa `antes` chars para TRÁS da seção — achado
+    real: no 8-K da NextEra (0001104659-26-062992), a âncora de troca_ceo caiu
+    perto do início do corpo do 5.02, e a janela de 320 chars antes invadiu a
+    capa/checkbox anterior ("...Section 13(a) of the Exchange Act..."),
+    contaminando inclusive a extração de nome do executivo.
     """
     t = str(raw or "")
     a = max(0, start - antes)
     b = min(len(t), end + depois)
+    if limite is not None:
+        la, lb = limite
+        a = max(a, la)
+        b = min(b, lb)
     # não cortar palavra ao meio
     while a > 0 and t[a] not in " \n\t":
         a -= 1

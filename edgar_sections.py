@@ -78,7 +78,16 @@ MAX_SECAO = 6000        # teto por seção; releases longos viram várias janela
 # aparente e nenhum sobrevivente real na inspeção manual — o padrão casa runs
 # de palavras capitalizadas em capa e tabela. `ref_line` e `contents` são
 # assunto declarado pelo emissor, úteis como corroboração, fracos como prova.
-KINDS_PONTUAVEIS = frozenset({"item"})
+#
+# 4H.3F DEMOTE: mesmo o "item" textual desta lista foi rebaixado. O run
+# 31206358785 mostrou que 4/4 pontuáveis finais vinham de capa/assinatura —
+# `edgar_dom.py` prova que o texto achatado não preserva estrutura suficiente
+# para confiar no marcador "Item N.NN" sozinho (referência cruzada, template
+# sem negrito). A partir da 4H.3F, `edgar_canonical._KINDS_PONTUAVEIS` só
+# aceita `item_dom` (parser DOM real do HTML). Este módulo (texto plano)
+# permanece o caminho do 6-K, que nunca teve `kind="item"` — nada aqui muda de
+# comportamento para 6-K.
+KINDS_PONTUAVEIS = frozenset()
 
 
 def _limpa(s: str) -> str:

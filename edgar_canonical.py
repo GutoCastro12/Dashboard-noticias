@@ -125,7 +125,13 @@ EVENT_EVIDENCE: dict[str, list[str]] = {
     ],
     "ma": [
         r"merger", r"acquisi\w+", r"acquir\w+", r"business\s+combination",
-        r"purchase\s+agreement", r"stock\s+purchase", r"asset\s+purchase",
+        # "stock purchase"/"asset purchase" SEM "agreement" casa com "Employee
+        # Stock Purchase Plan" — benefício corporativo rotineiro votado em
+        # assembleia (achado real: Halliburton, item 5.07, pauta de votação
+        # anual). Exigir "agreement" no rastro, como já valia para
+        # "purchase agreement".
+        r"purchase\s+agreement", r"stock\s+purchase\s+agreement",
+        r"asset\s+purchase\s+agreement",
         r"divestit\w+", r"dispos\w+\s+of\s+\w*\s*assets", r"tender\s+offer",
         r"fus[ãa]o", r"aquisi[çc][ãa]o", r"incorpora[çc][ãa]o",
     ],
@@ -468,6 +474,8 @@ january february march april may june july august september october november
 december monday tuesday wednesday thursday friday saturday sunday the board
 company corporation inc ltd llc holdings group chief executive financial
 officer president director directors annual meeting effective on at as of and
+energy corp co plc partners capital financial group industries systems
+holdings technologies international national global bank trust
 """.split())
 
 
@@ -503,7 +511,47 @@ _FATO_CONSUMADO = re.compile(
     # legítima só porque a palavra "indenture" aparecia.
     r"|issued\s+(?:an\s+aggregate\s+)?\$[\d.,]+|has\s+issued\b"
     r"|(?:completed|priced|closed)\s+(?:an?\s+|its\s+)?(?:public\s+|private\s+)?offering"
-    r"|sold\s+\$[\d.,]+)\b", re.I)
+    r"|sold\s+\$[\d.,]+"
+    # mecânica-padrão de conclusão de fusão (linguagem de Delaware/DGCL,
+    # comum a praticamente todo Item 2.01 real): "at the effective time of the
+    # Merger... were canceled and extinguished and automatically converted
+    # into the right to receive $X in cash". É exatamente esse texto — do caso
+    # real Baker Hughes/Chart Industries — que a lista de ponto-e-vírgula
+    # descrevendo o tratamento de ações/opções/RSUs aciona `_LISTA_DENSA`
+    # (pensada para bullet de fator de risco). Sem esta âncora, o fato
+    # econômico mais limpo do corpus inteiro virava "hipotético".
+    r"|effective\s+time\s+of\s+the\s+merger|converted\s+into\s+the\s+right\s+to\s+receive"
+    r"|canceled\s+and\s+(?:extinguished|converted)"
+    # dívida REALMENTE contraída: "entered into (i) a term loan credit
+    # agreement" (Baker Hughes/Chart Industries, item 1.01) é fato consumado,
+    # não hipótese — mas "Credit Agreement"/"Term Loan" TAMBÉM estão em
+    # `_CONTRATUAL` (sinal de cláusula que DEFINE um contrato, não de fato).
+    # As duas listas colidem exatamente no caso mais comum de item 1.01/2.03:
+    # "the Company entered into a $X credit agreement/indenture/term loan".
+    # Sem esta âncora, o fato de dívida mais limpo do corpus virava hipótese.
+    r"|entered\s+into\s+(?:\([a-z0-9]+\)\s+)?(?:a|an|the)\s+(?:\$[\d.,]+\s+)?"
+    r"(?:term\s+loan|credit\s+agreement|indenture))\b", re.I)
+
+
+# Boilerplate de PLANO DE BENEFÍCIOS a funcionários (ESPP/LTIP, comum em
+# pauta de assembleia — item 5.07 — ou referenciado a partir do 5.02). Duas
+# ocorrências reais no corpus: Halliburton ("Employee Stock Purchase Plan"
+# batendo em "stock purchase") e Baker Hughes ("enabling employees to
+# **acquire** Company shares" batendo em "acquir\w+", a âncora mais ampla de
+# M&A). O padrão se repete: plano de incentivo/compra de ações para
+# funcionários usa exatamente o vocabulário de M&A para descrever mecânica
+# rotineira de remuneração.
+_PLANO_BENEFICIOS = re.compile(
+    r"\b(?:Employee\s+Stock\s+Purchase\s+Plan|ESPP|Long[- ]Term\s+Incentive\s+Plan"
+    r"|\bLTIP\b|Incentive\s+(?:Compensation\s+)?Plan|Stock\s+(?:Option|Award)\s+Plan"
+    r"|acquire\s+(?:Company\s+)?shares|shares\s+reserved\s+for\s+issuance"
+    r"|pay[- ]for[- ]performance)\b", re.I)
+
+
+def is_benefit_plan_boilerplate(trecho: str) -> bool:
+    """Mecânica de plano de remuneração/compra de ações a funcionários — não
+    é M&A mesmo citando 'acquire'/'stock purchase'."""
+    return bool(_PLANO_BENEFICIOS.search(str(trecho or "")))
 
 
 # Enumeração de FATORES DE RISCO / forward-looking: lista tudo que "poderia"
@@ -569,17 +617,30 @@ def analyze_officer_change(text: str) -> dict:
             return n.group(1)
         return ""
 
+    nome_saiu = _nome_perto(saida)
+    nome_entrou = _nome_perto(entrada)
+    # exige NOME extraído (não só cargo + verbo). Achado real: NextEra
+    # (0001104659-26-063001), item 1.01 — cláusula de governança CONDICIONAL
+    # de M&A ("NextEra Energy will cause the Board to... appoint...") tem
+    # cargo relevante ("Chief Executive Officer" citado alhures no texto) e
+    # verbo de entrada ("appoint"), mas nenhuma PESSOA — "quem_entrou" saía
+    # como "Dominion Energy" (uma empresa). Sem nome extraído, não é troca de
+    # executivo, é estrutura de governança futura/contingente.
+    tem_nome = bool(nome_saiu or nome_entrou)
+    suficiente = bool(top and (saida or entrada) and tem_nome)
     return {
         "cargo_relevante": top,
         "cargo_secundario": other and not top,
-        "quem_saiu": _nome_perto(saida),
-        "quem_entrou": _nome_perto(entrada),
+        "quem_saiu": nome_saiu,
+        "quem_entrou": nome_entrou,
         "tem_saida": bool(saida),
         "tem_entrada": bool(entrada),
-        "suficiente": bool(top and (saida or entrada)),
-        "motivo": ("ok" if top and (saida or entrada)
+        "suficiente": suficiente,
+        "motivo": ("ok" if suficiente
                    else "5.02 sem cargo CEO/CFO identificado" if not top
-                   else "5.02 sem verbo de saída/entrada identificado"),
+                   else "5.02 sem verbo de saída/entrada identificado" if not (saida or entrada)
+                   else "cargo e verbo presentes, mas nenhuma pessoa identificada "
+                        "(provável cláusula de governança, não troca real)"),
     }
 
 
@@ -589,8 +650,6 @@ def candidate_events(filing: dict) -> list[dict]:
     form = _clean(filing.get("form"))
     itens = filing.get("items") or []
     cands: list[dict] = []
-    vistos: set[str] = set()
-
     for it in itens:
         sem = ITEM_SEMANTICS.get(it)
         if not sem:
@@ -603,6 +662,13 @@ def candidate_events(filing: dict) -> list[dict]:
                           "origem": "item_generico", "forca": "generico",
                           "motivo": f"item {it} ({sem['label']}) não prova evento sozinho"})
             continue
+        # `vistos` é POR ITEM, não global. Achado real na 4H.3F: um 8-K
+        # multi-item (Baker Hughes/Chart Industries) declara 1.01 e 2.01, e
+        # ambos mapeiam "ma". Com dedup global, "ma" nascia em 1.01 e o 2.01 —
+        # exatamente o item cujo texto É "Completion of Acquisition", a prova
+        # textual de M&A mais limpa do corpus inteiro — nunca gerava candidato
+        # nenhum. O mesmo valia para 2.03/emissao_divida atrás de 1.01.
+        vistos: set[str] = set()
         for ev in sem["eventos"]:
             if ev in vistos:
                 continue
@@ -632,25 +698,27 @@ def _restrito(texto: str, a: int, b: int) -> str:
     return (" " * a) + t[a:b] + (" " * (len(t) - b))
 
 
-def _kinds_pontuaveis() -> frozenset:
-    try:
-        import edgar_sections as _es
-        return _es.KINDS_PONTUAVEIS
-    except Exception:
-        return frozenset({"item"})
+# 4H.3F: só seção confirmada pelo parser DOM (`edgar_dom.parse_8k_dom_sections`,
+# kind="item_dom") sustenta pontuável. O "item" textual da 4H.3E (edgar_sections)
+# é DEMOVIDO: a 4H.3E provou que ele engolia capa/assinatura quando o marcador
+# de item era referência cruzada ou vinha de template sem negrito — ver
+# edgar_dom.py para o porquê. Ele continua útil como corroboração/informativo.
+_KINDS_PONTUAVEIS = frozenset({"item_dom"})
 
 
-_KINDS_PONTUAVEIS = _kinds_pontuaveis()
+def _janela(raw: str, achado: dict | None,
+           limite: tuple[int, int] | None = None) -> dict:
+    """Janela LOCAL de evidência no BRUTO, com heading da seção (4H.3D §6).
 
-
-def _janela(raw: str, achado: dict | None) -> dict:
-    """Janela LOCAL de evidência no BRUTO, com heading da seção (4H.3D §6)."""
+    `limite`, quando informado, trava a janela dentro da seção (4H.3F) — ver
+    `edgar_normalizer.evidence_window`.
+    """
     if not achado or not raw:
         return {}
     try:
         import edgar_normalizer as _en
         return _en.evidence_window(raw, achado["evidence_start"],
-                                   achado["evidence_end"])
+                                   achado["evidence_end"], limite=limite)
     except Exception:
         return {}
 
@@ -666,6 +734,10 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str,
     item = _clean(candidate.get("item"))
     forca = _clean(candidate.get("forca"))
     bruto = raw if raw is not None else text
+    # trava a JANELA de exibição dentro da seção conhecida (4H.3F) — ver
+    # `_janela`/`edgar_normalizer.evidence_window`.
+    _bounds = candidate.get("section_bounds")
+    _body_bounds = candidate.get("section_body_bounds") or _bounds
     base = {
         **candidate,
         "evidence_text": "", "evidence_match": "",
@@ -697,7 +769,7 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str,
                      "confianca": "baixa", "nao_pontuavel_por_forma": True,
                      "evidence_text": achado_p["evidence_text"],
                      "evidence_match": achado_p["evidence_match"],
-                     **_janela(bruto, achado_p),
+                     **_janela(bruto, achado_p, _bounds),
                      "motivo_decisao": (f"{filing.get('form')} é relatório periódico: "
                                         f"corrobora '{ev}', não prova fato novo")})
         return base
@@ -733,13 +805,21 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str,
                                         f"corrobora '{ev}', não prova")})
         return base
 
-    # 5.02 é, por definição, sobre administradores: a pergunta não é "o texto
-    # fala de executivo?" e sim "é executivo RELEVANTE e houve movimento?".
-    # Avaliar antes da âncora genérica produz motivo de rejeição útil no CSV
-    # ("eleição de conselheiro") em vez de um "sem evidência" opaco.
-    if ev == "troca_ceo" and item == "5.02":
+    # troca_ceo é, por definição, sobre administradores: a pergunta não é "o
+    # texto fala de executivo?" e sim "é executivo RELEVANTE e houve
+    # movimento?". Aplica-se SEMPRE que o evento é troca_ceo — não só quando
+    # ele nasce do item 5.02. Achado real da 4H.3F: o 8-K da NextEra
+    # (0001104659-26-063001) tem troca_ceo candidatado a partir do item 1.01
+    # (M&A com a Dominion Energy) — a seção fala de "recommend that
+    # shareholders approve the Share Issuance" e cláusulas de governança pós-
+    # fusão, sem cargo nem movimento de executivo algum. Sem esta guarda
+    # generalizada, qualquer seção que mencione "Board"/"appoint" de raspão
+    # (comum em cláusula de governança de M&A) validava uma troca de CEO que
+    # não existe.
+    if ev == "troca_ceo":
         ach502 = find_evidence(text, ev)
-        jan502 = _janela(bruto, ach502)
+        # janela SEM o heading — ver `section_body_bounds` acima.
+        jan502 = _janela(bruto, ach502, _body_bounds)
         # análise de cargo na JANELA LOCAL, não no filing inteiro: rodar sobre
         # 60 mil chars fazia qualquer "appointed" distante validar o evento.
         det = analyze_officer_change(jan502.get("evidence_text") or text)
@@ -774,7 +854,7 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str,
             "confianca": "alta" if achado else "media",
             "evidence_text": (achado or {}).get("evidence_text", f"item 1.03 ({filing.get('form')})"),
             "evidence_match": (achado or {}).get("evidence_match", "item 1.03"),
-            **_janela(bruto, achado),
+            **_janela(bruto, achado, _bounds),
             "motivo_decisao": "item 1.03 é o próprio fato jurídico",
         })
         return base
@@ -784,13 +864,25 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str,
                                   f"({'corpo não recuperado' if not text else 'âncora ausente no texto'})")
         return base
 
-    janela = _janela(bruto, achado)
+    janela = _janela(bruto, achado, _bounds)
     base.update({"evidence_text": achado["evidence_text"],
                  "evidence_match": achado["evidence_match"], **janela})
 
+    _evid_txt = janela.get("evidence_text") or achado["evidence_text"]
+
+    # plano de remuneração/compra de ações a funcionários usa vocabulário de
+    # M&A ("acquire shares", "stock purchase") para descrever mecânica
+    # rotineira — nunca é evento pontuável.
+    if ev in MATERIAL_EVENTS and is_benefit_plan_boilerplate(_evid_txt):
+        base.update({"aceito": True, "decisao": "aceito_nao_pontuavel",
+                     "confianca": "baixa", "nao_pontuavel_por_forma": True,
+                     "motivo_decisao": (f"'{ev}' aparece em boilerplate de plano de "
+                                        f"remuneração/compra de ações a funcionários "
+                                        f"— não é evento corporativo")})
+        return base
+
     # cláusula de contrato descrevendo hipótese ≠ fato ocorrido
-    if ev in MATERIAL_EVENTS and is_contractual(
-            janela.get("evidence_text") or achado["evidence_text"]):
+    if ev in MATERIAL_EVENTS and is_contractual(_evid_txt):
         base.update({"aceito": True, "decisao": "aceito_nao_pontuavel",
                      "confianca": "baixa", "nao_pontuavel_por_forma": True,
                      "contexto_contratual": True,
@@ -799,18 +891,9 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str,
                                         f"— não é fato ocorrido")})
         return base
 
-    # 5.02 exige detalhe de cargo + movimento
-    if ev == "troca_ceo":
-        det = analyze_officer_change(janela.get("evidence_text") or text)
-        base["officer_detail"] = det
-        if not det["suficiente"]:
-            base["motivo_decisao"] = det["motivo"]
-            return base
-        base.update({"aceito": True, "decisao": "aceito", "confianca": "alta",
-                     "motivo_decisao": (f"cargo relevante + movimento "
-                                        f"(saiu={det['quem_saiu'] or '?'}, "
-                                        f"entrou={det['quem_entrou'] or '?'})")})
-        return base
+    # troca_ceo já retornou na guarda estrutural acima (sempre exige
+    # analyze_officer_change, qualquer que seja o item/origem) — nunca chega
+    # aqui.
 
     # rating: "reafirmado/mantido" NÃO é downgrade — e "did not downgrade"
     # tampouco. Âncora negada é falso positivo clássico.
@@ -862,13 +945,37 @@ def analyze_filing(filing: dict, text: str = "",
     for c in cands:
         alvo = sem
         if sections is not None and c.get("item"):
+            # 4H.3F: aceita tanto "item_dom" (parser DOM real do HTML, único
+            # kind em `_KINDS_PONTUAVEIS`) quanto "item" (texto plano da
+            # 4H.3E, mantido para 6-K/fallback, nunca pontuável). Buscar só
+            # "item" aqui era um bug: nunca casava com seção DOM nenhuma, e a
+            # 4H.3F inteira ficaria sem efeito.
             sec = next((s for s in sections
-                        if s.get("kind") == "item" and s.get("item") == c["item"]),
+                        if s.get("kind") in ("item_dom", "item")
+                        and s.get("item") == c["item"]),
                        None)
             if sec:
-                alvo = _restrito(sem, sec["start_offset"], sec["end_offset"])
-                c = {**c, "section_kind": "item",
-                     "section_heading": sec.get("heading", "")}
+                # a BUSCA de âncora começa depois do heading (boilerplate da
+                # SEC, ver edgar_dom.py); a EXIBIÇÃO de evidência continua
+                # livre para citar qualquer trecho do documento via `_janela`.
+                busca_a = sec.get("body_start_offset", sec["start_offset"])
+                alvo = _restrito(sem, busca_a, sec["end_offset"])
+                c = {**c, "section_kind": sec.get("kind", "item"),
+                     "section_heading": sec.get("heading", ""),
+                     # trava a JANELA de exibição/nome dentro da seção — sem
+                     # isto, o padding de `_janela` (320 chars antes) pode
+                     # ultrapassar o início da seção e puxar capa/checkbox
+                     # anterior para dentro da evidência exibida.
+                     "section_bounds": (sec["start_offset"], sec["end_offset"]),
+                     # bounds SEM o heading — o título do item ("Departure of
+                     # Directors or Certain Officers...") contém "Departure"
+                     # (casa com o verbo de saída) e "Certain Officers"
+                     # (parece nome próprio para o extrator ingênuo). A
+                     # análise de cargo/movimento do 5.02 precisa do corpo,
+                     # nunca do título.
+                     "section_body_bounds": (sec.get("body_start_offset",
+                                                     sec["start_offset"]),
+                                             sec["end_offset"])}
             else:
                 # O metadata da SEC declara o item, mas o texto extraído não
                 # tem a seção correspondente — a estrutura de items não

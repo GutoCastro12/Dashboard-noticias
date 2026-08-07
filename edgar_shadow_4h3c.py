@@ -34,6 +34,7 @@ from pathlib import Path
 import edgar_canonical as ec
 import edgar_normalizer as en
 import edgar_sections as es
+import edgar_dom as ed
 
 ARTIFACTS = [
     "edgar_4h3c_por_emissor.csv",
@@ -42,6 +43,7 @@ ARTIFACTS = [
     "edgar_4h3c_classification.csv",
     "edgar_4h3c_false_positive_review.csv",
     "edgar_4h3c_dedup.csv",
+    "edgar_4h3f_exhibits.csv",
     "relatorio_edgar_4h3c.md",
     "edgar_4h3c_run_meta.json",
 ]
@@ -130,7 +132,7 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
         return r.text
 
     por_emissor, filings_rows, cand_rows = [], [], []
-    class_rows, fp_rows, dedup_rows = [], [], []
+    class_rows, fp_rows, dedup_rows, exhibit_rows = [], [], [], []
     todos_filings: list[dict] = []
 
     # ocorrências já conhecidas por OUTRAS fontes (Google News / RI / CVM)
@@ -147,7 +149,8 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
             "eventos_diretos": 0, "eventos_contextuais": 0, "eventos_informativos": 0,
             "rejeitados": 0, "motivo_rejeicao": "", "corpos_baixados": 0,
             "erro_corpo": "", "chars_neutralizados": 0, "secoes": 0,
-            "sem_secao": 0, "elapsed_ms": 0,
+            "sem_secao": 0, "items_missing_in_dom": 0, "items_extra_in_dom": 0,
+            "divergencias_dom": 0, "elapsed_ms": 0,
         }
         cik10 = c.get("cik") or cikmap.get(str(c.get("ticker") or "").upper())
         if not cik10:
@@ -193,24 +196,74 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
 
         corpos = 0
         for f in unicos:
-            texto, erros_corpo = "", []
+            # 4H.3F: o HTML BRUTO é buscado uma vez e preservado — a 4H.3E
+            # descartava exatamente isso dentro de fetch_document_text
+            # (`raw = fetcher(url); ...; return strip_html(raw)`). Sem o HTML,
+            # não há como o parser DOM diferenciar heading de referência
+            # cruzada nem excluir conteúdo `display:none`.
+            texto, erros_corpo, raw_html = "", [], ""
             if corpos < MAX_BODIES_PER_COMPANY and f.get("url"):
-                texto = ec.fetch_document_text(f["url"], _body,
-                                               max_chars=MAX_BODY_CHARS,
-                                               errors=erros_corpo)
+                try:
+                    raw_html = _body(f["url"])
+                except Exception as exc:
+                    erros_corpo.append(f"{type(exc).__name__}: {str(exc)[:160]}")
+                if raw_html:
+                    texto = ec.strip_html(raw_html)[:MAX_BODY_CHARS]
                 if texto:
                     corpos += 1
-                elif not linha["erro_corpo"]:
-                    linha["erro_corpo"] = _cut(erros_corpo[0] if erros_corpo else "", 160)
+                elif not erros_corpo:
+                    erros_corpo.append("resposta vazia")
+                if not linha["erro_corpo"] and erros_corpo:
+                    linha["erro_corpo"] = _cut(erros_corpo[0], 160)
                 if fetcher is None:
                     time.sleep(1.0 / rps)
-            # 4H.3D: normalização SOURCE-AWARE. O bruto segue intocado; a
-            # classificação roda sobre o semântico.
+            # 4H.3F: 8-K usa o parser DOM real do HTML (headings confirmados
+            # por negrito ou por serem o primeiro conteúdo do bloco — ver
+            # edgar_dom.py). Demais formulários mantêm o escopo textual da
+            # 4H.3E: 6-K nunca teve bug real comprovado, não reescrever.
+            #
+            # ATENÇÃO A COORDENADAS: as seções do DOM guardam offsets no
+            # espaço de `doc.flat_text` (texto visível, ordem do DOM, hidden
+            # excluído) — NUNCA em raw_html (tags mudam todos os índices) nem
+            # no `texto` de strip_html (outra extração, outro comprimento).
+            # Por isso, quando o DOM está disponível, `doc.flat_text` PASSA A
+            # SER o `texto`/bruto deste filing — é o único jeito de
+            # `_restrito`/`_janela` (que fatiam por índice) citarem o trecho
+            # certo. Sem isso, a evidência exibida sairia de posição aleatória.
+            items_meta_dom = items_dom_found = items_missing_dom = items_extra_dom = []
+            if f["form"] == "8-K" and raw_html:
+                _dom = ed.parse_8k_dom_sections(raw_html, items_metadata=f["items"])
+                if _dom["doc"] is not None and _dom["doc"].flat_text:
+                    texto = _dom["doc"].flat_text
+                _sec = {"sections": _dom["sections"],
+                        "cobertura": "por_dom" if _dom["sections"] else "documento_inteiro"}
+                items_meta_dom = _dom["items_metadata"]
+                items_dom_found = _dom["items_dom_found"]
+                items_missing_dom = _dom["items_missing_in_dom"]
+                items_extra_dom = _dom["items_extra_in_dom"]
+                linha["items_missing_in_dom"] += len(items_missing_dom)
+                linha["items_extra_in_dom"] += len(items_extra_dom)
+                if items_missing_dom or items_extra_dom:
+                    linha["divergencias_dom"] += 1
+                # exhibits citados DENTRO de uma seção (nunca do índice) — só
+                # registrados aqui; não baixados nesta fase (§9, escopo).
+                for _s in _dom["sections"]:
+                    for _ex in ed.referenced_exhibits(_s):
+                        exhibit_rows.append({
+                            "emissor": nome, "accession": f["accession_number"],
+                            "exhibit_number": _ex["exhibit_number"],
+                            "referenced_by_item": _ex["referenced_by_item"],
+                            "evidence_used": _cut(_ex["evidence_used"], 160),
+                        })
+            else:
+                _sec = es.evidence_sections(texto, form=f["form"], items=f["items"])
+            # 4H.3D: normalização SOURCE-AWARE, sobre o `texto` FINAL (já
+            # trocado por `doc.flat_text` acima quando o DOM está disponível —
+            # precisa vir depois da troca, ou o semântico e as seções ficariam
+            # em espaços de coordenadas diferentes). O bruto segue intocado.
             norm = en.normalize_edgar_semantic_text(texto, provenance="EDGAR")
             semantico = norm["semantic_text"]
             linha["chars_neutralizados"] += norm["stats"].get("chars_neutralizados", 0)
-            # 4H.3E: evidência escopada por seção econômica do filing.
-            _sec = es.evidence_sections(texto, form=f["form"], items=f["items"])
             linha["secoes"] += len(_sec["sections"])
             if _sec["cobertura"] == "documento_inteiro":
                 linha["sem_secao"] += 1
@@ -224,6 +277,10 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
                 "primary_document": f["primary_document"], "url": f["url"],
                 "corpo_recuperado": bool(texto), "corpo_chars": len(texto),
                 "erro_corpo": _cut(erros_corpo[0] if erros_corpo else "", 160),
+                "items_metadata": ",".join(items_meta_dom),
+                "items_dom_found": ",".join(items_dom_found),
+                "items_missing_in_dom": ",".join(items_missing_dom),
+                "items_extra_in_dom": ",".join(items_extra_dom),
                 "titulo_canonico": _cut(ec.canonical_title(f), 200),
                 "eventos_aceitos": ",".join(an["event_ids"]),
             })
@@ -239,6 +296,7 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
                     "confianca": cand.get("confianca", ""),
                     "motivo": _cut(cand.get("motivo_decisao") or cand.get("motivo"), 200),
                     "evidencia": _cut(cand.get("evidence_text"), 200),
+                    "section_kind": cand.get("section_kind", ""),
                 })
                 if not cand.get("aceito"):
                     linha["rejeitados"] += 1
@@ -318,6 +376,7 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
                     "lag_dias": _m.get("lag", ""),
                     "nao_pontuavel_por_forma": bool(
                         cand_do_ev.get("nao_pontuavel_por_forma")),
+                    "section_kind": cand_do_ev.get("section_kind", ""),
                 }
                 class_rows.append(row)
 
@@ -335,15 +394,17 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
     _write_csv(out / "edgar_4h3c_filings.csv", filings_rows, [
         "emissor", "cik", "ticker", "form", "accession", "filing_date", "report_date",
         "items", "description", "primary_document", "url", "corpo_recuperado",
-        "corpo_chars", "erro_corpo", "titulo_canonico", "eventos_aceitos"])
+        "corpo_chars", "erro_corpo", "titulo_canonico", "eventos_aceitos",
+        "items_metadata", "items_dom_found", "items_missing_in_dom",
+        "items_extra_in_dom"])
     _write_csv(out / "edgar_4h3c_event_candidates.csv", cand_rows, [
         "emissor", "form", "accession", "item", "event_id", "origem", "forca",
-        "aceito", "confianca", "motivo", "evidencia"])
+        "aceito", "confianca", "motivo", "evidencia", "section_kind"])
     _write_csv(out / "edgar_4h3c_classification.csv", class_rows, [
         "empresa_monitorada", "filer", "sujeito_economico", "evento", "form", "item",
         "evidencia", "confianca", "scoreable_simulado", "decisao_final", "motivo",
         "accession", "report_date", "data_economica", "url", "corroboracao",
-        "nivel_match", "lag_dias", "nao_pontuavel_por_forma"])
+        "nivel_match", "lag_dias", "nao_pontuavel_por_forma", "section_kind"])
     _write_csv(out / "edgar_4h3c_false_positive_review.csv", fp_rows, [
         "empresa_monitorada", "filer", "sujeito_economico", "evento", "form", "item",
         "evidencia", "confianca", "scoreable_simulado", "decisao_final", "suspeita",
@@ -352,12 +413,15 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
         "emissor", "tipo", "accession", "duplicate_of", "form", "event_id",
         "acao", "cria_ocorrencia", "nivel", "lag_dias", "data_economica",
         "occurrence_id", "entidades_comuns", "rejeitados", "motivo"])
+    _write_csv(out / "edgar_4h3f_exhibits.csv", exhibit_rows, [
+        "emissor", "accession", "exhibit_number", "referenced_by_item",
+        "evidence_used"])
 
     hashes_depois = {f: _sha(f) for f in watch}
     alterados = [f for f in watch if hashes_antes[f] != hashes_depois[f]]
 
     meta = {
-        "fase": "4H.3C",
+        "fase": "4H.3F",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "janela_dias": janela,
         "universo_elegivel": len(alvos),
@@ -402,6 +466,16 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
         "bloqueados_por_ano_antigo_sec": sum(
             1 for r in class_rows
             if "ano_antigo_citado:193" in str(r.get("motivo", ""))),
+        # ── 4H.3F: parser DOM do 8-K (§6/§19) ──
+        "filings_8k_com_dom": sum(1 for r in filings_rows
+                                  if r["form"] == "8-K" and r["items_dom_found"]),
+        "items_missing_in_dom": sum(l["items_missing_in_dom"] for l in por_emissor),
+        "items_extra_in_dom": sum(l["items_extra_in_dom"] for l in por_emissor),
+        "filings_com_divergencia_dom": sum(l["divergencias_dom"] for l in por_emissor),
+        "exhibits_referenciados": len(exhibit_rows),
+        "eventos_pontuaveis_via_item_dom": sum(
+            1 for r in class_rows
+            if r["scoreable_simulado"] and r.get("section_kind") == "item_dom"),
         # invariantes duras
         "scoring_enabled": rd.edgar_scoring_enabled(cfg),
         "persisted_records": 0,
@@ -614,7 +688,20 @@ def _relatorio(meta, por_emissor, class_rows, fp_rows, dedup_rows) -> str:
         f"**{f'{prec_pont:.1f}%' if prec_pont is not None else 'n/a (nenhum pontuável)'}** |",
         f"| Precisão geral (diluída — NÃO usar para decidir scoring) | {prec_geral:.1f}% |",
         "",
-        "## Deduplicação e corroboração", "",
+        "## Parser DOM do 8-K (4H.3F)", "",
+        "| Métrica | Valor |", "|---|---|",
+        f"| 8-K com seções confirmadas pelo DOM | {meta.get('filings_8k_com_dom', 0)} |",
+        f"| Items declarados no metadata sem seção no DOM | "
+        f"{meta.get('items_missing_in_dom', 0)} |",
+        f"| Items achados no DOM sem estar no metadata | "
+        f"{meta.get('items_extra_in_dom', 0)} |",
+        f"| Filings com alguma divergência metadata × DOM | "
+        f"{meta.get('filings_com_divergencia_dom', 0)} |",
+        f"| Exhibits referenciados (não baixados nesta fase) | "
+        f"{meta.get('exhibits_referenciados', 0)} |",
+        f"| Eventos pontuáveis com evidência `item_dom` | "
+        f"{meta.get('eventos_pontuaveis_via_item_dom', 0)} |",
+        "", "## Deduplicação e corroboração", "",
         f"- Ocorrências conhecidas na janela (News/RI): **{meta['ocorrencias_conhecidas_na_janela']}**",
         f"- Documentos repetidos descartados: **{meta['dedup_documentos_repetidos']}**",
         f"- **Corroborações nível 1** (contraparte + data compatível): "

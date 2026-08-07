@@ -8,6 +8,7 @@ __pycache__/
 # Saídas de diagnóstico do 4H.3C (o artifact do Actions é a fonte oficial).
 out_4h3c/
 out_4h3d/
+out_4h3f/
 
 # Config candidato: é GERADO a partir de config_risco.yaml, nunca versionado,
 # para não virar uma segunda fonte de verdade ao lado do config de produção.

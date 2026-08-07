@@ -115,8 +115,13 @@ def t05_periodico_sem_secao():
 
 def t06_so_item_pontua():
     print("\n[6] Só seção com estrutura garantida pela SEC pode pontuar")
-    check(es.KINDS_PONTUAVEIS == frozenset({"item"}),
-          "apenas 'item' é elegível a pontuar")
+    # 4H.3F DEMOTE: o "item" textual desta fase (edgar_sections, texto plano)
+    # foi rebaixado — o run 31206358785 mostrou 4/4 pontuáveis finais vindos
+    # de capa/assinatura. A partir da 4H.3F, nenhum kind deste módulo pontua;
+    # só `item_dom` (edgar_dom.py, parser real do HTML) sustenta pontuável —
+    # ver test_edgar_4h3f.py.
+    check(es.KINDS_PONTUAVEIS == frozenset(),
+          "nenhum kind de edgar_sections (texto plano) pontua mais")
     raw = ("FORM 6-K Company Announces Major Acquisition Of Target Corporation Today\n"
            "The company completed the acquisition of Target Corporation.")
     an, secs = _pipe(raw, form="6-K")
@@ -141,14 +146,19 @@ def t07_fora_de_secao_nao_pontua():
 
 
 def t08_item_real_continua_pontuando():
-    print("\n[8] Item 8-K legítimo continua pontuando (não virou regra cega)")
+    print("\n[8] Item 8-K via TEXTO reconhece o evento, mas não pontua mais")
+    # 4H.3F DEMOTE: até a 4H.3E este caso pontuava (kind="item" textual). A
+    # partir da 4H.3F, só `item_dom` (edgar_dom.py) sustenta pontuável — este
+    # teste passa a documentar o novo piso: reconhecido, porém informativo.
+    # O caso equivalente PONTUÁVEL com parser DOM está em test_edgar_4h3f.py.
     raw = (CAPA + "Item 2.03 Creation of a Direct Financial Obligation. On July 20, "
            "2026, the Company issued $1.5 billion aggregate principal amount of "
            "5.250% senior notes due 2034.")
     an, _ = _pipe(raw, form="8-K", items=["2.03"])
     a = next((c for c in an["aceitos"] if c["event_id"] == "emissao_divida"), None)
     check(a is not None, "emissão reconhecida")
-    check(a and not a.get("nao_pontuavel_por_forma"), "e continua PONTUÁVEL")
+    check(a and a.get("nao_pontuavel_por_forma"),
+          "mas NÃO pontua mais via item textual (só item_dom pontua)")
 
 
 def t09_offsets_validos_no_bruto():

@@ -53,7 +53,9 @@ jobs:
         run: |
           python -m py_compile risk_dashboard.py semantic_audit.py \
                  link_debt_audit.py coverage_diagnosis.py \
-                 edgar_canonical.py edgar_shadow_4h3c.py test_edgar_4h3c.py
+                 edgar_canonical.py edgar_normalizer.py edgar_sections.py \
+                 edgar_dom.py edgar_shadow_4h3c.py edgar_gold_4h3f.py \
+                 edgar_replay_4h3f.py test_edgar_4h3c.py test_edgar_4h3f.py
           for t in test_*.py; do
             echo "── $t ──"
             python "$t"
@@ -175,6 +177,7 @@ jobs:
             out_4h3c/edgar_4h3c_classification.csv
             out_4h3c/edgar_4h3c_false_positive_review.csv
             out_4h3c/edgar_4h3c_dedup.csv
+            out_4h3c/edgar_4h3f_exhibits.csv
             out_4h3c/relatorio_edgar_4h3c.md
             out_4h3c/edgar_4h3c_run_meta.json
             out_4h3c/hashes_antes.txt
