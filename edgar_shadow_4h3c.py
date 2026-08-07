@@ -482,8 +482,30 @@ def _atribuir(rd, cfg, art: dict, monitorada: str, event_id: str) -> dict:
                 "motivo": f"falha na atribuição semântica: {type(exc).__name__}"}
 
 
+# Resíduo ESTRUTURAL na evidência. Sem isto o detector de falso positivo mente:
+# no run 31193376631 ele reportou `falsos_positivos_pontuaveis: 0` enquanto a
+# inspeção manual dos 37 pontuáveis mostrava capa, bloco de assinatura, sumário,
+# linha de balanço e bullet de fator de risco como "evidência". Métrica que não
+# enxerga o defeito é pior que métrica ausente.
+_RESIDUO_ESTRUTURAL = __import__("re").compile(
+    r"indicate\s+by\s+check\s+mark|emerging\s+growth\s+company"
+    r"|SECURITIES\s+REGISTERED\s+PURSUANT|Form\s+20-F|Form\s+40-F"
+    r"|TABLE\s+OF\s+CONTENTS|duly\s+caused\s+this\s+report"
+    r"|Name:\s|Title:\s|Co-Registrant|Commission\s+File"
+    r"|CFR\s+2\d0\.|Exchange\s+Act\b|extended\s+transition\s+period"
+    r"|Notes\s+to\s+the\s+(?:condensed|consolidated)|statements\s+of\s+cash\s+flows"
+    r"|per\s+common\s+share|Non-controlling\s+interests"
+    r"|(?:\s\(?\d[\d.,]{2,}\)?){4,}"          # linha de tabela numérica
+    r"|(?:•[^•]{5,90}){2,}",                  # lista de bullets (fatores de risco)
+    __import__("re").I)
+
+
 def _suspeito(veredito: dict, cand: dict, filing: dict, texto: str) -> str:
     """Heurísticas de FALSO POSITIVO para revisão humana."""
+    if veredito["scoreable"] and _RESIDUO_ESTRUTURAL.search(
+            str(cand.get("evidence_text") or "")):
+        return ("evidência é resíduo ESTRUTURAL do documento (capa, assinatura, "
+                "sumário, tabela ou bullet de risco), não relato de fato")
     if veredito["scoreable"] and not texto:
         return "evento pontuável sem corpo do documento recuperado"
     if veredito["scoreable"] and cand.get("confianca") in ("baixa", "nenhuma", ""):
