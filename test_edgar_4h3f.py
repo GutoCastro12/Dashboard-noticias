@@ -25,6 +25,7 @@ bugs REAIS encontrados no corpus de 79 8-K (não hipotéticos):
 from __future__ import annotations
 
 import re
+from pathlib import Path
 
 import risk_dashboard as rd
 import edgar_dom as ed
@@ -322,7 +323,7 @@ def t22_shadow_nao_altera_producao():
     print("\n[22] Shadow (com DOM) não altera produção")
     import edgar_shadow_4h3c as sh
     import tempfile
-    cfg = rd.load_config(r"fixtures_4h3b\config_teste.yaml")
+    cfg = rd.load_config(str(Path(__file__).parent / "fixtures_4h3b" / "config_teste.yaml"))
     cfg["international_official_sources_enabled"] = True
     cfg.setdefault("official_sources", {}).setdefault("EUA", {})["enabled"] = True
     cfg["edgar_scoring_enabled"] = False
