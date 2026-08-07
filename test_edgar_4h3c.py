@@ -408,6 +408,30 @@ def t20_shadow_nao_altera_historico():
               "artifacts de sombra gravados em diretório separado")
 
 
+def t22_headers_dos_archives():
+    print("\n[22] REGRESSÃO — Archives nunca recebe Host=data.sec.gov")
+    h = ec.archive_headers(rd._EDGAR_UA)
+    check("Host" not in h,
+          "archive_headers NÃO envia Host (data.sec.gov roteia para o bucket errado)")
+    check(h.get("User-Agent") == rd._EDGAR_UA, "User-Agent identificável preservado")
+    check("Host" in rd._edgar_headers() and
+          rd._edgar_headers()["Host"] == "data.sec.gov",
+          "a API de submissions continua exigindo Host=data.sec.gov (não regredir)")
+    check(ec.archive_headers("x") != rd._edgar_headers(),
+          "os dois conjuntos de headers são distintos por construção")
+
+    # falha de corpo precisa ser REGISTRADA, nunca silenciosa
+    erros = []
+    def _boom(url):
+        raise RuntimeError("404 NoSuchKey")
+    txt = ec.fetch_document_text("https://www.sec.gov/x.htm", _boom, errors=erros)
+    check(txt == "", "falha devolve texto vazio (nunca evento presumido)")
+    check(erros and "NoSuchKey" in erros[0], f"motivo registrado: {erros[0] if erros else '—'}")
+    erros2 = []
+    ec.fetch_document_text("https://www.sec.gov/x.htm", lambda u: "", errors=erros2)
+    check(erros2 == ["resposta vazia"], "resposta vazia também é registrada")
+
+
 def t21_orquestrador_offline():
     print("\n[21] Orquestrador 4H.3C roda offline e prova invariância")
     import edgar_shadow_4h3c as sh3c
@@ -465,7 +489,8 @@ TESTES = [t01_parser_preserva_items, t02_parser_preserva_report_date,
           t15_duplicacao_por_accession, t16_dedup_edgar_x_noticia,
           t17_dedup_edgar_x_ri, t18_filer_nao_vira_sujeito,
           t19_scoring_desligado_impede_persistencia,
-          t20_shadow_nao_altera_historico, t21_orquestrador_offline]
+          t20_shadow_nao_altera_historico, t21_orquestrador_offline,
+          t22_headers_dos_archives]
 
 
 def main():

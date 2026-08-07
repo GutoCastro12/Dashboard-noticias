@@ -347,22 +347,47 @@ def strip_html(raw: str) -> str:
     return s.strip()
 
 
-def fetch_document_text(url: str, fetcher, *, max_chars: int = 60000) -> str:
+def archive_headers(user_agent: str) -> dict:
+    """Headers para `www.sec.gov/Archives/...`.
+
+    NÃO reaproveitar `risk_dashboard._edgar_headers()` aqui: aquele fixa
+    `Host: data.sec.gov`, correto para a API de submissions e ERRADO para os
+    Archives — a requisição é roteada para o bucket errado e volta
+    `404 NoSuchKey`. Isso derrubou o primeiro ciclo real da 4H.3C (run
+    31142676268): 32/32 emissores com HTTP 200 na API, 211 filings, e ZERO
+    corpos recuperados.
+    """
+    return {"User-Agent": user_agent, "Accept-Encoding": "gzip, deflate"}
+
+
+def fetch_document_text(url: str, fetcher, *, max_chars: int = 60000,
+                        errors: list | None = None) -> str:
     """Busca LIMITADA do corpo do filing.
 
     `fetcher(url) -> str` é injetado (a suíte passa um stub; produção passa o
-    cliente HTTP real com o User-Agent exigido pela SEC). Falha de rede devolve
-    string vazia — ausência de evidência, nunca evento presumido.
+    cliente HTTP real com o User-Agent exigido pela SEC). Falha devolve string
+    vazia — ausência de evidência, nunca evento presumido — mas o motivo é
+    REGISTRADO em `errors`: falha silenciosa é o que torna "HTTP 200" um falso
+    sucesso indistinguível de sucesso real.
     """
     if not url or fetcher is None:
+        if errors is not None:
+            errors.append("sem url ou sem fetcher")
         return ""
     try:
         raw = fetcher(url)
-    except Exception:
+    except Exception as exc:
+        if errors is not None:
+            errors.append(f"{type(exc).__name__}: {str(exc)[:160]}")
         return ""
     if not raw:
+        if errors is not None:
+            errors.append("resposta vazia")
         return ""
-    return strip_html(raw)[:max_chars]
+    txt = strip_html(raw)[:max_chars]
+    if not txt and errors is not None:
+        errors.append(f"corpo sem texto extraível ({len(str(raw))} bytes brutos)")
+    return txt
 
 
 def _window(text: str, m: re.Match, before: int = 90, after: int = 140) -> str:

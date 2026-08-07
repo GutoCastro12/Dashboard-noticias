@@ -122,7 +122,8 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
     def _body(url):
         if fetcher is not None:
             return fetcher(url)
-        r = session.get(url, headers=rd._edgar_headers(), timeout=25)
+        # headers dos ARCHIVES — nunca os de data.sec.gov (ver archive_headers)
+        r = session.get(url, headers=ec.archive_headers(rd._EDGAR_UA), timeout=30)
         r.raise_for_status()
         return r.text
 
@@ -143,7 +144,7 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
             "candidatos_evento": 0, "eventos_classificados": 0,
             "eventos_diretos": 0, "eventos_contextuais": 0, "eventos_informativos": 0,
             "rejeitados": 0, "motivo_rejeicao": "", "corpos_baixados": 0,
-            "elapsed_ms": 0,
+            "erro_corpo": "", "elapsed_ms": 0,
         }
         cik10 = c.get("cik") or cikmap.get(str(c.get("ticker") or "").upper())
         if not cik10:
@@ -189,11 +190,15 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
 
         corpos = 0
         for f in unicos:
-            texto = ""
+            texto, erros_corpo = "", []
             if corpos < MAX_BODIES_PER_COMPANY and f.get("url"):
-                texto = ec.fetch_document_text(f["url"], _body, max_chars=MAX_BODY_CHARS)
+                texto = ec.fetch_document_text(f["url"], _body,
+                                               max_chars=MAX_BODY_CHARS,
+                                               errors=erros_corpo)
                 if texto:
                     corpos += 1
+                elif not linha["erro_corpo"]:
+                    linha["erro_corpo"] = _cut(erros_corpo[0] if erros_corpo else "", 160)
                 if fetcher is None:
                     time.sleep(1.0 / rps)
             an = ec.analyze_filing(f, texto)
@@ -205,6 +210,7 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
                 "items": ",".join(f["items"]), "description": _cut(f["description"], 120),
                 "primary_document": f["primary_document"], "url": f["url"],
                 "corpo_recuperado": bool(texto), "corpo_chars": len(texto),
+                "erro_corpo": _cut(erros_corpo[0] if erros_corpo else "", 160),
                 "titulo_canonico": _cut(ec.canonical_title(f), 200),
                 "eventos_aceitos": ",".join(an["event_ids"]),
             })
@@ -283,7 +289,7 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
     _write_csv(out / "edgar_4h3c_filings.csv", filings_rows, [
         "emissor", "cik", "ticker", "form", "accession", "filing_date", "report_date",
         "items", "description", "primary_document", "url", "corpo_recuperado",
-        "corpo_chars", "titulo_canonico", "eventos_aceitos"])
+        "corpo_chars", "erro_corpo", "titulo_canonico", "eventos_aceitos"])
     _write_csv(out / "edgar_4h3c_event_candidates.csv", cand_rows, [
         "emissor", "form", "accession", "item", "event_id", "origem", "forca",
         "aceito", "confianca", "motivo", "evidencia"])
