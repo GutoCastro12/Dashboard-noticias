@@ -1,58 +1,5 @@
 {
  "articles": {
-  "https://www.estadao.com.br/einvestidor/onde-investir/debentures-simples-fisia-grupo-sbf/": {
-   "title": "Fisia, do Grupo SBF (SBFG3), fará 5ª emissão de debêntures milionários; veja valor total",
-   "url": "https://www.estadao.com.br/einvestidor/onde-investir/debentures-simples-fisia-grupo-sbf/",
-   "summary": "Fisia, do Grupo SBF (SBFG3), fará 5ª emissão de debêntures milionários; veja valor total &nbsp;&nbsp; Estadão",
-   "source": "Estadão",
-   "domain": "estadao.com.br",
-   "pub_ts": 1751526000,
-   "pub_iso": "2025-07-03 04:00",
-   "language": "pt",
-   "companies": [
-    "Fisia"
-   ],
-   "event_ids": [
-    "emissao_divida"
-   ],
-   "events_by_company": {
-    "Fisia": [
-     "emissao_divida"
-    ]
-   },
-   "mention_roles": {
-    "Fisia": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "companies_attributed": [
-    "Fisia"
-   ],
-   "context_companies": [],
-   "captured_ts": 1785345276,
-   "cap_iso": "2026-07-29 14:14",
-   "original_url": "https://www.estadao.com.br/einvestidor/onde-investir/debentures-simples-fisia-grupo-sbf/",
-   "redirect_url": "",
-   "resolved_url": "https://www.estadao.com.br/einvestidor/onde-investir/debentures-simples-fisia-grupo-sbf/",
-   "canonical_url": "https://www.estadao.com.br/einvestidor/onde-investir/debentures-simples-fisia-grupo-sbf/",
-   "display_url": "https://www.estadao.com.br/einvestidor/onde-investir/debentures-simples-fisia-grupo-sbf/",
-   "redirect_chain": "",
-   "original_host": "www.estadao.com.br",
-   "final_host": "www.estadao.com.br",
-   "http_status": "",
-   "link_health": "url_direta_valida",
-   "resolution_method": "direto",
-   "resolution_error": "",
-   "link_render_anchor": true,
-   "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.618913+00:00",
-   "corroborations": [],
-   "corrob_sources": []
-  },
   "https://www.clarin.com/economia/nuevos-acreedores-reclaman-acciones-ypf-cobrar-deudas-default-crece-presion-judicial-argentina_0_qTtMHGSoys.html": {
    "title": "Nuevos acreedores reclaman acciones de YPF para cobrar deudas en default: crece la presión judicial sobre Argentina",
    "url": "https://www.clarin.com/economia/nuevos-acreedores-reclaman-acciones-ypf-cobrar-deudas-default-crece-presion-judicial-argentina_0_qTtMHGSoys.html",
@@ -810,7 +757,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T00:57:20.867456+00:00"
+     "last_checked_at": "2026-08-07T11:10:32.649901+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2449,7 +2396,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T00:57:21.267780+00:00"
+     "last_checked_at": "2026-08-07T11:10:33.050168+00:00"
     }
    ],
    "corrob_sources": [
@@ -7060,7 +7007,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.624746+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.624746+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.cnnbrasil.com.br/economia/negocios/superintendencia-geral-do-cade-aprova-aquisicao-da-emae-pela-sabesp/": {
    "title": "Superintendência-Geral do Cade aprova aquisição da Emae pela Sabesp",
@@ -9240,7 +9189,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T00:57:21.668121+00:00"
+     "last_checked_at": "2026-08-07T11:10:33.450555+00:00"
     },
     {
      "source": "Demarest",
@@ -9260,7 +9209,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T00:57:22.068452+00:00"
+     "last_checked_at": "2026-08-07T11:10:33.850917+00:00"
     }
    ],
    "corrob_sources": [
@@ -10677,7 +10626,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T00:57:22.468759+00:00"
+     "last_checked_at": "2026-08-07T11:10:34.251216+00:00"
     }
    ],
    "corrob_sources": [
@@ -13865,7 +13814,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T00:57:23.077521+00:00"
+     "last_checked_at": "2026-08-07T11:10:34.911225+00:00"
     }
    ],
    "corrob_sources": [
@@ -16103,7 +16052,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T00:57:23.697894+00:00"
+     "last_checked_at": "2026-08-07T11:10:35.570144+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16209,7 +16158,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T00:57:24.308029+00:00"
+     "last_checked_at": "2026-08-07T11:10:36.282507+00:00"
     },
     {
      "source": "Moomoo",
@@ -17502,7 +17451,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T00:57:30.822203+00:00"
+     "last_checked_at": "2026-08-07T11:10:37.110435+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17545,7 +17494,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T00:57:38.701939+00:00"
+     "last_checked_at": "2026-08-07T11:10:37.964398+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -18383,7 +18332,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-07T00:57:39.307401+00:00",
+     "last_checked_at": "2026-08-07T11:10:38.642377+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -18408,7 +18357,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-07T00:57:39.909238+00:00",
+     "last_checked_at": "2026-08-07T11:10:39.302189+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19339,7 +19288,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-07T00:57:40.309578+00:00",
+     "last_checked_at": "2026-08-07T11:10:39.702465+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19404,7 +19353,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-07T00:57:40.709883+00:00",
+     "last_checked_at": "2026-08-07T11:10:40.102755+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20377,7 +20326,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T00:57:41.311220+00:00"
+     "last_checked_at": "2026-08-07T11:10:40.805541+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20462,7 +20411,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T00:57:41.919406+00:00"
+     "last_checked_at": "2026-08-07T11:10:41.443762+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22163,7 +22112,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-07T00:57:42.512477+00:00",
+     "last_checked_at": "2026-08-07T11:10:42.105828+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22333,7 +22282,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-07T00:57:43.113253+00:00",
+     "last_checked_at": "2026-08-07T11:10:42.777517+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -35719,7 +35668,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T00:57:51.800440+00:00"
+     "last_checked_at": "2026-08-07T11:10:43.610193+00:00"
     }
    ],
    "corrob_sources": [
@@ -38576,7 +38525,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T00:57:52.395748+00:00"
+     "last_checked_at": "2026-08-07T11:10:44.272294+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38619,7 +38568,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T00:57:52.992837+00:00"
+     "last_checked_at": "2026-08-07T11:10:44.935675+00:00"
     },
     {
      "source": "Virginia Business",
@@ -44086,7 +44035,9 @@
     "Construtora Tenda"
    ],
    "captured_ts": 1786029890,
-   "cap_iso": "2026-08-06 12:24"
+   "cap_iso": "2026-08-06 12:24",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMipwFBVV95cUxOMzZWSVdEMlNaSVVrcWNabFplekt1eXJleVVEZm42bXhlV2hEUG1vaVZCeU1yT0hNeVl4VDB2alcwUTZycG9Mb2FPRWJnaHlxMmNOellzRVhOMThXZDhUb3gzMExEb3dkQ0hUN2xueUpESkpXTFZFZ2tpTDcyeUY2T0owUy1HeDIyc3hwR1QtbUFVa05NQjVYMjdlOHhlcG4wQUpoZEpQUQ?oc=5": {
    "title": "Dominion Energy files application for 67-billion-dollar acquisition",
@@ -44295,9 +44246,255 @@
    "trust_override": "imprensa",
    "captured_ts": 1786064197,
    "cap_iso": "2026-08-06 21:56"
+  },
+  "https://news.google.com/rss/articles/CBMipAFBVV95cUxNTUNJSlFqdjJSTWxsVDVKWjVFNVA2aGdKZUdTM0tVR0J2czk0NWluTmQwYS10STBKbXBxaEhzUlRScWd4N0l3ejNDNzFsRTlDLWlsa1NfRzNlZDJmTVpzbDdMN19lNlRGaXVtcXE2cXpPZTBBaWdhUmpjTm85SFd6Y3VtNUI2QzlSdmxJTjFoUVJYSHlCRlo2RzlRR2ZVdVJGM1d5a9IBpAFBVV95cUxNTUNJSlFqdjJSTWxsVDVKWjVFNVA2aGdKZUdTM0tVR0J2czk0NWluTmQwYS10STBKbXBxaEhzUlRScWd4N0l3ejNDNzFsRTlDLWlsa1NfRzNlZDJmTVpzbDdMN19lNlRGaXVtcXE2cXpPZTBBaWdhUmpjTm85SFd6Y3VtNUI2QzlSdmxJTjFoUVJYSHlCRlo2RzlRR2ZVdVJGM1d5aw?oc=5": {
+   "title": "Pedida a falência da Ambipar",
+   "url": "https://oglobo.globo.com/google/amp/blogs/lauro-jardim/post/2026/08/pedida-a-falencia-da-ambipar.ghtml",
+   "summary": "Pedida a falência da Ambipar &nbsp;&nbsp; O GLOBO",
+   "source": "O GLOBO",
+   "domain": "oglobo.globo.com",
+   "pub_ts": 1785867806,
+   "pub_iso": "2026-08-04 15:23",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "corroborations": [
+    {
+     "source": "Painel Político",
+     "domain": "painelpolitico.com",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQajNNeFNXUTAwUHdxS2s2Ti1Hck5ub3FZWWdBQUc3NmtwR0E1NkxSVFpCbXdMckZNR3VNOXFtcE5HTkNPNEhCNjRkU3RBTGRqQXUxbmdRS1dSbnYtM0ZHRmxKWHgwWHhsVlNQVnFJZHpIX3VZbk9EMWwwVlFTMDF6X252UjRLWTNUWGs4NHdOQmlDMjBW?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQajNNeFNXUTAwUHdxS2s2Ti1Hck5ub3FZWWdBQUc3NmtwR0E1NkxSVFpCbXdMckZNR3VNOXFtcE5HTkNPNEhCNjRkU3RBTGRqQXUxbmdRS1dSbnYtM0ZHRmxKWHgwWHhsVlNQVnFJZHpIX3VZbk9EMWwwVlFTMDF6X252UjRLWTNUWGs4NHdOQmlDMjBW?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQajNNeFNXUTAwUHdxS2s2Ti1Hck5ub3FZWWdBQUc3NmtwR0E1NkxSVFpCbXdMckZNR3VNOXFtcE5HTkNPNEhCNjRkU3RBTGRqQXUxbmdRS1dSbnYtM0ZHRmxKWHgwWHhsVlNQVnFJZHpIX3VZbk9EMWwwVlFTMDF6X252UjRLWTNUWGs4NHdOQmlDMjBW?oc=5",
+     "resolved_url": "https://painelpolitico.com/addiante-pede-a-falencia-da-ambipar-por-divida-de-r-187-milhoes",
+     "canonical_url": "https://painelpolitico.com/addiante-pede-a-falencia-da-ambipar-por-divida-de-r-187-milhoes",
+     "display_url": "https://painelpolitico.com/addiante-pede-a-falencia-da-ambipar-por-divida-de-r-187-milhoes",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "painelpolitico.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-07T11:10:45.336042+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Tribuna Online",
+     "domain": "tribunaonline.com.br",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxObjFLS2xzYi1JMVFTOTRwS09lTlJ3SlN4MmY5dlNJR1hkZTYxSGhMR2hkRU1mS0pyd0FrdEhySjFJR0lZeHJpc1FVRElVT0FlX3hpWTZlYTg0Rnd2UjdjU2hLeGlXNVZWbG9zRjhuYWFwVzVDTXFkdE9FcWd1TmNvOVZsa0NUSEduSlNCaEhMREYzX0ZNUmdCNzRKQ1Jpd9IBpgFBVV95cUxQTVJmamZJUDhqVUtVN1lXYWZuYW5FSG0xZ0FvV0hweTZvNkZWaXJRYTNrZzZzYkRfWjhrb0c1NzRQQWVGdmRGdjFGMDZvTkQ2Q0U4UXR2S1h2X05ZRC1LQUNpREdEd1k1c25CektZMlBBS0Y0VjVjMGljZG5naThkVk55b21yY0FlaXkxeHkxaHQ0Mld1VzhRekh5SkI1Y2lUZUJBenZ3?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxObjFLS2xzYi1JMVFTOTRwS09lTlJ3SlN4MmY5dlNJR1hkZTYxSGhMR2hkRU1mS0pyd0FrdEhySjFJR0lZeHJpc1FVRElVT0FlX3hpWTZlYTg0Rnd2UjdjU2hLeGlXNVZWbG9zRjhuYWFwVzVDTXFkdE9FcWd1TmNvOVZsa0NUSEduSlNCaEhMREYzX0ZNUmdCNzRKQ1Jpd9IBpgFBVV95cUxQTVJmamZJUDhqVUtVN1lXYWZuYW5FSG0xZ0FvV0hweTZvNkZWaXJRYTNrZzZzYkRfWjhrb0c1NzRQQWVGdmRGdjFGMDZvTkQ2Q0U4UXR2S1h2X05ZRC1LQUNpREdEd1k1c25CektZMlBBS0Y0VjVjMGljZG5naThkVk55b21yY0FlaXkxeHkxaHQ0Mld1VzhRekh5SkI1Y2lUZUJBenZ3?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxObjFLS2xzYi1JMVFTOTRwS09lTlJ3SlN4MmY5dlNJR1hkZTYxSGhMR2hkRU1mS0pyd0FrdEhySjFJR0lZeHJpc1FVRElVT0FlX3hpWTZlYTg0Rnd2UjdjU2hLeGlXNVZWbG9zRjhuYWFwVzVDTXFkdE9FcWd1TmNvOVZsa0NUSEduSlNCaEhMREYzX0ZNUmdCNzRKQ1Jpd9IBpgFBVV95cUxQTVJmamZJUDhqVUtVN1lXYWZuYW5FSG0xZ0FvV0hweTZvNkZWaXJRYTNrZzZzYkRfWjhrb0c1NzRQQWVGdmRGdjFGMDZvTkQ2Q0U4UXR2S1h2X05ZRC1LQUNpREdEd1k1c25CektZMlBBS0Y0VjVjMGljZG5naThkVk55b21yY0FlaXkxeHkxaHQ0Mld1VzhRekh5SkI1Y2lUZUJBenZ3?oc=5",
+     "resolved_url": "https://tribunaonline.com.br/economia/pedida-falencia-de-multinacional-com-operacoes-no-es-327765",
+     "canonical_url": "https://tribunaonline.com.br/economia/pedida-falencia-de-multinacional-com-operacoes-no-es-327765",
+     "display_url": "https://tribunaonline.com.br/economia/pedida-falencia-de-multinacional-com-operacoes-no-es-327765",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "tribunaonline.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-07T11:10:45.980467+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Painel Político",
+     "domain": "painelpolitico.com",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQajNNeFNXUTAwUHdxS2s2Ti1Hck5ub3FZWWdBQUc3NmtwR0E1NkxSVFpCbXdMckZNR3VNOXFtcE5HTkNPNEhCNjRkU3RBTGRqQXUxbmdRS1dSbnYtM0ZHRmxKWHgwWHhsVlNQVnFJZHpIX3VZbk9EMWwwVlFTMDF6X252UjRLWTNUWGs4NHdOQmlDMjBW?oc=5",
+     "when": "04/08 15:55",
+     "original_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQajNNeFNXUTAwUHdxS2s2Ti1Hck5ub3FZWWdBQUc3NmtwR0E1NkxSVFpCbXdMckZNR3VNOXFtcE5HTkNPNEhCNjRkU3RBTGRqQXUxbmdRS1dSbnYtM0ZHRmxKWHgwWHhsVlNQVnFJZHpIX3VZbk9EMWwwVlFTMDF6X252UjRLWTNUWGs4NHdOQmlDMjBW?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQajNNeFNXUTAwUHdxS2s2Ti1Hck5ub3FZWWdBQUc3NmtwR0E1NkxSVFpCbXdMckZNR3VNOXFtcE5HTkNPNEhCNjRkU3RBTGRqQXUxbmdRS1dSbnYtM0ZHRmxKWHgwWHhsVlNQVnFJZHpIX3VZbk9EMWwwVlFTMDF6X252UjRLWTNUWGs4NHdOQmlDMjBW?oc=5",
+     "resolved_url": "https://painelpolitico.com/addiante-pede-a-falencia-da-ambipar-por-divida-de-r-187-milhoes",
+     "canonical_url": "https://painelpolitico.com/addiante-pede-a-falencia-da-ambipar-por-divida-de-r-187-milhoes",
+     "display_url": "https://painelpolitico.com/addiante-pede-a-falencia-da-ambipar-por-divida-de-r-187-milhoes",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "painelpolitico.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-07T11:10:46.380762+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Tribuna Online",
+     "domain": "tribunaonline.com.br",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxObjFLS2xzYi1JMVFTOTRwS09lTlJ3SlN4MmY5dlNJR1hkZTYxSGhMR2hkRU1mS0pyd0FrdEhySjFJR0lZeHJpc1FVRElVT0FlX3hpWTZlYTg0Rnd2UjdjU2hLeGlXNVZWbG9zRjhuYWFwVzVDTXFkdE9FcWd1TmNvOVZsa0NUSEduSlNCaEhMREYzX0ZNUmdCNzRKQ1Jpd9IBpgFBVV95cUxQTVJmamZJUDhqVUtVN1lXYWZuYW5FSG0xZ0FvV0hweTZvNkZWaXJRYTNrZzZzYkRfWjhrb0c1NzRQQWVGdmRGdjFGMDZvTkQ2Q0U4UXR2S1h2X05ZRC1LQUNpREdEd1k1c25CektZMlBBS0Y0VjVjMGljZG5naThkVk55b21yY0FlaXkxeHkxaHQ0Mld1VzhRekh5SkI1Y2lUZUJBenZ3?oc=5",
+     "when": "05/08 15:23",
+     "original_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxObjFLS2xzYi1JMVFTOTRwS09lTlJ3SlN4MmY5dlNJR1hkZTYxSGhMR2hkRU1mS0pyd0FrdEhySjFJR0lZeHJpc1FVRElVT0FlX3hpWTZlYTg0Rnd2UjdjU2hLeGlXNVZWbG9zRjhuYWFwVzVDTXFkdE9FcWd1TmNvOVZsa0NUSEduSlNCaEhMREYzX0ZNUmdCNzRKQ1Jpd9IBpgFBVV95cUxQTVJmamZJUDhqVUtVN1lXYWZuYW5FSG0xZ0FvV0hweTZvNkZWaXJRYTNrZzZzYkRfWjhrb0c1NzRQQWVGdmRGdjFGMDZvTkQ2Q0U4UXR2S1h2X05ZRC1LQUNpREdEd1k1c25CektZMlBBS0Y0VjVjMGljZG5naThkVk55b21yY0FlaXkxeHkxaHQ0Mld1VzhRekh5SkI1Y2lUZUJBenZ3?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxObjFLS2xzYi1JMVFTOTRwS09lTlJ3SlN4MmY5dlNJR1hkZTYxSGhMR2hkRU1mS0pyd0FrdEhySjFJR0lZeHJpc1FVRElVT0FlX3hpWTZlYTg0Rnd2UjdjU2hLeGlXNVZWbG9zRjhuYWFwVzVDTXFkdE9FcWd1TmNvOVZsa0NUSEduSlNCaEhMREYzX0ZNUmdCNzRKQ1Jpd9IBpgFBVV95cUxQTVJmamZJUDhqVUtVN1lXYWZuYW5FSG0xZ0FvV0hweTZvNkZWaXJRYTNrZzZzYkRfWjhrb0c1NzRQQWVGdmRGdjFGMDZvTkQ2Q0U4UXR2S1h2X05ZRC1LQUNpREdEd1k1c25CektZMlBBS0Y0VjVjMGljZG5naThkVk55b21yY0FlaXkxeHkxaHQ0Mld1VzhRekh5SkI1Y2lUZUJBenZ3?oc=5",
+     "resolved_url": "https://tribunaonline.com.br/economia/pedida-falencia-de-multinacional-com-operacoes-no-es-327765",
+     "canonical_url": "https://tribunaonline.com.br/economia/pedida-falencia-de-multinacional-com-operacoes-no-es-327765",
+     "display_url": "https://tribunaonline.com.br/economia/pedida-falencia-de-multinacional-com-operacoes-no-es-327765",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "tribunaonline.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-07T11:10:46.781101+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1786101025,
+   "cap_iso": "2026-08-07 08:10"
+  },
+  "https://www.law.com/article/almID/1202650774849/": {
+   "title": "Justice Watch: General Motors Dilemma May Leave Scar on Bankruptcy Law",
+   "url": "https://www.law.com/article/almID/1202650774849/",
+   "summary": "Justice Watch: General Motors Dilemma May Leave Scar on Bankruptcy Law &nbsp;&nbsp; law.com",
+   "source": "law.com",
+   "domain": "law.com",
+   "pub_ts": 1785957990,
+   "pub_iso": "2026-08-05 16:26",
+   "language": "pt",
+   "companies": [
+    "General Motors"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "mention_roles": {
+    "General Motors": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "General Motors": [
+     "falencia"
+    ]
+   },
+   "companies_attributed": [
+    "General Motors"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786101025,
+   "cap_iso": "2026-08-07 08:10"
+  },
+  "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQX3RXSWI1NURUZG1RSHk1Sll2akVYNmJISl9hWXRIRnlBS1V0YUN0R19kLVQ5ZTA2ZGpzTjlsSVBxcHVEUU1aNFRpZEJKTGlUeW9RWXRTSmM1WG1jU0x3N3NFbGNsSGNOTGpaTUlhTXp3elBfWVp1US1DeTd2SUxyQ3pSdE8xSERrQXViUmhNNmlmM2ZRRThIQ1hSdlZVbi13YzVXNW9lb1RhamVlOHdvVnpTYWZCaER5ZWtaS2drNVlrbDRpZWNSWDEtN180NGwtcllsMlltVdIB3AFBVV95cUxQbS1JcG9GdGM3TEhWbGRmTGhBMWt5d190QTRUckpVU25XUUtFM0JNdk42U2tmU1RVUHVDNzJVOEpma3ZCS2FaU21qczBFWHVGU3RPS2FDbVVWOWdyS0xsdEFLRkg3UVVHRXNnUlFBWDVKZ2h5ZHFjZ2VMS2U4VEVjU3dXcDU0b1pzb1ZPVkM0UGFBS2FYckVTQjlfTEVTMERIUmxrQ0prRER3bmw3cWRVVDNOM1VJTzYxdWRyRWU2dHBnRFhvY3g3TnR3cWVCVnFjZF9PcWJWQUxyckhF?oc=5": {
+   "title": "Rio de Janeiro pede falência do grupo Manguinhos, da Refit, após calote em acordo fiscal",
+   "url": "https://mercadoeconsumo.com.br/06/08/2026/mc-capital/rio-de-janeiro-pede-falencia-do-grupo-manguinhos-da-refit-apos-calote-em-acordo-fiscal/",
+   "summary": "Rio de Janeiro pede falência do grupo Manguinhos, da Refit, após calote em acordo fiscal &nbsp;&nbsp; Mercado&Consumo",
+   "source": "Mercado&Consumo",
+   "domain": "mercadoeconsumo.com.br",
+   "pub_ts": 1786026049,
+   "pub_iso": "2026-08-06 11:20",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "default",
+    "falencia"
+   ],
+   "captured_ts": 1786101025,
+   "cap_iso": "2026-08-07 08:10"
+  },
+  "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPdjNnRk9iYWcwMy1RREppbFl4b1NmYnZIZWpuZHo1N1R4RXBDM2pSbjI4XzhudDhMbFR5dVNOTVMtRkpTcmZ6SENDd1JlYzRuZkNQemtJNWlTT3VpckhkTlJpT2I3OHBNQ0hWR1ktTXhDU3ZXQkpSU3hNbFl0ejI5UzZST0VkcVdRa3JYRG1LZTBMU2JuLU1ieExyUHlsRlhwZ2l2M244U3B0XzhKejJHckhPS0RlX3hKbHB0Ny1vU1Qzc3dSaGl5RWV1QnQ1STc0VGk3aUF0RkRtWm1r?oc=5": {
+   "title": "Recuperação judicial não significa falência: especialista explica o que é por que empresas recorrem ao mecanismo",
+   "url": "https://www.fecap.br/2026/08/06/recuperacao-judicial-nao-significa-falencia-especialista-explica-o-que-e-por-que-empresas-recorrem-ao-mecanismo/",
+   "summary": "Recuperação judicial não significa falência: especialista explica o que é por que empresas recorrem ao mecanismo &nbsp;&nbsp; FECAP",
+   "source": "FECAP",
+   "domain": "fecap.br",
+   "pub_ts": 1786039160,
+   "pub_iso": "2026-08-06 14:59",
+   "language": "es",
+   "title_original": "Recuperação judicial não significa falência: especialista explica o que é por que empresas recorrem ao mecanismo",
+   "summary_original": "Recuperação judicial não significa falência: especialista explica o que é por que empresas recorrem ao mecanismo &nbsp;&nbsp; FECAP",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "secondary_events": [
+    {
+     "id": "recuperacao_judicial",
+     "label": "Recuperação Judicial",
+     "family": "insolvencia",
+     "family_label": "Insolvência",
+     "primary_event": "falencia"
+    }
+   ],
+   "conflict_resolution_reason": "recuperacao_judicial → secundário de falencia (família insolvencia: mesma ação econômica)",
+   "captured_ts": 1786101025,
+   "cap_iso": "2026-08-07 08:10"
+  },
+  "https://euqueroinvestir.com/acoes/lojas-renner-reduz-guidance-e-lucro-fica-estavel-em-r-405-mi": {
+   "title": "Lojas Renner reduz guidance e lucro fica estável em R$ 405 mi",
+   "url": "https://euqueroinvestir.com/acoes/lojas-renner-reduz-guidance-e-lucro-fica-estavel-em-r-405-mi",
+   "summary": "Lojas Renner reduz guidance e lucro fica estável em R$ 405 mi &nbsp;&nbsp; EuQueroInvestir",
+   "source": "EuQueroInvestir",
+   "domain": "euqueroinvestir.com",
+   "pub_ts": 1786054110,
+   "pub_iso": "2026-08-06 19:08",
+   "language": "pt",
+   "companies": [
+    "Lojas Renner"
+   ],
+   "event_ids": [
+    "guidance_negativo"
+   ],
+   "mention_roles": {
+    "Lojas Renner": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Lojas Renner": [
+     "guidance_negativo"
+    ]
+   },
+   "companies_attributed": [
+    "Lojas Renner"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786101025,
+   "cap_iso": "2026-08-07 08:10"
+  },
+  "https://www.marketwatch.com/story/as-alphabet-burns-through-cash-on-ai-its-turning-back-to-the-bond-market-04e85f31?mod=mw_rss_topstories": {
+   "title": "Enquanto a Alphabet queima caixa com IA, ela volta a recorrer ao mercado de títulos",
+   "url": "https://www.marketwatch.com/story/as-alphabet-burns-through-cash-on-ai-its-turning-back-to-the-bond-market-04e85f31?mod=mw_rss_topstories",
+   "summary": "A controladora do Google está utilizando seu balanço patrimonial com uma nova emissão de dívida, enquanto os pesados investimentos em IA corroem seu fluxo de caixa livre.",
+   "source": "MarketWatch · Top Stories",
+   "domain": "marketwatch.com",
+   "pub_ts": 1786058040,
+   "pub_iso": "2026-08-06 20:14",
+   "language": "en",
+   "title_original": "As Alphabet burns through cash on AI, it’s turning back to the bond market",
+   "summary_original": "The Google parent is utilizing its balance sheet with a fresh debt issuance, as heavy AI investments eat into its free cash flow.",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "emissao_divida"
+   ],
+   "trust_override": "imprensa",
+   "captured_ts": 1786101025,
+   "cap_iso": "2026-08-07 08:10"
   }
  },
- "run_count": 82,
+ "run_count": 83,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -49178,39 +49375,71 @@
   "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPd2V3VGc0RzRaVURBZjhwX09HOHNxUUNCWDRpWmdpa295VUFQRkRlNmV3X2g5bVVWQmNPXzU4SUxjV1JlaFVsUEdSclpQbWwtc3l5YlZOcElXb0YzdlV1Sk1jSmxtRVpjZU51c2FNV3Q5ZTFEZDlOa0tXNzBHalVCaTFPbjdhbjRhSTVYQmoxOTR1YnRrSUZIQk9feHh5X3N2a0I3a29kMVNMSElwN3dMZzQ1SDdCSFNYa21Z?oc=5": {
    "url": "https://bpmoney.com.br/negocios/engie-brasil-egie3-tem-lucro-de-r-694-milhoes-no-2o-tri-e-conclui-follow-on-bilionario/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMie0FVX3lxTFBYaXNHblNLYmZZZ0ZCa1I2QWF1b1UzWmhoZklMSk5IdkxFbTBmZldrRG9XYzlkOS1kazlmdE9SRE9ZejRaVnRmSXNid0s5UVlTZVBacjdMblRGaUljRHBVZExrckFHelVKckRTb01hVkpzakI5bk9VcDlsOA?oc=5": {
+   "url": "https://finance.yahoo.com/news/capital-one-closes-35-3bn-103614066.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1Kam1iMjBQWDl5aXZLVVBpNm5xU1M1dEkyNU0yRnpxYXpqd3NGcUdaV2RXVWpHZGJrSVRGcnVBcTdvMHNoWC1LbFRlMW4zNW5oVVlGMy10WllHVUI0?oc=5": {
+   "url": "https://www.law.com/article/almID/1202650774849/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMimgFBVV95cUxOY2FrdHBQVEJYcU00eDZzVzFGaUlGUDV0OWdyM3R5ekJrRFI5d3o0UWlHTldZV2JsWk5XS0RYV1JJTXhnSGxfblRFOEVRakJfOUZzaC0yTTdoVDdqY0VJNmNkTGhHMUxKYzlOR2hieUtubmhrYk5NRHRRbVBRNDBNajd2SEZwQ2s0UjdTVzVTcUhsWWNlQzFfYTB3?oc=5": {
+   "url": "https://euqueroinvestir.com/acoes/lojas-renner-reduz-guidance-e-lucro-fica-estavel-em-r-405-mi",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipAFBVV95cUxNTUNJSlFqdjJSTWxsVDVKWjVFNVA2aGdKZUdTM0tVR0J2czk0NWluTmQwYS10STBKbXBxaEhzUlRScWd4N0l3ejNDNzFsRTlDLWlsa1NfRzNlZDJmTVpzbDdMN19lNlRGaXVtcXE2cXpPZTBBaWdhUmpjTm85SFd6Y3VtNUI2QzlSdmxJTjFoUVJYSHlCRlo2RzlRR2ZVdVJGM1d5a9IBpAFBVV95cUxNTUNJSlFqdjJSTWxsVDVKWjVFNVA2aGdKZUdTM0tVR0J2czk0NWluTmQwYS10STBKbXBxaEhzUlRScWd4N0l3ejNDNzFsRTlDLWlsa1NfRzNlZDJmTVpzbDdMN19lNlRGaXVtcXE2cXpPZTBBaWdhUmpjTm85SFd6Y3VtNUI2QzlSdmxJTjFoUVJYSHlCRlo2RzlRR2ZVdVJGM1d5aw?oc=5": {
+   "url": "https://oglobo.globo.com/google/amp/blogs/lauro-jardim/post/2026/08/pedida-a-falencia-da-ambipar.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQX3RXSWI1NURUZG1RSHk1Sll2akVYNmJISl9hWXRIRnlBS1V0YUN0R19kLVQ5ZTA2ZGpzTjlsSVBxcHVEUU1aNFRpZEJKTGlUeW9RWXRTSmM1WG1jU0x3N3NFbGNsSGNOTGpaTUlhTXp3elBfWVp1US1DeTd2SUxyQ3pSdE8xSERrQXViUmhNNmlmM2ZRRThIQ1hSdlZVbi13YzVXNW9lb1RhamVlOHdvVnpTYWZCaER5ZWtaS2drNVlrbDRpZWNSWDEtN180NGwtcllsMlltVdIB3AFBVV95cUxQbS1JcG9GdGM3TEhWbGRmTGhBMWt5d190QTRUckpVU25XUUtFM0JNdk42U2tmU1RVUHVDNzJVOEpma3ZCS2FaU21qczBFWHVGU3RPS2FDbVVWOWdyS0xsdEFLRkg3UVVHRXNnUlFBWDVKZ2h5ZHFjZ2VMS2U4VEVjU3dXcDU0b1pzb1ZPVkM0UGFBS2FYckVTQjlfTEVTMERIUmxrQ0prRER3bmw3cWRVVDNOM1VJTzYxdWRyRWU2dHBnRFhvY3g3TnR3cWVCVnFjZF9PcWJWQUxyckhF?oc=5": {
+   "url": "https://mercadoeconsumo.com.br/06/08/2026/mc-capital/rio-de-janeiro-pede-falencia-do-grupo-manguinhos-da-refit-apos-calote-em-acordo-fiscal/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPdjNnRk9iYWcwMy1RREppbFl4b1NmYnZIZWpuZHo1N1R4RXBDM2pSbjI4XzhudDhMbFR5dVNOTVMtRkpTcmZ6SENDd1JlYzRuZkNQemtJNWlTT3VpckhkTlJpT2I3OHBNQ0hWR1ktTXhDU3ZXQkpSU3hNbFl0ejI5UzZST0VkcVdRa3JYRG1LZTBMU2JuLU1ieExyUHlsRlhwZ2l2M244U3B0XzhKejJHckhPS0RlX3hKbHB0Ny1vU1Qzc3dSaGl5RWV1QnQ1STc0VGk3aUF0RkRtWm1r?oc=5": {
+   "url": "https://www.fecap.br/2026/08/06/recuperacao-judicial-nao-significa-falencia-especialista-explica-o-que-e-por-que-empresas-recorrem-ao-mecanismo/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMingFBVV95cUxObjFLS2xzYi1JMVFTOTRwS09lTlJ3SlN4MmY5dlNJR1hkZTYxSGhMR2hkRU1mS0pyd0FrdEhySjFJR0lZeHJpc1FVRElVT0FlX3hpWTZlYTg0Rnd2UjdjU2hLeGlXNVZWbG9zRjhuYWFwVzVDTXFkdE9FcWd1TmNvOVZsa0NUSEduSlNCaEhMREYzX0ZNUmdCNzRKQ1Jpd9IBpgFBVV95cUxQTVJmamZJUDhqVUtVN1lXYWZuYW5FSG0xZ0FvV0hweTZvNkZWaXJRYTNrZzZzYkRfWjhrb0c1NzRQQWVGdmRGdjFGMDZvTkQ2Q0U4UXR2S1h2X05ZRC1LQUNpREdEd1k1c25CektZMlBBS0Y0VjVjMGljZG5naThkVk55b21yY0FlaXkxeHkxaHQ0Mld1VzhRekh5SkI1Y2lUZUJBenZ3?oc=5": {
+   "url": "https://tribunaonline.com.br/economia/pedida-falencia-de-multinacional-com-operacoes-no-es-327765",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786064273,
-  "iso": "06 ago 2026 · 21:57 BRT",
+  "ts": 1786101047,
+  "iso": "07 ago 2026 · 08:10 BRT",
   "status": {
    "Engie Brasil": {
     "status": "critico",
-    "score": 76
+    "score": 75
    },
    "Rumo": {
     "status": "atencao",
-    "score": 70
+    "score": 69
    },
    "Vale": {
     "status": "atencao",
-    "score": 62
+    "score": 61
    },
    "JPMorgan Chase": {
     "status": "critico",
-    "score": 61
-   },
-   "CVS Health": {
-    "status": "critico",
-    "score": 58
-   },
-   "Santander Brasil": {
-    "status": "atencao",
-    "score": 58
+    "score": 60
    },
    "Tok&Stok": {
     "status": "critico",
     "score": 57
+   },
+   "CVS Health": {
+    "status": "critico",
+    "score": 57
+   },
+   "Santander Brasil": {
+    "status": "atencao",
+    "score": 57
+   },
+   "General Motors": {
+    "status": "critico",
+    "score": 55
    },
    "Grupo Financiero Banorte": {
     "status": "critico",
@@ -49228,11 +49457,11 @@
     "status": "atencao",
     "score": 42
    },
-   "BTG Pactual": {
-    "status": "atencao",
-    "score": 41
-   },
    "Axia Energia": {
+    "status": "atencao",
+    "score": 40
+   },
+   "BTG Pactual": {
     "status": "atencao",
     "score": 40
    },
@@ -49241,16 +49470,16 @@
     "score": 37
    },
    "Sabesp": {
-    "status": "atencao",
+    "status": "monitorar",
     "score": 36
    },
    "Petrobras": {
     "status": "atencao",
-    "score": 32
+    "score": 31
    },
    "JBS": {
     "status": "atencao",
-    "score": 32
+    "score": 31
    },
    "Yobel": {
     "status": "monitorar",
@@ -49258,11 +49487,11 @@
    },
    "Banco do Brasil": {
     "status": "atencao",
-    "score": 30
+    "score": 29
    },
    "Baker Hughes": {
     "status": "monitorar",
-    "score": 27
+    "score": 26
    },
    "ISA Energia Brasil": {
     "status": "monitorar",
@@ -49272,12 +49501,12 @@
     "status": "monitorar",
     "score": 25
    },
-   "Embraer": {
-    "status": "atencao",
-    "score": 25
-   },
    "Suzano": {
     "status": "monitorar",
+    "score": 24
+   },
+   "Embraer": {
+    "status": "atencao",
     "score": 24
    },
    "Capital One Financial": {
@@ -49286,7 +49515,11 @@
    },
    "TIM Brasil": {
     "status": "monitorar",
-    "score": 22
+    "score": 21
+   },
+   "Lojas Renner": {
+    "status": "monitorar",
+    "score": 21
    },
    "Itaúsa": {
     "status": "monitorar",
@@ -49326,7 +49559,7 @@
    },
    "Ecopetrol": {
     "status": "monitorar",
-    "score": 15
+    "score": 14
    },
    "NextEra Energy": {
     "status": "monitorar",
@@ -49340,10 +49573,6 @@
     "status": "atencao",
     "score": 12
    },
-   "Vamos": {
-    "status": "atencao",
-    "score": 11
-   },
    "Cemig": {
     "status": "atencao",
     "score": 11
@@ -49354,6 +49583,10 @@
    },
    "British American Tobacco": {
     "status": "critico",
+    "score": 10
+   },
+   "Vamos": {
+    "status": "atencao",
     "score": 10
    },
    "Raia Drogasil": {
@@ -49415,10 +49648,6 @@
    "Direcional Engenharia": {
     "status": "monitorar",
     "score": 1
-   },
-   "General Motors": {
-    "status": "monitorar",
-    "score": 0
    },
    "Cyrela Brazil Realty": {
     "status": "monitorar",
