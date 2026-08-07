@@ -757,7 +757,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T11:10:32.649901+00:00"
+     "last_checked_at": "2026-08-07T14:19:06.354320+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2396,7 +2396,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T11:10:33.050168+00:00"
+     "last_checked_at": "2026-08-07T14:19:06.754594+00:00"
     }
    ],
    "corrob_sources": [
@@ -9189,7 +9189,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T11:10:33.450555+00:00"
+     "last_checked_at": "2026-08-07T14:19:07.154847+00:00"
     },
     {
      "source": "Demarest",
@@ -9209,7 +9209,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T11:10:33.850917+00:00"
+     "last_checked_at": "2026-08-07T14:19:07.555134+00:00"
     }
    ],
    "corrob_sources": [
@@ -10626,7 +10626,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T11:10:34.251216+00:00"
+     "last_checked_at": "2026-08-07T14:19:07.955433+00:00"
     }
    ],
    "corrob_sources": [
@@ -13814,7 +13814,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T11:10:34.911225+00:00"
+     "last_checked_at": "2026-08-07T14:19:08.558164+00:00"
     }
    ],
    "corrob_sources": [
@@ -16052,7 +16052,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T11:10:35.570144+00:00"
+     "last_checked_at": "2026-08-07T14:19:09.145713+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16158,7 +16158,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T11:10:36.282507+00:00"
+     "last_checked_at": "2026-08-07T14:19:09.708528+00:00"
     },
     {
      "source": "Moomoo",
@@ -17451,7 +17451,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T11:10:37.110435+00:00"
+     "last_checked_at": "2026-08-07T14:19:10.367161+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17494,7 +17494,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T11:10:37.964398+00:00"
+     "last_checked_at": "2026-08-07T14:19:11.013919+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -18332,7 +18332,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-07T11:10:38.642377+00:00",
+     "last_checked_at": "2026-08-07T14:19:11.568941+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -18357,7 +18357,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-07T11:10:39.302189+00:00",
+     "last_checked_at": "2026-08-07T14:19:12.124033+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19288,7 +19288,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-07T11:10:39.702465+00:00",
+     "last_checked_at": "2026-08-07T14:19:12.524336+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19353,7 +19353,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-07T11:10:40.102755+00:00",
+     "last_checked_at": "2026-08-07T14:19:12.924583+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20326,7 +20326,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T11:10:40.805541+00:00"
+     "last_checked_at": "2026-08-07T14:19:13.480895+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20411,7 +20411,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T11:10:41.443762+00:00"
+     "last_checked_at": "2026-08-07T14:19:14.048934+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22112,7 +22112,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-07T11:10:42.105828+00:00",
+     "last_checked_at": "2026-08-07T14:19:14.589083+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22282,7 +22282,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-07T11:10:42.777517+00:00",
+     "last_checked_at": "2026-08-07T14:19:15.135629+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -35668,7 +35668,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T11:10:43.610193+00:00"
+     "last_checked_at": "2026-08-07T14:19:15.780080+00:00"
     }
    ],
    "corrob_sources": [
@@ -38525,7 +38525,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T11:10:44.272294+00:00"
+     "last_checked_at": "2026-08-07T14:19:16.326553+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38568,7 +38568,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T11:10:44.935675+00:00"
+     "last_checked_at": "2026-08-07T14:19:16.874575+00:00"
     },
     {
      "source": "Virginia Business",
@@ -44492,9 +44492,45 @@
    "trust_override": "imprensa",
    "captured_ts": 1786101025,
    "cap_iso": "2026-08-07 08:10"
+  },
+  "https://mercadoeconsumo.com.br/06/08/2026/mc-capital/cade-aprova-aquisicao-pelo-santander-de-fatia-da-estapar-na-loop/": {
+   "title": "Cade aprova aquisição pelo Santander de fatia da Estapar na Loop",
+   "url": "https://mercadoeconsumo.com.br/06/08/2026/mc-capital/cade-aprova-aquisicao-pelo-santander-de-fatia-da-estapar-na-loop/",
+   "summary": "Cade aprova aquisição pelo Santander de fatia da Estapar na Loop &nbsp;&nbsp; Mercado&Consumo",
+   "source": "Mercado&Consumo",
+   "domain": "mercadoeconsumo.com.br",
+   "pub_ts": 1786029631,
+   "pub_iso": "2026-08-06 12:20",
+   "language": "pt",
+   "companies": [
+    "Santander Brasil"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "mention_roles": {
+    "Santander Brasil": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "aprovacao",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Santander Brasil": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "Santander Brasil"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786112342,
+   "cap_iso": "2026-08-07 11:19"
   }
  },
- "run_count": 83,
+ "run_count": 84,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -49403,14 +49439,18 @@
   "https://news.google.com/rss/articles/CBMingFBVV95cUxObjFLS2xzYi1JMVFTOTRwS09lTlJ3SlN4MmY5dlNJR1hkZTYxSGhMR2hkRU1mS0pyd0FrdEhySjFJR0lZeHJpc1FVRElVT0FlX3hpWTZlYTg0Rnd2UjdjU2hLeGlXNVZWbG9zRjhuYWFwVzVDTXFkdE9FcWd1TmNvOVZsa0NUSEduSlNCaEhMREYzX0ZNUmdCNzRKQ1Jpd9IBpgFBVV95cUxQTVJmamZJUDhqVUtVN1lXYWZuYW5FSG0xZ0FvV0hweTZvNkZWaXJRYTNrZzZzYkRfWjhrb0c1NzRQQWVGdmRGdjFGMDZvTkQ2Q0U4UXR2S1h2X05ZRC1LQUNpREdEd1k1c25CektZMlBBS0Y0VjVjMGljZG5naThkVk55b21yY0FlaXkxeHkxaHQ0Mld1VzhRekh5SkI1Y2lUZUJBenZ3?oc=5": {
    "url": "https://tribunaonline.com.br/economia/pedida-falencia-de-multinacional-com-operacoes-no-es-327765",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiugFBVV95cUxQakFob3lXd1pSdDU5WE5FZXpoNUt4UU15UmNuZU95U1E2c00yaFU2a0FHdFI1SXFQOXdFQlQwWmFWaUVHOXNteXhQT3ZSVmJURlEzSEczZHRyejI0Z0E4YmxXeG5KaUhYVVV3OEZCbTliWXdSRmo4OEZhMThCNmljR0Vad1FOTXRBUDllN0N0bXJOYzZSVERJcUhTWE10bzJ4NGYxZmZjNXYzZVF4ajFPQXY5U3JKOUNSSVHSAb8BQVVfeXFMUEVjWjFQczdfdm9TSUhMQ1FPZGVJTlVEaGhkekMteHFOZzY5cEJ4amJidDN5ZG03V001MmxIOEM1T0xXODVRd2lFME14M0VwaWItVVpOdlR2bXE2UUtQdVVwYV9KS19adzBIVGV0ZjZzUWpCd3ZUTmZVMm5KcXA2NmJ5RldzRzFQWFl2Nm9zeE84b0tyUzM5VC13eVN1cERIVDdlTGRjUDVWbVc4NGF6d1ZKNDlkeEJ2MEdoaWNsejQ?oc=5": {
+   "url": "https://mercadoeconsumo.com.br/06/08/2026/mc-capital/cade-aprova-aquisicao-pelo-santander-de-fatia-da-estapar-na-loop/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786101047,
-  "iso": "07 ago 2026 · 08:10 BRT",
+  "ts": 1786112357,
+  "iso": "07 ago 2026 · 11:19 BRT",
   "status": {
    "Engie Brasil": {
-    "status": "critico",
+    "status": "atencao",
     "score": 75
    },
    "Rumo": {
@@ -49425,17 +49465,17 @@
     "status": "critico",
     "score": 60
    },
-   "Tok&Stok": {
-    "status": "critico",
-    "score": 57
+   "Santander Brasil": {
+    "status": "atencao",
+    "score": 58
    },
    "CVS Health": {
     "status": "critico",
     "score": 57
    },
-   "Santander Brasil": {
-    "status": "atencao",
-    "score": 57
+   "Tok&Stok": {
+    "status": "critico",
+    "score": 56
    },
    "General Motors": {
     "status": "critico",
@@ -49443,19 +49483,19 @@
    },
    "Grupo Financiero Banorte": {
     "status": "critico",
-    "score": 49
+    "score": 48
    },
    "Cosan": {
     "status": "atencao",
     "score": 45
    },
-   "Samarco Mineração": {
-    "status": "critico",
-    "score": 42
-   },
    "Smart Fit": {
     "status": "atencao",
     "score": 42
+   },
+   "Samarco Mineração": {
+    "status": "critico",
+    "score": 41
    },
    "Axia Energia": {
     "status": "atencao",
@@ -49467,7 +49507,7 @@
    },
    "Energisa": {
     "status": "atencao",
-    "score": 37
+    "score": 36
    },
    "Sabesp": {
     "status": "monitorar",
@@ -49499,15 +49539,15 @@
    },
    "PRIO": {
     "status": "monitorar",
-    "score": 25
-   },
-   "Suzano": {
-    "status": "monitorar",
     "score": 24
    },
    "Embraer": {
     "status": "atencao",
     "score": 24
+   },
+   "Suzano": {
+    "status": "monitorar",
+    "score": 23
    },
    "Capital One Financial": {
     "status": "monitorar",
@@ -49521,19 +49561,19 @@
     "status": "monitorar",
     "score": 21
    },
-   "Itaúsa": {
-    "status": "monitorar",
-    "score": 20
-   },
-   "Aegea Saneamento": {
-    "status": "monitorar",
-    "score": 20
-   },
    "Yura": {
     "status": "atencao",
     "score": 19
    },
    "Citigroup": {
+    "status": "monitorar",
+    "score": 19
+   },
+   "Itaúsa": {
+    "status": "monitorar",
+    "score": 19
+   },
+   "Aegea Saneamento": {
     "status": "monitorar",
     "score": 19
    },
@@ -49581,10 +49621,6 @@
     "status": "monitorar",
     "score": 11
    },
-   "British American Tobacco": {
-    "status": "critico",
-    "score": 10
-   },
    "Vamos": {
     "status": "atencao",
     "score": 10
@@ -49592,6 +49628,10 @@
    "Raia Drogasil": {
     "status": "monitorar",
     "score": 10
+   },
+   "British American Tobacco": {
+    "status": "critico",
+    "score": 9
    },
    "BRF": {
     "status": "monitorar",
