@@ -448,6 +448,65 @@ officer president director directors annual meeting effective on at as of and
 _NEG = re.compile(r"\b(?:did\s+not|does\s+not|do\s+not|will\s+not|no|never|"
                   r"without|neither|nor|n[ãa]o)\b", re.I)
 
+# ── linguagem CONTRATUAL / HIPOTÉTICA ────────────────────────────────────────
+# Medido no replay 4H.3D: depois de neutralizar o boilerplate de 1933/1934,
+# emergiu outra classe de falso positivo — cláusulas de contrato de crédito que
+# DEFINEM o que constituiria default/falência, e não relatam fato algum:
+#   Ford, `falencia`:  "any significant guarantor with an aggregate outstanding
+#                       principal amount …"
+#   Baker Hughes, `default`: "Borrowings under each Term Loan Credit Agreement…"
+# Um covenant que descreve hipótese não é ocorrência econômica.
+_CONTRATUAL = re.compile(
+    r"\bas\s+defined\s+in\b|\bcapitalized\s+terms?\b|\bshall\s+(?:mean|be|have|"
+    r"constitute)\b|\bmeans\b|\bEvents?\s+of\s+Default\b\s*(?:”|\"|means|shall)"
+    r"|\bCredit\s+Agreement\b|\bIndenture\b|\bTerm\s+Loan\b|\bUnderwriting\s+Agreement\b"
+    r"|\bupon\s+the\s+occurrence\s+of\b|\bwould\s+(?:constitute|result)\b"
+    r"|\bif\s+any\s+(?:such\s+)?\w+\s+(?:shall|were|occurs)\b"
+    r"|\bfrom\s+time\s+to\s+time\b|\bamended,\s+supplemented\b"
+    r"|\bExhibit\s+\d|\bEXHIBIT\s+INDEX\b|\bpursuant\s+to\s+which\b", re.I)
+
+# Verbos que indicam FATO consumado — vencem a suspeita contratual.
+_FATO_CONSUMADO = re.compile(
+    r"\b(?:filed\s+a\s+(?:voluntary\s+)?petition|has\s+(?:filed|defaulted|failed)"
+    r"|completed\s+the\s+acquisition|closed\s+the\s+(?:merger|acquisition)"
+    r"|was\s+downgraded|downgraded\s+(?:the|its)|resigned\s+as|appointed\s+as"
+    r"|entered\s+into\s+a\s+definitive|announced\s+(?:the\s+)?(?:completion|closing)"
+    r"|declared\s+bankruptcy|commenced\s+(?:chapter|proceedings)"
+    # emissão REALIZADA: "issued $1.5 billion …" é fato, ainda que a frase cite
+    # o indenture que a rege. Sem isto, a guarda contratual apagava emissão
+    # legítima só porque a palavra "indenture" aparecia.
+    r"|issued\s+(?:an\s+aggregate\s+)?\$[\d.,]+|has\s+issued\b"
+    r"|(?:completed|priced|closed)\s+(?:an?\s+|its\s+)?(?:public\s+|private\s+)?offering"
+    r"|sold\s+\$[\d.,]+)\b", re.I)
+
+
+# Enumeração de FATORES DE RISCO / forward-looking: lista tudo que "poderia"
+# acontecer. No replay 4H.3D os 6-K da Cemex produziam `default`, `falencia`,
+# `ma` e `incidente_operacional` a partir de trechos como "changes in the
+# economy that affect demand for consumer goods" e "money laundering,
+# terrorism financing and corruption". Risco enumerado não é risco ocorrido.
+_RISCO_HIPOTETICO = re.compile(
+    r"\bcould\s+(?:cause|affect|result|adversely)\b|\bmay\s+(?:adversely\s+)?affect\b"
+    r"|\bactual\s+results\s+(?:may|could|to)\b|\brisks?\s+and\s+uncertaint\w+\b"
+    r"|\bforward[-\s]looking\b|\bcautionary\b|\bwe\s+(?:may|could)\s+\w+\b"
+    r"|\bchanges\s+in\s+the\s+(?:economy|market|law)\b|\bamong\s+other\s+(?:factors|things)\b"
+    r"|\bthat\s+(?:can|could)\s+adversely\s+affect\b|\bsubject\s+to\s+risks\b", re.I)
+
+# Densidade de lista: enumerações de risco vêm em séries de itens separados por
+# ponto-e-vírgula ou marcadores.
+_LISTA_DENSA = re.compile(r"(?:[;•]\s+\w+[^;•]{5,90}){3,}")
+
+
+def is_contractual(trecho: str) -> bool:
+    """A evidência é cláusula contratual/hipotética em vez de fato ocorrido?"""
+    t = str(trecho or "")
+    if not t:
+        return False
+    if _FATO_CONSUMADO.search(t):
+        return False
+    return bool(_CONTRATUAL.search(t) or _RISCO_HIPOTETICO.search(t)
+                or _LISTA_DENSA.search(t))
+
 
 def _anchor_negada(text: str, achado: dict | None, janela: int = 45) -> bool:
     """A âncora encontrada está sob escopo de negação imediatamente anterior?"""
@@ -536,14 +595,33 @@ def candidate_events(filing: dict) -> list[dict]:
     return cands
 
 
-def evaluate_candidate(filing: dict, candidate: dict, text: str) -> dict:
-    """Decide um candidato à luz da EVIDÊNCIA. Não pontua: só qualifica."""
+def _janela(raw: str, achado: dict | None) -> dict:
+    """Janela LOCAL de evidência no BRUTO, com heading da seção (4H.3D §6)."""
+    if not achado or not raw:
+        return {}
+    try:
+        import edgar_normalizer as _en
+        return _en.evidence_window(raw, achado["evidence_start"],
+                                   achado["evidence_end"])
+    except Exception:
+        return {}
+
+
+def evaluate_candidate(filing: dict, candidate: dict, text: str,
+                       raw: str | None = None) -> dict:
+    """Decide um candidato à luz da EVIDÊNCIA. Não pontua: só qualifica.
+
+    `text` é o texto de BUSCA (semântico quando houve normalização); `raw` é o
+    bruto de onde a evidência é recortada.
+    """
     ev = _clean(candidate.get("event_id"))
     item = _clean(candidate.get("item"))
     forca = _clean(candidate.get("forca"))
+    bruto = raw if raw is not None else text
     base = {
         **candidate,
         "evidence_text": "", "evidence_match": "",
+        "evidence_section": "", "evidence_source": "raw_document_text",
         "aceito": False, "confianca": "nenhuma", "decisao": "rejeitado",
     }
 
@@ -571,6 +649,7 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str) -> dict:
                      "confianca": "baixa", "nao_pontuavel_por_forma": True,
                      "evidence_text": achado_p["evidence_text"],
                      "evidence_match": achado_p["evidence_match"],
+                     **_janela(bruto, achado_p),
                      "motivo_decisao": (f"{filing.get('form')} é relatório periódico: "
                                         f"corrobora '{ev}', não prova fato novo")})
         return base
@@ -580,12 +659,15 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str) -> dict:
     # Avaliar antes da âncora genérica produz motivo de rejeição útil no CSV
     # ("eleição de conselheiro") em vez de um "sem evidência" opaco.
     if ev == "troca_ceo" and item == "5.02":
-        det = analyze_officer_change(text)
-        base["officer_detail"] = det
         ach502 = find_evidence(text, ev)
+        jan502 = _janela(bruto, ach502)
+        # análise de cargo na JANELA LOCAL, não no filing inteiro: rodar sobre
+        # 60 mil chars fazia qualquer "appointed" distante validar o evento.
+        det = analyze_officer_change(jan502.get("evidence_text") or text)
+        base["officer_detail"] = det
         if ach502:
             base.update({"evidence_text": ach502["evidence_text"],
-                         "evidence_match": ach502["evidence_match"]})
+                         "evidence_match": ach502["evidence_match"], **jan502})
         if not det["suficiente"]:
             base["motivo_decisao"] = det["motivo"]
             return base
@@ -613,6 +695,7 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str) -> dict:
             "confianca": "alta" if achado else "media",
             "evidence_text": (achado or {}).get("evidence_text", f"item 1.03 ({filing.get('form')})"),
             "evidence_match": (achado or {}).get("evidence_match", "item 1.03"),
+            **_janela(bruto, achado),
             "motivo_decisao": "item 1.03 é o próprio fato jurídico",
         })
         return base
@@ -622,12 +705,24 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str) -> dict:
                                   f"({'corpo não recuperado' if not text else 'âncora ausente no texto'})")
         return base
 
+    janela = _janela(bruto, achado)
     base.update({"evidence_text": achado["evidence_text"],
-                 "evidence_match": achado["evidence_match"]})
+                 "evidence_match": achado["evidence_match"], **janela})
+
+    # cláusula de contrato descrevendo hipótese ≠ fato ocorrido
+    if ev in MATERIAL_EVENTS and is_contractual(
+            janela.get("evidence_text") or achado["evidence_text"]):
+        base.update({"aceito": True, "decisao": "aceito_nao_pontuavel",
+                     "confianca": "baixa", "nao_pontuavel_por_forma": True,
+                     "contexto_contratual": True,
+                     "motivo_decisao": (f"'{ev}' aparece em linguagem contratual/"
+                                        f"hipotética (covenant, definição, exhibit) "
+                                        f"— não é fato ocorrido")})
+        return base
 
     # 5.02 exige detalhe de cargo + movimento
     if ev == "troca_ceo":
-        det = analyze_officer_change(text)
+        det = analyze_officer_change(janela.get("evidence_text") or text)
         base["officer_detail"] = det
         if not det["suficiente"]:
             base["motivo_decisao"] = det["motivo"]
@@ -659,10 +754,19 @@ def evaluate_candidate(filing: dict, candidate: dict, text: str) -> dict:
     return base
 
 
-def analyze_filing(filing: dict, text: str = "") -> dict:
-    """Pipeline canônico de um filing: candidatos → evidência → decisão."""
+def analyze_filing(filing: dict, text: str = "",
+                   semantic_text: str | None = None) -> dict:
+    """Pipeline canônico de um filing: candidatos → evidência → decisão.
+
+    `text` é o BRUTO (`raw_document_text`); `semantic_text` é o derivado pelo
+    normalizador source-aware. A busca de âncora roda no semântico — para não
+    tropeçar em boilerplate jurídico — mas a EVIDÊNCIA exibida sai sempre do
+    bruto, porque a neutralização preserva comprimento e offsets.
+    """
+    raw = text or ""
+    sem = raw if semantic_text is None else semantic_text
     cands = candidate_events(filing)
-    avaliados = [evaluate_candidate(filing, c, text or "") for c in cands]
+    avaliados = [evaluate_candidate(filing, c, sem, raw=raw) for c in cands]
     aceitos = [a for a in avaliados if a["aceito"]]
 
     # texto pode revelar evento material que o item não anunciou (ex.: 6-K)
@@ -670,14 +774,13 @@ def analyze_filing(filing: dict, text: str = "") -> dict:
     for ev in sorted(MATERIAL_EVENTS):
         if ev in ja:
             continue
-        achado = find_evidence(text or "", ev)
-        if not achado:
+        if not find_evidence(sem, ev):
             continue
         extra = evaluate_candidate(filing, {
             "event_id": ev, "item": "", "form": filing.get("form", ""),
             "origem": "texto_do_documento", "forca": "candidato",
             "motivo": f"âncora textual de '{ev}' sem item correspondente",
-        }, text or "")
+        }, sem, raw=raw)
         avaliados.append(extra)
         if extra["aceito"]:
             aceitos.append(extra)
@@ -687,21 +790,32 @@ def analyze_filing(filing: dict, text: str = "") -> dict:
         "candidatos": avaliados,
         "aceitos": aceitos,
         "event_ids": sorted({a["event_id"] for a in aceitos if a["event_id"]}),
-        "tem_texto": bool(text),
+        "tem_texto": bool(raw),
+        "normalizado": semantic_text is not None,
     }
 
 
-def to_article(filing: dict, text: str = "", analysis: dict | None = None) -> dict:
+def to_article(filing: dict, text: str = "", analysis: dict | None = None,
+               semantic_text: str | None = None) -> dict:
     """Converte o filing canônico em artigo do pipeline.
 
     Mantém a decisão 4H.3A: o filer entra como CANDIDATO (`candidate_companies`),
     NUNCA como `forced_companies`. Quem resolve o sujeito continua sendo
     `detect_companies`/`mention_role`/`semantic_audit`.
     """
-    an = analysis or analyze_filing(filing, text)
+    an = analysis or analyze_filing(filing, text, semantic_text)
     corpo = (text or "").strip()
-    resumo = corpo[:4000] if corpo else _clean(filing.get("description"))
     empresa = _clean(filing.get("company"))
+    # O texto entregue ao classificador é o SEMÂNTICO — nunca o bruto com
+    # boilerplate. Quando há evidência local, ela é o resumo: classificar a
+    # janela em vez do filing inteiro é o ponto do §6 da 4H.3D.
+    janelas = [a.get("evidence_text") for a in an["aceitos"] if a.get("evidence_text")]
+    if janelas:
+        resumo = " … ".join(dict.fromkeys(janelas))[:4000]
+    elif semantic_text:
+        resumo = re.sub(r"\s{2,}", " ", semantic_text).strip()[:4000]
+    else:
+        resumo = corpo[:4000] if corpo else _clean(filing.get("description"))
     return {
         "title": canonical_title(filing),
         "url": filing.get("url", ""),
@@ -728,6 +842,11 @@ def to_article(filing: dict, text: str = "", analysis: dict | None = None) -> di
         "edgar_candidates": an["candidatos"],
         "edgar_event_ids": an["event_ids"],
         "edgar_has_body": an["tem_texto"],
+        # bruto e semântico coexistem: o bruto é a prova, o semântico é o que
+        # se classifica. Nunca sobrescrever o bruto (4H.3D §2).
+        "raw_document_text": corpo,
+        "semantic_text": semantic_text or "",
+        "edgar_normalized": bool(semantic_text),
     }
 
 

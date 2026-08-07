@@ -32,6 +32,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import edgar_canonical as ec
+import edgar_normalizer as en
 
 ARTIFACTS = [
     "edgar_4h3c_por_emissor.csv",
@@ -144,7 +145,7 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
             "candidatos_evento": 0, "eventos_classificados": 0,
             "eventos_diretos": 0, "eventos_contextuais": 0, "eventos_informativos": 0,
             "rejeitados": 0, "motivo_rejeicao": "", "corpos_baixados": 0,
-            "erro_corpo": "", "elapsed_ms": 0,
+            "erro_corpo": "", "chars_neutralizados": 0, "elapsed_ms": 0,
         }
         cik10 = c.get("cik") or cikmap.get(str(c.get("ticker") or "").upper())
         if not cik10:
@@ -201,7 +202,12 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
                     linha["erro_corpo"] = _cut(erros_corpo[0] if erros_corpo else "", 160)
                 if fetcher is None:
                     time.sleep(1.0 / rps)
-            an = ec.analyze_filing(f, texto)
+            # 4H.3D: normalização SOURCE-AWARE. O bruto segue intocado; a
+            # classificação roda sobre o semântico.
+            norm = en.normalize_edgar_semantic_text(texto, provenance="EDGAR")
+            semantico = norm["semantic_text"]
+            linha["chars_neutralizados"] += norm["stats"].get("chars_neutralizados", 0)
+            an = ec.analyze_filing(f, texto, semantico)
 
             filings_rows.append({
                 "emissor": nome, "cik": f["cik"], "ticker": f["ticker"],
@@ -234,7 +240,7 @@ def run_shadow_4h3c(rd, cfg: dict, *, outdir: str = "out_4h3c",
                             cand.get("motivo_decisao") or cand.get("motivo"), 120)
 
             # ── atribuição pelo pipeline REAL (filer ≠ sujeito automático) ──
-            art = ec.to_article(f, texto, an)
+            art = ec.to_article(f, texto, an, semantic_text=semantico)
             for ev in an["event_ids"]:
                 veredito = _atribuir(rd, cfg, art, nome, ev)
                 # forma periódica nunca pontua, qualquer que seja o veredito
