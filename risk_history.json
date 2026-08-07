@@ -408,7 +408,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.619273+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.619273+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOR2t2XzZBbzFseEpZWTI0RmxhT2VxUk90clpRVmFTSUNUbnZJRmhVQUVzV2loUi1FTjFfQXVqWURHdWFHVmUtaDVfeVJBclVnWGw5Y2pxMzZyTnRDdl93Nl9sR2RlY3JYb0YtRVBWMDVYSFBZc0otNU1EUUk4MENEQmNaQ0IxQUxqcnByTnFtdHNXSjZwZHlhUGtOTEM0N2JvQ2pUM2VMdmfSAbcBQVVfeXFMTmtEaktweC1TRkYzakxILVFrWFVTdXozUklVXzd6QTExSWRiekVwSGhuMHJjRGtUd09xM0lKc3lKUURlTkFFTXRYTVJYdk1IOUxDVmFpS2pDZ2d3WW9pZUI2T3E2dE02YVhxaTNuTDdQS2plQ1ZsSFFwaVBoUm1PeVFmMVc4VFBGN2F0RUV2dXJEREVydEt0WXI1LU1XZndzcld4TENQdkcwT28zWVVvWDlPSjJmbmww?oc=5": {
    "title": "Rede D’Or negocia aquisição do Fleury, dizem fontes",
@@ -757,7 +759,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T14:19:06.354320+00:00"
+     "last_checked_at": "2026-08-07T17:02:06.135052+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2396,7 +2398,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T14:19:06.754594+00:00"
+     "last_checked_at": "2026-08-07T17:02:06.535298+00:00"
     }
    ],
    "corrob_sources": [
@@ -9189,7 +9191,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T14:19:07.154847+00:00"
+     "last_checked_at": "2026-08-07T17:02:06.935579+00:00"
     },
     {
      "source": "Demarest",
@@ -9209,7 +9211,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T14:19:07.555134+00:00"
+     "last_checked_at": "2026-08-07T17:02:07.335830+00:00"
     }
    ],
    "corrob_sources": [
@@ -10626,7 +10628,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T14:19:07.955433+00:00"
+     "last_checked_at": "2026-08-07T17:02:07.736080+00:00"
     }
    ],
    "corrob_sources": [
@@ -13814,7 +13816,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T14:19:08.558164+00:00"
+     "last_checked_at": "2026-08-07T17:02:08.287037+00:00"
     }
    ],
    "corrob_sources": [
@@ -16052,7 +16054,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T14:19:09.145713+00:00"
+     "last_checked_at": "2026-08-07T17:02:08.815716+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16158,7 +16160,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T14:19:09.708528+00:00"
+     "last_checked_at": "2026-08-07T17:02:09.362453+00:00"
     },
     {
      "source": "Moomoo",
@@ -17451,7 +17453,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T14:19:10.367161+00:00"
+     "last_checked_at": "2026-08-07T17:02:09.978180+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17494,7 +17496,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T14:19:11.013919+00:00"
+     "last_checked_at": "2026-08-07T17:02:10.641451+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -18332,7 +18334,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-07T14:19:11.568941+00:00",
+     "last_checked_at": "2026-08-07T17:02:11.156966+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -18357,7 +18359,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-07T14:19:12.124033+00:00",
+     "last_checked_at": "2026-08-07T17:02:11.716550+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19288,7 +19290,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-07T14:19:12.524336+00:00",
+     "last_checked_at": "2026-08-07T17:02:12.116801+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19353,7 +19355,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-07T14:19:12.924583+00:00",
+     "last_checked_at": "2026-08-07T17:02:12.517047+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20326,7 +20328,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T14:19:13.480895+00:00"
+     "last_checked_at": "2026-08-07T17:02:13.079805+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20411,7 +20413,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T14:19:14.048934+00:00"
+     "last_checked_at": "2026-08-07T17:02:13.632908+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22112,7 +22114,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-07T14:19:14.589083+00:00",
+     "last_checked_at": "2026-08-07T17:02:14.198603+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22282,7 +22284,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-07T14:19:15.135629+00:00",
+     "last_checked_at": "2026-08-07T17:02:14.723718+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -35668,7 +35670,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T14:19:15.780080+00:00"
+     "last_checked_at": "2026-08-07T17:02:15.370724+00:00"
     }
    ],
    "corrob_sources": [
@@ -38525,7 +38527,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T14:19:16.326553+00:00"
+     "last_checked_at": "2026-08-07T17:02:15.905348+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38568,7 +38570,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T14:19:16.874575+00:00"
+     "last_checked_at": "2026-08-07T17:02:16.426366+00:00"
     },
     {
      "source": "Virginia Business",
@@ -44226,7 +44228,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1786029890,
-   "cap_iso": "2026-08-06 12:24"
+   "cap_iso": "2026-08-06 12:24",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.marketwatch.com/story/trade-desk-shares-tumble-on-earnings-miss-and-weak-outlook-9f4640e9?mod=mw_rss_topstories": {
    "title": "Trade Desk shares tumble on earnings miss and weak outlook",
@@ -44470,7 +44474,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1786101025,
-   "cap_iso": "2026-08-07 08:10"
+   "cap_iso": "2026-08-07 08:10",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.marketwatch.com/story/as-alphabet-burns-through-cash-on-ai-its-turning-back-to-the-bond-market-04e85f31?mod=mw_rss_topstories": {
    "title": "Enquanto a Alphabet queima caixa com IA, ela volta a recorrer ao mercado de títulos",
@@ -44528,9 +44534,100 @@
    "context_companies": [],
    "captured_ts": 1786112342,
    "cap_iso": "2026-08-07 11:19"
+  },
+  "https://www.barrons.com/articles/nextera-energy-dominion-energy-acquisition-48df4128": {
+   "title": "Virginia Governor Is ‘Skeptical’ of NextEra Energy’s Dominion Acquisition",
+   "url": "https://www.barrons.com/articles/nextera-energy-dominion-energy-acquisition-48df4128",
+   "summary": "Virginia Governor Is ‘Skeptical’ of NextEra Energy’s Dominion Acquisition &nbsp;&nbsp; Barron's",
+   "source": "Barron's",
+   "domain": "barrons.com",
+   "pub_ts": 1786047240,
+   "pub_iso": "2026-08-06 17:14",
+   "language": "en",
+   "companies": [
+    "NextEra Energy"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "mention_roles": {
+    "NextEra Energy": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "NextEra Energy": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "NextEra Energy"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786122121,
+   "cap_iso": "2026-08-07 14:02"
+  },
+  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRjNNeV9ka21IVnpyZEk1d3ZKQmlZM21yTVVuUmRtWEhaaGpOOW9HOGNwdTIyYkpSRTlwcXRFZUJuUWE5bWgzT3lWdWw4Y2dkU25fZlRSa0lyU2cyWUdYTTRydnRDQThGcDZaQ01xbUE0dXhxaGtXc3Z2MlpibFMxZVZMaGdQZGpLdmVGZmk5SmllR2JmUVA3b0hQRmNJNFRiLTl4TUh5R2paZVJpX0RBMjlXZ1FHalpyVnhj?oc=5": {
+   "title": "Spanberger takes unprecedented step to intervene in $67B Dominion-NextEra merger",
+   "url": "https://virginiamercury.com/2026/08/06/spanberger-takes-unprecedented-step-to-intervene-in-67b-dominion-nextera-merger/",
+   "summary": "Spanberger takes unprecedented step to intervene in $67B Dominion-NextEra merger &nbsp;&nbsp; Virginia Mercury",
+   "source": "Virginia Mercury",
+   "domain": "virginiamercury.com",
+   "pub_ts": 1786048409,
+   "pub_iso": "2026-08-06 17:33",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1786122121,
+   "cap_iso": "2026-08-07 14:02"
+  },
+  "https://www.marketwatch.com/story/are-target-date-funds-hurting-americans-as-they-live-longer-929f4f92?mod=mw_rss_topstories": {
+   "title": "Are target-date funds hurting Americans as they live longer?",
+   "url": "https://www.marketwatch.com/story/are-target-date-funds-hurting-americans-as-they-live-longer-929f4f92?mod=mw_rss_topstories",
+   "summary": "The popular default investments may need to be more aggressive in order to fund decades of retirement.",
+   "source": "MarketWatch · Top Stories",
+   "domain": "marketwatch.com",
+   "pub_ts": 1786115880,
+   "pub_iso": "2026-08-07 12:18",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "default"
+   ],
+   "trust_override": "imprensa",
+   "captured_ts": 1786122121,
+   "cap_iso": "2026-08-07 14:02"
+  },
+  "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbW5JcHZlN00xSTN2Y1hEX1lRUG5jRTNINzlBVXQ2cnZqSzVhSXJQR3BtS2k5blhCTU1KRkN6MkJmVUFDcUxaUXMwYUFET04xdEdhRUJYbnY3MVlQbFBSd1FmNDlQV3BUMmhRajR2SjhkUzNRcUVCenNCMUc0QmZLdENnRDRzbXkyZW42TXZCZFM?oc=5": {
+   "title": "Justiça autoriza recuperação judicial da BMG Foods",
+   "url": "https://www.theagribiz.com/agribuzz/justica-autoriza-recuperacao-judicial-da-bmg-foods/",
+   "summary": "Justiça autoriza recuperação judicial da BMG Foods &nbsp;&nbsp; theagribiz.com",
+   "source": "theagribiz.com",
+   "domain": "theagribiz.com",
+   "pub_ts": 1786116487,
+   "pub_iso": "2026-08-07 12:28",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1786122121,
+   "cap_iso": "2026-08-07 14:02"
   }
  },
- "run_count": 84,
+ "run_count": 85,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -49443,11 +49540,23 @@
   "https://news.google.com/rss/articles/CBMiugFBVV95cUxQakFob3lXd1pSdDU5WE5FZXpoNUt4UU15UmNuZU95U1E2c00yaFU2a0FHdFI1SXFQOXdFQlQwWmFWaUVHOXNteXhQT3ZSVmJURlEzSEczZHRyejI0Z0E4YmxXeG5KaUhYVVV3OEZCbTliWXdSRmo4OEZhMThCNmljR0Vad1FOTXRBUDllN0N0bXJOYzZSVERJcUhTWE10bzJ4NGYxZmZjNXYzZVF4ajFPQXY5U3JKOUNSSVHSAb8BQVVfeXFMUEVjWjFQczdfdm9TSUhMQ1FPZGVJTlVEaGhkekMteHFOZzY5cEJ4amJidDN5ZG03V001MmxIOEM1T0xXODVRd2lFME14M0VwaWItVVpOdlR2bXE2UUtQdVVwYV9KS19adzBIVGV0ZjZzUWpCd3ZUTmZVMm5KcXA2NmJ5RldzRzFQWFl2Nm9zeE84b0tyUzM5VC13eVN1cERIVDdlTGRjUDVWbVc4NGF6d1ZKNDlkeEJ2MEdoaWNsejQ?oc=5": {
    "url": "https://mercadoeconsumo.com.br/06/08/2026/mc-capital/cade-aprova-aquisicao-pelo-santander-de-fatia-da-estapar-na-loop/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMijAFBVV95cUxNNWF1VFNuY3JKaEgtLXFwY29oQ0E3UDc5WnZyUnlRVHNpMC1rWW10c3c1UDBjQl9TOE9VSENyVmFOTzloRVFOeFd4OUR2NmpwZDZWYjJQMkRLTER0V0dvQnIzNFV0S0RhTUVqclh3THhwRGdpd0hXRmlMNDd2aG1POHk3enZSTHQ5aE1BYw?oc=5": {
+   "url": "https://www.barrons.com/articles/nextera-energy-dominion-energy-acquisition-48df4128",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRjNNeV9ka21IVnpyZEk1d3ZKQmlZM21yTVVuUmRtWEhaaGpOOW9HOGNwdTIyYkpSRTlwcXRFZUJuUWE5bWgzT3lWdWw4Y2dkU25fZlRSa0lyU2cyWUdYTTRydnRDQThGcDZaQ01xbUE0dXhxaGtXc3Z2MlpibFMxZVZMaGdQZGpLdmVGZmk5SmllR2JmUVA3b0hQRmNJNFRiLTl4TUh5R2paZVJpX0RBMjlXZ1FHalpyVnhj?oc=5": {
+   "url": "https://virginiamercury.com/2026/08/06/spanberger-takes-unprecedented-step-to-intervene-in-67b-dominion-nextera-merger/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbW5JcHZlN00xSTN2Y1hEX1lRUG5jRTNINzlBVXQ2cnZqSzVhSXJQR3BtS2k5blhCTU1KRkN6MkJmVUFDcUxaUXMwYUFET04xdEdhRUJYbnY3MVlQbFBSd1FmNDlQV3BUMmhRajR2SjhkUzNRcUVCenNCMUc0QmZLdENnRDRzbXkyZW42TXZCZFM?oc=5": {
+   "url": "https://www.theagribiz.com/agribuzz/justica-autoriza-recuperacao-judicial-da-bmg-foods/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786112357,
-  "iso": "07 ago 2026 · 11:19 BRT",
+  "ts": 1786122137,
+  "iso": "07 ago 2026 · 14:02 BRT",
   "status": {
    "Engie Brasil": {
     "status": "atencao",
@@ -49487,7 +49596,7 @@
    },
    "Cosan": {
     "status": "atencao",
-    "score": 45
+    "score": 44
    },
    "Smart Fit": {
     "status": "atencao",
@@ -49497,13 +49606,13 @@
     "status": "critico",
     "score": 41
    },
-   "Axia Energia": {
-    "status": "atencao",
-    "score": 40
-   },
    "BTG Pactual": {
     "status": "atencao",
     "score": 40
+   },
+   "Axia Energia": {
+    "status": "atencao",
+    "score": 39
    },
    "Energisa": {
     "status": "atencao",
@@ -49511,7 +49620,7 @@
    },
    "Sabesp": {
     "status": "monitorar",
-    "score": 36
+    "score": 35
    },
    "Petrobras": {
     "status": "atencao",
@@ -49543,6 +49652,10 @@
    },
    "Embraer": {
     "status": "atencao",
+    "score": 24
+   },
+   "NextEra Energy": {
+    "status": "monitorar",
     "score": 24
    },
    "Suzano": {
@@ -49600,10 +49713,6 @@
    "Ecopetrol": {
     "status": "monitorar",
     "score": 14
-   },
-   "NextEra Energy": {
-    "status": "monitorar",
-    "score": 13
    },
    "Usiminas": {
     "status": "monitorar",
