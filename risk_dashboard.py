@@ -9208,7 +9208,12 @@ def main():
             _sh3b.run_edgar_runtime_shadow(
                 _edgar_shadow_articles, cfg, sys.modules[__name__],
                 history_snapshot=history, outdir=args.outdir,
-                watch_files=[history_path, args.config, "index.html"])
+                # 4H.5F: history_path é Path, não str — run_edgar_runtime_shadow
+                # usa cada item de watch_files como CHAVE de dict que depois vai
+                # para json.dumps (hashes_antes/hashes_depois); Path não é
+                # serializável como chave JSON (TypeError). Agora que collection
+                # fica ligada permanentemente, isso rodava em todo run real.
+                watch_files=[str(history_path), args.config, "index.html"])
         except Exception as _exc:
             print(f"   ⚠️  shadow de runtime falhou ({type(_exc).__name__}: "
                   f"{str(_exc)[:140]}) — filings seguem FORA do pipeline pontuável.")
@@ -9265,6 +9270,40 @@ def main():
     # aplica a resolução de URLs aos registros JÁ no histórico (execuções
     # anteriores gravaram o link-redirecionador do Google; corrige todos)
     resolve_history_urls(history, cfg)
+
+    # ── 4H.5 — CASO B: EDGAR como fonte de CORROBORAÇÃO de ocorrências já
+    # validadas pelas fontes normais (nunca origem de score — decisão 4H.4B,
+    # não reaberta aqui). Roda DEPOIS de merge_into_history/resolve_history_
+    # urls para poder casar tanto contra histórico antigo quanto contra
+    # notícias desta mesma execução. Só anexa corrob_sources a um registro
+    # EXISTENTE — nunca cria linha nova em history["articles"].
+    if _edgar_shadow_articles:
+        try:
+            import edgar_corroboration_4h5 as _corrob4h5
+            _corrob_resumo = _corrob4h5.apply_edgar_corroboration(
+                _edgar_shadow_articles, history, cfg, sys.modules[__name__])
+            _n_erros_corpo = (_corrob_resumo["filings_recebidos"]
+                             - _corrob_resumo["filings_com_corpo"])
+            if _corrob_resumo["corroborados"] or _corrob_resumo["candidatos_avaliados"]:
+                print(f" 🔗 EDGAR corroboração: {_corrob_resumo['filings_recebidos']} filing(s) "
+                      f"recebido(s), {_n_erros_corpo} sem corpo recuperado (erro de coleta/parsing), "
+                      f"{_corrob_resumo['candidatos_avaliados']} candidato(s) avaliado(s), "
+                      f"{_corrob_resumo['corroborados']} corroboração(ões) nova(s) anexada(s), "
+                      f"{_corrob_resumo['sem_match']} sem match (não pontuam).")
+            # 4H.5F: telemetria persistida (não só o log) — para todo run com
+            # candidatos avaliados, grava o resumo completo (matches +
+            # sem_match_detalhe) em JSON, respondendo sem precisar reler log:
+            # filings coletados, com/sem corpo, candidatos, matches,
+            # rejeitados, EDGAR-only. Contador simples, sem framework novo.
+            try:
+                (Path(args.outdir) / "edgar_corroboration_4h5_resumo.json").write_text(
+                    json.dumps(_corrob_resumo, ensure_ascii=False, indent=2, default=str),
+                    encoding="utf-8")
+            except Exception:
+                pass
+        except Exception as _exc:
+            print(f"   ⚠️  corroboração EDGAR indisponível ({type(_exc).__name__}: "
+                  f"{str(_exc)[:140]}) — histórico segue sem alteração de corroboração.")
 
     prev_run = history.get("last_run") or {}
     prev_scores = {c: v.get("score") for c, v in (prev_run.get("status") or {}).items()}

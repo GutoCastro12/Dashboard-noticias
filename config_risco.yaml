@@ -4423,6 +4423,12 @@ output:
   filename: dashboard_risco.html
   history_file: risk_history.json
   open_browser: false
+# 4H.5 — habilita SOMENTE a coleta SEC/EDGAR (nunca scoring autônomo:
+# edgar_scoring_enabled continua ausente/false). Blast radius confirmado por
+# inspeção direta do código antes de aplicar: international_official_
+# sources_enabled só é lido dentro de edgar_collection_enabled(); nenhum
+# outro país sob official_sources é lido por qualquer função de coleta.
+international_official_sources_enabled: true
 official_sources:
   Brasil:
     regulador: CVM
@@ -4437,6 +4443,7 @@ official_sources:
       não confirma sozinho e vira ''revisar''. FIIs e fundos NÃO são companhias abertas: não constam neste dataset e recebem status ''nao_aplicavel_dataset_ipe'' — a cobertura oficial de fundos exige o
       dataset de fundos estruturados da CVM (a implementar), não é falha de filiação.'
   EUA:
+    enabled: true
     regulador: SEC
     filings: EDGAR
     filings_url: https://www.sec.gov/edgar/search/
