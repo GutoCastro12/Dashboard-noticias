@@ -13,3 +13,11 @@ out_4h3f/
 # Config candidato: é GERADO a partir de config_risco.yaml, nunca versionado,
 # para não virar uma segunda fonte de verdade ao lado do config de produção.
 config_risco_4h3c_candidato.yaml
+
+# Evidência local do run real controlado da 4H.5 (log + snapshot de dados de
+# execução) — preservada em disco, não commitada (não é dado de produção
+# permanente; o relatório já extrai tudo que é relevante para revisão).
+run_4h5_real.log
+run_4h5_artifact/
+edgar_runtime_shadow_*.csv
+edgar_runtime_shadow_run_meta.json
