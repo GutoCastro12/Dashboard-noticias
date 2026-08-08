@@ -46,8 +46,18 @@ def t02_dry_run_independe_flags():
     c["watchlist"] = []
     out = rd.fetch_edgar_filings(c, force=True)
     check(out == [], "force=True executa o caminho do coletor sem exigir flags (watchlist vazia → [])")
+    # 4H.6 ligou a coleta em produção (international_official_sources_enabled=true,
+    # official_sources.EUA.enabled=true) — chamar fetch_edgar_filings(CFG) direto
+    # faria uma chamada de rede REAL numa suíte "offline, sem rede" (dockstring
+    # do módulo). Watchlist vazia mantém o caminho real (flags de produção,
+    # inclusive collection=True) sem tocar a rede: alvos=[] retorna antes de
+    # qualquer requests.Session (ver fetch_edgar_filings).
     c2 = dict(CFG)
-    check(rd.fetch_edgar_filings(c2) == [], "sem force, config de produção continua retornando [] (score inalterado)")
+    c2["watchlist"] = []
+    check(rd.edgar_collection_enabled(c2) is True,
+          "config de produção (flags reais) tem coleta LIGADA (invariante pós-4H.6)")
+    check(rd.fetch_edgar_filings(c2) == [],
+          "sem force, watchlist vazia → [] mesmo com coleta ligada (sem chamada de rede)")
 
 
 def t03_source_diferente_subject():
@@ -249,14 +259,25 @@ def t19_idempotencia_duas_execucoes():
 
 
 def t20_preservacao_config_producao():
-    print("\n[20] Preservação do config de produção")
+    print("\n[20] Preservação do config de produção — invariante pós-4H.6")
+    # Pré-4H.6 esta função verificava que a coleta EDGAR permanecia OFF em
+    # produção. A 4H.5/4H.6 ligaram a coleta deliberadamente (corroboração
+    # real, sem scoring autônomo) — a premissa antiga está obsoleta, não a
+    # proteção em si. Substituída pela invariante ATUAL, que continua sendo
+    # a coisa real que protege o negócio: coleta pode estar ligada, scoring
+    # autônomo NUNCA pode estar (4H.4/4H.4B, decisão não reaberta).
     prod = rd.load_config("config_risco.yaml")
-    check(prod.get("international_official_sources_enabled") is None,
-          "config de produção NÃO tem a flag global (permanece desligado)")
-    check(((prod.get("official_sources") or {}).get("EUA") or {}).get("enabled") is None,
-          "config de produção NÃO tem EUA.enabled")
-    check(rd.edgar_collection_enabled(prod) is False, "coleta EDGAR desligada em produção")
-    check(rd.fetch_edgar_filings(prod) == [], "fetch_edgar_filings(produção) == [] → score idêntico")
+    check(prod.get("international_official_sources_enabled") is True,
+          "config de produção tem a flag global de coleta LIGADA (4H.6)")
+    check(((prod.get("official_sources") or {}).get("EUA") or {}).get("enabled") is True,
+          "config de produção tem official_sources.EUA.enabled LIGADO (4H.6)")
+    check(rd.edgar_collection_enabled(prod) is True,
+          "coleta EDGAR LIGADA em produção (invariante atual, não mais desligada)")
+    check(rd.edgar_scoring_enabled(prod) is False,
+          "scoring autônomo EDGAR continua DESLIGADO em produção mesmo com coleta ligada "
+          "(AND-gate: collection=True não implica scoring=True — decisão 4H.4B não reaberta)")
+    check("edgar_scoring_enabled" not in prod or prod.get("edgar_scoring_enabled") is not True,
+          "produção nunca seta edgar_scoring_enabled=true explicitamente")
     cand = Path("config_risco_4h3a_candidato.yaml")
     if cand.exists():
         cc = rd.load_config(str(cand))
