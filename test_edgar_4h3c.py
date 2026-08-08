@@ -370,14 +370,19 @@ def t19_scoring_desligado_impede_persistencia():
     check(len(production_articles) == 1, "filing NÃO entrou em production_articles")
     check(len(shadow) == 1, "filing roteado para o caminho de sombra")
 
-    # config de PRODUÇÃO permanece com as três flags desligadas
+    # NOVA INVARIANTE (4H.5F): nesta branch, collection EDGAR está
+    # deliberadamente LIGADA (arquitetura de corroboração validada em
+    # 4H.5 — run real, 1 TRUE CORROBORATION, 0 FALSE MATCH); scoring
+    # autônomo EDGAR continua e sempre continuará OFF. A premissa antiga
+    # ("config mantém EDGAR totalmente desligado") foi substituída pela
+    # premissa correta desta fase: collection ON não implica scoring ON.
     prod = rd.load_config(str(BASE / "config_risco.yaml"))
-    check(rd.edgar_collection_enabled(prod) is False,
-          "produção: coleta EDGAR desligada")
+    check(rd.edgar_collection_enabled(prod) is True,
+          "config: coleta EDGAR LIGADA (invariante desta branch)")
     check(rd.edgar_scoring_enabled(prod) is False,
-          "produção: scoring EDGAR desligado")
+          "config: scoring EDGAR permanece DESLIGADO")
     check(prod.get("edgar_scoring_enabled") in (None, False),
-          "produção: chave edgar_scoring_enabled ausente ou false")
+          "config: chave edgar_scoring_enabled ausente ou false")
 
 
 def t20_shadow_nao_altera_historico():

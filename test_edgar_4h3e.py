@@ -207,10 +207,12 @@ def t11_regressoes_anteriores():
 
 
 def t12_producao_isolada():
-    print("\n[12] Produção intocada")
+    print("\n[12] Scoring autônomo intocado (collection deliberadamente ligada)")
+    # NOVA INVARIANTE (4H.5F): collection EDGAR deliberadamente LIGADA
+    # nesta branch; scoring autônomo continua e sempre continuará OFF.
     prod = rd.load_config(str(BASE / "config_risco.yaml"))
     check(rd.edgar_scoring_enabled(prod) is False, "edgar_scoring_enabled = False")
-    check(rd.edgar_collection_enabled(prod) is False, "coleta EDGAR desligada")
+    check(rd.edgar_collection_enabled(prod) is True, "coleta EDGAR LIGADA (invariante desta branch)")
 
 
 def t13_determinismo():

@@ -19,7 +19,9 @@ import edgar_dom as ed
 import edgar_normalizer as en
 import edgar_corroboration_4h5 as corrob
 
-CORPUS_4H4 = Path(r"C:\Users\Gustavo\DashRisk-corpus-4h4-html")
+# Fixture bundlada no repo (não depende de corpus/caminho local, roda em
+# qualquer OS/CI) — ver test_fixtures_4h5/.
+FIXTURES_4H5 = Path(__file__).parent / "test_fixtures_4h5"
 HISTORY_PATH = Path("risk_history.json")
 
 PASS = FAIL = 0
@@ -42,12 +44,12 @@ def load_real_history() -> dict:
 
 
 def load_real_filing_article(cik: str, accession: str, company: str, form="8-K") -> dict:
-    """Constrói um artigo EDGAR completo a partir de um 8-K REAL já baixado na
-    4H.4 (sem rede, sem depender de o corpus 4H.4 estar acessível em runtime
-    de produção — é só para este teste)."""
-    idx = json.loads((CORPUS_4H4 / "index.json").read_text(encoding="utf-8"))
-    row = next(r for r in idx if r["accession"] == accession)
-    html = (CORPUS_4H4 / row["html_file"]).read_text(encoding="utf-8", errors="replace")
+    """Constrói um artigo EDGAR completo a partir de um 8-K REAL, bundlado
+    como fixture do repo (`test_fixtures_4h5/`) — sem rede, sem depender de
+    caminho local/corpus externo, funciona em qualquer OS/CI."""
+    stem = f"baker_hughes_{accession}"
+    row = json.loads((FIXTURES_4H5 / f"{stem}.json").read_text(encoding="utf-8"))
+    html = (FIXTURES_4H5 / f"{stem}.html").read_text(encoding="utf-8", errors="replace")
     filing = {
         "company": company, "cik": cik, "ticker": row.get("ticker", ""),
         "form": form, "accession_number": accession,

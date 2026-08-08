@@ -313,10 +313,12 @@ def t20_raw_text_imutavel():
 
 # ─────────────────────── 21–22: scoring/produção ──────────────────────────
 def t21_scoring_false():
-    print("\n[21] edgar_scoring_enabled = false")
+    print("\n[21] edgar_scoring_enabled = false (collection deliberadamente ligada)")
+    # NOVA INVARIANTE (4H.5F): collection EDGAR deliberadamente LIGADA
+    # nesta branch; scoring autônomo continua e sempre continuará OFF.
     prod = rd.load_config("config_risco.yaml")
-    check(rd.edgar_scoring_enabled(prod) is False, "scoring desligado em produção")
-    check(rd.edgar_collection_enabled(prod) is False, "coleta EDGAR desligada")
+    check(rd.edgar_scoring_enabled(prod) is False, "scoring desligado")
+    check(rd.edgar_collection_enabled(prod) is True, "coleta EDGAR LIGADA (invariante desta branch)")
 
 
 def t22_shadow_nao_altera_producao():
