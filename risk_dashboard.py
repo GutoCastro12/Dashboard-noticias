@@ -9266,6 +9266,26 @@ def main():
     # anteriores gravaram o link-redirecionador do Google; corrige todos)
     resolve_history_urls(history, cfg)
 
+    # ── 4H.5 — CASO B: EDGAR como fonte de CORROBORAÇÃO de ocorrências já
+    # validadas pelas fontes normais (nunca origem de score — decisão 4H.4B,
+    # não reaberta aqui). Roda DEPOIS de merge_into_history/resolve_history_
+    # urls para poder casar tanto contra histórico antigo quanto contra
+    # notícias desta mesma execução. Só anexa corrob_sources a um registro
+    # EXISTENTE — nunca cria linha nova em history["articles"].
+    if _edgar_shadow_articles:
+        try:
+            import edgar_corroboration_4h5 as _corrob4h5
+            _corrob_resumo = _corrob4h5.apply_edgar_corroboration(
+                _edgar_shadow_articles, history, cfg, sys.modules[__name__])
+            if _corrob_resumo["corroborados"] or _corrob_resumo["candidatos_avaliados"]:
+                print(f" 🔗 EDGAR corroboração: {_corrob_resumo['candidatos_avaliados']} "
+                      f"candidato(s) avaliado(s), {_corrob_resumo['corroborados']} "
+                      f"corroboração(ões) nova(s) anexada(s), "
+                      f"{_corrob_resumo['sem_match']} sem match (não pontuam).")
+        except Exception as _exc:
+            print(f"   ⚠️  corroboração EDGAR indisponível ({type(_exc).__name__}: "
+                  f"{str(_exc)[:140]}) — histórico segue sem alteração de corroboração.")
+
     prev_run = history.get("last_run") or {}
     prev_scores = {c: v.get("score") for c, v in (prev_run.get("status") or {}).items()}
     thresholds = calibrate_thresholds(history, cfg)
