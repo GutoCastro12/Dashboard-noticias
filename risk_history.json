@@ -1,154 +1,5 @@
 {
  "articles": {
-  "https://www.clarin.com/economia/nuevos-acreedores-reclaman-acciones-ypf-cobrar-deudas-default-crece-presion-judicial-argentina_0_qTtMHGSoys.html": {
-   "title": "Nuevos acreedores reclaman acciones de YPF para cobrar deudas en default: crece la presión judicial sobre Argentina",
-   "url": "https://www.clarin.com/economia/nuevos-acreedores-reclaman-acciones-ypf-cobrar-deudas-default-crece-presion-judicial-argentina_0_qTtMHGSoys.html",
-   "summary": "Nuevos acreedores reclaman acciones de YPF para cobrar deudas en default: crece la presión judicial sobre Argentina &nbsp;&nbsp; Clarin.com",
-   "source": "Clarin.com",
-   "domain": "clarin.com",
-   "pub_ts": 1751612400,
-   "pub_iso": "2025-07-04 04:00",
-   "language": "es",
-   "companies": [
-    "YPF"
-   ],
-   "event_ids": [
-    "default"
-   ],
-   "events_by_company": {
-    "YPF": [
-     "default"
-    ]
-   },
-   "mention_roles": {
-    "YPF": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "companies_attributed": [
-    "YPF"
-   ],
-   "context_companies": [],
-   "captured_ts": 1785345276,
-   "cap_iso": "2026-07-29 14:14",
-   "corroborations": [
-    {
-     "source": "El Economista - Últimas noticias económicas y financieras",
-     "domain": "eleconomista.com.ar",
-     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPajE1dHZtQVBlaWhpQWUtMk9vOWd5bU9kQ0ZkdUhReUNjTUNuLVp4S1kwTU1La1hPQUJFUEZNbUJBdEY2bjgtNWdMWFJhVEJzNnhSSHZ4NjliX3gxNVExWlplWFBNeUpyX3k4b2R4VHFma19JdGhvNGNpemkxdGpSbjlYbEVRc0tweDlDVkFLQVhQbkU0ajkxTXdYdkRNZGRqYXVWWWtwMUZmTEh0QkxGTlItVdIBuAFBVV95cUxPYlA1d0JGb3plbWl1Z0Q3NERRTVBpMzRtOWhCMWtQQ05vZlIyRmljYWEtOWg5eDFOVU1ubHBEZmZfTWZqVHVNeUV3V05MZFk5Tzh0SlBla0tJaTJpcnZyT0tXaTFsN0l5a3FGTlpkSnlVQjZyUzNTT3EzbDJ5VjBvNTFkNXgwa3c1XzByQW9aMHJvQlpyR0tmTExJWW9uaDFOREdFTEo4T19IY3dHUEpVbUFEb2I2QXRD?oc=5",
-     "original_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPajE1dHZtQVBlaWhpQWUtMk9vOWd5bU9kQ0ZkdUhReUNjTUNuLVp4S1kwTU1La1hPQUJFUEZNbUJBdEY2bjgtNWdMWFJhVEJzNnhSSHZ4NjliX3gxNVExWlplWFBNeUpyX3k4b2R4VHFma19JdGhvNGNpemkxdGpSbjlYbEVRc0tweDlDVkFLQVhQbkU0ajkxTXdYdkRNZGRqYXVWWWtwMUZmTEh0QkxGTlItVdIBuAFBVV95cUxPYlA1d0JGb3plbWl1Z0Q3NERRTVBpMzRtOWhCMWtQQ05vZlIyRmljYWEtOWg5eDFOVU1ubHBEZmZfTWZqVHVNeUV3V05MZFk5Tzh0SlBla0tJaTJpcnZyT0tXaTFsN0l5a3FGTlpkSnlVQjZyUzNTT3EzbDJ5VjBvNTFkNXgwa3c1XzByQW9aMHJvQlpyR0tmTExJWW9uaDFOREdFTEo4T19IY3dHUEpVbUFEb2I2QXRD?oc=5",
-     "redirect_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPajE1dHZtQVBlaWhpQWUtMk9vOWd5bU9kQ0ZkdUhReUNjTUNuLVp4S1kwTU1La1hPQUJFUEZNbUJBdEY2bjgtNWdMWFJhVEJzNnhSSHZ4NjliX3gxNVExWlplWFBNeUpyX3k4b2R4VHFma19JdGhvNGNpemkxdGpSbjlYbEVRc0tweDlDVkFLQVhQbkU0ajkxTXdYdkRNZGRqYXVWWWtwMUZmTEh0QkxGTlItVdIBuAFBVV95cUxPYlA1d0JGb3plbWl1Z0Q3NERRTVBpMzRtOWhCMWtQQ05vZlIyRmljYWEtOWg5eDFOVU1ubHBEZmZfTWZqVHVNeUV3V05MZFk5Tzh0SlBla0tJaTJpcnZyT0tXaTFsN0l5a3FGTlpkSnlVQjZyUzNTT3EzbDJ5VjBvNTFkNXgwa3c1XzByQW9aMHJvQlpyR0tmTExJWW9uaDFOREdFTEo4T19IY3dHUEpVbUFEb2I2QXRD?oc=5",
-     "resolved_url": "https://eleconomista.com.ar/economia/mas-presion-sobre-ypf-fondos-default-piden-prioridad-quieren-parte-51-n86310",
-     "canonical_url": "https://eleconomista.com.ar/economia/mas-presion-sobre-ypf-fondos-default-piden-prioridad-quieren-parte-51-n86310",
-     "display_url": "https://eleconomista.com.ar/economia/mas-presion-sobre-ypf-fondos-default-piden-prioridad-quieren-parte-51-n86310",
-     "redirect_chain": "",
-     "original_host": "news.google.com",
-     "final_host": "eleconomista.com.ar",
-     "http_status": "",
-     "link_health": "redirect_resolvido",
-     "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-06T15:24:55.468292+00:00",
-     "resolution_error": "",
-     "link_render_anchor": true,
-     "link_label": "Abrir notícia →"
-    }
-   ],
-   "corrob_sources": [
-    {
-     "source": "El Economista - Últimas noticias económicas y financieras",
-     "domain": "eleconomista.com.ar",
-     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPajE1dHZtQVBlaWhpQWUtMk9vOWd5bU9kQ0ZkdUhReUNjTUNuLVp4S1kwTU1La1hPQUJFUEZNbUJBdEY2bjgtNWdMWFJhVEJzNnhSSHZ4NjliX3gxNVExWlplWFBNeUpyX3k4b2R4VHFma19JdGhvNGNpemkxdGpSbjlYbEVRc0tweDlDVkFLQVhQbkU0ajkxTXdYdkRNZGRqYXVWWWtwMUZmTEh0QkxGTlItVdIBuAFBVV95cUxPYlA1d0JGb3plbWl1Z0Q3NERRTVBpMzRtOWhCMWtQQ05vZlIyRmljYWEtOWg5eDFOVU1ubHBEZmZfTWZqVHVNeUV3V05MZFk5Tzh0SlBla0tJaTJpcnZyT0tXaTFsN0l5a3FGTlpkSnlVQjZyUzNTT3EzbDJ5VjBvNTFkNXgwa3c1XzByQW9aMHJvQlpyR0tmTExJWW9uaDFOREdFTEo4T19IY3dHUEpVbUFEb2I2QXRD?oc=5",
-     "when": "04/07 04:00",
-     "original_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPajE1dHZtQVBlaWhpQWUtMk9vOWd5bU9kQ0ZkdUhReUNjTUNuLVp4S1kwTU1La1hPQUJFUEZNbUJBdEY2bjgtNWdMWFJhVEJzNnhSSHZ4NjliX3gxNVExWlplWFBNeUpyX3k4b2R4VHFma19JdGhvNGNpemkxdGpSbjlYbEVRc0tweDlDVkFLQVhQbkU0ajkxTXdYdkRNZGRqYXVWWWtwMUZmTEh0QkxGTlItVdIBuAFBVV95cUxPYlA1d0JGb3plbWl1Z0Q3NERRTVBpMzRtOWhCMWtQQ05vZlIyRmljYWEtOWg5eDFOVU1ubHBEZmZfTWZqVHVNeUV3V05MZFk5Tzh0SlBla0tJaTJpcnZyT0tXaTFsN0l5a3FGTlpkSnlVQjZyUzNTT3EzbDJ5VjBvNTFkNXgwa3c1XzByQW9aMHJvQlpyR0tmTExJWW9uaDFOREdFTEo4T19IY3dHUEpVbUFEb2I2QXRD?oc=5",
-     "redirect_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPajE1dHZtQVBlaWhpQWUtMk9vOWd5bU9kQ0ZkdUhReUNjTUNuLVp4S1kwTU1La1hPQUJFUEZNbUJBdEY2bjgtNWdMWFJhVEJzNnhSSHZ4NjliX3gxNVExWlplWFBNeUpyX3k4b2R4VHFma19JdGhvNGNpemkxdGpSbjlYbEVRc0tweDlDVkFLQVhQbkU0ajkxTXdYdkRNZGRqYXVWWWtwMUZmTEh0QkxGTlItVdIBuAFBVV95cUxPYlA1d0JGb3plbWl1Z0Q3NERRTVBpMzRtOWhCMWtQQ05vZlIyRmljYWEtOWg5eDFOVU1ubHBEZmZfTWZqVHVNeUV3V05MZFk5Tzh0SlBla0tJaTJpcnZyT0tXaTFsN0l5a3FGTlpkSnlVQjZyUzNTT3EzbDJ5VjBvNTFkNXgwa3c1XzByQW9aMHJvQlpyR0tmTExJWW9uaDFOREdFTEo4T19IY3dHUEpVbUFEb2I2QXRD?oc=5",
-     "resolved_url": "https://eleconomista.com.ar/economia/mas-presion-sobre-ypf-fondos-default-piden-prioridad-quieren-parte-51-n86310",
-     "canonical_url": "https://eleconomista.com.ar/economia/mas-presion-sobre-ypf-fondos-default-piden-prioridad-quieren-parte-51-n86310",
-     "display_url": "https://eleconomista.com.ar/economia/mas-presion-sobre-ypf-fondos-default-piden-prioridad-quieren-parte-51-n86310",
-     "redirect_chain": "",
-     "original_host": "news.google.com",
-     "final_host": "eleconomista.com.ar",
-     "http_status": "",
-     "link_health": "redirect_resolvido",
-     "resolution_method": "cache_historico",
-     "last_checked_at": "2026-08-06T15:24:55.868524+00:00",
-     "resolution_error": "",
-     "link_render_anchor": true,
-     "link_label": "Abrir notícia →"
-    }
-   ],
-   "original_url": "https://www.clarin.com/economia/nuevos-acreedores-reclaman-acciones-ypf-cobrar-deudas-default-crece-presion-judicial-argentina_0_qTtMHGSoys.html",
-   "redirect_url": "",
-   "resolved_url": "https://www.clarin.com/economia/nuevos-acreedores-reclaman-acciones-ypf-cobrar-deudas-default-crece-presion-judicial-argentina_0_qTtMHGSoys.html",
-   "canonical_url": "https://www.clarin.com/economia/nuevos-acreedores-reclaman-acciones-ypf-cobrar-deudas-default-crece-presion-judicial-argentina_0_qTtMHGSoys.html",
-   "display_url": "https://www.clarin.com/economia/nuevos-acreedores-reclaman-acciones-ypf-cobrar-deudas-default-crece-presion-judicial-argentina_0_qTtMHGSoys.html",
-   "redirect_chain": "",
-   "original_host": "www.clarin.com",
-   "final_host": "www.clarin.com",
-   "http_status": "",
-   "link_health": "url_direta_valida",
-   "resolution_method": "direto",
-   "resolution_error": "",
-   "link_render_anchor": true,
-   "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.618953+00:00"
-  },
-  "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/copel-emissao-debentures-data-de-vencimento-valor-total/": {
-   "title": "Copel (CPLE6) aprova 10ª emissão de debêntures no valor de R$ 3 bilhões; veja data de vencimento",
-   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/copel-emissao-debentures-data-de-vencimento-valor-total/",
-   "summary": "Copel (CPLE6) aprova 10ª emissão de debêntures no valor de R$ 3 bilhões; veja data de vencimento &nbsp;&nbsp; Estadão",
-   "source": "Estadão",
-   "domain": "estadao.com.br",
-   "pub_ts": 1751612400,
-   "pub_iso": "2025-07-04 04:00",
-   "language": "pt",
-   "companies": [
-    "Copel"
-   ],
-   "event_ids": [
-    "emissao_divida"
-   ],
-   "events_by_company": {
-    "Copel": [
-     "emissao_divida"
-    ]
-   },
-   "mention_roles": {
-    "Copel": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "aprovacao",
-     "direction_hint": ""
-    }
-   },
-   "companies_attributed": [
-    "Copel"
-   ],
-   "context_companies": [],
-   "captured_ts": 1785345276,
-   "cap_iso": "2026-07-29 14:14",
-   "original_url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/copel-emissao-debentures-data-de-vencimento-valor-total/",
-   "redirect_url": "",
-   "resolved_url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/copel-emissao-debentures-data-de-vencimento-valor-total/",
-   "canonical_url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/copel-emissao-debentures-data-de-vencimento-valor-total/",
-   "display_url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/copel-emissao-debentures-data-de-vencimento-valor-total/",
-   "redirect_chain": "",
-   "original_host": "www.estadao.com.br",
-   "final_host": "www.estadao.com.br",
-   "http_status": "",
-   "link_health": "url_direta_valida",
-   "resolution_method": "direto",
-   "resolution_error": "",
-   "link_render_anchor": true,
-   "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.618986+00:00",
-   "corroborations": [],
-   "corrob_sources": []
-  },
   "https://www.cnbc.com/2025/07/11/capital-one-has-more-room-to-run-after-its-acquisition-jim-cramer-says.html": {
    "title": "Capital One has more room to run after its Discover acquisition, Jim Cramer says",
    "url": "https://www.cnbc.com/2025/07/11/capital-one-has-more-room-to-run-after-its-acquisition-jim-cramer-says.html",
@@ -759,7 +610,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T19:57:51.209111+00:00"
+     "last_checked_at": "2026-08-08T17:25:33.397782+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2398,7 +2249,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T19:57:51.609430+00:00"
+     "last_checked_at": "2026-08-08T17:25:33.798045+00:00"
     }
    ],
    "corrob_sources": [
@@ -9191,7 +9042,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T19:57:52.009713+00:00"
+     "last_checked_at": "2026-08-08T17:25:34.198337+00:00"
     },
     {
      "source": "Demarest",
@@ -9211,7 +9062,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T19:57:52.410008+00:00"
+     "last_checked_at": "2026-08-08T17:25:34.598673+00:00"
     }
    ],
    "corrob_sources": [
@@ -10628,7 +10479,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T19:57:52.810319+00:00"
+     "last_checked_at": "2026-08-08T17:25:34.998912+00:00"
     }
    ],
    "corrob_sources": [
@@ -13816,7 +13667,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T19:57:53.413571+00:00"
+     "last_checked_at": "2026-08-08T17:25:35.564088+00:00"
     }
    ],
    "corrob_sources": [
@@ -16054,7 +15905,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T19:57:54.046548+00:00"
+     "last_checked_at": "2026-08-08T17:25:36.133276+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16160,7 +16011,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T19:57:54.642171+00:00"
+     "last_checked_at": "2026-08-08T17:25:36.714471+00:00"
     },
     {
      "source": "Moomoo",
@@ -17453,7 +17304,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T19:57:55.434256+00:00"
+     "last_checked_at": "2026-08-08T17:25:37.402709+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17496,7 +17347,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T19:57:56.193341+00:00"
+     "last_checked_at": "2026-08-08T17:25:38.073466+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -18334,7 +18185,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-07T19:57:56.811211+00:00",
+     "last_checked_at": "2026-08-08T17:25:38.762913+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -18359,7 +18210,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-07T19:57:57.458070+00:00",
+     "last_checked_at": "2026-08-08T17:25:39.320486+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19290,7 +19141,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-07T19:57:57.858415+00:00",
+     "last_checked_at": "2026-08-08T17:25:39.720771+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19355,7 +19206,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-07T19:57:58.258682+00:00",
+     "last_checked_at": "2026-08-08T17:25:40.120997+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20328,7 +20179,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T19:57:58.877998+00:00"
+     "last_checked_at": "2026-08-08T17:25:40.681309+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20413,7 +20264,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T19:57:59.498841+00:00"
+     "last_checked_at": "2026-08-08T17:25:41.231895+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22114,7 +21965,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-07T19:58:00.108412+00:00",
+     "last_checked_at": "2026-08-08T17:25:41.785926+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22284,7 +22135,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-07T19:58:00.743166+00:00",
+     "last_checked_at": "2026-08-08T17:25:42.344463+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -35670,7 +35521,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T19:58:01.505425+00:00"
+     "last_checked_at": "2026-08-08T17:25:43.001732+00:00"
     }
    ],
    "corrob_sources": [
@@ -36861,8 +36712,27 @@
    "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "corroborations": [],
-   "corrob_sources": [],
+   "corroborations": [
+    {
+     "source": "SEC · 8-K · Item 2.01",
+     "domain": "sec.gov",
+     "url": "https://www.sec.gov/Archives/edgar/data/1701605/000119312526305477/d105425d8k.htm"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "SEC · 8-K · Item 2.01",
+     "domain": "sec.gov",
+     "url": "https://www.sec.gov/Archives/edgar/data/1701605/000119312526305477/d105425d8k.htm",
+     "when": "15/07 21:00",
+     "display_url": "https://www.sec.gov/Archives/edgar/data/1701605/000119312526305477/d105425d8k.htm",
+     "canonical_url": "https://www.sec.gov/Archives/edgar/data/1701605/000119312526305477/d105425d8k.htm",
+     "resolved_url": "https://www.sec.gov/Archives/edgar/data/1701605/000119312526305477/d105425d8k.htm",
+     "link_health": "url_direta_valida",
+     "link_render_anchor": true,
+     "link_label": "Abrir filing SEC →"
+    }
+   ],
    "original_url": "https://www.stocktitan.net/sec-filings/BKR/10-q-baker-hughes-co-quarterly-earnings-report-2e09bbebf207.html",
    "redirect_url": "",
    "resolved_url": "https://www.stocktitan.net/sec-filings/BKR/10-q-baker-hughes-co-quarterly-earnings-report-2e09bbebf207.html",
@@ -38527,7 +38397,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T19:58:02.108371+00:00"
+     "last_checked_at": "2026-08-08T17:25:43.556817+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38570,7 +38440,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-07T19:58:02.726633+00:00"
+     "last_checked_at": "2026-08-08T17:25:44.108650+00:00"
     },
     {
      "source": "Virginia Business",
@@ -44430,7 +44300,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1786101025,
-   "cap_iso": "2026-08-07 08:10"
+   "cap_iso": "2026-08-07 08:10",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQX3RXSWI1NURUZG1RSHk1Sll2akVYNmJISl9hWXRIRnlBS1V0YUN0R19kLVQ5ZTA2ZGpzTjlsSVBxcHVEUU1aNFRpZEJKTGlUeW9RWXRTSmM1WG1jU0x3N3NFbGNsSGNOTGpaTUlhTXp3elBfWVp1US1DeTd2SUxyQ3pSdE8xSERrQXViUmhNNmlmM2ZRRThIQ1hSdlZVbi13YzVXNW9lb1RhamVlOHdvVnpTYWZCaER5ZWtaS2drNVlrbDRpZWNSWDEtN180NGwtcllsMlltVdIB3AFBVV95cUxQbS1JcG9GdGM3TEhWbGRmTGhBMWt5d190QTRUckpVU25XUUtFM0JNdk42U2tmU1RVUHVDNzJVOEpma3ZCS2FaU21qczBFWHVGU3RPS2FDbVVWOWdyS0xsdEFLRkg3UVVHRXNnUlFBWDVKZ2h5ZHFjZ2VMS2U4VEVjU3dXcDU0b1pzb1ZPVkM0UGFBS2FYckVTQjlfTEVTMERIUmxrQ0prRER3bmw3cWRVVDNOM1VJTzYxdWRyRWU2dHBnRFhvY3g3TnR3cWVCVnFjZF9PcWJWQUxyckhF?oc=5": {
    "title": "Rio de Janeiro pede falência do grupo Manguinhos, da Refit, após calote em acordo fiscal",
@@ -44668,9 +44540,405 @@
    ],
    "captured_ts": 1786122121,
    "cap_iso": "2026-08-07 14:02"
+  },
+  "https://stocktwits.com/news-articles/markets/equity/applovin-rises-5-premarket-after-citigroup-recommends-buying-the-stock/ch6PfUIR3hP": {
+   "title": "AppLovin Rises 5% Premarket After Citigroup Recommends Buying The Stock Amid SEC Investigation Concerns",
+   "url": "https://stocktwits.com/news-articles/markets/equity/applovin-rises-5-premarket-after-citigroup-recommends-buying-the-stock/ch6PfUIR3hP",
+   "summary": "AppLovin Rises 5% Premarket After Citigroup Recommends Buying The Stock Amid SEC Investigation Concerns &nbsp;&nbsp; Stocktwits",
+   "source": "Stocktwits",
+   "domain": "stocktwits.com",
+   "pub_ts": 1759820400,
+   "pub_iso": "2025-10-07 04:00",
+   "language": "en",
+   "companies": [
+    "Citigroup"
+   ],
+   "event_ids": [
+    "investigacao_regulatoria",
+    "investigacao_gestora"
+   ],
+   "mention_roles": {
+    "Citigroup": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Citigroup": [
+     "investigacao_regulatoria",
+     "investigacao_gestora"
+    ]
+   },
+   "companies_attributed": [
+    "Citigroup"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786209927,
+   "cap_iso": "2026-08-08 14:25"
+  },
+  "https://www.bloomberg.com/news/articles/2026-04-21/capital-one-boosts-provision-for-bad-loans-misses-estimates": {
+   "title": "Capital One Boosts Provision for Bad Loans, Misses Estimates",
+   "url": "https://www.bloomberg.com/news/articles/2026-04-21/capital-one-boosts-provision-for-bad-loans-misses-estimates",
+   "summary": "Capital One Boosts Provision for Bad Loans, Misses Estimates &nbsp;&nbsp; Bloomberg.com",
+   "source": "Bloomberg.com",
+   "domain": "bloomberg.com",
+   "pub_ts": 1776754800,
+   "pub_iso": "2026-04-21 04:00",
+   "language": "en",
+   "companies": [
+    "Capital One Financial"
+   ],
+   "event_ids": [
+    "lucro_abaixo_consenso"
+   ],
+   "mention_roles": {
+    "Capital One Financial": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Capital One Financial": [
+     "lucro_abaixo_consenso"
+    ]
+   },
+   "companies_attributed": [
+    "Capital One Financial"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786209927,
+   "cap_iso": "2026-08-08 14:25"
+  },
+  "https://news.google.com/rss/articles/CBMimAFBVV95cUxQeURLZUNYU1FMLXJLQVRNcW9BY2RkSmd5Mi1IODV4cUtPNVg0ZjdhZkVYY1FZY1ZqOGUwUF9qeHRoOHhrSThOSGNVOEZURnJUSXhSaDZmSERLbFdDdF9nU3diZXd4OVVPSHI3bEhPaG9tLTFXQVo1dUtlWk9xNnBnQjZPem1sRkV4a3VoZk0yLTZTLXY4UmRSLQ?oc=5": {
+   "title": "Dívidas de até R$1B: 3 varejistas lutam contra a falência no Brasil",
+   "url": "https://www.otvfoco.com.br/dividas-de-ate-r1b-3-varejistas-lutam-contra-a-falencia-no-brasil/",
+   "summary": "Dívidas de até R$1B: 3 varejistas lutam contra a falência no Brasil &nbsp;&nbsp; TV Foco",
+   "source": "TV Foco",
+   "domain": "otvfoco.com.br",
+   "pub_ts": 1785954000,
+   "pub_iso": "2026-08-05 15:20",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1786209927,
+   "cap_iso": "2026-08-08 14:25"
+  },
+  "https://news.google.com/rss/articles/CBMirgFBVV95cUxQYnRaMl9oN3RfOWVhcWt4UFI3RHdSNUlkbGFzVEN0eHF4RWhvdmFlbjZDbmVKb09TQXRoRjI0aG51NGU1LXVGemtKbERhdlJOOGdndG9HMXFzckRBcnNNZ3hCRkNiQnBOMjBnZkpETkxHTDg3S01aZ0pVWjFOYTNvNVVOajNVUzNnRXFDT2w3RTBIb3lpRVpUX3VnME14VlFmekxZLS1vNVRwdWVJeFHSAbwBQVVfeXFMTjEyUnVia3pEeXpVb01jaVppdlhMRnl5TnQ5VWIxZXdIb2EzTjNXS1R3WTlmU1BYUFlSWEExYXo5bWRjZVYyWi02ZGFKSVRjZmkteEdLY3BDRUFOTUJtVkxSdUYtQ0tob0dLS3p0b21ma1lBcEMxRE8zaGF3S014a3ZxYXp3VTZyVEpjTVJVbjdfVXlzY3FYNVpPVmdzWllscXIzU18zbVJFN2dkVlF1d3BZTDNvN1NCbnA0RE0?oc=5": {
+   "title": "Estado do Rio pede falência de Manguinhos, atual Refit",
+   "url": "https://valor.globo.com/brasil/noticia/2026/08/06/estado-do-rio-pede-falencia-de-manguinhos-atual-refit.ghtml",
+   "summary": "Estado do Rio pede falência de Manguinhos, atual Refit &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1786003279,
+   "pub_iso": "2026-08-06 05:01",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "corroborations": [
+    {
+     "source": "G1",
+     "domain": "g1.globo.com",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQZUxWWmdnN0pBdWJhY1NXcFJLdDFBdms5RGFUbXI1OEFlQ1I4SGpZVDlFbnh6U1lrTmcwT2xMLUdSbEZBanRYamJPV2o5aXR2NlJsSmNuYWtxcjc3dG5SVzVKSWFkaHZMSDMzaU81U3diUm5CWHQtS3VqMXU3U3MteXF6R0hseDZDYlNpLVZSLVNhX3J2dU1CTE1qZmx5YlhINFJVRtIBswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMA?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQZUxWWmdnN0pBdWJhY1NXcFJLdDFBdms5RGFUbXI1OEFlQ1I4SGpZVDlFbnh6U1lrTmcwT2xMLUdSbEZBanRYamJPV2o5aXR2NlJsSmNuYWtxcjc3dG5SVzVKSWFkaHZMSDMzaU81U3diUm5CWHQtS3VqMXU3U3MteXF6R0hseDZDYlNpLVZSLVNhX3J2dU1CTE1qZmx5YlhINFJVRtIBswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQZUxWWmdnN0pBdWJhY1NXcFJLdDFBdms5RGFUbXI1OEFlQ1I4SGpZVDlFbnh6U1lrTmcwT2xMLUdSbEZBanRYamJPV2o5aXR2NlJsSmNuYWtxcjc3dG5SVzVKSWFkaHZMSDMzaU81U3diUm5CWHQtS3VqMXU3U3MteXF6R0hseDZDYlNpLVZSLVNhX3J2dU1CTE1qZmx5YlhINFJVRtIBswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMA?oc=5",
+     "resolved_url": "https://g1.globo.com/politica/blog/octavio-guedes/post/2026/08/05/governo-rj-pede-falencia-refit.ghtml",
+     "canonical_url": "https://g1.globo.com/politica/blog/octavio-guedes/post/2026/08/05/governo-rj-pede-falencia-refit.ghtml",
+     "display_url": "https://g1.globo.com/politica/blog/octavio-guedes/post/2026/08/05/governo-rj-pede-falencia-refit.ghtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "g1.globo.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-08T17:25:44.673778+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "InfoMoney",
+     "domain": "infomoney.com.br",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOVGtfd0dXQUZFTElUbUJQRkpON3pQVm5BdDhmRFFLdUNGaFhDOENnVnZNaXZTYUJJbFI2NXJMeTRVNm1QSnFwZmU5MDNTMmdORU9vb3N2TGNmWWtVVTZpZ1pDZ0NEUWRsdkVsVHpRY0J3eTBsVXJLRC1WVmNfaDhnNHZCX2tvVjhpNS1jeUV3SzQzOVBZZW50QXhOMjc2TjdjYVI3NXZ3cGVtb1FrWXBOd21lWWtJbVBQTjlpV0twTdIBxAFBVV95cUxNZXplWWpSWl82NGpyem4xSkY4VTI2VGx1QjBDTTFJSEJYb0JBdVR6d3hOUUhSVVN5aEdlQjE5Z1N6QzdYZTFSMjMyRnBnd21Hci02TkxUejNRS0NjNVVCSy1UbnlZWF9MUmVaTmJBMnZYYWx6WWd0eHpxR0dwQ0I3ZDdwSzF4SEJ2eTRoSUV5TGhhNXlBTkRXeHk4NFZwMFI4UzhJRTNOaERYZXBKQnJ5Q0toM3JDLVBPZFF4VTA0ZFZpY0F2?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOVGtfd0dXQUZFTElUbUJQRkpON3pQVm5BdDhmRFFLdUNGaFhDOENnVnZNaXZTYUJJbFI2NXJMeTRVNm1QSnFwZmU5MDNTMmdORU9vb3N2TGNmWWtVVTZpZ1pDZ0NEUWRsdkVsVHpRY0J3eTBsVXJLRC1WVmNfaDhnNHZCX2tvVjhpNS1jeUV3SzQzOVBZZW50QXhOMjc2TjdjYVI3NXZ3cGVtb1FrWXBOd21lWWtJbVBQTjlpV0twTdIBxAFBVV95cUxNZXplWWpSWl82NGpyem4xSkY4VTI2VGx1QjBDTTFJSEJYb0JBdVR6d3hOUUhSVVN5aEdlQjE5Z1N6QzdYZTFSMjMyRnBnd21Hci02TkxUejNRS0NjNVVCSy1UbnlZWF9MUmVaTmJBMnZYYWx6WWd0eHpxR0dwQ0I3ZDdwSzF4SEJ2eTRoSUV5TGhhNXlBTkRXeHk4NFZwMFI4UzhJRTNOaERYZXBKQnJ5Q0toM3JDLVBPZFF4VTA0ZFZpY0F2?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOVGtfd0dXQUZFTElUbUJQRkpON3pQVm5BdDhmRFFLdUNGaFhDOENnVnZNaXZTYUJJbFI2NXJMeTRVNm1QSnFwZmU5MDNTMmdORU9vb3N2TGNmWWtVVTZpZ1pDZ0NEUWRsdkVsVHpRY0J3eTBsVXJLRC1WVmNfaDhnNHZCX2tvVjhpNS1jeUV3SzQzOVBZZW50QXhOMjc2TjdjYVI3NXZ3cGVtb1FrWXBOd21lWWtJbVBQTjlpV0twTdIBxAFBVV95cUxNZXplWWpSWl82NGpyem4xSkY4VTI2VGx1QjBDTTFJSEJYb0JBdVR6d3hOUUhSVVN5aEdlQjE5Z1N6QzdYZTFSMjMyRnBnd21Hci02TkxUejNRS0NjNVVCSy1UbnlZWF9MUmVaTmJBMnZYYWx6WWd0eHpxR0dwQ0I3ZDdwSzF4SEJ2eTRoSUV5TGhhNXlBTkRXeHk4NFZwMFI4UzhJRTNOaERYZXBKQnJ5Q0toM3JDLVBPZFF4VTA0ZFZpY0F2?oc=5",
+     "resolved_url": "https://www.infomoney.com.br/politica/divida-de-r25-bi-estado-pede-conversao-da-recuperacao-judicial-da-refit-em-falencia/",
+     "canonical_url": "https://www.infomoney.com.br/politica/divida-de-r25-bi-estado-pede-conversao-da-recuperacao-judicial-da-refit-em-falencia/",
+     "display_url": "https://www.infomoney.com.br/politica/divida-de-r25-bi-estado-pede-conversao-da-recuperacao-judicial-da-refit-em-falencia/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.infomoney.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-08T17:25:45.213070+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "ISTOÉ DINHEIRO",
+     "domain": "istoedinheiro.com.br",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZzVQN281T0lyeDBLUDFnUm8wTENuaW9sUlhFRlljTEF0M3h2SDNrSTYwOHVRVlRFa0hRLVd5dEFIMzBnd1VMeE9Sbjc4b3c1dDdnWUZGMlAyNmpRYlhGckdfaXV3Qk1NWGhxdDQ5bjR2VjdCS1lVQThubzJfSTJyY2lPU0pncVVFQVdVUUpOdkcyMFByRjdPVQ?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZzVQN281T0lyeDBLUDFnUm8wTENuaW9sUlhFRlljTEF0M3h2SDNrSTYwOHVRVlRFa0hRLVd5dEFIMzBnd1VMeE9Sbjc4b3c1dDdnWUZGMlAyNmpRYlhGckdfaXV3Qk1NWGhxdDQ5bjR2VjdCS1lVQThubzJfSTJyY2lPU0pncVVFQVdVUUpOdkcyMFByRjdPVQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZzVQN281T0lyeDBLUDFnUm8wTENuaW9sUlhFRlljTEF0M3h2SDNrSTYwOHVRVlRFa0hRLVd5dEFIMzBnd1VMeE9Sbjc4b3c1dDdnWUZGMlAyNmpRYlhGckdfaXV3Qk1NWGhxdDQ5bjR2VjdCS1lVQThubzJfSTJyY2lPU0pncVVFQVdVUUpOdkcyMFByRjdPVQ?oc=5",
+     "resolved_url": "https://istoedinheiro.com.br/refit-pge-rj-pede-falencia-da-empresa-por-divida-de-r-25-bilhoes",
+     "canonical_url": "https://istoedinheiro.com.br/refit-pge-rj-pede-falencia-da-empresa-por-divida-de-r-25-bilhoes",
+     "display_url": "https://istoedinheiro.com.br/refit-pge-rj-pede-falencia-da-empresa-por-divida-de-r-25-bilhoes",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "istoedinheiro.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-08T17:25:45.773782+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Times Brasil | CNBC",
+     "domain": "timesbrasil.com.br",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQMTNyTnN0dnJEbUhyQWpCcndpbmNhaVhvWHhvTUhscFo2VGVIcWgwclNpdTNsVEFQNXVKTkNiZzFIejNabkRlbVpOVi1hNFhPYTBCcUxCaGxBTHUxb2dMZzF4UjN2aXczNERrTzNmYnBvMDZueUJDRHZfb2lRLTFJOE40RFgtQ092MnNjSUNQMVR4bURNRVVFb0dCOA?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQMTNyTnN0dnJEbUhyQWpCcndpbmNhaVhvWHhvTUhscFo2VGVIcWgwclNpdTNsVEFQNXVKTkNiZzFIejNabkRlbVpOVi1hNFhPYTBCcUxCaGxBTHUxb2dMZzF4UjN2aXczNERrTzNmYnBvMDZueUJDRHZfb2lRLTFJOE40RFgtQ092MnNjSUNQMVR4bURNRVVFb0dCOA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQMTNyTnN0dnJEbUhyQWpCcndpbmNhaVhvWHhvTUhscFo2VGVIcWgwclNpdTNsVEFQNXVKTkNiZzFIejNabkRlbVpOVi1hNFhPYTBCcUxCaGxBTHUxb2dMZzF4UjN2aXczNERrTzNmYnBvMDZueUJDRHZfb2lRLTFJOE40RFgtQ092MnNjSUNQMVR4bURNRVVFb0dCOA?oc=5",
+     "resolved_url": "https://timesbrasil.com.br/brasil/falencia-da-refit-indica-esgotamento-da-recuperacao-judicial/",
+     "canonical_url": "https://timesbrasil.com.br/brasil/falencia-da-refit-indica-esgotamento-da-recuperacao-judicial/",
+     "display_url": "https://timesbrasil.com.br/brasil/falencia-da-refit-indica-esgotamento-da-recuperacao-judicial/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "timesbrasil.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-08T17:25:46.323514+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "R7",
+     "domain": "noticias.r7.com",
+     "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQaEszdDFZX3VQRFgzT01GUGozT016eFc0ZHBQcktkSGRpNHI2Y1ZRN1FkM3U5d2ZoMGx3OFBZc2hCRnl2MGNZMWF5RFNuM2dlMExxaV9ITy1kMkRubXhBdU1KTlB0QmpSVWNCWmktX0ZfUG1zOGpOcU9ucm95b1U3dTZERGpsakEycmJCM1l6dDNVcm83S2s0VzFsLXI5ZVJscEwycHVPQkc1Q3Rtbk9MaXNzamhqcUl1MVFFc0lrT1hoLU1MQ2FtdjVMdW9tbzRNdWVMY3F5bXNvTW8?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQaEszdDFZX3VQRFgzT01GUGozT016eFc0ZHBQcktkSGRpNHI2Y1ZRN1FkM3U5d2ZoMGx3OFBZc2hCRnl2MGNZMWF5RFNuM2dlMExxaV9ITy1kMkRubXhBdU1KTlB0QmpSVWNCWmktX0ZfUG1zOGpOcU9ucm95b1U3dTZERGpsakEycmJCM1l6dDNVcm83S2s0VzFsLXI5ZVJscEwycHVPQkc1Q3Rtbk9MaXNzamhqcUl1MVFFc0lrT1hoLU1MQ2FtdjVMdW9tbzRNdWVMY3F5bXNvTW8?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQaEszdDFZX3VQRFgzT01GUGozT016eFc0ZHBQcktkSGRpNHI2Y1ZRN1FkM3U5d2ZoMGx3OFBZc2hCRnl2MGNZMWF5RFNuM2dlMExxaV9ITy1kMkRubXhBdU1KTlB0QmpSVWNCWmktX0ZfUG1zOGpOcU9ucm95b1U3dTZERGpsakEycmJCM1l6dDNVcm83S2s0VzFsLXI5ZVJscEwycHVPQkc1Q3Rtbk9MaXNzamhqcUl1MVFFc0lrT1hoLU1MQ2FtdjVMdW9tbzRNdWVMY3F5bXNvTW8?oc=5",
+     "resolved_url": "https://noticias.r7.com/jr-na-tv/video/grupo-que-controla-a-refit-nao-confirma-se-vai-recorrer-do-pedido-de-falencia-do-governo-do-rj-06082026/",
+     "canonical_url": "https://noticias.r7.com/jr-na-tv/video/grupo-que-controla-a-refit-nao-confirma-se-vai-recorrer-do-pedido-de-falencia-do-governo-do-rj-06082026/",
+     "display_url": "https://noticias.r7.com/jr-na-tv/video/grupo-que-controla-a-refit-nao-confirma-se-vai-recorrer-do-pedido-de-falencia-do-governo-do-rj-06082026/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "noticias.r7.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-08T17:25:46.884538+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Folha de S.Paulo",
+     "domain": "www1.folha.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQc2ZNZnlJbGN4ZXkwbGpSb2UtdWUyMUFpUkVOb1d3MEVLaHItZFZZY0k5SGZtMnpabDdFUEdlbGxpclRMR29UWGVsU2xUdkREanlIT2ZkNmp2VjdwRHNNY2NIUmdZUVdBMDhOY2R5RmllWktkQWluaDY1UmdOeVJmLVJqUktENk56bV93UWl4dGlpQ3M4c0V0cnFGWUQxT2xNcGotNXN3aURUZmtBOGNkMHVNV1hFWFlyQXl5bXRJVQ?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQc2ZNZnlJbGN4ZXkwbGpSb2UtdWUyMUFpUkVOb1d3MEVLaHItZFZZY0k5SGZtMnpabDdFUEdlbGxpclRMR29UWGVsU2xUdkREanlIT2ZkNmp2VjdwRHNNY2NIUmdZUVdBMDhOY2R5RmllWktkQWluaDY1UmdOeVJmLVJqUktENk56bV93UWl4dGlpQ3M4c0V0cnFGWUQxT2xNcGotNXN3aURUZmtBOGNkMHVNV1hFWFlyQXl5bXRJVQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQc2ZNZnlJbGN4ZXkwbGpSb2UtdWUyMUFpUkVOb1d3MEVLaHItZFZZY0k5SGZtMnpabDdFUEdlbGxpclRMR29UWGVsU2xUdkREanlIT2ZkNmp2VjdwRHNNY2NIUmdZUVdBMDhOY2R5RmllWktkQWluaDY1UmdOeVJmLVJqUktENk56bV93UWl4dGlpQ3M4c0V0cnFGWUQxT2xNcGotNXN3aURUZmtBOGNkMHVNV1hFWFlyQXl5bXRJVQ?oc=5",
+     "resolved_url": "https://www1.folha.uol.com.br/mercado/2026/08/governo-do-rio-pede-falencia-da-refit-na-justica-por-divida-bilionaria.shtml",
+     "canonical_url": "https://www1.folha.uol.com.br/mercado/2026/08/governo-do-rio-pede-falencia-da-refit-na-justica-por-divida-bilionaria.shtml",
+     "display_url": "https://www1.folha.uol.com.br/mercado/2026/08/governo-do-rio-pede-falencia-da-refit-na-justica-por-divida-bilionaria.shtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www1.folha.uol.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-08T17:25:47.436456+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "G1",
+     "domain": "g1.globo.com",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQZUxWWmdnN0pBdWJhY1NXcFJLdDFBdms5RGFUbXI1OEFlQ1I4SGpZVDlFbnh6U1lrTmcwT2xMLUdSbEZBanRYamJPV2o5aXR2NlJsSmNuYWtxcjc3dG5SVzVKSWFkaHZMSDMzaU81U3diUm5CWHQtS3VqMXU3U3MteXF6R0hseDZDYlNpLVZSLVNhX3J2dU1CTE1qZmx5YlhINFJVRtIBswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMA?oc=5",
+     "when": "05/08 17:13",
+     "original_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQZUxWWmdnN0pBdWJhY1NXcFJLdDFBdms5RGFUbXI1OEFlQ1I4SGpZVDlFbnh6U1lrTmcwT2xMLUdSbEZBanRYamJPV2o5aXR2NlJsSmNuYWtxcjc3dG5SVzVKSWFkaHZMSDMzaU81U3diUm5CWHQtS3VqMXU3U3MteXF6R0hseDZDYlNpLVZSLVNhX3J2dU1CTE1qZmx5YlhINFJVRtIBswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQZUxWWmdnN0pBdWJhY1NXcFJLdDFBdms5RGFUbXI1OEFlQ1I4SGpZVDlFbnh6U1lrTmcwT2xMLUdSbEZBanRYamJPV2o5aXR2NlJsSmNuYWtxcjc3dG5SVzVKSWFkaHZMSDMzaU81U3diUm5CWHQtS3VqMXU3U3MteXF6R0hseDZDYlNpLVZSLVNhX3J2dU1CTE1qZmx5YlhINFJVRtIBswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMA?oc=5",
+     "resolved_url": "https://g1.globo.com/politica/blog/octavio-guedes/post/2026/08/05/governo-rj-pede-falencia-refit.ghtml",
+     "canonical_url": "https://g1.globo.com/politica/blog/octavio-guedes/post/2026/08/05/governo-rj-pede-falencia-refit.ghtml",
+     "display_url": "https://g1.globo.com/politica/blog/octavio-guedes/post/2026/08/05/governo-rj-pede-falencia-refit.ghtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "g1.globo.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-08T17:25:47.836704+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "InfoMoney",
+     "domain": "infomoney.com.br",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOVGtfd0dXQUZFTElUbUJQRkpON3pQVm5BdDhmRFFLdUNGaFhDOENnVnZNaXZTYUJJbFI2NXJMeTRVNm1QSnFwZmU5MDNTMmdORU9vb3N2TGNmWWtVVTZpZ1pDZ0NEUWRsdkVsVHpRY0J3eTBsVXJLRC1WVmNfaDhnNHZCX2tvVjhpNS1jeUV3SzQzOVBZZW50QXhOMjc2TjdjYVI3NXZ3cGVtb1FrWXBOd21lWWtJbVBQTjlpV0twTdIBxAFBVV95cUxNZXplWWpSWl82NGpyem4xSkY4VTI2VGx1QjBDTTFJSEJYb0JBdVR6d3hOUUhSVVN5aEdlQjE5Z1N6QzdYZTFSMjMyRnBnd21Hci02TkxUejNRS0NjNVVCSy1UbnlZWF9MUmVaTmJBMnZYYWx6WWd0eHpxR0dwQ0I3ZDdwSzF4SEJ2eTRoSUV5TGhhNXlBTkRXeHk4NFZwMFI4UzhJRTNOaERYZXBKQnJ5Q0toM3JDLVBPZFF4VTA0ZFZpY0F2?oc=5",
+     "when": "06/08 08:24",
+     "original_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOVGtfd0dXQUZFTElUbUJQRkpON3pQVm5BdDhmRFFLdUNGaFhDOENnVnZNaXZTYUJJbFI2NXJMeTRVNm1QSnFwZmU5MDNTMmdORU9vb3N2TGNmWWtVVTZpZ1pDZ0NEUWRsdkVsVHpRY0J3eTBsVXJLRC1WVmNfaDhnNHZCX2tvVjhpNS1jeUV3SzQzOVBZZW50QXhOMjc2TjdjYVI3NXZ3cGVtb1FrWXBOd21lWWtJbVBQTjlpV0twTdIBxAFBVV95cUxNZXplWWpSWl82NGpyem4xSkY4VTI2VGx1QjBDTTFJSEJYb0JBdVR6d3hOUUhSVVN5aEdlQjE5Z1N6QzdYZTFSMjMyRnBnd21Hci02TkxUejNRS0NjNVVCSy1UbnlZWF9MUmVaTmJBMnZYYWx6WWd0eHpxR0dwQ0I3ZDdwSzF4SEJ2eTRoSUV5TGhhNXlBTkRXeHk4NFZwMFI4UzhJRTNOaERYZXBKQnJ5Q0toM3JDLVBPZFF4VTA0ZFZpY0F2?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOVGtfd0dXQUZFTElUbUJQRkpON3pQVm5BdDhmRFFLdUNGaFhDOENnVnZNaXZTYUJJbFI2NXJMeTRVNm1QSnFwZmU5MDNTMmdORU9vb3N2TGNmWWtVVTZpZ1pDZ0NEUWRsdkVsVHpRY0J3eTBsVXJLRC1WVmNfaDhnNHZCX2tvVjhpNS1jeUV3SzQzOVBZZW50QXhOMjc2TjdjYVI3NXZ3cGVtb1FrWXBOd21lWWtJbVBQTjlpV0twTdIBxAFBVV95cUxNZXplWWpSWl82NGpyem4xSkY4VTI2VGx1QjBDTTFJSEJYb0JBdVR6d3hOUUhSVVN5aEdlQjE5Z1N6QzdYZTFSMjMyRnBnd21Hci02TkxUejNRS0NjNVVCSy1UbnlZWF9MUmVaTmJBMnZYYWx6WWd0eHpxR0dwQ0I3ZDdwSzF4SEJ2eTRoSUV5TGhhNXlBTkRXeHk4NFZwMFI4UzhJRTNOaERYZXBKQnJ5Q0toM3JDLVBPZFF4VTA0ZFZpY0F2?oc=5",
+     "resolved_url": "https://www.infomoney.com.br/politica/divida-de-r25-bi-estado-pede-conversao-da-recuperacao-judicial-da-refit-em-falencia/",
+     "canonical_url": "https://www.infomoney.com.br/politica/divida-de-r25-bi-estado-pede-conversao-da-recuperacao-judicial-da-refit-em-falencia/",
+     "display_url": "https://www.infomoney.com.br/politica/divida-de-r25-bi-estado-pede-conversao-da-recuperacao-judicial-da-refit-em-falencia/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.infomoney.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-08T17:25:48.236944+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "ISTOÉ DINHEIRO",
+     "domain": "istoedinheiro.com.br",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZzVQN281T0lyeDBLUDFnUm8wTENuaW9sUlhFRlljTEF0M3h2SDNrSTYwOHVRVlRFa0hRLVd5dEFIMzBnd1VMeE9Sbjc4b3c1dDdnWUZGMlAyNmpRYlhGckdfaXV3Qk1NWGhxdDQ5bjR2VjdCS1lVQThubzJfSTJyY2lPU0pncVVFQVdVUUpOdkcyMFByRjdPVQ?oc=5",
+     "when": "06/08 16:30",
+     "original_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZzVQN281T0lyeDBLUDFnUm8wTENuaW9sUlhFRlljTEF0M3h2SDNrSTYwOHVRVlRFa0hRLVd5dEFIMzBnd1VMeE9Sbjc4b3c1dDdnWUZGMlAyNmpRYlhGckdfaXV3Qk1NWGhxdDQ5bjR2VjdCS1lVQThubzJfSTJyY2lPU0pncVVFQVdVUUpOdkcyMFByRjdPVQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZzVQN281T0lyeDBLUDFnUm8wTENuaW9sUlhFRlljTEF0M3h2SDNrSTYwOHVRVlRFa0hRLVd5dEFIMzBnd1VMeE9Sbjc4b3c1dDdnWUZGMlAyNmpRYlhGckdfaXV3Qk1NWGhxdDQ5bjR2VjdCS1lVQThubzJfSTJyY2lPU0pncVVFQVdVUUpOdkcyMFByRjdPVQ?oc=5",
+     "resolved_url": "https://istoedinheiro.com.br/refit-pge-rj-pede-falencia-da-empresa-por-divida-de-r-25-bilhoes",
+     "canonical_url": "https://istoedinheiro.com.br/refit-pge-rj-pede-falencia-da-empresa-por-divida-de-r-25-bilhoes",
+     "display_url": "https://istoedinheiro.com.br/refit-pge-rj-pede-falencia-da-empresa-por-divida-de-r-25-bilhoes",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "istoedinheiro.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-08T17:25:48.637218+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Times Brasil | CNBC",
+     "domain": "timesbrasil.com.br",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQMTNyTnN0dnJEbUhyQWpCcndpbmNhaVhvWHhvTUhscFo2VGVIcWgwclNpdTNsVEFQNXVKTkNiZzFIejNabkRlbVpOVi1hNFhPYTBCcUxCaGxBTHUxb2dMZzF4UjN2aXczNERrTzNmYnBvMDZueUJDRHZfb2lRLTFJOE40RFgtQ092MnNjSUNQMVR4bURNRVVFb0dCOA?oc=5",
+     "when": "06/08 17:19",
+     "original_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQMTNyTnN0dnJEbUhyQWpCcndpbmNhaVhvWHhvTUhscFo2VGVIcWgwclNpdTNsVEFQNXVKTkNiZzFIejNabkRlbVpOVi1hNFhPYTBCcUxCaGxBTHUxb2dMZzF4UjN2aXczNERrTzNmYnBvMDZueUJDRHZfb2lRLTFJOE40RFgtQ092MnNjSUNQMVR4bURNRVVFb0dCOA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQMTNyTnN0dnJEbUhyQWpCcndpbmNhaVhvWHhvTUhscFo2VGVIcWgwclNpdTNsVEFQNXVKTkNiZzFIejNabkRlbVpOVi1hNFhPYTBCcUxCaGxBTHUxb2dMZzF4UjN2aXczNERrTzNmYnBvMDZueUJDRHZfb2lRLTFJOE40RFgtQ092MnNjSUNQMVR4bURNRVVFb0dCOA?oc=5",
+     "resolved_url": "https://timesbrasil.com.br/brasil/falencia-da-refit-indica-esgotamento-da-recuperacao-judicial/",
+     "canonical_url": "https://timesbrasil.com.br/brasil/falencia-da-refit-indica-esgotamento-da-recuperacao-judicial/",
+     "display_url": "https://timesbrasil.com.br/brasil/falencia-da-refit-indica-esgotamento-da-recuperacao-judicial/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "timesbrasil.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-08T17:25:49.037471+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "R7",
+     "domain": "noticias.r7.com",
+     "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQaEszdDFZX3VQRFgzT01GUGozT016eFc0ZHBQcktkSGRpNHI2Y1ZRN1FkM3U5d2ZoMGx3OFBZc2hCRnl2MGNZMWF5RFNuM2dlMExxaV9ITy1kMkRubXhBdU1KTlB0QmpSVWNCWmktX0ZfUG1zOGpOcU9ucm95b1U3dTZERGpsakEycmJCM1l6dDNVcm83S2s0VzFsLXI5ZVJscEwycHVPQkc1Q3Rtbk9MaXNzamhqcUl1MVFFc0lrT1hoLU1MQ2FtdjVMdW9tbzRNdWVMY3F5bXNvTW8?oc=5",
+     "when": "06/08 20:56",
+     "original_url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQaEszdDFZX3VQRFgzT01GUGozT016eFc0ZHBQcktkSGRpNHI2Y1ZRN1FkM3U5d2ZoMGx3OFBZc2hCRnl2MGNZMWF5RFNuM2dlMExxaV9ITy1kMkRubXhBdU1KTlB0QmpSVWNCWmktX0ZfUG1zOGpOcU9ucm95b1U3dTZERGpsakEycmJCM1l6dDNVcm83S2s0VzFsLXI5ZVJscEwycHVPQkc1Q3Rtbk9MaXNzamhqcUl1MVFFc0lrT1hoLU1MQ2FtdjVMdW9tbzRNdWVMY3F5bXNvTW8?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQaEszdDFZX3VQRFgzT01GUGozT016eFc0ZHBQcktkSGRpNHI2Y1ZRN1FkM3U5d2ZoMGx3OFBZc2hCRnl2MGNZMWF5RFNuM2dlMExxaV9ITy1kMkRubXhBdU1KTlB0QmpSVWNCWmktX0ZfUG1zOGpOcU9ucm95b1U3dTZERGpsakEycmJCM1l6dDNVcm83S2s0VzFsLXI5ZVJscEwycHVPQkc1Q3Rtbk9MaXNzamhqcUl1MVFFc0lrT1hoLU1MQ2FtdjVMdW9tbzRNdWVMY3F5bXNvTW8?oc=5",
+     "resolved_url": "https://noticias.r7.com/jr-na-tv/video/grupo-que-controla-a-refit-nao-confirma-se-vai-recorrer-do-pedido-de-falencia-do-governo-do-rj-06082026/",
+     "canonical_url": "https://noticias.r7.com/jr-na-tv/video/grupo-que-controla-a-refit-nao-confirma-se-vai-recorrer-do-pedido-de-falencia-do-governo-do-rj-06082026/",
+     "display_url": "https://noticias.r7.com/jr-na-tv/video/grupo-que-controla-a-refit-nao-confirma-se-vai-recorrer-do-pedido-de-falencia-do-governo-do-rj-06082026/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "noticias.r7.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-08T17:25:49.437708+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Folha de S.Paulo",
+     "domain": "www1.folha.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQc2ZNZnlJbGN4ZXkwbGpSb2UtdWUyMUFpUkVOb1d3MEVLaHItZFZZY0k5SGZtMnpabDdFUEdlbGxpclRMR29UWGVsU2xUdkREanlIT2ZkNmp2VjdwRHNNY2NIUmdZUVdBMDhOY2R5RmllWktkQWluaDY1UmdOeVJmLVJqUktENk56bV93UWl4dGlpQ3M4c0V0cnFGWUQxT2xNcGotNXN3aURUZmtBOGNkMHVNV1hFWFlyQXl5bXRJVQ?oc=5",
+     "when": "07/08 10:53",
+     "original_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQc2ZNZnlJbGN4ZXkwbGpSb2UtdWUyMUFpUkVOb1d3MEVLaHItZFZZY0k5SGZtMnpabDdFUEdlbGxpclRMR29UWGVsU2xUdkREanlIT2ZkNmp2VjdwRHNNY2NIUmdZUVdBMDhOY2R5RmllWktkQWluaDY1UmdOeVJmLVJqUktENk56bV93UWl4dGlpQ3M4c0V0cnFGWUQxT2xNcGotNXN3aURUZmtBOGNkMHVNV1hFWFlyQXl5bXRJVQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQc2ZNZnlJbGN4ZXkwbGpSb2UtdWUyMUFpUkVOb1d3MEVLaHItZFZZY0k5SGZtMnpabDdFUEdlbGxpclRMR29UWGVsU2xUdkREanlIT2ZkNmp2VjdwRHNNY2NIUmdZUVdBMDhOY2R5RmllWktkQWluaDY1UmdOeVJmLVJqUktENk56bV93UWl4dGlpQ3M4c0V0cnFGWUQxT2xNcGotNXN3aURUZmtBOGNkMHVNV1hFWFlyQXl5bXRJVQ?oc=5",
+     "resolved_url": "https://www1.folha.uol.com.br/mercado/2026/08/governo-do-rio-pede-falencia-da-refit-na-justica-por-divida-bilionaria.shtml",
+     "canonical_url": "https://www1.folha.uol.com.br/mercado/2026/08/governo-do-rio-pede-falencia-da-refit-na-justica-por-divida-bilionaria.shtml",
+     "display_url": "https://www1.folha.uol.com.br/mercado/2026/08/governo-do-rio-pede-falencia-da-refit-na-justica-por-divida-bilionaria.shtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www1.folha.uol.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-08T17:25:49.837942+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1786209927,
+   "cap_iso": "2026-08-08 14:25"
+  },
+  "https://news.google.com/rss/articles/CBMiygFBVV95cUxQNkdxTWZ4dWx3SnpKZXNFZlRwNmV0VDJvc2xPYUhkZER2WXdUcDhDcEhrbUJtVHc4SWJSbmx5UWFRdnNiTkhCdkVMb1d4WHJHSzRWWGNEUkcxMVpLX2NhdWdESmhFc0txaEFyZndTWEg3MU5MNVVBUXZzQUZfVU9Pd2J4ZmgtRjkzZkJzekZmZTNXdDhiLVY3SGtxZ0w4R2ltQy1FdHlmYTYwT2NjVDVEbWE5ZTNqWjBRR1Y4QVlTVlB4N0JsOTNjb0Jn?oc=5": {
+   "title": "Insolvência renova recorde no Brasil, puxada por juros altos, mostra estudo",
+   "url": "https://economia.uol.com.br/noticias/redacao/2026/08/06/insolvencia-renova-recorde-no-brasil-mesmo-apos-desacelerar-no-2-trim.ghtm",
+   "summary": "Insolvência renova recorde no Brasil, puxada por juros altos, mostra estudo &nbsp;&nbsp; UOL Economia",
+   "source": "UOL Economia",
+   "domain": "economia.uol.com.br",
+   "pub_ts": 1786039448,
+   "pub_iso": "2026-08-06 15:04",
+   "language": "es",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1786209927,
+   "cap_iso": "2026-08-08 14:25"
+  },
+  "https://news.google.com/rss/articles/CBMixwFBVV95cUxOM2poc2FJeUd0TzlRc2loZnZ2RzFuRGk3S0sxZnhhOTRUWVZEcDM4T0p3N0hQenZXaFotc0g4ZG01bDJ3RHBfUGFVWDNZTU5LM21jcnhESUZCODRDclU0QkV5M0FFbE5qNUVpNGZuaWYxa1lvcFZNd0VrU0tKcEkzZmFVYlVkRnJlVjdweERDVUkzWTZRa2xIV056cXZqdkV1VDdjaUJ2WFNVOTVwNXhLUldLZlNfVDBiaU9IeGZsRVBuWUFKcnhz?oc=5": {
+   "title": "Justiça dá 30 dias para Apex pedir recuperação judicial; dívida é de quase R$ 1 bilhão",
+   "url": "https://www.agazeta.com.br/es/economia/justica-da-30-dias-para-apex-pedir-recuperacao-judicial-divida-e-de-quase-r-1-bilhao-0826",
+   "summary": "Justiça dá 30 dias para Apex pedir recuperação judicial; dívida é de quase R$ 1 bilhão &nbsp;&nbsp; A Gazeta",
+   "source": "A Gazeta",
+   "domain": "agazeta.com.br",
+   "pub_ts": 1786142580,
+   "pub_iso": "2026-08-07 19:43",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1786209927,
+   "cap_iso": "2026-08-08 14:25"
   }
  },
- "run_count": 86,
+ "run_count": 87,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -49595,65 +49863,113 @@
   "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbW5JcHZlN00xSTN2Y1hEX1lRUG5jRTNINzlBVXQ2cnZqSzVhSXJQR3BtS2k5blhCTU1KRkN6MkJmVUFDcUxaUXMwYUFET04xdEdhRUJYbnY3MVlQbFBSd1FmNDlQV3BUMmhRajR2SjhkUzNRcUVCenNCMUc0QmZLdENnRDRzbXkyZW42TXZCZFM?oc=5": {
    "url": "https://www.theagribiz.com/agribuzz/justica-autoriza-recuperacao-judicial-da-bmg-foods/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMizwFBVV95cUxQejRUZ2VDanFBcURjek0ySlNnZGNPWURmVEVQTDNUamdrLXVoOFl5M1ZoeFg1SS1DUC1pOV9WejV5N3F1SmluaVRMeER0eGxoM0ViVU9DMmREcmpmUUlBUFhYMHRRWTFReHFkRmZjWFMzbnlvWDhqTGtXdEFtSFlNX0M5X1ZDMnZqTTZxVU1JSmJaMC05c0RuTW5SY21hMzh3SWI3bUxyZ25oQXlTQUtGMjhPM0tabFlsSHdKZGZzT2xWeDBxX1B5cV9OV0ZVdUE?oc=5": {
+   "url": "https://stocktwits.com/news-articles/markets/equity/applovin-rises-5-premarket-after-citigroup-recommends-buying-the-stock/ch6PfUIR3hP",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMirwFBVV95cUxOQzlhY1dlLWtnb19CWlk2Z1o1ZUN1V2tvWTRma2lOTk1YSE9TQTdsTmw0RTVYazI1SzVudUIyQWd1WFBaTmRsd3hyZWZOaVI5VGN0VnpqbTA2UHltV3ZUY2RER3JCVER1dEhiMm4xa2pYWjZkUFdUWDkxTUQyY3lQbzVXT1QtN0tSeU5xRm1DbzM0OVBYUEMwQURtLTFyTExRYTlueFpRVjBqbDhnNXlr?oc=5": {
+   "url": "https://www.bloomberg.com/news/articles/2026-04-21/capital-one-boosts-provision-for-bad-loans-misses-estimates",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMimAFBVV95cUxQeURLZUNYU1FMLXJLQVRNcW9BY2RkSmd5Mi1IODV4cUtPNVg0ZjdhZkVYY1FZY1ZqOGUwUF9qeHRoOHhrSThOSGNVOEZURnJUSXhSaDZmSERLbFdDdF9nU3diZXd4OVVPSHI3bEhPaG9tLTFXQVo1dUtlWk9xNnBnQjZPem1sRkV4a3VoZk0yLTZTLXY4UmRSLQ?oc=5": {
+   "url": "https://www.otvfoco.com.br/dividas-de-ate-r1b-3-varejistas-lutam-contra-a-falencia-no-brasil/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMirgFBVV95cUxQYnRaMl9oN3RfOWVhcWt4UFI3RHdSNUlkbGFzVEN0eHF4RWhvdmFlbjZDbmVKb09TQXRoRjI0aG51NGU1LXVGemtKbERhdlJOOGdndG9HMXFzckRBcnNNZ3hCRkNiQnBOMjBnZkpETkxHTDg3S01aZ0pVWjFOYTNvNVVOajNVUzNnRXFDT2w3RTBIb3lpRVpUX3VnME14VlFmekxZLS1vNVRwdWVJeFHSAbwBQVVfeXFMTjEyUnVia3pEeXpVb01jaVppdlhMRnl5TnQ5VWIxZXdIb2EzTjNXS1R3WTlmU1BYUFlSWEExYXo5bWRjZVYyWi02ZGFKSVRjZmkteEdLY3BDRUFOTUJtVkxSdUYtQ0tob0dLS3p0b21ma1lBcEMxRE8zaGF3S014a3ZxYXp3VTZyVEpjTVJVbjdfVXlzY3FYNVpPVmdzWllscXIzU18zbVJFN2dkVlF1d3BZTDNvN1NCbnA0RE0?oc=5": {
+   "url": "https://valor.globo.com/brasil/noticia/2026/08/06/estado-do-rio-pede-falencia-de-manguinhos-atual-refit.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiygFBVV95cUxQNkdxTWZ4dWx3SnpKZXNFZlRwNmV0VDJvc2xPYUhkZER2WXdUcDhDcEhrbUJtVHc4SWJSbmx5UWFRdnNiTkhCdkVMb1d4WHJHSzRWWGNEUkcxMVpLX2NhdWdESmhFc0txaEFyZndTWEg3MU5MNVVBUXZzQUZfVU9Pd2J4ZmgtRjkzZkJzekZmZTNXdDhiLVY3SGtxZ0w4R2ltQy1FdHlmYTYwT2NjVDVEbWE5ZTNqWjBRR1Y4QVlTVlB4N0JsOTNjb0Jn?oc=5": {
+   "url": "https://economia.uol.com.br/noticias/redacao/2026/08/06/insolvencia-renova-recorde-no-brasil-mesmo-apos-desacelerar-no-2-trim.ghtm",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMixwFBVV95cUxOM2poc2FJeUd0TzlRc2loZnZ2RzFuRGk3S0sxZnhhOTRUWVZEcDM4T0p3N0hQenZXaFotc0g4ZG01bDJ3RHBfUGFVWDNZTU5LM21jcnhESUZCODRDclU0QkV5M0FFbE5qNUVpNGZuaWYxa1lvcFZNd0VrU0tKcEkzZmFVYlVkRnJlVjdweERDVUkzWTZRa2xIV056cXZqdkV1VDdjaUJ2WFNVOTVwNXhLUldLZlNfVDBiaU9IeGZsRVBuWUFKcnhz?oc=5": {
+   "url": "https://www.agazeta.com.br/es/economia/justica-da-30-dias-para-apex-pedir-recuperacao-judicial-divida-e-de-quase-r-1-bilhao-0826",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipAFBVV95cUxQZUxWWmdnN0pBdWJhY1NXcFJLdDFBdms5RGFUbXI1OEFlQ1I4SGpZVDlFbnh6U1lrTmcwT2xMLUdSbEZBanRYamJPV2o5aXR2NlJsSmNuYWtxcjc3dG5SVzVKSWFkaHZMSDMzaU81U3diUm5CWHQtS3VqMXU3U3MteXF6R0hseDZDYlNpLVZSLVNhX3J2dU1CTE1qZmx5YlhINFJVRtIBswFBVV95cUxNdVBtTEw0OHdpOW1GRXpzRndXR3Z0NWdYdkxkSlhYdlpxVEpVQUNkNVczeWQ4eWRCenRtNUE5Tm1Hc3JXV1I3dVRSQ08wOExfVXhnQV9jdG9mUUQ5dGlJOV9RdG5QeXJkc2dmQTdXSlFXSXo1UFNNUGtUY3g3b3JualpHTnVPNzBFUEtwYjUxSk9pS2QyaktpVFJlYjBOX3lPVlo0ejVXczVkSWt6MFlZQkZrMA?oc=5": {
+   "url": "https://g1.globo.com/politica/blog/octavio-guedes/post/2026/08/05/governo-rj-pede-falencia-refit.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMivwFBVV95cUxOVGtfd0dXQUZFTElUbUJQRkpON3pQVm5BdDhmRFFLdUNGaFhDOENnVnZNaXZTYUJJbFI2NXJMeTRVNm1QSnFwZmU5MDNTMmdORU9vb3N2TGNmWWtVVTZpZ1pDZ0NEUWRsdkVsVHpRY0J3eTBsVXJLRC1WVmNfaDhnNHZCX2tvVjhpNS1jeUV3SzQzOVBZZW50QXhOMjc2TjdjYVI3NXZ3cGVtb1FrWXBOd21lWWtJbVBQTjlpV0twTdIBxAFBVV95cUxNZXplWWpSWl82NGpyem4xSkY4VTI2VGx1QjBDTTFJSEJYb0JBdVR6d3hOUUhSVVN5aEdlQjE5Z1N6QzdYZTFSMjMyRnBnd21Hci02TkxUejNRS0NjNVVCSy1UbnlZWF9MUmVaTmJBMnZYYWx6WWd0eHpxR0dwQ0I3ZDdwSzF4SEJ2eTRoSUV5TGhhNXlBTkRXeHk4NFZwMFI4UzhJRTNOaERYZXBKQnJ5Q0toM3JDLVBPZFF4VTA0ZFZpY0F2?oc=5": {
+   "url": "https://www.infomoney.com.br/politica/divida-de-r25-bi-estado-pede-conversao-da-recuperacao-judicial-da-refit-em-falencia/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZzVQN281T0lyeDBLUDFnUm8wTENuaW9sUlhFRlljTEF0M3h2SDNrSTYwOHVRVlRFa0hRLVd5dEFIMzBnd1VMeE9Sbjc4b3c1dDdnWUZGMlAyNmpRYlhGckdfaXV3Qk1NWGhxdDQ5bjR2VjdCS1lVQThubzJfSTJyY2lPU0pncVVFQVdVUUpOdkcyMFByRjdPVQ?oc=5": {
+   "url": "https://istoedinheiro.com.br/refit-pge-rj-pede-falencia-da-empresa-por-divida-de-r-25-bilhoes",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMimwFBVV95cUxQMTNyTnN0dnJEbUhyQWpCcndpbmNhaVhvWHhvTUhscFo2VGVIcWgwclNpdTNsVEFQNXVKTkNiZzFIejNabkRlbVpOVi1hNFhPYTBCcUxCaGxBTHUxb2dMZzF4UjN2aXczNERrTzNmYnBvMDZueUJDRHZfb2lRLTFJOE40RFgtQ092MnNjSUNQMVR4bURNRVVFb0dCOA?oc=5": {
+   "url": "https://timesbrasil.com.br/brasil/falencia-da-refit-indica-esgotamento-da-recuperacao-judicial/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQaEszdDFZX3VQRFgzT01GUGozT016eFc0ZHBQcktkSGRpNHI2Y1ZRN1FkM3U5d2ZoMGx3OFBZc2hCRnl2MGNZMWF5RFNuM2dlMExxaV9ITy1kMkRubXhBdU1KTlB0QmpSVWNCWmktX0ZfUG1zOGpOcU9ucm95b1U3dTZERGpsakEycmJCM1l6dDNVcm83S2s0VzFsLXI5ZVJscEwycHVPQkc1Q3Rtbk9MaXNzamhqcUl1MVFFc0lrT1hoLU1MQ2FtdjVMdW9tbzRNdWVMY3F5bXNvTW8?oc=5": {
+   "url": "https://noticias.r7.com/jr-na-tv/video/grupo-que-controla-a-refit-nao-confirma-se-vai-recorrer-do-pedido-de-falencia-do-governo-do-rj-06082026/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMivwFBVV95cUxQc2ZNZnlJbGN4ZXkwbGpSb2UtdWUyMUFpUkVOb1d3MEVLaHItZFZZY0k5SGZtMnpabDdFUEdlbGxpclRMR29UWGVsU2xUdkREanlIT2ZkNmp2VjdwRHNNY2NIUmdZUVdBMDhOY2R5RmllWktkQWluaDY1UmdOeVJmLVJqUktENk56bV93UWl4dGlpQ3M4c0V0cnFGWUQxT2xNcGotNXN3aURUZmtBOGNkMHVNV1hFWFlyQXl5bXRJVQ?oc=5": {
+   "url": "https://www1.folha.uol.com.br/mercado/2026/08/governo-do-rio-pede-falencia-da-refit-na-justica-por-divida-bilionaria.shtml",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786132684,
-  "iso": "07 ago 2026 · 16:58 BRT",
+  "ts": 1786209967,
+  "iso": "08 ago 2026 · 14:26 BRT",
   "status": {
    "Engie Brasil": {
     "status": "atencao",
-    "score": 74
+    "score": 73
    },
    "Rumo": {
     "status": "atencao",
-    "score": 69
+    "score": 67
    },
    "Vale": {
     "status": "atencao",
-    "score": 61
+    "score": 60
    },
    "JPMorgan Chase": {
     "status": "critico",
-    "score": 60
+    "score": 59
    },
    "Santander Brasil": {
     "status": "atencao",
-    "score": 58
+    "score": 57
    },
    "CVS Health": {
     "status": "critico",
-    "score": 57
+    "score": 56
    },
    "Tok&Stok": {
     "status": "critico",
-    "score": 56
+    "score": 55
    },
    "General Motors": {
     "status": "critico",
-    "score": 54
+    "score": 53
    },
    "Grupo Financiero Banorte": {
     "status": "critico",
-    "score": 48
+    "score": 47
    },
    "Cosan": {
     "status": "atencao",
-    "score": 44
-   },
-   "Samarco Mineração": {
-    "status": "critico",
-    "score": 41
+    "score": 43
    },
    "Smart Fit": {
     "status": "atencao",
     "score": 41
    },
-   "BTG Pactual": {
-    "status": "atencao",
+   "Samarco Mineração": {
+    "status": "critico",
     "score": 40
    },
    "Axia Energia": {
+    "status": "atencao",
+    "score": 39
+   },
+   "BTG Pactual": {
     "status": "atencao",
     "score": 39
    },
@@ -49665,21 +49981,21 @@
     "status": "monitorar",
     "score": 35
    },
-   "Petrobras": {
-    "status": "atencao",
-    "score": 31
-   },
    "JBS": {
     "status": "atencao",
     "score": 31
    },
+   "Petrobras": {
+    "status": "atencao",
+    "score": 30
+   },
    "Yobel": {
     "status": "monitorar",
-    "score": 31
+    "score": 30
    },
    "Banco do Brasil": {
     "status": "atencao",
-    "score": 29
+    "score": 28
    },
    "Baker Hughes": {
     "status": "monitorar",
@@ -49701,13 +50017,13 @@
     "status": "monitorar",
     "score": 23
    },
-   "Capital One Financial": {
-    "status": "monitorar",
-    "score": 23
-   },
    "NextEra Energy": {
     "status": "monitorar",
     "score": 23
+   },
+   "Capital One Financial": {
+    "status": "monitorar",
+    "score": 22
    },
    "TIM Brasil": {
     "status": "monitorar",
@@ -49715,15 +50031,7 @@
    },
    "Lojas Renner": {
     "status": "monitorar",
-    "score": 21
-   },
-   "Yura": {
-    "status": "atencao",
-    "score": 19
-   },
-   "Citigroup": {
-    "status": "monitorar",
-    "score": 19
+    "score": 20
    },
    "Itaúsa": {
     "status": "monitorar",
@@ -49732,6 +50040,14 @@
    "Aegea Saneamento": {
     "status": "monitorar",
     "score": 19
+   },
+   "Yura": {
+    "status": "atencao",
+    "score": 18
+   },
+   "Citigroup": {
+    "status": "monitorar",
+    "score": 18
    },
    "Natura &Co": {
     "status": "monitorar",
@@ -49751,7 +50067,7 @@
    },
    "Eneva": {
     "status": "monitorar",
-    "score": 15
+    "score": 14
    },
    "Ecopetrol": {
     "status": "monitorar",
@@ -49797,19 +50113,19 @@
     "status": "monitorar",
     "score": 7
    },
-   "Truist Financial": {
-    "status": "monitorar",
-    "score": 7
-   },
-   "Itaú Unibanco": {
-    "status": "monitorar",
-    "score": 7
-   },
    "Localiza": {
     "status": "monitorar",
     "score": 6
    },
    "Halliburton": {
+    "status": "monitorar",
+    "score": 6
+   },
+   "Truist Financial": {
+    "status": "monitorar",
+    "score": 6
+   },
+   "Itaú Unibanco": {
     "status": "monitorar",
     "score": 6
    },
