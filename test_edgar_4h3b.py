@@ -275,7 +275,13 @@ def t10_config_candidato():
     prod = BASE / "config_risco.yaml"
     if prod.exists():
         pc = rd.load_config(str(prod))
-        check(rd.edgar_collection_enabled(pc) is False, "config de PRODUÇÃO segue com coleta desligada")
+        # 4H.6 ligou a coleta em produção deliberadamente (corroboração real);
+        # a invariante que continua protegendo o negócio não é "coleta off" —
+        # é "scoring autônomo off", que a 4H.4/4H.4B nunca reabriram.
+        check(rd.edgar_collection_enabled(pc) is True,
+              "config de PRODUÇÃO tem coleta LIGADA (invariante pós-4H.6, não mais desligada)")
+        check(rd.edgar_scoring_enabled(pc) is False,
+              "config de PRODUÇÃO mantém scoring autônomo DESLIGADO mesmo com coleta ligada")
 
 
 def main():

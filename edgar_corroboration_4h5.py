@@ -32,17 +32,44 @@ from datetime import datetime, timezone, timedelta
 import edgar_canonical as ec
 import edgar_dom as ed
 import edgar_normalizer as en
+import edgar_sections as es
 
 SEC_DOMAIN = "sec.gov"
 
+# 4H.7C: formas com corpo tentado nesta fase. 8-K usa o parser DOM
+# (edgar_dom, validado 4H.3C-F). 6-K usa o extrator de seção já existente
+# da 4H.3E (edgar_sections.split_6k_release, calibrado em corpus real de
+# 113 documentos) — NENHUM parser novo foi escrito. 10-Q e qualquer outro
+# form permanecem fora deste caminho (decisão explícita, não revisitada).
+_FORMS_COM_CORPO = frozenset({"8-K", "6-K"})
 
-# ── 1) Enriquecimento: metadado → corpo real + candidatos do parser DOM ──────
+
+def _texto_da_secao_do_candidato(candidato: dict, secoes: list[dict]) -> str:
+    """Localiza a seção (edgar_sections) que originou um candidato 6-K e
+    devolve o texto real dela — para propagar em `evidence_text` (§8/4H.7C).
+
+    Correlação por (kind, heading) — a única chave disponível no candidato,
+    já que candidatos 6-K não carregam offset próprio (não têm Item). Se
+    houver mais de uma seção com o MESMO kind+heading (ambíguo) ou nenhuma
+    correspondência exata: falha para o lado seguro (string vazia) — nunca
+    usa o documento inteiro como fallback."""
+    kind = candidato.get("section_kind")
+    heading = candidato.get("section_heading")
+    if not kind or not heading:
+        return ""
+    candidatas = [s for s in secoes if s.get("kind") == kind and s.get("heading") == heading]
+    if len(candidatas) != 1:
+        return ""
+    return candidatas[0].get("text") or ""
+
+
+# ── 1) Enriquecimento: metadado → corpo real + candidatos do parser ─────────
 def enrich_with_body(stub_articles: list[dict], cfg: dict, rd, *,
                       rate_limit_rps: int = 6) -> list[dict]:
     """Para cada artigo EDGAR leve (metadado de `fetch_edgar_filings`, sem
-    corpo), baixa o documento primário e roda o MESMO parser DOM/classificador
-    canônico validado em 4H.3C-F, produzindo um artigo completo via
-    `ec.to_article()` (com `edgar_candidates`/evidência real por Item).
+    corpo), baixa o documento primário e roda o MESMO parser/classificador
+    canônico validado em 4H.3C-F/4H.3E, produzindo um artigo completo via
+    `ec.to_article()` (com `edgar_candidates`/evidência real).
 
     Sem isto, o matching de corroboração teria só o título/descrição curta da
     SEC como texto — praticamente sem contraparte extraível, o que faria
@@ -56,9 +83,10 @@ def enrich_with_body(stub_articles: list[dict], cfg: dict, rd, *,
     for stub in stub_articles:
         acc = stub.get("accession_number", "")
         url = stub.get("url", "")
+        form = stub.get("form", "8-K")
         filing = {
             "company": stub.get("filing_company", ""), "cik": stub.get("cik", ""),
-            "ticker": stub.get("ticker", ""), "form": stub.get("form", "8-K"),
+            "ticker": stub.get("ticker", ""), "form": form,
             "accession_number": acc, "accession_digits": ec.normalize_accession(acc),
             "filing_date": stub.get("filing_date", ""),
             "report_date": stub.get("report_date", ""),
@@ -68,7 +96,7 @@ def enrich_with_body(stub_articles: list[dict], cfg: dict, rd, *,
             "url": url, "provenance": "EDGAR", "pub_ts": stub.get("pub_ts"),
         }
         html = ""
-        if url and filing["form"] == "8-K":
+        if url and form in _FORMS_COM_CORPO:
             try:
                 r = session.get(url, headers=ec.archive_headers(rd._EDGAR_UA), timeout=25)
                 if r.status_code == 200:
@@ -78,13 +106,34 @@ def enrich_with_body(stub_articles: list[dict], cfg: dict, rd, *,
             time.sleep(1.0 / max(1, rate_limit_rps))
         an = None
         texto = sem = ""
-        if html:
+        secoes_6k: list[dict] = []
+        if html and form == "8-K":
             dom = ed.parse_8k_dom_sections(html, items_metadata=filing["items"])
             doc = dom["doc"]
             texto = doc.flat_text if doc else ""
             sem = en.normalize_edgar_semantic_text(texto, provenance="EDGAR")["semantic_text"]
             an = ec.analyze_filing(filing, texto, sem, sections=dom["sections"])
+        elif html and form == "6-K":
+            # 6-K não tem estrutura de Item (8-K) — usa o extrator de seção
+            # de press release já existente (edgar_sections, 4H.3E), NUNCA
+            # o parser DOM de 8-K (produziria seções sem sentido para 6-K).
+            texto = ec.strip_html(html)
+            sem = en.normalize_edgar_semantic_text(texto, provenance="EDGAR")["semantic_text"]
+            info = es.evidence_sections(texto, form="6-K")
+            secoes_6k = info["sections"]
+            an = ec.analyze_filing(filing, texto, sem, sections=secoes_6k)
         art = ec.to_article(filing, texto, an, sem)
+        if secoes_6k and an:
+            # §8/4H.7C: propaga o texto real da seção para `evidence_text`
+            # nos candidatos 6-K (o classificador canônico não populava esse
+            # campo para candidatos `nao_pontuavel_por_forma`, porque nunca
+            # foram feitos para exibição/pontuação). Falha para o lado
+            # seguro quando a correlação seção↔candidato é ambígua.
+            for c in (art.get("edgar_candidates") or []):
+                if c.get("form") == "6-K" and not c.get("evidence_text"):
+                    txt = _texto_da_secao_do_candidato(c, secoes_6k)
+                    if txt:
+                        c["evidence_text"] = txt[:2000]
         # preserva o pub_ts original (to_article não define um valor próprio
         # confiável para todos os forms) e o rótulo de fonte já usado hoje
         art["pub_ts"] = filing.get("pub_ts")
@@ -215,8 +264,19 @@ def apply_edgar_corroboration(edgar_stub_articles: list[dict], history: dict,
         # então não há ambiguidade de sujeito a resolver aqui.
         company = art.get("monitored_company") or art.get("filing_company", "")
         filer = art.get("filing_company", "")
+        # WHITELIST ESTRUTURAL (4H.7C, §7): `nao_pontuavel_por_forma=True`
+        # continua bloqueando TODO candidato para fins de scoring (essa
+        # trava nunca é tocada — `_KINDS_PONTUAVEIS` em edgar_canonical.py
+        # permanece intacta). Para CORROBORAÇÃO especificamente, candidatos
+        # 6-K (sempre `nao_pontuavel_por_forma=True`, por desenho da 4H.3E/F,
+        # já que 6-K não tem estrutura de Item garantida pela SEC) podem
+        # participar do matching — nunca originar score sozinhos, e o
+        # match continua exigindo empresa+família+contraparte+data via
+        # `ec.match_occurrence`, o mesmo filtro do 8-K. Nenhuma outra forma
+        # (10-Q/10-K/20-F/40-F) entra nesta whitelist — só "6-K" literal.
         aceitos = [c for c in (art.get("edgar_candidates") or [])
-                   if c.get("aceito") and not c.get("nao_pontuavel_por_forma")]
+                   if c.get("aceito")
+                   and (not c.get("nao_pontuavel_por_forma") or c.get("form") == "6-K")]
         cand_by_ev = {}
         for c in aceitos:
             eid = c.get("event_id")
