@@ -95,14 +95,32 @@ def enrich_with_body(stub_articles: list[dict], cfg: dict, rd, *,
             "items": [i.strip() for i in str(stub.get("filing_items", "")).split(",") if i.strip()],
             "url": url, "provenance": "EDGAR", "pub_ts": stub.get("pub_ts"),
         }
+        # 4H.8: telemetria de retrieval, SEPARADA de "form fora de escopo".
+        # form_suportado=False (ex.: 10-Q) nunca conta como body_fetch_failure
+        # — nem sequer tenta, por desenho (fora deste caminho desde a 4H.7C).
+        # Só um form suportado (8-K/6-K) que teve fetch TENTADO e não teve
+        # sucesso conta como falha real de retrieval. Comportamento (o `html`
+        # resultante, o fallback silencioso) é IDÊNTICO a antes — só passou
+        # a ser observado, nunca alterado.
+        form_suportado = form in _FORMS_COM_CORPO
+        retrieval = {
+            "form": form, "form_suportado": form_suportado,
+            "body_fetch_attempted": False, "body_fetch_success": False,
+            "failure_reason": "", "section_count": None,
+        }
         html = ""
-        if url and form in _FORMS_COM_CORPO:
+        if url and form_suportado:
+            retrieval["body_fetch_attempted"] = True
             try:
                 r = session.get(url, headers=ec.archive_headers(rd._EDGAR_UA), timeout=25)
                 if r.status_code == 200:
                     html = r.text
-            except Exception:
+                    retrieval["body_fetch_success"] = True
+                else:
+                    retrieval["failure_reason"] = f"http_{r.status_code}"
+            except Exception as exc:
                 html = ""
+                retrieval["failure_reason"] = type(exc).__name__
             time.sleep(1.0 / max(1, rate_limit_rps))
         an = None
         texto = sem = ""
@@ -113,6 +131,7 @@ def enrich_with_body(stub_articles: list[dict], cfg: dict, rd, *,
             texto = doc.flat_text if doc else ""
             sem = en.normalize_edgar_semantic_text(texto, provenance="EDGAR")["semantic_text"]
             an = ec.analyze_filing(filing, texto, sem, sections=dom["sections"])
+            retrieval["section_count"] = len(dom["sections"] or [])
         elif html and form == "6-K":
             # 6-K não tem estrutura de Item (8-K) — usa o extrator de seção
             # de press release já existente (edgar_sections, 4H.3E), NUNCA
@@ -122,7 +141,9 @@ def enrich_with_body(stub_articles: list[dict], cfg: dict, rd, *,
             info = es.evidence_sections(texto, form="6-K")
             secoes_6k = info["sections"]
             an = ec.analyze_filing(filing, texto, sem, sections=secoes_6k)
+            retrieval["section_count"] = len(secoes_6k)
         art = ec.to_article(filing, texto, an, sem)
+        art["_retrieval_4h8"] = retrieval
         if secoes_6k and an:
             # §8/4H.7C: propaga o texto real da seção para `evidence_text`
             # nos candidatos 6-K (o classificador canônico não populava esse
@@ -240,15 +261,67 @@ def apply_edgar_corroboration(edgar_stub_articles: list[dict], history: dict,
     casar: NÃO cria registro novo em `history` (decisão 4H.4B, não reaberta).
     """
     resumo = {
+        # ── LEGADO (4H.5/4H.6/4H.7C) — mesma semântica de sempre. Consumido
+        # por risk_dashboard.py (log) e pelos testes 4H.5/4H.5F/6-K; mantido
+        # como estava, nunca removido/renomeado (4H.8 é só telemetria).
         "filings_recebidos": len(edgar_stub_articles), "filings_com_corpo": 0,
         "candidatos_avaliados": 0, "corroborados": 0, "sem_match": 0,
         "matches": [], "sem_match_detalhe": [],
+        # ── NOVO (4H.8) — granular: form_fora_do_escopo NUNCA é contado como
+        # body_fetch_failure. Nenhum destes campos influencia matching/score;
+        # são só a mesma informação já existente, quebrada em buckets que não
+        # se confundem entre si (ver `docstring` do módulo).
+        "por_form": {}, "forms_suportados_total": 0, "forms_fora_do_escopo_total": 0,
+        "body_fetch_attempted": 0, "body_fetch_success": 0, "body_fetch_failure": 0,
+        "body_fetch_failure_detalhe": [],
+        "section_extracted": 0, "section_not_found": 0,
+        "matches_new": 0, "matches_idempotent": 0, "matches_rejected": 0,
+        "edgar_only": 0,
     }
     if not edgar_stub_articles:
         return resumo
 
     arts = enrich_with_body(edgar_stub_articles, cfg, rd)
     resumo["filings_com_corpo"] = sum(1 for a in arts if a.get("edgar_has_body"))
+
+    # 4H.8: agregação por form a partir da telemetria de retrieval de cada
+    # filing (`_retrieval_4h8`, anexada por `enrich_with_body`) — ANTES do
+    # loop de matching, porque é sobre TODOS os filings recebidos, não só os
+    # que produziram candidato aceito.
+    for art in arts:
+        r = art.get("_retrieval_4h8") or {}
+        form = r.get("form") or art.get("form", "")
+        pf = resumo["por_form"].setdefault(form, {
+            "total": 0, "form_suportado": r.get("form_suportado", False),
+            "body_fetch_attempted": 0, "body_fetch_success": 0,
+            "body_fetch_failure": 0, "section_extracted": 0, "section_not_found": 0,
+        })
+        pf["total"] += 1
+        if r.get("form_suportado"):
+            resumo["forms_suportados_total"] += 1
+            if r.get("body_fetch_attempted"):
+                pf["body_fetch_attempted"] += 1
+                resumo["body_fetch_attempted"] += 1
+                if r.get("body_fetch_success"):
+                    pf["body_fetch_success"] += 1
+                    resumo["body_fetch_success"] += 1
+                    sc = r.get("section_count")
+                    if sc:
+                        pf["section_extracted"] += 1
+                        resumo["section_extracted"] += 1
+                    else:
+                        pf["section_not_found"] += 1
+                        resumo["section_not_found"] += 1
+                else:
+                    pf["body_fetch_failure"] += 1
+                    resumo["body_fetch_failure"] += 1
+                    resumo["body_fetch_failure_detalhe"].append({
+                        "accession": art.get("accession_number", ""), "form": form,
+                        "issuer": art.get("filing_company", ""),
+                        "failure_reason": r.get("failure_reason", ""),
+                    })
+        else:
+            resumo["forms_fora_do_escopo_total"] += 1
 
     for art in arts:
         # ── candidatos: SÓ o classificador canônico validado (edgar_canonical
@@ -307,12 +380,20 @@ def apply_edgar_corroboration(edgar_stub_articles: list[dict], history: dict,
                     matched_url = resultado["match"]["occurrence_id"]
                     target = history["articles"].get(matched_url)
                     if target is None:
+                        # Corrida: occurrence_id não encontrado (raríssimo, não é
+                        # uma decisão de matching — mais próximo de "rejeitado"
+                        # para fins de telemetria, mas com motivo próprio.
                         resumo["sem_match"] += 1
+                        resumo["matches_rejected"] += 1
                         resumo["sem_match_detalhe"].append(
                             {**base, "motivo": "occurrence_id não encontrado em history (corrida)"})
                         continue
                     added = append_sec_corroboration(target, art, item)
                     resumo["corroborados"] += 1 if added else 0
+                    # 4H.8: NEW = primeira vez que a SEC é anexada; IDEMPOTENT =
+                    # match correto, mas a SEC já estava presente (reprocessar
+                    # não duplica bônus — comportamento inalterado, só nomeado).
+                    resumo["matches_new" if added else "matches_idempotent"] += 1
                     resumo["matches"].append({
                         **base, "matched_url": matched_url,
                         "matched_source": resultado["match"].get("source", ""),
@@ -320,9 +401,50 @@ def apply_edgar_corroboration(edgar_stub_articles: list[dict], history: dict,
                         "lag_dias": resultado["match"].get("lag"),
                         "entidades_comuns": resultado["match"].get("entidades_comuns", []),
                         "novo_bonus": added,
+                        "match_kind": "new" if added else "idempotent",
                         "motivo": resultado["motivo"],
                     })
                 else:
                     resumo["sem_match"] += 1
-                    resumo["sem_match_detalhe"].append({**base, "motivo": resultado["motivo"]})
+                    # 4H.8: EDGAR-ONLY = candidato válido, mas ZERO ocorrência
+                    # independente já conhecida (nada para corroborar contra —
+                    # não é rejeição, é ausência de universo de comparação).
+                    # REJECTED = havia ocorrência(s) da mesma empresa+família,
+                    # mas nenhuma compartilhou contraparte/data suficiente
+                    # (`ec.match_occurrence` já fazia essa distinção internamente
+                    # via `rejeitados`; aqui só é OBSERVADA, não decidida de novo).
+                    kind = "edgar_only" if not conhecidas else "rejected"
+                    resumo["edgar_only" if kind == "edgar_only" else "matches_rejected"] += 1
+                    resumo["sem_match_detalhe"].append(
+                        {**base, "motivo": resultado["motivo"], "match_kind": kind})
     return resumo
+
+
+# ── 5) Log humano (4H.8) ─────────────────────────────────────────────────────
+def format_telemetry_log(resumo: dict) -> str:
+    """Linha de log operacional legível, distinguindo explicitamente form
+    fora de escopo (10-Q) de falha real de retrieval (8-K/6-K que não
+    respondeu) — o objetivo desta fase (4H.8) é impedir a confusão que já
+    aconteceu uma vez (relatório da 4H.7 mencionando "135 sem corpo" como se
+    fossem falhas de rede, quando eram formas fora de escopo por desenho)."""
+    linhas = [f" 🇺🇸 SEC/EDGAR: {resumo['filings_recebidos']} filing(s)"]
+    if resumo["forms_suportados_total"] or resumo["forms_fora_do_escopo_total"]:
+        linhas.append(f"   {resumo['forms_suportados_total']} form(s) suportado(s) processado(s)"
+                       f" (8-K/6-K), {resumo['forms_fora_do_escopo_total']} fora do escopo"
+                       f" (form não coberto por este caminho — ex.: 10-Q)")
+        for form, pf in sorted(resumo["por_form"].items()):
+            if pf["form_suportado"]:
+                linhas.append(f"     {pf['body_fetch_success']}/{pf['body_fetch_attempted']} {form} com corpo")
+            else:
+                linhas.append(f"     {pf['total']} {form} fora do escopo (sem tentativa de fetch)")
+    linhas.append(f"   {resumo['candidatos_avaliados']} candidato(s) avaliado(s), "
+                   f"{resumo['matches_new']} corroboração(ões) nova(s), "
+                   f"{resumo['matches_idempotent']} idempotente(s) (já anexada), "
+                   f"{resumo['matches_rejected']} rejeitado(s), "
+                   f"{resumo['edgar_only']} sem ocorrência independente (EDGAR-only, não pontuam)")
+    if resumo["body_fetch_failure"]:
+        linhas.append(f"   ⚠️  {resumo['body_fetch_failure']} falha(s) REAL(is) de retrieval "
+                       f"(form suportado, fetch tentado, sem sucesso)")
+    else:
+        linhas.append("   0 falhas reais de retrieval")
+    return "\n".join(linhas)

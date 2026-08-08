@@ -9282,14 +9282,14 @@ def main():
             import edgar_corroboration_4h5 as _corrob4h5
             _corrob_resumo = _corrob4h5.apply_edgar_corroboration(
                 _edgar_shadow_articles, history, cfg, sys.modules[__name__])
-            _n_erros_corpo = (_corrob_resumo["filings_recebidos"]
-                             - _corrob_resumo["filings_com_corpo"])
+            # 4H.8: substitui o agregado ambíguo "sem corpo recuperado (erro de
+            # coleta/parsing)" — que misturava form fora de escopo (10-Q, nunca
+            # tentado) com falha real de rede — pelo log granular de
+            # `format_telemetry_log` (form_fora_do_escopo vs body_fetch_failure
+            # são contadores SEPARADOS desde a 4H.8; nenhuma decisão de coleta/
+            # matching/score mudou).
             if _corrob_resumo["corroborados"] or _corrob_resumo["candidatos_avaliados"]:
-                print(f" 🔗 EDGAR corroboração: {_corrob_resumo['filings_recebidos']} filing(s) "
-                      f"recebido(s), {_n_erros_corpo} sem corpo recuperado (erro de coleta/parsing), "
-                      f"{_corrob_resumo['candidatos_avaliados']} candidato(s) avaliado(s), "
-                      f"{_corrob_resumo['corroborados']} corroboração(ões) nova(s) anexada(s), "
-                      f"{_corrob_resumo['sem_match']} sem match (não pontuam).")
+                print(_corrob4h5.format_telemetry_log(_corrob_resumo))
             # 4H.5F: telemetria persistida (não só o log) — para todo run com
             # candidatos avaliados, grava o resumo completo (matches +
             # sem_match_detalhe) em JSON, respondendo sem precisar reler log:
