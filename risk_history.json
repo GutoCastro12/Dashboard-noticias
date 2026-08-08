@@ -610,7 +610,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-08T19:20:01.546331+00:00"
+     "last_checked_at": "2026-08-08T19:52:42.587461+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2249,7 +2249,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-08T19:20:01.946619+00:00"
+     "last_checked_at": "2026-08-08T19:52:42.987749+00:00"
     }
    ],
    "corrob_sources": [
@@ -9042,7 +9042,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-08T19:20:02.346908+00:00"
+     "last_checked_at": "2026-08-08T19:52:43.388086+00:00"
     },
     {
      "source": "Demarest",
@@ -9062,7 +9062,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-08T19:20:02.747216+00:00"
+     "last_checked_at": "2026-08-08T19:52:43.788406+00:00"
     }
    ],
    "corrob_sources": [
@@ -10479,7 +10479,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-08T19:20:03.147461+00:00"
+     "last_checked_at": "2026-08-08T19:52:44.188705+00:00"
     }
    ],
    "corrob_sources": [
@@ -13712,7 +13712,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-08T19:20:04.651711+00:00"
+     "last_checked_at": "2026-08-08T19:52:44.805470+00:00"
     }
    ],
    "corrob_sources": [
@@ -15950,7 +15950,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-08T19:20:05.203030+00:00"
+     "last_checked_at": "2026-08-08T19:52:45.412452+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -16056,7 +16056,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-08T19:20:05.760484+00:00"
+     "last_checked_at": "2026-08-08T19:52:46.019191+00:00"
     },
     {
      "source": "Moomoo",
@@ -17349,7 +17349,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-08T19:20:06.435113+00:00"
+     "last_checked_at": "2026-08-08T19:52:46.817511+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -17392,7 +17392,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-08T19:20:07.134703+00:00"
+     "last_checked_at": "2026-08-08T19:52:47.601114+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -18230,7 +18230,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-08T19:20:07.687164+00:00",
+     "last_checked_at": "2026-08-08T19:52:48.229277+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -18255,7 +18255,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-08T19:20:08.239178+00:00",
+     "last_checked_at": "2026-08-08T19:52:48.852022+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19186,7 +19186,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-08T19:20:08.639458+00:00",
+     "last_checked_at": "2026-08-08T19:52:49.252334+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -19251,7 +19251,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-08T19:20:09.039708+00:00",
+     "last_checked_at": "2026-08-08T19:52:49.652674+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20224,7 +20224,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-08T19:20:09.590208+00:00"
+     "last_checked_at": "2026-08-08T19:52:50.252311+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -20309,7 +20309,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-08T19:20:10.140510+00:00"
+     "last_checked_at": "2026-08-08T19:52:50.855365+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22010,7 +22010,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-08T19:20:10.700517+00:00",
+     "last_checked_at": "2026-08-08T19:52:51.493006+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22180,7 +22180,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-08T19:20:11.260752+00:00",
+     "last_checked_at": "2026-08-08T19:52:52.104850+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -35566,7 +35566,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-08T19:20:11.920837+00:00"
+     "last_checked_at": "2026-08-08T19:52:52.884103+00:00"
     }
    ],
    "corrob_sources": [
@@ -38442,7 +38442,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-08T19:20:12.478294+00:00"
+     "last_checked_at": "2026-08-08T19:52:53.495382+00:00"
     },
     {
      "source": "Virginia Business",
@@ -38485,7 +38485,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-08T19:20:13.032785+00:00"
+     "last_checked_at": "2026-08-08T19:52:54.100746+00:00"
     },
     {
      "source": "Virginia Business",
@@ -44652,7 +44652,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1786122121,
-   "cap_iso": "2026-08-07 14:02"
+   "cap_iso": "2026-08-07 14:02",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRjNNeV9ka21IVnpyZEk1d3ZKQmlZM21yTVVuUmRtWEhaaGpOOW9HOGNwdTIyYkpSRTlwcXRFZUJuUWE5bWgzT3lWdWw4Y2dkU25fZlRSa0lyU2cyWUdYTTRydnRDQThGcDZaQ01xbUE0dXhxaGtXc3Z2MlpibFMxZVZMaGdQZGpLdmVGZmk5SmllR2JmUVA3b0hQRmNJNFRiLTl4TUh5R2paZVJpX0RBMjlXZ1FHalpyVnhj?oc=5": {
    "title": "Spanberger takes unprecedented step to intervene in $67B Dominion-NextEra merger",
@@ -45122,9 +45124,72 @@
    ],
    "captured_ts": 1786216797,
    "cap_iso": "2026-08-08 16:19"
+  },
+  "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbkY4MUZyQ1V1TEJkbFVMMUZLeVVNMFpmSVVCNG1TZmZVM2NINzNqbzFIWHljWUFMT3hPa1U2ejlTSk9hQWZnWm1UbUVFbmdNbktzYXQxanJZTS0xYnJEMml0bkE1cHdaT0FsVWY0WWNQVnkzME1qcXp5SE04ZktMQ2VwYTEwemQ0LW15cE5qMUjSAZYBQVVfeXFMTWlHRi1NZS0tM1FhYXpaWFM2bTZTaHcxQ2RjT0ttSEJnbTJIT2YxQ1BPeFdwWHNhdEsyYWlFaDA4bFVEb3VZMkdOM1MtU0N4Qmg4RTUtdVBzYmxKRllubmVlcHZKLVZNR0FmNWozNHp1OWFLWkhRc05lWVBzOGhNd28zTWwtZTJiYWJoNFdKclpoRlZpWUFn?oc=5": {
+   "title": "Virginia governor to intervene in NextEra, Dominion merger over electricity price concerns",
+   "url": "https://www.cnbc.com/2026/08/06/virginia-governor-nextera-nee-dominion-data-center.html",
+   "summary": "Virginia governor to intervene in NextEra, Dominion merger over electricity price concerns &nbsp;&nbsp; CNBC",
+   "source": "CNBC",
+   "domain": "cnbc.com",
+   "pub_ts": 1786049459,
+   "pub_iso": "2026-08-06 17:50",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "corroborations": [
+    {
+     "source": "Virginia Mercury",
+     "domain": "virginiamercury.com",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRjNNeV9ka21IVnpyZEk1d3ZKQmlZM21yTVVuUmRtWEhaaGpOOW9HOGNwdTIyYkpSRTlwcXRFZUJuUWE5bWgzT3lWdWw4Y2dkU25fZlRSa0lyU2cyWUdYTTRydnRDQThGcDZaQ01xbUE0dXhxaGtXc3Z2MlpibFMxZVZMaGdQZGpLdmVGZmk5SmllR2JmUVA3b0hQRmNJNFRiLTl4TUh5R2paZVJpX0RBMjlXZ1FHalpyVnhj?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRjNNeV9ka21IVnpyZEk1d3ZKQmlZM21yTVVuUmRtWEhaaGpOOW9HOGNwdTIyYkpSRTlwcXRFZUJuUWE5bWgzT3lWdWw4Y2dkU25fZlRSa0lyU2cyWUdYTTRydnRDQThGcDZaQ01xbUE0dXhxaGtXc3Z2MlpibFMxZVZMaGdQZGpLdmVGZmk5SmllR2JmUVA3b0hQRmNJNFRiLTl4TUh5R2paZVJpX0RBMjlXZ1FHalpyVnhj?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRjNNeV9ka21IVnpyZEk1d3ZKQmlZM21yTVVuUmRtWEhaaGpOOW9HOGNwdTIyYkpSRTlwcXRFZUJuUWE5bWgzT3lWdWw4Y2dkU25fZlRSa0lyU2cyWUdYTTRydnRDQThGcDZaQ01xbUE0dXhxaGtXc3Z2MlpibFMxZVZMaGdQZGpLdmVGZmk5SmllR2JmUVA3b0hQRmNJNFRiLTl4TUh5R2paZVJpX0RBMjlXZ1FHalpyVnhj?oc=5",
+     "resolved_url": "https://virginiamercury.com/2026/08/06/spanberger-takes-unprecedented-step-to-intervene-in-67b-dominion-nextera-merger/",
+     "canonical_url": "https://virginiamercury.com/2026/08/06/spanberger-takes-unprecedented-step-to-intervene-in-67b-dominion-nextera-merger/",
+     "display_url": "https://virginiamercury.com/2026/08/06/spanberger-takes-unprecedented-step-to-intervene-in-67b-dominion-nextera-merger/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "virginiamercury.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-08T19:52:54.501041+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Virginia Mercury",
+     "domain": "virginiamercury.com",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRjNNeV9ka21IVnpyZEk1d3ZKQmlZM21yTVVuUmRtWEhaaGpOOW9HOGNwdTIyYkpSRTlwcXRFZUJuUWE5bWgzT3lWdWw4Y2dkU25fZlRSa0lyU2cyWUdYTTRydnRDQThGcDZaQ01xbUE0dXhxaGtXc3Z2MlpibFMxZVZMaGdQZGpLdmVGZmk5SmllR2JmUVA3b0hQRmNJNFRiLTl4TUh5R2paZVJpX0RBMjlXZ1FHalpyVnhj?oc=5",
+     "when": "06/08 17:33",
+     "original_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRjNNeV9ka21IVnpyZEk1d3ZKQmlZM21yTVVuUmRtWEhaaGpOOW9HOGNwdTIyYkpSRTlwcXRFZUJuUWE5bWgzT3lWdWw4Y2dkU25fZlRSa0lyU2cyWUdYTTRydnRDQThGcDZaQ01xbUE0dXhxaGtXc3Z2MlpibFMxZVZMaGdQZGpLdmVGZmk5SmllR2JmUVA3b0hQRmNJNFRiLTl4TUh5R2paZVJpX0RBMjlXZ1FHalpyVnhj?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRjNNeV9ka21IVnpyZEk1d3ZKQmlZM21yTVVuUmRtWEhaaGpOOW9HOGNwdTIyYkpSRTlwcXRFZUJuUWE5bWgzT3lWdWw4Y2dkU25fZlRSa0lyU2cyWUdYTTRydnRDQThGcDZaQ01xbUE0dXhxaGtXc3Z2MlpibFMxZVZMaGdQZGpLdmVGZmk5SmllR2JmUVA3b0hQRmNJNFRiLTl4TUh5R2paZVJpX0RBMjlXZ1FHalpyVnhj?oc=5",
+     "resolved_url": "https://virginiamercury.com/2026/08/06/spanberger-takes-unprecedented-step-to-intervene-in-67b-dominion-nextera-merger/",
+     "canonical_url": "https://virginiamercury.com/2026/08/06/spanberger-takes-unprecedented-step-to-intervene-in-67b-dominion-nextera-merger/",
+     "display_url": "https://virginiamercury.com/2026/08/06/spanberger-takes-unprecedented-step-to-intervene-in-67b-dominion-nextera-merger/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "virginiamercury.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-08T19:52:54.901305+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1786218757,
+   "cap_iso": "2026-08-08 16:52"
   }
  },
- "run_count": 88,
+ "run_count": 89,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -50117,11 +50182,15 @@
   "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQTWFITWtDWGNWOHJrbUhSQnNieE9vUVV6YVJYbzl2aVRETFFNRWYwbTVSLTNza2lEYVBaNWNLcFZUS05qTXB5QjJwZHNvUDd6SUY4b25xZ1VPU1JnRG84SHFpYlNCZEdETEs2RWhEM1Q5ZEE3MlppZUtZOElodUFNZ2NqSnVhQUJzNTBYU2s5a1lhOWZnZTN3anE5X0lfYWthLVl0YS1DSnRlVFRSZ1h3azQ5dFZpY2xueFVOUUVfOThTNS1FU1RLRlpIY2NWSVNyd3hDaXJHN2w?oc=5": {
    "url": "https://www.moneytimes.com.br/opa-bilionaria-do-santander-sanb11-e-resultado-da-vale-vale3-movimentam-mercado-ibovespa-em-dolar-sobe-hoje-31/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbkY4MUZyQ1V1TEJkbFVMMUZLeVVNMFpmSVVCNG1TZmZVM2NINzNqbzFIWHljWUFMT3hPa1U2ejlTSk9hQWZnWm1UbUVFbmdNbktzYXQxanJZTS0xYnJEMml0bkE1cHdaT0FsVWY0WWNQVnkzME1qcXp5SE04ZktMQ2VwYTEwemQ0LW15cE5qMUjSAZYBQVVfeXFMTWlHRi1NZS0tM1FhYXpaWFM2bTZTaHcxQ2RjT0ttSEJnbTJIT2YxQ1BPeFdwWHNhdEsyYWlFaDA4bFVEb3VZMkdOM1MtU0N4Qmg4RTUtdVBzYmxKRllubmVlcHZKLVZNR0FmNWozNHp1OWFLWkhRc05lWVBzOGhNd28zTWwtZTJiYWJoNFdKclpoRlZpWUFn?oc=5": {
+   "url": "https://www.cnbc.com/2026/08/06/virginia-governor-nextera-nee-dominion-data-center.html",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786216858,
-  "iso": "08 ago 2026 · 16:20 BRT",
+  "ts": 1786218817,
+  "iso": "08 ago 2026 · 16:53 BRT",
   "status": {
    "Engie Brasil": {
     "status": "atencao",
@@ -50187,11 +50256,11 @@
     "status": "monitorar",
     "score": 35
    },
-   "JBS": {
-    "status": "atencao",
-    "score": 31
-   },
    "Petrobras": {
+    "status": "atencao",
+    "score": 30
+   },
+   "JBS": {
     "status": "atencao",
     "score": 30
    },
