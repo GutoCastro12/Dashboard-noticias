@@ -867,12 +867,20 @@ def detect_debtor_subject(text: str, monitored: str, aliases: list[str] | None =
         # Substantivo comum do próprio domínio financeiro nunca é entidade:
         # "inadimplência DA DÍVIDA" extraía "divida" como se fosse empresa
         # (encontrado pelos testes da B5).
-        if re.fullmatch(r"(?:d[íi]vida|deuda|debt|d[ée]bito|obriga[çc][ãa]o|obligaci[óo]n|"
-                        r"pagamento|pago|parcela|juros|intereses|interest|deb[êe]ntures?|"
-                        r"bonds?|notes?|t[íi]tulos?|cri|cra|empr[ée]stimo|loan|"
-                        r"presta[çc][ãa]o|contrato|opera[çc][ãa]o|companhia|empresa|"
-                        r"sociedade|grupo|banco|governo|gobierno|estado|pa[íi]s)s?",
-                        _resto, re.I):
+        # Verificação por TOKEN: se todas as palavras restantes forem
+        # substantivos/adjetivos comuns do domínio, não é entidade. O
+        # `fullmatch` de uma palavra só falhava em "dívida própria" e
+        # bloqueava default legítimo do emissor (§8).
+        _COMUM = re.compile(
+            r"(?:d[íi]vida|deuda|debt|d[ée]bito|obriga[çc][ãa]o|obligaci[óo]n|"
+            r"pagamento|pago|parcela|juros|intereses|interest|deb[êe]nture|"
+            r"bond|note|t[íi]tulo|cri|cra|empr[ée]stimo|loan|presta[çc][ãa]o|"
+            r"contrato|opera[çc][ãa]o|companhia|empresa|sociedade|grupo|banco|"
+            r"governo|gobierno|estado|pa[íi]s|carteira|cartera|portfolio|cr[ée]dito|"
+            r"pr[óo]pri[oa]|own|total|l[íi]quid[oa]|financeir[oa]|banc[áa]ri[oa])s?",
+            re.I)
+        _toks = [w for w in re.split(r"\s+", _resto) if w]
+        if _toks and all(_COMUM.fullmatch(w) for w in _toks):
             continue
         return cand
     return ""
@@ -977,6 +985,79 @@ DEVEDOR_CORPORATIVO_EXPLICITO = [
     r"{m}{q}\s+(?:calote|inadimpl\w*)", r"default\s+d[ao]\s+{m}",
     r"{m}{q}\s+(?:on\s+its|em\s+sua|de\s+sua)\s+(?:corporate\s+)?(?:debt|d[íi]vida)",
 ]
+
+
+# ── 4I.2 Wave B6: risco PROSPECTIVO e objeto CARTEIRA ≠ default do emissor ──
+# Banorte recebia `default` crítico (peso 100) de "créditos con mayor RIESGO DE
+# impago": não há default nenhum — há concessão de crédito com risco maior. A
+# causa é de CLASSIFICAÇÃO (construção lexical que não representa o evento
+# econômico), não de entity resolution. Duas dimensões, ambas pequenas e
+# gerais, na mesma família da distinção fato/fase das Waves A1/A1b.
+MODALIZADOR_PROSPECTIVO = [
+    r"risco\s+de", r"riesgo\s+de", r"risk\s+of", r"em\s+risco\s+de",
+    r"amea[çc]a\s+de", r"amenaza\s+de", r"threat\s+of", r"perto\s+d[eo]",
+    r"pode\s+(?:entrar\s+em|dar|sofrer)", r"podr[íi]a", r"puede\s+(?:entrar|caer)",
+    r"could\s+(?:default|face)", r"may\s+default", r"expectativa\s+de",
+    r"proje[çc][ãa]o\s+de", r"alerta\s+(?:para|sobre)", r"warns?\s+of",
+    r"prev[êe]\s+", r"temor\s+de", r"receio\s+de", r"potencial\s+",
+]
+# o evento recai sobre CARTEIRA/PRODUTO/INSTRUMENTO, não sobre obrigação própria
+OBJETO_CARTEIRA = [
+    r"carteira\s+de\s+cr[ée]dito", r"cartera\s+(?:de\s+cr[ée]dito|vencida)",
+    r"loan\s+portfolio", r"cr[ée]dito?s\s+(?:concedidos?|outorgados?|con\b)",
+    r"morosidad", r"inadimpl[êe]ncia\s+d[ao]s?\s+(?:carteira|clientes?|tomadores?)",
+    r"\bnpl\b", r"non[- ]performing", r"default\s+rate", r"taxa\s+de\s+(?:default|inadimpl)",
+    r"cr[ée]ditos?\s+(?:problem[áa]ticos?|en\s+incumplimiento|vencidos?)",
+    r"borrowers?\s+in\s+default", r"clientes?\s+em\s+default",
+    r"empr[ée]stimos?\s+(?:concedidos?|outorgados?)",
+    r"(?:clientes?|tomadores?|devedores?|borrowers?|deudores?)\s+d[oae]s?\s+\w+\s+"
+    r"(?:entram?|entra|caen?|cai)\s+em\s+default",
+    r"provis[õo]es\s+para\s+(?:perdas|devedores)", r"exposi[çc][ãa]o\s+a\b",
+]
+
+
+def detect_evento_nao_consumado(text: str, event_keywords: list[str], monitored: str,
+                                aliases: list[str] | None = None) -> dict:
+    """O termo do evento aparece apenas como RISCO PROSPECTIVO ou recai sobre
+    CARTEIRA/produto — e não como obrigação própria inadimplida?
+
+    Cede sempre que houver devedor corporativo explícito (§8): banco que deixa
+    de pagar obrigação própria continua pontuando. Nunca fabrica sujeito (§10).
+    """
+    t = _n(text)
+    nomes = [re.escape(_n(a)) for a in ((aliases or []) + [monitored]) if a]
+    alt = "(?:" + "|".join(nomes) + ")" if nomes else ""
+    if alt and any(re.search(p.format(m=alt, q=_QUALIF), t, re.I)
+                   for p in DEVEDOR_CORPORATIVO_EXPLICITO):
+        return {"nao_consumado": False, "motivo": "", "evidence": ""}
+    kws = [re.escape(_n(k)) for k in (event_keywords or []) if k and len(_n(k)) >= 2]
+    if not kws:
+        return {"nao_consumado": False, "motivo": "", "evidence": ""}
+    kw_alt = "|".join(kws)
+    # modalizador COLADO ao termo do evento ("riesgo de impago")
+    rx_prosp = re.compile(r"(?:" + "|".join(MODALIZADOR_PROSPECTIVO) + r")\s+(?:\w+\s+){0,2}?(?:"
+                          + kw_alt + r")(?!\w)", re.I)
+    kw_rx = re.compile(r"(?<!\w)(?:" + kw_alt + r")(?!\w)")
+    mencoes = neutras = 0
+    motivo = ev = ""
+    for prop in _proposicoes(t):
+        if not kw_rx.search(prop):
+            continue
+        mencoes += 1
+        m = rx_prosp.search(prop)
+        if m:
+            neutras += 1
+            motivo = motivo or "risco_prospectivo"
+            ev = ev or m.group(0)[:70]
+            continue
+        c = next((re.search(p, prop, re.I) for p in OBJETO_CARTEIRA
+                  if re.search(p, prop, re.I)), None)
+        if c:
+            neutras += 1
+            motivo = motivo or "objeto_carteira"
+            ev = ev or c.group(0)[:70]
+    return {"nao_consumado": bool(mencoes) and neutras == mencoes,
+            "motivo": motivo, "evidence": ev}
 
 
 def _stem_pais(nome: str) -> str:
@@ -1326,6 +1407,24 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                 continue
         # 2g) CREDOR ≠ DEVEDOR (4I.2 Wave A6) — papel econômico, nunca tipo de
         # empresa: banco continua podendo sofrer evento próprio (§31).
+        # B6) RISCO PROSPECTIVO / OBJETO CARTEIRA ≠ default do emissor
+        # Posição: bloco de último recurso, junto das demais regras de papel —
+        # só atua quando nenhuma evidência mais forte já identificou a
+        # monitorada como sujeito direto (§14). Cede a devedor corporativo
+        # explícito, então não vira blindagem de banco (§8).
+        _al_b6 = aliases_por_empresa.get(monitored) or [monitored]
+        if (ev in EVENTOS_SUJEITO_ESTRITO or ev in EVENTOS_CREDITO_EXIGEM_FATO) and _kws:
+            _nc = detect_evento_nao_consumado(texto, _kws, monitored, _al_b6)
+            if _nc["nao_consumado"]:
+                d.update(scoreable=False, event_scope="indireto",
+                         relation_type=("exposicao_carteira"
+                                        if _nc["motivo"] == "objeto_carteira"
+                                        else "risco_prospectivo"),
+                         attribution_rule="R_EVENTO_NAO_CONSUMADO_OU_DE_CARTEIRA",
+                         rejection_reason=(f"{_nc['motivo']}: \"{_nc['evidence']}\" — não há "
+                                            f"inadimplemento consumado de obrigação própria"))
+                decisoes.append(d)
+                continue
         # B5) SOBERANO ≠ EMISSOR CORPORATIVO (4I.2 Wave B5)
         # Roda no bloco de último recurso, junto das demais regras de papel:
         # sujeito estrito, M&A, fraude e o próprio detector de devedor já
