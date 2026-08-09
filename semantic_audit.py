@@ -458,10 +458,10 @@ FASES_JURIDICAS = [
                         r"\bcivil\s+(?:suit|action|complaint)\b",
                         r"\bcomplaint\s+(?:against|filed)",
                         r"processa\w*\s+(?:a|o|na|no)\b",
-                        r"a[çc][ãa]o\s+(?:c[íi]vel|judicial)\s+contra",
+                        r"a[çc][ãa]o\s+(?:c[íi]vel|judicial)\b", r"move[m]?\s+a[çc][ãa]o",
                         r"demanda\s+judicial", r"querella"], "negativa"),
     ("alegacao", [r"den[úu]ncia\s+exclusiva", r"acusa\w*", r"suspeita",
-                  r"alleg\w*", r"teria\s+", r"segundo\s+denuncia",
+                  r"alleg\w*", r"alega\w*", r"teria\s+", r"segundo\s+denuncia",
                   r"\bsuspected\b", r"\bpurported\w*", r"presunt\w*",
                   r"sob\s+suspeita", r"denunciad[oa]\b", r"acusaci[óo]n"], "negativa"),
 ]
@@ -725,6 +725,23 @@ EVENTOS_SUJEITO_ESTRITO = {
 EVENTOS_MA = {"ma", "fusao_aquisicao", "m&a"}
 EVENTOS_FRAUDE = {"fraude", "fraude_investigacao", "corrupcao", "lavagem"}
 
+# ── 4I.2 Wave A1b: fase jurídica FORA da família fraude ─────────────────────
+# A regra da A1 não pode ser reaproveitada cegamente: o mínimo de fase que
+# torna um evento pontuável depende do que o event_id SIGNIFICA.
+#
+# `investigacao_regulatoria` (score 30) tem como keywords atos FORMAIS ("CVM
+# abre processo", "busca e apreensão", "expediente sancionador", "abre
+# investigación"): o próprio evento É a investigação. Exigir condenação aqui
+# mudaria o significado da família (§9/§20). Só alegação/rumor sem ato formal
+# não basta.
+#
+# `default_cri` (score 80, "Default de CRI na carteira") representa um fato
+# ECONÔMICO consumado — CRI efetivamente inadimplente. Denúncia, processo ou
+# investigação sobre suposta inadimplência não provam o default (§10/§21).
+EVENTOS_INVESTIGACAO_E_O_PROPRIO_EVENTO = {"investigacao_regulatoria"}
+EVENTOS_CREDITO_EXIGEM_FATO = {"default", "default_cri", "covenant_breach",
+                                "inadimplencia", "cross_default"}
+
 
 def resolve_article_semantics(title: str, summary: str, monitored: str,
                               event_ids: list[str], aliases_por_empresa: dict,
@@ -812,6 +829,36 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                          attribution_rule="R_RESOLUCAO_EVENTO_ANTERIOR",
                          rejection_reason=(f"desfecho/resolução de evento anterior, não "
                                             f"novo evento (\"{_res['evidence'][:70]}\")"))
+                decisoes.append(d)
+                continue
+        # 2d) FASE JURÍDICA fora da família fraude (4I.2 Wave A1b)
+        # Semântica por família, nunca um gate único (§8):
+        #   crédito  → alegação/processo/investigação NÃO provam o fato
+        #              econômico; só o fato consumado pontua;
+        #   investigação regulatória → o evento É a investigação, então ato
+        #              formal do regulador pontua; só rumor/alegação privada
+        #              sem ato formal não basta.
+        if ev in EVENTOS_CREDITO_EXIGEM_FATO and fase["event_phase"] in FASES_NAO_CONSUMADAS:
+            d.update(scoreable=False, event_scope="direto",
+                     attribution_confidence="baixa",
+                     attribution_rule="R_CREDITO_EXIGE_FATO_CONSUMADO",
+                     rejection_reason=(f"fase {fase['event_phase']}: denúncia/processo/"
+                                        f"investigação não provam inadimplemento econômico"))
+            decisoes.append(d)
+            continue
+        if (ev in EVENTOS_INVESTIGACAO_E_O_PROPRIO_EVENTO
+                and fase["event_phase"] in ("alegacao", "acusacao_civil")
+                and fase["event_phase"] != "investigacao"):
+            # há alegação, mas nenhum ato formal de investigação no texto
+            if not re.search(r"abre\s+(?:processo|investiga|inqu[ée]rito|expediente)"
+                             r"|instaura\w*|busca\s+e\s+apreens|expediente\s+sancionador"
+                             r"|opens?\s+(?:an?\s+)?(?:probe|investigation|inquiry)"
+                             r"|formal\s+(?:probe|investigation)", _n(texto), re.I):
+                d.update(scoreable=False, event_scope="direto",
+                         attribution_confidence="baixa",
+                         attribution_rule="R_INVESTIGACAO_SEM_ATO_FORMAL",
+                         rejection_reason=("alegação/rumor sem ato formal de investigação "
+                                            "por autoridade"))
                 decisoes.append(d)
                 continue
         # 3) sujeito estrito (RJ/falência/default)
