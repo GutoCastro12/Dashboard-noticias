@@ -71,6 +71,12 @@ watchlist:
     - "{A}\\b(?:\\s*(?:,|e)\\s*\\w+){0,2}\\s+(?:pede\\w*|pediu|cobra\\w*|cobrou|solicita\\w*|solicitou|questiona\\w*|questionou)\\s+(?:[ao]s?\\s+)?(?:esclarecimentos?|explicac\\w+|informacoes?)\\b"
     - \b(?:solicitad\w*|questionad\w*|cobrad\w*)\s+pel[ao]\s+{A}\b
     - \b(?:oficio|questionamento)\s+d[ao]\s+{A}\b
+    # 4I.2 Wave B7b-3a — OPERACAO DE TERCEIRO ocorre/e negociada NA B3.
+    # Os patterns acima cobrem posse/origem e protocolo, mas nao a
+    # construcao LOCATIVA: 'Banco Mercantil avalia novo follow-on NA B3'
+    # atribuia o follow-on a propria bolsa. Relacao geral (qualquer
+    # operacao de qualquer emissor), nao regra por artigo/empresa.
+    - '(?:follow[- ]on|oferta|ipo|emissao|listagem|estreia|negociacao|leilao|debentures?|acoes)\b(?:\s+\w+){0,3}\s+n[ao]\s+{A}\b'
   asset_class: listada
   ticker: B3SA3
   listing: B3
