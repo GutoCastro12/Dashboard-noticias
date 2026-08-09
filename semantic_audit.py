@@ -587,6 +587,10 @@ def detect_roles(text: str, monitored: str, aliases_por_empresa: dict) -> dict:
 _STOP_ENT = {"a", "o", "as", "os", "da", "do", "das", "dos", "de", "e", "em", "que",
              "the", "of", "and", "para", "com", "por", "sua", "seu", "plano",
              "recuperacao", "judicial", "falencia", "processo", "acao", "grupo",
+             # cargos nunca sao entidade: "renuncia DO CEO" capturava "CEO"
+             # como sujeito (4I.2 B7b-1)
+             "ceo", "presidente", "diretor", "diretor-presidente", "gerente",
+             "gerente general", "conselho", "sucessao", "comando",
              # moedas e magnitudes — evitam capturar "R$ 1,1 bilhão" como entidade
              "r", "rs", "r$", "us", "us$", "usd", "brl", "eur", "milhoes", "milhao",
              "bilhoes", "bilhao", "mil", "reais", "dolares",
@@ -613,6 +617,17 @@ EVENT_TERM_RX = {
     "default": r"\bdefault\b|inadimpl\w*|calote",
     "inadimplencia": r"inadimpl\w*|\bdefault\b",
     "fraude": r"fraude|fraudulent\w*|fraud\b",
+    # 4I.2 Wave B7b-1: "novo CEO DA Vale", "renúncia do CEO DA Organon" é a
+    # MESMA relação possessiva que "recuperação judicial DA Samarco" — o
+    # detector `subject_by_possessive` já era genérico (dirigido por este
+    # mapa); só faltava o termo do evento. Nenhum detector paralelo criado.
+    # Só construções que LIGAM a troca a um possessivo imediato. O termo solto
+    # `\bceo\b` foi removido: fazia o scan possessivo achar qualquer "de X"
+    # adiante e derrubou 3 positivos legítimos (Santander, Smart Fit, Tupy),
+    # em que a própria monitorada é o sujeito.
+    "troca_ceo": (r"(?:novo|nova|new)\s+(?:ceo|presidente|president|"
+                  r"diretor[- ]presidente|gerente\s+general|chief\s+executive)"
+                  r"|(?:ren[úu]ncia|sa[íi]da)\s+d[oe]\s+(?:ceo|presidente)"),
 }
 
 
@@ -1475,6 +1490,23 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                 continue
         # 2g) CREDOR ≠ DEVEDOR (4I.2 Wave A6) — papel econômico, nunca tipo de
         # empresa: banco continua podendo sofrer evento próprio (§31).
+        # B7b-1) TROCA DE CEO DE TERCEIRO, POR POSSESSIVO (4I.2)
+        # Restrito a `troca_ceo` (§5). Opera por EMPRESA × EVENTO (§4): só
+        # desarma este evento PARA ESTA monitorada — a empresa que é de fato
+        # sujeito continua recebendo o seu, porque o laço roda por empresa e
+        # `subject_by_possessive` já devolve "" quando a monitorada é a dona.
+        if ev == "troca_ceo":
+            _ceo_sub, _ceo_ev = subject_by_possessive(texto, ev, monitored,
+                                                      aliases_por_empresa)
+            if _ceo_sub:
+                d.update(subject_company=_ceo_sub, scoreable=False,
+                         event_scope="indireto", relation_type="terceiro_citado",
+                         subject_evidence=_ceo_ev,
+                         attribution_rule="R_TROCA_CEO_DE_TERCEIRO",
+                         rejection_reason=(f"a troca de CEO é da '{_ceo_sub}'; "
+                                            f"{monitored} aparece lateralmente"))
+                decisoes.append(d)
+                continue
         # B2) SUBSIDIÁRIA NOMEADA AO LADO DA CONTROLADORA (4I.2 Wave B2)
         # Corrige apenas o SUJEITO. O destino segue a política já existente
         # (subject != monitorada → contexto de terceiro), sem criar bucket
