@@ -799,10 +799,22 @@ def detect_evento_passado(text: str, event_keywords: list[str]) -> dict:
 # nunca sobre tipo de empresa: um banco continua podendo sofrer evento próprio
 # (§31). Dois sinais complementares, ambos textuais e explícitos.
 _INSOLVENCIA_NOUN = (r"(?:impago|default|calote|inadimpl[êe]nci\w*|falenci\w*|fal[êe]nci\w*|"
-                     r"quiebra|recupera[çc][ãa]o\s+judicial|concurso\s+de\s+acreedores|"
+                     r"quiebra|recupera[çc][ãa]o(?:\s+judicial)?|concurso\s+de\s+acreedores|"
                      r"bankruptcy|insolvenc\w*)")
+# 4I.2 B3: o preenchimento entre o substantivo de insolvência e o possessivo
+# NÃO pode atravessar outro conectivo possessivo, senão a captura escorrega
+# para a frase seguinte (foi o que zerou o caso Grupo México: "impago de Pemex
+# Detuvo Grupo México" era capturado inteiro).
 _DEVEDOR_POSSESSIVO = re.compile(
-    _INSOLVENCIA_NOUN + r"(?:\s+\w+){0,4}?\s+(?:de|da|do|dos|das|of|del|de\s+la)\s+"
+    _INSOLVENCIA_NOUN + r"(?:\s+(?!de\b|da\b|do\b|dos\b|das\b|of\b|del\b)\w+){0,3}?\s+"
+    r"(?:de|da|do|dos|das|of|del|de\s+la)\s+"
+    r"((?:[a-z0-9&.\-]+\s*){1,4})", re.I)
+# "calote de R$ 3,6 bi DO Banco do Brasil": quando há um VALOR entre o evento e
+# o possessivo, a quantia é DEVIDA A quem o possessivo nomeia — esse nome é o
+# CREDOR, não o devedor. É o que separa o caso Banco do Brasil do caso Pemex.
+_VALOR = r"(?:r\$|us\$|eur|\$)?\s*[\d][\d.,]*\s*(?:bi|bilh\w*|mi|milh\w*|mil|bn)?"
+_CREDOR_POR_VALOR = re.compile(
+    _INSOLVENCIA_NOUN + r"\s+de\s+" + _VALOR + r"\s+(?:do|da|dos|das|de)\s+"
     r"((?:[a-z0-9&.\-]+\s*){1,4})", re.I)
 # monitorada aparece como FINANCIADORA da operação de outro
 _CREDOR_CUES = [
@@ -819,15 +831,36 @@ def detect_debtor_subject(text: str, monitored: str, aliases: list[str] | None =
     não há nome — nunca adivinha."""
     t = _n(text)
     meus = {_n(a) for a in (aliases or [])} | {_n(monitored)}
+
+    def _limpa(bruto):
+        cand = re.sub(r"\s+", " ", bruto).strip(" .,;:")
+        # nunca deixar a entidade atravessar conectivo ou início de nova frase
+        cand = re.split(r"\b(?:em|no|na|e|and|y|que|com|detuvo|esta|está|apos|após)\b",
+                        cand)[0].strip()
+        return cand
+
+    # (a) monitorada nomeada como CREDORA por construção de valor → não é devedora
+    for m in _CREDOR_POR_VALOR.finditer(t):
+        cred = _limpa(m.group(1))
+        if cred and any(cred in a or a in cred for a in meus if a):
+            return "__monitorada_e_credora__"
+    # (b) devedor nomeado por possessivo
     for m in _DEVEDOR_POSSESSIVO.finditer(t):
-        cand = re.sub(r"\s+", " ", m.group(1)).strip(" .,;:")
-        cand = re.split(r"\b(?:em|no|na|e|and|y|que|com)\b", cand)[0].strip()
-        if not cand or len(cand) < 3:
+        cand = _limpa(m.group(1))
+        if not cand or len(cand) < 2:
             continue
         if any(cand in a or a in cand for a in meus if a):
-            return ""          # o devedor é a própria monitorada
-        if re.fullmatch(r"[r$0-9\s,.]+|bi|bilh\w*|milh\w*|mi", cand):
-            continue           # valor monetário, não entidade
+            continue           # este possessivo é a própria monitorada; segue procurando
+        # Valor monetário nunca é entidade. `fullmatch` não bastava: "r$ 1,1
+        # bilhao" tem token alfabético e escapava, virando "entidade" — foi a
+        # regressão que a suíte histórica (test_semantica [13]) pegou nesta
+        # wave. Agora remove moeda/número/magnitude e exige que sobre nome.
+        _resto = re.sub(r"\b(?:r\$|rs|us\$|usd|brl|eur|bi|bn|bilh\w*|milh\w*|mi|mil|"
+                        r"reais|dolares|d[óo]lares|euros?)\b|[\d.,$]+", " ", cand).strip()
+        if len(_resto) < 2:
+            continue
+        if cand in _STOP_ENT or _resto in _STOP_ENT:
+            continue
         return cand
     return ""
 
@@ -1137,6 +1170,16 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
         _al = aliases_por_empresa.get(monitored) or [monitored]
         if ev in EVENTOS_SUJEITO_ESTRITO or ev in EVENTOS_CREDITO_EXIGEM_FATO:
             _dev = detect_debtor_subject(texto, monitored, _al)
+            if _dev == "__monitorada_e_credora__":
+                # a quantia inadimplida é DEVIDA À monitorada (construção
+                # "calote de R$ X do <monitorada>") — ela é a credora lesada.
+                d.update(scoreable=False, event_scope="indireto",
+                         relation_type="credor_lesado",
+                         attribution_rule="R_MONITORADA_E_CREDORA_LESADA",
+                         rejection_reason=(f"o valor inadimplido é devido a {monitored}; "
+                                            f"a monitorada é a credora, não a devedora"))
+                decisoes.append(d)
+                continue
             if _dev:
                 d.update(subject_company=_dev, scoreable=False,
                          event_scope="indireto", relation_type="terceiro_devedor",
