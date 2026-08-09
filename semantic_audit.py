@@ -1075,7 +1075,21 @@ def detect_evento_nao_consumado(text: str, event_keywords: list[str], monitored:
 # controlada deve afetar o score da controladora.
 _REL_SUBSIDIARIA = (r"(?:subsidiary|subsidiaria|subsidi[áa]ria|unit|division|"
                     r"controlada|coligada|afiliada|affiliate|arm)")
-_ENT_NOME_B2 = r"((?:[A-Z][\w&.\-]+)(?:\s+[A-Z][\w&.\-]+){0,3})"
+# O nome da entidade é uma sequência de tokens CAPITALIZADOS. O grupo abaixo
+# usa flag local `(?-i:…)` porque as buscas rodam com `re.I` — e sob `re.I` o
+# `[A-Z]` deixa de exigir inicial maiúscula, fazendo a captura engolir
+# conectivos e verbos minúsculos ("Omnicare TO GenieRX", "Omnicare FILES for
+# Chapter"). Com a flag local, o limite sintático é o próprio fim da sequência
+# capitalizada: nomes multipalavra legítimos ("Banco Digimais", "St. Marche",
+# "Zurich Santander Brasil Seguros") continuam inteiros, e minúsculas param a
+# captura naturalmente — sem lista de palavras de corte.
+_ENT_NOME_B2 = (r"((?-i:[A-Z][\w&.\-]*"
+                # conectivo MINUSCULO so continua o nome se vier outro token
+                # capitalizado depois ("Banco de Brasilia", "Bank of America") —
+                # assim "Omnicare to GenieRX" ainda para em "Omnicare", porque
+                # "to" nao e conectivo nominal.
+                r"(?:\s+(?:de|da|do|dos|das|of|del|y|e|&)\s+[A-Z][\w&.\-]*"
+                r"|\s+[A-Z][\w&.\-]*){0,3}))")
 
 
 def detect_subsidiary_subject(text: str, monitored: str,
@@ -1103,9 +1117,6 @@ def detect_subsidiary_subject(text: str, monitored: str,
         if not m:
             continue
         cand = re.sub(r"\s+", " ", m.group(1)).strip(" .,;:")
-        # o nome termina no primeiro conectivo/verbo: sem isso a captura
-        # gulosa produzia "Omnicare to GenieRX" / "Omnicare files for Chapter".
-        cand = re.split(r"\s+(?:to|of|for|and|files?|filed|completes?|announces?|enters?|em|de|da|do|e|para|com)", cand, flags=re.I)[0].strip(" .,;:")
         cn = _n(cand)
         if not cn or len(cn) < 3:
             continue
