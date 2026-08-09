@@ -765,6 +765,114 @@ DEFAULT_ECONOMICO_REAL = [
 ]
 
 
+# ── 4I.2 Wave A5: referência a evento PASSADO detectável pelo texto ─────────
+# Construção "após/tras/after + <evento>": o evento é citado como pano de
+# fundo, não anunciado. Exige ADJACÊNCIA (marcador colado ao termo do evento)
+# para não capturar "Justiça aceita RJ após pedido da empresa", que é atual.
+POSTERIORIDADE = (r"(?:tras|ap[óo]s|depois\s+d[aeo]s?|after|following|since|desde)\s+"
+                  r"(?:the\s+|a\s+|o\s+|as\s+|os\s+|la\s+|el\s+|its\s+|su\s+|sua\s+|seu\s+)?")
+
+
+def detect_evento_passado(text: str, event_keywords: list[str]) -> dict:
+    """Evento citado como ANTERIOR ("tras la quiebra", "after the acquisition")."""
+    t = _n(text)
+    kws = [re.escape(_n(k)) for k in (event_keywords or []) if k and len(_n(k)) >= 4]
+    if not kws:
+        return {"passado": False, "evidence": ""}
+    rx = re.compile(POSTERIORIDADE + r"(?:" + "|".join(kws) + r")(?!\w)", re.I)
+    mencoes = passadas = 0
+    ev = ""
+    kw_rx = re.compile(r"(?<!\w)(?:" + "|".join(kws) + r")(?!\w)")
+    for prop in _proposicoes(t):
+        if not kw_rx.search(prop):
+            continue
+        mencoes += 1
+        m = rx.search(prop)
+        if m:
+            passadas += 1
+            ev = ev or m.group(0)[:80]
+    return {"passado": bool(mencoes) and passadas == mencoes, "evidence": ev}
+
+
+# ── 4I.2 Wave A6: credor ≠ devedor ──────────────────────────────────────────
+# O evento de crédito pertence a QUEM DEVE. A regra é sobre papel econômico,
+# nunca sobre tipo de empresa: um banco continua podendo sofrer evento próprio
+# (§31). Dois sinais complementares, ambos textuais e explícitos.
+_INSOLVENCIA_NOUN = (r"(?:impago|default|calote|inadimpl[êe]nci\w*|falenci\w*|fal[êe]nci\w*|"
+                     r"quiebra|recupera[çc][ãa]o\s+judicial|concurso\s+de\s+acreedores|"
+                     r"bankruptcy|insolvenc\w*)")
+_DEVEDOR_POSSESSIVO = re.compile(
+    _INSOLVENCIA_NOUN + r"(?:\s+\w+){0,4}?\s+(?:de|da|do|dos|das|of|del|de\s+la)\s+"
+    r"((?:[a-z0-9&.\-]+\s*){1,4})", re.I)
+# monitorada aparece como FINANCIADORA da operação de outro
+_CREDOR_CUES = [
+    r"junto\s+a[oó]?\s+{m}", r"junto\s+[àa]\s+{m}", r"com\s+o\s+{m}\b",
+    r"{m}\s+(?:financia|financiou|empresta|emprestou|concede\s+cr[ée]dito)",
+    r"financiad[oa]\s+pel[oa]\s+{m}", r"{m}\s+as\s+(?:lender|creditor)",
+]
+
+
+def detect_debtor_subject(text: str, monitored: str, aliases: list[str] | None = None) -> str:
+    """Entidade a quem o evento de crédito/insolvência realmente pertence,
+    quando o texto a nomeia por possessivo ("impago de Pemex", "recuperação
+    da Oi"). Devolve "" quando o devedor é a própria monitorada ou quando
+    não há nome — nunca adivinha."""
+    t = _n(text)
+    meus = {_n(a) for a in (aliases or [])} | {_n(monitored)}
+    for m in _DEVEDOR_POSSESSIVO.finditer(t):
+        cand = re.sub(r"\s+", " ", m.group(1)).strip(" .,;:")
+        cand = re.split(r"\b(?:em|no|na|e|and|y|que|com)\b", cand)[0].strip()
+        if not cand or len(cand) < 3:
+            continue
+        if any(cand in a or a in cand for a in meus if a):
+            return ""          # o devedor é a própria monitorada
+        if re.fullmatch(r"[r$0-9\s,.]+|bi|bilh\w*|milh\w*|mi", cand):
+            continue           # valor monetário, não entidade
+        return cand
+    return ""
+
+
+def is_monitored_credor(text: str, monitored: str, aliases: list[str] | None = None) -> bool:
+    """A monitorada aparece explicitamente como financiadora da operação."""
+    t = _n(text)
+    nomes = [re.escape(_n(a)) for a in ((aliases or []) + [monitored]) if a]
+    if not nomes:
+        return False
+    alt = "(?:" + "|".join(nomes) + ")"
+    return any(re.search(p.format(m=alt), t, re.I) for p in _CREDOR_CUES)
+
+
+# ── 4I.2 Wave A7: vítima / comentarista / investigador ──────────────────────
+# A monitorada aparece, mas não é sujeito do evento: ela alerta, comenta,
+# investiga ou sofre. Cues textuais explícitos, sem tocar entity resolution.
+_PAPEL_NAO_SUJEITO = {
+    "vitima": [r"{m}\s+(?:warns?|alerta|alertou)\s+(?:customers?|clientes?|sobre|about)",
+                r"golpe\s+(?:que\s+)?se\s+passa\s+por\s+{m}", r"impersonat\w*\s+{m}",
+                r"charged\s+in\s+{m}\s+(?:fraud|scam)",
+                r"(?:v[íi]tima|victim)\s+(?:de|of)\s+", r"scam\s+(?:targeting|involving)\s+{m}"],
+    "comentarista": [r"{m}\s+(?:alerta\s+para|comenta|avalia|v[êe]|diz\s+que)",
+                      r"(?:diz|afirma|segundo|responde)\s+(?:o\s+)?(?:gestor|diretor|presidente|"
+                      r"economista)\s+d[ao]\s+{m}", r"gestor\s+d[ao]\s+{m}\s+responde"],
+    "investigador": [r"{m}\s+(?:abre|abri[óu])\s+(?:una?\s+)?investigaci[óo]n",
+                      r"{m}\s+(?:abre|instaura)\s+(?:uma?\s+)?(?:investiga[çc][ãa]o|sindic[âa]ncia)",
+                      r"{m}\s+opens?\s+(?:an?\s+)?(?:probe|investigation)"],
+}
+
+
+def detect_papel_nao_sujeito(text: str, monitored: str,
+                             aliases: list[str] | None = None) -> str:
+    """Papel da monitorada quando ela NÃO é o sujeito do evento. "" se nenhum."""
+    t = _n(text)
+    nomes = [re.escape(_n(a)) for a in ((aliases or []) + [monitored]) if a]
+    if not nomes:
+        return ""
+    alt = "(?:" + "|".join(nomes) + ")"
+    for papel, pats in _PAPEL_NAO_SUJEITO.items():
+        if any(re.search(p.format(m=alt), t, re.I) for p in pats):
+            return papel
+    return ""
+
+
 def is_default_nomenclatura_de_rating(text: str) -> bool:
     """O texto usa "default" apenas como NOME de métrica de rating (IDR) ou
     como cláusula contratual citada, sem qualquer default econômico real?"""
@@ -1008,6 +1116,53 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                          rejection_reason=(
                              f"fase {fase['event_phase']} — alegação/processo sem "
                              f"confirmação formal; não prova fraude consumada"))
+        # ── ÚLTIMO RECURSO (4I.2 Waves A5/A6/A7) ──
+        # Rodam DEPOIS de todas as regras estabelecidas (sujeito
+        # estrito, M&A, fraude): elas resolvem sujeito/relação com
+        # semântica já validada (Vale/Samarco, B3/Braskem) e não
+        # podem ser atropeladas por estas. Só tratam o que sobrou.
+        # A5) EVENTO CITADO COMO PASSADO (4I.2 Wave A5)
+        if _kws:
+            _pas = detect_evento_passado(texto, _kws)
+            if _pas["passado"]:
+                d.update(scoreable=False, new_occurrence=False,
+                         event_scope="direto", direction="neutra",
+                         attribution_rule="R_EVENTO_CITADO_COMO_PASSADO",
+                         rejection_reason=(f"evento citado como anterior "
+                                            f"(\"{_pas['evidence']}\"), não anunciado agora"))
+                decisoes.append(d)
+                continue
+        # 2g) CREDOR ≠ DEVEDOR (4I.2 Wave A6) — papel econômico, nunca tipo de
+        # empresa: banco continua podendo sofrer evento próprio (§31).
+        _al = aliases_por_empresa.get(monitored) or [monitored]
+        if ev in EVENTOS_SUJEITO_ESTRITO or ev in EVENTOS_CREDITO_EXIGEM_FATO:
+            _dev = detect_debtor_subject(texto, monitored, _al)
+            if _dev:
+                d.update(subject_company=_dev, scoreable=False,
+                         event_scope="indireto", relation_type="terceiro_devedor",
+                         attribution_rule="R_CREDOR_NAO_HERDA_EVENTO_DO_DEVEDOR",
+                         rejection_reason=(f"o evento de crédito pertence a '{_dev}'; "
+                                            f"{monitored} não é o devedor"))
+                decisoes.append(d)
+                continue
+        if ev in ("emissao_divida",) and is_monitored_credor(texto, monitored, _al):
+            d.update(scoreable=False, event_scope="indireto",
+                     relation_type="credor_financiador",
+                     attribution_rule="R_MONITORADA_E_FINANCIADORA",
+                     rejection_reason=(f"{monitored} aparece como financiadora da "
+                                        f"operação de terceiro, não como emissora"))
+            decisoes.append(d)
+            continue
+        # 2h) PAPEL NÃO-SUJEITO: vítima / comentarista / investigador (Wave A7)
+        _papel = detect_papel_nao_sujeito(texto, monitored, _al)
+        if _papel:
+            d.update(scoreable=False, event_scope="indireto",
+                     relation_type=f"papel_{_papel}",
+                     attribution_rule="R_PAPEL_NAO_SUJEITO",
+                     rejection_reason=(f"{monitored} atua como {_papel} neste texto, "
+                                        f"não como sujeito do evento"))
+            decisoes.append(d)
+            continue
         decisoes.append(d)
     return {"decisoes": decisoes, "historico": hist, "transacao": trans,
             "fase": fase, "papeis": papeis, "rating_colapso": colapso}
