@@ -250,26 +250,65 @@ def ma_is_legitimate(text: str, papeis: dict | None = None) -> tuple[bool, str]:
 
 
 # ─────────────── 6/15. fases jurídicas ───────────────
+# 4I.2 Wave A1 — a lista original cobria bem português e quase nada de
+# inglês/espanhol, e por isso NÃO disparava nos falsos positivos críticos da
+# auditoria 4I: JPMorgan ("fraud-claim scrutiny"), CVS ("sue … alleging"),
+# BAT ("probes … allegations"), Prudential ("suspected of fraud"), Nutresa
+# ("presunta explotación"). As fases são as MESMAS de antes — nenhuma
+# taxonomia nova (§7) — só ganharam cobertura pt/en/es equivalente, mais a
+# fase civil `acusacao_civil`, que a lista antiga não distinguia de fraude
+# consumada.
 FASES_JURIDICAS = [
     ("encerramento", [r"encerra\w*\s+(?:a\s+)?a[çc][ãa]o", r"encerramento\s+d[ao]",
                       r"p[õo]e\s+fim", r"quita[çc][ãa]o", r"extin[çc][ãa]o\s+d[ao]\s+processo",
-                      r"encerra\s+processo", r"settles?\b", r"settlement"], "mitigadora"),
+                      r"encerra\s+processo", r"settles?\b", r"settlement",
+                      r"\bdefeats?\b", r"\bwins?\s+(?:dismissal|case|suit)",
+                      r"\bcleared\s+of\b", r"\bdrops?\s+(?:the\s+)?(?:case|suit|claims?)\b",
+                      r"concluye\s+(?:el\s+)?proceso", r"pone\s+fin"], "mitigadora"),
     ("acordo", [r"acordo\s+(?:judicial|com\s+o\s+minist[ée]rio|de\s+leni[êe]ncia)",
-                r"faz\s+acordo", r"celebra\s+acordo", r"plea\s+agreement"], "mitigadora"),
+                r"faz\s+acordo", r"celebra\s+acordo", r"plea\s+agreement",
+                r"\bsettles?\s+with\b", r"reaches?\s+(?:a\s+)?settlement",
+                r"acuerdo\s+(?:judicial|extrajudicial|de\s+leniencia)"], "mitigadora"),
     ("pagamento", [r"paga\s+r\$", r"pagamento\s+de\s+r\$", r"pays?\s+\$",
-                   r"desembolsa"], "mitigadora"),
-    ("absolvicao", [r"absolvi\w*", r"acquitted", r"inocentad"], "mitigadora"),
-    ("arquivamento", [r"arquiva\w*", r"dismissed", r"shelved"], "mitigadora"),
-    ("prescricao", [r"prescri[çc][ãa]o", r"prescrito"], "mitigadora"),
+                   r"desembolsa", r"paga\s+(?:una\s+)?multa"], "mitigadora"),
+    ("absolvicao", [r"absolvi\w*", r"acquitted", r"inocentad", r"absuelt\w*"], "mitigadora"),
+    ("arquivamento", [r"arquiva\w*", r"dismissed", r"shelved",
+                      r"\bthrows?\s+out\b", r"archiv[oa]\s+d?el?\s+caso"], "mitigadora"),
+    ("prescricao", [r"prescri[çc][ãa]o", r"prescrito", r"prescripci[óo]n"], "mitigadora"),
     ("anulacao", [r"anula\w*", r"overturn\w*", r"revers[ãa]o\s+d[ae]\s+condena"], "mitigadora"),
-    ("condenacao", [r"condena\w*", r"convicted", r"sentenc[ei]ad"], "negativa"),
+    ("condenacao", [r"condena\w*", r"convicted", r"conviction", r"sentenc[ei]ad",
+                    r"pleaded\s+guilty", r"guilty\s+plea", r"found\s+liable",
+                    r"admits?\s+(?:to\s+)?(?:fraud|wrongdoing)",
+                    r"declarad[oa]\s+culpable"], "negativa"),
     ("acusacao_formal", [r"den[úu]ncia\s+(?:formal|do\s+mp|oferecida)",
-                         r"indict\w*", r"formalmente\s+acusad", r"a[çc][ãa]o\s+penal"], "negativa"),
+                         r"indict\w*", r"formalmente\s+acusad", r"a[çc][ãa]o\s+penal",
+                         r"\bcharged\s+with\b", r"\bfiles?\s+charges\b",
+                         r"criminal\s+charges", r"imputad[oa]\s+formalmente"], "negativa"),
     ("investigacao", [r"investiga[çc][ãa]o", r"apura[çc][ãa]o", r"opera[çc][ãa]o\s+d[ao]\s+pf",
-                      r"investigation", r"probe", r"inqu[ée]rito"], "negativa"),
+                      r"investigation", r"investigat\w*", r"probe[sd]?\b", r"inqu[ée]rito",
+                      r"\bscrutiny\b", r"\bunder\s+review\b", r"whistleblow\w*",
+                      r"investigaci[óo]n"], "negativa"),
+    # NOVA (4I.2 Wave A1): litígio CIVIL — lawsuit/claim/processo. Antes caía
+    # em "alegacao" (ou em nada) e o evento pontuava como fraude consumada:
+    # é exatamente o par CVS Health / JPMorgan Chase da auditoria.
+    ("acusacao_civil", [r"\blawsuits?\b", r"\bsues?\b", r"\bsuing\b", r"\bsued\b",
+                        r"\bfraud[- ]claims?\b", r"\bclaims?\s+(?:of|that)\b",
+                        r"\bcivil\s+(?:suit|action|complaint)\b",
+                        r"\bcomplaint\s+(?:against|filed)",
+                        r"processa\w*\s+(?:a|o|na|no)\b",
+                        r"a[çc][ãa]o\s+(?:c[íi]vel|judicial)\s+contra",
+                        r"demanda\s+judicial", r"querella"], "negativa"),
     ("alegacao", [r"den[úu]ncia\s+exclusiva", r"acusa\w*", r"suspeita",
-                  r"alleged", r"teria\s+", r"segundo\s+denuncia"], "negativa"),
+                  r"alleg\w*", r"teria\s+", r"segundo\s+denuncia",
+                  r"\bsuspected\b", r"\bpurported\w*", r"presunt\w*",
+                  r"sob\s+suspeita", r"denunciad[oa]\b", r"acusaci[óo]n"], "negativa"),
 ]
+
+# Fases em que o fato NÃO está juridicamente consumado. Palavra forte em
+# manchete não pode pular fase (invariante 7 do CLAUDE.md): a taxonomia NÃO
+# ganha evento novo — o evento apenas deixa de ser pontuável e vai para o
+# bucket informativo já existente (4I.2 §7).
+FASES_NAO_CONSUMADAS = frozenset({"alegacao", "acusacao_civil", "investigacao"})
 
 
 def detect_juridical_phase(text: str) -> dict:
@@ -667,9 +706,22 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                 decisoes.append(d)
                 continue
             if fase["confirmation_level"] == "nao_confirmado":
-                d.update(attribution_confidence="baixa",
+                # 4I.2 Wave A1 — SEGUNDA falha independente encontrada na
+                # auditoria: antes esta regra só reduzia `attribution_confidence`
+                # e o evento continuava PONTUANDO com peso integral. O caso
+                # CVS Health é a prova: o registro carregava
+                # `legal_status="allegation/lawsuit"` e mesmo assim pontuava
+                # fraude 90/crítico. Agora a fase não consumada realmente trava
+                # o scoring — sem mexer em peso, threshold ou taxonomia: o
+                # evento vai para o bucket informativo já existente, que é o
+                # destino correto de "alegação ainda não comprovada".
+                d.update(scoreable=False,
+                         attribution_confidence="baixa",
                          attribution_rule="R_FRAUDE_NAO_CONFIRMADA",
-                         rejection_reason="alegação/denúncia sem confirmação formal")
+                         event_scope="direto",
+                         rejection_reason=(
+                             f"fase {fase['event_phase']} — alegação/processo sem "
+                             f"confirmação formal; não prova fraude consumada"))
         decisoes.append(d)
     return {"decisoes": decisoes, "historico": hist, "transacao": trans,
             "fase": fase, "papeis": papeis, "rating_colapso": colapso}
