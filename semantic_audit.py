@@ -110,6 +110,74 @@ NEGACAO_MA = [
     r"descarta\s+.{0,25}aquisi[çc]", r"sem\s+planos\s+de\s+aquisi[çc]",
     r"not?\s+(?:considering|evaluating)\s+.{0,25}acquisit",
 ]
+# ── 4I.2 Wave A2: negação ESCOPADA AO EVENTO ────────────────────────────────
+# `NEGACAO_MA` acima só protege M&A. A auditoria 4I encontrou negação também
+# em outras famílias (Citigroup "banco nega planos", Hapvida "rescisão",
+# Klabin "não há conversas"). A regra abaixo é geral, mas NUNCA global: a
+# negação precisa estar na MESMA proposição que a menção do evento, senão
+# "nega conversas de aquisição, mas confirma emissão de dívida" apagaria as
+# duas coisas (§12).
+NEGACAO_TRIGGERS = [
+    # pt
+    r"n[ãa]o\s+h[áa]\b", r"n[ãa]o\s+existe\w*", r"n[ãa]o\s+est[áa]\b",
+    r"n[ãa]o\s+(?:avalia|planeja|pretende|considera|negocia|prev[êe]|vai|ir[áa]|houve|ocorreu)\b",
+    r"\bneg(?:a|ou|am|ar|aram|ando)\b", r"desmente\w*", r"descarta\w*",
+    r"sem\s+planos\s+de", r"afasta\s+(?:a\s+)?(?:possibilidade|hip[óo]tese)",
+    r"rescis[ãa]o\b", r"rescind\w*", r"n[ãa]o\s+pode\s+ser\s+exigid\w*",
+    # en
+    r"\bdenies?\b", r"\bdenied\b", r"\bdenying\b", r"no\s+plans?\s+(?:to|for)\b",
+    r"\bnot\s+(?:considering|evaluating|in\s+talks|planning|filing|pursuing)\b",
+    r"no\s+(?:discussions?|talks?|negotiations?)\b", r"has\s+not\s+filed\b",
+    r"\bruled?\s+out\b", r"\bterminat(?:es|ed|ion)\b", r"\bcall(?:s|ed)\s+off\b",
+    r"\bscrapp?(?:s|ed)\b", r"\bwalks?\s+away\s+from\b",
+    # es
+    r"\bniega\b", r"\bniegan\b", r"no\s+hay\b", r"no\s+existen?\b",
+    r"\bdescarta\w*", r"sin\s+planes\s+de", r"no\s+est[áa]\s+negociando",
+    r"\brescisi[óo]n\b",
+]
+# adversativas separam proposições: "nega X, mas confirma Y" são 2 proposições
+_ADVERSATIVA = (r"[.;!?]|\s+—\s+|\s+-\s+"
+                r"|\s*,?\s*\b(?:mas|por[ée]m|contudo|entretanto|todavia|embora"
+                r"|but|however|although|though|while|yet"
+                r"|pero|sin\s+embargo|aunque)\b\s*")
+
+
+def _proposicoes(text: str) -> list[str]:
+    """Fatia o texto em proposições independentes. Mais fino que
+    `split_clauses` (que é compartilhado por outras regras e não trata
+    adversativas), de propósito: negação precisa desse corte."""
+    return [p for p in re.split(_ADVERSATIVA, text, flags=re.I) if p and p.strip()]
+
+
+def detect_event_negation(text: str, event_keywords: list[str]) -> dict:
+    """O evento está explicitamente NEGADO neste texto?
+
+    Verdadeiro só quando TODA menção do evento aparece em proposição que
+    também carrega negação — assim "nega aquisição, mas confirma emissão"
+    nega apenas o M&A. Sem menção do evento, devolve False (nada a negar):
+    a negação nunca se aplica a um evento que o texto não discute."""
+    t = _n(text)
+    # Casamento por LIMITE DE PALAVRA, não substring: preserva keywords curtas
+    # e legítimas da taxonomia ("OPA", "RJ", "M&A") sem que "OPA" case dentro
+    # de "opaco" nem "RJ" dentro de outra sigla.
+    kws = [re.escape(_n(k)) for k in (event_keywords or []) if k and len(_n(k)) >= 2]
+    if not kws:
+        return {"negated": False, "evidence": "", "mentions": 0}
+    kw_rx = re.compile(r"(?<!\w)(?:" + "|".join(kws) + r")(?!\w)")
+    mencoes = negadas = 0
+    evidencia = ""
+    for prop in _proposicoes(t):
+        if not kw_rx.search(prop):
+            continue
+        mencoes += 1
+        gat = next((p for p in NEGACAO_TRIGGERS if re.search(p, prop, re.I)), "")
+        if gat:
+            negadas += 1
+            evidencia = evidencia or prop.strip()[:120]
+    return {"negated": bool(mencoes) and negadas == mencoes,
+            "evidence": evidencia, "mentions": mencoes}
+
+
 POS_TRANSACAO = [
     r"ap[óo]s\s+(?:a\s+)?aquisi[çc][ãa]o", r"depois\s+d[ao]\s+compra",
     r"desde\s+a\s+aquisi[çc][ãa]o", r"aquisi[çc][ãa]o\s+conclu[íi]da",
@@ -567,7 +635,8 @@ EVENTOS_FRAUDE = {"fraude", "fraude_investigacao", "corrupcao", "lavagem"}
 def resolve_article_semantics(title: str, summary: str, monitored: str,
                               event_ids: list[str], aliases_por_empresa: dict,
                               *, article_year: int | None = None,
-                              source_domain: str = "") -> dict:
+                              source_domain: str = "",
+                              keywords_por_evento: dict | None = None) -> dict:
     """Resolve TODOS os eventos candidatos de um artigo para UMA empresa
     monitorada. Devolve decisões por evento com evidência e regra aplicada."""
     texto = f"{title} {summary}".strip()
@@ -619,6 +688,24 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                                       f"de {hist['event_year']}")
             decisoes.append(d)
             continue
+        # 2b) NEGAÇÃO EXPLÍCITA DO EVENTO (4I.2 Wave A2)
+        # Escopada: só nega o evento cujas menções estão todas em proposição
+        # com negação. "Nega conversas de aquisição, mas confirma emissão de
+        # dívida" derruba apenas o M&A (§12). Sem `keywords_por_evento` (uso
+        # legado da função) o gate simplesmente não atua — nunca adivinha.
+        _kws = (keywords_por_evento or {}).get(ev) or []
+        if _kws:
+            _neg = detect_event_negation(texto, _kws)
+            if _neg["negated"]:
+                d.update(scoreable=False, new_occurrence=False,
+                         negation_detected=True,
+                         event_scope="direto",
+                         direction="mitigadora",
+                         attribution_rule="R_NEGACAO_EXPLICITA",
+                         rejection_reason=(f"texto nega explicitamente o evento "
+                                            f"(\"{_neg['evidence'][:70]}\")"))
+                decisoes.append(d)
+                continue
         # 3) sujeito estrito (RJ/falência/default)
         if ev in EVENTOS_SUJEITO_ESTRITO:
             terceiro = ""
@@ -730,6 +817,14 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
 # ═══════════════════════════════════════════════════════════════════════
 # INTEGRAÇÃO COM O PIPELINE DE PRODUÇÃO
 # ═══════════════════════════════════════════════════════════════════════
+def _keywords_por_evento(cfg: dict) -> dict:
+    """Vocabulário de cada evento vindo da PRÓPRIA taxonomia de produção —
+    nunca uma lista paralela hardcoded. Assim a negação escopada (Wave A2)
+    acompanha automaticamente qualquer mudança futura da taxonomia, sem
+    precisar ser reeditada."""
+    return {e["id"]: list(e.get("keywords") or []) for e in (cfg.get("taxonomy") or [])}
+
+
 def _aliases_map(cfg: dict) -> dict:
     return {c["name"]: (c.get("aliases") or [c["name"]])
             for c in (cfg.get("watchlist") or [])}
@@ -789,7 +884,8 @@ def apply_semantics_to_record(rec: dict, cfg: dict, *, aliases: dict | None = No
             continue
         r = resolve_article_semantics(titulo, resumo, empresa, eventos, aliases,
                                       article_year=ano,
-                                      source_domain=rec.get("domain", "") or "")
+                                      source_domain=rec.get("domain", "") or "",
+                                      keywords_por_evento=_keywords_por_evento(cfg))
         manter = []
         # Eventos que PERMANECEM pontuáveis nesta empresa/artigo — qualquer
         # outro evento descartado da MESMA empresa neste MESMO artigo, cujo
