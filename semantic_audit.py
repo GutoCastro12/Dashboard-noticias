@@ -1107,6 +1107,61 @@ _ENT_NOME_B2 = (r"((?-i:[A-Z][\w&.\-]*"
                 r"|\s+[A-Z][\w&.\-]*){0,3}))")
 
 
+# ── 4I.2 Wave B7b-2: follow-on de TERCEIRO, monitorada é INVESTIDORA ────────
+# "Itaúsa aporta no aumento de capital DA AEGEA" não é follow-on da Itaúsa.
+# A regra A6 (`is_monitored_credor`) cobre só `emissao_divida` e usa cues de
+# EMPRÉSTIMO ("junto ao", "financia") — semântica diferente de aporte em
+# equity. Detector análogo, não reuso forçado.
+_EMISSOR_TERCEIRO = [
+    r"([A-Z][\w&.\-]*(?:\s+[A-Z][\w&.\-]*){0,3})\s+(?:aprova|anuncia|realiza|"
+    r"lan[çc]a|conclui|precifica)\s+(?:o\s+|um\s+|a\s+)?"
+    r"(?:aumento\s+de\s+capital|follow[- ]on|oferta\s+(?:p[úu]blica\s+)?de\s+a[çc][õo]es)",
+    r"(?:aumento\s+de\s+capital|follow[- ]on|oferta\s+de\s+a[çc][õo]es)\s+d[ao]\s+"
+    r"([A-Z][\w&.\-]*(?:\s+[A-Z][\w&.\-]*){0,3})",
+    r"(?:fatia|participa[çc][ãa]o|stake)\s+n[ao]\s+"
+    r"([A-Z][\w&.\-]*(?:\s+[A-Z][\w&.\-]*){0,3})",
+    r"\bD[ao]\s+([A-Z][\w&.\-]*(?:\s+[A-Z][\w&.\-]*){0,2})\s+[Aa]p[óo]s\s+"
+    r"[Hh]omologa[çc][ãa]o\s+[Dd]e\s+[Aa]umento\s+[Dd]e\s+[Cc]apital",
+]
+# `{t}` absorve o ticker entre parenteses ("Itausa (ITSA4) pode aportar"),
+# mesma forma do qualificador corporativo que a B4 tratou em "Truist BANK".
+_TICKER_PAREN = r"(?:\s*\([A-Z0-9]{3,7}\))?"
+_PAPEL_INVESTIDORA = [
+    r"{m}{q}{t}\s+(?:pode\s+)?(?:aporta\w*|subscreve\w*|participa\w*|investe|investir)",
+    r"{m}{q}{t}\s+planeja\s+(?:ampliar|aumentar)\s+(?:sua\s+)?(?:fatia|participa[çc][ãa]o)",
+    r"{m}{q}{t}\s+(?:passa\s+a\s+deter|amplia\s+(?:sua\s+)?(?:fatia|participa[çc][ãa]o))",
+    r"{m}{q}{t}\s+(?:acompanha|exerce\s+direito)",
+]
+
+
+def detect_follow_on_de_terceiro(text: str, monitored: str,
+                                 aliases: list[str] | None = None) -> str:
+    """Emissor TERCEIRO do follow-on quando a monitorada é apenas a
+    INVESTIDORA/aportante. Devolve "" quando o emissor é a própria monitorada
+    ou quando ela não está em papel de investidora — nunca infere."""
+    if not text:
+        return ""
+    meus = {_n(a) for a in ((aliases or []) + [monitored]) if a}
+    nomes = [re.escape(_n(a)) for a in ((aliases or []) + [monitored]) if a]
+    if not nomes:
+        return ""
+    alt = "(?:" + "|".join(nomes) + ")"
+    tn = _n(text)
+    if not any(re.search(p.format(m=alt, q=_QUALIF, t=_TICKER_PAREN), tn, re.I)
+               for p in _PAPEL_INVESTIDORA):
+        return ""                      # monitorada não está em papel de investidora
+    for p in _EMISSOR_TERCEIRO:
+        for m in re.finditer(p, text):
+            cand = re.sub(r"\s+", " ", m.group(1)).strip(" .,;:")
+            cn = _n(cand)
+            if not cn or len(cn) < 3 or cn in _STOP_ENT:
+                continue
+            if any(cn in a or a in cn for a in meus if a):
+                continue               # o emissor é a própria monitorada
+            return cand
+    return ""
+
+
 def detect_subsidiary_subject(text: str, monitored: str,
                               aliases: list[str] | None = None) -> str:
     """Subsidiária nomeada IMEDIATAMENTE ao lado da controladora monitorada.
@@ -1490,6 +1545,20 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                 continue
         # 2g) CREDOR ≠ DEVEDOR (4I.2 Wave A6) — papel econômico, nunca tipo de
         # empresa: banco continua podendo sofrer evento próprio (§31).
+        # B7b-2) FOLLOW-ON DE TERCEIRO, MONITORADA É INVESTIDORA (4I.2)
+        # Restrito a `follow_on`, por EMPRESA × EVENTO: só desarma o evento
+        # para a investidora — o EMISSOR real continua recebendo o seu.
+        if ev == "follow_on":
+            _emissor = detect_follow_on_de_terceiro(
+                texto, monitored, aliases_por_empresa.get(monitored) or [monitored])
+            if _emissor:
+                d.update(subject_company=_emissor, scoreable=False,
+                         event_scope="indireto", relation_type="investidora",
+                         attribution_rule="R_FOLLOW_ON_DE_TERCEIRO",
+                         rejection_reason=(f"o follow-on/aumento de capital é da "
+                                            f"'{_emissor}'; {monitored} apenas aporta"))
+                decisoes.append(d)
+                continue
         # B7b-1) TROCA DE CEO DE TERCEIRO, POR POSSESSIVO (4I.2)
         # Restrito a `troca_ceo` (§5). Opera por EMPRESA × EVENTO (§4): só
         # desarma este evento PARA ESTA monitorada — a empresa que é de fato
