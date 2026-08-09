@@ -14,8 +14,8 @@ zero rede e zero LLM) contra um histórico sintético montado a partir dos
 casos auditados, e compara com o veredito humano.
 
 O gold guarda os DOIS lados (4I.2 §3):
-  POSITIVOS (115) — ocorrências corretas que NÃO podem sumir;
-  NEGATIVOS ( 90) — falsos positivos que NÃO podem voltar;
+  POSITIVOS (116 após adjudicação) — corretas que NÃO podem sumir;
+  NEGATIVOS ( 89 após adjudicação) — falsos positivos que NÃO podem voltar;
   DEDUP     ( 21) — o mesmo fato econômico deve colapsar em 1 ocorrência;
   SKIP      (  6) — indecidíveis pela evidência (fora do pass/fail, §27 da 4I.1).
 
@@ -31,9 +31,37 @@ from pathlib import Path
 import risk_dashboard as rd
 
 GOLD = Path(__file__).parent / "test_fixtures_4i" / "gold_set_4i.json"
+ADJ = Path(__file__).parent / "test_fixtures_4i" / "gold_adjudications_4i2.json"
 cfg = rd.load_config("config_risco.yaml")
 dados = json.loads(GOLD.read_text(encoding="utf-8"))
 casos = dados["casos"]
+
+# ── adjudicações (4I.2 §2) ───────────────────────────────────────────────
+# Aplicadas POR CIMA da auditoria original, que fica intacta como evidência
+# histórica. Corrigem o veredito HUMANO — nunca acomodam uma regra ruim.
+_MAP_ASSERT = {"CORRECT": "keep", "DUPLICATE_OCCURRENCE": "dedup",
+               "WRONG_SUBJECT": "drop", "WRONG_RELATION": "drop",
+               "NEGATED_EVENT": "drop", "HISTORICAL_REFERENCE": "drop",
+               "HISTORICAL_MA": "drop", "RESOLUTION_OF_PRIOR_NEGATIVE_EVENT": "drop",
+               "WRONG_EVENT": "reclass", "WRONG_LEGAL_PHASE": "phase",
+               "NEEDS_MANUAL_REVIEW": "skip"}
+_adjs = json.loads(ADJ.read_text(encoding="utf-8"))["adjudicacoes"] if ADJ.exists() else []
+_aplicadas = []
+for _a in _adjs:
+    for c in casos:
+        if (c["monitored_company"] == _a["company"]
+                and c.get("current_event_id") == _a["event_id"]
+                and _a["title_fragment"].lower() in (c["title"] or "").lower()):
+            c["audit_verdict_original"] = c["audit_verdict"]
+            c["audit_verdict"] = _a["new_verdict"]
+            c["assertion"] = _MAP_ASSERT[_a["new_verdict"]]
+            c["adjudicated"] = True
+            if _a["new_verdict"] == "CORRECT":
+                c["expected_scoreable"] = True
+                c["expected_event_id"] = c["current_event_id"]
+                c["forbidden_event_id"] = ""
+            _aplicadas.append(_a)
+            break
 
 
 def _hist_sintetico(casos):
@@ -108,6 +136,7 @@ def avaliar(c):
 print("=" * 100)
 print("GOLD SET 4I — regressão contra os vereditos humanos da auditoria")
 print(f"origem: {dados['_meta']['origem']}")
+print(f"adjudicações aplicadas: {len(_aplicadas)}")
 print("=" * 100)
 
 for c in casos:

@@ -1,0 +1,21 @@
+{
+ "_meta": {
+  "proposito": "Adjudicacoes do veredito HUMANO da auditoria 4I, aplicadas POR CIMA do gold original em vez de reescrever labels historicos. A auditoria original (GLOBAL_SEMANTIC_AUDIT_4I.csv, RELATORIO_4I_AUDITORIA_GLOBAL.md, branch feature/global-semantic-reliability-audit @ 9e91611) permanece intacta como evidencia do diagnostico daquele momento.",
+  "regra": "uma adjudicacao corrige o VEREDITO humano; nunca e usada para acomodar uma regra ruim (4I.2 §29/§32)."
+ },
+ "adjudicacoes": [
+  {
+   "case_id": "Grupo Nutresa|investigacao_regulatoria|ministerio del trabajo abre investigacion",
+   "company": "Grupo Nutresa",
+   "event_id": "investigacao_regulatoria",
+   "title_fragment": "Ministerio del Trabajo abre investigaci",
+   "old_verdict": "WRONG_LEGAL_PHASE",
+   "new_verdict": "CORRECT",
+   "adjudication_stage": "4I.2 Wave A checkpoint",
+   "adjudicated_by": "usuario (decisao explicita)",
+   "reason": "Investigacao formal explicitamente aberta pela autoridade competente ('Ministerio del Trabajo abre investigacion'). 'Presunta' qualifica a CONDUTA investigada, nao a existencia do procedimento. O event_id monitorado e `investigacao_regulatoria` — cujo proprio significado e a investigacao — e nao `fraude` confirmada nem sancao regulatoria.",
+   "evidence_summary": "Keywords da familia investigacao_regulatoria no config de producao sao atos formais ('CVM abre processo', 'busca e apreensao', 'expediente sancionador', 'abre investigacion'), score 30. Exigir condenacao mudaria o significado da familia (4I.2 §9/§20).",
+   "impacto_no_gold": "negativo -> positivo: POSITIVOS 115->116, NEGATIVOS 90->89"
+  }
+ ]
+}
