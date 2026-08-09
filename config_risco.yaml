@@ -649,6 +649,16 @@ watchlist:
   - Renner
   - LREN3
 - name: MercadoLibre
+  # 4I.2 Wave B1 — `Mercado Livre` e alias LEGITIMO (marca no Brasil) e continua
+  # na coleta e na deteccao. Mas e tambem sintagma setorial: os 2 unicos
+  # registros do historico com essa expressao eram falsos positivos ("pressao
+  # no mercado livre", "energia do mercado livre" = mercado livre de ENERGIA).
+  # Mesmo mecanismo ja usado em producao pela B3 para "indice da B3".
+  mention_guard:
+    role: expressao_setorial
+    contexto_patterns:
+    - 'press[aã]o\s+no\s+{A}\b'
+    - 'energia\s+d[eo]\s+{A}\b'
   asset_class: listada
   ticker: MELI
   listing: Nasdaq
@@ -690,6 +700,14 @@ watchlist:
   - Natura
   - NTCO3
 - name: Porto
+  # 4I.2 Wave B1 — uso PREDICATIVO/idiomatico ("reforca posicao como 'porto
+  # seguro' do setor"). O alias `Porto` e necessario: casa o fato relevante
+  # legitimo "[Fato Relevante] Porto:". A excecao cobre so a construcao
+  # metaforica observada.
+  mention_guard:
+    role: expressao_idiomatica
+    contexto_patterns:
+    - 'como\s+["“”'']?{A}["“”'']?\s+d[ao]\s+setor'
   asset_class: listada
   ticker: PSSA3
   listing: B3
@@ -724,6 +742,14 @@ watchlist:
   - Sabesp
   - SBSP3
 - name: Santander Brasil
+  # 4I.2 Wave B1 — `Zurich Santander` e ENTIDADE JURIDICA DISTINTA (JV de
+  # seguros), nao o Banco Santander Brasil. O alias `Santander` e legitimo
+  # (12/13 ocorrencias historicas corretas); a excecao cobre so o nome
+  # composto observado.
+  mention_guard:
+    role: entidade_composta
+    contexto_patterns:
+    - '\bzurich\s+{A}\b'
   asset_class: listada
   ticker: SANB11
   listing: B3
