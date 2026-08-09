@@ -1089,6 +1089,16 @@ watchlist:
   - Aeroméxico
   - Grupo Aeroméxico
 - name: Grupo Financiero Banorte
+  # 4I.2 Wave B7b-3b — NAMING RIGHTS: 'Estadio Banorte' e o nome do LOCAL,
+  # nao o banco. A Fiscalia investigava uma MORTE no estadio; o alias casava
+  # e a keyword 'abre investigacion' criava investigacao_regulatoria para o
+  # emissor. Exige o substantivo do local IMEDIATAMENTE antes do alias, entao
+  # 'Banorte anuncia naming rights de novo estadio' (banco como sujeito)
+  # continua atribuido. Termo unico, comprovado pelo registro real.
+  mention_guard:
+    role: naming_rights_local
+    contexto_patterns:
+    - '\bestadio\s+{A}\b'
   asset_class: listada
   ticker: GFNORTEO
   listing: BMV
