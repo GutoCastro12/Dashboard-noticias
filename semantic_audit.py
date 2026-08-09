@@ -835,7 +835,10 @@ def detect_debtor_subject(text: str, monitored: str, aliases: list[str] | None =
     def _limpa(bruto):
         cand = re.sub(r"\s+", " ", bruto).strip(" .,;:")
         # nunca deixar a entidade atravessar conectivo ou início de nova frase
-        cand = re.split(r"\b(?:em|no|na|e|and|y|que|com|detuvo|esta|está|apos|após)\b",
+        cand = re.split(r"\b(?:em|no|na|e|and|y|que|com|detuvo|esta|está|apos|após|"
+                        # verbos/particípios encerram o nome da entidade
+                        r"foi|foram|sera|será|teve|pediu|entrou|sofreu|registrou|"
+                        r"decretad\w*|citad\w*|aprovad\w*|convertid\w*|was|were)\b",
                         cand)[0].strip()
         return cand
 

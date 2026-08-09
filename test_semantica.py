@@ -6,6 +6,7 @@ Autocontido: usa fixtures_semantica/config_teste.yaml, nunca o config de produç
 """
 from pathlib import Path
 
+import re
 import risk_dashboard as rd
 import semantic_audit as sa
 
@@ -187,10 +188,24 @@ def t13_rj_direta_verdadeira():
     d = d_de(r, "recuperacao_judicial")
     check(d.get("scoreable") is True, "RJ própria continua pontuando")
     check(d.get("subject_company") == "Tok&Stok", "subject permanece a própria empresa")
-    r2 = R("Vazamento sobre calote de R$ 3,6 bi do Banco do Brasil", "Banco do Brasil",
-           ["default"])
-    check(d_de(r2, "default").get("scoreable") is True,
-          "valor monetário não é confundido com entidade")
+    # ── FIXTURE ADJUDICADA (4I.2 Wave B3) ──────────────────────────────────
+    # A versão anterior usava "Vazamento sobre calote de R$ 3,6 bi do Banco do
+    # Brasil" como VEÍCULO para testar que valor monetário não vira entidade,
+    # e exigia `scoreable is True` para o BB. A auditoria 4I demonstrou depois
+    # que essa segunda premissa é economicamente incorreta: naquele título o
+    # BB é o CREDOR lesado (a quantia é devida A ele), não o devedor em
+    # default — veredito WRONG_RELATION, confirmado por adjudicação explícita.
+    # A invariante monetária, que é legítima, foi preservada e agora é testada
+    # DIRETAMENTE na função responsável, sem carregar junto uma relação
+    # credor/devedor já refutada. O caso BB virou regressão canônica em
+    # test_wave_b3_credor_devedor.py.
+    import semantic_audit as _sa
+    for _txt in ("Empresa X pede recuperação judicial de R$ 1,1 bilhão",
+                 "Companhia Y assume dívida de R$ 500 milhões",
+                 "Emissor Z declara default de R$ 3,6 bilhões"):
+        _ent = _sa.detect_debtor_subject(_txt, "Tok&Stok", ["Tok&Stok"])
+        check(not re.search(r"r\$|\d|bilh|milh|^bi$", _ent or "", re.I),
+              f"valor monetário não é confundido com entidade ({_ent or 'vazio'!r})")
 
 
 def t14_fraude_nova_acusacao():
