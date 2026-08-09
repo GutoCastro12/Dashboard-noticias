@@ -178,6 +178,100 @@ def detect_event_negation(text: str, event_keywords: list[str]) -> dict:
             "evidence": evidencia, "mentions": mencoes}
 
 
+# ── 4I.2 Wave A3: RESOLUÇÃO de evento negativo anterior ──────────────────────
+# Distinta de negação: aqui o evento negativo ACONTECEU de verdade, e a
+# notícia atual informa encerramento/saída/cura/quitação. "Samarco informa
+# encerramento da RJ" não é uma nova RJ; "Aeroméxico salió de la quiebra"
+# não é nova falência; "resgate antecipado integral" não é nova emissão.
+#
+# Os gatilhos são deliberadamente ESPECÍFICOS (verbo + objeto do evento), não
+# verbos soltos: "conclui"/"encerra" isolados derrubariam positivos legítimos
+# do gold como "BTG conclui aquisição do HSBC Uruguai".
+RESOLUCAO_TRIGGERS = [
+    # pt — insolvência/litígio
+    r"encerramento\s+d[ao]\s+(?:recupera|fal|process|litig)",
+    r"encerra\s+(?:a\s+|o\s+)?(?:recupera|fal|process)",
+    r"sa[ií](?:u|da|r)\s+d[ao]\s+(?:recupera|fal)",
+    r"conclus[ãa]o\s+d[ao]\s+(?:recupera|fal|process)",
+    r"conclui\s+(?:a\s+|o\s+)?(?:recupera|process)",
+    r"supera(?:ndo|do|r)?\s+(?:a\s+)?(?:recupera|fal|crise)",
+    r"emerge\s+d[ao]\s+(?:recupera|fal)",
+    # pt — dívida
+    r"resgate\s+antecipado", r"quita[çc][ãa]o\s+(?:antecipada\s+)?d[ao]",
+    r"quita\s+(?:a\s+|o\s+)?d[íi]vida", r"amortiza[çc][ãa]o\s+integral",
+    r"liquida[çc][ãa]o\s+antecipada",
+    # pt — rating
+    r"(?:mant[ée]m|manteve|mantido|reafirma|reafirmou)\s+(?:o\s+|a\s+)?(?:rating|nota|classifica)",
+    r"rating\s+(?:mantido|reafirmado)",
+    # en
+    r"emerge[sd]?\s+from\s+(?:bankruptcy|chapter\s*11|restructuring)",
+    r"exit(?:s|ed|ing)?\s+(?:from\s+)?(?:bankruptcy|chapter\s*11)",
+    r"emerged\s+from", r"early\s+redemption", r"redeem(?:s|ed)\s+(?:the\s+)?notes",
+    r"repa(?:ys|id)\s+(?:the\s+)?(?:debt|notes|bonds)",
+    r"affirm(?:s|ed)\s+(?:the\s+)?(?:rating|idr)", r"rating\s+affirmed",
+    r"cured?\s+(?:the\s+)?(?:default|breach|covenant)",
+    # es
+    r"sal(?:e|i[óo]|ir)\s+d[e]?\s*l?[ao]?\s*(?:quiebra|concurso)",
+    r"super[óa]\s+(?:la\s+)?(?:quiebra|crisis)",
+    r"rescate\s+anticipado", r"mantiene\s+(?:la\s+)?(?:calificaci[óo]n|nota)",
+]
+
+
+# Ação negativa EXPLÍCITA e simultânea. Encontrada na 4I.2 Wave A3 ao
+# derrubar um positivo legítimo do gold: "Fitch revisa perspectiva para
+# negativa … E MANTÉM rating 'BB'" é um outlook negativo REAL — a afirmação
+# de uma dimensão (rating mantido) não neutraliza a deterioração de outra
+# (perspectiva revisada). Quando as duas coisas estão na mesma proposição,
+# a ação negativa vence e a resolução NÃO se aplica.
+ACAO_NEGATIVA_EXPLICITA = [
+    r"revis[ãa]o?\s+(?:a\s+)?perspectiva\s+para\s+negativ", r"revisa\s+.{0,20}negativ",
+    r"perspectiva\s+negativ", r"outlook\s+(?:to\s+)?negative", r"negative\s+outlook",
+    r"rebaix\w*", r"corta\s+(?:o\s+)?(?:rating|nota)", r"downgrad\w*",
+    r"lower(?:s|ed)\s+(?:the\s+)?(?:rating|idr)", r"cut(?:s)?\s+(?:the\s+)?rating",
+    r"rebaja\w*", r"pede\s+(?:a\s+)?(?:fal[êe]nci|recupera)",
+    r"entra\s+(?:em|com)\s+(?:recupera|fal)", r"files?\s+for\s+bankruptcy",
+    r"creditwatch\s+negativ", r"em\s+observa[çc][ãa]o\s+negativ",
+]
+
+
+def detect_event_resolution(text: str, event_keywords: list[str]) -> dict:
+    """O texto informa a RESOLUÇÃO de um evento negativo anterior?
+
+    Mesma disciplina de escopo da negação (Wave A2): a marca de resolução
+    precisa estar na MESMA proposição que a menção do evento — senão uma
+    notícia que fala da saída da RJ de um terceiro apagaria o evento direto
+    da monitorada."""
+    t = _n(text)
+    kws = [re.escape(_n(k)) for k in (event_keywords or []) if k and len(_n(k)) >= 2]
+    if not kws:
+        return {"resolved": False, "evidence": ""}
+    kw_rx = re.compile(r"(?<!\w)(?:" + "|".join(kws) + r")(?!\w)")
+    mencoes = resolvidas = 0
+    evidencia = ""
+    for prop in _proposicoes(t):
+        tem_kw = bool(kw_rx.search(prop))
+        # ação negativa explícita na MESMA proposição vence a marca de
+        # resolução (ver ACAO_NEGATIVA_EXPLICITA)
+        if any(re.search(p, prop, re.I) for p in ACAO_NEGATIVA_EXPLICITA):
+            if tem_kw:
+                mencoes += 1
+            continue
+        gat = next((p for p in RESOLUCAO_TRIGGERS if re.search(p, prop, re.I)), "")
+        # o gatilho de dívida/rating pode aparecer sem a keyword do evento na
+        # mesma proposição (ex.: "resgate antecipado integral da 21ª emissão")
+        if not tem_kw and not gat:
+            continue
+        if tem_kw:
+            mencoes += 1
+            if gat:
+                resolvidas += 1
+                evidencia = evidencia or prop.strip()[:120]
+        elif gat:
+            evidencia = evidencia or prop.strip()[:120]
+    return {"resolved": bool(mencoes) and resolvidas == mencoes,
+            "evidence": evidencia}
+
+
 POS_TRANSACAO = [
     r"ap[óo]s\s+(?:a\s+)?aquisi[çc][ãa]o", r"depois\s+d[ao]\s+compra",
     r"desde\s+a\s+aquisi[çc][ãa]o", r"aquisi[çc][ãa]o\s+conclu[íi]da",
@@ -704,6 +798,20 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                          attribution_rule="R_NEGACAO_EXPLICITA",
                          rejection_reason=(f"texto nega explicitamente o evento "
                                             f"(\"{_neg['evidence'][:70]}\")"))
+                decisoes.append(d)
+                continue
+        # 2c) RESOLUÇÃO de evento negativo anterior (4I.2 Wave A3)
+        # Não é negação: o evento aconteceu, e a notícia informa o desfecho.
+        # Vai para o bucket informativo já existente — o fato é preservado,
+        # apenas deixa de contar como NOVO evento negativo (§4/§17).
+        if _kws:
+            _res = detect_event_resolution(texto, _kws)
+            if _res["resolved"]:
+                d.update(scoreable=False, new_occurrence=False,
+                         event_scope="direto", direction="mitigadora",
+                         attribution_rule="R_RESOLUCAO_EVENTO_ANTERIOR",
+                         rejection_reason=(f"desfecho/resolução de evento anterior, não "
+                                            f"novo evento (\"{_res['evidence'][:70]}\")"))
                 decisoes.append(d)
                 continue
         # 3) sujeito estrito (RJ/falência/default)
