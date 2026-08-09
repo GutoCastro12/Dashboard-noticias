@@ -864,6 +864,16 @@ def detect_debtor_subject(text: str, monitored: str, aliases: list[str] | None =
             continue
         if cand in _STOP_ENT or _resto in _STOP_ENT:
             continue
+        # Substantivo comum do próprio domínio financeiro nunca é entidade:
+        # "inadimplência DA DÍVIDA" extraía "divida" como se fosse empresa
+        # (encontrado pelos testes da B5).
+        if re.fullmatch(r"(?:d[íi]vida|deuda|debt|d[ée]bito|obriga[çc][ãa]o|obligaci[óo]n|"
+                        r"pagamento|pago|parcela|juros|intereses|interest|deb[êe]ntures?|"
+                        r"bonds?|notes?|t[íi]tulos?|cri|cra|empr[ée]stimo|loan|"
+                        r"presta[çc][ãa]o|contrato|opera[çc][ãa]o|companhia|empresa|"
+                        r"sociedade|grupo|banco|governo|gobierno|estado|pa[íi]s)s?",
+                        _resto, re.I):
+            continue
         return cand
     return ""
 
@@ -941,6 +951,86 @@ FRAUDE_AGENTE = [
 ]
 
 
+# ── 4I.2 Wave B5: SOBERANO ≠ EMISSOR CORPORATIVO ────────────────────────────
+# YPF recebia `default` crítico de "default ARGENTINO": o devedor está nomeado
+# por DEMÔNIMO ADJETIVO, construção que nenhum detector de sujeito/possessivo
+# reconhecia — sem regra, o evento caía no fim do laço com subject=YPF.
+#
+# Nenhuma base geográfica nova (§10): reaproveito (a) o princípio já codificado
+# em `_STOP_ENT` ("países/jurisdições não são sujeito de evento de crédito") e
+# (b) o campo `country` que o cadastro já mantém. `country` serve só para
+# RECONHECER o soberano — nunca como fallback de atribuição (§11) — e o efeito
+# é sempre REMOVER atribuição indevida, jamais criá-la.
+SOBERANO_TERMS = [
+    r"soberan\w*", r"sovereign", r"d[íi]vida\s+p[úu]blica", r"deuda\s+p[úu]blica",
+    r"d[oe]\s+governo", r"del\s+gobierno", r"government\s+(?:debt|bonds?|default)",
+    r"tesouro\s+nacional", r"tesoro\s+(?:nacional|p[úu]blico)", r"treasury",
+    r"\bfmi\b", r"\bimf\b", r"paris\s+club", r"clube\s+de\s+paris",
+    r"t[íi]tulos\s+p[úu]blicos",
+]
+# a monitorada é o devedor de forma EXPLÍCITA — vence qualquer marca soberana
+DEVEDOR_CORPORATIVO_EXPLICITO = [
+    r"{m}{q}\s+(?:deixa|deixou)\s+de\s+pagar", r"{m}{q}\s+n[ãa]o\s+pag(?:a|ou)",
+    r"{m}{q}\s+(?:default(?:s|ed)?|entra\s+em\s+default|declara\s+default)",
+    r"{m}{q}\s+(?:incumple|incumpli[óo]|deja\s+de\s+pagar)",
+    r"{m}{q}\s+(?:misses?|missed)\s+(?:a\s+|the\s+)?(?:bond\s+)?payment",
+    r"{m}{q}\s+(?:calote|inadimpl\w*)", r"default\s+d[ao]\s+{m}",
+    r"{m}{q}\s+(?:on\s+its|em\s+sua|de\s+sua)\s+(?:corporate\s+)?(?:debt|d[íi]vida)",
+]
+
+
+def _stem_pais(nome: str) -> str:
+    """Radical do nome do país, para casar o demônimo adjetivo derivado dele
+    ("Argentina"→argentin→"argentino"; "México"→mexic→"mexicano"). Derivação
+    morfológica simples sobre metadado existente — não é tabela nova."""
+    n = _n(nome or "").strip()
+    n = re.sub(r"[^a-z\s]", "", n)
+    n = re.sub(r"[aeiou]+$", "", n)
+    return n if len(n) >= 4 else ""
+
+
+def detect_sovereign_subject(text: str, event_keywords: list[str], monitored: str,
+                             aliases: list[str] | None = None,
+                             country: str = "") -> dict:
+    """O evento de crédito pertence ao SOBERANO (país/governo/tesouro), e não à
+    monitorada? Verdadeiro só quando (a) há marca soberana na MESMA proposição
+    da menção do evento e (b) NÃO há evidência explícita de que a monitorada é
+    a devedora — havendo, o sujeito corporativo vence (§6/§12/§16)."""
+    t = _n(text)
+    nomes = [re.escape(_n(a)) for a in ((aliases or []) + [monitored]) if a]
+    alt = "(?:" + "|".join(nomes) + ")" if nomes else ""
+    if alt and any(re.search(p.format(m=alt, q=_QUALIF), t, re.I)
+                   for p in DEVEDOR_CORPORATIVO_EXPLICITO):
+        return {"soberano": False, "evidence": "", "motivo": "devedor corporativo explícito"}
+    kws = [re.escape(_n(k)) for k in (event_keywords or []) if k and len(_n(k)) >= 2]
+    if not kws:
+        return {"soberano": False, "evidence": ""}
+    kw_rx = re.compile(r"(?<!\w)(?:" + "|".join(kws) + r")(?!\w)")
+    marcas = list(SOBERANO_TERMS)
+    stem = _stem_pais(country)
+    if stem:
+        # O demônimo só vale em POSIÇÃO ADJETIVA colada ao evento ("default
+        # argentino", "deuda argentina"). Sem essa restrição o radical casa
+        # dentro do NOME da empresa — "Grupo México" derrubava o default
+        # legítimo da Pemex, que é exatamente a nacionalidade-como-regra
+        # proibida pelo §7.
+        _kw_alt = "|".join(kws)
+        marcas.append(rf"(?:{_kw_alt})\s+{stem}\w*\b")
+        marcas.append(rf"\b{stem}\w*\s+(?:{_kw_alt})")
+    mencoes = soberanas = 0
+    ev = ""
+    for prop in _proposicoes(t):
+        if not kw_rx.search(prop):
+            continue
+        mencoes += 1
+        achou = next((re.search(p, prop, re.I) for p in marcas
+                      if re.search(p, prop, re.I)), None)
+        if achou:
+            soberanas += 1
+            ev = ev or achou.group(0)[:60]
+    return {"soberano": bool(mencoes) and soberanas == mencoes, "evidence": ev}
+
+
 def detect_fraud_role(text: str, monitored: str,
                       aliases: list[str] | None = None) -> str:
     """Papel da monitorada num evento de fraude: "agente", "vitima" ou "".
@@ -989,7 +1079,8 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                               event_ids: list[str], aliases_por_empresa: dict,
                               *, article_year: int | None = None,
                               source_domain: str = "",
-                              keywords_por_evento: dict | None = None) -> dict:
+                              keywords_por_evento: dict | None = None,
+                              country: str = "") -> dict:
     """Resolve TODOS os eventos candidatos de um artigo para UMA empresa
     monitorada. Devolve decisões por evento com evidência e regra aplicada."""
     texto = f"{title} {summary}".strip()
@@ -1235,6 +1326,22 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                 continue
         # 2g) CREDOR ≠ DEVEDOR (4I.2 Wave A6) — papel econômico, nunca tipo de
         # empresa: banco continua podendo sofrer evento próprio (§31).
+        # B5) SOBERANO ≠ EMISSOR CORPORATIVO (4I.2 Wave B5)
+        # Roda no bloco de último recurso, junto das demais regras de papel:
+        # sujeito estrito, M&A, fraude e o próprio detector de devedor já
+        # decidiram antes. Dentro do detector, devedor corporativo explícito
+        # vence a marca soberana — logo default próprio da estatal sobrevive.
+        _al_b5 = aliases_por_empresa.get(monitored) or [monitored]
+        if (ev in EVENTOS_SUJEITO_ESTRITO or ev in EVENTOS_CREDITO_EXIGEM_FATO) and _kws:
+            _sob = detect_sovereign_subject(texto, _kws, monitored, _al_b5, country)
+            if _sob["soberano"]:
+                d.update(scoreable=False, event_scope="indireto",
+                         relation_type="evento_soberano",
+                         attribution_rule="R_SOBERANO_NAO_E_EMISSOR_CORPORATIVO",
+                         rejection_reason=(f"o evento de crédito é do soberano "
+                                            f"(\"{_sob['evidence']}\"), não de {monitored}"))
+                decisoes.append(d)
+                continue
         _al = aliases_por_empresa.get(monitored) or [monitored]
         if ev in EVENTOS_SUJEITO_ESTRITO or ev in EVENTOS_CREDITO_EXIGEM_FATO:
             _dev = detect_debtor_subject(texto, monitored, _al)
@@ -1298,6 +1405,13 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
 # ═══════════════════════════════════════════════════════════════════════
 # INTEGRAÇÃO COM O PIPELINE DE PRODUÇÃO
 # ═══════════════════════════════════════════════════════════════════════
+def _country_de(cfg: dict, empresa: str) -> str:
+    """País de domicílio do cadastro — usado APENAS para reconhecer o soberano
+    (Wave B5), nunca como fallback de atribuição de sujeito (§11)."""
+    c = next((x for x in (cfg.get("watchlist") or []) if x.get("name") == empresa), None)
+    return (c or {}).get("country", "") or ""
+
+
 def _keywords_por_evento(cfg: dict) -> dict:
     """Vocabulário de cada evento vindo da PRÓPRIA taxonomia de produção —
     nunca uma lista paralela hardcoded. Assim a negação escopada (Wave A2)
@@ -1366,7 +1480,8 @@ def apply_semantics_to_record(rec: dict, cfg: dict, *, aliases: dict | None = No
         r = resolve_article_semantics(titulo, resumo, empresa, eventos, aliases,
                                       article_year=ano,
                                       source_domain=rec.get("domain", "") or "",
-                                      keywords_por_evento=_keywords_por_evento(cfg))
+                                      keywords_por_evento=_keywords_por_evento(cfg),
+                                      country=_country_de(cfg, empresa))
         manter = []
         # Eventos que PERMANECEM pontuáveis nesta empresa/artigo — qualquer
         # outro evento descartado da MESMA empresa neste MESMO artigo, cujo
