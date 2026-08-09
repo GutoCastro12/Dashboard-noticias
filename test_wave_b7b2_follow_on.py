@@ -115,6 +115,45 @@ check("rebaixamento_rating" in pontua(
 
 print()
 print("=" * 96)
+print("BLOCO F — B7b-2.1: precedência own-issuer × investidora (§3)")
+print("=" * 96)
+# A limitação suspeitada foi REFUTADA pelo trace: a proteção já é estrutural.
+# `_PAPEL_INVESTIDORA` exige o verbo de aporte ADJACENTE ao nome da
+# monitorada. Em "Itaúsa ANUNCIA follow-on … e aporta", o nome é seguido de
+# "anuncia" — não há evidência de papel de investidora, e o evento próprio
+# sobrevive. Nenhum override precisou ser implementado.
+_ONLY_INV = "Itaúsa aporta R$ 1 bilhão no aumento de capital da Aegea"
+check("follow_on" not in pontua(_ONLY_INV, "Itaúsa"),
+      "[B1 ONLY INVESTOR] Itaúsa não recebe")
+check("follow_on" in pontua(_ONLY_INV, "Aegea Saneamento"),
+      "[B1b ONLY INVESTOR] Aegea (emissora) recebe")
+
+check("follow_on" in pontua("Itaúsa anuncia follow-on de R$ 2 bilhões", "Itaúsa"),
+      "[B2 ONLY ISSUER] Itaúsa recebe")
+
+_BOTH = ("Itaúsa anuncia follow-on de R$ 2 bilhões e aporta R$ 1 bilhão no aumento "
+         "de capital da Aegea")
+check("follow_on" in pontua(_BOTH, "Itaúsa"),
+      "[B3 BOTH] emissão própria vence a supressão por papel de investidora")
+check("follow_on" in pontua(_BOTH, "Aegea Saneamento"),
+      "[B3b BOTH] Aegea também mantém o seu")
+check(sa.detect_follow_on_de_terceiro(_BOTH, "Itaúsa", ["Itaúsa"]) == "",
+      "[B3c BOTH] detector não dispara: nome seguido de 'anuncia', não de 'aporta'")
+
+_DIST = "Itaúsa avalia investimento. Aegea anuncia follow-on."
+check(sa.detect_follow_on_de_terceiro(_DIST, "Itaúsa", ["Itaúsa"]) == "",
+      "[B4 DISTÂNCIA] follow-on distante da Aegea não é capturado como papel da Itaúsa")
+
+print()
+print("=" * 96)
+print("BLOCO G — §4: os 3 casos reais continuam corrigidos após B7b-2.1")
+print("=" * 96)
+check("follow_on" not in pontua(_T1, "BTG Pactual"), "[B5] BTG/Light continua corrigido")
+check("follow_on" not in pontua(_T2, "Itaúsa"), "[B6] Itaúsa/Aegea #1 continua corrigido")
+check("follow_on" not in pontua(_T3, "Itaúsa"), "[B7] Itaúsa/Aegea #2 continua corrigido")
+
+print()
+print("=" * 96)
 print(f"RESULTADO WAVE B7b-2: {PASS}/{PASS+FAIL} checagens passaram")
 print("=" * 96)
 if FAIL:
