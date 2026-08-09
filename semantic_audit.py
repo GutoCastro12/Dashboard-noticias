@@ -1060,6 +1060,63 @@ def detect_evento_nao_consumado(text: str, event_keywords: list[str], monitored:
             "motivo": motivo, "evidence": ev}
 
 
+# ── 4I.2 Wave B2: SUBSIDIÁRIA nomeada ao lado da controladora ───────────────
+# "CVS Health's Omnicare files for Chapter 11" e "Bankruptcy judge approves
+# sale of CVS Health SUBSIDIARY Omnicare": o sujeito é a Omnicare, mas as duas
+# construções (possessivo saxônico e aposto com palavra de relação) não são
+# cobertas por `subject_by_possessive`, que espera "falência DA X" — então o
+# evento caía no fallback subject = monitorada.
+#
+# Política aplicada é a JÁ EXISTENTE no projeto (roteamento de não-pontuáveis
+# em `apply_semantics_to_record`): subject_company != monitorada → contexto de
+# terceiro, a mesma que já trata Vale/Samarco, Gerdau/transportadoras,
+# Cencosud/St. Marche e BTG/Digimais. NENHUMA metodologia de risco consolidado
+# é criada: esta wave corrige ATRIBUIÇÃO DE SUJEITO, não decide se risco de
+# controlada deve afetar o score da controladora.
+_REL_SUBSIDIARIA = (r"(?:subsidiary|subsidiaria|subsidi[áa]ria|unit|division|"
+                    r"controlada|coligada|afiliada|affiliate|arm)")
+_ENT_NOME_B2 = r"((?:[A-Z][\w&.\-]+)(?:\s+[A-Z][\w&.\-]+){0,3})"
+
+
+def detect_subsidiary_subject(text: str, monitored: str,
+                              aliases: list[str] | None = None) -> str:
+    """Subsidiária nomeada IMEDIATAMENTE ao lado da controladora monitorada.
+
+    Reconhece só as duas construções explícitas — possessivo saxônico
+    ("CVS Health's Omnicare") e aposto com palavra de relação ("CVS Health
+    subsidiary Omnicare"). Devolve "" quando o nome capturado é a própria
+    monitorada ou quando não há nome: nunca infere relação societária."""
+    if not text:
+        return ""
+    meus = {_n(a) for a in ((aliases or []) + [monitored]) if a}
+    nomes = [re.escape(a) for a in ((aliases or []) + [monitored]) if a]
+    if not nomes:
+        return ""
+    alt = "(?:" + "|".join(nomes) + ")"
+    padroes = [
+        rf"{alt}\s*[’'`]s\s+{_ENT_NOME_B2}",              # CVS Health's Omnicare
+        rf"{alt}\s+{_REL_SUBSIDIARIA}\s+{_ENT_NOME_B2}",  # CVS Health subsidiary Omnicare
+        rf"{_REL_SUBSIDIARIA}\s+d[aeo]s?\s+{alt}[,\s]+{_ENT_NOME_B2}",
+    ]
+    for p in padroes:
+        m = re.search(p, text, re.I)
+        if not m:
+            continue
+        cand = re.sub(r"\s+", " ", m.group(1)).strip(" .,;:")
+        # o nome termina no primeiro conectivo/verbo: sem isso a captura
+        # gulosa produzia "Omnicare to GenieRX" / "Omnicare files for Chapter".
+        cand = re.split(r"\s+(?:to|of|for|and|files?|filed|completes?|announces?|enters?|em|de|da|do|e|para|com)", cand, flags=re.I)[0].strip(" .,;:")
+        cn = _n(cand)
+        if not cn or len(cn) < 3:
+            continue
+        if any(cn in a or a in cn for a in meus if a):
+            continue                       # capturou a própria monitorada
+        if cn in _STOP_ENT:
+            continue
+        return cand
+    return ""
+
+
 def _stem_pais(nome: str) -> str:
     """Radical do nome do país, para casar o demônimo adjetivo derivado dele
     ("Argentina"→argentin→"argentino"; "México"→mexic→"mexicano"). Derivação
@@ -1407,6 +1464,26 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                 continue
         # 2g) CREDOR ≠ DEVEDOR (4I.2 Wave A6) — papel econômico, nunca tipo de
         # empresa: banco continua podendo sofrer evento próprio (§31).
+        # B2) SUBSIDIÁRIA NOMEADA AO LADO DA CONTROLADORA (4I.2 Wave B2)
+        # Corrige apenas o SUJEITO. O destino segue a política já existente
+        # (subject != monitorada → contexto de terceiro), sem criar bucket
+        # novo nem metodologia de risco consolidado.
+        # Restrito a EVENTOS_SUJEITO_ESTRITO: são os eventos que a entidade
+        # SOFRE (falência/RJ/default/liquidação), onde "quem sofreu" tem de ser
+        # exato. Eventos que a subsidiária PRATICA (M&A como compradora) são
+        # economicamente do grupo — "Cigna's Evernorth Completes Acquisition"
+        # é aquisição correta da Cigna, e o gold confirma.
+        _sub = (detect_subsidiary_subject(texto, monitored,
+                                          aliases_por_empresa.get(monitored) or [monitored])
+                if ev in EVENTOS_SUJEITO_ESTRITO else "")
+        if _sub:
+            d.update(subject_company=_sub, scoreable=False,
+                     event_scope="indireto", relation_type="subsidiaria",
+                     attribution_rule="R_EVENTO_DE_SUBSIDIARIA_NOMEADA",
+                     rejection_reason=(f"o evento é da subsidiária '{_sub}'; "
+                                        f"{monitored} é a controladora, não o sujeito"))
+            decisoes.append(d)
+            continue
         # B6) RISCO PROSPECTIVO / OBJETO CARTEIRA ≠ default do emissor
         # Posição: bloco de último recurso, junto das demais regras de papel —
         # só atua quando nenhuma evidência mais forte já identificou a
