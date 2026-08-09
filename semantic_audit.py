@@ -886,6 +886,8 @@ _PAPEL_NAO_SUJEITO = {
                 r"golpe\s+(?:que\s+)?se\s+passa\s+por\s+{m}", r"impersonat\w*\s+{m}",
                 r"charged\s+in\s+{m}\s+(?:fraud|scam)",
                 r"(?:v[íi]tima|victim)\s+(?:de|of)\s+", r"scam\s+(?:targeting|involving)\s+{m}"],
+    # 4I.2 B4: os cues de fraude propriamente ditos vivem em FRAUDE_VITIMA/
+    # FRAUDE_AGENTE abaixo, porque papel e fase jurídica são eixos distintos.
     "comentarista": [r"{m}\s+(?:alerta\s+para|comenta|avalia|v[êe]|diz\s+que)",
                       r"(?:diz|afirma|segundo|responde)\s+(?:o\s+)?(?:gestor|diretor|presidente|"
                       r"economista)\s+d[ao]\s+{m}", r"gestor\s+d[ao]\s+{m}\s+responde"],
@@ -893,6 +895,69 @@ _PAPEL_NAO_SUJEITO = {
                       r"{m}\s+(?:abre|instaura)\s+(?:uma?\s+)?(?:investiga[çc][ãa]o|sindic[âa]ncia)",
                       r"{m}\s+opens?\s+(?:an?\s+)?(?:probe|investigation)"],
 }
+
+
+# ── 4I.2 Wave B4: VÍTIMA ≠ AUTORA da fraude ─────────────────────────────────
+# Papel e fase jurídica são EIXOS DISTINTOS (§5): "Truist alleges customer
+# committed fraud against the bank" é allegation NA FASE e vítima NO PAPEL —
+# e mesmo que a fraude fosse comprovada, continuaria não sendo fraude
+# COMETIDA pela Truist.
+#
+# `{m}` é o alias da monitorada. `{q}` absorve qualificadores corporativos
+# entre o nome e o verbo ("Truist BANK warns…", "Vale S.A. informou…"), que
+# foi exatamente a causa do falso positivo Truist: o alias cadastrado existe
+# e a atribuição funciona — o cue é que exigia adjacência estrita.
+_QUALIF = r"(?:\s+(?:bank|banco|financial|holdings?|group|grupo|s\.?a\.?|inc\.?|corp\.?|"
+_QUALIF += r"co\.?|plc|ltda?\.?|n\.?a\.?)){0,3}"
+# conector tolerante a artigo/preposicao: "defraudaron A Cemex", "contra A
+# Petrobras", "fraudou O Itau" — sem isso o cue so casava sem artigo.
+_ART = r"\s+(?:a|o|as|os|the|el|la|los|las|ao|aos|à|às)?\s*"
+FRAUDE_VITIMA = [
+    # a monitorada alerta/sofre/é alvo
+    r"{m}{q}\s+(?:warns?|warned|alerta|alertou|adverte|advirti[óo])",
+    r"{m}{q}\s+(?:sofreu|sofre|foi\s+alvo|foi\s+v[íi]tima|perdeu)",
+    r"(?:v[íi]tima|victim|v[íi]ctima)\s+(?:de|of)\s+{m}",
+    r"{m}{q}\s+(?:é|e|foi)\s+(?:a\s+)?(?:v[íi]tima|lesad[oa])",
+    # terceiro age CONTRA a monitorada
+    r"(?:fraud|fraude|estafa|golpe|scam|scheme|esquema)\s+(?:against|contra){a}{m}",
+    r"(?:defraud\w*|fraud(?:ou|aram)|scamm\w*|estaf[óo]|enganou|lesou|roubou|"
+    r"stole\s+from){a}{m}",
+    r"(?:stole|roubad\w*|desviad\w*|subtra[íi]d\w*)\s+.{{0,40}}?(?:from|de|da|do)\s+{m}",
+    r"(?:targeting|dirigid[oa]\s+a|voltado\s+contra){a}{m}",
+    r"(?:se\s+passa(?:m|ndo)?\s+por|impersonat\w*|posing\s+as)\s+{m}",
+    r"charged\s+in\s+{m}{q}\s+(?:fraud|scam)",
+    r"(?:cliente|customer|funcion[áa]rio|employee|ex-funcion[áa]rio)\s+.{{0,60}}?"
+    r"(?:fraud\w*|golpe|estafa|lesou|desviou)\s*.{{0,20}}?{a}{m}",
+]
+FRAUDE_AGENTE = [
+    r"{m}{q}\s+(?:commit\w*|comete\w*|praticou|perpetr\w*|orquestr\w*)",
+    r"{m}{q}\s+(?:admit\w*|confess\w*|assumiu)",
+    r"{m}{q}\s+.{{0,30}}?(?:condenad|convicted|found\s+liable|declarad[oa]\s+culpable)",
+    r"(?:condena\w*|convicts?)\s+.{{0,40}}?{m}",
+    r"{m}{q}\s+(?:is\s+)?(?:accused|acusad[oa]|indicted|charged\s+with)",
+    r"(?:fraud|fraude)\s+(?:by|d[ao])\s+{m}",
+    r"{m}{q}\s+(?:stole|roubou|desviou|manipul\w*|falsific\w*|forjou)",
+    r"{m}{q}\s+.{{0,30}}?(?:esquema|scheme)\s+(?:fraudulent\w*|de\s+fraude)",
+]
+
+
+def detect_fraud_role(text: str, monitored: str,
+                      aliases: list[str] | None = None) -> str:
+    """Papel da monitorada num evento de fraude: "agente", "vitima" ou "".
+
+    O papel de AGENTE vence sempre: um cue incidental de vítima noutra oração
+    não pode apagar fraude realmente cometida/condenada pela companhia (§10).
+    """
+    t = _n(text)
+    nomes = [re.escape(_n(a)) for a in ((aliases or []) + [monitored]) if a]
+    if not nomes:
+        return ""
+    alt = "(?:" + "|".join(nomes) + ")"
+    if any(re.search(p.format(m=alt, q=_QUALIF, a=_ART), t, re.I) for p in FRAUDE_AGENTE):
+        return "agente"
+    if any(re.search(p.format(m=alt, q=_QUALIF, a=_ART), t, re.I) for p in FRAUDE_VITIMA):
+        return "vitima"
+    return ""
 
 
 def detect_papel_nao_sujeito(text: str, monitored: str,
@@ -1199,6 +1264,22 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                                         f"operação de terceiro, não como emissora"))
             decisoes.append(d)
             continue
+        # B4) FRAUDE: VÍTIMA ≠ AUTORA (4I.2 Wave B4)
+        # Posição: bloco de último recurso, depois de sujeito estrito, M&A e
+        # do bloco de fraude — logo, fraude com sujeito de terceiro, desfecho
+        # mitigador ou fase não confirmada já saiu antes. Aqui só chega fraude
+        # que seguiria pontuando como DIRETA da monitorada; o papel de agente
+        # vence o de vítima dentro do próprio detector.
+        if ev in EVENTOS_FRAUDE:
+            _fr = detect_fraud_role(texto, monitored, _al)
+            if _fr == "vitima":
+                d.update(scoreable=False, event_scope="indireto",
+                         relation_type="vitima_do_evento",
+                         attribution_rule="R_VITIMA_NAO_E_AUTORA_DA_FRAUDE",
+                         rejection_reason=(f"{monitored} é vítima/alvo da fraude neste "
+                                            f"texto, não quem a praticou"))
+                decisoes.append(d)
+                continue
         # 2h) PAPEL NÃO-SUJEITO: vítima / comentarista / investigador (Wave A7)
         _papel = detect_papel_nao_sujeito(texto, monitored, _al)
         if _papel:
