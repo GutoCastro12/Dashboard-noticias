@@ -739,6 +739,39 @@ EVENTOS_FRAUDE = {"fraude", "fraude_investigacao", "corrupcao", "lavagem"}
 # ECONÔMICO consumado — CRI efetivamente inadimplente. Denúncia, processo ou
 # investigação sobre suposta inadimplência não provam o default (§10/§21).
 EVENTOS_INVESTIGACAO_E_O_PROPRIO_EVENTO = {"investigacao_regulatoria"}
+
+# ── 4I.2 Wave A4: "Issuer Default Rating" é NOME DE MÉTRICA, não evento ─────
+# "Fitch Ratings Upgrades Term Issuer Default Rating on BAT" virava `default`
+# crítico (peso 80) — sendo que é um UPGRADE. A palavra "default" aqui compõe
+# a nomenclatura da agência (IDR), não descreve inadimplemento.
+NOMENCLATURA_RATING = [
+    r"issuer\s+default\s+rating", r"\bidr\b", r"long[- ]term\s+issuer\s+default",
+    r"short[- ]term\s+issuer\s+default", r"foreign\s+currency\s+issuer\s+default",
+    r"local\s+currency\s+issuer\s+default", r"default\s+rating",
+    r"calificaci[óo]n\s+de\s+incumplimiento\s+del\s+emisor",
+    r"rating\s+de\s+inadimpl[êe]ncia\s+do\s+emissor",
+    # cláusula contratual citada como texto jurídico, sem acionamento
+    r"default\s+provisions?", r"cl[áa]usulas?\s+de\s+default",
+]
+# Default ECONÔMICO de verdade — o que a nomenclatura acima não prova.
+DEFAULT_ECONOMICO_REAL = [
+    r"payment\s+default", r"missed\s+payment", r"failure\s+to\s+pay",
+    r"event\s+of\s+default\s+(?:was\s+)?(?:triggered|declared|occurred)",
+    r"defaults?\s+on\s+(?:its\s+|the\s+)?(?:debt|notes|bonds|loan|payment)",
+    r"deixou?\s+de\s+pagar", r"n[ãa]o\s+pagou", r"calote",
+    r"inadimpl[êe]ncia\s+d[ao]\s+d[íi]vida", r"atraso\s+no\s+pagamento",
+    r"impago", r"incumplimiento\s+de\s+pago", r"cesaci[óo]n\s+de\s+pagos",
+    r"acionou?\s+(?:o\s+)?evento\s+de\s+inadimpl",
+]
+
+
+def is_default_nomenclatura_de_rating(text: str) -> bool:
+    """O texto usa "default" apenas como NOME de métrica de rating (IDR) ou
+    como cláusula contratual citada, sem qualquer default econômico real?"""
+    t = _n(text)
+    if not any(re.search(p, t, re.I) for p in NOMENCLATURA_RATING):
+        return False
+    return not any(re.search(p, t, re.I) for p in DEFAULT_ECONOMICO_REAL)
 EVENTOS_CREDITO_EXIGEM_FATO = {"default", "default_cri", "covenant_breach",
                                 "inadimplencia", "cross_default"}
 
@@ -831,6 +864,17 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                                             f"novo evento (\"{_res['evidence'][:70]}\")"))
                 decisoes.append(d)
                 continue
+        # 2e) "default" como NOMENCLATURA DE RATING (4I.2 Wave A4)
+        # Só desarma o evento `default`: a ação de rating em si (upgrade ou
+        # downgrade) segue o caminho normal da taxonomia de rating (§13/§25).
+        if ev in ("default", "default_cri") and is_default_nomenclatura_de_rating(texto):
+            d.update(scoreable=False, event_scope="direto",
+                     attribution_rule="R_DEFAULT_NOMENCLATURA_RATING",
+                     rejection_reason=("'default' aqui é nome de métrica de rating "
+                                        "(Issuer Default Rating) ou cláusula contratual "
+                                        "citada — não há inadimplemento econômico"))
+            decisoes.append(d)
+            continue
         # 2d) FASE JURÍDICA fora da família fraude (4I.2 Wave A1b)
         # Semântica por família, nunca um gate único (§8):
         #   crédito  → alegação/processo/investigação NÃO provam o fato
