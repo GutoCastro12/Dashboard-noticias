@@ -57,6 +57,41 @@ HISTORICAL_MARKERS = [
     r"hace \d+ a[ñn]os", r"efem[ée]ride",
 ]
 
+# ── 4I.2 P0: PERFIL/VERBETE DE COMPANHIA ────────────────────────────────────
+# Páginas enciclopédicas e perfis corporativos listam a TRAJETÓRIA da empresa
+# como TÓPICOS, não como fatos do dia: "General Motors (GM) | History, Growth,
+# Bankruptcy, & Recovery". A falência ali é item de sumário, não ocorrência.
+#
+# Sinal estrutural (não lexical solto): o texto enumera ≥2 tópicos de
+# trajetória em lista separada por vírgula/&/pipe. `history` sozinho num
+# título jamais basta — "NextEra's acquisition would bring history of
+# political fights" tem `history` e NÃO é perfil.
+_PERFIL_TOPICOS = (r"hist[óo]r(?:y|ia|ical)|growth|recovery|overview|profile|timeline|"
+                   r"perfil|trajet[óo]ria|linha do tempo|crescimento")
+_PERFIL_LISTA = re.compile(
+    r"(?:" + _PERFIL_TOPICOS + r")\b[^|]{0,40}?[,&|][^|]{0,40}?\b(?:" + _PERFIL_TOPICOS + r")\b",
+    re.I)
+# Verbo/locução de OCORRÊNCIA ATUAL — vence o marcador de perfil (§7). Sem
+# isto, um perfil que noticiasse um pedido de falência seria apagado.
+_OCORRENCIA_ATUAL = re.compile(
+    r"\b(files?|filed|filing|seeks?|sought|enters?|entered|declares?|declared|"
+    r"approv\w+|orders?|ordered|wins?|won|exits?|exited|emerges?|emerged|"
+    r"pede|pediu|entra|entrou|decreta|decretou|homologa|homologou|aprova|aprovou|"
+    r"protocola|protocolou|solicita|solicitou)\b", re.I)
+
+
+def detect_company_profile(text: str) -> str:
+    """Verbete/perfil de companhia: a trajetória é o ASSUNTO, não o fato.
+
+    Devolve a evidência ou "". Exige lista de tópicos de trajetória E ausência
+    de verbo de ocorrência atual — keyword cria candidato, não prova evento.
+    """
+    t = _n(text)
+    if _OCORRENCIA_ATUAL.search(t):
+        return ""
+    m = _PERFIL_LISTA.search(t)
+    return m.group(0).strip()[:60] if m else ""
+
 
 def detect_historical_reference(text: str, article_year: int | None = None) -> dict:
     """Detecta se o evento econômico é histórico, não atual.
@@ -70,6 +105,14 @@ def detect_historical_reference(text: str, article_year: int | None = None) -> d
     if anos:
         ano_evento = min(anos)
     hist = bool(marcador)
+    # 4I.2 P0: verbete/perfil de companhia é referência histórica por natureza —
+    # reusa o mesmo bucket e a mesma regra `R_HISTORICO` já validados no caso
+    # WSAW/2009, em vez de criar mecanismo paralelo.
+    if not hist:
+        _perfil = detect_company_profile(text)
+        if _perfil:
+            hist = True
+            marcador = f"perfil_de_companhia:{_perfil}"
     if not hist and ano_evento and article_year and (article_year - ano_evento) >= 2:
         # ano antigo citado explicitamente junto de verbo no passado
         if re.search(r"\b(files?|filed|pediu|entrou|decretou|ocorreu|announced)\b", t):
