@@ -671,7 +671,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:16:37.895500+00:00"
+     "last_checked_at": "2026-08-10T11:56:14.128979+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2540,7 +2540,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:16:38.295768+00:00"
+     "last_checked_at": "2026-08-10T11:56:14.529204+00:00"
     }
    ],
    "corrob_sources": [
@@ -9870,7 +9870,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:16:38.696076+00:00"
+     "last_checked_at": "2026-08-10T11:56:14.929479+00:00"
     },
     {
      "source": "Demarest",
@@ -9890,7 +9890,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:16:39.096383+00:00"
+     "last_checked_at": "2026-08-10T11:56:15.329810+00:00"
     }
    ],
    "corrob_sources": [
@@ -11473,7 +11473,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:16:39.496659+00:00"
+     "last_checked_at": "2026-08-10T11:56:15.730082+00:00"
     }
    ],
    "corrob_sources": [
@@ -15121,7 +15121,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:16:40.083580+00:00"
+     "last_checked_at": "2026-08-10T11:56:16.306585+00:00"
     }
    ],
    "corrob_sources": [
@@ -17674,7 +17674,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:16:40.643461+00:00"
+     "last_checked_at": "2026-08-10T11:56:16.879746+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -17780,7 +17780,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:16:41.238562+00:00"
+     "last_checked_at": "2026-08-10T11:56:17.438492+00:00"
     },
     {
      "source": "Moomoo",
@@ -19122,7 +19122,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:16:41.909955+00:00"
+     "last_checked_at": "2026-08-10T11:56:18.133983+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19165,7 +19165,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:16:42.578436+00:00"
+     "last_checked_at": "2026-08-10T11:56:18.832817+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19989,7 +19989,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T11:16:43.151938+00:00",
+     "last_checked_at": "2026-08-10T11:56:19.374064+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20014,7 +20014,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T11:16:43.709324+00:00",
+     "last_checked_at": "2026-08-10T11:56:19.935758+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21134,7 +21134,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-10T11:16:44.109595+00:00",
+     "last_checked_at": "2026-08-10T11:56:20.336070+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21199,7 +21199,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-10T11:16:44.509850+00:00",
+     "last_checked_at": "2026-08-10T11:56:20.736354+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22288,7 +22288,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:16:45.084683+00:00"
+     "last_checked_at": "2026-08-10T11:56:21.289814+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22373,7 +22373,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:16:45.657420+00:00"
+     "last_checked_at": "2026-08-10T11:56:21.860879+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24123,7 +24123,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T11:16:46.243445+00:00",
+     "last_checked_at": "2026-08-10T11:56:22.421593+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24293,7 +24293,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T11:16:46.823974+00:00",
+     "last_checked_at": "2026-08-10T11:56:22.972264+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -38399,7 +38399,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:16:47.512151+00:00"
+     "last_checked_at": "2026-08-10T11:56:23.637908+00:00"
     }
    ],
    "corrob_sources": [
@@ -41470,7 +41470,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:16:48.084060+00:00"
+     "last_checked_at": "2026-08-10T11:56:24.193845+00:00"
     },
     {
      "source": "Virginia Business",
@@ -41513,7 +41513,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:16:48.657754+00:00"
+     "last_checked_at": "2026-08-10T11:56:24.760051+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48178,7 +48178,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T11:16:50.189114+00:00",
+     "last_checked_at": "2026-08-10T11:56:25.326790+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48201,7 +48201,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T11:16:50.755340+00:00",
+     "last_checked_at": "2026-08-10T11:56:25.880151+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -49292,7 +49292,7 @@
    "cap_iso": "2026-08-10 08:16"
   }
  },
- "run_count": 93,
+ "run_count": 94,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -54328,8 +54328,8 @@
   }
  },
  "last_run": {
-  "ts": 1786362246,
-  "iso": "10 ago 2026 · 08:44 BRT",
+  "ts": 1786363025,
+  "iso": "10 ago 2026 · 08:57 BRT",
   "status": {
    "Engie Brasil": {
     "status": "atencao",
