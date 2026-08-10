@@ -4087,9 +4087,51 @@ def load_history(path: Path) -> dict:
     return {"articles": {}}
 
 
+def sha256_file(path: Path) -> str:
+    """SHA-256 de um arquivo, em streaming (P1c §6)."""
+    import hashlib
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
 def save_history(path: Path, history: dict) -> None:
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(history, f, ensure_ascii=False, indent=1)
+    """Persiste o histórico de forma ATÔMICA (P1c §2).
+
+    O `open(path, "w")` anterior TRUNCAVA o destino antes de serializar: uma
+    interrupção no meio do dump (~3 MB) deixava o history inválido. Aqui o
+    conteúdo é escrito num temporário do MESMO diretório (portanto do mesmo
+    filesystem, requisito do `os.replace`), sincronizado em disco, validado
+    como JSON e só então promovido.
+
+    Propriedade garantida pelo DESENHO, sem capturar KeyboardInterrupt (§3):
+    qualquer falha antes do `os.replace` deixa o original byte-for-byte
+    intacto; depois dele, o destino já é um JSON completo e válido.
+
+    Contrato de serialização inalterado (§5): mesmo encoding, mesmo
+    `ensure_ascii=False`, mesmo `indent=1`, mesma ordem de chaves.
+    """
+    path = Path(path)
+    tmp = path.with_name(path.name + f".tmp{os.getpid()}")
+    try:
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(history, f, ensure_ascii=False, indent=1)
+            f.flush()
+            os.fsync(f.fileno())
+        # valida o temporário ANTES de promover: nunca substituir um arquivo
+        # bom por um JSON truncado.
+        json.loads(tmp.read_text(encoding="utf-8"))
+        os.replace(tmp, path)          # atômico no mesmo filesystem
+    except BaseException:
+        # §4: limpa o temp sem apagar o original e sem mascarar a exceção.
+        try:
+            if tmp.exists():
+                tmp.unlink()
+        except OSError:
+            pass
+        raise
 
 
 def resolve_history_urls(history: dict, cfg: dict, budget: int = 40) -> None:
@@ -8730,20 +8772,58 @@ def run_reclassify_only(args, cfg) -> int:
         return 0
 
     # ── APPLY: só chega aqui se o usuário pediu --apply explicitamente ──
-    gates_ok = idempotent and not diag1["errors"] or (diag1["errors"] and idempotent)
-    if not idempotent:
-        print(" ❌ APPLY abortado: reclassificação não é idempotente (2ª passada mudou algo).")
-        return 1
+    out_hist = Path(args.output_history or args.history)
+    # §13: o preview NUNCA vai para `index.html` por default. O objetivo do
+    # apply é persistir o HISTORY; publicar o dashboard é outro passo. Só
+    # escreve HTML fora da auditoria se o operador pedir `--output-html`.
+    out_html = Path(args.output_html) if args.output_html else (
+        outdir / "preview_reclassify_only.html")
 
+    # ── GATES PRÉ-WRITE (§8): invariantes ESTRUTURAIS, nada de gold, ──
+    # ── threshold de nº de mudanças ou allowlist de empresas (§9).   ──
+    _ids_before = set((original.get("articles") or {}).keys())
+    _ids_after = set((history1.get("articles") or {}).keys())
+    _gates = [
+        ("G1 primeira passada sem errors", not diag1["errors"]),
+        ("G2 idempotência (2ª passada)", idempotent),
+        ("G3 mesmo número de registros", len(_ids_before) == len(_ids_after)),
+        ("G4 mesmo conjunto de identidades", _ids_before == _ids_after),
+        ("G5 added == 0", diag1["added"] == 0),
+        # `duplicates_collapsed` conta OCORRÊNCIAS de evento fundidas por
+        # dedup, não registros. O contrato do apply é não perder registro;
+        # exigir 0 aqui é o comportamento conservador e é o que o dry-run
+        # de 715 registros já produz.
+        ("G6 duplicates_collapsed == 0", diag1["duplicates_collapsed"] == 0),
+    ]
+    for _nome, _ok in _gates:
+        if not _ok:
+            print(f" ❌ APPLY abortado ANTES de qualquer escrita — gate falhou: {_nome}")
+            return 1
+
+    sha_original = sha256_file(out_hist) if out_hist.exists() else ""
     backup_dir = outdir / "backup_apply" / datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     backup_dir.mkdir(parents=True, exist_ok=True)
-    out_hist = Path(args.output_history or args.history)
-    out_html = Path(args.output_html or "index.html")
+    bkp_hist = backup_dir / out_hist.name
     if out_hist.exists():
-        shutil.copy2(out_hist, backup_dir / out_hist.name)
+        shutil.copy2(out_hist, bkp_hist)
     if out_html.exists():
         shutil.copy2(out_html, backup_dir / out_html.name)
-    print(f" 🗄️  backup salvo em {backup_dir}")
+
+    # G7: não confiar no sucesso do copy2 — conferir o backup por hash.
+    sha_backup = sha256_file(bkp_hist) if bkp_hist.exists() else ""
+    if sha_original and sha_backup != sha_original:
+        print(" ❌ APPLY abortado ANTES de qualquer escrita — gate falhou: "
+              "G7 backup hash != original")
+        print(f"    original={sha_original}\n    backup  ={sha_backup}")
+        return 1
+
+    print(f" 🗄️  backup: {backup_dir.resolve()}")
+    print(f"    SHA-256 original/backup: {sha_original}")
+    print(f"    history que será alterado: {out_hist.resolve()}")
+    if "tmp" in str(backup_dir.resolve()).lower() or "temp" in str(backup_dir.resolve()).lower():
+        print("    ⚠️  ATENÇÃO: o backup está em diretório TEMPORÁRIO — copie-o "
+              "para local durável antes de confiar nele.")
+    print(f" ✅ gates pré-write: {len(_gates)+1}/{len(_gates)+1} OK")
 
     try:
         history1["last_run"] = {
@@ -8753,21 +8833,40 @@ def run_reclassify_only(args, cfg) -> int:
                        for r in evo_ref},
         }
         history1["reclassify_only_applied_at"] = datetime.now(timezone.utc).isoformat()
+        # §10: o objeto FINAL é congelado ANTES do write, para que a
+        # verificação pós-write seja igualdade literal contra ele — e não
+        # apenas "reclassificar de novo não muda nada".
+        expected_final = _copy.deepcopy(history1)
         save_history(out_hist, history1)
         out_html.write_text(preview_html, encoding="utf-8")
 
-        # ── verificação pós-apply: idempotência sobre o arquivo já persistido ──
-        reread = json.loads(out_hist.read_text(encoding="utf-8"))
+        # ── GATES PÓS-WRITE (§11) ──
+        reread = json.loads(out_hist.read_text(encoding="utf-8"))          # P1
+        if len(reread.get("articles") or {}) != len(_ids_after):
+            raise RuntimeError("P2 contagem de registros divergiu após o write")
+        if set((reread.get("articles") or {}).keys()) != _ids_after:
+            raise RuntimeError("P3 conjunto de identidades divergiu após o write")
+        if reread != expected_final:
+            raise RuntimeError("P4 stored != candidate final esperado")
         _, diag_post = _reclassify_only_pass(_copy.deepcopy(reread), cfg)
         post_idempotent = (diag_post["n_changed"] == 0 and not diag_post["errors"])
-        if not post_idempotent:
-            raise RuntimeError("pós-apply não idempotente — revertendo")
-    except Exception as exc:
+        if not post_idempotent:                                            # P5
+            raise RuntimeError("P5 pós-apply não idempotente")
+    except BaseException as exc:
         print(f" ❌ falha no apply ({exc}) — restaurando backup…")
-        if (backup_dir / out_hist.name).exists():
-            shutil.copy2(backup_dir / out_hist.name, out_hist)
+        if bkp_hist.exists():
+            shutil.copy2(bkp_hist, out_hist)
         if (backup_dir / out_html.name).exists():
             shutil.copy2(backup_dir / out_html.name, out_html)
+        # §12: rollback VERIFICADO — nunca reportar restauração sem conferir.
+        sha_restored = sha256_file(out_hist) if out_hist.exists() else ""
+        if sha_original and sha_restored == sha_original:
+            print(f" ✅ rollback confirmado por hash: {sha_restored}")
+        else:
+            print(" 🚨 ERRO CRÍTICO: ROLLBACK NÃO CONFIRMADO")
+            print(f"    backup   : {bkp_hist.resolve() if bkp_hist.exists() else '(ausente)'}")
+            print(f"    esperado : {sha_original}")
+            print(f"    obtido   : {sha_restored}")
         return 1
 
     print(f" 💾 histórico reclassificado persistido → {out_hist}")
