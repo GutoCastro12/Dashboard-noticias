@@ -1,0 +1,6 @@
+{
+  "_meta": {
+    "purpose": "Ground truth HUMANO dos itens do live audit. Chave: url||company||event_id. O runtime nunca escreve aqui -- a classificacao do proprio pipeline nao e verdade sobre si mesma (R1b §24).",
+    "states": ["UNREVIEWED", "TRUE", "FALSE_POSITIVE", "AMBIGUOUS"]
+  }
+}

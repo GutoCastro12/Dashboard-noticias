@@ -1,3 +1,6 @@
 # Bytecode e caches do Python
 __pycache__/
 *.py[cod]
+
+# Artefatos gerados pela auditoria de confiabilidade
+out_reliability/
