@@ -91,8 +91,19 @@ OBJ_NAO_EMPRESA = {
                        r"cancelamento\s+de\s+a[çc][õo]es", r"a[çc][õo]es\s+em\s+tesouraria",
                        r"recompra\s+de\s+d[íi]vida", r"deb[êe]ntures\s+pr[óo]prias",
                        r"cotas\s+do\s+pr[óo]prio\s+fundo"],
+    # 4I.2 Wave C2: `kc[- ]390` é designação de MODELO, mesma natureza dos
+    # `e190`/`e195` já presentes — "aquisição dos três Embraer KC-390" é compra
+    # de N unidades de um produto, não da companhia.
     "aeronaves": [r"aeronaves?", r"aircraft", r"avi[õo]es", r"jatos?", r"e190", r"e195",
-                  r"motores?\s+ge", r"engines?"],
+                  r"kc[- ]?390", r"motores?\s+ge", r"engines?"],
+    # 4I.2 Wave C2: CARTEIRA DE PEDIDOS (backlog). "Aquisição da Grécia pode
+    # adicionar US$ 690 milhões à carteira da Embraer" é RECEITA COMERCIAL do
+    # fabricante, não aquisição empresarial. Restrito à construção observada
+    # (algo entra na carteira de alguém); não colide com `carteira de crédito`,
+    # que já é tratada como objeto financeiro.
+    # Escopo PT: os dois casos reais são PT. Sem formas EN — quando houver caso
+    # observado em inglês, elas entram junto com a evidência.
+    "pedido_comercial": [r"[àa]\s+carteira\s+d[ao]\s+", r"carteira\s+de\s+pedidos"],
     "equipamento": [r"equipamentos?", r"maquin[áa]rio", r"machinery", r"frota de caminh"],
     "imovel": [r"im[óo]ve(?:l|is)", r"terreno", r"real\s+estate", r"galp[ãa]o"],
     "capex_ativo": [r"capex", r"renova[çc][ãa]o\s+de\s+frota", r"usina", r"planta industrial"],
@@ -380,7 +391,8 @@ def ma_is_legitimate(text: str, papeis: dict | None = None) -> tuple[bool, str]:
         return False, "negacao_explicita_de_nova_aquisicao"
     if d["transaction_object"] == "acoes_proprias":
         return False, "recompra_de_acoes_proprias_nao_e_ma"
-    if d["transaction_object"] in ("aeronaves", "equipamento", "imovel", "capex_ativo"):
+    if d["transaction_object"] in ("aeronaves", "equipamento", "imovel", "capex_ativo",
+                                    "pedido_comercial"):
         return False, f"objeto_nao_empresarial:{d['transaction_object']}"
     if d["intragroup_detected"]:
         return False, "reorganizacao_intragrupo_sob_controle_comum"
