@@ -1134,6 +1134,72 @@ _PAPEL_INVESTIDORA = [
 ]
 
 
+# ── B7b-4b: DIGEST MULTIEMPRESA — ATRIBUIÇÃO LOCAL POR SEGMENTO (4I.2) ──
+# Helper NOVO e estreito: `split_clauses` continua intocada porque serve
+# `subject_by_possessive` e as Waves A/B com outro contrato (§5).
+#
+# Delimitador: SOMENTE ';' (§2). ':' NÃO divide — "Vale: companhia anuncia
+# novo CEO" é um item só, e o diagnóstico da B7b-4a mediu que ';' sozinho
+# resolve 9/9 casos. '|' não foi adicionado porque nenhum caso real
+# observado depende dele (§3, sem expansão preventiva).
+#
+# Escopo do texto: apenas o TÍTULO (§15). O summary do corpus é
+# majoritariamente o título reduplicado com o veículo anexado; segmentar a
+# concatenação criaria itens sintéticos e falsos negativos. Decisão
+# documentada e deliberadamente conservadora.
+_DIGEST_DELIM = re.compile(r";")
+
+
+def split_digest_segments(title: str) -> list[str]:
+    """Itens de um digest de mercado, separados por ';'."""
+    return [s.strip() for s in _DIGEST_DELIM.split(title or "") if s.strip()]
+
+
+def _seg_tem_evento(seg_norm: str, kws_norm: list) -> bool:
+    return any(k in seg_norm for k in kws_norm)
+
+
+def _seg_tem_empresa(seg_norm: str, aliases: list) -> bool:
+    return any(re.search(r"\b" + re.escape(_n(a)) + r"\b", seg_norm)
+               for a in aliases if _n(a))
+
+
+def detect_evento_de_outro_item(title: str, monitored: str, kws: list,
+                                aliases_por_empresa: dict) -> str:
+    """Digest: o evento vive num item de OUTRA empresa (Wave B7b-4b).
+
+    Gate de ATRIBUIÇÃO, não classificador (§8): consome os event IDs que o
+    pipeline já detectou e o vocabulário da própria taxonomia. Devolve a
+    empresa dona do item onde o evento realmente está, ou "".
+
+    Exige TODAS as condições do §7: delimitador presente, ≥2 itens, a
+    monitorada identificada num item, o evento AUSENTE de todo item dela, e
+    presente num item de outra monitorada.
+    """
+    segs = split_digest_segments(title)
+    if len(segs) < 2:
+        return ""
+    kws_norm = [_n(k) for k in kws if len(_n(k)) >= 4]
+    if not kws_norm:
+        return ""
+    segn = [_n(s) for s in segs]
+    al_m = list(aliases_por_empresa.get(monitored) or [monitored])
+    idx_m = [i for i, s in enumerate(segn) if _seg_tem_empresa(s, al_m)]
+    if not idx_m:
+        return ""
+    # Condição 4: se o evento aparece em QUALQUER item da monitorada, é dela.
+    if any(_seg_tem_evento(segn[i], kws_norm) for i in idx_m):
+        return ""
+    # Condição 5: outra monitorada é dona de um item que contém o evento.
+    for i, s in enumerate(segn):
+        if i in idx_m or not _seg_tem_evento(s, kws_norm):
+            continue
+        for outra, als in (aliases_por_empresa or {}).items():
+            if outra != monitored and _seg_tem_empresa(s, list(als or [outra])):
+                return outra
+    return ""
+
+
 def detect_follow_on_de_terceiro(text: str, monitored: str,
                                  aliases: list[str] | None = None) -> str:
     """Emissor TERCEIRO do follow-on quando a monitorada é apenas a
@@ -1685,6 +1751,24 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                                         f"não como sujeito do evento"))
             decisoes.append(d)
             continue
+        # B7b-4b) DIGEST MULTIEMPRESA: O EVENTO É DE OUTRO ITEM (4I.2)
+        # Precedência DELIBERADAMENTE MÍNIMA (§6): roda por último, depois de
+        # todas as regras semânticas. Qualquer regra que já tenha provado a
+        # relação (possessivo, sujeito estrito, M&A, papel) sai antes com
+        # `continue` e nunca é atropelada por localidade textual.
+        # Opera por EMPRESA × EVENTO: desarma só este evento para esta
+        # monitorada — a dona do item continua recebendo o seu.
+        if _kws:
+            _dono = detect_evento_de_outro_item(title, monitored, _kws,
+                                                aliases_por_empresa)
+            if _dono:
+                d.update(subject_company=_dono, scoreable=False,
+                         event_scope="indireto", relation_type="outro_item_do_digest",
+                         attribution_rule="R_EVENTO_DE_OUTRO_ITEM_DO_DIGEST",
+                         rejection_reason=(f"o evento pertence ao item da '{_dono}'; "
+                                            f"{monitored} aparece em outro item do digest"))
+                decisoes.append(d)
+                continue
         decisoes.append(d)
     return {"decisoes": decisoes, "historico": hist, "transacao": trans,
             "fase": fase, "papeis": papeis, "rating_colapso": colapso}
