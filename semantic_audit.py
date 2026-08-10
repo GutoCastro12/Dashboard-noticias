@@ -374,6 +374,63 @@ _MA_OBJ_FINANCEIRO_RX = re.compile(
     r"a[çc][õo]es\s+pr[óo]prias|carteira\s+de\s+cr[ée]dito)", re.I)
 
 
+# ── 4I.2 Wave C1: PAPEL TRANSACIONAL DE VENDEDOR ────────────────────────────
+# Quem VENDE um ativo não faz uma aquisição. A taxonomia atual não tem evento
+# próprio para desinvestimento (lacuna DESINVESTIMENTO_SEM_EVENTO_PROPRIO), e
+# até que exista, `ma`/`follow_on` simplesmente não pertencem à vendedora.
+#
+# Exige a cadeia COMPLETA (C1b): OUTRO comprador nomeado + verbo de aquisição
+# + objeto + preposição de origem governando a monitorada. `da <monitorada>`
+# sozinho NUNCA basta — é ambíguo ("aquisição da Aegea" é aquisição FEITA
+# pela Aegea, um TRUE do gold.)
+_SELLER_S3_S5 = [
+    # PT (S3): "Âmbar Energia conclui a aquisição de 4 hidrelétricas DA CEMIG"
+    r"\w[\w\s&.\-]{{2,40}}?\s+(?:conclui|aprova|anuncia|assina)?\s*(?:a\s+)?"
+    r"(?:aquisi[çc][ãa]o|compra)\s+d[aeo]s?\s+(?P<obj>[\w\s\-]{{2,40}}?)\s+"
+    r"d[aeo]\s+{m}\b",
+    # EN (S5): "Spire completes acquisition of <business> FROM DUKE ENERGY"
+    r"\w[\w\s&.\-]{{2,40}}?\s+(?:completes?|announces?|closes?)?\s*(?:the\s+)?"
+    r"(?:acquisition|purchase)\s+of\s+(?P<obj>[\w\s\-]{{2,50}}?)\s+from\s+{m}\b",
+    r"\w[\w\s&.\-]{{2,40}}?\s+(?:acquires?|buys?|purchases?)\s+"
+    r"(?P<obj>[\w\s\-]{{2,50}}?)\s+from\s+{m}\b",
+]
+# H1B4 — OBJETO SOCIETÁRIO: se o que se compra são AÇÕES/PARTICIPAÇÃO da
+# monitorada, ela é o ALVO cujo capital muda de mãos, não a vendedora.
+# "Ternium conclui aquisição de ações da Usiminas" → Usiminas é target (C3).
+_SELLER_OBJ_SOCIETARIO = re.compile(
+    r"\b(a[çc][õo]es|a[çc][ãa]o|participa[çc][ãa]o|fatia|stake|shares?|quotas?|"
+    r"capital)\b", re.I)
+# H1B6 — MARCADOR DE COMPRADOR `por`: "aquisição de fazenda por banco DO BTG"
+# — aqui `do BTG` é parte do NOME do comprador, não preposição de origem.
+_SELLER_MARCADOR_COMPRADOR = re.compile(r"\bpor\b", re.I)
+
+
+def detect_transaction_seller_role(text: str, monitored: str,
+                                   aliases: list[str] | None = None) -> str:
+    """A monitorada é a VENDEDORA da transação? Devolve evidência ou "".
+
+    Papel TRANSACIONAL — o artigo continua diretamente relacionado à empresa;
+    o que está errado é o event_id, não a relevância (§20 do brief C1a).
+    """
+    t = _n(text)
+    nomes = [re.escape(_n(a)) for a in ((aliases or []) + [monitored]) if a]
+    if not nomes:
+        return ""
+    alt = "(?:" + "|".join(nomes) + ")"
+    for p in _SELLER_S3_S5:
+        m = re.search(p.format(m=alt), t, re.I)
+        if not m:
+            continue
+        obj = m.group("obj") or ""
+        if _SELLER_OBJ_SOCIETARIO.search(obj):      # H1B4 → é target, não seller
+            return ""
+        trecho = t[m.start():m.end()]
+        if _SELLER_MARCADOR_COMPRADOR.search(trecho):   # H1B6 → `do X` é o comprador
+            return ""
+        return trecho.strip()[:80]
+    return ""
+
+
 def ma_is_legitimate(text: str, papeis: dict | None = None) -> tuple[bool, str]:
     """M&A legítimo? (item 13). Devolve (ok, motivo_da_rejeicao).
 
@@ -1587,6 +1644,23 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                          rejection_reason=f"sujeito verdadeiro é {terceiro}; "
                                           f"não representa {ev} de {monitored}",
                          attribution_confidence="alta")
+                decisoes.append(d)
+                continue
+        # 3b) VENDEDORA DA TRANSAÇÃO (4I.2 Wave C1)
+        # Roda ANTES do bloco de M&A: se a monitorada é quem vende, o evento
+        # não é dela, qualquer que seja o objeto. Cobre `ma` e `follow_on` —
+        # G245 provou que a mesma estrutura S3 aparece nas duas famílias.
+        # NÃO cria event_id novo: a lacuna de desinvestimento segue aberta.
+        if ev in EVENTOS_MA or ev == "follow_on":
+            _vend = detect_transaction_seller_role(
+                texto, monitored, aliases_por_empresa.get(monitored) or [monitored])
+            if _vend:
+                d.update(scoreable=False, event_scope="direto",
+                         relation_type="vendedora",
+                         attribution_rule="R_MA_PAPEL_VENDEDOR",
+                         rejection_reason=(f"{monitored} é a VENDEDORA nesta transação; "
+                                            f"{ev} pertence ao comprador/emissor "
+                                            f"(\"{_vend}\")"))
                 decisoes.append(d)
                 continue
         # 4) M&A

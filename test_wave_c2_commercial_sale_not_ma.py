@@ -106,11 +106,19 @@ check(obj("Bradesco anuncia aquisição de carteira de crédito do BRB")
 
 print()
 print("=" * 96)
-print("BLOCO D — §22/§23: C1 e C3 intocados")
+print("BLOCO D — §22/§23: C1 e C3 fora do escopo desta wave")
 print("=" * 96)
-check("ma" in pontua("Âmbar Energia conclui a aquisição de 4 hidrelétricas da Cemig em MG",
-                     "Cemig"),
-      "[C1] seller/Cemig CONTINUA errado — fora do escopo desta wave")
+# Esta asserção era um SCOPE LOCK da C2: enquanto o C1 não existisse, Cemig
+# tinha de continuar errada, provando que a C2 não extrapolava. A Wave C1
+# (R_MA_PAPEL_VENDEDOR) corrigiu o caso, então a premissa expirou. O que a
+# asserção protege agora é o mesmo em espírito: a correção da Cemig NÃO vem
+# do guard de objeto comercial da C2, e sim do papel de vendedora.
+_CEMIG = "Âmbar Energia conclui a aquisição de 4 hidrelétricas da Cemig em MG"
+check("ma" not in pontua(_CEMIG, "Cemig"),
+      "[C1] seller/Cemig corrigida pela Wave C1")
+check(sa.detect_transaction(_CEMIG)["transaction_object"] not in
+      ("aeronaves", "pedido_comercial"),
+      "[C1b] …e NÃO pelo guard de objeto comercial da C2 — waves independentes")
 check("ma" in pontua("Usiminas: Cade aprova aquisição de fatia da Nippon e Mitsubishi "
                      "pela Ternium", "Usiminas"),
       "[C3] shareholder/Usiminas CONTINUA errado — fora do escopo")
