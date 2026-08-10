@@ -671,7 +671,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T01:53:24.842459+00:00"
+     "last_checked_at": "2026-08-10T07:21:10.407661+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2540,7 +2540,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T01:53:25.242722+00:00"
+     "last_checked_at": "2026-08-10T07:21:10.807911+00:00"
     }
    ],
    "corrob_sources": [
@@ -9870,7 +9870,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T01:53:25.643024+00:00"
+     "last_checked_at": "2026-08-10T07:21:11.208186+00:00"
     },
     {
      "source": "Demarest",
@@ -9890,7 +9890,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T01:53:26.043325+00:00"
+     "last_checked_at": "2026-08-10T07:21:11.608515+00:00"
     }
    ],
    "corrob_sources": [
@@ -11473,7 +11473,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T01:53:26.443579+00:00"
+     "last_checked_at": "2026-08-10T07:21:12.008757+00:00"
     }
    ],
    "corrob_sources": [
@@ -15121,7 +15121,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T01:53:27.014827+00:00"
+     "last_checked_at": "2026-08-10T07:21:12.562684+00:00"
     }
    ],
    "corrob_sources": [
@@ -17674,7 +17674,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T01:53:27.571101+00:00"
+     "last_checked_at": "2026-08-10T07:21:13.141298+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -17780,7 +17780,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T01:53:28.151617+00:00"
+     "last_checked_at": "2026-08-10T07:21:13.703711+00:00"
     },
     {
      "source": "Moomoo",
@@ -19122,7 +19122,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T01:53:28.856490+00:00"
+     "last_checked_at": "2026-08-10T07:21:14.419587+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19165,7 +19165,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T01:53:29.533392+00:00"
+     "last_checked_at": "2026-08-10T07:21:15.118085+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19989,7 +19989,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T01:53:30.112958+00:00",
+     "last_checked_at": "2026-08-10T07:21:15.696424+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20014,7 +20014,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T01:53:30.688824+00:00",
+     "last_checked_at": "2026-08-10T07:21:16.250032+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21134,7 +21134,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-10T01:53:31.089155+00:00",
+     "last_checked_at": "2026-08-10T07:21:16.650280+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21199,7 +21199,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-10T01:53:31.489408+00:00",
+     "last_checked_at": "2026-08-10T07:21:17.050518+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22288,7 +22288,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T01:53:32.071685+00:00"
+     "last_checked_at": "2026-08-10T07:21:17.610903+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22373,7 +22373,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T01:53:32.629750+00:00"
+     "last_checked_at": "2026-08-10T07:21:18.168461+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24123,7 +24123,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T01:53:33.185537+00:00",
+     "last_checked_at": "2026-08-10T07:21:18.734710+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24293,7 +24293,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T01:53:33.750441+00:00",
+     "last_checked_at": "2026-08-10T07:21:19.296542+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -38336,7 +38336,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T01:53:34.406773+00:00"
+     "last_checked_at": "2026-08-10T07:21:19.952873+00:00"
     }
    ],
    "corrob_sources": [
@@ -41407,7 +41407,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T01:53:35.000034+00:00"
+     "last_checked_at": "2026-08-10T07:21:20.538254+00:00"
     },
     {
      "source": "Virginia Business",
@@ -41450,7 +41450,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T01:53:35.561443+00:00"
+     "last_checked_at": "2026-08-10T07:21:21.091913+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48206,7 +48206,9 @@
       "source_record_id": "https://stocktwits.com/news-articles/markets/equity/applovin-rises-5-premarket-after-citigroup-recommends-buying-the-stock/ch6PfUIR3hP"
      }
     ]
-   }
+   },
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.bloomberg.com/news/articles/2026-04-21/capital-one-boosts-provision-for-bad-loans-misses-estimates": {
    "title": "Capital One Boosts Provision for Bad Loans, Misses Estimates",
@@ -48681,7 +48683,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1786326799,
-   "cap_iso": "2026-08-09 22:53"
+   "cap_iso": "2026-08-09 22:53",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMilAFBVV95cUxQajNNeFNXUTAwUHdxS2s2Ti1Hck5ub3FZWWdBQUc3NmtwR0E1NkxSVFpCbXdMckZNR3VNOXFtcE5HTkNPNEhCNjRkU3RBTGRqQXUxbmdRS1dSbnYtM0ZHRmxKWHgwWHhsVlNQVnFJZHpIX3VZbk9EMWwwVlFTMDF6X252UjRLWTNUWGs4NHdOQmlDMjBW?oc=5": {
    "title": "Addiante pede a falência da Ambipar por dívida de R$ 187 milhões",
@@ -48939,9 +48943,63 @@
    ],
    "captured_ts": 1786326799,
    "cap_iso": "2026-08-09 22:53"
+  },
+  "https://news.google.com/rss/articles/CBMioAFBVV95cUxOY1JyYXZHMUFsYnVQUmVQbUNManlMZUw5QnVSYjVwY1IxWVlEMTNHbndVOGVnOFd3bjhuVXQwRGxDdVNmdTJxeVZIQzFIMEp4OVlNWHpQU0p1UEt6X3JOckpKa1RKVkNGa0hzZ19MTDhnelB6N2h3VjJTTGNwamozcUFncnZXdHJHbmh6WDZPRmMyeExVNUZQc3dTZWZ4ZGVD?oc=5": {
+   "title": "Ford Most Exposed To First Brands Bankruptcy Aftermath",
+   "url": "https://gmauthority.com/blog/2026/03/ford-not-gm-most-exposed-to-first-brands-bankruptcy-aftermath/",
+   "summary": "Ford Most Exposed To First Brands Bankruptcy Aftermath &nbsp;&nbsp; gmauthority.com",
+   "source": "gmauthority.com",
+   "domain": "gmauthority.com",
+   "pub_ts": 1772524800,
+   "pub_iso": "2026-03-03 05:00",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1786346466,
+   "cap_iso": "2026-08-10 04:21"
+  },
+  "https://www.britannica.com/money/General-Motors-Corporation": {
+   "title": "General Motors (GM) | History, Growth, Bankruptcy, & Recovery",
+   "url": "https://www.britannica.com/money/General-Motors-Corporation",
+   "summary": "General Motors (GM) | History, Growth, Bankruptcy, & Recovery &nbsp;&nbsp; Encyclopedia Britannica",
+   "source": "Encyclopedia Britannica",
+   "domain": "britannica.com",
+   "pub_ts": 1786086000,
+   "pub_iso": "2026-08-07 04:00",
+   "language": "pt",
+   "companies": [
+    "General Motors"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "mention_roles": {
+    "General Motors": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "General Motors": [
+     "falencia"
+    ]
+   },
+   "companies_attributed": [
+    "General Motors"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786346466,
+   "cap_iso": "2026-08-10 04:21"
   }
  },
- "run_count": 90,
+ "run_count": 91,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -53954,15 +54012,31 @@
   "https://news.google.com/rss/articles/CBMilAJBVV95cUxQVGluLUxBa1FhaGo1TllValFtNm5yNlVGY05EbU1HM1hSbE10Ymo3a3Z5Vk5USjFiNjhEVEk5aGxCREVQV19ILWF4WWJKSzV3T1JMMlRpWThUZWtEUm41WlIzOVZ3Tms0NllqTXlQLVZoNWpmM3VybDZrdWpBekFBYkwxdEl4cXNLLVQ4bXA3MWVrTGNwQWtXVGVhX19tOWFnWWN5bk9yU1FtN0hnUG5sUzFqQjBLNTJ4SHE5R3NTLTc0Z09NSkdqLXpPZWkzU0V1ZmRZYjhMN0N6cHhpX3Q3Y0EyNEhub0l2Z2hQbVJ5X1hoeHZZS2FnLVVuZUV2LVExckhNcFFpWDBYdW5tVVRnUGJMOXU?oc=5": {
    "url": "https://timesbrasil.com.br/empresas-e-negocios/alvo-de-pedido-de-falencia-refit-acumula-r-257-bilhoes-em-debitos-de-impostos-e-entra-na-mira-de-projeto-contra-devedores-contumazes-no-rj/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNdTJ2eC1vdHZwZWtQbUk5SVJNbmJPbUxJVVlwVnVCWkIyeUFhbGVOTzF0U1liQXBkRkdlQUlxdkc2c09iVHh4U1dELXRTTFdET2d5cWVoNFpvVjB0TmpmV2JsQ2N2VV9sVnBMVzJxTTFCZEQweGF3ZXV1SU5QanZIeTU1blpXTE9FNVlvVkw4ZlBZUmZFMVd4V1pUa2U2eFpkeVNRYmtZOVlXdw?oc=5": {
+   "url": "https://www.df.cl/empresas/industria/salmones-camanchaca-retoma-operaciones-tras-levantamiento-del-paro-de",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMimgFBVV95cUxOS3cza0U3UmFIVjlieWEza1d6YUN1LVpmUmZzdlhnaUw2dkkzUGVpcm9NX1Rzb1RFODlGa1pBdjg5Z1NaS3d2aGstNDl4SjJKdmtCNlc4M2JKUmxRY1FTTjFfMzBPVzBlVVdZYnQ0VzFOWXhVQ194U2ctbk5LU0VMTUJBUjgtVG5WdTdQNm5TTE1nOEtGWHcza253?oc=5": {
+   "url": "https://www.diariousach.cl/latam-confirma-que-salio-del-proceso-de-quiebra-al-que-se-acogio-en",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMia0FVX3lxTE1xY1NneDdOcnY0dGZXVklHaGtFbHI4cGV5M3Zyd0IzZG9zRnFPYUVrTjVrLVNnWlp2ODhJdXdEbnZYT3lOZnRvZ3Jyb2JXRTROam1BbVlHU1QtR0lfTlNFLXhCWFY2cjB0eE13?oc=5": {
+   "url": "https://www.britannica.com/money/General-Motors-Corporation",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMioAFBVV95cUxOY1JyYXZHMUFsYnVQUmVQbUNManlMZUw5QnVSYjVwY1IxWVlEMTNHbndVOGVnOFd3bjhuVXQwRGxDdVNmdTJxeVZIQzFIMEp4OVlNWHpQU0p1UEt6X3JOckpKa1RKVkNGa0hzZ19MTDhnelB6N2h3VjJTTGNwamozcUFncnZXdHJHbmh6WDZPRmMyeExVNUZQc3dTZWZ4ZGVD?oc=5": {
+   "url": "https://gmauthority.com/blog/2026/03/ford-not-gm-most-exposed-to-first-brands-bankruptcy-aftermath/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786326858,
-  "iso": "09 ago 2026 · 22:54 BRT",
+  "ts": 1786346520,
+  "iso": "10 ago 2026 · 04:22 BRT",
   "status": {
    "Engie Brasil": {
     "status": "atencao",
-    "score": 71
+    "score": 70
    },
    "Rumo": {
     "status": "atencao",
@@ -53970,15 +54044,19 @@
    },
    "Vale": {
     "status": "atencao",
-    "score": 58
+    "score": 57
    },
    "Tok&Stok": {
     "status": "critico",
     "score": 53
    },
+   "General Motors": {
+    "status": "critico",
+    "score": 53
+   },
    "Santander Brasil": {
     "status": "atencao",
-    "score": 48
+    "score": 47
    },
    "Samarco Mineração": {
     "status": "critico",
@@ -54002,11 +54080,11 @@
    },
    "Sabesp": {
     "status": "monitorar",
-    "score": 34
+    "score": 33
    },
    "JBS": {
     "status": "atencao",
-    "score": 30
+    "score": 29
    },
    "Yobel": {
     "status": "monitorar",
@@ -54014,7 +54092,7 @@
    },
    "Banco do Brasil": {
     "status": "atencao",
-    "score": 28
+    "score": 27
    },
    "Baker Hughes": {
     "status": "monitorar",
@@ -54044,11 +54122,11 @@
     "status": "monitorar",
     "score": 21
    },
-   "Lojas Renner": {
-    "status": "monitorar",
-    "score": 20
-   },
    "Embraer": {
+    "status": "monitorar",
+    "score": 19
+   },
+   "Lojas Renner": {
     "status": "monitorar",
     "score": 19
    },
@@ -54116,15 +54194,15 @@
     "status": "monitorar",
     "score": 7
    },
-   "Pemex (Petróleos Mexicanos)": {
-    "status": "monitorar",
-    "score": 7
-   },
    "Localiza": {
     "status": "monitorar",
     "score": 6
    },
    "Halliburton": {
+    "status": "monitorar",
+    "score": 6
+   },
+   "Pemex (Petróleos Mexicanos)": {
     "status": "monitorar",
     "score": 6
    },
@@ -54143,10 +54221,6 @@
    "Caixa Seguridade": {
     "status": "monitorar",
     "score": 5
-   },
-   "Hapvida": {
-    "status": "monitorar",
-    "score": 3
    },
    "Tupy": {
     "status": "monitorar",
@@ -54169,10 +54243,6 @@
     "score": 0
    },
    "Vibra Energia": {
-    "status": "monitorar",
-    "score": 0
-   },
-   "General Motors": {
     "status": "monitorar",
     "score": 0
    },
