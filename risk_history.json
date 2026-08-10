@@ -3758,9 +3758,7 @@
     "ma"
    ],
    "events_by_company": {
-    "Cemig": [
-     "ma"
-    ]
+    "Cemig": []
    },
    "mention_roles": {
     "Cemig": {
@@ -3771,10 +3769,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Cemig"
    ],
-   "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "original_url": "https://agenciainfra.com/blog/ambar-energia-conclui-a-aquisicao-de-4-hidreletricas-da-cemig-em-mg/",
@@ -3791,7 +3789,72 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.621772+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.621772+00:00",
+   "event_assessments": [
+    {
+     "company": "Cemig",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Cemig",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_PAPEL_VENDEDOR",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "Cemig é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"ambar energia conclui a aquisicao de 4 hidreletricas da cemig\")",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Cemig",
+     "event_id": "ma",
+     "event_id_corrigido": "",
+     "regra": "R_MA_PAPEL_VENDEDOR",
+     "motivo": "Cemig é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"ambar energia conclui a aquisicao de 4 hidreletricas da cemig\")",
+     "subject_company": "Cemig"
+    }
+   ],
+   "informational_events_by_company": {
+    "Cemig": [
+     {
+      "company": "Cemig",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Cemig",
+      "monitored_company": "Cemig",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_PAPEL_VENDEDOR",
+      "attribution_confidence": "media",
+      "title": "Âmbar Energia conclui a aquisição de 4 hidrelétricas da Cemig em MG",
+      "url": "https://agenciainfra.com/blog/ambar-energia-conclui-a-aquisicao-de-4-hidreletricas-da-cemig-em-mg/",
+      "pub_ts": 1760598000,
+      "observation": "Cemig é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"ambar energia conclui a aquisicao de 4 hidreletricas da cemig\")",
+      "source_record_id": "https://agenciainfra.com/blog/ambar-energia-conclui-a-aquisicao-de-4-hidreletricas-da-cemig-em-mg/"
+     }
+    ]
+   }
   },
   "https://canalve.com.br/weg-anuncia-aquisicao-54-capital-social-tupi-mob/": {
    "title": "WEG anuncia aquisição de 54% do capital social da Tupi Mob",
@@ -4136,9 +4199,7 @@
     "ma"
    ],
    "events_by_company": {
-    "Copel": [
-     "ma"
-    ]
+    "Copel": []
    },
    "mention_roles": {
     "Copel": {
@@ -4149,10 +4210,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Copel"
    ],
-   "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "corroborations": [],
@@ -4171,7 +4232,72 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.622000+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.622000+00:00",
+   "event_assessments": [
+    {
+     "company": "Copel",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Copel",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "alvo",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_PAPEL_VENDEDOR",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "Copel é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"mattos filho assessora energo-pro na aquisicao do cebi da copel\")",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Copel",
+     "event_id": "ma",
+     "event_id_corrigido": "",
+     "regra": "R_MA_PAPEL_VENDEDOR",
+     "motivo": "Copel é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"mattos filho assessora energo-pro na aquisicao do cebi da copel\")",
+     "subject_company": "Copel"
+    }
+   ],
+   "informational_events_by_company": {
+    "Copel": [
+     {
+      "company": "Copel",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Copel",
+      "monitored_company": "Copel",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_PAPEL_VENDEDOR",
+      "attribution_confidence": "media",
+      "title": "Mattos Filho assessora Energo-Pro na aquisição do CEBI da Copel",
+      "url": "https://www.migalhas.com.br/quentes/442948/mattos-filho-assessora-energo-pro-na-aquisicao-do-cebi-da-copel",
+      "pub_ts": 1761202800,
+      "observation": "Copel é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"mattos filho assessora energo-pro na aquisicao do cebi da copel\")",
+      "source_record_id": "https://www.migalhas.com.br/quentes/442948/mattos-filho-assessora-energo-pro-na-aquisicao-do-cebi-da-copel"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMiygFBVV95cUxNSnVqbjZteFJPMHlNX2toTkxocXpmSnZKbUxkUGFxOXNJZmY4M3VHbHBLNGo1NTRrNV90UzFPWF9hRTZndEIyckx0TzQwSUo0anNkN0RVQW8xaEdleFBHSENYdE9xMHl2ekhIcWlZMEJqaUQ3eUo0Q1g5aHhhOVZRVDk2YkFlREh2bU1oM0diOUNUR1ViSW9YTWJadGxjV2xkdHdhekMtQXBwU3lHWklpN0RaVnduc0U1ZkxXMmNkYnd4N2NzVllfaUxR0gHPAUFVX3lxTFA1V2Z0SWhyUHZPYXVHZ3hya1JsN242M2VibXh5MnFBT19JUjBsNDVrYlBDcmlNMDRXLW5RcXh0NW1pS3JGcExKNFNFdzd1TWdkUzRzQXAzbTkxTTM3Qi1rZEdHV05heWgxbUlISGRydVlWOGdpM1I2cTI4X202b0lueU1rYzlYcXhOTndwUUNBZkZtMWhiQ19sbm1hOHlkeVdodlU0R2JpdWhKWGloT3Y2bEFxYXljdWJWLXprYkxPRWNuMmdVLXU3TGRmMjFsaw?oc=5": {
    "title": "Presidente da Caixa não descarta nova oferta de ações para braço de seguridade",
@@ -6101,9 +6227,7 @@
     "follow_on"
    ],
    "events_by_company": {
-    "BTG Pactual": [
-     "follow_on"
-    ],
+    "BTG Pactual": [],
     "Eneva": [
      "follow_on"
     ]
@@ -6125,10 +6249,11 @@
     }
    },
    "companies_attributed": [
-    "BTG Pactual",
     "Eneva"
    ],
-   "context_companies": [],
+   "context_companies": [
+    "BTG Pactual"
+   ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "corroborations": [],
@@ -6147,7 +6272,95 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.623781+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.623781+00:00",
+   "event_assessments": [
+    {
+     "company": "BTG Pactual",
+     "event_id": "follow_on",
+     "assessed_by": "semantic_audit",
+     "subject_company": "BTG Pactual",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_PAPEL_VENDEDOR",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "BTG Pactual é a VENDEDORA nesta transação; follow_on pertence ao comprador/emissor (\"anuncia compra de termicas do btg\")",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    },
+    {
+     "company": "Eneva",
+     "event_id": "follow_on",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Eneva",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "compradora",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "",
+     "attribution_confidence": "media",
+     "scoreable": true,
+     "rejection_reason": "",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "BTG Pactual",
+     "event_id": "follow_on",
+     "event_id_corrigido": "",
+     "regra": "R_MA_PAPEL_VENDEDOR",
+     "motivo": "BTG Pactual é a VENDEDORA nesta transação; follow_on pertence ao comprador/emissor (\"anuncia compra de termicas do btg\")",
+     "subject_company": "BTG Pactual"
+    }
+   ],
+   "informational_events_by_company": {
+    "BTG Pactual": [
+     {
+      "company": "BTG Pactual",
+      "event_id": "follow_on",
+      "event_label": "follow on",
+      "subject_company": "BTG Pactual",
+      "monitored_company": "BTG Pactual",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_PAPEL_VENDEDOR",
+      "attribution_confidence": "media",
+      "title": "Eneva (ENEV3) anuncia compra de térmicas do BTG e follow on de até R$ 4,2 bilhões",
+      "url": "https://www.moneytimes.com.br/eneva-enev3-anuncia-compra-de-participacoes-em-termicas-do-btg-e-follow-on-bilionario-vinp/",
+      "pub_ts": 1763366400,
+      "observation": "BTG Pactual é a VENDEDORA nesta transação; follow_on pertence ao comprador/emissor (\"anuncia compra de termicas do btg\")",
+      "source_record_id": "https://www.moneytimes.com.br/eneva-enev3-anuncia-compra-de-participacoes-em-termicas-do-btg-e-follow-on-bilionario-vinp/"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMihAFBVV95cUxOUVY3RC1CME96aFI2Y1Y1X2sxRzhaMEYzc21NclRTQkFycjMwaDBMaFB1Q3Rlbldwa2pwaWNMSndlZnA0U2xLYWFrY0dfSlNrNzByYzMwT3FfVzdKaHB4SlRwbnZtTnctbzhjZ3BYVnZ4T1JnV1B0S2gtZk5mZDR0bVI5QWw?oc=5": {
    "title": "The most important chart in AI today? Oracle’s default swaps blow out",
@@ -18208,9 +18421,7 @@
     "ma"
    ],
    "events_by_company": {
-    "Duke Energy": [
-     "ma"
-    ]
+    "Duke Energy": []
    },
    "mention_roles": {
     "Duke Energy": {
@@ -18221,10 +18432,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Duke Energy"
    ],
-   "context_companies": [],
    "corroborations": [
     {
      "source": "Marcellus Drilling News",
@@ -18286,7 +18497,72 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.635499+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.635499+00:00",
+   "event_assessments": [
+    {
+     "company": "Duke Energy",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Duke Energy",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_PAPEL_VENDEDOR",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "Duke Energy é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"spire completes acquisition of tennessee piedmont natural gas business from duke\")",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Duke Energy",
+     "event_id": "ma",
+     "event_id_corrigido": "",
+     "regra": "R_MA_PAPEL_VENDEDOR",
+     "motivo": "Duke Energy é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"spire completes acquisition of tennessee piedmont natural gas business from duke\")",
+     "subject_company": "Duke Energy"
+    }
+   ],
+   "informational_events_by_company": {
+    "Duke Energy": [
+     {
+      "company": "Duke Energy",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Duke Energy",
+      "monitored_company": "Duke Energy",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_PAPEL_VENDEDOR",
+      "attribution_confidence": "media",
+      "title": "Spire completes acquisition of Tennessee Piedmont Natural Gas business from Duke Energy",
+      "url": "https://www.prnewswire.com/news-releases/spire-completes-acquisition-of-tennessee-piedmont-natural-gas-business-from-duke-energy-302730161.html",
+      "pub_ts": 1774940400,
+      "observation": "Duke Energy é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"spire completes acquisition of tennessee piedmont natural gas business from duke\")",
+      "source_record_id": "https://www.prnewswire.com/news-releases/spire-completes-acquisition-of-tennessee-piedmont-natural-gas-business-from-duke-energy-302730161.html"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMipgFBVV95cUxOeElveTBrWG8wbXQ2bXhHUVJrbjBtNWdwX05Ea2R5SGYwOEVmSU80d2VDbGdjMTFvNHhtZFV2VmtNZlltb0ttblk4eTVWQS11VThVOG9VOW9KNnJyZ3BFa1lnc2JoZlpJS2RuN1pEcnZWeTZCS2txZHVTN1MzV2Y1QmVzT3lRRkpPZ2tKczYzMmk4YnVDc2V4a0ZtWFZzQU1JUmVyeUpR?oc=5": {
    "title": "More Casino Mergers & Acquisitions Expected Amid Caesars Takeover Bid",
@@ -23129,14 +23405,77 @@
     }
    },
    "events_by_company": {
-    "Energisa": [
-     "ma"
-    ]
+    "Energisa": []
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Energisa"
    ],
-   "context_companies": []
+   "event_assessments": [
+    {
+     "company": "Energisa",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Energisa",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_PAPEL_VENDEDOR",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "Energisa é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"transmissora alianca de energia eletrica anuncia aquisicao de ativos da energisa\")",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Energisa",
+     "event_id": "ma",
+     "event_id_corrigido": "",
+     "regra": "R_MA_PAPEL_VENDEDOR",
+     "motivo": "Energisa é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"transmissora alianca de energia eletrica anuncia aquisicao de ativos da energisa\")",
+     "subject_company": "Energisa"
+    }
+   ],
+   "informational_events_by_company": {
+    "Energisa": [
+     {
+      "company": "Energisa",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Energisa",
+      "monitored_company": "Energisa",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_PAPEL_VENDEDOR",
+      "attribution_confidence": "media",
+      "title": "Transmissora Aliança de Energia Elétrica anuncia aquisição de ativos da Energisa",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOOGdGS2w4bEpIa19aa0VCc2tsUG80aUdWNm9lZEhQQ1pjNVg4YkVnV09CdkhQMnltUC1ZLXpQWi0wYjVNbkJOOFE0UVp1QTRJVGFtYTRpM0FZRVZ3TFY1cXc0ZjBRbmpkT0NrdUd4V0NvUm94b0dWbF95UUJsZkdHSXBzTnhuWGFsa3I4T2hhSVdZM1kxcW1jRjBiMTNwSm52WGRUdVhpbUFQSjJSdUdYNUhBVlI?oc=5",
+      "pub_ts": 1779346800,
+      "observation": "Energisa é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"transmissora alianca de energia eletrica anuncia aquisicao de ativos da energisa\")",
+      "source_record_id": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOOGdGS2w4bEpIa19aa0VCc2tsUG80aUdWNm9lZEhQQ1pjNVg4YkVnV09CdkhQMnltUC1ZLXpQWi0wYjVNbkJOOFE0UVp1QTRJVGFtYTRpM0FZRVZ3TFY1cXc0ZjBRbmpkT0NrdUd4V0NvUm94b0dWbF95UUJsZkdHSXBzTnhuWGFsa3I4T2hhSVdZM1kxcW1jRjBiMTNwSm52WGRUdVhpbUFQSjJSdUdYNUhBVlI?oc=5"
+     }
+    ]
+   }
   },
   "https://agfeed.com.br/negocios/justica-do-mato-grosso-mantem-aquisicao-de-fazenda-bilionaria-por-banco-do-btg/": {
    "title": "Justiça do Mato Grosso mantém aquisição de fazenda bilionária por banco do BTG",
@@ -34966,9 +35305,7 @@
     "ma"
    ],
    "events_by_company": {
-    "Energisa": [
-     "ma"
-    ]
+    "Energisa": []
    },
    "mention_roles": {
     "Energisa": {
@@ -34979,10 +35316,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Energisa"
    ],
-   "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "corroborations": [],
@@ -35001,7 +35338,72 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.653315+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.653315+00:00",
+   "event_assessments": [
+    {
+     "company": "Energisa",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Energisa",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_PAPEL_VENDEDOR",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "Energisa é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"taesa aprova aquisicao de cinco transmissoras da energisa\")",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Energisa",
+     "event_id": "ma",
+     "event_id_corrigido": "",
+     "regra": "R_MA_PAPEL_VENDEDOR",
+     "motivo": "Energisa é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"taesa aprova aquisicao de cinco transmissoras da energisa\")",
+     "subject_company": "Energisa"
+    }
+   ],
+   "informational_events_by_company": {
+    "Energisa": [
+     {
+      "company": "Energisa",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Energisa",
+      "monitored_company": "Energisa",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_PAPEL_VENDEDOR",
+      "attribution_confidence": "media",
+      "title": "Taesa aprova aquisição de cinco transmissoras da Energisa por R$ 1,5 bi",
+      "url": "https://agenciainfra.com/blog/taesa-aprova-aquisicao-de-cinco-transmissoras-da-energisa-por-15-bilhoes/",
+      "pub_ts": 1784154905,
+      "observation": "Energisa é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"taesa aprova aquisicao de cinco transmissoras da energisa\")",
+      "source_record_id": "https://agenciainfra.com/blog/taesa-aprova-aquisicao-de-cinco-transmissoras-da-energisa-por-15-bilhoes/"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMiqwJBVV95cUxON1JTODdGZ2VlRzJ5TktMeldmUWU3SmZwYURuZ2R4dTctU21TZWxoRlhXYUVENGk3Vk5Db3VDTVpKTzgwMVotNE0yc3JlYnFOYWJySTA0ZXBqT3JUbWdTTjNPMnJIZlI3Vk5CV2hhQmxFR05MZy1wV25YY2FFOEZ6dVlrT2l2VzdSbmMtRkJVdDl6XzF4UFp1TGpkRXc5dHgxWHpKNmRlMTFqa24xNkNxamRfYnV5SGQyWlVtSUEwRmI0UDExMUg4OWM3MERkV3FPOWk1TUdjbEVNcDNhLW1mUllsMUgyQUcyT3FSU1kweFZkdWRVSDJPTHRrNU9PeGdVRVA4eENGTExvdm5OOTVZNWtXMzVNR1VqbjBEbXI3NFVkR2ZkaXNTTUFfSQ?oc=5": {
    "title": "Decretada falência de fabricante de móveis da Serra após plano de recuperação judicial ser rejeitado",
@@ -46415,16 +46817,79 @@
     }
    },
    "events_by_company": {
-    "Energisa": [
-     "ma"
-    ]
+    "Energisa": []
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Energisa"
    ],
-   "context_companies": [],
    "captured_ts": 1785845977,
-   "cap_iso": "2026-08-04 09:19"
+   "cap_iso": "2026-08-04 09:19",
+   "event_assessments": [
+    {
+     "company": "Energisa",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Energisa",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_PAPEL_VENDEDOR",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "Energisa é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"transmissora alianca de energia eletrica anuncia aquisicao de ativos da energisa\")",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Energisa",
+     "event_id": "ma",
+     "event_id_corrigido": "",
+     "regra": "R_MA_PAPEL_VENDEDOR",
+     "motivo": "Energisa é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"transmissora alianca de energia eletrica anuncia aquisicao de ativos da energisa\")",
+     "subject_company": "Energisa"
+    }
+   ],
+   "informational_events_by_company": {
+    "Energisa": [
+     {
+      "company": "Energisa",
+      "event_id": "ma",
+      "event_label": "ma",
+      "subject_company": "Energisa",
+      "monitored_company": "Energisa",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_PAPEL_VENDEDOR",
+      "attribution_confidence": "media",
+      "title": "Transmissora Aliança de Energia Elétrica anuncia aquisição de ativos da Energisa",
+      "url": "https://www.clubefii.com.br/noticias/acoes/transmissora-alianca-energia-eletrica-anuncia-aquisicao-ativos-energisa",
+      "pub_ts": 1779346800,
+      "observation": "Energisa é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"transmissora alianca de energia eletrica anuncia aquisicao de ativos da energisa\")",
+      "source_record_id": "https://www.clubefii.com.br/noticias/acoes/transmissora-alianca-energia-eletrica-anuncia-aquisicao-ativos-energisa"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMijwFBVV95cUxPc0ZzampMWlZDRlNNMFhaS1dUUjNqdjBKOUQtSFRkakhMbFYycmVxU0N2NnZoZGppa2ZxTUF0bFltNTRjWDRvRGhodEk3TEF4dENOR0NYRzNabUtkSGhuSWpqbXJmNkY0Rkg1eS1tZ1J2ZzFxdmFHZDNnT0RKdU04eG9KcjlrektFYVR0RXc5cw?oc=5": {
    "title": "JPMorgan poderia gastar até US$ 20 bilhões em aquisição, diz Jamie Dimon",
@@ -54431,8 +54896,8 @@
   }
  },
  "last_run": {
-  "ts": 1786381813,
-  "iso": "10 ago 2026 · 14:10 BRT",
+  "ts": 1786383861,
+  "iso": "10 ago 2026 · 14:44 BRT",
   "status": {
    "Engie Brasil": {
     "status": "atencao",
@@ -54473,10 +54938,6 @@
    "Cosan": {
     "status": "monitorar",
     "score": 36
-   },
-   "Energisa": {
-    "status": "atencao",
-    "score": 34
    },
    "Sabesp": {
     "status": "monitorar",
@@ -54558,6 +55019,10 @@
     "status": "monitorar",
     "score": 15
    },
+   "Energisa": {
+    "status": "monitorar",
+    "score": 15
+   },
    "Eneva": {
     "status": "monitorar",
     "score": 14
@@ -54598,10 +55063,6 @@
     "status": "monitorar",
     "score": 6
    },
-   "Halliburton": {
-    "status": "monitorar",
-    "score": 6
-   },
    "Pemex (Petróleos Mexicanos)": {
     "status": "monitorar",
     "score": 6
@@ -54619,6 +55080,10 @@
     "score": 5
    },
    "Caixa Seguridade": {
+    "status": "monitorar",
+    "score": 5
+   },
+   "Halliburton": {
     "status": "monitorar",
     "score": 5
    },
@@ -54703,5 +55168,5 @@
  "semantic_reclassified_at": "2026-07-30T21:07:47.714609+00:00",
  "semantic_version": "1.0",
  "links_repaired_at": "2026-07-31T05:45:56.701137+00:00",
- "reclassify_only_applied_at": "2026-08-10T11:44:06.838236+00:00"
+ "reclassify_only_applied_at": "2026-08-10T17:44:21.107750+00:00"
 }
