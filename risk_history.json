@@ -26457,9 +26457,7 @@
     "ma"
    ],
    "events_by_company": {
-    "Embraer": [
-     "ma"
-    ]
+    "Embraer": []
    },
    "mention_roles": {
     "Embraer": {
@@ -26470,10 +26468,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Embraer"
    ],
-   "context_companies": [],
    "corroborations": [
     {
      "source": "AEROIN",
@@ -26513,7 +26511,72 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.643440+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.643440+00:00",
+   "event_assessments": [
+    {
+     "company": "Embraer",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Embraer",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "pedido_comercial",
+     "transaction_scope": "capex",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "neutra",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "objeto_nao_empresarial:pedido_comercial",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Embraer",
+     "event_id": "ma",
+     "event_id_corrigido": "aquisicao_capex",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "objeto_nao_empresarial:pedido_comercial",
+     "subject_company": "Embraer"
+    }
+   ],
+   "informational_events_by_company": {
+    "Embraer": [
+     {
+      "company": "Embraer",
+      "event_id": "aquisicao_capex",
+      "event_label": "aquisicao capex",
+      "subject_company": "Embraer",
+      "monitored_company": "Embraer",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "aquisicao_capex",
+      "transaction_scope": "capex",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Aquisição da Grécia pode adicionar US$ 690 milhões à carteira da Embraer",
+      "url": "https://valor.globo.com/empresas/noticia/2026/06/11/aquisicao-da-grecia-pode-adicionar-us-690-milhoes-a-carteira-da-embraer.ghtml",
+      "pub_ts": 1781161200,
+      "observation": "objeto_nao_empresarial:pedido_comercial",
+      "source_record_id": "https://valor.globo.com/empresas/noticia/2026/06/11/aquisicao-da-grecia-pode-adicionar-us-690-milhoes-a-carteira-da-embraer.ghtml"
+     }
+    ]
+   }
   },
   "https://braziljournal.com/engie-faz-follow-on-de-r-83-bilhoes-para-comprar-fatia-em-jirau-e-desalavancar/": {
    "title": "Engie faz follow-on de R$ 8,3 bilhões para comprar fatia em Jirau e desalavancar",
@@ -42483,18 +42546,81 @@
     }
    },
    "events_by_company": {
-    "Embraer": [
-     "ma"
-    ]
+    "Embraer": []
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Embraer"
    ],
-   "context_companies": [],
    "captured_ts": 1785645374,
    "cap_iso": "2026-08-02 01:36",
    "corroborations": [],
-   "corrob_sources": []
+   "corrob_sources": [],
+   "event_assessments": [
+    {
+     "company": "Embraer",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Embraer",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "aeronaves",
+     "transaction_scope": "capex",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "neutra",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "objeto_nao_empresarial:aeronaves",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Embraer",
+     "event_id": "ma",
+     "event_id_corrigido": "aquisicao_capex",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "objeto_nao_empresarial:aeronaves",
+     "subject_company": "Embraer"
+    }
+   ],
+   "informational_events_by_company": {
+    "Embraer": [
+     {
+      "company": "Embraer",
+      "event_id": "aquisicao_capex",
+      "event_label": "aquisicao capex",
+      "subject_company": "Embraer",
+      "monitored_company": "Embraer",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "aquisicao_capex",
+      "transaction_scope": "capex",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Grécia investirá 600 milhões de euros na aquisição dos três Embraer KC-390 Millennium",
+      "url": "https://forcaaerea.com.br/grecia-investira-600-milhoes-de-euros-na-aquisicao-dos-tres-embraer-kc-390-millennium/",
+      "pub_ts": 1785441642,
+      "observation": "objeto_nao_empresarial:aeronaves",
+      "source_record_id": "https://forcaaerea.com.br/grecia-investira-600-milhoes-de-euros-na-aquisicao-dos-tres-embraer-kc-390-millennium/"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMijgFBVV95cUxQSnVjQ0tjRVdtQk9kMThERUFzNjJpUm5nR1VPQldCdG5Gd0dqODV0QkRYYUZxSVNjZHRpbDdFRzVmR0hmejRad3Yzc1ZIUlZXVEpBTTZwQzNlb0xMaDNDVlZKZmZMMDZfYVBDTDZLbkNBMXRMNkVTSWpHMHVXWGRaUWlaZ0xvcnFJSmp5WUZ30gGTAUFVX3lxTE8wdDY0RU1wX3Bidm0yUHhLeHFiWFlXREV1V1ZDY1pUbWQ2ZmRaSGFZNmtIcEVsVTE5OEVCMWdOQ0hpOFhjbllMX1RGb2NIS28xRnlaRjNYY3lSYWxQSlNKZjVsUzBianM5UFNtbThucUVkR05fWVZ0MGF0RDVmV190M2V4NHlrdGNFS3V4a3BQS19waw?oc=5": {
    "title": "Justiça nega que BC participe da recuperação judicial da Ambipar",
@@ -54202,8 +54328,8 @@
   }
  },
  "last_run": {
-  "ts": 1786360685,
-  "iso": "10 ago 2026 · 08:18 BRT",
+  "ts": 1786362246,
+  "iso": "10 ago 2026 · 08:44 BRT",
   "status": {
    "Engie Brasil": {
     "status": "atencao",
@@ -54293,10 +54419,6 @@
     "status": "monitorar",
     "score": 21
    },
-   "Embraer": {
-    "status": "monitorar",
-    "score": 19
-   },
    "Lojas Renner": {
     "status": "monitorar",
     "score": 19
@@ -54315,6 +54437,10 @@
    },
    "Ultrapar": {
     "status": "atencao",
+    "score": 16
+   },
+   "Embraer": {
+    "status": "monitorar",
     "score": 16
    },
    "Natura &Co": {
@@ -54474,5 +54600,5 @@
  "semantic_reclassified_at": "2026-07-30T21:07:47.714609+00:00",
  "semantic_version": "1.0",
  "links_repaired_at": "2026-07-31T05:45:56.701137+00:00",
- "reclassify_only_applied_at": "2026-08-10T09:59:34.587915+00:00"
+ "reclassify_only_applied_at": "2026-08-10T11:44:06.838236+00:00"
 }
