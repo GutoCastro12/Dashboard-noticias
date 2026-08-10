@@ -48674,18 +48674,81 @@
     }
    },
    "events_by_company": {
-    "Vale": [
-     "investigacao_regulatoria"
-    ]
+    "Vale": []
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Vale"
    ],
-   "context_companies": [],
    "captured_ts": 1786326799,
    "cap_iso": "2026-08-09 22:53",
    "corroborations": [],
-   "corrob_sources": []
+   "corrob_sources": [],
+   "event_assessments": [
+    {
+     "company": "Vale",
+     "event_id": "investigacao_regulatoria",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Vale",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "indireto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_PAPEL_NAO_SUJEITO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "Vale atua como individual_subject neste texto, não como sujeito do evento",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Vale",
+     "event_id": "investigacao_regulatoria",
+     "event_id_corrigido": "",
+     "regra": "R_PAPEL_NAO_SUJEITO",
+     "motivo": "Vale atua como individual_subject neste texto, não como sujeito do evento",
+     "subject_company": "Vale"
+    }
+   ],
+   "informational_events_by_company": {
+    "Vale": [
+     {
+      "company": "Vale",
+      "event_id": "investigacao_regulatoria",
+      "event_label": "investigacao regulatoria",
+      "subject_company": "Vale",
+      "monitored_company": "Vale",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_PAPEL_NAO_SUJEITO",
+      "attribution_confidence": "media",
+      "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
+      "url": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/",
+      "pub_ts": 1783494000,
+      "observation": "Vale atua como individual_subject neste texto, não como sujeito do evento",
+      "source_record_id": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMilAFBVV95cUxQajNNeFNXUTAwUHdxS2s2Ti1Hck5ub3FZWWdBQUc3NmtwR0E1NkxSVFpCbXdMckZNR3VNOXFtcE5HTkNPNEhCNjRkU3RBTGRqQXUxbmdRS1dSbnYtM0ZHRmxKWHgwWHhsVlNQVnFJZHpIX3VZbk9EMWwwVlFTMDF6X252UjRLWTNUWGs4NHdOQmlDMjBW?oc=5": {
    "title": "Addiante pede a falência da Ambipar por dívida de R$ 187 milhões",
@@ -54031,8 +54094,8 @@
   }
  },
  "last_run": {
-  "ts": 1786346520,
-  "iso": "10 ago 2026 · 04:22 BRT",
+  "ts": 1786355974,
+  "iso": "10 ago 2026 · 06:59 BRT",
   "status": {
    "Engie Brasil": {
     "status": "atencao",
@@ -54071,7 +54134,7 @@
     "score": 37
    },
    "Cosan": {
-    "status": "atencao",
+    "status": "monitorar",
     "score": 36
    },
    "Energisa": {
@@ -54166,15 +54229,15 @@
     "status": "monitorar",
     "score": 14
    },
-   "Cemig": {
-    "status": "atencao",
-    "score": 11
-   },
    "Bradesco": {
     "status": "atencao",
     "score": 11
    },
    "Vamos": {
+    "status": "atencao",
+    "score": 10
+   },
+   "Cemig": {
     "status": "atencao",
     "score": 10
    },
@@ -54303,5 +54366,5 @@
  "semantic_reclassified_at": "2026-07-30T21:07:47.714609+00:00",
  "semantic_version": "1.0",
  "links_repaired_at": "2026-07-31T05:45:56.701137+00:00",
- "reclassify_only_applied_at": "2026-08-10T00:49:34.427402+00:00"
+ "reclassify_only_applied_at": "2026-08-10T09:59:34.587915+00:00"
 }
