@@ -927,7 +927,28 @@ _PAPEL_NAO_SUJEITO = {
     "investigador": [r"{m}\s+(?:abre|abri[óu])\s+(?:una?\s+)?investigaci[óo]n",
                       r"{m}\s+(?:abre|instaura)\s+(?:uma?\s+)?(?:investiga[çc][ãa]o|sindic[âa]ncia)",
                       r"{m}\s+opens?\s+(?:an?\s+)?(?:probe|investigation)"],
+    # 4I.2 Wave B7b-5b — ANALISTA/RECOMENDADOR: a monitorada é a FONTE da
+    # recomendação sobre o ativo de um TERCEIRO, não sujeito do evento.
+    # Vocabulário restrito à construção COMPROVADA no registro real (§4):
+    # nome + verbo de recomendação + OBJETO FINANCEIRO (§12). O objeto é
+    # exigido de propósito — "{m} recommends" sozinho é ambíguo demais.
+    # NÃO inclui `downgrade`/`upgrade`/`rates`/`price target`/`initiates
+    # coverage` nem formas PT/ES: nenhum caso real os justifica, e
+    # `downgrade` colide com rebaixamento de rating de crédito (§13).
+    "analista": [r"{m}\s+recommends?\s+(?:buying|selling)\s+(?:the\s+)?"
+                 r"(?:stock|shares|share)\b"],
 }
+
+# Investigação dirigida à PRÓPRIA monitorada. Tem PRECEDÊNCIA sobre o papel
+# de analista (§6): sujeito formal explícito vence papel lateral, mesmo que
+# a mesma matéria traga uma recomendação de mercado.
+_INVESTIGACAO_PROPRIA = [
+    r"(?:investigation|probe|inquiry)\s+(?:into|against|of|on)\s+(?:the\s+)?{m}",
+    r"{m}\s+(?:faces?|is\s+facing|under)\s+(?:an?\s+)?(?:\w+\s+){{0,2}}"
+    r"(?:probe|investigation|inquiry)",
+    r"(?:investiga(?:ci[óo]n|[çc][ãa]o))\s+(?:\w+\s+){{0,2}}?(?:contra|sobre|a)\s+{m}",
+    r"investiga\s+(?:a\s+|o\s+)?{m}\b",
+]
 
 
 # ── 4I.2 Wave B4: VÍTIMA ≠ AUTORA da fraude ─────────────────────────────────
@@ -1344,8 +1365,15 @@ def detect_papel_nao_sujeito(text: str, monitored: str,
         return ""
     alt = "(?:" + "|".join(nomes) + ")"
     for papel, pats in _PAPEL_NAO_SUJEITO.items():
-        if any(re.search(p.format(m=alt), t, re.I) for p in pats):
-            return papel
+        if not any(re.search(p.format(m=alt), t, re.I) for p in pats):
+            continue
+        # 4I.2 Wave B7b-5b §6: o papel de analista é FALLBACK. Se o texto diz
+        # explicitamente que a monitorada é a investigada, o sujeito formal
+        # vence e o evento continua dela.
+        if papel == "analista" and any(
+                re.search(p.format(m=alt), t, re.I) for p in _INVESTIGACAO_PROPRIA):
+            continue
+        return papel
     return ""
 
 
