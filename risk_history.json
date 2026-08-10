@@ -49768,18 +49768,81 @@
     }
    },
    "events_by_company": {
-    "General Motors": [
-     "falencia"
-    ]
+    "General Motors": []
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "General Motors"
    ],
-   "context_companies": [],
    "captured_ts": 1786346466,
    "cap_iso": "2026-08-10 04:21",
    "corroborations": [],
-   "corrob_sources": []
+   "corrob_sources": [],
+   "event_assessments": [
+    {
+     "company": "General Motors",
+     "event_id": "falencia",
+     "assessed_by": "semantic_audit",
+     "subject_company": "General Motors",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "",
+     "historical_reference": true,
+     "new_occurrence": false,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_HISTORICO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "referência histórica (perfil_de_companhia:history, growth); evento econômico de None",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "General Motors",
+     "event_id": "falencia",
+     "event_id_corrigido": "",
+     "regra": "R_HISTORICO",
+     "motivo": "referência histórica (perfil_de_companhia:history, growth); evento econômico de None",
+     "subject_company": "General Motors"
+    }
+   ],
+   "informational_events_by_company": {
+    "General Motors": [
+     {
+      "company": "General Motors",
+      "event_id": "falencia",
+      "event_label": "falencia",
+      "subject_company": "General Motors",
+      "monitored_company": "General Motors",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": true,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "confirmado",
+      "attribution_rule": "R_HISTORICO",
+      "attribution_confidence": "media",
+      "title": "General Motors (GM) | History, Growth, Bankruptcy, & Recovery",
+      "url": "https://www.britannica.com/money/General-Motors-Corporation",
+      "pub_ts": 1786086000,
+      "observation": "referência histórica (perfil_de_companhia:history, growth); evento econômico de None",
+      "source_record_id": "https://www.britannica.com/money/General-Motors-Corporation"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMingFBVV95cUxPcWIxcU54UGwyZEl5UEU1dlQtbjFMclQzdnRpU2lEYm9McmJYSUtteHU4V2xSaW1YVG5ONUNRcEZpcWJXM3o3eUlHZkVQbklLTlhWeDZSM3dGcW1RZXV3Rk1NOTNBUER6LVJGdm9LTXF0a2NIcTd1eHdVZElSd1MweXpaUEllVDBEc05TaXFnUk1HM081WE8zeUpTOFA2d9IBowFBVV95cUxOZnBGamhma3JHeDN1WlN2akpEM0g2X2dTNXlmeEgtZEoyN3gzZmtIbzlwRVZxbHV0ZlFEaU9mTUw3UFQxR0dtS3R4NEhZT0dQSGx2LVY3MXlIRl9nRXRMbWtuN2NxLWZuTWlSZzRPWEstU2ZoWUJ5anFHTjgwdjh0QkluWG5PUG82TEhJaEZFd3NUVUR0bzg1TUtaeDVZY2VjWTdz?oc=5": {
    "title": "Banco Mercantil avalia novo follow-on na B3 em março",
@@ -54902,12 +54965,12 @@
   }
  },
  "last_run": {
-  "ts": 1786384697,
-  "iso": "10 ago 2026 · 14:58 BRT",
+  "ts": 1786388713,
+  "iso": "10 ago 2026 · 16:05 BRT",
   "status": {
    "Engie Brasil": {
     "status": "atencao",
-    "score": 70
+    "score": 69
    },
    "Rumo": {
     "status": "atencao",
@@ -54916,10 +54979,6 @@
    "Vale": {
     "status": "atencao",
     "score": 57
-   },
-   "General Motors": {
-    "status": "critico",
-    "score": 53
    },
    "Tok&Stok": {
     "status": "critico",
@@ -55117,6 +55176,10 @@
     "status": "monitorar",
     "score": 0
    },
+   "General Motors": {
+    "status": "monitorar",
+    "score": 0
+   },
    "Cyrela Brazil Realty": {
     "status": "monitorar",
     "score": 0
@@ -55174,5 +55237,5 @@
  "semantic_reclassified_at": "2026-07-30T21:07:47.714609+00:00",
  "semantic_version": "1.0",
  "links_repaired_at": "2026-07-31T05:45:56.701137+00:00",
- "reclassify_only_applied_at": "2026-08-10T17:44:21.107750+00:00"
+ "reclassify_only_applied_at": "2026-08-10T19:05:13.921310+00:00"
 }
