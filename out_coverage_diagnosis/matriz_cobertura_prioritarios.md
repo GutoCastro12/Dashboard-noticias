@@ -1,26 +1,26 @@
 # Matriz de cobertura — emissores priorizados (reconciliação runtime)
 
-run_id: 2026-08-10T10:29:29.170807+00:00 · generated_at: 2026-08-10T10:29:29.170807+00:00 · commit_base: bb49d95da63c703dff84ac171053e569991e0f0b · payload_hash: 67d8d128d8bb2f871b15ea961e43cb909af37df56703fd9f8035fe4f45caf431
+run_id: 2026-08-10T11:18:05.147451+00:00 · generated_at: 2026-08-10T11:18:05.147451+00:00 · commit_base: ff479b7fba8b78257bf53b7ce93f89cf4f390d81 · payload_hash: afd0ad97b5b8742c1b3afc994c2dec5f2ac656db10b9e6f395c2d7d54a5871b3
 
 | Emissor | Tipo | Ciclo atual | Consolidado | Frescor |
 |---|---|---|---|---|
-| Ambev | Tier 1 | PARTIAL_COVERAGE | ONLY_INFORMATIONAL_FOUND | valida |
-| B3 | Tier 1 | PARTIAL_COVERAGE | ONLY_INFORMATIONAL_FOUND | valida |
-| BTG Pactual | Tier 1 | PARTIAL_COVERAGE | ONLY_INFORMATIONAL_FOUND | valida |
-| Banco do Brasil | Tier 1 | PARTIAL_COVERAGE | ONLY_INFORMATIONAL_FOUND | valida |
-| Bradesco | Tier 1 | PARTIAL_COVERAGE | ONLY_INFORMATIONAL_FOUND | valida |
-| Eletrobras | Tier 1 | PARTIAL_COVERAGE | ONLY_INFORMATIONAL_FOUND | valida |
-| Equatorial Energia | Tier 1 | PARTIAL_COVERAGE | ONLY_INFORMATIONAL_FOUND | valida |
-| Itaú Unibanco | Tier 1 | PARTIAL_COVERAGE | ONLY_INFORMATIONAL_FOUND | valida |
-| Localiza | Tier 1 | PARTIAL_COVERAGE | ONLY_INFORMATIONAL_FOUND | valida |
-| PRIO | Tier 1 | PARTIAL_COVERAGE | ONLY_INFORMATIONAL_FOUND | valida |
-| Petrobras | Tier 1 | PARTIAL_COVERAGE | ONLY_INFORMATIONAL_FOUND | valida |
-| Raia Drogasil | Tier 1 | PARTIAL_COVERAGE | ONLY_INFORMATIONAL_FOUND | valida |
-| Rede D'Or | Tier 1 | PARTIAL_COVERAGE | ONLY_INFORMATIONAL_FOUND | valida |
-| Suzano | Tier 1 | PARTIAL_COVERAGE | ONLY_INFORMATIONAL_FOUND | valida |
-| Vale | Tier 1 | PARTIAL_COVERAGE | ONLY_INFORMATIONAL_FOUND | valida |
-| Vibra Energia | Tier 1 | PARTIAL_COVERAGE | ONLY_INFORMATIONAL_FOUND | valida |
-| Yura | Peru | PARTIAL_COVERAGE | PARTIAL_COVERAGE | valida |
+| Ambev | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
+| B3 | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
+| BTG Pactual | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
+| Banco do Brasil | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
+| Bradesco | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
+| Eletrobras | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
+| Equatorial Energia | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
+| Itaú Unibanco | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
+| Localiza | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
+| PRIO | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
+| Petrobras | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
+| Raia Drogasil | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
+| Rede D'Or | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
+| Suzano | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
+| Vale | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
+| Vibra Energia | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
+| Yura | Peru | FALLBACK_ONLY | FALLBACK_ONLY | valida |
 | Trupal | Peru | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | valida |
 | Coazucar | Peru | PARTIAL_COVERAGE | PARTIAL_COVERAGE | valida |
 | Yobel | Peru | COLLECTION_FAILURE | PARTIAL_COVERAGE | parcial |
