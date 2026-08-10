@@ -671,7 +671,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:56:14.128979+00:00"
+     "last_checked_at": "2026-08-10T14:27:51.310004+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2540,7 +2540,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:56:14.529204+00:00"
+     "last_checked_at": "2026-08-10T14:27:51.710243+00:00"
     }
    ],
    "corrob_sources": [
@@ -9253,6 +9253,26 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T03:04:35.626715+00:00"
+    },
+    {
+     "source": "www.gov.br",
+     "domain": "gov.br",
+     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQaFV4WmtNTmQ3cU1kN1BSUVk2WnlhbEI2dlhpRmMyOWdNa3NoOV9CRHdUdmJJdmY1UGNON3d2VVo5Ym5GdGVlQnlCUmc5c1NJYWJvUkZJbHdxSUxGN1hXX0U3dUpQU29zeXFCcHhkTlJfTDZOZi1LdGd5RmZQSk9CNll4emtmTWFDMGFPSjNKUmx4NEk?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQaFV4WmtNTmQ3cU1kN1BSUVk2WnlhbEI2dlhpRmMyOWdNa3NoOV9CRHdUdmJJdmY1UGNON3d2VVo5Ym5GdGVlQnlCUmc5c1NJYWJvUkZJbHdxSUxGN1hXX0U3dUpQU29zeXFCcHhkTlJfTDZOZi1LdGd5RmZQSk9CNll4emtmTWFDMGFPSjNKUmx4NEk?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQaFV4WmtNTmQ3cU1kN1BSUVk2WnlhbEI2dlhpRmMyOWdNa3NoOV9CRHdUdmJJdmY1UGNON3d2VVo5Ym5GdGVlQnlCUmc5c1NJYWJvUkZJbHdxSUxGN1hXX0U3dUpQU29zeXFCcHhkTlJfTDZOZi1LdGd5RmZQSk9CNll4emtmTWFDMGFPSjNKUmx4NEk?oc=5",
+     "resolved_url": "https://www.gov.br/cade/pt-br/assuntos/noticias/cade-aprova-aquisicao-da-emae-pela-sabesp",
+     "canonical_url": "https://www.gov.br/cade/pt-br/assuntos/noticias/cade-aprova-aquisicao-da-emae-pela-sabesp",
+     "display_url": "https://www.gov.br/cade/pt-br/assuntos/noticias/cade-aprova-aquisicao-da-emae-pela-sabesp",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.gov.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-10T14:27:52.273933+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "corrob_sources": [
@@ -9276,6 +9296,27 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T03:04:35.626744+00:00"
+    },
+    {
+     "source": "www.gov.br",
+     "domain": "gov.br",
+     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQaFV4WmtNTmQ3cU1kN1BSUVk2WnlhbEI2dlhpRmMyOWdNa3NoOV9CRHdUdmJJdmY1UGNON3d2VVo5Ym5GdGVlQnlCUmc5c1NJYWJvUkZJbHdxSUxGN1hXX0U3dUpQU29zeXFCcHhkTlJfTDZOZi1LdGd5RmZQSk9CNll4emtmTWFDMGFPSjNKUmx4NEk?oc=5",
+     "when": "20/01 05:00",
+     "original_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQaFV4WmtNTmQ3cU1kN1BSUVk2WnlhbEI2dlhpRmMyOWdNa3NoOV9CRHdUdmJJdmY1UGNON3d2VVo5Ym5GdGVlQnlCUmc5c1NJYWJvUkZJbHdxSUxGN1hXX0U3dUpQU29zeXFCcHhkTlJfTDZOZi1LdGd5RmZQSk9CNll4emtmTWFDMGFPSjNKUmx4NEk?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQaFV4WmtNTmQ3cU1kN1BSUVk2WnlhbEI2dlhpRmMyOWdNa3NoOV9CRHdUdmJJdmY1UGNON3d2VVo5Ym5GdGVlQnlCUmc5c1NJYWJvUkZJbHdxSUxGN1hXX0U3dUpQU29zeXFCcHhkTlJfTDZOZi1LdGd5RmZQSk9CNll4emtmTWFDMGFPSjNKUmx4NEk?oc=5",
+     "resolved_url": "https://www.gov.br/cade/pt-br/assuntos/noticias/cade-aprova-aquisicao-da-emae-pela-sabesp",
+     "canonical_url": "https://www.gov.br/cade/pt-br/assuntos/noticias/cade-aprova-aquisicao-da-emae-pela-sabesp",
+     "display_url": "https://www.gov.br/cade/pt-br/assuntos/noticias/cade-aprova-aquisicao-da-emae-pela-sabesp",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.gov.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-10T14:27:52.674164+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "captured_ts": 1785345276,
@@ -9870,7 +9911,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:56:14.929479+00:00"
+     "last_checked_at": "2026-08-10T14:27:53.074413+00:00"
     },
     {
      "source": "Demarest",
@@ -9890,7 +9931,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:56:15.329810+00:00"
+     "last_checked_at": "2026-08-10T14:27:53.474710+00:00"
     }
    ],
    "corrob_sources": [
@@ -11473,7 +11514,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:56:15.730082+00:00"
+     "last_checked_at": "2026-08-10T14:27:53.874963+00:00"
     }
    ],
    "corrob_sources": [
@@ -15121,7 +15162,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:56:16.306585+00:00"
+     "last_checked_at": "2026-08-10T14:27:54.436211+00:00"
     }
    ],
    "corrob_sources": [
@@ -17674,7 +17715,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:56:16.879746+00:00"
+     "last_checked_at": "2026-08-10T14:27:55.016848+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -17780,7 +17821,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:56:17.438492+00:00"
+     "last_checked_at": "2026-08-10T14:27:55.587114+00:00"
     },
     {
      "source": "Moomoo",
@@ -19122,7 +19163,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:56:18.133983+00:00"
+     "last_checked_at": "2026-08-10T14:27:56.279417+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19165,7 +19206,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:56:18.832817+00:00"
+     "last_checked_at": "2026-08-10T14:27:57.010731+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19989,7 +20030,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T11:56:19.374064+00:00",
+     "last_checked_at": "2026-08-10T14:27:57.576444+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20014,7 +20055,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T11:56:19.935758+00:00",
+     "last_checked_at": "2026-08-10T14:27:58.144079+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21134,7 +21175,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-10T11:56:20.336070+00:00",
+     "last_checked_at": "2026-08-10T14:27:58.544377+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21199,7 +21240,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-10T11:56:20.736354+00:00",
+     "last_checked_at": "2026-08-10T14:27:58.944594+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22288,7 +22329,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:56:21.289814+00:00"
+     "last_checked_at": "2026-08-10T14:27:59.492694+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22373,7 +22414,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:56:21.860879+00:00"
+     "last_checked_at": "2026-08-10T14:28:00.203474+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24123,7 +24164,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T11:56:22.421593+00:00",
+     "last_checked_at": "2026-08-10T14:28:00.765140+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24293,7 +24334,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T11:56:22.972264+00:00",
+     "last_checked_at": "2026-08-10T14:28:01.332707+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -38399,7 +38440,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:56:23.637908+00:00"
+     "last_checked_at": "2026-08-10T14:28:01.995310+00:00"
     }
    ],
    "corrob_sources": [
@@ -41470,7 +41511,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:56:24.193845+00:00"
+     "last_checked_at": "2026-08-10T14:28:02.552402+00:00"
     },
     {
      "source": "Virginia Business",
@@ -41513,7 +41554,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T11:56:24.760051+00:00"
+     "last_checked_at": "2026-08-10T14:28:03.115022+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48178,7 +48219,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T11:56:25.326790+00:00",
+     "last_checked_at": "2026-08-10T14:28:03.668815+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48201,7 +48242,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T11:56:25.880151+00:00",
+     "last_checked_at": "2026-08-10T14:28:04.230230+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -49290,9 +49331,63 @@
    ],
    "captured_ts": 1786360594,
    "cap_iso": "2026-08-10 08:16"
+  },
+  "https://www.investing.com/news/sec-filings/capital-one-files-resale-prospectus-for-shares-issued-in-brex-acquisition-93CH-4631825": {
+   "title": "Capital One files resale prospectus for shares issued in Brex acquisition",
+   "url": "https://www.investing.com/news/sec-filings/capital-one-files-resale-prospectus-for-shares-issued-in-brex-acquisition-93CH-4631825",
+   "summary": "Capital One files resale prospectus for shares issued in Brex acquisition &nbsp;&nbsp; Investing.com",
+   "source": "Investing.com",
+   "domain": "investing.com",
+   "pub_ts": 1776927600,
+   "pub_iso": "2026-04-23 04:00",
+   "language": "en",
+   "companies": [
+    "Capital One Financial"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "mention_roles": {
+    "Capital One Financial": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Capital One Financial": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "Capital One Financial"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786372067,
+   "cap_iso": "2026-08-10 11:27"
+  },
+  "https://news.google.com/rss/articles/CBMizwFBVV95cUxNOWR0TWtNbEdHLUp5NGQ2b1d2RjhXU2RNUk5KdXNiWk1Gcmc1YVZVaWNXS21rdTY0ODM2M2IteHVFVU1PSGhtRWRDS0dwbmN6WjNuTUNWd3MyVkVKLWtkUXg3ZlVyTDlQWm90akxNdmVmMkx6Q3lYTFpQX21yNXVwUVhNMmotUW5GSThZd1J0YzlOX3I2ZE5vNzNiWE9VcWpUVl9oY29GamhxTFdVaDNVQ2NHeTQ3YlRHRnh3VjhtM0d3b0Zvck9BcnpkdjV6VUk?oc=5": {
+   "title": "Por que o produtor rural entra em recuperação judicial sem estar \"quebrado\"",
+   "url": "https://www.cnnbrasil.com.br/blogs/fernanda-pressinott/agro/por-que-o-produtor-rural-entra-em-recuperacao-judicial-sem-estar-quebrado/",
+   "summary": "Por que o produtor rural entra em recuperação judicial sem estar \"quebrado\" &nbsp;&nbsp; CNN Brasil",
+   "source": "CNN Brasil",
+   "domain": "cnnbrasil.com.br",
+   "pub_ts": 1786365757,
+   "pub_iso": "2026-08-10 09:42",
+   "language": "es",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1786372067,
+   "cap_iso": "2026-08-10 11:27"
   }
  },
- "run_count": 94,
+ "run_count": 95,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -50055,8 +50150,8 @@
    "exact": true
   },
   "https://news.google.com/rss/articles/CBMikwFBVV95cUxQaFV4WmtNTmQ3cU1kN1BSUVk2WnlhbEI2dlhpRmMyOWdNa3NoOV9CRHdUdmJJdmY1UGNON3d2VVo5Ym5GdGVlQnlCUmc5c1NJYWJvUkZJbHdxSUxGN1hXX0U3dUpQU29zeXFCcHhkTlJfTDZOZi1LdGd5RmZQSk9CNll4emtmTWFDMGFPSjNKUmx4NEk?oc=5": {
-   "url": "https://gov.br",
-   "exact": false
+   "url": "https://www.gov.br/cade/pt-br/assuntos/noticias/cade-aprova-aquisicao-da-emae-pela-sabesp",
+   "exact": true
   },
   "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOY1R2S3NnNkk2MVJjSWdHNDUzTWt6Mnl1dGwydjNBYm5JOHhEbGJJRklmcW56ekFSMW05RHBVeFNEOWwtcEdra3ZXU0NEdTM4WWpFdEUyY0F3emtJY1V3MmMyYXBkekF4Rk1qamQ4N0ZkS0ktMG1DbHBBa044S256N3hic3ZVQUdodmNObGNzU1I1dV9IUVA3TExCSkJwelQwM215SlFzdkliQQ?oc=5": {
    "url": "https://www.cnnbrasil.com.br/economia/negocios/eneva-anuncia-14a-emissao-de-debentures-no-valor-de-r-2-bi/",
@@ -54325,11 +54420,19 @@
   "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOWXVnTWc1QXNRVDRiQjhXSWxZbHRBTmRISjMyN2V2b0RNVEJLaG5rMlFJc0FrQkF1ZWpWWV9oT1YtYVoybDIxaVVhRkFKZXdYVmhMTTByWjB6bTBET2tWNnpxTTRkRTd5T255R0JEeTJQN3BuSjY1eldKNmd4cUIwY3AtVWZjMHdlSXdUUzNYNjl2bWFrNGdhaThKNXlyTHNTVGNGeHFpM01Gdw?oc=5": {
    "url": "https://www.moomoo.com/news/post/74220716/market-chatter-jpmorgan-chase-s-anti-fraud-program-faced-federal",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNVnV1RFZDMlZ4VXNsa3F1Wm9CM3N2bnlaSVNIQ3ZzQzN0UTRHcUNEVTRuVUZaY3k5Qm8tVUFkd2xfVElVbHJuSTFuSE84WFg2Qm5RbXdhUVptcWw1M2VSU0NUWWVpWVJ0MzR4ak1uZHEwV1Q5dS1mXzdrRWxiVFVhOFo3Mmw3aXdMXy1JTVc2Uy00ckg4SmcxR2pQclZsM3ZNc3VKUjhCczNpbFNDVVZhR1VWRUxiNGhnUDNOLUxXVDZnMWhaLXQ5dA?oc=5": {
+   "url": "https://www.investing.com/news/sec-filings/capital-one-files-resale-prospectus-for-shares-issued-in-brex-acquisition-93CH-4631825",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMizwFBVV95cUxNOWR0TWtNbEdHLUp5NGQ2b1d2RjhXU2RNUk5KdXNiWk1Gcmc1YVZVaWNXS21rdTY0ODM2M2IteHVFVU1PSGhtRWRDS0dwbmN6WjNuTUNWd3MyVkVKLWtkUXg3ZlVyTDlQWm90akxNdmVmMkx6Q3lYTFpQX21yNXVwUVhNMmotUW5GSThZd1J0YzlOX3I2ZE5vNzNiWE9VcWpUVl9oY29GamhxTFdVaDNVQ2NHeTQ3YlRHRnh3VjhtM0d3b0Zvck9BcnpkdjV6VUk?oc=5": {
+   "url": "https://www.cnnbrasil.com.br/blogs/fernanda-pressinott/agro/por-que-o-produtor-rural-entra-em-recuperacao-judicial-sem-estar-quebrado/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786363025,
-  "iso": "10 ago 2026 · 08:57 BRT",
+  "ts": 1786372124,
+  "iso": "10 ago 2026 · 11:28 BRT",
   "status": {
    "Engie Brasil": {
     "status": "atencao",
@@ -54337,7 +54440,7 @@
    },
    "Rumo": {
     "status": "atencao",
-    "score": 65
+    "score": 64
    },
    "Vale": {
     "status": "atencao",
@@ -54435,10 +54538,6 @@
     "status": "monitorar",
     "score": 17
    },
-   "Ultrapar": {
-    "status": "atencao",
-    "score": 16
-   },
    "Embraer": {
     "status": "monitorar",
     "score": 16
@@ -54447,13 +54546,17 @@
     "status": "monitorar",
     "score": 16
    },
-   "Albioma": {
-    "status": "monitorar",
-    "score": 16
-   },
    "EQT Corporation": {
     "status": "monitorar",
     "score": 16
+   },
+   "Ultrapar": {
+    "status": "atencao",
+    "score": 15
+   },
+   "Albioma": {
+    "status": "monitorar",
+    "score": 15
    },
    "Eneva": {
     "status": "monitorar",
@@ -54461,7 +54564,7 @@
    },
    "Ecopetrol": {
     "status": "monitorar",
-    "score": 14
+    "score": 13
    },
    "Bradesco": {
     "status": "atencao",
@@ -54489,7 +54592,7 @@
    },
    "BRF": {
     "status": "monitorar",
-    "score": 7
+    "score": 6
    },
    "Localiza": {
     "status": "monitorar",
