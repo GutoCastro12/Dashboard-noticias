@@ -1,0 +1,538 @@
+{
+  "_meta": {
+    "purpose": "Memoria de CLASSES de erro, nao de casos. Responde: o que o sistema deveria ter APRENDIDO com cada erro. Nao substitui o gold_set_4i.json, que continua sendo o contrato de regressao exata.",
+    "contract": "Uma familia so e GENERALIZED_ON_TEST_SET quando exact=100%, siblings=100% e negatives=100%. Passar apenas nas exact regressions e memorizacao, nao generalizacao.",
+    "created_at": "2026-08-10",
+    "holdout_start_ts": 1786060800,
+    "holdout_note": "Artigos com captured_ts >= holdout_start_ts e ausentes do gold e desta memoria sao out-of-sample REAL. O history atual NAO e holdout: ja foi inspecionado."
+  },
+  "families": [
+    {
+      "family_id": "F1",
+      "name": "INSOLVENCY CURRENTNESS / HISTORICAL PROFILE",
+      "invariant": "Mencao a falencia nao e ocorrencia atual de falencia. Verbete, perfil e retrospectiva descrevem a trajetoria da empresa.",
+      "event_ids": [
+        "falencia",
+        "recuperacao_judicial"
+      ],
+      "languages": [
+        "pt",
+        "en"
+      ],
+      "rule_ids": [
+        "R_HISTORICO"
+      ],
+      "status": "PENDING_MEASUREMENT",
+      "exact_regressions": [
+        {
+          "title": "General Motors (GM) | History, Growth, Bankruptcy, & Recovery",
+          "company": "General Motors",
+          "forbidden": "falencia",
+          "origin": "hotfix P0 Britannica"
+        },
+        {
+          "title": "This Day in History: June 1, 2009 - General Motors files for Chapter 11 reorganization",
+          "company": "General Motors",
+          "forbidden": "recuperacao_judicial",
+          "origin": "WSAW"
+        },
+        {
+          "title": "This Day in Michigan History: GM files for bankruptcy",
+          "company": "General Motors",
+          "forbidden": "falencia",
+          "origin": "corpus"
+        }
+      ],
+      "semantic_siblings": [
+        {
+          "title": "General Motors | Profile, History, Bankruptcy Era & Turnaround",
+          "company": "General Motors",
+          "forbidden": "falencia"
+        },
+        {
+          "title": "Vale: perfil da companhia, historia, recuperacao judicial e retomada",
+          "company": "Vale",
+          "forbidden": "recuperacao_judicial"
+        },
+        {
+          "title": "General Motors: Company Overview, Growth, Bankruptcy & Legacy",
+          "company": "General Motors",
+          "forbidden": "falencia"
+        },
+        {
+          "title": "Dasa | Trajetoria, crescimento, recuperacao judicial e futuro",
+          "company": "Dasa",
+          "forbidden": "recuperacao_judicial"
+        }
+      ],
+      "negative_controls": [
+        {
+          "title": "General Motors files for bankruptcy protection",
+          "company": "General Motors",
+          "required": "falencia"
+        },
+        {
+          "title": "Company enters Chapter 11 after years of growth and recovery efforts",
+          "company": "General Motors",
+          "required": "falencia"
+        },
+        {
+          "title": "Dasa pede recuperacao judicial",
+          "company": "Dasa",
+          "required": "recuperacao_judicial"
+        },
+        {
+          "title": "Justica decreta falencia da Vale",
+          "company": "Vale",
+          "required": "falencia"
+        }
+      ],
+      "notes": "Sinal estrutural: lista de >=2 topicos de trajetoria. `history` solto nunca basta."
+    },
+    {
+      "family_id": "F2",
+      "name": "LEGAL VENUE != COMPANY INSOLVENCY",
+      "invariant": "`Bankruptcy Court` e o FORO. Ser parte num processo perante esse tribunal nao significa estar em falencia.",
+      "event_ids": [
+        "falencia",
+        "recuperacao_judicial"
+      ],
+      "languages": [
+        "en"
+      ],
+      "rule_ids": [],
+      "status": "PENDING_MEASUREMENT",
+      "exact_regressions": [
+        {
+          "title": "Bankruptcy Court Orders Texas to Strike Allegations In State Data Privacy Suit Against General Motors",
+          "company": "General Motors",
+          "forbidden": "falencia",
+          "origin": "global rescan P0"
+        }
+      ],
+      "semantic_siblings": [
+        {
+          "title": "Bankruptcy Court rules on trademark dispute involving Ford Motor Company",
+          "company": "General Motors",
+          "forbidden": "falencia"
+        },
+        {
+          "title": "Bankruptcy Court denies motion in contract litigation against Duke Energy",
+          "company": "Duke Energy",
+          "forbidden": "falencia"
+        },
+        {
+          "title": "US Bankruptcy Court hears environmental claim naming Vale as defendant",
+          "company": "Vale",
+          "forbidden": "falencia"
+        }
+      ],
+      "negative_controls": [
+        {
+          "title": "Bankruptcy Court approves Vale's Chapter 11 reorganization plan",
+          "company": "Vale",
+          "required": "falencia"
+        },
+        {
+          "title": "Vale files Chapter 11 petition in bankruptcy court",
+          "company": "Vale",
+          "required": "falencia"
+        }
+      ],
+      "notes": "Proibido `if Bankruptcy Court: discard`. Precisa distinguir foro de processo da empresa."
+    },
+    {
+      "family_id": "F3",
+      "name": "FRAUD VICTIM != FRAUD PERPETRATOR",
+      "invariant": "Empresa alvo de golpe, ou cujos clientes sao alvo, nao cometeu fraude. Nome da empresa qualificando o NOME DO CASO nao atribui autoria.",
+      "event_ids": [
+        "fraude"
+      ],
+      "languages": [
+        "pt",
+        "en"
+      ],
+      "rule_ids": [
+        "R_VITIMA_NAO_E_AUTORA_DA_FRAUDE"
+      ],
+      "status": "PENDING_MEASUREMENT",
+      "exact_regressions": [
+        {
+          "title": "Third suspect arrested in Duke Energy fraud case",
+          "company": "Duke Energy",
+          "forbidden": "fraude",
+          "origin": "global rescan P0"
+        },
+        {
+          "title": "Duke Energy leverages artificial intelligence to combat fraud targeting energy customers",
+          "company": "Duke Energy",
+          "forbidden": "fraude",
+          "origin": "global rescan P0"
+        },
+        {
+          "title": "Dazmyn Person: Another person was arrested, charged in the ongoing Duke Energy fraud case, Wake County Sheriff's Office says",
+          "company": "Duke Energy",
+          "forbidden": "fraude",
+          "origin": "global rescan P0"
+        },
+        {
+          "title": "Eileen Taylor Weighs in on Duke Energy Fraud Case",
+          "company": "Duke Energy",
+          "forbidden": "fraude",
+          "origin": "global rescan P0"
+        }
+      ],
+      "semantic_siblings": [
+        {
+          "title": "Two suspects charged in Itau Unibanco fraud case, police say",
+          "company": "Itaú Unibanco",
+          "forbidden": "fraude"
+        },
+        {
+          "title": "Bradesco deploys new technology to combat fraud targeting account holders",
+          "company": "Bradesco",
+          "forbidden": "fraude"
+        },
+        {
+          "title": "Man sentenced in Truist Financial fraud scheme",
+          "company": "Truist Financial",
+          "forbidden": "fraude"
+        },
+        {
+          "title": "Preso terceiro suspeito no caso de fraude contra clientes do Santander",
+          "company": "Santander Brasil",
+          "forbidden": "fraude"
+        }
+      ],
+      "negative_controls": [
+        {
+          "title": "Truist Bank warns customers about phishing, check fraud and text scams",
+          "company": "Truist Financial",
+          "forbidden": "fraude"
+        },
+        {
+          "title": "Justica condena executivos e ex-diretores da TIM por fraude fiscal em SC",
+          "company": "TIM Brasil",
+          "required": "fraude"
+        },
+        {
+          "title": "Fraude nas Americanas: executivos de Itaú, Bradesco e Santander são alvo de buscas",
+          "company": "Itaú Unibanco",
+          "required": "investigacao_regulatoria"
+        }
+      ],
+      "notes": "B4 exige a monitorada como OBJETO de construcao de vitima. `<Company> fraud case` usa o nome como MODIFICADOR do caso — nenhum cue cobre."
+    },
+    {
+      "family_id": "F4",
+      "name": "INDIVIDUAL AFFILIATION != COMPANY EVENT SUBJECT",
+      "invariant": "Pessoa descrita como `ex-CEO de X` nao torna X sujeito do evento. Exige OUTRO sujeito explicito para o evento.",
+      "event_ids": [
+        "falencia",
+        "default",
+        "recuperacao_judicial",
+        "investigacao_regulatoria"
+      ],
+      "languages": [
+        "pt",
+        "es"
+      ],
+      "rule_ids": [
+        "R_PAPEL_NAO_SUJEITO"
+      ],
+      "status": "PENDING_MEASUREMENT",
+      "exact_regressions": [
+        {
+          "title": "\"Sin reestructuracion, Aconcagua ira a la quiebra\": el duro pronostico del exCEO de YPF",
+          "company": "YPF",
+          "forbidden": "falencia",
+          "origin": "global rescan P0"
+        },
+        {
+          "title": "Vista se uniria a un exCEO de YPF y a la duena de Puma Energy para rescatar a una petrolera en default",
+          "company": "YPF",
+          "forbidden": "default",
+          "origin": "global rescan P0"
+        },
+        {
+          "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
+          "company": "Vale",
+          "forbidden": "investigacao_regulatoria",
+          "origin": "B8"
+        }
+      ],
+      "semantic_siblings": [
+        {
+          "title": "Ex-diretor da Petrobras preve falencia da fornecedora Alfa",
+          "company": "Petrobras",
+          "forbidden": "falencia"
+        },
+        {
+          "title": "Former CEO of Duke Energy says supplier Beta will default on its notes",
+          "company": "Duke Energy",
+          "forbidden": "default"
+        },
+        {
+          "title": "Ex-presidente do Bradesco comenta recuperacao judicial da varejista Gama",
+          "company": "Bradesco",
+          "forbidden": "recuperacao_judicial"
+        }
+      ],
+      "negative_controls": [
+        {
+          "title": "CEO da Vale afirma que a companhia pode entrar em default",
+          "company": "Vale",
+          "required": "default"
+        },
+        {
+          "title": "SEC opens investigation into Citigroup and its former CEO",
+          "company": "Citigroup",
+          "forbidden": "__none__"
+        },
+        {
+          "title": "Petrobras anuncia novo CEO",
+          "company": "Petrobras",
+          "required": "troca_ceo"
+        }
+      ],
+      "notes": "Proibido `ex-CEO da X -> nenhum evento para X`. Exige OUTRO sujeito explicito. B8 hoje so cobre investigacao_regulatoria e exige ato formal + `contra`."
+    },
+    {
+      "family_id": "F5",
+      "name": "SELLER ROLE != ACQUIRER",
+      "invariant": "Quem vende um ativo nao faz aquisicao. `ma`/`follow_on` pertencem ao comprador/emissor.",
+      "event_ids": [
+        "ma",
+        "follow_on"
+      ],
+      "languages": [
+        "pt",
+        "en"
+      ],
+      "rule_ids": [
+        "R_MA_PAPEL_VENDEDOR"
+      ],
+      "status": "PENDING_MEASUREMENT",
+      "exact_regressions": [
+        {
+          "title": "Ambar Energia conclui a aquisicao de 4 hidreletricas da Cemig em MG",
+          "company": "Cemig",
+          "forbidden": "ma",
+          "origin": "C1"
+        },
+        {
+          "title": "Spire completes acquisition of Tennessee Piedmont Natural Gas business from Duke Energy",
+          "company": "Duke Energy",
+          "forbidden": "ma",
+          "origin": "C1"
+        },
+        {
+          "title": "Eneva (ENEV3) anuncia compra de termicas do BTG e follow on de ate R$ 4,2 bilhoes",
+          "company": "BTG Pactual",
+          "forbidden": "follow_on",
+          "origin": "C1"
+        }
+      ],
+      "semantic_siblings": [
+        {
+          "title": "Empresa Alfa conclui a aquisicao de tres usinas da Copel no Parana",
+          "company": "Copel",
+          "forbidden": "ma"
+        },
+        {
+          "title": "Beta Corp completes acquisition of the logistics business from Vale",
+          "company": "Vale",
+          "forbidden": "ma"
+        }
+      ],
+      "negative_controls": [
+        {
+          "title": "BTG conclui aquisicao do HSBC Uruguai e inicia operacoes no pais",
+          "company": "BTG Pactual",
+          "required": "ma"
+        },
+        {
+          "title": "Cade aprova fusao entre Marfrig e BRF que cria gigante do setor de carnes",
+          "company": "BRF",
+          "required": "ma"
+        },
+        {
+          "title": "Cade aprova aquisicao de 90% da Sanessol pela Sabesp",
+          "company": "Sabesp",
+          "required": "ma"
+        }
+      ],
+      "notes": "Publicada e validada na Wave C1."
+    },
+    {
+      "family_id": "F6",
+      "name": "COMMERCIAL OBJECT != CORPORATE M&A",
+      "invariant": "Compra de produto/equipamento nao e aquisicao da fabricante.",
+      "event_ids": [
+        "ma"
+      ],
+      "languages": [
+        "pt"
+      ],
+      "rule_ids": [
+        "R_MA_OBJETO_ESCOPO"
+      ],
+      "status": "PENDING_MEASUREMENT",
+      "exact_regressions": [
+        {
+          "title": "Grecia investira 600 milhoes de euros na aquisicao dos tres Embraer KC-390 Millennium",
+          "company": "Embraer",
+          "forbidden": "ma",
+          "origin": "C2"
+        },
+        {
+          "title": "Aquisicao da Grecia pode adicionar US$ 690 milhoes a carteira da Embraer",
+          "company": "Embraer",
+          "forbidden": "ma",
+          "origin": "C2"
+        }
+      ],
+      "semantic_siblings": [
+        {
+          "title": "Companhia aerea anuncia aquisicao de 20 aeronaves da Embraer",
+          "company": "Embraer",
+          "forbidden": "ma"
+        },
+        {
+          "title": "Aquisicao adiciona US$ 400 milhoes a carteira da Embraer",
+          "company": "Embraer",
+          "forbidden": "ma"
+        }
+      ],
+      "negative_controls": [
+        {
+          "title": "Cigna's Evernorth Completes Acquisition of CarepathRx",
+          "company": "Cigna Group",
+          "required": "ma"
+        },
+        {
+          "title": "Bradesco conclui aquisição do banco digital Alfa",
+          "company": "Bradesco",
+          "required": "ma"
+        }
+      ],
+      "notes": "Publicada e validada na Wave C2."
+    },
+    {
+      "family_id": "F8",
+      "name": "SECONDARY SHAREHOLDER TRADE / TARGET RELATION",
+      "invariant": "Acoes da monitorada negociadas entre terceiros nao sao `ma` dela.",
+      "event_ids": [
+        "ma"
+      ],
+      "languages": [
+        "pt"
+      ],
+      "rule_ids": [],
+      "status": "BLOCKED_BY_INPUT",
+      "exact_regressions": [
+        {
+          "title": "Usiminas: Cade aprova aquisicao de fatia da Nippon e Mitsubishi pela Ternium",
+          "company": "Usiminas",
+          "forbidden": "ma",
+          "origin": "C3/G203"
+        }
+      ],
+      "semantic_siblings": [],
+      "negative_controls": [],
+      "notes": "C3c.1 provou que a relacao alvo nao esta no input: a unica evidencia seria o prefixo editorial, e o corpus mostra empresas em prefixo que sao COMPRADORAS. Sem enriquecimento de corpo, nao ha regra segura."
+    },
+    {
+      "family_id": "F9",
+      "name": "ENTITY NAME OVERLAP",
+      "invariant": "Alias/sigla da monitorada dentro de nome composto de outro ativo nao prova relacao societaria.",
+      "event_ids": [
+        "ma"
+      ],
+      "languages": [
+        "en"
+      ],
+      "rule_ids": [],
+      "status": "BLOCKED_BY_INPUT",
+      "exact_regressions": [
+        {
+          "title": "CCP approves Systems Limited's acquisition of BAT SAA Services",
+          "company": "British American Tobacco",
+          "forbidden": "ma",
+          "origin": "C1-S7a/G135"
+        }
+      ],
+      "semantic_siblings": [],
+      "negative_controls": [],
+      "notes": "O corpus tem 7 casos de sigla curta embutida em nome composto, e em varios a monitorada e a compradora. Sem corpo do artigo, nao ha como distinguir posse de homonimia."
+    },
+    {
+      "family_id": "F10",
+      "name": "EVENT CENTRALITY / HISTORICAL FOLLOW-UP",
+      "invariant": "Evento citado como pano de fundo, com a acao principal sendo outra, nao e nova ocorrencia.",
+      "event_ids": [
+        "ma",
+        "troca_ceo",
+        "investigacao_gestora"
+      ],
+      "languages": [
+        "pt",
+        "en"
+      ],
+      "rule_ids": [],
+      "status": "UNRESOLVED",
+      "exact_regressions": [
+        {
+          "title": "Capital One Faces Earnings Test After High-Stakes Discover Acquisition Bet",
+          "company": "Capital One Financial",
+          "forbidden": "ma",
+          "origin": "S0/G137"
+        },
+        {
+          "title": "Dasa retoma foco em diagnosticos e avanca em agenda de crescimento, diz novo CEO",
+          "company": "Dasa",
+          "forbidden": "troca_ceo",
+          "origin": "S0/G277"
+        },
+        {
+          "title": "Novo CEO da Pemex vai viajar ao Brasil para avancar agenda de parceria com a Petrobras",
+          "company": "Pemex (Petróleos Mexicanos)",
+          "forbidden": "troca_ceo",
+          "origin": "S0/G283"
+        },
+        {
+          "title": "Vale elege presidente interino do conselho em meio a investigacao da CVM",
+          "company": "Vale",
+          "forbidden": "investigacao_gestora",
+          "origin": "global rescan P0"
+        }
+      ],
+      "semantic_siblings": [],
+      "negative_controls": [],
+      "notes": "S0 mediu SF3 (ausencia de verbo de mudanca): 4/4 FPs mas 26 TRUE lost em 54 keeps. Exige nocao de oracao principal que a arquitetura nao tem. NAO implementar por regex de vocabulario."
+    }
+  ],
+  "review_queue": [
+    {
+      "title": "SCOTUS Declines to Intervene in Billion-Dollar Fraud Showdown Against Citigroup",
+      "company": "Citigroup",
+      "event": "fraude",
+      "status": "UNREVIEWED",
+      "note": "Citigroup aparenta ser reu; provavel TRUE. Nao auto-classificar."
+    },
+    {
+      "title": "CIBanco, una quiebra no merecida",
+      "company": "CIBanco",
+      "event": "falencia",
+      "status": "UNREVIEWED",
+      "note": "Opiniao sobre a quebra do proprio CIBanco; provavel TRUE."
+    },
+    {
+      "title": "Detuvo Grupo Mexico sus plataformas petroleras por impago de Pemex",
+      "company": "Pemex (Petroleos Mexicanos)",
+      "event": "default",
+      "status": "UNREVIEWED",
+      "note": "Pemex como devedor; provavel TRUE."
+    }
+  ]
+}
