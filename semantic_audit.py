@@ -937,7 +937,32 @@ _PAPEL_NAO_SUJEITO = {
     # `downgrade` colide com rebaixamento de rating de crédito (§13).
     "analista": [r"{m}\s+recommends?\s+(?:buying|selling)\s+(?:the\s+)?"
                  r"(?:stock|shares|share)\b"],
+    # 4I.2 Wave B8 — INDIVIDUAL SUBJECT: o alvo formal do ato é uma PESSOA
+    # FÍSICA e a monitorada aparece só como VÍNCULO PROFISSIONAL dela
+    # ("processo contra o ex-presidente do conselho DA Vale"). Cargo sozinho
+    # nunca basta: exige ATO FORMAL + preposição de ALVO + CARGO + vínculo.
+    # Escopo linguístico: PT apenas — única evidência real observada (B8a,
+    # N=1). EN/ES ficam para quando houver caso.
+    "individual_subject": [
+        r"(?:processo|procedimento|inqu[ée]rito|investiga\w*|apura\w*|a[çc][ãa]o)"
+        r"(?:\s+\w+){{0,2}}\s+contra\s+"        # ato formal + preposição de alvo
+        r"(?:[^,]{{0,40}},\s*)?"                # nome próprio em aposto, opcional
+        r"(?:o\s+|a\s+)?ex[- ]?"                # cargo de EX-ocupante
+        r"(?:presidente|diretor\w*|conselheir[oa]|executiv[oa]|ceo|chairman|"
+        r"gerente|administrador|s[óo]ci[oa]|superintendente)"
+        r"(?:\s+\w+){{0,3}}\s+d[aeo]\s+{m}\b",  # vínculo: "… da <monitorada>"
+    ],
 }
+
+# A monitorada aparece ELA PRÓPRIA como alvo do ato formal. Tem PRECEDÊNCIA
+# sobre `individual_subject` (§9): se a companhia é parte, o evento é dela,
+# mesmo que um executivo também seja citado. Complementa
+# `_INVESTIGACAO_PROPRIA`, que cobre as formas EN/ES e "investiga a X".
+_ALVO_E_A_PROPRIA_EMPRESA = [
+    r"contra\s+(?:a\s+|o\s+)?{m}\b",
+    r"{m}\s+(?:e\s+(?:seus?|suas?)\s+\w+\s+)?(?:s[ãa]o|[ée])\s+(?:alvo|investigad)",
+    r"{m}\s+(?:e\s+\w+){{0,3}}\s+s[ãa]o\s+alvo",
+]
 
 # Investigação dirigida à PRÓPRIA monitorada. Tem PRECEDÊNCIA sobre o papel
 # de analista (§6): sujeito formal explícito vence papel lateral, mesmo que
@@ -1373,6 +1398,12 @@ def detect_papel_nao_sujeito(text: str, monitored: str,
         if papel == "analista" and any(
                 re.search(p.format(m=alt), t, re.I) for p in _INVESTIGACAO_PROPRIA):
             continue
+        # 4I.2 Wave B8 §9: mesma precedência para o alvo individual — se a
+        # companhia também é alvo formal, o evento continua dela.
+        if papel == "individual_subject" and any(
+                re.search(p.format(m=alt), t, re.I)
+                for p in _INVESTIGACAO_PROPRIA + _ALVO_E_A_PROPRIA_EMPRESA):
+            continue
         return papel
     return ""
 
@@ -1771,6 +1802,12 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                 continue
         # 2h) PAPEL NÃO-SUJEITO: vítima / comentarista / investigador (Wave A7)
         _papel = detect_papel_nao_sujeito(texto, monitored, _al)
+        # 4I.2 Wave B8 §8: o papel `individual_subject` só vale para a família
+        # onde o caso foi observado. Fraude, condenação, prisão e M&A têm
+        # semântica de responsabilização corporativa própria e ficam de fora
+        # até haver evidência real — menor blast radius vence.
+        if _papel == "individual_subject" and ev != "investigacao_regulatoria":
+            _papel = ""
         if _papel:
             d.update(scoreable=False, event_scope="indireto",
                      relation_type=f"papel_{_papel}",

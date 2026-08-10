@@ -140,9 +140,13 @@ print()
 print("=" * 96)
 print("BLOCO G — §22: A7 preservada nos papéis antigos")
 print("=" * 96)
-check(list(sa._PAPEL_NAO_SUJEITO) == ["vitima", "comentarista", "investigador",
-                                       "analista"],
-      "[19] A7 preservada: papéis antigos intactos, 'analista' apenas acrescentado")
+# Papéis anteriores a esta wave, na ordem, seguidos de `analista`. Waves
+# posteriores podem ACRESCENTAR papéis ao final (B8 fez isso com
+# `individual_subject`); o que esta asserção protege é que nenhum papel
+# antigo seja removido ou reordenado, e que `analista` continue presente.
+check(list(sa._PAPEL_NAO_SUJEITO)[:4] == ["vitima", "comentarista", "investigador",
+                                           "analista"],
+      "[19] A7 preservada: papéis antigos intactos, 'analista' acrescentado na posição 4")
 check(papel("CNBV abre investigación contra Banorte", "Grupo Financiero Banorte")
       != "analista", "[20] investigação própria nunca é classificada como analista")
 
