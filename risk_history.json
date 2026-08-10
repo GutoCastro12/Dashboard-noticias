@@ -671,7 +671,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T17:57:17.464147+00:00"
+     "last_checked_at": "2026-08-10T19:15:36.442920+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2540,7 +2540,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T17:57:17.864402+00:00"
+     "last_checked_at": "2026-08-10T19:15:36.843182+00:00"
     }
    ],
    "corrob_sources": [
@@ -10124,7 +10124,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T17:57:18.264683+00:00"
+     "last_checked_at": "2026-08-10T19:15:37.243530+00:00"
     },
     {
      "source": "Demarest",
@@ -10144,7 +10144,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T17:57:18.664947+00:00"
+     "last_checked_at": "2026-08-10T19:15:37.643838+00:00"
     }
    ],
    "corrob_sources": [
@@ -11727,7 +11727,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T17:57:19.065170+00:00"
+     "last_checked_at": "2026-08-10T19:15:38.044056+00:00"
     }
    ],
    "corrob_sources": [
@@ -15375,7 +15375,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T17:57:19.695623+00:00"
+     "last_checked_at": "2026-08-10T19:15:38.610404+00:00"
     }
    ],
    "corrob_sources": [
@@ -17928,7 +17928,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T17:57:20.314574+00:00"
+     "last_checked_at": "2026-08-10T19:15:39.150509+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -18034,7 +18034,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T17:57:20.944181+00:00"
+     "last_checked_at": "2026-08-10T19:15:39.713893+00:00"
     },
     {
      "source": "Moomoo",
@@ -19439,7 +19439,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T17:57:21.764828+00:00"
+     "last_checked_at": "2026-08-10T19:15:40.374437+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19482,7 +19482,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T17:57:22.552113+00:00"
+     "last_checked_at": "2026-08-10T19:15:41.138596+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -20306,7 +20306,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T17:57:23.181703+00:00",
+     "last_checked_at": "2026-08-10T19:15:41.721988+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20331,7 +20331,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T17:57:23.796213+00:00",
+     "last_checked_at": "2026-08-10T19:15:42.325038+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21451,7 +21451,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-10T17:57:24.196463+00:00",
+     "last_checked_at": "2026-08-10T19:15:42.725323+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21516,7 +21516,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-10T17:57:24.596696+00:00",
+     "last_checked_at": "2026-08-10T19:15:43.125588+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22605,7 +22605,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T17:57:25.233268+00:00"
+     "last_checked_at": "2026-08-10T19:15:43.718139+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22690,7 +22690,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T17:57:25.866828+00:00"
+     "last_checked_at": "2026-08-10T19:15:44.324910+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24503,7 +24503,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T17:57:26.497624+00:00",
+     "last_checked_at": "2026-08-10T19:15:44.899644+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24673,7 +24673,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T17:57:27.151471+00:00",
+     "last_checked_at": "2026-08-10T19:15:45.483009+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -38842,7 +38842,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T17:57:27.925540+00:00"
+     "last_checked_at": "2026-08-10T19:15:46.234530+00:00"
     }
    ],
    "corrob_sources": [
@@ -41913,7 +41913,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T17:57:28.543326+00:00"
+     "last_checked_at": "2026-08-10T19:15:46.773231+00:00"
     },
     {
      "source": "Virginia Business",
@@ -41956,7 +41956,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T17:57:29.162592+00:00"
+     "last_checked_at": "2026-08-10T19:15:47.310986+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48684,7 +48684,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T17:57:29.781164+00:00",
+     "last_checked_at": "2026-08-10T19:15:47.863160+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48707,7 +48707,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T17:57:30.417315+00:00",
+     "last_checked_at": "2026-08-10T19:15:48.436060+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -49915,9 +49915,291 @@
    ],
    "captured_ts": 1786372067,
    "cap_iso": "2026-08-10 11:27"
+  },
+  "https://news.google.com/rss/articles/CBMinAFBVV95cUxORE5EOHk3NVNaZlFjLUJFc3JjWHpqYzJvZnF4bVBqTjlHQnQ1Tm44eHRvbGt5Sk5POHBtdUFkaVRxMUgzWkxoT29WcTR6ZEktQUMtT3hXTVhFV1loSjFheHh3RE5QY2R6RGFwdzR2UWw5UmxKZ3BPN0JpYUxWWDBVTDU0emdLRVNwekxEMThOakEwOW1rN2E3NjhCQkM?oc=5": {
+   "title": "Recuperação judicial cresce entre pequenas empresas e muda perfil das companhias em crise",
+   "url": "https://www.contabeis.com.br/noticias/78518/recuperacao-judicial-cresce-entre-pequenas-empresas/",
+   "summary": "Recuperação judicial cresce entre pequenas empresas e muda perfil das companhias em crise &nbsp;&nbsp; Portal Contabeis",
+   "source": "Portal Contabeis",
+   "domain": "contabeis.com.br",
+   "pub_ts": 1785868201,
+   "pub_iso": "2026-08-04 15:30",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "corroborations": [
+    {
+     "source": "Campo Grande News",
+     "domain": "campograndenews.com.br",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "resolved_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "canonical_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "display_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.campograndenews.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-10T19:15:49.026160+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Campo Grande News",
+     "domain": "campograndenews.com.br",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "when": "06/08 09:30",
+     "original_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "resolved_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "canonical_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "display_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.campograndenews.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-10T19:15:49.426469+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1786389332,
+   "cap_iso": "2026-08-10 16:15"
+  },
+  "https://www.nsctotal.com.br/economia/tupy-do-futuro-novo-ceo-faz-giro-por-unidades-e-reconhece-solucao-para-falta-de-mao-de-obra-em-joinville": {
+   "title": "“Tupy do futuro”: novo CEO faz giro por unidades e reconhece solução para falta de mão de obra em Joinville",
+   "url": "https://www.nsctotal.com.br/economia/tupy-do-futuro-novo-ceo-faz-giro-por-unidades-e-reconhece-solucao-para-falta-de-mao-de-obra-em-joinville",
+   "summary": "“Tupy do futuro”: novo CEO faz giro por unidades e reconhece solução para falta de mão de obra em Joinville &nbsp;&nbsp; NSC Total",
+   "source": "NSC Total",
+   "domain": "nsctotal.com.br",
+   "pub_ts": 1786374766,
+   "pub_iso": "2026-08-10 12:12",
+   "language": "pt",
+   "companies": [
+    "Tupy"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "mention_roles": {
+    "Tupy": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Tupy": [
+     "troca_ceo"
+    ]
+   },
+   "companies_attributed": [
+    "Tupy"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786389332,
+   "cap_iso": "2026-08-10 16:15"
+  },
+  "https://br.investing.com/news/stock-market-news/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027-2033673": {
+   "title": "JBS anuncia Wesley Batista Filho como novo CEO global a partir de janeiro de 2027 Por Reuters",
+   "url": "https://br.investing.com/news/stock-market-news/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027-2033673",
+   "summary": "JBS anuncia Wesley Batista Filho como novo CEO global a partir de janeiro de 2027 Por Reuters &nbsp;&nbsp; Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "domain": "br.investing.com",
+   "pub_ts": 1786387680,
+   "pub_iso": "2026-08-10 15:48",
+   "language": "es",
+   "companies": [
+    "JBS"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "mention_roles": {
+    "JBS": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "anuncio",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "JBS": [
+     "troca_ceo"
+    ]
+   },
+   "companies_attributed": [
+    "JBS"
+   ],
+   "context_companies": [],
+   "corroborations": [
+    {
+     "source": "CNN Brasil",
+     "domain": "cnnbrasil.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPVG95OU56eFJORkVxVTFIcEc4eTluMGNEUjFJM2NPYXg3Y25pakJhV1RQZlNhOFR3YXV5T3M2YkRtTDkwZnRFczVaMzVFcjM4c2tEQUNONG1lUW4yeHJGX3FHX08tYWx3SWROY25KQlhiZkxzbzBwSjJBTWVOVWd5Q2xKQVZRWU5WV01vRGdTc3dpUXp4bG5wVFBST0pCT3ExTzRMUEJFaXI?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPVG95OU56eFJORkVxVTFIcEc4eTluMGNEUjFJM2NPYXg3Y25pakJhV1RQZlNhOFR3YXV5T3M2YkRtTDkwZnRFczVaMzVFcjM4c2tEQUNONG1lUW4yeHJGX3FHX08tYWx3SWROY25KQlhiZkxzbzBwSjJBTWVOVWd5Q2xKQVZRWU5WV01vRGdTc3dpUXp4bG5wVFBST0pCT3ExTzRMUEJFaXI?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPVG95OU56eFJORkVxVTFIcEc4eTluMGNEUjFJM2NPYXg3Y25pakJhV1RQZlNhOFR3YXV5T3M2YkRtTDkwZnRFczVaMzVFcjM4c2tEQUNONG1lUW4yeHJGX3FHX08tYWx3SWROY25KQlhiZkxzbzBwSjJBTWVOVWd5Q2xKQVZRWU5WV01vRGdTc3dpUXp4bG5wVFBST0pCT3ExTzRMUEJFaXI?oc=5",
+     "resolved_url": "https://www.cnnbrasil.com.br/agro/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-2027/",
+     "canonical_url": "https://www.cnnbrasil.com.br/agro/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-2027/",
+     "display_url": "https://www.cnnbrasil.com.br/agro/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-2027/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.cnnbrasil.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-10T19:15:50.020537+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "O GLOBO",
+     "domain": "oglobo.globo.com",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPN1hrNERUOXExdUR3NjhJcF85SVpiOWJRUjNLTlQ2SmVQWWhPZXBkeHhXX01SR1ZpblM0S0ZKckhUMmNadGoxeHBJeXJUYlRWbDRXWkEzSVdram5qSmhBQk42N0o4M2RaQVNtcV9FMWJJYWNka1NkaklQaDhiZFNId0dwd1E4VnBFYThXUFZoONIBngFBVV95cUxPWE9hQzhEdF9nempNamhmcDBnNzFhQ3JQbW5YNjBWbHlCNm9KNllDakxjYUxFTFV4SDJYRnpLZW9kVUhPb2FBNldxX3poOXpxeGk1eFJHcWV0TlFXVHo4U3lEVi1EUlhVMVBlMXdSckhJeThiMS1oQ1RidzdZLThrLVEwaVhHb0p6QTI4bWRKX1ZlMmx3VHhFNVI0LUtmdw?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPN1hrNERUOXExdUR3NjhJcF85SVpiOWJRUjNLTlQ2SmVQWWhPZXBkeHhXX01SR1ZpblM0S0ZKckhUMmNadGoxeHBJeXJUYlRWbDRXWkEzSVdram5qSmhBQk42N0o4M2RaQVNtcV9FMWJJYWNka1NkaklQaDhiZFNId0dwd1E4VnBFYThXUFZoONIBngFBVV95cUxPWE9hQzhEdF9nempNamhmcDBnNzFhQ3JQbW5YNjBWbHlCNm9KNllDakxjYUxFTFV4SDJYRnpLZW9kVUhPb2FBNldxX3poOXpxeGk1eFJHcWV0TlFXVHo4U3lEVi1EUlhVMVBlMXdSckhJeThiMS1oQ1RidzdZLThrLVEwaVhHb0p6QTI4bWRKX1ZlMmx3VHhFNVI0LUtmdw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPN1hrNERUOXExdUR3NjhJcF85SVpiOWJRUjNLTlQ2SmVQWWhPZXBkeHhXX01SR1ZpblM0S0ZKckhUMmNadGoxeHBJeXJUYlRWbDRXWkEzSVdram5qSmhBQk42N0o4M2RaQVNtcV9FMWJJYWNka1NkaklQaDhiZFNId0dwd1E4VnBFYThXUFZoONIBngFBVV95cUxPWE9hQzhEdF9nempNamhmcDBnNzFhQ3JQbW5YNjBWbHlCNm9KNllDakxjYUxFTFV4SDJYRnpLZW9kVUhPb2FBNldxX3poOXpxeGk1eFJHcWV0TlFXVHo4U3lEVi1EUlhVMVBlMXdSckhJeThiMS1oQ1RidzdZLThrLVEwaVhHb0p6QTI4bWRKX1ZlMmx3VHhFNVI0LUtmdw?oc=5",
+     "resolved_url": "https://oglobo.globo.com/blogs/lauro-jardim/post/2026/08/jbs-tem-novo-ceo-global.ghtml",
+     "canonical_url": "https://oglobo.globo.com/blogs/lauro-jardim/post/2026/08/jbs-tem-novo-ceo-global.ghtml",
+     "display_url": "https://oglobo.globo.com/blogs/lauro-jardim/post/2026/08/jbs-tem-novo-ceo-global.ghtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "oglobo.globo.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-10T19:15:50.590221+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "TradingView",
+     "domain": "br.tradingview.com",
+     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5QWVRBNDBEV2tOeXYweHVXQXVOM3pfWE1IYWNNZEMzSnY1NUlpbldxZTRqWlQ5VEVEdDFlODM3SUtDQUtqRDQyQS1wbmRNT0lONEVHQ0tTcEZvbGVabXZrWlBYY3BVOUFGb3NmNVZVUWxMV1ZYY1pF?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5QWVRBNDBEV2tOeXYweHVXQXVOM3pfWE1IYWNNZEMzSnY1NUlpbldxZTRqWlQ5VEVEdDFlODM3SUtDQUtqRDQyQS1wbmRNT0lONEVHQ0tTcEZvbGVabXZrWlBYY3BVOUFGb3NmNVZVUWxMV1ZYY1pF?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5QWVRBNDBEV2tOeXYweHVXQXVOM3pfWE1IYWNNZEMzSnY1NUlpbldxZTRqWlQ5VEVEdDFlODM3SUtDQUtqRDQyQS1wbmRNT0lONEVHQ0tTcEZvbGVabXZrWlBYY3BVOUFGb3NmNVZVUWxMV1ZYY1pF?oc=5",
+     "resolved_url": "https://br.tradingview.com/news/reuters.com,2026:newsml_L1N4470RT:0/",
+     "canonical_url": "https://br.tradingview.com/news/reuters.com,2026:newsml_L1N4470RT:0/",
+     "display_url": "https://br.tradingview.com/news/reuters.com,2026:newsml_L1N4470RT:0/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "br.tradingview.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-10T19:15:51.149287+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Rádio Rural",
+     "domain": "radiorural.com.br",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOOGZsLVNLMHRPeWVPQkhuVmpZUk1MdU5aMHc0UkhNZzlra3FYNnNINVU0c0NIUy1kMmdiM0dNUlpjZ3hPeWkxbkFoTjlLUXIzTGF1OFQ2cHF6akdGWTlPTGFXUnFSenIzbzlCcE52ODlwRVBzemkyaTc2a2FEWU1DbDg3SWU1VUI1QTBxRllaUDBRQ3RLYXU4X1VOTkVPNWhuNFVPa0RfZ05tWnlHVjVTWFJSeWppSWNXaGNfbllMWXVvX0da?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOOGZsLVNLMHRPeWVPQkhuVmpZUk1MdU5aMHc0UkhNZzlra3FYNnNINVU0c0NIUy1kMmdiM0dNUlpjZ3hPeWkxbkFoTjlLUXIzTGF1OFQ2cHF6akdGWTlPTGFXUnFSenIzbzlCcE52ODlwRVBzemkyaTc2a2FEWU1DbDg3SWU1VUI1QTBxRllaUDBRQ3RLYXU4X1VOTkVPNWhuNFVPa0RfZ05tWnlHVjVTWFJSeWppSWNXaGNfbllMWXVvX0da?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOOGZsLVNLMHRPeWVPQkhuVmpZUk1MdU5aMHc0UkhNZzlra3FYNnNINVU0c0NIUy1kMmdiM0dNUlpjZ3hPeWkxbkFoTjlLUXIzTGF1OFQ2cHF6akdGWTlPTGFXUnFSenIzbzlCcE52ODlwRVBzemkyaTc2a2FEWU1DbDg3SWU1VUI1QTBxRllaUDBRQ3RLYXU4X1VOTkVPNWhuNFVPa0RfZ05tWnlHVjVTWFJSeWppSWNXaGNfbllMWXVvX0da?oc=5",
+     "resolved_url": "https://www.radiorural.com.br/noticias/63444-jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027",
+     "canonical_url": "https://www.radiorural.com.br/noticias/63444-jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027",
+     "display_url": "https://www.radiorural.com.br/noticias/63444-jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.radiorural.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-10T19:15:51.715082+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "CNN Brasil",
+     "domain": "cnnbrasil.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPVG95OU56eFJORkVxVTFIcEc4eTluMGNEUjFJM2NPYXg3Y25pakJhV1RQZlNhOFR3YXV5T3M2YkRtTDkwZnRFczVaMzVFcjM4c2tEQUNONG1lUW4yeHJGX3FHX08tYWx3SWROY25KQlhiZkxzbzBwSjJBTWVOVWd5Q2xKQVZRWU5WV01vRGdTc3dpUXp4bG5wVFBST0pCT3ExTzRMUEJFaXI?oc=5",
+     "when": "10/08 13:00",
+     "original_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPVG95OU56eFJORkVxVTFIcEc4eTluMGNEUjFJM2NPYXg3Y25pakJhV1RQZlNhOFR3YXV5T3M2YkRtTDkwZnRFczVaMzVFcjM4c2tEQUNONG1lUW4yeHJGX3FHX08tYWx3SWROY25KQlhiZkxzbzBwSjJBTWVOVWd5Q2xKQVZRWU5WV01vRGdTc3dpUXp4bG5wVFBST0pCT3ExTzRMUEJFaXI?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPVG95OU56eFJORkVxVTFIcEc4eTluMGNEUjFJM2NPYXg3Y25pakJhV1RQZlNhOFR3YXV5T3M2YkRtTDkwZnRFczVaMzVFcjM4c2tEQUNONG1lUW4yeHJGX3FHX08tYWx3SWROY25KQlhiZkxzbzBwSjJBTWVOVWd5Q2xKQVZRWU5WV01vRGdTc3dpUXp4bG5wVFBST0pCT3ExTzRMUEJFaXI?oc=5",
+     "resolved_url": "https://www.cnnbrasil.com.br/agro/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-2027/",
+     "canonical_url": "https://www.cnnbrasil.com.br/agro/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-2027/",
+     "display_url": "https://www.cnnbrasil.com.br/agro/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-2027/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.cnnbrasil.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-10T19:15:52.115337+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "TradingView",
+     "domain": "br.tradingview.com",
+     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5QWVRBNDBEV2tOeXYweHVXQXVOM3pfWE1IYWNNZEMzSnY1NUlpbldxZTRqWlQ5VEVEdDFlODM3SUtDQUtqRDQyQS1wbmRNT0lONEVHQ0tTcEZvbGVabXZrWlBYY3BVOUFGb3NmNVZVUWxMV1ZYY1pF?oc=5",
+     "when": "10/08 15:55",
+     "original_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5QWVRBNDBEV2tOeXYweHVXQXVOM3pfWE1IYWNNZEMzSnY1NUlpbldxZTRqWlQ5VEVEdDFlODM3SUtDQUtqRDQyQS1wbmRNT0lONEVHQ0tTcEZvbGVabXZrWlBYY3BVOUFGb3NmNVZVUWxMV1ZYY1pF?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5QWVRBNDBEV2tOeXYweHVXQXVOM3pfWE1IYWNNZEMzSnY1NUlpbldxZTRqWlQ5VEVEdDFlODM3SUtDQUtqRDQyQS1wbmRNT0lONEVHQ0tTcEZvbGVabXZrWlBYY3BVOUFGb3NmNVZVUWxMV1ZYY1pF?oc=5",
+     "resolved_url": "https://br.tradingview.com/news/reuters.com,2026:newsml_L1N4470RT:0/",
+     "canonical_url": "https://br.tradingview.com/news/reuters.com,2026:newsml_L1N4470RT:0/",
+     "display_url": "https://br.tradingview.com/news/reuters.com,2026:newsml_L1N4470RT:0/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "br.tradingview.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-10T19:15:52.515603+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Rádio Rural",
+     "domain": "radiorural.com.br",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOOGZsLVNLMHRPeWVPQkhuVmpZUk1MdU5aMHc0UkhNZzlra3FYNnNINVU0c0NIUy1kMmdiM0dNUlpjZ3hPeWkxbkFoTjlLUXIzTGF1OFQ2cHF6akdGWTlPTGFXUnFSenIzbzlCcE52ODlwRVBzemkyaTc2a2FEWU1DbDg3SWU1VUI1QTBxRllaUDBRQ3RLYXU4X1VOTkVPNWhuNFVPa0RfZ05tWnlHVjVTWFJSeWppSWNXaGNfbllMWXVvX0da?oc=5",
+     "when": "10/08 15:59",
+     "original_url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOOGZsLVNLMHRPeWVPQkhuVmpZUk1MdU5aMHc0UkhNZzlra3FYNnNINVU0c0NIUy1kMmdiM0dNUlpjZ3hPeWkxbkFoTjlLUXIzTGF1OFQ2cHF6akdGWTlPTGFXUnFSenIzbzlCcE52ODlwRVBzemkyaTc2a2FEWU1DbDg3SWU1VUI1QTBxRllaUDBRQ3RLYXU4X1VOTkVPNWhuNFVPa0RfZ05tWnlHVjVTWFJSeWppSWNXaGNfbllMWXVvX0da?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOOGZsLVNLMHRPeWVPQkhuVmpZUk1MdU5aMHc0UkhNZzlra3FYNnNINVU0c0NIUy1kMmdiM0dNUlpjZ3hPeWkxbkFoTjlLUXIzTGF1OFQ2cHF6akdGWTlPTGFXUnFSenIzbzlCcE52ODlwRVBzemkyaTc2a2FEWU1DbDg3SWU1VUI1QTBxRllaUDBRQ3RLYXU4X1VOTkVPNWhuNFVPa0RfZ05tWnlHVjVTWFJSeWppSWNXaGNfbllMWXVvX0da?oc=5",
+     "resolved_url": "https://www.radiorural.com.br/noticias/63444-jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027",
+     "canonical_url": "https://www.radiorural.com.br/noticias/63444-jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027",
+     "display_url": "https://www.radiorural.com.br/noticias/63444-jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.radiorural.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-10T19:15:52.915842+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1786389332,
+   "cap_iso": "2026-08-10 16:15"
   }
  },
- "run_count": 97,
+ "run_count": 98,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -54962,11 +55244,47 @@
   "https://news.google.com/rss/articles/CBMitgJBVV95cUxPZmxvdDFLWVJqR3VxNlplR2RuSEF0WEFnNjdlWXlfdWFDdlVlbG5uLUJMdmhKMXI2dTBIMlhheGdiRENXNGF6QjBvcDBhNHVoQkhjVnpyWGE4MUVfSjdJUmFINTZRTGZHRGdHbmZQQkM5Zm5pRWVhMW80SkN4bnNSaW1aczVLS1VrMC1aZHk0enhkWGNBaFdwRXNPZU1oSzB6SGdES1VJOHd4MncxWmhoOTljX2tzNExhaVdDYVRDdjRaZTBISy1fOGN5alhPb3lSS0JLd1pmT0gwajZqMGlwenZUc0xEZ0FNZE5ZdlFnRUJHci10RUhBMlRrTWlTQ01IWXVaeVpGVWNUbjNjelBuZnlNNlNlVmViZGhiYzM0ZGJzZXhxZFNyX25QSjF0RFNHdDJHTGR3?oc=5": {
    "url": "https://www.newsfilecorp.com/release/224094/FORD-STOCK-ALERT-Ford-Motor-Company-Investors-that-Suffered-Losses-are-Encouraged-to-Contact-BFA-Law-Prior-to-October-7-Court-Deadline-in-Securities-Fraud-Class-Action",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMitgFBVV95cUxOMXRNVzNPQjZUaGNhbjAzN0swMFhwRVZ5LTlseldtR1FZNmZmUkxfRFAxaXF6STI0dUJYYWZTZEhKNGszSXRkOTFNMG5aa0tub19PSEF4VjRqeVBQOU4tb0lOMzFQRnVyVERRVTJfRDVCMm9VZHBxdGstVFpvWVExZVVGVnRNLVNnM3luWVV1NWRqcEs4MXUyVEZIQzUwLU4wcnhsQVN3UDBjZFA2LVdNTUtsVFJkd9IB1wFBVV95cUxQTW9GZnFJMlFiN2N2d0JWY3BKWjhzRlg5OTNfVFFyTk1KdU9XcHlmdjN4NUYtb0JqNFBWSnJjekctOWRjMnQ2NVRsakNqTmVBc25LZXpwRTEzSFRMQm9zN25GTnpJNzQ0Y3gyVFRrWEFvanFoeVduOWZ1c0ZVMFBUcUJmWWhDNzBuTW9mMFJKZmc1Zk1CNC03WkNGRm15V2Z4VHlfVDdkbi1VXzlLU3JxQWd1RkZMQUkwT2JlLVp5MGMxd2hCVG1aY3FoMjRCNHZsbzRueUhoVQ?oc=5": {
+   "url": "https://www.latercera.com/pulso/noticia/cmf-aprueba-fusion-de-bicecorp-y-grupo-security/TMOIO4Z3KBBGZCY6PMBRIIC3JQ/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNMmt4bndzRXkyYjBISlU1eGswaUQwUnFXVThWTXJObjd0Um5lN0RwakhIeFBWbTNUN25ETVhrdUxjelB2bWdxLVE2cXdQNFVWUkliNUZXMHRjN21vNXVISzNNemRUQ0JabndfeVdSRVZoMENjQ1doWlBfWF94b2RFVm5mWFVhLWN3QkQxdEdpT0RBRkpudXhxcUg0aWtIb3ZLMVkzeFMzcF9raU53cExRX0hld1p4Yy1vSXA4cHlLdUtSMU9TT000S2toVjFWUUxYVmpnUmdjaWI?oc=5": {
+   "url": "https://www.nsctotal.com.br/economia/tupy-do-futuro-novo-ceo-faz-giro-por-unidades-e-reconhece-solucao-para-falta-de-mao-de-obra-em-joinville",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPbWNtSHJaYkpqSlBmaXJDcjFTZHdlZ3lsS3dKZTBwMm5obDAzWDJDc1BPOE96ZUhYdmNFM3dSemwyNTlpT3ltbF9kbi1QOWJscmVtSXBVNGFQNmdQOFhldVBiVTNnd2xacjFqbjl2N0dCUUt2TVZxSnlUbTNMZUE0dzlZOV9GalVrNXpFQVJIN3J4OHNKanRNMUNHdDNqWVJ1cXpBRDdGWnM3TXFTb0E1R21BZE1lLU50bHhVT3h3WVdjcGNoMXBIRFdoenpJRWljbUFv?oc=5": {
+   "url": "https://br.investing.com/news/stock-market-news/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027-2033673",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMinAFBVV95cUxORE5EOHk3NVNaZlFjLUJFc3JjWHpqYzJvZnF4bVBqTjlHQnQ1Tm44eHRvbGt5Sk5POHBtdUFkaVRxMUgzWkxoT29WcTR6ZEktQUMtT3hXTVhFV1loSjFheHh3RE5QY2R6RGFwdzR2UWw5UmxKZ3BPN0JpYUxWWDBVTDU0emdLRVNwekxEMThOakEwOW1rN2E3NjhCQkM?oc=5": {
+   "url": "https://www.contabeis.com.br/noticias/78518/recuperacao-judicial-cresce-entre-pequenas-empresas/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5": {
+   "url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPVG95OU56eFJORkVxVTFIcEc4eTluMGNEUjFJM2NPYXg3Y25pakJhV1RQZlNhOFR3YXV5T3M2YkRtTDkwZnRFczVaMzVFcjM4c2tEQUNONG1lUW4yeHJGX3FHX08tYWx3SWROY25KQlhiZkxzbzBwSjJBTWVOVWd5Q2xKQVZRWU5WV01vRGdTc3dpUXp4bG5wVFBST0pCT3ExTzRMUEJFaXI?oc=5": {
+   "url": "https://www.cnnbrasil.com.br/agro/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-2027/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMijwFBVV95cUxPN1hrNERUOXExdUR3NjhJcF85SVpiOWJRUjNLTlQ2SmVQWWhPZXBkeHhXX01SR1ZpblM0S0ZKckhUMmNadGoxeHBJeXJUYlRWbDRXWkEzSVdram5qSmhBQk42N0o4M2RaQVNtcV9FMWJJYWNka1NkaklQaDhiZFNId0dwd1E4VnBFYThXUFZoONIBngFBVV95cUxPWE9hQzhEdF9nempNamhmcDBnNzFhQ3JQbW5YNjBWbHlCNm9KNllDakxjYUxFTFV4SDJYRnpLZW9kVUhPb2FBNldxX3poOXpxeGk1eFJHcWV0TlFXVHo4U3lEVi1EUlhVMVBlMXdSckhJeThiMS1oQ1RidzdZLThrLVEwaVhHb0p6QTI4bWRKX1ZlMmx3VHhFNVI0LUtmdw?oc=5": {
+   "url": "https://oglobo.globo.com/blogs/lauro-jardim/post/2026/08/jbs-tem-novo-ceo-global.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMid0FVX3lxTE5QWVRBNDBEV2tOeXYweHVXQXVOM3pfWE1IYWNNZEMzSnY1NUlpbldxZTRqWlQ5VEVEdDFlODM3SUtDQUtqRDQyQS1wbmRNT0lONEVHQ0tTcEZvbGVabXZrWlBYY3BVOUFGb3NmNVZVUWxMV1ZYY1pF?oc=5": {
+   "url": "https://br.tradingview.com/news/reuters.com,2026:newsml_L1N4470RT:0/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMixAFBVV95cUxOOGZsLVNLMHRPeWVPQkhuVmpZUk1MdU5aMHc0UkhNZzlra3FYNnNINVU0c0NIUy1kMmdiM0dNUlpjZ3hPeWkxbkFoTjlLUXIzTGF1OFQ2cHF6akdGWTlPTGFXUnFSenIzbzlCcE52ODlwRVBzemkyaTc2a2FEWU1DbDg3SWU1VUI1QTBxRllaUDBRQ3RLYXU4X1VOTkVPNWhuNFVPa0RfZ05tWnlHVjVTWFJSeWppSWNXaGNfbllMWXVvX0da?oc=5": {
+   "url": "https://www.radiorural.com.br/noticias/63444-jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786388713,
-  "iso": "10 ago 2026 · 16:05 BRT",
+  "ts": 1786389392,
+  "iso": "10 ago 2026 · 16:16 BRT",
   "status": {
    "Engie Brasil": {
     "status": "atencao",
@@ -54975,6 +55293,10 @@
    "Rumo": {
     "status": "atencao",
     "score": 64
+   },
+   "JBS": {
+    "status": "atencao",
+    "score": 59
    },
    "Vale": {
     "status": "atencao",
@@ -54988,13 +55310,13 @@
     "status": "atencao",
     "score": 47
    },
-   "Samarco Mineração": {
-    "status": "critico",
-    "score": 39
-   },
    "Smart Fit": {
     "status": "atencao",
     "score": 39
+   },
+   "Samarco Mineração": {
+    "status": "critico",
+    "score": 38
    },
    "Axia Energia": {
     "status": "atencao",
@@ -55007,10 +55329,6 @@
    "Sabesp": {
     "status": "monitorar",
     "score": 33
-   },
-   "JBS": {
-    "status": "atencao",
-    "score": 29
    },
    "Yobel": {
     "status": "monitorar",
@@ -55057,6 +55375,10 @@
     "score": 18
    },
    "Aegea Saneamento": {
+    "status": "monitorar",
+    "score": 18
+   },
+   "Tupy": {
     "status": "monitorar",
     "score": 18
    },
@@ -55151,10 +55473,6 @@
    "Halliburton": {
     "status": "monitorar",
     "score": 5
-   },
-   "Tupy": {
-    "status": "monitorar",
-    "score": 3
    },
    "Direcional Engenharia": {
     "status": "monitorar",
