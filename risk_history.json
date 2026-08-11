@@ -724,7 +724,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T14:26:38.866729+00:00"
+     "last_checked_at": "2026-08-11T15:12:33.657664+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2593,7 +2593,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T14:26:39.266999+00:00"
+     "last_checked_at": "2026-08-11T15:12:34.057951+00:00"
     }
    ],
    "corrob_sources": [
@@ -10262,7 +10262,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T14:26:40.067581+00:00"
+     "last_checked_at": "2026-08-11T15:12:34.458286+00:00"
     },
     {
      "source": "Demarest",
@@ -10282,7 +10282,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T14:26:40.467902+00:00"
+     "last_checked_at": "2026-08-11T15:12:34.858658+00:00"
     }
    ],
    "corrob_sources": [
@@ -11865,7 +11865,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T14:26:40.868140+00:00"
+     "last_checked_at": "2026-08-11T15:12:35.258903+00:00"
     }
    ],
    "corrob_sources": [
@@ -15578,7 +15578,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T14:26:41.497068+00:00"
+     "last_checked_at": "2026-08-11T15:12:35.853376+00:00"
     }
    ],
    "corrob_sources": [
@@ -18131,7 +18131,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T14:26:42.101170+00:00"
+     "last_checked_at": "2026-08-11T15:12:36.441416+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -18237,7 +18237,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T14:26:42.740510+00:00"
+     "last_checked_at": "2026-08-11T15:12:37.024960+00:00"
     },
     {
      "source": "Moomoo",
@@ -19642,7 +19642,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T14:26:43.543670+00:00"
+     "last_checked_at": "2026-08-11T15:12:37.792994+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19685,7 +19685,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T14:26:44.325713+00:00"
+     "last_checked_at": "2026-08-11T15:12:38.516910+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -20509,7 +20509,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T14:26:44.935671+00:00",
+     "last_checked_at": "2026-08-11T15:12:39.110915+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20534,7 +20534,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T14:26:45.573044+00:00",
+     "last_checked_at": "2026-08-11T15:12:39.697753+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21654,7 +21654,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-11T14:26:45.973338+00:00",
+     "last_checked_at": "2026-08-11T15:12:40.098042+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21719,7 +21719,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-11T14:26:46.373596+00:00",
+     "last_checked_at": "2026-08-11T15:12:40.498326+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22808,7 +22808,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T14:26:47.016461+00:00"
+     "last_checked_at": "2026-08-11T15:12:41.079736+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22893,7 +22893,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T14:26:47.635527+00:00"
+     "last_checked_at": "2026-08-11T15:12:41.707071+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24706,7 +24706,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T14:26:48.245531+00:00",
+     "last_checked_at": "2026-08-11T15:12:42.290811+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24876,7 +24876,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T14:26:48.868346+00:00",
+     "last_checked_at": "2026-08-11T15:12:42.869838+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -39045,7 +39045,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T14:26:49.611657+00:00"
+     "last_checked_at": "2026-08-11T15:12:43.627911+00:00"
     }
    ],
    "corrob_sources": [
@@ -42116,7 +42116,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T14:26:50.232347+00:00"
+     "last_checked_at": "2026-08-11T15:12:44.241941+00:00"
     },
     {
      "source": "Virginia Business",
@@ -42159,7 +42159,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T14:26:50.849906+00:00"
+     "last_checked_at": "2026-08-11T15:12:44.811417+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48940,7 +48940,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T14:26:51.468801+00:00",
+     "last_checked_at": "2026-08-11T15:12:45.395460+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48963,7 +48963,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T14:26:52.115381+00:00",
+     "last_checked_at": "2026-08-11T15:12:45.982989+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -50789,7 +50789,9 @@
     "Engie Brasil"
    ],
    "captured_ts": 1786446222,
-   "cap_iso": "2026-08-11 08:03"
+   "cap_iso": "2026-08-11 08:03",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://portalnovarejo.com.br/noticias/engie-brasil-energia-finaliza-oferta-de-acoes-e-aumenta-participacao-em-jirau/": {
    "title": "ENGIE Brasil Energia finaliza oferta de ações e aumenta participação em Jirau",
@@ -50825,7 +50827,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1786446222,
-   "cap_iso": "2026-08-11 08:03"
+   "cap_iso": "2026-08-11 08:03",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://brasilenergia.com.br/energia/empresas/fitch-eleva-rating-global-da-engie-brasil-para-bbb": {
    "title": "Fitch eleva rating global da Engie Brasil para ‘BBB’",
@@ -50882,7 +50886,52 @@
     "Engie Brasil"
    ],
    "captured_ts": 1786446222,
-   "cap_iso": "2026-08-11 08:03"
+   "cap_iso": "2026-08-11 08:03",
+   "corroborations": [
+    {
+     "source": "financenews.com.br",
+     "domain": "financenews.com.br",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNUURQNF9RaU5UV2h2WElXcDl6RGwxeGlJeVE0d1lOSy1palBFQnk2S2VXdGQxRlB0MldOMnItN01aZVZqUmhlMnYzVVFiUE1yUGZoVzRrLUttNzh3MVdqdi1NQjdoMmpGZF9iaWlGRHJ2VmRWQ0Q5SkRMUWRJMWtFWURXQ0RYQTlwcjVmazIxem95Q0FjZ0E?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNUURQNF9RaU5UV2h2WElXcDl6RGwxeGlJeVE0d1lOSy1palBFQnk2S2VXdGQxRlB0MldOMnItN01aZVZqUmhlMnYzVVFiUE1yUGZoVzRrLUttNzh3MVdqdi1NQjdoMmpGZF9iaWlGRHJ2VmRWQ0Q5SkRMUWRJMWtFWURXQ0RYQTlwcjVmazIxem95Q0FjZ0E?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNUURQNF9RaU5UV2h2WElXcDl6RGwxeGlJeVE0d1lOSy1palBFQnk2S2VXdGQxRlB0MldOMnItN01aZVZqUmhlMnYzVVFiUE1yUGZoVzRrLUttNzh3MVdqdi1NQjdoMmpGZF9iaWlGRHJ2VmRWQ0Q5SkRMUWRJMWtFWURXQ0RYQTlwcjVmazIxem95Q0FjZ0E?oc=5",
+     "resolved_url": "https://financenews.com.br/2026/08/fitch-eleva-idr-em-moeda-local-da-engie-brasil-para-bbb/",
+     "canonical_url": "https://financenews.com.br/2026/08/fitch-eleva-idr-em-moeda-local-da-engie-brasil-para-bbb/",
+     "display_url": "https://financenews.com.br/2026/08/fitch-eleva-idr-em-moeda-local-da-engie-brasil-para-bbb/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "financenews.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-11T15:12:46.572208+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "financenews.com.br",
+     "domain": "financenews.com.br",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNUURQNF9RaU5UV2h2WElXcDl6RGwxeGlJeVE0d1lOSy1palBFQnk2S2VXdGQxRlB0MldOMnItN01aZVZqUmhlMnYzVVFiUE1yUGZoVzRrLUttNzh3MVdqdi1NQjdoMmpGZF9iaWlGRHJ2VmRWQ0Q5SkRMUWRJMWtFWURXQ0RYQTlwcjVmazIxem95Q0FjZ0E?oc=5",
+     "when": "11/08 09:39",
+     "original_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNUURQNF9RaU5UV2h2WElXcDl6RGwxeGlJeVE0d1lOSy1palBFQnk2S2VXdGQxRlB0MldOMnItN01aZVZqUmhlMnYzVVFiUE1yUGZoVzRrLUttNzh3MVdqdi1NQjdoMmpGZF9iaWlGRHJ2VmRWQ0Q5SkRMUWRJMWtFWURXQ0RYQTlwcjVmazIxem95Q0FjZ0E?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNUURQNF9RaU5UV2h2WElXcDl6RGwxeGlJeVE0d1lOSy1palBFQnk2S2VXdGQxRlB0MldOMnItN01aZVZqUmhlMnYzVVFiUE1yUGZoVzRrLUttNzh3MVdqdi1NQjdoMmpGZF9iaWlGRHJ2VmRWQ0Q5SkRMUWRJMWtFWURXQ0RYQTlwcjVmazIxem95Q0FjZ0E?oc=5",
+     "resolved_url": "https://financenews.com.br/2026/08/fitch-eleva-idr-em-moeda-local-da-engie-brasil-para-bbb/",
+     "canonical_url": "https://financenews.com.br/2026/08/fitch-eleva-idr-em-moeda-local-da-engie-brasil-para-bbb/",
+     "display_url": "https://financenews.com.br/2026/08/fitch-eleva-idr-em-moeda-local-da-engie-brasil-para-bbb/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "financenews.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-11T15:12:46.972445+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ]
   },
   "https://www.law360.com/articles/2391836/unitedhealth-fights-investor-suit-over-doj-s-merger-probe": {
    "title": "UnitedHealth Fights Investor Suit Over DOJ's Merger Probe",
@@ -50938,9 +50987,162 @@
    "trust_override": "imprensa",
    "captured_ts": 1786458394,
    "cap_iso": "2026-08-11 11:26"
+  },
+  "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOazFTbEFPOGtYRGdfb251Y0s0WEhaUXFuM1dDc2cwdWxDaUN6M3ozdW9YVmdqMHB3dDZmekdsVXhCcjRSSHdtbE1XZVdVZjlCdmlJXzdYS21JaVBQdURfXzZtcF9qc2VqX25ucExMdWpoRThxX25LZVBKcUczVXF0dWU4NThIVlQ4MVNzYm94VGdUdGNuZzI2SzN3WVZxblFVU2dmc3lvajVJdll3TTR3a1hNS2JLeEkyVVNiYXZNbFdOUEZhVksza0EtbjNUeUFpTG5hQ2tHVjZUMzFSSlBCdEFSaw?oc=5": {
+   "title": "Fiscalía CDMX abre investigación por muerte en el Estadio Banorte previo al México vs Portugal",
+   "url": "https://www.record.com.mx/historia/fiscalia-cdmx-abre-investigacion-por-muerte-en-el-estadio-banorte-previo-al-mexico-vs-portugal-2026032906081088330",
+   "summary": "Fiscalía CDMX abre investigación por muerte en el Estadio Banorte previo al México vs Portugal &nbsp;&nbsp; Récord",
+   "source": "Récord",
+   "domain": "record.com.mx",
+   "pub_ts": 1774767600,
+   "pub_iso": "2026-03-29 04:00",
+   "language": "es",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "investigacao_regulatoria"
+   ],
+   "captured_ts": 1786461149,
+   "cap_iso": "2026-08-11 12:12"
+  },
+  "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/": {
+   "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
+   "url": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/",
+   "summary": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal &nbsp;&nbsp; InfoMoney",
+   "source": "InfoMoney",
+   "domain": "infomoney.com.br",
+   "pub_ts": 1783494000,
+   "pub_iso": "2026-07-08 04:00",
+   "language": "pt",
+   "companies": [
+    "Vale"
+   ],
+   "event_ids": [
+    "investigacao_regulatoria"
+   ],
+   "event_assessments": [
+    {
+     "company": "Vale",
+     "event_id": "investigacao_regulatoria",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Vale",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "indireto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_PAPEL_NAO_SUJEITO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "Vale atua como individual_subject neste texto, não como sujeito do evento",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Vale",
+     "event_id": "investigacao_regulatoria",
+     "event_id_corrigido": "",
+     "regra": "R_PAPEL_NAO_SUJEITO",
+     "motivo": "Vale atua como individual_subject neste texto, não como sujeito do evento",
+     "subject_company": "Vale"
+    }
+   ],
+   "mention_roles": {
+    "Vale": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Vale": [
+     {
+      "company": "Vale",
+      "event_id": "investigacao_regulatoria",
+      "event_label": "investigacao regulatoria",
+      "subject_company": "Vale",
+      "monitored_company": "Vale",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_PAPEL_NAO_SUJEITO",
+      "attribution_confidence": "media",
+      "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOU93WVNoT0tjSW96XzBfWU54MGlPbm9IUXJtb1MwVG1pN2ZUZmF3UUpZN3ZNR0ZoQmw3M3lZT0psX2VaLVdaM1lBNzZ2aHpIM3F2bGpWaEh3bEktNTBXZTdnRDd5UWVEdkRkTzd4aHhwWXZnWkVpMWQyZEx4cDRlTy1ERjZNQmNFRzlWTHp5N1hWOFU4NDY2OFRFSmdXYVRSM25VaEo0LVJqSkZTMGgtaTA4Z1EwWWtHUkRPdjRSUUPSAcYBQVVfeXFMUFJqQ2JsVE5yZENES2pndGtXa2VYNDFPTnBtVHlzWlV3eFYwczZxSGlDY0dMM25TZS1ScEtPaVdIbEpCQUR6WThLRk9jWmtYZXE4MjhzUDhzQ2JUZmVaVnpfN3lHM1FXckdKR0xZRmE3bTlaRG9jVU1zRTV3NmRLcmRvWHhUNVA1eXhGaUhuOEdFQ3haR25OR2txQ0dQU3hFam9zSktjVkNGZGFCeGFQZm5jVl9YN2VBdXZtcjRSMmJfdUgxVk1n?oc=5",
+      "pub_ts": 1783494000,
+      "observation": "Vale atua como individual_subject neste texto, não como sujeito do evento",
+      "source_record_id": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOU93WVNoT0tjSW96XzBfWU54MGlPbm9IUXJtb1MwVG1pN2ZUZmF3UUpZN3ZNR0ZoQmw3M3lZT0psX2VaLVdaM1lBNzZ2aHpIM3F2bGpWaEh3bEktNTBXZTdnRDd5UWVEdkRkTzd4aHhwWXZnWkVpMWQyZEx4cDRlTy1ERjZNQmNFRzlWTHp5N1hWOFU4NDY2OFRFSmdXYVRSM25VaEo0LVJqSkZTMGgtaTA4Z1EwWWtHUkRPdjRSUUPSAcYBQVVfeXFMUFJqQ2JsVE5yZENES2pndGtXa2VYNDFPTnBtVHlzWlV3eFYwczZxSGlDY0dMM25TZS1ScEtPaVdIbEpCQUR6WThLRk9jWmtYZXE4MjhzUDhzQ2JUZmVaVnpfN3lHM1FXckdKR0xZRmE3bTlaRG9jVU1zRTV3NmRLcmRvWHhUNVA1eXhGaUhuOEdFQ3haR25OR2txQ0dQU3hFam9zSktjVkNGZGFCeGFQZm5jVl9YN2VBdXZtcjRSMmJfdUgxVk1n?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Vale": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Vale"
+   ],
+   "captured_ts": 1786461149,
+   "cap_iso": "2026-08-11 12:12"
+  },
+  "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNN3l5NFBlbTBYbTVVRGhiNmhmby05eEdjSndTVXQyTjQtbHFiLTJManU5ZVJoNDdaSVVId3RUdVR0VkRMaHMyYUhjUndyNmlsUmdobUQ5T09CQnMxOUkxaWQwVEQyXzdiS2czXzdGb0xHR0JobDZpU2Q0RldzTEtpaXdGV3NjUndPYUJYdXIyLTZpZ3VkdjBKR29KYXdMdWYteFB2TEFLMm4?oc=5": {
+   "title": "Lucid Motors Hired Bankruptcy Specialists, Then Watched Its Stock Collapse 50%",
+   "url": "https://www.gadgetreview.com/lucid-motors-hired-bankruptcy-specialists-then-watched-its-stock-collapse-50",
+   "summary": "Lucid Motors Hired Bankruptcy Specialists, Then Watched Its Stock Collapse 50% &nbsp;&nbsp; Gadget Review",
+   "source": "Gadget Review",
+   "domain": "gadgetreview.com",
+   "pub_ts": 1784098800,
+   "pub_iso": "2026-07-15 04:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1786461149,
+   "cap_iso": "2026-08-11 12:12"
+  },
+  "https://news.google.com/rss/articles/CBMikwJBVV95cUxPdjh5TVVyaUNpdi1lMUdINDRmWG4tQThBMEc0bnI5azZ2djdNVTNOdUVHRU1ZYWRxaHY3SW9TQ2I4akFNSlFUWVNHS3d6bzgycXFpY0sxR29KbktrM0tOTTBvWjMzM1c3M1VhSWdIRkFjTHNPV3ZWNF9rN0pVSlpkLXFnbmxuVExNTmc1YlVxZlExUFpUTUQ0MFVmNE5fanVpM3RPWS10NTI1SlV3TEMzbzcwbE5PQ013VTQ1Sm81c0w1R2thakd4SlhPN0JDWVZVaE9NMUhURFRTSHMwUlR5c19vX25DWWx5V0RBYnZ3SUhoWGxDR0w0amVxVk1yQ1owdGE3SkV2NG93eV9md2YwdEtrWQ?oc=5": {
+   "title": "Investidores recorrem a soluções criativas para reaver aplicações em títulos de empresas em recuperação judicial ou extrajudicial",
+   "url": "https://www.seudinheiro.com/2026/renda-fixa/as-solucoes-criativas-de-gestores-e-advogados-para-reaver-investimentos-em-dividas-de-empresas-em-recuperacao-judicial-ou-extrajudicial-kaes/",
+   "summary": "Investidores recorrem a soluções criativas para reaver aplicações em títulos de empresas em recuperação judicial ou extrajudicial &nbsp;&nbsp; seudinheiro.com",
+   "source": "seudinheiro.com",
+   "domain": "seudinheiro.com",
+   "pub_ts": 1786440150,
+   "pub_iso": "2026-08-11 06:22",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1786461149,
+   "cap_iso": "2026-08-11 12:12"
   }
  },
- "run_count": 102,
+ "run_count": 103,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -56105,11 +56307,19 @@
   "https://news.google.com/rss/articles/CBMisgFBVV95cUxOeWhoWFoyVHVLSUE5bm4wOUNNd25ZRlMtT2lrcU5BNEI2QWdlZkVHQkVUeGljQzBqX3R6LXBKa3gwNWF3ZzY5aV8zVXk5ZWEwbUxLazdndVlzVDFheWQ1Q3N1VVo0eEJjc2w1UWMtb2pUNUVkOHpPV2RPNHlTMVdmTlE4YU93OFRMOXNqTk1kbDB5ajl3R1NUNFhzaENkenhZR3pYNjFMQXBfQU1YOUZQZmlR?oc=5": {
    "url": "https://agrimidia.com.br/avicultura-industrial/2026/08/11/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMikwJBVV95cUxPdjh5TVVyaUNpdi1lMUdINDRmWG4tQThBMEc0bnI5azZ2djdNVTNOdUVHRU1ZYWRxaHY3SW9TQ2I4akFNSlFUWVNHS3d6bzgycXFpY0sxR29KbktrM0tOTTBvWjMzM1c3M1VhSWdIRkFjTHNPV3ZWNF9rN0pVSlpkLXFnbmxuVExNTmc1YlVxZlExUFpUTUQ0MFVmNE5fanVpM3RPWS10NTI1SlV3TEMzbzcwbE5PQ013VTQ1Sm81c0w1R2thakd4SlhPN0JDWVZVaE9NMUhURFRTSHMwUlR5c19vX25DWWx5V0RBYnZ3SUhoWGxDR0w0amVxVk1yQ1owdGE3SkV2NG93eV9md2YwdEtrWQ?oc=5": {
+   "url": "https://www.seudinheiro.com/2026/renda-fixa/as-solucoes-criativas-de-gestores-e-advogados-para-reaver-investimentos-em-dividas-de-empresas-em-recuperacao-judicial-ou-extrajudicial-kaes/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMilgFBVV95cUxNUURQNF9RaU5UV2h2WElXcDl6RGwxeGlJeVE0d1lOSy1palBFQnk2S2VXdGQxRlB0MldOMnItN01aZVZqUmhlMnYzVVFiUE1yUGZoVzRrLUttNzh3MVdqdi1NQjdoMmpGZF9iaWlGRHJ2VmRWQ0Q5SkRMUWRJMWtFWURXQ0RYQTlwcjVmazIxem95Q0FjZ0E?oc=5": {
+   "url": "https://financenews.com.br/2026/08/fitch-eleva-idr-em-moeda-local-da-engie-brasil-para-bbb/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786460114,
-  "iso": "11 ago 2026 · 11:55 BRT",
+  "ts": 1786461209,
+  "iso": "11 ago 2026 · 12:13 BRT",
   "status": {
    "Cosan": {
     "status": "atencao",
