@@ -1,6 +1,6 @@
 {
- "schema_version": "1.0",
- "extractor_version": "r5b.1",
+ "schema_version": "1.1",
+ "extractor_version": "r6b.1",
  "policy_version": "r5b.1",
  "articles": {
   "https://www.clarin.com/economia/miguel-galuccio-une-exceo-ypf-duena-puma-energy-rescatar-petrolera-default_0_ZDkoMlRGKN.html": {
@@ -2553,7 +2553,7 @@
    }
   }
  },
- "gerado_em": 1786478872,
+ "gerado_em": 1786483044,
  "first_seen_run": {
   "https://www.cnbc.com/2025/07/11/capital-one-has-more-room-to-run-after-its-acquisition-jim-cramer-says.html": 104,
   "https://www.infomoney.com.br/mercados/telefonica-assume-100-da-fibrasil-e-reforca-estrategia-de-infraestrutura-propria/": 104,

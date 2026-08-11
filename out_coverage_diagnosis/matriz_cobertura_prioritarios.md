@@ -1,15 +1,15 @@
 # Matriz de cobertura — emissores priorizados (reconciliação runtime)
 
-run_id: 2026-08-11T20:07:50.965224+00:00 · generated_at: 2026-08-11T20:07:50.965224+00:00 · commit_base: 560aaa02c46e6da328295d893c9df98e84c53779 · payload_hash: f3b60f283eec1a969530f3f8a43ac87557286faf13811cc4481e2ba87687353a
+run_id: 2026-08-11T21:17:23.693311+00:00 · generated_at: 2026-08-11T21:17:23.693311+00:00 · commit_base: 226c47cdb96fc3735134653eca6aa85e21f20e32 · payload_hash: 8bc2fd88f5eafc6140a1ce4f7deef7808252fbd920c5dd7d74a8bd3da97282bc
 
 | Emissor | Tipo | Ciclo atual | Consolidado | Frescor |
 |---|---|---|---|---|
 | Ambev | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
-| B3 | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
-| BTG Pactual | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
+| B3 | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
+| BTG Pactual | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
 | Banco do Brasil | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
 | Bradesco | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
-| Eletrobras | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
+| Eletrobras | Tier 1 | FALLBACK_ONLY | FALLBACK_ONLY | valida |
 | Equatorial Energia | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
 | Itaú Unibanco | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
 | Localiza | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
@@ -20,10 +20,10 @@ run_id: 2026-08-11T20:07:50.965224+00:00 · generated_at: 2026-08-11T20:07:50.96
 | Suzano | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
 | Vale | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
 | Vibra Energia | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
-| Yura | Peru | PARTIAL_COVERAGE | PARTIAL_COVERAGE | valida |
+| Yura | Peru | FALLBACK_ONLY | FALLBACK_ONLY | valida |
 | Trupal | Peru | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | valida |
-| Coazucar | Peru | FALLBACK_ONLY | FALLBACK_ONLY | valida |
-| Yobel | Peru | COLLECTION_FAILURE | PARTIAL_COVERAGE | parcial |
+| Coazucar | Peru | PARTIAL_COVERAGE | PARTIAL_COVERAGE | valida |
+| Yobel | Peru | PARTIAL_COVERAGE | PARTIAL_COVERAGE | parcial |
 | Casa Grande S.A.A. | Subsidiária Coazucar | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | valida |
 | Cartavio S.A.A. | Subsidiária Coazucar | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | valida |
 | Agroindustrias San Jacinto S.A. | Subsidiária Coazucar | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | valida |
