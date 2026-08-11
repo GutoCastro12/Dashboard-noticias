@@ -1,0 +1,197 @@
+{
+ "baseline_id": "critical_baseline_r1c",
+ "created_at": 1786412505,
+ "reference": "R1c critical review · history commit 63f95ab (stored production)",
+ "purpose": "Denominador FIXO e reproduzível da MÉTRICA A. Não é gold (§23): gold_set_4i.json permanece independente. Cron novo NÃO reescreve este conjunto (§21) — críticos novos entram em live inventory / novelty / holdout.",
+ "counts": {
+  "total": 26,
+  "TRUE": 18,
+  "FALSE_POSITIVE": 7,
+  "AMBIGUOUS": 1,
+  "denominador_fixo": 25
+ },
+ "itens": {
+  "https://www.clarin.com/economia/miguel-galuccio-une-exceo-ypf-duena-puma-energy-rescatar-petrolera-default_0_ZDkoMlRGKN.html||YPF||default": {
+   "status": "FALSE_POSITIVE",
+   "company": "YPF",
+   "event_id": "default",
+   "family_id": "F4",
+   "title": "Vista se uniría a un exCEO de YPF y a la dueña de Puma Energy para rescatar a una petrolera en default"
+  },
+  "https://www.eldiariodechihuahua.mx/economia/2025/jul/31/para-gmexico-plataformas-por-impago-de-pemex-720456.html||Pemex (Petróleos Mexicanos)||default": {
+   "status": "TRUE",
+   "company": "Pemex (Petróleos Mexicanos)",
+   "event_id": "default",
+   "family_id": "",
+   "title": "Para GMéxico plataformas por impago de Pemex"
+  },
+  "https://www.elfinanciero.com.mx/opinion/jeanette-leyva/2025/10/13/cibanco-una-quiebra-no-merecida/||CIBanco||falencia": {
+   "status": "TRUE",
+   "company": "CIBanco",
+   "event_id": "falencia",
+   "family_id": "",
+   "title": "CIBanco, una quiebra no merecida"
+  },
+  "https://poole.ncsu.edu/thought-leadership/article/eileen-taylor-weighs-in-on-duke-energy-fraud-case/||Duke Energy||fraude": {
+   "status": "FALSE_POSITIVE",
+   "company": "Duke Energy",
+   "event_id": "fraude",
+   "family_id": "F3",
+   "title": "Eileen Taylor Weighs in on Duke Energy Fraud Case"
+  },
+  "https://www.whiteandwilliams.com/restructuring-perspectives/bankruptcy-court-orders-texas-to-strike-allegations-in-state-data-privacy-suit-against-general-motors||General Motors||falencia": {
+   "status": "FALSE_POSITIVE",
+   "company": "General Motors",
+   "event_id": "falencia",
+   "family_id": "F2",
+   "title": "Bankruptcy Court Orders Texas to Strike Allegations In State Data Privacy Suit Against General Motors"
+  },
+  "https://br.advfn.com/jornal/2025/11/fitch-rebaixa-rating-da-tupy-e-acende-sinal-de-alerta-para-investidores-na-bolsa-de-valores||Tupy||rebaixamento_rating": {
+   "status": "TRUE",
+   "company": "Tupy",
+   "event_id": "rebaixamento_rating",
+   "family_id": "",
+   "title": "Fitch rebaixa rating da Tupy e acende sinal de alerta para investidores na bolsa de valores"
+  },
+  "https://www.suno.com.br/noticias/fitch-rebaixa-rating-hapvida-hapv3-2026-mt/||Hapvida||rebaixamento_rating": {
+   "status": "TRUE",
+   "company": "Hapvida",
+   "event_id": "rebaixamento_rating",
+   "family_id": "",
+   "title": "Hapvida (HAPV3): Fitch corta rating e liga o alerta para 2026"
+  },
+  "https://abc11.com/post/dazmyn-person-another-was-arrested-charged-ongoing-duke-energy-fraud-case-wake-county-sheriffs-office-says/18300753/||Duke Energy||fraude": {
+   "status": "FALSE_POSITIVE",
+   "company": "Duke Energy",
+   "event_id": "fraude",
+   "family_id": "F3",
+   "title": "Dazmyn Person: Another person was arrested, charged in the ongoing Duke Energy fraud case, Wake County Sheriff's Office says"
+  },
+  "https://www.findlaw.com/legalblogs/federal-courts/scotus-declines-to-intervene-in-billion-dollar-fraud-showdown-against-citigroup/||Citigroup||fraude": {
+   "status": "TRUE",
+   "company": "Citigroup",
+   "event_id": "fraude",
+   "family_id": "",
+   "title": "SCOTUS Declines to Intervene in Billion‑Dollar Fraud Showdown Against Citigroup"
+  },
+  "https://financenews.com.br/2026/02/moodys-local-rebaixa-rating-da-cosan/||Cosan||rebaixamento_rating": {
+   "status": "TRUE",
+   "company": "Cosan",
+   "event_id": "rebaixamento_rating",
+   "family_id": "",
+   "title": "Moody’s Local rebaixa rating da Cosan"
+  },
+  "https://www.wral.com/news/local/wake-county-duke-energy-fraud-investigation-arrest-feb-2026/||Duke Energy||fraude": {
+   "status": "FALSE_POSITIVE",
+   "company": "Duke Energy",
+   "event_id": "fraude",
+   "family_id": "F3",
+   "title": "Third suspect arrested in Duke Energy fraud case"
+  },
+  "https://nkytribune.com/2026/03/duke-energy-leverages-artificial-intelligence-to-combat-fraud-targeting-energy-customers/||Duke Energy||fraude": {
+   "status": "FALSE_POSITIVE",
+   "company": "Duke Energy",
+   "event_id": "fraude",
+   "family_id": "F3",
+   "title": "Duke Energy leverages artificial intelligence to combat fraud targeting energy customers"
+  },
+  "https://br.tradingview.com/news/reuters.com,2026:newsml_L1N3ZU11G:0/||Cosan||rebaixamento_rating": {
+   "status": "TRUE",
+   "company": "Cosan",
+   "event_id": "rebaixamento_rating",
+   "family_id": "",
+   "title": "S&P corta rating da Cosan para BB- ante BB, define observação negativa"
+  },
+  "https://www.minhaoperadora.com.br/2026/03/justica-condena-executivos-e-ex-diretores-da-tim-por-fraude-fiscal-em-sc.html||TIM Brasil||fraude": {
+   "status": "TRUE",
+   "company": "TIM Brasil",
+   "event_id": "fraude",
+   "family_id": "",
+   "title": "Justiça condena executivos e ex-diretores da TIM por fraude fiscal em SC"
+  },
+  "https://financenews.com.br/2026/03/s-perspectiva-negativa/||Tupy||rebaixamento_rating": {
+   "status": "TRUE",
+   "company": "Tupy",
+   "event_id": "rebaixamento_rating",
+   "family_id": "",
+   "title": "S&P rebaixa rating da Tupy; perspectiva negativa"
+  },
+  "https://economia.uol.com.br/colunas/graciliano-rocha/2026/04/01/agencia-de-rating-rebaixa-nota-de-credito-da-aegea-gigante-do-saneamento.htm||Aegea Saneamento||rebaixamento_rating": {
+   "status": "TRUE",
+   "company": "Aegea Saneamento",
+   "event_id": "rebaixamento_rating",
+   "family_id": "",
+   "title": "Graciliano Rocha: Agência de rating rebaixa nota de crédito da Aegea, gigante do saneamento"
+  },
+  "https://www.valoraanalitik.com/rebaja-de-calificacion-de-colombia-a-manos-de-sp-tambien-arrastro-a-ecopetrol/||Ecopetrol||rebaixamento_rating": {
+   "status": "TRUE",
+   "company": "Ecopetrol",
+   "event_id": "rebaixamento_rating",
+   "family_id": "",
+   "title": "Rebaja de calificación de Colombia a manos de S&P también arrastró a Ecopetrol"
+  },
+  "https://www.nsctotal.com.br/colunistas/pedro-machado/tokstok-justica-aceita-recuperacao-judicial-de-r-11-bilhao-que-impacta-22-mil-funcionarios||Tok&Stok||recuperacao_judicial": {
+   "status": "TRUE",
+   "company": "Tok&Stok",
+   "event_id": "recuperacao_judicial",
+   "family_id": "",
+   "title": "Tok&Stok: Justiça aceita recuperação judicial de R$ 1,1 bilhão que impacta 2,2 mil funcionários"
+  },
+  "https://www.cnnbrasil.com.br/agro/sp-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/||Cosan||rebaixamento_rating": {
+   "status": "TRUE",
+   "company": "Cosan",
+   "event_id": "rebaixamento_rating",
+   "family_id": "",
+   "title": "S&P rebaixa rating da Cosan e cita reestruturação da Raízen"
+  },
+  "https://www.infomoney.com.br/consumo/recuperacao-judicial-afeta-quem-esta-esperando-moveis-de-tokstok-e-mobly-veja/||Tok&Stok||recuperacao_judicial": {
+   "status": "TRUE",
+   "company": "Tok&Stok",
+   "event_id": "recuperacao_judicial",
+   "family_id": "",
+   "title": "Recuperação judicial afeta quem está esperando móveis de Tok&Stok e Mobly? Veja"
+  },
+  "https://veja.abril.com.br/economia/vale-elege-presidente-interino-do-conselho-em-meio-a-investigacao-da-cvm/||Vale||investigacao_gestora": {
+   "status": "AMBIGUOUS",
+   "company": "Vale",
+   "event_id": "investigacao_gestora",
+   "family_id": "F10",
+   "title": "Vale elege presidente interino do conselho em meio à investigação da CVM"
+  },
+  "https://agfeed.com.br/financas/moodys-corta-rating-da-cosan-e-aponta-desafios-para-desalavancagem-da-holding/||Cosan||rebaixamento_rating": {
+   "status": "TRUE",
+   "company": "Cosan",
+   "event_id": "rebaixamento_rating",
+   "family_id": "",
+   "title": "Moody’s corta rating da Cosan e aponta desafios para desalavancagem da holding"
+  },
+  "https://valor.globo.com/empresas/noticia/2026/07/17/moodys-rebaixa-rating-corporativo-da-rumo-de-ba2-para-ba3-e-altera-perspectiva-para-negativa.ghtml||Rumo||rebaixamento_rating": {
+   "status": "TRUE",
+   "company": "Rumo",
+   "event_id": "rebaixamento_rating",
+   "family_id": "",
+   "title": "Moody’s rebaixa rating corporativo da Rumo de ‘Ba2’ para ‘Ba3’ e altera perspectiva para negativa"
+  },
+  "https://www.vale.com/pt/w/vale-informa-sobre-plano-de-recuperacao-judicial-da-samarco/-/categories/64919||Samarco Mineração||recuperacao_judicial": {
+   "status": "TRUE",
+   "company": "Samarco Mineração",
+   "event_id": "recuperacao_judicial",
+   "family_id": "",
+   "title": "Vale informa sobre Plano de Recuperação Judicial da Samarco"
+  },
+  "https://www.rionegro.com.ar/energia/sociedad/sin-reestructuracion-aconcagua-ira-a-la-quiebra-el-duro-pronostico-del-exceo-de-ypf-4247338/||YPF||falencia": {
+   "status": "FALSE_POSITIVE",
+   "company": "YPF",
+   "event_id": "falencia",
+   "family_id": "F4",
+   "title": "“Sin reestructuración, Aconcagua irá a la quiebra”: el duro pronóstico del exCEO de YPF"
+  },
+  "https://www.tiempo.com.mx/economia/detuvo-grupo-mexico-sus-plataformas-petroleras-impago-pemex-noviembre-2025/||Pemex (Petróleos Mexicanos)||default": {
+   "status": "TRUE",
+   "company": "Pemex (Petróleos Mexicanos)",
+   "event_id": "default",
+   "family_id": "",
+   "title": "Detuvo Grupo México sus plataformas petroleras por impago de Pemex"
+  }
+ }
+}

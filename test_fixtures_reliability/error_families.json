@@ -293,6 +293,34 @@
           "title": "Ex-presidente do Bradesco comenta recuperacao judicial da varejista Gama",
           "company": "Bradesco",
           "forbidden": "recuperacao_judicial"
+        },
+        {
+          "title": "Former chairman of Petrobras says supplier Delta filed for bankruptcy",
+          "company": "Petrobras",
+          "forbidden": "falencia",
+          "proof": "classificador",
+          "lang": "en"
+        },
+        {
+          "title": "El exdirector de Ecopetrol advirtio que una compania entro en default",
+          "company": "Ecopetrol",
+          "forbidden": "default",
+          "proof": "determinante_indefinido",
+          "lang": "es"
+        },
+        {
+          "title": "Aconcagua pediu falencia; segundo o ex-presidente da Petrobras, o setor sofrera",
+          "company": "Petrobras",
+          "forbidden": "falencia",
+          "proof": "pontuacao_forte",
+          "lang": "pt"
+        },
+        {
+          "title": "Una petrolera entro en default, advirtio el exCEO de YPF",
+          "company": "YPF",
+          "forbidden": "default",
+          "proof": "determinante_indefinido",
+          "lang": "es"
         }
       ],
       "negative_controls": [
@@ -337,7 +365,7 @@
           "required": "falencia"
         }
       ],
-      "notes": "R_AFILIACAO_INDIVIDUAL exige DUAS condicoes: (1) a monitorada so aparece dentro da construcao de afiliacao; (2) o termo do evento tem outro nucleo nominal — nome proprio separado por pontuacao forte, nome proprio com classificador ('supplier Beta'), ou substantivo de companhia com determinante INDEFINIDO ('una petrolera'). Anafora definida ('the company') nao conta. Escopo: falencia, default, investigacao_regulatoria. NC removido nesta wave: 'CEO da Vale afirma que a companhia pode entrar em default' — colidia com R_EVENTO_NAO_CONSUMADO_OU_DE_CARTEIRA (risco prospectivo, regra deliberada do projeto), falhava IDENTICAMENTE na baseline e nao testava F4; substituido por formulacao consumada. Siblings 1 e 3 passam por R_CREDOR_NAO_HERDA_EVENTO_DO_DEVEDOR, nao por F4; o sibling Duke e o unico resolvido pela regra nova."
+      "notes": "R_AFILIACAO_INDIVIDUAL exige DUAS condicoes: (1) a monitorada so aparece dentro da construcao de afiliacao; (2) o termo do evento tem outro nucleo nominal — nome proprio separado por pontuacao forte, nome proprio com classificador ('supplier Beta'), ou substantivo de companhia com determinante INDEFINIDO ('una petrolera'). Anafora definida ('the company') nao conta. Escopo: falencia, default, investigacao_regulatoria. NC removido nesta wave: 'CEO da Vale afirma que a companhia pode entrar em default' — colidia com R_EVENTO_NAO_CONSUMADO_OU_DE_CARTEIRA (risco prospectivo, regra deliberada do projeto), falhava IDENTICAMENTE na baseline e nao testava F4; substituido por formulacao consumada. Siblings 1 e 3 passam por R_CREDOR_NAO_HERDA_EVENTO_DO_DEVEDOR, nao por F4; o sibling Duke e o unico resolvido pela regra nova. R3b: acrescentados 4 siblings que EXERCITAM R_AFILIACAO_INDIVIDUAL (en/es/pt, cargos chairman/exdirector/ex-presidente/exCEO, as tres formas de prova e as duas ordens de oracao) — os siblings 'fornecedora Alfa' e 'varejista Gama' passam por R_CREDOR_NAO_HERDA_EVENTO_DO_DEVEDOR e ficam como BEHAVIORAL_PASS_OTHER_RULE, nao como evidencia de F4."
     },
     {
       "family_id": "F5",

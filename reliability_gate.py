@@ -39,6 +39,7 @@ from pathlib import Path
 
 import reliability_generalization as rg
 import reliability_live_audit as la
+import reliability_metrics as rm
 
 PY = sys.executable
 OUTDIR = Path("out_reliability")
@@ -71,16 +72,22 @@ def main() -> int:
     attr = _num(r"RESULTADO ATTRIBUTION GOLD:\s*(\d+/\d+)", attr_txt)
 
     gen = rg.avaliar()
-    g = {"exact": [0, 0], "siblings": [0, 0], "negatives": [0, 0]}
-    st = {}
+    g = {"exact": [0, 0], "siblings": [0, 0], "negatives": [0, 0],
+         "exercised_exact": [0, 0], "exercised_siblings": [0, 0]}
+    st, stb = {}, {}
     for f in gen["families"]:
         for k in g:
             g[k][0] += f[k][0]
             g[k][1] += f[k][1]
         st[f["status"]] = st.get(f["status"], 0) + 1
-    # Regressão de família já generalizada é falha dura.
+        stb[f["behavioral_status"]] = stb.get(f["behavioral_status"], 0) + 1
+    # Regressão de família já resolvida é falha dura. O critério é o
+    # COMPORTAMENTAL — é ele que significa "algo que antes funcionava caiu".
+    # O nível família-específico (R3b) é evidência de aprendizado, não de
+    # regressão: perder `GENERALIZED` por falta de sibling exercitado é
+    # lacuna de cobertura de teste, e vira aviso, não bloqueio (§24).
     regrediu = [f["family_id"] for f in gen["families"]
-                if f["family_id"] in ("F5", "F6") and f["status"] != rg.GENERALIZED]
+                if f["family_id"] in ("F5", "F6") and f["behavioral_status"] != rg.COVERED]
     if regrediu:
         falhas.append(f"REGRESSÃO: famílias generalizadas caíram: {', '.join(regrediu)}")
     if "?" in (pos, neg, tot, attr):
@@ -101,11 +108,16 @@ def main() -> int:
     print(f"  negatives            {neg}")
     print(f"  total                {tot}")
     print(f"  attribution          {attr}")
-    print("\nGENERALIZATION")
+    print("\nBEHAVIORAL GENERALIZATION   (o output final está correto?)")
     print(f"  exact                {g['exact'][0]}/{g['exact'][1]}")
     print(f"  siblings             {g['siblings'][0]}/{g['siblings'][1]}")
     print(f"  negative controls    {g['negatives'][0]}/{g['negatives'][1]}")
+    print(f"  behaviorally covered {stb.get(rg.COVERED, 0)}")
+    print("\nFAMILY-SPECIFIC GENERALIZATION   (a família sob teste foi exercitada?)")
+    print(f"  exercised exact      {g['exercised_exact'][0]}/{g['exercised_exact'][1]}")
+    print(f"  exercised siblings   {g['exercised_siblings'][0]}/{g['exercised_siblings'][1]}")
     print(f"  generalized          {st.get(rg.GENERALIZED, 0)}")
+    print(f"  covered only         {st.get(rg.COVERED, 0)}")
     print(f"  partial              {st.get(rg.PARTIAL, 0)}")
     print(f"  blocked/unresolved   {st.get(rg.BLOCKED, 0) + st.get(rg.UNRESOLVED, 0)}")
     print("\nLIVE")
@@ -143,6 +155,23 @@ def main() -> int:
     print("\nREVIEW QUEUE")
     print(f"  aguardando adjudicação humana  {len(gen['review_queue'])}")
 
+    # R3b §24 — as duas métricas, informativas, sem threshold de bloqueio.
+    met = None
+    try:
+        met = rm.relatorio()
+    except SystemExit as exc:              # baseline ainda não congelado
+        print(f"\nMETRICS\n  indisponível: {exc}")
+    if met:
+        print(f"\nMETRICS  ·  baseline `{met['baseline_id']}`  "
+              f"denominador fixo {met['counts']['denominador_fixo']}")
+        for u, rot in (("stored", "STORED PRODUCTION   "),
+                       ("candidate", "CANDIDATE RUNTIME   ")):
+            print(f"  {rot} A fixed accuracy {met[u]['a']['texto']:>18}"
+                  f"   ·   B live precision {met[u]['b']['texto']:>18}")
+        print("     ^ A tem denominador FIXO (mede evolução); B tem denominador"
+              " VARIÁVEL (descreve a tela). Não são a mesma conta.")
+        print("     ^ CANDIDATE é projeção em memória — NÃO está em produção.")
+
     # WARNINGS (§18) — exigem olho humano, mas não são regressão.
     avisos = []
     if not r["sem_baseline"]:
@@ -161,6 +190,9 @@ def main() -> int:
     parciais = st.get(rg.PARTIAL, 0) + st.get(rg.BLOCKED, 0) + st.get(rg.UNRESOLVED, 0)
     if parciais:
         avisos.append(f"{parciais} família(s) PARTIAL/BLOCKED/UNRESOLVED")
+    if st.get(rg.COVERED, 0):
+        avisos.append(f"{st[rg.COVERED]} família(s) com output correto mas SEM "
+                      f"evidência suficiente de que a própria regra foi exercitada")
 
     print()
     print("=" * 96)
@@ -180,7 +212,16 @@ def main() -> int:
     (OUTDIR / "gate_summary.json").write_text(json.dumps(
         {"gold": {"positives": pos, "negatives": neg, "total": tot, "attribution": attr},
          "generalization": {"exact": g["exact"], "siblings": g["siblings"],
-                            "negatives": g["negatives"], "status": st},
+                            "negatives": g["negatives"],
+                            "exercised_exact": g["exercised_exact"],
+                            "exercised_siblings": g["exercised_siblings"],
+                            "status": st, "behavioral_status": stb},
+         "metrics": ({"baseline_id": met["baseline_id"], "counts": met["counts"],
+                      "stored": {"a": met["stored"]["a"]["texto"],
+                                 "b": met["stored"]["b"]["texto"]},
+                      "candidate": {"a": met["candidate"]["a"]["texto"],
+                                    "b": met["candidate"]["b"]["texto"]}}
+                     if met else None),
          "live": r, "review_queue": len(gen["review_queue"])},
         ensure_ascii=False, indent=1), encoding="utf-8")
     return 0
