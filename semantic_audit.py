@@ -1508,6 +1508,110 @@ def detect_fraud_role(text: str, monitored: str,
     return ""
 
 
+# ── 4I.2 R3/F4: AFILIAÇÃO INDIVIDUAL COM OUTRO SUJEITO EXPLÍCITO ────────────
+# `ex-CEO de X` identifica uma PESSOA; não torna X sujeito do evento. Mas a
+# afiliação sozinha NUNCA basta — "Ex-CEO da X afirma que X entrou em default"
+# continua sendo evento de X. Por isso duas condições CUMULATIVAS:
+#
+#   1) a monitorada aparece EXCLUSIVAMENTE dentro da construção de afiliação;
+#   2) o termo do evento está preso a OUTRO sintagma nominal.
+#
+# É a condição (1) que protege os contraexemplos: se a empresa reaparece fora
+# do aposto, ela volta a ser candidata a sujeito e o gate não atua.
+_AFILIACAO_INDIVIDUAL = (
+    r"(?:ex[-\s]?|former\s+|antigo\s+)"
+    r"(?:ceo|presidente|president|chairman|diretor\w*|director\w*|executiv[oa]s?|"
+    r"executive|conselheir[oa]|gerente|superintendente)\s*"
+    r"(?:d[aeo]s?\s+|of\s+|del\s+)")
+# Substantivos de COMPANHIA genérica — reconhecem o terceiro sujeito mesmo
+# quando ele não é entidade nomeada nem está na watchlist ("una petrolera").
+_SUJEITO_GENERICO = (r"petrolera|petroleira|empresa|compa[ñn]ia|companhia|firma|"
+                     r"grupo|fabricante|varejista|banco|operadora|construtora|"
+                     r"mineradora|siderurgica|company|firm")
+# Só determinante INDEFINIDO conta. "una petrolera en default" INTRODUZ um
+# referente novo; "the company may default" é anáfora — retoma a própria
+# monitorada e não prova sujeito distinto.
+_DET_INDEFINIDO = r"(?:un|uno|una|um|uma|uns|umas|unos|unas|an?|another|outr[oa]|otr[oa])\s+"
+# Classificador comum antes de nome próprio — "supplier Beta", "fornecedora
+# Alfa". Assim como o determinante indefinido, INTRODUZ um referente novo; um
+# aposto de afiliação ("ex-CEO da Vale Fulano") nunca tem classificador.
+_CLASSIFICADOR = (_SUJEITO_GENERICO +
+                  r"|supplier|fornecedor[ae]?|distribuidora|transportadora|"
+                  r"concorrente|rival|parceira|cliente|subsidiaria|controlada")
+# Aposto ("ex-CEO da YPF Fulano de Tal") nunca atravessa pontuação forte; a
+# vírgula fica de fora justamente porque aposto usa vírgula.
+_FRONTEIRA_FORTE = re.compile(r"[.;:!?\"“”«»]|\s[-–—]\s")
+
+
+def _norm_caixa(s: str) -> str:
+    """Mesma normalização de `_n`, preservando a caixa — os offsets coincidem
+    com os de `_n`, o que permite ler maiúsculas sem desalinhar índices."""
+    s = unicodedata.normalize("NFD", str(s or ""))
+    s = "".join(c for c in s if unicodedata.category(c) != "Mn")
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def detect_individual_affiliation_role(text: str, monitored: str,
+                                       aliases: list[str] | None = None,
+                                       event_kws: list[str] | None = None) -> str:
+    """A monitorada só nomeia a AFILIAÇÃO de uma pessoa e o evento é de outro.
+
+    Devolve a evidência do outro sujeito, ou "". Não decide por distância
+    (§21): o sujeito é o núcleo nominal que ANTECEDE o termo do evento, e ele
+    só conta como prova se for (a) um nome próprio separado da monitorada por
+    pontuação forte, ou (b) um substantivo de companhia com determinante
+    indefinido. Qualquer outra coisa devolve "" e o evento permanece.
+    """
+    if not event_kws:
+        return ""
+    tc = _norm_caixa(text)
+    t = tc.lower()
+    nomes = [re.escape(_n(a)) for a in ((aliases or []) + [monitored]) if a]
+    if not nomes:
+        return ""
+    alt = "(?:" + "|".join(nomes) + ")"
+    ocorr = list(re.finditer(alt, t))
+    if not ocorr:
+        return ""
+    # (1) toda ocorrência da monitorada tem de vir logo após a afiliação
+    for m in ocorr:
+        if not re.search(_AFILIACAO_INDIVIDUAL + r"$", t[max(0, m.start() - 60):m.start()]):
+            return ""
+    # (2) o termo do evento tem de estar preso a OUTRO núcleo nominal
+    nucleo = re.compile(r"(?:(?i:" + _DET_INDEFINIDO + r")(?P<gen>(?i:" + _SUJEITO_GENERICO + r"))\b"
+                        r"|(?P<nome>[A-Z][\w\-]{2,}))"
+                        r"(?:\s+\w+){0,4}[\s\"“”]*$")
+    classif = re.compile(r"(?i:" + _CLASSIFICADOR + r")\s+$")
+    for kw in sorted({_n(k) for k in event_kws if len(_n(k)) >= 4}):
+        for mk in re.finditer(re.escape(kw), t):
+            trecho = tc[:mk.start()]
+            cand = None
+            for i in range(len(trecho)):         # o núcleo MAIS PRÓXIMO vence
+                m2 = nucleo.match(trecho, i)
+                if m2:
+                    cand = m2
+            if not cand:
+                continue
+            if cand.group("gen"):
+                return cand.group("gen")
+            nome = cand.group("nome")
+            if re.fullmatch(alt, nome.lower()):
+                continue                        # o núcleo é a própria monitorada
+            pos = cand.start("nome")
+            # classificador antes do nome já basta: "supplier Beta" introduz
+            # referente novo e nenhum aposto de afiliação tem classificador.
+            mc = classif.search(trecho[:pos])
+            if mc:
+                return f"{mc.group(0).strip()} {nome}"
+            # nome próprio sem classificador só prova sujeito distinto se não
+            # for aposto da afiliação: exige pontuação forte entre ele e toda
+            # menção à monitorada.
+            if all(_FRONTEIRA_FORTE.search(tc[min(pos, m.start()):max(pos, m.start())])
+                   for m in ocorr):
+                return nome
+    return ""
+
+
 def detect_papel_nao_sujeito(text: str, monitored: str,
                              aliases: list[str] | None = None) -> str:
     """Papel da monitorada quando ela NÃO é o sujeito do evento. "" se nenhum."""
@@ -1952,6 +2056,22 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
         # até haver evidência real — menor blast radius vence.
         if _papel == "individual_subject" and ev != "investigacao_regulatoria":
             _papel = ""
+        # 4I.2 R3/F4: afiliação individual + OUTRO sujeito explícito do evento.
+        # Escopo restrito às famílias com caso real observado (§24); as demais
+        # ficam de fora até haver evidência.
+        if not _papel and ev in ("falencia", "default", "investigacao_regulatoria"):
+            _outro = detect_individual_affiliation_role(
+                texto, monitored, _al, (keywords_por_evento or {}).get(ev) or [])
+            if _outro:
+                d.update(scoreable=False, event_scope="indireto",
+                         relation_type="afiliacao_individual",
+                         subject_company=_outro,
+                         attribution_rule="R_AFILIACAO_INDIVIDUAL",
+                         rejection_reason=(
+                             f"{monitored} aparece apenas como afiliação de uma pessoa; "
+                             f"o {ev} é de '{_outro}'"))
+                decisoes.append(d)
+                continue
         if _papel:
             d.update(scoreable=False, event_scope="indireto",
                      relation_type=f"papel_{_papel}",
