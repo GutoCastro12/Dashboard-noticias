@@ -164,6 +164,27 @@ def metrica_b(base: dict, inventario: dict) -> dict:
             "texto": f"{t}/{den} = {t / den * 100:.1f}%" if den else "N/D"}
 
 
+def metrica_b_inventario(inventario: dict) -> dict:
+    """B sobre TODO o inventário rotulado, não só o baseline congelado.
+
+    Existe porque o cron traz críticos novos: eles NÃO entram no denominador
+    fixo da A (§21), mas assim que recebem rótulo humano fazem parte da tela.
+    Reportar só a leitura restrita ao baseline esconderia essa deriva.
+    """
+    revs = json.load(io.open(REVIEWS, encoding="utf-8"))
+    t = f = amb = unrev = 0
+    for k in inventario:
+        st = (revs.get(k) or {}).get("status", "UNREVIEWED")
+        t += st == "TRUE"
+        f += st == "FALSE_POSITIVE"
+        amb += st == "AMBIGUOUS"
+        unrev += st == "UNREVIEWED"
+    den = t + f
+    return {"true": t, "false_positive": f, "ambiguous": amb, "unreviewed": unrev,
+            "denominador": den, "pct": (t / den * 100) if den else 0.0,
+            "texto": f"{t}/{den} = {t / den * 100:.1f}%" if den else "N/D"}
+
+
 def relatorio(cfg: dict | None = None) -> dict:
     cfg = cfg or _cfg()
     base = carregar_baseline()
@@ -173,9 +194,9 @@ def relatorio(cfg: dict | None = None) -> dict:
         "baseline_id": base["baseline_id"], "created_at": base["created_at"],
         "counts": base["counts"],
         "stored": {"a": metrica_a(base, inv_s), "b": metrica_b(base, inv_s),
-                   "criticos": len(inv_s)},
+                   "b_inventario": metrica_b_inventario(inv_s), "criticos": len(inv_s)},
         "candidate": {"a": metrica_a(base, inv_c), "b": metrica_b(base, inv_c),
-                      "criticos": len(inv_c)},
+                      "b_inventario": metrica_b_inventario(inv_c), "criticos": len(inv_c)},
     }
     r["corrigidos"] = [d for d in r["candidate"]["a"]["detalhe"]
                        if d["label"] == "FALSE_POSITIVE" and d["acerto"]]
@@ -203,7 +224,10 @@ def imprimir(r: dict) -> int:
         print(f"    A · fixed adjudicated accuracy       : {u['a']['texto']}"
               f"   (denominador fixo {u['a']['denominador']})")
         print(f"    B · live reviewed critical precision : {u['b']['texto']}"
-              f"   (denominador variável {u['b']['denominador']})")
+              f"   (denominador variável {u['b']['denominador']}, restrito ao baseline)")
+        bi = u["b_inventario"]
+        print(f"    B' · idem, sobre TODO o inventário    : {bi['texto']}"
+              f"   (+{bi['unreviewed']} unreviewed, {bi['ambiguous']} ambiguous fora)")
     print(f"\n  FPs corrigidos pelo candidate : {len(r['corrigidos'])}")
     for d in r["corrigidos"]:
         print(f"      · {d['company']}/{d['event_id']} :: {d['title'][:64]}")

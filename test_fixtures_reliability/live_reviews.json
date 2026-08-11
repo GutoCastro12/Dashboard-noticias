@@ -215,5 +215,13 @@
   "family_id": "",
   "company": "Pemex (Petróleos Mexicanos)",
   "event_id": "default"
+ },
+ "https://www.moneytimes.com.br/moodys-rebaixa-rating-da-cosan-csan3-e-mantem-perspectiva-negativa-pads/||Cosan||rebaixamento_rating": {
+  "status": "TRUE",
+  "note": "Moodys rebaixa o rating da propria Cosan; sujeito direto e explicito no titulo",
+  "reviewed_at": 1786415074,
+  "family_id": "",
+  "company": "Cosan",
+  "event_id": "rebaixamento_rating"
  }
 }
