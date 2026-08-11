@@ -724,7 +724,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T17:13:59.449518+00:00"
+     "last_checked_at": "2026-08-11T19:21:47.755033+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2593,7 +2593,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T17:13:59.849755+00:00"
+     "last_checked_at": "2026-08-11T19:21:48.155307+00:00"
     }
    ],
    "corrob_sources": [
@@ -10262,7 +10262,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T17:14:00.250039+00:00"
+     "last_checked_at": "2026-08-11T19:21:48.555617+00:00"
     },
     {
      "source": "Demarest",
@@ -10282,7 +10282,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T17:14:00.650327+00:00"
+     "last_checked_at": "2026-08-11T19:21:48.955881+00:00"
     }
    ],
    "corrob_sources": [
@@ -11865,7 +11865,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T17:14:01.050607+00:00"
+     "last_checked_at": "2026-08-11T19:21:49.356135+00:00"
     }
    ],
    "corrob_sources": [
@@ -15578,7 +15578,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T17:14:01.688708+00:00"
+     "last_checked_at": "2026-08-11T19:21:49.925271+00:00"
     }
    ],
    "corrob_sources": [
@@ -18131,7 +18131,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T17:14:02.328715+00:00"
+     "last_checked_at": "2026-08-11T19:21:50.480906+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -18237,7 +18237,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T17:14:03.030285+00:00"
+     "last_checked_at": "2026-08-11T19:21:51.024042+00:00"
     },
     {
      "source": "Moomoo",
@@ -19642,7 +19642,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T17:14:03.854846+00:00"
+     "last_checked_at": "2026-08-11T19:21:51.765210+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19685,7 +19685,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T17:14:04.679397+00:00"
+     "last_checked_at": "2026-08-11T19:21:52.418203+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -20509,7 +20509,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T17:14:05.293604+00:00",
+     "last_checked_at": "2026-08-11T19:21:52.957886+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20534,7 +20534,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T17:14:05.926286+00:00",
+     "last_checked_at": "2026-08-11T19:21:53.511849+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21654,7 +21654,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-11T17:14:06.326620+00:00",
+     "last_checked_at": "2026-08-11T19:21:53.912140+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21719,7 +21719,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-11T17:14:06.726897+00:00",
+     "last_checked_at": "2026-08-11T19:21:54.312406+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22808,7 +22808,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T17:14:07.364777+00:00"
+     "last_checked_at": "2026-08-11T19:21:54.866448+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22893,7 +22893,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T17:14:07.994435+00:00"
+     "last_checked_at": "2026-08-11T19:21:55.451792+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24706,7 +24706,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T17:14:08.608420+00:00",
+     "last_checked_at": "2026-08-11T19:21:56.016110+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24876,7 +24876,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T17:14:09.250196+00:00",
+     "last_checked_at": "2026-08-11T19:21:56.561329+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -39045,7 +39045,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T17:14:10.022592+00:00"
+     "last_checked_at": "2026-08-11T19:21:57.263141+00:00"
     }
    ],
    "corrob_sources": [
@@ -42116,7 +42116,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T17:14:10.649114+00:00"
+     "last_checked_at": "2026-08-11T19:21:57.856496+00:00"
     },
     {
      "source": "Virginia Business",
@@ -42159,7 +42159,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T17:14:11.280412+00:00"
+     "last_checked_at": "2026-08-11T19:21:58.413167+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48940,7 +48940,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T17:14:11.913717+00:00",
+     "last_checked_at": "2026-08-11T19:21:58.955519+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48963,7 +48963,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T17:14:12.541909+00:00",
+     "last_checked_at": "2026-08-11T19:21:59.506025+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -50696,7 +50696,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1786446222,
-   "cap_iso": "2026-08-11 08:03"
+   "cap_iso": "2026-08-11 08:03",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.gasworld.com/story/eu-approves-baker-hughes-acquisition-of-chart-industries/2254207.article/": {
    "title": "EU approves Baker Hughes acquisition of Chart Industries",
@@ -50732,7 +50734,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1786446222,
-   "cap_iso": "2026-08-11 08:03"
+   "cap_iso": "2026-08-11 08:03",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://visnoinvest.com.br/news/14672/engie-brasil-egie3-registra-elevacao-de-rating-global-pela-fitch": {
    "title": "ENGIE Brasil (EGIE3) registra elevação de rating global pela Fitch",
@@ -51041,9 +51045,108 @@
    ],
    "captured_ts": 1786461149,
    "cap_iso": "2026-08-11 12:12"
+  },
+  "https://news.google.com/rss/articles/CBMijwFBVV95cUxOakFZZTlwVF8wZmQtN1ZoekhQWFFqVmIwNWNiMUpJbldtYXBnbnFTb1BKN0JQbzY0aUFRODVSbE9zeGVSZ0loUWhrTk9aUEx0YnItYzFoWVNobHdZVmhmTVFRS05FRFdZQWh4azhRUmpKRGktUXRWd244ZjRYdXg3VGtyb0NLSVVlc2ZhZ1RnYw?oc=5": {
+   "title": "Recuperação judicial cresce entre pequenas empresas",
+   "url": "https://revistaoeste.com/economia/recuperacao-judicial-cresce-entre-pequenas-empresas/",
+   "summary": "Recuperação judicial cresce entre pequenas empresas &nbsp;&nbsp; Revista Oeste",
+   "source": "Revista Oeste",
+   "domain": "revistaoeste.com",
+   "pub_ts": 1785963656,
+   "pub_iso": "2026-08-05 18:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "corroborations": [
+    {
+     "source": "Campo Grande News",
+     "domain": "campograndenews.com.br",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "resolved_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "canonical_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "display_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.campograndenews.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-11T19:21:59.906310+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Campo Grande News",
+     "domain": "campograndenews.com.br",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "when": "06/08 09:30",
+     "original_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "resolved_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "canonical_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "display_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.campograndenews.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-11T19:22:00.306558+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1786476103,
+   "cap_iso": "2026-08-11 16:21"
+  },
+  "https://kalkinemedia.com/us/news/announcements/nextera-energy-submits-sec-report-detailing-financials-for-dominion-energy-merger": {
+   "title": "NextEra Energy Submits SEC Report Detailing Financials for Dominion Energy Merger",
+   "url": "https://kalkinemedia.com/us/news/announcements/nextera-energy-submits-sec-report-detailing-financials-for-dominion-energy-merger",
+   "summary": "NextEra Energy Submits SEC Report Detailing Financials for Dominion Energy Merger &nbsp;&nbsp; Kalkine Media",
+   "source": "Kalkine Media",
+   "domain": "kalkinemedia.com",
+   "pub_ts": 1786456658,
+   "pub_iso": "2026-08-11 10:57",
+   "language": "en",
+   "companies": [
+    "NextEra Energy"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "mention_roles": {
+    "NextEra Energy": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "NextEra Energy": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "NextEra Energy"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786476103,
+   "cap_iso": "2026-08-11 16:21"
   }
  },
- "run_count": 104,
+ "run_count": 105,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -56220,11 +56323,23 @@
   "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNa2JHYkFCTm1Pa2NsQkJRQ2tUV1lhYWl2dlJhczNqWFJ1azFGMmdmcXVmR1BzLXhDQTh1eU5jdTNveWE1TXMxVGpyZGFBVTRfREllVF8xZFE4OHg5elBRYWlTN3RkX051cW82OHdHckZDNXl1a1ZmODBHNnBIMTJSb25BVTNzQWNCNFZoY254LW12SEF0cC1hbTctNDFwSVBNX3JKWUFVMzFaUXc?oc=5": {
    "url": "https://www.migalhas.com.br/quentes/382793/stj-grupo-que-comprou-acoes-da-usiminas-nao-precisa-promover-opa",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMitgFBVV95cUxNRlphbmdxM2ZDalFHc0FtX3lyZG43aDNNR1pqcS1GUGpHSUhhLWY2ZzQ2LU5QS05DVVotdTVnaHpsQWVtRTNyNnJDWHZkZ1RJUW5YUTQ2VmFuaGYzT2xTYUZaUkNnbmFVUmRHXzA4QlJQa0g2Z3QtMmlDUzk5LWJDV2RmYTZMdUNWVFB4VXdiN0hGcmJFN0dCWWVNTUdxM2xWU2h2LTNDNnVTTGVVenEtWjBQT0xUQdIBuwFBVV95cUxNWFpXUWlMampNV3c2SzZkY1h3TXpCV09VY05KUy1PRFlpcHVLUjQ5QUl6QlQ2ako4RHhuN1hsbGI0N2xEODhaNGRwTWctYXhYMDdEOFJMdTJhOFVsWTg3UWR6YU9iMEhWMHMxZGFIT2hKeHowbHhDSU9vdTFGeUIxSmQxTDNDdk9pUlFKSEJwRl9KX3NISWJ6RV8zNUhxMlM1SlZhZ2EzcE9lNzJub1pKT3haaHppSlhuMVk0?oc=5": {
+   "url": "https://www.infomoney.com.br/mercados/acoes-da-prio-sobem-mais-de-5-com-aquisicao-bilionaria-do-campo-de-peregrino/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMixwFBVV95cUxPcUw0OXM2clVnNU9EcEY2VHRxcHNJa2xFTUlvU0owdFNzLXUzaTh6U05KTFZWVE1jRVo0cDBQcDgxMENpd3Z6U3ZXUl9NTlllQjVlNVNqYjNKU0hwMTN2dmZUcG44UWRBVUlHTURjZm1sVDQta2xZNWltdWp4MG1wY1BWLUxIS01hOXl3ZG9jaHREY0R4X1lPUDZQNjJoVktiWTBtOWk3UEJRRzZzVko3U0pEVmZGREwtSVk2Ui1DSWR4NnhTSmpN?oc=5": {
+   "url": "https://kalkinemedia.com/us/news/announcements/nextera-energy-submits-sec-report-detailing-financials-for-dominion-energy-merger",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMijwFBVV95cUxOakFZZTlwVF8wZmQtN1ZoekhQWFFqVmIwNWNiMUpJbldtYXBnbnFTb1BKN0JQbzY0aUFRODVSbE9zeGVSZ0loUWhrTk9aUEx0YnItYzFoWVNobHdZVmhmTVFRS05FRFdZQWh4azhRUmpKRGktUXRWd244ZjRYdXg3VGtyb0NLSVVlc2ZhZ1RnYw?oc=5": {
+   "url": "https://revistaoeste.com/economia/recuperacao-judicial-cresce-entre-pequenas-empresas/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786468493,
-  "iso": "11 ago 2026 · 14:14 BRT",
+  "ts": 1786476162,
+  "iso": "11 ago 2026 · 16:22 BRT",
   "status": {
    "Cosan": {
     "status": "atencao",
@@ -56240,11 +56355,11 @@
    },
    "JBS": {
     "status": "atencao",
-    "score": 60
+    "score": 59
    },
    "Vale": {
     "status": "atencao",
-    "score": 56
+    "score": 55
    },
    "Tok&Stok": {
     "status": "critico",
@@ -56274,13 +56389,13 @@
     "status": "monitorar",
     "score": 28
    },
-   "Banco do Brasil": {
-    "status": "atencao",
-    "score": 27
-   },
    "NextEra Energy": {
     "status": "monitorar",
-    "score": 25
+    "score": 27
+   },
+   "Banco do Brasil": {
+    "status": "atencao",
+    "score": 26
    },
    "Baker Hughes": {
     "status": "monitorar",
@@ -56314,16 +56429,16 @@
     "status": "monitorar",
     "score": 18
    },
-   "Tupy": {
-    "status": "monitorar",
-    "score": 18
-   },
    "Suzano": {
     "status": "monitorar",
     "score": 17
    },
    "Yura": {
     "status": "atencao",
+    "score": 17
+   },
+   "Tupy": {
+    "status": "monitorar",
     "score": 17
    },
    "Embraer": {
