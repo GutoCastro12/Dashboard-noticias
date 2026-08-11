@@ -724,7 +724,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T02:21:26.535604+00:00"
+     "last_checked_at": "2026-08-11T11:03:46.689142+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2593,7 +2593,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T02:21:26.935873+00:00"
+     "last_checked_at": "2026-08-11T11:03:47.089411+00:00"
     }
    ],
    "corrob_sources": [
@@ -10177,7 +10177,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T02:21:27.336168+00:00"
+     "last_checked_at": "2026-08-11T11:03:47.489762+00:00"
     },
     {
      "source": "Demarest",
@@ -10197,7 +10197,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T02:21:27.736522+00:00"
+     "last_checked_at": "2026-08-11T11:03:47.890060+00:00"
     }
    ],
    "corrob_sources": [
@@ -11780,7 +11780,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T02:21:28.136781+00:00"
+     "last_checked_at": "2026-08-11T11:03:48.290325+00:00"
     }
    ],
    "corrob_sources": [
@@ -15493,7 +15493,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T02:21:28.790481+00:00"
+     "last_checked_at": "2026-08-11T11:03:48.862973+00:00"
     }
    ],
    "corrob_sources": [
@@ -18046,7 +18046,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T02:21:29.432171+00:00"
+     "last_checked_at": "2026-08-11T11:03:49.411928+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -18152,7 +18152,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T02:21:30.083601+00:00"
+     "last_checked_at": "2026-08-11T11:03:49.956312+00:00"
     },
     {
      "source": "Moomoo",
@@ -19557,7 +19557,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T02:21:30.915967+00:00"
+     "last_checked_at": "2026-08-11T11:03:50.635633+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19600,7 +19600,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T02:21:31.774107+00:00"
+     "last_checked_at": "2026-08-11T11:03:51.298132+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -20424,7 +20424,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T02:21:32.425096+00:00",
+     "last_checked_at": "2026-08-11T11:03:51.859050+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20449,7 +20449,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T02:21:33.067707+00:00",
+     "last_checked_at": "2026-08-11T11:03:52.409041+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21569,7 +21569,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-11T02:21:33.467923+00:00",
+     "last_checked_at": "2026-08-11T11:03:52.809339+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21634,7 +21634,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-11T02:21:33.868146+00:00",
+     "last_checked_at": "2026-08-11T11:03:53.209644+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22723,7 +22723,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T02:21:34.511687+00:00"
+     "last_checked_at": "2026-08-11T11:03:53.782950+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22808,7 +22808,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T02:21:35.156172+00:00"
+     "last_checked_at": "2026-08-11T11:03:54.351382+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24621,7 +24621,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T02:21:35.807586+00:00",
+     "last_checked_at": "2026-08-11T11:03:54.904269+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24791,7 +24791,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T02:21:36.463595+00:00",
+     "last_checked_at": "2026-08-11T11:03:55.458473+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -38960,7 +38960,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T02:21:37.272663+00:00"
+     "last_checked_at": "2026-08-11T11:03:56.123447+00:00"
     }
    ],
    "corrob_sources": [
@@ -42031,7 +42031,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T02:21:37.907676+00:00"
+     "last_checked_at": "2026-08-11T11:03:56.665863+00:00"
     },
     {
      "source": "Virginia Business",
@@ -42074,7 +42074,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T02:21:38.555972+00:00"
+     "last_checked_at": "2026-08-11T11:03:57.210906+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48855,7 +48855,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T02:21:39.201802+00:00",
+     "last_checked_at": "2026-08-11T11:03:57.767757+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48878,7 +48878,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T02:21:39.850101+00:00",
+     "last_checked_at": "2026-08-11T11:03:58.344979+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -49539,107 +49539,6 @@
    ],
    "captured_ts": 1786218757,
    "cap_iso": "2026-08-08 16:52"
-  },
-  "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/": {
-   "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
-   "url": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/",
-   "summary": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal &nbsp;&nbsp; InfoMoney",
-   "source": "InfoMoney",
-   "domain": "infomoney.com.br",
-   "pub_ts": 1783494000,
-   "pub_iso": "2026-07-08 04:00",
-   "language": "pt",
-   "companies": [
-    "Vale"
-   ],
-   "event_ids": [
-    "investigacao_regulatoria"
-   ],
-   "mention_roles": {
-    "Vale": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "events_by_company": {
-    "Vale": []
-   },
-   "companies_attributed": [],
-   "context_companies": [
-    "Vale"
-   ],
-   "captured_ts": 1786326799,
-   "cap_iso": "2026-08-09 22:53",
-   "corroborations": [],
-   "corrob_sources": [],
-   "event_assessments": [
-    {
-     "company": "Vale",
-     "event_id": "investigacao_regulatoria",
-     "assessed_by": "semantic_audit",
-     "subject_company": "Vale",
-     "actor_company": "",
-     "affected_company": "",
-     "transaction_object": "indefinido",
-     "transaction_scope": "indefinido",
-     "transaction_role": "",
-     "event_phase": "",
-     "event_scope": "indireto",
-     "direction": "",
-     "historical_reference": false,
-     "new_occurrence": true,
-     "confirmation_level": "indefinido",
-     "attribution_rule": "R_PAPEL_NAO_SUJEITO",
-     "attribution_confidence": "media",
-     "scoreable": false,
-     "rejection_reason": "Vale atua como individual_subject neste texto, não como sujeito do evento",
-     "legal_status": "",
-     "confirmation_status": "indefinido"
-    }
-   ],
-   "semantic_discards": [
-    {
-     "empresa": "Vale",
-     "event_id": "investigacao_regulatoria",
-     "event_id_corrigido": "",
-     "regra": "R_PAPEL_NAO_SUJEITO",
-     "motivo": "Vale atua como individual_subject neste texto, não como sujeito do evento",
-     "subject_company": "Vale"
-    }
-   ],
-   "informational_events_by_company": {
-    "Vale": [
-     {
-      "company": "Vale",
-      "event_id": "investigacao_regulatoria",
-      "event_label": "investigacao regulatoria",
-      "subject_company": "Vale",
-      "monitored_company": "Vale",
-      "relation_type": "direto",
-      "event_scope": "direto",
-      "direction": "neutra",
-      "scoreable": false,
-      "display_category": "informativo",
-      "new_ma_occurrence": false,
-      "change_of_control": false,
-      "external_ma": false,
-      "historical_transaction_reference": false,
-      "secondary_context": "",
-      "transaction_scope": "indefinido",
-      "confirmation_status": "indefinido",
-      "attribution_rule": "R_PAPEL_NAO_SUJEITO",
-      "attribution_confidence": "media",
-      "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
-      "url": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/",
-      "pub_ts": 1783494000,
-      "observation": "Vale atua como individual_subject neste texto, não como sujeito do evento",
-      "source_record_id": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/"
-     }
-    ]
-   }
   },
   "https://news.google.com/rss/articles/CBMilAFBVV95cUxQajNNeFNXUTAwUHdxS2s2Ti1Hck5ub3FZWWdBQUc3NmtwR0E1NkxSVFpCbXdMckZNR3VNOXFtcE5HTkNPNEhCNjRkU3RBTGRqQXUxbmdRS1dSbnYtM0ZHRmxKWHgwWHhsVlNQVnFJZHpIX3VZbk9EMWwwVlFTMDF6X252UjRLWTNUWGs4NHdOQmlDMjBW?oc=5": {
    "title": "Addiante pede a falência da Ambipar por dívida de R$ 187 milhões",
@@ -50634,7 +50533,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1786414880,
-   "cap_iso": "2026-08-10 23:21"
+   "cap_iso": "2026-08-10 23:21",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.marketwatch.com/story/ebay-may-dodge-a-gamestop-takeover-but-theres-a-new-twist-in-the-ryan-cohen-saga-d779b753?mod=mw_rss_topstories": {
    "title": "EBay may dodge a GameStop takeover — but there’s a new twist in the Ryan Cohen saga",
@@ -50654,9 +50555,231 @@
    "trust_override": "imprensa",
    "captured_ts": 1786414880,
    "cap_iso": "2026-08-10 23:21"
+  },
+  "https://www.quiverquant.com/news/Baker+Hughes+Company+Issues+$9.5+Billion+in+Senior+Unsecured+Notes+to+Fund+Acquisition+of+Chart+Industries,+Inc.": {
+   "title": "Baker Hughes Company Issues $9.5 Billion in Senior Unsecured Notes to Fund Acquisition of Chart Industries, Inc.",
+   "url": "https://www.quiverquant.com/news/Baker+Hughes+Company+Issues+$9.5+Billion+in+Senior+Unsecured+Notes+to+Fund+Acquisition+of+Chart+Industries,+Inc.",
+   "summary": "Baker Hughes Company Issues $9.5 Billion in Senior Unsecured Notes to Fund Acquisition of Chart Industries, Inc. &nbsp;&nbsp; Quiver Quantitative",
+   "source": "Quiver Quantitative",
+   "domain": "quiverquant.com",
+   "pub_ts": 1773212400,
+   "pub_iso": "2026-03-11 04:00",
+   "language": "en",
+   "companies": [
+    "Baker Hughes"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "mention_roles": {
+    "Baker Hughes": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Baker Hughes": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "Baker Hughes"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786446222,
+   "cap_iso": "2026-08-11 08:03"
+  },
+  "https://www.gasworld.com/story/eu-approves-baker-hughes-acquisition-of-chart-industries/2254207.article/": {
+   "title": "EU approves Baker Hughes acquisition of Chart Industries",
+   "url": "https://www.gasworld.com/story/eu-approves-baker-hughes-acquisition-of-chart-industries/2254207.article/",
+   "summary": "EU approves Baker Hughes acquisition of Chart Industries &nbsp;&nbsp; gasworld",
+   "source": "gasworld",
+   "domain": "gasworld.com",
+   "pub_ts": 1783839600,
+   "pub_iso": "2026-07-12 04:00",
+   "language": "en",
+   "companies": [
+    "Baker Hughes"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "mention_roles": {
+    "Baker Hughes": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Baker Hughes": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "Baker Hughes"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786446222,
+   "cap_iso": "2026-08-11 08:03"
+  },
+  "https://visnoinvest.com.br/news/14672/engie-brasil-egie3-registra-elevacao-de-rating-global-pela-fitch": {
+   "title": "ENGIE Brasil (EGIE3) registra elevação de rating global pela Fitch",
+   "url": "https://visnoinvest.com.br/news/14672/engie-brasil-egie3-registra-elevacao-de-rating-global-pela-fitch",
+   "summary": "ENGIE Brasil (EGIE3) registra elevação de rating global pela Fitch &nbsp;&nbsp; Visno Invest",
+   "source": "Visno Invest",
+   "domain": "visnoinvest.com.br",
+   "pub_ts": 1786397940,
+   "pub_iso": "2026-08-10 18:39",
+   "language": "pt",
+   "companies": [
+    "Engie Brasil"
+   ],
+   "event_ids": [
+    "rating_elevado"
+   ],
+   "mention_roles": {
+    "Engie Brasil": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Engie Brasil": [
+     {
+      "company": "Engie Brasil",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "Engie Brasil",
+      "monitored_company": "Engie Brasil",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "ENGIE Brasil (EGIE3) registra elevação de rating global pela Fitch",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNUEpFZHpWbmpKTTJ4NGtvVk04Z0ZXS2RWVWV2VV9NYW1HRVRpMDdSbEh5WGFkQzdqRWFodFBraDB2aTdhUkZ5REQ4ZEMzM1hmd2JQd1JEVGRBdUdqLU9sM0NpTWRmUlR4cHJacVBoa3N2NkdHN25WemtjNmVSbW9mdHlFeUZuNkh3QjByX0ctZDgxREZFNklvcGhHTG1veDlyMl9lTg?oc=5",
+      "pub_ts": 1786397940,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNUEpFZHpWbmpKTTJ4NGtvVk04Z0ZXS2RWVWV2VV9NYW1HRVRpMDdSbEh5WGFkQzdqRWFodFBraDB2aTdhUkZ5REQ4ZEMzM1hmd2JQd1JEVGRBdUdqLU9sM0NpTWRmUlR4cHJacVBoa3N2NkdHN25WemtjNmVSbW9mdHlFeUZuNkh3QjByX0ctZDgxREZFNklvcGhHTG1veDlyMl9lTg?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Engie Brasil": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Engie Brasil"
+   ],
+   "captured_ts": 1786446222,
+   "cap_iso": "2026-08-11 08:03"
+  },
+  "https://portalnovarejo.com.br/noticias/engie-brasil-energia-finaliza-oferta-de-acoes-e-aumenta-participacao-em-jirau/": {
+   "title": "ENGIE Brasil Energia finaliza oferta de ações e aumenta participação em Jirau",
+   "url": "https://portalnovarejo.com.br/noticias/engie-brasil-energia-finaliza-oferta-de-acoes-e-aumenta-participacao-em-jirau/",
+   "summary": "ENGIE Brasil Energia finaliza oferta de ações e aumenta participação em Jirau &nbsp;&nbsp; novarejo",
+   "source": "novarejo",
+   "domain": "portalnovarejo.com.br",
+   "pub_ts": 1786400658,
+   "pub_iso": "2026-08-10 19:24",
+   "language": "pt",
+   "companies": [
+    "Engie Brasil"
+   ],
+   "event_ids": [
+    "follow_on"
+   ],
+   "mention_roles": {
+    "Engie Brasil": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "encerramento",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Engie Brasil": [
+     "follow_on"
+    ]
+   },
+   "companies_attributed": [
+    "Engie Brasil"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786446222,
+   "cap_iso": "2026-08-11 08:03"
+  },
+  "https://brasilenergia.com.br/energia/empresas/fitch-eleva-rating-global-da-engie-brasil-para-bbb": {
+   "title": "Fitch eleva rating global da Engie Brasil para ‘BBB’",
+   "url": "https://brasilenergia.com.br/energia/empresas/fitch-eleva-rating-global-da-engie-brasil-para-bbb",
+   "summary": "Fitch eleva rating global da Engie Brasil para ‘BBB’ &nbsp;&nbsp; Editora Brasil Energia",
+   "source": "Editora Brasil Energia",
+   "domain": "brasilenergia.com.br",
+   "pub_ts": 1786400951,
+   "pub_iso": "2026-08-10 19:29",
+   "language": "pt",
+   "companies": [
+    "Engie Brasil"
+   ],
+   "event_ids": [
+    "rating_elevado"
+   ],
+   "mention_roles": {
+    "Engie Brasil": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Engie Brasil": [
+     {
+      "company": "Engie Brasil",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "Engie Brasil",
+      "monitored_company": "Engie Brasil",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Fitch eleva rating global da Engie Brasil para ‘BBB’",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSUdkbmJVUWlsa3RsdmNmaDJORFlRdFFCSzdtQzNDWDZpeXZ1N0xaMXY5amltMEVsRldzVmRnakY0YTdwdkxQdTZVblJwdDVJWHcxLTNRRnFUeUgtNDV5MjNzVFF5dnlyTHU0WDF2YU02VUtGVDdDbWhuWm1pNzNEM1E1bm1ESkJmUkc1OFozLV95cnlyVFdRNzZQVkw?oc=5",
+      "pub_ts": 1786400951,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSUdkbmJVUWlsa3RsdmNmaDJORFlRdFFCSzdtQzNDWDZpeXZ1N0xaMXY5amltMEVsRldzVmRnakY0YTdwdkxQdTZVblJwdDVJWHcxLTNRRnFUeUgtNDV5MjNzVFF5dnlyTHU0WDF2YU02VUtGVDdDbWhuWm1pNzNEM1E1bm1ESkJmUkc1OFozLV95cnlyVFdRNzZQVkw?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Engie Brasil": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Engie Brasil"
+   ],
+   "captured_ts": 1786446222,
+   "cap_iso": "2026-08-11 08:03"
   }
  },
- "run_count": 100,
+ "run_count": 101,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -55793,23 +55916,43 @@
   "https://news.google.com/rss/articles/CBMijwFBVV95cUxQQmhoamF2Yk9KZU9MY0kzcjdKcjZuT0dza3UzV0lLQi1Oc2Y4dlVUbGFHeUFnWGlacFBUVmdxT2JBRXJwbDdxS3htWW5pUzA3bE9VcWVJMXNUcXpNT0I0V2xSMTloazRNd1MtQ01YbkFHSnlnM0RLLTA5c0ZpeTV1NGRKZjdkbGlRVV9TOWtGZw?oc=5": {
    "url": "https://www.meioemensagem.com.br/gente/jbs-nomeia-wesley-batista-filho-como-ceo-global",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipwFBVV95cUxOOVVxNWZJcDhPQWUwTEVsckR1MEhlNHIwMGk2MXFUNkVDTnR6bEp3TEF4eHA5SzMyUVEtYi1OcmdRVHp3LU5IYmp4U1lCTDlhbWM4ZkxsMnVxdEtiSnhJbDlzdnNyNC0zOWFpaHJpdC16N3RpQ1RXMWl6OTZvOUpfM21sWk54NmlFTXl6S3BmbEtZT1dZekxSVDR0QXdEcWlYZnlmQzBDdw?oc=5": {
+   "url": "https://www.demarest.com.br/follow-on-da-caixa-seguridade-inaugura-ano-de-equity-na-b3-e-levanta-r12-bi/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQdk9LMjFIVkVSS2RkTXdvNHFCWHBBZTFHbnhtNWdQZ2NudkFOZlJaZ0xKeTczSXhKWFlwdWRXYnBEcEZrLTdCM3o4UFB5MWJPby1wSGN0YlUyQzhHZWljcGVsZXdnVWJwb3V1WGY3dUZVQzJVbktlYkdBZm81VlJud2I4TUtCNVpHNlpIc0pnRXdoYTNhanNqSFdlZkRGS1p3M1FhcWdLVnRzS1dOYW10akpUa1JGdGlKWWN4LXNrSFhtZ0FDRVFZTGtVY3RVYzlBVThadEdGVHR3eS13ZHc?oc=5": {
+   "url": "https://www.quiverquant.com/news/Baker+Hughes+Company+Issues+$9.5+Billion+in+Senior+Unsecured+Notes+to+Fund+Acquisition+of+Chart+Industries,+Inc.",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipAFBVV95cUxNUEpFZHpWbmpKTTJ4NGtvVk04Z0ZXS2RWVWV2VV9NYW1HRVRpMDdSbEh5WGFkQzdqRWFodFBraDB2aTdhUkZ5REQ4ZEMzM1hmd2JQd1JEVGRBdUdqLU9sM0NpTWRmUlR4cHJacVBoa3N2NkdHN25WemtjNmVSbW9mdHlFeUZuNkh3QjByX0ctZDgxREZFNklvcGhHTG1veDlyMl9lTg?oc=5": {
+   "url": "https://visnoinvest.com.br/news/14672/engie-brasil-egie3-registra-elevacao-de-rating-global-pela-fitch",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZHN4LXctWFk4RmxBVTV2TzZoejZyZmZ3NVM5ZTlCcmdaRXV5RDViSzVRdTFwZVVRanRjMkxhRTdfYTJwNFhOT0NsbWVYcmg4dG5CREJBZXp0MlVKdWJELWRIaC1FbVNWZERCOUJYYUlTZjhGcXNnWk51NjBhUkVLZkM4RjVxSW1qN0VONVJJU1JlV1czQlJlTDdZWTBJQ3hjM2JHa0hHVE1ieXBDblB5V3ZLUGM5ZUdB?oc=5": {
+   "url": "https://portalnovarejo.com.br/noticias/engie-brasil-energia-finaliza-oferta-de-acoes-e-aumenta-participacao-em-jirau/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSUdkbmJVUWlsa3RsdmNmaDJORFlRdFFCSzdtQzNDWDZpeXZ1N0xaMXY5amltMEVsRldzVmRnakY0YTdwdkxQdTZVblJwdDVJWHcxLTNRRnFUeUgtNDV5MjNzVFF5dnlyTHU0WDF2YU02VUtGVDdDbWhuWm1pNzNEM1E1bm1ESkJmUkc1OFozLV95cnlyVFdRNzZQVkw?oc=5": {
+   "url": "https://brasilenergia.com.br/energia/empresas/fitch-eleva-rating-global-da-engie-brasil-para-bbb",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786414948,
-  "iso": "10 ago 2026 · 23:22 BRT",
+  "ts": 1786446279,
+  "iso": "11 ago 2026 · 08:04 BRT",
   "status": {
    "Cosan": {
     "status": "atencao",
-    "score": 72
+    "score": 71
    },
    "Engie Brasil": {
     "status": "atencao",
-    "score": 69
+    "score": 70
    },
    "Rumo": {
     "status": "atencao",
-    "score": 64
+    "score": 63
    },
    "JBS": {
     "status": "atencao",
@@ -55861,17 +56004,17 @@
    },
    "ISA Energia Brasil": {
     "status": "monitorar",
-    "score": 24
-   },
-   "BTG Pactual": {
-    "status": "atencao",
-    "score": 23
-   },
-   "PRIO": {
-    "status": "monitorar",
     "score": 23
    },
    "Petrobras": {
+    "status": "monitorar",
+    "score": 22
+   },
+   "BTG Pactual": {
+    "status": "atencao",
+    "score": 22
+   },
+   "PRIO": {
     "status": "monitorar",
     "score": 22
    },
@@ -55935,10 +56078,6 @@
     "status": "atencao",
     "score": 11
    },
-   "Vamos": {
-    "status": "atencao",
-    "score": 10
-   },
    "Cemig": {
     "status": "atencao",
     "score": 10
@@ -55946,6 +56085,10 @@
    "Copel": {
     "status": "monitorar",
     "score": 10
+   },
+   "Vamos": {
+    "status": "atencao",
+    "score": 9
    },
    "Raia Drogasil": {
     "status": "monitorar",
