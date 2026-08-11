@@ -227,6 +227,9 @@
         "en"
       ],
       "rule_ids": [
+        "R_FRAUDE_ATOR_EXTERNO",
+        "R_FRAUDE_PREJUIZO_DE_TERCEIRO",
+        "R_FRAUDE_VITIMA_DETECTORA",
         "R_VITIMA_NAO_E_AUTORA_DA_FRAUDE"
       ],
       "status": "PENDING_MEASUREMENT",
@@ -264,6 +267,20 @@
           "detectability": "CASE_NAME_ONLY",
           "known_truth": "FALSE_POSITIVE",
           "expected_runtime_status": "BLOCKED_BY_INPUT"
+        },
+        {
+          "title": "Dazmyn Person: Another person was arrested, charged in the ongoing Duke Energy fraud case. WCSO identified a woman allegedly responsible for stealing victims identities to assist in creating fraudulent Duke Energy accounts.",
+          "company": "Duke Energy",
+          "forbidden": "fraude",
+          "origin": "R6a enriched input",
+          "detectability": "ENRICHED_ROLE_EVIDENCE"
+        },
+        {
+          "title": "Third suspect arrested in Duke Energy fraud case. On Tuesday deputies arrested a suspect after deputies said Duke Energy representatives discovered numerous accounts were opened in the name of living and deceased customers without their knowledge, costing the company 495904 in losses.",
+          "company": "Duke Energy",
+          "forbidden": "fraude",
+          "origin": "R6a enriched input",
+          "detectability": "ENRICHED_ROLE_EVIDENCE"
         }
       ],
       "semantic_siblings": [
@@ -292,6 +309,34 @@
           "company": "Santander Brasil",
           "forbidden": "fraude",
           "detectability": "EXPLICIT_ROLE"
+        },
+        {
+          "title": "Petrobras detected a fraud scheme with accounts opened by suspects",
+          "company": "Petrobras",
+          "forbidden": "fraude",
+          "proof": "papel_explicito",
+          "lang": "en"
+        },
+        {
+          "title": "Scammers impersonated Vale in a fraud that stole customer information",
+          "company": "Vale",
+          "forbidden": "fraude",
+          "proof": "papel_explicito",
+          "lang": "en"
+        },
+        {
+          "title": "Suspect convicted in fraud for creating fraudulent Citigroup accounts",
+          "company": "Citigroup",
+          "forbidden": "fraude",
+          "proof": "papel_explicito",
+          "lang": "en"
+        },
+        {
+          "title": "Authorities arrested people accused of identity theft in a fraud to open fraudulent Vale accounts",
+          "company": "Vale",
+          "forbidden": "fraude",
+          "proof": "papel_explicito",
+          "lang": "en"
         }
       ],
       "negative_controls": [
@@ -309,9 +354,29 @@
           "title": "Fraude nas Americanas: executivos de Itaú, Bradesco e Santander são alvo de buscas",
           "company": "Itaú Unibanco",
           "required": "investigacao_regulatoria"
+        },
+        {
+          "title": "Vale was found liable for fraud",
+          "company": "Vale",
+          "required": "fraude"
+        },
+        {
+          "title": "Vale admitted fraud in regulatory filing",
+          "company": "Vale",
+          "required": "fraude"
+        },
+        {
+          "title": "Vale executives orchestrated fraud scheme",
+          "company": "Vale",
+          "required": "fraude"
+        },
+        {
+          "title": "Vale discovered that its executives had committed fraud",
+          "company": "Vale",
+          "required": "fraude"
         }
       ],
-      "notes": "R2: estendido detect_fraud_role com PAPEL DE PROTETORA (monitorada e sujeito de combate/prevencao a fraude) e GOLPE CONTRA A BASE DE CLIENTES. NAO foi implementada a construcao `<Company> fraud case`: sozinha ela nao distingue vitima de re -- \"Wells Fargo fraud case\" descreveria igualmente bem um caso em que a empresa e a autora. Os 3 Duke e o sibling Truist que dependem so dessa forma nominal ficam CASE_NAME_ONLY / BLOCKED_BY_INPUT: verdade humana conhecida, evidencia ausente do input. Denominador NAO foi reduzido para inflar a taxa."
+      "notes": "R2: estendido detect_fraud_role com PAPEL DE PROTETORA (monitorada e sujeito de combate/prevencao a fraude) e GOLPE CONTRA A BASE DE CLIENTES. NAO foi implementada a construcao `<Company> fraud case`: sozinha ela nao distingue vitima de re -- \"Wells Fargo fraud case\" descreveria igualmente bem um caso em que a empresa e a autora. Os 3 Duke e o sibling Truist que dependem so dessa forma nominal ficam CASE_NAME_ONLY / BLOCKED_BY_INPUT: verdade humana conhecida, evidencia ausente do input. Denominador NAO foi reduzido para inflar a taxa. R6a: PAPEL EXPLICITO SUPERA FASE. detect_fraud_victim_evidence roda ANTES da checagem de fase, com evidencia POSITIVA: V1 a monitorada descobre/detecta a fraude alheia, V2 prejuizo causado por esquema de terceiro, P1 ator externo explicito com objeto fraudado da monitorada. Responsabilizacao explicita (found liable/admitted) e fraude praticada por gente da propria casa anulam o papel. Duke #2 passou de R_FRAUDE_NAO_CONFIRMADA para R_FRAUDE_ATOR_EXTERNO; Duke #3 exige o corpo Tier 2, que o early stop da R5c nao persiste."
     },
     {
       "family_id": "F4",

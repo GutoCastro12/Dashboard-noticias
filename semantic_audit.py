@@ -1547,6 +1547,110 @@ def detect_sovereign_subject(text: str, event_keywords: list[str], monitored: st
     return {"soberano": bool(mencoes) and soberanas == mencoes, "evidence": ev}
 
 
+# ── 4I.2 R6a/F3: PAPEL EXPLÍCITO DE FRAUDE SUPERA FASE ──────────────────────
+# Auditado em R5c: os artigos do caso Duke deixavam de pontuar apenas porque
+# `allegedly`/`investigation` marcavam a fase como não consumada — o runtime
+# seguia com `subject_company = Duke Energy`, ou seja, continuava achando que
+# a fraude era DELA. Resultado certo, motivo frágil: bastaria a fraude ser
+# confirmada para o evento voltar a pontuar contra a VÍTIMA.
+#
+# PAPEL e FASE são dimensões diferentes. Quem sofreu a fraude não vira autora
+# quando a fraude é comprovada. Por isso o papel explícito passa a ser
+# avaliado ANTES da fase, e só com evidência POSITIVA — nunca por ausência de
+# acusação.
+_FRAUDE_ATOR_EXTERNO = (
+    r"(?:suspects?|man|woman|person|people|individuals?|scammers?|fraudsters?|"
+    r"hackers?|criminals?|defendants?|golpistas?|estelionat[áa]rios?|"
+    r"suspeitos?|acusados?|homem|mulher|quadrilha|terceiros?)")
+# Se o ator é gente da própria monitorada, não há vítima: pessoal interno é
+# agência da empresa, não terceiro.
+_FRAUDE_AGENCIA_PROPRIA = (
+    r"(?:executives?|executivos?|employees?|funcion[áa]rios?|staff|agents?|"
+    r"agentes?|diretor\w*|director\w*|managers?|gerentes?|s[óo]cios?|"
+    r"vendedores?|salespe\w+|officers?)")
+_FRAUDE_OBJETO = r"(?:fraud\w*|fraude\w*|scam\w*|golpes?|estafas?|phishing)"
+
+# V1 — a monitorada DESCOBRE / DETECTA / REPORTA a fraude alheia.
+_FRAUDE_V1_DESCOBRE = [
+    r"{m}{q}(?:\s+" + _FRAUDE_AGENCIA_PROPRIA + r")?\s+"
+    r"(?:discovered|detected|identified|uncovered|flagged|reported|"
+    r"descobriu|detectou|identificou|constatou|apurou|reportou)"
+    r"(?:\s+\w+){{0,8}}\s+" + _FRAUDE_OBJETO,
+    r"{m}{q}(?:\s+" + _FRAUDE_AGENCIA_PROPRIA + r")?\s+"
+    r"(?:discovered|detected|identified|uncovered|descobriu|detectou|"
+    r"identificou|constatou)(?:\s+\w+){{0,6}}\s+"
+    r"(?:accounts?|contas?|transactions?|transa[çc][õo]es)"
+    r"(?:\s+\w+){{0,8}}?\s*(?:were\s+opened|opened|abertas?|criadas?)",
+]
+# V2 — prejuízo causado à monitorada por esquema de terceiro.
+_FRAUDE_V2_PREJUIZO = [
+    r"costing\s+(?:the\s+(?:company|utility|bank|firm)|{m})"
+    r"(?:\s+\S+){{0,6}}\s+in\s+(?:losses|damages)",
+    r"(?:causou|gerou|provocou)(?:\s+\w+){{0,4}}\s+"
+    r"(?:preju[íi]zo|perdas?|dano)(?:\s+\w+){{0,4}}\s+(?:a|à|para|ao)\s+{m}",
+]
+# P1 — ator externo explicitamente responsável, e o objeto fraudado é da
+# monitorada. Nenhuma das metades basta sozinha (§6/§11).
+_FRAUDE_P1_ATOR_EXTERNO = [
+    _FRAUDE_ATOR_EXTERNO + r"(?:\s+\w+){{0,10}}\s+"
+    r"(?:responsible\s+for|charged\s+with|convicted\s+of|arrested\s+for|"
+    r"accused\s+of|indicted\s+for|sentenced\s+for|acusad[oa]s?\s+de|"
+    r"condenad[oa]s?\s+por)(?:\s+\w+){{0,10}}\s+"
+    r"(?:fraudulent\s+{m}|identity\s+theft|stealing|roubo\s+de\s+identidade)",
+    r"(?:creating|created|opening|opened|criar|criaram|abrir|abriram)"
+    r"(?:\s+\w+){{0,3}}\s+fraudulent\s+{m}\b",
+    r"(?:impersonat\w*|posing\s+as|se\s+passa\w*\s+por)(?:\s+\w+){{0,3}}\s*{m}\b",
+]
+# Guards: a fraude é da CASA. Qualquer um anula o papel de vítima.
+_FRAUDE_CASA_PROPRIA = [
+    r"{m}{q}\s+(?:own|pr[óo]pri[oa])(?:\s+\w+){{0,3}}\s*" + _FRAUDE_OBJETO,
+    r"{m}{q}(?:\s+\w+){{0,3}}\s+" + _FRAUDE_AGENCIA_PROPRIA +
+    r"(?:\s+\w+){{0,6}}\s+(?:committed|orchestrat\w*|perpetrat\w*|ran\b|"
+    r"cometeram|orquestraram|praticaram|montaram)",
+    r"(?:its|seus?|suas?)\s+" + _FRAUDE_AGENCIA_PROPRIA +
+    r"(?:\s+\w+){{0,6}}\s+(?:had\s+)?(?:committed|orchestrat\w*|perpetrat\w*|"
+    r"cometeram|praticaram)",
+    _FRAUDE_AGENCIA_PROPRIA + r"\s+(?:of|d[aeo]s?)\s+{m}"
+    r"(?:\s+\w+){{0,6}}\s+(?:committed|orchestrat\w*|perpetrat\w*|cometeu|"
+    r"cometeram|praticou|praticaram)",
+    r"{m}{q}(?:\s+\w+){{0,4}}\s+(?:participat\w*|particip\w*)"
+    r"(?:\s+\w+){{0,4}}\s+" + _FRAUDE_OBJETO,
+    # "own fraudulent scheme was uncovered" — o esquema é da própria empresa
+    r"(?:its|seus?|suas?)\s+own\s+" + _FRAUDE_OBJETO,
+    r"own\s+fraudulent\s+scheme",
+]
+
+
+def detect_fraud_victim_evidence(text: str, monitored: str,
+                                 aliases: list[str] | None = None) -> dict:
+    """Evidência POSITIVA de que a monitorada sofreu — não cometeu — a fraude.
+
+    Devolve `{"role", "rule", "evidence"}` ou `{}`. Responsabilização
+    explícita vence tudo: companhia condenada não vira vítima por citar
+    clientes ou prejuízos. E qualquer marca de fraude praticada por gente da
+    própria casa anula o papel.
+    """
+    t = _n(text)
+    nomes = [re.escape(_n(a)) for a in ((aliases or []) + [monitored]) if a]
+    if not nomes:
+        return {}
+    alt = "(?:" + "|".join(nomes) + ")"
+    fmt = dict(m=alt, q=_QUALIF, a=_ART)
+    if any(re.search(p.format(**fmt), t, re.I) for p in FRAUDE_AGENTE):
+        return {}
+    if any(re.search(p.format(**fmt), t, re.I) for p in _FRAUDE_CASA_PROPRIA):
+        return {}
+    for regra, padroes in (("R_FRAUDE_VITIMA_DETECTORA", _FRAUDE_V1_DESCOBRE),
+                           ("R_FRAUDE_ATOR_EXTERNO", _FRAUDE_P1_ATOR_EXTERNO),
+                           ("R_FRAUDE_PREJUIZO_DE_TERCEIRO", _FRAUDE_V2_PREJUIZO)):
+        for p in padroes:
+            m = re.search(p.format(**fmt), t, re.I)
+            if m:
+                return {"role": "vitima", "rule": regra,
+                        "evidence": m.group(0)[:120]}
+    return {}
+
+
 def detect_fraud_role(text: str, monitored: str,
                       aliases: list[str] | None = None) -> str:
     """Papel da monitorada num evento de fraude: "agente", "vitima" ou "".
@@ -2012,6 +2116,25 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                          rejection_reason=f"sujeito verdadeiro é {_entf}; "
                                           f"não representa fraude de {monitored}",
                          attribution_confidence="alta")
+                decisoes.append(d)
+                continue
+            # 4I.2 R6a/F3 — PAPEL EXPLÍCITO ANTES DA FASE.
+            # Se há evidência positiva de que a monitorada SOFREU a fraude, o
+            # evento não é dela — e isso não pode depender de `allegedly` nem
+            # de a investigação estar em curso. Fase decide se um fato está
+            # confirmado; papel decide de QUEM é o fato.
+            _vit = detect_fraud_victim_evidence(
+                texto, monitored, aliases_por_empresa.get(monitored) or [monitored])
+            if _vit:
+                d.update(scoreable=False, event_scope="direto",
+                         relation_type="vitima_de_fraude",
+                         subject_company=monitored,
+                         subject_evidence=_vit["evidence"],
+                         attribution_rule=_vit["rule"],
+                         attribution_confidence="alta",
+                         rejection_reason=(
+                             f"{monitored} é a parte LESADA, não a autora — "
+                             f"evidência: “{_vit['evidence']}”"))
                 decisoes.append(d)
                 continue
             if fase["direction"] == "mitigadora":
