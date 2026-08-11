@@ -161,47 +161,63 @@
           "title": "Third suspect arrested in Duke Energy fraud case",
           "company": "Duke Energy",
           "forbidden": "fraude",
-          "origin": "global rescan P0"
+          "origin": "global rescan P0",
+          "detectability": "CASE_NAME_ONLY",
+          "known_truth": "FALSE_POSITIVE",
+          "expected_runtime_status": "BLOCKED_BY_INPUT"
         },
         {
           "title": "Duke Energy leverages artificial intelligence to combat fraud targeting energy customers",
           "company": "Duke Energy",
           "forbidden": "fraude",
-          "origin": "global rescan P0"
+          "origin": "global rescan P0",
+          "detectability": "EXPLICIT_ROLE"
         },
         {
           "title": "Dazmyn Person: Another person was arrested, charged in the ongoing Duke Energy fraud case, Wake County Sheriff's Office says",
           "company": "Duke Energy",
           "forbidden": "fraude",
-          "origin": "global rescan P0"
+          "origin": "global rescan P0",
+          "detectability": "CASE_NAME_ONLY",
+          "known_truth": "FALSE_POSITIVE",
+          "expected_runtime_status": "BLOCKED_BY_INPUT"
         },
         {
           "title": "Eileen Taylor Weighs in on Duke Energy Fraud Case",
           "company": "Duke Energy",
           "forbidden": "fraude",
-          "origin": "global rescan P0"
+          "origin": "global rescan P0",
+          "detectability": "CASE_NAME_ONLY",
+          "known_truth": "FALSE_POSITIVE",
+          "expected_runtime_status": "BLOCKED_BY_INPUT"
         }
       ],
       "semantic_siblings": [
         {
           "title": "Two suspects charged in Itau Unibanco fraud case, police say",
           "company": "Itaú Unibanco",
-          "forbidden": "fraude"
+          "forbidden": "fraude",
+          "detectability": "EXPLICIT_ROLE"
         },
         {
           "title": "Bradesco deploys new technology to combat fraud targeting account holders",
           "company": "Bradesco",
-          "forbidden": "fraude"
+          "forbidden": "fraude",
+          "detectability": "EXPLICIT_ROLE"
         },
         {
           "title": "Man sentenced in Truist Financial fraud scheme",
           "company": "Truist Financial",
-          "forbidden": "fraude"
+          "forbidden": "fraude",
+          "detectability": "CASE_NAME_ONLY",
+          "known_truth": "FALSE_POSITIVE",
+          "expected_runtime_status": "BLOCKED_BY_INPUT"
         },
         {
           "title": "Preso terceiro suspeito no caso de fraude contra clientes do Santander",
           "company": "Santander Brasil",
-          "forbidden": "fraude"
+          "forbidden": "fraude",
+          "detectability": "EXPLICIT_ROLE"
         }
       ],
       "negative_controls": [
@@ -221,7 +237,7 @@
           "required": "investigacao_regulatoria"
         }
       ],
-      "notes": "B4 exige a monitorada como OBJETO de construcao de vitima. `<Company> fraud case` usa o nome como MODIFICADOR do caso — nenhum cue cobre."
+      "notes": "R2: estendido detect_fraud_role com PAPEL DE PROTETORA (monitorada e sujeito de combate/prevencao a fraude) e GOLPE CONTRA A BASE DE CLIENTES. NAO foi implementada a construcao `<Company> fraud case`: sozinha ela nao distingue vitima de re -- \"Wells Fargo fraud case\" descreveria igualmente bem um caso em que a empresa e a autora. Os 3 Duke e o sibling Truist que dependem so dessa forma nominal ficam CASE_NAME_ONLY / BLOCKED_BY_INPUT: verdade humana conhecida, evidencia ausente do input. Denominador NAO foi reduzido para inflar a taxa."
     },
     {
       "family_id": "F4",

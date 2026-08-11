@@ -1119,6 +1119,21 @@ FRAUDE_VITIMA = [
     r"charged\s+in\s+{m}{q}\s+(?:fraud|scam)",
     r"(?:cliente|customer|funcion[áa]rio|employee|ex-funcion[áa]rio)\s+.{{0,60}}?"
     r"(?:fraud\w*|golpe|estafa|lesou|desviou)\s*.{{0,20}}?{a}{m}",
+    # ── 4I.2 R2/F3: PAPEL DE PROTETORA ──────────────────────────────────
+    # A monitorada é SUJEITO de verbo de combate/prevenção à fraude:
+    # "Duke Energy leverages artificial intelligence to COMBAT FRAUD…".
+    # Quem combate a fraude não a cometeu. É evidência POSITIVA de papel —
+    # nunca ausência de acusação (§12).
+    r"{m}{q}(?:\s+\w+){{0,6}}\s+(?:to\s+|para\s+)?(?:combats?|fights?|prevents?|"
+    r"tackles?|blocks?|combater|combate|prevenir|previne|proteger|protege|"
+    r"coibir|co[íi]be)\s+(?:\w+\s+){{0,2}}(?:fraud|fraude|scam|golpe|estafa|phishing)",
+    # ── 4I.2 R2/F3: GOLPE CONTRA A BASE DE CLIENTES ─────────────────────
+    # "fraude contra clientes do <X>" / "scam targeting customers of <X>".
+    # O alvo econômico é a carteira de clientes, não a monitorada como autora.
+    r"(?:fraud|fraude|scam|golpe|estafa|phishing)\s+(?:\w+\s+){{0,2}}?"
+    r"(?:against|contra|targeting|dirigid[oa]s?\s+a|voltad[oa]s?\s+contra)\s+"
+    r"(?:os\s+|as\s+|the\s+)?(?:customers?|clients?|clientes|usu[áa]rios|"
+    r"consumidores|correntistas|assinantes)\s+(?:of\s+|d[oae]s?\s+)?{m}",
 ]
 FRAUDE_AGENTE = [
     r"{m}{q}\s+(?:commit\w*|comete\w*|praticou|perpetr\w*|orquestr\w*)",
