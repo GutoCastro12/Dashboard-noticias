@@ -93,6 +93,17 @@ jobs:
       - name: Prepare static output for Render
         run: cp dashboard_risco.html index.html
 
+      # 4I.2 R5c — coleta SHADOW de contexto, só para os artigos novos deste
+      # run. Roda DEPOIS do pipeline e do dashboard de propósito: o scoring já
+      # foi calculado com o input original e nada daqui pode alterá-lo.
+      # `continue-on-error` somado ao try/except interno garante que uma falha
+      # de rede no enrichment jamais impeça a publicação — isto é
+      # observabilidade, não insumo do risco. Teto de 40 requisições por run.
+      - name: Shadow enrichment (prospective, no scoring impact)
+        continue-on-error: true
+        timeout-minutes: 6
+        run: python reliability_enrichment_sidecar.py --prospective
+
       # Histórico persistido via commit no repositório — não via actions/cache,
       # que evicta entradas não acessadas há 7 dias e tem limite de 10GB/repo.
       - name: Commit history + dashboard
@@ -106,6 +117,11 @@ jobs:
           # (agora também carrega cvm_telemetry — telemetria CVM persistida —
           # e o campo official_sources por run, usados no frescor consolidado).
           git add -f international_search_history.json run_meta.json 2>/dev/null || true
+          # 4I.2 R5c — side-car do enrichment shadow. Precisa sobreviver entre
+          # runs (runner efêmero) para que a coleta continue PROSPECTIVA: sem
+          # ele, todo artigo pareceria novo e o próximo run viraria backfill.
+          # É dado gerado, fica FORA de risk_history.json e não alimenta score.
+          git add -f risk_enrichment_shadow.json 2>/dev/null || true
           # Reconciliação runtime: os 6 exports de cobertura são regenerados
           # do ZERO em toda execução (risk_dashboard.main() via
           # coverage_diagnosis.run_production_coverage) e têm que entrar no
