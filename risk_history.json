@@ -724,7 +724,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T11:03:46.689142+00:00"
+     "last_checked_at": "2026-08-11T14:26:38.866729+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2593,7 +2593,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T11:03:47.089411+00:00"
+     "last_checked_at": "2026-08-11T14:26:39.266999+00:00"
     }
    ],
    "corrob_sources": [
@@ -7196,7 +7196,29 @@
    ],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "corrob_sources": [],
+   "corrob_sources": [
+    {
+     "source": "Forbes Brasil",
+     "domain": "forbes.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNS3MzajFUZjVGeWkybFBxeFdPZWpyYjZfNzdmV1ZPbDNBQXlXcGhQZW1EMGVTOUxzUy1MN1Y4VHdqaTIwZzN3c08wdWhuVlNjLWplUHJJMThsWnB2elZyWURoanhET2s5WXY2aklpeDJfaTF1bG4yd1I3TTNFcnhBYjFqYjVNczNCeXpCMG5MYmNKT3V5RWVYNHZNTDh4cWR2YlE?oc=5",
+     "when": "02/12 05:00",
+     "original_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNS3MzajFUZjVGeWkybFBxeFdPZWpyYjZfNzdmV1ZPbDNBQXlXcGhQZW1EMGVTOUxzUy1MN1Y4VHdqaTIwZzN3c08wdWhuVlNjLWplUHJJMThsWnB2elZyWURoanhET2s5WXY2aklpeDJfaTF1bG4yd1I3TTNFcnhBYjFqYjVNczNCeXpCMG5MYmNKT3V5RWVYNHZNTDh4cWR2YlE?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNS3MzajFUZjVGeWkybFBxeFdPZWpyYjZfNzdmV1ZPbDNBQXlXcGhQZW1EMGVTOUxzUy1MN1Y4VHdqaTIwZzN3c08wdWhuVlNjLWplUHJJMThsWnB2elZyWURoanhET2s5WXY2aklpeDJfaTF1bG4yd1I3TTNFcnhBYjFqYjVNczNCeXpCMG5MYmNKT3V5RWVYNHZNTDh4cWR2YlE?oc=5",
+     "resolved_url": "https://forbes.com.br/forbes-money/2025/12/smart-fit-avanca-no-centro-oeste-com-aquisicao-da-evolve/",
+     "canonical_url": "https://forbes.com.br/forbes-money/2025/12/smart-fit-avanca-no-centro-oeste-com-aquisicao-da-evolve/",
+     "display_url": "https://forbes.com.br/forbes-money/2025/12/smart-fit-avanca-no-centro-oeste-com-aquisicao-da-evolve/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "forbes.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-11T14:26:39.667301+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
    "semantic_discards": [
     {
      "empresa": "Smart Fit",
@@ -10177,7 +10199,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T11:03:47.489762+00:00"
+     "last_checked_at": "2026-08-11T14:26:40.067581+00:00"
     },
     {
      "source": "Demarest",
@@ -10197,7 +10219,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T11:03:47.890060+00:00"
+     "last_checked_at": "2026-08-11T14:26:40.467902+00:00"
     }
    ],
    "corrob_sources": [
@@ -11780,7 +11802,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T11:03:48.290325+00:00"
+     "last_checked_at": "2026-08-11T14:26:40.868140+00:00"
     }
    ],
    "corrob_sources": [
@@ -15493,7 +15515,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T11:03:48.862973+00:00"
+     "last_checked_at": "2026-08-11T14:26:41.497068+00:00"
     }
    ],
    "corrob_sources": [
@@ -18046,7 +18068,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T11:03:49.411928+00:00"
+     "last_checked_at": "2026-08-11T14:26:42.101170+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -18152,7 +18174,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T11:03:49.956312+00:00"
+     "last_checked_at": "2026-08-11T14:26:42.740510+00:00"
     },
     {
      "source": "Moomoo",
@@ -19557,7 +19579,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T11:03:50.635633+00:00"
+     "last_checked_at": "2026-08-11T14:26:43.543670+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19600,7 +19622,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T11:03:51.298132+00:00"
+     "last_checked_at": "2026-08-11T14:26:44.325713+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -20424,7 +20446,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T11:03:51.859050+00:00",
+     "last_checked_at": "2026-08-11T14:26:44.935671+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20449,7 +20471,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T11:03:52.409041+00:00",
+     "last_checked_at": "2026-08-11T14:26:45.573044+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21569,7 +21591,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-11T11:03:52.809339+00:00",
+     "last_checked_at": "2026-08-11T14:26:45.973338+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21634,7 +21656,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-11T11:03:53.209644+00:00",
+     "last_checked_at": "2026-08-11T14:26:46.373596+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22723,7 +22745,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T11:03:53.782950+00:00"
+     "last_checked_at": "2026-08-11T14:26:47.016461+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22808,7 +22830,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T11:03:54.351382+00:00"
+     "last_checked_at": "2026-08-11T14:26:47.635527+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24621,7 +24643,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T11:03:54.904269+00:00",
+     "last_checked_at": "2026-08-11T14:26:48.245531+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24791,7 +24813,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T11:03:55.458473+00:00",
+     "last_checked_at": "2026-08-11T14:26:48.868346+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -38960,7 +38982,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T11:03:56.123447+00:00"
+     "last_checked_at": "2026-08-11T14:26:49.611657+00:00"
     }
    ],
    "corrob_sources": [
@@ -42031,7 +42053,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T11:03:56.665863+00:00"
+     "last_checked_at": "2026-08-11T14:26:50.232347+00:00"
     },
     {
      "source": "Virginia Business",
@@ -42074,7 +42096,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T11:03:57.210906+00:00"
+     "last_checked_at": "2026-08-11T14:26:50.849906+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48855,7 +48877,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T11:03:57.767757+00:00",
+     "last_checked_at": "2026-08-11T14:26:51.468801+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48878,7 +48900,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T11:03:58.344979+00:00",
+     "last_checked_at": "2026-08-11T14:26:52.115381+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -50476,6 +50498,27 @@
      "resolution_error": "",
      "link_render_anchor": true,
      "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Agrimidia",
+     "domain": "agrimidia.com.br",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOeWhoWFoyVHVLSUE5bm4wOUNNd25ZRlMtT2lrcU5BNEI2QWdlZkVHQkVUeGljQzBqX3R6LXBKa3gwNWF3ZzY5aV8zVXk5ZWEwbUxLazdndVlzVDFheWQ1Q3N1VVo0eEJjc2w1UWMtb2pUNUVkOHpPV2RPNHlTMVdmTlE4YU93OFRMOXNqTk1kbDB5ajl3R1NUNFhzaENkenhZR3pYNjFMQXBfQU1YOUZQZmlR?oc=5",
+     "when": "11/08 08:13",
+     "original_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOeWhoWFoyVHVLSUE5bm4wOUNNd25ZRlMtT2lrcU5BNEI2QWdlZkVHQkVUeGljQzBqX3R6LXBKa3gwNWF3ZzY5aV8zVXk5ZWEwbUxLazdndVlzVDFheWQ1Q3N1VVo0eEJjc2w1UWMtb2pUNUVkOHpPV2RPNHlTMVdmTlE4YU93OFRMOXNqTk1kbDB5ajl3R1NUNFhzaENkenhZR3pYNjFMQXBfQU1YOUZQZmlR?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOeWhoWFoyVHVLSUE5bm4wOUNNd25ZRlMtT2lrcU5BNEI2QWdlZkVHQkVUeGljQzBqX3R6LXBKa3gwNWF3ZzY5aV8zVXk5ZWEwbUxLazdndVlzVDFheWQ1Q3N1VVo0eEJjc2w1UWMtb2pUNUVkOHpPV2RPNHlTMVdmTlE4YU93OFRMOXNqTk1kbDB5ajl3R1NUNFhzaENkenhZR3pYNjFMQXBfQU1YOUZQZmlR?oc=5",
+     "resolved_url": "https://agrimidia.com.br/avicultura-industrial/2026/08/11/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global/",
+     "canonical_url": "https://agrimidia.com.br/avicultura-industrial/2026/08/11/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global/",
+     "display_url": "https://agrimidia.com.br/avicultura-industrial/2026/08/11/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "agrimidia.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-11T14:26:52.713936+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "captured_ts": 1786414880,
@@ -50777,9 +50820,64 @@
    ],
    "captured_ts": 1786446222,
    "cap_iso": "2026-08-11 08:03"
+  },
+  "https://www.law360.com/articles/2391836/unitedhealth-fights-investor-suit-over-doj-s-merger-probe": {
+   "title": "UnitedHealth Fights Investor Suit Over DOJ's Merger Probe",
+   "url": "https://www.law360.com/articles/2391836/unitedhealth-fights-investor-suit-over-doj-s-merger-probe",
+   "summary": "UnitedHealth Fights Investor Suit Over DOJ's Merger Probe &nbsp;&nbsp; Law360",
+   "source": "Law360",
+   "domain": "law360.com",
+   "pub_ts": 1758697200,
+   "pub_iso": "2025-09-24 04:00",
+   "language": "pt",
+   "companies": [
+    "UnitedHealth Group"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "mention_roles": {
+    "UnitedHealth Group": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "UnitedHealth Group": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "UnitedHealth Group"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786458394,
+   "cap_iso": "2026-08-11 11:26"
+  },
+  "https://www.marketwatch.com/story/we-live-on-a-farm-and-have-2-2-million-saved-for-retirement-were-ready-to-retire-abroad-can-we-afford-it-85e56105?mod=mw_rss_topstories": {
+   "title": "We live on a farm and have $2.2 million saved for retirement. We’re ready to retire abroad. Can we afford it?",
+   "url": "https://www.marketwatch.com/story/we-live-on-a-farm-and-have-2-2-million-saved-for-retirement-were-ready-to-retire-abroad-can-we-afford-it-85e56105?mod=mw_rss_topstories",
+   "summary": "”We don’t live lavishly, and sometimes we both think maybe we could upgrade a few things.”",
+   "source": "MarketWatch · Top Stories",
+   "domain": "marketwatch.com",
+   "pub_ts": 1786453200,
+   "pub_iso": "2026-08-11 10:00",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "rating_elevado"
+   ],
+   "trust_override": "imprensa",
+   "captured_ts": 1786458394,
+   "cap_iso": "2026-08-11 11:26"
   }
  },
- "run_count": 101,
+ "run_count": 102,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -55936,11 +56034,19 @@
   "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSUdkbmJVUWlsa3RsdmNmaDJORFlRdFFCSzdtQzNDWDZpeXZ1N0xaMXY5amltMEVsRldzVmRnakY0YTdwdkxQdTZVblJwdDVJWHcxLTNRRnFUeUgtNDV5MjNzVFF5dnlyTHU0WDF2YU02VUtGVDdDbWhuWm1pNzNEM1E1bm1ESkJmUkc1OFozLV95cnlyVFdRNzZQVkw?oc=5": {
    "url": "https://brasilenergia.com.br/energia/empresas/fitch-eleva-rating-global-da-engie-brasil-para-bbb",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMingFBVV95cUxQaS1EZkVyeHZjVF9UdWZWMEV1VnVRa0dhRHJfUEpIZWRFQUoxUWFiSWJMOWhKcWFpb0JMN3AzSXpFVXoxQXpYY3BkQzhoRjdNQ1VxSnNKcXF1RTd1QUxqSlhrX2ljdGZjV1kxLUxOYm1lMUtnUmlNQzNibTg4aEgwRVUtRHFESkI2RUxKLXMtMWlXTi1qS194SHA4dE9vQdIBVkFVX3lxTFBVdEdDSUJ6aXN3aHlkNFBEbk5Bd3BlR3hTNDUtRkJiRkFqOVhRcmRKZlhJWHdFME83SUt0OU5xNzdwWHNuYjBYejhDck02cFQxcmoyaU9R?oc=5": {
+   "url": "https://www.law360.com/articles/2391836/unitedhealth-fights-investor-suit-over-doj-s-merger-probe",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMisgFBVV95cUxOeWhoWFoyVHVLSUE5bm4wOUNNd25ZRlMtT2lrcU5BNEI2QWdlZkVHQkVUeGljQzBqX3R6LXBKa3gwNWF3ZzY5aV8zVXk5ZWEwbUxLazdndVlzVDFheWQ1Q3N1VVo0eEJjc2w1UWMtb2pUNUVkOHpPV2RPNHlTMVdmTlE4YU93OFRMOXNqTk1kbDB5ajl3R1NUNFhzaENkenhZR3pYNjFMQXBfQU1YOUZQZmlR?oc=5": {
+   "url": "https://agrimidia.com.br/avicultura-industrial/2026/08/11/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786446279,
-  "iso": "11 ago 2026 · 08:04 BRT",
+  "ts": 1786458453,
+  "iso": "11 ago 2026 · 11:27 BRT",
   "status": {
    "Cosan": {
     "status": "atencao",
@@ -55964,7 +56070,7 @@
    },
    "Tok&Stok": {
     "status": "critico",
-    "score": 52
+    "score": 51
    },
    "Santander Brasil": {
     "status": "atencao",
@@ -55984,7 +56090,7 @@
    },
    "Sabesp": {
     "status": "monitorar",
-    "score": 33
+    "score": 32
    },
    "Yobel": {
     "status": "monitorar",
