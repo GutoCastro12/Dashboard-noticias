@@ -101,17 +101,24 @@ print("=" * 96)
 print("BLOCO E — os números reais, derivados e não escritos à mão")
 print("=" * 96)
 r = rm.relatorio()
-check(r["counts"]["denominador_fixo"] == r["stored"]["a"]["denominador"],
-      f"[17] o denominador fixo do baseline é o denominador de A "
-      f"({r['counts']['denominador_fixo']})")
-check(r["stored"]["a"]["denominador"] == r["stored"]["b"]["denominador"],
-      "[18] em STORED nenhum item foi removido, então os denominadores coincidem — "
-      "é o único ponto em que coincidir é correto")
-check(r["candidate"]["a"]["denominador"] > r["candidate"]["b"]["denominador"],
-      f"[19] em CANDIDATE eles divergem: A={r['candidate']['a']['denominador']} "
-      f"B={r['candidate']['b']['denominador']}")
-check(r["candidate"]["a"]["acertos"] > r["stored"]["a"]["acertos"],
-      f"[20] A evolui de {r['stored']['a']['texto']} para {r['candidate']['a']['texto']}")
+check(r["counts"]["denominador_fixo"] == r["stored"]["a"]["denominador"]
+      == r["candidate"]["a"]["denominador"],
+      f"[17] o denominador de A é SEMPRE o denominador fixo do baseline "
+      f"({r['counts']['denominador_fixo']}), nos dois universos")
+# A relação, não o snapshot: o denominador de B é o de A menos os itens
+# adjudicados que deixaram de pontuar. Coincidem só enquanto nada saiu — e
+# isso muda assim que um apply entra em produção.
+for u in ("stored", "candidate"):
+    saiu = sum(1 for d in r[u]["a"]["detalhe"] if not d["scoreable"])
+    check(r[u]["b"]["denominador"] == r[u]["a"]["denominador"] - saiu,
+          f"[18] {u}: denominador de B = denominador fixo − itens que saíram "
+          f"({r[u]['a']['denominador']} − {saiu} = {r[u]['b']['denominador']})")
+check(r["candidate"]["a"]["acertos"] >= r["stored"]["a"]["acertos"],
+      f"[19] o candidate nunca regride contra o stored: "
+      f"{r['stored']['a']['texto']} → {r['candidate']['a']['texto']}")
+check(r["candidate"]["b"]["denominador"] <= r["candidate"]["a"]["denominador"],
+      f"[20] o denominador de B nunca excede o de A: "
+      f"B={r['candidate']['b']['denominador']} ≤ A={r['candidate']['a']['denominador']}")
 check(not r["true_perdidos"],
       f"[21] nenhum TRUE perdido na projeção ({len(r['true_perdidos'])})")
 check(len(r["corrigidos"]) + len(r["fp_restantes"]) == r["counts"]["FALSE_POSITIVE"],
