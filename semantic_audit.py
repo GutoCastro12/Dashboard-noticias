@@ -1508,6 +1508,91 @@ def detect_fraud_role(text: str, monitored: str,
     return ""
 
 
+# ── 4I.2 R4/F2: FORO JUDICIAL ≠ INSOLVÊNCIA DA MONITORADA ───────────────────
+# `Bankruptcy Court` é o NOME DE UM TRIBUNAL. A palavra `bankruptcy` ali
+# designa a competência da corte, não um fato da empresa citada — o litígio
+# pode ser de privacidade de dados, contrato ou descoberta.
+#
+# A regra proibida seria `bankruptcy court ⇒ descarta falência`: ela apagaria
+# "Bankruptcy Court approves Company's Chapter 11 plan", onde o foro é o mesmo
+# mas a insolvência é real. Por isso, duas condições CUMULATIVAS:
+#
+#   1) TODA ocorrência de termo do evento está DENTRO do nome da instituição;
+#   2) nada mais no texto liga insolvência à monitorada.
+#
+# Basta um termo de insolvência fora do nome do tribunal — ou uma construção
+# possessiva/verbal ligando a empresa ao processo — para a regra não atuar.
+#
+# Escopo lexical DELIBERADAMENTE mínimo: só as construções realmente
+# observadas no corpus — `Bankruptcy Court` e `Bankruptcy judge`. Não há
+# nenhum caso em PT/ES no histórico ("vara de falências", "tribunal
+# concursal"), e naqueles títulos o pipeline sequer chega a criar candidato
+# de falência. Expandir sem caso observado é o erro que já custou uma wave.
+_FORO_INSOLVENCIA = re.compile(
+    r"(?:u\.?s\.?\s+|federal\s+|the\s+)?bankruptcy\s+(?:court|judge)")
+# Vocabulário de insolvência que NÃO é keyword de evento mas prova vínculo:
+# aparece nos TRUE controls ("Chapter 11 plan", "restructuring plan", "debtor").
+_PROVA_INSOLVENCIA_PROPRIA = [
+    # o possessivo inglês pode vir como `X's`, `Xs'` ou só `X'` (nome plural)
+    r"{m}(?:['’]s|s['’]|['’])?\s+(?:chapter\s+(?:\d+|eleven)|restructuring\s+plan|"
+    r"reorganization\s+plan|reorganisation\s+plan|bankruptcy\s+(?:filing|petition|plan)|"
+    r"insolvency|plano\s+de\s+recupera[çc][ãa]o)",
+    r"(?:chapter\s+(?:\d+|eleven)|restructuring\s+plan|reorganization\s+plan|"
+    r"bankruptcy\s+(?:filing|petition|plan)|plano\s+de\s+recupera[çc][ãa]o)\s+"
+    r"(?:of|for|d[aeo]s?\s+)\s*{m}",
+    r"{m}\s+(?:files?|filed|filing|petitions?|petitioned)\s+for\b",
+    # "Vale files Chapter 11 petition in bankruptcy court": o verbo de
+    # protocolo liga a empresa ao processo mesmo sem a preposição `for`.
+    r"{m}\s+(?:files?|filed|filing|petitions?|petitioned|submits?|submitted)\s+"
+    r"(?:\w+\s+){{0,3}}(?:chapter\s+(?:\d+|eleven)|bankruptcy|insolvency|petition)",
+    r"{m}\s+(?:enters?|entered|exits?|exited|emerges?|emerged)\s+"
+    r"(?:from\s+)?(?:chapter|bankruptcy|insolvency|reorganization)",
+    r"\b(?:debtor|devedora)\s+{m}\b",
+    r"{m}\s*,?\s+(?:the\s+|as\s+)?debtor\b",
+    r"declare?s?\s+{m}\s+(?:bankrupt|insolvent)",
+    r"{m}\s+(?:pede|pediu|entra|entrou|obt[êe]m|obteve|protocola|protocolou)\s+"
+    r"(?:\w+\s+){{0,2}}(?:recupera[çc][ãa]o|fal[êe]ncia|concordata)",
+    r"(?:recupera[çc][ãa]o\s+judicial|fal[êe]ncia|quiebra|concurso\s+de\s+acreedores)"
+    r"\s+d[aeo]s?\s+{m}\b",
+]
+
+
+def detect_foro_judicial_sem_insolvencia(text: str, monitored: str,
+                                         aliases: list[str] | None = None,
+                                         event_kws: list[str] | None = None) -> str:
+    """O termo de insolvência só nomeia o TRIBUNAL — não a empresa monitorada.
+
+    Devolve o nome do foro encontrado, ou "". Retorna "" (isto é, mantém o
+    evento) assim que houver qualquer termo do evento fora do nome da
+    instituição, ou qualquer prova positiva ligando a insolvência à empresa.
+    """
+    if not event_kws:
+        return ""
+    t = _n(text)
+    foros = [m.span() for m in _FORO_INSOLVENCIA.finditer(t)]
+    if not foros:
+        return ""
+    # (1) nenhum termo do evento pode ocorrer FORA do nome do tribunal
+    achou_kw = False
+    for kw in {_n(k) for k in event_kws if len(_n(k)) >= 4}:
+        for mk in re.finditer(re.escape(kw), t):
+            achou_kw = True
+            if not any(a <= mk.start() and mk.end() <= b for a, b in foros):
+                return ""
+    if not achou_kw:
+        return ""
+    # (2) nenhuma prova positiva de insolvência DA monitorada
+    nomes = [re.escape(_n(a)) for a in ((aliases or []) + [monitored]) if a]
+    if not nomes:
+        return ""
+    alt = "(?:" + "|".join(nomes) + ")"
+    for p in _PROVA_INSOLVENCIA_PROPRIA:
+        if re.search(p.format(m=alt), t):
+            return ""
+    a, b = foros[0]
+    return t[a:b]
+
+
 # ── 4I.2 R3/F4: AFILIAÇÃO INDIVIDUAL COM OUTRO SUJEITO EXPLÍCITO ────────────
 # `ex-CEO de X` identifica uma PESSOA; não torna X sujeito do evento. Mas a
 # afiliação sozinha NUNCA basta — "Ex-CEO da X afirma que X entrou em default"
@@ -2056,6 +2141,24 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
         # até haver evidência real — menor blast radius vence.
         if _papel == "individual_subject" and ev != "investigacao_regulatoria":
             _papel = ""
+        # 4I.2 R4/F2: o termo de insolvência só nomeia o TRIBUNAL.
+        # Escopo restrito a `falencia`/`recuperacao_judicial` — são os únicos
+        # eventos cuja keyword aparece em nome de instituição judicial (§11:
+        # nada de reescrever o contrato de insolvência inteiro nesta wave).
+        if not _papel and ev in ("falencia", "recuperacao_judicial"):
+            _foro = detect_foro_judicial_sem_insolvencia(
+                texto, monitored, _al, (keywords_por_evento or {}).get(ev) or [])
+            if _foro:
+                d.update(scoreable=False, event_scope="direto",
+                         relation_type="foro_judicial",
+                         subject_company=monitored,
+                         subject_evidence=_foro,
+                         attribution_rule="R_FORO_JUDICIAL_NAO_PROVA_INSOLVENCIA",
+                         rejection_reason=(
+                             f"'{_foro}' é o FORO; nada no texto liga insolvência "
+                             f"a {monitored}"))
+                decisoes.append(d)
+                continue
         # 4I.2 R3/F4: afiliação individual + OUTRO sujeito explícito do evento.
         # Escopo restrito às famílias com caso real observado (§24); as demais
         # ficam de fora até haver evidência.

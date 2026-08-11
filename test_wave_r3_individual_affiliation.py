@@ -145,7 +145,11 @@ print("=" * 96)
 import re  # noqa: E402  (usado só na asserção de escopo)
 
 _src = open("semantic_audit.py", encoding="utf-8").read()
-_m = re.search(r'if not _papel and ev in \(([^)]*)\):', _src)
+# ancora no PRÓPRIO gate F4: outras famílias também usam `if not _papel and
+# ev in (...)`, então casar pelo primeiro match pega a regra errada.
+_m = re.search(r'if not _papel and ev in \(([^)]*)\):'
+               r'(?:(?!if not _papel).)*?detect_individual_affiliation_role',
+               _src, re.S)
 check(_m is not None, "[26] o gate F4 está condicionado a uma lista explícita de eventos")
 if _m:
     _escopo = {x.strip().strip("\"'") for x in _m.group(1).split(",") if x.strip()}

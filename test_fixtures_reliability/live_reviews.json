@@ -6,7 +6,14 @@
    "TRUE",
    "FALSE_POSITIVE",
    "AMBIGUOUS"
-  ]
+  ],
+  "reviewer_types": [
+   "human",
+   "assistant",
+   "imported_prior_adjudication",
+   "unknown"
+  ],
+  "reviewer_provenance": "reviewer_type registra QUEM adjudicou. imported_prior_adjudication = rotulo herdado da R1c, cuja origem individual nao foi registrada na epoca; NAO afirmar que foi human. assistant = adjudicado pelo Claude a partir do input literal, o que NAO equivale a confirmacao manual do usuario."
  },
  "https://www.clarin.com/economia/miguel-galuccio-une-exceo-ypf-duena-puma-energy-rescatar-petrolera-default_0_ZDkoMlRGKN.html||YPF||default": {
   "status": "FALSE_POSITIVE",
@@ -14,7 +21,8 @@
   "reviewed_at": 1786391126,
   "family_id": "F4",
   "company": "YPF",
-  "event_id": "default"
+  "event_id": "default",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://www.eldiariodechihuahua.mx/economia/2025/jul/31/para-gmexico-plataformas-por-impago-de-pemex-720456.html||Pemex (Petróleos Mexicanos)||default": {
   "status": "TRUE",
@@ -22,7 +30,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "Pemex (Petróleos Mexicanos)",
-  "event_id": "default"
+  "event_id": "default",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://www.elfinanciero.com.mx/opinion/jeanette-leyva/2025/10/13/cibanco-una-quiebra-no-merecida/||CIBanco||falencia": {
   "status": "TRUE",
@@ -30,7 +39,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "CIBanco",
-  "event_id": "falencia"
+  "event_id": "falencia",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://poole.ncsu.edu/thought-leadership/article/eileen-taylor-weighs-in-on-duke-energy-fraud-case/||Duke Energy||fraude": {
   "status": "FALSE_POSITIVE",
@@ -38,7 +48,8 @@
   "reviewed_at": 1786391126,
   "family_id": "F3",
   "company": "Duke Energy",
-  "event_id": "fraude"
+  "event_id": "fraude",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://www.whiteandwilliams.com/restructuring-perspectives/bankruptcy-court-orders-texas-to-strike-allegations-in-state-data-privacy-suit-against-general-motors||General Motors||falencia": {
   "status": "FALSE_POSITIVE",
@@ -46,7 +57,8 @@
   "reviewed_at": 1786391126,
   "family_id": "F2",
   "company": "General Motors",
-  "event_id": "falencia"
+  "event_id": "falencia",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://br.advfn.com/jornal/2025/11/fitch-rebaixa-rating-da-tupy-e-acende-sinal-de-alerta-para-investidores-na-bolsa-de-valores||Tupy||rebaixamento_rating": {
   "status": "TRUE",
@@ -54,7 +66,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "Tupy",
-  "event_id": "rebaixamento_rating"
+  "event_id": "rebaixamento_rating",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://www.suno.com.br/noticias/fitch-rebaixa-rating-hapvida-hapv3-2026-mt/||Hapvida||rebaixamento_rating": {
   "status": "TRUE",
@@ -62,7 +75,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "Hapvida",
-  "event_id": "rebaixamento_rating"
+  "event_id": "rebaixamento_rating",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://abc11.com/post/dazmyn-person-another-was-arrested-charged-ongoing-duke-energy-fraud-case-wake-county-sheriffs-office-says/18300753/||Duke Energy||fraude": {
   "status": "FALSE_POSITIVE",
@@ -70,7 +84,8 @@
   "reviewed_at": 1786391126,
   "family_id": "F3",
   "company": "Duke Energy",
-  "event_id": "fraude"
+  "event_id": "fraude",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://www.findlaw.com/legalblogs/federal-courts/scotus-declines-to-intervene-in-billion-dollar-fraud-showdown-against-citigroup/||Citigroup||fraude": {
   "status": "TRUE",
@@ -78,7 +93,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "Citigroup",
-  "event_id": "fraude"
+  "event_id": "fraude",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://financenews.com.br/2026/02/moodys-local-rebaixa-rating-da-cosan/||Cosan||rebaixamento_rating": {
   "status": "TRUE",
@@ -86,7 +102,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "Cosan",
-  "event_id": "rebaixamento_rating"
+  "event_id": "rebaixamento_rating",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://www.wral.com/news/local/wake-county-duke-energy-fraud-investigation-arrest-feb-2026/||Duke Energy||fraude": {
   "status": "FALSE_POSITIVE",
@@ -94,7 +111,8 @@
   "reviewed_at": 1786391126,
   "family_id": "F3",
   "company": "Duke Energy",
-  "event_id": "fraude"
+  "event_id": "fraude",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://nkytribune.com/2026/03/duke-energy-leverages-artificial-intelligence-to-combat-fraud-targeting-energy-customers/||Duke Energy||fraude": {
   "status": "FALSE_POSITIVE",
@@ -102,7 +120,8 @@
   "reviewed_at": 1786391126,
   "family_id": "F3",
   "company": "Duke Energy",
-  "event_id": "fraude"
+  "event_id": "fraude",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://br.tradingview.com/news/reuters.com,2026:newsml_L1N3ZU11G:0/||Cosan||rebaixamento_rating": {
   "status": "TRUE",
@@ -110,7 +129,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "Cosan",
-  "event_id": "rebaixamento_rating"
+  "event_id": "rebaixamento_rating",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://www.minhaoperadora.com.br/2026/03/justica-condena-executivos-e-ex-diretores-da-tim-por-fraude-fiscal-em-sc.html||TIM Brasil||fraude": {
   "status": "TRUE",
@@ -118,7 +138,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "TIM Brasil",
-  "event_id": "fraude"
+  "event_id": "fraude",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://financenews.com.br/2026/03/s-perspectiva-negativa/||Tupy||rebaixamento_rating": {
   "status": "TRUE",
@@ -126,7 +147,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "Tupy",
-  "event_id": "rebaixamento_rating"
+  "event_id": "rebaixamento_rating",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://economia.uol.com.br/colunas/graciliano-rocha/2026/04/01/agencia-de-rating-rebaixa-nota-de-credito-da-aegea-gigante-do-saneamento.htm||Aegea Saneamento||rebaixamento_rating": {
   "status": "TRUE",
@@ -134,7 +156,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "Aegea Saneamento",
-  "event_id": "rebaixamento_rating"
+  "event_id": "rebaixamento_rating",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://www.valoraanalitik.com/rebaja-de-calificacion-de-colombia-a-manos-de-sp-tambien-arrastro-a-ecopetrol/||Ecopetrol||rebaixamento_rating": {
   "status": "TRUE",
@@ -142,7 +165,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "Ecopetrol",
-  "event_id": "rebaixamento_rating"
+  "event_id": "rebaixamento_rating",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://www.nsctotal.com.br/colunistas/pedro-machado/tokstok-justica-aceita-recuperacao-judicial-de-r-11-bilhao-que-impacta-22-mil-funcionarios||Tok&Stok||recuperacao_judicial": {
   "status": "TRUE",
@@ -150,7 +174,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "Tok&Stok",
-  "event_id": "recuperacao_judicial"
+  "event_id": "recuperacao_judicial",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://www.cnnbrasil.com.br/agro/sp-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/||Cosan||rebaixamento_rating": {
   "status": "TRUE",
@@ -158,7 +183,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "Cosan",
-  "event_id": "rebaixamento_rating"
+  "event_id": "rebaixamento_rating",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://www.infomoney.com.br/consumo/recuperacao-judicial-afeta-quem-esta-esperando-moveis-de-tokstok-e-mobly-veja/||Tok&Stok||recuperacao_judicial": {
   "status": "TRUE",
@@ -166,7 +192,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "Tok&Stok",
-  "event_id": "recuperacao_judicial"
+  "event_id": "recuperacao_judicial",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://veja.abril.com.br/economia/vale-elege-presidente-interino-do-conselho-em-meio-a-investigacao-da-cvm/||Vale||investigacao_gestora": {
   "status": "AMBIGUOUS",
@@ -174,7 +201,8 @@
   "reviewed_at": 1786391126,
   "family_id": "F10",
   "company": "Vale",
-  "event_id": "investigacao_gestora"
+  "event_id": "investigacao_gestora",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://agfeed.com.br/financas/moodys-corta-rating-da-cosan-e-aponta-desafios-para-desalavancagem-da-holding/||Cosan||rebaixamento_rating": {
   "status": "TRUE",
@@ -182,7 +210,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "Cosan",
-  "event_id": "rebaixamento_rating"
+  "event_id": "rebaixamento_rating",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://valor.globo.com/empresas/noticia/2026/07/17/moodys-rebaixa-rating-corporativo-da-rumo-de-ba2-para-ba3-e-altera-perspectiva-para-negativa.ghtml||Rumo||rebaixamento_rating": {
   "status": "TRUE",
@@ -190,7 +219,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "Rumo",
-  "event_id": "rebaixamento_rating"
+  "event_id": "rebaixamento_rating",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://www.vale.com/pt/w/vale-informa-sobre-plano-de-recuperacao-judicial-da-samarco/-/categories/64919||Samarco Mineração||recuperacao_judicial": {
   "status": "TRUE",
@@ -198,7 +228,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "Samarco Mineração",
-  "event_id": "recuperacao_judicial"
+  "event_id": "recuperacao_judicial",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://www.rionegro.com.ar/energia/sociedad/sin-reestructuracion-aconcagua-ira-a-la-quiebra-el-duro-pronostico-del-exceo-de-ypf-4247338/||YPF||falencia": {
   "status": "FALSE_POSITIVE",
@@ -206,7 +237,8 @@
   "reviewed_at": 1786391126,
   "family_id": "F4",
   "company": "YPF",
-  "event_id": "falencia"
+  "event_id": "falencia",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://www.tiempo.com.mx/economia/detuvo-grupo-mexico-sus-plataformas-petroleras-impago-pemex-noviembre-2025/||Pemex (Petróleos Mexicanos)||default": {
   "status": "TRUE",
@@ -214,7 +246,8 @@
   "reviewed_at": 1786391126,
   "family_id": "",
   "company": "Pemex (Petróleos Mexicanos)",
-  "event_id": "default"
+  "event_id": "default",
+  "reviewer_type": "imported_prior_adjudication"
  },
  "https://www.moneytimes.com.br/moodys-rebaixa-rating-da-cosan-csan3-e-mantem-perspectiva-negativa-pads/||Cosan||rebaixamento_rating": {
   "status": "TRUE",
@@ -222,6 +255,7 @@
   "reviewed_at": 1786415074,
   "family_id": "",
   "company": "Cosan",
-  "event_id": "rebaixamento_rating"
+  "event_id": "rebaixamento_rating",
+  "reviewer_type": "assistant"
  }
 }

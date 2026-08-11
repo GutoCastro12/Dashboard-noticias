@@ -147,6 +147,8 @@ def main() -> int:
     print(f"  unreviewed           {rev['UNREVIEWED']}")
     print(f"  precision reviewed   {rev['precision']}")
     print("     ^ PRECISION ON CURRENT REVIEWED CRITICAL SET — não é precisão global")
+    print(f"  reviewer provenance  {r.get('reviewer_types') or '—'}")
+    print("     ^ rótulo do assistente NÃO equivale a confirmação manual do usuário")
     print("\nHIGH REVIEW")
     print(f"  total high           {hr['total']}")
     print(f"  reviewed             {hr['reviewed']}  (coverage {hr['coverage']})")

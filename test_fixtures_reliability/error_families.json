@@ -100,8 +100,10 @@
       "languages": [
         "en"
       ],
-      "rule_ids": [],
-      "status": "PENDING_MEASUREMENT",
+      "rule_ids": [
+        "R_FORO_JUDICIAL_NAO_PROVA_INSOLVENCIA"
+      ],
+      "status": "MEASURED",
       "exact_regressions": [
         {
           "title": "Bankruptcy Court Orders Texas to Strike Allegations In State Data Privacy Suit Against General Motors",
@@ -112,19 +114,46 @@
       ],
       "semantic_siblings": [
         {
-          "title": "Bankruptcy Court rules on trademark dispute involving Ford Motor Company",
-          "company": "General Motors",
-          "forbidden": "falencia"
+          "title": "Bankruptcy Court dismisses unrelated privacy claim against Petrobras",
+          "company": "Petrobras",
+          "forbidden": "falencia",
+          "proof": "venue_only",
+          "lang": "en"
         },
         {
-          "title": "Bankruptcy Court denies motion in contract litigation against Duke Energy",
-          "company": "Duke Energy",
-          "forbidden": "falencia"
+          "title": "Bankruptcy judge rules on discovery dispute involving Citigroup",
+          "company": "Citigroup",
+          "forbidden": "falencia",
+          "proof": "venue_only",
+          "lang": "en"
+        },
+        {
+          "title": "Vale wins contract dispute in US Bankruptcy Court",
+          "company": "Vale",
+          "forbidden": "falencia",
+          "proof": "venue_only",
+          "lang": "en"
+        },
+        {
+          "title": "Bankruptcy Court sets deadline in trademark dispute involving Citigroup",
+          "company": "Citigroup",
+          "forbidden": "falencia",
+          "proof": "venue_only",
+          "lang": "en"
         },
         {
           "title": "US Bankruptcy Court hears environmental claim naming Vale as defendant",
           "company": "Vale",
-          "forbidden": "falencia"
+          "forbidden": "falencia",
+          "proof": "venue_only",
+          "lang": "en"
+        },
+        {
+          "title": "Bankruptcy Court denies motion in contract litigation against Duke Energy",
+          "company": "Duke Energy",
+          "forbidden": "falencia",
+          "proof": "venue_only",
+          "lang": "en"
         }
       ],
       "negative_controls": [
@@ -137,9 +166,54 @@
           "title": "Vale files Chapter 11 petition in bankruptcy court",
           "company": "Vale",
           "required": "falencia"
+        },
+        {
+          "title": "Bankruptcy Court approves General Motors' Chapter 11 plan",
+          "company": "General Motors",
+          "required": "falencia"
+        },
+        {
+          "title": "Bankruptcy judge confirms General Motors' restructuring plan",
+          "company": "General Motors",
+          "required": "falencia"
+        },
+        {
+          "title": "Bankruptcy Court declares the bankruptcy of Petrobras",
+          "company": "Petrobras",
+          "required": "falencia"
+        },
+        {
+          "title": "US Bankruptcy Court schedules hearing on Petrobras bankruptcy filing",
+          "company": "Petrobras",
+          "required": "falencia"
+        },
+        {
+          "title": "US Bankruptcy Court approves the sale of debtor General Motors assets",
+          "company": "General Motors",
+          "required": "falencia"
+        },
+        {
+          "title": "Petrobras files for bankruptcy in federal court",
+          "company": "Petrobras",
+          "required": "falencia"
+        },
+        {
+          "title": "Petrobras enters Chapter 11",
+          "company": "Petrobras",
+          "required": "recuperacao_judicial"
+        },
+        {
+          "title": "Tok&Stok: Justica aceita recuperacao judicial de R$ 1,1 bilhao que impacta 2,2 mil funcionarios",
+          "company": "Tok&Stok",
+          "required": "recuperacao_judicial"
+        },
+        {
+          "title": "CIBanco, una quiebra no merecida",
+          "company": "CIBanco",
+          "required": "falencia"
         }
       ],
-      "notes": "Proibido `if Bankruptcy Court: discard`. Precisa distinguir foro de processo da empresa."
+      "notes": "R_FORO_JUDICIAL_NAO_PROVA_INSOLVENCIA exige DUAS condicoes: (1) TODA ocorrencia de termo do evento esta dentro do nome da instituicao judicial ('Bankruptcy Court', 'Bankruptcy judge'); (2) nenhuma prova positiva liga insolvencia a monitorada (possessivo com Chapter 11 / restructuring plan, 'X files for', 'debtor X', 'falencia de X'...). Escopo lexical minimo e deliberado: so as construcoes observadas no corpus, em EN. Nao ha caso PT/ES no historico. Sibling removido nesta wave: 'Bankruptcy Court rules on trademark dispute involving Ford Motor Company' atribuido a General Motors — a monitorada nao aparece no titulo, entao o caso passava por remocao pre-semantica e nunca testou F2. Gap registrado, fora do escopo: 'Court declares Company bankrupt' nao gera candidato porque 'bankrupt' (adjetivo) nao e keyword de evento — falha identica na baseline, nao e efeito desta regra."
     },
     {
       "family_id": "F3",

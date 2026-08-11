@@ -101,6 +101,8 @@ def coletar(cfg: dict | None = None) -> dict:
                     "rule": d.get("regra") or "",
                     "assessment": (d.get("motivo") or "")[:120],
                     "review_status": revs.get(k, {}).get("status", "UNREVIEWED"),
+                    # R4 §3: rótulo do assistente NÃO é confirmação do usuário.
+                    "reviewer_type": revs.get(k, {}).get("reviewer_type", "unknown"),
                     "review_note": revs.get(k, {}).get("note", ""),
                     "known_case": "SIM" if titulo in conhecidos else "nao",
                 }
@@ -136,7 +138,8 @@ def gravar(res: dict) -> None:
     OUTDIR.mkdir(exist_ok=True)
     campos = ["novelty", "severity", "company", "event_id", "event_label", "title",
               "source", "url", "pub_iso", "cap_iso", "captured_ts", "age_days",
-              "rule", "assessment", "review_status", "review_note", "known_case"]
+              "rule", "assessment", "review_status", "reviewer_type", "review_note",
+              "known_case"]
     with open(CSV_OUT, "w", encoding="utf-8-sig", newline="") as f:
         w = csv.DictWriter(f, fieldnames=campos, extrasaction="ignore")
         w.writeheader()
@@ -173,8 +176,13 @@ def resumo(res: dict, nov: dict) -> dict:
                 "precision": (f"{c['TRUE']}/{den} = {c['TRUE'] / den * 100:.1f}%"
                               if den else "N/D — sem itens adjudicados")}
 
+    proc = {}
+    for l in crit:
+        if l["review_status"] != "UNREVIEWED":
+            proc[l["reviewer_type"]] = proc.get(l["reviewer_type"], 0) + 1
+
     return {
-        "review": _rev(crit), "review_high": _rev(alto),
+        "review": _rev(crit), "review_high": _rev(alto), "reviewer_types": proc,
         "records": res["records"],
         "critical": len(crit), "high": len(alto),
         "new_critical": sum(1 for l in crit if l.get("novelty") == "NEW"),
