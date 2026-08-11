@@ -38,6 +38,7 @@ import sys
 from pathlib import Path
 
 import risk_dashboard as rd
+import semantic_audit as sa
 
 # Paths sobrescrevíveis por ambiente: testes destrutivos trabalham numa CÓPIA
 # temporária em vez de mutilar a fixture versionada compartilhada (R5a §0.2).
@@ -68,16 +69,26 @@ MIN_EXERCISED_SIBLINGS = 2
 SEM_REGISTRO = "SEM_REGISTRO_SEMANTICO"
 
 
-def _pontua(cfg: dict, title: str, company: str) -> tuple[set, dict]:
+def _pontua(cfg: dict, title: str, company: str, shadow: bool = False) -> tuple[set, dict]:
     """Roda o pipeline semântico REAL sobre um título e devolve os eventos que
     ficariam scoreable para a empresa, mais o registro completo — de onde sai
-    a proveniência, sem duplicar a semântica."""
+    a proveniência, sem duplicar a semântica.
+
+    `shadow=True` mede a semântica que ainda NÃO está ativa em produção. É o
+    caso das famílias cuja regra vive atrás de interruptor: medi-las no
+    caminho de produção diria apenas que o interruptor está desligado, o que
+    já se sabe, e esconderia o que a wave realmente entregou.
+    """
     hist = {"articles": {"u1": {
         "title": title, "summary": "", "source": "reliability-fixture",
         "domain": "exemplo.com", "pub_ts": 1786000000,
         "pub_iso": "2026-08-07 04:00", "companies": [company]}},
         "run_count": 1}
-    rd._reclassify_only_pass(hist, cfg)
+    if shadow:
+        with sa.shadow_fraud_roles():
+            rd._reclassify_only_pass(hist, cfg)
+    else:
+        rd._reclassify_only_pass(hist, cfg)
     rec = hist["articles"]["u1"]
     return set(rd.event_ids_for(rec, company) or []), rec
 
@@ -106,9 +117,10 @@ def _proveniencia(rec: dict, company: str, event_id: str) -> dict:
     return p
 
 
-def _check(cfg: dict, caso: dict, regras_familia: set, declarado: str) -> dict:
+def _check(cfg: dict, caso: dict, regras_familia: set, declarado: str,
+           shadow: bool = False) -> dict:
     """Avalia UM caso em dois níveis: comportamental e específico da família."""
-    got, rec = _pontua(cfg, caso["title"], caso["company"])
+    got, rec = _pontua(cfg, caso["title"], caso["company"], shadow)
     proibido = caso.get("forbidden")
     exigido = caso.get("required")
     alvo = proibido if (proibido and proibido != "__none__") else exigido
@@ -178,7 +190,10 @@ def avaliar(cfg: dict | None = None) -> dict:
         regras = set(fam.get("rule_ids") or [])
         linhas = {}
         for bucket in ("exact_regressions", "semantic_siblings", "negative_controls"):
-            linhas[bucket] = [_check(cfg, c, regras, declarado)
+            # Família com regra ainda não ativa em produção é medida no
+            # caminho shadow — é lá que a regra existe.
+            modo_shadow = fam.get("evaluation_mode") == "shadow"
+            linhas[bucket] = [_check(cfg, c, regras, declarado, modo_shadow)
                               for c in (fam.get(bucket) or [])]
 
         def taxa(b):

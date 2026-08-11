@@ -43,7 +43,8 @@ def pontua(titulo, resumo, empresa):
                              "domain": "exemplo.com", "pub_ts": 1786000000,
                              "pub_iso": "2026-08-07 04:00",
                              "companies": [empresa]}}, "run_count": 1}
-    rd._reclassify_only_pass(h, cfg)
+    with sa.shadow_fraud_roles():
+        rd._reclassify_only_pass(h, cfg)
     r = h["articles"]["u1"]
     got = set((r.get("events_by_company") or {}).get(empresa) or [])
     regras = {d.get("event_id"): d.get("regra")
@@ -53,7 +54,9 @@ def pontua(titulo, resumo, empresa):
 
 
 def papel(txt, emp):
-    return sa.detect_fraud_victim_evidence(txt, emp, AL.get(emp) or [emp])
+    # R6c: estes testes avaliam a semântica SHADOW, nunca a de produção.
+    with sa.shadow_fraud_roles():
+        return sa.detect_fraud_victim_evidence(txt, emp, AL.get(emp) or [emp])
 
 
 D2_T = ("Dazmyn Person: Another person was arrested, charged in the ongoing "

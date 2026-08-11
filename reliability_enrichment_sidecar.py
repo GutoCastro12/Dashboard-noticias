@@ -200,9 +200,12 @@ def papel_do_evento_indefinido(texto: str, empresa: str, evento: str,
     if evento not in sa.EVENTOS_FRAUDE:
         return False
     al = aliases or [empresa]
-    if sa.detect_fraud_role(texto, empresa, al):
-        return False
-    return not sa.detect_fraud_victim_evidence(texto, empresa, al)
+    # R6c: a completude de evidência é decidida com a semântica SHADOW — é
+    # ela que será avaliada. Produção continua fora deste caminho.
+    with sa.shadow_fraud_roles():
+        if sa.detect_fraud_role(texto, empresa, al):
+            return False
+        return not sa.detect_fraud_victim_evidence(texto, empresa, al)
 
 
 def selecionar_evidencias(frags: list, base: str, empresa: str, evento: str,

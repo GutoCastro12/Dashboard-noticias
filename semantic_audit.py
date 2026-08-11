@@ -16,6 +16,7 @@ Resolução por:
 """
 from __future__ import annotations
 
+import contextlib
 import re
 import unicodedata
 from datetime import datetime
@@ -1117,14 +1118,11 @@ FRAUDE_VITIMA = [
     r"(?:targeting|dirigid[oa]\s+a|voltado\s+contra){a}{m}",
     r"(?:se\s+passa(?:m|ndo)?\s+por|impersonat\w*|posing\s+as)\s+{m}",
     r"charged\s+in\s+{m}{q}\s+(?:fraud|scam)",
-    # 4I.2 R6b — DIREÇÃO OBRIGATÓRIA. Antes bastava um funcionário e um termo
-    # de fraude perto do nome da empresa, o que fazia "employee committed
-    # fraud FOR Vale" (fraude EM NOME da companhia) ser lido como vítima
-    # exatamente igual a "employee defrauded Vale" (fraude CONTRA ela). Só a
-    # preposição separa as duas leituras, e agora ela é exigida.
+    # Padrão de produção, inalterado desde a Wave B4. A R6b mostrou que ele
+    # não distingue direção — ver `FRAUDE_VITIMA_SHADOW` logo abaixo —, mas a
+    # correção só vale no caminho SHADOW até ser autorizada em produção.
     r"(?:cliente|customer|funcion[áa]rio|employee|ex-funcion[áa]rio)\s+.{{0,60}}?"
-    r"(?:fraud\w*|golpe|estafa|lesou|desviou|stole|roubou|embezzl\w*|desviou)"
-    r"\s*.{{0,20}}?(?:against|from|contra|de|d[ao]s?)\s*{a}{m}",
+    r"(?:fraud\w*|golpe|estafa|lesou|desviou)\s*.{{0,20}}?{a}{m}",
     # ── 4I.2 R2/F3: PAPEL DE PROTETORA ──────────────────────────────────
     # A monitorada é SUJEITO de verbo de combate/prevenção à fraude:
     # "Duke Energy leverages artificial intelligence to COMBAT FRAUD…".
@@ -1141,6 +1139,26 @@ FRAUDE_VITIMA = [
     r"(?:os\s+|as\s+|the\s+)?(?:customers?|clients?|clientes|usu[áa]rios|"
     r"consumidores|correntistas|assinantes)\s+(?:of\s+|d[oae]s?\s+)?{m}",
 ]
+
+# ── 4I.2 R6b/R6c: MESMA LISTA, COM DIREÇÃO OBRIGATÓRIA — SÓ NO SHADOW ───────
+# O padrão de produção acima aceita "employee committed fraud FOR Company" e
+# "employee defrauded Company" como se fossem a mesma coisa: exige apenas um
+# funcionário e um termo de fraude perto do nome da empresa. É a PREPOSIÇÃO
+# que separa fraude EM NOME da companhia de fraude CONTRA ela.
+#
+# A correção existe e está testada, mas ativá-la mudaria a classificação de
+# todo artigo futuro — e isso ainda não foi autorizado. Por isso ela vive
+# nesta lista paralela, usada apenas quando o chamador pede explicitamente o
+# caminho shadow. Produção segue byte a byte com o comportamento anterior.
+FRAUDE_VITIMA_SHADOW = [
+    p for p in FRAUDE_VITIMA
+    if not p.startswith(r"(?:cliente|customer|funcion[áa]rio|employee")
+] + [
+    r"(?:cliente|customer|funcion[áa]rio|employee|ex-funcion[áa]rio)\s+.{{0,60}}?"
+    r"(?:fraud\w*|golpe|estafa|lesou|desviou|stole|roubou|embezzl\w*)"
+    r"\s*.{{0,20}}?(?:against|from|contra|de|d[ao]s?)\s*{a}{m}",
+]
+
 FRAUDE_AGENTE = [
     r"{m}{q}\s+(?:commit\w*|comete\w*|praticou|perpetr\w*|orquestr\w*)",
     r"{m}{q}\s+(?:admit\w*|confess\w*|assumiu)",
@@ -1627,6 +1645,35 @@ _FRAUDE_CASA_PROPRIA = [
 ]
 
 
+# ── 4I.2 R6c: SHADOW ≠ PRODUÇÃO ─────────────────────────────────────────────
+# A semântica de papel da R6a/R6b está validada, mas ligá-la por padrão faria
+# dela o classificador de produção para TODO artigo futuro — e essa é uma
+# decisão separada, que ainda não foi tomada. Enquanto isso, ela fica atrás
+# de um interruptor explícito: desligado, o pipeline se comporta exatamente
+# como antes; ligado, apenas dentro do bloco `with`, os avaliadores shadow
+# enxergam a nova semântica.
+#
+# O padrão é DESLIGADO de propósito. Um flag que precisa ser ligado nunca
+# entra em produção por esquecimento; um que precisa ser desligado, sim.
+_SHADOW_FRAUD_ROLES = False
+
+
+def shadow_fraud_roles_ativo() -> bool:
+    return _SHADOW_FRAUD_ROLES
+
+
+@contextlib.contextmanager
+def shadow_fraud_roles():
+    """Habilita a semântica de papel de fraude SÓ dentro deste bloco."""
+    global _SHADOW_FRAUD_ROLES
+    anterior = _SHADOW_FRAUD_ROLES
+    _SHADOW_FRAUD_ROLES = True
+    try:
+        yield
+    finally:
+        _SHADOW_FRAUD_ROLES = anterior
+
+
 def detect_fraud_victim_evidence(text: str, monitored: str,
                                  aliases: list[str] | None = None) -> dict:
     """Evidência POSITIVA de que a monitorada sofreu — não cometeu — a fraude.
@@ -1714,9 +1761,15 @@ def detect_fraud_role(text: str, monitored: str,
     alt = "(?:" + "|".join(nomes) + ")"
     if any(re.search(p.format(m=alt, q=_QUALIF, a=_ART), t, re.I) for p in FRAUDE_AGENTE):
         return "agente"
-    if detect_agencia_em_nome_da_empresa(text, monitored, aliases):
-        return ""
-    if any(re.search(p.format(m=alt, q=_QUALIF, a=_ART), t, re.I) for p in FRAUDE_VITIMA):
+    # R6c: guard de agência e lista com direção obrigatória são caminho
+    # SHADOW. Sem o interruptor, vale exatamente a lista de produção.
+    if _SHADOW_FRAUD_ROLES:
+        if detect_agencia_em_nome_da_empresa(text, monitored, aliases):
+            return ""
+        vitima = FRAUDE_VITIMA_SHADOW
+    else:
+        vitima = FRAUDE_VITIMA
+    if any(re.search(p.format(m=alt, q=_QUALIF, a=_ART), t, re.I) for p in vitima):
         return "vitima"
     return ""
 
@@ -2174,8 +2227,11 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
             # evento não é dela — e isso não pode depender de `allegedly` nem
             # de a investigação estar em curso. Fase decide se um fato está
             # confirmado; papel decide de QUEM é o fato.
-            _vit = detect_fraud_victim_evidence(
+            # R6c: caminho SHADOW. Em produção este gate não roda, e o bloco
+            # de fraude decide como antes, pela fase.
+            _vit = (detect_fraud_victim_evidence(
                 texto, monitored, aliases_por_empresa.get(monitored) or [monitored])
+                if _SHADOW_FRAUD_ROLES else {})
             if _vit:
                 d.update(scoreable=False, event_scope="direto",
                          relation_type="vitima_de_fraude",

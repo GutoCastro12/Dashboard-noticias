@@ -45,7 +45,9 @@ def check(cond, label):
 
 
 def papel(t, emp):
-    return sa.detect_fraud_role(t, emp, AL.get(emp) or [emp])
+    # R6c: estes testes avaliam a semântica SHADOW, nunca a de produção.
+    with sa.shadow_fraud_roles():
+        return sa.detect_fraud_role(t, emp, AL.get(emp) or [emp])
 
 
 def pontua(t, emp, resumo=""):
@@ -53,7 +55,8 @@ def pontua(t, emp, resumo=""):
                              "domain": "exemplo.com", "pub_ts": 1786000000,
                              "pub_iso": "2026-08-07 04:00",
                              "companies": [emp]}}, "run_count": 1}
-    rd._reclassify_only_pass(h, cfg)
+    with sa.shadow_fraud_roles():
+        rd._reclassify_only_pass(h, cfg)
     r = h["articles"]["u1"]
     return (set((r.get("events_by_company") or {}).get(emp) or []),
             {d.get("event_id"): d.get("regra")
