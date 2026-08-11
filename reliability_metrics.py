@@ -35,15 +35,19 @@ from __future__ import annotations
 import copy
 import io
 import json
+import os
 import sys
 import time
 from pathlib import Path
 
 import risk_dashboard as rd
 
-HISTORY = Path("risk_history.json")
-REVIEWS = Path("test_fixtures_reliability/live_reviews.json")
-BASELINE = Path("test_fixtures_reliability/critical_baseline.json")
+# Paths sobrescrevíveis por ambiente (R5a §0.2) — ver reliability_generalization.
+HISTORY = Path(os.environ.get("RELIABILITY_HISTORY") or "risk_history.json")
+REVIEWS = Path(os.environ.get("RELIABILITY_REVIEWS")
+               or "test_fixtures_reliability/live_reviews.json")
+BASELINE = Path(os.environ.get("RELIABILITY_CRITICAL_BASELINE")
+                or "test_fixtures_reliability/critical_baseline.json")
 
 BASELINE_ID = "critical_baseline_r1c"
 ADJUDICADOS = ("TRUE", "FALSE_POSITIVE")

@@ -33,13 +33,17 @@ Uso:
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 
 import risk_dashboard as rd
 
-FAMILIES = Path("test_fixtures_reliability/error_families.json")
-OUTDIR = Path("out_reliability")
+# Paths sobrescrevíveis por ambiente: testes destrutivos trabalham numa CÓPIA
+# temporária em vez de mutilar a fixture versionada compartilhada (R5a §0.2).
+FAMILIES = Path(os.environ.get("RELIABILITY_FAMILIES")
+                or "test_fixtures_reliability/error_families.json")
+OUTDIR = Path(os.environ.get("RELIABILITY_OUTDIR") or "out_reliability")
 
 # Estados possíveis de uma família.
 GENERALIZED = "GENERALIZED_ON_TEST_SET"

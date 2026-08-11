@@ -29,16 +29,20 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 import sys
 import time
 from pathlib import Path
 
 import risk_dashboard as rd
 
-HISTORY = Path("risk_history.json")
-FAMILIES = Path("test_fixtures_reliability/error_families.json")
-REVIEWS = Path("test_fixtures_reliability/live_reviews.json")
-OUTDIR = Path("out_reliability")
+# Paths sobrescrevíveis por ambiente (R5a §0.2) — ver reliability_generalization.
+HISTORY = Path(os.environ.get("RELIABILITY_HISTORY") or "risk_history.json")
+FAMILIES = Path(os.environ.get("RELIABILITY_FAMILIES")
+                or "test_fixtures_reliability/error_families.json")
+REVIEWS = Path(os.environ.get("RELIABILITY_REVIEWS")
+               or "test_fixtures_reliability/live_reviews.json")
+OUTDIR = Path(os.environ.get("RELIABILITY_OUTDIR") or "out_reliability")
 BASELINE = OUTDIR / "live_baseline.json"
 CSV_OUT = OUTDIR / "current_high_critical.csv"
 HOLDOUT_OUT = OUTDIR / "holdout_candidates.csv"
