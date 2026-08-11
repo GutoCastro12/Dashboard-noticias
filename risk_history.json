@@ -724,7 +724,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T20:02:05.742883+00:00"
+     "last_checked_at": "2026-08-11T02:21:26.535604+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2593,7 +2593,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T20:02:06.143090+00:00"
+     "last_checked_at": "2026-08-11T02:21:26.935873+00:00"
     }
    ],
    "corrob_sources": [
@@ -10177,7 +10177,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T20:02:06.543313+00:00"
+     "last_checked_at": "2026-08-11T02:21:27.336168+00:00"
     },
     {
      "source": "Demarest",
@@ -10197,7 +10197,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T20:02:06.943540+00:00"
+     "last_checked_at": "2026-08-11T02:21:27.736522+00:00"
     }
    ],
    "corrob_sources": [
@@ -11780,7 +11780,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T20:02:07.343734+00:00"
+     "last_checked_at": "2026-08-11T02:21:28.136781+00:00"
     }
    ],
    "corrob_sources": [
@@ -13405,7 +13405,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.630598+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.630598+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMivwFBVV95cUxOUGRCNno1Sm81Zi1MMXdxMW5vZWNVaVk1ajdGVXUzQUxyWHdkTEFSU1RYU21JSFlSSWd4aWNVQUE3M01kOFJZR2dxdXVlLUZTbEljcTVrVUVTS3U3ZzhEZVM1eWpmZ3VkOTJ0SXk0VV8xV28tQTJYVmdGaUJ3V2JEQkpwTGRnaG1sR1lVbl9UTGRaUDNVNU9OQWRJTjlHZ045Z3ZoTVRiUEhTYTV6OF81NTBtaGpERTdwZkNhRjAtSQ?oc=5": {
    "title": "Falência de fornecedor de marcas próprias: Altas Cumbres Group cai por dívidas milionárias",
@@ -15491,7 +15493,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T20:02:07.893499+00:00"
+     "last_checked_at": "2026-08-11T02:21:28.790481+00:00"
     }
    ],
    "corrob_sources": [
@@ -18044,7 +18046,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T20:02:08.453513+00:00"
+     "last_checked_at": "2026-08-11T02:21:29.432171+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -18150,7 +18152,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T20:02:08.996451+00:00"
+     "last_checked_at": "2026-08-11T02:21:30.083601+00:00"
     },
     {
      "source": "Moomoo",
@@ -19555,7 +19557,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T20:02:09.652947+00:00"
+     "last_checked_at": "2026-08-11T02:21:30.915967+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19598,7 +19600,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T20:02:10.316622+00:00"
+     "last_checked_at": "2026-08-11T02:21:31.774107+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -20422,7 +20424,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T20:02:10.907571+00:00",
+     "last_checked_at": "2026-08-11T02:21:32.425096+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20447,7 +20449,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T20:02:11.460276+00:00",
+     "last_checked_at": "2026-08-11T02:21:33.067707+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21567,7 +21569,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-10T20:02:11.860486+00:00",
+     "last_checked_at": "2026-08-11T02:21:33.467923+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21632,7 +21634,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-10T20:02:12.260676+00:00",
+     "last_checked_at": "2026-08-11T02:21:33.868146+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22721,7 +22723,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T20:02:12.843895+00:00"
+     "last_checked_at": "2026-08-11T02:21:34.511687+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22806,7 +22808,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T20:02:13.421067+00:00"
+     "last_checked_at": "2026-08-11T02:21:35.156172+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24619,7 +24621,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T20:02:13.965175+00:00",
+     "last_checked_at": "2026-08-11T02:21:35.807586+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24789,7 +24791,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T20:02:14.523078+00:00",
+     "last_checked_at": "2026-08-11T02:21:36.463595+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -38958,7 +38960,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T20:02:15.217773+00:00"
+     "last_checked_at": "2026-08-11T02:21:37.272663+00:00"
     }
    ],
    "corrob_sources": [
@@ -42029,7 +42031,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T20:02:15.785327+00:00"
+     "last_checked_at": "2026-08-11T02:21:37.907676+00:00"
     },
     {
      "source": "Virginia Business",
@@ -42072,7 +42074,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-10T20:02:16.406300+00:00"
+     "last_checked_at": "2026-08-11T02:21:38.555972+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48853,7 +48855,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T20:02:16.963924+00:00",
+     "last_checked_at": "2026-08-11T02:21:39.201802+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48876,7 +48878,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-10T20:02:17.511823+00:00",
+     "last_checked_at": "2026-08-11T02:21:39.850101+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -50190,15 +50192,88 @@
    "corroborations": [],
    "corrob_sources": []
   },
-  "https://br.investing.com/news/stock-market-news/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027-2033673": {
-   "title": "JBS anuncia Wesley Batista Filho como novo CEO global a partir de janeiro de 2027 Por Reuters",
-   "url": "https://br.investing.com/news/stock-market-news/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027-2033673",
-   "summary": "JBS anuncia Wesley Batista Filho como novo CEO global a partir de janeiro de 2027 Por Reuters &nbsp;&nbsp; Investing.com Brasil - Finanças, Câmbio e Investimentos",
-   "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
-   "domain": "br.investing.com",
-   "pub_ts": 1786387680,
-   "pub_iso": "2026-08-10 15:48",
-   "language": "es",
+  "https://www.marketwatch.com/story/this-nvidia-change-could-spell-good-news-for-micron-80449e59?mod=mw_rss_topstories": {
+   "title": "This Nvidia change could spell good news for Micron",
+   "url": "https://www.marketwatch.com/story/this-nvidia-change-could-spell-good-news-for-micron-80449e59?mod=mw_rss_topstories",
+   "summary": "An analyst says that Nvidia’s move to downgrade some chip capabilities could end up boosting consumption of high-bandwidth memory.",
+   "source": "MarketWatch · Top Stories",
+   "domain": "marketwatch.com",
+   "pub_ts": 1786390920,
+   "pub_iso": "2026-08-10 16:42",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "rebaixamento_rating"
+   ],
+   "trust_override": "imprensa",
+   "captured_ts": 1786392122,
+   "cap_iso": "2026-08-10 17:02"
+  },
+  "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/cade-aprova-aquisicao-do-controle-da-evolve-pela-smartfit-smft3/": {
+   "title": "Cade aprova aquisição do controle da Evolve pela SmartFit (SMFT3)",
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/cade-aprova-aquisicao-do-controle-da-evolve-pela-smartfit-smft3/",
+   "summary": "Cade aprova aquisição do controle da Evolve pela SmartFit (SMFT3) &nbsp;&nbsp; Estadão",
+   "source": "Estadão",
+   "domain": "estadao.com.br",
+   "pub_ts": 1783580400,
+   "pub_iso": "2026-07-09 04:00",
+   "language": "pt",
+   "companies": [
+    "Smart Fit"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "mention_roles": {
+    "Smart Fit": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "aprovacao",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Smart Fit": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "Smart Fit"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786414880,
+   "cap_iso": "2026-08-10 23:21"
+  },
+  "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaGU1cEZodDRLemgxb3pqN05Ga2VTSXljR0xydlJsV2dtc21kb1VaaWVYZ1BpaVpMRGpnYlBnSUEtVHN1ZEEzbGYySjRwaDJqelExMVU5U3lqVDdGdW5HTlR6XzlXd2pZS1M2bWdqOTQzUzBFU2NaOXFCRjlnWkpfZXZTSEhDY1d6R2lJTW5NSDlCb1Y3bFZRbjNTX0FCcmt4UjJsWDVmLS0xR09qWHJxNWFoRFAxckkyX3pNZVA3d2FDMmVKMWk1dXV3T0pxaWs?oc=5": {
+   "title": "Empresa de móveis de SC tem falência decretada após 55 anos de história e dívida de R$ 133 milhões",
+   "url": "https://www.nsctotal.com.br/economia/empresa-de-moveis-de-sc-tem-falencia-decretada-apos-55-anos-de-historia-e-divida-de-r-133-milhoes",
+   "summary": "Empresa de móveis de SC tem falência decretada após 55 anos de história e dívida de R$ 133 milhões &nbsp;&nbsp; NSC Total",
+   "source": "NSC Total",
+   "domain": "nsctotal.com.br",
+   "pub_ts": 1786390482,
+   "pub_iso": "2026-08-10 16:34",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1786414880,
+   "cap_iso": "2026-08-10 23:21"
+  },
+  "https://www.bloomberglinea.com.br/agro/jbs-nomeia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro/": {
+   "title": "JBS nomeia Wesley Batista Filho como novo CEO global a partir de janeiro",
+   "url": "https://www.bloomberglinea.com.br/agro/jbs-nomeia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro/",
+   "summary": "JBS nomeia Wesley Batista Filho como novo CEO global a partir de janeiro &nbsp;&nbsp; Bloomberg Línea Brasil",
+   "source": "Bloomberg Línea Brasil",
+   "domain": "bloomberglinea.com.br",
+   "pub_ts": 1786390892,
+   "pub_iso": "2026-08-10 16:41",
+   "language": "pt",
    "companies": [
     "JBS"
    ],
@@ -50210,7 +50285,7 @@
      "relation_type": "direto",
      "subject_company": "",
      "impact_type": "direto",
-     "event_phase": "anuncio",
+     "event_phase": "",
      "direction_hint": ""
     }
    },
@@ -50224,6 +50299,11 @@
    ],
    "context_companies": [],
    "corroborations": [
+    {
+     "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+     "domain": "br.investing.com",
+     "url": "https://br.investing.com/news/stock-market-news/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027-2033673"
+    },
     {
      "source": "CNN Brasil",
      "domain": "cnnbrasil.com.br",
@@ -50303,97 +50383,280 @@
      "resolution_error": "",
      "link_render_anchor": true,
      "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "InvestNews",
+     "domain": "investnews.com.br",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOcHdsenUtUGFQUW5leFNYbTJVS0ZVVHJQME80UTQ1RHVvNkpmVVl6a2N6Q3JZRnkyYy1Qeks1UmZpODlSLTV2UEJmY3Rrdy0wMGR5bVEzLW5MWWI1ckZQcUFjYjVyd3VWWDRkcVdNcHFpeGFLbUp2X0FERHgyb1RoVE1wZnZUU2ZOWjY4WEN0WldNR004NEx0R0RB0gGfAUFVX3lxTFBlek9pYWoxRVh4aXpvQ3paTWNDcFpnSmc5NVRueWU0eVhYNXE3YmVBYW51Tm1WOElmOWNoa1d1bC16MTdITGpSVEVvMVM1dzRja19hSzhldUlUTEdjSEtkUURuVElpSTUyeTZGOTBMV2VuNzgxNDdmTHRoTVNXZ1FoMzZTVElfMjZRVFlPM0lYamlFWTJINHhYZm5ReTRTRQ?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOcHdsenUtUGFQUW5leFNYbTJVS0ZVVHJQME80UTQ1RHVvNkpmVVl6a2N6Q3JZRnkyYy1Qeks1UmZpODlSLTV2UEJmY3Rrdy0wMGR5bVEzLW5MWWI1ckZQcUFjYjVyd3VWWDRkcVdNcHFpeGFLbUp2X0FERHgyb1RoVE1wZnZUU2ZOWjY4WEN0WldNR004NEx0R0RB0gGfAUFVX3lxTFBlek9pYWoxRVh4aXpvQ3paTWNDcFpnSmc5NVRueWU0eVhYNXE3YmVBYW51Tm1WOElmOWNoa1d1bC16MTdITGpSVEVvMVM1dzRja19hSzhldUlUTEdjSEtkUURuVElpSTUyeTZGOTBMV2VuNzgxNDdmTHRoTVNXZ1FoMzZTVElfMjZRVFlPM0lYamlFWTJINHhYZm5ReTRTRQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOcHdsenUtUGFQUW5leFNYbTJVS0ZVVHJQME80UTQ1RHVvNkpmVVl6a2N6Q3JZRnkyYy1Qeks1UmZpODlSLTV2UEJmY3Rrdy0wMGR5bVEzLW5MWWI1ckZQcUFjYjVyd3VWWDRkcVdNcHFpeGFLbUp2X0FERHgyb1RoVE1wZnZUU2ZOWjY4WEN0WldNR004NEx0R0RB0gGfAUFVX3lxTFBlek9pYWoxRVh4aXpvQ3paTWNDcFpnSmc5NVRueWU0eVhYNXE3YmVBYW51Tm1WOElmOWNoa1d1bC16MTdITGpSVEVvMVM1dzRja19hSzhldUlUTEdjSEtkUURuVElpSTUyeTZGOTBMV2VuNzgxNDdmTHRoTVNXZ1FoMzZTVElfMjZRVFlPM0lYamlFWTJINHhYZm5ReTRTRQ?oc=5",
+     "resolved_url": "https://investnews.com.br/negocios/jbs-tera-wesley-batista-filho-como-novo-ceo-global-em-2027/",
+     "canonical_url": "https://investnews.com.br/negocios/jbs-tera-wesley-batista-filho-como-novo-ceo-global-em-2027/",
+     "display_url": "https://investnews.com.br/negocios/jbs-tera-wesley-batista-filho-como-novo-ceo-global-em-2027/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "investnews.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-11T02:21:40.495075+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Canal Rural",
+     "domain": "canalrural.com.br",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOem1WbUhpZDRESzUxX2ZUS01ES0g4bzJCejNORy1nbzd3Z0VuRk5tZy1JS2E1d1FWZ0g4MUI5RnlZMGtFRXhZQWhudDBZYy1uY0FvZjc3RFQwWFVPRk5LazlLdFBwOWc4Vkt3cFI1YUxuSmQ2UFJEbkZDV3ZveGhyQjNNb3NxeUNpclU5TU5LUnFKRGNHN2JZRWlnMmRyUQ?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOem1WbUhpZDRESzUxX2ZUS01ES0g4bzJCejNORy1nbzd3Z0VuRk5tZy1JS2E1d1FWZ0g4MUI5RnlZMGtFRXhZQWhudDBZYy1uY0FvZjc3RFQwWFVPRk5LazlLdFBwOWc4Vkt3cFI1YUxuSmQ2UFJEbkZDV3ZveGhyQjNNb3NxeUNpclU5TU5LUnFKRGNHN2JZRWlnMmRyUQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOem1WbUhpZDRESzUxX2ZUS01ES0g4bzJCejNORy1nbzd3Z0VuRk5tZy1JS2E1d1FWZ0g4MUI5RnlZMGtFRXhZQWhudDBZYy1uY0FvZjc3RFQwWFVPRk5LazlLdFBwOWc4Vkt3cFI1YUxuSmQ2UFJEbkZDV3ZveGhyQjNNb3NxeUNpclU5TU5LUnFKRGNHN2JZRWlnMmRyUQ?oc=5",
+     "resolved_url": "https://www.canalrural.com.br/economia/wesley-batista-filho-assumira-como-novo-ceo-global-da-jbs/",
+     "canonical_url": "https://www.canalrural.com.br/economia/wesley-batista-filho-assumira-como-novo-ceo-global-da-jbs/",
+     "display_url": "https://www.canalrural.com.br/economia/wesley-batista-filho-assumira-como-novo-ceo-global-da-jbs/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.canalrural.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-11T02:21:41.133915+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "UOL Economia",
+     "domain": "economia.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOcXRSSzhLT3BlT2wxRG1LMENTWEQxUTNfTXBGbHhCV0s3ZjRPSzBSQkVBQWRHUUpJblg4NnZLRHpFdWc3TzVYSmxJbFk4UkJPbjJEV0pBZmxDNk1zZTRYUFNlWmZsY29sLTJwOEZ4UWY2M182UUd0cTJzbnFMbkxWTmE3elFncy0yMHdpc1J5UGE2cFUwMW04Vm0yM3BrUmZ6TmZKcjFtUDBxV25zWVhaMnNXS3czRkZYejZyWkYyT1VNZmVPRV9JWEVDRQ?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOcXRSSzhLT3BlT2wxRG1LMENTWEQxUTNfTXBGbHhCV0s3ZjRPSzBSQkVBQWRHUUpJblg4NnZLRHpFdWc3TzVYSmxJbFk4UkJPbjJEV0pBZmxDNk1zZTRYUFNlWmZsY29sLTJwOEZ4UWY2M182UUd0cTJzbnFMbkxWTmE3elFncy0yMHdpc1J5UGE2cFUwMW04Vm0yM3BrUmZ6TmZKcjFtUDBxV25zWVhaMnNXS3czRkZYejZyWkYyT1VNZmVPRV9JWEVDRQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOcXRSSzhLT3BlT2wxRG1LMENTWEQxUTNfTXBGbHhCV0s3ZjRPSzBSQkVBQWRHUUpJblg4NnZLRHpFdWc3TzVYSmxJbFk4UkJPbjJEV0pBZmxDNk1zZTRYUFNlWmZsY29sLTJwOEZ4UWY2M182UUd0cTJzbnFMbkxWTmE3elFncy0yMHdpc1J5UGE2cFUwMW04Vm0yM3BrUmZ6TmZKcjFtUDBxV25zWVhaMnNXS3czRkZYejZyWkYyT1VNZmVPRV9JWEVDRQ?oc=5",
+     "resolved_url": "https://economia.uol.com.br/noticias/redacao/2026/08/10/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-2027.ghtm",
+     "canonical_url": "https://economia.uol.com.br/noticias/redacao/2026/08/10/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-2027.ghtm",
+     "display_url": "https://economia.uol.com.br/noticias/redacao/2026/08/10/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-2027.ghtm",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "economia.uol.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-11T02:21:41.765907+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "corrob_sources": [
     {
+     "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+     "domain": "br.investing.com",
+     "url": "https://br.investing.com/news/stock-market-news/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027-2033673",
+     "when": "10/08 15:48"
+    },
+    {
+     "source": "Estadão",
+     "domain": "estadao.com.br",
+     "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOdE84NDN1bXRhOWRzejQ1R2t6TFpESnk2dzJLUTV6T1JRcW9CYkhQM3E2MmNIZm9TMjFycTdsdFZNeGFfM0p0aUpqX1c4YmJfYTk3RExxc25TYjkwekEwQjNkUEYycGlaZ21hSGlRbWt5TjJrLUd2YVZ4WFVCMjJ0MnMxZUJhcjd3QTNOZmpJUlo0TExBYXMzTmVVdEJfcVBXWm1qZG95RDRITTAtYmJsWVZMbW9tOE5FZEo2NmppTXZJTi1ESU9EVmFPdnlUamFMVEVaetIB2gFBVV95cUxOMzR0SUlYeTVCVHZnTW1lclZCYjFXWmctNnJlUmI4TGRKeGtPZWtBbjRCOXd5aDVVcXVKVEVfSHVMdWItYk5LWnM3SjFuVGZfVF9LRVdqdjVlaFFmdHJvbVpWRklDdU1JVDYtRzg4cVp2b2hUUW1SaFVJeG1FbDJVY25uYXRfNjh2eDBGZkZHcnVXRnd0XzVUSlRDR3VUSVNXUWJLQXUwN2dWb1hEb01TSWxVN3RodFo3LWhxQXhLbU9FSVE5MjRsWU1qNmZSMmpScWxEeU1pcGkzdw?oc=5",
+     "when": "10/08 16:45",
+     "original_url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOdE84NDN1bXRhOWRzejQ1R2t6TFpESnk2dzJLUTV6T1JRcW9CYkhQM3E2MmNIZm9TMjFycTdsdFZNeGFfM0p0aUpqX1c4YmJfYTk3RExxc25TYjkwekEwQjNkUEYycGlaZ21hSGlRbWt5TjJrLUd2YVZ4WFVCMjJ0MnMxZUJhcjd3QTNOZmpJUlo0TExBYXMzTmVVdEJfcVBXWm1qZG95RDRITTAtYmJsWVZMbW9tOE5FZEo2NmppTXZJTi1ESU9EVmFPdnlUamFMVEVaetIB2gFBVV95cUxOMzR0SUlYeTVCVHZnTW1lclZCYjFXWmctNnJlUmI4TGRKeGtPZWtBbjRCOXd5aDVVcXVKVEVfSHVMdWItYk5LWnM3SjFuVGZfVF9LRVdqdjVlaFFmdHJvbVpWRklDdU1JVDYtRzg4cVp2b2hUUW1SaFVJeG1FbDJVY25uYXRfNjh2eDBGZkZHcnVXRnd0XzVUSlRDR3VUSVNXUWJLQXUwN2dWb1hEb01TSWxVN3RodFo3LWhxQXhLbU9FSVE5MjRsWU1qNmZSMmpScWxEeU1pcGkzdw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOdE84NDN1bXRhOWRzejQ1R2t6TFpESnk2dzJLUTV6T1JRcW9CYkhQM3E2MmNIZm9TMjFycTdsdFZNeGFfM0p0aUpqX1c4YmJfYTk3RExxc25TYjkwekEwQjNkUEYycGlaZ21hSGlRbWt5TjJrLUd2YVZ4WFVCMjJ0MnMxZUJhcjd3QTNOZmpJUlo0TExBYXMzTmVVdEJfcVBXWm1qZG95RDRITTAtYmJsWVZMbW9tOE5FZEo2NmppTXZJTi1ESU9EVmFPdnlUamFMVEVaetIB2gFBVV95cUxOMzR0SUlYeTVCVHZnTW1lclZCYjFXWmctNnJlUmI4TGRKeGtPZWtBbjRCOXd5aDVVcXVKVEVfSHVMdWItYk5LWnM3SjFuVGZfVF9LRVdqdjVlaFFmdHJvbVpWRklDdU1JVDYtRzg4cVp2b2hUUW1SaFVJeG1FbDJVY25uYXRfNjh2eDBGZkZHcnVXRnd0XzVUSlRDR3VUSVNXUWJLQXUwN2dWb1hEb01TSWxVN3RodFo3LWhxQXhLbU9FSVE5MjRsWU1qNmZSMmpScWxEeU1pcGkzdw?oc=5",
+     "resolved_url": "https://www.estadao.com.br/economia/negocios/familia-volta-ao-comando-da-jbs-com-wesley-batista-filho-como-ceo-global-a-partir-de-janeiro/",
+     "canonical_url": "https://www.estadao.com.br/economia/negocios/familia-volta-ao-comando-da-jbs-com-wesley-batista-filho-como-ceo-global-a-partir-de-janeiro/",
+     "display_url": "https://www.estadao.com.br/economia/negocios/familia-volta-ao-comando-da-jbs-com-wesley-batista-filho-como-ceo-global-a-partir-de-janeiro/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.estadao.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-11T02:21:42.410340+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
      "source": "CNN Brasil",
      "domain": "cnnbrasil.com.br",
-     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPVG95OU56eFJORkVxVTFIcEc4eTluMGNEUjFJM2NPYXg3Y25pakJhV1RQZlNhOFR3YXV5T3M2YkRtTDkwZnRFczVaMzVFcjM4c2tEQUNONG1lUW4yeHJGX3FHX08tYWx3SWROY25KQlhiZkxzbzBwSjJBTWVOVWd5Q2xKQVZRWU5WV01vRGdTc3dpUXp4bG5wVFBST0pCT3ExTzRMUEJFaXI?oc=5",
-     "when": "10/08 13:00",
-     "original_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPVG95OU56eFJORkVxVTFIcEc4eTluMGNEUjFJM2NPYXg3Y25pakJhV1RQZlNhOFR3YXV5T3M2YkRtTDkwZnRFczVaMzVFcjM4c2tEQUNONG1lUW4yeHJGX3FHX08tYWx3SWROY25KQlhiZkxzbzBwSjJBTWVOVWd5Q2xKQVZRWU5WV01vRGdTc3dpUXp4bG5wVFBST0pCT3ExTzRMUEJFaXI?oc=5",
-     "redirect_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPVG95OU56eFJORkVxVTFIcEc4eTluMGNEUjFJM2NPYXg3Y25pakJhV1RQZlNhOFR3YXV5T3M2YkRtTDkwZnRFczVaMzVFcjM4c2tEQUNONG1lUW4yeHJGX3FHX08tYWx3SWROY25KQlhiZkxzbzBwSjJBTWVOVWd5Q2xKQVZRWU5WV01vRGdTc3dpUXp4bG5wVFBST0pCT3ExTzRMUEJFaXI?oc=5",
-     "resolved_url": "https://www.cnnbrasil.com.br/agro/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-2027/",
-     "canonical_url": "https://www.cnnbrasil.com.br/agro/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-2027/",
-     "display_url": "https://www.cnnbrasil.com.br/agro/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-2027/",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNZXA0YmZNVmdnWUM1LUl4N0FnNzdnU3Q1REliOVJ3a3VkaENfWVNJUjJBaV9yUFRPRl9sVlRoMkIwWnNBSkN4VGVuUkgzZTM5NVh0cURpOHNFVXNOTktnOTJMSW9KSVlNWFJNcWpWWHRXUUQtT3pWcE14Wm9KSHNDX09xQUpLTllDeE1FdHJtUmpSSHZrOXc?oc=5",
+     "when": "10/08 17:01",
+     "original_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNZXA0YmZNVmdnWUM1LUl4N0FnNzdnU3Q1REliOVJ3a3VkaENfWVNJUjJBaV9yUFRPRl9sVlRoMkIwWnNBSkN4VGVuUkgzZTM5NVh0cURpOHNFVXNOTktnOTJMSW9KSVlNWFJNcWpWWHRXUUQtT3pWcE14Wm9KSHNDX09xQUpLTllDeE1FdHJtUmpSSHZrOXc?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNZXA0YmZNVmdnWUM1LUl4N0FnNzdnU3Q1REliOVJ3a3VkaENfWVNJUjJBaV9yUFRPRl9sVlRoMkIwWnNBSkN4VGVuUkgzZTM5NVh0cURpOHNFVXNOTktnOTJMSW9KSVlNWFJNcWpWWHRXUUQtT3pWcE14Wm9KSHNDX09xQUpLTllDeE1FdHJtUmpSSHZrOXc?oc=5",
+     "resolved_url": "https://www.cnnbrasil.com.br/agro/saiba-quem-e-wesley-batista-filho-novo-ceo-global-da-jbs/",
+     "canonical_url": "https://www.cnnbrasil.com.br/agro/saiba-quem-e-wesley-batista-filho-novo-ceo-global-da-jbs/",
+     "display_url": "https://www.cnnbrasil.com.br/agro/saiba-quem-e-wesley-batista-filho-novo-ceo-global-da-jbs/",
      "redirect_chain": "",
      "original_host": "news.google.com",
      "final_host": "www.cnnbrasil.com.br",
      "http_status": "",
      "link_health": "redirect_resolvido",
-     "resolution_method": "cache_historico",
-     "last_checked_at": "2026-08-10T19:15:52.115337+00:00",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-11T02:21:43.048663+00:00",
      "resolution_error": "",
      "link_render_anchor": true,
      "link_label": "Abrir notícia →"
     },
     {
-     "source": "TradingView",
-     "domain": "br.tradingview.com",
-     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5QWVRBNDBEV2tOeXYweHVXQXVOM3pfWE1IYWNNZEMzSnY1NUlpbldxZTRqWlQ5VEVEdDFlODM3SUtDQUtqRDQyQS1wbmRNT0lONEVHQ0tTcEZvbGVabXZrWlBYY3BVOUFGb3NmNVZVUWxMV1ZYY1pF?oc=5",
-     "when": "10/08 15:55",
-     "original_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5QWVRBNDBEV2tOeXYweHVXQXVOM3pfWE1IYWNNZEMzSnY1NUlpbldxZTRqWlQ5VEVEdDFlODM3SUtDQUtqRDQyQS1wbmRNT0lONEVHQ0tTcEZvbGVabXZrWlBYY3BVOUFGb3NmNVZVUWxMV1ZYY1pF?oc=5",
-     "redirect_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5QWVRBNDBEV2tOeXYweHVXQXVOM3pfWE1IYWNNZEMzSnY1NUlpbldxZTRqWlQ5VEVEdDFlODM3SUtDQUtqRDQyQS1wbmRNT0lONEVHQ0tTcEZvbGVabXZrWlBYY3BVOUFGb3NmNVZVUWxMV1ZYY1pF?oc=5",
-     "resolved_url": "https://br.tradingview.com/news/reuters.com,2026:newsml_L1N4470RT:0/",
-     "canonical_url": "https://br.tradingview.com/news/reuters.com,2026:newsml_L1N4470RT:0/",
-     "display_url": "https://br.tradingview.com/news/reuters.com,2026:newsml_L1N4470RT:0/",
+     "source": "G1",
+     "domain": "g1.globo.com",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPTlJjaVA1QnNEOWJQZXB2OEY4Y1k1S0FKak1qUDl0amJqNS1PYlRmV2JoNGxJTGFDSzhBNk1nOXpqZzhSdlpKWkZDRXYtX2xtVkFJNC1TanVzZXFLLTZsSVdFbEpLbHB2cGpBckZqWnRieWc3aUNRZUVpRE90MUFZb0puc09YYjZmb196ZDYzaGhpRzRtbkZTSkk5TWvSAasBQVVfeXFMT1F3aFh6bTBWVEJqeFNwcGJNdnRMQ0lUMUpKY2lxakctdGtQZFNiLVJ1QjhfUmhCajVwLWJZcFVaOURJdkE4WUpCZUNDYjJNSWhzeEFSTGxBRzEtTjNETkx0bnpWeW9uNzVuRkJtdHJYWTdtdjFwNlhTc1l3aTEzQXdPT0tvcGhDNldqV2FxRUNST1RpdmFsT3ljT3RMMG9yN0tMVHdBSUcwSzBN?oc=5",
+     "when": "10/08 17:16",
+     "original_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPTlJjaVA1QnNEOWJQZXB2OEY4Y1k1S0FKak1qUDl0amJqNS1PYlRmV2JoNGxJTGFDSzhBNk1nOXpqZzhSdlpKWkZDRXYtX2xtVkFJNC1TanVzZXFLLTZsSVdFbEpLbHB2cGpBckZqWnRieWc3aUNRZUVpRE90MUFZb0puc09YYjZmb196ZDYzaGhpRzRtbkZTSkk5TWvSAasBQVVfeXFMT1F3aFh6bTBWVEJqeFNwcGJNdnRMQ0lUMUpKY2lxakctdGtQZFNiLVJ1QjhfUmhCajVwLWJZcFVaOURJdkE4WUpCZUNDYjJNSWhzeEFSTGxBRzEtTjNETkx0bnpWeW9uNzVuRkJtdHJYWTdtdjFwNlhTc1l3aTEzQXdPT0tvcGhDNldqV2FxRUNST1RpdmFsT3ljT3RMMG9yN0tMVHdBSUcwSzBN?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPTlJjaVA1QnNEOWJQZXB2OEY4Y1k1S0FKak1qUDl0amJqNS1PYlRmV2JoNGxJTGFDSzhBNk1nOXpqZzhSdlpKWkZDRXYtX2xtVkFJNC1TanVzZXFLLTZsSVdFbEpLbHB2cGpBckZqWnRieWc3aUNRZUVpRE90MUFZb0puc09YYjZmb196ZDYzaGhpRzRtbkZTSkk5TWvSAasBQVVfeXFMT1F3aFh6bTBWVEJqeFNwcGJNdnRMQ0lUMUpKY2lxakctdGtQZFNiLVJ1QjhfUmhCajVwLWJZcFVaOURJdkE4WUpCZUNDYjJNSWhzeEFSTGxBRzEtTjNETkx0bnpWeW9uNzVuRkJtdHJYWTdtdjFwNlhTc1l3aTEzQXdPT0tvcGhDNldqV2FxRUNST1RpdmFsT3ljT3RMMG9yN0tMVHdBSUcwSzBN?oc=5",
+     "resolved_url": "https://g1.globo.com/economia/agronegocios/noticia/2026/08/10/jbs-wesley-batista-filho-ceo.ghtml",
+     "canonical_url": "https://g1.globo.com/economia/agronegocios/noticia/2026/08/10/jbs-wesley-batista-filho-ceo.ghtml",
+     "display_url": "https://g1.globo.com/economia/agronegocios/noticia/2026/08/10/jbs-wesley-batista-filho-ceo.ghtml",
      "redirect_chain": "",
      "original_host": "news.google.com",
-     "final_host": "br.tradingview.com",
+     "final_host": "g1.globo.com",
      "http_status": "",
      "link_health": "redirect_resolvido",
-     "resolution_method": "cache_historico",
-     "last_checked_at": "2026-08-10T19:15:52.515603+00:00",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-11T02:21:43.705423+00:00",
      "resolution_error": "",
      "link_render_anchor": true,
      "link_label": "Abrir notícia →"
     },
     {
-     "source": "Rádio Rural",
-     "domain": "radiorural.com.br",
-     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOOGZsLVNLMHRPeWVPQkhuVmpZUk1MdU5aMHc0UkhNZzlra3FYNnNINVU0c0NIUy1kMmdiM0dNUlpjZ3hPeWkxbkFoTjlLUXIzTGF1OFQ2cHF6akdGWTlPTGFXUnFSenIzbzlCcE52ODlwRVBzemkyaTc2a2FEWU1DbDg3SWU1VUI1QTBxRllaUDBRQ3RLYXU4X1VOTkVPNWhuNFVPa0RfZ05tWnlHVjVTWFJSeWppSWNXaGNfbllMWXVvX0da?oc=5",
-     "when": "10/08 15:59",
-     "original_url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOOGZsLVNLMHRPeWVPQkhuVmpZUk1MdU5aMHc0UkhNZzlra3FYNnNINVU0c0NIUy1kMmdiM0dNUlpjZ3hPeWkxbkFoTjlLUXIzTGF1OFQ2cHF6akdGWTlPTGFXUnFSenIzbzlCcE52ODlwRVBzemkyaTc2a2FEWU1DbDg3SWU1VUI1QTBxRllaUDBRQ3RLYXU4X1VOTkVPNWhuNFVPa0RfZ05tWnlHVjVTWFJSeWppSWNXaGNfbllMWXVvX0da?oc=5",
-     "redirect_url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOOGZsLVNLMHRPeWVPQkhuVmpZUk1MdU5aMHc0UkhNZzlra3FYNnNINVU0c0NIUy1kMmdiM0dNUlpjZ3hPeWkxbkFoTjlLUXIzTGF1OFQ2cHF6akdGWTlPTGFXUnFSenIzbzlCcE52ODlwRVBzemkyaTc2a2FEWU1DbDg3SWU1VUI1QTBxRllaUDBRQ3RLYXU4X1VOTkVPNWhuNFVPa0RfZ05tWnlHVjVTWFJSeWppSWNXaGNfbllMWXVvX0da?oc=5",
-     "resolved_url": "https://www.radiorural.com.br/noticias/63444-jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027",
-     "canonical_url": "https://www.radiorural.com.br/noticias/63444-jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027",
-     "display_url": "https://www.radiorural.com.br/noticias/63444-jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027",
+     "source": "NeoFeed",
+     "domain": "neofeed.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZHM3eUU1ang1ZHRFb0xBOEk2bUtBd0l3di1WT09MMXlhcGVkUi1SMllkbmVVa1pCWWRZYTlnaDBWMmlJdmhDSWUwMVZ2MldHVFVWRHY2YnB3N3FORVNtdjFQdG9ZWW5ORUZ5NzV0bk5sclR5TEZEWVlkbmt5RmF5YU9NNGtwVWRuMUNHbm1Zck85SzlnVE1kV0R6SktwS0F4bWFOSVFGeTI?oc=5",
+     "when": "10/08 18:02",
+     "original_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZHM3eUU1ang1ZHRFb0xBOEk2bUtBd0l3di1WT09MMXlhcGVkUi1SMllkbmVVa1pCWWRZYTlnaDBWMmlJdmhDSWUwMVZ2MldHVFVWRHY2YnB3N3FORVNtdjFQdG9ZWW5ORUZ5NzV0bk5sclR5TEZEWVlkbmt5RmF5YU9NNGtwVWRuMUNHbm1Zck85SzlnVE1kV0R6SktwS0F4bWFOSVFGeTI?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZHM3eUU1ang1ZHRFb0xBOEk2bUtBd0l3di1WT09MMXlhcGVkUi1SMllkbmVVa1pCWWRZYTlnaDBWMmlJdmhDSWUwMVZ2MldHVFVWRHY2YnB3N3FORVNtdjFQdG9ZWW5ORUZ5NzV0bk5sclR5TEZEWVlkbmt5RmF5YU9NNGtwVWRuMUNHbm1Zck85SzlnVE1kV0R6SktwS0F4bWFOSVFGeTI?oc=5",
+     "resolved_url": "https://neofeed.com.br/negocios/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-e-ja-mira-o-sp-400/",
+     "canonical_url": "https://neofeed.com.br/negocios/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-e-ja-mira-o-sp-400/",
+     "display_url": "https://neofeed.com.br/negocios/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-e-ja-mira-o-sp-400/",
      "redirect_chain": "",
      "original_host": "news.google.com",
-     "final_host": "www.radiorural.com.br",
+     "final_host": "neofeed.com.br",
      "http_status": "",
      "link_health": "redirect_resolvido",
-     "resolution_method": "cache_historico",
-     "last_checked_at": "2026-08-10T19:15:52.915842+00:00",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-11T02:21:44.344965+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Investidor10",
+     "domain": "investidor10.com.br",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQeUpFN2IxS0paQ1NLb3V2SG02cDBlLWtPbUtQVjk2WWVNQU4wSEYzMV9UY1BCWk1MLVhKMnBYS3Vham1HMnhxZ0t1eVloY0xFX1dscU8zUkRBcXlhZDRHYUZMNjdDbmY3MG5tMjNzc3cxcmduVGxOTnUzS1BQRDctN0JNY3RYbVhGUHRsZnZmWmV5N3BqV3VPZGFhVUZBWEpaOGJ4TDloejF4d0ZBS2fSAa4BQVVfeXFMUHlKRTdiMUtKWkNTS291dkhtNnAwZS1rT21LUFY5NlllTUFOMEhGMzFfVGNQQlpNTC1YSjJwWEt1YWptRzJ4cWdLdXlZaGNMRV9XbHFPM1JEQXF5YWQ0R2FGTDY3Q25mNzBubTIzc3N3MXJnblRsTk51M0tQUEQ3LTdCTWN0WG1YRlB0bGZ2ZlpleTdwald1T2RhYVVGQVhKWjhieEw5aHoxeHdGQUtn?oc=5",
+     "when": "10/08 18:35",
+     "original_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQeUpFN2IxS0paQ1NLb3V2SG02cDBlLWtPbUtQVjk2WWVNQU4wSEYzMV9UY1BCWk1MLVhKMnBYS3Vham1HMnhxZ0t1eVloY0xFX1dscU8zUkRBcXlhZDRHYUZMNjdDbmY3MG5tMjNzc3cxcmduVGxOTnUzS1BQRDctN0JNY3RYbVhGUHRsZnZmWmV5N3BqV3VPZGFhVUZBWEpaOGJ4TDloejF4d0ZBS2fSAa4BQVVfeXFMUHlKRTdiMUtKWkNTS291dkhtNnAwZS1rT21LUFY5NlllTUFOMEhGMzFfVGNQQlpNTC1YSjJwWEt1YWptRzJ4cWdLdXlZaGNMRV9XbHFPM1JEQXF5YWQ0R2FGTDY3Q25mNzBubTIzc3N3MXJnblRsTk51M0tQUEQ3LTdCTWN0WG1YRlB0bGZ2ZlpleTdwald1T2RhYVVGQVhKWjhieEw5aHoxeHdGQUtn?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQeUpFN2IxS0paQ1NLb3V2SG02cDBlLWtPbUtQVjk2WWVNQU4wSEYzMV9UY1BCWk1MLVhKMnBYS3Vham1HMnhxZ0t1eVloY0xFX1dscU8zUkRBcXlhZDRHYUZMNjdDbmY3MG5tMjNzc3cxcmduVGxOTnUzS1BQRDctN0JNY3RYbVhGUHRsZnZmWmV5N3BqV3VPZGFhVUZBWEpaOGJ4TDloejF4d0ZBS2fSAa4BQVVfeXFMUHlKRTdiMUtKWkNTS291dkhtNnAwZS1rT21LUFY5NlllTUFOMEhGMzFfVGNQQlpNTC1YSjJwWEt1YWptRzJ4cWdLdXlZaGNMRV9XbHFPM1JEQXF5YWQ0R2FGTDY3Q25mNzBubTIzc3N3MXJnblRsTk51M0tQUEQ3LTdCTWN0WG1YRlB0bGZ2ZlpleTdwald1T2RhYVVGQVhKWjhieEw5aHoxeHdGQUtn?oc=5",
+     "resolved_url": "https://investidor10.com.br/amp/noticias/jbs-jbss32-anuncia-wesley-batista-filho-como-novo-ceo-global-121963/",
+     "canonical_url": "https://investidor10.com.br/amp/noticias/jbs-jbss32-anuncia-wesley-batista-filho-como-novo-ceo-global-121963/",
+     "display_url": "https://investidor10.com.br/amp/noticias/jbs-jbss32-anuncia-wesley-batista-filho-como-novo-ceo-global-121963/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "investidor10.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-11T02:21:44.983363+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Meio e Mensagem",
+     "domain": "meioemensagem.com.br",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQQmhoamF2Yk9KZU9MY0kzcjdKcjZuT0dza3UzV0lLQi1Oc2Y4dlVUbGFHeUFnWGlacFBUVmdxT2JBRXJwbDdxS3htWW5pUzA3bE9VcWVJMXNUcXpNT0I0V2xSMTloazRNd1MtQ01YbkFHSnlnM0RLLTA5c0ZpeTV1NGRKZjdkbGlRVV9TOWtGZw?oc=5",
+     "when": "10/08 18:51",
+     "original_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQQmhoamF2Yk9KZU9MY0kzcjdKcjZuT0dza3UzV0lLQi1Oc2Y4dlVUbGFHeUFnWGlacFBUVmdxT2JBRXJwbDdxS3htWW5pUzA3bE9VcWVJMXNUcXpNT0I0V2xSMTloazRNd1MtQ01YbkFHSnlnM0RLLTA5c0ZpeTV1NGRKZjdkbGlRVV9TOWtGZw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQQmhoamF2Yk9KZU9MY0kzcjdKcjZuT0dza3UzV0lLQi1Oc2Y4dlVUbGFHeUFnWGlacFBUVmdxT2JBRXJwbDdxS3htWW5pUzA3bE9VcWVJMXNUcXpNT0I0V2xSMTloazRNd1MtQ01YbkFHSnlnM0RLLTA5c0ZpeTV1NGRKZjdkbGlRVV9TOWtGZw?oc=5",
+     "resolved_url": "https://www.meioemensagem.com.br/gente/jbs-nomeia-wesley-batista-filho-como-ceo-global",
+     "canonical_url": "https://www.meioemensagem.com.br/gente/jbs-nomeia-wesley-batista-filho-como-ceo-global",
+     "display_url": "https://www.meioemensagem.com.br/gente/jbs-nomeia-wesley-batista-filho-como-ceo-global",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.meioemensagem.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-11T02:21:45.619030+00:00",
      "resolution_error": "",
      "link_render_anchor": true,
      "link_label": "Abrir notícia →"
     }
    ],
-   "captured_ts": 1786389332,
-   "cap_iso": "2026-08-10 16:15"
+   "captured_ts": 1786414880,
+   "cap_iso": "2026-08-10 23:21"
   },
-  "https://www.marketwatch.com/story/this-nvidia-change-could-spell-good-news-for-micron-80449e59?mod=mw_rss_topstories": {
-   "title": "This Nvidia change could spell good news for Micron",
-   "url": "https://www.marketwatch.com/story/this-nvidia-change-could-spell-good-news-for-micron-80449e59?mod=mw_rss_topstories",
-   "summary": "An analyst says that Nvidia’s move to downgrade some chip capabilities could end up boosting consumption of high-bandwidth memory.",
+  "https://news.google.com/rss/articles/CBMitgFBVV95cUxOSHlMQUltd0FwZDc1OG81SG9SX1dja3g3bjlJc0JHNmtWLVNRcTcxU0FTa2owbm9ULWxzaV80ZE9QZzhsWEdJZEhXMm9kbzN0SERxOEtsQkMtcmd0UUZyT1Rlbmh1LUd4VG5LX2xCUzY3aHVLbjdZS3JOWUN1T3NEeldzUE10eGFSNWFCc3ZOOV9kU0dKOGlIaUQ2aHhjN2M2em5jRG56QnFvNzZ5TEE2NUNqOHg2QQ?oc=5": {
+   "title": "Justiça defere recuperação judicial do Grupo Bozetti após PF mirar empresário | HiperNotícias - Você bem informado",
+   "url": "https://www.hnt.com.br/justica/justica-defere-recuperacao-judicial-do-grupo-bozetti-apos-pf-mirar-empresario/568350",
+   "summary": "Justiça defere recuperação judicial do Grupo Bozetti após PF mirar empresário | HiperNotícias - Você bem informado &nbsp;&nbsp; HiperNotícias - Você bem informado",
+   "source": "HiperNotícias - Você bem informado",
+   "domain": "hnt.com.br",
+   "pub_ts": 1786394940,
+   "pub_iso": "2026-08-10 17:49",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1786414880,
+   "cap_iso": "2026-08-10 23:21"
+  },
+  "https://www.moneytimes.com.br/moodys-rebaixa-rating-da-cosan-csan3-e-mantem-perspectiva-negativa-pads/": {
+   "title": "Moody’s rebaixa rating da Cosan (CSAN3) em meio à deterioração da qualidade de crédito da Raízen (RAIZ4)",
+   "url": "https://www.moneytimes.com.br/moodys-rebaixa-rating-da-cosan-csan3-e-mantem-perspectiva-negativa-pads/",
+   "summary": "Moody’s rebaixa rating da Cosan (CSAN3) em meio à deterioração da qualidade de crédito da Raízen (RAIZ4) &nbsp;&nbsp; Money Times",
+   "source": "Money Times",
+   "domain": "moneytimes.com.br",
+   "pub_ts": 1786399920,
+   "pub_iso": "2026-08-10 19:12",
+   "language": "pt",
+   "companies": [
+    "Cosan"
+   ],
+   "event_ids": [
+    "rebaixamento_rating"
+   ],
+   "mention_roles": {
+    "Cosan": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Cosan": [
+     "rebaixamento_rating"
+    ]
+   },
+   "companies_attributed": [
+    "Cosan"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786414880,
+   "cap_iso": "2026-08-10 23:21"
+  },
+  "https://www.marketwatch.com/story/ebay-may-dodge-a-gamestop-takeover-but-theres-a-new-twist-in-the-ryan-cohen-saga-d779b753?mod=mw_rss_topstories": {
+   "title": "EBay may dodge a GameStop takeover — but there’s a new twist in the Ryan Cohen saga",
+   "url": "https://www.marketwatch.com/story/ebay-may-dodge-a-gamestop-takeover-but-theres-a-new-twist-in-the-ryan-cohen-saga-d779b753?mod=mw_rss_topstories",
+   "summary": "Bloomberg says GameStop could propose collaborating with eBay in some way other than a merger. Some analysts doubt whether eBay would benefit much from that sort of deal.",
    "source": "MarketWatch · Top Stories",
    "domain": "marketwatch.com",
-   "pub_ts": 1786390920,
-   "pub_iso": "2026-08-10 16:42",
+   "pub_ts": 1786402440,
+   "pub_iso": "2026-08-10 19:54",
    "language": "en",
    "companies": [
     "Mercado (geral)"
    ],
    "event_ids": [
-    "rebaixamento_rating"
+    "ma"
    ],
    "trust_override": "imprensa",
-   "captured_ts": 1786392122,
-   "cap_iso": "2026-08-10 17:02"
+   "captured_ts": 1786414880,
+   "cap_iso": "2026-08-10 23:21"
   }
  },
- "run_count": 99,
+ "run_count": 100,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -55474,12 +55737,72 @@
   "https://news.google.com/rss/articles/CBMixAFBVV95cUxOOGZsLVNLMHRPeWVPQkhuVmpZUk1MdU5aMHc0UkhNZzlra3FYNnNINVU0c0NIUy1kMmdiM0dNUlpjZ3hPeWkxbkFoTjlLUXIzTGF1OFQ2cHF6akdGWTlPTGFXUnFSenIzbzlCcE52ODlwRVBzemkyaTc2a2FEWU1DbDg3SWU1VUI1QTBxRllaUDBRQ3RLYXU4X1VOTkVPNWhuNFVPa0RfZ05tWnlHVjVTWFJSeWppSWNXaGNfbllMWXVvX0da?oc=5": {
    "url": "https://www.radiorural.com.br/noticias/63444-jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro-de-2027",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMivwFBVV95cUxOYmhYQXJ3SHN2S2pkLVFsZ0NTUmQ4VVo2T2xsT0JGZ3FqVEZISDczUWJFMUxBelQ1SlV5aW92bnRTdjRTdVctdnQ5M0k0V3loSkVnUEd5Y20xLVJGMDZBVWpCQ2lsRXVhTE5YUkJnRFhBTjlVLTQtZkNYSWktdDNRd29PNnd4VWk3LWxkZ1R4TkF0b25fenBWTDlQUU9wV3c5SmVjbW5UdFFyeUk3XzVnaG4tQlhHUjRzZ0l4T09mMNIBxAFBVV95cUxQd3RSQllKaTRSeUs2ZEZnMGc3ZGFSTG1wbHo0cWtreFRvaC02NE5XVVdTRVdGaUlZUGtDRU9lTFZlYncwbmR0U1lveUdMMTZEZTYxajlQbzNFeVNjMUtKRm5hZUNVaTFwZ3hyb1RmN3pldEFaVnNoWngtZ2NObC1mRDZQNGdscHNEUVdZTU5rRlUxd3NFRzY4SHBTRTkzRDd1RGhyRmRwLVdFZWEyVUc2Q1EzSXdQU2ZQaGtFdThfVUNGODAt?oc=5": {
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/cade-aprova-aquisicao-do-controle-da-evolve-pela-smartfit-smft3/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMisgFBVV95cUxOcHBDVVc3ejhvaTdIM1NScExYOGJLbV9GQjBJQ3JXbFlTRlZGLVVOVmpYMmtQZGpSSEhYQVcyMkNEV0lnR0pWQ3J3Rzlhc1V4UUdXS1RzeFJzNVBGcU9JVVVQOHN5M2w4M0JuTktXVGp5ZGxlUm54MF9kQUdQeXpDZlZnZmxXWVMzMGk3YU5UWFppSFVDZkF5WmY0ZXBMVUlIODctR0M1ZHlKRlU2Vlg5TjR30gHGAUFVX3lxTE9WdHVuR0NhY2cwQ1ZhRWVpajdSNEZYalF2V2ZEQmgxNldOeGJyUE9MUVN3LWl2c3paVU1Hck8zSlBxa0ItYmdYbzJULVRORVNVUUJ6WHNnMHY2T1NObFhBaWJraVpXT0dDWDRfLVFHNklZNVRWWmdWWmNYcGEzRElwRUdkZVRjcVNjUURkbVZVY2JlbmM1ZUZoOGpWbGUyekstYllRd3pwNFAxaXdFUzJPVGlOWjA0WnphLXM1TFpRWHBTOFVHdw?oc=5": {
+   "url": "https://www.bloomberglinea.com.br/agro/jbs-nomeia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipAFBVV95cUxPS1hldFFGWm9UMGRRelRmNUVJXy1GSWlnUkRhRGZ2eTZrSGFybVlfekNyeXJSc0FkNnBVSXFXSzVsX2lxYmQ2bU8yN3A5dk9PbmRuTkRhX01ucndfODNMLTFncW9TREVMc2VpT1M5dk5NWV81MXcwUk82bzFQbElYemJUamlfR2xJN1hYWk9ubG1VSjNmeTR0aFdLYV95YjBLaHBoSQ?oc=5": {
+   "url": "https://www.moneytimes.com.br/moodys-rebaixa-rating-da-cosan-csan3-e-mantem-perspectiva-negativa-pads/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaGU1cEZodDRLemgxb3pqN05Ga2VTSXljR0xydlJsV2dtc21kb1VaaWVYZ1BpaVpMRGpnYlBnSUEtVHN1ZEEzbGYySjRwaDJqelExMVU5U3lqVDdGdW5HTlR6XzlXd2pZS1M2bWdqOTQzUzBFU2NaOXFCRjlnWkpfZXZTSEhDY1d6R2lJTW5NSDlCb1Y3bFZRbjNTX0FCcmt4UjJsWDVmLS0xR09qWHJxNWFoRFAxckkyX3pNZVA3d2FDMmVKMWk1dXV3T0pxaWs?oc=5": {
+   "url": "https://www.nsctotal.com.br/economia/empresa-de-moveis-de-sc-tem-falencia-decretada-apos-55-anos-de-historia-e-divida-de-r-133-milhoes",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMitgFBVV95cUxOSHlMQUltd0FwZDc1OG81SG9SX1dja3g3bjlJc0JHNmtWLVNRcTcxU0FTa2owbm9ULWxzaV80ZE9QZzhsWEdJZEhXMm9kbzN0SERxOEtsQkMtcmd0UUZyT1Rlbmh1LUd4VG5LX2xCUzY3aHVLbjdZS3JOWUN1T3NEeldzUE10eGFSNWFCc3ZOOV9kU0dKOGlIaUQ2aHhjN2M2em5jRG56QnFvNzZ5TEE2NUNqOHg2QQ?oc=5": {
+   "url": "https://www.hnt.com.br/justica/justica-defere-recuperacao-judicial-do-grupo-bozetti-apos-pf-mirar-empresario/568350",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMimgFBVV95cUxOcHdsenUtUGFQUW5leFNYbTJVS0ZVVHJQME80UTQ1RHVvNkpmVVl6a2N6Q3JZRnkyYy1Qeks1UmZpODlSLTV2UEJmY3Rrdy0wMGR5bVEzLW5MWWI1ckZQcUFjYjVyd3VWWDRkcVdNcHFpeGFLbUp2X0FERHgyb1RoVE1wZnZUU2ZOWjY4WEN0WldNR004NEx0R0RB0gGfAUFVX3lxTFBlek9pYWoxRVh4aXpvQ3paTWNDcFpnSmc5NVRueWU0eVhYNXE3YmVBYW51Tm1WOElmOWNoa1d1bC16MTdITGpSVEVvMVM1dzRja19hSzhldUlUTEdjSEtkUURuVElpSTUyeTZGOTBMV2VuNzgxNDdmTHRoTVNXZ1FoMzZTVElfMjZRVFlPM0lYamlFWTJINHhYZm5ReTRTRQ?oc=5": {
+   "url": "https://investnews.com.br/negocios/jbs-tera-wesley-batista-filho-como-novo-ceo-global-em-2027/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMingFBVV95cUxOem1WbUhpZDRESzUxX2ZUS01ES0g4bzJCejNORy1nbzd3Z0VuRk5tZy1JS2E1d1FWZ0g4MUI5RnlZMGtFRXhZQWhudDBZYy1uY0FvZjc3RFQwWFVPRk5LazlLdFBwOWc4Vkt3cFI1YUxuSmQ2UFJEbkZDV3ZveGhyQjNNb3NxeUNpclU5TU5LUnFKRGNHN2JZRWlnMmRyUQ?oc=5": {
+   "url": "https://www.canalrural.com.br/economia/wesley-batista-filho-assumira-como-novo-ceo-global-da-jbs/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiywFBVV95cUxOcXRSSzhLT3BlT2wxRG1LMENTWEQxUTNfTXBGbHhCV0s3ZjRPSzBSQkVBQWRHUUpJblg4NnZLRHpFdWc3TzVYSmxJbFk4UkJPbjJEV0pBZmxDNk1zZTRYUFNlWmZsY29sLTJwOEZ4UWY2M182UUd0cTJzbnFMbkxWTmE3elFncy0yMHdpc1J5UGE2cFUwMW04Vm0yM3BrUmZ6TmZKcjFtUDBxV25zWVhaMnNXS3czRkZYejZyWkYyT1VNZmVPRV9JWEVDRQ?oc=5": {
+   "url": "https://economia.uol.com.br/noticias/redacao/2026/08/10/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-2027.ghtm",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOdE84NDN1bXRhOWRzejQ1R2t6TFpESnk2dzJLUTV6T1JRcW9CYkhQM3E2MmNIZm9TMjFycTdsdFZNeGFfM0p0aUpqX1c4YmJfYTk3RExxc25TYjkwekEwQjNkUEYycGlaZ21hSGlRbWt5TjJrLUd2YVZ4WFVCMjJ0MnMxZUJhcjd3QTNOZmpJUlo0TExBYXMzTmVVdEJfcVBXWm1qZG95RDRITTAtYmJsWVZMbW9tOE5FZEo2NmppTXZJTi1ESU9EVmFPdnlUamFMVEVaetIB2gFBVV95cUxOMzR0SUlYeTVCVHZnTW1lclZCYjFXWmctNnJlUmI4TGRKeGtPZWtBbjRCOXd5aDVVcXVKVEVfSHVMdWItYk5LWnM3SjFuVGZfVF9LRVdqdjVlaFFmdHJvbVpWRklDdU1JVDYtRzg4cVp2b2hUUW1SaFVJeG1FbDJVY25uYXRfNjh2eDBGZkZHcnVXRnd0XzVUSlRDR3VUSVNXUWJLQXUwN2dWb1hEb01TSWxVN3RodFo3LWhxQXhLbU9FSVE5MjRsWU1qNmZSMmpScWxEeU1pcGkzdw?oc=5": {
+   "url": "https://www.estadao.com.br/economia/negocios/familia-volta-ao-comando-da-jbs-com-wesley-batista-filho-como-ceo-global-a-partir-de-janeiro/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMilgFBVV95cUxNZXA0YmZNVmdnWUM1LUl4N0FnNzdnU3Q1REliOVJ3a3VkaENfWVNJUjJBaV9yUFRPRl9sVlRoMkIwWnNBSkN4VGVuUkgzZTM5NVh0cURpOHNFVXNOTktnOTJMSW9KSVlNWFJNcWpWWHRXUUQtT3pWcE14Wm9KSHNDX09xQUpLTllDeE1FdHJtUmpSSHZrOXc?oc=5": {
+   "url": "https://www.cnnbrasil.com.br/agro/saiba-quem-e-wesley-batista-filho-novo-ceo-global-da-jbs/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMinAFBVV95cUxPTlJjaVA1QnNEOWJQZXB2OEY4Y1k1S0FKak1qUDl0amJqNS1PYlRmV2JoNGxJTGFDSzhBNk1nOXpqZzhSdlpKWkZDRXYtX2xtVkFJNC1TanVzZXFLLTZsSVdFbEpLbHB2cGpBckZqWnRieWc3aUNRZUVpRE90MUFZb0puc09YYjZmb196ZDYzaGhpRzRtbkZTSkk5TWvSAasBQVVfeXFMT1F3aFh6bTBWVEJqeFNwcGJNdnRMQ0lUMUpKY2lxakctdGtQZFNiLVJ1QjhfUmhCajVwLWJZcFVaOURJdkE4WUpCZUNDYjJNSWhzeEFSTGxBRzEtTjNETkx0bnpWeW9uNzVuRkJtdHJYWTdtdjFwNlhTc1l3aTEzQXdPT0tvcGhDNldqV2FxRUNST1RpdmFsT3ljT3RMMG9yN0tMVHdBSUcwSzBN?oc=5": {
+   "url": "https://g1.globo.com/economia/agronegocios/noticia/2026/08/10/jbs-wesley-batista-filho-ceo.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZHM3eUU1ang1ZHRFb0xBOEk2bUtBd0l3di1WT09MMXlhcGVkUi1SMllkbmVVa1pCWWRZYTlnaDBWMmlJdmhDSWUwMVZ2MldHVFVWRHY2YnB3N3FORVNtdjFQdG9ZWW5ORUZ5NzV0bk5sclR5TEZEWVlkbmt5RmF5YU9NNGtwVWRuMUNHbm1Zck85SzlnVE1kV0R6SktwS0F4bWFOSVFGeTI?oc=5": {
+   "url": "https://neofeed.com.br/negocios/jbs-anuncia-wesley-batista-filho-como-novo-ceo-global-e-ja-mira-o-sp-400/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMirgFBVV95cUxQeUpFN2IxS0paQ1NLb3V2SG02cDBlLWtPbUtQVjk2WWVNQU4wSEYzMV9UY1BCWk1MLVhKMnBYS3Vham1HMnhxZ0t1eVloY0xFX1dscU8zUkRBcXlhZDRHYUZMNjdDbmY3MG5tMjNzc3cxcmduVGxOTnUzS1BQRDctN0JNY3RYbVhGUHRsZnZmWmV5N3BqV3VPZGFhVUZBWEpaOGJ4TDloejF4d0ZBS2fSAa4BQVVfeXFMUHlKRTdiMUtKWkNTS291dkhtNnAwZS1rT21LUFY5NlllTUFOMEhGMzFfVGNQQlpNTC1YSjJwWEt1YWptRzJ4cWdLdXlZaGNMRV9XbHFPM1JEQXF5YWQ0R2FGTDY3Q25mNzBubTIzc3N3MXJnblRsTk51M0tQUEQ3LTdCTWN0WG1YRlB0bGZ2ZlpleTdwald1T2RhYVVGQVhKWjhieEw5aHoxeHdGQUtn?oc=5": {
+   "url": "https://investidor10.com.br/amp/noticias/jbs-jbss32-anuncia-wesley-batista-filho-como-novo-ceo-global-121963/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMijwFBVV95cUxQQmhoamF2Yk9KZU9MY0kzcjdKcjZuT0dza3UzV0lLQi1Oc2Y4dlVUbGFHeUFnWGlacFBUVmdxT2JBRXJwbDdxS3htWW5pUzA3bE9VcWVJMXNUcXpNT0I0V2xSMTloazRNd1MtQ01YbkFHSnlnM0RLLTA5c0ZpeTV1NGRKZjdkbGlRVV9TOWtGZw?oc=5": {
+   "url": "https://www.meioemensagem.com.br/gente/jbs-nomeia-wesley-batista-filho-como-ceo-global",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786414029,
-  "iso": "10 ago 2026 · 23:07 BRT",
+  "ts": 1786414948,
+  "iso": "10 ago 2026 · 23:22 BRT",
   "status": {
+   "Cosan": {
+    "status": "atencao",
+    "score": 72
+   },
    "Engie Brasil": {
     "status": "atencao",
     "score": 69
@@ -55490,7 +55813,7 @@
    },
    "JBS": {
     "status": "atencao",
-    "score": 58
+    "score": 60
    },
    "Vale": {
     "status": "atencao",
@@ -55516,17 +55839,13 @@
     "status": "atencao",
     "score": 36
    },
-   "Cosan": {
-    "status": "monitorar",
-    "score": 35
-   },
    "Sabesp": {
     "status": "monitorar",
     "score": 33
    },
    "Yobel": {
     "status": "monitorar",
-    "score": 29
+    "score": 28
    },
    "Banco do Brasil": {
     "status": "atencao",
