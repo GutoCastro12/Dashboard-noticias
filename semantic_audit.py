@@ -1117,8 +1117,14 @@ FRAUDE_VITIMA = [
     r"(?:targeting|dirigid[oa]\s+a|voltado\s+contra){a}{m}",
     r"(?:se\s+passa(?:m|ndo)?\s+por|impersonat\w*|posing\s+as)\s+{m}",
     r"charged\s+in\s+{m}{q}\s+(?:fraud|scam)",
+    # 4I.2 R6b — DIREÇÃO OBRIGATÓRIA. Antes bastava um funcionário e um termo
+    # de fraude perto do nome da empresa, o que fazia "employee committed
+    # fraud FOR Vale" (fraude EM NOME da companhia) ser lido como vítima
+    # exatamente igual a "employee defrauded Vale" (fraude CONTRA ela). Só a
+    # preposição separa as duas leituras, e agora ela é exigida.
     r"(?:cliente|customer|funcion[áa]rio|employee|ex-funcion[áa]rio)\s+.{{0,60}}?"
-    r"(?:fraud\w*|golpe|estafa|lesou|desviou)\s*.{{0,20}}?{a}{m}",
+    r"(?:fraud\w*|golpe|estafa|lesou|desviou|stole|roubou|embezzl\w*|desviou)"
+    r"\s*.{{0,20}}?(?:against|from|contra|de|d[ao]s?)\s*{a}{m}",
     # ── 4I.2 R2/F3: PAPEL DE PROTETORA ──────────────────────────────────
     # A monitorada é SUJEITO de verbo de combate/prevenção à fraude:
     # "Duke Energy leverages artificial intelligence to COMBAT FRAUD…".
@@ -1640,6 +1646,8 @@ def detect_fraud_victim_evidence(text: str, monitored: str,
         return {}
     if any(re.search(p.format(**fmt), t, re.I) for p in _FRAUDE_CASA_PROPRIA):
         return {}
+    if detect_agencia_em_nome_da_empresa(text, monitored, aliases):
+        return {}                     # R6b: agiu PELA empresa, não CONTRA ela
     for regra, padroes in (("R_FRAUDE_VITIMA_DETECTORA", _FRAUDE_V1_DESCOBRE),
                            ("R_FRAUDE_ATOR_EXTERNO", _FRAUDE_P1_ATOR_EXTERNO),
                            ("R_FRAUDE_PREJUIZO_DE_TERCEIRO", _FRAUDE_V2_PREJUIZO)):
@@ -1651,12 +1659,53 @@ def detect_fraud_victim_evidence(text: str, monitored: str,
     return {}
 
 
+# ── 4I.2 R6b: AGÊNCIA — FRAUDE *PARA* A EMPRESA NÃO É FRAUDE *CONTRA* ELA ───
+# Funcionário, executivo ou preposto são agência da companhia. Quando o texto
+# diz que agiram EM NOME dela, a companhia não é a parte lesada — mesmo que a
+# frase mencione fraude e o nome dela na mesma oração. É a preposição que
+# separa "employee defrauded Company" de "employee committed fraud for
+# Company", e o detector precisa enxergá-la.
+_AGENTE_DA_CASA = (r"(?:employees?|funcion[áa]rios?|ex-funcion[áa]rios?|"
+                   r"executives?|executivos?|officers?|agents?|agentes?|"
+                   r"diretor\w*|director\w*|managers?|gerentes?|prepostos?|"
+                   r"representantes?|contractors?|s[óo]cios?)")
+_AGENCIA_EM_NOME_DA_EMPRESA = [
+    # "<agente> committed fraud FOR / ON BEHALF OF <empresa|the firm>"
+    _AGENTE_DA_CASA + r"(?:\s+\w+){{0,8}}?\s+"
+    r"(?:committed|orchestrat\w*|perpetrat\w*|carried\s+out|ran\b|"
+    r"cometeu|cometeram|praticou|praticaram|orquestrou|orquestraram)"
+    r"(?:\s+\w+){{0,6}}?\s+(?:for|on\s+behalf\s+of|em\s+nome\s+d[aeo]s?|para)\s+"
+    r"(?:the\s+(?:company|firm|group)|a\s+empresa|{m})",
+    # "<agente> acting on <empresa> instructions / a mando da <empresa>"
+    _AGENTE_DA_CASA + r"(?:\s+\w+){{0,4}}?\s+(?:acting|agindo)"
+    r"(?:\s+\w+){{0,4}}?\s+(?:on|sob|a\s+mando\s+d[aeo]s?|por\s+ordem\s+d[aeo]s?)"
+    r"\s*(?:the\s+)?{m}",
+]
+
+
+def detect_agencia_em_nome_da_empresa(text: str, monitored: str,
+                                      aliases: list[str] | None = None) -> str:
+    """O ato foi praticado POR gente da casa e EM NOME da monitorada."""
+    t = _n(text)
+    nomes = [re.escape(_n(a)) for a in ((aliases or []) + [monitored]) if a]
+    if not nomes:
+        return ""
+    alt = "(?:" + "|".join(nomes) + ")"
+    for p in _AGENCIA_EM_NOME_DA_EMPRESA:
+        m = re.search(p.format(m=alt, q=_QUALIF, a=_ART), t, re.I)
+        if m:
+            return m.group(0)[:120]
+    return ""
+
+
 def detect_fraud_role(text: str, monitored: str,
                       aliases: list[str] | None = None) -> str:
     """Papel da monitorada num evento de fraude: "agente", "vitima" ou "".
 
     O papel de AGENTE vence sempre: um cue incidental de vítima noutra oração
     não pode apagar fraude realmente cometida/condenada pela companhia (§10).
+    E fraude praticada por agência da própria casa EM NOME dela nunca produz
+    papel de vítima (R6b) — quem agiu pela empresa não a lesou.
     """
     t = _n(text)
     nomes = [re.escape(_n(a)) for a in ((aliases or []) + [monitored]) if a]
@@ -1665,6 +1714,8 @@ def detect_fraud_role(text: str, monitored: str,
     alt = "(?:" + "|".join(nomes) + ")"
     if any(re.search(p.format(m=alt, q=_QUALIF, a=_ART), t, re.I) for p in FRAUDE_AGENTE):
         return "agente"
+    if detect_agencia_em_nome_da_empresa(text, monitored, aliases):
+        return ""
     if any(re.search(p.format(m=alt, q=_QUALIF, a=_ART), t, re.I) for p in FRAUDE_VITIMA):
         return "vitima"
     return ""

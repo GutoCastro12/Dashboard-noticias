@@ -44,12 +44,27 @@ import reliability_enrichment as enr
 import reliability_enrichment_policy as pol
 import reliability_input_audit as ia
 import risk_dashboard as rd
+import semantic_audit as sa
 
 HISTORY = Path(os.environ.get("RELIABILITY_HISTORY") or "risk_history.json")
 SIDECAR = Path(os.environ.get("RELIABILITY_SIDECAR") or "risk_enrichment_shadow.json")
 
-SCHEMA_VERSION = "1.0"
-EXTRACTOR_VERSION = "r5b.1"
+SCHEMA_VERSION = "1.1"          # R6b: primary + supporting
+EXTRACTOR_VERSION = "r6b.1"
+# Versões que o leitor ainda entende. Registro antigo continua legível; o que
+# muda é que ele não carrega `supporting` e será reprocessado quando a coleta
+# prospectiva o encontrar de novo — nunca retroativamente (§26).
+SCHEMA_COMPATIVEIS = ("1.0", "1.1")
+
+# No máximo DOIS fragmentos por artigo: o estruturado que já basta na maioria
+# dos casos, e um único apoio quando o papel do evento continua indefinido.
+# Mais que isso reintroduz o corpo inteiro, que é justamente o que a R5b
+# provou ser perigoso.
+MAX_EVIDENCIAS = 2
+# Janela de contexto do evento para o Tier 2: frases inteiras ao redor do
+# termo, porque papel exige sujeito + verbo + objeto. Recortar a keyword
+# isolada destruiria a evidência que se quer preservar.
+JANELA_CONTEXTO = 420
 
 # Excerto por fragmento. 1200 caracteres cobrem com folga o lead de uma
 # notícia — nos artigos auditados o trecho decisivo apareceu nos primeiros
@@ -139,6 +154,104 @@ def suficiente(frag: dict) -> bool:
     return (frag["effective_new_tokens"] >= MIN_TOKENS_SUFICIENTE
             and frag["sentence_like"]
             and not frag["quality_flags"])
+
+
+def janela_de_evento(texto: str, termos: list, largura: int = JANELA_CONTEXTO) -> str:
+    """Frases inteiras ao redor do primeiro termo do evento.
+
+    Papel semântico exige sujeito, verbo e objeto: recortar a keyword isolada
+    devolveria exatamente o que não serve. Por isso a janela se expande até a
+    fronteira de frase mais próxima nos dois lados.
+    """
+    for pos in _ocorrencias(texto or "", termos):
+        yield _janela_em(texto, pos, largura)
+
+
+def _ocorrencias(t: str, termos: list) -> list:
+    baixo = t.lower()
+    pos = set()
+    for k in termos:
+        if not k:
+            continue
+        i = baixo.find(k.lower())
+        while i != -1:
+            pos.add(i)
+            i = baixo.find(k.lower(), i + 1)
+    return sorted(pos)
+
+
+def _janela_em(t: str, pos: int, largura: int) -> str:
+    ini, fim = max(0, pos - largura), min(len(t), pos + largura)
+    corte = t.rfind(". ", 0, ini + 1)
+    ini = corte + 2 if corte != -1 else ini
+    corte = t.find(". ", fim)
+    fim = corte + 1 if corte != -1 else fim
+    return re.sub(r"\s+", " ", t[ini:fim]).strip()
+
+
+def papel_do_evento_indefinido(texto: str, empresa: str, evento: str,
+                               aliases: list | None = None) -> bool:
+    """O texto disponível deixa o PAPEL da empresa no evento sem resposta?
+
+    Não é ground truth e não pergunta se a empresa é vítima — pergunta se o
+    runtime CONSEGUE dizer. Enquanto a resposta for "não sei", vale procurar
+    um fragmento de apoio; assim que houver papel explícito, para.
+    """
+    if evento not in sa.EVENTOS_FRAUDE:
+        return False
+    al = aliases or [empresa]
+    if sa.detect_fraud_role(texto, empresa, al):
+        return False
+    return not sa.detect_fraud_victim_evidence(texto, empresa, al)
+
+
+def selecionar_evidencias(frags: list, base: str, empresa: str, evento: str,
+                          aliases: list | None = None) -> tuple[list, str]:
+    """PRIMARY estruturado e, se o papel seguir indefinido, um SUPPORTING.
+
+    A R5c parava no primeiro fragmento tecnicamente suficiente e descartava o
+    resto. Isso custou a evidência decisiva de um caso real: a metadata dizia
+    apenas que houve uma prisão, enquanto o corpo dizia quem descobriu a
+    fraude e quem sofreu o prejuízo. Suficiência técnica não é completude de
+    evidência.
+    """
+    primary, motivo = selecionar(frags)
+    if not primary:
+        return [], motivo
+    texto = f"{base} {primary['text_excerpt']}"
+    if not papel_do_evento_indefinido(texto, empresa, evento, aliases):
+        return [primary], f"{motivo}; papel explícito no primary"
+    # papel ainda indefinido: um único apoio LIMPO pode completar a evidência
+    cands = [f for f in frags
+             if f["content_hash"] != primary["content_hash"]
+             and not f["quality_flags"] and f["sentence_like"]
+             and f["effective_new_tokens"] > 0]
+    for f in sorted(cands, key=_ordem, reverse=True):
+        g = ia.ganho_efetivo(texto, f["text_excerpt"])
+        if g["duplicado"] or g["tokens_novos"] < 5:
+            continue               # apoio que só repete o primary não entra
+        apoio = dict(f)
+        # A janela é escolhida por NECESSIDADE DE EVIDÊNCIA: entre as janelas
+        # possíveis ao redor do termo, fica a primeira que de fato resolve o
+        # papel. Isso é determinístico e não consulta ground truth — pergunta
+        # apenas se o runtime passa a conseguir responder.
+        escolhida = ""
+        for janela in janela_de_evento(f["text_excerpt"],
+                                       ["fraud", "fraude", "scam", "golpe"]):
+            if not janela:
+                continue
+            if not papel_do_evento_indefinido(f"{texto} {janela}", empresa,
+                                              evento, aliases):
+                escolhida = janela
+                break
+        if not escolhida:
+            continue                   # este apoio não completa a evidência
+        apoio["text_excerpt"] = escolhida[:MAX_EXCERPT]
+        apoio["length"] = len(apoio["text_excerpt"])
+        apoio["window_of_event"] = True
+        return ([primary, apoio][:MAX_EVIDENCIAS],
+                f"{motivo}; apoio {f['method']} porque o papel seguia indefinido")
+    return [primary], f"{motivo}; nenhum apoio limpo disponível"
 
 
 def _ordem(frag: dict) -> tuple:
