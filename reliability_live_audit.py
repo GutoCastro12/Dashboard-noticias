@@ -162,7 +162,19 @@ def resumo(res: dict, nov: dict) -> dict:
     crit = [l for l in res["linhas"] if l["severity"] == "critico"]
     alto = [l for l in res["linhas"] if l["severity"] == "alto"]
     rev = [l for l in res["holdout"] if l["review_status"] != "UNREVIEWED"]
+
+    def _rev(itens):
+        c = {k: sum(1 for l in itens if l["review_status"] == k) for k in REVIEW_STATES}
+        revd = len(itens) - c["UNREVIEWED"]
+        den = c["TRUE"] + c["FALSE_POSITIVE"]
+        return {**c, "total": len(itens), "reviewed": revd,
+                "coverage": f"{revd}/{len(itens)}",
+                # AMBIGUOUS fica FORA do denominador (§15)
+                "precision": (f"{c['TRUE']}/{den} = {c['TRUE'] / den * 100:.1f}%"
+                              if den else "N/D — sem itens adjudicados")}
+
     return {
+        "review": _rev(crit), "review_high": _rev(alto),
         "records": res["records"],
         "critical": len(crit), "high": len(alto),
         "new_critical": sum(1 for l in crit if l.get("novelty") == "NEW"),

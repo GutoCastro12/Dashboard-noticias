@@ -15,9 +15,19 @@ Reúne, sem duplicar lógica:
 
 Não roda a suíte pytest inteira — isso é papel do CI e duplicaria trabalho.
 
-Códigos de saída:
-  0  nada exigindo ação imediata
-  1  há crítico NOVO, ou família já generalizada regrediu
+Contrato de saída (R1c §18) — a distinção importa:
+
+  EXIT 1 · BLOCKING — regressão estrutural, algo que ANTES funcionava:
+     gold, attribution, exact/sibling/negative de família GENERALIZED,
+     fixture inválida, contaminação pelo fallback F1, schema/crash.
+
+  EXIT 0 · REVIEW REQUIRED — precisa de olho humano, não é regressão:
+     crítico/alto NOVO ou CHANGED, item UNREVIEWED, holdout não revisado,
+     família PARTIAL ou BLOCKED_BY_INPUT, review AMBIGUOUS.
+
+Uma notícia crítica legítima recém-coletada precisa SALTAR AOS OLHOS sem
+quebrar o build — senão o gate vira ruído e passa a ser ignorado, que é
+exatamente como a Britannica entrou em produção.
 """
 from __future__ import annotations
 
@@ -72,14 +82,16 @@ def main() -> int:
     regrediu = [f["family_id"] for f in gen["families"]
                 if f["family_id"] in ("F5", "F6") and f["status"] != rg.GENERALIZED]
     if regrediu:
-        falhas.append(f"famílias generalizadas regrediram: {', '.join(regrediu)}")
+        falhas.append(f"REGRESSÃO: famílias generalizadas caíram: {', '.join(regrediu)}")
+    if "?" in (pos, neg, tot, attr):
+        falhas.append("REGRESSÃO/ESTRUTURAL: gold ou attribution não produziram resultado")
+    elif pos.split("/")[0] != pos.split("/")[1]:
+        falhas.append(f"REGRESSÃO: gold positives {pos} — positivos não podem cair")
 
     res = la.coletar()
     nov = la.novidade(res["linhas"])
     la.gravar(res)
     r = la.resumo(res, nov)
-    if r["new_critical"] > 0:
-        falhas.append(f"{r['new_critical']} crítico(s) NOVO(S) desde o último baseline")
 
     print("=" * 96)
     print("RELIABILITY GATE")
@@ -113,17 +125,57 @@ def main() -> int:
     print(f"  unreviewed           {r['holdout_unreviewed']}")
     if r["holdout_reviewed"] == 0:
         print("  precision            NÃO CALCULÁVEL — sem labels humanos")
+    rev, hr = r["review"], r["review_high"]
+    print("\nCRITICAL REVIEW")
+    print(f"  total critical       {rev['total']}")
+    print(f"  reviewed             {rev['reviewed']}  (coverage {rev['coverage']})")
+    print(f"  true                 {rev['TRUE']}")
+    print(f"  false_positive       {rev['FALSE_POSITIVE']}")
+    print(f"  ambiguous            {rev['AMBIGUOUS']}")
+    print(f"  unreviewed           {rev['UNREVIEWED']}")
+    print(f"  precision reviewed   {rev['precision']}")
+    print("     ^ PRECISION ON CURRENT REVIEWED CRITICAL SET — não é precisão global")
+    print("\nHIGH REVIEW")
+    print(f"  total high           {hr['total']}")
+    print(f"  reviewed             {hr['reviewed']}  (coverage {hr['coverage']})")
+    print(f"  unreviewed           {hr['UNREVIEWED']}")
+    print("     ^ a precisão dos críticos NÃO se extrapola para os altos")
     print("\nREVIEW QUEUE")
     print(f"  aguardando adjudicação humana  {len(gen['review_queue'])}")
 
+    # WARNINGS (§18) — exigem olho humano, mas não são regressão.
+    avisos = []
+    if not r["sem_baseline"]:
+        if r["new_critical"]:
+            avisos.append(f"{r['new_critical']} crítico(s) NOVO(S) — adjudicar")
+        if r["new_high"]:
+            avisos.append(f"{r['new_high']} alto(s) NOVO(S)")
+        if r["changed"]:
+            avisos.append(f"{r['changed']} item(ns) CHANGED")
+    if rev["UNREVIEWED"]:
+        avisos.append(f"{rev['UNREVIEWED']} crítico(s) UNREVIEWED")
+    if rev["AMBIGUOUS"]:
+        avisos.append(f"{rev['AMBIGUOUS']} review(s) AMBIGUOUS")
+    if r["holdout_unreviewed"]:
+        avisos.append(f"{r['holdout_unreviewed']} candidato(s) de holdout não revisado(s)")
+    parciais = st.get(rg.PARTIAL, 0) + st.get(rg.BLOCKED, 0) + st.get(rg.UNRESOLVED, 0)
+    if parciais:
+        avisos.append(f"{parciais} família(s) PARTIAL/BLOCKED/UNRESOLVED")
+
     print()
     print("=" * 96)
+    if avisos:
+        print("  ⚠️  REVIEW REQUIRED — não bloqueia, mas exige olho humano:")
+        for a in avisos:
+            print(f"       · {a}")
     if falhas:
+        print("  ❌ BLOCKING:")
         for f in falhas:
-            print(f"  ❌ {f}")
+            print(f"       · {f}")
         print("=" * 96)
         return 1
-    print("  ✅ nada exigindo ação imediata")
+    if not avisos:
+        print("  ✅ nada exigindo ação imediata")
     print("=" * 96)
     (OUTDIR / "gate_summary.json").write_text(json.dumps(
         {"gold": {"positives": pos, "negatives": neg, "total": tot, "attribution": attr},
