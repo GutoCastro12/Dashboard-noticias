@@ -1279,6 +1279,62 @@ _ENT_NOME_B2 = (r"((?-i:[A-Z][\w&.\-]*"
                 r"(?:\s+(?:de|da|do|dos|das|of|del|y|e|&)\s+[A-Z][\w&.\-]*"
                 r"|\s+[A-Z][\w&.\-]*){0,3}))")
 
+# ── 4I.2 R4b/B2: CAPITALIZAÇÃO NÃO É PROVA DE ENTIDADE ──────────────────────
+# Em manchete, TUDO vem capitalizado. `Vale's Chapter 11`, `Capital One's
+# Acquisition Of Discover`, `NextEra Energy's Dominion Acquisition. Virginia
+# Governor` — nenhum desses complementos possessivos é uma subsidiária; são
+# termo jurídico, substantivo de transação e travessia de fim de frase.
+#
+# A correção é estrutural e vale para as três construções: a sequência
+# capturada é TRUNCADA no primeiro token que pertence a uma classe de
+# substantivo comum / verbo — não é uma lista de exceções por caso. Sobrando
+# nome, ele é a entidade ("Cigna's Evernorth Completes Acquisition…" →
+# `Evernorth`); não sobrando nada, não há subsidiária.
+_NAO_ENTIDADE_TOKENS = {
+    # termo jurídico / insolvência
+    "chapter", "section", "bankruptcy", "insolvency", "restructuring",
+    "reorganization", "reorganisation", "filing", "filings", "plan", "petition",
+    "case", "lawsuit", "suit", "claim", "ruling", "settlement", "court",
+    "recuperacao", "falencia", "concordata", "processo", "acao",
+    # papel corporativo
+    "ceo", "cfo", "coo", "cto", "chairman", "chairwoman", "board", "president",
+    "director", "directors", "management", "shareholder", "shareholders",
+    "conselho", "diretoria", "presidente", "acionistas",
+    # atributo financeiro
+    "rating", "ratings", "debt", "bond", "bonds", "earnings", "results",
+    "revenue", "revenues", "profit", "loss", "losses", "share", "shares",
+    "stock", "stocks", "outlook", "guidance", "dividend", "credit", "cash",
+    "divida", "resultado", "resultados", "lucro", "prejuizo", "acoes",
+    # transação / evento
+    "acquisition", "merger", "deal", "purchase", "sale", "takeover", "spinoff",
+    "ipo", "offering", "migration", "investment", "expansion", "buyback",
+    "aquisicao", "fusao", "venda", "compra", "oferta",
+    # verbos e particípios que a captura pode engolir
+    "completes", "completed", "suspected", "reshapes", "won", "files", "filed",
+    "plans", "seeks", "says", "reports", "faces", "wins", "loses", "announces",
+}
+
+
+def _nome_entidade_limpo(cand: str) -> str:
+    """Trunca a sequência capturada no primeiro token que não é nome próprio.
+
+    Devolve "" quando nada resta — sinal de que o complemento possessivo era
+    um substantivo comum, não uma entidade.
+    """
+    out = []
+    for tok in re.sub(r"\s+", " ", cand or "").strip().split(" "):
+        limpo = _n(tok).strip(".,;:'’`")
+        if limpo in _NAO_ENTIDADE_TOKENS:
+            break
+        # citação legal: nome capitalizado seguido de número ("Chapter 11",
+        # "Section 363") nunca é razão social.
+        if limpo.isdigit():
+            break
+        out.append(tok)
+        if tok.endswith(".") and len(tok.strip(".")) > 2:
+            break                      # fim de frase, não abreviação ("St.")
+    return re.sub(r"\s+", " ", " ".join(out)).strip(" .,;:")
+
 
 # ── 4I.2 Wave B7b-2: follow-on de TERCEIRO, monitorada é INVESTIDORA ────────
 # "Itaúsa aporta no aumento de capital DA AEGEA" não é follow-on da Itaúsa.
@@ -1425,7 +1481,9 @@ def detect_subsidiary_subject(text: str, monitored: str,
         m = re.search(p, text, re.I)
         if not m:
             continue
-        cand = re.sub(r"\s+", " ", m.group(1)).strip(" .,;:")
+        # capitalização sozinha não prova entidade (R4b): trunca no primeiro
+        # substantivo comum/verbo antes de qualquer outra checagem.
+        cand = _nome_entidade_limpo(m.group(1))
         cn = _n(cand)
         if not cn or len(cn) < 3:
             continue
