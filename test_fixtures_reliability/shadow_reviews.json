@@ -1,0 +1,21 @@
+{
+ "_meta": {
+  "purpose": "Ground truth de company x event que existe SOMENTE no shadow enrichment. Separado de live_reviews.json de proposito: estes pares nao existem no inventario de producao e nao podem contaminar o denominador fixo do baseline critico.",
+  "reviewer_types": [
+   "human",
+   "assistant",
+   "imported_prior_adjudication",
+   "unknown"
+  ]
+ },
+ "https://news.bloomberglaw.com||CVS Health||fraude": {
+  "status": "TRUE",
+  "reviewer_type": "assistant",
+  "reviewed_at": 1786475712,
+  "company": "CVS Health",
+  "event_id": "fraude",
+  "origin": "R5b shadow enrichment",
+  "note": "og:description diz que Omnicare e a controladora CVS Health foram consideradas responsaveis (found liable) por dispensar medicamentos sem prescricao valida e concordaram em pagar ao menos US$ 440 milhoes. A CVS esta explicitamente entre as partes responsabilizadas.",
+  "evidence": "Omnicare and its parent company, CVS Health, have agreed to pay at least $440 million ... found liable for fraudulently dispensing drugs without valid prescriptions"
+ }
+}

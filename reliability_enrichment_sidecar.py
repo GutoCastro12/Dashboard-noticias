@@ -59,7 +59,17 @@ MAX_EXCERPT = 1200
 MAX_FRAGMENTOS = 6
 
 # Ladder: procedência em ordem de confiança. Índice menor = mais confiável.
+#
+# TIER 0 é texto que o COLETOR já recebeu — nenhuma requisição extra, nenhum
+# crawl de página. Medido em R5c: o `description` do Google News tem mediana
+# de 1 token novo (é o título mais o veículo) e não serve; mas os feeds
+# custom/RI entregam 10–14 tokens de conteúdo real, e o `content:encoded`,
+# que o parser sequer lê hoje, chegou a 204 tokens novos num feed medido.
 TIER = {
+    "feed:content_encoded": (0, "collector"),
+    "feed:description": (0, "collector"),
+    "feed:summary": (0, "collector"),
+    "collector:summary": (0, "collector"),
     "jsonld:description": (1, "structured"),
     "jsonld:articleBody": (1, "structured"),
     "meta:og:description": (1, "structured"),
@@ -67,6 +77,34 @@ TIER = {
     "meta:twitter:description": (1, "structured"),
     "html:paragrafos": (2, "page_text"),
 }
+# Campos que o coletor pode carregar. O contrato é o mesmo dos demais tiers:
+# passa pelo quality gate ou não é usado. Estar preenchido não basta.
+CAMPOS_TIER0 = (("feed:content_encoded", "content_encoded"),
+                ("feed:description", "feed_description"),
+                ("feed:summary", "feed_summary"),
+                ("collector:summary", "summary"))
+
+
+def fragmentos_tier0(rec: dict, base_titulo: str) -> list:
+    """Texto já entregue pelo coletor. Zero requisição, zero crawl.
+
+    Robots não se aplica aqui (§12): nada é buscado — este texto veio no mesmo
+    feed que o pipeline já consome legitimamente.
+    """
+    frags = []
+    for metodo, campo in CAMPOS_TIER0:
+        txt = (rec.get(campo) or "").strip()
+        if not txt:
+            continue
+        txt = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", txt)).strip()
+        if not txt:
+            continue
+        frags.append({"method": metodo, "tier": 0, "kind": "collector",
+                      "text_excerpt": txt[:MAX_EXCERPT],
+                      "content_hash": hashlib.sha256(
+                          txt.encode("utf-8", "replace")).hexdigest()[:16],
+                      **qualidade(txt, base_titulo)})
+    return frags
 
 # Suficiência é TÉCNICA, não semântica: diz que já há texto limpo bastante
 # para valer a pena, nunca se a empresa é vítima ou autora — isso continua
@@ -167,11 +205,32 @@ def _reaproveitavel(anterior: dict) -> bool:
                                            "BLOCKED_BY_SOURCE"))
 
 
-def enriquecer_url(url: str, base: str) -> dict:
+def enriquecer_url(url: str, base: str, rec: dict | None = None) -> dict:
+    """Sobe a ladder do Tier 0 até o Tier 2, parando assim que bastar.
+
+    O Tier 0 roda ANTES de qualquer rede: se o coletor já trouxe contexto
+    suficiente, nenhuma requisição é feita — o que economiza custo e reduz a
+    exposição a robots, e não apenas processamento.
+    """
     reg = {"attempted_at": int(time.time()), "fragments": [],
            "extractor_version": EXTRACTOR_VERSION,
            "policy_version": pol.POLICY_VERSION,
            "schema_version": SCHEMA_VERSION}
+
+    t0 = fragmentos_tier0(rec or {}, (rec or {}).get("title") or base)
+    if t0 and any(suficiente(f) for f in t0):
+        sel, motivo = selecionar(t0)
+        reg.update(status="OK", fragments=t0[:MAX_FRAGMENTOS], early_stop=True,
+                   tier0_sufficient=True, page_fetch=False,
+                   robots_status="nao_aplicavel (sem fetch de página)",
+                   selected=({"method": sel["method"], "tier": sel["tier"],
+                              "content_hash": sel["content_hash"],
+                              "effective_new_tokens": sel["effective_new_tokens"],
+                              "selection_reason": motivo} if sel else None))
+        return reg
+    reg["tier0_sufficient"] = False
+    reg["page_fetch"] = True
+
     permitido, robots_status = enr._robots_permite(url)
     reg["robots_status"] = robots_status
     if not permitido:
@@ -198,6 +257,7 @@ def enriquecer_url(url: str, base: str) -> dict:
         return reg
 
     frags, early = processar_html(html, base)
+    frags = t0 + frags                      # Tier 0 continua concorrendo
     sel, motivo = selecionar(frags)
     reg.update(status="OK" if frags else "NO_CONTENT", fragments=frags,
                early_stop=early,
@@ -206,6 +266,100 @@ def enriquecer_url(url: str, base: str) -> dict:
                           "effective_new_tokens": sel["effective_new_tokens"],
                           "selection_reason": motivo} if sel else None))
     return reg
+
+
+MAX_REQUESTS_POR_RUN = 40
+
+
+def novos_do_run(hist: dict, side: dict) -> list:
+    """Artigos VISTOS PELA PRIMEIRA VEZ neste run.
+
+    `captured_ts` recente não serve: reprocessamento reescreve carimbos e
+    traria histórico de volta. A identidade é a ausência do artigo no
+    side-car — que persiste entre runs — combinada com o `run_count` em que
+    o artigo foi registrado. Sem backfill: o estoque anterior nunca entra.
+    """
+    vistos = set(side.get("articles") or {})
+    marcados = side.get("first_seen_run") or {}
+    run = int(hist.get("run_count") or 0)
+    # PRIMEIRA execução: o estoque inteiro pareceria "novo" e viraria backfill
+    # acidental. A primeira passada apenas SEMEIA o marcador e não enriquece
+    # nada — enriquecimento retroativo continua proibido.
+    seed = not marcados
+    novos = []
+    for url, rec in hist["articles"].items():
+        ident = rec.get("canonical_url") or url
+        if ident in vistos or ident in marcados:
+            continue
+        if not seed:
+            novos.append((ident, url, rec))
+        marcados[ident] = run
+    side["first_seen_run"] = marcados
+    side["seeded_at_run"] = side.get("seeded_at_run", run if seed else None)
+    return novos
+
+
+def coletar_prospectivo(cfg=None, limite: int = MAX_REQUESTS_POR_RUN) -> dict:
+    """Ponto de entrada do cron. NUNCA pode derrubar o pipeline (§29)."""
+    tel = {"new_articles": 0, "eligible": 0, "tier0_attempted": 0,
+           "tier0_sufficient": 0, "page_fetch_attempted": 0, "OK": 0,
+           "BLOCKED_BY_ROBOTS": 0, "BLOCKED_BY_SOURCE": 0, "ERROR": 0,
+           "NO_CONTENT": 0, "early_stop": 0, "tier2_usage": 0,
+           "limite_atingido": False, "latencias": [], "metodos": {}}
+    try:
+        cfg = cfg or rd.load_config("config_risco.yaml")
+        hist = json.load(io.open(HISTORY, encoding="utf-8"))
+        side = carregar_sidecar()
+        novos = novos_do_run(hist, side)
+        tel["new_articles"] = len(novos)
+        ultimo_host = ""
+        for ident, url, rec in novos:
+            ok, s = pol.should_enrich(rec, cfg)
+            if not ok:
+                continue
+            tel["eligible"] += 1
+            if tel["page_fetch_attempted"] >= limite:
+                tel["limite_atingido"] = True
+                continue
+            tel["tier0_attempted"] += 1
+            host = urlparse(url).netloc
+            base = f"{rec.get('title') or ''}. {rec.get('summary') or ''}"
+            reg = enriquecer_url(url, base, rec)
+            if reg.get("page_fetch"):
+                tel["page_fetch_attempted"] += 1
+                if host == ultimo_host:
+                    time.sleep(enr.PAUSA_ENTRE_HOSTS)
+                ultimo_host = host
+            else:
+                tel["tier0_sufficient"] += 1
+            reg.update(canonical_url=ident, title=(rec.get("title") or "")[:200],
+                       eligibility=s, first_seen_run=int(hist.get("run_count") or 0))
+            side["articles"][ident] = reg
+            tel[reg["status"]] = tel.get(reg["status"], 0) + 1
+            tel["early_stop"] += bool(reg.get("early_stop"))
+            tel["tier2_usage"] += sum(1 for f in reg["fragments"] if f["tier"] == 2)
+            if reg.get("latency_ms"):
+                tel["latencias"].append(reg["latency_ms"])
+            for f in reg["fragments"]:
+                tel["metodos"][f["method"]] = tel["metodos"].get(f["method"], 0) + 1
+        gravar_sidecar(side)
+    except Exception as exc:                            # noqa: BLE001
+        # §29: enrichment é observabilidade. Falhar aqui não pode impedir a
+        # publicação do dashboard — o pipeline de risco não depende disto.
+        tel["fatal_error"] = f"{type(exc).__name__}: {exc}"
+        print(f" ⚠️  enrichment shadow falhou e foi ignorado: {tel['fatal_error']}")
+    tel["latencia_media_ms"] = (int(sum(tel["latencias"]) / len(tel["latencias"]))
+                                if tel["latencias"] else 0)
+    tel.pop("latencias")
+    return tel
+
+
+def gravar_sidecar(side: dict) -> None:
+    side.update(schema_version=SCHEMA_VERSION, extractor_version=EXTRACTOR_VERSION,
+                policy_version=pol.POLICY_VERSION, gerado_em=int(time.time()))
+    tmp = SIDECAR.with_suffix(".tmp")
+    tmp.write_text(json.dumps(side, ensure_ascii=False, indent=1), encoding="utf-8")
+    os.replace(tmp, SIDECAR)
 
 
 def rodar(limite: int = 60) -> dict:
@@ -259,6 +413,18 @@ def rodar(limite: int = 60) -> dict:
 
 
 def main() -> int:
+    if "--prospective" in sys.argv:
+        tel = coletar_prospectivo()
+        print("=" * 96)
+        print("PROSPECTIVE SHADOW ENRICHMENT")
+        print("=" * 96)
+        for k, v in tel.items():
+            print(f"  {k:24s} {v}")
+        if SIDECAR.exists():
+            print(f"  side-car                 {SIDECAR} "
+                  f"({SIDECAR.stat().st_size / 1024:.1f} KB)")
+        print("=" * 96)
+        return 0                      # §29: nunca falha o run
     if "--report" in sys.argv:
         side = carregar_sidecar()
         print(json.dumps({"schema": side.get("schema_version"),
