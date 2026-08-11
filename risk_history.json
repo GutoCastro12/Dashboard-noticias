@@ -4199,9 +4199,7 @@
     "falencia"
    ],
    "events_by_company": {
-    "General Motors": [
-     "falencia"
-    ]
+    "General Motors": []
    },
    "mention_roles": {
     "General Motors": {
@@ -4212,10 +4210,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "General Motors"
    ],
-   "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "corroborations": [],
@@ -4234,7 +4232,72 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.621967+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.621967+00:00",
+   "event_assessments": [
+    {
+     "company": "General Motors",
+     "event_id": "falencia",
+     "assessed_by": "semantic_audit",
+     "subject_company": "General Motors",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "alegacao",
+     "event_scope": "direto",
+     "direction": "negativa",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "nao_confirmado",
+     "attribution_rule": "R_FORO_JUDICIAL_NAO_PROVA_INSOLVENCIA",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "'bankruptcy court' é o FORO; nada no texto liga insolvência a General Motors",
+     "legal_status": "alegacao",
+     "confirmation_status": "nao_confirmado"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "General Motors",
+     "event_id": "falencia",
+     "event_id_corrigido": "",
+     "regra": "R_FORO_JUDICIAL_NAO_PROVA_INSOLVENCIA",
+     "motivo": "'bankruptcy court' é o FORO; nada no texto liga insolvência a General Motors",
+     "subject_company": "General Motors"
+    }
+   ],
+   "informational_events_by_company": {
+    "General Motors": [
+     {
+      "company": "General Motors",
+      "event_id": "falencia",
+      "event_label": "falencia",
+      "subject_company": "General Motors",
+      "monitored_company": "General Motors",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "negativa",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "nao_confirmado",
+      "attribution_rule": "R_FORO_JUDICIAL_NAO_PROVA_INSOLVENCIA",
+      "attribution_confidence": "media",
+      "title": "Bankruptcy Court Orders Texas to Strike Allegations In State Data Privacy Suit Against General Motors",
+      "url": "https://www.whiteandwilliams.com/restructuring-perspectives/bankruptcy-court-orders-texas-to-strike-allegations-in-state-data-privacy-suit-against-general-motors",
+      "pub_ts": 1761116400,
+      "observation": "'bankruptcy court' é o FORO; nada no texto liga insolvência a General Motors",
+      "source_record_id": "https://www.whiteandwilliams.com/restructuring-perspectives/bankruptcy-court-orders-texas-to-strike-allegations-in-state-data-privacy-suit-against-general-motors"
+     }
+    ]
+   }
   },
   "https://www.migalhas.com.br/quentes/442948/mattos-filho-assessora-energo-pro-na-aquisicao-do-cebi-da-copel": {
    "title": "Mattos Filho assessora Energo-Pro na aquisição do CEBI da Copel",
@@ -50711,10 +50774,10 @@
       "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
       "attribution_confidence": "media",
       "title": "ENGIE Brasil (EGIE3) registra elevação de rating global pela Fitch",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNUEpFZHpWbmpKTTJ4NGtvVk04Z0ZXS2RWVWV2VV9NYW1HRVRpMDdSbEh5WGFkQzdqRWFodFBraDB2aTdhUkZ5REQ4ZEMzM1hmd2JQd1JEVGRBdUdqLU9sM0NpTWRmUlR4cHJacVBoa3N2NkdHN25WemtjNmVSbW9mdHlFeUZuNkh3QjByX0ctZDgxREZFNklvcGhHTG1veDlyMl9lTg?oc=5",
+      "url": "https://visnoinvest.com.br/news/14672/engie-brasil-egie3-registra-elevacao-de-rating-global-pela-fitch",
       "pub_ts": 1786397940,
       "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
-      "source_record_id": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNUEpFZHpWbmpKTTJ4NGtvVk04Z0ZXS2RWVWV2VV9NYW1HRVRpMDdSbEh5WGFkQzdqRWFodFBraDB2aTdhUkZ5REQ4ZEMzM1hmd2JQd1JEVGRBdUdqLU9sM0NpTWRmUlR4cHJacVBoa3N2NkdHN25WemtjNmVSbW9mdHlFeUZuNkh3QjByX0ctZDgxREZFNklvcGhHTG1veDlyMl9lTg?oc=5"
+      "source_record_id": "https://visnoinvest.com.br/news/14672/engie-brasil-egie3-registra-elevacao-de-rating-global-pela-fitch"
      }
     ]
    },
@@ -50804,10 +50867,10 @@
       "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
       "attribution_confidence": "media",
       "title": "Fitch eleva rating global da Engie Brasil para ‘BBB’",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSUdkbmJVUWlsa3RsdmNmaDJORFlRdFFCSzdtQzNDWDZpeXZ1N0xaMXY5amltMEVsRldzVmRnakY0YTdwdkxQdTZVblJwdDVJWHcxLTNRRnFUeUgtNDV5MjNzVFF5dnlyTHU0WDF2YU02VUtGVDdDbWhuWm1pNzNEM1E1bm1ESkJmUkc1OFozLV95cnlyVFdRNzZQVkw?oc=5",
+      "url": "https://brasilenergia.com.br/energia/empresas/fitch-eleva-rating-global-da-engie-brasil-para-bbb",
       "pub_ts": 1786400951,
       "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
-      "source_record_id": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSUdkbmJVUWlsa3RsdmNmaDJORFlRdFFCSzdtQzNDWDZpeXZ1N0xaMXY5amltMEVsRldzVmRnakY0YTdwdkxQdTZVblJwdDVJWHcxLTNRRnFUeUgtNDV5MjNzVFF5dnlyTHU0WDF2YU02VUtGVDdDbWhuWm1pNzNEM1E1bm1ESkJmUkc1OFozLV95cnlyVFdRNzZQVkw?oc=5"
+      "source_record_id": "https://brasilenergia.com.br/energia/empresas/fitch-eleva-rating-global-da-engie-brasil-para-bbb"
      }
     ]
    },
@@ -56045,8 +56108,8 @@
   }
  },
  "last_run": {
-  "ts": 1786458453,
-  "iso": "11 ago 2026 · 11:27 BRT",
+  "ts": 1786460114,
+  "iso": "11 ago 2026 · 11:55 BRT",
   "status": {
    "Cosan": {
     "status": "atencao",
@@ -56317,5 +56380,5 @@
  "semantic_reclassified_at": "2026-07-30T21:07:47.714609+00:00",
  "semantic_version": "1.0",
  "links_repaired_at": "2026-07-31T05:45:56.701137+00:00",
- "reclassify_only_applied_at": "2026-08-11T02:07:09.567560+00:00"
+ "reclassify_only_applied_at": "2026-08-11T14:55:14.646943+00:00"
 }
