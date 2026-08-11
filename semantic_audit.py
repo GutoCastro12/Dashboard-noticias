@@ -1674,6 +1674,71 @@ def shadow_fraud_roles():
         _SHADOW_FRAUD_ROLES = anterior
 
 
+# ── 4I.2 R6d: RESPONSABILIZAÇÃO ADJUDICADA vs RESOLUÇÃO POSTERIOR ───────────
+# Um acordo firmado DEPOIS de a empresa ser responsabilizada é o desfecho de
+# um fato provado, não a ausência dele. `detect_juridical_phase` já cobre a
+# maior parte: achando `condenacao` junto de `encerramento`, a fase mitigadora
+# não vence. Medido nesta wave, o contrato falha em dois pontos:
+#
+#   L4  "admitted fraud and agreed to settle" — o cue de condenação exige
+#       `admits?`, que não casa `admitted`. A confissão passa despercebida e
+#       o acordo apaga o evento.
+#   L8  "Supplier was found liable; Company agreed separately to settle" — a
+#       responsabilização é de TERCEIRO e a monitorada herda o evento. É
+#       problema de sujeito, não de fase.
+#
+# As duas correções vivem no caminho SHADOW; produção segue idêntica.
+_LIABILITY_ADJUDICADA = (
+    r"(?:found\s+liable|held\s+liable|was\s+liable|convicted|conviction|"
+    r"pleaded\s+guilty|guilty\s+plea|admitt?(?:ed|s|ing)\s+(?:to\s+)?"
+    r"(?:the\s+)?(?:fraud|wrongdoing|guilt)|condenad\w*|"
+    r"declarad[oa]\s+culpable|assumiu\s+(?:a\s+)?(?:fraude|culpa))")
+
+
+def detect_liability_adjudicada(text: str, monitored: str,
+                                aliases: list[str] | None = None) -> dict:
+    """Responsabilização explícita LIGADA À MONITORADA.
+
+    Devolve `{"cue", "evidence"}` ou `{}`. O vínculo é obrigatório: uma
+    condenação de fornecedor citada no mesmo texto não responsabiliza a
+    monitorada — é exatamente o caso L8.
+    """
+    t = _n(text)
+    nomes = [re.escape(_n(a)) for a in ((aliases or []) + [monitored]) if a]
+    if not nomes:
+        return {}
+    alt = "(?:" + "|".join(nomes) + ")"
+    ligacoes = [
+        # "X was found liable" / "X and Y were found liable"
+        rf"{alt}(?:\s*,)?(?:\s+and\s+[\w\s&.\-]{{2,40}}?)?\s+(?:\w+\s+){{0,3}}?"
+        + _LIABILITY_ADJUDICADA,
+        # "... and X were found liable"
+        rf"\band\s+{alt}\s+(?:\w+\s+){{0,3}}?" + _LIABILITY_ADJUDICADA,
+        # "fraud committed by X" / "condenação da X"
+        _LIABILITY_ADJUDICADA + rf"(?:\s+\w+){{0,6}}\s+(?:by|d[aeo]s?)\s+{alt}\b",
+    ]
+    for p in ligacoes:
+        m = re.search(p, t)
+        if m:
+            cue = re.search(_LIABILITY_ADJUDICADA, m.group(0))
+            return {"cue": cue.group(0) if cue else "", "evidence": m.group(0)[:140]}
+    # Anáfora: "Omnicare and its parent company, CVS Health, … in a case in
+    # which THEY were found liable" — o pronome retoma a enumeração anterior.
+    # Só vale quando a monitorada aparece ANTES da anáfora e nenhum outro
+    # sujeito é responsabilizado entre as duas; é isso que impede o caso do
+    # fornecedor condenado de contaminar a empresa que apenas fez acordo.
+    ana = re.search(r"\b(?:they|eles|elas|ambas|ambos)\s+(?:\w+\s+){0,2}?"
+                    + _LIABILITY_ADJUDICADA, t)
+    if ana:
+        antes = t[:ana.start()]
+        mon = list(re.finditer(alt, antes))
+        if mon and not re.search(_LIABILITY_ADJUDICADA, antes[mon[-1].end():]):
+            cue = re.search(_LIABILITY_ADJUDICADA, ana.group(0))
+            return {"cue": cue.group(0) if cue else "",
+                    "evidence": ana.group(0)[:140], "anafora": True}
+    return {}
+
+
 def detect_fraud_victim_evidence(text: str, monitored: str,
                                  aliases: list[str] | None = None) -> dict:
     """Evidência POSITIVA de que a monitorada sofreu — não cometeu — a fraude.
@@ -2242,6 +2307,27 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                          rejection_reason=(
                              f"{monitored} é a parte LESADA, não a autora — "
                              f"evidência: “{_vit['evidence']}”"))
+                decisoes.append(d)
+                continue
+            # 4I.2 R6d — RESPONSABILIZAÇÃO ADJUDICADA VENCE RESOLUÇÃO POSTERIOR.
+            # Caminho SHADOW. Um acordo posterior é o desfecho de um fato
+            # provado, não a ausência dele — mas só quando a responsabilização
+            # está ligada À MONITORADA. Liability de terceiro citada no mesmo
+            # texto não transfere o evento.
+            _liab = (detect_liability_adjudicada(
+                texto, monitored, aliases_por_empresa.get(monitored) or [monitored])
+                if _SHADOW_FRAUD_ROLES else {})
+            if _liab and fase["direction"] == "mitigadora":
+                d.update(scoreable=True, event_scope="direto",
+                         subject_company=monitored,
+                         subject_evidence=_liab["evidence"],
+                         attribution_rule="R_LIABILITY_VENCE_RESOLUCAO",
+                         attribution_confidence="alta",
+                         confirmation_level="confirmado",
+                         rejection_reason=(
+                             f"responsabilização explícita (“{_liab['cue']}”) precede a "
+                             f"resolução {fase['event_phase']}; o acordo encerra um fato "
+                             f"provado, não o apaga"))
                 decisoes.append(d)
                 continue
             if fase["direction"] == "mitigadora":
