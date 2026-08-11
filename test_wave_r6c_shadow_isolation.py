@@ -180,6 +180,94 @@ check(isinstance(_shadow, str),
 
 print()
 print("=" * 96)
+print("BLOCO H — ativação é SÓ por call-site: nada externo liga o shadow")
+print("=" * 96)
+import os  # noqa: E402
+import subprocess  # noqa: E402
+import sys  # noqa: E402
+
+_probe = ("import semantic_audit as sa; "
+          "print('ATIVO' if sa.shadow_fraud_roles_ativo() else 'DESLIGADO')")
+_env = {**os.environ, "SHADOW_FRAUD_ROLES": "1", "RELIABILITY_SHADOW": "true",
+        "SHADOW": "on", "ENABLE_SHADOW_FRAUD_ROLES": "yes"}
+_r = subprocess.run([sys.executable, "-c", _probe], capture_output=True, text=True,
+                    encoding="utf-8", errors="replace", env=_env, timeout=300)
+check(_r.stdout.strip() == "DESLIGADO",
+      f"[24] nenhuma variável de ambiente liga o shadow ({_r.stdout.strip()})")
+_src_sa = io.open("semantic_audit.py", encoding="utf-8").read()
+check("environ" not in _src_sa,
+      "[25] semantic_audit não lê variável de ambiente alguma")
+_bloco = _src_sa.split("_SHADOW_FRAUD_ROLES = False")[1].split("def detect_fraud_victim_evidence")[0]
+check("open(" not in _bloco and "Path(" not in _bloco,
+      "[26] o interruptor não depende de nenhum arquivo externo")
+check(Path("risk_enrichment_shadow.json").exists()
+      and sa.shadow_fraud_roles_ativo() is False,
+      "[27] a mera presença do side-car não ativa o shadow")
+
+print()
+print("=" * 96)
+print("BLOCO I — separação de scoring: o side-car não entra no risco")
+print("=" * 96)
+import reliability_enrichment_sidecar as sc  # noqa: E402
+
+_prod_src = io.open("risk_dashboard.py", encoding="utf-8").read()
+for termo in ("enrichment_shadow", "risk_enrichment", "selecionar_evidencias",
+              "reliability_enrichment"):
+    check(termo not in _prod_src,
+          f"[28..31] risk_dashboard não conhece o side-car ('{termo}')")
+check("build_evolution" not in io.open(
+    "reliability_enrichment_sidecar.py", encoding="utf-8").read(),
+    "[32] o side-car não toca build_evolution")
+_hist_antes = json.load(io.open("risk_history.json", encoding="utf-8"))
+_n_antes = len(_hist_antes["articles"])
+_ev_antes = {u: (r.get("events_by_company") or {}) for u, r in _hist_antes["articles"].items()}
+sc.carregar_sidecar()
+_hist_dep = json.load(io.open("risk_history.json", encoding="utf-8"))
+check(len(_hist_dep["articles"]) == _n_antes
+      and all((_hist_dep["articles"][u].get("events_by_company") or {}) == v
+              for u, v in _ev_antes.items()),
+      "[33] ler o side-car não altera nenhum evento do history")
+
+print()
+print("=" * 96)
+print("BLOCO J — migração de versão: 1.0 legível, 1.1 novo, sem migração silenciosa")
+print("=" * 96)
+_t = Path(tempfile.mkdtemp(prefix="r6c_mig_"))
+_velho = {"schema_version": "1.0", "extractor_version": "r5b.1",
+          "policy_version": "r5b.1",
+          "articles": {"u1": {"status": "OK", "schema_version": "1.0",
+                              "extractor_version": "r5b.1", "policy_version": "r5b.1",
+                              "fragments": [], "selected": None}}}
+_p = _t / "side.json"
+_p.write_text(json.dumps(_velho, ensure_ascii=False), encoding="utf-8")
+os.environ["RELIABILITY_SIDECAR"] = str(_p)
+import importlib  # noqa: E402
+importlib.reload(sc)
+_lido = sc.carregar_sidecar()
+check(_lido["schema_version"] == "1.0" and "u1" in _lido["articles"],
+      "[34] side-car schema 1.0 continua legível")
+check(json.loads(_p.read_text(encoding="utf-8"))["schema_version"] == "1.0",
+      "[35] apenas LER um 1.0 não o regrava como 1.1 — sem migração silenciosa")
+check(not sc._reaproveitavel(_velho["articles"]["u1"]),
+      "[36] registro 1.0 não é reaproveitado sob o extractor novo")
+check(sc.SCHEMA_VERSION == "1.1" and sc.MAX_EVIDENCIAS == 2,
+      f"[37] o schema novo é {sc.SCHEMA_VERSION} com no máximo {sc.MAX_EVIDENCIAS} evidências")
+os.environ.pop("RELIABILITY_SIDECAR", None)
+importlib.reload(sc)
+
+print()
+print("=" * 96)
+print("BLOCO K — prospectivo: o passado não é reprocessado")
+print("=" * 96)
+_side_prod = json.load(io.open("risk_enrichment_shadow.json", encoding="utf-8"))
+_versoes = {r.get("extractor_version") for r in _side_prod["articles"].values()}
+check("r6b.1" not in _versoes,
+      f"[38] nenhum registro antigo foi regravado com o extractor novo: {sorted(_versoes)}")
+check(len(_side_prod.get("first_seen_run") or {}) >= len(_side_prod["articles"]),
+      "[39] o marcador de já-visto cobre o estoque — coleta segue prospectiva")
+
+print()
+print("=" * 96)
 print(f"RESULTADO WAVE R6c (isolamento shadow): {PASS}/{PASS+FAIL} checagens passaram")
 print("=" * 96)
 if FAIL:

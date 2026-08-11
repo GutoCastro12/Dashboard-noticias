@@ -102,7 +102,12 @@ jobs:
       - name: Shadow enrichment (prospective, no scoring impact)
         continue-on-error: true
         timeout-minutes: 6
-        run: python reliability_enrichment_sidecar.py --prospective
+        run: |
+          python reliability_enrichment_sidecar.py --prospective
+          # 4I.2 R6c — diff entre a decisão publicada e a semântica de papel
+          # que ainda NÃO está ativa. Observabilidade pura: o relatório sai em
+          # out_reliability/ e nada aqui alimenta score, history ou dashboard.
+          python reliability_shadow_diff.py || true
 
       # Histórico persistido via commit no repositório — não via actions/cache,
       # que evicta entradas não acessadas há 7 dias e tem limite de 10GB/repo.

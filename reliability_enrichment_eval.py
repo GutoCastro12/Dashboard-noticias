@@ -22,17 +22,24 @@ from pathlib import Path
 import reliability_enrichment_sidecar as sc
 import reliability_live_audit as la
 import risk_dashboard as rd
+import semantic_audit as sa
 
 OUTDIR = Path(os.environ.get("RELIABILITY_OUTDIR") or "out_reliability")
 SAIDA = OUTDIR / "enrichment_eval.json"
 
 
-def _rodar(cfg, titulo, resumo, empresas):
+def _rodar(cfg, titulo, resumo, empresas, shadow: bool = False):
+    """`shadow=True` avalia a semântica de papel que ainda não está em
+    produção. O default reproduz exatamente a decisão publicada."""
     h = {"articles": {"u1": {"title": titulo, "summary": resumo, "source": "shadow",
                              "domain": "exemplo.com", "pub_ts": 1786000000,
                              "pub_iso": "2026-08-07 04:00",
                              "companies": list(empresas)}}, "run_count": 1}
-    rd._reclassify_only_pass(h, cfg)
+    if shadow:
+        with sa.shadow_fraud_roles():
+            rd._reclassify_only_pass(h, cfg)
+    else:
+        rd._reclassify_only_pass(h, cfg)
     rec = h["articles"]["u1"]
     return {c: sorted((rec.get("events_by_company") or {}).get(c) or [])
             for c in empresas}, {
@@ -66,7 +73,8 @@ def main() -> int:
             continue
         titulo, resumo = rec.get("title") or "", rec.get("summary") or ""
         at, at_r = _rodar(cfg, titulo, resumo, empresas)
-        en, en_r = _rodar(cfg, titulo, f"{resumo} {frag['text_excerpt']}", empresas)
+        en, en_r = _rodar(cfg, titulo, f"{resumo} {frag['text_excerpt']}", empresas,
+                          shadow=True)
         for c in empresas:
             ap = sorted(set(en[c]) - set(at[c]))
             so = sorted(set(at[c]) - set(en[c]))
