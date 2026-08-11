@@ -226,9 +226,7 @@
     "default"
    ],
    "events_by_company": {
-    "YPF": [
-     "default"
-    ]
+    "YPF": []
    },
    "mention_roles": {
     "YPF": {
@@ -239,10 +237,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "YPF"
    ],
-   "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "original_url": "https://www.clarin.com/economia/miguel-galuccio-une-exceo-ypf-duena-puma-energy-rescatar-petrolera-default_0_ZDkoMlRGKN.html",
@@ -261,7 +259,62 @@
    "link_label": "Abrir notícia →",
    "last_checked_at": "2026-07-31T03:04:35.619273+00:00",
    "corroborations": [],
-   "corrob_sources": []
+   "corrob_sources": [],
+   "event_assessments": [
+    {
+     "company": "YPF",
+     "event_id": "default",
+     "assessed_by": "semantic_audit",
+     "subject_company": "petrolera",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "indireto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_AFILIACAO_INDIVIDUAL",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "YPF aparece apenas como afiliação de uma pessoa; o default é de 'petrolera'",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "YPF",
+     "event_id": "default",
+     "event_id_corrigido": "",
+     "regra": "R_AFILIACAO_INDIVIDUAL",
+     "motivo": "YPF aparece apenas como afiliação de uma pessoa; o default é de 'petrolera'",
+     "subject_company": "petrolera"
+    }
+   ],
+   "context_events_by_company": {
+    "YPF": [
+     {
+      "event_id": "default",
+      "event_label": "default",
+      "subject_company": "petrolera",
+      "relation_type": "afiliacao_individual",
+      "impact_type": "indireto_material",
+      "event_scope": "indireto",
+      "event_phase": "",
+      "direction": "neutra",
+      "scoreable": false,
+      "event_id_corrigido": "",
+      "attribution_rule": "R_AFILIACAO_INDIVIDUAL",
+      "attribution_confidence": "media",
+      "attribution_evidence": "",
+      "nota": "YPF aparece apenas como afiliação de uma pessoa; o default é de 'petrolera'"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOR2t2XzZBbzFseEpZWTI0RmxhT2VxUk90clpRVmFTSUNUbnZJRmhVQUVzV2loUi1FTjFfQXVqWURHdWFHVmUtaDVfeVJBclVnWGw5Y2pxMzZyTnRDdl93Nl9sR2RlY3JYb0YtRVBWMDVYSFBZc0otNU1EUUk4MENEQmNaQ0IxQUxqcnByTnFtdHNXSjZwZHlhUGtOTEM0N2JvQ2pUM2VMdmfSAbcBQVVfeXFMTmtEaktweC1TRkYzakxILVFrWFVTdXozUklVXzd6QTExSWRiekVwSGhuMHJjRGtUd09xM0lKc3lKUURlTkFFTXRYTVJYdk1IOUxDVmFpS2pDZ2d3WW9pZUI2T3E2dE02YVhxaTNuTDdQS2plQ1ZsSFFwaVBoUm1PeVFmMVc4VFBGN2F0RUV2dXJEREVydEt0WXI1LU1XZndzcld4TENQdkcwT28zWVVvWDlPSjJmbmww?oc=5": {
    "title": "Rede D’Or negocia aquisição do Fleury, dizem fontes",
@@ -14572,9 +14625,7 @@
     "fraude"
    ],
    "events_by_company": {
-    "Duke Energy": [
-     "fraude"
-    ]
+    "Duke Energy": []
    },
    "mention_roles": {
     "Duke Energy": {
@@ -14585,10 +14636,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Duke Energy"
    ],
-   "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "corroborations": [],
@@ -14607,7 +14658,72 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.631919+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.631919+00:00",
+   "event_assessments": [
+    {
+     "company": "Duke Energy",
+     "event_id": "fraude",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Duke Energy",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "indireto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_VITIMA_NAO_E_AUTORA_DA_FRAUDE",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "Duke Energy é vítima/alvo da fraude neste texto, não quem a praticou",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Duke Energy",
+     "event_id": "fraude",
+     "event_id_corrigido": "",
+     "regra": "R_VITIMA_NAO_E_AUTORA_DA_FRAUDE",
+     "motivo": "Duke Energy é vítima/alvo da fraude neste texto, não quem a praticou",
+     "subject_company": "Duke Energy"
+    }
+   ],
+   "informational_events_by_company": {
+    "Duke Energy": [
+     {
+      "company": "Duke Energy",
+      "event_id": "fraude",
+      "event_label": "fraude",
+      "subject_company": "Duke Energy",
+      "monitored_company": "Duke Energy",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_VITIMA_NAO_E_AUTORA_DA_FRAUDE",
+      "attribution_confidence": "media",
+      "title": "Duke Energy leverages artificial intelligence to combat fraud targeting energy customers",
+      "url": "https://nkytribune.com/2026/03/duke-energy-leverages-artificial-intelligence-to-combat-fraud-targeting-energy-customers/",
+      "pub_ts": 1772611200,
+      "observation": "Duke Energy é vítima/alvo da fraude neste texto, não quem a praticou",
+      "source_record_id": "https://nkytribune.com/2026/03/duke-energy-leverages-artificial-intelligence-to-combat-fraud-targeting-energy-customers/"
+     }
+    ]
+   }
   },
   "https://www.infomoney.com.br/mercados/smartfit-lanca-14a-emissao-de-debentures-no-montante-de-r132-bi/": {
    "title": "Smartfit lança 14ª emissão de debêntures no montante de R$ 1,32 bi",
@@ -43584,16 +43700,69 @@
     }
    },
    "events_by_company": {
-    "YPF": [
-     "falencia"
-    ]
+    "YPF": []
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "YPF"
    ],
-   "context_companies": [],
    "captured_ts": 1785772446,
-   "cap_iso": "2026-08-03 12:54"
+   "cap_iso": "2026-08-03 12:54",
+   "event_assessments": [
+    {
+     "company": "YPF",
+     "event_id": "falencia",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Aconcagua",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "indireto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_AFILIACAO_INDIVIDUAL",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "YPF aparece apenas como afiliação de uma pessoa; o falencia é de 'Aconcagua'",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "YPF",
+     "event_id": "falencia",
+     "event_id_corrigido": "",
+     "regra": "R_AFILIACAO_INDIVIDUAL",
+     "motivo": "YPF aparece apenas como afiliação de uma pessoa; o falencia é de 'Aconcagua'",
+     "subject_company": "Aconcagua"
+    }
+   ],
+   "context_events_by_company": {
+    "YPF": [
+     {
+      "event_id": "falencia",
+      "event_label": "falencia",
+      "subject_company": "Aconcagua",
+      "relation_type": "afiliacao_individual",
+      "impact_type": "indireto_material",
+      "event_scope": "indireto",
+      "event_phase": "",
+      "direction": "neutra",
+      "scoreable": false,
+      "event_id_corrigido": "",
+      "attribution_rule": "R_AFILIACAO_INDIVIDUAL",
+      "attribution_confidence": "media",
+      "attribution_evidence": "",
+      "nota": "YPF aparece apenas como afiliação de uma pessoa; o falencia é de 'Aconcagua'"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNNzNjay1WVVdwb2lmY2lpN01rYVoxTEJUd0FhZ1ZRMkVEOTBLd2Y4UUM5NXZaMVpsYnZ6cEpnMVJCMUxHSzBoMktERVpQLXQ2UzFkT0hKQ0N3ZVJ0Y0I4bzZxQ19WVDlmYzJxXzdPTUZjZE1HODZZWWFEZUFob1VrNjhsYzh1X0lqUnFmazFsMmE5QVVPR2hMYVY4V2VVVlhuOEs5MjFKZ2lOUQ?oc=5": {
    "title": "Banco Mercantil (BMEB3, BMEB4) atinge 96% na OPA da Mercantil Financeira",
@@ -55308,8 +55477,8 @@
   }
  },
  "last_run": {
-  "ts": 1786392176,
-  "iso": "10 ago 2026 · 17:02 BRT",
+  "ts": 1786414029,
+  "iso": "10 ago 2026 · 23:07 BRT",
   "status": {
    "Engie Brasil": {
     "status": "atencao",
@@ -55321,11 +55490,11 @@
    },
    "JBS": {
     "status": "atencao",
-    "score": 59
+    "score": 58
    },
    "Vale": {
     "status": "atencao",
-    "score": 57
+    "score": 56
    },
    "Tok&Stok": {
     "status": "critico",
@@ -55333,23 +55502,23 @@
    },
    "Santander Brasil": {
     "status": "atencao",
-    "score": 47
-   },
-   "Smart Fit": {
-    "status": "atencao",
-    "score": 39
+    "score": 46
    },
    "Samarco Mineração": {
     "status": "critico",
     "score": 38
    },
+   "Smart Fit": {
+    "status": "atencao",
+    "score": 38
+   },
    "Axia Energia": {
     "status": "atencao",
-    "score": 37
+    "score": 36
    },
    "Cosan": {
     "status": "monitorar",
-    "score": 36
+    "score": 35
    },
    "Sabesp": {
     "status": "monitorar",
@@ -55365,7 +55534,7 @@
    },
    "NextEra Energy": {
     "status": "monitorar",
-    "score": 26
+    "score": 25
    },
    "Baker Hughes": {
     "status": "monitorar",
@@ -55437,7 +55606,7 @@
    },
    "Eneva": {
     "status": "monitorar",
-    "score": 14
+    "score": 13
    },
    "Ecopetrol": {
     "status": "monitorar",
@@ -55580,5 +55749,5 @@
  "semantic_reclassified_at": "2026-07-30T21:07:47.714609+00:00",
  "semantic_version": "1.0",
  "links_repaired_at": "2026-07-31T05:45:56.701137+00:00",
- "reclassify_only_applied_at": "2026-08-10T19:05:13.921310+00:00"
+ "reclassify_only_applied_at": "2026-08-11T02:07:09.567560+00:00"
 }
