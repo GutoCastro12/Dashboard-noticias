@@ -1,5 +1,98 @@
 {
  "articles": {
+  "004dc64e8f3e2543": {
+   "article_id": "004dc64e8f3e2543",
+   "best_input_chars": 1441,
+   "chars_antes_do_cap": 1441,
+   "content_hash": "79a77fff987e7bdbdbd8890365afba2e",
+   "dominio": "valor.globo.com",
+   "empresas": [
+    {
+     "candidatos": [],
+     "empresa": "BTG Pactual",
+     "tem_candidato": false
+    }
+   ],
+   "enrichment": {
+    "falha": "OK",
+    "metodo": "html:paragrafos",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R2_BODY"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "DIRTY_ONLY",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 1229,
+    "faltou": [
+     "sentences<3",
+     "dirty"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 48,
+    "nav_flag": true,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 2,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.111,
+    "unique_meaningful_tokens": 49,
+    "useful_chars": 1229
+   },
+   "first_seen_run": 116,
+   "fonte": "company_query",
+   "last_seen_run": 116,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 105,
+     "metodo": "title"
+    },
+    {
+     "chars": 134,
+     "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 1200,
+     "metodo": "html:paragrafos"
+    }
+   ],
+   "pub_iso": "2026-08-11 12:35",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 28
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "sentence_like_count": 0,
+    "useful_chars": 28
+   },
+   "r1_tentado": true,
+   "r2_tentado": true,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "R2_BODY",
+   "titulo": "Exclusivo: BTG compra créditos de 2W e Rio Alto por 2% do valor; cotistas estimam perdas de R$ 1,7 bilhão",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOeVUzZGtuVzVpR0ZJelBUQWplZDZIYmJfd3JadFZDdDVwYTdPYlZYOUQ2c3h5SU1peEpzRnVpYUdreURYU2NvT3dnMjN4eGFpLTE5TDNEYnNvX2g2UGRNVFRjalJ3RE1MN3JQQXR0SkZLMkt1cHlTdnB3dGJ2UElUM0RFM1MtbzhzTnJmeTZOSVFrcXpQUEtTYktWT0gzbVc4T1RMeGw5S3VKdDBBSXVOTjl5R0lveDFXRTZBRG9ETXpmZUxqSTZ5TDQtcDhfOVc4ME10RktFZzNzT0dQN3Y0SDZFNzJNQ0hWZElWT0tTSmZ5bzBVVkkzVXdsd2xkcm8zbTNlVnhWUDJFUGVWbWfSAZwCQVVfeXFMTmQtajZDVnpoNFFPQTlXcjl2ZnRDV0w3bTEyLTNGcXBQcEZlLWdMV2daMkdrRlo3aUxpTjkzclBMQjFwaTFNYWZodDZLRlcyMUZzSWtrOGd0XzlkWVN6NGRIZ0pWM1ozNTlSQ2xubGtfREZQT2dhZUNUaE52Z3hrVWhmOEhhUjdRWUZKMzV3eXVFbkpBVzdPTHlQY0ljaVdZaEgyZ2REYlA3TW1PRVVLZlc5ZDBPeHNGTkhUTmpRWDRXR2lobXktV0IzYjJoWWVucm42ZjBMNk1TeGdnbzFnaXdteHlEU0k0SnNjLWU2bjVhNEVabWxrMGNJUlBpLXhzUnFscFhuVzZiZ1NYbFVKSmlHcmx6clpRWFpPbWY?oc=5",
+   "url_resolvida": ""
+  },
   "00c755a930452611": {
    "article_id": "00c755a930452611",
    "best_input_chars": 141,
@@ -48,7 +141,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -138,7 +231,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -326,7 +419,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -504,7 +597,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -596,7 +689,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -695,7 +788,7 @@
    },
    "first_seen_run": 115,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 2,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -785,7 +878,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -877,7 +970,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -1071,7 +1164,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -1261,7 +1354,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -1351,7 +1444,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -1440,7 +1533,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -1534,7 +1627,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -1624,7 +1717,7 @@
    },
    "first_seen_run": 115,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -1714,7 +1807,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -1806,7 +1899,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -1846,6 +1939,96 @@
    "titulo": "Prio: como aquisição bilionária do campo de Peregrino pode impulsionar a empresa",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQblEyS2JRX19xOWphWkpVUEFtWDlfQlNKdnkzSEFxUTlYY3d6ZkNscmw3aVh6cVlhV0sybzNxTy1oMkhXbFVqbjZsZm9IQTdaV0J5eVNWcVRrcF82ZkxuNnZjNEwtc0Fya3JqSGlDcUZXeWJ6V2JhRGlGOGxIQnRaRzVXRjN1TXpYVGp0SHdoWkFxQzJVRDNhM3dwUERpVTVOb3pfTkNxakpXUnpBYldrZTd2SDhxX2ZtemljOVhJM25zdHfSAdcBQVVfeXFMUGN6Zzc4ODBzMlFJdUZiaFNDVW1xVFp2NDVRdDVjbF9KZkZTQThSM2FwVVdvVHl4QkxRYnNKbGdxcGxVcldUXzByU3J1QUdwU0tBNXRpLThhZFB5YUN0QUJVMm5SYWMwRUg4SHl6Zm9ZcmdLenE1Nkl5UzRKd2lDWmFtZ2Fkc3dnRHBkcEhmeHFuU1dJcFpoUmFCM1NiUTVacVcwUFQ4a0RYcnMyakFoQm9OeUxjT01pZXRUd29pVm8zVVBSeEd4Z3NsbGduRUw0cDg5aWFVNVU?oc=5",
+   "url_resolvida": ""
+  },
+  "155f845178351a16": {
+   "article_id": "155f845178351a16",
+   "best_input_chars": 182,
+   "chars_antes_do_cap": 182,
+   "content_hash": "91af90b12c86b3bc2907cf0945c77435",
+   "dominio": "br.advfn.com",
+   "empresas": [
+    {
+     "candidatos": [],
+     "empresa": "PRIO",
+     "tem_candidato": false
+    }
+   ],
+   "enrichment": {
+    "falha": "ROBOTS_BLOCKED",
+    "metodo": "",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "THIN"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "ROBOTS_BLOCKED",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 18,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 0,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 2,
+    "useful_chars": 18
+   },
+   "first_seen_run": 116,
+   "fonte": "company_query",
+   "last_seen_run": 116,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 81,
+     "metodo": "title"
+    },
+    {
+     "chars": 100,
+     "metodo": "R0_LEGACY"
+    }
+   ],
+   "pub_iso": "2026-01-27 05:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 18
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "sentence_like_count": 0,
+    "useful_chars": 18
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "THIN",
+   "titulo": "PRIO tem rating elevado pela Moody’s, após ampliar controle do campo de Peregrino",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPUFVKVHlESGM2VlR6b3E4U0NzWDM0T21lNXU4QjZpd01HSkdPb2hjVHZaR3otZjVWSHFkRVo3d0NBeFZYRXpfZVZRNl93YlNkQ0dmdF9jMlMwd2NRTVlCMGdEZ1E3dWUwWWZiN1dXOUNHZFcxM05BOTRQWkkwTjQ0Qk9yNmRoWHlVYWJ1QkY5QWFseEhyYjIya3laTExEQTJMTHp4ZFhHMzRtX2FRbDd3RHRfWk1EYnM?oc=5",
    "url_resolvida": ""
   },
   "172d944630cd7283": {
@@ -1901,7 +2084,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 2,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -2177,7 +2360,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -2267,7 +2450,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -2361,7 +2544,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -2635,7 +2818,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -2741,7 +2924,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 3,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -2833,7 +3016,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -2877,9 +3060,9 @@
   },
   "219be2864378133f": {
    "article_id": "219be2864378133f",
-   "best_input_chars": 224,
-   "chars_antes_do_cap": 224,
-   "content_hash": "54430c4506f75cb0a5d11d93f432ca52",
+   "best_input_chars": 1618,
+   "chars_antes_do_cap": 1618,
+   "content_hash": "daac735e65bca0e1da0f98f6b1a8e946",
    "dominio": "capitalreset.uol.com.br",
    "empresas": [
     {
@@ -2889,41 +3072,37 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
-    "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
-    "tier": "THIN"
+    "falha": "OK",
+    "metodo": "jsonld:articleBody",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "OK",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
      "titulo_repetido",
      "titulo_repetido"
     ],
-    "chars_totais": 26,
-    "faltou": [
-     "useful_chars<400",
-     "sentences<3",
-     "novos_tokens<30"
-    ],
-    "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 3,
+    "chars_totais": 1420,
+    "faltou": [],
+    "input_ready_under_r7c_policy": true,
+    "meaningful_gain_vs_title": 110,
     "nav_flag": false,
     "paywall_flag": false,
     "policy": "SELECTED",
     "policy_version": "r7c.policy2",
-    "sentence_like_count": 0,
+    "sentence_like_count": 10,
     "title_duplication": 0.0,
-    "title_summary_overlap": 0.0,
-    "unique_meaningful_tokens": 3,
-    "useful_chars": 26
+    "title_summary_overlap": 0.778,
+    "unique_meaningful_tokens": 117,
+    "useful_chars": 1420
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -2936,6 +3115,10 @@
     {
      "chars": 125,
      "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 1393,
+     "metodo": "jsonld:articleBody"
     }
    ],
    "pub_iso": "2026-05-15 04:00",
@@ -2959,7 +3142,7 @@
    "shadow_version": "r7cp.1",
    "source_kind": "NEWS",
    "tem_algum_candidato": false,
-   "tier_final": "THIN",
+   "tier_final": "R1_STRUCTURED",
    "titulo": "Verdinhas: CVM aponta falhas em reporte ESG de empresas; Petrobras estuda avançar em fertilizantes",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNdXhWQlN1Z0FVbjlyMEtHUjg0czJUZWFmd3N6aU5BSkhfQjY0X2xqTXB6cHlXR3FMTUw4VHlyYjRBTWFOSW9Vc0Vma1l6N1NHdjNNYmdyX2lSM21JWEd1dno5VkFNYmNWNjZxTHNUZkN4REppWEFzNGNxbE81dGV6T05lRFNWSUl4VUlsX01EazkzbjF0RzVyakR1djNCSml2blFCdWlFTF82RVdYQ1hzeEF2b3dXTTlTemJ5dnl1RFg2S3gwUlBObFRCclJ4bklkaFozMVhB?oc=5",
@@ -2979,14 +3162,14 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
+    "falha": "ROBOTS_BLOCKED",
     "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
     "tier": "THIN"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "ROBOTS_BLOCKED",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
@@ -3013,7 +3196,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3069,14 +3252,14 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
+    "falha": "ROBOTS_BLOCKED",
     "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
     "tier": "THIN"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "ROBOTS_BLOCKED",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
@@ -3103,7 +3286,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3147,9 +3330,9 @@
   },
   "2443aeb1f7938f36": {
    "article_id": "2443aeb1f7938f36",
-   "best_input_chars": 192,
-   "chars_antes_do_cap": 192,
-   "content_hash": "05f8b38f8954776a81d59c6a4b12f12a",
+   "best_input_chars": 272,
+   "chars_antes_do_cap": 272,
+   "content_hash": "d56830c90c24401d281538f6f45b3639",
    "dominio": "infomoney.com.br",
    "empresas": [
     {
@@ -3159,41 +3342,41 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
-    "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
-    "tier": "THIN"
+    "falha": "OK",
+    "metodo": "jsonld:description",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "THIN_AFTER_ENRICHMENT",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
      "titulo_repetido",
      "titulo_repetido"
     ],
-    "chars_totais": 22,
+    "chars_totais": 102,
     "faltou": [
      "useful_chars<400",
      "sentences<3",
      "novos_tokens<30"
     ],
     "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 2,
+    "meaningful_gain_vs_title": 11,
     "nav_flag": false,
     "paywall_flag": false,
     "policy": "SELECTED",
     "policy_version": "r7c.policy2",
-    "sentence_like_count": 0,
+    "sentence_like_count": 1,
     "title_duplication": 0.0,
     "title_summary_overlap": 0.0,
-    "unique_meaningful_tokens": 2,
-    "useful_chars": 22
+    "unique_meaningful_tokens": 11,
+    "useful_chars": 102
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3206,6 +3389,10 @@
     {
      "chars": 107,
      "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 79,
+     "metodo": "jsonld:description"
     }
    ],
    "pub_iso": "2025-09-29 04:00",
@@ -3229,7 +3416,7 @@
    "shadow_version": "r7cp.1",
    "source_kind": "NEWS",
    "tem_algum_candidato": false,
-   "tier_final": "THIN",
+   "tier_final": "R1_STRUCTURED",
    "titulo": "Eletrobras: privatização se dá “ao longo do tempo”, e exige paciência dos acionistas",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPcVFDbktESFRIWnpNcGhQSWtQT0xVZW1LZWR3ZTFJbnUtczNsM1V5RExtLWNDUzBMcnJMbmpZQzVMMFZnMGJUby04Z194TjhwQWlEUE9uOXplZHRvMXcwVGo1V0p5aFY4T21BcDFKUnNVTGZ4Vk9vSlNPX2FjMzdVSXlJWk1DNWM1UmfSAY8BQVVfeXFMUER3RmJIQUJETFpHRGpULXNaRTdWd1pFeDNtRnh1SjJtRmk5Smx3dVdUdDNnUURpVGpuNEI5cVlraF93RE1LZ3psSVpfSi1ZUWs0RnRCTWFfdTFrV2pFTG1KN3VGOVFhLVdJa2ZEakFmemJ1aGdhd3FHNTI4M0VGRWZ0bFlnU21QVXFqbFVIX2c?oc=5",
@@ -3341,14 +3528,14 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
+    "falha": "ROBOTS_BLOCKED",
     "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
     "tier": "THIN"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "ROBOTS_BLOCKED",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
@@ -3375,7 +3562,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3419,9 +3606,9 @@
   },
   "25e697f0e333792d": {
    "article_id": "25e697f0e333792d",
-   "best_input_chars": 219,
-   "chars_antes_do_cap": 219,
-   "content_hash": "ba28febf9b7ec9cc53203ebcf0161451",
+   "best_input_chars": 1420,
+   "chars_antes_do_cap": 1420,
+   "content_hash": "54aad646bd7cb09a4e904b0f56f88635",
    "dominio": "braziljournal.com",
    "empresas": [
     {
@@ -3431,41 +3618,37 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
-    "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
-    "tier": "THIN"
+    "falha": "OK",
+    "metodo": "html:paragrafos",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R2_BODY"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "OK",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
      "titulo_repetido",
      "titulo_repetido"
     ],
-    "chars_totais": 27,
-    "faltou": [
-     "useful_chars<400",
-     "sentences<3",
-     "novos_tokens<30"
-    ],
-    "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 3,
+    "chars_totais": 1228,
+    "faltou": [],
+    "input_ready_under_r7c_policy": true,
+    "meaningful_gain_vs_title": 92,
     "nav_flag": false,
     "paywall_flag": false,
     "policy": "SELECTED",
     "policy_version": "r7c.policy2",
-    "sentence_like_count": 0,
+    "sentence_like_count": 7,
     "title_duplication": 0.0,
-    "title_summary_overlap": 0.0,
-    "unique_meaningful_tokens": 3,
-    "useful_chars": 27
+    "title_summary_overlap": 0.5,
+    "unique_meaningful_tokens": 96,
+    "useful_chars": 1228
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3478,6 +3661,10 @@
     {
      "chars": 123,
      "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 1200,
+     "metodo": "html:paragrafos"
     }
    ],
    "pub_iso": "2026-05-12 04:00",
@@ -3496,12 +3683,12 @@
     "useful_chars": 27
    },
    "r1_tentado": true,
-   "r2_tentado": false,
+   "r2_tentado": true,
    "schema_version": "r7cp.s1",
    "shadow_version": "r7cp.1",
    "source_kind": "NEWS",
    "tem_algum_candidato": false,
-   "tier_final": "THIN",
+   "tier_final": "R2_BODY",
    "titulo": "“A gente gosta mesmo é de dinheiro,” diz CEO da Petrobras, que vai gerir preços “sem prejuízos”",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOSkNUMkxBRnJCbGNPd2d4V200RUc5TS1UUmIwUDR0M0NmWDBwS1pKR01UbHVGb0Nnd2pVNGh1VHh2NHNYV1pwaDhORGdHUWJ3aDYwc3BXejJ5Z2RJeG5iTEZpMlYzYldTWFRWRkNmZFlqUWl1V1ZJZmVJYTFnS3ZOZ2tSaUJkc0g0OXRuWVN0YUZZUGJFRkNPRjVvWFYxLWd6dEdER0J2TUdMb0s2eldMZE9mZktZWWc?oc=5",
@@ -3509,9 +3696,9 @@
   },
   "268497d421405e19": {
    "article_id": "268497d421405e19",
-   "best_input_chars": 212,
-   "chars_antes_do_cap": 212,
-   "content_hash": "98f94e2c73fde60f6357285e6c367930",
+   "best_input_chars": 1413,
+   "chars_antes_do_cap": 1413,
+   "content_hash": "cef424abc593042aa68d715ae4fa6c00",
    "dominio": "valor.globo.com",
    "empresas": [
     {
@@ -3521,14 +3708,289 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
+    "falha": "OK",
+    "metodo": "html:paragrafos",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R2_BODY"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "DIRTY_ONLY",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 1229,
+    "faltou": [
+     "sentences<3",
+     "dirty"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 49,
+    "nav_flag": true,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 2,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 49,
+    "useful_chars": 1229
+   },
+   "first_seen_run": 111,
+   "fonte": "company_query",
+   "last_seen_run": 116,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 91,
+     "metodo": "title"
+    },
+    {
+     "chars": 120,
+     "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 1200,
+     "metodo": "html:paragrafos"
+    }
+   ],
+   "pub_iso": "2026-02-12 05:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 28
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "sentence_like_count": 0,
+    "useful_chars": 28
+   },
+   "r1_tentado": true,
+   "r2_tentado": true,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "R2_BODY",
+   "titulo": "Após quedas de volume, começamos a ver a Skol se estabilizando no mercado, diz CEO da Ambev",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOZ25hbE8teFlpZnlGM19rcHIxaFkzbWZHLVF0TUdIWEZUYURGQ2JRejUxODRSdE8xTUZaQWR6WEdJbFVxamhCY2tQeHJOQUNzNnJmRU40VjczT2s5TjVkWkdzQUZoNTNnQnBvT3dWbUZSNV9GcUVudERYSUhUcDJRTy1JMzFMNmRUM3dneWVYZzZyeXBQbGZrNzMyYkdJZnk1VG1DREZ0WEtlcGpLSzktbVlHbUZaR2tsY1gzNkpfWlJjOUltRk1PVURrMFctWjhWSHdKbXBkU2tvaXJ6dVFMYdIB7wFBVV95cUxQSUNDMnJVcDZQQ2VJUDJZcU5uellqRWNZNjdOSy1oTHpVOGdadjdZSkZJSDRIeFdlN05wTmNndV9TVDJfbFA1eWJ6RElEXzR3RnVlZnk5ZGsxc3pOTERqSjB2QlRaN1hiWlRWTjhFanY3NDREcXNCeV9BQ0dNSTB4R0l1NUwyUk9yOXVEYzdibkpiU0FsdjktSXY4ajZqY1ZQNTJNUFd0ZHc0RWp3X1p4WFdaM1JfRGl3YTZsSzV4cW1ZRDJpMkkyeWVZRmNBZGtfcnBCUThpTS02bHVxZmZoNTFrSjRXRTl0ZzVkSTE2WQ?oc=5",
+   "url_resolvida": ""
+  },
+  "26c462aba0a6ba11": {
+   "article_id": "26c462aba0a6ba11",
+   "best_input_chars": 813,
+   "chars_antes_do_cap": 813,
+   "content_hash": "45a4045b542268eff60df33cb3ec5590",
+   "dominio": "seudinheiro.com",
+   "empresas": [
+    {
+     "candidatos": [],
+     "empresa": "Banco do Brasil",
+     "tem_candidato": false
+    }
+   ],
+   "enrichment": {
+    "falha": "OK",
+    "metodo": "jsonld:description",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "OK",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 621,
+    "faltou": [],
+    "input_ready_under_r7c_policy": true,
+    "meaningful_gain_vs_title": 51,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 4,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.2,
+    "unique_meaningful_tokens": 53,
+    "useful_chars": 621
+   },
+   "first_seen_run": 116,
+   "fonte": "company_query",
+   "last_seen_run": 116,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 95,
+     "metodo": "title"
+    },
+    {
+     "chars": 121,
+     "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 595,
+     "metodo": "jsonld:description"
+    }
+   ],
+   "pub_iso": "2026-08-12 09:16",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 25
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "sentence_like_count": 0,
+    "useful_chars": 25
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "R1_STRUCTURED",
+   "titulo": "Banco do Brasil (BBAS3) já tem uma dor de cabeça no agro — agora El Niño pode piorar a situação",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQSGJVdldYSlBpUnNMamg1OFoxOGhkTHFIbXhnc2haM3oyWDRFODkzSHpFeTByOFdvbG5kRTN0QnpmenZBaWtUY0ZZOFhCclVUVjg0MGNkZWhRdWlBY0UwbnJhWlAwMkFZc1hBaWlaNDEtck15bjd6MjZ2RHNLcDhaMVp0NDZobmRRUDhNQUFyZVRmRTFmbHB0Mk16dDQxRTkzbE9aWFZBUkwxX1Q4Yks2OENIME1TUk5VMFdQc2hiVW8zcmdxZ1lhNU1TSmxlVUp2WnJaTkxB?oc=5",
+   "url_resolvida": ""
+  },
+  "296e2b63f015277c": {
+   "article_id": "296e2b63f015277c",
+   "best_input_chars": 1446,
+   "chars_antes_do_cap": 1446,
+   "content_hash": "7071f23592a9755e48c5388bab0c4919",
+   "dominio": "teletime.com.br",
+   "empresas": [
+    {
+     "candidatos": [],
+     "empresa": "BTG Pactual",
+     "tem_candidato": false
+    }
+   ],
+   "enrichment": {
+    "falha": "OK",
+    "metodo": "jsonld:description",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "OK",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 1310,
+    "faltou": [],
+    "input_ready_under_r7c_policy": true,
+    "meaningful_gain_vs_title": 31,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 9,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 31,
+    "useful_chars": 1310
+   },
+   "first_seen_run": 111,
+   "fonte": "company_query",
+   "last_seen_run": 116,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 67,
+     "metodo": "title"
+    },
+    {
+     "chars": 94,
+     "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 1283,
+     "metodo": "jsonld:description"
+    }
+   ],
+   "pub_iso": "2026-03-05 05:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 26
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "sentence_like_count": 0,
+    "useful_chars": 26
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "R1_STRUCTURED",
+   "titulo": "Fundos do BTG Pactual fazem proposta única por fatia da Oi na V.tal",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOaUctbmYyU0tLd21uam9HZWlxdDdXbUtsYzYxUlRZdDlkTG00NkxpRnVsaUhELUIxbmtTT0l1cmJoUWRVRkJmWl9OVGN5OXNnNWRJSDBDZlFfSHFnMDlXVDVJX0RQRGlYWkFWVkZDeTY3aUNUeWo4VzBGZzNZbjlNbHhpMkpqVEVCSUFtVDNMQk1WOVJnT29ZSjdqQ0FFWUxFTDQyejdR?oc=5",
+   "url_resolvida": ""
+  },
+  "2e4e9505fb6a8e6b": {
+   "article_id": "2e4e9505fb6a8e6b",
+   "best_input_chars": 248,
+   "chars_antes_do_cap": 248,
+   "content_hash": "a3872f17616436b38e5ddbc809537ae7",
+   "dominio": "esquerdadiario.com.br",
+   "empresas": [
+    {
+     "candidatos": [
+      "falencia"
+     ],
+     "empresa": "BTG Pactual",
+     "tem_candidato": true
+    }
+   ],
+   "enrichment": {
+    "falha": "ROBOTS_BLOCKED",
     "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
     "tier": "THIN"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "ROBOTS_BLOCKED",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
@@ -3555,189 +4017,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
-   "n_empresas": 1,
-   "normalization_version": "r7c.n1",
-   "policy_version": "r7c.policy2",
-   "procedencia": "PROSPECTIVE",
-   "provenance": [
-    {
-     "chars": 91,
-     "metodo": "title"
-    },
-    {
-     "chars": 120,
-     "metodo": "R0_LEGACY"
-    }
-   ],
-   "pub_iso": "2026-02-12 05:00",
-   "query_kind": "company_query",
-   "r0_extended": {
-    "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 3,
-    "metodo": "R0_LEGACY",
-    "sentence_like_count": 0,
-    "useful_chars": 28
-   },
-   "r0_legacy": {
-    "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 3,
-    "sentence_like_count": 0,
-    "useful_chars": 28
-   },
-   "r1_tentado": true,
-   "r2_tentado": false,
-   "schema_version": "r7cp.s1",
-   "shadow_version": "r7cp.1",
-   "source_kind": "NEWS",
-   "tem_algum_candidato": false,
-   "tier_final": "THIN",
-   "titulo": "Após quedas de volume, começamos a ver a Skol se estabilizando no mercado, diz CEO da Ambev",
-   "truncado": false,
-   "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOZ25hbE8teFlpZnlGM19rcHIxaFkzbWZHLVF0TUdIWEZUYURGQ2JRejUxODRSdE8xTUZaQWR6WEdJbFVxamhCY2tQeHJOQUNzNnJmRU40VjczT2s5TjVkWkdzQUZoNTNnQnBvT3dWbUZSNV9GcUVudERYSUhUcDJRTy1JMzFMNmRUM3dneWVYZzZyeXBQbGZrNzMyYkdJZnk1VG1DREZ0WEtlcGpLSzktbVlHbUZaR2tsY1gzNkpfWlJjOUltRk1PVURrMFctWjhWSHdKbXBkU2tvaXJ6dVFMYdIB7wFBVV95cUxQSUNDMnJVcDZQQ2VJUDJZcU5uellqRWNZNjdOSy1oTHpVOGdadjdZSkZJSDRIeFdlN05wTmNndV9TVDJfbFA1eWJ6RElEXzR3RnVlZnk5ZGsxc3pOTERqSjB2QlRaN1hiWlRWTjhFanY3NDREcXNCeV9BQ0dNSTB4R0l1NUwyUk9yOXVEYzdibkpiU0FsdjktSXY4ajZqY1ZQNTJNUFd0ZHc0RWp3X1p4WFdaM1JfRGl3YTZsSzV4cW1ZRDJpMkkyeWVZRmNBZGtfcnBCUThpTS02bHVxZmZoNTFrSjRXRTl0ZzVkSTE2WQ?oc=5",
-   "url_resolvida": ""
-  },
-  "296e2b63f015277c": {
-   "article_id": "296e2b63f015277c",
-   "best_input_chars": 162,
-   "chars_antes_do_cap": 162,
-   "content_hash": "7b6772ce8757267444fcd15b2a79c985",
-   "dominio": "teletime.com.br",
-   "empresas": [
-    {
-     "candidatos": [],
-     "empresa": "BTG Pactual",
-     "tem_candidato": false
-    }
-   ],
-   "enrichment": {
-    "falha": "RESOLUTION_FAILED",
-    "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
-    "tier": "THIN"
-   },
-   "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
-   "final": {
-    "boilerplate_flag": false,
-    "bordas_removidas": [
-     "titulo_repetido",
-     "titulo_repetido"
-    ],
-    "chars_totais": 26,
-    "faltou": [
-     "useful_chars<400",
-     "sentences<3",
-     "novos_tokens<30"
-    ],
-    "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 3,
-    "nav_flag": false,
-    "paywall_flag": false,
-    "policy": "SELECTED",
-    "policy_version": "r7c.policy2",
-    "sentence_like_count": 0,
-    "title_duplication": 0.0,
-    "title_summary_overlap": 0.0,
-    "unique_meaningful_tokens": 3,
-    "useful_chars": 26
-   },
-   "first_seen_run": 111,
-   "fonte": "company_query",
-   "last_seen_run": 115,
-   "n_empresas": 1,
-   "normalization_version": "r7c.n1",
-   "policy_version": "r7c.policy2",
-   "procedencia": "PROSPECTIVE",
-   "provenance": [
-    {
-     "chars": 67,
-     "metodo": "title"
-    },
-    {
-     "chars": 94,
-     "metodo": "R0_LEGACY"
-    }
-   ],
-   "pub_iso": "2026-03-05 05:00",
-   "query_kind": "company_query",
-   "r0_extended": {
-    "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 3,
-    "metodo": "R0_LEGACY",
-    "sentence_like_count": 0,
-    "useful_chars": 26
-   },
-   "r0_legacy": {
-    "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 3,
-    "sentence_like_count": 0,
-    "useful_chars": 26
-   },
-   "r1_tentado": true,
-   "r2_tentado": false,
-   "schema_version": "r7cp.s1",
-   "shadow_version": "r7cp.1",
-   "source_kind": "NEWS",
-   "tem_algum_candidato": false,
-   "tier_final": "THIN",
-   "titulo": "Fundos do BTG Pactual fazem proposta única por fatia da Oi na V.tal",
-   "truncado": false,
-   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOaUctbmYyU0tLd21uam9HZWlxdDdXbUtsYzYxUlRZdDlkTG00NkxpRnVsaUhELUIxbmtTT0l1cmJoUWRVRkJmWl9OVGN5OXNnNWRJSDBDZlFfSHFnMDlXVDVJX0RQRGlYWkFWVkZDeTY3aUNUeWo4VzBGZzNZbjlNbHhpMkpqVEVCSUFtVDNMQk1WOVJnT29ZSjdqQ0FFWUxFTDQyejdR?oc=5",
-   "url_resolvida": ""
-  },
-  "2e4e9505fb6a8e6b": {
-   "article_id": "2e4e9505fb6a8e6b",
-   "best_input_chars": 254,
-   "chars_antes_do_cap": 254,
-   "content_hash": "82180bb13855ea8fdbf3e3f36b08d047",
-   "dominio": "esquerdadiario.com.br",
-   "empresas": [
-    {
-     "candidatos": [
-      "falencia"
-     ],
-     "empresa": "BTG Pactual",
-     "tem_candidato": true
-    }
-   ],
-   "enrichment": {
-    "falha": "RESOLUTION_FAILED",
-    "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
-    "tier": "THIN"
-   },
-   "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
-   "final": {
-    "boilerplate_flag": false,
-    "bordas_removidas": [
-     "titulo_repetido",
-     "titulo_repetido"
-    ],
-    "chars_totais": 34,
-    "faltou": [
-     "useful_chars<400",
-     "sentences<3",
-     "novos_tokens<30"
-    ],
-    "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 2,
-    "nav_flag": false,
-    "paywall_flag": false,
-    "policy": "SELECTED",
-    "policy_version": "r7c.policy2",
-    "sentence_like_count": 0,
-    "title_duplication": 0.0,
-    "title_summary_overlap": 0.0,
-    "unique_meaningful_tokens": 2,
-    "useful_chars": 34
-   },
-   "first_seen_run": 111,
-   "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3748,7 +4028,7 @@
      "metodo": "title"
     },
     {
-     "chars": 144,
+     "chars": 138,
      "metodo": "R0_LEGACY"
     }
    ],
@@ -3756,16 +4036,16 @@
    "query_kind": "company_query",
    "r0_extended": {
     "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 2,
+    "meaningful_gain_vs_title": 3,
     "metodo": "R0_LEGACY",
     "sentence_like_count": 0,
-    "useful_chars": 34
+    "useful_chars": 28
    },
    "r0_legacy": {
     "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 2,
+    "meaningful_gain_vs_title": 3,
     "sentence_like_count": 0,
-    "useful_chars": 34
+    "useful_chars": 28
    },
    "r1_tentado": true,
    "r2_tentado": false,
@@ -3793,14 +4073,14 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
+    "falha": "ROBOTS_BLOCKED",
     "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
     "tier": "THIN"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "ROBOTS_BLOCKED",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
@@ -3827,7 +4107,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3871,9 +4151,9 @@
   },
   "31e71fa4e35cb0d8": {
    "article_id": "31e71fa4e35cb0d8",
-   "best_input_chars": 173,
-   "chars_antes_do_cap": 173,
-   "content_hash": "e65059852c751c26b810af9cc6aa5c56",
+   "best_input_chars": 1090,
+   "chars_antes_do_cap": 1090,
+   "content_hash": "f4d01c1863b3ce476f655b212a1be459",
    "dominio": "cnnbrasil.com.br",
    "empresas": [
     {
@@ -3883,41 +4163,37 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
-    "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
-    "tier": "THIN"
+    "falha": "OK",
+    "metodo": "jsonld:articleBody",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "OK",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
      "titulo_repetido",
      "titulo_repetido"
     ],
-    "chars_totais": 23,
-    "faltou": [
-     "useful_chars<400",
-     "sentences<3",
-     "novos_tokens<30"
-    ],
-    "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 2,
+    "chars_totais": 940,
+    "faltou": [],
+    "input_ready_under_r7c_policy": true,
+    "meaningful_gain_vs_title": 65,
     "nav_flag": false,
     "paywall_flag": false,
     "policy": "SELECTED",
     "policy_version": "r7c.policy2",
-    "sentence_like_count": 0,
+    "sentence_like_count": 5,
     "title_duplication": 0.0,
-    "title_summary_overlap": 0.0,
-    "unique_meaningful_tokens": 2,
-    "useful_chars": 23
+    "title_summary_overlap": 0.625,
+    "unique_meaningful_tokens": 70,
+    "useful_chars": 940
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3930,6 +4206,10 @@
     {
      "chars": 98,
      "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 916,
+     "metodo": "jsonld:articleBody"
     }
    ],
    "pub_iso": "2026-08-06 11:35",
@@ -3953,7 +4233,7 @@
    "shadow_version": "r7cp.1",
    "source_kind": "NEWS",
    "tem_algum_candidato": false,
-   "tier_final": "THIN",
+   "tier_final": "R1_STRUCTURED",
    "titulo": "Bradesco: Crescimento do crédito deve convergir para guidance até dezembro",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZ3FQN0REV3luZ19oWnluZF9xZ1BFZWxJTlVNaVRjRmlBbXZUcjVHM2J4dnU4VkIybGhCSUIzTl82d2FDd2NaOFVjX3J2dmllY2NjMjlDdU1CRE5wNENjSWlnYlVsUDZFal9NYmF5MVE3OWUwX3lPMW9URjZwaEFObWp6WFpvTm1Kdy1yZEE5MHFGaWNBdzBOSm9yLXpoM0xTNGxNZjVkdU1zampHc1M1Y2I3Q09XVW80WXMxZzRn?oc=5",
@@ -4187,7 +4467,7 @@
    },
    "first_seen_run": 113,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -4231,9 +4511,9 @@
   },
   "3abaec74ce177b24": {
    "article_id": "3abaec74ce177b24",
-   "best_input_chars": 160,
-   "chars_antes_do_cap": 160,
-   "content_hash": "6f525535fa339d7126a6a497d1cb3c3a",
+   "best_input_chars": 371,
+   "chars_antes_do_cap": 371,
+   "content_hash": "4a0b76fd634c51afa17a6614d4340e02",
    "dominio": "exame.com",
    "empresas": [
     {
@@ -4248,41 +4528,41 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
-    "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
-    "tier": "THIN"
+    "falha": "OK",
+    "metodo": "jsonld:description",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "THIN_AFTER_ENRICHMENT",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
      "titulo_repetido",
      "titulo_repetido"
     ],
-    "chars_totais": 18,
+    "chars_totais": 229,
     "faltou": [
      "useful_chars<400",
      "sentences<3",
      "novos_tokens<30"
     ],
     "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 2,
+    "meaningful_gain_vs_title": 21,
     "nav_flag": false,
     "paywall_flag": false,
     "policy": "SELECTED",
     "policy_version": "r7c.policy2",
-    "sentence_like_count": 0,
+    "sentence_like_count": 2,
     "title_duplication": 0.0,
     "title_summary_overlap": 0.0,
-    "unique_meaningful_tokens": 2,
-    "useful_chars": 18
+    "unique_meaningful_tokens": 21,
+    "useful_chars": 229
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 2,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -4295,6 +4575,10 @@
     {
      "chars": 89,
      "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 210,
+     "metodo": "jsonld:description"
     }
    ],
    "pub_iso": "2025-10-23 04:00",
@@ -4318,7 +4602,7 @@
    "shadow_version": "r7cp.1",
    "source_kind": "NEWS",
    "tem_algum_candidato": false,
-   "tier_final": "THIN",
+   "tier_final": "R1_STRUCTURED",
    "titulo": "O estrangeiro não sabia falar Eletrobras, diz CEO da nova Axia Energia",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPbFJ4eVlRVHlzLWNtY3NCWVZ2aWR6Ti12aEkxUHJ3MnBUbW9MTTcwbUlnSXdEcDRpN3Y0NEpSV2x5QmFTTkV0blB2Z2RRcmxtdVl0dGFNeThkNnpfbG9qcTRSdGlCMERadEhtSmN5RzZ1cGYxU280UldPc3pFLXVSMFJvZnJGdFRQZ2UxR0Z5eXI2bGQ1SDNQV1JvYlMwNENndmozbnpHRQ?oc=5",
@@ -4326,9 +4610,9 @@
   },
   "3b1bbf736939fece": {
    "article_id": "3b1bbf736939fece",
-   "best_input_chars": 300,
-   "chars_antes_do_cap": 300,
-   "content_hash": "6427018906bd242199a1925a8dc4f993",
+   "best_input_chars": 998,
+   "chars_antes_do_cap": 998,
+   "content_hash": "268865c1565b4a078d5ab2c58bcab1f4",
    "dominio": "moneytimes.com.br",
    "empresas": [
     {
@@ -4338,41 +4622,37 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
-    "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
-    "tier": "THIN"
+    "falha": "OK",
+    "metodo": "jsonld:description",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "OK",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
      "titulo_repetido",
      "titulo_repetido"
     ],
-    "chars_totais": 24,
-    "faltou": [
-     "useful_chars<400",
-     "sentences<3",
-     "novos_tokens<30"
-    ],
-    "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 3,
+    "chars_totais": 722,
+    "faltou": [],
+    "input_ready_under_r7c_policy": true,
+    "meaningful_gain_vs_title": 67,
     "nav_flag": false,
     "paywall_flag": false,
     "policy": "SELECTED",
     "policy_version": "r7c.policy2",
-    "sentence_like_count": 0,
+    "sentence_like_count": 7,
     "title_duplication": 0.0,
-    "title_summary_overlap": 0.0,
-    "unique_meaningful_tokens": 3,
-    "useful_chars": 24
+    "title_summary_overlap": 0.385,
+    "unique_meaningful_tokens": 72,
+    "useful_chars": 722
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -4385,6 +4665,10 @@
     {
      "chars": 162,
      "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 697,
+     "metodo": "jsonld:description"
     }
    ],
    "pub_iso": "2026-08-06 12:51",
@@ -4408,7 +4692,7 @@
    "shadow_version": "r7cp.1",
    "source_kind": "NEWS",
    "tem_algum_candidato": false,
-   "tier_final": "THIN",
+   "tier_final": "R1_STRUCTURED",
    "titulo": "'Comprar ações do Bradesco (BBDC4) é um bom negócio, estamos muito descontados, o mercado vai reconhecer', diz CEO após balanço; ação cai",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNdGhhcGxPU1VzZlE2NmpGZlQ5U3ZkbmJQc3F3QWNDLTE0ZThWRGRKSlUtcVlGWTdkdUZsbEV2TG83UGdIMlFXdWZFSkw4WmtwMXJnTWM5bnRyWlN4RzJ2dTVDUm5US1BiNDRtWklka3hwcUNjSllzZkQ3ZEV2Y3YyZ1gwazRjU2d2Q0FDaUxXN25lR0c3SDBiSi1LZEJkcVo0T2pFUV9MNng3UlEwVldpcUhKV1VMakxrQko4V1RSSVczYzVabXNuSHFZZVVvcmVhcWlOd0hJX2ZGRnZST2RudGJNd0VBcU11dHdMc3JRcUV4Zw?oc=5",
@@ -4428,14 +4712,14 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
+    "falha": "ROBOTS_BLOCKED",
     "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
     "tier": "THIN"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "ROBOTS_BLOCKED",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
@@ -4462,7 +4746,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -4506,9 +4790,9 @@
   },
   "3d75928e5cf8ae83": {
    "article_id": "3d75928e5cf8ae83",
-   "best_input_chars": 150,
-   "chars_antes_do_cap": 150,
-   "content_hash": "7a1455c9f71a03796287f521a0c5e73d",
+   "best_input_chars": 275,
+   "chars_antes_do_cap": 275,
+   "content_hash": "555c143516345f8692ff46437c64d8c2",
    "dominio": "meioemensagem.com.br",
    "empresas": [
     {
@@ -4518,41 +4802,41 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
-    "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
-    "tier": "THIN"
+    "falha": "OK",
+    "metodo": "jsonld:description",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "THIN_AFTER_ENRICHMENT",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
      "titulo_repetido",
      "titulo_repetido"
     ],
-    "chars_totais": 28,
+    "chars_totais": 153,
     "faltou": [
      "useful_chars<400",
      "sentences<3",
      "novos_tokens<30"
     ],
     "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 3,
+    "meaningful_gain_vs_title": 16,
     "nav_flag": false,
     "paywall_flag": false,
     "policy": "SELECTED",
     "policy_version": "r7c.policy2",
-    "sentence_like_count": 0,
+    "sentence_like_count": 1,
     "title_duplication": 0.0,
     "title_summary_overlap": 0.0,
-    "unique_meaningful_tokens": 3,
-    "useful_chars": 28
+    "unique_meaningful_tokens": 16,
+    "useful_chars": 153
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -4565,6 +4849,10 @@
     {
      "chars": 89,
      "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 124,
+     "metodo": "jsonld:description"
     }
    ],
    "pub_iso": "2022-05-25 04:00",
@@ -4588,7 +4876,7 @@
    "shadow_version": "r7cp.1",
    "source_kind": "NEWS",
    "tem_algum_candidato": false,
-   "tier_final": "THIN",
+   "tier_final": "R1_STRUCTURED",
    "titulo": "Marcilio Pousada, da Raia Drogasil: a transformação da saúde",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOSllranE0Z002VF9WaXByY2xxV012RjF4NVFIcDBKWkQ4VzROM2NJcEdJRk51ZWY4WGFFQ0FBUGdoeTlPX1g4YlFzbDR4UWdDdzlzUUlLYU85cXFlY0J6a0ZhWWlucklmM3VZTlZwOFhJQXpEVjQzZG5neVAxVy1Pa3R1N3lpcUFXZldyWmJYMEhkQlMtSHNvLThCSDIxemlZM3JXM0t1T3dPS1BveFdF?oc=5",
@@ -4596,9 +4884,9 @@
   },
   "3e4181750b44b791": {
    "article_id": "3e4181750b44b791",
-   "best_input_chars": 184,
-   "chars_antes_do_cap": 184,
-   "content_hash": "7fa3ab02006e8cbfef05876aa998f39e",
+   "best_input_chars": 264,
+   "chars_antes_do_cap": 264,
+   "content_hash": "6b03883bffe3cce6467f86122c620abb",
    "dominio": "infomoney.com.br",
    "empresas": [
     {
@@ -4610,41 +4898,41 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
-    "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
-    "tier": "THIN"
+    "falha": "OK",
+    "metodo": "jsonld:description",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "THIN_AFTER_ENRICHMENT",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
      "titulo_repetido",
      "titulo_repetido"
     ],
-    "chars_totais": 22,
+    "chars_totais": 102,
     "faltou": [
      "useful_chars<400",
      "sentences<3",
      "novos_tokens<30"
     ],
     "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 2,
+    "meaningful_gain_vs_title": 11,
     "nav_flag": false,
     "paywall_flag": false,
     "policy": "SELECTED",
     "policy_version": "r7c.policy2",
-    "sentence_like_count": 0,
+    "sentence_like_count": 1,
     "title_duplication": 0.0,
     "title_summary_overlap": 0.0,
-    "unique_meaningful_tokens": 2,
-    "useful_chars": 22
+    "unique_meaningful_tokens": 11,
+    "useful_chars": 102
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -4657,6 +4945,10 @@
     {
      "chars": 103,
      "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 79,
+     "metodo": "jsonld:description"
     }
    ],
    "pub_iso": "2026-07-10 04:00",
@@ -4680,7 +4972,7 @@
    "shadow_version": "r7cp.1",
    "source_kind": "NEWS",
    "tem_algum_candidato": true,
-   "tier_final": "THIN",
+   "tier_final": "R1_STRUCTURED",
    "titulo": "Petrobras (PETR4) conclui aquisição de bloco exploratório em São Tomé e Príncipe",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQenU5RmMyRVQtVm14QUxuMVpWYTVudDA0LWMyYll5ZVBKdmdFMFVUWDR3NDZLNXI5cXF4QlZNVGJ3S3N0UFpYalRORXA2OXc1WHVEX3M5ZVV5T2xKaFBOMGFjckpDQUlhV1F0Y1hjRHN1Y25uVmRYY19Ld3NTN0FrMXZScUpMeG5ha1kzSlBDaHBWZjVKb3Q0QWN3aDFLcGF4UFZ1cHNvdTl0SUtadXZxak14S01lYTNX0gG-AUFVX3lxTE9DLTFNWkNWc0N5b2ltVDQtdFBYeEpIaFBaZW5qYWprOHhtUUZielljdllXSUthY0t3cnBXNXZmUExmNDRDRExuTlRqNXJZbFdtQVhGZTR5UW5ZZzZzYzVmemNyaklWTk9QRDBwNE51SXU0SEpobHFCeFRpaDdrWlpjTU5oa2plem5NeGRJU3M4RG9qakFXWUZCMHo1UmR5Q09qdEZKNjg5Nnp0LVA3VkJUa3I4TldEUUFYVkFGZkE?oc=5",
@@ -4688,9 +4980,9 @@
   },
   "3e6f6af9a7da8a2c": {
    "article_id": "3e6f6af9a7da8a2c",
-   "best_input_chars": 200,
-   "chars_antes_do_cap": 200,
-   "content_hash": "021d77852e3cd538ceeae1322cbb9461",
+   "best_input_chars": 1401,
+   "chars_antes_do_cap": 1401,
+   "content_hash": "f2f56d754009d5fc6d83ef024aa0f486",
    "dominio": "valor.globo.com",
    "empresas": [
     {
@@ -4700,41 +4992,40 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
-    "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
-    "tier": "THIN"
+    "falha": "OK",
+    "metodo": "html:paragrafos",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R2_BODY"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "DIRTY_ONLY",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
      "titulo_repetido",
      "titulo_repetido"
     ],
-    "chars_totais": 28,
+    "chars_totais": 1229,
     "faltou": [
-     "useful_chars<400",
      "sentences<3",
-     "novos_tokens<30"
+     "dirty"
     ],
     "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 3,
-    "nav_flag": false,
+    "meaningful_gain_vs_title": 49,
+    "nav_flag": true,
     "paywall_flag": false,
     "policy": "SELECTED",
     "policy_version": "r7c.policy2",
-    "sentence_like_count": 0,
+    "sentence_like_count": 2,
     "title_duplication": 0.0,
     "title_summary_overlap": 0.0,
-    "unique_meaningful_tokens": 3,
-    "useful_chars": 28
+    "unique_meaningful_tokens": 49,
+    "useful_chars": 1229
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -4747,6 +5038,10 @@
     {
      "chars": 114,
      "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 1200,
+     "metodo": "html:paragrafos"
     }
    ],
    "pub_iso": "2026-07-01 04:00",
@@ -4765,12 +5060,12 @@
     "useful_chars": 28
    },
    "r1_tentado": true,
-   "r2_tentado": false,
+   "r2_tentado": true,
    "schema_version": "r7cp.s1",
    "shadow_version": "r7cp.1",
    "source_kind": "NEWS",
    "tem_algum_candidato": false,
-   "tier_final": "THIN",
+   "tier_final": "R2_BODY",
    "titulo": "Petróleo entrou em novo patamar de US$ 75, mesmo sob incertezas, diz CEO da Petrobras",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPaHhDY0NaalNsTDBzdzdfZ2g2NmxoQ1AwVzdfcWxPRkpDS09tRTg1T3FHYlpxejVaS29WUGxZS0xNd3BJTjRscWhDUDFGVkotWFphU01rcTdSR1pwWkV2bndoWmtvOVpJM1lWVmhvMkVqcXkxcWR5VW5DWmlOaHhzQ3lIMktOZExXNG1CX2VTVGRuOW55MzNoSC1SRlM5cl94Sjc1YnVlMmk4T0hfVW1OaWJLakJwdGpwVG5PcWhGTWFfc3ZMbW9OZ3FSQVNQQ2J2bXE4MnZRZ9IB5gFBVV95cUxPRmN3TF9ZT1NMQ3BtdjZhNXF1U0M2WTdvNHpPZXl5cXRrMmdVbDBVT1pxeVhHXzBTZkRTY3NxMTB1aWFZYXhfYl9aY0JmcFFOajE1NGxueFFkRWVJOEJCVFNZbVBOV2JVMmdGMzRTeFhuVlZURDVuRl9ONGhOdWJxTU9GZDNzZzVwWU1RRm9vTWRIQzZnVlBXcFNQSWRNa19UNHd3WXFjUW9pblN4X2EwcFF3YzVHcEhPcjJkRE51ajJ6NUZGdmJ1Xzl2Z05qdDFSQXhqaklsTW5tanBFT0Q5Zld4b0NnQQ?oc=5",
@@ -4778,9 +5073,9 @@
   },
   "3fb334b778289102": {
    "article_id": "3fb334b778289102",
-   "best_input_chars": 219,
-   "chars_antes_do_cap": 219,
-   "content_hash": "189095e3ca9dea26b967d2b6bc84eb05",
+   "best_input_chars": 950,
+   "chars_antes_do_cap": 950,
+   "content_hash": "f381b876473b80e8ace831f9f085af2c",
    "dominio": "maisretorno.com",
    "empresas": [
     {
@@ -4790,41 +5085,39 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
-    "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
-    "tier": "THIN"
+    "falha": "OK",
+    "metodo": "jsonld:description",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "THIN_AFTER_ENRICHMENT",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
      "titulo_repetido",
      "titulo_repetido"
     ],
-    "chars_totais": 25,
+    "chars_totais": 756,
     "faltou": [
-     "useful_chars<400",
-     "sentences<3",
      "novos_tokens<30"
     ],
     "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 3,
+    "meaningful_gain_vs_title": 21,
     "nav_flag": false,
     "paywall_flag": false,
     "policy": "SELECTED",
     "policy_version": "r7c.policy2",
-    "sentence_like_count": 0,
-    "title_duplication": 0.0,
-    "title_summary_overlap": 0.0,
-    "unique_meaningful_tokens": 3,
-    "useful_chars": 25
+    "sentence_like_count": 7,
+    "title_duplication": 0.127,
+    "title_summary_overlap": 1.0,
+    "unique_meaningful_tokens": 29,
+    "useful_chars": 465
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -4837,6 +5130,10 @@
     {
      "chars": 122,
      "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 730,
+     "metodo": "jsonld:description"
     }
    ],
    "pub_iso": "2026-05-21 22:49",
@@ -4860,7 +5157,7 @@
    "shadow_version": "r7cp.1",
    "source_kind": "NEWS",
    "tem_algum_candidato": false,
-   "tier_final": "THIN",
+   "tier_final": "R1_STRUCTURED",
    "titulo": "Fundo Bradesco Portfólio Debêntures Incentivadas FIF CIC RF Incentivado Investimento Infra LP RL",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQampKZ2JsUmhHUVZPQy14QUhfRVB5TW5GcjZKYnpjX1hjWXEzUGIwRFVKR3JsYWxRa2dDVkQ0SmYxUk9TbnRXY0w4MkNwdTUyMlRPa3k4aXZ4ZHpIb2VXQkpJUWVzODNGTXBJU0g5cVN2anB1Umd2ZnlkNFdRUlJRQTYzRVdad1MydUtaYkp5WXZPRjZfd3g3UXZ4Qk5xaWROLW1JNmtDQWwyU0tCVkhMcGtpWFEyTVJCZzc2WA?oc=5",
@@ -4958,9 +5255,9 @@
   },
   "4175cb3e0b660658": {
    "article_id": "4175cb3e0b660658",
-   "best_input_chars": 200,
-   "chars_antes_do_cap": 200,
-   "content_hash": "2a537f98c67dd4cd0940b96f9955c54e",
+   "best_input_chars": 2118,
+   "chars_antes_do_cap": 2118,
+   "content_hash": "538154add874f632130bc7e03e484fd5",
    "dominio": "neofeed.com.br",
    "empresas": [
     {
@@ -4970,41 +5267,37 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
-    "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
-    "tier": "THIN"
+    "falha": "OK",
+    "metodo": "jsonld:articleBody",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "OK",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
      "titulo_repetido",
      "titulo_repetido"
     ],
-    "chars_totais": 20,
-    "faltou": [
-     "useful_chars<400",
-     "sentences<3",
-     "novos_tokens<30"
-    ],
-    "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 2,
+    "chars_totais": 1938,
+    "faltou": [],
+    "input_ready_under_r7c_policy": true,
+    "meaningful_gain_vs_title": 106,
     "nav_flag": false,
     "paywall_flag": false,
     "policy": "SELECTED",
     "policy_version": "r7c.policy2",
-    "sentence_like_count": 0,
+    "sentence_like_count": 11,
     "title_duplication": 0.0,
-    "title_summary_overlap": 0.0,
-    "unique_meaningful_tokens": 2,
-    "useful_chars": 20
+    "title_summary_overlap": 0.6,
+    "unique_meaningful_tokens": 112,
+    "useful_chars": 1938
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -5017,6 +5310,10 @@
     {
      "chars": 110,
      "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 1917,
+     "metodo": "jsonld:articleBody"
     }
    ],
    "pub_iso": "2021-08-26 04:00",
@@ -5040,7 +5337,7 @@
    "shadow_version": "r7cp.1",
    "source_kind": "NEWS",
    "tem_algum_candidato": false,
-   "tier_final": "THIN",
+   "tier_final": "R1_STRUCTURED",
    "titulo": "Raia Drogasil está sentada na pontinha de um enorme iceberg. E quer ir além da superfície",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQcEdWaWNjTVpGV2F1c0RKVGllbW5KMEdtUXFrYXloaUJxdVZlanZLU01kU1ZEUFYzYVR0Mng5bU5OZlJhZThON0ZOekQ4c0VYNUNlMGVORXQ2Z2dNY0pFN2N1cXJLQUJkV29QajVzS0NGUzBrZkNPckVuS2R1UV9Zd2hBM0RnMHM5UGxXTzh1ZUItQm5Dblc0eHFLYW9QNndBV3hxTm04ZGNGNjRHbFl5b2lCNE5MTGd5MWZONlJnaTNva193Q0VCS0hOLVplZw?oc=5",
@@ -5062,14 +5359,14 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
+    "falha": "ROBOTS_BLOCKED",
     "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
     "tier": "THIN"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "ROBOTS_BLOCKED",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
@@ -5096,7 +5393,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -5154,14 +5451,14 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
+    "falha": "ROBOTS_BLOCKED",
     "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
     "tier": "THIN"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "ROBOTS_BLOCKED",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
@@ -5188,7 +5485,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -5232,9 +5529,9 @@
   },
   "472d9e79b14f9f0d": {
    "article_id": "472d9e79b14f9f0d",
-   "best_input_chars": 186,
-   "chars_antes_do_cap": 186,
-   "content_hash": "264f4415d854f1a0fa05d0ff8f6fe226",
+   "best_input_chars": 266,
+   "chars_antes_do_cap": 266,
+   "content_hash": "846a94f28dddb7e685c77a7d17f3514f",
    "dominio": "infomoney.com.br",
    "empresas": [
     {
@@ -5244,41 +5541,41 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
-    "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
-    "tier": "THIN"
+    "falha": "OK",
+    "metodo": "jsonld:description",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "THIN_AFTER_ENRICHMENT",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
      "titulo_repetido",
      "titulo_repetido"
     ],
-    "chars_totais": 22,
+    "chars_totais": 102,
     "faltou": [
      "useful_chars<400",
      "sentences<3",
      "novos_tokens<30"
     ],
     "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 2,
+    "meaningful_gain_vs_title": 11,
     "nav_flag": false,
     "paywall_flag": false,
     "policy": "SELECTED",
     "policy_version": "r7c.policy2",
-    "sentence_like_count": 0,
+    "sentence_like_count": 1,
     "title_duplication": 0.0,
     "title_summary_overlap": 0.0,
-    "unique_meaningful_tokens": 2,
-    "useful_chars": 22
+    "unique_meaningful_tokens": 11,
+    "useful_chars": 102
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -5291,6 +5588,10 @@
     {
      "chars": 104,
      "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 79,
+     "metodo": "jsonld:description"
     }
    ],
    "pub_iso": "2026-08-05 10:30",
@@ -5314,7 +5615,7 @@
    "shadow_version": "r7cp.1",
    "source_kind": "NEWS",
    "tem_algum_candidato": false,
-   "tier_final": "THIN",
+   "tier_final": "R1_STRUCTURED",
    "titulo": "Itaú Unibanco vê “super estabilidade” na inadimplência do banco à frente, diz CEO",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZ1dWcWNZQUk1bWhjR1M0Wm1saU1XcURISS1QVHpIdmZScWFwa2F5aFlWTndCNW9YRUpnQTNDV05pNUtMaThJeEFCZ3pKZ3l1QW1icEMtUVBwZGprVGlNSmtxMnJyLXdVR0xKc2JmRVhRbTRKZFpuTm1BOVltYXJ0V3I0Z1NEakNYZGhybnVOVmlQdVJFanVNYXc2VTNWQjR3NURuMDNUVVRBVzZKb2h3NzMwM1piUU1x0gG-AUFVX3lxTFBpb2RpMkpyM3phVGxOOHRfbTN0bmwzanloRWM1M2RhZkxtWmIxLXo4ZTJOV3dmTWdza1lSSl92WjR4YTduVHBuSUNhdVA0bDhjc2hSUlJpY0JiVldZcUlHdjdsUE90b3BSb2Y5N2xnY0dMakRRTFEwMkwtdnEzZjRwVTJvT1JGY24tYnRPclE0eDR4b1ZYSDFTS21XQjg1TE1kLUNuQVZjcXFPc3VrOV80VURqQWRHVXdPbjFlcVE?oc=5",
@@ -5368,7 +5669,7 @@
    },
    "first_seen_run": 115,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -5428,14 +5729,14 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
+    "falha": "ROBOTS_BLOCKED",
     "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
     "tier": "THIN"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "ROBOTS_BLOCKED",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
@@ -5462,7 +5763,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -5504,11 +5805,101 @@
    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOXy13bExfeFI1cHhjbjFaNExiWVgxRXEyUGNzYzlXWS1ZbFZzM3FfVnFMYkFXMERnc2hxU2VqOEdsWTY3QWpEZ0JZODdIczFkRWdOTTFrcW5BcjNTVTc0eTZRemN3WVViZHBWNVBPdHJxUDZrQjNuSVhlQ0FnZjIySWw4VlFDUU44ZWpKbW01b3lSLVFvQ0J6eG5qZjBadzVGb3JabG10U1ZvY3NzNHAyeklJM2tsLXl6VzlZ0gHAAUFVX3lxTE9RczVOel8wMFgtc002MXNRanlNX1otN1oyRG9sb01WanR3bEw3WklsQmJDZklWX1pCOTd1OVRhaXBMaldMYnlJV2tJdjVkeXc5RDlib2dwMWdwbHdtTzNrcU43bk9ZVGV5VXBsR0VlcmVFamNzRXVsWUdhZmZJd2FjTjU0a0NIY0dyTW9rWWlvUjFPU1ozNFlJdDIwTGZIZ0ZwMXZfaWxUNDlUdnUtQ0ozMnZ1Vk92YzlOalZ1U3lnVg?oc=5",
    "url_resolvida": ""
   },
+  "4ab8175a2e07879f": {
+   "article_id": "4ab8175a2e07879f",
+   "best_input_chars": 180,
+   "chars_antes_do_cap": 180,
+   "content_hash": "c10ef2e47f5203782953562528933d0f",
+   "dominio": "estadao.com.br",
+   "empresas": [
+    {
+     "candidatos": [],
+     "empresa": "Itaú Unibanco",
+     "tem_candidato": false
+    }
+   ],
+   "enrichment": {
+    "falha": "ROBOTS_BLOCKED",
+    "metodo": "",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "THIN"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "ROBOTS_BLOCKED",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 20,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 0,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 2,
+    "useful_chars": 20
+   },
+   "first_seen_run": 116,
+   "fonte": "company_query",
+   "last_seen_run": 116,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 79,
+     "metodo": "title"
+    },
+    {
+     "chars": 100,
+     "metodo": "R0_LEGACY"
+    }
+   ],
+   "pub_iso": "2026-03-16 04:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 20
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "sentence_like_count": 0,
+    "useful_chars": 20
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "THIN",
+   "titulo": "Fundos do Itaú concentram 64% das debêntures da Raízen; AZ Quest tem 50% do GPA",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOc0EyVGdaRFEzc21wNXdpQjZ6UGdBNVNBdEFSeXRJdlJqVm51Z1hKVzZrNGdYRVRBOWlVWnJWY2UwWlRSX29tQzdvbkVjSUdVZWRnSlQwcnlXVkc0TS1Va2QtSEdEY3NodnNmb0lrWkNGZkluR3NuM3lLUGRieUR6Y3BrRVpUWlhCUGRtOVNSNXVlaTEtZ1lYM1paYnVXUGhGRVhrLVh4WHJ5RlV4STRuVUE5VjF4SHZxNXRHQzdCa1lOSlgxOXZ5OXdRb1dBc0x5dUowUHhSN1hNYVVC0gHiAUFVX3lxTE9BazA4LVR6anFfYTlyZnhRQUl1dlZJQlMyQmtOd2R0OVNueS1DZWtoaXdtcm5GYmM5TUFMZ2cwZXZKOVpIejJVQnpfUEpTZVJBQjV5cWh5ZXpWaE53TTV0ODBhTnhwdUhMRVRlZEFSLVhyNlJqS195X3Ntc1ZNNVNCaHdqUThvTmpKa0JsRjNnWHpTTVNFYW04bnNjQ1BVM3Y3T3ltdWczeFRrc3l2ckM4XzRWbEhsUW45QlEwVmE1N2Vray1PTkI2ZW1YaVRnNGhBYWZndjQ0LUlBckhTcGNiakE?oc=5",
+   "url_resolvida": ""
+  },
   "4ad3060bad1c4441": {
    "article_id": "4ad3060bad1c4441",
-   "best_input_chars": 167,
-   "chars_antes_do_cap": 167,
-   "content_hash": "be8d8c30594682afc05725b1658f3279",
+   "best_input_chars": 775,
+   "chars_antes_do_cap": 775,
+   "content_hash": "24d0b458b9a10e76634779ab4972244a",
    "dominio": "braziljournal.com",
    "empresas": [
     {
@@ -5518,41 +5909,39 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
-    "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
-    "tier": "THIN"
+    "falha": "OK",
+    "metodo": "jsonld:description",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "THIN_AFTER_ENRICHMENT",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
      "titulo_repetido",
      "titulo_repetido"
     ],
-    "chars_totais": 27,
+    "chars_totais": 635,
     "faltou": [
-     "useful_chars<400",
-     "sentences<3",
      "novos_tokens<30"
     ],
     "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 3,
+    "meaningful_gain_vs_title": 12,
     "nav_flag": false,
     "paywall_flag": false,
     "policy": "SELECTED",
     "policy_version": "r7c.policy2",
-    "sentence_like_count": 0,
+    "sentence_like_count": 5,
     "title_duplication": 0.0,
-    "title_summary_overlap": 0.0,
-    "unique_meaningful_tokens": 3,
-    "useful_chars": 27
+    "title_summary_overlap": 0.375,
+    "unique_meaningful_tokens": 15,
+    "useful_chars": 635
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -5565,6 +5954,10 @@
     {
      "chars": 97,
      "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 607,
+     "metodo": "jsonld:description"
     }
    ],
    "pub_iso": "2023-08-14 04:00",
@@ -5588,7 +5981,7 @@
    "shadow_version": "r7cp.1",
    "source_kind": "NEWS",
    "tem_algum_candidato": false,
-   "tier_final": "THIN",
+   "tier_final": "R1_STRUCTURED",
    "titulo": "BREAKING: Eletrobras troca Wilson Ferreira por Ivan Monteiro como CEO",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9ITGE4Q0g3dlBxaXltUGljVWt4b0IySUttTmlPZVZHamgwRXUySTNCdjYwQmhPODNNMzNxb0xaS1RJUFo5MVZHWG9icTB1Yy1qZlhXV3lCckVOR1lkYk1IRm9pc29xd1daTHNJckFnMlF6RFk?oc=5",
@@ -5638,7 +6031,7 @@
    },
    "first_seen_run": 113,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -5788,14 +6181,14 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
+    "falha": "ROBOTS_BLOCKED",
     "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
     "tier": "THIN"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "ROBOTS_BLOCKED",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
@@ -5822,7 +6215,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -5912,7 +6305,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6092,7 +6485,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6184,7 +6577,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6274,7 +6667,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6366,7 +6759,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6456,7 +6849,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6546,7 +6939,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6636,7 +7029,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6726,7 +7119,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6908,7 +7301,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6998,7 +7391,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -7088,7 +7481,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -7178,7 +7571,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -7268,7 +7661,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -7358,7 +7751,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -7448,7 +7841,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -7538,7 +7931,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -7628,7 +8021,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -7718,7 +8111,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -7808,7 +8201,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -7898,7 +8291,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -7988,7 +8381,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -8078,7 +8471,7 @@
    },
    "first_seen_run": 115,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -8168,7 +8561,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -8348,7 +8741,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -8438,7 +8831,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -8530,7 +8923,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -8620,7 +9013,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -8712,7 +9105,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -8807,7 +9200,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 2,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -8913,7 +9306,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 3,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9003,7 +9396,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9095,7 +9488,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9187,7 +9580,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9282,7 +9675,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 2,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9372,7 +9765,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9464,7 +9857,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9554,7 +9947,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9644,7 +10037,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9736,7 +10129,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9826,7 +10219,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9919,7 +10312,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -10011,7 +10404,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -10103,7 +10496,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -10193,7 +10586,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -10285,7 +10678,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -10375,7 +10768,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -10465,7 +10858,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -10505,6 +10898,96 @@
    "titulo": "EXCLUSIVO: CEO do Bradesco fala em redução da inadimplência em consignado, cartão e crédito rural no trimestre",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQbl94M0hweDFNM2hTTTNVa0VabTF0WV96ZUVRQTMxNndfbEU4VnFvZ1VGOGdjT0JvV0pXTVlENGI0cVVKd3lheklKd1VQeFZDdWhacG1RTDZvekJtdDNCaWFCbUR4SF91cFFnYTlWMFJtd201Yzg5MVRtZlhFZkMyb051cFEwZGxIeFhqZjRoTlA1WlhtSW9lS3VSbDBrTnRoT2MtZVdzWlNLNHpBRi1MOWJoa1I5Z21vSVd1TFZGa3c2SklLM0RpRlNQUFZld1U?oc=5",
+   "url_resolvida": ""
+  },
+  "995f5eec75bbf9ee": {
+   "article_id": "995f5eec75bbf9ee",
+   "best_input_chars": 270,
+   "chars_antes_do_cap": 270,
+   "content_hash": "7638460b128fa31ada3afc7b5afe34cc",
+   "dominio": "forbes.com.br",
+   "empresas": [
+    {
+     "candidatos": [],
+     "empresa": "LATAM Airlines",
+     "tem_candidato": false
+    }
+   ],
+   "enrichment": {
+    "falha": "ROBOTS_BLOCKED",
+    "metodo": "",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "THIN"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "ROBOTS_BLOCKED",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 26,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 0,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 3,
+    "useful_chars": 26
+   },
+   "first_seen_run": 116,
+   "fonte": "company_query",
+   "last_seen_run": 116,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 121,
+     "metodo": "title"
+    },
+    {
+     "chars": 148,
+     "metodo": "R0_LEGACY"
+    }
+   ],
+   "pub_iso": "2026-07-24 04:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 26
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "sentence_like_count": 0,
+    "useful_chars": 26
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "THIN",
+   "titulo": "\"O Mercado de Ouro Deixou Algo Claro Este Ano: É um Ativo Genuinamente Global\", Diz CEO Latam do Conselho Mundial do Ouro",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE03YzBjY1RJMmo1b3dZcThYdlRyWlFDR1cwSFg2akxEWEpUa1FucGlPaWNwZUZnWkFiV3ZnbnhENUJaSzludG9hRkZpdGlld1BySjZMZnZ0d19QaXhxODFxbXNva2xwM0FMdHpHNDlQYW9qcmc?oc=5",
    "url_resolvida": ""
   },
   "9b5cd618e5cff698": {
@@ -10650,7 +11133,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -10742,7 +11225,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -10832,7 +11315,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -10924,7 +11407,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11014,7 +11497,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11106,7 +11589,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11196,7 +11679,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11286,7 +11769,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11378,7 +11861,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11470,7 +11953,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11560,7 +12043,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11650,7 +12133,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11739,7 +12222,7 @@
    },
    "first_seen_run": 113,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11835,7 +12318,7 @@
    },
    "first_seen_run": 112,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11927,7 +12410,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12019,7 +12502,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12111,7 +12594,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12201,7 +12684,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12291,7 +12774,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12391,7 +12874,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 3,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12483,7 +12966,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12573,7 +13056,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12665,7 +13148,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12757,7 +13240,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12947,7 +13430,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -13036,7 +13519,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -13128,7 +13611,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -13218,7 +13701,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -13308,7 +13791,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -13398,7 +13881,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -13490,7 +13973,7 @@
    },
    "first_seen_run": 112,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -13580,7 +14063,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -13670,7 +14153,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -13760,7 +14243,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -13850,7 +14333,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -13940,7 +14423,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14030,7 +14513,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14122,7 +14605,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14212,7 +14695,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14302,7 +14785,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14392,7 +14875,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14432,6 +14915,96 @@
    "titulo": "Equatorial compra 30% da Copasa por R$ 5,5 bi e conclui privatização",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNendWVFlVVi1Ud2pod3ltaG56Snd2WDFHU0pvbnk1NUVwUjZHemhybjNrV0dlZDdIY3ROcDRnQ25ncW1nNFBqNjlDaWZodjhTazcxS19Ud2FCaDlOc1JaeWVpU3AySEJ0WUdFbEt0bmRaWVB0WWpHM1hZQ2QzYUJUdE1VQzVZSTJOZE5UN0xHOVUxUXZqbEcwVXc4VmhHODVTS0M2bFJUc29UNVBuZGc?oc=5",
+   "url_resolvida": ""
+  },
+  "cead289394d0fac7": {
+   "article_id": "cead289394d0fac7",
+   "best_input_chars": 182,
+   "chars_antes_do_cap": 182,
+   "content_hash": "6b71947304a0e3bc76ac04c02aa69a1f",
+   "dominio": "investalk.bb.com.br",
+   "empresas": [
+    {
+     "candidatos": [],
+     "empresa": "B3",
+     "tem_candidato": false
+    }
+   ],
+   "enrichment": {
+    "falha": "ROBOTS_BLOCKED",
+    "metodo": "",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "THIN"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "ROBOTS_BLOCKED",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 22,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 0,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 2,
+    "useful_chars": 22
+   },
+   "first_seen_run": 116,
+   "fonte": "company_query",
+   "last_seen_run": 116,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 79,
+     "metodo": "title"
+    },
+    {
+     "chars": 102,
+     "metodo": "R0_LEGACY"
+    }
+   ],
+   "pub_iso": "2026-08-12 14:04",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 22
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "sentence_like_count": 0,
+    "useful_chars": 22
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "THIN",
+   "titulo": "B3 (B3SA3) 2T26: Diversificação sustenta resultado em trimestre menos favorável",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9mRXZHczUxdW1WbS1VbzZ6djU5ZTlUZzBEUmU0U01RNkgzekxzXzVJN0MzSW1VUVU0MnIzcmhILUJndGZpSWVzbmhwVlhLT3F5UTJsX3pianNScmJ3YnBCa0xEZw?oc=5",
    "url_resolvida": ""
   },
   "cf890853ac7c3265": {
@@ -14484,7 +15057,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14574,7 +15147,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14664,7 +15237,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14754,7 +15327,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14846,7 +15419,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14936,7 +15509,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15026,7 +15599,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15116,7 +15689,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15208,7 +15781,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15340,6 +15913,96 @@
    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPUFMxQlczTkxIb2FSYWx2b1I0OTNLOE5GeXVHNzktYkdNcGZLZERULUxXamswa3JYemxaM2pTNWozb3htcVVENlV1SjM0NmVmekVscjN0azF4M0RCYjRuUktSOE42X212SmpZVEhvUU1EZ0wxdFlKUWJDN2Z4a3ZGZGlJeU54R2l5VENtWWhuMmc?oc=5",
    "url_resolvida": ""
   },
+  "db5f6893533becbd": {
+   "article_id": "db5f6893533becbd",
+   "best_input_chars": 201,
+   "chars_antes_do_cap": 201,
+   "content_hash": "f7ae2a8754f613d2ffb615ed0b0d0001",
+   "dominio": "bloomberglinea.com.br",
+   "empresas": [
+    {
+     "candidatos": [],
+     "empresa": "Localiza",
+     "tem_candidato": false
+    }
+   ],
+   "enrichment": {
+    "falha": "ROBOTS_BLOCKED",
+    "metodo": "",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "THIN"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "ROBOTS_BLOCKED",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 35,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 4,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 0,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 4,
+    "useful_chars": 35
+   },
+   "first_seen_run": 116,
+   "fonte": "company_query",
+   "last_seen_run": 116,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 82,
+     "metodo": "title"
+    },
+    {
+     "chars": 118,
+     "metodo": "R0_LEGACY"
+    }
+   ],
+   "pub_iso": "2025-07-24 04:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 4,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 35
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 4,
+    "sentence_like_count": 0,
+    "useful_chars": 35
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "THIN",
+   "titulo": "Localiza vê avanço de carro por assinatura e mantém foco em rentabilidade, diz CEO",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPVUR3NVI0dkFPTy1LYy1mSExaTzU2M0s3cUJWX0FycmdMcUQzVElNZE1nWWpqaUxydklzM2VPbEczdnVKa0UwZjZzc3NYaC1UR2d1ODluaDBoMHpONFB5aUQxQ1g4ZFhXWkJyZXR6MWRpSkFsNnUwQVFfTkJNNDJDWGpKamJac25EX1BZQjhxOTFJbmp1bXVUZW5NUVRiNk5NSXcwMVRqTXpEdDRZdWpQcGRONVJFXzNDVTllNzhNeFRQcGfSAdcBQVVfeXFMTnhtYzRNUTc2U2FSdTJyX1Nnb0YwMDYxX3JQTmg0bUdOd1JQSXZVWUZLZXlQNVdZYVJyM1ltcFJGWWJaTXhMc2JhTldNLXNwY2xfRFZQV1VSTGtaeU9uX2VKblIxN25uYjhXa0VQcUxOeEo3alpBaktMdi1XMVBhVlVtMHlReXBQWGRKV3NiRW9BUF9kZE9NeVRfMnQyWWdNX0hzcmFocU1NVjU4eUJUU0pIMVd1cXoyZzM2bENlRzIzRnkwdkRwQ01MbXRRM05ycFNTUzFQb3c?oc=5",
+   "url_resolvida": ""
+  },
   "db86c9768dadd4a2": {
    "article_id": "db86c9768dadd4a2",
    "best_input_chars": 151,
@@ -15388,7 +16051,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15478,7 +16141,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15573,7 +16236,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 2,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15663,7 +16326,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15703,6 +16366,96 @@
    "titulo": "CEO do Bradesco faz promessa ao mercado apesar da alta da inadimplência",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTm1ULWR6QzQ1dGdXaWVHZUdZT2JzSEFTTDIzZzN5OHNWTEExZjlZZ08wWjdXbUg2Q0ZrXzgwa1RqY285M2dOaGVSU1VTVkFOcmhoaGY4c0R3YkpWZDRVZlZ5WHNHYkNFZVpobE5iWGxvcXBZS2pYUkJUcldGUVlWMFZVVV9YSDFQQUNSRjNIYTZ5VU5wWjZFLTFlWFEzekp6Vl92OG5ibjRNa3M?oc=5",
+   "url_resolvida": ""
+  },
+  "df759025da546577": {
+   "article_id": "df759025da546577",
+   "best_input_chars": 197,
+   "chars_antes_do_cap": 197,
+   "content_hash": "43df902b312a363c486d6d987230257f",
+   "dominio": "bloomberglinea.com.br",
+   "empresas": [
+    {
+     "candidatos": [],
+     "empresa": "Nubank (Nu Holdings)",
+     "tem_candidato": false
+    }
+   ],
+   "enrichment": {
+    "falha": "ROBOTS_BLOCKED",
+    "metodo": "",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "THIN"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "ROBOTS_BLOCKED",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 35,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 0,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.1,
+    "unique_meaningful_tokens": 4,
+    "useful_chars": 35
+   },
+   "first_seen_run": 116,
+   "fonte": "company_query",
+   "last_seen_run": 116,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 80,
+     "metodo": "title"
+    },
+    {
+     "chars": 116,
+     "metodo": "R0_LEGACY"
+    }
+   ],
+   "pub_iso": "2026-07-15 04:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 35
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "sentence_like_count": 0,
+    "useful_chars": 35
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "THIN",
+   "titulo": "Nubank: Livia Chanes acumula cargo, vira CEO da América Latina e segue no Brasil",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNMFgtVDc0U2tmN2Q3RlZDNzhKOWxzVmRLQ0xTc3A5UE1sb09jR1Y4V3ZFbmxTaFNrVmxKZjlUSWZxd1JIWGpmaFIwRUtjd3F0U3U1d3FYdWpUOEt0Z3Uyak9pTFBYaHZGYVZHamhxaWJtZjZmTGxyeExDY2hBSXNOeEU3Tlp3eGFyeGJOTWc1OFRPOUFvUUd3WlVOb0UyOXJJU3YxNWw5SmNYZjQ2UWJlaUFURmp1UGVkNnB0NHZqUdIB0wFBVV95cUxPY0NLRmhfT0E1clZYUzhvbmdLLU1jZzY0dWVvLXhiSG1QTUt6bVB3REZaZThjRFdBOXcxZ01WcG9yV1RzOHlRNHJCS25vTzk5MkNTTVVSNE5ONFctV1BUUUl2MEw0U3R5LURFR2NKZ2t4QS12MlJ4RzlPUHk4Nks1ekFod01fX0RoY3lMZjVzZGtZSjVjZHRHcEE1S3gybmZXbGJrRGwxQVhIVng3ZTB3MWpoYkhMMS1WSWwyeTJZOVRiNTRGYUF0Sy1JeXR1ZWNpdFc4?oc=5",
    "url_resolvida": ""
   },
   "e1a41b29de280407": {
@@ -15755,7 +16508,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15845,7 +16598,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15937,7 +16690,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16027,7 +16780,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16117,7 +16870,7 @@
    },
    "first_seen_run": 115,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16207,7 +16960,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16299,7 +17052,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16391,7 +17144,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16481,7 +17234,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16571,7 +17324,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16661,7 +17414,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16751,7 +17504,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16841,7 +17594,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16931,7 +17684,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -17023,7 +17776,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -17113,7 +17866,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -17208,7 +17961,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 2,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -17393,7 +18146,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 2,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -17483,7 +18236,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 115,
+   "last_seen_run": 116,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -17844,6 +18597,75 @@
     "com_candidato": 51,
     "sem_candidato": 132,
     "sem_empresa": 26
+   }
+  },
+  {
+   "artigos_no_run": 180,
+   "backlog_adiado": 118,
+   "backlog_budget": 25,
+   "backlog_selecionado": 25,
+   "backlog_total": 143,
+   "cap_estrutural": 80,
+   "funil": {
+    "artigos_unicos": 180,
+    "com_candidato": 48,
+    "denominador_tentado": 62,
+    "duplicatas_evitadas": 0,
+    "falhas": {
+     "DIRTY_ONLY": 5,
+     "OK": 9,
+     "RESOLUTION_FAILED": 118,
+     "ROBOTS_BLOCKED": 32,
+     "THIN_AFTER_ENRICHMENT": 16
+    },
+    "final_insufficient": 171,
+    "final_ready": 9,
+    "limite_fetch": 80,
+    "max_requests_um_host": 4,
+    "mediana_final_chars": 26,
+    "nao_tentados_por_cap": 0,
+    "network_fetches": 33,
+    "pares_empresa_artigo": 194,
+    "r0_extended_ready": 0,
+    "r0_legacy_ready": 0,
+    "r1_attempted": 180,
+    "r1_ready": 8,
+    "r2_attempted": 6,
+    "r2_ready": 1,
+    "requests_evitadas_por_dedup": 14,
+    "requests_por_host": {
+     "braziljournal.com": 2,
+     "economia.uol.com.br": 2,
+     "investalk.bb.com.br": 1,
+     "valor.globo.com": 3,
+     "www.bloomberglinea.com.br": 4,
+     "www.estadao.com.br": 2,
+     "www.infomoney.com.br": 4,
+     "www.seudinheiro.com": 1
+    },
+    "resolucao_falhou": 118,
+    "resolucoes": 33,
+    "reuso_sidecar": 0,
+    "sem_candidato": 132,
+    "tiers": {
+     "R1_STRUCTURED": 24,
+     "R2_BODY": 6,
+     "THIN": 150
+    },
+    "truncados": 0
+   },
+   "gerado_em": 1786564895,
+   "marco": 111,
+   "novos": 8,
+   "prospectivos": 33,
+   "reaproveitados": 147,
+   "run_count": 116,
+   "telemetria_coleta": {
+    "atribuido": 180,
+    "bruto": 210,
+    "com_candidato": 48,
+    "sem_candidato": 132,
+    "sem_empresa": 29
    }
   }
  ],
