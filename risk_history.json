@@ -724,7 +724,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T16:29:07.143857+00:00"
+     "last_checked_at": "2026-08-12T17:07:01.393014+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2593,7 +2593,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T16:29:07.544135+00:00"
+     "last_checked_at": "2026-08-12T17:07:01.793279+00:00"
     }
    ],
    "corrob_sources": [
@@ -10264,7 +10264,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T16:29:07.944417+00:00"
+     "last_checked_at": "2026-08-12T17:07:02.193613+00:00"
     },
     {
      "source": "Demarest",
@@ -10284,7 +10284,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T16:29:08.344716+00:00"
+     "last_checked_at": "2026-08-12T17:07:02.593946+00:00"
     }
    ],
    "corrob_sources": [
@@ -11867,7 +11867,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T16:29:08.744970+00:00"
+     "last_checked_at": "2026-08-12T17:07:02.994216+00:00"
     }
    ],
    "corrob_sources": [
@@ -15580,7 +15580,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T16:29:09.396616+00:00"
+     "last_checked_at": "2026-08-12T17:07:03.523304+00:00"
     }
    ],
    "corrob_sources": [
@@ -18133,7 +18133,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T16:29:10.008722+00:00"
+     "last_checked_at": "2026-08-12T17:07:04.056978+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -18239,7 +18239,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T16:29:10.653793+00:00"
+     "last_checked_at": "2026-08-12T17:07:04.585619+00:00"
     },
     {
      "source": "Moomoo",
@@ -19644,7 +19644,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T16:29:11.483574+00:00"
+     "last_checked_at": "2026-08-12T17:07:05.204624+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19687,7 +19687,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T16:29:12.256706+00:00"
+     "last_checked_at": "2026-08-12T17:07:05.805049+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -20511,7 +20511,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T16:29:12.907973+00:00",
+     "last_checked_at": "2026-08-12T17:07:06.345280+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20536,7 +20536,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T16:29:13.547285+00:00",
+     "last_checked_at": "2026-08-12T17:07:06.881598+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21656,7 +21656,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-12T16:29:13.947543+00:00",
+     "last_checked_at": "2026-08-12T17:07:07.281914+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21721,7 +21721,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-12T16:29:14.347798+00:00",
+     "last_checked_at": "2026-08-12T17:07:07.682166+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22810,7 +22810,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T16:29:14.987457+00:00"
+     "last_checked_at": "2026-08-12T17:07:08.205086+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22895,7 +22895,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T16:29:15.602618+00:00"
+     "last_checked_at": "2026-08-12T17:07:08.739687+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24710,7 +24710,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T16:29:16.196320+00:00",
+     "last_checked_at": "2026-08-12T17:07:09.285894+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24880,7 +24880,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T16:29:16.835931+00:00",
+     "last_checked_at": "2026-08-12T17:07:09.801375+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -32878,59 +32878,6 @@
    "link_label": "Abrir notícia →",
    "last_checked_at": "2026-07-31T03:04:35.650058+00:00"
   },
-  "https://www.cnnbrasil.com.br/agro/sp-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/": {
-   "title": "S&P rebaixa rating da Cosan e cita reestruturação da Raízen",
-   "url": "https://www.cnnbrasil.com.br/agro/sp-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/",
-   "summary": "S&P rebaixa rating da Cosan e cita reestruturação da Raízen &nbsp;&nbsp; CNN Brasil",
-   "source": "CNN Brasil",
-   "domain": "cnnbrasil.com.br",
-   "pub_ts": 1783494000,
-   "pub_iso": "2026-07-08 04:00",
-   "language": "pt",
-   "companies": [
-    "Cosan"
-   ],
-   "event_ids": [
-    "rebaixamento_rating"
-   ],
-   "events_by_company": {
-    "Cosan": [
-     "rebaixamento_rating"
-    ]
-   },
-   "mention_roles": {
-    "Cosan": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "companies_attributed": [
-    "Cosan"
-   ],
-   "context_companies": [],
-   "captured_ts": 1785345276,
-   "cap_iso": "2026-07-29 14:14",
-   "corroborations": [],
-   "corrob_sources": [],
-   "original_url": "https://www.cnnbrasil.com.br/agro/sp-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/",
-   "redirect_url": "",
-   "resolved_url": "https://www.cnnbrasil.com.br/agro/sp-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/",
-   "canonical_url": "https://www.cnnbrasil.com.br/agro/sp-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/",
-   "display_url": "https://www.cnnbrasil.com.br/agro/sp-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/",
-   "redirect_chain": "",
-   "original_host": "www.cnnbrasil.com.br",
-   "final_host": "www.cnnbrasil.com.br",
-   "http_status": "",
-   "link_health": "url_direta_valida",
-   "resolution_method": "direto",
-   "resolution_error": "",
-   "link_render_anchor": true,
-   "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.650096+00:00"
-  },
   "https://news.google.com/rss/articles/CBMihwJBVV95cUxQbUVqTmhxVWYwTkFUZGRCeXktQmtqS2dIOGlUTnNOUlBERFBHUWp6S3RVb2NhZGl6S0ItV201YmJoVkJ0cFRiS2M1eVg3b0FyZTIwOE9LTGU0czYyVDVCOWZkTzY0dzBDR3FOaGl5ZjlrRUJ3a0ZwWXJwd0p2b2pfaGsxaXIyNHhNTDI4MDRkWWxKM0xQNXl1VVFEcjlCRDBnUlBkQjZ2d2NuTmtTZ0xxd3BYYm44cFBqS2NSLTJheDQyT3hWb24tVnA4b3B2TjRNd2Vza3F1a0V5d2Z0V2xIZVJkY1pGT2NqZVl1Njl5bld2b3dXU3dFTUlxTjhLNVRFd2VHQXJPONIBlgJBVV95cUxOSm1VYnl4YmhMU1luaVRadEt2SWE5RloyTk8xUExkdll2XzhTaTdLRnBQRGdVYWhwc2g5d05HdldTazMzdlI0OERONmlDNWlMVUVSdGF1amhKRWFBUGdpQXFsTGIxZGZmSmRJdzZxRWt1c3RJVjRlQThtZVZiQThlRmgyZWVsNjF3REdQWFR2eldFRndidlhESDV2Wl83aG1mWXZsOHA3c1l2bHJseHhYeHpzTlhPOWFjY2EzZXNfdnRONldnSm12THJJdlRUSWQ4c3k3QnZ4ckFlWU1ZSWM0em5teXYzVHVxMkNHdGFSN0JCX1hEV3p4cmh0Slowbk5WU3RMdzRvZXFJZnBQd2V1VThxX1JkQQ?oc=5": {
    "title": "Recuperação judicial do St Marche evidencia nova tendência entre empresas em crise, aponta especialista",
    "url": "https://valor.globo.com/patrocinado/pressworks/noticia/2026/07/08/recuperacao-judicial-do-st-marche-evidencia-nova-tendencia-entre-empresas-em-crise-aponta-especialista-1.ghtml",
@@ -38996,7 +38943,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T16:29:18.406684+00:00"
+     "last_checked_at": "2026-08-12T17:07:10.462719+00:00"
     }
    ],
    "corrob_sources": [
@@ -42067,7 +42014,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T16:29:19.013156+00:00"
+     "last_checked_at": "2026-08-12T17:07:10.973351+00:00"
     },
     {
      "source": "Virginia Business",
@@ -42110,7 +42057,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T16:29:19.622785+00:00"
+     "last_checked_at": "2026-08-12T17:07:11.586897+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48891,7 +48838,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T16:29:20.241372+00:00",
+     "last_checked_at": "2026-08-12T17:07:12.126402+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48914,7 +48861,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T16:29:20.835816+00:00",
+     "last_checked_at": "2026-08-12T17:07:12.658182+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -51634,8 +51581,92 @@
    "context_companies": [],
    "captured_ts": 1786544854,
    "cap_iso": "2026-08-12 11:27",
-   "corroborations": [],
-   "corrob_sources": []
+   "corroborations": [
+    {
+     "source": "infomoney.com.br",
+     "domain": "infomoney.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWndpY21Id1hBX0xUb050Nm44Q0VDT2tDMUdiUl9FOXdFZzlmR0Qxdi1QYmRHVmFNRkpKS1Rudjg5YVhkeGE1blMybDQxSVRhUFp5RUk1TzVNemFFbnN1ajBtdFR1VHJGb2dMZjJwRmRnYzhtT0xJS3FtdkZCb0NWSGJaZWRoaEFXd1lldWRpT3hFal9QMHZpN1hkYkxmeUlldFFOS3NpTHBPTWZaZEttSko4WHk5azZQeWfSAb8BQVVfeXFMTlo3UVFaRGQyNDR4X2gzZURqb0hSa2U0Sjlvd19jbnhsd0lCWml1ODlvaXZmbzlMNlRKRzJuR25OSXhpd3FtSEVvbG53WFJPRFRmbW0xNU1qckRxdW83RHRGT2FhTEkzdmRENjllWVp3T2djOFhqZDMwQ1ZqRjFFV1N1QVg2MUh2bzB2WFdBY2c4OVoyb0dnQkxHMzBtWl9EN1NHOUNGZm1NM0lxdEdmRS1pVE8yNDR4OWFVUUV6UjA?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWndpY21Id1hBX0xUb050Nm44Q0VDT2tDMUdiUl9FOXdFZzlmR0Qxdi1QYmRHVmFNRkpKS1Rudjg5YVhkeGE1blMybDQxSVRhUFp5RUk1TzVNemFFbnN1ajBtdFR1VHJGb2dMZjJwRmRnYzhtT0xJS3FtdkZCb0NWSGJaZWRoaEFXd1lldWRpT3hFal9QMHZpN1hkYkxmeUlldFFOS3NpTHBPTWZaZEttSko4WHk5azZQeWfSAb8BQVVfeXFMTlo3UVFaRGQyNDR4X2gzZURqb0hSa2U0Sjlvd19jbnhsd0lCWml1ODlvaXZmbzlMNlRKRzJuR25OSXhpd3FtSEVvbG53WFJPRFRmbW0xNU1qckRxdW83RHRGT2FhTEkzdmRENjllWVp3T2djOFhqZDMwQ1ZqRjFFV1N1QVg2MUh2bzB2WFdBY2c4OVoyb0dnQkxHMzBtWl9EN1NHOUNGZm1NM0lxdEdmRS1pVE8yNDR4OWFVUUV6UjA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWndpY21Id1hBX0xUb050Nm44Q0VDT2tDMUdiUl9FOXdFZzlmR0Qxdi1QYmRHVmFNRkpKS1Rudjg5YVhkeGE1blMybDQxSVRhUFp5RUk1TzVNemFFbnN1ajBtdFR1VHJGb2dMZjJwRmRnYzhtT0xJS3FtdkZCb0NWSGJaZWRoaEFXd1lldWRpT3hFal9QMHZpN1hkYkxmeUlldFFOS3NpTHBPTWZaZEttSko4WHk5azZQeWfSAb8BQVVfeXFMTlo3UVFaRGQyNDR4X2gzZURqb0hSa2U0Sjlvd19jbnhsd0lCWml1ODlvaXZmbzlMNlRKRzJuR25OSXhpd3FtSEVvbG53WFJPRFRmbW0xNU1qckRxdW83RHRGT2FhTEkzdmRENjllWVp3T2djOFhqZDMwQ1ZqRjFFV1N1QVg2MUh2bzB2WFdBY2c4OVoyb0dnQkxHMzBtWl9EN1NHOUNGZm1NM0lxdEdmRS1pVE8yNDR4OWFVUUV6UjA?oc=5",
+     "resolved_url": "https://www.infomoney.com.br/mercados/pane-que-atrasou-abertura-da-bolsa-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3/",
+     "canonical_url": "https://www.infomoney.com.br/mercados/pane-que-atrasou-abertura-da-bolsa-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3/",
+     "display_url": "https://www.infomoney.com.br/mercados/pane-que-atrasou-abertura-da-bolsa-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.infomoney.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-12T17:07:13.192976+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "BPMoney",
+     "domain": "bpmoney.com.br",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMkp2UnVwXzR1TklrenZMXzRVZTNwNTV2T0JyMzJaZEFBV3pwOUd3cElHaDlIS0c2a2dkSmJlT2FlYjlBZnBQZUhDdHpWclFSWWRfb3JRM2IzSkpuaVFlOGNvYzY0R3B4UEpuMnZHWHdsSzJZN0ZEc1NzN1lUUVFJdUFza0ZDa2Q4TFdkWk8wU3FhdG1tVVRV?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMkp2UnVwXzR1TklrenZMXzRVZTNwNTV2T0JyMzJaZEFBV3pwOUd3cElHaDlIS0c2a2dkSmJlT2FlYjlBZnBQZUhDdHpWclFSWWRfb3JRM2IzSkpuaVFlOGNvYzY0R3B4UEpuMnZHWHdsSzJZN0ZEc1NzN1lUUVFJdUFza0ZDa2Q4TFdkWk8wU3FhdG1tVVRV?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMkp2UnVwXzR1TklrenZMXzRVZTNwNTV2T0JyMzJaZEFBV3pwOUd3cElHaDlIS0c2a2dkSmJlT2FlYjlBZnBQZUhDdHpWclFSWWRfb3JRM2IzSkpuaVFlOGNvYzY0R3B4UEpuMnZHWHdsSzJZN0ZEc1NzN1lUUVFJdUFza0ZDa2Q4TFdkWk8wU3FhdG1tVVRV?oc=5",
+     "resolved_url": "https://bpmoney.com.br/negocios/empresas-na-bolsa/b3-pane-julho-chamado-acao-christian-egan/",
+     "canonical_url": "https://bpmoney.com.br/negocios/empresas-na-bolsa/b3-pane-julho-chamado-acao-christian-egan/",
+     "display_url": "https://bpmoney.com.br/negocios/empresas-na-bolsa/b3-pane-julho-chamado-acao-christian-egan/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "bpmoney.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-12T17:07:13.744959+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "infomoney.com.br",
+     "domain": "infomoney.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWndpY21Id1hBX0xUb050Nm44Q0VDT2tDMUdiUl9FOXdFZzlmR0Qxdi1QYmRHVmFNRkpKS1Rudjg5YVhkeGE1blMybDQxSVRhUFp5RUk1TzVNemFFbnN1ajBtdFR1VHJGb2dMZjJwRmRnYzhtT0xJS3FtdkZCb0NWSGJaZWRoaEFXd1lldWRpT3hFal9QMHZpN1hkYkxmeUlldFFOS3NpTHBPTWZaZEttSko4WHk5azZQeWfSAb8BQVVfeXFMTlo3UVFaRGQyNDR4X2gzZURqb0hSa2U0Sjlvd19jbnhsd0lCWml1ODlvaXZmbzlMNlRKRzJuR25OSXhpd3FtSEVvbG53WFJPRFRmbW0xNU1qckRxdW83RHRGT2FhTEkzdmRENjllWVp3T2djOFhqZDMwQ1ZqRjFFV1N1QVg2MUh2bzB2WFdBY2c4OVoyb0dnQkxHMzBtWl9EN1NHOUNGZm1NM0lxdEdmRS1pVE8yNDR4OWFVUUV6UjA?oc=5",
+     "when": "12/08 13:42",
+     "original_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWndpY21Id1hBX0xUb050Nm44Q0VDT2tDMUdiUl9FOXdFZzlmR0Qxdi1QYmRHVmFNRkpKS1Rudjg5YVhkeGE1blMybDQxSVRhUFp5RUk1TzVNemFFbnN1ajBtdFR1VHJGb2dMZjJwRmRnYzhtT0xJS3FtdkZCb0NWSGJaZWRoaEFXd1lldWRpT3hFal9QMHZpN1hkYkxmeUlldFFOS3NpTHBPTWZaZEttSko4WHk5azZQeWfSAb8BQVVfeXFMTlo3UVFaRGQyNDR4X2gzZURqb0hSa2U0Sjlvd19jbnhsd0lCWml1ODlvaXZmbzlMNlRKRzJuR25OSXhpd3FtSEVvbG53WFJPRFRmbW0xNU1qckRxdW83RHRGT2FhTEkzdmRENjllWVp3T2djOFhqZDMwQ1ZqRjFFV1N1QVg2MUh2bzB2WFdBY2c4OVoyb0dnQkxHMzBtWl9EN1NHOUNGZm1NM0lxdEdmRS1pVE8yNDR4OWFVUUV6UjA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWndpY21Id1hBX0xUb050Nm44Q0VDT2tDMUdiUl9FOXdFZzlmR0Qxdi1QYmRHVmFNRkpKS1Rudjg5YVhkeGE1blMybDQxSVRhUFp5RUk1TzVNemFFbnN1ajBtdFR1VHJGb2dMZjJwRmRnYzhtT0xJS3FtdkZCb0NWSGJaZWRoaEFXd1lldWRpT3hFal9QMHZpN1hkYkxmeUlldFFOS3NpTHBPTWZaZEttSko4WHk5azZQeWfSAb8BQVVfeXFMTlo3UVFaRGQyNDR4X2gzZURqb0hSa2U0Sjlvd19jbnhsd0lCWml1ODlvaXZmbzlMNlRKRzJuR25OSXhpd3FtSEVvbG53WFJPRFRmbW0xNU1qckRxdW83RHRGT2FhTEkzdmRENjllWVp3T2djOFhqZDMwQ1ZqRjFFV1N1QVg2MUh2bzB2WFdBY2c4OVoyb0dnQkxHMzBtWl9EN1NHOUNGZm1NM0lxdEdmRS1pVE8yNDR4OWFVUUV6UjA?oc=5",
+     "resolved_url": "https://www.infomoney.com.br/mercados/pane-que-atrasou-abertura-da-bolsa-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3/",
+     "canonical_url": "https://www.infomoney.com.br/mercados/pane-que-atrasou-abertura-da-bolsa-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3/",
+     "display_url": "https://www.infomoney.com.br/mercados/pane-que-atrasou-abertura-da-bolsa-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.infomoney.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-12T17:07:14.145213+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "BPMoney",
+     "domain": "bpmoney.com.br",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMkp2UnVwXzR1TklrenZMXzRVZTNwNTV2T0JyMzJaZEFBV3pwOUd3cElHaDlIS0c2a2dkSmJlT2FlYjlBZnBQZUhDdHpWclFSWWRfb3JRM2IzSkpuaVFlOGNvYzY0R3B4UEpuMnZHWHdsSzJZN0ZEc1NzN1lUUVFJdUFza0ZDa2Q4TFdkWk8wU3FhdG1tVVRV?oc=5",
+     "when": "12/08 13:51",
+     "original_url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMkp2UnVwXzR1TklrenZMXzRVZTNwNTV2T0JyMzJaZEFBV3pwOUd3cElHaDlIS0c2a2dkSmJlT2FlYjlBZnBQZUhDdHpWclFSWWRfb3JRM2IzSkpuaVFlOGNvYzY0R3B4UEpuMnZHWHdsSzJZN0ZEc1NzN1lUUVFJdUFza0ZDa2Q4TFdkWk8wU3FhdG1tVVRV?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMkp2UnVwXzR1TklrenZMXzRVZTNwNTV2T0JyMzJaZEFBV3pwOUd3cElHaDlIS0c2a2dkSmJlT2FlYjlBZnBQZUhDdHpWclFSWWRfb3JRM2IzSkpuaVFlOGNvYzY0R3B4UEpuMnZHWHdsSzJZN0ZEc1NzN1lUUVFJdUFza0ZDa2Q4TFdkWk8wU3FhdG1tVVRV?oc=5",
+     "resolved_url": "https://bpmoney.com.br/negocios/empresas-na-bolsa/b3-pane-julho-chamado-acao-christian-egan/",
+     "canonical_url": "https://bpmoney.com.br/negocios/empresas-na-bolsa/b3-pane-julho-chamado-acao-christian-egan/",
+     "display_url": "https://bpmoney.com.br/negocios/empresas-na-bolsa/b3-pane-julho-chamado-acao-christian-egan/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "bpmoney.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-12T17:07:14.545456+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ]
   },
   "https://atlaspublico.com.br/cvm/noticias/localiza-rent-a-car-capta-rs-1-8-bilhao-em-debentures-64132": {
    "title": "Localiza Rent a Car capta R$ 1,8 bilhão em debêntures rating AAA(bra)",
@@ -51671,7 +51702,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1786552141,
-   "cap_iso": "2026-08-12 13:29"
+   "cap_iso": "2026-08-12 13:29",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMioAFBVV95cUxNQ250WDBqa1NIRS1Nb3BQQUpSYW45R1g2TkVxdjJpSmQ0aHFVY1BSQjhvUkF0V21xM09pcmlvYjNkWE93OXo2U29VREM1azhkWXJyaUhzTk9tVE1nWkhYaUc5QVF1SG9CQjUwZGNCTFV3dF9ZZHpZdVpCc3dDb1gxZGxpS19Nc2luODY1ZExJNGNUN1RXUUdLY0hUMFlRT0t6?oc=5": {
    "title": "Pedidos de recuperação judicial no agro sobem 21,9% no 1º trimestre",
@@ -51690,9 +51723,96 @@
    ],
    "captured_ts": 1786552141,
    "cap_iso": "2026-08-12 13:29"
+  },
+  "https://news.google.com/rss/articles/CBMinAFBVV95cUxQTmJwWWFocTRHcmhkcWFNREJEdUxsLUhOdHBWdVNxLVJhUmNUcU9xRnlITVZva0R4REpLeWRpektBdFk4em9MMUVNU2xqUm5iVk1sUHlkUGxsVEY2SUNwSS1CTjMyOXRlX2U0SHpWTDhRSUk4NHotemM5OE41LVJwTjc1aUJiMWRrRmhiLWJuMVJfVDRYWXUyeVc3b2nSAb4BQVVfeXFMTW94U19WZ2ZyaTI4UjcyUkh6NkowbnFoblJia3BsbkZTYVotemVNZkVFVmhJZXluNE1aaUJCT0h6U2owdGp4VEU0QnhsaFA3dldUREEwbnpBTFJfMWllTmFsck5UVnZobWtqM1BINW5kelcyY215cnVrdmJ5a1N0eGxaVDRITnMyQmlTTFlPX0dKQldGeUZ5WDZTaWtyOFNfTEJYZzVZY1pzZHFnR1dqaENQV1FjblpzWGpnTnhUUQ?oc=5": {
+   "title": "Coca-Cola Company nombra nuevo gerente general en Chile",
+   "url": "https://www.latercera.com/pulso/noticia/coca-cola-company-nombra-nuevo-gerente-general-en-chile/",
+   "summary": "Coca-Cola Company nombra nuevo gerente general en Chile &nbsp;&nbsp; La Tercera",
+   "source": "La Tercera",
+   "domain": "latercera.com",
+   "pub_ts": 1777359600,
+   "pub_iso": "2026-04-28 04:00",
+   "language": "es",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "captured_ts": 1786554417,
+   "cap_iso": "2026-08-12 14:06"
+  },
+  "https://br.investing.com/news/stock-market-news/sp-rebaixa-rating-da-cosan-para-b-apos-enfraquecimento-da-diversificacao-93CH-1996403": {
+   "title": "S&P rebaixa rating da Cosan para B+ após enfraquecimento da diversificação",
+   "url": "https://br.investing.com/news/stock-market-news/sp-rebaixa-rating-da-cosan-para-b-apos-enfraquecimento-da-diversificacao-93CH-1996403",
+   "summary": "S&P rebaixa rating da Cosan para B+ após enfraquecimento da diversificação &nbsp;&nbsp; Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "domain": "br.investing.com",
+   "pub_ts": 1783494000,
+   "pub_iso": "2026-07-08 04:00",
+   "language": "pt",
+   "companies": [
+    "Cosan"
+   ],
+   "event_ids": [
+    "rebaixamento_rating"
+   ],
+   "mention_roles": {
+    "Cosan": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Cosan": [
+     "rebaixamento_rating"
+    ]
+   },
+   "companies_attributed": [
+    "Cosan"
+   ],
+   "context_companies": [],
+   "corroborations": [
+    {
+     "source": "CNN Brasil",
+     "domain": "cnnbrasil.com.br",
+     "url": "https://www.cnnbrasil.com.br/agro/sp-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "CNN Brasil",
+     "domain": "cnnbrasil.com.br",
+     "url": "https://www.cnnbrasil.com.br/agro/sp-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/",
+     "when": "08/07 04:00"
+    }
+   ],
+   "captured_ts": 1786554417,
+   "cap_iso": "2026-08-12 14:06"
+  },
+  "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPT2pad3Vwd2lBbnBSTG1pWlFMNUpXQWdkZEU4TUtmdVBwLUZKZEVPM0piZ3VnOEhwV3YzNjA4dnVrMy1XSExJT0pUUUpNam01d2tmOWc2TlUzRHhER3VLYmlhaDU5U2J1b2RGdk9ienhWcV9YM0lwVnVwanpWMkFnT1VlU0xWNGxDUWFvb0VNRGxQY3VUU1QzZElQYjRBbkpQNkYyM1VuU1RRLTh2SktfQkNuTG1Gc2JCa0dKeFo0VUNqb0VVdWRtSzJadUU0aVNPRzN6RThqU1ZCM19YVllwQ1haekNMc2VVTjJWVktB0gHzAUFVX3lxTE40RlZMc04tZkttVFRQa0RRMklhX1liV2NIbG92ZDkxQ1NwOEpVRmVnZXJMMHJzR3FBNVRLSFgzRjlzaElqRzdlQlZMamtLeVFPaDN0Qk1pZkFvZGRBc1BEbWo2UGtfanNybU5MZFcwTDBYcmsxeWdzTlV3ZmZvclBtNGZ1YXR6Q1BJNXBPZkhCRlpySTRhWUpJOHZFbi01T19sZl9nM2pCb0RxYnlSczhINDg4MTlZS1R2a1JMU3NUaEFCbDlHWEtmWEpkQ2w1bXNsM1hJLXljY3EyMy1FOEdxNzBZckY4VFdfN3dBVHJfbElPcw?oc=5": {
+   "title": "Provisões contra calote pesam no lucro do BB no 2T26 e fase mais difícil ainda pode estar à frente",
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/provisoes-contra-calote-pesam-no-lucro-do-bb-no-2t26-e-fase-mais-dificil-ainda-pode-estar-a-frente/",
+   "summary": "Provisões contra calote pesam no lucro do BB no 2T26 e fase mais difícil ainda pode estar à frente &nbsp;&nbsp; Estadão",
+   "source": "Estadão",
+   "domain": "estadao.com.br",
+   "pub_ts": 1786523400,
+   "pub_iso": "2026-08-12 05:30",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "default"
+   ],
+   "captured_ts": 1786554417,
+   "cap_iso": "2026-08-12 14:06"
   }
  },
- "run_count": 111,
+ "run_count": 112,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -56941,11 +57061,35 @@
   "https://news.google.com/rss/articles/CBMioAFBVV95cUxNQ250WDBqa1NIRS1Nb3BQQUpSYW45R1g2TkVxdjJpSmQ0aHFVY1BSQjhvUkF0V21xM09pcmlvYjNkWE93OXo2U29VREM1azhkWXJyaUhzTk9tVE1nWkhYaUc5QVF1SG9CQjUwZGNCTFV3dF9ZZHpZdVpCc3dDb1gxZGxpS19Nc2luODY1ZExJNGNUN1RXUUdLY0hUMFlRT0t6?oc=5": {
    "url": "https://www.metropoles.com/brasil/pedidos-de-recuperacao-judicial-no-agro-sobem-219-no-1o-trimestre",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiugFBVV95cUxOZEZJNDJ4emxBb1lTMk4yQnY1VnNkS0gxbUNfODlGZThzTWJYV0JHR2huWl9KZEs0MG1kWVVQUGgtWDA4ZWxiX1pwNzZIaDRicFpHWGtKeWxEb0hBZnFHU1ZjWjJGNElSRVF0MlhBczFXdDFjbEdsbjZCTE80THhDaGphMEtfeG5IdC1Rb2lZZ0FXeFppS21jUHRZbm4wSGd3YnJJYWVrT05SUF9lTEpfT2hhZTczY1NlcXfSAdsBQVVfeXFMTXhodDM2R25KOWxVYlQwdDdOUlFFUWJ6Sk50WEF4TUdGSWVVSF94cUFuQ01Xa2EtSlBtUkNfcDhUTDI4Q09GdGVOdGlTUThWMk44RVhCam10bDRKY2tTaWUzUDlSczNDelZBdDlXTWtOSFluVWdQc1dCa2dHY1FKTGJ1SzJsMXRVRjJRb000aHJmdGZiMjE2eGlxSWlXUVlFS3dsWDRfSnBnU1F6TklXSDJaQVZSY1Y4NlFhVmljSEpVUlZ6NkR4aWF5RVUxbUdPVkZkdEx3SW10S1ZZ?oc=5": {
+   "url": "https://www.latercera.com/pulso/noticia/presidente-embonor-andres-vicuna-la-fusion-andina-no-tema-este-la-mesa/172460/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMizgFBVV95cUxOZjRmeVZKbU9HdHpkUF9IbkhUejZ2UXljV1hjM2pZSVZPUTJnQWR2RDdhZ2FlX0t6ZUtDUTROcGJYSDdNNXliYjhlRzBvRkE5dFU5Rm1PM1JPdm4wQngxbWNvQVoxRUJqcUFna0tqbDl6eHZhNV84S2hZV3NKNFRpQzBQd1RxVmlCVzRQdTZoaXpjcGZEUWhzTnhJNm9vVmR2NU12dFFkbklwcjlWYW95VzVpa1d6SElGVFc3cEdjT1ZiM003Qmgtbkd0RG44dw?oc=5": {
+   "url": "https://br.investing.com/news/stock-market-news/sp-rebaixa-rating-da-cosan-para-b-apos-enfraquecimento-da-diversificacao-93CH-1996403",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMinAFBVV95cUxQTmJwWWFocTRHcmhkcWFNREJEdUxsLUhOdHBWdVNxLVJhUmNUcU9xRnlITVZva0R4REpLeWRpektBdFk4em9MMUVNU2xqUm5iVk1sUHlkUGxsVEY2SUNwSS1CTjMyOXRlX2U0SHpWTDhRSUk4NHotemM5OE41LVJwTjc1aUJiMWRrRmhiLWJuMVJfVDRYWXUyeVc3b2nSAb4BQVVfeXFMTW94U19WZ2ZyaTI4UjcyUkh6NkowbnFoblJia3BsbkZTYVotemVNZkVFVmhJZXluNE1aaUJCT0h6U2owdGp4VEU0QnhsaFA3dldUREEwbnpBTFJfMWllTmFsck5UVnZobWtqM1BINW5kelcyY215cnVrdmJ5a1N0eGxaVDRITnMyQmlTTFlPX0dKQldGeUZ5WDZTaWtyOFNfTEJYZzVZY1pzZHFnR1dqaENQV1FjblpzWGpnTnhUUQ?oc=5": {
+   "url": "https://www.latercera.com/pulso/noticia/coca-cola-company-nombra-nuevo-gerente-general-en-chile/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPT2pad3Vwd2lBbnBSTG1pWlFMNUpXQWdkZEU4TUtmdVBwLUZKZEVPM0piZ3VnOEhwV3YzNjA4dnVrMy1XSExJT0pUUUpNam01d2tmOWc2TlUzRHhER3VLYmlhaDU5U2J1b2RGdk9ienhWcV9YM0lwVnVwanpWMkFnT1VlU0xWNGxDUWFvb0VNRGxQY3VUU1QzZElQYjRBbkpQNkYyM1VuU1RRLTh2SktfQkNuTG1Gc2JCa0dKeFo0VUNqb0VVdWRtSzJadUU0aVNPRzN6RThqU1ZCM19YVllwQ1haekNMc2VVTjJWVktB0gHzAUFVX3lxTE40RlZMc04tZkttVFRQa0RRMklhX1liV2NIbG92ZDkxQ1NwOEpVRmVnZXJMMHJzR3FBNVRLSFgzRjlzaElqRzdlQlZMamtLeVFPaDN0Qk1pZkFvZGRBc1BEbWo2UGtfanNybU5MZFcwTDBYcmsxeWdzTlV3ZmZvclBtNGZ1YXR6Q1BJNXBPZkhCRlpySTRhWUpJOHZFbi01T19sZl9nM2pCb0RxYnlSczhINDg4MTlZS1R2a1JMU3NUaEFCbDlHWEtmWEpkQ2w1bXNsM1hJLXljY3EyMy1FOEdxNzBZckY4VFdfN3dBVHJfbElPcw?oc=5": {
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/provisoes-contra-calote-pesam-no-lucro-do-bb-no-2t26-e-fase-mais-dificil-ainda-pode-estar-a-frente/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWndpY21Id1hBX0xUb050Nm44Q0VDT2tDMUdiUl9FOXdFZzlmR0Qxdi1QYmRHVmFNRkpKS1Rudjg5YVhkeGE1blMybDQxSVRhUFp5RUk1TzVNemFFbnN1ajBtdFR1VHJGb2dMZjJwRmRnYzhtT0xJS3FtdkZCb0NWSGJaZWRoaEFXd1lldWRpT3hFal9QMHZpN1hkYkxmeUlldFFOS3NpTHBPTWZaZEttSko4WHk5azZQeWfSAb8BQVVfeXFMTlo3UVFaRGQyNDR4X2gzZURqb0hSa2U0Sjlvd19jbnhsd0lCWml1ODlvaXZmbzlMNlRKRzJuR25OSXhpd3FtSEVvbG53WFJPRFRmbW0xNU1qckRxdW83RHRGT2FhTEkzdmRENjllWVp3T2djOFhqZDMwQ1ZqRjFFV1N1QVg2MUh2bzB2WFdBY2c4OVoyb0dnQkxHMzBtWl9EN1NHOUNGZm1NM0lxdEdmRS1pVE8yNDR4OWFVUUV6UjA?oc=5": {
+   "url": "https://www.infomoney.com.br/mercados/pane-que-atrasou-abertura-da-bolsa-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMkp2UnVwXzR1TklrenZMXzRVZTNwNTV2T0JyMzJaZEFBV3pwOUd3cElHaDlIS0c2a2dkSmJlT2FlYjlBZnBQZUhDdHpWclFSWWRfb3JRM2IzSkpuaVFlOGNvYzY0R3B4UEpuMnZHWHdsSzJZN0ZEc1NzN1lUUVFJdUFza0ZDa2Q4TFdkWk8wU3FhdG1tVVRV?oc=5": {
+   "url": "https://bpmoney.com.br/negocios/empresas-na-bolsa/b3-pane-julho-chamado-acao-christian-egan/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786552198,
-  "iso": "12 ago 2026 · 13:29 BRT",
+  "ts": 1786554483,
+  "iso": "12 ago 2026 · 14:08 BRT",
   "status": {
    "Banco do Brasil": {
     "status": "critico",
@@ -56961,7 +57105,7 @@
    },
    "Rumo": {
     "status": "atencao",
-    "score": 64
+    "score": 63
    },
    "JBS": {
     "status": "atencao",
@@ -56991,13 +57135,13 @@
     "status": "monitorar",
     "score": 35
    },
+   "B3": {
+    "status": "monitorar",
+    "score": 35
+   },
    "Sabesp": {
     "status": "monitorar",
     "score": 32
-   },
-   "B3": {
-    "status": "monitorar",
-    "score": 29
    },
    "Yobel": {
     "status": "monitorar",
