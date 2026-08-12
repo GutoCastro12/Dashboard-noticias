@@ -42,6 +42,15 @@
   "reviewer_type": "imported_prior_adjudication",
   "status": "TRUE"
  },
+ "https://br.investing.com/analysis/cosan-csan3-a-beira-da-falencia-sera-que-conseguira-se-recuperar-200477368||Cosan||falencia": {
+  "company": "Cosan",
+  "event_id": "falencia",
+  "family_id": "",
+  "note": "Revisao humana: o titulo e interrogativo e especulativo e nao confirma que a Cosan pediu falencia, entrou em processo de falencia ou teve falencia decretada.",
+  "reviewed_at": 1786567962,
+  "reviewer_type": "human",
+  "status": "FALSE_POSITIVE"
+ },
  "https://br.investing.com/news/stock-market-news/sp-rebaixa-rating-da-cosan-para-b-apos-enfraquecimento-da-diversificacao-93CH-1996403||Cosan||rebaixamento_rating": {
   "company": "Cosan",
   "event_id": "rebaixamento_rating",

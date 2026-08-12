@@ -1212,6 +1212,25 @@ MODALIZADOR_PROSPECTIVO = [
     r"could\s+(?:default|face)", r"may\s+default", r"expectativa\s+de",
     r"proje[çc][ãa]o\s+de", r"alerta\s+(?:para|sobre)", r"warns?\s+of",
     r"prev[êe]\s+", r"temor\s+de", r"receio\s+de", r"potencial\s+",
+    # 4I.2 R7c-P8 — PROXIMIDADE e HIPOTESE. Caso adjudicado por humano como
+    # FALSE_POSITIVE: "Cosan (CSAN3) a beira da falencia? Sera que conseguira
+    # se recuperar?" pontuava `falencia` critica para a Cosan. Estar A BEIRA de
+    # algo e justamente NAO ter chegado la — mesma familia semantica de "risco
+    # de", que este helper ja reconhece. Nao e regra de ponto de interrogacao:
+    # o que bloqueia e o modalizador adjacente ao termo do evento, e por isso
+    # "X pediu falencia? Documento confirma protocolo" continua pontuando.
+    r"[àa]\s+beira\s+d", r"[àa]s\s+portas\s+d", r"pr[óo]xim[ao]\s+d[ao]",
+    r"rumo\s+[àa]", r"caminha\s+para", r"beira\s+d[ao]",
+    r"eventual\s+", r"eventuais\s+", r"hipot[ée]tic\w*\s+", r"suposta?\s+",
+    r"al\s+borde\s+de", r"on\s+the\s+brink\s+of", r"on\s+the\s+verge\s+of",
+    r"discute\s+", r"debate\s+",
+]
+# Mesma ideia, marcador DEPOIS do termo: "falencia a vista", "falencia
+# iminente". A ordem inversa e comum em manchete e o padrao prefixado nao a
+# alcanca.
+MODALIZADOR_PROSPECTIVO_POSFIXO = [
+    r"[àa]\s+vista", r"iminente", r"inminente", r"looming",
+    r"no\s+horizonte", r"[àa]\s+espreita", r"em\s+discuss[ãa]o",
 ]
 # o evento recai sobre CARTEIRA/PRODUTO/INSTRUMENTO, não sobre obrigação própria
 OBJETO_CARTEIRA = [
@@ -1247,8 +1266,11 @@ def detect_evento_nao_consumado(text: str, event_keywords: list[str], monitored:
         return {"nao_consumado": False, "motivo": "", "evidence": ""}
     kw_alt = "|".join(kws)
     # modalizador COLADO ao termo do evento ("riesgo de impago")
-    rx_prosp = re.compile(r"(?:" + "|".join(MODALIZADOR_PROSPECTIVO) + r")\s+(?:\w+\s+){0,2}?(?:"
+    rx_prosp = re.compile(r"(?:" + "|".join(MODALIZADOR_PROSPECTIVO) + r")\s*(?:\w+\s+){0,2}?(?:"
                           + kw_alt + r")(?!\w)", re.I)
+    # e o caso simetrico, com o marcador seguindo o termo ("falencia iminente")
+    rx_prosp_pos = re.compile(r"(?<!\w)(?:" + kw_alt + r")(?!\w)\s+(?:\w+\s+){0,1}?(?:"
+                              + "|".join(MODALIZADOR_PROSPECTIVO_POSFIXO) + r")", re.I)
     kw_rx = re.compile(r"(?<!\w)(?:" + kw_alt + r")(?!\w)")
     mencoes = neutras = 0
     motivo = ev = ""
@@ -1256,7 +1278,7 @@ def detect_evento_nao_consumado(text: str, event_keywords: list[str], monitored:
         if not kw_rx.search(prop):
             continue
         mencoes += 1
-        m = rx_prosp.search(prop)
+        m = rx_prosp.search(prop) or rx_prosp_pos.search(prop)
         if m:
             neutras += 1
             motivo = motivo or "risco_prospectivo"
