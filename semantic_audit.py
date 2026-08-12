@@ -2126,6 +2126,113 @@ def detect_papel_nao_sujeito(text: str, monitored: str,
     return ""
 
 
+# ── 4I.2 R7c-P2 — insolvência setorial ou de terceiro ───────────────────────
+# Caso adjudicado por humano: "Banco do Brasil (BBAS3) em alerta: Pedidos de
+# recuperação judicial no agronegócio saltam 22%, aponta Serasa" pontuava
+# `recuperacao_judicial` PARA O BANCO. A recuperação é do setor; o banco é o
+# credor exposto, citado no contexto.
+#
+# O defeito não está no título: é o de sempre — a palavra vira candidato e o
+# evento pontua por AUSÊNCIA de blocker. `detect_debtor_subject` devolve vazio
+# tanto aqui quanto em "X pede recuperação judicial", então nada distinguia os
+# dois. A correção exige EVIDÊNCIA POSITIVA de que a monitorada é a devedora.
+#
+# Generaliza para insolvência de escopo setorial/coletivo — não conhece banco,
+# agronegócio, veículo nem ticker.
+# Singular E plural: "recuperações judiciais no varejo" é justamente a forma
+# em que a notícia setorial aparece, e a versão só-singular deixava passar.
+# Baldes que nao sao emissores: agregam noticia de mercado, nunca sao sujeito.
+_NAO_EMISSOR = frozenset({"mercado (geral)", "mercado geral", "mercado"})
+
+_INSOLV_ESTRITA = (r"(?:recupera[çc](?:[ãa]o|[õo]es)\s+judicia(?:l|is)|"
+                   r"fal[êe]nci\w*|concurso\s+de\s+acreedores|quiebra|"
+                   r"chapter\s*11|insolvenc\w*|bankruptc\w*)")
+
+# A monitorada É a devedora: possessivo, verbo próprio ou pedido nomeado.
+_INSOLV_SUJEITO_PROPRIO = [
+    _INSOLV_ESTRITA + r"\s+d[aeo]s?\s+(?:{m})\b",
+    r"(?:{m})\s+(?:\w+\s+){{0,2}}?(?:pede|pediu|pedir[áa]|entra|entrou|"
+    r"solicita|solicitou|requer|requereu|ajuiza|ajuizou|protocola|protocolou)"
+    r"\s+(?:\w+\s+){{0,3}}?" + _INSOLV_ESTRITA,
+    r"(?:{m})\s+(?:est[áa]|entrou|permanece|segue|encontra-se)\s+"
+    r"(?:\w+\s+){{0,2}}?em\s+" + _INSOLV_ESTRITA,
+    r"(?:pedido|plano|processo)\s+de\s+" + _INSOLV_ESTRITA +
+    r"\s+d[aeo]s?\s+(?:{m})\b",
+    r"(?:{m})\s+(?:\w+\s+){{0,3}}?(?:decretad\w*|declarad\w*)\s+"
+    r"(?:\w+\s+){{0,2}}?" + _INSOLV_ESTRITA,
+]
+
+# O sujeito é COLETIVO ou terceiro: setor, classe de empresas, clientes,
+# fornecedores, produtores. "Pedidos de RJ no agronegócio", "RJ de clientes".
+_INSOLV_SUJEITO_COLETIVO = [
+    r"(?:pedidos?|processos?|casos?|n[úu]mero)\s+de\s+" + _INSOLV_ESTRITA,
+    _INSOLV_ESTRITA + r"\s+(?:no|na|nos|nas|em|do|da|dos|das)\s+"
+    r"(?:setor|segmento|mercado|ind[úu]stria|agroneg[óo]cio|varejo|"
+    r"com[ée]rcio|constru[çc][ãa]o|pa[íi]s|regi[ãa]o|estado)",
+    _INSOLV_ESTRITA + r"\s+d[aeo]s?\s+(?:clientes?|fornecedores?|produtores?|"
+    r"parceir\w+|devedores?|tomadores?|contrapartes?|empresas?|companhias?|"
+    r"varejistas?|construtoras?|usinas?)",
+    r"(?:empresas?|companhias?|clientes?|produtores?|fornecedores?)\s+"
+    r"(?:\w+\s+){0,2}?em\s+" + _INSOLV_ESTRITA,
+    r"(?:aumento|alta|salto|crescimento|avan[çc]o|onda|disparam?|saltam?)"
+    r"(?:\s+\w+){0,4}?\s+" + _INSOLV_ESTRITA,
+    # Plural nu, sem nenhuma entidade ligada: "recuperações judiciais crescem",
+    # "as falências no país". O plural já indica classe, não uma empresa.
+    r"(?:recupera[çc][õo]es\s+judiciais|fal[êe]ncias)",
+]
+
+# Papel da monitorada quando o sujeito é coletivo: exposta, credora, provisiona,
+# acompanha, é fonte do dado. Nenhum deles é "estar em recuperação judicial".
+_INSOLV_PAPEL_EXPOSTO = [
+    r"(?:{m})\s*(?:[\w()\[\]:,.-]+\s+){{0,3}}?(?:em\s+alerta|em\s+aten[çc][ãa]o|"
+    r"monitora|acompanha|avalia|analisa|projeta|estima|aponta|revela|"
+    r"calcula|divulga|informa)",
+    r"(?:{m})\s*(?:[\w()\[\]:,.-]+\s+){{0,3}}?(?:provis\w+|provisiona|reserva|"
+    r"exposi[çc][ãa]o|expost\w+|credor\w*|carteira)",
+    r"(?:segundo|conforme|de\s+acordo\s+com|aponta|diz|informa)\s+"
+    r"(?:a\s+|o\s+)?(?:{m})\b",
+]
+
+
+def detect_insolvencia_setorial(text: str, monitored: str,
+                                aliases: list | None = None) -> dict:
+    """A insolvência é do SETOR/de terceiros, não da monitorada.
+
+    Só bloqueia quando NÃO há evidência positiva de que a monitorada é a
+    devedora. Assim "X pede recuperação judicial", "recuperação judicial da X",
+    "plano de recuperação judicial da X" e "X está em recuperação judicial"
+    seguem pontuando — exige-se sujeito, não se apaga a família."""
+    # O balde de notícia de mercado NÃO é um emissor: ali o sujeito nunca é a
+    # "empresa monitorada", e aplicar a regra apagaria o feed inteiro. Medido
+    # no blast: 24 dos 25 pares alterados eram desse balde, incluindo
+    # "Hughes pede recuperação judicial" — evento real de terceiro, que é
+    # justamente o que esse agrupamento existe para mostrar.
+    if _n(monitored) in _NAO_EMISSOR:
+        return {}
+    t = _n(text)
+    alt = "(?:" + "|".join(re.escape(_n(a)) for a in
+                           ((aliases or []) + [monitored]) if a) + ")"
+    for p in _INSOLV_SUJEITO_PROPRIO:
+        if re.search(p.format(m=alt), t, re.I):
+            return {}
+    coletivo = ""
+    for p in _INSOLV_SUJEITO_COLETIVO:
+        m = re.search(p, t, re.I)
+        if m:
+            coletivo = m.group(0).strip()
+            break
+    if not coletivo:
+        return {}
+    papel = ""
+    for p in _INSOLV_PAPEL_EXPOSTO:
+        m = re.search(p.format(m=alt), t, re.I)
+        if m:
+            papel = m.group(0).strip()
+            break
+    return {"sujeito_coletivo": coletivo[:90], "papel_monitorada": papel[:90],
+            "evidence": coletivo[:160]}
+
+
 def is_default_nomenclatura_de_rating(text: str) -> bool:
     """O texto usa "default" apenas como NOME de métrica de rating (IDR) ou
     como cláusula contratual citada, sem qualquer default econômico real?"""
@@ -2281,6 +2388,33 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
             elif papeis["third_party_statement"]:
                 terceiro, regra = (papeis["target_company"] or "terceiro citado"), \
                                   "R_COMUNICADO_SOBRE_TERCEIRO"
+            # 4I.2 R7c-P2 — insolvência SETORIAL/de terceiro. Precedência
+            # DELIBERADAMENTE MÍNIMA: só atua quando nenhuma regra de terceiro
+            # NOMEADO atuou. Rodando antes, roubava o caso do comunicado sobre
+            # terceiro — que dá um sujeito melhor, com entidade nomeada, e o
+            # `test_semantica` acusou na hora. Aqui o sujeito é um COLETIVO
+            # ("pedidos de RJ no agronegócio"), que nenhuma das regras acima
+            # procura, e por isso o evento pontuava por ausência de blocker.
+            if not terceiro:
+                _set = detect_insolvencia_setorial(
+                    texto, monitored,
+                    aliases_por_empresa.get(monitored) or [monitored])
+                if _set:
+                    d.update(subject_company=_set["sujeito_coletivo"],
+                             scoreable=False, event_scope="indireto",
+                             relation_type="setorial_ou_terceiro",
+                             subject_evidence=_set["evidence"],
+                             direction="neutra",
+                             attribution_rule="R_INSOLVENCIA_SETORIAL_OU_DE_TERCEIRO",
+                             rejection_reason=(
+                                 f"a insolvência é de "
+                                 f"{_set['sujeito_coletivo']!r}; {monitored} "
+                                 f"aparece como parte exposta/citada"
+                                 + (f" ({_set['papel_monitorada']})"
+                                    if _set["papel_monitorada"] else "")),
+                             attribution_confidence="alta")
+                    decisoes.append(d)
+                    continue
             if terceiro:
                 d.update(subject_company=terceiro, scoreable=False,
                          event_scope="indireto",
