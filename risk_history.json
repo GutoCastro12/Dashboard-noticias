@@ -724,7 +724,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T21:16:29.424770+00:00"
+     "last_checked_at": "2026-08-12T01:24:50.874958+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2593,7 +2593,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T21:16:29.825036+00:00"
+     "last_checked_at": "2026-08-12T01:24:51.275231+00:00"
     }
    ],
    "corrob_sources": [
@@ -10262,7 +10262,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T21:16:30.225381+00:00"
+     "last_checked_at": "2026-08-12T01:24:51.675525+00:00"
     },
     {
      "source": "Demarest",
@@ -10282,7 +10282,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T21:16:30.625676+00:00"
+     "last_checked_at": "2026-08-12T01:24:52.075809+00:00"
     }
    ],
    "corrob_sources": [
@@ -11865,7 +11865,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T21:16:31.025928+00:00"
+     "last_checked_at": "2026-08-12T01:24:52.476060+00:00"
     }
    ],
    "corrob_sources": [
@@ -15578,7 +15578,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T21:16:31.670074+00:00"
+     "last_checked_at": "2026-08-12T01:24:53.010722+00:00"
     }
    ],
    "corrob_sources": [
@@ -18131,7 +18131,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T21:16:32.281576+00:00"
+     "last_checked_at": "2026-08-12T01:24:53.545922+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -18237,7 +18237,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T21:16:32.906481+00:00"
+     "last_checked_at": "2026-08-12T01:24:54.054957+00:00"
     },
     {
      "source": "Moomoo",
@@ -19642,7 +19642,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T21:16:33.725547+00:00"
+     "last_checked_at": "2026-08-12T01:24:54.641542+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19685,7 +19685,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T21:16:34.530132+00:00"
+     "last_checked_at": "2026-08-12T01:24:55.232013+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -20509,7 +20509,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T21:16:35.152972+00:00",
+     "last_checked_at": "2026-08-12T01:24:55.782780+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20534,7 +20534,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T21:16:35.798911+00:00",
+     "last_checked_at": "2026-08-12T01:24:56.314923+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21654,7 +21654,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-11T21:16:36.199267+00:00",
+     "last_checked_at": "2026-08-12T01:24:56.715246+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21719,7 +21719,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-11T21:16:36.599523+00:00",
+     "last_checked_at": "2026-08-12T01:24:57.115495+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22808,7 +22808,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T21:16:37.250328+00:00"
+     "last_checked_at": "2026-08-12T01:24:57.642730+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22893,7 +22893,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T21:16:37.898006+00:00"
+     "last_checked_at": "2026-08-12T01:24:58.158351+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24708,7 +24708,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T21:16:38.514915+00:00",
+     "last_checked_at": "2026-08-12T01:24:58.668821+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24878,7 +24878,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T21:16:39.130875+00:00",
+     "last_checked_at": "2026-08-12T01:24:59.174242+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -39047,7 +39047,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T21:16:39.885726+00:00"
+     "last_checked_at": "2026-08-12T01:24:59.790463+00:00"
     }
    ],
    "corrob_sources": [
@@ -42118,7 +42118,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T21:16:40.506959+00:00"
+     "last_checked_at": "2026-08-12T01:25:00.297023+00:00"
     },
     {
      "source": "Virginia Business",
@@ -42161,7 +42161,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-11T21:16:41.117291+00:00"
+     "last_checked_at": "2026-08-12T01:25:00.800373+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48942,7 +48942,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T21:16:41.737196+00:00",
+     "last_checked_at": "2026-08-12T01:25:01.319866+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48965,7 +48965,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-11T21:16:42.383015+00:00",
+     "last_checked_at": "2026-08-12T01:25:01.826350+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -51148,9 +51148,344 @@
    "context_companies": [],
    "captured_ts": 1786476103,
    "cap_iso": "2026-08-11 16:21"
+  },
+  "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/": {
+   "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
+   "url": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/",
+   "summary": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal &nbsp;&nbsp; InfoMoney",
+   "source": "InfoMoney",
+   "domain": "infomoney.com.br",
+   "pub_ts": 1783494000,
+   "pub_iso": "2026-07-08 04:00",
+   "language": "pt",
+   "companies": [
+    "Vale"
+   ],
+   "event_ids": [
+    "investigacao_regulatoria"
+   ],
+   "event_assessments": [
+    {
+     "company": "Vale",
+     "event_id": "investigacao_regulatoria",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Vale",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "indireto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_PAPEL_NAO_SUJEITO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "Vale atua como individual_subject neste texto, não como sujeito do evento",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Vale",
+     "event_id": "investigacao_regulatoria",
+     "event_id_corrigido": "",
+     "regra": "R_PAPEL_NAO_SUJEITO",
+     "motivo": "Vale atua como individual_subject neste texto, não como sujeito do evento",
+     "subject_company": "Vale"
+    }
+   ],
+   "mention_roles": {
+    "Vale": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Vale": [
+     {
+      "company": "Vale",
+      "event_id": "investigacao_regulatoria",
+      "event_label": "investigacao regulatoria",
+      "subject_company": "Vale",
+      "monitored_company": "Vale",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_PAPEL_NAO_SUJEITO",
+      "attribution_confidence": "media",
+      "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOU93WVNoT0tjSW96XzBfWU54MGlPbm9IUXJtb1MwVG1pN2ZUZmF3UUpZN3ZNR0ZoQmw3M3lZT0psX2VaLVdaM1lBNzZ2aHpIM3F2bGpWaEh3bEktNTBXZTdnRDd5UWVEdkRkTzd4aHhwWXZnWkVpMWQyZEx4cDRlTy1ERjZNQmNFRzlWTHp5N1hWOFU4NDY2OFRFSmdXYVRSM25VaEo0LVJqSkZTMGgtaTA4Z1EwWWtHUkRPdjRSUUPSAcYBQVVfeXFMUFJqQ2JsVE5yZENES2pndGtXa2VYNDFPTnBtVHlzWlV3eFYwczZxSGlDY0dMM25TZS1ScEtPaVdIbEpCQUR6WThLRk9jWmtYZXE4MjhzUDhzQ2JUZmVaVnpfN3lHM1FXckdKR0xZRmE3bTlaRG9jVU1zRTV3NmRLcmRvWHhUNVA1eXhGaUhuOEdFQ3haR25OR2txQ0dQU3hFam9zSktjVkNGZGFCeGFQZm5jVl9YN2VBdXZtcjRSMmJfdUgxVk1n?oc=5",
+      "pub_ts": 1783494000,
+      "observation": "Vale atua como individual_subject neste texto, não como sujeito do evento",
+      "source_record_id": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOU93WVNoT0tjSW96XzBfWU54MGlPbm9IUXJtb1MwVG1pN2ZUZmF3UUpZN3ZNR0ZoQmw3M3lZT0psX2VaLVdaM1lBNzZ2aHpIM3F2bGpWaEh3bEktNTBXZTdnRDd5UWVEdkRkTzd4aHhwWXZnWkVpMWQyZEx4cDRlTy1ERjZNQmNFRzlWTHp5N1hWOFU4NDY2OFRFSmdXYVRSM25VaEo0LVJqSkZTMGgtaTA4Z1EwWWtHUkRPdjRSUUPSAcYBQVVfeXFMUFJqQ2JsVE5yZENES2pndGtXa2VYNDFPTnBtVHlzWlV3eFYwczZxSGlDY0dMM25TZS1ScEtPaVdIbEpCQUR6WThLRk9jWmtYZXE4MjhzUDhzQ2JUZmVaVnpfN3lHM1FXckdKR0xZRmE3bTlaRG9jVU1zRTV3NmRLcmRvWHhUNVA1eXhGaUhuOEdFQ3haR25OR2txQ0dQU3hFam9zSktjVkNGZGFCeGFQZm5jVl9YN2VBdXZtcjRSMmJfdUgxVk1n?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Vale": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Vale"
+   ],
+   "captured_ts": 1786497886,
+   "cap_iso": "2026-08-11 22:24"
+  },
+  "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVkE0WWZqMmhmYlgyWTNneXBwMFdjOWZ5X2taZERCamhsalZmUVdNR05lNks4dUdBZFo4TzhEMjE0YVVTS0RRN0N5N2hkS0RBTlliMjNYRFhSX3NrM2hZaHpvaUlPc2EzTE9aQjJFREx6ZkFlU3BTMDBRS0w0SlVBWnUwRnUzczdMemphWHJwMXFrNVpNbHFaOFdpdzZhdjJ4MGhmR9IBswFBVV95cUxQYlNlV3hwa09ia201SDliTnFNRWNHR0RuX0hEeDRWZWNmd0F2WEY2eWx2X0t5YjZEWlY3LS1wZDFiaEdWd0tob3pqb2ZCcGU2RVhUQS1YcWRsS2VzLTdHd1J0X2h2U3ZzR3dWMFp4WkZSNEU3UW9BaW15WF9SVEp0UHBfTEVEcnVMYnRka0ZEZDFmdFE3T28zcHY2YWpXYUdoX1pQR2NVOUVUZmQ2d29DVkllTQ?oc=5": {
+   "title": "Recuperação judicial é ferramenta poderosa do investidor",
+   "url": "https://valor.globo.com/financas/coluna/recuperacao-judicial-e-ferramenta-poderosa-do-investidor.ghtml",
+   "summary": "Recuperação judicial é ferramenta poderosa do investidor &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1786003251,
+   "pub_iso": "2026-08-06 05:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "corroborations": [
+    {
+     "source": "Revista Oeste",
+     "domain": "revistaoeste.com",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOakFZZTlwVF8wZmQtN1ZoekhQWFFqVmIwNWNiMUpJbldtYXBnbnFTb1BKN0JQbzY0aUFRODVSbE9zeGVSZ0loUWhrTk9aUEx0YnItYzFoWVNobHdZVmhmTVFRS05FRFdZQWh4azhRUmpKRGktUXRWd244ZjRYdXg3VGtyb0NLSVVlc2ZhZ1RnYw?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOakFZZTlwVF8wZmQtN1ZoekhQWFFqVmIwNWNiMUpJbldtYXBnbnFTb1BKN0JQbzY0aUFRODVSbE9zeGVSZ0loUWhrTk9aUEx0YnItYzFoWVNobHdZVmhmTVFRS05FRFdZQWh4azhRUmpKRGktUXRWd244ZjRYdXg3VGtyb0NLSVVlc2ZhZ1RnYw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOakFZZTlwVF8wZmQtN1ZoekhQWFFqVmIwNWNiMUpJbldtYXBnbnFTb1BKN0JQbzY0aUFRODVSbE9zeGVSZ0loUWhrTk9aUEx0YnItYzFoWVNobHdZVmhmTVFRS05FRFdZQWh4azhRUmpKRGktUXRWd244ZjRYdXg3VGtyb0NLSVVlc2ZhZ1RnYw?oc=5",
+     "resolved_url": "https://revistaoeste.com/economia/recuperacao-judicial-cresce-entre-pequenas-empresas/",
+     "canonical_url": "https://revistaoeste.com/economia/recuperacao-judicial-cresce-entre-pequenas-empresas/",
+     "display_url": "https://revistaoeste.com/economia/recuperacao-judicial-cresce-entre-pequenas-empresas/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "revistaoeste.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-12T01:25:02.226631+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Campo Grande News",
+     "domain": "campograndenews.com.br",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "resolved_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "canonical_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "display_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.campograndenews.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-12T01:25:02.626901+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Revista Oeste",
+     "domain": "revistaoeste.com",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOakFZZTlwVF8wZmQtN1ZoekhQWFFqVmIwNWNiMUpJbldtYXBnbnFTb1BKN0JQbzY0aUFRODVSbE9zeGVSZ0loUWhrTk9aUEx0YnItYzFoWVNobHdZVmhmTVFRS05FRFdZQWh4azhRUmpKRGktUXRWd244ZjRYdXg3VGtyb0NLSVVlc2ZhZ1RnYw?oc=5",
+     "when": "05/08 18:00",
+     "original_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOakFZZTlwVF8wZmQtN1ZoekhQWFFqVmIwNWNiMUpJbldtYXBnbnFTb1BKN0JQbzY0aUFRODVSbE9zeGVSZ0loUWhrTk9aUEx0YnItYzFoWVNobHdZVmhmTVFRS05FRFdZQWh4azhRUmpKRGktUXRWd244ZjRYdXg3VGtyb0NLSVVlc2ZhZ1RnYw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOakFZZTlwVF8wZmQtN1ZoekhQWFFqVmIwNWNiMUpJbldtYXBnbnFTb1BKN0JQbzY0aUFRODVSbE9zeGVSZ0loUWhrTk9aUEx0YnItYzFoWVNobHdZVmhmTVFRS05FRFdZQWh4azhRUmpKRGktUXRWd244ZjRYdXg3VGtyb0NLSVVlc2ZhZ1RnYw?oc=5",
+     "resolved_url": "https://revistaoeste.com/economia/recuperacao-judicial-cresce-entre-pequenas-empresas/",
+     "canonical_url": "https://revistaoeste.com/economia/recuperacao-judicial-cresce-entre-pequenas-empresas/",
+     "display_url": "https://revistaoeste.com/economia/recuperacao-judicial-cresce-entre-pequenas-empresas/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "revistaoeste.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-12T01:25:03.027181+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Campo Grande News",
+     "domain": "campograndenews.com.br",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "when": "06/08 09:30",
+     "original_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5",
+     "resolved_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "canonical_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "display_url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.campograndenews.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-12T01:25:03.427409+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1786497886,
+   "cap_iso": "2026-08-11 22:24"
+  },
+  "https://news.google.com/rss/articles/CBMijgJBVV95cUxPVTJ5YV8yekFHRUEtR1RPRWpGdHZfQ2ZlR3VaWGE0OVRNcjRLVVNtNDRtcTY4aE1kN192VXZyVGgyQU1TM0JvMEVTQ0M2TG9kbHNtTzhwRlJDU3RrT1BfcmxadGpvYk8zUmlKRkhqRTM4cnlSRjllVHljSnl2cHFueDNrNzRuNlduQjFHOW85d0pMc0xabE12aW9LYm9sT3ZpNTVMTC1feTNfSzFBaW93YW1ySS1TVUVjakVfaEd3MXFzUVVSYUxKak9DTWlHMXNaLVNGX1pESmpRTXFEVUVyS1V2SW5ZTFZJcGhhQUNXb21PWXZqejZGQ1pjZGUySGF0aU42ZTFOTl91NTZDUVHSAY4CQVVfeXFMT1UyeWFfMnpBR0VBLUdUT0VqRnR2X0NmZUd1WlhhNDlUTXI0S1VTbTQ0bXE2OGhNZDdfdlV2clRoMkFNUzNCbzBFU0NDNkxvZGxzbU84cEZSQ1N0a09QX3JsWnRqb2JPM1JpSkZIakUzOHJ5UkY5ZVR5Y0p5dnBxbngzazc0bjZXbkIxRzlvOXdKTHNMWmxNdmlvS2JvbE92aTU1TEwtX3kzX0sxQWlvd2FtckktU1VFY2pFX2hHdzFxc1FVUmFMSmpPQ01pRzFzWi1TRl9aREpqUU1xRFVFcktVdkluWUxWSXBoYUFDV29tT1l2ano2RkNaY2RlMkhhdGlONmUxTk5fdTU2Q1FR?oc=5": {
+   "title": "Recuperação judicial no agronegócio cresce, mas renegociar dívidas não basta para superar a crise",
+   "url": "https://valor.globo.com/google/amp/patrocinado/pressworks/noticia/2026/08/11/recuperacao-judicial-no-agronegocio-cresce-mas-renegociar-dividas-nao-basta-para-superar-a-crise-1.ghtml",
+   "summary": "Recuperação judicial no agronegócio cresce, mas renegociar dívidas não basta para superar a crise &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1786474939,
+   "pub_iso": "2026-08-11 16:02",
+   "language": "es",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1786497886,
+   "cap_iso": "2026-08-11 22:24"
+  },
+  "https://www.moneytimes.com.br/axia-energia-axia3-fitch-eleva-rating-de-credito-e-ve-ebitda-de-r-265-bilhoes-em-2028-pads/": {
+   "title": "Axia Energia (AXIA3): Fitch eleva rating de crédito e vê Ebitda de R$ 26,5 bilhões em 2028",
+   "url": "https://www.moneytimes.com.br/axia-energia-axia3-fitch-eleva-rating-de-credito-e-ve-ebitda-de-r-265-bilhoes-em-2028-pads/",
+   "summary": "Axia Energia (AXIA3): Fitch eleva rating de crédito e vê Ebitda de R$ 26,5 bilhões em 2028 &nbsp;&nbsp; Money Times",
+   "source": "Money Times",
+   "domain": "moneytimes.com.br",
+   "pub_ts": 1786485060,
+   "pub_iso": "2026-08-11 18:51",
+   "language": "pt",
+   "companies": [
+    "Axia Energia"
+   ],
+   "event_ids": [
+    "rating_elevado"
+   ],
+   "mention_roles": {
+    "Axia Energia": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Axia Energia": [
+     {
+      "company": "Axia Energia",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "Axia Energia",
+      "monitored_company": "Axia Energia",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Axia Energia (AXIA3): Fitch eleva rating de crédito e vê Ebitda de R$ 26,5 bilhões em 2028",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOMXdzenAxdmF4NFVMUFJoTC02Rk1rM2RfTXJmei1CWHd1cVdLZnY3V1FqWmZERnZMTUZNTWpYclBTNHN2dnBoSXd5c2laNGQ4a1dGUVMzSFhZR3dOeHBXRE5mMjNZcWRIVWZBdVAzbF9uWEthZmE0WUZhQ1FTcDROU1FwcVJWbkprR08yZUJXVkNhaHg1RS04b1h6TmhIRXZXTHQtdVVLNGlZbnJxNWpFTWszcHcwTGdOODJQQjZR?oc=5",
+      "pub_ts": 1786485060,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOMXdzenAxdmF4NFVMUFJoTC02Rk1rM2RfTXJmei1CWHd1cVdLZnY3V1FqWmZERnZMTUZNTWpYclBTNHN2dnBoSXd5c2laNGQ4a1dGUVMzSFhZR3dOeHBXRE5mMjNZcWRIVWZBdVAzbF9uWEthZmE0WUZhQ1FTcDROU1FwcVJWbkprR08yZUJXVkNhaHg1RS04b1h6TmhIRXZXTHQtdVVLNGlZbnJxNWpFTWszcHcwTGdOODJQQjZR?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Axia Energia": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Axia Energia"
+   ],
+   "captured_ts": 1786497886,
+   "cap_iso": "2026-08-11 22:24"
+  },
+  "https://visnoinvest.com.br/news/14704/axia-energia-axia3-registra-elevacao-de-rating-pela-fitch": {
+   "title": "Axia Energia (AXIA3) registra elevação de rating pela Fitch",
+   "url": "https://visnoinvest.com.br/news/14704/axia-energia-axia3-registra-elevacao-de-rating-pela-fitch",
+   "summary": "Axia Energia (AXIA3) registra elevação de rating pela Fitch &nbsp;&nbsp; Visno Invest",
+   "source": "Visno Invest",
+   "domain": "visnoinvest.com.br",
+   "pub_ts": 1786485720,
+   "pub_iso": "2026-08-11 19:02",
+   "language": "pt",
+   "companies": [
+    "Axia Energia"
+   ],
+   "event_ids": [
+    "rating_elevado"
+   ],
+   "mention_roles": {
+    "Axia Energia": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Axia Energia": [
+     {
+      "company": "Axia Energia",
+      "event_id": "rating_elevado",
+      "event_label": "Rating elevado",
+      "subject_company": "Axia Energia",
+      "monitored_company": "Axia Energia",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
+      "attribution_confidence": "media",
+      "title": "Axia Energia (AXIA3) registra elevação de rating pela Fitch",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQdmNtR2lfSkJVZjhrZEduRFMwbEoyUzRRX0l1TWQzQUJoNzFxR0VqUGdxM2YtcjBxX0haaGxNdW9QQVlXLS1YVzlOSk00cjJqU1hJMEJNcWdSVFA4aC1SaWdGc3VXNWU5d2ZMeVcwZUsyR1BVTWZtVFlKQzlKUXdwdkVYME9zd3JJWlUzamxPd3FEVXVBWXhwSlUyNA?oc=5",
+      "pub_ts": 1786485720,
+      "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
+      "source_record_id": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQdmNtR2lfSkJVZjhrZEduRFMwbEoyUzRRX0l1TWQzQUJoNzFxR0VqUGdxM2YtcjBxX0haaGxNdW9QQVlXLS1YVzlOSk00cjJqU1hJMEJNcWdSVFA4aC1SaWdGc3VXNWU5d2ZMeVcwZUsyR1BVTWZtVFlKQzlKUXdwdkVYME9zd3JJWlUzamxPd3FEVXVBWXhwSlUyNA?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Axia Energia": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Axia Energia"
+   ],
+   "captured_ts": 1786497886,
+   "cap_iso": "2026-08-11 22:24"
   }
  },
- "run_count": 107,
+ "run_count": 108,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -56343,11 +56678,27 @@
   "https://news.google.com/rss/articles/CBMihAFBVV95cUxOakFtUThFUzlYandCZF9la2xNVU1sYjg4UWdLMXdFSmJnRnhoX2JHaUVEVlpUd19uOF9SLWp0bkhuSEMtY0ZRY21tMDNxSjJlZDE2SzUyWjVaUkhPbnZNTlVmWFUzcG5UcFd4aXNhMnlOTUdVZkUycWRzdjRZd19XekhQZWw?oc=5": {
    "url": "https://www.wsj.com/us-news/unitedhealth-medicare-fraud-investigation-df80667f",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMivgFBVV95cUxOMXdzenAxdmF4NFVMUFJoTC02Rk1rM2RfTXJmei1CWHd1cVdLZnY3V1FqWmZERnZMTUZNTWpYclBTNHN2dnBoSXd5c2laNGQ4a1dGUVMzSFhZR3dOeHBXRE5mMjNZcWRIVWZBdVAzbF9uWEthZmE0WUZhQ1FTcDROU1FwcVJWbkprR08yZUJXVkNhaHg1RS04b1h6TmhIRXZXTHQtdVVLNGlZbnJxNWpFTWszcHcwTGdOODJQQjZR?oc=5": {
+   "url": "https://www.moneytimes.com.br/axia-energia-axia3-fitch-eleva-rating-de-credito-e-ve-ebitda-de-r-265-bilhoes-em-2028-pads/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMimwFBVV95cUxQdmNtR2lfSkJVZjhrZEduRFMwbEoyUzRRX0l1TWQzQUJoNzFxR0VqUGdxM2YtcjBxX0haaGxNdW9QQVlXLS1YVzlOSk00cjJqU1hJMEJNcWdSVFA4aC1SaWdGc3VXNWU5d2ZMeVcwZUsyR1BVTWZtVFlKQzlKUXdwdkVYME9zd3JJWlUzamxPd3FEVXVBWXhwSlUyNA?oc=5": {
+   "url": "https://visnoinvest.com.br/news/14704/axia-energia-axia3-registra-elevacao-de-rating-pela-fitch",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVkE0WWZqMmhmYlgyWTNneXBwMFdjOWZ5X2taZERCamhsalZmUVdNR05lNks4dUdBZFo4TzhEMjE0YVVTS0RRN0N5N2hkS0RBTlliMjNYRFhSX3NrM2hZaHpvaUlPc2EzTE9aQjJFREx6ZkFlU3BTMDBRS0w0SlVBWnUwRnUzczdMemphWHJwMXFrNVpNbHFaOFdpdzZhdjJ4MGhmR9IBswFBVV95cUxQYlNlV3hwa09ia201SDliTnFNRWNHR0RuX0hEeDRWZWNmd0F2WEY2eWx2X0t5YjZEWlY3LS1wZDFiaEdWd0tob3pqb2ZCcGU2RVhUQS1YcWRsS2VzLTdHd1J0X2h2U3ZzR3dWMFp4WkZSNEU3UW9BaW15WF9SVEp0UHBfTEVEcnVMYnRka0ZEZDFmdFE3T28zcHY2YWpXYUdoX1pQR2NVOUVUZmQ2d29DVkllTQ?oc=5": {
+   "url": "https://valor.globo.com/financas/coluna/recuperacao-judicial-e-ferramenta-poderosa-do-investidor.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMijgJBVV95cUxPVTJ5YV8yekFHRUEtR1RPRWpGdHZfQ2ZlR3VaWGE0OVRNcjRLVVNtNDRtcTY4aE1kN192VXZyVGgyQU1TM0JvMEVTQ0M2TG9kbHNtTzhwRlJDU3RrT1BfcmxadGpvYk8zUmlKRkhqRTM4cnlSRjllVHljSnl2cHFueDNrNzRuNlduQjFHOW85d0pMc0xabE12aW9LYm9sT3ZpNTVMTC1feTNfSzFBaW93YW1ySS1TVUVjakVfaEd3MXFzUVVSYUxKak9DTWlHMXNaLVNGX1pESmpRTXFEVUVyS1V2SW5ZTFZJcGhhQUNXb21PWXZqejZGQ1pjZGUySGF0aU42ZTFOTl91NTZDUVHSAY4CQVVfeXFMT1UyeWFfMnpBR0VBLUdUT0VqRnR2X0NmZUd1WlhhNDlUTXI0S1VTbTQ0bXE2OGhNZDdfdlV2clRoMkFNUzNCbzBFU0NDNkxvZGxzbU84cEZSQ1N0a09QX3JsWnRqb2JPM1JpSkZIakUzOHJ5UkY5ZVR5Y0p5dnBxbngzazc0bjZXbkIxRzlvOXdKTHNMWmxNdmlvS2JvbE92aTU1TEwtX3kzX0sxQWlvd2FtckktU1VFY2pFX2hHdzFxc1FVUmFMSmpPQ01pRzFzWi1TRl9aREpqUU1xRFVFcktVdkluWUxWSXBoYUFDV29tT1l2ano2RkNaY2RlMkhhdGlONmUxTk5fdTU2Q1FR?oc=5": {
+   "url": "https://valor.globo.com/google/amp/patrocinado/pressworks/noticia/2026/08/11/recuperacao-judicial-no-agronegocio-cresce-mas-renegociar-dividas-nao-basta-para-superar-a-crise-1.ghtml",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786483043,
-  "iso": "11 ago 2026 · 18:17 BRT",
+  "ts": 1786497951,
+  "iso": "11 ago 2026 · 22:25 BRT",
   "status": {
    "Cosan": {
     "status": "atencao",
@@ -56375,15 +56726,15 @@
    },
    "Santander Brasil": {
     "status": "atencao",
-    "score": 46
-   },
-   "Samarco Mineração": {
-    "status": "critico",
-    "score": 38
+    "score": 45
    },
    "Smart Fit": {
     "status": "atencao",
     "score": 38
+   },
+   "Samarco Mineração": {
+    "status": "critico",
+    "score": 37
    },
    "Axia Energia": {
     "status": "monitorar",
@@ -56427,7 +56778,7 @@
    },
    "Capital One Financial": {
     "status": "monitorar",
-    "score": 21
+    "score": 20
    },
    "Lojas Renner": {
     "status": "monitorar",
@@ -56437,10 +56788,6 @@
     "status": "monitorar",
     "score": 18
    },
-   "Suzano": {
-    "status": "monitorar",
-    "score": 17
-   },
    "Yura": {
     "status": "atencao",
     "score": 17
@@ -56449,11 +56796,11 @@
     "status": "monitorar",
     "score": 17
    },
-   "Embraer": {
+   "Suzano": {
     "status": "monitorar",
     "score": 16
    },
-   "Natura &Co": {
+   "Embraer": {
     "status": "monitorar",
     "score": 16
    },
@@ -56463,6 +56810,10 @@
    },
    "Ultrapar": {
     "status": "atencao",
+    "score": 15
+   },
+   "Natura &Co": {
+    "status": "monitorar",
     "score": 15
    },
    "Albioma": {

@@ -2551,9 +2551,108 @@
     "policy": "E",
     "policy_version": "r5b.1"
    }
+  },
+  "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/": {
+   "attempted_at": 1786497952,
+   "fragments": [
+    {
+     "method": "collector:summary",
+     "tier": 0,
+     "kind": "collector",
+     "text_excerpt": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal &nbsp;&nbsp; InfoMoney",
+     "content_hash": "ae28845db276dbc1",
+     "effective_new_tokens": 2,
+     "effective_new_chars": 13,
+     "containment": 0.833,
+     "quality_flags": [
+      "malformed_text"
+     ],
+     "sentence_like": false,
+     "length": 108
+    },
+    {
+     "method": "jsonld:description",
+     "tier": 1,
+     "kind": "structured",
+     "text_excerpt": "Camille é jornalista do InfoMoney e atua como repórter de mercados e do Ibovespa Ao Vivo, cobrindo ações brasileiras e internacionais, além de acompanhar o mercado de câmbio. Antes disso, trabalhou na divisão editorial do Research da XP e possui graduação em Direito.",
+     "content_hash": "a8b6a51e63cc8d09",
+     "effective_new_tokens": 25,
+     "effective_new_chars": 183,
+     "containment": 0.038,
+     "quality_flags": [],
+     "sentence_like": true,
+     "length": 267
+    },
+    {
+     "method": "meta:og:description",
+     "tier": 1,
+     "kind": "structured",
+     "text_excerpt": "Segundo o Valor Econômico, o processo apura suposta compensação financeira concedida a Daniel Stieler, ex-presidente do conselho de administração da Vale",
+     "content_hash": "f9bb31f8f85cc4b1",
+     "effective_new_tokens": 11,
+     "effective_new_chars": 89,
+     "containment": 0.267,
+     "quality_flags": [
+      "malformed_text"
+     ],
+     "sentence_like": false,
+     "length": 153
+    },
+    {
+     "method": "meta:description",
+     "tier": 1,
+     "kind": "structured",
+     "text_excerpt": "Segundo o Valor Econômico, o processo apura suposta compensação financeira concedida a Daniel Stieler, ex-presidente do conselho de administração da Vale",
+     "content_hash": "f9bb31f8f85cc4b1",
+     "effective_new_tokens": 11,
+     "effective_new_chars": 89,
+     "containment": 0.267,
+     "quality_flags": [
+      "malformed_text"
+     ],
+     "sentence_like": false,
+     "length": 153
+    }
+   ],
+   "extractor_version": "r6b.1",
+   "policy_version": "r5b.1",
+   "schema_version": "1.1",
+   "tier0_sufficient": false,
+   "page_fetch": true,
+   "robots_status": "robots_lido",
+   "latency_ms": 529,
+   "http_status": 200,
+   "status": "OK",
+   "early_stop": true,
+   "selected": {
+    "method": "jsonld:description",
+    "tier": 1,
+    "content_hash": "a8b6a51e63cc8d09",
+    "effective_new_tokens": 25,
+    "selection_reason": "melhor fragmento limpo, por procedência"
+   },
+   "canonical_url": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/",
+   "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
+   "eligibility": {
+    "eventos": [
+     "investigacao_regulatoria"
+    ],
+    "severidade_max": "alto",
+    "tokens_novos": 2,
+    "input_marginal": true,
+    "marcas_ambiguidade": [
+     "afiliacao_individual",
+     "termo_processual"
+    ],
+    "familia_sensivel": true,
+    "multiplas_empresas": false,
+    "policy": "E",
+    "policy_version": "r5b.1"
+   },
+   "first_seen_run": 108
   }
  },
- "gerado_em": 1786483044,
+ "gerado_em": 1786497953,
  "first_seen_run": {
   "https://www.cnbc.com/2025/07/11/capital-one-has-more-room-to-run-after-its-acquisition-jim-cramer-says.html": 104,
   "https://www.infomoney.com.br/mercados/telefonica-assume-100-da-fibrasil-e-reforca-estrategia-de-infraestrutura-propria/": 104,
@@ -3247,7 +3346,13 @@
   "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNN3l5NFBlbTBYbTVVRGhiNmhmby05eEdjSndTVXQyTjQtbHFiLTJManU5ZVJoNDdaSVVId3RUdVR0VkRMaHMyYUhjUndyNmlsUmdobUQ5T09CQnMxOUkxaWQwVEQyXzdiS2czXzdGb0xHR0JobDZpU2Q0RldzTEtpaXdGV3NjUndPYUJYdXIyLTZpZ3VkdjBKR29KYXdMdWYteFB2TEFLMm4?oc=5": 104,
   "https://news.google.com/rss/articles/CBMikwJBVV95cUxPdjh5TVVyaUNpdi1lMUdINDRmWG4tQThBMEc0bnI5azZ2djdNVTNOdUVHRU1ZYWRxaHY3SW9TQ2I4akFNSlFUWVNHS3d6bzgycXFpY0sxR29KbktrM0tOTTBvWjMzM1c3M1VhSWdIRkFjTHNPV3ZWNF9rN0pVSlpkLXFnbmxuVExNTmc1YlVxZlExUFpUTUQ0MFVmNE5fanVpM3RPWS10NTI1SlV3TEMzbzcwbE5PQ013VTQ1Sm81c0w1R2thakd4SlhPN0JDWVZVaE9NMUhURFRTSHMwUlR5c19vX25DWWx5V0RBYnZ3SUhoWGxDR0w0amVxVk1yQ1owdGE3SkV2NG93eV9md2YwdEtrWQ?oc=5": 104,
   "https://news.google.com/rss/articles/CBMijwFBVV95cUxOakFZZTlwVF8wZmQtN1ZoekhQWFFqVmIwNWNiMUpJbldtYXBnbnFTb1BKN0JQbzY0aUFRODVSbE9zeGVSZ0loUWhrTk9aUEx0YnItYzFoWVNobHdZVmhmTVFRS05FRFdZQWh4azhRUmpKRGktUXRWd244ZjRYdXg3VGtyb0NLSVVlc2ZhZ1RnYw?oc=5": 105,
-  "https://kalkinemedia.com/us/news/announcements/nextera-energy-submits-sec-report-detailing-financials-for-dominion-energy-merger": 105
+  "https://kalkinemedia.com/us/news/announcements/nextera-energy-submits-sec-report-detailing-financials-for-dominion-energy-merger": 105,
+  "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/": 108,
+  "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVkE0WWZqMmhmYlgyWTNneXBwMFdjOWZ5X2taZERCamhsalZmUVdNR05lNks4dUdBZFo4TzhEMjE0YVVTS0RRN0N5N2hkS0RBTlliMjNYRFhSX3NrM2hZaHpvaUlPc2EzTE9aQjJFREx6ZkFlU3BTMDBRS0w0SlVBWnUwRnUzczdMemphWHJwMXFrNVpNbHFaOFdpdzZhdjJ4MGhmR9IBswFBVV95cUxQYlNlV3hwa09ia201SDliTnFNRWNHR0RuX0hEeDRWZWNmd0F2WEY2eWx2X0t5YjZEWlY3LS1wZDFiaEdWd0tob3pqb2ZCcGU2RVhUQS1YcWRsS2VzLTdHd1J0X2h2U3ZzR3dWMFp4WkZSNEU3UW9BaW15WF9SVEp0UHBfTEVEcnVMYnRka0ZEZDFmdFE3T28zcHY2YWpXYUdoX1pQR2NVOUVUZmQ2d29DVkllTQ?oc=5": 108,
+  "https://news.google.com/rss/articles/CBMijgJBVV95cUxPVTJ5YV8yekFHRUEtR1RPRWpGdHZfQ2ZlR3VaWGE0OVRNcjRLVVNtNDRtcTY4aE1kN192VXZyVGgyQU1TM0JvMEVTQ0M2TG9kbHNtTzhwRlJDU3RrT1BfcmxadGpvYk8zUmlKRkhqRTM4cnlSRjllVHljSnl2cHFueDNrNzRuNlduQjFHOW85d0pMc0xabE12aW9LYm9sT3ZpNTVMTC1feTNfSzFBaW93YW1ySS1TVUVjakVfaEd3MXFzUVVSYUxKak9DTWlHMXNaLVNGX1pESmpRTXFEVUVyS1V2SW5ZTFZJcGhhQUNXb21PWXZqejZGQ1pjZGUySGF0aU42ZTFOTl91NTZDUVHSAY4CQVVfeXFMT1UyeWFfMnpBR0VBLUdUT0VqRnR2X0NmZUd1WlhhNDlUTXI0S1VTbTQ0bXE2OGhNZDdfdlV2clRoMkFNUzNCbzBFU0NDNkxvZGxzbU84cEZSQ1N0a09QX3JsWnRqb2JPM1JpSkZIakUzOHJ5UkY5ZVR5Y0p5dnBxbngzazc0bjZXbkIxRzlvOXdKTHNMWmxNdmlvS2JvbE92aTU1TEwtX3kzX0sxQWlvd2FtckktU1VFY2pFX2hHdzFxc1FVUmFMSmpPQ01pRzFzWi1TRl9aREpqUU1xRFVFcktVdkluWUxWSXBoYUFDV29tT1l2ano2RkNaY2RlMkhhdGlONmUxTk5fdTU2Q1FR?oc=5": 108,
+  "https://www.moneytimes.com.br/axia-energia-axia3-fitch-eleva-rating-de-credito-e-ve-ebitda-de-r-265-bilhoes-em-2028-pads/": 108,
+  "https://visnoinvest.com.br/news/14704/axia-energia-axia3-registra-elevacao-de-rating-pela-fitch": 108
  },
- "seeded_at_run": null
+ "seeded_at_run": null,
+ "r6f_publicado_no_run": 108
 }
