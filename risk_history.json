@@ -724,7 +724,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T01:24:50.874958+00:00"
+     "last_checked_at": "2026-08-12T11:11:52.883318+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2593,7 +2593,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T01:24:51.275231+00:00"
+     "last_checked_at": "2026-08-12T11:11:53.283615+00:00"
     }
    ],
    "corrob_sources": [
@@ -10262,7 +10262,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T01:24:51.675525+00:00"
+     "last_checked_at": "2026-08-12T11:11:53.683886+00:00"
     },
     {
      "source": "Demarest",
@@ -10282,7 +10282,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T01:24:52.075809+00:00"
+     "last_checked_at": "2026-08-12T11:11:54.084189+00:00"
     }
    ],
    "corrob_sources": [
@@ -11865,7 +11865,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T01:24:52.476060+00:00"
+     "last_checked_at": "2026-08-12T11:11:54.484439+00:00"
     }
    ],
    "corrob_sources": [
@@ -15578,7 +15578,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T01:24:53.010722+00:00"
+     "last_checked_at": "2026-08-12T11:11:55.141887+00:00"
     }
    ],
    "corrob_sources": [
@@ -18131,7 +18131,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T01:24:53.545922+00:00"
+     "last_checked_at": "2026-08-12T11:11:55.767335+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -18237,7 +18237,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T01:24:54.054957+00:00"
+     "last_checked_at": "2026-08-12T11:11:56.380782+00:00"
     },
     {
      "source": "Moomoo",
@@ -19642,7 +19642,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T01:24:54.641542+00:00"
+     "last_checked_at": "2026-08-12T11:11:57.182297+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19685,7 +19685,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T01:24:55.232013+00:00"
+     "last_checked_at": "2026-08-12T11:11:57.936041+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -20509,7 +20509,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T01:24:55.782780+00:00",
+     "last_checked_at": "2026-08-12T11:11:58.588411+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20534,7 +20534,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T01:24:56.314923+00:00",
+     "last_checked_at": "2026-08-12T11:11:59.268050+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21654,7 +21654,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-12T01:24:56.715246+00:00",
+     "last_checked_at": "2026-08-12T11:11:59.668317+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21719,7 +21719,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-12T01:24:57.115495+00:00",
+     "last_checked_at": "2026-08-12T11:12:00.068603+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22808,7 +22808,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T01:24:57.642730+00:00"
+     "last_checked_at": "2026-08-12T11:12:00.686986+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22893,7 +22893,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T01:24:58.158351+00:00"
+     "last_checked_at": "2026-08-12T11:12:01.306204+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24708,7 +24708,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T01:24:58.668821+00:00",
+     "last_checked_at": "2026-08-12T11:12:01.952862+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24878,7 +24878,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T01:24:59.174242+00:00",
+     "last_checked_at": "2026-08-12T11:12:02.565184+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -39047,7 +39047,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T01:24:59.790463+00:00"
+     "last_checked_at": "2026-08-12T11:12:03.337388+00:00"
     }
    ],
    "corrob_sources": [
@@ -42118,7 +42118,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T01:25:00.297023+00:00"
+     "last_checked_at": "2026-08-12T11:12:03.936302+00:00"
     },
     {
      "source": "Virginia Business",
@@ -42161,7 +42161,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T01:25:00.800373+00:00"
+     "last_checked_at": "2026-08-12T11:12:04.546874+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48942,7 +48942,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T01:25:01.319866+00:00",
+     "last_checked_at": "2026-08-12T11:12:05.156116+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48965,7 +48965,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T01:25:01.826350+00:00",
+     "last_checked_at": "2026-08-12T11:12:05.763736+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -51147,7 +51147,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1786476103,
-   "cap_iso": "2026-08-11 16:21"
+   "cap_iso": "2026-08-11 16:21",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/": {
    "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
@@ -51246,7 +51248,9 @@
     "Vale"
    ],
    "captured_ts": 1786497886,
-   "cap_iso": "2026-08-11 22:24"
+   "cap_iso": "2026-08-11 22:24",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVkE0WWZqMmhmYlgyWTNneXBwMFdjOWZ5X2taZERCamhsalZmUVdNR05lNks4dUdBZFo4TzhEMjE0YVVTS0RRN0N5N2hkS0RBTlliMjNYRFhSX3NrM2hZaHpvaUlPc2EzTE9aQjJFREx6ZkFlU3BTMDBRS0w0SlVBWnUwRnUzczdMemphWHJwMXFrNVpNbHFaOFdpdzZhdjJ4MGhmR9IBswFBVV95cUxQYlNlV3hwa09ia201SDliTnFNRWNHR0RuX0hEeDRWZWNmd0F2WEY2eWx2X0t5YjZEWlY3LS1wZDFiaEdWd0tob3pqb2ZCcGU2RVhUQS1YcWRsS2VzLTdHd1J0X2h2U3ZzR3dWMFp4WkZSNEU3UW9BaW15WF9SVEp0UHBfTEVEcnVMYnRka0ZEZDFmdFE3T28zcHY2YWpXYUdoX1pQR2NVOUVUZmQ2d29DVkllTQ?oc=5": {
    "title": "Recuperação judicial é ferramenta poderosa do investidor",
@@ -51483,9 +51487,27 @@
    ],
    "captured_ts": 1786497886,
    "cap_iso": "2026-08-11 22:24"
+  },
+  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOaFY5M1dwcXZLcDJOYlA4WWxnMUExb2NFcDJ2ZnZ6M1FHdm1DRnUyX0c5RTgxTWg4QjJPTFRqTi15cUUwNmEtU2xPQTVNT3ZjZmxtN3YxSUtmVHlyUHhlMVNJVEhfOTFWREFreUE4LXhwcENkUUJOTGd1d2ctVFVqMWxPdDNrQUo5RTY3aXdKOWJrVl9qUDdLQVBjQU5kZWd1WHlyUjJMM0owQzZnZ0puZjlQZ19jR2lGcjBv0gHKAUFVX3lxTE90dHV4aV8yTG9ybklMUnlTY0pqYU9oMHJfakl4UUlVTFFPRHhEbVdGTjFFUVgtR0k1UEg0NFF5OXFCVXI0TVlBc20zVVVqUUNDWW5zZ18tR3VrV01sbjRzSGxDX09VdlVwd2VOSjdKTEUxMDNrd2x2c2E4bWZpdGxtU2F3OGhJd0VjVTUzQnZKMTRnOEVNTXhDbnRPYTdrV1M3SmIwVFUybDkzRmNJdEpBTWVicTB0a2ZoaFFfd2lScVhyQlZzbng0NlE?oc=5": {
+   "title": "Em recuperação judicial, Oi volta a adiar divulgação de resultados",
+   "url": "https://valor.globo.com/empresas/noticia/2026/08/11/em-recuperao-judicial-oi-volta-a-adiar-divulgao-de-resultados.ghtml",
+   "summary": "Em recuperação judicial, Oi volta a adiar divulgação de resultados &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1786484532,
+   "pub_iso": "2026-08-11 18:42",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1786533108,
+   "cap_iso": "2026-08-12 08:11"
   }
  },
- "run_count": 108,
+ "run_count": 109,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -56694,15 +56716,27 @@
   "https://news.google.com/rss/articles/CBMijgJBVV95cUxPVTJ5YV8yekFHRUEtR1RPRWpGdHZfQ2ZlR3VaWGE0OVRNcjRLVVNtNDRtcTY4aE1kN192VXZyVGgyQU1TM0JvMEVTQ0M2TG9kbHNtTzhwRlJDU3RrT1BfcmxadGpvYk8zUmlKRkhqRTM4cnlSRjllVHljSnl2cHFueDNrNzRuNlduQjFHOW85d0pMc0xabE12aW9LYm9sT3ZpNTVMTC1feTNfSzFBaW93YW1ySS1TVUVjakVfaEd3MXFzUVVSYUxKak9DTWlHMXNaLVNGX1pESmpRTXFEVUVyS1V2SW5ZTFZJcGhhQUNXb21PWXZqejZGQ1pjZGUySGF0aU42ZTFOTl91NTZDUVHSAY4CQVVfeXFMT1UyeWFfMnpBR0VBLUdUT0VqRnR2X0NmZUd1WlhhNDlUTXI0S1VTbTQ0bXE2OGhNZDdfdlV2clRoMkFNUzNCbzBFU0NDNkxvZGxzbU84cEZSQ1N0a09QX3JsWnRqb2JPM1JpSkZIakUzOHJ5UkY5ZVR5Y0p5dnBxbngzazc0bjZXbkIxRzlvOXdKTHNMWmxNdmlvS2JvbE92aTU1TEwtX3kzX0sxQWlvd2FtckktU1VFY2pFX2hHdzFxc1FVUmFMSmpPQ01pRzFzWi1TRl9aREpqUU1xRFVFcktVdkluWUxWSXBoYUFDV29tT1l2ano2RkNaY2RlMkhhdGlONmUxTk5fdTU2Q1FR?oc=5": {
    "url": "https://valor.globo.com/google/amp/patrocinado/pressworks/noticia/2026/08/11/recuperacao-judicial-no-agronegocio-cresce-mas-renegociar-dividas-nao-basta-para-superar-a-crise-1.ghtml",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiekFVX3lxTE0yMnBuVkJPak5BYUU5ZmVmeUdCdGljMWxlcVpBdlpfSEtfRjcyR3gxZ2RhSWo3eURYV1FMQWNFSEhBZTBCSGF0ajlVRUFHZVA5OXFyaktpV3VzaTN4UmtSaHNjazN6NmxFWFlTN1hNSGZrV251SGw5RWhB?oc=5": {
+   "url": "https://www.suno.com.br/noticias/suzano-suzb3-follow-on-r-6-9-bilhoes/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMihgFBVV95cUxQVFVTc2VXS3dSVDZaMVRCRUM0VU03a1pLM1dtZUZKOVRSWnpka09KWVltOVo4NlJGTG5lc1RpNTM0dTlkNTBBS1d4VVc4Y096ZGU2blUyZVh0RjBVRkdEZTNJLVFaQmkwenF1cGU3Ukd5djQzX3VTbGZXVFFPd1RmU0R0bUU0UdIBiwFBVV95cUxQT3lxblRtRzJHaEVRdWFGeWR4aUczZ2gwLUNJVy1ZbHVJT3pWS0g4RjAzM3VWS1BhVWlsRFlwQi10RFoxOC1NTE9JcmpSVzRPSEl0NWdiWjVsRmpPZ0ZqRlpabW1heHp5b29iOFhCN1h5ZHR3dWVDZFJUZ0w4V1B5QkNmdFQwdV9YRi1R?oc=5": {
+   "url": "https://www.suno.com.br/noticias/raia-drogasil-radl3-emissao-debentures-500-mi/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOaFY5M1dwcXZLcDJOYlA4WWxnMUExb2NFcDJ2ZnZ6M1FHdm1DRnUyX0c5RTgxTWg4QjJPTFRqTi15cUUwNmEtU2xPQTVNT3ZjZmxtN3YxSUtmVHlyUHhlMVNJVEhfOTFWREFreUE4LXhwcENkUUJOTGd1d2ctVFVqMWxPdDNrQUo5RTY3aXdKOWJrVl9qUDdLQVBjQU5kZWd1WHlyUjJMM0owQzZnZ0puZjlQZ19jR2lGcjBv0gHKAUFVX3lxTE90dHV4aV8yTG9ybklMUnlTY0pqYU9oMHJfakl4UUlVTFFPRHhEbVdGTjFFUVgtR0k1UEg0NFF5OXFCVXI0TVlBc20zVVVqUUNDWW5zZ18tR3VrV01sbjRzSGxDX09VdlVwd2VOSjdKTEUxMDNrd2x2c2E4bWZpdGxtU2F3OGhJd0VjVTUzQnZKMTRnOEVNTXhDbnRPYTdrV1M3SmIwVFUybDkzRmNJdEpBTWVicTB0a2ZoaFFfd2lScVhyQlZzbng0NlE?oc=5": {
+   "url": "https://valor.globo.com/empresas/noticia/2026/08/11/em-recuperao-judicial-oi-volta-a-adiar-divulgao-de-resultados.ghtml",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786497951,
-  "iso": "11 ago 2026 · 22:25 BRT",
+  "ts": 1786533163,
+  "iso": "12 ago 2026 · 08:12 BRT",
   "status": {
    "Cosan": {
     "status": "atencao",
-    "score": 70
+    "score": 69
    },
    "Engie Brasil": {
     "status": "atencao",
@@ -56722,23 +56756,23 @@
    },
    "Tok&Stok": {
     "status": "critico",
-    "score": 51
+    "score": 50
    },
    "Santander Brasil": {
     "status": "atencao",
     "score": 45
    },
-   "Smart Fit": {
-    "status": "atencao",
-    "score": 38
-   },
    "Samarco Mineração": {
     "status": "critico",
     "score": 37
    },
+   "Smart Fit": {
+    "status": "atencao",
+    "score": 37
+   },
    "Axia Energia": {
     "status": "monitorar",
-    "score": 36
+    "score": 35
    },
    "Sabesp": {
     "status": "monitorar",
@@ -56750,17 +56784,17 @@
    },
    "NextEra Energy": {
     "status": "monitorar",
-    "score": 27
-   },
-   "Banco do Brasil": {
-    "status": "atencao",
     "score": 26
    },
    "Baker Hughes": {
     "status": "monitorar",
-    "score": 24
+    "score": 23
    },
    "ISA Energia Brasil": {
+    "status": "monitorar",
+    "score": 23
+   },
+   "Banco do Brasil": {
     "status": "monitorar",
     "score": 23
    },
@@ -56782,14 +56816,14 @@
    },
    "Lojas Renner": {
     "status": "monitorar",
-    "score": 19
-   },
-   "Aegea Saneamento": {
-    "status": "monitorar",
     "score": 18
    },
    "Yura": {
     "status": "atencao",
+    "score": 17
+   },
+   "Aegea Saneamento": {
+    "status": "monitorar",
     "score": 17
    },
    "Tupy": {
@@ -56801,10 +56835,6 @@
     "score": 16
    },
    "Embraer": {
-    "status": "monitorar",
-    "score": 16
-   },
-   "EQT Corporation": {
     "status": "monitorar",
     "score": 16
    },
@@ -56821,6 +56851,10 @@
     "score": 15
    },
    "Energisa": {
+    "status": "monitorar",
+    "score": 15
+   },
+   "EQT Corporation": {
     "status": "monitorar",
     "score": 15
    },
@@ -56876,10 +56910,6 @@
     "status": "monitorar",
     "score": 6
    },
-   "B3": {
-    "status": "monitorar",
-    "score": 5
-   },
    "Caixa Seguridade": {
     "status": "monitorar",
     "score": 5
@@ -56888,13 +56918,13 @@
     "status": "monitorar",
     "score": 5
    },
+   "B3": {
+    "status": "monitorar",
+    "score": 4
+   },
    "Direcional Engenharia": {
     "status": "monitorar",
     "score": 1
-   },
-   "CVS Health": {
-    "status": "monitorar",
-    "score": 0
    },
    "British American Tobacco": {
     "status": "monitorar",
@@ -56921,6 +56951,10 @@
     "score": 0
    },
    "Cencosud": {
+    "status": "monitorar",
+    "score": 0
+   },
+   "CVS Health": {
     "status": "monitorar",
     "score": 0
    },
