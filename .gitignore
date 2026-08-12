@@ -4,3 +4,6 @@ __pycache__/
 
 # Artefatos gerados pela auditoria de confiabilidade
 out_reliability/
+out_taxonomy_inventory/
+out_taxonomy_inventory_test/
+r7a_baseline_snapshot.sha
