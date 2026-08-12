@@ -1709,8 +1709,14 @@ def detect_liability_adjudicada(text: str, monitored: str,
         return {}
     alt = "(?:" + "|".join(nomes) + ")"
     ligacoes = [
-        # "X was found liable" / "X and Y were found liable"
-        rf"{alt}(?:\s*,)?(?:\s+and\s+[\w\s&.\-]{{2,40}}?)?\s+(?:\w+\s+){{0,3}}?"
+        # "X was found liable" — sem vírgula entre o nome e o cue, senão o
+        # aposto de terceiro ("Supplier, a contractor of X, was found liable")
+        # faria X parecer o responsabilizado.
+        rf"{alt}\s+(?:\w+\s+){{0,3}}?" + _LIABILITY_ADJUDICADA,
+        # "X and Y were found liable" — enumeração conjunta, sem atravessar
+        # fim de frase: "X and Y were named. They were found liable" é anáfora
+        # e tem tratamento próprio abaixo.
+        rf"{alt}\s*,?\s+and\s+[\w\s&\-]{{2,40}}?\s+(?:\w+\s+){{0,3}}?"
         + _LIABILITY_ADJUDICADA,
         # "... and X were found liable"
         rf"\band\s+{alt}\s+(?:\w+\s+){{0,3}}?" + _LIABILITY_ADJUDICADA,
@@ -1736,6 +1742,71 @@ def detect_liability_adjudicada(text: str, monitored: str,
             cue = re.search(_LIABILITY_ADJUDICADA, ana.group(0))
             return {"cue": cue.group(0) if cue else "",
                     "evidence": ana.group(0)[:140], "anafora": True}
+    return {}
+
+
+# ── 4I.2 R6e: RESPONSABILIZAÇÃO DE TERCEIRO NÃO TRANSFERE ───────────────────
+# O trace do L8 mostrou o problema exato: em "Supplier Alfa was found liable
+# for fraud; Vale agreed separately to settle a contract dispute" o pipeline
+# reconhece a condenação (EVENT EXISTS) mas nunca decide de QUEM ela é — o
+# laço termina com `subject = Vale` só porque a Vale é a única monitorada
+# citada, e o evento passa sem regra alguma.
+#
+# A correção não pode ser negação cega ("a monitorada não está ligada, então
+# descarta"): isso apagaria eventos legítimos onde o vínculo simplesmente não
+# tem construção reconhecível. Exigimos evidência POSITIVA de que existe OUTRO
+# responsabilizado — um sujeito nomeado ou um papel de terceiro imediatamente
+# antes do cue de responsabilização.
+_TERCEIRO_SUJEITO = (
+    r"(?:suppliers?|fornecedor\w*|vendors?|contractors?|distribuidor\w*|"
+    r"parceir[oa]s?|partners?|clientes?|customers?|terceir[oa]s?|"
+    r"executives?|executivos?|employees?|funcion[áa]rios?|indiv[íi]duos?|"
+    r"suspects?|defendants?|r[ée]us?)")
+
+
+def detect_liability_de_terceiro(text: str, monitored: str,
+                                 aliases: list[str] | None = None) -> dict:
+    """Existe responsabilização explícita, e o sujeito dela NÃO é a monitorada.
+
+    Devolve `{"terceiro", "cue", "evidence"}` ou `{}`. Só atua quando há um
+    responsabilizado IDENTIFICÁVEL diferente da monitorada — ausência de
+    vínculo, sozinha, nunca basta para apagar um evento.
+    """
+    if detect_liability_adjudicada(text, monitored, aliases):
+        return {}                       # a monitorada está ligada: não é caso
+    tc = _norm_caixa(text)
+    t = tc.lower()
+    nomes = [re.escape(_n(a)) for a in ((aliases or []) + [monitored]) if a]
+    if not nomes:
+        return {}
+    alt = "(?:" + "|".join(nomes) + ")"
+    for m in re.finditer(_LIABILITY_ADJUDICADA, t):
+        antes = t[max(0, m.start() - 90):m.start()]
+        # o sujeito é o núcleo nominal imediatamente anterior ao cue
+        s = re.search(r"(?:^|[.;:]\s*)([^.;:]{2,80}?)\s*$", antes)
+        trecho = (s.group(1) if s else antes).strip()
+        # O aposto não muda o sujeito: em "Supplier, a contractor of X, was
+        # found liable" quem responde é o Supplier, não X. O núcleo é o que
+        # vem antes da primeira vírgula.
+        nucleo = trecho.split(",")[0].strip() if "," in trecho else trecho
+        if re.search(alt, nucleo):
+            continue                    # a monitorada É o sujeito do cue
+        if re.search(alt, trecho) and not re.search(_TERCEIRO_SUJEITO, nucleo) \
+                and not re.search(r"(?-i:[A-Z])", _norm_caixa(nucleo)):
+            continue                    # nome só aparece e não há outro núcleo
+        trecho = nucleo
+        # o nome do responsabilizado sai do NÚCLEO, nunca da janela bruta —
+        # senão o aposto devolveria justamente a monitorada como "terceiro".
+        janela_tc = tc[max(0, m.start() - 90):m.start()]
+        pos = janela_tc.lower().find(trecho)
+        nucleo_tc = janela_tc[pos:pos + len(trecho)] if pos >= 0 else ""
+        nome = re.search(r"(?-i:[A-Z][\w&.\-]{2,})(?:\s+(?-i:[A-Z][\w&.\-]{2,}))?",
+                         nucleo_tc)
+        papel = re.search(_TERCEIRO_SUJEITO, trecho)
+        if nome or papel:
+            return {"terceiro": (nome.group(0) if nome else papel.group(0))[:60],
+                    "cue": m.group(0),
+                    "evidence": (trecho + " " + m.group(0))[:140]}
     return {}
 
 
@@ -2314,9 +2385,27 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
             # provado, não a ausência dele — mas só quando a responsabilização
             # está ligada À MONITORADA. Liability de terceiro citada no mesmo
             # texto não transfere o evento.
-            _liab = (detect_liability_adjudicada(
-                texto, monitored, aliases_por_empresa.get(monitored) or [monitored])
-                if _SHADOW_FRAUD_ROLES else {})
+            _al_f = aliases_por_empresa.get(monitored) or [monitored]
+            # 4I.2 R6e — responsabilização de TERCEIRO não transfere.
+            # Caminho SHADOW. Sem evidência de outro responsabilizado
+            # identificável, nada é descartado: ausência de vínculo sozinha
+            # nunca apaga evento.
+            _terc = (detect_liability_de_terceiro(texto, monitored, _al_f)
+                     if _SHADOW_FRAUD_ROLES else {})
+            if _terc:
+                d.update(scoreable=False, event_scope="indireto",
+                         relation_type="terceiro_responsabilizado",
+                         subject_company=_terc["terceiro"],
+                         subject_evidence=_terc["evidence"],
+                         attribution_rule="R_LIABILITY_DE_TERCEIRO",
+                         attribution_confidence="alta",
+                         rejection_reason=(
+                             f"quem foi responsabilizado é '{_terc['terceiro']}' "
+                             f"(“{_terc['cue']}”); {monitored} não herda a fraude"))
+                decisoes.append(d)
+                continue
+            _liab = (detect_liability_adjudicada(texto, monitored, _al_f)
+                     if _SHADOW_FRAUD_ROLES else {})
             if _liab and fase["direction"] == "mitigadora":
                 d.update(scoreable=True, event_scope="direto",
                          subject_company=monitored,
