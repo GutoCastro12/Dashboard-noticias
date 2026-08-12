@@ -51907,16 +51907,79 @@
     }
    },
    "events_by_company": {
-    "Cosan": [
-     "falencia"
-    ]
+    "Cosan": []
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Cosan"
    ],
-   "context_companies": [],
    "captured_ts": 1786564720,
-   "cap_iso": "2026-08-12 16:58"
+   "cap_iso": "2026-08-12 16:58",
+   "event_assessments": [
+    {
+     "company": "Cosan",
+     "event_id": "falencia",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Cosan",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "indireto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_EVENTO_NAO_CONSUMADO_OU_DE_CARTEIRA",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "risco_prospectivo: \"a beira da falencia\" — não há inadimplemento consumado de obrigação própria",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Cosan",
+     "event_id": "falencia",
+     "event_id_corrigido": "",
+     "regra": "R_EVENTO_NAO_CONSUMADO_OU_DE_CARTEIRA",
+     "motivo": "risco_prospectivo: \"a beira da falencia\" — não há inadimplemento consumado de obrigação própria",
+     "subject_company": "Cosan"
+    }
+   ],
+   "informational_events_by_company": {
+    "Cosan": [
+     {
+      "company": "Cosan",
+      "event_id": "falencia",
+      "event_label": "falencia",
+      "subject_company": "Cosan",
+      "monitored_company": "Cosan",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_EVENTO_NAO_CONSUMADO_OU_DE_CARTEIRA",
+      "attribution_confidence": "media",
+      "title": "Cosan (CSAN3) à beira da falência? Será que conseguirá se recuperar?",
+      "url": "https://br.investing.com/analysis/cosan-csan3-a-beira-da-falencia-sera-que-conseguira-se-recuperar-200477368",
+      "pub_ts": 1779260400,
+      "observation": "risco_prospectivo: \"a beira da falencia\" — não há inadimplemento consumado de obrigação própria",
+      "source_record_id": "https://br.investing.com/analysis/cosan-csan3-a-beira-da-falencia-sera-que-conseguira-se-recuperar-200477368"
+     }
+    ]
+   }
   }
  },
  "run_count": 119,
@@ -57207,12 +57270,12 @@
   }
  },
  "last_run": {
-  "ts": 1786570366,
-  "iso": "12 ago 2026 · 18:32 BRT",
+  "ts": 1786575582,
+  "iso": "12 ago 2026 · 19:59 BRT",
   "status": {
    "Cosan": {
-    "status": "critico",
-    "score": 85
+    "status": "atencao",
+    "score": 73
    },
    "Engie Brasil": {
     "status": "atencao",
@@ -57236,7 +57299,7 @@
    },
    "Santander Brasil": {
     "status": "atencao",
-    "score": 45
+    "score": 44
    },
    "Samarco Mineração": {
     "status": "critico",
@@ -57479,5 +57542,5 @@
  "semantic_reclassified_at": "2026-07-30T21:07:47.714609+00:00",
  "semantic_version": "1.0",
  "links_repaired_at": "2026-07-31T05:45:56.701137+00:00",
- "reclassify_only_applied_at": "2026-08-12T20:14:59.088657+00:00"
+ "reclassify_only_applied_at": "2026-08-12T22:59:42.050208+00:00"
 }
