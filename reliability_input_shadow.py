@@ -57,6 +57,20 @@ MAX_ARTIGOS_PERSISTIDOS = 2000  # §9 — teto medido: ~5,5 MB no estado estacio
 
 MARCO = "r7cp_publicado_no_run"
 
+# ESTADOS RETOMÁVEIS. A distinção não é cosmética: define o que um run seguinte
+# tenta de novo e o que aceita como resposta final.
+#   CAP_REACHED       nem chegou a ser tentado — é fila, não resultado.
+#   RESOLUTION_FAILED a resolução do wrapper depende de rede; falhou uma vez,
+#                     pode funcionar depois. Foi este o estado em que o bug de
+#                     degradação deixou 183 registros: sem retomada, ficariam
+#                     presos para sempre num erro que era nosso, não do site.
+#   TIMEOUT / 429     transitórios por definição.
+# ROBOTS_BLOCKED e HTTP_403 NÃO entram: são decisão do publisher, e insistir a
+# cada run seria pouco educado sem chance de resultado diferente.
+# EMPTY / THIN / DIRTY também não: o site entregou o que tinha.
+RETOMAVEIS = frozenset({rh.CAP_REACHED, rh.RESOLUTION_FAILED, rh.TIMEOUT,
+                        rh.HTTP_429, None, ""})
+
 
 def carregar() -> dict:
     if SIDECAR.exists():
@@ -217,9 +231,10 @@ def coletar(cfg: dict, *, run_count: int, max_emissores: int = MAX_EMISSORES_POR
         # RESOLUTION_FAILED. O acúmulo, que é a razão de existir desta camada,
         # se destruía a cada run.
         #
-        # Reprocessa-se APENAS o que ficou pendente por teto: `CAP_REACHED` é
-        # justamente o caso que um run seguinte deve retomar.
-        if antes and antes.get("falha") not in (rh.CAP_REACHED, None, ""):
+        # Reprocessa-se apenas o que está em estado RETOMÁVEL (ver acima):
+        # pendente por teto ou falha transitória de rede. Resultado já obtido —
+        # bom ou ruim — não é refeito.
+        if antes and antes.get("falha") not in RETOMAVEIS:
             reaproveitados += 1
             antes["last_seen_run"] = run_count
             antes["procedencia"] = classificar_procedencia(antes, marco)

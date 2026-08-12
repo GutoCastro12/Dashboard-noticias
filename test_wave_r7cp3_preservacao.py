@@ -72,8 +72,8 @@ print("BLOCO A — o contrato de preservação, isolado")
 print("=" * 98)
 _src = io.open("reliability_input_shadow.py", encoding="utf-8").read()
 _col = _src.split("def coletar(")[1].split("\ndef ")[0]
-check("antes.get(\"falha\") not in (rh.CAP_REACHED" in _col,
-      "[1] só se reprocessa o que ficou pendente por teto")
+check("antes.get(\"falha\") not in RETOMAVEIS" in _col,
+      "[1] só se reprocessa o que está em estado retomável")
 check("reaproveitados" in _col,
       "[2] o reaproveitamento é contado e sai na telemetria")
 check("antes[\"last_seen_run\"] = run_count" in _col,
@@ -152,8 +152,9 @@ try:
           "[17] o melhor input conhecido permanece o melhor")
 finally:
     sh.SIDECAR = _orig
-check("CAP_REACHED" in _col,
-      "[18] a política de retomada é explícita no código, não implícita")
+check("RETOMAVEIS = frozenset" in _src and "rh.ROBOTS_BLOCKED" not in
+      _src.split("RETOMAVEIS = frozenset")[1].split("})")[0],
+      "[18] a política de retomada é uma lista explícita, e robots está fora")
 
 print()
 print("=" * 98)
@@ -175,8 +176,11 @@ try:
     check(not piorou, f"[20] CASE F: nenhum `input_ready` foi perdido ({len(piorou)})")
     check(not mudou_falha,
           f"[21] nenhum registro mudou de estado sem motivo ({len(mudou_falha)})")
-    check(r2["resumo"].get("reaproveitados", 0) > 0,
-          f"[22] o segundo run reaproveita ({r2['resumo'].get('reaproveitados')})")
+    _nr = [k for k, v in d1.items() if v.get("falha") not in sh.RETOMAVEIS]
+    check(r2["resumo"].get("reaproveitados", 0) == len(_nr),
+          f"[22] reaproveita exatamente os NÃO retomáveis "
+          f"({r2['resumo'].get('reaproveitados')} de {len(_nr)}); "
+          f"os retomáveis voltam para a fila, como devem")
     check(all(v.get("last_seen_run") == 21 for v in d2.values()),
           "[23] CASE E: `last_seen_run` avança para todos")
     check(all(v.get("first_seen_run") == 20 for v in d2.values()),
