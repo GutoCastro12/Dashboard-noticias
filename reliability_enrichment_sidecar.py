@@ -412,6 +412,11 @@ def novos_do_run(hist: dict, side: dict) -> list:
         marcados[ident] = run
     side["first_seen_run"] = marcados
     side["seeded_at_run"] = side.get("seeded_at_run", run if seed else None)
+    # 4I.2 R6f — marco de publicação da telemetria P/I/IS. Tudo que já estava
+    # no side-car quando o marco foi gravado é CONTROLE HISTÓRICO; só o que
+    # aparecer depois conta como observação out-of-sample. Sem esse carimbo,
+    # os artigos usados para construir as regras se disfarçariam de evidência.
+    side.setdefault("r6f_publicado_no_run", run)
     return novos
 
 
