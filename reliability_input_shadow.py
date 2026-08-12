@@ -199,7 +199,7 @@ def coletar(cfg: dict, *, run_count: int, max_emissores: int = MAX_EMISSORES_POR
         if com:
             ordem.append(com.pop(0))
 
-    novos = prospectivos = 0
+    novos = prospectivos = reaproveitados = 0
     regs = []
     for b in ordem:
         art, comps, evs = b["art"], b["comps"], b["evs"]
@@ -209,12 +209,30 @@ def coletar(cfg: dict, *, run_count: int, max_emissores: int = MAX_EMISSORES_POR
         primeiro = antes.get("first_seen_run") if antes else run_count
         if not antes:
             novos += 1
+        # O QUE JÁ FOI RESOLVIDO NÃO SE REDERIVA. Um artigo já presente no
+        # sidecar era reprocessado com a rede desligada — e o resultado
+        # degradado SOBRESCREVIA o bom. Medido no run 113: 176 registros
+        # rebaixados e 8 que estavam `input_ready` deixaram de estar, porque a
+        # resolução do wrapper do Google News não acontece offline e virava
+        # RESOLUTION_FAILED. O acúmulo, que é a razão de existir desta camada,
+        # se destruía a cada run.
+        #
+        # Reprocessa-se APENAS o que ficou pendente por teto: `CAP_REACHED` é
+        # justamente o caso que um run seguinte deve retomar.
+        if antes and antes.get("falha") not in (rh.CAP_REACHED, None, ""):
+            reaproveitados += 1
+            antes["last_seen_run"] = run_count
+            antes["procedencia"] = classificar_procedencia(antes, marco)
+            side["articles"][art_id] = antes
+            regs.append(antes)
+            continue
+
         reg = rh.processar_artigo(
             url=url, titulo=art.get("title") or "",
             resumo=art.get("summary") or "", dominio=art.get("domain") or "",
             pub_iso=art.get("pub_iso") or "",
             empresas={c: list(evs) for c in comps}, ricos=None, rec=art,
-            sidecar={}, permitir_rede=permitir_rede and not antes,
+            sidecar={}, permitir_rede=permitir_rede,
             contador=contador, politica="SELECTED",
             query_kind=b["query_kind"], fonte="company_query")
         reg.pop("_best_input", None)
@@ -243,6 +261,7 @@ def coletar(cfg: dict, *, run_count: int, max_emissores: int = MAX_EMISSORES_POR
               "gerado_em": int(time.time()),
               "telemetria_coleta": dict(tel),
               "artigos_no_run": len(regs), "novos": novos,
+              "reaproveitados": reaproveitados,
               "prospectivos": prospectivos,
               "funil": funil}
     side["runs"] = (side.get("runs") or [])[-19:] + [resumo]
@@ -306,6 +325,7 @@ def main() -> int:
         print(f"   📥 input shadow · run {run_count} · marco {res['marco']}")
         print(f"      coleta: {res['telemetria_coleta']}")
         print(f"      artigos {res['artigos_no_run']} · novos {res['novos']} "
+              f"· reaproveitados {res.get('reaproveitados', 0)} "
               f"· prospectivos {res['prospectivos']} "
               f"· persistidos {r['total_persistido']}")
         if f:
