@@ -10,3 +10,4 @@ r7a_baseline_snapshot.sha
 out_reliability/
 r7b_baseline_snapshot.sha
 r7c_baseline_snapshot.sha
+out_reliability/r7c/probe_sidecar.json

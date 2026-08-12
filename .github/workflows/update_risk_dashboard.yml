@@ -109,6 +109,24 @@ jobs:
           # out_reliability/ e nada aqui alimenta score, history ou dashboard.
           python reliability_shadow_diff.py || true
 
+      # 4I.2 R7c-P — camada de INPUT em shadow prospectivo. Roda depois do
+      # dashboard pela mesma razão do passo acima: o scoring já foi calculado e
+      # publicado, e nada daqui pode alterá-lo. Acumula, num sidecar PRÓPRIO
+      # (`risk_input_shadow.json`, fora de todo caminho de leitura de
+      # produção), o melhor texto disponível por ARTIGO — inclusive os artigos
+      # atribuídos a um emissor para os quais NENHUM evento da taxonomia se
+      # aplica, hoje descartados antes do history (74,7% dos atribuídos,
+      # medido em dois runs independentes). Sem esse acúmulo, qualquer
+      # avaliação semântica futura seguiria limitada a manchetes e ao que a
+      # taxonomia já sabe nomear.
+      # Teto de 40 requisições por run, UMA por artigo (nunca por empresa).
+      # Não usa LLM e não exige nenhum secret novo.
+      - name: Shadow input layer (prospective, no dashboard impact)
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          python reliability_input_shadow.py --prospective
+
       # Histórico persistido via commit no repositório — não via actions/cache,
       # que evicta entradas não acessadas há 7 dias e tem limite de 10GB/repo.
       - name: Commit history + dashboard
@@ -127,6 +145,11 @@ jobs:
           # ele, todo artigo pareceria novo e o próximo run viraria backfill.
           # É dado gerado, fica FORA de risk_history.json e não alimenta score.
           git add -f risk_enrichment_shadow.json 2>/dev/null || true
+          # 4I.2 R7c-P — side-car da camada de INPUT. Mesma razão do anterior:
+          # o runner é efêmero e, sem persistir, todo artigo pareceria novo a
+          # cada run e a coleta deixaria de ser prospectiva. É dado gerado,
+          # vive FORA de risk_history.json e nenhum caminho de produção o lê.
+          git add -f risk_input_shadow.json 2>/dev/null || true
           # Reconciliação runtime: os 6 exports de cobertura são regenerados
           # do ZERO em toda execução (risk_dashboard.main() via
           # coverage_diagnosis.run_production_coverage) e têm que entrar no
