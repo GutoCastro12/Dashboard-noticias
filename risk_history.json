@@ -724,7 +724,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T20:26:28.426696+00:00"
+     "last_checked_at": "2026-08-12T21:31:54.958303+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2593,7 +2593,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T20:26:28.827016+00:00"
+     "last_checked_at": "2026-08-12T21:31:55.358550+00:00"
     }
    ],
    "corrob_sources": [
@@ -10264,7 +10264,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T20:26:29.227318+00:00"
+     "last_checked_at": "2026-08-12T21:31:55.758836+00:00"
     },
     {
      "source": "Demarest",
@@ -10284,7 +10284,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T20:26:29.627603+00:00"
+     "last_checked_at": "2026-08-12T21:31:56.159150+00:00"
     }
    ],
    "corrob_sources": [
@@ -11867,7 +11867,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T20:26:30.027855+00:00"
+     "last_checked_at": "2026-08-12T21:31:56.559466+00:00"
     }
    ],
    "corrob_sources": [
@@ -15580,7 +15580,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T20:26:30.551064+00:00"
+     "last_checked_at": "2026-08-12T21:31:57.138953+00:00"
     }
    ],
    "corrob_sources": [
@@ -18133,7 +18133,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T20:26:31.087758+00:00"
+     "last_checked_at": "2026-08-12T21:31:57.697017+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -18239,7 +18239,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T20:26:31.611836+00:00"
+     "last_checked_at": "2026-08-12T21:31:58.262079+00:00"
     },
     {
      "source": "Moomoo",
@@ -19644,7 +19644,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T20:26:32.240511+00:00"
+     "last_checked_at": "2026-08-12T21:31:58.937356+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19687,7 +19687,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T20:26:32.941514+00:00"
+     "last_checked_at": "2026-08-12T21:31:59.621426+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -20511,7 +20511,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T20:26:33.494771+00:00",
+     "last_checked_at": "2026-08-12T21:32:00.187218+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20536,7 +20536,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T20:26:34.025401+00:00",
+     "last_checked_at": "2026-08-12T21:32:00.744714+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21656,7 +21656,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-12T20:26:34.425683+00:00",
+     "last_checked_at": "2026-08-12T21:32:01.145031+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21721,7 +21721,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-12T20:26:34.825930+00:00",
+     "last_checked_at": "2026-08-12T21:32:01.545305+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22810,7 +22810,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T20:26:35.344552+00:00"
+     "last_checked_at": "2026-08-12T21:32:02.090005+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22895,7 +22895,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T20:26:35.862318+00:00"
+     "last_checked_at": "2026-08-12T21:32:02.647561+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24710,7 +24710,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T20:26:36.400957+00:00",
+     "last_checked_at": "2026-08-12T21:32:03.203018+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24880,7 +24880,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T20:26:36.969538+00:00",
+     "last_checked_at": "2026-08-12T21:32:03.775253+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -38943,7 +38943,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T20:26:37.605135+00:00"
+     "last_checked_at": "2026-08-12T21:32:04.443853+00:00"
     }
    ],
    "corrob_sources": [
@@ -42014,7 +42014,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T20:26:38.120651+00:00"
+     "last_checked_at": "2026-08-12T21:32:05.024337+00:00"
     },
     {
      "source": "Virginia Business",
@@ -42057,7 +42057,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T20:26:38.635025+00:00"
+     "last_checked_at": "2026-08-12T21:32:05.574754+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48838,7 +48838,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T20:26:39.184376+00:00",
+     "last_checked_at": "2026-08-12T21:32:06.130702+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48861,7 +48861,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T20:26:39.716256+00:00",
+     "last_checked_at": "2026-08-12T21:32:06.684215+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -51917,108 +51917,9 @@
    "context_companies": [],
    "captured_ts": 1786564720,
    "cap_iso": "2026-08-12 16:58"
-  },
-  "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/": {
-   "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
-   "url": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/",
-   "summary": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal &nbsp;&nbsp; InfoMoney",
-   "source": "InfoMoney",
-   "domain": "infomoney.com.br",
-   "pub_ts": 1783494000,
-   "pub_iso": "2026-07-08 04:00",
-   "language": "pt",
-   "companies": [
-    "Vale"
-   ],
-   "event_ids": [
-    "investigacao_regulatoria"
-   ],
-   "event_assessments": [
-    {
-     "company": "Vale",
-     "event_id": "investigacao_regulatoria",
-     "assessed_by": "semantic_audit",
-     "subject_company": "Vale",
-     "actor_company": "",
-     "affected_company": "",
-     "transaction_object": "indefinido",
-     "transaction_scope": "indefinido",
-     "transaction_role": "",
-     "event_phase": "",
-     "event_scope": "indireto",
-     "direction": "",
-     "historical_reference": false,
-     "new_occurrence": true,
-     "confirmation_level": "indefinido",
-     "attribution_rule": "R_PAPEL_NAO_SUJEITO",
-     "attribution_confidence": "media",
-     "scoreable": false,
-     "rejection_reason": "Vale atua como individual_subject neste texto, não como sujeito do evento",
-     "legal_status": "",
-     "confirmation_status": "indefinido"
-    }
-   ],
-   "semantic_discards": [
-    {
-     "empresa": "Vale",
-     "event_id": "investigacao_regulatoria",
-     "event_id_corrigido": "",
-     "regra": "R_PAPEL_NAO_SUJEITO",
-     "motivo": "Vale atua como individual_subject neste texto, não como sujeito do evento",
-     "subject_company": "Vale"
-    }
-   ],
-   "mention_roles": {
-    "Vale": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "informational_events_by_company": {
-    "Vale": [
-     {
-      "company": "Vale",
-      "event_id": "investigacao_regulatoria",
-      "event_label": "investigacao regulatoria",
-      "subject_company": "Vale",
-      "monitored_company": "Vale",
-      "relation_type": "direto",
-      "event_scope": "direto",
-      "direction": "neutra",
-      "scoreable": false,
-      "display_category": "informativo",
-      "new_ma_occurrence": false,
-      "change_of_control": false,
-      "external_ma": false,
-      "historical_transaction_reference": false,
-      "secondary_context": "",
-      "transaction_scope": "indefinido",
-      "confirmation_status": "indefinido",
-      "attribution_rule": "R_PAPEL_NAO_SUJEITO",
-      "attribution_confidence": "media",
-      "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOU93WVNoT0tjSW96XzBfWU54MGlPbm9IUXJtb1MwVG1pN2ZUZmF3UUpZN3ZNR0ZoQmw3M3lZT0psX2VaLVdaM1lBNzZ2aHpIM3F2bGpWaEh3bEktNTBXZTdnRDd5UWVEdkRkTzd4aHhwWXZnWkVpMWQyZEx4cDRlTy1ERjZNQmNFRzlWTHp5N1hWOFU4NDY2OFRFSmdXYVRSM25VaEo0LVJqSkZTMGgtaTA4Z1EwWWtHUkRPdjRSUUPSAcYBQVVfeXFMUFJqQ2JsVE5yZENES2pndGtXa2VYNDFPTnBtVHlzWlV3eFYwczZxSGlDY0dMM25TZS1ScEtPaVdIbEpCQUR6WThLRk9jWmtYZXE4MjhzUDhzQ2JUZmVaVnpfN3lHM1FXckdKR0xZRmE3bTlaRG9jVU1zRTV3NmRLcmRvWHhUNVA1eXhGaUhuOEdFQ3haR25OR2txQ0dQU3hFam9zSktjVkNGZGFCeGFQZm5jVl9YN2VBdXZtcjRSMmJfdUgxVk1n?oc=5",
-      "pub_ts": 1783494000,
-      "observation": "Vale atua como individual_subject neste texto, não como sujeito do evento",
-      "source_record_id": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOU93WVNoT0tjSW96XzBfWU54MGlPbm9IUXJtb1MwVG1pN2ZUZmF3UUpZN3ZNR0ZoQmw3M3lZT0psX2VaLVdaM1lBNzZ2aHpIM3F2bGpWaEh3bEktNTBXZTdnRDd5UWVEdkRkTzd4aHhwWXZnWkVpMWQyZEx4cDRlTy1ERjZNQmNFRzlWTHp5N1hWOFU4NDY2OFRFSmdXYVRSM25VaEo0LVJqSkZTMGgtaTA4Z1EwWWtHUkRPdjRSUUPSAcYBQVVfeXFMUFJqQ2JsVE5yZENES2pndGtXa2VYNDFPTnBtVHlzWlV3eFYwczZxSGlDY0dMM25TZS1ScEtPaVdIbEpCQUR6WThLRk9jWmtYZXE4MjhzUDhzQ2JUZmVaVnpfN3lHM1FXckdKR0xZRmE3bTlaRG9jVU1zRTV3NmRLcmRvWHhUNVA1eXhGaUhuOEdFQ3haR25OR2txQ0dQU3hFam9zSktjVkNGZGFCeGFQZm5jVl9YN2VBdXZtcjRSMmJfdUgxVk1n?oc=5"
-     }
-    ]
-   },
-   "events_by_company": {
-    "Vale": []
-   },
-   "companies_attributed": [],
-   "context_companies": [
-    "Vale"
-   ],
-   "captured_ts": 1786566385,
-   "cap_iso": "2026-08-12 17:26"
   }
  },
- "run_count": 118,
+ "run_count": 119,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -57306,8 +57207,8 @@
   }
  },
  "last_run": {
-  "ts": 1786566444,
-  "iso": "12 ago 2026 · 17:27 BRT",
+  "ts": 1786570366,
+  "iso": "12 ago 2026 · 18:32 BRT",
   "status": {
    "Cosan": {
     "status": "critico",
@@ -57429,13 +57330,13 @@
     "status": "monitorar",
     "score": 15
    },
-   "Energisa": {
-    "status": "monitorar",
-    "score": 15
-   },
    "EQT Corporation": {
     "status": "monitorar",
     "score": 15
+   },
+   "Energisa": {
+    "status": "monitorar",
+    "score": 14
    },
    "Eneva": {
     "status": "monitorar",
