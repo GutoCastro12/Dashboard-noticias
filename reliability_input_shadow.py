@@ -55,6 +55,13 @@ MAX_EMISSORES_POR_RUN = 14
 PAUSA_ENTRE_QUERIES = 1.0
 MAX_ARTIGOS_PERSISTIDOS = 2000  # §9 — teto medido: ~5,5 MB no estado estacionario
 
+# Orcamento SEPARADO do teto estrutural. 80 limita o TOTAL de requisicoes do
+# run; este limita quanto da FILA ANTIGA pode ser retomado numa unica execucao.
+# Existe porque uma fila de 184 retomaveis consumiu os 8 minutos inteiros do
+# passo e ele foi cortado antes de gravar o sidecar — gastou o envelope e nao
+# acumulou nada. Nao e um novo cap total: e a fatia maxima do backlog.
+MAX_RETRY_BACKLOG_POR_RUN = 25
+
 MARCO = "r7cp_publicado_no_run"
 
 # ESTADOS RETOMÁVEIS. A distinção não é cosmética: define o que um run seguinte
@@ -213,6 +220,43 @@ def coletar(cfg: dict, *, run_count: int, max_emissores: int = MAX_EMISSORES_POR
         if com:
             ordem.append(com.pop(0))
 
+    # ── R7c-P4: o backlog não pode monopolizar o run ────────────────────────
+    # O run 31627960181 estourou os 8 minutos porque 184 registros ficaram
+    # retomáveis de uma vez e o passo foi cortado ANTES de gravar o sidecar —
+    # ou seja, gastou o envelope inteiro e não acumulou nada. O teto estrutural
+    # de 80 requisições não protege contra isso: ele limita o TOTAL, não a
+    # fatia que a fila antiga consome.
+    #
+    # Duas listas, dois orçamentos. Artigo novo deste run tem precedência
+    # absoluta — é a coleta prospectiva, a razão de existir da camada. O que
+    # sobra do teto vai para a fila antiga, e ainda assim no máximo
+    # MAX_RETRY_BACKLOG_POR_RUN por execução, para a fila drenar ao longo de
+    # vários crons em vez de tomar um run inteiro.
+    conhecidos = side["articles"] or {}
+    novos_b, backlog_b = [], []
+    for b in ordem:
+        art_id = il.identidade(b["art"].get("url") or "")
+        reg = conhecidos.get(art_id)
+        if reg is None:
+            novos_b.append(b)
+        elif reg.get("falha") in RETOMAVEIS:
+            backlog_b.append((reg, b))
+        else:
+            novos_b.append(b)          # não retomável: só reaproveita, sem rede
+
+    # Ordem justa e determinística: primeiro quem foi visto há mais tempo.
+    # Sem isso o mesmo lote seria retomado a cada run e o resto passaria fome.
+    backlog_b.sort(key=lambda rb: ((rb[0].get("last_seen_run") or 0),
+                                   (rb[0].get("first_seen_run") or 0),
+                                   rb[0].get("article_id") or ""))
+    backlog_total = len(backlog_b)
+    backlog_sel = [b for _r, b in backlog_b[:MAX_RETRY_BACKLOG_POR_RUN]]
+    backlog_adiado = [b for _r, b in backlog_b[MAX_RETRY_BACKLOG_POR_RUN:]]
+    # Os adiados entram na lista sem direito a rede: preservam o registro e
+    # atualizam `last_seen`, exatamente como qualquer não-retomável.
+    ordem = novos_b + backlog_sel + backlog_adiado
+    adiados_ids = {il.identidade(b["art"].get("url") or "") for b in backlog_adiado}
+
     novos = prospectivos = reaproveitados = 0
     regs = []
     for b in ordem:
@@ -231,10 +275,11 @@ def coletar(cfg: dict, *, run_count: int, max_emissores: int = MAX_EMISSORES_POR
         # RESOLUTION_FAILED. O acúmulo, que é a razão de existir desta camada,
         # se destruía a cada run.
         #
-        # Reprocessa-se apenas o que está em estado RETOMÁVEL (ver acima):
-        # pendente por teto ou falha transitória de rede. Resultado já obtido —
-        # bom ou ruim — não é refeito.
-        if antes and antes.get("falha") not in RETOMAVEIS:
+        # Reprocessa-se apenas o que está em estado RETOMÁVEL (ver acima) E
+        # coube no orçamento de backlog deste run. Resultado já obtido — bom ou
+        # ruim — não é refeito; fila antiga adiada é preservada intacta.
+        if antes and (antes.get("falha") not in RETOMAVEIS
+                      or art_id in adiados_ids):
             reaproveitados += 1
             antes["last_seen_run"] = run_count
             antes["procedencia"] = classificar_procedencia(antes, marco)
@@ -277,6 +322,11 @@ def coletar(cfg: dict, *, run_count: int, max_emissores: int = MAX_EMISSORES_POR
               "telemetria_coleta": dict(tel),
               "artigos_no_run": len(regs), "novos": novos,
               "reaproveitados": reaproveitados,
+              "backlog_total": backlog_total,
+              "backlog_selecionado": len(backlog_sel),
+              "backlog_adiado": len(backlog_adiado),
+              "backlog_budget": MAX_RETRY_BACKLOG_POR_RUN,
+              "cap_estrutural": max_fetch,
               "prospectivos": prospectivos,
               "funil": funil}
     side["runs"] = (side.get("runs") or [])[-19:] + [resumo]
@@ -339,6 +389,10 @@ def main() -> int:
         res, f = r["resumo"], r["resumo"]["funil"]
         print(f"   📥 input shadow · run {run_count} · marco {res['marco']}")
         print(f"      coleta: {res['telemetria_coleta']}")
+        print(f"      backlog {res.get('backlog_selecionado', 0)}"
+              f"/{res.get('backlog_total', 0)} "
+              f"(budget {res.get('backlog_budget')}, adiados "
+              f"{res.get('backlog_adiado', 0)}) · cap {res.get('cap_estrutural')}")
         print(f"      artigos {res['artigos_no_run']} · novos {res['novos']} "
               f"· reaproveitados {res.get('reaproveitados', 0)} "
               f"· prospectivos {res['prospectivos']} "

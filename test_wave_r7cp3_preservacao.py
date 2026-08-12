@@ -176,11 +176,15 @@ try:
     check(not piorou, f"[20] CASE F: nenhum `input_ready` foi perdido ({len(piorou)})")
     check(not mudou_falha,
           f"[21] nenhum registro mudou de estado sem motivo ({len(mudou_falha)})")
+    # Desde a R7c-P4, `reaproveitados` cobre duas categorias: o que nunca e
+    # retomado (resposta definitiva) e o que FICOU DE FORA do orcamento de
+    # backlog deste run. As duas sao preservadas do mesmo jeito.
     _nr = [k for k, v in d1.items() if v.get("falha") not in sh.RETOMAVEIS]
-    check(r2["resumo"].get("reaproveitados", 0) == len(_nr),
-          f"[22] reaproveita exatamente os NÃO retomáveis "
-          f"({r2['resumo'].get('reaproveitados')} de {len(_nr)}); "
-          f"os retomáveis voltam para a fila, como devem")
+    _esp = len(_nr) + (r2["resumo"].get("backlog_adiado") or 0)
+    check(r2["resumo"].get("reaproveitados", 0) == _esp,
+          f"[22] reaproveita os não-retomáveis mais os adiados pelo orçamento "
+          f"({r2['resumo'].get('reaproveitados')} = {len(_nr)} + "
+          f"{r2['resumo'].get('backlog_adiado')})")
     check(all(v.get("last_seen_run") == 21 for v in d2.values()),
           "[23] CASE E: `last_seen_run` avança para todos")
     check(all(v.get("first_seen_run") == 20 for v in d2.values()),
