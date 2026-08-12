@@ -51252,10 +51252,10 @@
       "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
       "attribution_confidence": "media",
       "title": "Axia Energia (AXIA3): Fitch eleva rating de crédito e vê Ebitda de R$ 26,5 bilhões em 2028",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOMXdzenAxdmF4NFVMUFJoTC02Rk1rM2RfTXJmei1CWHd1cVdLZnY3V1FqWmZERnZMTUZNTWpYclBTNHN2dnBoSXd5c2laNGQ4a1dGUVMzSFhZR3dOeHBXRE5mMjNZcWRIVWZBdVAzbF9uWEthZmE0WUZhQ1FTcDROU1FwcVJWbkprR08yZUJXVkNhaHg1RS04b1h6TmhIRXZXTHQtdVVLNGlZbnJxNWpFTWszcHcwTGdOODJQQjZR?oc=5",
+      "url": "https://www.moneytimes.com.br/axia-energia-axia3-fitch-eleva-rating-de-credito-e-ve-ebitda-de-r-265-bilhoes-em-2028-pads/",
       "pub_ts": 1786485060,
       "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
-      "source_record_id": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOMXdzenAxdmF4NFVMUFJoTC02Rk1rM2RfTXJmei1CWHd1cVdLZnY3V1FqWmZERnZMTUZNTWpYclBTNHN2dnBoSXd5c2laNGQ4a1dGUVMzSFhZR3dOeHBXRE5mMjNZcWRIVWZBdVAzbF9uWEthZmE0WUZhQ1FTcDROU1FwcVJWbkprR08yZUJXVkNhaHg1RS04b1h6TmhIRXZXTHQtdVVLNGlZbnJxNWpFTWszcHcwTGdOODJQQjZR?oc=5"
+      "source_record_id": "https://www.moneytimes.com.br/axia-energia-axia3-fitch-eleva-rating-de-credito-e-ve-ebitda-de-r-265-bilhoes-em-2028-pads/"
      }
     ]
    },
@@ -51311,10 +51311,10 @@
       "attribution_rule": "R_EVENTO_DIRETO_PESO_ZERO",
       "attribution_confidence": "media",
       "title": "Axia Energia (AXIA3) registra elevação de rating pela Fitch",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQdmNtR2lfSkJVZjhrZEduRFMwbEoyUzRRX0l1TWQzQUJoNzFxR0VqUGdxM2YtcjBxX0haaGxNdW9QQVlXLS1YVzlOSk00cjJqU1hJMEJNcWdSVFA4aC1SaWdGc3VXNWU5d2ZMeVcwZUsyR1BVTWZtVFlKQzlKUXdwdkVYME9zd3JJWlUzamxPd3FEVXVBWXhwSlUyNA?oc=5",
+      "url": "https://visnoinvest.com.br/news/14704/axia-energia-axia3-registra-elevacao-de-rating-pela-fitch",
       "pub_ts": 1786485720,
       "observation": "Evento direto 'Rating elevado' tem peso-base 0 na taxonomia (positivo/informativo) — não pontua.",
-      "source_record_id": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQdmNtR2lfSkJVZjhrZEduRFMwbEoyUzRRX0l1TWQzQUJoNzFxR0VqUGdxM2YtcjBxX0haaGxNdW9QQVlXLS1YVzlOSk00cjJqU1hJMEJNcWdSVFA4aC1SaWdGc3VXNWU5d2ZMeVcwZUsyR1BVTWZtVFlKQzlKUXdwdkVYME9zd3JJWlUzamxPd3FEVXVBWXhwSlUyNA?oc=5"
+      "source_record_id": "https://visnoinvest.com.br/news/14704/axia-energia-axia3-registra-elevacao-de-rating-pela-fitch"
      }
     ]
    },
@@ -51454,14 +51454,12 @@
     }
    },
    "events_by_company": {
-    "Banco do Brasil": [
-     "recuperacao_judicial"
-    ]
+    "Banco do Brasil": []
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Banco do Brasil"
    ],
-   "context_companies": [],
    "corroborations": [
     {
      "source": "Kinvo",
@@ -51508,7 +51506,62 @@
     }
    ],
    "captured_ts": 1786544854,
-   "cap_iso": "2026-08-12 11:27"
+   "cap_iso": "2026-08-12 11:27",
+   "event_assessments": [
+    {
+     "company": "Banco do Brasil",
+     "event_id": "recuperacao_judicial",
+     "assessed_by": "semantic_audit",
+     "subject_company": "pedidos de recuperacao judicial",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "acusacao_civil",
+     "event_scope": "indireto",
+     "direction": "neutra",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "nao_confirmado",
+     "attribution_rule": "R_INSOLVENCIA_SETORIAL_OU_DE_TERCEIRO",
+     "attribution_confidence": "alta",
+     "scoreable": false,
+     "rejection_reason": "a insolvência é de 'pedidos de recuperacao judicial'; Banco do Brasil aparece como parte exposta/citada (banco do brasil (bbas3) em alerta)",
+     "legal_status": "acusacao_civil",
+     "confirmation_status": "nao_confirmado"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Banco do Brasil",
+     "event_id": "recuperacao_judicial",
+     "event_id_corrigido": "",
+     "regra": "R_INSOLVENCIA_SETORIAL_OU_DE_TERCEIRO",
+     "motivo": "a insolvência é de 'pedidos de recuperacao judicial'; Banco do Brasil aparece como parte exposta/citada (banco do brasil (bbas3) em alerta)",
+     "subject_company": "pedidos de recuperacao judicial"
+    }
+   ],
+   "context_events_by_company": {
+    "Banco do Brasil": [
+     {
+      "event_id": "recuperacao_judicial",
+      "event_label": "recuperacao judicial",
+      "subject_company": "pedidos de recuperacao judicial",
+      "relation_type": "setorial_ou_terceiro",
+      "impact_type": "indireto_material",
+      "event_scope": "indireto",
+      "event_phase": "acusacao_civil",
+      "direction": "neutra",
+      "scoreable": false,
+      "event_id_corrigido": "",
+      "attribution_rule": "R_INSOLVENCIA_SETORIAL_OU_DE_TERCEIRO",
+      "attribution_confidence": "alta",
+      "attribution_evidence": "pedidos de recuperacao judicial",
+      "nota": "a insolvência é de 'pedidos de recuperacao judicial'; Banco do Brasil aparece como parte exposta/citada (banco do brasil (bbas3) em alerta)"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOTVJBX0dqaW5uZ2xKR1hNcF9xUEhQeVlJUldxVEp1VU5SbTdVbDRmaUltVTRkeF9wa0k1b1gwbng1cHpyRkthd1dNVGNfWjI2Tmo4RTdzdVJsLWhPOHVXQXN5aUVYdDdycXFoS0E0Y2tvUUR4UGdyMU5Td3VSbF83LVRDRUFpSTRuYV9mdEFXOUdNRzJOWUlqT3BNY0ZOb29YaHZJcUVlX0NZYjVMS1lFbWZla1RKcWlTVmxhNkJMeE9JWk5hSEdLMGVjUmhfRXJL?oc=5": {
    "title": "StoneX anuncia aquisição do Banco Travelex do Brasil por volume de US$ 6 bilhões",
@@ -57154,13 +57207,9 @@
   }
  },
  "last_run": {
-  "ts": 1786565235,
-  "iso": "12 ago 2026 · 17:07 BRT",
+  "ts": 1786565699,
+  "iso": "12 ago 2026 · 17:14 BRT",
   "status": {
-   "Banco do Brasil": {
-    "status": "critico",
-    "score": 117
-   },
    "Cosan": {
     "status": "critico",
     "score": 85
@@ -57222,6 +57271,10 @@
     "score": 23
    },
    "ISA Energia Brasil": {
+    "status": "monitorar",
+    "score": 23
+   },
+   "Banco do Brasil": {
     "status": "monitorar",
     "score": 23
    },
@@ -57426,5 +57479,5 @@
  "semantic_reclassified_at": "2026-07-30T21:07:47.714609+00:00",
  "semantic_version": "1.0",
  "links_repaired_at": "2026-07-31T05:45:56.701137+00:00",
- "reclassify_only_applied_at": "2026-08-11T14:55:14.646943+00:00"
+ "reclassify_only_applied_at": "2026-08-12T20:14:59.088657+00:00"
 }
