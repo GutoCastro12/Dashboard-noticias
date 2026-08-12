@@ -244,18 +244,36 @@ _on = {f: _hash(f) for f in _ALVOS}
 check(_off == _on,
       f"[57] os 6 artefatos do dashboard não mudam "
       f"({sum(1 for f in _ALVOS if _off[f] != _on[f])} diferenças)")
-_h = json.load(io.open("risk_history.json", encoding="utf-8"))
+# O SHA absoluto muda a cada avanco normal de dados (cron 4x/dia). Fixar um
+# valor tornaria o teste um alarme de calendario. O contrato real e OUTRO: o
+# snapshot tem de ser IDENTICO antes e depois de mexer no sidecar shadow.
 _campos = ("events_by_company", "informational_events_by_company",
            "context_events_by_company", "semantic_discards",
            "event_assessments", "companies_attributed", "context_companies",
            "mention_roles", "event_ids")
-_snap = {u: {c: r.get(c) for c in _campos}
-         for u, r in sorted(_h["articles"].items())}
-_sha = hashlib.sha256(json.dumps(_snap, sort_keys=True, ensure_ascii=False,
-                                 default=str).encode()).hexdigest()
-check(_sha == io.open("r7c_baseline_snapshot.sha", encoding="utf-8").read().strip()
-      if Path("r7c_baseline_snapshot.sha").exists() else True,
-      "[58] o SHA semântico segue igual ao baseline")
+
+
+def _semantico():
+    h = json.load(io.open("risk_history.json", encoding="utf-8"))
+    snap = {u: {c: r.get(c) for c in _campos}
+            for u, r in sorted(h["articles"].items())}
+    return hashlib.sha256(json.dumps(snap, sort_keys=True, ensure_ascii=False,
+                                     default=str).encode()).hexdigest()
+
+
+_sem_off = _semantico()
+_td2 = Path(tempfile.mkdtemp())
+_o2 = sh.SIDECAR
+try:
+    sh.SIDECAR = _td2 / "s.json"
+    _s2 = sh.carregar()
+    _s2.setdefault(sh.MARCO, 7)
+    _s2["articles"]["y"] = {"url": "u2", "first_seen_run": 7}
+    sh.gravar(_s2)
+finally:
+    sh.SIDECAR = _o2
+check(_semantico() == _sem_off,
+      "[58] escrever no sidecar shadow não altera o snapshot semântico")
 
 print()
 print("=" * 98)

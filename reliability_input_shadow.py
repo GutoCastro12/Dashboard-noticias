@@ -53,7 +53,7 @@ OUTDIR = Path(os.environ.get("RELIABILITY_OUTDIR", "out_reliability/r7c"))
 MAX_FETCH_POR_RUN = 40          # §14 — igual ao teto validado na R7c
 MAX_EMISSORES_POR_RUN = 14
 PAUSA_ENTRE_QUERIES = 1.0
-MAX_ARTIGOS_PERSISTIDOS = 4000  # §9 — teto de crescimento do sidecar
+MAX_ARTIGOS_PERSISTIDOS = 2000  # §9 — teto medido: ~5,5 MB no estado estacionario
 
 MARCO = "r7cp_publicado_no_run"
 
@@ -79,6 +79,39 @@ def gravar(side: dict) -> None:
         json.dumps(side, ensure_ascii=False, indent=1, sort_keys=True,
                    default=str))
     os.replace(tmp, SIDECAR)
+
+
+# Componentes que ficam INTEIROS no estágio final — é sobre ele que qualquer
+# análise futura decide. Dos estágios anteriores guarda-se só o suficiente para
+# medir o ganho marginal de cada degrau da escada.
+_RESUMO_ESTAGIO = ("useful_chars", "sentence_like_count",
+                   "meaningful_gain_vs_title", "input_ready_under_r7c_policy")
+
+
+def enxugar(reg: dict) -> dict:
+    """Registro enxuto — §9.
+
+    Medido antes de publicar: 3,7 KB por artigo dava 14,8 MB no teto, e o
+    arquivo inteiro é reescrito e commitado quatro vezes por dia. Três blocos
+    de componentes quase idênticos (`r0_legacy`, `r0_extended`, `final`)
+    respondiam por 1,4 KB disso. Guardar o estágio final completo e um resumo
+    dos anteriores preserva tudo o que o §11 exige — first_seen, empresas, mapa
+    de candidatos, procedência, qualidade, enrichment, versões — e o ganho
+    marginal por degrau continua calculável."""
+    out = dict(reg)
+    for estagio in ("r0_legacy", "r0_extended"):
+        c = out.get(estagio) or {}
+        out[estagio] = {k: c[k] for k in _RESUMO_ESTAGIO if k in c}
+        if estagio == "r0_extended" and c.get("metodo"):
+            out[estagio]["metodo"] = c["metodo"]
+    f = out.get("final") or {}
+    out["final"] = {k: v for k, v in f.items() if k != "faltou"} or f
+    out["final"]["faltou"] = (f.get("faltou") or [])[:3]
+    enr = out.get("enrichment") or {}
+    out["enrichment"] = {k: enr[k] for k in
+                         ("origem", "falha", "tier", "metodo",
+                          "metodo_resolucao") if k in enr}
+    return out
 
 
 def classificar_procedencia(reg: dict, marco: int | None) -> str:
@@ -182,6 +215,7 @@ def coletar(cfg: dict, *, run_count: int, max_emissores: int = MAX_EMISSORES_POR
             contador=contador, politica="SELECTED",
             query_kind=b["query_kind"], fonte="company_query")
         reg.pop("_best_input", None)
+        reg = enxugar(reg)
         reg.update({
             "first_seen_run": primeiro, "last_seen_run": run_count,
             "shadow_version": SHADOW_VERSION,
