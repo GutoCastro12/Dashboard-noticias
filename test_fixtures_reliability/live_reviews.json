@@ -1,261 +1,288 @@
 {
  "_meta": {
   "purpose": "Ground truth HUMANO dos itens do live audit. Chave: url||company||event_id. O runtime nunca escreve aqui -- a classificacao do proprio pipeline nao e verdade sobre si mesma (R1b §24).",
-  "states": [
-   "UNREVIEWED",
-   "TRUE",
-   "FALSE_POSITIVE",
-   "AMBIGUOUS"
-  ],
+  "reviewer_provenance": "reviewer_type registra QUEM adjudicou. imported_prior_adjudication = rotulo herdado da R1c, cuja origem individual nao foi registrada na epoca; NAO afirmar que foi human. assistant = adjudicado pelo Claude a partir do input literal, o que NAO equivale a confirmacao manual do usuario.",
   "reviewer_types": [
    "human",
    "assistant",
    "imported_prior_adjudication",
    "unknown"
   ],
-  "reviewer_provenance": "reviewer_type registra QUEM adjudicou. imported_prior_adjudication = rotulo herdado da R1c, cuja origem individual nao foi registrada na epoca; NAO afirmar que foi human. assistant = adjudicado pelo Claude a partir do input literal, o que NAO equivale a confirmacao manual do usuario."
- },
- "https://www.clarin.com/economia/miguel-galuccio-une-exceo-ypf-duena-puma-energy-rescatar-petrolera-default_0_ZDkoMlRGKN.html||YPF||default": {
-  "status": "FALSE_POSITIVE",
-  "note": "default e de terceira petrolera; YPF entra pela afiliacao do individuo",
-  "reviewed_at": 1786391126,
-  "family_id": "F4",
-  "company": "YPF",
-  "event_id": "default",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://www.eldiariodechihuahua.mx/economia/2025/jul/31/para-gmexico-plataformas-por-impago-de-pemex-720456.html||Pemex (Petróleos Mexicanos)||default": {
-  "status": "TRUE",
-  "note": "inadimplencia da Pemex com fornecedor",
-  "reviewed_at": 1786391126,
-  "family_id": "",
-  "company": "Pemex (Petróleos Mexicanos)",
-  "event_id": "default",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://www.elfinanciero.com.mx/opinion/jeanette-leyva/2025/10/13/cibanco-una-quiebra-no-merecida/||CIBanco||falencia": {
-  "status": "TRUE",
-  "note": "o texto afirma a quiebra do proprio CIBanco",
-  "reviewed_at": 1786391126,
-  "family_id": "",
-  "company": "CIBanco",
-  "event_id": "falencia",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://poole.ncsu.edu/thought-leadership/article/eileen-taylor-weighs-in-on-duke-energy-fraud-case/||Duke Energy||fraude": {
-  "status": "FALSE_POSITIVE",
-  "note": "comentario sobre o caso; Duke e vitima, nao autora",
-  "reviewed_at": 1786391126,
-  "family_id": "F3",
-  "company": "Duke Energy",
-  "event_id": "fraude",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://www.whiteandwilliams.com/restructuring-perspectives/bankruptcy-court-orders-texas-to-strike-allegations-in-state-data-privacy-suit-against-general-motors||General Motors||falencia": {
-  "status": "FALSE_POSITIVE",
-  "note": "\"Bankruptcy Court\" e o FORO; acao e de privacidade de dados",
-  "reviewed_at": 1786391126,
-  "family_id": "F2",
-  "company": "General Motors",
-  "event_id": "falencia",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://br.advfn.com/jornal/2025/11/fitch-rebaixa-rating-da-tupy-e-acende-sinal-de-alerta-para-investidores-na-bolsa-de-valores||Tupy||rebaixamento_rating": {
-  "status": "TRUE",
-  "note": "rebaixamento real da Tupy",
-  "reviewed_at": 1786391126,
-  "family_id": "",
-  "company": "Tupy",
-  "event_id": "rebaixamento_rating",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://www.suno.com.br/noticias/fitch-rebaixa-rating-hapvida-hapv3-2026-mt/||Hapvida||rebaixamento_rating": {
-  "status": "TRUE",
-  "note": "rebaixamento real da Hapvida",
-  "reviewed_at": 1786391126,
-  "family_id": "",
-  "company": "Hapvida",
-  "event_id": "rebaixamento_rating",
-  "reviewer_type": "imported_prior_adjudication"
+  "states": [
+   "UNREVIEWED",
+   "TRUE",
+   "FALSE_POSITIVE",
+   "AMBIGUOUS"
+  ]
  },
  "https://abc11.com/post/dazmyn-person-another-was-arrested-charged-ongoing-duke-energy-fraud-case-wake-county-sheriffs-office-says/18300753/||Duke Energy||fraude": {
-  "status": "FALSE_POSITIVE",
+  "company": "Duke Energy",
+  "event_id": "fraude",
+  "family_id": "F3",
   "note": "prisao de suspeito do golpe; Duke e vitima",
   "reviewed_at": 1786391126,
-  "family_id": "F3",
-  "company": "Duke Energy",
-  "event_id": "fraude",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://www.findlaw.com/legalblogs/federal-courts/scotus-declines-to-intervene-in-billion-dollar-fraud-showdown-against-citigroup/||Citigroup||fraude": {
-  "status": "TRUE",
-  "note": "\"Against Citigroup\": o banco e reu na acao de fraude",
-  "reviewed_at": 1786391126,
-  "family_id": "",
-  "company": "Citigroup",
-  "event_id": "fraude",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://financenews.com.br/2026/02/moodys-local-rebaixa-rating-da-cosan/||Cosan||rebaixamento_rating": {
-  "status": "TRUE",
-  "note": "rebaixamento real da Cosan",
-  "reviewed_at": 1786391126,
-  "family_id": "",
-  "company": "Cosan",
-  "event_id": "rebaixamento_rating",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://www.wral.com/news/local/wake-county-duke-energy-fraud-investigation-arrest-feb-2026/||Duke Energy||fraude": {
-  "status": "FALSE_POSITIVE",
-  "note": "prisao de suspeito; \"Duke Energy fraud case\" nomeia o caso, nao a autora",
-  "reviewed_at": 1786391126,
-  "family_id": "F3",
-  "company": "Duke Energy",
-  "event_id": "fraude",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://nkytribune.com/2026/03/duke-energy-leverages-artificial-intelligence-to-combat-fraud-targeting-energy-customers/||Duke Energy||fraude": {
-  "status": "FALSE_POSITIVE",
-  "note": "Duke COMBATE fraude contra clientes; papel de protetora",
-  "reviewed_at": 1786391126,
-  "family_id": "F3",
-  "company": "Duke Energy",
-  "event_id": "fraude",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://br.tradingview.com/news/reuters.com,2026:newsml_L1N3ZU11G:0/||Cosan||rebaixamento_rating": {
-  "status": "TRUE",
-  "note": "rebaixamento real da Cosan",
-  "reviewed_at": 1786391126,
-  "family_id": "",
-  "company": "Cosan",
-  "event_id": "rebaixamento_rating",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://www.minhaoperadora.com.br/2026/03/justica-condena-executivos-e-ex-diretores-da-tim-por-fraude-fiscal-em-sc.html||TIM Brasil||fraude": {
-  "status": "TRUE",
-  "note": "condenacao por fraude fiscal alcanca a companhia (gold G109 keep)",
-  "reviewed_at": 1786391126,
-  "family_id": "",
-  "company": "TIM Brasil",
-  "event_id": "fraude",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://financenews.com.br/2026/03/s-perspectiva-negativa/||Tupy||rebaixamento_rating": {
-  "status": "TRUE",
-  "note": "rebaixamento real da Tupy",
-  "reviewed_at": 1786391126,
-  "family_id": "",
-  "company": "Tupy",
-  "event_id": "rebaixamento_rating",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://economia.uol.com.br/colunas/graciliano-rocha/2026/04/01/agencia-de-rating-rebaixa-nota-de-credito-da-aegea-gigante-do-saneamento.htm||Aegea Saneamento||rebaixamento_rating": {
-  "status": "TRUE",
-  "note": "rebaixamento real da Aegea pela agencia",
-  "reviewed_at": 1786391126,
-  "family_id": "",
-  "company": "Aegea Saneamento",
-  "event_id": "rebaixamento_rating",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://www.valoraanalitik.com/rebaja-de-calificacion-de-colombia-a-manos-de-sp-tambien-arrastro-a-ecopetrol/||Ecopetrol||rebaixamento_rating": {
-  "status": "TRUE",
-  "note": "o rebaixamento soberano arrastou a nota da Ecopetrol",
-  "reviewed_at": 1786391126,
-  "family_id": "",
-  "company": "Ecopetrol",
-  "event_id": "rebaixamento_rating",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://www.nsctotal.com.br/colunistas/pedro-machado/tokstok-justica-aceita-recuperacao-judicial-de-r-11-bilhao-que-impacta-22-mil-funcionarios||Tok&Stok||recuperacao_judicial": {
-  "status": "TRUE",
-  "note": "RJ deferida da propria Tok&Stok",
-  "reviewed_at": 1786391126,
-  "family_id": "",
-  "company": "Tok&Stok",
-  "event_id": "recuperacao_judicial",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://www.cnnbrasil.com.br/agro/sp-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/||Cosan||rebaixamento_rating": {
-  "status": "TRUE",
-  "note": "rebaixamento real da Cosan",
-  "reviewed_at": 1786391126,
-  "family_id": "",
-  "company": "Cosan",
-  "event_id": "rebaixamento_rating",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://www.infomoney.com.br/consumo/recuperacao-judicial-afeta-quem-esta-esperando-moveis-de-tokstok-e-mobly-veja/||Tok&Stok||recuperacao_judicial": {
-  "status": "TRUE",
-  "note": "atribuicao correta; duplicacao do mesmo fato e Wave D, nao erro de atribuicao",
-  "reviewed_at": 1786391126,
-  "family_id": "",
-  "company": "Tok&Stok",
-  "event_id": "recuperacao_judicial",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://veja.abril.com.br/economia/vale-elege-presidente-interino-do-conselho-em-meio-a-investigacao-da-cvm/||Vale||investigacao_gestora": {
-  "status": "AMBIGUOUS",
-  "note": "a investigacao da CVM e real e e da Vale, mas aparece como CONTEXTO; se mencao de fundo deve pontuar e exatamente a questao aberta de F10",
-  "reviewed_at": 1786391126,
-  "family_id": "F10",
-  "company": "Vale",
-  "event_id": "investigacao_gestora",
-  "reviewer_type": "imported_prior_adjudication"
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "FALSE_POSITIVE"
  },
  "https://agfeed.com.br/financas/moodys-corta-rating-da-cosan-e-aponta-desafios-para-desalavancagem-da-holding/||Cosan||rebaixamento_rating": {
-  "status": "TRUE",
+  "company": "Cosan",
+  "event_id": "rebaixamento_rating",
+  "family_id": "",
   "note": "rebaixamento real da Cosan",
   "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://br.advfn.com/jornal/2025/11/fitch-rebaixa-rating-da-tupy-e-acende-sinal-de-alerta-para-investidores-na-bolsa-de-valores||Tupy||rebaixamento_rating": {
+  "company": "Tupy",
+  "event_id": "rebaixamento_rating",
   "family_id": "",
+  "note": "rebaixamento real da Tupy",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://br.investing.com/news/stock-market-news/sp-rebaixa-rating-da-cosan-para-b-apos-enfraquecimento-da-diversificacao-93CH-1996403||Cosan||rebaixamento_rating": {
   "company": "Cosan",
   "event_id": "rebaixamento_rating",
-  "reviewer_type": "imported_prior_adjudication"
+  "family_id": "",
+  "note": "Revisao humana: o rebaixamento esta corretamente atribuido a Cosan.",
+  "reviewed_at": 1786558758,
+  "reviewer_type": "human",
+  "status": "TRUE"
+ },
+ "https://br.tradingview.com/news/reuters.com,2026:newsml_L1N3ZU11G:0/||Cosan||rebaixamento_rating": {
+  "company": "Cosan",
+  "event_id": "rebaixamento_rating",
+  "family_id": "",
+  "note": "rebaixamento real da Cosan",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://economia.uol.com.br/colunas/graciliano-rocha/2026/04/01/agencia-de-rating-rebaixa-nota-de-credito-da-aegea-gigante-do-saneamento.htm||Aegea Saneamento||rebaixamento_rating": {
+  "company": "Aegea Saneamento",
+  "event_id": "rebaixamento_rating",
+  "family_id": "",
+  "note": "rebaixamento real da Aegea pela agencia",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://financenews.com.br/2026/02/moodys-local-rebaixa-rating-da-cosan/||Cosan||rebaixamento_rating": {
+  "company": "Cosan",
+  "event_id": "rebaixamento_rating",
+  "family_id": "",
+  "note": "rebaixamento real da Cosan",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://financenews.com.br/2026/03/s-perspectiva-negativa/||Tupy||rebaixamento_rating": {
+  "company": "Tupy",
+  "event_id": "rebaixamento_rating",
+  "family_id": "",
+  "note": "rebaixamento real da Tupy",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://nkytribune.com/2026/03/duke-energy-leverages-artificial-intelligence-to-combat-fraud-targeting-energy-customers/||Duke Energy||fraude": {
+  "company": "Duke Energy",
+  "event_id": "fraude",
+  "family_id": "F3",
+  "note": "Duke COMBATE fraude contra clientes; papel de protetora",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "FALSE_POSITIVE"
+ },
+ "https://poole.ncsu.edu/thought-leadership/article/eileen-taylor-weighs-in-on-duke-energy-fraud-case/||Duke Energy||fraude": {
+  "company": "Duke Energy",
+  "event_id": "fraude",
+  "family_id": "F3",
+  "note": "comentario sobre o caso; Duke e vitima, nao autora",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "FALSE_POSITIVE"
  },
  "https://valor.globo.com/empresas/noticia/2026/07/17/moodys-rebaixa-rating-corporativo-da-rumo-de-ba2-para-ba3-e-altera-perspectiva-para-negativa.ghtml||Rumo||rebaixamento_rating": {
-  "status": "TRUE",
-  "note": "rebaixamento real da Rumo",
-  "reviewed_at": 1786391126,
-  "family_id": "",
   "company": "Rumo",
   "event_id": "rebaixamento_rating",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://www.vale.com/pt/w/vale-informa-sobre-plano-de-recuperacao-judicial-da-samarco/-/categories/64919||Samarco Mineração||recuperacao_judicial": {
-  "status": "TRUE",
-  "note": "a Samarco esta de fato em recuperacao judicial",
-  "reviewed_at": 1786391126,
   "family_id": "",
-  "company": "Samarco Mineração",
-  "event_id": "recuperacao_judicial",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://www.rionegro.com.ar/energia/sociedad/sin-reestructuracion-aconcagua-ira-a-la-quiebra-el-duro-pronostico-del-exceo-de-ypf-4247338/||YPF||falencia": {
-  "status": "FALSE_POSITIVE",
-  "note": "falencia e da Aconcagua; YPF entra pela afiliacao do individuo",
+  "note": "rebaixamento real da Rumo",
   "reviewed_at": 1786391126,
-  "family_id": "F4",
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://veja.abril.com.br/economia/vale-elege-presidente-interino-do-conselho-em-meio-a-investigacao-da-cvm/||Vale||investigacao_gestora": {
+  "company": "Vale",
+  "event_id": "investigacao_gestora",
+  "family_id": "F10",
+  "note": "a investigacao da CVM e real e e da Vale, mas aparece como CONTEXTO; se mencao de fundo deve pontuar e exatamente a questao aberta de F10",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "AMBIGUOUS"
+ },
+ "https://www.clarin.com/economia/miguel-galuccio-une-exceo-ypf-duena-puma-energy-rescatar-petrolera-default_0_ZDkoMlRGKN.html||YPF||default": {
   "company": "YPF",
-  "event_id": "falencia",
-  "reviewer_type": "imported_prior_adjudication"
- },
- "https://www.tiempo.com.mx/economia/detuvo-grupo-mexico-sus-plataformas-petroleras-impago-pemex-noviembre-2025/||Pemex (Petróleos Mexicanos)||default": {
-  "status": "TRUE",
-  "note": "inadimplencia da Pemex com fornecedor",
-  "reviewed_at": 1786391126,
-  "family_id": "",
-  "company": "Pemex (Petróleos Mexicanos)",
   "event_id": "default",
-  "reviewer_type": "imported_prior_adjudication"
+  "family_id": "F4",
+  "note": "default e de terceira petrolera; YPF entra pela afiliacao do individuo",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "FALSE_POSITIVE"
  },
- "https://www.moneytimes.com.br/moodys-rebaixa-rating-da-cosan-csan3-e-mantem-perspectiva-negativa-pads/||Cosan||rebaixamento_rating": {
-  "status": "TRUE",
-  "note": "Moodys rebaixa o rating da propria Cosan; sujeito direto e explicito no titulo",
-  "reviewed_at": 1786415074,
-  "family_id": "",
+ "https://www.cnnbrasil.com.br/agro/sp-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/||Cosan||rebaixamento_rating": {
   "company": "Cosan",
   "event_id": "rebaixamento_rating",
-  "reviewer_type": "assistant"
+  "family_id": "",
+  "note": "rebaixamento real da Cosan",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://www.eldiariodechihuahua.mx/economia/2025/jul/31/para-gmexico-plataformas-por-impago-de-pemex-720456.html||Pemex (Petróleos Mexicanos)||default": {
+  "company": "Pemex (Petróleos Mexicanos)",
+  "event_id": "default",
+  "family_id": "",
+  "note": "inadimplencia da Pemex com fornecedor",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://www.elfinanciero.com.mx/opinion/jeanette-leyva/2025/10/13/cibanco-una-quiebra-no-merecida/||CIBanco||falencia": {
+  "company": "CIBanco",
+  "event_id": "falencia",
+  "family_id": "",
+  "note": "o texto afirma a quiebra do proprio CIBanco",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://www.findlaw.com/legalblogs/federal-courts/scotus-declines-to-intervene-in-billion-dollar-fraud-showdown-against-citigroup/||Citigroup||fraude": {
+  "company": "Citigroup",
+  "event_id": "fraude",
+  "family_id": "",
+  "note": "\"Against Citigroup\": o banco e reu na acao de fraude",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://www.infomoney.com.br/consumo/recuperacao-judicial-afeta-quem-esta-esperando-moveis-de-tokstok-e-mobly-veja/||Tok&Stok||recuperacao_judicial": {
+  "company": "Tok&Stok",
+  "event_id": "recuperacao_judicial",
+  "family_id": "",
+  "note": "atribuicao correta; duplicacao do mesmo fato e Wave D, nao erro de atribuicao",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://www.minhaoperadora.com.br/2026/03/justica-condena-executivos-e-ex-diretores-da-tim-por-fraude-fiscal-em-sc.html||TIM Brasil||fraude": {
+  "company": "TIM Brasil",
+  "event_id": "fraude",
+  "family_id": "",
+  "note": "condenacao por fraude fiscal alcanca a companhia (gold G109 keep)",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://www.moneytimes.com.br/banco-do-brasil-bbas3-em-alerta-pedidos-de-recuperacao-judicial-no-agronegocio-saltam-22-aponta-serasa-igdl/||Banco do Brasil||recuperacao_judicial": {
+  "company": "Banco do Brasil",
+  "event_id": "recuperacao_judicial",
+  "family_id": "",
+  "note": "Revisao humana: a recuperacao judicial nao e do Banco do Brasil. A materia trata do aumento de pedidos de RJ no setor do agronegocio; o BB aparece no contexto, como exposto/credor, nao como sujeito da recuperacao.",
+  "reviewed_at": 1786556980,
+  "reviewer_type": "human",
+  "status": "FALSE_POSITIVE"
+ },
+ "https://www.moneytimes.com.br/moodys-rebaixa-rating-da-cosan-csan3-e-mantem-perspectiva-negativa-pads/||Cosan||rebaixamento_rating": {
+  "company": "Cosan",
+  "event_id": "rebaixamento_rating",
+  "family_id": "",
+  "note": "Moodys rebaixa o rating da propria Cosan; sujeito direto e explicito no titulo",
+  "reviewed_at": 1786415074,
+  "reviewer_type": "assistant",
+  "status": "TRUE"
+ },
+ "https://www.moneytimes.com.br/moodys-rebaixa-rating-da-cosan-csan3-para-b1-e-mantem-perspectiva-negativa/||Cosan||rebaixamento_rating": {
+  "company": "Cosan",
+  "event_id": "rebaixamento_rating",
+  "family_id": "",
+  "note": "Revisao humana: o evento e um rebaixamento de rating da propria Cosan.",
+  "reviewed_at": 1786556980,
+  "reviewer_type": "human",
+  "status": "TRUE"
+ },
+ "https://www.nsctotal.com.br/colunistas/pedro-machado/tokstok-justica-aceita-recuperacao-judicial-de-r-11-bilhao-que-impacta-22-mil-funcionarios||Tok&Stok||recuperacao_judicial": {
+  "company": "Tok&Stok",
+  "event_id": "recuperacao_judicial",
+  "family_id": "",
+  "note": "RJ deferida da propria Tok&Stok",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://www.rionegro.com.ar/energia/sociedad/sin-reestructuracion-aconcagua-ira-a-la-quiebra-el-duro-pronostico-del-exceo-de-ypf-4247338/||YPF||falencia": {
+  "company": "YPF",
+  "event_id": "falencia",
+  "family_id": "F4",
+  "note": "falencia e da Aconcagua; YPF entra pela afiliacao do individuo",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "FALSE_POSITIVE"
+ },
+ "https://www.suno.com.br/noticias/fitch-rebaixa-rating-hapvida-hapv3-2026-mt/||Hapvida||rebaixamento_rating": {
+  "company": "Hapvida",
+  "event_id": "rebaixamento_rating",
+  "family_id": "",
+  "note": "rebaixamento real da Hapvida",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://www.tiempo.com.mx/economia/detuvo-grupo-mexico-sus-plataformas-petroleras-impago-pemex-noviembre-2025/||Pemex (Petróleos Mexicanos)||default": {
+  "company": "Pemex (Petróleos Mexicanos)",
+  "event_id": "default",
+  "family_id": "",
+  "note": "inadimplencia da Pemex com fornecedor",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://www.vale.com/pt/w/vale-informa-sobre-plano-de-recuperacao-judicial-da-samarco/-/categories/64919||Samarco Mineração||recuperacao_judicial": {
+  "company": "Samarco Mineração",
+  "event_id": "recuperacao_judicial",
+  "family_id": "",
+  "note": "a Samarco esta de fato em recuperacao judicial",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://www.valoraanalitik.com/rebaja-de-calificacion-de-colombia-a-manos-de-sp-tambien-arrastro-a-ecopetrol/||Ecopetrol||rebaixamento_rating": {
+  "company": "Ecopetrol",
+  "event_id": "rebaixamento_rating",
+  "family_id": "",
+  "note": "o rebaixamento soberano arrastou a nota da Ecopetrol",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "TRUE"
+ },
+ "https://www.whiteandwilliams.com/restructuring-perspectives/bankruptcy-court-orders-texas-to-strike-allegations-in-state-data-privacy-suit-against-general-motors||General Motors||falencia": {
+  "company": "General Motors",
+  "event_id": "falencia",
+  "family_id": "F2",
+  "note": "\"Bankruptcy Court\" e o FORO; acao e de privacidade de dados",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "FALSE_POSITIVE"
+ },
+ "https://www.wral.com/news/local/wake-county-duke-energy-fraud-investigation-arrest-feb-2026/||Duke Energy||fraude": {
+  "company": "Duke Energy",
+  "event_id": "fraude",
+  "family_id": "F3",
+  "note": "prisao de suspeito; \"Duke Energy fraud case\" nomeia o caso, nao a autora",
+  "reviewed_at": 1786391126,
+  "reviewer_type": "imported_prior_adjudication",
+  "status": "FALSE_POSITIVE"
  }
 }
