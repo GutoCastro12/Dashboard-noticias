@@ -221,9 +221,13 @@ import reliability_enrichment_sidecar as sc  # noqa: E402
 check("1.0" in sc.SCHEMA_COMPATIVEIS and sc.SCHEMA_VERSION == "1.1",
       f"[39] 1.0 legível, 1.1 corrente ({sc.SCHEMA_COMPATIVEIS})")
 _side = json.load(io.open("risk_enrichment_shadow.json", encoding="utf-8"))
-_vers = {r.get("extractor_version") for r in _side["articles"].values()}
-check("r6b.1" not in _vers,
-      f"[40] nenhum registro antigo reescrito com o extractor novo: {sorted(_vers)}")
+_marco = _side.get("r6f_publicado_no_run")
+_fs = _side.get("first_seen_run") or {}
+_antigos = [k for k, r in _side["articles"].items()
+            if (_fs.get(k) is None or (_marco is not None and _fs[k] < _marco))]
+check(all(_side["articles"][k].get("extractor_version") != "r6b.1" for k in _antigos),
+      f"[40] nenhum registro ANTIGO foi reescrito com o extractor novo "
+      f"({len(_antigos)} antigos)")
 check("r6f_publicado_no_run" in io.open("reliability_enrichment_sidecar.py",
                                         encoding="utf-8").read(),
       "[41] o marco prospectivo é carimbado no side-car")
@@ -238,6 +242,10 @@ check(json.loads(_p.read_text(encoding="utf-8"))["schema_version"] == "1.0",
       "[42] ler um side-car 1.0 não o migra silenciosamente")
 os.environ.pop("RELIABILITY_SIDECAR", None)
 importlib.reload(sc)
+
+check(all(o["classe"] == "HISTORICAL_CONTROL"
+          for o in _dados["observacoes"] if o["first_seen_run"] is None),
+      "[43] artigo do estoque sem carimbo NUNCA conta como out-of-sample")
 
 print()
 print("=" * 96)

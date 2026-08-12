@@ -260,9 +260,14 @@ print("=" * 96)
 print("BLOCO K — prospectivo: o passado não é reprocessado")
 print("=" * 96)
 _side_prod = json.load(io.open("risk_enrichment_shadow.json", encoding="utf-8"))
-_versoes = {r.get("extractor_version") for r in _side_prod["articles"].values()}
-check("r6b.1" not in _versoes,
-      f"[38] nenhum registro antigo foi regravado com o extractor novo: {sorted(_versoes)}")
+_marco = _side_prod.get("r6f_publicado_no_run")
+_fs = _side_prod.get("first_seen_run") or {}
+_antigos = [k for k, r in _side_prod["articles"].items()
+            if _fs.get(k) is None or (_marco is not None and _fs[k] < _marco)]
+check(all(_side_prod["articles"][k].get("extractor_version") != "r6b.1"
+          for k in _antigos),
+      f"[38] nenhum registro ANTIGO foi regravado com o extractor novo "
+      f"({len(_antigos)} antigos)")
 check(len(_side_prod.get("first_seen_run") or {}) >= len(_side_prod["articles"]),
       "[39] o marcador de já-visto cobre o estoque — coleta segue prospectiva")
 

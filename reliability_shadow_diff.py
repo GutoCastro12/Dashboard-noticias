@@ -153,8 +153,13 @@ def telemetria_prospectiva(cfg, hist, side) -> dict:
                                               AL.get(empresas[0]))
                      if reg.get("fragments") else ([], ""))
         run = first_seen.get(ident)
-        historico = (titulo in controles) or (marco is None) or \
-                    (run is not None and marco is not None and run <= marco)
+        # Prospectivo exige CARIMBO e run POSTERIOR ao marco. Medido no
+        # primeiro run em produção: 18 candidatos de fraude do estoque nunca
+        # foram elegíveis para enrichment, logo nunca receberam
+        # `first_seen_run` — e sem esta condição apareciam como out-of-sample,
+        # inflando justamente a métrica que a separação existe para proteger.
+        historico = (titulo in controles) or (marco is None) or (run is None) \
+            or run <= marco
         gate["historical_controls" if historico else "prospective"] += 1
 
         ev_p, reg_p = _decidir(cfg, titulo, resumo, empresas, False)
