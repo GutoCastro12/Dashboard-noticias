@@ -724,7 +724,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T14:27:39.373061+00:00"
+     "last_checked_at": "2026-08-12T16:29:07.143857+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2593,7 +2593,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T14:27:39.773356+00:00"
+     "last_checked_at": "2026-08-12T16:29:07.544135+00:00"
     }
    ],
    "corrob_sources": [
@@ -10264,7 +10264,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T14:27:40.173653+00:00"
+     "last_checked_at": "2026-08-12T16:29:07.944417+00:00"
     },
     {
      "source": "Demarest",
@@ -10284,7 +10284,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T14:27:40.573959+00:00"
+     "last_checked_at": "2026-08-12T16:29:08.344716+00:00"
     }
    ],
    "corrob_sources": [
@@ -11867,7 +11867,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T14:27:40.974246+00:00"
+     "last_checked_at": "2026-08-12T16:29:08.744970+00:00"
     }
    ],
    "corrob_sources": [
@@ -15580,7 +15580,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T14:27:41.531411+00:00"
+     "last_checked_at": "2026-08-12T16:29:09.396616+00:00"
     }
    ],
    "corrob_sources": [
@@ -18133,7 +18133,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T14:27:42.091892+00:00"
+     "last_checked_at": "2026-08-12T16:29:10.008722+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -18239,7 +18239,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T14:27:42.682126+00:00"
+     "last_checked_at": "2026-08-12T16:29:10.653793+00:00"
     },
     {
      "source": "Moomoo",
@@ -19644,7 +19644,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T14:27:43.380025+00:00"
+     "last_checked_at": "2026-08-12T16:29:11.483574+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19687,7 +19687,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T14:27:44.106789+00:00"
+     "last_checked_at": "2026-08-12T16:29:12.256706+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -20511,7 +20511,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T14:27:44.677978+00:00",
+     "last_checked_at": "2026-08-12T16:29:12.907973+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20536,7 +20536,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T14:27:45.321719+00:00",
+     "last_checked_at": "2026-08-12T16:29:13.547285+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21656,7 +21656,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-12T14:27:45.722040+00:00",
+     "last_checked_at": "2026-08-12T16:29:13.947543+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21721,7 +21721,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-12T14:27:46.122294+00:00",
+     "last_checked_at": "2026-08-12T16:29:14.347798+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22810,7 +22810,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T14:27:46.676620+00:00"
+     "last_checked_at": "2026-08-12T16:29:14.987457+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22895,7 +22895,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T14:27:47.232772+00:00"
+     "last_checked_at": "2026-08-12T16:29:15.602618+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24710,7 +24710,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T14:27:47.784858+00:00",
+     "last_checked_at": "2026-08-12T16:29:16.196320+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24880,7 +24880,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T14:27:48.349853+00:00",
+     "last_checked_at": "2026-08-12T16:29:16.835931+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -36444,8 +36444,51 @@
    "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
-   "corroborations": [],
-   "corrob_sources": [],
+   "corroborations": [
+    {
+     "source": "EuQueroInvestir",
+     "domain": "euqueroinvestir.com",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTHdHQ214anpuenRVRmpMRy1ibmJ6azJtTnNYQ2hlT3o4Ni1FOGMyeVByWk8zdXczcnBTbVJBbU1JMVlxU1h2ZndFTVA1aXl5TUlaSnRoTlJ5YmJYV1BVeHEwZlRVWXJyRHpOSzZhcU1RV2dISmI2a3piX1Q1SjVLVmlGUnMwNlNJZ190YktGaXZyelRUaHc?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTHdHQ214anpuenRVRmpMRy1ibmJ6azJtTnNYQ2hlT3o4Ni1FOGMyeVByWk8zdXczcnBTbVJBbU1JMVlxU1h2ZndFTVA1aXl5TUlaSnRoTlJ5YmJYV1BVeHEwZlRVWXJyRHpOSzZhcU1RV2dISmI2a3piX1Q1SjVLVmlGUnMwNlNJZ190YktGaXZyelRUaHc?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTHdHQ214anpuenRVRmpMRy1ibmJ6azJtTnNYQ2hlT3o4Ni1FOGMyeVByWk8zdXczcnBTbVJBbU1JMVlxU1h2ZndFTVA1aXl5TUlaSnRoTlJ5YmJYV1BVeHEwZlRVWXJyRHpOSzZhcU1RV2dISmI2a3piX1Q1SjVLVmlGUnMwNlNJZ190YktGaXZyelRUaHc?oc=5",
+     "resolved_url": "https://euqueroinvestir.com/acoes/moodys-rebaixa-rating-da-rumo-apos-corte-na-nota-da-cosan",
+     "canonical_url": "https://euqueroinvestir.com/acoes/moodys-rebaixa-rating-da-rumo-apos-corte-na-nota-da-cosan",
+     "display_url": "https://euqueroinvestir.com/acoes/moodys-rebaixa-rating-da-rumo-apos-corte-na-nota-da-cosan",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "euqueroinvestir.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-12T16:29:17.236218+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "EuQueroInvestir",
+     "domain": "euqueroinvestir.com",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTHdHQ214anpuenRVRmpMRy1ibmJ6azJtTnNYQ2hlT3o4Ni1FOGMyeVByWk8zdXczcnBTbVJBbU1JMVlxU1h2ZndFTVA1aXl5TUlaSnRoTlJ5YmJYV1BVeHEwZlRVWXJyRHpOSzZhcU1RV2dISmI2a3piX1Q1SjVLVmlGUnMwNlNJZ190YktGaXZyelRUaHc?oc=5",
+     "when": "17/07 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTHdHQ214anpuenRVRmpMRy1ibmJ6azJtTnNYQ2hlT3o4Ni1FOGMyeVByWk8zdXczcnBTbVJBbU1JMVlxU1h2ZndFTVA1aXl5TUlaSnRoTlJ5YmJYV1BVeHEwZlRVWXJyRHpOSzZhcU1RV2dISmI2a3piX1Q1SjVLVmlGUnMwNlNJZ190YktGaXZyelRUaHc?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTHdHQ214anpuenRVRmpMRy1ibmJ6azJtTnNYQ2hlT3o4Ni1FOGMyeVByWk8zdXczcnBTbVJBbU1JMVlxU1h2ZndFTVA1aXl5TUlaSnRoTlJ5YmJYV1BVeHEwZlRVWXJyRHpOSzZhcU1RV2dISmI2a3piX1Q1SjVLVmlGUnMwNlNJZ190YktGaXZyelRUaHc?oc=5",
+     "resolved_url": "https://euqueroinvestir.com/acoes/moodys-rebaixa-rating-da-rumo-apos-corte-na-nota-da-cosan",
+     "canonical_url": "https://euqueroinvestir.com/acoes/moodys-rebaixa-rating-da-rumo-apos-corte-na-nota-da-cosan",
+     "display_url": "https://euqueroinvestir.com/acoes/moodys-rebaixa-rating-da-rumo-apos-corte-na-nota-da-cosan",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "euqueroinvestir.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-12T16:29:17.636453+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
    "original_url": "https://valor.globo.com/empresas/noticia/2026/07/17/moodys-rebaixa-rating-corporativo-da-rumo-de-ba2-para-ba3-e-altera-perspectiva-para-negativa.ghtml",
    "redirect_url": "",
    "resolved_url": "https://valor.globo.com/empresas/noticia/2026/07/17/moodys-rebaixa-rating-corporativo-da-rumo-de-ba2-para-ba3-e-altera-perspectiva-para-negativa.ghtml",
@@ -38953,7 +38996,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T14:27:49.036935+00:00"
+     "last_checked_at": "2026-08-12T16:29:18.406684+00:00"
     }
    ],
    "corrob_sources": [
@@ -42024,7 +42067,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T14:27:49.618185+00:00"
+     "last_checked_at": "2026-08-12T16:29:19.013156+00:00"
     },
     {
      "source": "Virginia Business",
@@ -42067,7 +42110,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T14:27:50.190085+00:00"
+     "last_checked_at": "2026-08-12T16:29:19.622785+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48848,7 +48891,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T14:27:50.744939+00:00",
+     "last_checked_at": "2026-08-12T16:29:20.241372+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48871,7 +48914,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T14:27:51.305391+00:00",
+     "last_checked_at": "2026-08-12T16:29:20.835816+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -51590,10 +51633,66 @@
    ],
    "context_companies": [],
    "captured_ts": 1786544854,
-   "cap_iso": "2026-08-12 11:27"
+   "cap_iso": "2026-08-12 11:27",
+   "corroborations": [],
+   "corrob_sources": []
+  },
+  "https://atlaspublico.com.br/cvm/noticias/localiza-rent-a-car-capta-rs-1-8-bilhao-em-debentures-64132": {
+   "title": "Localiza Rent a Car capta R$ 1,8 bilhão em debêntures rating AAA(bra)",
+   "url": "https://atlaspublico.com.br/cvm/noticias/localiza-rent-a-car-capta-rs-1-8-bilhao-em-debentures-64132",
+   "summary": "Localiza Rent a Car capta R$ 1,8 bilhão em debêntures rating AAA(bra) &nbsp;&nbsp; atlaspublico.com.br",
+   "source": "atlaspublico.com.br",
+   "domain": "atlaspublico.com.br",
+   "pub_ts": 1782802800,
+   "pub_iso": "2026-06-30 04:00",
+   "language": "pt",
+   "companies": [
+    "Localiza"
+   ],
+   "event_ids": [
+    "emissao_divida"
+   ],
+   "mention_roles": {
+    "Localiza": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Localiza": [
+     "emissao_divida"
+    ]
+   },
+   "companies_attributed": [
+    "Localiza"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786552141,
+   "cap_iso": "2026-08-12 13:29"
+  },
+  "https://news.google.com/rss/articles/CBMioAFBVV95cUxNQ250WDBqa1NIRS1Nb3BQQUpSYW45R1g2TkVxdjJpSmQ0aHFVY1BSQjhvUkF0V21xM09pcmlvYjNkWE93OXo2U29VREM1azhkWXJyaUhzTk9tVE1nWkhYaUc5QVF1SG9CQjUwZGNCTFV3dF9ZZHpZdVpCc3dDb1gxZGxpS19Nc2luODY1ZExJNGNUN1RXUUdLY0hUMFlRT0t6?oc=5": {
+   "title": "Pedidos de recuperação judicial no agro sobem 21,9% no 1º trimestre",
+   "url": "https://www.metropoles.com/brasil/pedidos-de-recuperacao-judicial-no-agro-sobem-219-no-1o-trimestre",
+   "summary": "Pedidos de recuperação judicial no agro sobem 21,9% no 1º trimestre &nbsp;&nbsp; Metrópoles",
+   "source": "Metrópoles",
+   "domain": "metropoles.com",
+   "pub_ts": 1786538640,
+   "pub_iso": "2026-08-12 09:44",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1786552141,
+   "cap_iso": "2026-08-12 13:29"
   }
  },
- "run_count": 110,
+ "run_count": 111,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -56838,11 +56937,15 @@
   "https://news.google.com/rss/articles/CBMiywFBVV95cUxNN3haT1RnSWE4WC1La0dZaS1QMXJOb3hOeWtGRkpNWFNKMjBZUzlhQWsxNVUtZ205RU11RXJoYi1iRlhnTy1jRTFsalJBeVBjb0ZUZ20xVFdvQXRQTm5vMFl5S2d6eVdUWmdudXkxS2RHWFJ3UlRwa1gyZmhqUUFGLW1tZW5VSVRiOFRBU1dCVWUyUE15T2lPSldEX2NTNlEtN01BbTYxVE5ZQndqdUdKRVBmYUFoSDdwRUNCQnFfZzVxM1IxVW91TWVuSQ?oc=5": {
    "url": "https://kinvo.com.br/noticia/banco-do-brasil-bbas3-em-alerta-pedidos-de-recuperacao-judicial-no-agronegocio-saltam-22-aponta-serasa",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMioAFBVV95cUxNQ250WDBqa1NIRS1Nb3BQQUpSYW45R1g2TkVxdjJpSmQ0aHFVY1BSQjhvUkF0V21xM09pcmlvYjNkWE93OXo2U29VREM1azhkWXJyaUhzTk9tVE1nWkhYaUc5QVF1SG9CQjUwZGNCTFV3dF9ZZHpZdVpCc3dDb1gxZGxpS19Nc2luODY1ZExJNGNUN1RXUUdLY0hUMFlRT0t6?oc=5": {
+   "url": "https://www.metropoles.com/brasil/pedidos-de-recuperacao-judicial-no-agro-sobem-219-no-1o-trimestre",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786544913,
-  "iso": "12 ago 2026 · 11:28 BRT",
+  "ts": 1786552198,
+  "iso": "12 ago 2026 · 13:29 BRT",
   "status": {
    "Banco do Brasil": {
     "status": "critico",
@@ -56858,7 +56961,7 @@
    },
    "Rumo": {
     "status": "atencao",
-    "score": 61
+    "score": 64
    },
    "JBS": {
     "status": "atencao",
@@ -56898,7 +57001,7 @@
    },
    "Yobel": {
     "status": "monitorar",
-    "score": 28
+    "score": 27
    },
    "NextEra Energy": {
     "status": "monitorar",
@@ -57000,15 +57103,15 @@
     "status": "monitorar",
     "score": 9
    },
+   "Localiza": {
+    "status": "monitorar",
+    "score": 8
+   },
    "JPMorgan Chase": {
     "status": "monitorar",
     "score": 7
    },
    "BRF": {
-    "status": "monitorar",
-    "score": 6
-   },
-   "Localiza": {
     "status": "monitorar",
     "score": 6
    },
