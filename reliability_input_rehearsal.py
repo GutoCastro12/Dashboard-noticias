@@ -60,7 +60,8 @@ SCHEMA_VERSION = "r7c.s1"
 OUTDIR = Path(os.environ.get("RELIABILITY_OUTDIR", "out_reliability/r7c"))
 HISTORY = Path(os.environ.get("RELIABILITY_HISTORY", "risk_history.json"))
 
-MAX_FETCH_ARTIGOS = 40          # §26 — teto operacional do rehearsal ao vivo
+MAX_FETCH_ARTIGOS = 40          # §26 — teto do rehearsal LOCAL (o prospectivo passa o seu)
+PAUSA_POR_HOST = 1.5            # §17 — espacamento a partir da 2a requisicao ao mesmo host
 BEST_INPUT_CAP = 8000           # §17
 CAP_MINIMO_REPORTADO = 5000
 
@@ -395,13 +396,26 @@ def enriquecer_uma_vez(url: str, titulo: str, rec: dict, *,
         sv = str(reg.get("schema_version") or "")
         if sv and sv not in ("1.0", "1.1"):
             reg, origem = {}, "INCOMPATIBLE"
-    if not reg and permitir_rede and contador["fetches"] >= MAX_FETCH_ARTIGOS:
+    # O teto vem do CONTADOR, não de uma constante de módulo. Antes o
+    # `max_fetch` do coletor prospectivo era decorativo: `coletar()` recebia o
+    # parâmetro e nunca o repassava, então quem mandava de fato era esta
+    # constante — mudar o número no lugar errado não teria efeito algum.
+    limite = contador.get("limite_fetch", MAX_FETCH_ARTIGOS)
+    if not reg and permitir_rede and contador["fetches"] >= limite:
         out = {"texto": "", "metodo": "", "origem": "CAP",
                "falha": CAP_REACHED, "tier": TIER_NENHUM,
                "url_resolvida": alvo, "metodo_resolucao": metodo_res}
         contador["por_artigo"][art_id] = out
         return out
-    if not reg and permitir_rede and contador["fetches"] < MAX_FETCH_ARTIGOS:
+    if not reg and permitir_rede and contador["fetches"] < limite:
+        # §17 — dobrar o teto global não pode virar martelo num único
+        # publisher. Espaçamento mínimo por HOST, contado só quando há mais de
+        # uma requisição ao mesmo domínio no run.
+        host = lda._host(alvo) or "?"
+        por_host = contador.setdefault("por_host", collections.Counter())
+        if por_host[host] >= 1:
+            time.sleep(PAUSA_POR_HOST)
+        por_host[host] += 1
         try:
             import reliability_enrichment_sidecar as sc
             reg = sc.enriquecer_url(alvo, titulo, rec or {})
@@ -515,6 +529,11 @@ def funil(regs: list, contador: dict) -> dict:
         "falhas": dict(falhas),
         "tiers": dict(collections.Counter(r["tier_final"] for r in regs)),
         "network_fetches": contador["fetches"],
+        "limite_fetch": contador.get("limite_fetch", MAX_FETCH_ARTIGOS),
+        "requests_por_host": dict((contador.get("por_host") or {}).most_common(8))
+        if contador.get("por_host") else {},
+        "max_requests_um_host": (max((contador.get("por_host") or {}).values())
+                                 if contador.get("por_host") else 0),
         "resolucoes": contador.get("resolucoes", 0),
         "duplicatas_evitadas": contador["duplicatas_evitadas"],
         "requests_evitadas_por_dedup": sum(r["n_empresas"] for r in regs) - n,

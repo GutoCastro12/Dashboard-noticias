@@ -50,7 +50,7 @@ SIDECAR = Path(os.environ.get("RELIABILITY_INPUT_SIDECAR",
 HISTORY = Path(os.environ.get("RELIABILITY_HISTORY", "risk_history.json"))
 OUTDIR = Path(os.environ.get("RELIABILITY_OUTDIR", "out_reliability/r7c"))
 
-MAX_FETCH_POR_RUN = 40          # §14 — igual ao teto validado na R7c
+MAX_FETCH_POR_RUN = 80          # R7c-P2 — elevado de 40 apos autorizacao explicita
 MAX_EMISSORES_POR_RUN = 14
 PAUSA_ENTRE_QUERIES = 1.0
 MAX_ARTIGOS_PERSISTIDOS = 2000  # §9 — teto medido: ~5,5 MB no estado estacionario
@@ -144,8 +144,11 @@ def coletar(cfg: dict, *, run_count: int, max_emissores: int = MAX_EMISSORES_POR
     watch = cfg.get("watchlist", [])
     tax = cfg.get("taxonomy", [])
     S = requests.Session()
+    # O teto viaja no contador — e o unico lugar em que ele e lido. Ate a
+    # R7c-P este parametro nao chegava a lugar nenhum e o valor efetivo era a
+    # constante do modulo de rehearsal.
     contador = {"fetches": 0, "duplicatas_evitadas": 0, "por_artigo": {},
-                "resolucoes": 0}
+                "resolucoes": 0, "limite_fetch": max_fetch}
     tel = collections.Counter()
     vistos = set()
     brutos = []
