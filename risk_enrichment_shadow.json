@@ -2650,9 +2650,122 @@
     "policy_version": "r5b.1"
    },
    "first_seen_run": 108
+  },
+  "https://valor.globo.com/financas/noticia/2026/08/12/falha-que-atrasou-abertura-dos-mercados-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3.ghtml": {
+   "attempted_at": 1786544914,
+   "fragments": [
+    {
+     "method": "collector:summary",
+     "tier": 0,
+     "kind": "collector",
+     "text_excerpt": "Falha que atrasou abertura dos mercados em julho é ‘chamado à ação’, diz novo CEO da B3 &nbsp;&nbsp; Valor Econômico",
+     "content_hash": "7fa44c4a1e8063f8",
+     "effective_new_tokens": 3,
+     "effective_new_chars": 18,
+     "containment": 0.8,
+     "quality_flags": [
+      "malformed_text"
+     ],
+     "sentence_like": false,
+     "length": 116
+    },
+    {
+     "method": "meta:og:description",
+     "tier": 1,
+     "kind": "structured",
+     "text_excerpt": "“Ficamos aquém do padrão que o mercado espera da B3 e, mais importante, do padrão que exigimos de nós mesmos”, afirma Christian Egan",
+     "content_hash": "9ec536987bb26823",
+     "effective_new_tokens": 13,
+     "effective_new_chars": 81,
+     "containment": 0.071,
+     "quality_flags": [
+      "malformed_text"
+     ],
+     "sentence_like": false,
+     "length": 132
+    },
+    {
+     "method": "meta:description",
+     "tier": 1,
+     "kind": "structured",
+     "text_excerpt": "“Ficamos aquém do padrão que o mercado espera da B3 e, mais importante, do padrão que exigimos de nós mesmos”, afirma Christian Egan",
+     "content_hash": "9ec536987bb26823",
+     "effective_new_tokens": 13,
+     "effective_new_chars": 81,
+     "containment": 0.071,
+     "quality_flags": [
+      "malformed_text"
+     ],
+     "sentence_like": false,
+     "length": 132
+    },
+    {
+     "method": "meta:twitter:description",
+     "tier": 1,
+     "kind": "structured",
+     "text_excerpt": "“Ficamos aquém do padrão que o mercado espera da B3 e, mais importante, do padrão que exigimos de nós mesmos”, afirma Christian Egan",
+     "content_hash": "9ec536987bb26823",
+     "effective_new_tokens": 13,
+     "effective_new_chars": 81,
+     "containment": 0.071,
+     "quality_flags": [
+      "malformed_text"
+     ],
+     "sentence_like": false,
+     "length": 132
+    },
+    {
+     "method": "html:paragrafos",
+     "tier": 2,
+     "kind": "page_text",
+     "text_excerpt": "Carregando... Acesse sua conta ou cadastre-se grátis sair Home Edição digital Valor International Valor Data Voltar Valor Data Home\"> Home Aplicações\"> Aplicações Bolsas\"> Bolsas Voltar Bolsas Bolsas > Brasil\"> Brasil Bolsas > Internacionais\"> Internacionais Carteira Valor\"> Carteira Valor Commodities\"> Commodities Voltar Commodities Commodities > Agrícolas internacionais\"> Agrícolas internacionais Commodities > Agrícolas nacionais\"> Agrícolas nacionais Commodities > Energia\"> Energia Commodities > Minerais\"> Minerais Crédito\"> Crédito Criptomoedas\"> Criptomoedas Empresas 360\"> Empresas 360 Finanças públicas\"> Finanças públicas Fundos\"> Fundos Guia de fundos\"> Guia de fundos Índices macroeconômicos\"> Índices macroeconômicos Voltar Índices macroeconômicos Índices macroeconômicos > Inflação e atividade econômica\"> Inflação e atividade econômica Índices macroeconômicos > IPCA INPC\"> IPCA INPC Índices macroeconômicos > Atividade gráficos\"> Atividade gráficos Índices macroeconômicos > Inflação gráficos\"> Inflação gráficos Internacional\"> Internacional Juros externos\"> Juros externos Moedas\"> Moedas Taxas referenciais\"> Taxas referenciais Títulos privados\"> Títulos privados Tributos\"> Tr",
+     "content_hash": "08cecc3cb3c49def",
+     "effective_new_tokens": 48,
+     "effective_new_chars": 362,
+     "containment": 0.02,
+     "quality_flags": [],
+     "sentence_like": true,
+     "length": 1200
+    }
+   ],
+   "extractor_version": "r6b.1",
+   "policy_version": "r5b.1",
+   "schema_version": "1.1",
+   "tier0_sufficient": false,
+   "page_fetch": true,
+   "robots_status": "robots_lido",
+   "latency_ms": 1122,
+   "http_status": 200,
+   "status": "OK",
+   "early_stop": false,
+   "selected": {
+    "method": "html:paragrafos",
+    "tier": 2,
+    "content_hash": "08cecc3cb3c49def",
+    "effective_new_tokens": 48,
+    "selection_reason": "melhor fragmento limpo, por procedência"
+   },
+   "canonical_url": "https://valor.globo.com/financas/noticia/2026/08/12/falha-que-atrasou-abertura-dos-mercados-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3.ghtml",
+   "title": "Falha que atrasou abertura dos mercados em julho é ‘chamado à ação’, diz novo CEO da B3",
+   "eligibility": {
+    "eventos": [
+     "troca_ceo"
+    ],
+    "severidade_max": "alto",
+    "tokens_novos": 3,
+    "input_marginal": true,
+    "marcas_ambiguidade": [
+     "termo_processual"
+    ],
+    "familia_sensivel": false,
+    "multiplas_empresas": false,
+    "policy": "E",
+    "policy_version": "r5b.1"
+   },
+   "first_seen_run": 110
   }
  },
- "gerado_em": 1786533164,
+ "gerado_em": 1786544917,
  "first_seen_run": {
   "https://www.cnbc.com/2025/07/11/capital-one-has-more-room-to-run-after-its-acquisition-jim-cramer-says.html": 104,
   "https://www.infomoney.com.br/mercados/telefonica-assume-100-da-fibrasil-e-reforca-estrategia-de-infraestrutura-propria/": 104,
@@ -3352,7 +3465,12 @@
   "https://news.google.com/rss/articles/CBMijgJBVV95cUxPVTJ5YV8yekFHRUEtR1RPRWpGdHZfQ2ZlR3VaWGE0OVRNcjRLVVNtNDRtcTY4aE1kN192VXZyVGgyQU1TM0JvMEVTQ0M2TG9kbHNtTzhwRlJDU3RrT1BfcmxadGpvYk8zUmlKRkhqRTM4cnlSRjllVHljSnl2cHFueDNrNzRuNlduQjFHOW85d0pMc0xabE12aW9LYm9sT3ZpNTVMTC1feTNfSzFBaW93YW1ySS1TVUVjakVfaEd3MXFzUVVSYUxKak9DTWlHMXNaLVNGX1pESmpRTXFEVUVyS1V2SW5ZTFZJcGhhQUNXb21PWXZqejZGQ1pjZGUySGF0aU42ZTFOTl91NTZDUVHSAY4CQVVfeXFMT1UyeWFfMnpBR0VBLUdUT0VqRnR2X0NmZUd1WlhhNDlUTXI0S1VTbTQ0bXE2OGhNZDdfdlV2clRoMkFNUzNCbzBFU0NDNkxvZGxzbU84cEZSQ1N0a09QX3JsWnRqb2JPM1JpSkZIakUzOHJ5UkY5ZVR5Y0p5dnBxbngzazc0bjZXbkIxRzlvOXdKTHNMWmxNdmlvS2JvbE92aTU1TEwtX3kzX0sxQWlvd2FtckktU1VFY2pFX2hHdzFxc1FVUmFMSmpPQ01pRzFzWi1TRl9aREpqUU1xRFVFcktVdkluWUxWSXBoYUFDV29tT1l2ano2RkNaY2RlMkhhdGlONmUxTk5fdTU2Q1FR?oc=5": 108,
   "https://www.moneytimes.com.br/axia-energia-axia3-fitch-eleva-rating-de-credito-e-ve-ebitda-de-r-265-bilhoes-em-2028-pads/": 108,
   "https://visnoinvest.com.br/news/14704/axia-energia-axia3-registra-elevacao-de-rating-pela-fitch": 108,
-  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOaFY5M1dwcXZLcDJOYlA4WWxnMUExb2NFcDJ2ZnZ6M1FHdm1DRnUyX0c5RTgxTWg4QjJPTFRqTi15cUUwNmEtU2xPQTVNT3ZjZmxtN3YxSUtmVHlyUHhlMVNJVEhfOTFWREFreUE4LXhwcENkUUJOTGd1d2ctVFVqMWxPdDNrQUo5RTY3aXdKOWJrVl9qUDdLQVBjQU5kZWd1WHlyUjJMM0owQzZnZ0puZjlQZ19jR2lGcjBv0gHKAUFVX3lxTE90dHV4aV8yTG9ybklMUnlTY0pqYU9oMHJfakl4UUlVTFFPRHhEbVdGTjFFUVgtR0k1UEg0NFF5OXFCVXI0TVlBc20zVVVqUUNDWW5zZ18tR3VrV01sbjRzSGxDX09VdlVwd2VOSjdKTEUxMDNrd2x2c2E4bWZpdGxtU2F3OGhJd0VjVTUzQnZKMTRnOEVNTXhDbnRPYTdrV1M3SmIwVFUybDkzRmNJdEpBTWVicTB0a2ZoaFFfd2lScVhyQlZzbng0NlE?oc=5": 109
+  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOaFY5M1dwcXZLcDJOYlA4WWxnMUExb2NFcDJ2ZnZ6M1FHdm1DRnUyX0c5RTgxTWg4QjJPTFRqTi15cUUwNmEtU2xPQTVNT3ZjZmxtN3YxSUtmVHlyUHhlMVNJVEhfOTFWREFreUE4LXhwcENkUUJOTGd1d2ctVFVqMWxPdDNrQUo5RTY3aXdKOWJrVl9qUDdLQVBjQU5kZWd1WHlyUjJMM0owQzZnZ0puZjlQZ19jR2lGcjBv0gHKAUFVX3lxTE90dHV4aV8yTG9ybklMUnlTY0pqYU9oMHJfakl4UUlVTFFPRHhEbVdGTjFFUVgtR0k1UEg0NFF5OXFCVXI0TVlBc20zVVVqUUNDWW5zZ18tR3VrV01sbjRzSGxDX09VdlVwd2VOSjdKTEUxMDNrd2x2c2E4bWZpdGxtU2F3OGhJd0VjVTUzQnZKMTRnOEVNTXhDbnRPYTdrV1M3SmIwVFUybDkzRmNJdEpBTWVicTB0a2ZoaFFfd2lScVhyQlZzbng0NlE?oc=5": 109,
+  "https://www.moneytimes.com.br/moodys-rebaixa-rating-da-cosan-csan3-para-b1-e-mantem-perspectiva-negativa/": 110,
+  "https://www.moneytimes.com.br/banco-do-brasil-bbas3-em-alerta-pedidos-de-recuperacao-judicial-no-agronegocio-saltam-22-aponta-serasa-igdl/": 110,
+  "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOTVJBX0dqaW5uZ2xKR1hNcF9xUEhQeVlJUldxVEp1VU5SbTdVbDRmaUltVTRkeF9wa0k1b1gwbng1cHpyRkthd1dNVGNfWjI2Tmo4RTdzdVJsLWhPOHVXQXN5aUVYdDdycXFoS0E0Y2tvUUR4UGdyMU5Td3VSbF83LVRDRUFpSTRuYV9mdEFXOUdNRzJOWUlqT3BNY0ZOb29YaHZJcUVlX0NZYjVMS1lFbWZla1RKcWlTVmxhNkJMeE9JWk5hSEdLMGVjUmhfRXJL?oc=5": 110,
+  "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQSVNCUVhidjdNbmloYjZPVkxzYU5TLWlrVlBteUtyQkFvdmpLNlg2X1ZwX1lCNG9mSGFxSFdwaUtiNzR0LVlTSjJlSURZaVR5Q3kzUjctemxFZk9yb3RJdUZKRmhaMGF1eG9ZQXhleV9YUzVBZGF6bXVaRG5HMHczbi0zV3VpZjhuQjZ2eF8yOS0yVUU5ZmlKdndMVXZnSlhxT3BUWGNjUXJjVjFqc3pEU2h5aVlacXV5NklyYVNaSFAtd0hjeldIcVlPNFBPNGNiZmVlVDZoUQ?oc=5": 110,
+  "https://valor.globo.com/financas/noticia/2026/08/12/falha-que-atrasou-abertura-dos-mercados-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3.ghtml": 110
  },
  "seeded_at_run": null,
  "r6f_publicado_no_run": 108

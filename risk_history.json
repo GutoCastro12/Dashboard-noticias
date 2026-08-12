@@ -724,7 +724,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T11:11:52.883318+00:00"
+     "last_checked_at": "2026-08-12T14:27:39.373061+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2593,7 +2593,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T11:11:53.283615+00:00"
+     "last_checked_at": "2026-08-12T14:27:39.773356+00:00"
     }
    ],
    "corrob_sources": [
@@ -7136,7 +7136,9 @@
       "source_record_id": "https://www.latercera.com/pulso/noticia/grupo-bice-reporta-resultados-al-tercer-trimestre-tras-fusion-con-security/"
      }
     ]
-   }
+   },
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMic0FVX3lxTFBlbmdTTkcxWlJ3SDRId21aeTFSak53RDRKYmtyUjk0Uno4YXJodlRsYmtJUEZXTDg1a3JPTXFpdFF4MERWQzBWZ2RwQ1hYRUd6NW9hZkN4NF9qb3lnbHRhdW5XYzRoRjZTSEt0aDJBSGc2YWM?oc=5": {
    "title": "10 companies that bounced back after bankruptcy",
@@ -10262,7 +10264,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T11:11:53.683886+00:00"
+     "last_checked_at": "2026-08-12T14:27:40.173653+00:00"
     },
     {
      "source": "Demarest",
@@ -10282,7 +10284,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T11:11:54.084189+00:00"
+     "last_checked_at": "2026-08-12T14:27:40.573959+00:00"
     }
    ],
    "corrob_sources": [
@@ -11865,7 +11867,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T11:11:54.484439+00:00"
+     "last_checked_at": "2026-08-12T14:27:40.974246+00:00"
     }
    ],
    "corrob_sources": [
@@ -15578,7 +15580,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T11:11:55.141887+00:00"
+     "last_checked_at": "2026-08-12T14:27:41.531411+00:00"
     }
    ],
    "corrob_sources": [
@@ -18131,7 +18133,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T11:11:55.767335+00:00"
+     "last_checked_at": "2026-08-12T14:27:42.091892+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -18237,7 +18239,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T11:11:56.380782+00:00"
+     "last_checked_at": "2026-08-12T14:27:42.682126+00:00"
     },
     {
      "source": "Moomoo",
@@ -19642,7 +19644,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T11:11:57.182297+00:00"
+     "last_checked_at": "2026-08-12T14:27:43.380025+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19685,7 +19687,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T11:11:57.936041+00:00"
+     "last_checked_at": "2026-08-12T14:27:44.106789+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -20509,7 +20511,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T11:11:58.588411+00:00",
+     "last_checked_at": "2026-08-12T14:27:44.677978+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20534,7 +20536,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T11:11:59.268050+00:00",
+     "last_checked_at": "2026-08-12T14:27:45.321719+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21654,7 +21656,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-12T11:11:59.668317+00:00",
+     "last_checked_at": "2026-08-12T14:27:45.722040+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21719,7 +21721,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-12T11:12:00.068603+00:00",
+     "last_checked_at": "2026-08-12T14:27:46.122294+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22808,7 +22810,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T11:12:00.686986+00:00"
+     "last_checked_at": "2026-08-12T14:27:46.676620+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22893,7 +22895,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T11:12:01.306204+00:00"
+     "last_checked_at": "2026-08-12T14:27:47.232772+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24708,7 +24710,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T11:12:01.952862+00:00",
+     "last_checked_at": "2026-08-12T14:27:47.784858+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24878,7 +24880,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T11:12:02.565184+00:00",
+     "last_checked_at": "2026-08-12T14:27:48.349853+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -35813,102 +35815,6 @@
    "link_label": "Abrir notícia →",
    "last_checked_at": "2026-07-31T03:04:35.653492+00:00"
   },
-  "https://agfeed.com.br/financas/moodys-corta-rating-da-cosan-e-aponta-desafios-para-desalavancagem-da-holding/": {
-   "title": "Moody’s corta rating da Cosan e aponta desafios para desalavancagem da holding",
-   "url": "https://agfeed.com.br/financas/moodys-corta-rating-da-cosan-e-aponta-desafios-para-desalavancagem-da-holding/",
-   "summary": "Moody’s corta rating da Cosan e aponta desafios para desalavancagem da holding &nbsp;&nbsp; AgFeed",
-   "source": "AgFeed",
-   "domain": "agfeed.com.br",
-   "pub_ts": 1784241180,
-   "pub_iso": "2026-07-16 19:33",
-   "language": "pt",
-   "companies": [
-    "Cosan"
-   ],
-   "event_ids": [
-    "rebaixamento_rating"
-   ],
-   "events_by_company": {
-    "Cosan": [
-     "rebaixamento_rating"
-    ]
-   },
-   "mention_roles": {
-    "Cosan": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "companies_attributed": [
-    "Cosan"
-   ],
-   "context_companies": [],
-   "corroborations": [
-    {
-     "source": "EuQueroInvestir",
-     "domain": "euqueroinvestir.com",
-     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTHdHQ214anpuenRVRmpMRy1ibmJ6azJtTnNYQ2hlT3o4Ni1FOGMyeVByWk8zdXczcnBTbVJBbU1JMVlxU1h2ZndFTVA1aXl5TUlaSnRoTlJ5YmJYV1BVeHEwZlRVWXJyRHpOSzZhcU1RV2dISmI2a3piX1Q1SjVLVmlGUnMwNlNJZ190YktGaXZyelRUaHc?oc=5",
-     "original_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTHdHQ214anpuenRVRmpMRy1ibmJ6azJtTnNYQ2hlT3o4Ni1FOGMyeVByWk8zdXczcnBTbVJBbU1JMVlxU1h2ZndFTVA1aXl5TUlaSnRoTlJ5YmJYV1BVeHEwZlRVWXJyRHpOSzZhcU1RV2dISmI2a3piX1Q1SjVLVmlGUnMwNlNJZ190YktGaXZyelRUaHc?oc=5",
-     "redirect_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTHdHQ214anpuenRVRmpMRy1ibmJ6azJtTnNYQ2hlT3o4Ni1FOGMyeVByWk8zdXczcnBTbVJBbU1JMVlxU1h2ZndFTVA1aXl5TUlaSnRoTlJ5YmJYV1BVeHEwZlRVWXJyRHpOSzZhcU1RV2dISmI2a3piX1Q1SjVLVmlGUnMwNlNJZ190YktGaXZyelRUaHc?oc=5",
-     "resolved_url": "https://euqueroinvestir.com/acoes/moodys-rebaixa-rating-da-rumo-apos-corte-na-nota-da-cosan",
-     "canonical_url": "https://euqueroinvestir.com/acoes/moodys-rebaixa-rating-da-rumo-apos-corte-na-nota-da-cosan",
-     "display_url": "https://euqueroinvestir.com/acoes/moodys-rebaixa-rating-da-rumo-apos-corte-na-nota-da-cosan",
-     "redirect_chain": "",
-     "original_host": "news.google.com",
-     "final_host": "euqueroinvestir.com",
-     "http_status": "",
-     "link_health": "redirect_resolvido",
-     "resolution_method": "batchexecute",
-     "resolution_error": "",
-     "link_render_anchor": true,
-     "link_label": "Abrir notícia →",
-     "last_checked_at": "2026-07-31T05:45:49.040503+00:00"
-    }
-   ],
-   "captured_ts": 1785345276,
-   "cap_iso": "2026-07-29 14:14",
-   "corrob_sources": [
-    {
-     "source": "euqueroinvestir.com",
-     "domain": "euqueroinvestir.com",
-     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTHdHQ214anpuenRVRmpMRy1ibmJ6azJtTnNYQ2hlT3o4Ni1FOGMyeVByWk8zdXczcnBTbVJBbU1JMVlxU1h2ZndFTVA1aXl5TUlaSnRoTlJ5YmJYV1BVeHEwZlRVWXJyRHpOSzZhcU1RV2dISmI2a3piX1Q1SjVLVmlGUnMwNlNJZ190YktGaXZyelRUaHc?oc=5",
-     "when": "17/07 15:36",
-     "original_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTHdHQ214anpuenRVRmpMRy1ibmJ6azJtTnNYQ2hlT3o4Ni1FOGMyeVByWk8zdXczcnBTbVJBbU1JMVlxU1h2ZndFTVA1aXl5TUlaSnRoTlJ5YmJYV1BVeHEwZlRVWXJyRHpOSzZhcU1RV2dISmI2a3piX1Q1SjVLVmlGUnMwNlNJZ190YktGaXZyelRUaHc?oc=5",
-     "redirect_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTHdHQ214anpuenRVRmpMRy1ibmJ6azJtTnNYQ2hlT3o4Ni1FOGMyeVByWk8zdXczcnBTbVJBbU1JMVlxU1h2ZndFTVA1aXl5TUlaSnRoTlJ5YmJYV1BVeHEwZlRVWXJyRHpOSzZhcU1RV2dISmI2a3piX1Q1SjVLVmlGUnMwNlNJZ190YktGaXZyelRUaHc?oc=5",
-     "resolved_url": "https://euqueroinvestir.com/acoes/moodys-rebaixa-rating-da-rumo-apos-corte-na-nota-da-cosan",
-     "canonical_url": "https://euqueroinvestir.com/acoes/moodys-rebaixa-rating-da-rumo-apos-corte-na-nota-da-cosan",
-     "display_url": "https://euqueroinvestir.com/acoes/moodys-rebaixa-rating-da-rumo-apos-corte-na-nota-da-cosan",
-     "redirect_chain": "",
-     "original_host": "news.google.com",
-     "final_host": "euqueroinvestir.com",
-     "http_status": "",
-     "link_health": "redirect_resolvido",
-     "resolution_method": "cache_historico",
-     "resolution_error": "",
-     "link_render_anchor": true,
-     "link_label": "Abrir notícia →",
-     "last_checked_at": "2026-07-31T05:45:49.040560+00:00"
-    }
-   ],
-   "original_url": "https://agfeed.com.br/financas/moodys-corta-rating-da-cosan-e-aponta-desafios-para-desalavancagem-da-holding/",
-   "redirect_url": "",
-   "resolved_url": "https://agfeed.com.br/financas/moodys-corta-rating-da-cosan-e-aponta-desafios-para-desalavancagem-da-holding/",
-   "canonical_url": "https://agfeed.com.br/financas/moodys-corta-rating-da-cosan-e-aponta-desafios-para-desalavancagem-da-holding/",
-   "display_url": "https://agfeed.com.br/financas/moodys-corta-rating-da-cosan-e-aponta-desafios-para-desalavancagem-da-holding/",
-   "redirect_chain": "",
-   "original_host": "agfeed.com.br",
-   "final_host": "agfeed.com.br",
-   "http_status": "",
-   "link_health": "url_direta_valida",
-   "resolution_method": "direto",
-   "resolution_error": "",
-   "link_render_anchor": true,
-   "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.653556+00:00"
-  },
   "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOaVhPODEzSjVTaGdnSTgzbW9yaVNlTGZ4bG5ELXBLM0NTcWZmdGNaMGFMblRETVhod2lRX2JkVGptT1hha0JLRXdkUzlfX3BYM2ZiQzVrUWJvQmw3MlpvZi1jVEN4WXRUUi1HUFJIYUZJclNuRkhLUkZUU2dtZTNIUXpBcUZmZVptbFpVLWtCSDJzQXM1Nlh3R0YxNlUzOEhhMVFZV0QxT0xocDRCQlA5Ym05ajAxSzZKUW95NE5FclVQX2IweEhxSGY3UVpLZ3BTM3NLdTYxd3J4SHNFT2lGVHR3?oc=5": {
    "title": "Pedidos de recuperação judicial somaram 76 processos em março, aponta Serasa Experian",
    "url": "https://www.serasaexperian.com.br/sala-de-imprensa/indicadores/pedidos-de-recuperacao-judicial-somaram-76-processos-em-marco-aponta-serasa-experian/",
@@ -39047,7 +38953,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T11:12:03.337388+00:00"
+     "last_checked_at": "2026-08-12T14:27:49.036935+00:00"
     }
    ],
    "corrob_sources": [
@@ -42118,7 +42024,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T11:12:03.936302+00:00"
+     "last_checked_at": "2026-08-12T14:27:49.618185+00:00"
     },
     {
      "source": "Virginia Business",
@@ -42161,7 +42067,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T11:12:04.546874+00:00"
+     "last_checked_at": "2026-08-12T14:27:50.190085+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48942,7 +48848,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T11:12:05.156116+00:00",
+     "last_checked_at": "2026-08-12T14:27:50.744939+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48965,7 +48871,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T11:12:05.763736+00:00",
+     "last_checked_at": "2026-08-12T14:27:51.305391+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -50642,8 +50548,51 @@
    "context_companies": [],
    "captured_ts": 1786414880,
    "cap_iso": "2026-08-10 23:21",
-   "corroborations": [],
-   "corrob_sources": []
+   "corroborations": [
+    {
+     "source": "CNN Brasil",
+     "domain": "cnnbrasil.com.br",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNUXNQV0xqVWxZNzBTdTM2NU9UVHBjUmlMUHVzbVo0UHFXTHlFQ19PRC1qVnhfRjFfc0F0UC1vbllob2NYVWZvaC1fOUxhUUFaT0hVbGtpQzFpNkZHeEwxSURTUjU0MlY3TENkdHF4SDNZLTFLeUVZVENkNmlzZ2dYY1YyU2QyN0RmWWVSaEdySktyN3g0YXBVMTFaYTlMdw?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNUXNQV0xqVWxZNzBTdTM2NU9UVHBjUmlMUHVzbVo0UHFXTHlFQ19PRC1qVnhfRjFfc0F0UC1vbllob2NYVWZvaC1fOUxhUUFaT0hVbGtpQzFpNkZHeEwxSURTUjU0MlY3TENkdHF4SDNZLTFLeUVZVENkNmlzZ2dYY1YyU2QyN0RmWWVSaEdySktyN3g0YXBVMTFaYTlMdw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNUXNQV0xqVWxZNzBTdTM2NU9UVHBjUmlMUHVzbVo0UHFXTHlFQ19PRC1qVnhfRjFfc0F0UC1vbllob2NYVWZvaC1fOUxhUUFaT0hVbGtpQzFpNkZHeEwxSURTUjU0MlY3TENkdHF4SDNZLTFLeUVZVENkNmlzZ2dYY1YyU2QyN0RmWWVSaEdySktyN3g0YXBVMTFaYTlMdw?oc=5",
+     "resolved_url": "https://www.cnnbrasil.com.br/agro/moodys-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/",
+     "canonical_url": "https://www.cnnbrasil.com.br/agro/moodys-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/",
+     "display_url": "https://www.cnnbrasil.com.br/agro/moodys-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.cnnbrasil.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-12T14:27:51.856242+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "CNN Brasil",
+     "domain": "cnnbrasil.com.br",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNUXNQV0xqVWxZNzBTdTM2NU9UVHBjUmlMUHVzbVo0UHFXTHlFQ19PRC1qVnhfRjFfc0F0UC1vbllob2NYVWZvaC1fOUxhUUFaT0hVbGtpQzFpNkZHeEwxSURTUjU0MlY3TENkdHF4SDNZLTFLeUVZVENkNmlzZ2dYY1YyU2QyN0RmWWVSaEdySktyN3g0YXBVMTFaYTlMdw?oc=5",
+     "when": "10/08 16:37",
+     "original_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNUXNQV0xqVWxZNzBTdTM2NU9UVHBjUmlMUHVzbVo0UHFXTHlFQ19PRC1qVnhfRjFfc0F0UC1vbllob2NYVWZvaC1fOUxhUUFaT0hVbGtpQzFpNkZHeEwxSURTUjU0MlY3TENkdHF4SDNZLTFLeUVZVENkNmlzZ2dYY1YyU2QyN0RmWWVSaEdySktyN3g0YXBVMTFaYTlMdw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNUXNQV0xqVWxZNzBTdTM2NU9UVHBjUmlMUHVzbVo0UHFXTHlFQ19PRC1qVnhfRjFfc0F0UC1vbllob2NYVWZvaC1fOUxhUUFaT0hVbGtpQzFpNkZHeEwxSURTUjU0MlY3TENkdHF4SDNZLTFLeUVZVENkNmlzZ2dYY1YyU2QyN0RmWWVSaEdySktyN3g0YXBVMTFaYTlMdw?oc=5",
+     "resolved_url": "https://www.cnnbrasil.com.br/agro/moodys-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/",
+     "canonical_url": "https://www.cnnbrasil.com.br/agro/moodys-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/",
+     "display_url": "https://www.cnnbrasil.com.br/agro/moodys-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.cnnbrasil.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-12T14:27:52.256484+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ]
   },
   "https://www.marketwatch.com/story/ebay-may-dodge-a-gamestop-takeover-but-theres-a-new-twist-in-the-ryan-cohen-saga-d779b753?mod=mw_rss_topstories": {
    "title": "EBay may dodge a GameStop takeover — but there’s a new twist in the Ryan Cohen saga",
@@ -51151,107 +51100,6 @@
    "corroborations": [],
    "corrob_sources": []
   },
-  "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/": {
-   "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
-   "url": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/",
-   "summary": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal &nbsp;&nbsp; InfoMoney",
-   "source": "InfoMoney",
-   "domain": "infomoney.com.br",
-   "pub_ts": 1783494000,
-   "pub_iso": "2026-07-08 04:00",
-   "language": "pt",
-   "companies": [
-    "Vale"
-   ],
-   "event_ids": [
-    "investigacao_regulatoria"
-   ],
-   "event_assessments": [
-    {
-     "company": "Vale",
-     "event_id": "investigacao_regulatoria",
-     "assessed_by": "semantic_audit",
-     "subject_company": "Vale",
-     "actor_company": "",
-     "affected_company": "",
-     "transaction_object": "indefinido",
-     "transaction_scope": "indefinido",
-     "transaction_role": "",
-     "event_phase": "",
-     "event_scope": "indireto",
-     "direction": "",
-     "historical_reference": false,
-     "new_occurrence": true,
-     "confirmation_level": "indefinido",
-     "attribution_rule": "R_PAPEL_NAO_SUJEITO",
-     "attribution_confidence": "media",
-     "scoreable": false,
-     "rejection_reason": "Vale atua como individual_subject neste texto, não como sujeito do evento",
-     "legal_status": "",
-     "confirmation_status": "indefinido"
-    }
-   ],
-   "semantic_discards": [
-    {
-     "empresa": "Vale",
-     "event_id": "investigacao_regulatoria",
-     "event_id_corrigido": "",
-     "regra": "R_PAPEL_NAO_SUJEITO",
-     "motivo": "Vale atua como individual_subject neste texto, não como sujeito do evento",
-     "subject_company": "Vale"
-    }
-   ],
-   "mention_roles": {
-    "Vale": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "informational_events_by_company": {
-    "Vale": [
-     {
-      "company": "Vale",
-      "event_id": "investigacao_regulatoria",
-      "event_label": "investigacao regulatoria",
-      "subject_company": "Vale",
-      "monitored_company": "Vale",
-      "relation_type": "direto",
-      "event_scope": "direto",
-      "direction": "neutra",
-      "scoreable": false,
-      "display_category": "informativo",
-      "new_ma_occurrence": false,
-      "change_of_control": false,
-      "external_ma": false,
-      "historical_transaction_reference": false,
-      "secondary_context": "",
-      "transaction_scope": "indefinido",
-      "confirmation_status": "indefinido",
-      "attribution_rule": "R_PAPEL_NAO_SUJEITO",
-      "attribution_confidence": "media",
-      "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOU93WVNoT0tjSW96XzBfWU54MGlPbm9IUXJtb1MwVG1pN2ZUZmF3UUpZN3ZNR0ZoQmw3M3lZT0psX2VaLVdaM1lBNzZ2aHpIM3F2bGpWaEh3bEktNTBXZTdnRDd5UWVEdkRkTzd4aHhwWXZnWkVpMWQyZEx4cDRlTy1ERjZNQmNFRzlWTHp5N1hWOFU4NDY2OFRFSmdXYVRSM25VaEo0LVJqSkZTMGgtaTA4Z1EwWWtHUkRPdjRSUUPSAcYBQVVfeXFMUFJqQ2JsVE5yZENES2pndGtXa2VYNDFPTnBtVHlzWlV3eFYwczZxSGlDY0dMM25TZS1ScEtPaVdIbEpCQUR6WThLRk9jWmtYZXE4MjhzUDhzQ2JUZmVaVnpfN3lHM1FXckdKR0xZRmE3bTlaRG9jVU1zRTV3NmRLcmRvWHhUNVA1eXhGaUhuOEdFQ3haR25OR2txQ0dQU3hFam9zSktjVkNGZGFCeGFQZm5jVl9YN2VBdXZtcjRSMmJfdUgxVk1n?oc=5",
-      "pub_ts": 1783494000,
-      "observation": "Vale atua como individual_subject neste texto, não como sujeito do evento",
-      "source_record_id": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOU93WVNoT0tjSW96XzBfWU54MGlPbm9IUXJtb1MwVG1pN2ZUZmF3UUpZN3ZNR0ZoQmw3M3lZT0psX2VaLVdaM1lBNzZ2aHpIM3F2bGpWaEh3bEktNTBXZTdnRDd5UWVEdkRkTzd4aHhwWXZnWkVpMWQyZEx4cDRlTy1ERjZNQmNFRzlWTHp5N1hWOFU4NDY2OFRFSmdXYVRSM25VaEo0LVJqSkZTMGgtaTA4Z1EwWWtHUkRPdjRSUUPSAcYBQVVfeXFMUFJqQ2JsVE5yZENES2pndGtXa2VYNDFPTnBtVHlzWlV3eFYwczZxSGlDY0dMM25TZS1ScEtPaVdIbEpCQUR6WThLRk9jWmtYZXE4MjhzUDhzQ2JUZmVaVnpfN3lHM1FXckdKR0xZRmE3bTlaRG9jVU1zRTV3NmRLcmRvWHhUNVA1eXhGaUhuOEdFQ3haR25OR2txQ0dQU3hFam9zSktjVkNGZGFCeGFQZm5jVl9YN2VBdXZtcjRSMmJfdUgxVk1n?oc=5"
-     }
-    ]
-   },
-   "events_by_company": {
-    "Vale": []
-   },
-   "companies_attributed": [],
-   "context_companies": [
-    "Vale"
-   ],
-   "captured_ts": 1786497886,
-   "cap_iso": "2026-08-11 22:24",
-   "corroborations": [],
-   "corrob_sources": []
-  },
   "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVkE0WWZqMmhmYlgyWTNneXBwMFdjOWZ5X2taZERCamhsalZmUVdNR05lNks4dUdBZFo4TzhEMjE0YVVTS0RRN0N5N2hkS0RBTlliMjNYRFhSX3NrM2hZaHpvaUlPc2EzTE9aQjJFREx6ZkFlU3BTMDBRS0w0SlVBWnUwRnUzczdMemphWHJwMXFrNVpNbHFaOFdpdzZhdjJ4MGhmR9IBswFBVV95cUxQYlNlV3hwa09ia201SDliTnFNRWNHR0RuX0hEeDRWZWNmd0F2WEY2eWx2X0t5YjZEWlY3LS1wZDFiaEdWd0tob3pqb2ZCcGU2RVhUQS1YcWRsS2VzLTdHd1J0X2h2U3ZzR3dWMFp4WkZSNEU3UW9BaW15WF9SVEp0UHBfTEVEcnVMYnRka0ZEZDFmdFE3T28zcHY2YWpXYUdoX1pQR2NVOUVUZmQ2d29DVkllTQ?oc=5": {
    "title": "Recuperação judicial é ferramenta poderosa do investidor",
    "url": "https://valor.globo.com/financas/coluna/recuperacao-judicial-e-ferramenta-poderosa-do-investidor.ghtml",
@@ -51429,7 +51277,9 @@
     "Axia Energia"
    ],
    "captured_ts": 1786497886,
-   "cap_iso": "2026-08-11 22:24"
+   "cap_iso": "2026-08-11 22:24",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://visnoinvest.com.br/news/14704/axia-energia-axia3-registra-elevacao-de-rating-pela-fitch": {
    "title": "Axia Energia (AXIA3) registra elevação de rating pela Fitch",
@@ -51486,7 +51336,9 @@
     "Axia Energia"
    ],
    "captured_ts": 1786497886,
-   "cap_iso": "2026-08-11 22:24"
+   "cap_iso": "2026-08-11 22:24",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOaFY5M1dwcXZLcDJOYlA4WWxnMUExb2NFcDJ2ZnZ6M1FHdm1DRnUyX0c5RTgxTWg4QjJPTFRqTi15cUUwNmEtU2xPQTVNT3ZjZmxtN3YxSUtmVHlyUHhlMVNJVEhfOTFWREFreUE4LXhwcENkUUJOTGd1d2ctVFVqMWxPdDNrQUo5RTY3aXdKOWJrVl9qUDdLQVBjQU5kZWd1WHlyUjJMM0owQzZnZ0puZjlQZ19jR2lGcjBv0gHKAUFVX3lxTE90dHV4aV8yTG9ybklMUnlTY0pqYU9oMHJfakl4UUlVTFFPRHhEbVdGTjFFUVgtR0k1UEg0NFF5OXFCVXI0TVlBc20zVVVqUUNDWW5zZ18tR3VrV01sbjRzSGxDX09VdlVwd2VOSjdKTEUxMDNrd2x2c2E4bWZpdGxtU2F3OGhJd0VjVTUzQnZKMTRnOEVNTXhDbnRPYTdrV1M3SmIwVFUybDkzRmNJdEpBTWVicTB0a2ZoaFFfd2lScVhyQlZzbng0NlE?oc=5": {
    "title": "Em recuperação judicial, Oi volta a adiar divulgação de resultados",
@@ -51505,9 +51357,243 @@
    ],
    "captured_ts": 1786533108,
    "cap_iso": "2026-08-12 08:11"
+  },
+  "https://www.moneytimes.com.br/moodys-rebaixa-rating-da-cosan-csan3-para-b1-e-mantem-perspectiva-negativa/": {
+   "title": "Moody’s rebaixa rating da Cosan (CSAN3) para B1 e mantém perspectiva negativa",
+   "url": "https://www.moneytimes.com.br/moodys-rebaixa-rating-da-cosan-csan3-para-b1-e-mantem-perspectiva-negativa/",
+   "summary": "Moody’s rebaixa rating da Cosan (CSAN3) para B1 e mantém perspectiva negativa &nbsp;&nbsp; Money Times",
+   "source": "Money Times",
+   "domain": "moneytimes.com.br",
+   "pub_ts": 1784185200,
+   "pub_iso": "2026-07-16 04:00",
+   "language": "pt",
+   "companies": [
+    "Cosan"
+   ],
+   "event_ids": [
+    "rebaixamento_rating"
+   ],
+   "secondary_events": [
+    {
+     "id": "outlook_negativo",
+     "label": "Outlook negativo",
+     "family": "credit_rating",
+     "family_label": "Ação de rating",
+     "primary_event": "rebaixamento_rating"
+    }
+   ],
+   "conflict_resolution_reason": "outlook_negativo → secundário de rebaixamento_rating (família credit_rating: mesma ação econômica)",
+   "mention_roles": {
+    "Cosan": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Cosan": [
+     "rebaixamento_rating"
+    ]
+   },
+   "companies_attributed": [
+    "Cosan"
+   ],
+   "context_companies": [],
+   "corroborations": [
+    {
+     "source": "AgFeed",
+     "domain": "agfeed.com.br",
+     "url": "https://agfeed.com.br/financas/moodys-corta-rating-da-cosan-e-aponta-desafios-para-desalavancagem-da-holding/"
+    },
+    {
+     "source": "EuQueroInvestir",
+     "domain": "euqueroinvestir.com",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTHdHQ214anpuenRVRmpMRy1ibmJ6azJtTnNYQ2hlT3o4Ni1FOGMyeVByWk8zdXczcnBTbVJBbU1JMVlxU1h2ZndFTVA1aXl5TUlaSnRoTlJ5YmJYV1BVeHEwZlRVWXJyRHpOSzZhcU1RV2dISmI2a3piX1Q1SjVLVmlGUnMwNlNJZ190YktGaXZyelRUaHc?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTHdHQ214anpuenRVRmpMRy1ibmJ6azJtTnNYQ2hlT3o4Ni1FOGMyeVByWk8zdXczcnBTbVJBbU1JMVlxU1h2ZndFTVA1aXl5TUlaSnRoTlJ5YmJYV1BVeHEwZlRVWXJyRHpOSzZhcU1RV2dISmI2a3piX1Q1SjVLVmlGUnMwNlNJZ190YktGaXZyelRUaHc?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTHdHQ214anpuenRVRmpMRy1ibmJ6azJtTnNYQ2hlT3o4Ni1FOGMyeVByWk8zdXczcnBTbVJBbU1JMVlxU1h2ZndFTVA1aXl5TUlaSnRoTlJ5YmJYV1BVeHEwZlRVWXJyRHpOSzZhcU1RV2dISmI2a3piX1Q1SjVLVmlGUnMwNlNJZ190YktGaXZyelRUaHc?oc=5",
+     "resolved_url": "https://euqueroinvestir.com/acoes/moodys-rebaixa-rating-da-rumo-apos-corte-na-nota-da-cosan",
+     "canonical_url": "https://euqueroinvestir.com/acoes/moodys-rebaixa-rating-da-rumo-apos-corte-na-nota-da-cosan",
+     "display_url": "https://euqueroinvestir.com/acoes/moodys-rebaixa-rating-da-rumo-apos-corte-na-nota-da-cosan",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "euqueroinvestir.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →",
+     "last_checked_at": "2026-07-31T05:45:49.040503+00:00"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "AgFeed",
+     "domain": "agfeed.com.br",
+     "url": "https://agfeed.com.br/financas/moodys-corta-rating-da-cosan-e-aponta-desafios-para-desalavancagem-da-holding/",
+     "when": "16/07 19:33"
+    }
+   ],
+   "captured_ts": 1786544854,
+   "cap_iso": "2026-08-12 11:27"
+  },
+  "https://www.moneytimes.com.br/banco-do-brasil-bbas3-em-alerta-pedidos-de-recuperacao-judicial-no-agronegocio-saltam-22-aponta-serasa-igdl/": {
+   "title": "Banco do Brasil (BBAS3) em alerta: Pedidos de recuperação judicial no agronegócio saltam 22%, aponta Serasa",
+   "url": "https://www.moneytimes.com.br/banco-do-brasil-bbas3-em-alerta-pedidos-de-recuperacao-judicial-no-agronegocio-saltam-22-aponta-serasa-igdl/",
+   "summary": "Banco do Brasil (BBAS3) em alerta: Pedidos de recuperação judicial no agronegócio saltam 22%, aponta Serasa &nbsp;&nbsp; Money Times",
+   "source": "Money Times",
+   "domain": "moneytimes.com.br",
+   "pub_ts": 1786535400,
+   "pub_iso": "2026-08-12 08:50",
+   "language": "pt",
+   "companies": [
+    "Banco do Brasil"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "mention_roles": {
+    "Banco do Brasil": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Banco do Brasil": [
+     "recuperacao_judicial"
+    ]
+   },
+   "companies_attributed": [
+    "Banco do Brasil"
+   ],
+   "context_companies": [],
+   "corroborations": [
+    {
+     "source": "Kinvo",
+     "domain": "kinvo.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNN3haT1RnSWE4WC1La0dZaS1QMXJOb3hOeWtGRkpNWFNKMjBZUzlhQWsxNVUtZ205RU11RXJoYi1iRlhnTy1jRTFsalJBeVBjb0ZUZ20xVFdvQXRQTm5vMFl5S2d6eVdUWmdudXkxS2RHWFJ3UlRwa1gyZmhqUUFGLW1tZW5VSVRiOFRBU1dCVWUyUE15T2lPSldEX2NTNlEtN01BbTYxVE5ZQndqdUdKRVBmYUFoSDdwRUNCQnFfZzVxM1IxVW91TWVuSQ?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNN3haT1RnSWE4WC1La0dZaS1QMXJOb3hOeWtGRkpNWFNKMjBZUzlhQWsxNVUtZ205RU11RXJoYi1iRlhnTy1jRTFsalJBeVBjb0ZUZ20xVFdvQXRQTm5vMFl5S2d6eVdUWmdudXkxS2RHWFJ3UlRwa1gyZmhqUUFGLW1tZW5VSVRiOFRBU1dCVWUyUE15T2lPSldEX2NTNlEtN01BbTYxVE5ZQndqdUdKRVBmYUFoSDdwRUNCQnFfZzVxM1IxVW91TWVuSQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNN3haT1RnSWE4WC1La0dZaS1QMXJOb3hOeWtGRkpNWFNKMjBZUzlhQWsxNVUtZ205RU11RXJoYi1iRlhnTy1jRTFsalJBeVBjb0ZUZ20xVFdvQXRQTm5vMFl5S2d6eVdUWmdudXkxS2RHWFJ3UlRwa1gyZmhqUUFGLW1tZW5VSVRiOFRBU1dCVWUyUE15T2lPSldEX2NTNlEtN01BbTYxVE5ZQndqdUdKRVBmYUFoSDdwRUNCQnFfZzVxM1IxVW91TWVuSQ?oc=5",
+     "resolved_url": "https://kinvo.com.br/noticia/banco-do-brasil-bbas3-em-alerta-pedidos-de-recuperacao-judicial-no-agronegocio-saltam-22-aponta-serasa",
+     "canonical_url": "https://kinvo.com.br/noticia/banco-do-brasil-bbas3-em-alerta-pedidos-de-recuperacao-judicial-no-agronegocio-saltam-22-aponta-serasa",
+     "display_url": "https://kinvo.com.br/noticia/banco-do-brasil-bbas3-em-alerta-pedidos-de-recuperacao-judicial-no-agronegocio-saltam-22-aponta-serasa",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "kinvo.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-12T14:27:52.826757+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Kinvo",
+     "domain": "kinvo.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNN3haT1RnSWE4WC1La0dZaS1QMXJOb3hOeWtGRkpNWFNKMjBZUzlhQWsxNVUtZ205RU11RXJoYi1iRlhnTy1jRTFsalJBeVBjb0ZUZ20xVFdvQXRQTm5vMFl5S2d6eVdUWmdudXkxS2RHWFJ3UlRwa1gyZmhqUUFGLW1tZW5VSVRiOFRBU1dCVWUyUE15T2lPSldEX2NTNlEtN01BbTYxVE5ZQndqdUdKRVBmYUFoSDdwRUNCQnFfZzVxM1IxVW91TWVuSQ?oc=5",
+     "when": "12/08 08:08",
+     "original_url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNN3haT1RnSWE4WC1La0dZaS1QMXJOb3hOeWtGRkpNWFNKMjBZUzlhQWsxNVUtZ205RU11RXJoYi1iRlhnTy1jRTFsalJBeVBjb0ZUZ20xVFdvQXRQTm5vMFl5S2d6eVdUWmdudXkxS2RHWFJ3UlRwa1gyZmhqUUFGLW1tZW5VSVRiOFRBU1dCVWUyUE15T2lPSldEX2NTNlEtN01BbTYxVE5ZQndqdUdKRVBmYUFoSDdwRUNCQnFfZzVxM1IxVW91TWVuSQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNN3haT1RnSWE4WC1La0dZaS1QMXJOb3hOeWtGRkpNWFNKMjBZUzlhQWsxNVUtZ205RU11RXJoYi1iRlhnTy1jRTFsalJBeVBjb0ZUZ20xVFdvQXRQTm5vMFl5S2d6eVdUWmdudXkxS2RHWFJ3UlRwa1gyZmhqUUFGLW1tZW5VSVRiOFRBU1dCVWUyUE15T2lPSldEX2NTNlEtN01BbTYxVE5ZQndqdUdKRVBmYUFoSDdwRUNCQnFfZzVxM1IxVW91TWVuSQ?oc=5",
+     "resolved_url": "https://kinvo.com.br/noticia/banco-do-brasil-bbas3-em-alerta-pedidos-de-recuperacao-judicial-no-agronegocio-saltam-22-aponta-serasa",
+     "canonical_url": "https://kinvo.com.br/noticia/banco-do-brasil-bbas3-em-alerta-pedidos-de-recuperacao-judicial-no-agronegocio-saltam-22-aponta-serasa",
+     "display_url": "https://kinvo.com.br/noticia/banco-do-brasil-bbas3-em-alerta-pedidos-de-recuperacao-judicial-no-agronegocio-saltam-22-aponta-serasa",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "kinvo.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-12T14:27:53.227032+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1786544854,
+   "cap_iso": "2026-08-12 11:27"
+  },
+  "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOTVJBX0dqaW5uZ2xKR1hNcF9xUEhQeVlJUldxVEp1VU5SbTdVbDRmaUltVTRkeF9wa0k1b1gwbng1cHpyRkthd1dNVGNfWjI2Tmo4RTdzdVJsLWhPOHVXQXN5aUVYdDdycXFoS0E0Y2tvUUR4UGdyMU5Td3VSbF83LVRDRUFpSTRuYV9mdEFXOUdNRzJOWUlqT3BNY0ZOb29YaHZJcUVlX0NZYjVMS1lFbWZla1RKcWlTVmxhNkJMeE9JWk5hSEdLMGVjUmhfRXJL?oc=5": {
+   "title": "StoneX anuncia aquisição do Banco Travelex do Brasil por volume de US$ 6 bilhões",
+   "url": "https://br.investing.com/news/company-news/stonex-anuncia-aquisicao-do-banco-travelex-do-brasil-por-volume-de-us-6-bilhoes-93CH-2036233",
+   "summary": "StoneX anuncia aquisição do Banco Travelex do Brasil por volume de US$ 6 bilhões &nbsp;&nbsp; Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "domain": "br.investing.com",
+   "pub_ts": 1786533000,
+   "pub_iso": "2026-08-12 08:10",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1786544854,
+   "cap_iso": "2026-08-12 11:27"
+  },
+  "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQSVNCUVhidjdNbmloYjZPVkxzYU5TLWlrVlBteUtyQkFvdmpLNlg2X1ZwX1lCNG9mSGFxSFdwaUtiNzR0LVlTSjJlSURZaVR5Q3kzUjctemxFZk9yb3RJdUZKRmhaMGF1eG9ZQXhleV9YUzVBZGF6bXVaRG5HMHczbi0zV3VpZjhuQjZ2eF8yOS0yVUU5ZmlKdndMVXZnSlhxT3BUWGNjUXJjVjFqc3pEU2h5aVlacXV5NklyYVNaSFAtd0hjeldIcVlPNFBPNGNiZmVlVDZoUQ?oc=5": {
+   "title": "Inclusão de empresa estrangeira no polo ativo da recuperação judicial",
+   "url": "https://conjur.com.br/2026-ago-12/analise-de-casos-de-insolvencia-transnacional-a-inclusao-de-empresas-estrangeiras-na-recuperacao-judicial/",
+   "summary": "Inclusão de empresa estrangeira no polo ativo da recuperação judicial &nbsp;&nbsp; Consultor Jurídico",
+   "source": "Consultor Jurídico",
+   "domain": "conjur.com.br",
+   "pub_ts": 1786537419,
+   "pub_iso": "2026-08-12 09:23",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1786544854,
+   "cap_iso": "2026-08-12 11:27"
+  },
+  "https://valor.globo.com/financas/noticia/2026/08/12/falha-que-atrasou-abertura-dos-mercados-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3.ghtml": {
+   "title": "Falha que atrasou abertura dos mercados em julho é ‘chamado à ação’, diz novo CEO da B3",
+   "url": "https://valor.globo.com/financas/noticia/2026/08/12/falha-que-atrasou-abertura-dos-mercados-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3.ghtml",
+   "summary": "Falha que atrasou abertura dos mercados em julho é ‘chamado à ação’, diz novo CEO da B3 &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1786542275,
+   "pub_iso": "2026-08-12 10:44",
+   "language": "pt",
+   "companies": [
+    "B3"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "mention_roles": {
+    "B3": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "B3": [
+     "troca_ceo"
+    ]
+   },
+   "companies_attributed": [
+    "B3"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786544854,
+   "cap_iso": "2026-08-12 11:27"
   }
  },
- "run_count": 109,
+ "run_count": 110,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -56728,31 +56814,59 @@
   "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOaFY5M1dwcXZLcDJOYlA4WWxnMUExb2NFcDJ2ZnZ6M1FHdm1DRnUyX0c5RTgxTWg4QjJPTFRqTi15cUUwNmEtU2xPQTVNT3ZjZmxtN3YxSUtmVHlyUHhlMVNJVEhfOTFWREFreUE4LXhwcENkUUJOTGd1d2ctVFVqMWxPdDNrQUo5RTY3aXdKOWJrVl9qUDdLQVBjQU5kZWd1WHlyUjJMM0owQzZnZ0puZjlQZ19jR2lGcjBv0gHKAUFVX3lxTE90dHV4aV8yTG9ybklMUnlTY0pqYU9oMHJfakl4UUlVTFFPRHhEbVdGTjFFUVgtR0k1UEg0NFF5OXFCVXI0TVlBc20zVVVqUUNDWW5zZ18tR3VrV01sbjRzSGxDX09VdlVwd2VOSjdKTEUxMDNrd2x2c2E4bWZpdGxtU2F3OGhJd0VjVTUzQnZKMTRnOEVNTXhDbnRPYTdrV1M3SmIwVFUybDkzRmNJdEpBTWVicTB0a2ZoaFFfd2lScVhyQlZzbng0NlE?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2026/08/11/em-recuperao-judicial-oi-volta-a-adiar-divulgao-de-resultados.ghtml",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQUWNuRk5RZkcwMXIzcmJRZ3RndW4zR3hSNEsxa2NQTXUwRFMwand3U0hJMlVNNVdQM2tIdDljaEdtTmtBLTJ1U0Q2YjJGMjk0eDlvS0xIZ3I0M25wSlYzbE1saFc2c0taOGNsUmZQbXJaN2hWNUtCZlQyc1NPUTNXX1UwNlVwNlQ2Z1VfU21WUVEyWVlIOEswRVlRcHdzMHFVZnNUMGtsY2pqWVRQMWRxc0d3YnZsRndPcFY0Slh6c0Y4RWF0dmc4ZEE5Y01hYVl4QlhWWQ?oc=5": {
+   "url": "https://www.moneytimes.com.br/banco-do-brasil-bbas3-em-alerta-pedidos-de-recuperacao-judicial-no-agronegocio-saltam-22-aponta-serasa-igdl/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNbF9hbUlUaUxGcjBTTzVQQnctcUtidVZOS2RYaUtNRHJTSUY1ZzY0cG10QVJEV0RZTGJZVlJ5Zzh4YWpFajNrX2hOclhIRzJkSkF5QWpKRl9IN2Z5aWk5VzFvR1pkRXlUYmV0VVRRajhVcXkxa2drTlctdk51UlFoRXplY3Q2MmxTQXdCYUJXVC1Ja2o1U0IwRlNMekFLWEFRSGg2RVZ4ZngtRlBhMXk2dElJWTdRZmVWWEQ1Y3JuTDNidlp6UzFqVEx3UnA5TkdBeFljNlJaUDNjZ9IB6AFBVV95cUxQcUIwakMyVlFoSE1rcm1VVTFtYmRYSVZTdVJIRlRKY1JzcHYtcFRaZFNPLVJLWUcxMEJhX0k4aUg1Tk9uTjZGZU5PeFljMmd0QUpiR19lT093ajNlX2FTOFM4bnRSMWlVTi02LVh4dUIwa2EwQkJFb3kzUHgtZXZ3Qk93dmwzdG14Z1diSGtwMEM5VmNKMmpNekIzMl9YVUFsN1A0VHpGRDBGdWRuS3RzN19pbmxUTWtBVlBQY25uNGJnVVJIVGc0bnNtSThLUjN2Wl9EWVREbjBBRVBPbDF4TEtDb3k1UWFn?oc=5": {
+   "url": "https://valor.globo.com/financas/noticia/2026/08/12/falha-que-atrasou-abertura-dos-mercados-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOTVJBX0dqaW5uZ2xKR1hNcF9xUEhQeVlJUldxVEp1VU5SbTdVbDRmaUltVTRkeF9wa0k1b1gwbng1cHpyRkthd1dNVGNfWjI2Tmo4RTdzdVJsLWhPOHVXQXN5aUVYdDdycXFoS0E0Y2tvUUR4UGdyMU5Td3VSbF83LVRDRUFpSTRuYV9mdEFXOUdNRzJOWUlqT3BNY0ZOb29YaHZJcUVlX0NZYjVMS1lFbWZla1RKcWlTVmxhNkJMeE9JWk5hSEdLMGVjUmhfRXJL?oc=5": {
+   "url": "https://br.investing.com/news/company-news/stonex-anuncia-aquisicao-do-banco-travelex-do-brasil-por-volume-de-us-6-bilhoes-93CH-2036233",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQSVNCUVhidjdNbmloYjZPVkxzYU5TLWlrVlBteUtyQkFvdmpLNlg2X1ZwX1lCNG9mSGFxSFdwaUtiNzR0LVlTSjJlSURZaVR5Q3kzUjctemxFZk9yb3RJdUZKRmhaMGF1eG9ZQXhleV9YUzVBZGF6bXVaRG5HMHczbi0zV3VpZjhuQjZ2eF8yOS0yVUU5ZmlKdndMVXZnSlhxT3BUWGNjUXJjVjFqc3pEU2h5aVlacXV5NklyYVNaSFAtd0hjeldIcVlPNFBPNGNiZmVlVDZoUQ?oc=5": {
+   "url": "https://conjur.com.br/2026-ago-12/analise-de-casos-de-insolvencia-transnacional-a-inclusao-de-empresas-estrangeiras-na-recuperacao-judicial/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMingFBVV95cUxNUXNQV0xqVWxZNzBTdTM2NU9UVHBjUmlMUHVzbVo0UHFXTHlFQ19PRC1qVnhfRjFfc0F0UC1vbllob2NYVWZvaC1fOUxhUUFaT0hVbGtpQzFpNkZHeEwxSURTUjU0MlY3TENkdHF4SDNZLTFLeUVZVENkNmlzZ2dYY1YyU2QyN0RmWWVSaEdySktyN3g0YXBVMTFaYTlMdw?oc=5": {
+   "url": "https://www.cnnbrasil.com.br/agro/moodys-rebaixa-rating-da-cosan-e-cita-reestruturacao-da-raizen/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiywFBVV95cUxNN3haT1RnSWE4WC1La0dZaS1QMXJOb3hOeWtGRkpNWFNKMjBZUzlhQWsxNVUtZ205RU11RXJoYi1iRlhnTy1jRTFsalJBeVBjb0ZUZ20xVFdvQXRQTm5vMFl5S2d6eVdUWmdudXkxS2RHWFJ3UlRwa1gyZmhqUUFGLW1tZW5VSVRiOFRBU1dCVWUyUE15T2lPSldEX2NTNlEtN01BbTYxVE5ZQndqdUdKRVBmYUFoSDdwRUNCQnFfZzVxM1IxVW91TWVuSQ?oc=5": {
+   "url": "https://kinvo.com.br/noticia/banco-do-brasil-bbas3-em-alerta-pedidos-de-recuperacao-judicial-no-agronegocio-saltam-22-aponta-serasa",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786533163,
-  "iso": "12 ago 2026 · 08:12 BRT",
+  "ts": 1786544913,
+  "iso": "12 ago 2026 · 11:28 BRT",
   "status": {
+   "Banco do Brasil": {
+    "status": "critico",
+    "score": 117
+   },
    "Cosan": {
     "status": "atencao",
-    "score": 69
+    "score": 73
    },
    "Engie Brasil": {
     "status": "atencao",
-    "score": 69
+    "score": 68
    },
    "Rumo": {
     "status": "atencao",
-    "score": 62
+    "score": 61
    },
    "JBS": {
     "status": "atencao",
-    "score": 59
+    "score": 58
    },
    "Vale": {
     "status": "atencao",
-    "score": 55
+    "score": 54
    },
    "Tok&Stok": {
     "status": "critico",
@@ -56778,6 +56892,10 @@
     "status": "monitorar",
     "score": 32
    },
+   "B3": {
+    "status": "monitorar",
+    "score": 29
+   },
    "Yobel": {
     "status": "monitorar",
     "score": 28
@@ -56791,10 +56909,6 @@
     "score": 23
    },
    "ISA Energia Brasil": {
-    "status": "monitorar",
-    "score": 23
-   },
-   "Banco do Brasil": {
     "status": "monitorar",
     "score": 23
    },
@@ -56917,10 +57031,6 @@
    "Halliburton": {
     "status": "monitorar",
     "score": 5
-   },
-   "B3": {
-    "status": "monitorar",
-    "score": 4
    },
    "Direcional Engenharia": {
     "status": "monitorar",
