@@ -98,8 +98,11 @@ _itens = {k: v for k, v in S8.items() if k != "_meta"}
 # vez que o conjunto cresce legitimamente.
 _s8 = {k: v for k, v in _itens.items() if v.get("stratum") == "S8"}
 _s3 = {k: v for k, v in _itens.items() if v.get("stratum") == "S3"}
-check(len(_s8) == 3 and len(_s3) == 1,
-      f"[12] três verdades S8 e uma S3 registradas ({len(_s8)}/{len(_s3)})")
+check({v["company"] for v in _s8.values()} == {"YPF", "Sabesp", "B3"}
+      and {"Grupo Security", "Cemig", "TIM Brasil", "PRIO"}
+      <= {v["company"] for v in _s3.values()},
+      f"[12] S8 e S3 estão povoados pelas empresas certas "
+      f"(S8={len(_s8)}, S3={len(_s3)})")
 check(all(v["reviewer_type"] == "human" for v in _itens.values()),
       "[13] todos com reviewer_type human")
 check(all(v["human_scoreable"] is False for v in _itens.values()),
@@ -144,6 +147,52 @@ check("HUMAN PROVIDED CONTEXT" in (_gs.get("truth_source") or ""),
 check(_gs["deterministic_comparison"]["classification"]
       == "correct output / wrong reason",
       "[19g] e o diagnóstico do motor é honesto: acerta por acidente morfológico")
+
+print()
+print("=" * 98)
+print("BLOCO C3 — as três famílias S3 consolidadas (R7b-S3)")
+print("=" * 98)
+_por_emp = {v["company"]: v for v in _s3.values()}
+check(set(_por_emp) == {"Grupo Security", "Cemig", "TIM Brasil", "PRIO"},
+      f"[19h] quatro controles S3 registrados ({sorted(_por_emp)})")
+check(all(v["reviewer_type"] == "human" for v in _s3.values()),
+      "[19i] os quatro com reviewer_type human")
+check(all(v.get("human_scoreable") is False for v in _s3.values()),
+      "[19j] e nenhum deles pontua")
+
+# §9 do brief: as três labels NÃO podem ser reduzidas a "M&A falso". O que as
+# distingue é a DIMENSÃO que falha, e é isso que a comparação determinístico ×
+# LLM vai medir. Se um dia alguém colapsar as três num rótulo só, este teste cai.
+_dims = {c: v.get("failure_dimension") for c, v in _por_emp.items()
+         if v.get("failure_dimension")}
+check(_dims == {"Cemig": "attribution",
+                "TIM Brasil": "occurrence_currentness",
+                "PRIO": "centrality_currentness"},
+      f"[19k] cada uma preserva a sua dimensão de falha ({_dims})")
+check(len({v.get("s3_family") for v in _s3.values() if v.get("s3_family")}) == 3,
+      "[19l] e as famílias semânticas são distintas entre si")
+
+# A transação subjacente é VERDADEIRA nos quatro. O que é falso é a nova
+# ocorrência (ou, no caso da Cemig, a atribuição). Confundir isso apagaria
+# fusões e aquisições reais do histórico.
+for _c in ("Cemig", "TIM Brasil", "PRIO", "Grupo Security"):
+    check(_por_emp[_c].get("underlying_ma_transaction") is True,
+          f"[19m..p] {_c}: a transação subjacente segue reconhecida como REAL")
+check(_por_emp["Cemig"].get("new_occurrence") is True
+      and _por_emp["Cemig"].get("transaction_role") == "seller",
+      "[19q] Cemig é o único com ocorrência ATUAL — o defeito é de atribuição")
+check(_por_emp["TIM Brasil"].get("acquisition_actually_happened") is True,
+      "[19r] TIM: a aquisição na Itália aconteceu — o defeito é dupla contagem")
+check(_por_emp["PRIO"].get("article_primary_event") == "rating_upgrade",
+      "[19s] PRIO: o evento central do artigo é o rating, não o M&A")
+
+# §3 do brief: nenhum event_id alternativo foi adjudicado por inferência.
+_prio_txt = json.dumps({k: v for k, v in _por_emp["PRIO"].items()
+                        if k not in ("note", "limite_de_escopo",
+                                     "article_primary_event")},
+                       ensure_ascii=False)
+check("outlook_positivo" not in _prio_txt and "rebaixamento" not in _prio_txt,
+      "[19t] e nenhum event_id de produção foi auto-atribuído ao caso PRIO")
 
 print()
 print("=" * 98)
