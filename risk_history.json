@@ -724,7 +724,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-13T11:13:58.134042+00:00"
+     "last_checked_at": "2026-08-13T14:29:16.711414+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2593,7 +2593,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-13T11:13:58.534315+00:00"
+     "last_checked_at": "2026-08-13T14:29:17.111666+00:00"
     }
    ],
    "corrob_sources": [
@@ -10264,7 +10264,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-13T11:13:58.934618+00:00"
+     "last_checked_at": "2026-08-13T14:29:17.511986+00:00"
     },
     {
      "source": "Demarest",
@@ -10284,7 +10284,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-13T11:13:59.334947+00:00"
+     "last_checked_at": "2026-08-13T14:29:17.912295+00:00"
     }
    ],
    "corrob_sources": [
@@ -11867,7 +11867,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-13T11:13:59.735223+00:00"
+     "last_checked_at": "2026-08-13T14:29:18.312622+00:00"
     }
    ],
    "corrob_sources": [
@@ -15580,7 +15580,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-13T11:14:00.319935+00:00"
+     "last_checked_at": "2026-08-13T14:29:18.891640+00:00"
     }
    ],
    "corrob_sources": [
@@ -18133,7 +18133,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-13T11:14:00.928698+00:00"
+     "last_checked_at": "2026-08-13T14:29:19.488848+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -18239,7 +18239,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-13T11:14:01.492990+00:00"
+     "last_checked_at": "2026-08-13T14:29:20.067663+00:00"
     },
     {
      "source": "Moomoo",
@@ -19644,7 +19644,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-13T11:14:02.184528+00:00"
+     "last_checked_at": "2026-08-13T14:29:20.779482+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19687,7 +19687,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-13T11:14:02.900754+00:00"
+     "last_checked_at": "2026-08-13T14:29:21.478636+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -20511,7 +20511,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-13T11:14:03.473355+00:00",
+     "last_checked_at": "2026-08-13T14:29:22.061232+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20536,7 +20536,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-13T11:14:04.041771+00:00",
+     "last_checked_at": "2026-08-13T14:29:22.646631+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21656,7 +21656,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-13T11:14:04.442060+00:00",
+     "last_checked_at": "2026-08-13T14:29:23.046947+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21721,7 +21721,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-13T11:14:04.842335+00:00",
+     "last_checked_at": "2026-08-13T14:29:23.447217+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22810,7 +22810,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-13T11:14:05.464010+00:00"
+     "last_checked_at": "2026-08-13T14:29:24.017084+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22895,7 +22895,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-13T11:14:06.028699+00:00"
+     "last_checked_at": "2026-08-13T14:29:24.581164+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24710,7 +24710,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-13T11:14:06.600301+00:00",
+     "last_checked_at": "2026-08-13T14:29:25.139848+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24880,7 +24880,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-13T11:14:07.180897+00:00",
+     "last_checked_at": "2026-08-13T14:29:25.688436+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -38943,7 +38943,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-13T11:14:07.868321+00:00"
+     "last_checked_at": "2026-08-13T14:29:26.413650+00:00"
     }
    ],
    "corrob_sources": [
@@ -42014,7 +42014,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-13T11:14:08.427838+00:00"
+     "last_checked_at": "2026-08-13T14:29:26.969532+00:00"
     },
     {
      "source": "Virginia Business",
@@ -42057,7 +42057,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-13T11:14:08.993054+00:00"
+     "last_checked_at": "2026-08-13T14:29:27.553192+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48838,7 +48838,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-13T11:14:09.561732+00:00",
+     "last_checked_at": "2026-08-13T14:29:28.117165+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48861,7 +48861,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-13T11:14:10.133908+00:00",
+     "last_checked_at": "2026-08-13T14:29:28.658692+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -50127,7 +50127,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1786414880,
-   "cap_iso": "2026-08-10 23:21"
+   "cap_iso": "2026-08-10 23:21",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaGU1cEZodDRLemgxb3pqN05Ga2VTSXljR0xydlJsV2dtc21kb1VaaWVYZ1BpaVpMRGpnYlBnSUEtVHN1ZEEzbGYySjRwaDJqelExMVU5U3lqVDdGdW5HTlR6XzlXd2pZS1M2bWdqOTQzUzBFU2NaOXFCRjlnWkpfZXZTSEhDY1d6R2lJTW5NSDlCb1Y3bFZRbjNTX0FCcmt4UjJsWDVmLS0xR09qWHJxNWFoRFAxckkyX3pNZVA3d2FDMmVKMWk1dXV3T0pxaWs?oc=5": {
    "title": "Empresa de móveis de SC tem falência decretada após 55 anos de história e dívida de R$ 133 milhões",
@@ -52089,7 +52091,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "nenhum",
-     "last_checked_at": "2026-08-13T11:14:11.822159+00:00",
+     "last_checked_at": "2026-08-13T14:29:29.322055+00:00",
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -52112,7 +52114,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "nenhum",
-     "last_checked_at": "2026-08-13T11:14:12.511727+00:00",
+     "last_checked_at": "2026-08-13T14:29:29.989804+00:00",
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -52174,9 +52176,56 @@
    ],
    "captured_ts": 1786619631,
    "cap_iso": "2026-08-13 08:13"
+  },
+  "https://news.google.com/rss/articles/CBMitwFBVV95cUxOd1JUTERuR2o1QWR5SFIzTnMwS1huenU1WmVqRlJ6MnpyY2pHb18xYmE3dXhZekxFcWVuaFVFemhCdk1hYTBVdWpuVTBjVUI3YzJkZmwzTWh3TjRKcldUUXU3VDNPTmJkWE9oS0htZUZqTGFxWWpuOXIzdW9qOXF1dzNWWlhDWkJlbzFXelRTeWExSjBoejh3NTREeW9JTTFwTk95eXdVVlJNUUxJWm5QMkZ0YU1NM1U?oc=5": {
+   "title": "EXCLUSIVO: Pedidos de falência caem 31% e de recuperação judicial 27% em abril, mostra Serasa Experian",
+   "url": "https://timesbrasil.com.br/brasil/judiciario/recuperacao-judicial/recuperacao-judicial-cai-27-abril-serasa-experian/",
+   "summary": "EXCLUSIVO: Pedidos de falência caem 31% e de recuperação judicial 27% em abril, mostra Serasa Experian &nbsp;&nbsp; Times Brasil | CNBC",
+   "source": "Times Brasil | CNBC",
+   "domain": "timesbrasil.com.br",
+   "pub_ts": 1786493580,
+   "pub_iso": "2026-08-11 21:13",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "secondary_events": [
+    {
+     "id": "recuperacao_judicial",
+     "label": "Recuperação Judicial",
+     "family": "insolvencia",
+     "family_label": "Insolvência",
+     "primary_event": "falencia"
+    }
+   ],
+   "conflict_resolution_reason": "recuperacao_judicial → secundário de falencia (família insolvencia: mesma ação econômica)",
+   "captured_ts": 1786631352,
+   "cap_iso": "2026-08-13 11:29"
+  },
+  "https://www.cnbc.com/2026/08/13/wholesale-prices-were-flat-in-july-below-expectations-for-0point2percent-increase.html": {
+   "title": "Wholesale prices were flat in July, below expectations for 0.2% increase",
+   "url": "https://www.cnbc.com/2026/08/13/wholesale-prices-were-flat-in-july-below-expectations-for-0point2percent-increase.html",
+   "summary": "The producer price index was expected to increase by 0.2% in July, according to the Dow Jones consensus.",
+   "source": "CNBC · Economy",
+   "domain": "cnbc.com",
+   "pub_ts": 1786627116,
+   "pub_iso": "2026-08-13 10:18",
+   "language": "en",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "lucro_abaixo_consenso"
+   ],
+   "trust_override": "imprensa",
+   "captured_ts": 1786631352,
+   "cap_iso": "2026-08-13 11:29"
   }
  },
- "run_count": 121,
+ "run_count": 122,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -57485,15 +57534,27 @@
   "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1MNjNtek9JUThOR2JMeW40cDhwUi1QVTZORzJFalNBUTNDNDU0Yk8zZjJELXNST3h3YmhiT19YRG1vVko3Z3BBSmV0WlVWU190Y1NvQ3p3TWU?oc=5": {
    "url": "https://aciara.com.br/novo-ceo-b3-trata-pane/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMijgFBVV95cUxPTnpTQ1AtV3k4Vl8zR3ZxS3BzWkFnN2lGT3EwQ0w2emN3TzMzeE5VMHRocEVadGJxazJRN24yQ0ZoZzl2cGVYZU92UHJUOXZOaFd4T2hnQUFyc3lQY0RCbWY3YjFrbUlTdXVxMHJ0cl9nNU12XzVkbVlkSDhHa3VNenJONTZieE81U0hJcEln0gGOAUFVX3lxTE9rZnUtZ1d1SGVLSXRVdnRfN25WR3dwOUNNdERiY2R3YU4zWFRmWWxsdVVmZDNDUEUyay1la2phbmo4WEFydkJldXFBT2VHT20xMi1TTHFKNjZRUnFQbW84ejd6Skp5WVAtYW02MHROd3I2dVlDejVnQlFFRlJUYjllNk9HMXVHWTR0VHoxbHc?oc=5": {
+   "url": "https://www.milenio.com/negocios/grupo-aeromexico-esta-en-quiebra-tecnica-sobrecargos",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiowFBVV95cUxQZ1g4SUU1c2FoU1lhZ0FpMWlPR0JveEFoY3QzWFdVbE1BbjQ2Wms5RWFIellEamZiWkpTWnQ5MW12M2dmZTRJYlM3dVR2X0k3dFM4b3RSTV9pVGY0TjlldC1TaTlSUkg2NTdsSlhxRDlBZWpDYTBPYW9KeG1XRVdLNkZIVWROWU5PN1ZyZlUwN3JqSGNNWkRONGh4SnE3ZlpveGtF?oc=5": {
+   "url": "https://www.fiercehealthcare.com/payers/cigna-officially-confirms-its-not-pursuing-humana-acquisition",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMitwFBVV95cUxOd1JUTERuR2o1QWR5SFIzTnMwS1huenU1WmVqRlJ6MnpyY2pHb18xYmE3dXhZekxFcWVuaFVFemhCdk1hYTBVdWpuVTBjVUI3YzJkZmwzTWh3TjRKcldUUXU3VDNPTmJkWE9oS0htZUZqTGFxWWpuOXIzdW9qOXF1dzNWWlhDWkJlbzFXelRTeWExSjBoejh3NTREeW9JTTFwTk95eXdVVlJNUUxJWm5QMkZ0YU1NM1U?oc=5": {
+   "url": "https://timesbrasil.com.br/brasil/judiciario/recuperacao-judicial/recuperacao-judicial-cai-27-abril-serasa-experian/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786619691,
-  "iso": "13 ago 2026 · 08:14 BRT",
+  "ts": 1786631411,
+  "iso": "13 ago 2026 · 11:30 BRT",
   "status": {
    "Cosan": {
     "status": "atencao",
-    "score": 72
+    "score": 71
    },
    "Engie Brasil": {
     "status": "atencao",
@@ -57527,13 +57588,13 @@
     "status": "atencao",
     "score": 36
    },
-   "Axia Energia": {
-    "status": "monitorar",
-    "score": 35
-   },
    "B3": {
     "status": "monitorar",
     "score": 35
+   },
+   "Axia Energia": {
+    "status": "monitorar",
+    "score": 34
    },
    "Sabesp": {
     "status": "monitorar",
