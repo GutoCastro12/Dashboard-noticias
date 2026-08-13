@@ -41,7 +41,7 @@ import reliability_pilot_input as pi
 import risk_dashboard as rd
 import semantic_audit as sa
 
-MAX_FETCH_S3 = 5
+MAX_FETCH_S3 = int(os.environ.get("R7B_S3_BUDGET", "3"))
 SAIDA = Path(os.environ.get("R7B_S3_OUT")
              or "out_reliability/r7b_s3_experimental_inputs.json")
 HISTORY = Path("risk_history.json")
@@ -59,7 +59,33 @@ CANDIDATOS = [
      "referencia_historica_pos_fusao"),
     ("S3-C5", "TIM Brasil", "ma", "Presidente da TIM Brasil vê potencial estratégico",
      "comentarista_terceiro"),
+    # ── wave R7b-S3: 3 tentativas novas, escolhidas OFFLINE ─────────────────
+    ("S3-C6", "Hapvida", "ma", "anuncia rescisão de contrato vinculante",
+     "transacao_rescindida"),
+    ("S3-C7", "Citigroup", "ma", "Citigroup Em Foco Após Banco Negar",
+     "rumor_negado"),
+    ("S3-C8", "PRIO", "ma", "S&P Global eleva nota de crédito da petrolífera após",
+     "pos_transacao_como_causa"),
 ]
+# Grupo Security NÃO entra aqui: a verdade humana já foi dada por Gustavo com
+# contexto externo, e gastar request nele seria queimar orçamento por nada.
+
+
+def _human_reviewable(comp: dict, falha: str) -> bool:
+    """O fragmento basta para um HUMANO adjudicar? (§15 do brief R7b-S3.)
+
+    Critério deliberadamente conservador e separado de `llm_input_ready`: um
+    `og:description` de 340 chars pode conter comprador, vendedor, objeto e
+    valor — e então serve de verdade humana — sem chegar perto do limiar que a
+    `r7c.policy2` exige para alimentar o modelo em produção. Menu de navegação,
+    boilerplate e manchete pura não contam, por mais chars que tenham.
+    """
+    if falha != "OK":
+        return False
+    if comp.get("nav_flag") or comp.get("boilerplate_flag"):
+        return False
+    return (int(comp.get("chars_totais") or 0) >= 250
+            and int(comp.get("meaningful_gain_vs_title") or 0) >= 20)
 
 
 CACHE_FETCH = Path(os.environ.get("R7B_S3_CACHE")
@@ -163,9 +189,13 @@ def main() -> int:
                 "paywall_flag": comp.get("paywall_flag"),
                 "nav_flag": comp.get("nav_flag"),
                 "boilerplate_flag": comp.get("boilerplate_flag"),
-                "sufficient": bool(pronto.get("pronto")),
                 "faltou": pronto.get("faltou"),
             },
+            # DUAS métricas separadas (§14). `llm_input_ready` continua sendo o
+            # veredito da política de produção, intocada; `human_reviewable` é
+            # critério de AVALIAÇÃO S3 e não vale para mais nada.
+            "llm_input_ready": bool(pronto.get("pronto")),
+            "human_reviewable": _human_reviewable(comp, enr.get("falha") or ""),
             "evidence_text": (best.get("best_input") or "")[:4000],
             "content_hash": best.get("content_hash") or "",
             "provenance": best.get("provenance") or [],
@@ -187,7 +217,8 @@ def main() -> int:
                                 "nunca ground truth.",
         })
 
-    ready = [r for r in registros if (r.get("quality") or {}).get("sufficient")]
+    ready = [r for r in registros if r.get("human_reviewable")]
+    llm_ready = [r for r in registros if r.get("llm_input_ready")]
     out = {
         "_meta": {
             "proposito": "Inputs experimentais retrospectivos para construir "
@@ -219,7 +250,8 @@ def main() -> int:
             "falhas": dict(collections.Counter(
                 (r.get("fetch") or {}).get("status") or r.get("status")
                 for r in registros)),
-            "ready": len(ready),
+            "human_reviewable": len(ready),
+            "llm_input_ready": len(llm_ready),
         },
         "registros": registros,
     }
@@ -235,9 +267,12 @@ def main() -> int:
         f = r.get("fetch") or {}
         print(f"  {r['s3_id']} {r.get('company','?'):14s} {f.get('status') or r.get('status'):22s} "
               f"chars={q.get('useful_chars', 0):5d} sent={q.get('sentence_like_count', 0):3d} "
-              f"toks={q.get('unique_meaningful_tokens', 0):4d} pronto={q.get('sufficient')}")
+              f"toks={q.get('unique_meaningful_tokens', 0):4d} "
+              f"human={r.get('human_reviewable')} llm={r.get('llm_input_ready')}")
     print()
-    print(f"  requests: {contador['fetches']}/{MAX_FETCH_S3} | ready: {len(ready)}")
+    print(f"  requests NOVAS: {contador['fetches']}/{MAX_FETCH_S3} | "
+          f"cache hits: {contador.get('reaproveitados', 0)} | "
+          f"human-reviewable: {len(ready)} | llm-ready: {len(llm_ready)}")
     print(f"  saida   : {SAIDA}")
     return 0
 

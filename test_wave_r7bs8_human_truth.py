@@ -92,12 +92,19 @@ print("=" * 98)
 print("BLOCO C — verdades S8 registradas")
 print("=" * 98)
 _itens = {k: v for k, v in S8.items() if k != "_meta"}
-check(len(_itens) == 3, f"[12] os três ground truths S8 estão registrados ({len(_itens)})")
+# A fixture guarda verdade de OCORRÊNCIA/ATUALIDADE, que é a mesma pergunta
+# para S8 e para o controle S3 do Grupo Security. Por isso a checagem é por
+# ESTRATO, não por contagem total — assim ela não vira um número a bumpar toda
+# vez que o conjunto cresce legitimamente.
+_s8 = {k: v for k, v in _itens.items() if v.get("stratum") == "S8"}
+_s3 = {k: v for k, v in _itens.items() if v.get("stratum") == "S3"}
+check(len(_s8) == 3 and len(_s3) == 1,
+      f"[12] três verdades S8 e uma S3 registradas ({len(_s8)}/{len(_s3)})")
 check(all(v["reviewer_type"] == "human" for v in _itens.values()),
       "[13] todos com reviewer_type human")
 check(all(v["human_scoreable"] is False for v in _itens.values()),
-      "[14] e os três dizem: não pontua")
-_ev = {v["company"]: v["event_id"] for v in _itens.values()}
+      "[14] e todos dizem: não pontua")
+_ev = {v["company"]: v["event_id"] for v in _s8.values()}
 check(_ev == {"YPF": "falencia", "Sabesp": "ma", "B3": "troca_ceo"},
       f"[15] sobre os eventos candidatos corretos ({_ev})")
 _todos = json.dumps(S8, ensure_ascii=False)
@@ -111,10 +118,32 @@ check(all("provenance" in v and "note" in v for v in _itens.values()),
 check(all("deterministic_comparison" in v for v in _itens.values()),
       "[18] e a comparação com o determinístico está registrada")
 _cls = {v["company"]: v["deterministic_comparison"]["classification"]
-        for v in _itens.values()}
+        for v in _s8.values()}
 check(_cls == {"YPF": "correct output / fragile reason",
                "Sabesp": "conflict", "B3": "conflict"},
       f"[19] com a classificação honesta de cada um ({_cls})")
+
+print()
+print("=" * 98)
+print("BLOCO C2 — controle S3 do Grupo Security (R7b-S3)")
+print("=" * 98)
+_gs = list(_s3.values())[0]
+check(_gs["company"] == "Grupo Security" and _gs["event_id"] == "ma",
+      f"[19b] a verdade S3 é do Grupo Security / `ma` ({_gs['company']})")
+check(_gs.get("underlying_ma_transaction") is True
+      and _gs.get("transaction_completed") is True,
+      "[19c] a fusão VERDADEIRA não foi apagada — underlying e completed seguem True")
+check(_gs.get("new_ma_occurrence_in_this_article") is False
+      and _gs.get("scoreable_as_new_ma") is False,
+      "[19d] o que é falso é a NOVA OCORRÊNCIA neste artigo, não a transação")
+check(_gs.get("transaction_completed_at") == "2025-09-01"
+      and _gs.get("combined_entity_brand") == "BICE",
+      "[19e] data de conclusão e marca da entidade combinada registradas")
+check("HUMAN PROVIDED CONTEXT" in (_gs.get("truth_source") or ""),
+      "[19f] a origem da verdade é contexto humano, não fetch experimental")
+check(_gs["deterministic_comparison"]["classification"]
+      == "correct output / wrong reason",
+      "[19g] e o diagnóstico do motor é honesto: acerta por acidente morfológico")
 
 print()
 print("=" * 98)
