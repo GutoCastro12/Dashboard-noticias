@@ -60,6 +60,16 @@ for _a in _adjs:
                 c["expected_scoreable"] = True
                 c["expected_event_id"] = c["current_event_id"]
                 c["forbidden_event_id"] = ""
+            elif c["assertion"] in ("drop", "reclass", "phase"):
+                # Direção inversa (R7b-S2): um POSITIVO do gold vira negativo.
+                # Sem isto o caso passaria VACUAMENTE — `forbidden_event_id`
+                # nasce "" nos casos `keep`, e `"" not in pontuaveis` é sempre
+                # verdadeiro. O mecanismo só tinha implementado o caminho
+                # negativo→positivo porque era o único override que existia.
+                c["expected_scoreable"] = False
+                c["forbidden_event_id"] = (c.get("forbidden_event_id")
+                                           or c["current_event_id"])
+                c["expected_event_id"] = ""
             _aplicadas.append(_a)
             break
 

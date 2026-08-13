@@ -16,6 +16,22 @@
    "reason": "Investigacao formal explicitamente aberta pela autoridade competente ('Ministerio del Trabajo abre investigacion'). 'Presunta' qualifica a CONDUTA investigada, nao a existencia do procedimento. O event_id monitorado e `investigacao_regulatoria` — cujo proprio significado e a investigacao — e nao `fraude` confirmada nem sancao regulatoria.",
    "evidence_summary": "Keywords da familia investigacao_regulatoria no config de producao sao atos formais ('CVM abre processo', 'busca e apreensao', 'expediente sancionador', 'abre investigacion'), score 30. Exigir condenacao mudaria o significado da familia (4I.2 §9/§20).",
    "impacto_no_gold": "negativo -> positivo: POSITIVOS 115->116, NEGATIVOS 90->89"
+  },
+  {
+   "case_id": "G183",
+   "company": "Petrobras",
+   "event_id": "ma",
+   "title_fragment": "aquisição de bloco exploratório na África",
+   "old_verdict": "CORRECT",
+   "new_verdict": "WRONG_EVENT",
+   "adjudication_stage": "R7b-S2 checkpoint",
+   "adjudicated_by": "usuario (decisao explicita)",
+   "reviewer_type": "human",
+   "adjudicated_at": "2026-08-12",
+   "reason": "AQUISICAO DE BLOCO EXPLORATORIO NAO E M&A SOCIETARIO. O objeto adquirido e ativo / direito exploratorio / bloco operacional -- nao empresa, controle societario, participacao societaria nem joint venture interest. O papel da Petrobras (adquirente) esta correto e nunca esteve em disputa; o que estava errado era concluir M&A a partir do PAPEL, sem provar o OBJETO. A adjudicacao atual PREVALECE sobre o veredito da auditoria 4I.",
+   "evidence_summary": "O proprio racional do caso base G183 registra 'aquisicao de bloco (ativo estrategico)' e 'ma_role_real: BUYER' — a auditoria original ja havia lido o objeto como ATIVO e ainda assim manteve o event_id `ma`. A inconsistencia estava no gold antigo, nao na regra. Mesma classe semantica do controle S2-C3 adjudicado no mesmo dia (Petrobras / bloco exploratorio em Sao Tome e Principe, `ma` = FALSE), registrado em test_fixtures_reliability/ma_transaction_reviews.json.",
+   "verdict_escolhido": "WRONG_EVENT e o unico veredito do schema que e VERDADEIRO aqui: existe transacao real e a empresa e mesmo a adquirente; o que esta errado e o event_id. Mapeia para a assertion `reclass`, avaliada de forma IDENTICA a `drop` — o evento proibido nao pode pontuar. O brief pediu KEEP -> DROP e o efeito e exatamente esse, sem precisar afirmar um veredito falso (WRONG_SUBJECT, HISTORICAL_MA e afins nao descrevem este caso).",
+   "impacto_no_gold": "positivo -> negativo: POSITIVOS 116->115 (denominador tambem 116->115), NEGATIVOS 89->90"
   }
  ]
 }

@@ -1,0 +1,99 @@
+{
+ "_meta": {
+  "purpose": "Ground truth HUMANO sobre ATUALIDADE e OCORRENCIA: este artigo representa um evento NOVO, ATUAL e DA PROPRIA empresa? Separado de live_reviews.json (que registra veredito de pontuabilidade sobre item do inventario critico) e de ma_transaction_reviews.json (que registra as dimensoes de uma transacao). Sao tres perguntas distintas e nenhuma pode contaminar o denominador das outras.",
+  "chave": "url||company||event_id",
+  "origem": "Wave R7b-S2/S8. Gustavo adjudicou pessoalmente os tres controles S8 apresentados no checkpoint R7b-S2, em 2026-08-12.",
+  "dimensoes": {
+   "human_scoreable": "o evento candidato deve pontuar para esta empresa neste artigo?",
+   "event_subject": "de quem e o evento",
+   "company_role": "papel da monitorada no artigo",
+   "currentness": "o fato e atual, anterior, ou acompanhamento de fato ja ocorrido",
+   "new_occurrence": "e uma NOVA ocorrencia economica?",
+   "article_role": "o que este artigo e, editorialmente"
+  },
+  "principio_s8_c2": "UMA OCORRENCIA ECONOMICA PONTUA UMA VEZ. Follow-up regulatorio de operacao ja contada nao e evento novo.",
+  "limite_de_escopo": "Estas labels dizem apenas o que dizem. Nenhum evento ALTERNATIVO foi rotulado por inferencia -- em particular, `incidente_operacional` no caso da B3 NAO recebeu label humana.",
+  "reviewer_types": ["human", "assistant", "imported_prior_adjudication", "unknown"]
+ },
+ "https://www.lanacion.com.ar/economia/negocios/el-exceo-de-ypf-que-busca-recuperar-aconcagua-tras-la-quiebra-nid11092025/||YPF||falencia": {
+  "company": "YPF",
+  "event_id": "falencia",
+  "stratum": "S8",
+  "title": "El exCEO de YPF que busca recuperar Aconcagua tras la quiebra",
+  "source": "La Nación",
+  "pub_iso": "2025-09-11 04:00",
+  "human_scoreable": false,
+  "event_subject": "Aconcagua Energía",
+  "subject_kind": "third_party",
+  "company_role": "contextual",
+  "currentness": "historical_or_prior_event",
+  "new_occurrence": false,
+  "article_role": "recuperacao/reestruturacao de terceiro",
+  "reviewer_type": "human",
+  "reviewed_at": "2026-08-12",
+  "in_production_history": true,
+  "note": "A quebra e da Aconcagua, nao da YPF. A pessoa citada e EX-CEO da YPF, e o fato descrito como atual e a recuperacao/reestruturacao da Aconcagua. A YPF nao deve herdar `falencia`: nenhum evento de falencia para a YPF neste artigo.",
+  "deterministic_comparison": {
+   "output": "FALSE (concorda com a verdade humana)",
+   "rule": "R_EVENTO_CITADO_COMO_PASSADO",
+   "classification": "correct output / fragile reason",
+   "detalhe": "O motor rejeita por ATUALIDADE ('tras la quiebra', evento citado como anterior) e declara subject_company = 'YPF'. A verdade humana diz que o sujeito e a Aconcagua -- terceiro. O output final coincide, mas por uma dimensao diferente da que de fato resolve o caso: se o mesmo texto trouxesse a quebra da Aconcagua no presente, a regra de atualidade nao atuaria e a atribuicao a terceiro continuaria sem ser feita."
+  },
+  "provenance": "adjudicacao explicita do usuario no brief da wave R7b-S2/S8"
+ },
+ "https://agenciainfra.com/blog/aquisicao-da-emae-pela-sabesp-sobe-ao-tribunal-do-cade-apos-recurso/||Sabesp||ma": {
+  "company": "Sabesp",
+  "event_id": "ma",
+  "stratum": "S8",
+  "title": "Aquisição da Emae pela Sabesp sobe ao Tribunal do Cade após recurso",
+  "source": "Agência iNFRA",
+  "pub_iso": "2026-01-09 05:00",
+  "human_scoreable": false,
+  "underlying_transaction": "aquisicao legitima da Emae pela Sabesp",
+  "underlying_transaction_valid": true,
+  "event_subject": "Sabesp",
+  "company_role": "adquirente",
+  "currentness": "follow_up_de_operacao_ja_anunciada",
+  "new_occurrence": false,
+  "article_role": "regulatory_follow_up",
+  "reviewer_type": "human",
+  "reviewed_at": "2026-08-12",
+  "in_production_history": true,
+  "note": "A aquisicao em si e uma operacao legitima da Sabesp. Este ARTIGO, porem, nao representa uma nova ocorrencia economica: o fato atual e o recurso/processo no Cade, evolucao processual de operacao ja anunciada. Nao deve gerar nova pontuacao de `ma`. Pode permanecer como contexto/follow-up/informativo conforme a arquitetura.",
+  "deterministic_comparison": {
+   "output": "TRUE (CONFLITA com a verdade humana)",
+   "rule": "R_MA_LEGITIMO",
+   "new_occurrence_do_motor": true,
+   "classification": "conflict",
+   "detalhe": "O motor nao tem IDENTIDADE DE TRANSACAO. `resolve_event_families` deduplica dentro de UM artigo (mesma acao economica gerando dois event_ids); `dedupe_articles` deduplica artigos quase identicos. O merge cross-artigo existe (`merge_occurrences_across_articles`) mas esta ligado apenas para `disrupcao_operacional` -- a propria docstring registra que `ma` nunca entra nesse mapa. Nada acompanha 'Sabesp x Emae' como UMA ocorrencia ao longo do tempo.",
+   "evidencia_medida": "No corpus atual, a MESMA transacao Sabesp x Emae pontua `ma` em 6 artigos distintos entre 2025-12-16 e 2026-07-27: aprovacao pela Superintendencia-Geral do Cade, recurso ao Tribunal, conclusao (duas fontes), protocolo para as acoes restantes e assembleia."
+  },
+  "provenance": "adjudicacao explicita do usuario no brief da wave R7b-S2/S8"
+ },
+ "https://valor.globo.com/financas/noticia/2026/08/12/falha-que-atrasou-abertura-dos-mercados-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3.ghtml||B3||troca_ceo": {
+  "company": "B3",
+  "event_id": "troca_ceo",
+  "stratum": "S8",
+  "title": "Falha que atrasou abertura dos mercados em julho é 'chamado à ação', diz novo CEO da B3",
+  "source": "Valor Econômico",
+  "pub_iso": "2026-08-12 10:44",
+  "human_scoreable": false,
+  "event_subject": "B3",
+  "company_role": "sujeito",
+  "currentness": "descritor_de_cargo_nao_evento",
+  "new_occurrence": false,
+  "current_article_event": "not_ceo_change",
+  "article_role": "declaracao sobre falha operacional ocorrida em julho",
+  "reviewer_type": "human",
+  "reviewed_at": "2026-08-12",
+  "in_production_history": true,
+  "note": "'novo CEO' identifica QUEM ESTA FALANDO. A troca de CEO nao e o fato anunciado nesta materia; o assunto atual e a falha operacional de julho. Este artigo nao deve gerar nova ocorrencia de `troca_ceo`. NENHUMA label humana foi atribuida a `incidente_operacional` -- a verdade desta wave e apenas `troca_ceo` = FALSE como evento atual deste artigo.",
+  "deterministic_comparison": {
+   "output": "TRUE (CONFLITA com a verdade humana)",
+   "rule": "",
+   "classification": "conflict",
+   "detalhe": "Nenhuma regra semantica atuou -- `attribution_rule` vem vazio. O evento nasce do keyword 'novo CEO' (familia troca_ceo no config de producao, junto de 'new ceo', 'nuevo director ejecutivo') e sobrevive por AUSENCIA DE BLOCKER. Respondendo a pergunta do brief: sim, o motor confunde DESCRITOR DE CARGO com EVENTO DE TROCA, e a confusao nasce no nivel do candidato, sem nada a jusante que a apanhe."
+  },
+  "provenance": "adjudicacao explicita do usuario no brief da wave R7b-S2/S8"
+ }
+}
