@@ -148,10 +148,54 @@ OBJ_NAO_EMPRESA = {
     # Escopo PT: os dois casos reais são PT. Sem formas EN — quando houver caso
     # observado em inglês, elas entram junto com a evidência.
     "pedido_comercial": [r"[àa]\s+carteira\s+d[ao]\s+", r"carteira\s+de\s+pedidos"],
-    "equipamento": [r"equipamentos?", r"maquin[áa]rio", r"machinery", r"frota de caminh"],
+    "equipamento": [r"equipamentos?", r"maquin[áa]rio", r"m[áa]quinas?", r"machinery",
+                    r"frota de caminh"],
     "imovel": [r"im[óo]ve(?:l|is)", r"terreno", r"real\s+estate", r"galp[ãa]o"],
     "capex_ativo": [r"capex", r"renova[çc][ãa]o\s+de\s+frota", r"usina", r"planta industrial"],
+    # ── 4I.2 R7b-S2: O QUE FOI COMPRADO, NÃO SÓ QUEM COMPROU ────────────────
+    # Ground truth humano (2026-08-12): BTG adquirindo uma FAZENDA e Petrobras
+    # adquirindo um BLOCO EXPLORATÓRIO são adquirentes reais — o papel está
+    # certo — mas o objeto não é societário, e por isso não são `ma`. O mapa
+    # de objetos já existia e já governava a rejeição; faltava-lhe o léxico de
+    # PROPRIEDADE RURAL e de DIREITO/CONCESSÃO. Nada aqui decide materialidade:
+    # a informação continua registrada como evento direto não pontuável.
+    "imovel_rural": [r"fazendas?", r"propriedades?\s+rura(?:l|is)",
+                     r"im[óo]ve(?:l|is)\s+rura(?:l|is)", r"terras?\s+(?:agr[íi]cola|rura)\w*",
+                     r"[áa]reas?\s+rura(?:l|is)", r"hectares", r"\bch[áa]cara",
+                     r"farmland", r"\bfarms?\b"],
+    "direito_exploratorio": [
+        r"blocos?\s+explorat[óo]rios?", r"[áa]reas?\s+explorat[óo]rias?",
+        r"lotes?\s+explorat[óo]rios?", r"direitos?\s+de\s+explora[çc][ãa]o",
+        r"direitos?\s+miner[áa]rios?", r"campos?\s+(?:de\s+petr[óo]leo|petrol[íi]feros?)",
+        r"exploration\s+(?:block|rights?|acreage)", r"mining\s+rights?",
+        # concessões de infraestrutura: o objeto é o DIREITO de operar, não a
+        # sociedade concessionária (`concession[áa]ria` não casa aqui, de
+        # propósito — comprar a concessionária é aquisição societária).
+        r"concess(?:[ãa]o|[õo]es)\s+(?:rodovi\w+|ferrovi\w+|aeroportu\w+|portu\w+)",
+        r"concess(?:[ãa]o|[õo]es)\s+d[eo]\s+(?:rodovia|ferrovia|aeroporto|porto|saneamento|"
+        r"[áa]gua|esgoto|energia|transmiss[ãa]o|distribui[çc][ãa]o|explora[çc][ãa]o|lote)",
+    ],
+    "carteira_de_ativos": [r"carteiras?\s+de\s+ativos", r"portf[óo]lios?\s+de\s+ativos",
+                           r"asset\s+portfolio"],
 }
+# Evidência POSITIVA de objeto societário. Existe para dois fins: (a) provar
+# `empresa` em vez de deduzi-la por ausência de blocker, e (b) VENCER o léxico
+# de ativo quando os dois aparecem — "aquisição de participação na
+# concessionária Alfa" é societário mesmo citando concessão. Exige SUBSTANTIVO
+# societário: percentual sozinho não basta ("30% de uma fazenda" continua ativo).
+OBJ_SOCIETARIO_FORTE = [
+    r"participa[çc][ãa]o\s+(?:acion[áa]ria|societ[áa]ria)", r"participa[çc][ãa]o\s+d[aeo]\s",
+    r"participa[çc][ãa]o\s+n[ao]\s", r"participa[çc][ãa]o\s+em\s",
+    r"controle\s+acion[áa]rio", r"capital\s+social", r"joint\s*ventures?",
+    r"a[çc][õo]es\s+d[aeo]\s", r"quotas?\s+d[aeo]\s", r"\bstakes?\s+in\b",
+    r"\bequity\s+(?:stake|interest)",
+]
+# NÃO entram aqui `subsidi[áa]ria`/`controlada d...`: nomeiam uma RELAÇÃO entre
+# empresas, não o objeto da compra, e no corpus real aparecem descrevendo o
+# COMPRADOR com a mesma frequência ("Controlada da Cemig conclui aquisição de
+# usinas fotovoltaicas"). Quando o alvo é mesmo uma controlada nomeada, o ramo
+# de entidade nomeada de `ma_is_legitimate` já aceita — com objeto `indefinido`,
+# que é a resposta honesta: ninguém provou o tipo do objeto.
 OBJ_EMPRESA = [
     r"aquisi[çc][ãa]o\s+d[ao]s?\s+(?:empresa|companhia|banco|grupo|controlad|participa[çc])",
     r"compra\s+d[ao]s?\s+(?:empresa|companhia|banco|grupo|controlad|participa[çc])",
@@ -367,15 +411,39 @@ def detect_earnings_beat(text: str) -> bool:
     return any(re.search(p, t) for p in EARNINGS_BEAT_MARKERS)
 
 
+def _societario_apos_verbo(t: str) -> bool:
+    """Evidência societária no OBJETO da aquisição, não no sujeito dela.
+
+    O blast da R7b-S2 mostrou por que a janela importa: "Controlada da Cemig
+    conclui aquisição de usinas fotovoltaicas" tem `controlada d...` no texto,
+    mas isso descreve QUEM COMPRA — o que se compra é uma usina. Só conta o que
+    vem depois do verbo de aquisição. É a própria distinção que a wave existe
+    para fazer: papel não é objeto.
+    """
+    m = _MA_VERBO_RX.search(t)
+    if not m:
+        return False
+    janela = t[m.end():m.end() + 140]
+    return any(re.search(p, janela) for p in OBJ_SOCIETARIO_FORTE)
+
+
 def detect_transaction(text: str) -> dict:
     """Resolve objeto, escopo e fase da transação (itens 4, 7, 8, 11, 13)."""
     t = _n(text)
     obj, escopo = "", ""
-    for k, pats in OBJ_NAO_EMPRESA.items():
-        if any(re.search(p, t) for p in pats):
-            obj = k
-            escopo = ("capital_proprio" if k == "acoes_proprias" else "capex")
-            break
+    # `acoes_proprias` primeiro: recompra é rejeição própria e não pode ser
+    # sobreposta pela evidência societária ("recompra de ações DA companhia").
+    if any(re.search(p, t) for p in OBJ_NAO_EMPRESA["acoes_proprias"]):
+        obj, escopo = "acoes_proprias", "capital_proprio"
+    elif _societario_apos_verbo(t):
+        obj, escopo = "empresa", "externo"
+    else:
+        for k, pats in OBJ_NAO_EMPRESA.items():
+            if k == "acoes_proprias":
+                continue
+            if any(re.search(p, t) for p in pats):
+                obj, escopo = k, "capex"
+                break
     if not obj and any(re.search(p, t) for p in OBJ_EMPRESA):
         obj, escopo = "empresa", "externo"
     neg = any(re.search(p, t) for p in NEGACAO_MA)
@@ -406,9 +474,12 @@ def detect_transaction(text: str) -> dict:
     }
 
 
+_OBJ_NAO_EMPRESARIAL_IDS = frozenset(k for k in OBJ_NAO_EMPRESA if k != "acoes_proprias")
 _MA_VERBO_RX = re.compile(
     r"(aquisi[çc][ãa]o|compra|adquir\w+|fus[ãa]o|incorpora[çc][ãa]o|merger|"
-    r"acquisition|acquires?|takeover|oferta p[úu]blica de aquisi)", re.I)
+    r"acquisition|acquires?|takeover|oferta p[úu]blica de aquisi|"
+    # R7b-S2: assumir o controle é aquisição societária sem a palavra "compra"
+    r"assum\w+\s+(?:o\s+)?controle|takes?\s+control)", re.I)
 _MA_PARTICIPACAO_RX = re.compile(
     r"(\d{1,3}(?:[.,]\d+)?\s*%|participa[çc][ãa]o|stake|controle|sociedade|"
     r"joint\s*venture|capital\s+social)", re.I)
@@ -492,8 +563,9 @@ def ma_is_legitimate(text: str, papeis: dict | None = None) -> tuple[bool, str]:
         return False, "negacao_explicita_de_nova_aquisicao"
     if d["transaction_object"] == "acoes_proprias":
         return False, "recompra_de_acoes_proprias_nao_e_ma"
-    if d["transaction_object"] in ("aeronaves", "equipamento", "imovel", "capex_ativo",
-                                    "pedido_comercial"):
+    # derivado do mapa (R7b-S2): qualquer objeto não-empresarial catalogado
+    # rejeita, sem precisar repetir a lista aqui e deixá-la envelhecer.
+    if d["transaction_object"] in _OBJ_NAO_EMPRESARIAL_IDS:
         return False, f"objeto_nao_empresarial:{d['transaction_object']}"
     if d["intragroup_detected"]:
         return False, "reorganizacao_intragrupo_sob_controle_comum"

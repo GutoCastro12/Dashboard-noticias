@@ -60,6 +60,14 @@ OUTDIR = Path(os.environ.get("RELIABILITY_OUTDIR", "out_taxonomy_inventory"))
 # conclusão, não conclusão — tratá-lo como valor inflava a cobertura de fase.
 CONFIRMACAO_REAL = frozenset({"confirmado", "nao_confirmado", "nao_confirmada",
                               "desfecho_confirmado"})
+# "indefinido" é ausência de conclusão também para o objeto da transação — a
+# mesma armadilha que `confirmation_level` já tinha armado uma vez.
+OBJETO_REAL_NAO_PROVADO = frozenset({"", "indefinido"})
+
+
+def _eventos_ma() -> frozenset:
+    """Lida do runtime a cada chamada: renomear a família propaga sozinho."""
+    return frozenset(sa.EVENTOS_MA)
 
 
 @dataclass
@@ -99,6 +107,11 @@ class UniversalEventAssessment:
     positive_evidence: Dim = field(default_factory=Dim)
     negative_evidence: Dim = field(default_factory=Dim)
     entity_attribution: Dim = field(default_factory=Dim)
+    # R7b-S2 — condicional: só a família M&A tem "objeto da transação". Um
+    # rebaixamento de rating não compra nada, e contar essa dimensão como
+    # ausente em toda a taxonomia distorceria a completude tanto quanto
+    # ignorá-la em `ma` a inflava.
+    transaction_object: Dim = field(default_factory=Dim)
 
     scoreable: bool = False
     decision_rule: str = ""
@@ -107,9 +120,12 @@ class UniversalEventAssessment:
     DIMS = ("candidate", "event_occurrence", "subject", "company_role", "relation",
             "currentness", "phase", "centrality", "positive_evidence",
             "negative_evidence", "entity_attribution")
+    DIMS_CONDICIONAIS = {"transaction_object": lambda ev: ev in _eventos_ma()}
 
     def dims(self) -> dict:
-        return {d: getattr(self, d) for d in self.DIMS}
+        nomes = list(self.DIMS) + [d for d, aplica in self.DIMS_CONDICIONAIS.items()
+                                   if aplica(self.event)]
+        return {d: getattr(self, d) for d in nomes}
 
     def missing_dimensions(self) -> list:
         return [d for d, v in self.dims().items()
@@ -119,7 +135,7 @@ class UniversalEventAssessment:
         return [d for d, v in self.dims().items() if v.status == ESTABLISHED]
 
     def completeness(self) -> float:
-        return len(self.established()) / len(self.DIMS)
+        return len(self.established()) / len(self.dims())
 
     def to_dict(self) -> dict:
         d = asdict(self)
@@ -143,7 +159,8 @@ def _mapa_dimensional() -> dict:
                 "currentness": "currentness", "phase": "phase",
                 "centrality": "centrality", "positive_evidence": "positive_evidence",
                 "negative_evidence": "negative_evidence",
-                "entity_attribution": "entity_attribution"}
+                "entity_attribution": "entity_attribution",
+                "transaction_object": "transaction_object"}
     return {r: tuple(traducao[d] for d in dims)
             for r, (dims, _e, _s) in inv.REGRAS.items()}
 
@@ -249,6 +266,17 @@ def montar(d: dict, *, identity: str, texto: str = "") -> UniversalEventAssessme
     else:
         u.phase.dft({"phase": fase, "confirmation": conf},
                     evidence="fase não reconhecida; confirmação indefinida")
+
+    # objeto da transação (só família M&A) — R7b-S2
+    if u.event in _eventos_ma():
+        obj = d.get("transaction_object") or ""
+        if obj not in OBJETO_REAL_NAO_PROVADO:
+            u.transaction_object.est(obj, regra or "detect_transaction", _trecho(d))
+        else:
+            u.transaction_object.dft(obj or "indefinido",
+                                     evidence="o que foi adquirido não foi provado; "
+                                              "papel de adquirente não implica objeto "
+                                              "societário")
 
     # centralidade
     escopo = d.get("event_scope") or ""

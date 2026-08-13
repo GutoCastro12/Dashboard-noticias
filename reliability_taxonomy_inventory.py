@@ -57,6 +57,12 @@ DIMENSOES = (
     "positive_evidence",  # 8. existe evidência positiva?
     "negative_evidence",  # 9. existe evidência de descarte?
     "entity_attribution", # 10./11. a qual entidade o trecho pertence
+    # 12. R7b-S2: O QUE foi transacionado. Só se aplica à família M&A, e existe
+    # porque papel e objeto são perguntas distintas: BTG e Petrobras são
+    # adquirentes de verdade (role comprovado) e ainda assim não fazem M&A
+    # societário (object é fazenda / bloco exploratório). Sem esta dimensão a
+    # família `ma` aparentava completude sem nunca ter provado o objeto.
+    "transaction_object",
 )
 
 STRONG, PARTIAL, INDIRECT, NONE = "STRONG", "PARTIAL", "INDIRECT", "NONE"
@@ -115,7 +121,8 @@ REGRAS = {
     "R_COMPRADOR_NAO_SOFRE_RJ": (("role", "relation"), _ESTRITO, False),
     "R_COMUNICADO_SOBRE_TERCEIRO": (("subject", "centrality"), _ESTRITO, False),
     "R_MA_PAPEL_VENDEDOR": (("role", "relation"), (_MA, "follow_on"), False),
-    "R_MA_OBJETO_ESCOPO": (("event_evidence", "centrality"), _MA, False),
+    "R_MA_OBJETO_ESCOPO": (("event_evidence", "centrality", "transaction_object"),
+                           _MA, False),
     "R_MA_LEGITIMO": (("positive_evidence",), _MA, False),
     "R_LIABILITY_DE_TERCEIRO": (("subject", "entity_attribution"), _FRAUDE, True),
     "R_LIABILITY_VENCE_RESOLUCAO": (("phase", "positive_evidence"), _FRAUDE, False),

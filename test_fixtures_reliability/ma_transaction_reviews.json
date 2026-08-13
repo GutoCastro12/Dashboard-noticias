@@ -1,0 +1,72 @@
+{
+ "_meta": {
+  "purpose": "Ground truth HUMANO das DIMENSOES da transacao em eventos da familia `ma`: papel (quem compra), objeto (o que foi comprado), escopo e participacao. Separado de live_reviews.json e de shadow_reviews.json de proposito -- aqueles registram um VEREDITO DE PONTUABILIDADE sobre um item do inventario critico; este registra a ADJUDICACAO DIMENSIONAL de uma transacao, que e uma pergunta diferente e nao pode entrar no denominador fixo do baseline critico.",
+  "chave": "url_canonica||company||event_id",
+  "origem": "Wave R7b-S2. Gustavo adjudicou pessoalmente os tres controles S2 apresentados no checkpoint R7c-P10, em 2026-08-12.",
+  "invariante_humano": "AQUISICAO NAO E AUTOMATICAMENTE M&A. Aquisicao societaria (empresa, controle, participacao, joint venture) pode ser `ma`. Aquisicao de ativo ou direito (fazenda, imovel, bloco exploratorio, concessao, direito isolado) nao e automaticamente `ma`. A informacao economica continua material e deve ser preservada -- o que nao pode e receber a familia M&A societaria por padrao.",
+  "reviewer_types": ["human", "assistant", "imported_prior_adjudication", "unknown"],
+  "campos": {
+   "transaction_role": "papel da empresa monitorada na transacao (adquirente | alvo | vendedora | nenhum)",
+   "transaction_object": "o que foi adquirido, na leitura humana",
+   "transaction_scope": "natureza/extensao da operacao",
+   "stake": "participacao adquirida, quando o texto declara",
+   "scoreable_as_ma": "a transacao deve pontuar na familia `ma`?",
+   "in_production_history": "o artigo existe em risk_history.json nesta data; false = so existe no shadow prospectivo (R7c) e nao pode contaminar metricas de producao"
+  },
+  "nota_de_colisao": "A adjudicacao da Petrobras contradiz o rotulo do gold 4I para o artigo IRMAO 'Petrobras reforca expansao internacional com aquisicao de bloco exploratorio na Africa' (marcado keep/positivo naquela auditoria). A colisao esta REPORTADA, nao resolvida: nenhuma label do gold foi alterada nesta wave."
+ },
+ "https://agfeed.com.br/negocios/justica-do-mato-grosso-mantem-aquisicao-de-fazenda-bilionaria-por-banco-do-btg/||BTG Pactual||ma": {
+  "company": "BTG Pactual",
+  "event_id": "ma",
+  "stratum": "S2",
+  "title": "Justiça do Mato Grosso mantém aquisição de fazenda bilionária por banco do BTG",
+  "source": "AgFeed",
+  "pub_iso": "2026-05-21 04:00",
+  "transaction_role": "adquirente",
+  "transaction_object": "ativo/fazenda",
+  "transaction_scope": "aquisicao_de_ativo",
+  "stake": "",
+  "scoreable_as_ma": false,
+  "reviewer_type": "human",
+  "reviewed_at": "2026-08-12",
+  "in_production_history": true,
+  "note": "O banco do BTG e a parte adquirente -- o papel transacional esta claro. Mas a operacao e aquisicao de ativo imobiliario/rural, nao aquisicao societaria, fusao ou compra de participacao em companhia. A materia atual ainda enfatiza a decisao judicial que manteve a aquisicao ja realizada. A informacao nao se perde: pode permanecer informativa ou contextual, mas nao deve receber `ma` automaticamente.",
+  "provenance": "adjudicacao explicita do usuario no brief da wave R7b-S2"
+ },
+ "https://www.cnnbrasil.com.br/agro/suzano-conclui-aquisicao-de-51-de-joint-venture-da-kimberly-clark/||Suzano||ma": {
+  "company": "Suzano",
+  "event_id": "ma",
+  "stratum": "S2",
+  "title": "Suzano conclui aquisição de joint venture da Kimberly-Clark por US$ 1,3 bi",
+  "source": "CNN Brasil",
+  "pub_iso": "2026-07-01 04:00",
+  "transaction_role": "adquirente",
+  "transaction_object": "equity_stake",
+  "transaction_scope": "parcial",
+  "stake": "51%",
+  "scoreable_as_ma": true,
+  "reviewer_type": "human",
+  "reviewed_at": "2026-08-12",
+  "in_production_history": false,
+  "note": "A Suzano adquire participacao societaria relevante em joint venture da Kimberly-Clark. Ser 51% e nao 100% NAO descaracteriza M&A: e aquisicao societaria legitima e DEVE pontuar como `ma`. Este e o ancora positivo -- nenhuma correcao pode resolver BTG/Petrobras derrubando este caso.",
+  "provenance": "adjudicacao explicita do usuario no brief da wave R7b-S2"
+ },
+ "https://agencia.petrobras.com.br/w/negocio/petrobras-conclui-aquisicao-de-bloco-exploratorio-em-sao-tome-e-principe||Petrobras||ma": {
+  "company": "Petrobras",
+  "event_id": "ma",
+  "stratum": "S2",
+  "title": "Petrobras conclui aquisição de bloco exploratório em São Tomé e Príncipe",
+  "source": "Agência Petrobras",
+  "pub_iso": "2026-07-09 04:00",
+  "transaction_role": "adquirente",
+  "transaction_object": "exploration_block",
+  "transaction_scope": "aquisicao_de_ativo",
+  "stake": "",
+  "scoreable_as_ma": false,
+  "reviewer_type": "human",
+  "reviewed_at": "2026-08-12",
+  "in_production_history": false,
+  "note": "A Petrobras e efetivamente a adquirente, mas o objeto e bloco exploratorio / ativo / direito de exploracao de petroleo. Representa investimento e expansao operacional, nao aquisicao de empresa, participacao acionaria, joint venture ou controle societario. Nao deve ser scoreable como `ma`; a informacao pode ser material para risco e deve ser preservada.",
+  "provenance": "adjudicacao explicita do usuario no brief da wave R7b-S2"
+ }
+}
