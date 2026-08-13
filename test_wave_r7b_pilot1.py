@@ -260,7 +260,9 @@ print("=" * 98)
 _chamadas = {"n": 0}
 
 
-def _fake_chamada(genai, modelo, prompt, sleep_s):
+def _fake_chamada(genai, modelo, prompt):
+    # a assinatura acompanha `chamada_unica`, que deixou de receber `sleep_s`:
+    # quem espaça agora é o laço, depois de QUALQUER tentativa
     _chamadas["n"] += 1
     return {"estado": "OK", "latencia_s": 0.01, "uso": {}, "modelo_real": "fake",
             "saida": {"__MOCK__": True, "events": [
@@ -314,6 +316,266 @@ _b = pp.comparar(_sintetico,
                  "OK", "sintetico", pc.CALL_AUDIT, {"ok": True})
 check(_b["comparison_status"] == "BOTH_ABSTAIN",
       f"[52] e ambos negando = BOTH_ABSTAIN ({_b['comparison_status']})")
+
+
+print()
+print("=" * 98)
+print("BLOCO J — classificação de erro do provider (exceções SINTÉTICAS)")
+print("=" * 98)
+
+
+class _ResourceExhausted(Exception):
+    pass
+
+
+class _Unauthenticated(Exception):
+    pass
+
+
+class _InvalidArgument(Exception):
+    pass
+
+
+class _DeadlineExceeded(Exception):
+    pass
+
+
+class _CoisaEstranha(Exception):
+    pass
+
+
+_ResourceExhausted.__name__ = "ResourceExhausted"
+_Unauthenticated.__name__ = "Unauthenticated"
+_InvalidArgument.__name__ = "InvalidArgument"
+_DeadlineExceeded.__name__ = "DeadlineExceeded"
+
+_c = pr.classificar_erro_provider(_ResourceExhausted(
+    "429 You exceeded your current quota, please check your plan and billing"))
+check(_c["classe"] == pr.QUOTA_EXHAUSTED and _c["interrompe"],
+      f"[53] ResourceExhausted → QUOTA_EXHAUSTED e interrompe ({_c['classe']})")
+check(_c["base_da_classificacao"] == "tipo_da_excecao",
+      f"[54] classificado pelo TIPO, não pela mensagem "
+      f"({_c['base_da_classificacao']})")
+check(_c["quota_vs_rate_limit_indeterminado"] is True,
+      "[55] e a ambiguidade quota-vs-rate-limit fica DECLARADA, não afirmada")
+check(pr.classificar_erro_provider(_Unauthenticated("bad key"))["classe"]
+      == pr.AUTH_ERROR, "[56] Unauthenticated → AUTH_ERROR")
+check(pr.classificar_erro_provider(_InvalidArgument("x"))["classe"]
+      == pr.INVALID_REQUEST, "[57] InvalidArgument → INVALID_REQUEST")
+_d = pr.classificar_erro_provider(_DeadlineExceeded("timeout"))
+check(_d["classe"] == pr.PROVIDER_ERROR and not _d["interrompe"],
+      "[58] DeadlineExceeded é erro comum e NÃO interrompe a corrida")
+_u = pr.classificar_erro_provider(_CoisaEstranha("algo novo"))
+check(_u["classe"] == pr.UNKNOWN_PROVIDER_ERROR,
+      f"[59] desconhecido vira UNKNOWN, não é forçado numa gaveta ({_u['classe']})")
+
+
+class _ComCodigo(Exception):
+    code = 401
+
+
+check(pr.classificar_erro_provider(_ComCodigo("x"))["base_da_classificacao"]
+      == "codigo_estruturado",
+      "[60] código estruturado é usado quando o tipo não é conhecido")
+
+print()
+print("=" * 98)
+print("BLOCO K — circuit breaker: para na PRIMEIRA exaustão")
+print("=" * 98)
+
+
+def _fabricar(seq):
+    """Provider falso que devolve, em ordem, o que a lista mandar."""
+    estado = {"n": 0, "chamadas": []}
+
+    def _fake(genai, modelo, prompt):
+        i = estado["n"]
+        estado["n"] += 1
+        estado["chamadas"].append(i)
+        item = seq[i] if i < len(seq) else seq[-1]
+        if isinstance(item, Exception):
+            cls = pr.classificar_erro_provider(item)
+            return {"estado": cls["classe"], "saida": None, "latencia_s": 0.01,
+                    "uso": {}, "modelo_real": "", "finish": {}, "erro": cls,
+                    "motivo": f"{cls['excecao']}: {cls['mensagem']}"}
+        return {"estado": "OK", "latencia_s": 0.01, "uso": {"x": 1},
+                "modelo_real": "fake", "finish": {"finish_reason_nome": "STOP"},
+                "raw_output": "{}", "output_cap_solicitado": 900,
+                "saida": {"__MOCK__": True, "events": [
+                    {"event_id": "ma", "event_asserted": "ASSERTED",
+                     "subject": "x", "company_role": "SUBJECT",
+                     "currentness": "CURRENT", "phase": "CONFIRMED",
+                     "centrality": "MAIN", "field_support": "SUPPORTED",
+                     "event_quote": "", "semantic_scoreable_for_evaluation": True}]}}
+    return _fake, estado
+
+
+def _rodar_com(seq):
+    _fake, estado = _fabricar(seq)
+    orig_prep, orig_call = pr.preparar_provider, pr.chamada_unica
+    bak = pr.CACHE.read_text(encoding="utf-8") if pr.CACHE.exists() else None
+    try:
+        pr.preparar_provider = lambda cfg: (None, "modelo-falso", 0.0)
+        pr.chamada_unica = _fake
+        if pr.CACHE.exists():
+            pr.CACHE.unlink()
+        res = pr.executar("live", confirmado=True, espacamento_s=0.0)
+    finally:
+        pr.preparar_provider, pr.chamada_unica = orig_prep, orig_call
+        if bak is not None:
+            pr.CACHE.write_text(bak, encoding="utf-8")
+        elif pr.CACHE.exists():
+            pr.CACHE.unlink()
+    return res, estado
+
+
+_quota = _ResourceExhausted("429 You exceeded your current quota")
+_res, _est = _rodar_com(["ok", _quota])
+_skip = sum(1 for l in _res["linhas"] if str(l["estado"]).startswith("SKIPPED_"))
+check(_est["n"] == 2,
+      f"[61] sucesso→quota: o provider foi invocado EXATAMENTE 2 vezes ({_est['n']})")
+check(_res["provider_calls"] == 2, "[62] e o contador reportado bate")
+check(_skip == 38, f"[63] as 38 restantes viram SKIPPED, sem tocar o provider ({_skip})")
+check(_res["estado"] == "INTERROMPIDO_POR_DISJUNTOR",
+      f"[64] a corrida é marcada como interrompida ({_res['estado']})")
+check((_res["circuit_breaker"] or {}).get("classe") == pr.QUOTA_EXHAUSTED,
+      "[65] com a classe e o ponto de parada registrados")
+check(sum(1 for l in _res["linhas"] if l["estado"] == "OK") >= 1,
+      "[66] e o resultado já obtido é PRESERVADO, não descartado")
+
+_res2, _est2 = _rodar_com([_quota])
+_skip2 = sum(1 for l in _res2["linhas"] if str(l["estado"]).startswith("SKIPPED_"))
+check(_est2["n"] == 1 and _skip2 == 39,
+      f"[67] quota na PRIMEIRA chamada: 1 invocação, 39 puladas ({_est2['n']}/{_skip2})")
+check(_res2["estado"] == "INTERROMPIDO_POR_DISJUNTOR",
+      "[68] e a corrida termina de forma controlada, sem exceção")
+
+_auth = _Unauthenticated("API key not valid")
+_res3, _est3 = _rodar_com([_auth])
+check(_est3["n"] == 1, f"[69] auth error: uma invocação só ({_est3['n']})")
+check((_res3["circuit_breaker"] or {}).get("classe") == pr.AUTH_ERROR,
+      "[70] disjuntor por AUTH_ERROR")
+_serial3 = json.dumps(_res3, ensure_ascii=False, default=str)
+check("GEMINI_API_KEY" not in _serial3 and "AIza" not in _serial3,
+      "[71] e nenhum segredo aparece no resultado")
+
+print()
+print("=" * 98)
+print("BLOCO L — pacing após TODA tentativa, não só no sucesso")
+print("=" * 98)
+_dormidas = []
+_orig_sleep = pr.time.sleep
+
+
+def _spy(s):
+    _dormidas.append(s)
+
+
+_erro_comum = _DeadlineExceeded("timeout")
+try:
+    pr.time.sleep = _spy
+    _res4, _est4 = _rodar_com(["ok", _erro_comum, "ok"])
+finally:
+    pr.time.sleep = _orig_sleep
+    _dormidas_erro = list(_dormidas)
+
+_dormidas.clear()
+try:
+    pr.time.sleep = _spy
+    _f, _e = _fabricar(["ok", _erro_comum, "ok"])
+    _op, _oc = pr.preparar_provider, pr.chamada_unica
+    _bak = pr.CACHE.read_text(encoding="utf-8") if pr.CACHE.exists() else None
+    try:
+        pr.preparar_provider = lambda cfg: (None, "m", 0.0)
+        pr.chamada_unica = _f
+        if pr.CACHE.exists():
+            pr.CACHE.unlink()
+        _r5 = pr.executar("live", confirmado=True, espacamento_s=0.5,
+                          teto_execucao=3)
+    finally:
+        pr.preparar_provider, pr.chamada_unica = _op, _oc
+        if _bak is not None:
+            pr.CACHE.write_text(_bak, encoding="utf-8")
+        elif pr.CACHE.exists():
+            pr.CACHE.unlink()
+finally:
+    pr.time.sleep = _orig_sleep
+
+check(len([d for d in _dormidas if d == 0.5]) == 3,
+      f"[72] 3 tentativas → 3 esperas, inclusive após o ERRO comum "
+      f"({[d for d in _dormidas if d == 0.5]})")
+check(_r5["espacamento_s"] == 0.5,
+      f"[73] o espaçamento usado é reportado ({_r5['espacamento_s']})")
+_src_run2 = io.open("reliability_pilot1_run.py", encoding="utf-8").read()
+check("--inter-call-seconds" in _src_run2,
+      "[74] e é ajustável por argumento, sem tocar o config de produção")
+
+print()
+print("=" * 98)
+print("BLOCO M — metadados de uso DESCOBERTOS, truncamento sem chute")
+print("=" * 98)
+
+
+class _Campo:
+    def __init__(self, name):
+        self.name = name
+
+
+class _Desc:
+    fields = [_Campo("prompt_token_count"), _Campo("candidates_token_count"),
+              _Campo("total_token_count"), _Campo("thoughts_token_count")]
+
+
+class _UsoProto:
+    DESCRIPTOR = _Desc()
+    prompt_token_count = 857
+    candidates_token_count = 32
+    total_token_count = 1753
+    thoughts_token_count = 864
+
+
+_u1 = pr.serializar_uso(_UsoProto())
+check(_u1.get("thoughts_token_count") == 864,
+      f"[75] campos além dos três básicos são capturados quando existem "
+      f"({_u1.get('thoughts_token_count')})")
+check(_u1.get("_origem_dos_campos") == "protobuf_descriptor",
+      "[76] com a origem da descoberta registrada")
+
+
+class _UsoSimples:
+    prompt_token_count = 10
+    total_token_count = 20
+    algo_callable = staticmethod(lambda: 1)
+
+
+_u2 = pr.serializar_uso(_UsoSimples())
+check(_u2.get("prompt_token_count") == 10
+      and "algo_callable" not in _u2
+      and "candidates_token_count" not in _u2,
+      f"[77] sem descriptor, cai para introspecção e NÃO inventa campo ausente "
+      f"({sorted(k for k in _u2 if not k.startswith('_'))})")
+check(pr.serializar_uso(None) == {}, "[78] objeto ausente devolve vazio")
+
+_trunc = pr.diagnosticar_json('{"events": [', ValueError("x"),
+                              {"finish_reason_nome": "MAX_TOKENS"})
+check(_trunc["possible_output_truncation"] is True,
+      "[79] truncamento é afirmado a partir do finish_reason")
+_semfim = pr.diagnosticar_json('{"events": [', ValueError("x"), {})
+check(_semfim["possible_output_truncation"] is None,
+      f"[80] SEM finish reason o veredito é UNKNOWN, não False nem True "
+      f"({_semfim['possible_output_truncation']})")
+check("indeterminado" in _semfim["base_da_suspeita"],
+      "[81] e a base da incerteza fica explícita")
+_stop = pr.diagnosticar_json("nao e json", ValueError("x"),
+                             {"finish_reason_nome": "STOP"})
+check(_stop["possible_output_truncation"] is False,
+      "[82] terminou por STOP: JSON inválido não é truncamento")
+_arit = io.open("reliability_pilot1_run.py", encoding="utf-8").read()
+check("total_token_count - " not in _arit and "reasoning_tokens" not in _arit,
+      "[83] nenhuma aritmética total-prompt-output é usada como prova")
+check(pr.OUTPUT_TOKEN_CAP == 900,
+      f"[84] cap de saída preservado em 900 para manter comparabilidade "
+      f"({pr.OUTPUT_TOKEN_CAP})")
 
 print()
 print("=" * 98)
