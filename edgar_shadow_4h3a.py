@@ -212,6 +212,13 @@ def edgar_shadow_run(rd, cfg: dict, *, outdir: str = ".",
     classificacao, contexto, score_sim, fp = [], [], [], []
     vistos = {}
 
+    # Duas passadas de propósito. A primeira só MONTA os artigos; a tradução
+    # acontece UMA vez para o conjunto inteiro. Antes, `translate_articles`
+    # era chamada com uma lista de um elemento dentro do laço, o que anulava o
+    # lote interno de 20 e transformava cada filing numa chamada ao provider.
+    # Os dicts são mutados no lugar, então a segunda passada vê exatamente o
+    # mesmo objeto — identidade, ordem e conteúdo preservados.
+    _pares = []
     for f in base:
         emissor = f.get("emissor") or f.get("filing_company") or ""
         art = {
@@ -228,11 +235,15 @@ def edgar_shadow_run(rd, cfg: dict, *, outdir: str = ".",
             "filing_items": f.get("filing_items") or "",
             "filing_date": f.get("data") or "",
         }
-        # tradução + classificação + atribuição: MESMO caminho da produção
-        try:
-            rd.translate_articles([art], cfg)
-        except Exception:
-            pass
+        _pares.append((f, emissor, art))
+
+    # tradução EM LOTE — mesmo caminho da produção, fail-open preservado
+    try:
+        rd.translate_articles([a for _f, _e, a in _pares], cfg)
+    except Exception:
+        pass
+
+    for f, emissor, art in _pares:
         rd.classify_and_attribute(art, cfg)
 
         ebc = art.get("events_by_company") or {}

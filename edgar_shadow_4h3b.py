@@ -263,11 +263,22 @@ def run_edgar_runtime_shadow(edgar_articles: list[dict], cfg: dict, rd,
     tax = {e.get("id"): e for e in (cfg.get("taxonomy") or [])}
     vistos = set()
     total_sim = 0
+    # Tradução EM LOTE, uma vez para todos os filings. A versão anterior fazia
+    # `translate_articles([art], cfg)` DENTRO deste laço: como o lote interno de
+    # `translate_articles` é 20 e cada chamada trazia 1 pendente, cada filing
+    # virava uma chamada ao provider. Medido no run 31709933696: 197 filings =
+    # 197 chamadas, consumindo a cota diária inteira ANTES da tradução principal
+    # e da consolidação — que é a etapa de maior valor semântico.
+    #
+    # `translate_articles` muta os dicts no lugar e `arts` são os mesmos objetos
+    # percorridos abaixo; por isso içar a chamada preserva identidade, ordem e
+    # conteúdo. Continua fail-open: erro de tradução mantém o texto original.
+    try:
+        rd.translate_articles(arts, cfg)
+    except Exception:
+        pass
+
     for art in arts:
-        try:
-            rd.translate_articles([art], cfg)
-        except Exception:
-            pass
         rd.classify_and_attribute(art, cfg)
         apply_evidence_attribution(art, cfg, rd.normalize)
         filer = art.get("filing_company") or ""

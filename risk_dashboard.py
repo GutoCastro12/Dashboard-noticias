@@ -21,6 +21,7 @@ Uso:
 import base64
 import argparse
 import collections
+import translation_cache as _tc          # cache de traduções em sidecar próprio
 import copy
 import csv
 import difflib
@@ -2388,6 +2389,24 @@ def detect_language(art: dict, cfg: dict) -> str:
     return best
 
 
+def _aplicar_traducao(a: dict, titulo: str, resumo: str) -> None:
+    """Aplica a tradução ao artigo EM MEMÓRIA, preservando o original.
+
+    O comportamento observável é o mesmo de antes: `title`/`summary` passam a
+    carregar o texto traduzido (a classificação e a UI leem esses campos) e o
+    original fica em `title_original`/`summary_original`. O que muda é só a
+    ORIGEM do texto — pode vir do provider ou do cache.
+    """
+    if titulo:
+        a.setdefault("title_original", a.get("title"))
+        a["title_pt"] = titulo
+        a["title"] = titulo
+    if resumo:
+        a.setdefault("summary_original", a.get("summary"))
+        a["summary_pt"] = resumo
+        a["summary"] = resumo
+
+
 def translate_articles(articles: list[dict], cfg: dict) -> int:
     """Traduz título e resumo para português nos artigos em outro idioma.
     Preserva `title_original`/`summary_original` e o link. Em lote, para
@@ -2407,6 +2426,41 @@ def translate_articles(articles: list[dict], cfg: dict) -> int:
             pendentes.append(a)
     if not pendentes:
         return 0
+
+    # ── cache persistente + dedup de trabalho idêntico ──────────────────────
+    # `title_pt` nunca foi persistido — não existe no schema do history — então
+    # todo artigo em outro idioma era retraduzido a cada run, para sempre. O
+    # cache vive em sidecar próprio: o history continua guardando o texto
+    # ORIGINAL, que é a evidência coletada.
+    #
+    # O dedup por chave ataca um segundo desperdício, dentro do mesmo run: a
+    # mesma manchete republicada por N veículos é UM trabalho de tradução, não
+    # N. Isso é dedup de TRABALHO, não dedup semântico de notícia.
+    _modelo_trad = (cfg.get("llm") or {}).get("model", "")
+    _cache = _tc.carregar()
+    _do_cache, _duplicatas, _restantes, _por_chave = 0, 0, [], {}
+    for a in pendentes:
+        k = _tc.chave(a.get("title") or "", a.get("summary") or "",
+                      a.get("language") or "", alvo, _modelo_trad, maxc)
+        a["_trad_key"] = k
+        hit = _tc.consultar(_cache, k)
+        if hit:
+            _aplicar_traducao(a, hit.get("title") or "", hit.get("summary") or "")
+            _do_cache += 1
+            continue
+        if k in _por_chave:
+            _por_chave[k].append(a)       # mesmo trabalho: herda o resultado
+            _duplicatas += 1
+            continue
+        _por_chave[k] = [a]
+        _restantes.append(a)
+    if _do_cache or _duplicatas:
+        print(f"   ♻️  tradução: {_do_cache} do cache, {_duplicatas} duplicata(s) "
+              f"no run, {len(_restantes)} a traduzir")
+    pendentes = _restantes
+    if not pendentes:
+        _tc.gravar(_cache)
+        return _do_cache
 
     api_key = (cfg.get("llm") or {}).get("gemini_api_key") or os.environ.get("GEMINI_API_KEY")
     if not api_key or genai is None:
@@ -2471,16 +2525,24 @@ def translate_articles(articles: list[dict], cfg: dict) -> int:
             except (KeyError, ValueError, IndexError):
                 continue
             if item.get("title"):
-                a["title_original"] = a.get("title")
-                a["title_pt"] = item["title"]
-                a["title"] = item["title"]        # classificação usa o traduzido
+                # SUCCESS-ONLY: só entra no cache o que de fato voltou
+                # traduzido. Erro, cota esgotada, item faltando no lote ou saída
+                # vazia caem para o texto original e NÃO viram registro.
+                _tc.armazenar(_cache, a.get("_trad_key") or "",
+                              titulo=item["title"], resumo=item.get("summary") or "",
+                              idioma=a.get("language") or "", alvo=alvo,
+                              modelo=_modelo_trad)
+                _aplicar_traducao(a, item["title"], item.get("summary") or "")
                 traduzidos += 1
-            if item.get("summary"):
-                a["summary_original"] = a.get("summary")
-                a["summary_pt"] = item["summary"]
-                a["summary"] = item["summary"]
+                # a mesma manchete de outro veículo herda sem nova chamada
+                for _gemeo in _por_chave.get(a.get("_trad_key") or "", [])[1:]:
+                    _aplicar_traducao(_gemeo, item["title"],
+                                      item.get("summary") or "")
+            elif item.get("summary"):
+                _aplicar_traducao(a, "", item["summary"])
+    _tc.gravar(_cache)
     print(f"   ✅ {traduzidos} título(s) traduzido(s); originais preservados")
-    return traduzidos
+    return traduzidos + _do_cache
 
 
 @functools.lru_cache(maxsize=2048)
