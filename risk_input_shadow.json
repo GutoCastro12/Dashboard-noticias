@@ -21377,6 +21377,24 @@
     "sem_candidato": 136,
     "sem_empresa": 26
    }
+  },
+  {
+   "artigos_no_run": 0,
+   "backlog_adiado": 0,
+   "backlog_budget": 25,
+   "backlog_selecionado": 0,
+   "backlog_total": 0,
+   "cap_estrutural": 80,
+   "funil": {},
+   "gerado_em": 1786652174,
+   "marco": 111,
+   "novos": 0,
+   "prospectivos": 0,
+   "reaproveitados": 0,
+   "run_count": 124,
+   "telemetria_coleta": {
+    "bruto": 0
+   }
   }
  ],
  "schema_version": "r7cp.s1",
