@@ -2438,6 +2438,13 @@ def translate_articles(articles: list[dict], cfg: dict) -> int:
     # N. Isso é dedup de TRABALHO, não dedup semântico de notícia.
     _modelo_trad = (cfg.get("llm") or {}).get("model", "")
     _cache = _tc.carregar()
+
+    # ÚNICO ponto de gravação do sidecar em toda a função. Relê o disco e funde
+    # antes de escrever, para não sobrescrever o que outro run tenha gravado
+    # enquanto este rodava.
+    def _flush_cache_traducao() -> None:
+        _tc.gravar(_tc.fundir(_cache, _tc.carregar()))
+
     _do_cache, _duplicatas, _restantes, _por_chave = 0, 0, [], {}
     for a in pendentes:
         k = _tc.chave(a.get("title") or "", a.get("summary") or "",
@@ -2459,7 +2466,7 @@ def translate_articles(articles: list[dict], cfg: dict) -> int:
               f"no run, {len(_restantes)} a traduzir")
     pendentes = _restantes
     if not pendentes:
-        _tc.gravar(_tc.fundir(_cache, _tc.carregar()))
+        _flush_cache_traducao()
         return _do_cache
 
     api_key = (cfg.get("llm") or {}).get("gemini_api_key") or os.environ.get("GEMINI_API_KEY")
@@ -2479,68 +2486,84 @@ def translate_articles(articles: list[dict], cfg: dict) -> int:
           f"(modelo {modelos[0]})…")
     LOTE = 20
     traduzidos = 0
-    for i in range(0, len(pendentes), LOTE):
-        lote = pendentes[i:i + LOTE]
-        itens = [{"i": n,
-                  "lang": a["language"],
-                  "title": (a.get("title") or "")[:maxc],
-                  "summary": (a.get("summary") or "")[:maxc]}
-                 for n, a in enumerate(lote)]
-        prompt = (
-            "Traduza para português do Brasil os campos 'title' e 'summary' das "
-            "notícias financeiras abaixo. Preserve nomes próprios, tickers, números "
-            "e siglas. Não interprete nem resuma: traduza fielmente. "
-            "Responda SOMENTE com JSON no formato "
-            '{"itens":[{"i":0,"title":"...","summary":"..."}]}.\n\n'
-            + json.dumps(itens, ensure_ascii=False))
-        # Rotaciona pelos modelos de fallback se o atual estiver indisponível
-        # (404/descontinuado); esgotada a cota ou a lista, degrada mantendo o
-        # texto original — tradução nunca derruba o pipeline.
-        data = None
-        while True:
-            try:
-                data = _gemini_call(model, prompt, sleep_s)
-                break
-            except GeminiModelUnavailable as exc:
-                model_idx += 1
-                if model_idx < len(modelos):
-                    print(f"   ↪️  modelo de tradução indisponível ({exc}); "
-                          f"tentando fallback {modelos[model_idx]}…")
-                    model = genai.GenerativeModel(modelos[model_idx])
-                    continue
-                print("   ⚠️  Nenhum modelo de tradução disponível — "
-                      "mantendo TODO o texto no idioma original (pipeline segue).")
-                return traduzidos
-            except GeminiQuotaExhausted:
-                print("   ⚠️  Cota Gemini esgotada — mantendo texto original.")
-                return traduzidos
-            except Exception as exc:
-                print(f"   ⚠️  Tradução do lote {i // LOTE + 1} falhou: {exc}")
-                break
-        if not data:
-            continue
-        for item in (data or {}).get("itens", []):
-            try:
-                a = lote[int(item["i"])]
-            except (KeyError, ValueError, IndexError):
+    # O flush do cache fica num ÚNICO ponto, no `finally`. Antes ele vivia
+    # só no fim feliz do laço, e cada `return` de interrupção — cota
+    # esgotada, nenhum modelo disponível — saía por cima dele: os lotes que
+    # JÁ tinham voltado traduzidos eram descartados em vez de persistidos,
+    # exatamente no cenário em que o cache existe para poupar trabalho no
+    # run seguinte. Medido no cron 31738417162.
+    try:
+        for i in range(0, len(pendentes), LOTE):
+            lote = pendentes[i:i + LOTE]
+            itens = [{"i": n,
+                      "lang": a["language"],
+                      "title": (a.get("title") or "")[:maxc],
+                      "summary": (a.get("summary") or "")[:maxc]}
+                     for n, a in enumerate(lote)]
+            prompt = (
+                "Traduza para português do Brasil os campos 'title' e 'summary' das "
+                "notícias financeiras abaixo. Preserve nomes próprios, tickers, números "
+                "e siglas. Não interprete nem resuma: traduza fielmente. "
+                "Responda SOMENTE com JSON no formato "
+                '{"itens":[{"i":0,"title":"...","summary":"..."}]}.\n\n'
+                + json.dumps(itens, ensure_ascii=False))
+            # Rotaciona pelos modelos de fallback se o atual estiver indisponível
+            # (404/descontinuado); esgotada a cota ou a lista, degrada mantendo o
+            # texto original — tradução nunca derruba o pipeline.
+            data = None
+            while True:
+                try:
+                    data = _gemini_call(model, prompt, sleep_s)
+                    break
+                except GeminiModelUnavailable as exc:
+                    model_idx += 1
+                    if model_idx < len(modelos):
+                        print(f"   ↪️  modelo de tradução indisponível ({exc}); "
+                              f"tentando fallback {modelos[model_idx]}…")
+                        model = genai.GenerativeModel(modelos[model_idx])
+                        continue
+                    print("   ⚠️  Nenhum modelo de tradução disponível — "
+                          f"{traduzidos} tradução(ões) obtida(s) até aqui vão "
+                          "para o cache; o resto segue no idioma original "
+                          "(pipeline segue).")
+                    # `+ _do_cache` porque o retorno é "quantos artigos estão
+                    # traduzidos", não "quantos o provider traduziu agora": os
+                    # acertos de cache também estão, e omiti-los aqui fazia a
+                    # contagem do caminho interrompido divergir da do feliz.
+                    return traduzidos + _do_cache
+                except GeminiQuotaExhausted:
+                    print(f"   ⚠️  Cota Gemini esgotada — {traduzidos} tradução(ões) "
+                          "obtida(s) até aqui vão para o cache; o restante "
+                          "mantém o texto original.")
+                    return traduzidos + _do_cache
+                except Exception as exc:
+                    print(f"   ⚠️  Tradução do lote {i // LOTE + 1} falhou: {exc}")
+                    break
+            if not data:
                 continue
-            if item.get("title"):
-                # SUCCESS-ONLY: só entra no cache o que de fato voltou
-                # traduzido. Erro, cota esgotada, item faltando no lote ou saída
-                # vazia caem para o texto original e NÃO viram registro.
-                _tc.armazenar(_cache, a.get("_trad_key") or "",
-                              titulo=item["title"], resumo=item.get("summary") or "",
-                              idioma=a.get("language") or "", alvo=alvo,
-                              modelo=_modelo_trad)
-                _aplicar_traducao(a, item["title"], item.get("summary") or "")
-                traduzidos += 1
-                # a mesma manchete de outro veículo herda sem nova chamada
-                for _gemeo in _por_chave.get(a.get("_trad_key") or "", [])[1:]:
-                    _aplicar_traducao(_gemeo, item["title"],
-                                      item.get("summary") or "")
-            elif item.get("summary"):
-                _aplicar_traducao(a, "", item["summary"])
-    _tc.gravar(_tc.fundir(_cache, _tc.carregar()))
+            for item in (data or {}).get("itens", []):
+                try:
+                    a = lote[int(item["i"])]
+                except (KeyError, ValueError, IndexError):
+                    continue
+                if item.get("title"):
+                    # SUCCESS-ONLY: só entra no cache o que de fato voltou
+                    # traduzido. Erro, cota esgotada, item faltando no lote ou saída
+                    # vazia caem para o texto original e NÃO viram registro.
+                    _tc.armazenar(_cache, a.get("_trad_key") or "",
+                                  titulo=item["title"], resumo=item.get("summary") or "",
+                                  idioma=a.get("language") or "", alvo=alvo,
+                                  modelo=_modelo_trad)
+                    _aplicar_traducao(a, item["title"], item.get("summary") or "")
+                    traduzidos += 1
+                    # a mesma manchete de outro veículo herda sem nova chamada
+                    for _gemeo in _por_chave.get(a.get("_trad_key") or "", [])[1:]:
+                        _aplicar_traducao(_gemeo, item["title"],
+                                          item.get("summary") or "")
+                elif item.get("summary"):
+                    _aplicar_traducao(a, "", item["summary"])
+    finally:
+        _flush_cache_traducao()
     print(f"   ✅ {traduzidos} título(s) traduzido(s); originais preservados")
     return traduzidos + _do_cache
 
