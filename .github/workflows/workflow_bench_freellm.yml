@@ -1,0 +1,104 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# BENCHMARK DE MODELOS GRATUITOS — gemini-3.1-flash-lite × gemini-3.5-flash-lite
+#
+# POR QUE ESTE WORKFLOW EXISTE
+#   A chave da produção é um secret do GitHub e não existe fora do Actions. O
+#   benchmark precisa de chamadas REAIS, então ele só pode rodar aqui. Sem este
+#   workflow, a escolha do modelo seria palpite.
+#
+# O QUE ELE NÃO FAZ, por construção:
+#   - não roda o pipeline de produção;
+#   - não escreve history, sidecar, dashboard ou config;
+#   - não faz commit (permissão de leitura apenas);
+#   - não influencia score.
+#
+# TETO: 30 invocações reais, contadas antes de sair. Zero retry. Zero fallback
+# entre os modelos — medir a união de dois modelos não responde qual é melhor.
+# Disjuntor POR MODELO: a cota do Gemini é por projeto+modelo, então um modelo
+# esgotado não diz nada sobre o outro.
+#
+# MODELO EXCLUÍDO: gemini-3.6-flash. A cota gratuita dele já se mostrou
+# insuficiente no cron 31738417162 — medi-lo de novo responderia uma pergunta
+# que já foi respondida.
+# ─────────────────────────────────────────────────────────────────────────────
+name: Bench Free LLM (manual only)
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmar:
+        description: 'Digite EXECUTAR-BENCHMARK para confirmar. Qualquer outra coisa aborta.'
+        required: true
+        default: ''
+      modo:
+        description: 'dry = monta e audita (zero chamadas). live = chama os dois modelos.'
+        type: choice
+        options: [dry, live]
+        default: dry
+      espacamento:
+        description: 'Segundos entre CADA tentativa (pacing conservador).'
+        default: '8'
+
+# Sem `schedule`: este benchmark nunca roda sozinho.
+permissions:
+  contents: read          # LEITURA apenas — não pode commitar nem por engano
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Guarda de confirmação
+        run: |
+          if [ "${{ inputs.confirmar }}" != "EXECUTAR-BENCHMARK" ]; then
+            echo "Confirmação ausente ou incorreta — abortando antes de qualquer chamada."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Dependências
+        run: pip install -r requirements.txt google-generativeai
+
+      - name: Preflight — plano, teto, vazamento e cegueira (zero rede)
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python reliability_pilot1_payloads.py
+          python test_wave_bench_freellm.py
+
+      # Portão seco obrigatório antes do live: um erro de invocação já custou
+      # um run inteiro noutra frente, e ali ele só apareceu na hora de gastar.
+      - name: Dry gate (obrigatório antes do live)
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python bench_free_llm.py --mode dry
+
+      - name: Executar benchmark (live)
+        if: ${{ inputs.modo == 'live' }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PYTHONIOENCODING: utf-8
+        run: python bench_free_llm.py --mode live --confirm EXECUTAR-BENCHMARK --inter-call-seconds ${{ inputs.espacamento }}
+
+      # `always()`: provar que o benchmark não tocou produção importa MAIS
+      # quando algo falha, não menos.
+      - name: Provar que produção não foi tocada
+        if: always()
+        run: |
+          git diff --exit-code -- risk_history.json risk_input_shadow.json \
+            risk_enrichment_shadow.json index.html dashboard_risco.html \
+            run_meta.json config_risco.yaml
+
+      - name: Publicar artefatos do benchmark
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bench-freellm
+          path: out_bench_freellm/
+          retention-days: 14
+          if-no-files-found: warn
