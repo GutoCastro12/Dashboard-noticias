@@ -724,7 +724,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T23:16:45.720987+00:00"
+     "last_checked_at": "2026-08-13T11:13:58.134042+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2593,7 +2593,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T23:16:46.121222+00:00"
+     "last_checked_at": "2026-08-13T11:13:58.534315+00:00"
     }
    ],
    "corrob_sources": [
@@ -10264,7 +10264,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T23:16:46.521541+00:00"
+     "last_checked_at": "2026-08-13T11:13:58.934618+00:00"
     },
     {
      "source": "Demarest",
@@ -10284,7 +10284,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T23:16:46.921802+00:00"
+     "last_checked_at": "2026-08-13T11:13:59.334947+00:00"
     }
    ],
    "corrob_sources": [
@@ -11867,7 +11867,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T23:16:47.322041+00:00"
+     "last_checked_at": "2026-08-13T11:13:59.735223+00:00"
     }
    ],
    "corrob_sources": [
@@ -15580,7 +15580,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T23:16:47.940598+00:00"
+     "last_checked_at": "2026-08-13T11:14:00.319935+00:00"
     }
    ],
    "corrob_sources": [
@@ -18133,7 +18133,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T23:16:48.556822+00:00"
+     "last_checked_at": "2026-08-13T11:14:00.928698+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -18239,7 +18239,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T23:16:49.239580+00:00"
+     "last_checked_at": "2026-08-13T11:14:01.492990+00:00"
     },
     {
      "source": "Moomoo",
@@ -19644,7 +19644,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T23:16:50.016119+00:00"
+     "last_checked_at": "2026-08-13T11:14:02.184528+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19687,7 +19687,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T23:16:50.797274+00:00"
+     "last_checked_at": "2026-08-13T11:14:02.900754+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -20511,7 +20511,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T23:16:51.473136+00:00",
+     "last_checked_at": "2026-08-13T11:14:03.473355+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20536,7 +20536,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T23:16:52.110399+00:00",
+     "last_checked_at": "2026-08-13T11:14:04.041771+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21656,7 +21656,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-12T23:16:52.510718+00:00",
+     "last_checked_at": "2026-08-13T11:14:04.442060+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21721,7 +21721,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-12T23:16:52.910975+00:00",
+     "last_checked_at": "2026-08-13T11:14:04.842335+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22810,7 +22810,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T23:16:53.575427+00:00"
+     "last_checked_at": "2026-08-13T11:14:05.464010+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22895,7 +22895,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T23:16:54.226221+00:00"
+     "last_checked_at": "2026-08-13T11:14:06.028699+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -24710,7 +24710,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T23:16:54.851203+00:00",
+     "last_checked_at": "2026-08-13T11:14:06.600301+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24880,7 +24880,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T23:16:55.456087+00:00",
+     "last_checked_at": "2026-08-13T11:14:07.180897+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -38943,7 +38943,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T23:16:56.317152+00:00"
+     "last_checked_at": "2026-08-13T11:14:07.868321+00:00"
     }
    ],
    "corrob_sources": [
@@ -42014,7 +42014,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T23:16:56.954433+00:00"
+     "last_checked_at": "2026-08-13T11:14:08.427838+00:00"
     },
     {
      "source": "Virginia Business",
@@ -42057,7 +42057,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-12T23:16:57.583985+00:00"
+     "last_checked_at": "2026-08-13T11:14:08.993054+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48838,7 +48838,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T23:16:58.189964+00:00",
+     "last_checked_at": "2026-08-13T11:14:09.561732+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48861,7 +48861,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-12T23:16:58.810384+00:00",
+     "last_checked_at": "2026-08-13T11:14:10.133908+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -51674,6 +51674,26 @@
      "resolution_error": "",
      "link_render_anchor": true,
      "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Associação Comercial e Industrial de Araçatuba",
+     "domain": "aciara.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1MNjNtek9JUThOR2JMeW40cDhwUi1QVTZORzJFalNBUTNDNDU0Yk8zZjJELXNST3h3YmhiT19YRG1vVko3Z3BBSmV0WlVWU190Y1NvQ3p3TWU?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1MNjNtek9JUThOR2JMeW40cDhwUi1QVTZORzJFalNBUTNDNDU0Yk8zZjJELXNST3h3YmhiT19YRG1vVko3Z3BBSmV0WlVWU190Y1NvQ3p3TWU?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1MNjNtek9JUThOR2JMeW40cDhwUi1QVTZORzJFalNBUTNDNDU0Yk8zZjJELXNST3h3YmhiT19YRG1vVko3Z3BBSmV0WlVWU190Y1NvQ3p3TWU?oc=5",
+     "resolved_url": "https://aciara.com.br/novo-ceo-b3-trata-pane/",
+     "canonical_url": "https://aciara.com.br/novo-ceo-b3-trata-pane/",
+     "display_url": "https://aciara.com.br/novo-ceo-b3-trata-pane/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "aciara.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-13T11:14:10.708795+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "corrob_sources": [
@@ -51715,6 +51735,27 @@
      "link_health": "redirect_resolvido",
      "resolution_method": "cache_historico",
      "last_checked_at": "2026-08-12T17:07:14.545456+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Associação Comercial e Industrial de Araçatuba",
+     "domain": "aciara.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1MNjNtek9JUThOR2JMeW40cDhwUi1QVTZORzJFalNBUTNDNDU0Yk8zZjJELXNST3h3YmhiT19YRG1vVko3Z3BBSmV0WlVWU190Y1NvQ3p3TWU?oc=5",
+     "when": "13/08 02:11",
+     "original_url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1MNjNtek9JUThOR2JMeW40cDhwUi1QVTZORzJFalNBUTNDNDU0Yk8zZjJELXNST3h3YmhiT19YRG1vVko3Z3BBSmV0WlVWU190Y1NvQ3p3TWU?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1MNjNtek9JUThOR2JMeW40cDhwUi1QVTZORzJFalNBUTNDNDU0Yk8zZjJELXNST3h3YmhiT19YRG1vVko3Z3BBSmV0WlVWU190Y1NvQ3p3TWU?oc=5",
+     "resolved_url": "https://aciara.com.br/novo-ceo-b3-trata-pane/",
+     "canonical_url": "https://aciara.com.br/novo-ceo-b3-trata-pane/",
+     "display_url": "https://aciara.com.br/novo-ceo-b3-trata-pane/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "aciara.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-13T11:14:11.109080+00:00",
      "resolution_error": "",
      "link_render_anchor": true,
      "link_label": "Abrir notícia →"
@@ -51980,9 +52021,162 @@
      }
     ]
    }
+  },
+  "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWWhXcUV6M0xUekNuOVRQNTh5RXRkbEFSUHJhODItYmNkV25yYmRzc21nd2lXQUtHSFpoc1hCSkgyQ3piR0dWR3JrSmFVNy13TVdvemhuV3dCSjhlUXN6R3ZvZ3pJaDdDTXd5TkpEYnBJdU93SElCcnhyUWRVTEowbWxaczFOMEtMNW1kNWFjZkRjVE0zZDRVX0hTWEtHdFY0NWxIY2FnMXA4Rm9veFNkMmJwZWo2WjZVR05SSHJ4Z9IBvwFBVV95cUxNYWxyREx4WEJndHJNc29mckRpNE1YUF9mdFh1U1RPYU12aWJWLXktZFdfXzMwYWtZVl9YcHQzbWhFTFp1VEJUWHlkNmd0MnJpbDh3S0kzWl8xdWxaeGlKZUhrbWxIeEp4V2UyV3FXTUhaMzQ1cWpQYmpvcnNSa1ZQNjkzR25KNnB3emJZNTNsajk4SF9KMkpLYWVMWXRNNXBkYVNValh5dnk1RVprRFU2QXJYc1hxWEVFcXRKVy15VQ?oc=5": {
+   "title": "Recuperação judicial: por que a escolha errada pode piorar a crise",
+   "url": "https://www.campograndenews.com.br/colunistas/entre-risco-e-decisao/recuperacao-judicial-nao-e-lugar-para-aprender-fazendo",
+   "summary": "Recuperação judicial: por que a escolha errada pode piorar a crise &nbsp;&nbsp; Campo Grande News",
+   "source": "Campo Grande News",
+   "domain": "campograndenews.com.br",
+   "pub_ts": 1786019400,
+   "pub_iso": "2026-08-06 09:30",
+   "language": "es",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1786619631,
+   "cap_iso": "2026-08-13 08:13"
+  },
+  "https://news.google.com/rss/articles/CBMiqgFBVV95cUxORVlOYVdXYUtNbTR0dV9DWno2NHhFM0ktVlV0eUdoaEtueDJ4cnAzTk1DQlRXVkxicm1ULTlid3gwVXFHaURvRk9XcHBNYmc3YTVOa2lvZnI1RS1mRS0wYVU2ZDhQN01XYTF2WWxoMzMtUG5yT2JyVDBwSWNFajRadjctNnZHX0hBUGMxblJ4VjlGWGZJVTVsRkZKakdEandrZ2RNVHBWN1NLUQ?oc=5": {
+   "title": "CVM solicita esclarecimentos à Refinaria de Manguinhos após pedido de falência de R$ 25,7 bilhões pelo Estado do Rio",
+   "url": "https://atlaspublico.com.br/cvm/noticias/cvm-solicita-esclarecimentos-a-refinaria-de-manguinhos-apos-77808",
+   "summary": "CVM solicita esclarecimentos à Refinaria de Manguinhos após pedido de falência de R$ 25,7 bilhões pelo Estado do Rio &nbsp;&nbsp; atlaspublico.com.br",
+   "source": "atlaspublico.com.br",
+   "domain": "atlaspublico.com.br",
+   "pub_ts": 1786128315,
+   "pub_iso": "2026-08-07 15:45",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1786619631,
+   "cap_iso": "2026-08-13 08:13"
+  },
+  "https://news.google.com/rss/articles/CBMizAFBVV95cUxQMlkwazU2Ui1fZXVPM3RlTHBiWW9CajZFeWp3dVFVbURhMXBlMWE5OHBFMGhKWHZwellFbWRwZnloMzNNY292UzBic3lscmwzamhvbk9fd0hCYjQtanFBLUhzeXFYOVFUajZtQjdnYW5VX0Vta2dZZzVaYmczSEdjR0VHeEZEU2NQRzk1SG5OQ2xKWktucDhRNFMxUi1rUVpNU2JVNHJiYzJ4NjM3LWtYWE5UdThHcDV4TDZxdW9NaTJTRXpMZmF5ay1xb3k?oc=5": {
+   "title": "Empresa responsável por Megashop Moda Nordeste tem falência decretada",
+   "url": "https://diariodonordeste.verdesmares.com.br/negocios/empresa-responsavel-por-megashop-moda-nordeste-tem-falencia-decretada-1.3782930",
+   "summary": "Empresa responsável por Megashop Moda Nordeste tem falência decretada &nbsp;&nbsp; Diário do Nordeste",
+   "source": "Diário do Nordeste",
+   "domain": "diariodonordeste.verdesmares.com.br",
+   "pub_ts": 1786306620,
+   "pub_iso": "2026-08-09 17:17",
+   "language": "es",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "corroborations": [
+    {
+     "source": "O Otimista",
+     "domain": "ootimista.com.br",
+     "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOSDY2eVktZXBWSEpSbVpCRWhjZ2NMT3M0MTh5SFpldFFLWVBGUXF1LUx0X1E5dG56TUV6TFlxdlZITXpDeGlmcHUtUlg3NWE1U1BMUGEycUNhTlZsUGFxX0VXMG11X2sycjdVTWVvMHBWS0tZelk3Ym8xcHRRbkRSd01WSGl3bzY5MXlmRHUwU1I3NUhXVVNLaDI1bWJWX3ZwX1dZWk9OTi12RzVIR0UtTlA3bV9Za2swNEZSX0NvSTFqc0x0NWZDejMwTFdOeWMxbjk2VDhNYVB5LTl0R3ZTTVFYb2Y?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOSDY2eVktZXBWSEpSbVpCRWhjZ2NMT3M0MTh5SFpldFFLWVBGUXF1LUx0X1E5dG56TUV6TFlxdlZITXpDeGlmcHUtUlg3NWE1U1BMUGEycUNhTlZsUGFxX0VXMG11X2sycjdVTWVvMHBWS0tZelk3Ym8xcHRRbkRSd01WSGl3bzY5MXlmRHUwU1I3NUhXVVNLaDI1bWJWX3ZwX1dZWk9OTi12RzVIR0UtTlA3bV9Za2swNEZSX0NvSTFqc0x0NWZDejMwTFdOeWMxbjk2VDhNYVB5LTl0R3ZTTVFYb2Y?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOSDY2eVktZXBWSEpSbVpCRWhjZ2NMT3M0MTh5SFpldFFLWVBGUXF1LUx0X1E5dG56TUV6TFlxdlZITXpDeGlmcHUtUlg3NWE1U1BMUGEycUNhTlZsUGFxX0VXMG11X2sycjdVTWVvMHBWS0tZelk3Ym8xcHRRbkRSd01WSGl3bzY5MXlmRHUwU1I3NUhXVVNLaDI1bWJWX3ZwX1dZWk9OTi12RzVIR0UtTlA3bV9Za2swNEZSX0NvSTFqc0x0NWZDejMwTFdOeWMxbjk2VDhNYVB5LTl0R3ZTTVFYb2Y?oc=5",
+     "resolved_url": "",
+     "canonical_url": "",
+     "display_url": "",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "",
+     "http_status": "",
+     "link_health": "redirect_nao_resolvido",
+     "resolution_method": "nenhum",
+     "last_checked_at": "2026-08-13T11:14:11.822159+00:00",
+     "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "O Otimista",
+     "domain": "ootimista.com.br",
+     "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOSDY2eVktZXBWSEpSbVpCRWhjZ2NMT3M0MTh5SFpldFFLWVBGUXF1LUx0X1E5dG56TUV6TFlxdlZITXpDeGlmcHUtUlg3NWE1U1BMUGEycUNhTlZsUGFxX0VXMG11X2sycjdVTWVvMHBWS0tZelk3Ym8xcHRRbkRSd01WSGl3bzY5MXlmRHUwU1I3NUhXVVNLaDI1bWJWX3ZwX1dZWk9OTi12RzVIR0UtTlA3bV9Za2swNEZSX0NvSTFqc0x0NWZDejMwTFdOeWMxbjk2VDhNYVB5LTl0R3ZTTVFYb2Y?oc=5",
+     "when": "10/08 02:59",
+     "original_url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOSDY2eVktZXBWSEpSbVpCRWhjZ2NMT3M0MTh5SFpldFFLWVBGUXF1LUx0X1E5dG56TUV6TFlxdlZITXpDeGlmcHUtUlg3NWE1U1BMUGEycUNhTlZsUGFxX0VXMG11X2sycjdVTWVvMHBWS0tZelk3Ym8xcHRRbkRSd01WSGl3bzY5MXlmRHUwU1I3NUhXVVNLaDI1bWJWX3ZwX1dZWk9OTi12RzVIR0UtTlA3bV9Za2swNEZSX0NvSTFqc0x0NWZDejMwTFdOeWMxbjk2VDhNYVB5LTl0R3ZTTVFYb2Y?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOSDY2eVktZXBWSEpSbVpCRWhjZ2NMT3M0MTh5SFpldFFLWVBGUXF1LUx0X1E5dG56TUV6TFlxdlZITXpDeGlmcHUtUlg3NWE1U1BMUGEycUNhTlZsUGFxX0VXMG11X2sycjdVTWVvMHBWS0tZelk3Ym8xcHRRbkRSd01WSGl3bzY5MXlmRHUwU1I3NUhXVVNLaDI1bWJWX3ZwX1dZWk9OTi12RzVIR0UtTlA3bV9Za2swNEZSX0NvSTFqc0x0NWZDejMwTFdOeWMxbjk2VDhNYVB5LTl0R3ZTTVFYb2Y?oc=5",
+     "resolved_url": "",
+     "canonical_url": "",
+     "display_url": "",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "",
+     "http_status": "",
+     "link_health": "redirect_nao_resolvido",
+     "resolution_method": "nenhum",
+     "last_checked_at": "2026-08-13T11:14:12.511727+00:00",
+     "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia (via agregador) →"
+    }
+   ],
+   "captured_ts": 1786619631,
+   "cap_iso": "2026-08-13 08:13"
+  },
+  "https://news.google.com/rss/articles/CBMitwFBVV95cUxOYkdkT2N6cS1vQV8tU0w0SlBWenU5eFBMRVhaenpoYU54Q01HblRVSjRQNmtOWTVHaDA5aksyeUJGQVJKc29ZT0lkNEo4cXExeDU5NzZtZVRqRk5QZk1jUjE1dVZ2ajl2S1ZsWGR3aGNnRnNtTEZLWlIyV19OQmZiM2hHN09NYVgtNS1xR3QzZlJUZUFtUWhLR3BFWW1Gb0NuWmpxUmx3Nk5JNXBJZ016YXJWdUZVd2c?oc=5": {
+   "title": "Justiça decreta falência de empresa responsável por projeto de R$ 160 milhões em Maracanaú",
+   "url": "https://focuspoder.com.br/justica-decreta-falencia-de-empresa-responsavel-por-projeto-de-r-160-milhoes-em-maracanau/",
+   "summary": "Justiça decreta falência de empresa responsável por projeto de R$ 160 milhões em Maracanaú &nbsp;&nbsp; focuspoder.com.br",
+   "source": "focuspoder.com.br",
+   "domain": "focuspoder.com.br",
+   "pub_ts": 1786383393,
+   "pub_iso": "2026-08-10 14:36",
+   "language": "es",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1786619631,
+   "cap_iso": "2026-08-13 08:13"
+  },
+  "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQTzdPbTB0R2NRNHAyTlo4cVJqMEZKdmdFRVdDZVI3UVBQblFseU4zMWF1eXV4OVpvY0V0MXhOME5BTkpucU9oMWxWR3AzYUZrQzU2NlMtLUZZMVFabldqdnVVelBNVmQ2OGlCWFhpTEl0WHNXcTBFajgzaXVhRVY2VXViZ2JrMDVpdUV3Ql9WZWE0Z1N3WFowTFhlLXQtYjRkNElwTUNrVUE5ZXVEd2EzeTB3cTFLa2lXc1RTY3M5TjlPcWtEdHpqWkdEaFkxUkNLQjVr?oc=5": {
+   "title": "Segunda falência em menos de 2 anos derruba gigante das festas com 700 lojas e dívida bilionária",
+   "url": "https://www.em.com.br/emfoco/2026/08/12/segunda-falencia-em-menos-de-2-anos-derruba-gigante-das-festas-com-700-lojas-e-divida-bilionaria/",
+   "summary": "Segunda falência em menos de 2 anos derruba gigante das festas com 700 lojas e dívida bilionária &nbsp;&nbsp; Estado de Minas",
+   "source": "Estado de Minas",
+   "domain": "em.com.br",
+   "pub_ts": 1786555500,
+   "pub_iso": "2026-08-12 14:25",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1786619631,
+   "cap_iso": "2026-08-13 08:13"
+  },
+  "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPNk1TOVdPTjl1Vk80cVFOMnVIVXExazFJUU5Ia2FJTG95QmUwcG9EN3JJcVRZalVyMVNRWmNDaWxmUkktVXowbzRXY1MzVDdkb1lwR3p0Y0EyQ3RFTkhaS19iQnZMNDNkVjQ5WVVnY0RtM0ZBYkc0SXhqWmZ0TE1ta0RoS0tscG1taktrTTZiTmJHaWo0S0xmZFhDNWQwVVdGb3dqUVAyWWdVN3N4cERmU2lmNTBxTVpfeXlTRkZwMzQ4OWhLQWMxV3BhVF9mNXd4aTc5TU9UNG1KNDYwTUpEaW05eXRpcDY2UnNB?oc=5": {
+   "title": "Agência de Comunicação - O sistema de recuperação judicial funciona? O debate ganha força com Valdoir Slapak",
+   "url": "https://bluestudio.estadao.com.br/agencia-de-comunicacao/saftec-digital/o-sistema-de-recuperacao-judicial-funciona-o-debate-ganha-forca-com-valdoir-slapak/",
+   "summary": "Agência de Comunicação - O sistema de recuperação judicial funciona? O debate ganha força com Valdoir Slapak &nbsp;&nbsp; Estadão Blue Studio",
+   "source": "Estadão Blue Studio",
+   "domain": "bluestudio.estadao.com.br",
+   "pub_ts": 1786560348,
+   "pub_iso": "2026-08-12 15:45",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "captured_ts": 1786619631,
+   "cap_iso": "2026-08-13 08:13"
   }
  },
- "run_count": 120,
+ "run_count": 121,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -57267,11 +57461,35 @@
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxQTVNRZmhyNVBqdlVYSkdhOFhIVHRIX2ZRQ3QwVEdEb19DSGJ0OF9adWwyd295RnBDLUFQS05qTW5JMmtRNHl5WGFxRm1OTzhzNXpaV2JWaTlwenlrNXAzMHNjbXVOZ0E0WFh6N1QzcDhWRlZwNEFWYzY2N0pWMkF5bDZjaUNicWdzUEYwLXB0UXBzcFh0emg1QTA3SzR0a3ZvTlR0bndnVkNiSUVNTFNZZGZEYVNyVmM?oc=5": {
    "url": "https://www.investing.com/news/company-news/micron-launches-tender-offer-for-54-billion-in-senior-notes-93CH-4579839",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiqgFBVV95cUxORVlOYVdXYUtNbTR0dV9DWno2NHhFM0ktVlV0eUdoaEtueDJ4cnAzTk1DQlRXVkxicm1ULTlid3gwVXFHaURvRk9XcHBNYmc3YTVOa2lvZnI1RS1mRS0wYVU2ZDhQN01XYTF2WWxoMzMtUG5yT2JyVDBwSWNFajRadjctNnZHX0hBUGMxblJ4VjlGWGZJVTVsRkZKakdEandrZ2RNVHBWN1NLUQ?oc=5": {
+   "url": "https://atlaspublico.com.br/cvm/noticias/cvm-solicita-esclarecimentos-a-refinaria-de-manguinhos-apos-77808",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMizAFBVV95cUxQMlkwazU2Ui1fZXVPM3RlTHBiWW9CajZFeWp3dVFVbURhMXBlMWE5OHBFMGhKWHZwellFbWRwZnloMzNNY292UzBic3lscmwzamhvbk9fd0hCYjQtanFBLUhzeXFYOVFUajZtQjdnYW5VX0Vta2dZZzVaYmczSEdjR0VHeEZEU2NQRzk1SG5OQ2xKWktucDhRNFMxUi1rUVpNU2JVNHJiYzJ4NjM3LWtYWE5UdThHcDV4TDZxdW9NaTJTRXpMZmF5ay1xb3k?oc=5": {
+   "url": "https://diariodonordeste.verdesmares.com.br/negocios/empresa-responsavel-por-megashop-moda-nordeste-tem-falencia-decretada-1.3782930",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMitwFBVV95cUxOYkdkT2N6cS1vQV8tU0w0SlBWenU5eFBMRVhaenpoYU54Q01HblRVSjRQNmtOWTVHaDA5aksyeUJGQVJKc29ZT0lkNEo4cXExeDU5NzZtZVRqRk5QZk1jUjE1dVZ2ajl2S1ZsWGR3aGNnRnNtTEZLWlIyV19OQmZiM2hHN09NYVgtNS1xR3QzZlJUZUFtUWhLR3BFWW1Gb0NuWmpxUmx3Nk5JNXBJZ016YXJWdUZVd2c?oc=5": {
+   "url": "https://focuspoder.com.br/justica-decreta-falencia-de-empresa-responsavel-por-projeto-de-r-160-milhoes-em-maracanau/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQTzdPbTB0R2NRNHAyTlo4cVJqMEZKdmdFRVdDZVI3UVBQblFseU4zMWF1eXV4OVpvY0V0MXhOME5BTkpucU9oMWxWR3AzYUZrQzU2NlMtLUZZMVFabldqdnVVelBNVmQ2OGlCWFhpTEl0WHNXcTBFajgzaXVhRVY2VXViZ2JrMDVpdUV3Ql9WZWE0Z1N3WFowTFhlLXQtYjRkNElwTUNrVUE5ZXVEd2EzeTB3cTFLa2lXc1RTY3M5TjlPcWtEdHpqWkdEaFkxUkNLQjVr?oc=5": {
+   "url": "https://www.em.com.br/emfoco/2026/08/12/segunda-falencia-em-menos-de-2-anos-derruba-gigante-das-festas-com-700-lojas-e-divida-bilionaria/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPNk1TOVdPTjl1Vk80cVFOMnVIVXExazFJUU5Ia2FJTG95QmUwcG9EN3JJcVRZalVyMVNRWmNDaWxmUkktVXowbzRXY1MzVDdkb1lwR3p0Y0EyQ3RFTkhaS19iQnZMNDNkVjQ5WVVnY0RtM0ZBYkc0SXhqWmZ0TE1ta0RoS0tscG1taktrTTZiTmJHaWo0S0xmZFhDNWQwVVdGb3dqUVAyWWdVN3N4cERmU2lmNTBxTVpfeXlTRkZwMzQ4OWhLQWMxV3BhVF9mNXd4aTc5TU9UNG1KNDYwTUpEaW05eXRpcDY2UnNB?oc=5": {
+   "url": "https://bluestudio.estadao.com.br/agencia-de-comunicacao/saftec-digital/o-sistema-de-recuperacao-judicial-funciona-o-debate-ganha-forca-com-valdoir-slapak/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1MNjNtek9JUThOR2JMeW40cDhwUi1QVTZORzJFalNBUTNDNDU0Yk8zZjJELXNST3h3YmhiT19YRG1vVko3Z3BBSmV0WlVWU190Y1NvQ3p3TWU?oc=5": {
+   "url": "https://aciara.com.br/novo-ceo-b3-trata-pane/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786576656,
-  "iso": "12 ago 2026 · 20:17 BRT",
+  "ts": 1786619691,
+  "iso": "13 ago 2026 · 08:14 BRT",
   "status": {
    "Cosan": {
     "status": "atencao",
@@ -57279,23 +57497,23 @@
    },
    "Engie Brasil": {
     "status": "atencao",
-    "score": 68
+    "score": 67
    },
    "Rumo": {
     "status": "atencao",
-    "score": 63
+    "score": 62
    },
    "JBS": {
     "status": "atencao",
-    "score": 58
+    "score": 57
    },
    "Vale": {
     "status": "atencao",
-    "score": 54
+    "score": 53
    },
    "Tok&Stok": {
     "status": "critico",
-    "score": 50
+    "score": 49
    },
    "Santander Brasil": {
     "status": "atencao",
@@ -57303,11 +57521,11 @@
    },
    "Samarco Mineração": {
     "status": "critico",
-    "score": 37
+    "score": 36
    },
    "Smart Fit": {
     "status": "atencao",
-    "score": 37
+    "score": 36
    },
    "Axia Energia": {
     "status": "monitorar",
@@ -57315,7 +57533,7 @@
    },
    "B3": {
     "status": "monitorar",
-    "score": 34
+    "score": 35
    },
    "Sabesp": {
     "status": "monitorar",
@@ -57333,23 +57551,23 @@
     "status": "monitorar",
     "score": 23
    },
-   "ISA Energia Brasil": {
-    "status": "monitorar",
-    "score": 23
-   },
    "Banco do Brasil": {
     "status": "monitorar",
     "score": 23
    },
-   "BTG Pactual": {
-    "status": "atencao",
-    "score": 22
-   },
-   "PRIO": {
+   "ISA Energia Brasil": {
     "status": "monitorar",
     "score": 22
    },
    "Petrobras": {
+    "status": "monitorar",
+    "score": 21
+   },
+   "BTG Pactual": {
+    "status": "atencao",
+    "score": 21
+   },
+   "PRIO": {
     "status": "monitorar",
     "score": 21
    },
@@ -57360,10 +57578,6 @@
    "Lojas Renner": {
     "status": "monitorar",
     "score": 18
-   },
-   "Yura": {
-    "status": "atencao",
-    "score": 17
    },
    "Aegea Saneamento": {
     "status": "monitorar",
@@ -57377,25 +57591,29 @@
     "status": "monitorar",
     "score": 16
    },
-   "Embraer": {
-    "status": "monitorar",
+   "Yura": {
+    "status": "atencao",
     "score": 16
    },
-   "Ultrapar": {
-    "status": "atencao",
+   "Embraer": {
+    "status": "monitorar",
     "score": 15
    },
    "Natura &Co": {
     "status": "monitorar",
     "score": 15
    },
-   "Albioma": {
-    "status": "monitorar",
-    "score": 15
-   },
    "EQT Corporation": {
     "status": "monitorar",
     "score": 15
+   },
+   "Ultrapar": {
+    "status": "atencao",
+    "score": 14
+   },
+   "Albioma": {
+    "status": "monitorar",
+    "score": 14
    },
    "Energisa": {
     "status": "monitorar",
@@ -57420,10 +57638,6 @@
    "Copel": {
     "status": "monitorar",
     "score": 10
-   },
-   "Vamos": {
-    "status": "atencao",
-    "score": 9
    },
    "Raia Drogasil": {
     "status": "monitorar",
@@ -57452,6 +57666,10 @@
    "Itaú Unibanco": {
     "status": "monitorar",
     "score": 6
+   },
+   "Vamos": {
+    "status": "monitorar",
+    "score": 5
    },
    "Caixa Seguridade": {
     "status": "monitorar",
