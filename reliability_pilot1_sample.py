@@ -39,7 +39,16 @@ import reliability_pilot_contract as pc
 import risk_dashboard as rd
 import semantic_audit as sa
 
-SAMPLE_VERSION = "r7b.pilot1.sample.v1"
+SAMPLE_VERSION = "r7b.pilot1.sample.v2"
+SAMPLE_VERSION_ANTERIOR = "r7b.pilot1.sample.v1"
+SAMPLE_BUMP_MOTIVO = (
+    "S6 2 -> 6. A v1 definia S6 como 'artigo sem NENHUM event_id', o que dava um "
+    "pool de 3 pares e esvaziava a metrica OW-2. A definicao estabelecida do "
+    "estrato em reliability_pilot_sample.py e outra e melhor: EMPRESA ATRIBUIDA "
+    "QUE NAO RECEBEU EVENTO, mesmo que o artigo pontue para outra empresa. Com "
+    "ela o pool real e 491 pares, 249 dominios, 67 empresas. Nenhuma rede foi "
+    "usada; os quatro acrescentados ja estavam no corpus local."
+)
 INPUT_VERSION = "r7b.pilot1.input.v1"
 
 OUTDIR = Path(os.environ.get("R7B_PILOT1_OUT", "out_reliability/r7b_pilot1"))
@@ -252,6 +261,12 @@ def construir() -> dict:
             "input_track": trilha(inp),
             "input": inp,
             "selection_reason": origem_selecao,
+            # S6 nao recebe rotulo humano por inferencia: o determinístico nao
+            # ter gerado candidato NAO prova ausencia de evento. Pode ser
+            # ausencia real ou falha de geracao de candidato -- e isso e
+            # exatamente o que o piloto vai medir.
+            "s6_status": ("EVENTLESS_CONTROL_CANDIDATE" if stratum == "S6"
+                          else ""),
             # LADO DA AVALIAÇÃO — nunca entra em payload
             "evaluation_only": {
                 "human_truth": gt,
@@ -296,9 +311,16 @@ def construir() -> dict:
         rec = arts[url]
         comps = list(rec.get("companies") or [])
         evs = list(rec.get("event_ids") or [])
+        ebc = rec.get("events_by_company") or {}
         for emp in comps:
-            if not evs:
+            # S6 = a empresa foi ATRIBUÍDA ao artigo e não recebeu evento algum.
+            # Não é "artigo sem eventos": um artigo pode pontuar para a empresa A
+            # e não pontuar para a B, e o par (artigo, B) é justamente o controle
+            # de falsa descoberta. A v1 usava a definição estreita e o estrato
+            # ficou com 3 candidatos.
+            if not ebc.get(emp):
                 pool["S6"].append((url, rec, emp, ""))
+            if not evs:
                 continue
             for ev in evs:
                 if ev in sa.EVENTOS_MA:
@@ -312,10 +334,18 @@ def construir() -> dict:
                     if len(comps) > 1:
                         pool["S5"].append((url, rec, emp, ev))
 
+    # `vistos` é por url||empresa||evento, e o S6 usa evento vazio — sem esta
+    # segunda barreira o MESMO par empresa×artigo entrava duas vezes, uma como
+    # controle do seu estrato e outra como S6 (foi o que aconteceu com YPF e
+    # Klabin na primeira montagem da v2). Não geraria call duplicada, porque
+    # AUDIT exige candidato e DISCOVERY dedupa por artigo, mas dobraria o item
+    # nas métricas.
+    pares_usados = {(i["url"], i["company"]) for i in itens}
+
     for est, alvo in ALVO_HOLDOUT.items():
         cands = []
         for url, rec, emp, ev in pool.get(est, []):
-            if f"{url}||{emp}||{ev}" in vistos:
+            if f"{url}||{emp}||{ev}" in vistos or (url, emp) in pares_usados:
                 continue
             inp = melhor_input(url, rec, fontes)
             cands.append((inp["chars_alem_do_titulo"], url, rec, emp, ev, inp))
@@ -333,12 +363,15 @@ def construir() -> dict:
             dominios.add(dom)
             empresas.add(emp)
             n += 1
+            pares_usados.add((url, emp))
             add(url, rec, emp, ev, est, HOLDOUT,
                 f"holdout {est}: maior input disponível, 1 por domínio/empresa")
 
     return {
         "_meta": {
             "sample_version": SAMPLE_VERSION,
+            "sample_version_anterior": SAMPLE_VERSION_ANTERIOR,
+            "motivo_do_bump": SAMPLE_BUMP_MOTIVO,
             "input_version": INPUT_VERSION,
             "normalization_version": pc.NORMALIZATION_VERSION,
             "prompt_version": pc.PROMPT_VERSION,
