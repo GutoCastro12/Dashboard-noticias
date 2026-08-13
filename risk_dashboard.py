@@ -2459,7 +2459,7 @@ def translate_articles(articles: list[dict], cfg: dict) -> int:
               f"no run, {len(_restantes)} a traduzir")
     pendentes = _restantes
     if not pendentes:
-        _tc.gravar(_cache)
+        _tc.gravar(_tc.fundir(_cache, _tc.carregar()))
         return _do_cache
 
     api_key = (cfg.get("llm") or {}).get("gemini_api_key") or os.environ.get("GEMINI_API_KEY")
@@ -2540,7 +2540,7 @@ def translate_articles(articles: list[dict], cfg: dict) -> int:
                                       item.get("summary") or "")
             elif item.get("summary"):
                 _aplicar_traducao(a, "", item["summary"])
-    _tc.gravar(_cache)
+    _tc.gravar(_tc.fundir(_cache, _tc.carregar()))
     print(f"   ✅ {traduzidos} título(s) traduzido(s); originais preservados")
     return traduzidos + _do_cache
 

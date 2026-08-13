@@ -99,31 +99,74 @@ def _meta() -> dict:
                          "não substitui o texto original do risk_history.json"}
 
 
-def gravar(cache: dict, caminho: Path | None = None) -> None:
-    """Escrita atômica: temporário no MESMO diretório e `os.replace`."""
+def _serializar(cache: dict) -> str:
+    # chaves ordenadas: dois runs com o mesmo conteúdo produzem bytes iguais,
+    # o que é o que permite detectar "nada mudou" de forma confiável
+    return json.dumps(cache, ensure_ascii=False, indent=1, sort_keys=True)
+
+
+def gravar(cache: dict, caminho: Path | None = None) -> bool:
+    """Escrita atômica e SÓ SE MUDOU. Devolve True se escreveu.
+
+    Um run inteiro de acertos de cache não deve tocar o arquivo: sem isto, todo
+    cron produziria diff e o pipeline commitaria dado idêntico quatro vezes por
+    dia. `os.replace` sobre temporário no MESMO diretório garante que um kill
+    no meio não deixe sidecar truncado.
+    """
     p = Path(caminho or CAMINHO_PADRAO)
-    p.parent.mkdir(parents=True, exist_ok=True)
     cache.setdefault("_meta", _meta())
     ent = cache.get("entradas") or {}
     if len(ent) > MAX_REGISTROS:
-        # poda simples por uso mais recente; não é LRU sofisticado de propósito
+        # poda simples por data de criação; não é LRU sofisticado de propósito,
+        # e nem precisa ser — no ritmo medido, o teto leva mais de uma década
         ordenadas = sorted(ent.items(),
-                           key=lambda kv: kv[1].get("last_used_at") or 0,
+                           key=lambda kv: kv[1].get("created_at") or 0,
                            reverse=True)[:MAX_REGISTROS]
         cache["entradas"] = dict(ordenadas)
+
+    novo = _serializar(cache)
+    if p.exists():
+        try:
+            if io.open(p, encoding="utf-8").read() == novo:
+                return False          # nada mudou: nem toca no arquivo
+        except Exception:
+            pass                      # ilegível: reescreve
+    p.parent.mkdir(parents=True, exist_ok=True)
     tmp = p.with_suffix(p.suffix + ".tmp")
     with io.open(tmp, "w", encoding="utf-8") as f:
-        json.dump(cache, f, ensure_ascii=False, indent=1)
+        f.write(novo)
         f.flush()
         os.fsync(f.fileno())
     os.replace(tmp, p)
+    return True
+
+
+def fundir(base: dict, outro: dict) -> dict:
+    """Une dois caches por CHAVE, preservando o registro mais antigo.
+
+    Registros de tradução são independentes e imutáveis: a mesma chave sempre
+    descreve o mesmo trabalho, então não há conflito real a resolver — só união.
+    Existe para o caso de dois runs concorrentes terem lido o mesmo snapshot;
+    sem isso, o segundo a gravar apagaria as traduções do primeiro.
+    """
+    saida = {"_meta": base.get("_meta") or _meta(), "entradas": {}}
+    saida["entradas"].update(outro.get("entradas") or {})
+    saida["entradas"].update(base.get("entradas") or {})
+    return saida
 
 
 def consultar(cache: dict, k: str) -> dict | None:
+    """Leitura PURA — não marca uso, de propósito.
+
+    A primeira versão gravava `last_used_at` a cada acerto. Com centenas de
+    acertos por run, isso mudava o sidecar em TODO cron mesmo sem nenhuma
+    tradução nova: diff garantido, commit de dados inútil quatro vezes por dia
+    e conflito de merge à toa. O cache é pequeno (centenas de registros, teto
+    de poda em 20 mil) — precisão de LRU não paga esse preço.
+    """
     v = (cache.get("entradas") or {}).get(k)
     if not v or not v.get("ok"):
         return None
-    v["last_used_at"] = int(time.time())
     return v
 
 

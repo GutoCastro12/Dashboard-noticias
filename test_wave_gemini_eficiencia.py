@@ -298,6 +298,70 @@ check("translation_cache" in _src_rd and "risk_translation_cache" not in _src_rd
 check(str(tc.CAMINHO_PADRAO).endswith("risk_translation_cache.json"),
       f"[38] sidecar próprio, separado do history ({tc.CAMINHO_PADRAO})")
 
+
+print()
+print("=" * 98)
+print("BLOCO G — DURABILIDADE: o sidecar sobrevive ao runner efêmero?")
+print("=" * 98)
+_wf = io.open(".github/workflows/update_risk_dashboard.yml", encoding="utf-8").read()
+check("git add -f risk_translation_cache.json" in _wf,
+      "[39] o workflow inclui o cache na allowlist do commit de dados")
+_i_cache = _wf.find("git add -f risk_translation_cache.json")
+_i_commit = _wf.find("git commit -m")
+check(0 < _i_cache < _i_commit,
+      "[40] e isso acontece ANTES do commit, junto dos outros sidecars")
+_gi = io.open(".gitignore", encoding="utf-8").read()
+check("risk_translation_cache" not in _gi,
+      "[41] o cache NÃO é gitignored — separado do history não é descartável")
+for _outro in ("risk_enrichment_shadow.json", "risk_input_shadow.json"):
+    check("git add -f " + _outro in _wf,
+          "[42..43] mesmo mecanismo já usado por " + _outro)
+
+print()
+print("=" * 98)
+print("BLOCO H — PURE HIT: um run só de acertos não toca o arquivo")
+print("=" * 98)
+_p7 = TMP / "purehit.json"
+_c7 = {"_meta": {}, "entradas": {}}
+tc.armazenar(_c7, "k1", titulo="T1", resumo="S1", idioma="en", alvo="pt")
+tc.armazenar(_c7, "k2", titulo="T2", resumo="S2", idioma="es", alvo="pt")
+check(tc.gravar(_c7, _p7) is True, "[44] a primeira gravação escreve")
+_bytes_antes = _p7.read_bytes()
+_lido = tc.carregar(_p7)
+_carimbo_antes = _lido["entradas"]["k1"].get("last_used_at")
+for _ in range(50):
+    tc.consultar(_lido, "k1")
+    tc.consultar(_lido, "k2")
+_escreveu = tc.gravar(_lido, _p7)
+_bytes_depois = _p7.read_bytes()
+check(_escreveu is False,
+      "[45] 100 acertos e ZERO escrita — gravar() vê que nada mudou")
+check(_bytes_antes == _bytes_depois,
+      "[46] arquivo byte-a-byte idêntico após um run só de acertos")
+check(_lido["entradas"]["k1"].get("last_used_at") == _carimbo_antes,
+      "[47] consultar() é leitura PURA — não carimba uso a cada acerto")
+tc.armazenar(_lido, "k3", titulo="T3", resumo="S3", idioma="en", alvo="pt")
+check(tc.gravar(_lido, _p7) is True, "[48] mas uma tradução NOVA de fato grava")
+
+print()
+print("=" * 98)
+print("BLOCO I — merge por chave: run concorrente não apaga tradução alheia")
+print("=" * 98)
+_ca = {"_meta": {}, "entradas": {}}
+_cb = {"_meta": {}, "entradas": {}}
+tc.armazenar(_ca, "ka", titulo="TA", resumo="", idioma="en", alvo="pt")
+tc.armazenar(_cb, "kb", titulo="TB", resumo="", idioma="es", alvo="pt")
+_m = tc.fundir(_ca, _cb)
+check(set(_m["entradas"]) == {"ka", "kb"},
+      "[49] união por chave preserva os dois lados (" + str(sorted(_m["entradas"])) + ")")
+_velho = {"_meta": {}, "entradas": {"ka": {"ok": True, "title": "ANTIGO"}}}
+_novo = {"_meta": {}, "entradas": {"ka": {"ok": True, "title": "NOVO"}}}
+check(tc.fundir(_novo, _velho)["entradas"]["ka"]["title"] == "NOVO",
+      "[50] em colisão de chave a corrida ATUAL vence, sem perder o outro lado")
+_src_rd2 = io.open("risk_dashboard.py", encoding="utf-8").read()
+check("_tc.fundir(_cache, _tc.carregar())" in _src_rd2,
+      "[51] o pipeline relê o disco e funde antes de gravar")
+
 print()
 print("=" * 98)
 print(f"RESULTADO EFICIÊNCIA GEMINI: {PASS}/{PASS + FAIL} checagens passaram")

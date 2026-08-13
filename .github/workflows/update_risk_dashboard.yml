@@ -150,6 +150,15 @@ jobs:
           # cada run e a coleta deixaria de ser prospectiva. É dado gerado,
           # vive FORA de risk_history.json e nenhum caminho de produção o lê.
           git add -f risk_input_shadow.json 2>/dev/null || true
+          # Cache de traduções. A razão é a MESMA dos dois acima — o runner é
+          # efêmero — mas a consequência é outra: sem persistir, todo cron
+          # recomeça com o cache vazio e retraduz os mesmos títulos para
+          # sempre, que é exatamente o desperdício que o cache existe para
+          # eliminar. É dado OPERACIONAL: vive fora de risk_history.json, não é
+          # evidência nem verdade humana, não alimenta score e não aparece no
+          # dashboard. Um run só de acertos não altera o arquivo, então isto
+          # não passa a gerar commit a cada ciclo.
+          git add -f risk_translation_cache.json 2>/dev/null || true
           # Reconciliação runtime: os 6 exports de cobertura são regenerados
           # do ZERO em toda execução (risk_dashboard.main() via
           # coverage_diagnosis.run_production_coverage) e têm que entrar no
