@@ -377,7 +377,7 @@ def comparar(item: dict, saida, estado: str, rotulo: str,
 
 def main() -> int:
     cfg = rd.load_config("config_risco.yaml")
-    man = json.load(io.open(ps.MANIFESTO, encoding="utf-8"))
+    man = ps.carregar_manifesto()
     pl = construir_payloads(man, cfg)
     porid = {i["sample_id"]: i for i in man["itens"]}
 

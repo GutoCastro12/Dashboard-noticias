@@ -146,7 +146,7 @@ def executar(modo: str, *, confirmado: bool, teto_execucao: int | None = None) -
     linha funciona, porque a primeira nunca deixaria chegar lá.
     """
     cfg = rd.load_config("config_risco.yaml")
-    man = json.load(io.open(ps.MANIFESTO, encoding="utf-8"))
+    man = ps.carregar_manifesto()
     pl = pp.construir_payloads(man, cfg)
     porid = {i["sample_id"]: i for i in man["itens"]}
     entradas = pl["audit"] + pl["discovery"]

@@ -43,7 +43,7 @@ def check(cond, label):
         print(f"  ❌ FALHOU: {label}")
 
 
-MAN = json.load(io.open(ps.MANIFESTO, encoding="utf-8"))
+MAN = ps.carregar_manifesto()
 PL = json.load(io.open(pp.PAYLOADS, encoding="utf-8"))
 PORID = {i["sample_id"]: i for i in MAN["itens"]}
 
@@ -199,6 +199,24 @@ check("secrets.GEMINI_API_KEY" in _y and "echo $GEMINI" not in _y,
       "[37] a key vem do secret e não é ecoada")
 check("contents: read" in _y,
       "[38] permissão de LEITURA apenas — não pode commitar nem por engano")
+
+# A invocação errada custou um run inteiro: o workflow chamava `--live`, que o
+# argparse do executor não conhece. Estes três travam a correção.
+check("--mode live --confirm-live EXECUTAR-PILOTO" in _y,
+      "[38b] o step live usa a CLI REAL do executor")
+check("--live\n" not in _y and "--live " not in _y.replace("--confirm-live ", ""),
+      "[38c] e a invocação antiga não sobreviveu em lugar nenhum")
+_i_dry = _y.find("--mode dry")
+_i_live = _y.find("--mode live")
+check(0 < _i_dry < _i_live,
+      "[38d] o dry gate vem ANTES do live — se ele falhar, o live não roda")
+check(_y.count("if: always()") >= 2,
+      f"[38e] integridade de produção e artefato rodam com always() "
+      f"({_y.count('if: always()')})")
+check("reliability_pilot1_sample.py" not in _y,
+      "[38f] o workflow NÃO regenera a amostra — congelar é congelar")
+check("pilot1_sample_manifest_v2.json" in _y,
+      "[38g] e verifica a presença do manifesto congelado versionado")
 
 print()
 print("=" * 98)

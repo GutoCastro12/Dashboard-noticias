@@ -60,30 +60,53 @@ jobs:
       - name: Dependências
         run: pip install -r requirements.txt google-generativeai
 
-      - name: Congelar amostra e montar payloads (zero rede)
+      # A amostra NÃO é regenerada aqui. `out_reliability/` é gitignored, então
+      # regenerar no runner reconstruiria a amostra a partir do corpus DO
+      # MOMENTO — e o corpus muda a cada cron. O manifesto v2 está congelado em
+      # test_fixtures_reliability/ e é ele que manda. Congelar é congelar.
+      - name: Verificar congelamento da amostra e montar payloads (zero rede)
+        env:
+          PYTHONIOENCODING: utf-8
         run: |
-          python reliability_pilot1_sample.py
+          test -f test_fixtures_reliability/pilot1_sample_manifest_v2.json
           python reliability_pilot1_payloads.py
 
-      - name: Provar ausência de vazamento antes de qualquer chamada
+      - name: Preflight — vazamento, cegueira, cache, teto
+        env:
+          PYTHONIOENCODING: utf-8
         run: python test_wave_r7b_pilot1.py
 
-      - name: Executar piloto
+      # Portão seco imediatamente antes do live. Se ele falhar, o step live não
+      # roda — foi a classe de erro que derrubou o run 31698937663, quando uma
+      # invocação incorreta só apareceu no momento de gastar dinheiro.
+      - name: Dry gate (obrigatório antes do live)
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python reliability_pilot1_run.py --mode dry
+
+      - name: Executar piloto (live)
         if: ${{ inputs.modo == 'live' }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PYTHONIOENCODING: utf-8
-        run: python reliability_pilot1_run.py --live
+        run: python reliability_pilot1_run.py --mode live --confirm-live EXECUTAR-PILOTO
 
+      # `always()`: provar que o piloto não escreveu em produção importa MAIS
+      # quando algo falha, não menos.
       - name: Provar que produção não foi tocada
+        if: always()
         run: |
           git diff --exit-code -- risk_history.json risk_input_shadow.json \
             risk_enrichment_shadow.json index.html dashboard_risco.html \
             run_meta.json config_risco.yaml
 
+      # `always()`: no run anterior o upload foi pulado junto com o live e
+      # perdemos plano de chamadas, contadores e saída de validação.
       - name: Publicar artefatos do piloto
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: r7b-pilot1
           path: out_reliability/r7b_pilot1/
           retention-days: 14
+          if-no-files-found: warn

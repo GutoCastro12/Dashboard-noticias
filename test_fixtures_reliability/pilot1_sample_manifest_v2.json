@@ -1,0 +1,1291 @@
+{
+ "_meta": {
+  "sample_version": "r7b.pilot1.sample.v2",
+  "sample_version_anterior": "r7b.pilot1.sample.v1",
+  "motivo_do_bump": "S6 2 -> 6. A v1 definia S6 como 'artigo sem NENHUM event_id', o que dava um pool de 3 pares e esvaziava a metrica OW-2. A definicao estabelecida do estrato em reliability_pilot_sample.py e outra e melhor: EMPRESA ATRIBUIDA QUE NAO RECEBEU EVENTO, mesmo que o artigo pontue para outra empresa. Com ela o pool real e 491 pares, 249 dominios, 67 empresas. Nenhuma rede foi usada; os quatro acrescentados ja estavam no corpus local.",
+  "input_version": "r7b.pilot1.input.v1",
+  "normalization_version": "r7ba.n1",
+  "prompt_version": "r7ba.p1",
+  "schema_version": "r7ba.s1",
+  "input_policy_version": "r7ba.i1",
+  "arquitetura": "ARCH-A",
+  "corpus": {
+   "risk_history.json": "7cd7c761c56c5fca",
+   "risk_input_shadow.json": "27d49a769fd3c952",
+   "risk_enrichment_shadow.json": "c8c7ea40d4902cef",
+   "s3_experimental": "065761db0d42d6e7",
+   "history_run_count": 121,
+   "history_articles": 767
+  },
+  "determinismo": "ordenação por article_id/sha; sem random, sem seed",
+  "trilhas": {
+   "rich": "ganho>=600 e frases>=3",
+   "degraded": "o resto"
+  },
+  "aviso": "evaluation_only NUNCA entra em payload enviado ao modelo",
+  "plano_de_chamadas": {
+   "audit_pairs": 17,
+   "discovery_articles": 23,
+   "total_calls": 40,
+   "calls_rich": 10,
+   "calls_degraded": 30,
+   "itens_por_trilha": {
+    "degraded": 18,
+    "rich": 7
+   },
+   "itens_sem_input": 2,
+   "volume_audit": {
+    "chars": 9463,
+    "tokens_estimados": 2366
+   },
+   "volume_discovery": {
+    "chars": 17558,
+    "tokens_estimados": 4390
+   },
+   "aproximacao_de_token": "chars/4 — heurística explícita; nenhum tokenizer do provider foi consultado e nenhum pacote foi instalado para isto",
+   "output_token_cap_sugerido": 900
+  }
+ },
+ "itens": [
+  {
+   "sample_id": "P1-X001",
+   "article_id": "2dab34a55ceba7a9",
+   "url": "https://agencia.petrobras.com.br/w/negocio/petrobras-conclui-aquisicao-de-bloco-exploratorio-em-sao-tome-e-principe",
+   "title": "",
+   "company": "Petrobras",
+   "candidate_events": [
+    "ma"
+   ],
+   "stratum": "S2",
+   "role": "DEV_CONTROL",
+   "input_track": "degraded",
+   "input": {
+    "texto": "",
+    "chars": 0,
+    "tier": "AUSENTE_DO_CORPUS",
+    "chars_alem_do_titulo": 0,
+    "sentence_like_count": 0,
+    "unique_meaningful_tokens": 0,
+    "provenance": [],
+    "content_hash": "",
+    "input_version": "r7b.pilot1.input.v1",
+    "origem_do_corpo": "nenhuma",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "controle humano sem artigo no history",
+   "evaluation_only": {
+    "human_truth": {
+     "fonte": "ma_transaction_reviews.json",
+     "company": "Petrobras",
+     "title": "Petrobras conclui aquisição de bloco exploratório em São Tomé e Príncipe",
+     "event_id": "ma",
+     "stratum": "S2",
+     "human_scoreable": false,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "reviewer_type": "human"
+    },
+    "deterministic": null
+   }
+  },
+  {
+   "sample_id": "P1-002",
+   "article_id": "90f9a0435dbcd6b1",
+   "url": "https://agenciainfra.com/blog/ambar-energia-conclui-a-aquisicao-de-4-hidreletricas-da-cemig-em-mg/",
+   "title": "Âmbar Energia conclui a aquisição de 4 hidrelétricas da Cemig em MG",
+   "source": "Agência iNFRA",
+   "domain": "agenciainfra.com",
+   "pub_iso": "2025-10-16 04:00",
+   "company": "Cemig",
+   "candidate_events": [
+    "ma"
+   ],
+   "stratum": "S3",
+   "role": "DEV_CONTROL",
+   "input_track": "degraded",
+   "input": {
+    "texto": "Âmbar Energia conclui a aquisição de 4 hidrelétricas da Cemig em MG da Agência iNFRA A Âmbar Energia, do grupo J&F, concluiu nesta quinta-feira (16) a compra de quatro usinas hidrelétricas da Cemig (Companhia Energética de Minas Gerais) localizadas no estado, em uma operação de R$52,4 milhões. As unidades - Marmelos (4,0 MW), Martins (7,7 MW), Sinceridade (1,4 MW) e Machado Mineiro (1,7 MW) - somam 14,8 […]",
+    "tier": "R1_STRUCTURED",
+    "origem_do_corpo": "s3_experimental",
+    "chars": 410,
+    "chars_alem_do_titulo": 343,
+    "sentence_like_count": 2,
+    "unique_meaningful_tokens": 31,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 67
+     },
+     {
+      "metodo": "s3_experimental",
+      "chars": 342
+     }
+    ],
+    "content_hash": "ec9ace953b250d7c0fdab528dfadc506772e3b9d18f7e9c7546e95280d5310ac",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "controle com verdade humana",
+   "s6_status": "",
+   "evaluation_only": {
+    "human_truth": {
+     "fonte": "occurrence_currentness_reviews.json",
+     "company": "Cemig",
+     "title": "Âmbar Energia conclui a aquisição de 4 hidrelétricas da Cemig em MG",
+     "event_id": "ma",
+     "stratum": "S3",
+     "human_scoreable": false,
+     "human_label": "FALSE_POSITIVE",
+     "failure_dimension": "attribution",
+     "s3_family": "S3-A_seller_role",
+     "reviewer_type": "human"
+    },
+    "deterministic": {
+     "scoreable": false,
+     "rule": "R_MA_PAPEL_VENDEDOR",
+     "reason": "Cemig é a VENDEDORA nesta transação; ma pertence ao comprador/emissor (\"ambar energia conclui a aquisicao de 4 hidreletricas da cemig\")"
+    }
+   }
+  },
+  {
+   "sample_id": "P1-003",
+   "article_id": "08c62c88951d437f",
+   "url": "https://agenciainfra.com/blog/aquisicao-da-emae-pela-sabesp-sobe-ao-tribunal-do-cade-apos-recurso/",
+   "title": "Aquisição da Emae pela Sabesp sobe ao Tribunal do Cade após recurso",
+   "source": "Agência iNFRA",
+   "domain": "agenciainfra.com",
+   "pub_iso": "2026-01-09 05:00",
+   "company": "Sabesp",
+   "candidate_events": [
+    "ma"
+   ],
+   "stratum": "S8",
+   "role": "DEV_CONTROL",
+   "input_track": "degraded",
+   "input": {
+    "texto": "Aquisição da Emae pela Sabesp sobe ao Tribunal do Cade após recurso Multiplataforma de informação jornalística referência na área de infraestrutura no Brasil! da Agência iNFRA O Tribunal do Cade (Conselho Administrativo de Defesa Econômica) analisará a aquisição da Emae (Empresa Metropolitana de Águas e Energia) pela Sabesp, após o presidente do órgão, Gustavo Augusto Freitas, determinar, nesta terça-feira (6), que um recurso apresentado pelo fundo Phoenix seja sorteado a um dos integrantes do Tribunal. O negócio havia […]",
+    "tier": "R1_SIDECAR",
+    "origem_do_corpo": "enrichment_shadow",
+    "chars": 528,
+    "chars_alem_do_titulo": 461,
+    "sentence_like_count": 2,
+    "unique_meaningful_tokens": 45,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 67
+     },
+     {
+      "metodo": "enrichment_shadow",
+      "chars": 460
+     }
+    ],
+    "content_hash": "1bc820149feb2e74c99a3496dea2dc769ee3e04e9a17c5790a4bc4ae8dd4084b",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "controle com verdade humana",
+   "s6_status": "",
+   "evaluation_only": {
+    "human_truth": {
+     "fonte": "occurrence_currentness_reviews.json",
+     "company": "Sabesp",
+     "title": "Aquisição da Emae pela Sabesp sobe ao Tribunal do Cade após recurso",
+     "event_id": "ma",
+     "stratum": "S8",
+     "human_scoreable": false,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "reviewer_type": "human"
+    },
+    "deterministic": {
+     "scoreable": true,
+     "rule": "R_MA_LEGITIMO",
+     "reason": ""
+    }
+   }
+  },
+  {
+   "sample_id": "P1-004",
+   "article_id": "a016c86064d29745",
+   "url": "https://agfeed.com.br/negocios/justica-do-mato-grosso-mantem-aquisicao-de-fazenda-bilionaria-por-banco-do-btg/",
+   "title": "Justiça do Mato Grosso mantém aquisição de fazenda bilionária por banco do BTG",
+   "source": "AgFeed",
+   "domain": "agfeed.com.br",
+   "pub_iso": "2026-05-21 04:00",
+   "company": "BTG Pactual",
+   "candidate_events": [
+    "ma"
+   ],
+   "stratum": "S2",
+   "role": "DEV_CONTROL",
+   "input_track": "degraded",
+   "input": {
+    "texto": "Justiça do Mato Grosso mantém aquisição de fazenda bilionária por banco do BTG &nbsp;&nbsp; AgFeed",
+    "tier": "R0_SUMMARY",
+    "origem_do_corpo": "history_summary",
+    "chars": 98,
+    "chars_alem_do_titulo": 20,
+    "sentence_like_count": 1,
+    "unique_meaningful_tokens": 10,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 78
+     },
+     {
+      "metodo": "history_summary",
+      "chars": 19
+     }
+    ],
+    "content_hash": "85f3f48428f20b09df9ea2c99aab3c7ae51fde2a0937b93690966f107fd53a54",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "controle com verdade humana",
+   "s6_status": "",
+   "evaluation_only": {
+    "human_truth": {
+     "fonte": "ma_transaction_reviews.json",
+     "company": "BTG Pactual",
+     "title": "Justiça do Mato Grosso mantém aquisição de fazenda bilionária por banco do BTG",
+     "event_id": "ma",
+     "stratum": "S2",
+     "human_scoreable": false,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "reviewer_type": "human"
+    },
+    "deterministic": {
+     "scoreable": false,
+     "rule": "R_MA_OBJETO_ESCOPO",
+     "reason": "objeto_nao_empresarial:imovel_rural"
+    }
+   }
+  },
+  {
+   "sample_id": "P1-005",
+   "article_id": "b1eea0e7acee8d92",
+   "url": "https://valor.globo.com/financas/noticia/2026/08/12/falha-que-atrasou-abertura-dos-mercados-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3.ghtml",
+   "title": "Falha que atrasou abertura dos mercados em julho é ‘chamado à ação’, diz novo CEO da B3",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_iso": "2026-08-12 10:44",
+   "company": "B3",
+   "candidate_events": [
+    "troca_ceo"
+   ],
+   "stratum": "S8",
+   "role": "DEV_CONTROL",
+   "input_track": "degraded",
+   "input": {
+    "texto": "Falha que atrasou abertura dos mercados em julho é \"chamado à ação\", diz novo CEO da B3 &nbsp;&nbsp; Valor Econômico \"Ficamos aquém do padrão que o mercado espera da B3 e, mais importante, do padrão que exigimos de nós mesmos\", afirma Christian Egan \"Ficamos aquém do padrão que o mercado espera da B3 e, mais importante, do padrão que exigimos de nós mesmos\", afirma Christian Egan \"Ficamos aquém do padrão que o mercado espera da B3 e, mais importante, do padrão que exigimos de nós mesmos\", afirma Christian Egan Carregando... Acesse sua conta ou cadastre-se grátis sair Home Edição digital Valor International Valor Data Voltar Valor Data Home\"> Home Aplicações\"> Aplicações Bolsas\"> Bolsas Voltar Bolsas Bolsas > Brasil\"> Brasil Bolsas > Internacionais\"> Internacionais Carteira Valor\"> Carteira Valor Commodities\"> Commodities Voltar Commodities Commodities > Agrícolas internacionais\"> Agrícolas internacionais Commodities > Agrícolas nacionais\"> Agrícolas nacionais Commodities > Energia\"> Energia Commodities > Minerais\"> Minerais Crédito\"> Crédito Criptomoedas\"> Criptomoedas Empresas 360\"> Empresas 360 Finanças públicas\"> Finanças públicas Fundos\"> Fundos Guia de fundos\"> Guia de fundos Índices macroeconômicos\"> Índices macroeconômicos Voltar Índices macroeconômicos Índices macroeconômicos > Inflação e atividade econômica\"> Inflação e atividade econômica Índices macroeconômicos > IPCA INPC\"> IPCA INPC Índices macroeconômicos > Atividade gráficos\"> Atividade gráficos Índices macroeconômicos > Inflação gráficos\"> Inflação gráficos Internacional\"> Internacional Juros externos\"> Juros externos Moedas\"> Moedas Taxas referenciais\"> Taxas referenciais Títulos privados\"> Títulos privados Tributos\"> Tr",
+    "tier": "R1_SIDECAR",
+    "origem_do_corpo": "enrichment_shadow",
+    "chars": 1716,
+    "chars_alem_do_titulo": 1629,
+    "sentence_like_count": 2,
+    "unique_meaningful_tokens": 69,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 87
+     },
+     {
+      "metodo": "enrichment_shadow",
+      "chars": 1628
+     }
+    ],
+    "content_hash": "836123576eb05918596221aa6e96a86dc0c67c1cdc751d3bd6e7aa11304e3544",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "controle com verdade humana",
+   "s6_status": "",
+   "evaluation_only": {
+    "human_truth": {
+     "fonte": "occurrence_currentness_reviews.json",
+     "company": "B3",
+     "title": "Falha que atrasou abertura dos mercados em julho é 'chamado à ação', diz novo CEO da B3",
+     "event_id": "troca_ceo",
+     "stratum": "S8",
+     "human_scoreable": false,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "reviewer_type": "human"
+    },
+    "deterministic": {
+     "scoreable": true,
+     "rule": "",
+     "reason": ""
+    }
+   }
+  },
+  {
+   "sample_id": "P1-X006",
+   "article_id": "aa15af185423d634",
+   "url": "https://www.cnnbrasil.com.br/agro/suzano-conclui-aquisicao-de-51-de-joint-venture-da-kimberly-clark/",
+   "title": "",
+   "company": "Suzano",
+   "candidate_events": [
+    "ma"
+   ],
+   "stratum": "S2",
+   "role": "DEV_CONTROL",
+   "input_track": "degraded",
+   "input": {
+    "texto": "",
+    "chars": 0,
+    "tier": "AUSENTE_DO_CORPUS",
+    "chars_alem_do_titulo": 0,
+    "sentence_like_count": 0,
+    "unique_meaningful_tokens": 0,
+    "provenance": [],
+    "content_hash": "",
+    "input_version": "r7b.pilot1.input.v1",
+    "origem_do_corpo": "nenhuma",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "controle humano sem artigo no history",
+   "evaluation_only": {
+    "human_truth": {
+     "fonte": "ma_transaction_reviews.json",
+     "company": "Suzano",
+     "title": "Suzano conclui aquisição de joint venture da Kimberly-Clark por US$ 1,3 bi",
+     "event_id": "ma",
+     "stratum": "S2",
+     "human_scoreable": true,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "reviewer_type": "human"
+    },
+    "deterministic": null
+   }
+  },
+  {
+   "sample_id": "P1-007",
+   "article_id": "2554c5a11fad64cc",
+   "url": "https://www.df.cl/mercados/banca-fintech/fusion-bicecorp-y-grupo-security-ya-tiene-nombre-la-marca-elegida-para-el",
+   "title": "Fusión Bicecorp y Grupo Security ya tiene nombre: la marca elegida para el grupo financiero es BICE",
+   "source": "Diario Financiero",
+   "domain": "df.cl",
+   "pub_iso": "2025-09-02 04:00",
+   "company": "Grupo Security",
+   "candidate_events": [
+    "ma"
+   ],
+   "stratum": "S3",
+   "role": "DEV_CONTROL",
+   "input_track": "degraded",
+   "input": {
+    "texto": "Fusión Bicecorp y Grupo Security ya tiene nombre: la marca elegida para el grupo financiero es BICE &nbsp;&nbsp; Diario Financiero",
+    "tier": "R0_SUMMARY",
+    "origem_do_corpo": "history_summary",
+    "chars": 130,
+    "chars_alem_do_titulo": 31,
+    "sentence_like_count": 1,
+    "unique_meaningful_tokens": 13,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 99
+     },
+     {
+      "metodo": "history_summary",
+      "chars": 30
+     }
+    ],
+    "content_hash": "ca0134a17165304e4a6f5f667b8b31ec5d4139aa74de915b39363de60946220b",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "controle com verdade humana",
+   "s6_status": "",
+   "evaluation_only": {
+    "human_truth": {
+     "fonte": "occurrence_currentness_reviews.json",
+     "company": "Grupo Security",
+     "title": "Fusión Bicecorp y Grupo Security ya tiene nombre: la marca elegida para el grupo financiero es BICE",
+     "event_id": "ma",
+     "stratum": "S3",
+     "human_scoreable": false,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "reviewer_type": "human"
+    },
+    "deterministic": {
+     "scoreable": false,
+     "rule": "R_MA_OBJETO_ESCOPO",
+     "reason": "sem_verbo_de_aquisicao_no_texto"
+    }
+   }
+  },
+  {
+   "sample_id": "P1-008",
+   "article_id": "9af1e45807f6726f",
+   "url": "https://www.lanacion.com.ar/economia/negocios/el-exceo-de-ypf-que-busca-recuperar-aconcagua-tras-la-quiebra-nid11092025/",
+   "title": "El exCEO de YPF que busca recuperar Aconcagua tras la quiebra",
+   "source": "La Nación",
+   "domain": "lanacion.com.ar",
+   "pub_iso": "2025-09-11 04:00",
+   "company": "YPF",
+   "candidate_events": [
+    "falencia"
+   ],
+   "stratum": "S8",
+   "role": "DEV_CONTROL",
+   "input_track": "rich",
+   "input": {
+    "texto": "El exCEO de YPF que busca recuperar Aconcagua tras la quiebra Últimas noticias de Argentina y el mundo - LA NACION \"Los fundamentos de la compañía son sólidos\", remarcó Pablo Iuliano, exCEO de YPF y hoy al frente de Aconcagua Energía. Tras meses de negociaciones, la petrolera completó la reestructuración de su deuda y encara una etapa, con foco en estabilizar su operación, volver a crecer en los campos maduros de Río Negro y Mendoza y preparar el salto hacia los no convencionales. La empresa -que emplea a más de 600 personas de manera directa- venía de una situación financiera crítica, con fuerte carga de deuda y trabajos de mantenimiento postergados. En junio, reveló que su pasivo consolidado ascendía a $447.604 millones -equivalentes a US$385,9 millones al tipo de cambio oficial-, cifra que representaba el 99% de su activo total y, multiplicado por casi 17, su patrimonio neto. Y tras iniciar un proceso de reestructuración financiera y comercial, anunció un acuerdo con Tango Energy, una sociedad cocontrolada por AR Energy Resources (vinculada a la multinacional Trafigura) y Vista Energy (la compañía fundada por Galuccio) y de la que participa Pablo Iuliano, exCEO de YPF. El convenio -que quedó efectivo a finales de agosto- contempló una inyección de US$36 millones por parte de Tango Energy y e Con una deuda reperfilada y producción en declive, Pablo Iuliano apuesta a la \"excelencia operativa\"; recuperación de pozos maduros y proyección hacia Vaca Muerta Con una deuda reperfilada y producción en declive, Pablo Iuliano apuesta a la \"excelencia operativa\"; recuperación de pozos maduros y proyección hacia Vaca Muerta - LA NACION Con una deuda reperfilada y producción en declive, Pablo Iuliano apuesta a la \"excelencia operativa\"; recuperación de pozos maduros y proyección hacia Vaca Muerta",
+    "tier": "R1_SIDECAR",
+    "origem_do_corpo": "enrichment_shadow",
+    "chars": 1816,
+    "chars_alem_do_titulo": 1755,
+    "sentence_like_count": 6,
+    "unique_meaningful_tokens": 108,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 61
+     },
+     {
+      "metodo": "enrichment_shadow",
+      "chars": 1754
+     }
+    ],
+    "content_hash": "e296cec5d5d880f4b6bea3ad7d9246ca5e60f4e73d9ad111fd953f6c7b9c770a",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "controle com verdade humana",
+   "s6_status": "",
+   "evaluation_only": {
+    "human_truth": {
+     "fonte": "occurrence_currentness_reviews.json",
+     "company": "YPF",
+     "title": "El exCEO de YPF que busca recuperar Aconcagua tras la quiebra",
+     "event_id": "falencia",
+     "stratum": "S8",
+     "human_scoreable": false,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "reviewer_type": "human"
+    },
+    "deterministic": {
+     "scoreable": false,
+     "rule": "R_EVENTO_CITADO_COMO_PASSADO",
+     "reason": "evento citado como anterior (\"tras la quiebra\"), não anunciado agora"
+    }
+   }
+  },
+  {
+   "sample_id": "P1-009",
+   "article_id": "e632c663ed9bbfb6",
+   "url": "https://www.moneytimes.com.br/prio-prio3-sp-global-eleva-nota-de-credito-da-petrolifera-apos-aquisicao-de-peregrino-lmrs/",
+   "title": "Prio (PRIO3): S&P Global eleva nota de crédito da petrolífera após aquisição de Peregrino",
+   "source": "Money Times",
+   "domain": "moneytimes.com.br",
+   "pub_iso": "2025-11-14 05:00",
+   "company": "PRIO",
+   "candidate_events": [
+    "ma"
+   ],
+   "stratum": "S3",
+   "role": "DEV_CONTROL",
+   "input_track": "degraded",
+   "input": {
+    "texto": "Prio (PRIO3): S&P Global eleva nota de crédito da petrolífera após aquisição de Peregrino Formada em jornalismo pela Universidade Nove de Julho. Ingressou no Money Times em 2022 e cobre empresas, com foco em varejo e setor aéreo. A S&P Global elevou o rating da Prio para 'BB' após recente aquisição. Entenda as implicações dessa decisão.",
+    "tier": "R1_STRUCTURED",
+    "origem_do_corpo": "s3_experimental",
+    "chars": 338,
+    "chars_alem_do_titulo": 249,
+    "sentence_like_count": 4,
+    "unique_meaningful_tokens": 34,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 89
+     },
+     {
+      "metodo": "s3_experimental",
+      "chars": 248
+     }
+    ],
+    "content_hash": "539910d1641bf8c895c899411593d2358cdd15fb934226d0f1baba0855b685f9",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "controle com verdade humana",
+   "s6_status": "",
+   "evaluation_only": {
+    "human_truth": {
+     "fonte": "occurrence_currentness_reviews.json",
+     "company": "PRIO",
+     "title": "Prio (PRIO3): S&P Global eleva nota de crédito da petrolífera após aquisição de Peregrino",
+     "event_id": "ma",
+     "stratum": "S3",
+     "human_scoreable": false,
+     "human_label": "FALSE_POSITIVE",
+     "failure_dimension": "centrality_currentness",
+     "s3_family": "S3-C_ma_como_contexto_de_outro_evento",
+     "reviewer_type": "human"
+    },
+    "deterministic": {
+     "scoreable": false,
+     "rule": "R_MA_OBJETO_ESCOPO",
+     "reason": "contexto_pos_aquisicao_nao_e_nova_ocorrencia"
+    }
+   }
+  },
+  {
+   "sample_id": "P1-010",
+   "article_id": "e3d957a394887bbb",
+   "url": "https://www.tribunadoagreste.com.br/geral/2026/08/02/951433-presidente-da-tim-brasil-ve-potencial-estrategico-apos-nova-aquisicao-na-italia",
+   "title": "Presidente da TIM Brasil vê potencial estratégico após nova aquisição na Itália",
+   "source": "Tribuna do Agreste",
+   "domain": "tribunadoagreste.com.br",
+   "pub_iso": "2026-08-02 08:30",
+   "company": "TIM Brasil",
+   "candidate_events": [
+    "ma"
+   ],
+   "stratum": "S3",
+   "role": "DEV_CONTROL",
+   "input_track": "degraded",
+   "input": {
+    "texto": "Presidente da TIM Brasil vê potencial estratégico após nova aquisição na Itália Alberto Griselli reafirma que a TIM Brasil não está à venda e destaca valorização da operação no país. Notícias de Alagoas, do Brasil e do mundo, sobre política, economia, emprego, educação, saúde, meio ambiente, celebridades, ciência. Saiba tudo em tempo real aqui Alberto Griselli reafirma que a TIM Brasil não está à venda e destaca valorização da operação no país.",
+    "tier": "R1_STRUCTURED",
+    "origem_do_corpo": "s3_experimental",
+    "chars": 448,
+    "chars_alem_do_titulo": 369,
+    "sentence_like_count": 3,
+    "unique_meaningful_tokens": 35,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 79
+     },
+     {
+      "metodo": "s3_experimental",
+      "chars": 368
+     }
+    ],
+    "content_hash": "1fdb5874638dc15172d16869a6b6aa54a29404d6f51d5403e61de90719a81a0b",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "controle com verdade humana",
+   "s6_status": "",
+   "evaluation_only": {
+    "human_truth": {
+     "fonte": "occurrence_currentness_reviews.json",
+     "company": "TIM Brasil",
+     "title": "Presidente da TIM Brasil vê potencial estratégico após nova aquisição na Itália",
+     "event_id": "ma",
+     "stratum": "S3",
+     "human_scoreable": false,
+     "human_label": "FALSE_POSITIVE",
+     "failure_dimension": "occurrence_currentness",
+     "s3_family": "S3-B_follow_up_de_transacao_verdadeira",
+     "reviewer_type": "human"
+    },
+    "deterministic": {
+     "scoreable": false,
+     "rule": "R_PAPEL_NAO_SUJEITO",
+     "reason": "TIM Brasil atua como comentarista neste texto, não como sujeito do evento"
+    }
+   }
+  },
+  {
+   "sample_id": "P1-011",
+   "article_id": "7ec0a20d005dff0e",
+   "url": "https://www.record.com.mx/historia/fiscalia-cdmx-abre-investigacion-por-muerte-en-el-estadio-banorte-previo-al-mexico-vs-portugal-2026032906081088330",
+   "title": "Fiscalía CDMX abre investigación por muerte en el Estadio Banorte previo al México vs Portugal",
+   "source": "Récord",
+   "domain": "record.com.mx",
+   "pub_iso": "2026-03-29 04:00",
+   "company": "Mercado (geral)",
+   "candidate_events": [],
+   "stratum": "S6",
+   "role": "HOLDOUT",
+   "input_track": "rich",
+   "input": {
+    "texto": "Fiscalía CDMX abre investigación por muerte en el Estadio Banorte previo al México vs Portugal Un desafortunado deceso tuvo lugar en la reinauguración del 'Coloso de Santa Úrsula' Un desafortunado deceso tuvo lugar en la reinauguración del 'Coloso de Santa Úrsula' Un desafortunado deceso tuvo lugar en la reinauguración del 'Coloso de Santa Úrsula' Un desafortunado deceso tuvo lugar en la reinauguración del 'Coloso de Santa Úrsula' Futbol Nacional Selección Mexicana Futbol Internacional Opinión Video Otros Deportes Fans United PARTIDOS PARTIDOS Fans United Futbol Nacional Selección Mexicana Futbol Internacional Opinión Video Otros Deportes Fans United PARTIDOS Caliente.mx - Apuestas deportivas. Recibe de regalo $1,000. Haz clic aquí. ¡Apuesta ahora! Futbol Fiscalía CDMX abre investigación por muerte en el Estadio Banorte previo al México vs Portugal Fiscalía CDMX abre investigación por muerte en el Estadio Banorte previo al México vs Portugal Estadio Banorte momentos previos a su reapertura | Imago7 Añadir como fuente preferida en Google Añadir como fuente preferida en Google Un desafortunado deceso tuvo lugar en la reinauguración del 'Coloso de Santa Úrsula' La Fiscalía General de Justicia de la Ciudad de México abrió una investigación tras el fallecimiento de una persona ocurrido el pasado 28 de marzo dentro del Estadio Banorte , antes del partido amistoso entre la Selección Mexicana y Portugal . El caso ha generado atención pública luego de que se confirmara que los hechos ocurrieron en la zona de palcos del inmueble. Aunque la noticia del fallecimiento ya había trascendido previamente, ahora el enfoque de",
+    "tier": "R1_SIDECAR",
+    "origem_do_corpo": "enrichment_shadow",
+    "chars": 1635,
+    "chars_alem_do_titulo": 1541,
+    "sentence_like_count": 4,
+    "unique_meaningful_tokens": 80,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 94
+     },
+     {
+      "metodo": "enrichment_shadow",
+      "chars": 1540
+     }
+    ],
+    "content_hash": "658e694c0f48c56ad03e54f4ba07ebce3fc56b2d7bdb35deef216df0406b5b9a",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "holdout S6: maior input disponível, 1 por domínio/empresa",
+   "s6_status": "EVENTLESS_CONTROL_CANDIDATE",
+   "evaluation_only": {
+    "human_truth": null,
+    "deterministic": null
+   }
+  },
+  {
+   "sample_id": "P1-012",
+   "article_id": "22077175db0d768b",
+   "url": "https://www.latercera.com/nacional/noticia/cenco-abre-investigacion-para-determinar-las-causas-del-incendio-en-el-mall-costanera-center/",
+   "title": "Cencosud abre investigación para determinar las causas del incendio en el mall Costanera Center",
+   "source": "La Tercera",
+   "domain": "latercera.com",
+   "pub_iso": "2025-10-03 04:00",
+   "company": "Cencosud",
+   "candidate_events": [],
+   "stratum": "S6",
+   "role": "HOLDOUT",
+   "input_track": "rich",
+   "input": {
+    "texto": "Cencosud abre investigación para determinar las causas del incendio en el mall Costanera Center Noticias de última hora de Chile, América Latina y el mundo. Contenidos exclusivos de política, internacional, economía, opinión, cultura, espectáculos y tendencias. Novedades de la actualidad local y contenidos interactivos de La Tercera. A las 5.25 de este viernes se activaron las alarmas de incendio del mall Costanera Center, luego que comenzara a salir humo del local de zapatillas de la marca Skechers, ubicado en el tercer nivel del centro comercial. La empresa Cenco Malls informó que \"de inmediato se activaron los sistemas automáticos de extinción de incendios y protocolos de emergencia, sumándose posteriormente Bomberos de Santiago, tras lo cual se logró controlar la situación\". Asimismo, señalaron que \"en una primera evaluación, no se registran daños en los locales contiguos. Sin embargo, de manera preventiva se procedió a cortar el suministro eléctrico en la zona afectada y a evacuar el centro comercial\". La compañía lamentó el incidente e informó que \"se ha iniciado una investigación para determinar las causas del siniestro\". Pasadas las 8.00 de la mañana el centro comercial permanecía evacuado, aunque desde la empresa precisaron que el mall abrirá sus puertas \"en cuanto las condiciones de seguridad permitan su reapertura\". La empresa informó que no se registran daños en los locales contiguos a la tienda afectada. La empresa informó que no se registran daños en los locales contiguos a la tienda afectada. La empresa informó que no se registran daños en los locales contiguos a la tienda afectada.",
+    "tier": "R1_SIDECAR",
+    "origem_do_corpo": "enrichment_shadow",
+    "chars": 1624,
+    "chars_alem_do_titulo": 1529,
+    "sentence_like_count": 12,
+    "unique_meaningful_tokens": 105,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 95
+     },
+     {
+      "metodo": "enrichment_shadow",
+      "chars": 1528
+     }
+    ],
+    "content_hash": "766db8e7e5b5849d602253712765b38bc34d750757037698cb92cc2b299aa856",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "holdout S6: maior input disponível, 1 por domínio/empresa",
+   "s6_status": "EVENTLESS_CONTROL_CANDIDATE",
+   "evaluation_only": {
+    "human_truth": null,
+    "deterministic": null
+   }
+  },
+  {
+   "sample_id": "P1-013",
+   "article_id": "af9772c8f9b38ffb",
+   "url": "https://www.rionegro.com.ar/energia/sociedad/sin-reestructuracion-aconcagua-ira-a-la-quiebra-el-duro-pronostico-del-exceo-de-ypf-4247338/",
+   "title": "“Sin reestructuración, Aconcagua irá a la quiebra”: el duro pronóstico del exCEO de YPF",
+   "source": "Diario Río Negro",
+   "domain": "rionegro.com.ar",
+   "pub_iso": "2025-08-08 04:00",
+   "company": "YPF",
+   "candidate_events": [],
+   "stratum": "S6",
+   "role": "HOLDOUT",
+   "input_track": "rich",
+   "input": {
+    "texto": "\"Sin reestructuración, Aconcagua irá a la quiebra\": el duro pronóstico del exCEO de YPF Últimas noticias de Neuquén, Río Negro y la Patagonia Argentina. Información confiable, videos y fotos. Léelo antes en tu diario Río Negro La petrolera Aconcagua Energía está en sus días decisivos. Pablo Iuliano, el exCEO de YPF y fundador de Tango Energy, fue tajante: \"Si no se alcanza el acuerdo con los acreedores, la compañía irá a la quiebra\". La advertencia fue realizada durante el evento \"Credit Update 2 Aconcagua Energía\", donde se expusieron los números rojos de la operadora y el delicado presente que atraviesa. La empresa es la sexta productora de hidrocarburos del país y actualmente carga con una deuda exigible de má Pablo Iuliano, el fundador de Tango Energy, advirtió que el ingreso de capital depende de un acuerdo con el 90% de los acreedores. El plazo de adhesión a la reestructuración finaliza el próximo jueves 14. Pablo Iuliano, el fundador de Tango Energy, advirtió que el ingreso de capital depende de un acuerdo con el 90% de los acreedores. El plazo de adhesión a la reestructuración finaliza el próximo jueves 14. Pablo Iuliano, el fundador de Tango Energy, advirtió que el ingreso de capital depende de un acuerdo con el 90% de los acreedores. El plazo de adhesión a la reestructuración finaliza el próximo jueves 14.",
+    "tier": "R1_SIDECAR",
+    "origem_do_corpo": "enrichment_shadow",
+    "chars": 1337,
+    "chars_alem_do_titulo": 1250,
+    "sentence_like_count": 11,
+    "unique_meaningful_tokens": 66,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 87
+     },
+     {
+      "metodo": "enrichment_shadow",
+      "chars": 1249
+     }
+    ],
+    "content_hash": "be08e7ed46c7055a11d6e54e6ca9ee07f289e94cb427950c090be51a6ee384e4",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "holdout S6: maior input disponível, 1 por domínio/empresa",
+   "s6_status": "EVENTLESS_CONTROL_CANDIDATE",
+   "evaluation_only": {
+    "human_truth": null,
+    "deterministic": null
+   }
+  },
+  {
+   "sample_id": "P1-014",
+   "article_id": "04fea4eb5cadb5fb",
+   "url": "https://www.whiteandwilliams.com/restructuring-perspectives/bankruptcy-court-orders-texas-to-strike-allegations-in-state-data-privacy-suit-against-general-motors",
+   "title": "Bankruptcy Court Orders Texas to Strike Allegations In State Data Privacy Suit Against General Motors",
+   "source": "White and Williams LLP",
+   "domain": "whiteandwilliams.com",
+   "pub_iso": "2025-10-22 04:00",
+   "company": "General Motors",
+   "candidate_events": [],
+   "stratum": "S6",
+   "role": "HOLDOUT",
+   "input_track": "rich",
+   "input": {
+    "texto": "Bankruptcy Court Orders Texas to Strike Allegations In State Data Privacy Suit Against General Motors Menu About Contributors Blogs & Podcasts www.whiteandwilliams.com Search Restructuring Perspectives 6 minute read October 22, 2025 Bankruptcy Court Orders Texas to Strike Allegations In State Data Privacy Suit Against General Motors By: John G. Loughnane Categories: Bankruptcy Sales , Chapter 11 General Motors LLC and OnStar, LLC (collectively, \"New GM\") recently sought and obtained a notable order of enforcement (available here ) from the United States Bankruptcy Court for the Southern District of New York. Specifically, New GM prevailed in its efforts to have the bankruptcy court specifically enforce certain provisions of the 2009 sale order entered by the court (\"Sale Order\") authorizing the sale of substantially all assets from Chapter 11 debtor General Motors Corp. (\"Old GM\") to New GM. As typical in any bankruptcy sale, New GM acquired the assets under the Sale Order free and clear of all liens, claims, encumbrances and other interests of any kind or nature, except certain assumed liabilities. Further, as is typical, the Sale Order specifically provided that New GM as buyer was not liable for any claims against Old GM including any successor liability claims. New GM sought th",
+    "tier": "R1_SIDECAR",
+    "origem_do_corpo": "enrichment_shadow",
+    "chars": 1302,
+    "chars_alem_do_titulo": 1201,
+    "sentence_like_count": 5,
+    "unique_meaningful_tokens": 85,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 101
+     },
+     {
+      "metodo": "enrichment_shadow",
+      "chars": 1200
+     }
+    ],
+    "content_hash": "62eed7de5a22a8630f70eb06debafa2e5e712bcfe51e072c3c4b98e4a1a1158f",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "holdout S6: maior input disponível, 1 por domínio/empresa",
+   "s6_status": "EVENTLESS_CONTROL_CANDIDATE",
+   "evaluation_only": {
+    "human_truth": null,
+    "deterministic": null
+   }
+  },
+  {
+   "sample_id": "P1-015",
+   "article_id": "1107d4815f483463",
+   "url": "https://valor.globo.com/empresas/noticia/2026/02/12/nao-ha-conversas-sobre-fusao-e-aquisicao-neste-momento-diz-diretor-geral-da-klabin.ghtml",
+   "title": "Não há conversas sobre fusão e aquisição neste momento, diz diretor-geral da Klabin",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_iso": "2026-02-12 05:00",
+   "company": "Klabin",
+   "candidate_events": [],
+   "stratum": "S6",
+   "role": "HOLDOUT",
+   "input_track": "degraded",
+   "input": {
+    "texto": "Não há conversas sobre fusão e aquisição neste momento, diz diretor-geral da Klabin Carregando... Acesse sua conta ou cadastre-se grátis sair Home Edição digital Valor International Valor Data Voltar Valor Data Home\"> Home Aplicações\"> Aplicações Bolsas\"> Bolsas Voltar Bolsas Bolsas > Brasil\"> Brasil Bolsas > Internacionais\"> Internacionais Carteira Valor\"> Carteira Valor Commodities\"> Commodities Voltar Commodities Commodities > Agrícolas internacionais\"> Agrícolas internacionais Commodities > Agrícolas nacionais\"> Agrícolas nacionais Commodities > Energia\"> Energia Commodities > Minerais\"> Minerais Crédito\"> Crédito Criptomoedas\"> Criptomoedas Empresas 360\"> Empresas 360 Finanças públicas\"> Finanças públicas Fundos\"> Fundos Guia de fundos\"> Guia de fundos Índices macroeconômicos\"> Índices macroeconômicos Voltar Índices macroeconômicos Índices macroeconômicos > Inflação e atividade econômica\"> Inflação e atividade econômica Índices macroeconômicos > IPCA INPC\"> IPCA INPC Índices macroeconômicos > Atividade gráficos\"> Atividade gráficos Índices macroeconômicos > Inflação gráficos\"> Inflação gráficos Internacional\"> Internacional Juros externos\"> Juros externos Moedas\"> Moedas Taxas referenciais\"> Taxas referenciais Títulos privados\"> Títulos privados Tributos\"> Tr",
+    "tier": "R2_BODY",
+    "origem_do_corpo": "s3_experimental",
+    "chars": 1284,
+    "chars_alem_do_titulo": 1201,
+    "sentence_like_count": 2,
+    "unique_meaningful_tokens": 56,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 83
+     },
+     {
+      "metodo": "s3_experimental",
+      "chars": 1200
+     }
+    ],
+    "content_hash": "e2eb747d77c12148d38ef9ce6db12218354cebdfbb94f78b8b9a66afc97f3d83",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "holdout S6: maior input disponível, 1 por domínio/empresa",
+   "s6_status": "EVENTLESS_CONTROL_CANDIDATE",
+   "evaluation_only": {
+    "human_truth": null,
+    "deterministic": null
+   }
+  },
+  {
+   "sample_id": "P1-016",
+   "article_id": "c2f3c9031a58d275",
+   "url": "https://www.mcknightsseniorliving.com/news/omnicare-cvs-health-reach-440-million-settlement-in-senior-living-prescription-fraud-case/",
+   "title": "Omnicare, CVS Health reach $440 million settlement in senior living prescription fraud case",
+   "source": "McKnight's Senior Living",
+   "domain": "mcknightsseniorliving.com",
+   "pub_iso": "2026-07-06 04:00",
+   "company": "CVS Health",
+   "candidate_events": [],
+   "stratum": "S6",
+   "role": "HOLDOUT",
+   "input_track": "degraded",
+   "input": {
+    "texto": "Omnicare, CVS Health reach $440 million settlement in senior living prescription fraud case We help you make a difference Long-term care pharmacy Omnicare and its parent company, CVS Health, have agreed to pay at least $440 million to the federal government to satisfy an almost $950 million judgment in a case in which they were found liable for fraudulently dispensing drugs without valid prescriptions to residents of assisted living communities and other non-skilled-nursing residential long-term care facilities. Long-term care pharmacy Omnicare and its parent company, CVS Health, have agreed to pay at least $440 million to the federal government to satisfy an almost $950 million judgment in a case in which they were found liable for fraudulently dispensing drugs without valid prescriptions to residents of assisted living communities and other non-skilled-nursing residential long-term care facilities.",
+    "tier": "R1_SIDECAR",
+    "origem_do_corpo": "enrichment_shadow",
+    "chars": 913,
+    "chars_alem_do_titulo": 822,
+    "sentence_like_count": 2,
+    "unique_meaningful_tokens": 46,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 91
+     },
+     {
+      "metodo": "enrichment_shadow",
+      "chars": 821
+     }
+    ],
+    "content_hash": "a5e06e0831de897cc1d59df5694194a9c9c28e6222fc1b874a77fe4b3fcc2b62",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "holdout S6: maior input disponível, 1 por domínio/empresa",
+   "s6_status": "EVENTLESS_CONTROL_CANDIDATE",
+   "evaluation_only": {
+    "human_truth": null,
+    "deterministic": null
+   }
+  },
+  {
+   "sample_id": "P1-017",
+   "article_id": "1dc273e68892ef4f",
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/mbrf-mbrf3-fusao-marfrig-mrfg3-brf-brfs3-estreia/",
+   "title": "MBRF (MBRF3), fusão entre Marfrig e BRF, estreia na B3 nesta terça (23); o que esperar da ação?",
+   "source": "Estadão",
+   "domain": "estadao.com.br",
+   "pub_iso": "2025-09-22 04:00",
+   "company": "BRF",
+   "candidate_events": [
+    "ma"
+   ],
+   "stratum": "S1",
+   "role": "HOLDOUT",
+   "input_track": "rich",
+   "input": {
+    "texto": "MBRF (MBRF3), fusão entre Marfrig e BRF, estreia na B3 nesta terça (23); o que esperar da ação? Empresa nasce com um portfólio de produtos variados para disputar com JBS (JBSS32) e Tyson (TSN) Empresa nasce com um portfólio de produtos variados para disputar com JBS (JBSS32) e Tyson (TSN) Empresa nasce com um portfólio de produtos variados para disputar com JBS (JBSS32) e Tyson (TSN) Empresa nasce com um portfólio de produtos variados para disputar com JBS (JBSS32) e Tyson (TSN) E-Investidor Pulsa Paladar Jornal do Carro Descubra Assine Entrar Hoje E-Investidor Pulsa Paladar JC Descubra Assine Notícia Estadão E-Investidor Cenários e Mercado MBRF (MBRF3), fusão entre Marfrig e BRF, estreia na B3 nesta terça (23); o que esperar da ação? Empresa nasce com um portfólio de produtos variados para disputar com JBS (JBSS32) e Tyson (TSN) PUBLICIDADE MBRF (MBRF3), fusão entre Marfrig (MRFG3) e BRF (BRFS3), estreia na B3 na terça-feira (23). Foto: Adobe Stock O mercado de proteínas ganhará uma nova gigante. Nesta segunda-feira (22), os investidores se despedem das ações da BRF (BRFS3) , que deixam de ser negociadas na B3. A partir de terça-feira (23), a Marfrig (MRFG3) passa a negociar sob o novo ticker MBRF3, da MBRF , companhia resultante da fusão entre as duas líderes do setor de alimentos. Leia mais BRF aprova cancelamento de ações e pede mudança de registro na CVM para concretizar fusão com Marfrig na Bolsa Ações de Marfrig (MRFG3) e BRF (BRFS3) disparam na Bolsa a poucos dias da conclusão da fusão Cade aprova fusão entre Marfrig (MRFG3) e BRF (BRFS3) e autoriza criação da MBRF O processo foi conturbado, enfrentando a resistência de investidores desde o anúncio",
+    "tier": "R1_SIDECAR",
+    "origem_do_corpo": "enrichment_shadow",
+    "chars": 1684,
+    "chars_alem_do_titulo": 1589,
+    "sentence_like_count": 7,
+    "unique_meaningful_tokens": 82,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 95
+     },
+     {
+      "metodo": "enrichment_shadow",
+      "chars": 1588
+     }
+    ],
+    "content_hash": "22e607ac5d95b8e1fd26510021379674648023974dfb3a0d05c1deace1f4da18",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "holdout S1: maior input disponível, 1 por domínio/empresa",
+   "s6_status": "",
+   "evaluation_only": {
+    "human_truth": null,
+    "deterministic": {
+     "scoreable": true,
+     "rule": "R_MA_LEGITIMO",
+     "reason": ""
+    }
+   }
+  },
+  {
+   "sample_id": "P1-018",
+   "article_id": "5b60c7e2ff382d30",
+   "url": "https://www.law360.com/articles/2391836/unitedhealth-fights-investor-suit-over-doj-s-merger-probe",
+   "title": "UnitedHealth Fights Investor Suit Over DOJ's Merger Probe",
+   "source": "Law360",
+   "domain": "law360.com",
+   "pub_iso": "2025-09-24 04:00",
+   "company": "UnitedHealth Group",
+   "candidate_events": [
+    "ma"
+   ],
+   "stratum": "S1",
+   "role": "HOLDOUT",
+   "input_track": "rich",
+   "input": {
+    "texto": "UnitedHealth Fights Investor Suit Over DOJ's Merger Probe UnitedHealth and its executives have asked a Minnesota federal judge to toss a proposed securities class action accusing it of, among many things, not disclosing that the U.S. Department of Justice had reopened an antitrust investigation into the health insurer, saying the complaint consists of unsupported \"scattershot allegations.\" UnitedHealth and its executives have asked a Minnesota federal judge to toss a proposed securities class action accusing it of, among many things, not disclosing that the U.S. Department of Justice had reopened an antitrust investigation into the health insurer, saying the complaint consists of unsupported &quot;scattershot allegations.&quot; UnitedHealth and its executives have asked a Minnesota federal judge to toss a proposed securities class action accusing it of, among many things, not disclosing that the U.S. Department of Justice had reopened an antitrust investigation into the health insurer, saying the complaint consists of unsupported \"scattershot allegations.\"",
+    "tier": "R1_SIDECAR",
+    "origem_do_corpo": "enrichment_shadow",
+    "chars": 1072,
+    "chars_alem_do_titulo": 1015,
+    "sentence_like_count": 4,
+    "unique_meaningful_tokens": 39,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 57
+     },
+     {
+      "metodo": "enrichment_shadow",
+      "chars": 1014
+     }
+    ],
+    "content_hash": "1ccb0cc302c18d161546a403284c92457d1d11a249397c1ea0577f4aa5185566",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "holdout S1: maior input disponível, 1 por domínio/empresa",
+   "s6_status": "",
+   "evaluation_only": {
+    "human_truth": null,
+    "deterministic": {
+     "scoreable": true,
+     "rule": "R_MA_LEGITIMO",
+     "reason": ""
+    }
+   }
+  },
+  {
+   "sample_id": "P1-019",
+   "article_id": "191401f7b839bd4b",
+   "url": "https://www.marketwatch.com/story/astrazeneca-tie-up-talks-with-bristol-myers-squibb-are-moving-stocks-analysts-are-puzzled-7ae60fef?mod=mw_rss_topstories",
+   "title": "Uma fusão entre AstraZeneca e Bristol Myers Squibb poderia criar uma gigante dos medicamentos contra o câncer, mas analistas a classificam como 'estranha'",
+   "source": "MarketWatch · Top Stories",
+   "domain": "marketwatch.com",
+   "pub_iso": "2026-08-03 09:13",
+   "company": "Mercado (geral)",
+   "candidate_events": [
+    "ma"
+   ],
+   "stratum": "S1",
+   "role": "HOLDOUT",
+   "input_track": "degraded",
+   "input": {
+    "texto": "Uma fusão entre AstraZeneca e Bristol Myers Squibb poderia criar uma gigante dos medicamentos contra o câncer, mas analistas a classificam como 'estranha' As ações da AstraZeneca estavam em queda, enquanto as ações da Bristol-Myers Squibb subiam na segunda-feira devido a relatos de conversas sobre o negócio. Mas a grande questão é por que essas duas gigantes farmacêuticas gostariam de se unir para início de conversa.",
+    "tier": "R0_SUMMARY",
+    "origem_do_corpo": "history_summary",
+    "chars": 420,
+    "chars_alem_do_titulo": 266,
+    "sentence_like_count": 2,
+    "unique_meaningful_tokens": 39,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 154
+     },
+     {
+      "metodo": "history_summary",
+      "chars": 265
+     }
+    ],
+    "content_hash": "6fc6c9351bd9bed4ad02ce1060953f771d49130b098e7c14375c42309178e4ed",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "holdout S1: maior input disponível, 1 por domínio/empresa",
+   "s6_status": "",
+   "evaluation_only": {
+    "human_truth": null,
+    "deterministic": {
+     "scoreable": true,
+     "rule": "R_MA_LEGITIMO",
+     "reason": ""
+    }
+   }
+  },
+  {
+   "sample_id": "P1-020",
+   "article_id": "19160a6f56fd5246",
+   "url": "https://www.marketwatch.com/story/as-alphabet-burns-through-cash-on-ai-its-turning-back-to-the-bond-market-04e85f31?mod=mw_rss_topstories",
+   "title": "Enquanto a Alphabet queima caixa com IA, ela volta a recorrer ao mercado de títulos",
+   "source": "MarketWatch · Top Stories",
+   "domain": "marketwatch.com",
+   "pub_iso": "2026-08-06 20:14",
+   "company": "Mercado (geral)",
+   "candidate_events": [
+    "emissao_divida"
+   ],
+   "stratum": "S4",
+   "role": "HOLDOUT",
+   "input_track": "degraded",
+   "input": {
+    "texto": "Enquanto a Alphabet queima caixa com IA, ela volta a recorrer ao mercado de títulos A controladora do Google está utilizando seu balanço patrimonial com uma nova emissão de dívida, enquanto os pesados investimentos em IA corroem seu fluxo de caixa livre.",
+    "tier": "R0_SUMMARY",
+    "origem_do_corpo": "history_summary",
+    "chars": 254,
+    "chars_alem_do_titulo": 171,
+    "sentence_like_count": 1,
+    "unique_meaningful_tokens": 22,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 83
+     },
+     {
+      "metodo": "history_summary",
+      "chars": 170
+     }
+    ],
+    "content_hash": "96e0116bcfc9b4fa57c6b1b0601f13c39fd7b518f74dbf62b4f86d2103c8d3cf",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "holdout S4: maior input disponível, 1 por domínio/empresa",
+   "s6_status": "",
+   "evaluation_only": {
+    "human_truth": null,
+    "deterministic": {
+     "scoreable": true,
+     "rule": "",
+     "reason": ""
+    }
+   }
+  },
+  {
+   "sample_id": "P1-021",
+   "article_id": "875f72493508e2fd",
+   "url": "https://br.investing.com/news/stock-market-news/sp-rebaixa-rating-da-cosan-para-b-apos-enfraquecimento-da-diversificacao-93CH-1996403",
+   "title": "S&P rebaixa rating da Cosan para B+ após enfraquecimento da diversificação",
+   "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "domain": "br.investing.com",
+   "pub_iso": "2026-07-08 04:00",
+   "company": "Cosan",
+   "candidate_events": [
+    "rebaixamento_rating"
+   ],
+   "stratum": "S4",
+   "role": "HOLDOUT",
+   "input_track": "degraded",
+   "input": {
+    "texto": "S&P rebaixa rating da Cosan para B+ após enfraquecimento da diversificação &nbsp;&nbsp; Investing.com Brasil - Finanças, Câmbio e Investimentos",
+    "tier": "R0_SUMMARY",
+    "origem_do_corpo": "history_summary",
+    "chars": 143,
+    "chars_alem_do_titulo": 69,
+    "sentence_like_count": 1,
+    "unique_meaningful_tokens": 13,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 74
+     },
+     {
+      "metodo": "history_summary",
+      "chars": 68
+     }
+    ],
+    "content_hash": "f37f5e3b78bd252f9b6bea799a673b63e4729cabd76d4678b2c56aa21fbcef47",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "holdout S4: maior input disponível, 1 por domínio/empresa",
+   "s6_status": "",
+   "evaluation_only": {
+    "human_truth": null,
+    "deterministic": {
+     "scoreable": true,
+     "rule": "",
+     "reason": ""
+    }
+   }
+  },
+  {
+   "sample_id": "P1-022",
+   "article_id": "8f658604b51530d8",
+   "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1474630&numSequencia=999336&numVersao=1",
+   "title": "[Fato Relevante] Axia Energia: Fato Relevante",
+   "source": "CVM · Fato Relevante",
+   "domain": "cvm.gov.br",
+   "pub_iso": "2026-02-06",
+   "company": "Axia Energia",
+   "candidate_events": [
+    "emissao_divida"
+   ],
+   "stratum": "S4",
+   "role": "HOLDOUT",
+   "input_track": "degraded",
+   "input": {
+    "texto": "[Fato Relevante] Axia Energia: Fato Relevante Fato Relevante - Emissão de Debêntures - AXIA Energia",
+    "tier": "R0_SUMMARY",
+    "origem_do_corpo": "history_summary",
+    "chars": 99,
+    "chars_alem_do_titulo": 54,
+    "sentence_like_count": 1,
+    "unique_meaningful_tokens": 6,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 45
+     },
+     {
+      "metodo": "history_summary",
+      "chars": 53
+     }
+    ],
+    "content_hash": "3ef46ade177f8c12643a74096a0ea545671e121a4e376dcc04910c6215a71b7e",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "holdout S4: maior input disponível, 1 por domínio/empresa",
+   "s6_status": "",
+   "evaluation_only": {
+    "human_truth": null,
+    "deterministic": {
+     "scoreable": true,
+     "rule": "",
+     "reason": ""
+    }
+   }
+  },
+  {
+   "sample_id": "P1-023",
+   "article_id": "49e4b15e448d2b3b",
+   "url": "https://www.bloomberglinea.com.br/negocios/dasa-retoma-foco-em-diagnosticos-e-avanca-em-agenda-de-crescimento-diz-novo-ceo/",
+   "title": "Dasa retoma foco em diagnósticos e avança em agenda de crescimento, diz novo CEO",
+   "source": "Bloomberg Línea Brasil",
+   "domain": "bloomberglinea.com.br",
+   "pub_iso": "2025-08-14 04:00",
+   "company": "Dasa",
+   "candidate_events": [
+    "troca_ceo"
+   ],
+   "stratum": "S4",
+   "role": "HOLDOUT",
+   "input_track": "degraded",
+   "input": {
+    "texto": "Dasa retoma foco em diagnósticos e avança em agenda de crescimento, diz novo CEO &nbsp;&nbsp; Bloomberg Línea Brasil",
+    "tier": "R0_SUMMARY",
+    "origem_do_corpo": "history_summary",
+    "chars": 116,
+    "chars_alem_do_titulo": 36,
+    "sentence_like_count": 1,
+    "unique_meaningful_tokens": 12,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 80
+     },
+     {
+      "metodo": "history_summary",
+      "chars": 35
+     }
+    ],
+    "content_hash": "d811649e7ed43cd00078ff176abc271c2f508903664a4d10a335df457d64cfce",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "holdout S4: maior input disponível, 1 por domínio/empresa",
+   "s6_status": "",
+   "evaluation_only": {
+    "human_truth": null,
+    "deterministic": {
+     "scoreable": true,
+     "rule": "",
+     "reason": ""
+    }
+   }
+  },
+  {
+   "sample_id": "P1-024",
+   "article_id": "f9250a2285305bbd",
+   "url": "https://www.brasildefato.com.br/2026/06/25/fraude-nas-americanas-executivos-de-itau-bradesco-e-santander-sao-alvo-de-buscas/",
+   "title": "Fraude nas Americanas: executivos de Itaú, Bradesco e Santander são alvo de buscas",
+   "source": "Brasil de Fato",
+   "domain": "brasildefato.com.br",
+   "pub_iso": "2026-06-25 04:00",
+   "company": "Bradesco",
+   "candidate_events": [
+    "investigacao_regulatoria"
+   ],
+   "stratum": "S5",
+   "role": "HOLDOUT",
+   "input_track": "degraded",
+   "input": {
+    "texto": "Fraude nas Americanas: executivos de Itaú, Bradesco e Santander são alvo de buscas &nbsp;&nbsp; Brasil de Fato",
+    "tier": "R0_SUMMARY",
+    "origem_do_corpo": "history_summary",
+    "chars": 110,
+    "chars_alem_do_titulo": 28,
+    "sentence_like_count": 1,
+    "unique_meaningful_tokens": 11,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 82
+     },
+     {
+      "metodo": "history_summary",
+      "chars": 27
+     }
+    ],
+    "content_hash": "235cbfd6a8aee58c0ca797f3c497fa2afb684142d9543c2e8055255e6f9f3b1f",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "holdout S5: maior input disponível, 1 por domínio/empresa",
+   "s6_status": "",
+   "evaluation_only": {
+    "human_truth": null,
+    "deterministic": {
+     "scoreable": true,
+     "rule": "",
+     "reason": ""
+    }
+   }
+  },
+  {
+   "sample_id": "P1-025",
+   "article_id": "21d8d04410e46b61",
+   "url": "https://www.vale.com/pt/w/vale-informa-sobre-plano-de-recuperacao-judicial-da-samarco/-/categories/64919",
+   "title": "Vale informa sobre Plano de Recuperação Judicial da Samarco",
+   "source": "vale.com",
+   "domain": "vale.com",
+   "pub_iso": "2026-07-22 11:14",
+   "company": "Vale",
+   "candidate_events": [
+    "recuperacao_judicial"
+   ],
+   "stratum": "S5",
+   "role": "HOLDOUT",
+   "input_track": "degraded",
+   "input": {
+    "texto": "Vale informa sobre Plano de Recuperação Judicial da Samarco &nbsp;&nbsp; vale.com",
+    "tier": "R0_SUMMARY",
+    "origem_do_corpo": "history_summary",
+    "chars": 81,
+    "chars_alem_do_titulo": 22,
+    "sentence_like_count": 1,
+    "unique_meaningful_tokens": 8,
+    "provenance": [
+     {
+      "metodo": "title",
+      "chars": 59
+     },
+     {
+      "metodo": "history_summary",
+      "chars": 21
+     }
+    ],
+    "content_hash": "068715b4665f37d1ffdf181854f4c7410e10d4ac818fcf8eb82ea31a886993c3",
+    "input_version": "r7b.pilot1.input.v1",
+    "normalization_version": "r7ba.n1"
+   },
+   "selection_reason": "holdout S5: maior input disponível, 1 por domínio/empresa",
+   "s6_status": "",
+   "evaluation_only": {
+    "human_truth": null,
+    "deterministic": {
+     "scoreable": false,
+     "rule": "R_POSSESSIVO_MESMA_ORACAO",
+     "reason": "sujeito verdadeiro é Samarco Mineração; não representa recuperacao_judicial de Vale"
+    }
+   }
+  }
+ ]
+}

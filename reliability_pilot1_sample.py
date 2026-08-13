@@ -54,6 +54,20 @@ INPUT_VERSION = "r7b.pilot1.input.v1"
 OUTDIR = Path(os.environ.get("R7B_PILOT1_OUT", "out_reliability/r7b_pilot1"))
 MANIFESTO = OUTDIR / "pilot1_sample_manifest.json"
 
+# CONGELAMENTO DE VERDADE. `out_reliability/` é gitignored, então o runner do
+# Actions não veria o manifesto e regeneraria a amostra a partir do corpus DO
+# MOMENTO — que muda a cada cron. Foi exatamente o que quase aconteceu: o
+# manifesto v2 foi congelado no run 121 (767 artigos) e o corpus já está no
+# 122 (769). Congelar significa congelar: a partir daqui o piloto lê ESTE
+# arquivo versionado, e regenerar exige bump de versão.
+MANIFESTO_CONGELADO = Path("test_fixtures_reliability/pilot1_sample_manifest_v2.json")
+
+
+def carregar_manifesto() -> dict:
+    """O manifesto congelado tem precedência sobre qualquer regeneração."""
+    alvo = MANIFESTO_CONGELADO if MANIFESTO_CONGELADO.exists() else MANIFESTO
+    return json.load(io.open(alvo, encoding="utf-8"))
+
 HISTORY = Path("risk_history.json")
 SHADOW = Path("risk_input_shadow.json")
 ENRICH = Path("risk_enrichment_shadow.json")
