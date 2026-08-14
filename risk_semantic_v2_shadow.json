@@ -86,7 +86,52 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-14 16:57",
-   "human_review": null,
+   "human_review": {
+    "camada_artigo": {
+     "criterio": "`occurrence_novelty` avalia o que o artigo fornecido ao modelo apresenta semanticamente, nao se o banco ja possui outro artigo sobre a mesma ocorrencia.",
+     "occurrence_novelty": "NEW_OCCURRENCE"
+    },
+    "camada_sistema": {
+     "criterio": "O pipeline manteve troca_ceo uma unica vez, ancorado na materia de 10/08, e absorveu esta como fonte corroboradora. A invariante 'uma ocorrencia economica pontua uma vez' permanece intacta.",
+     "duplicate_score_created": false,
+     "occurrence_identity": "EXISTING_OCCURRENCE_CORROBORATION",
+     "ocorrencia_ancorada_em": "JBS nomeia Wesley Batista Filho como novo CEO global a partir de janeiro (Bloomberg Linea, 2026-08-10 16:41)"
+    },
+    "diagnostico_de_evidencia": {
+     "contar_como_erro_de_evidencia_do_modelo": false,
+     "diagnostico_humano": "VALIDATOR_FALSE_NEGATIVE_SHORT_ALIAS",
+     "motivo": "subject_quote='JBS' esta literalmente no titulo; quote_valida rejeita qualquer citacao com menos de 4 caracteres. Nao e alucinacao de evidencia do modelo.",
+     "resultado_bruto_do_validador": "INVALID / H1_QUOTE_INEXISTENTE",
+     "telemetria_original_preservada": true
+    },
+    "dimensoes_adjudicadas": {
+     "centrality": "MAIN",
+     "company_role": "SUBJECT",
+     "currentness": "CURRENT",
+     "event_asserted": "ASSERTED",
+     "occurrence_novelty": "NEW_OCCURRENCE",
+     "phase": "ANNOUNCED",
+     "related_entity": "Wesley Batista Filho",
+     "relation": "CEO",
+     "subject": "JBS",
+     "transaction_object": "NOT_APPLICABLE"
+    },
+    "fase_temporal": {
+     "anuncio": "2026-08 (atual)",
+     "observacao": "phase=ANNOUNCED e nao EFFECTIVE/CONCLUDED: a posse ainda nao ocorreu. O runtime atual nao modela essa distincao para troca_ceo; isso nao foi alterado nesta wave.",
+     "posse_efetiva": "janeiro de 2027 (futura)"
+    },
+    "nao_sobrescreve": null,
+    "nota": "A materia e centralmente sobre a nomeacao de Wesley Batista Filho como futuro CEO Global da JBS. Nao e descriptor, nao e referencia lateral, nao e troca de CEO de terceiro e nao se apresenta como atualizacao de anuncio anterior. Logo, semanticamente pontuavel como troca_ceo.",
+    "prospective_case_number": 2,
+    "razao_primaria": "article_central_event",
+    "reviewed_at": 1786738880,
+    "reviewed_at_iso": "2026-08-14T20:21:20Z",
+    "reviewer": "Gustavo",
+    "reviewer_type": "human",
+    "scoreable_as_troca_ceo": true,
+    "verdict": "TRUE_NEW_ANNOUNCEMENT"
+   },
    "latencia_s": 4.36,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.1-flash-lite",
@@ -209,7 +254,52 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-14 16:57",
-   "human_review": null,
+   "human_review": {
+    "camada_artigo": {
+     "criterio": "`occurrence_novelty` avalia o que o artigo fornecido ao modelo apresenta semanticamente, nao se o banco ja possui outro artigo sobre a mesma ocorrencia.",
+     "occurrence_novelty": "NEW_OCCURRENCE"
+    },
+    "camada_sistema": {
+     "criterio": "O pipeline manteve troca_ceo uma unica vez, ancorado na materia de 10/08, e absorveu esta como fonte corroboradora. A invariante 'uma ocorrencia economica pontua uma vez' permanece intacta.",
+     "duplicate_score_created": false,
+     "occurrence_identity": "EXISTING_OCCURRENCE_CORROBORATION",
+     "ocorrencia_ancorada_em": "JBS nomeia Wesley Batista Filho como novo CEO global a partir de janeiro (Bloomberg Linea, 2026-08-10 16:41)"
+    },
+    "diagnostico_de_evidencia": {
+     "contar_como_erro_de_evidencia_do_modelo": false,
+     "diagnostico_humano": "VALIDATOR_FALSE_NEGATIVE_SHORT_ALIAS",
+     "motivo": "subject_quote='JBS' esta literalmente no titulo; quote_valida rejeita qualquer citacao com menos de 4 caracteres. Nao e alucinacao de evidencia do modelo.",
+     "resultado_bruto_do_validador": "INVALID / H1_QUOTE_INEXISTENTE",
+     "telemetria_original_preservada": true
+    },
+    "dimensoes_adjudicadas": {
+     "centrality": "MAIN",
+     "company_role": "SUBJECT",
+     "currentness": "CURRENT",
+     "event_asserted": "ASSERTED",
+     "occurrence_novelty": "NEW_OCCURRENCE",
+     "phase": "ANNOUNCED",
+     "related_entity": "Wesley Batista Filho",
+     "relation": "CEO",
+     "subject": "JBS",
+     "transaction_object": "NOT_APPLICABLE"
+    },
+    "fase_temporal": {
+     "anuncio": "2026-08 (atual)",
+     "observacao": "phase=ANNOUNCED e nao EFFECTIVE/CONCLUDED: a posse ainda nao ocorreu. O runtime atual nao modela essa distincao para troca_ceo; isso nao foi alterado nesta wave.",
+     "posse_efetiva": "janeiro de 2027 (futura)"
+    },
+    "nao_sobrescreve": null,
+    "nota": "A materia e centralmente sobre a nomeacao de Wesley Batista Filho como futuro CEO Global da JBS. Nao e descriptor, nao e referencia lateral, nao e troca de CEO de terceiro e nao se apresenta como atualizacao de anuncio anterior. Logo, semanticamente pontuavel como troca_ceo.",
+    "prospective_case_number": 2,
+    "razao_primaria": "article_central_event",
+    "reviewed_at": 1786738880,
+    "reviewed_at_iso": "2026-08-14T20:21:20Z",
+    "reviewer": "Gustavo",
+    "reviewer_type": "human",
+    "scoreable_as_troca_ceo": true,
+    "verdict": "TRUE_NEW_ANNOUNCEMENT"
+   },
    "latencia_s": 1.85,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.5-flash-lite",
