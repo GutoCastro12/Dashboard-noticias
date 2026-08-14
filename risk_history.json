@@ -23784,9 +23784,7 @@
     "ma"
    ],
    "events_by_company": {
-    "BTG Pactual": [
-     "ma"
-    ]
+    "BTG Pactual": []
    },
    "mention_roles": {
     "BTG Pactual": {
@@ -23797,10 +23795,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "BTG Pactual"
    ],
-   "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "corroborations": [],
@@ -23819,7 +23817,72 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.640451+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.640451+00:00",
+   "event_assessments": [
+    {
+     "company": "BTG Pactual",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "BTG Pactual",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "imovel_rural",
+     "transaction_scope": "capex",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "neutra",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "objeto_nao_empresarial:imovel_rural",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "BTG Pactual",
+     "event_id": "ma",
+     "event_id_corrigido": "aquisicao_capex",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "objeto_nao_empresarial:imovel_rural",
+     "subject_company": "BTG Pactual"
+    }
+   ],
+   "informational_events_by_company": {
+    "BTG Pactual": [
+     {
+      "company": "BTG Pactual",
+      "event_id": "aquisicao_capex",
+      "event_label": "aquisicao capex",
+      "subject_company": "BTG Pactual",
+      "monitored_company": "BTG Pactual",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "aquisicao_capex",
+      "transaction_scope": "capex",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Justiça do Mato Grosso mantém aquisição de fazenda bilionária por banco do BTG",
+      "url": "https://agfeed.com.br/negocios/justica-do-mato-grosso-mantem-aquisicao-de-fazenda-bilionaria-por-banco-do-btg/",
+      "pub_ts": 1779346800,
+      "observation": "objeto_nao_empresarial:imovel_rural",
+      "source_record_id": "https://agfeed.com.br/negocios/justica-do-mato-grosso-mantem-aquisicao-de-fazenda-bilionaria-por-banco-do-btg/"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMihAJBVV95cUxQdlJ2dV9ENXZjMDBjdkFnVlhwa25DcjZJS09yZ092RHo2QmwzMTZWZlB3TWdYZVc5aHBQUjF0em9PNXhBdzNhWDZmd1JOQkk2cVNhcDhUd1ItaTQzRXlqVUlWUXZKSl9BX2JhQzY4WnZtMmhsUU5FWk1pY1gtdW5rUjJoanZfd2NSUnlFSFp6OXdZMmtxNTdCd2l6S3VUVUdQaGJyVFd5ZFJiYnUzU0hQZ1ZXTHFjN1kyYVBRWTFLSHV4OFpxSlpZcEZsTVJMUUVXUWg0dTVZTm02TE8yUFlDQTZvQjNyaEM2TDA0Vk85WlR4VjdnTGQ2SWxEajZxQ1g3bXBUeNIBkwJBVV95cUxOVm1CbjRhVGVNdHcybjloSUhRb2dDSU5GX2psYkhabWxpanNld2lmRC1GT1VNcXU2TXJPMU1ZZjZBeFQ3N0IwT2F6SVl4bkJybHVsN3JZX1pSOWpQN09pUTR4SDFOTl9obEhPUkx1U29oeDlpcHlHdFVrS0pDLXZtUDVtOFNhQjhpT091SDhwcUFBRVB3X2ZTU1BrVGtwYnhaVkgtZWs4MEw1emJBa2NDVWRPRktvNmNPRkxKTDllM2trZUJwWlN4aHZxN2NfVFRKajZNYzJmVmtPQ2loN0tLXzF6cWxRVUJlcXZLQ2FNY1BWTEgxdC1IYlVmekNCU1FweE9UNE9HM3BvV2doN21GQWcxUQ?oc=5": {
    "title": "Credores apontam ‘esvaziamento patrimonial’ e pedem que Justiça decrete falência de grupo que tentou comprar Banco Master",
@@ -25937,10 +26000,10 @@
      "subject_company": "Vibra Energia",
      "actor_company": "",
      "affected_company": "",
-     "transaction_object": "indefinido",
-     "transaction_scope": "indefinido",
+     "transaction_object": "empresa",
+     "transaction_scope": "externo",
      "transaction_role": "",
-     "event_phase": "",
+     "event_phase": "anuncio",
      "event_scope": "direto",
      "direction": "mitigadora",
      "historical_reference": false,
@@ -25950,7 +26013,7 @@
      "attribution_confidence": "media",
      "scoreable": false,
      "rejection_reason": "texto nega explicitamente o evento (\"vibra (vbbr3): cvm confirma que opa nao pode ser exigida por compra de\")",
-     "legal_status": "",
+     "legal_status": "anuncio",
      "confirmation_status": "indefinido"
     }
    ],
@@ -25982,7 +26045,7 @@
       "external_ma": false,
       "historical_transaction_reference": false,
       "secondary_context": "",
-      "transaction_scope": "indefinido",
+      "transaction_scope": "externo",
       "confirmation_status": "indefinido",
       "attribution_rule": "R_NEGACAO_EXPLICITA",
       "attribution_confidence": "media",
@@ -33048,9 +33111,7 @@
     "ma"
    ],
    "events_by_company": {
-    "Petrobras": [
-     "ma"
-    ]
+    "Petrobras": []
    },
    "mention_roles": {
     "Petrobras": {
@@ -33061,10 +33122,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Petrobras"
    ],
-   "context_companies": [],
    "corroborations": [
     {
      "source": "Valor Econômico",
@@ -33331,7 +33392,72 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.650206+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.650206+00:00",
+   "event_assessments": [
+    {
+     "company": "Petrobras",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Petrobras",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "direito_exploratorio",
+     "transaction_scope": "capex",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "neutra",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "objeto_nao_empresarial:direito_exploratorio",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Petrobras",
+     "event_id": "ma",
+     "event_id_corrigido": "aquisicao_capex",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "objeto_nao_empresarial:direito_exploratorio",
+     "subject_company": "Petrobras"
+    }
+   ],
+   "informational_events_by_company": {
+    "Petrobras": [
+     {
+      "company": "Petrobras",
+      "event_id": "aquisicao_capex",
+      "event_label": "aquisicao capex",
+      "subject_company": "Petrobras",
+      "monitored_company": "Petrobras",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "aquisicao_capex",
+      "transaction_scope": "capex",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Petrobras reforça expansão internacional com aquisição de bloco exploratório na África",
+      "url": "https://www.bloomberglinea.com.br/negocios/petrobras-reforca-expansao-internacional-com-aquisicao-de-bloco-exploratorio-na-africa/",
+      "pub_ts": 1783666800,
+      "observation": "objeto_nao_empresarial:direito_exploratorio",
+      "source_record_id": "https://www.bloomberglinea.com.br/negocios/petrobras-reforca-expansao-internacional-com-aquisicao-de-bloco-exploratorio-na-africa/"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMipgFBVV95cUxPaVRqbUdMSUEySHdKTHpVX3ZmT0J5Ukk1REJUSkh5V09IMkItYVRKY0pXS2NkZXo3OEFjSFFkbFEzTnU5ZFI3ODI4c0ZkeFp4UWlrX01mdlEtU2tpM00yZGFLZU1aLVhWWjlIR0JaRERzVnpnNXBQenRIN19qVTA5Q1oxZ0hUTEM0MWZONUFhVlJwTTVST2lHd1o5bDVfNm9HR1U2STRn?oc=5": {
    "title": "CVS' Omnicare agrees to $440M settlement with DOJ in fraud case",
@@ -47747,14 +47873,12 @@
     }
    },
    "events_by_company": {
-    "Banco do Brasil": [
-     "ma"
-    ]
+    "Banco do Brasil": []
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Banco do Brasil"
    ],
-   "context_companies": [],
    "captured_ts": 1785892293,
    "cap_iso": "2026-08-04 22:11",
    "corroborations": [
@@ -47801,7 +47925,72 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →"
     }
-   ]
+   ],
+   "event_assessments": [
+    {
+     "company": "Banco do Brasil",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Banco do Brasil",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "equipamento",
+     "transaction_scope": "capex",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "neutra",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "objeto_nao_empresarial:equipamento",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Banco do Brasil",
+     "event_id": "ma",
+     "event_id_corrigido": "aquisicao_capex",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "objeto_nao_empresarial:equipamento",
+     "subject_company": "Banco do Brasil"
+    }
+   ],
+   "informational_events_by_company": {
+    "Banco do Brasil": [
+     {
+      "company": "Banco do Brasil",
+      "event_id": "aquisicao_capex",
+      "event_label": "aquisicao capex",
+      "subject_company": "Banco do Brasil",
+      "monitored_company": "Banco do Brasil",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "aquisicao_capex",
+      "transaction_scope": "capex",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "Banco do Brasil passa a operar nova linha para aquisição de máquinas agrícolas",
+      "url": "https://globorural.globo.com/credito-e-investimento/noticia/2026/08/banco-do-brasil-passa-a-operar-nova-linha-para-aquisicao-de-maquinas-agricolas.ghtml",
+      "pub_ts": 1785874204,
+      "observation": "objeto_nao_empresarial:equipamento",
+      "source_record_id": "https://globorural.globo.com/credito-e-investimento/noticia/2026/08/banco-do-brasil-passa-a-operar-nova-linha-para-aquisicao-de-maquinas-agricolas.ghtml"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTThBZ09ZOU5fYTBQa0NWUWRteDMzeEItek16REUwNzdMQ2xsNURxU2pzU3hrd1pIQ0tXUzh0d1F5LTFRVmF6dkozMzhySTVXZEROdWkxd2pTRmlReGVZQlpZdUZnRkZyN1R4aEY2ZjUwTVJ1T1dZaTU0VnY4MVd6UXIzeHdMYVly?oc=5": {
    "title": "Explainer: What are credit default swaps and why are they spooking AI investors?",
@@ -52544,18 +52733,71 @@
     }
    },
    "events_by_company": {
-    "Santander Brasil": [
-     "falencia"
-    ]
+    "Santander Brasil": []
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Santander Brasil"
    ],
-   "context_companies": [],
    "captured_ts": 1786706114,
    "cap_iso": "2026-08-14 08:15",
    "corroborations": [],
-   "corrob_sources": []
+   "corrob_sources": [],
+   "event_assessments": [
+    {
+     "company": "Santander Brasil",
+     "event_id": "falencia",
+     "assessed_by": "semantic_audit",
+     "subject_company": "",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "indireto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_REQUERENTE_DE_FALENCIA_NAO_E_O_FALIDO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "Santander Brasil REQUER a falência (\"santander surpreende e entra na justica para solicitar falencia\"); o falido é o requerido, não o requerente",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Santander Brasil",
+     "event_id": "falencia",
+     "event_id_corrigido": "",
+     "regra": "R_REQUERENTE_DE_FALENCIA_NAO_E_O_FALIDO",
+     "motivo": "Santander Brasil REQUER a falência (\"santander surpreende e entra na justica para solicitar falencia\"); o falido é o requerido, não o requerente",
+     "subject_company": ""
+    }
+   ],
+   "context_events_by_company": {
+    "Santander Brasil": [
+     {
+      "event_id": "falencia",
+      "event_label": "falencia",
+      "subject_company": "",
+      "relation_type": "credor_requerente",
+      "impact_type": "indireto_material",
+      "event_scope": "indireto",
+      "event_phase": "",
+      "direction": "neutra",
+      "scoreable": false,
+      "event_id_corrigido": "",
+      "attribution_rule": "R_REQUERENTE_DE_FALENCIA_NAO_E_O_FALIDO",
+      "attribution_confidence": "media",
+      "attribution_evidence": "",
+      "nota": "Santander Brasil REQUER a falência (\"santander surpreende e entra na justica para solicitar falencia\"); o falido é o requerido, não o requerente"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQcmJTdUVMNE1Qa0ZQNTBrb0pLTTFfYnNZdjZObnF5TDNwVkZKNENTLVBuYnh1c2h4bG14SHJUQWRabzVDX3ZGdE5udGRGRjZOam5lT2VHbUctWnZTUUVqczdBcU5ydEQteWpMSW84LXBtMVdHRmMxM2YtSXdrSkJKQ0xscW5PeXpiYTlIenZEeVZ0dWthV2FtSzJiUGJ6OEVsanZCa2YtYVJBdTk0TDBXZkh3bmZvVWtjNXdGc2dPQ1NoWklWMS1sVmh5cjRWbVI3cXBvVV9hNE9VTmVNRVM4SHNQYi3SAeQBQVVfeXFMUHJiU3VFTDRNUGtGUDUwa29KS00xX2JzWXY2Tm5xeUwzcFZGSjRDUy1QbmJ4dXNoeGxteEhyVEFkWm81Q192RnRObnRkRkY2TmpuZU9lR21HLVp2U1FFanM3QXFOcnRELXlqTElvOC1wbTFXR0ZjMTNmLUl3a0pCSkNMbHFuT3l6YmE5SHp2RHlWdHVrYVdhbUsyYlBiejhFbGp2QmtmLWFSQXU5NEwwV2ZId25mb1VrYzV3RnNnT0NTaFpJVjEtbFZoeXI0Vm1SN3Fwb1VfYTRPVU5lTUVTOEhzUGIt?oc=5": {
    "title": "Orizon acerta aquisição de 51% da empresa titular do aterro de Rondonópolis",
@@ -52823,10 +53065,10 @@
       "attribution_rule": "R_PAPEL_NAO_SUJEITO",
       "attribution_confidence": "media",
       "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOU93WVNoT0tjSW96XzBfWU54MGlPbm9IUXJtb1MwVG1pN2ZUZmF3UUpZN3ZNR0ZoQmw3M3lZT0psX2VaLVdaM1lBNzZ2aHpIM3F2bGpWaEh3bEktNTBXZTdnRDd5UWVEdkRkTzd4aHhwWXZnWkVpMWQyZEx4cDRlTy1ERjZNQmNFRzlWTHp5N1hWOFU4NDY2OFRFSmdXYVRSM25VaEo0LVJqSkZTMGgtaTA4Z1EwWWtHUkRPdjRSUUPSAcYBQVVfeXFMUFJqQ2JsVE5yZENES2pndGtXa2VYNDFPTnBtVHlzWlV3eFYwczZxSGlDY0dMM25TZS1ScEtPaVdIbEpCQUR6WThLRk9jWmtYZXE4MjhzUDhzQ2JUZmVaVnpfN3lHM1FXckdKR0xZRmE3bTlaRG9jVU1zRTV3NmRLcmRvWHhUNVA1eXhGaUhuOEdFQ3haR25OR2txQ0dQU3hFam9zSktjVkNGZGFCeGFQZm5jVl9YN2VBdXZtcjRSMmJfdUgxVk1n?oc=5",
+      "url": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/",
       "pub_ts": 1783494000,
       "observation": "Vale atua como individual_subject neste texto, não como sujeito do evento",
-      "source_record_id": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOU93WVNoT0tjSW96XzBfWU54MGlPbm9IUXJtb1MwVG1pN2ZUZmF3UUpZN3ZNR0ZoQmw3M3lZT0psX2VaLVdaM1lBNzZ2aHpIM3F2bGpWaEh3bEktNTBXZTdnRDd5UWVEdkRkTzd4aHhwWXZnWkVpMWQyZEx4cDRlTy1ERjZNQmNFRzlWTHp5N1hWOFU4NDY2OFRFSmdXYVRSM25VaEo0LVJqSkZTMGgtaTA4Z1EwWWtHUkRPdjRSUUPSAcYBQVVfeXFMUFJqQ2JsVE5yZENES2pndGtXa2VYNDFPTnBtVHlzWlV3eFYwczZxSGlDY0dMM25TZS1ScEtPaVdIbEpCQUR6WThLRk9jWmtYZXE4MjhzUDhzQ2JUZmVaVnpfN3lHM1FXckdKR0xZRmE3bTlaRG9jVU1zRTV3NmRLcmRvWHhUNVA1eXhGaUhuOEdFQ3haR25OR2txQ0dQU3hFam9zSktjVkNGZGFCeGFQZm5jVl9YN2VBdXZtcjRSMmJfdUgxVk1n?oc=5"
+      "source_record_id": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/"
      }
     ]
    },
@@ -58400,13 +58642,9 @@
   }
  },
  "last_run": {
-  "ts": 1786727285,
-  "iso": "14 ago 2026 · 14:08 BRT",
+  "ts": 1786730410,
+  "iso": "14 ago 2026 · 15:00 BRT",
   "status": {
-   "Santander Brasil": {
-    "status": "critico",
-    "score": 97
-   },
    "Cosan": {
     "status": "atencao",
     "score": 70
@@ -58430,6 +58668,10 @@
    "Tok&Stok": {
     "status": "critico",
     "score": 48
+   },
+   "Santander Brasil": {
+    "status": "atencao",
+    "score": 43
    },
    "Samarco Mineração": {
     "status": "critico",
@@ -58470,14 +58712,6 @@
    "ISA Energia Brasil": {
     "status": "monitorar",
     "score": 22
-   },
-   "Banco do Brasil": {
-    "status": "monitorar",
-    "score": 22
-   },
-   "Petrobras": {
-    "status": "monitorar",
-    "score": 21
    },
    "BTG Pactual": {
     "status": "atencao",
@@ -58591,6 +58825,10 @@
     "status": "monitorar",
     "score": 4
    },
+   "Petrobras": {
+    "status": "monitorar",
+    "score": 4
+   },
    "Direcional Engenharia": {
     "status": "monitorar",
     "score": 1
@@ -58663,6 +58901,10 @@
     "status": "monitorar",
     "score": 0
    },
+   "Banco do Brasil": {
+    "status": "monitorar",
+    "score": 0
+   },
    "Coazucar": {
     "status": "monitorar",
     "score": 0
@@ -58672,5 +58914,5 @@
  "semantic_reclassified_at": "2026-07-30T21:07:47.714609+00:00",
  "semantic_version": "1.0",
  "links_repaired_at": "2026-07-31T05:45:56.701137+00:00",
- "reclassify_only_applied_at": "2026-08-12T22:59:42.050208+00:00"
+ "reclassify_only_applied_at": "2026-08-14T18:00:10.713448+00:00"
 }

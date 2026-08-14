@@ -105,6 +105,15 @@
   "reviewer_type": "imported_prior_adjudication",
   "status": "TRUE"
  },
+ "https://globorural.globo.com/credito-e-investimento/noticia/2026/08/banco-do-brasil-passa-a-operar-nova-linha-para-aquisicao-de-maquinas-agricolas.ghtml||Banco do Brasil||ma": {
+  "company": "Banco do Brasil",
+  "event_id": "ma",
+  "family_id": "MA_OBJECT_SCOPE_CAPEX",
+  "note": "Banco do Brasil e o FINANCIADOR/operador da linha de credito; a aquisicao e feita por terceiros e o objeto sao maquinas/equipamentos agricolas. Nao ha aquisicao de empresa, fusao, participacao societaria nem mudanca de controle atribuivel ao banco. Destino coerente: aquisicao_capex (informativo).",
+  "reviewed_at": 1786730242,
+  "reviewer_type": "human",
+  "status": "FALSE_POSITIVE"
+ },
  "https://nkytribune.com/2026/03/duke-energy-leverages-artificial-intelligence-to-combat-fraud-targeting-energy-customers/||Duke Energy||fraude": {
   "company": "Duke Energy",
   "event_id": "fraude",
