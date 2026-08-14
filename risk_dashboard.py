@@ -22,6 +22,7 @@ import base64
 import argparse
 import collections
 import translation_cache as _tc          # cache de traduções em sidecar próprio
+import llm_router as _router             # tarefa → provider → modelo
 import copy
 import csv
 import difflib
@@ -2477,7 +2478,12 @@ def translate_articles(articles: list[dict], cfg: dict) -> int:
 
     llm = cfg.get("llm") or {}
     genai.configure(api_key=api_key)
-    modelos = [llm.get("model", "gemini-3-flash")] + list(llm.get("model_fallbacks") or [])
+    # TAREFA = tradução, com modelo próprio desde o benchmark 31754386165.
+    # `gemini-3.6-flash` sai do caminho de tradução: ele é o `llm.model` do
+    # config, não um fallback, então não volta por baixo. Sobra o vencedor à
+    # frente e o outro Lite como degradação conhecida.
+    modelos = _router.modelos_de(_router.TASK_TRANSLATION, cfg) or \
+        [llm.get("model", "gemini-3-flash")]
     model_idx = 0
     model = genai.GenerativeModel(modelos[0])
     sleep_s = float(llm.get("rpm_sleep_seconds", 4))
