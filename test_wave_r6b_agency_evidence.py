@@ -118,12 +118,18 @@ print()
 print("=" * 96)
 print("BLOCO D — RETENÇÃO DE EVIDÊNCIA: apoio só quando o papel falta")
 print("=" * 96)
-_BASE = "Third suspect arrested in Company fraud case."
+_BASE = "Regulators review fraud controls at Company."
+# AJUSTADO 2026-08-14 (wave CASO NOMEADO). A fixture anterior dizia "papel
+# indefinido no primary", mas o texto trazia o caso NOMEADO e um suspeito
+# PRESO — ou seja, o papel estava definido, e o teste só passava porque o
+# runtime ainda não sabia lê-lo. Quando passou a saber, a premissa caiu.
+# A fixture foi corrigida para de fato não carregar papel algum no primary,
+# que é a condição que este bloco quer exercitar; a estrutura testada — papel
+# só no corpo, longe da primeira menção ao evento — está preservada.
+_P_TXT = ("Regulators said they are reviewing the fraud controls in place, "
+          "according to a filing published on Tuesday.")
 _PRIM = {"method": "jsonld:description", "tier": 1, "content_hash": "p1",
-         "text_excerpt": ("Sheriff said a suspect was arrested after deputies said she was "
-                          "connected to an ongoing Company fraud investigation."),
-         **sc.qualidade("Sheriff said a suspect was arrested after deputies said she was "
-                        "connected to an ongoing Company fraud investigation.", _BASE)}
+         "text_excerpt": _P_TXT, **sc.qualidade(_P_TXT, _BASE)}
 # Reproduz a ESTRUTURA do corpo real: a evidência de papel aparece longe da
 # primeira menção ao termo do evento, que é o que a janela precisa alcançar.
 _BODY_TXT = ("Deputies opened an ongoing fraud investigation last year. "

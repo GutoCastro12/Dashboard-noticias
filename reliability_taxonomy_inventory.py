@@ -148,6 +148,13 @@ REGRAS = {
                                                 (_ESTRITO, _CREDITO), False),
     "R_MONITORADA_E_FINANCIADORA": (("role", "relation"), ("emissao_divida",), False),
     "R_VITIMA_NAO_E_AUTORA_DA_FRAUDE": (("role", "relation"), _FRAUDE, False),
+    # Irmã da anterior para a construção "<Empresa> fraud case": a empresa dá
+    # NOME ao processo, mas quem responde é terceiro. Exige duas evidências —
+    # o caso nomeado e um ator terceiro responsabilizado (ou comentário sobre
+    # o caso) —, porque o nome sozinho também aparece quando a empresa é ré.
+    # Adjudicada em Duke Energy (2026-08-14).
+    "R_CASO_NOMEADO_NAO_IMPUTA_AUTORIA": (("subject", "role", "relation"),
+                                          _FRAUDE, False),
     "R_FORO_JUDICIAL_NAO_PROVA_INSOLVENCIA": (("event_evidence", "subject"),
                                               ("falencia", "recuperacao_judicial"), False),
     "R_AFILIACAO_INDIVIDUAL": (("subject", "role"),

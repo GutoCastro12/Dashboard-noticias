@@ -76,8 +76,23 @@ print("BLOCO A — Duke: current, enriched e o contrafactual de fase")
 print("=" * 96)
 for tag, tit, enr, conf in (("Duke #2", D2_T, D2_E, D2_CONF),
                             ("Duke #3", D3_T, D3_E, D3_CONF)):
+    # ATUALIZADO 2026-08-14 (wave CASO NOMEADO). Até então esta linha afirmava
+    # que o título sozinho AINDA PONTUAVA. Não era um invariante desejável: era
+    # o retrato do defeito que sobrava enquanto o motor de papel desta wave
+    # permanecia restrito ao shadow e exigindo enrichment — a Duke aparecia
+    # CRÍTICA por três matérias em que ela apenas dá NOME ao processo.
+    # A produção passou a decidir por uma via independente e bem mais estreita:
+    # R_CASO_NOMEADO_NAO_IMPUTA_AUTORIA exige DUAS evidências explícitas no
+    # próprio texto — o caso nomeado E um terceiro responsabilizado (ou um
+    # comentário sobre o caso). Isso não é "deduzir papel de input pobre".
+    # O invariante que este arquivo protege segue intacto e é reafirmado na
+    # linha seguinte: o motor de papel não opina sem enrichment.
     g, _ = pontua(tit, "", "Duke Energy")
-    check("fraude" in g, f"[1..2] {tag} CURRENT ainda pontua — o input pobre não decide papel")
+    check("fraude" not in g,
+          f"[1..2] {tag} CURRENT não pontua mais — caso nomeado, autor terceiro")
+    check(not papel(tit, "Duke Energy").get("role"),
+          f"[1..2b] e o motor de papel segue mudo sem enrichment "
+          f"({papel(tit, 'Duke Energy').get('role')!r}) — nada virou heurística")
     g, r = pontua(tit, enr, "Duke Energy")
     p = papel(f"{tit}. {enr}", "Duke Energy")
     check("fraude" not in g and p.get("role") == "vitima",

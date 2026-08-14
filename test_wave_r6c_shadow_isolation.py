@@ -77,8 +77,20 @@ _g, _r = pontua(N4, "Vale")
 check(_r.get("fraude") == "R_VITIMA_NAO_E_AUTORA_DA_FRAUDE",
       f"[4] e a regra antiga segue vencendo: {_r.get('fraude')}")
 _g, _r = pontua(D2T, "Duke Energy", D2E)
-check(_r.get("fraude") == "R_FRAUDE_NAO_CONFIRMADA",
-      f"[5] Duke #2 em produção cai por fase, como antes: {_r.get('fraude')}")
+# ATUALIZADO 2026-08-14 (wave CASO NOMEADO). A afirmação original era que a
+# Duke #2 caía POR FASE (`R_FRAUDE_NAO_CONFIRMADA`) — não pontuava, mas pela
+# razão errada: bastaria a fraude ser confirmada para o evento voltar contra a
+# vítima, que é justamente o risco descrito no cabeçalho da R6a. Agora cai por
+# PAPEL, em produção, e o motivo é estável sob confirmação. O que este bloco
+# protege — produção não usar o motor SHADOW de papel — segue verificado em
+# [3], [4] e no bloco C.
+check(_r.get("fraude") == "R_CASO_NOMEADO_NAO_IMPUTA_AUTORIA",
+      f"[5] Duke #2 em produção cai por PAPEL, não mais por fase: {_r.get('fraude')}")
+_g2, _r2 = pontua(D2T.replace("arrested", "convicted"), "Duke Energy",
+                  D2E.replace("allegedly responsible", "was responsible"))
+check("fraude" not in _g2,
+      "[5b] e o contrafactual de fase não devolve o evento à vítima — "
+      "confirmar a fraude do terceiro não transfere autoria")
 
 print()
 print("=" * 96)

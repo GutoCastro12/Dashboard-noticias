@@ -4009,9 +4009,7 @@
     "fraude"
    ],
    "events_by_company": {
-    "Duke Energy": [
-     "fraude"
-    ]
+    "Duke Energy": []
    },
    "mention_roles": {
     "Duke Energy": {
@@ -4022,10 +4020,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Duke Energy"
    ],
-   "context_companies": [],
    "captured_ts": 1785345276,
    "cap_iso": "2026-07-29 14:14",
    "corroborations": [],
@@ -4044,7 +4042,62 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.621872+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.621872+00:00",
+   "event_assessments": [
+    {
+     "company": "Duke Energy",
+     "event_id": "fraude",
+     "assessed_by": "semantic_audit",
+     "subject_company": "",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "indireto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_CASO_NOMEADO_NAO_IMPUTA_AUTORIA",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "\"duke energy fraud case\" nomeia o processo; quem responde é terceiro, não Duke Energy",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Duke Energy",
+     "event_id": "fraude",
+     "event_id_corrigido": "",
+     "regra": "R_CASO_NOMEADO_NAO_IMPUTA_AUTORIA",
+     "motivo": "\"duke energy fraud case\" nomeia o processo; quem responde é terceiro, não Duke Energy",
+     "subject_company": ""
+    }
+   ],
+   "context_events_by_company": {
+    "Duke Energy": [
+     {
+      "event_id": "fraude",
+      "event_label": "fraude",
+      "subject_company": "",
+      "relation_type": "entidade_que_nomeia_o_caso",
+      "impact_type": "indireto_material",
+      "event_scope": "indireto",
+      "event_phase": "",
+      "direction": "neutra",
+      "scoreable": false,
+      "event_id_corrigido": "",
+      "attribution_rule": "R_CASO_NOMEADO_NAO_IMPUTA_AUTORIA",
+      "attribution_confidence": "media",
+      "attribution_evidence": "",
+      "nota": "\"duke energy fraud case\" nomeia o processo; quem responde é terceiro, não Duke Energy"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQazllamVSSU5jWGFPaEUxMTR3R0RiY0YtdktLOWZDQ2ZjaGdVbmJHUFk5ODFXeVBoZHY4ZHlmWm12Njd4VlZrbzRpeTM0ZkNGaWVpSzBwM0s4ZUN6YTEyQVBHbHJHOV9zYkdfQkhZVVhWQXZrRGZwLUh3VmFpa0Vsd2wxODhHd2JsNkNVZkFQSkNjVXB5VXpsQVBlQTBGYzlDd1RoR2JwRzk?oc=5": {
    "title": "Productor de salmón se declara en quiebra",
@@ -8027,9 +8080,7 @@
     "fraude"
    ],
    "events_by_company": {
-    "Duke Energy": [
-     "fraude"
-    ]
+    "Duke Energy": []
    },
    "mention_roles": {
     "Duke Energy": {
@@ -8040,10 +8091,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Duke Energy"
    ],
-   "context_companies": [],
    "corroborations": [
     {
      "source": "CBS17.com",
@@ -8105,7 +8156,62 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.624878+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.624878+00:00",
+   "event_assessments": [
+    {
+     "company": "Duke Energy",
+     "event_id": "fraude",
+     "assessed_by": "semantic_audit",
+     "subject_company": "",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "indireto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_CASO_NOMEADO_NAO_IMPUTA_AUTORIA",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "\"duke energy fraud case\" nomeia o processo; quem responde é terceiro, não Duke Energy",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Duke Energy",
+     "event_id": "fraude",
+     "event_id_corrigido": "",
+     "regra": "R_CASO_NOMEADO_NAO_IMPUTA_AUTORIA",
+     "motivo": "\"duke energy fraud case\" nomeia o processo; quem responde é terceiro, não Duke Energy",
+     "subject_company": ""
+    }
+   ],
+   "context_events_by_company": {
+    "Duke Energy": [
+     {
+      "event_id": "fraude",
+      "event_label": "fraude",
+      "subject_company": "",
+      "relation_type": "entidade_que_nomeia_o_caso",
+      "impact_type": "indireto_material",
+      "event_scope": "indireto",
+      "event_phase": "",
+      "direction": "neutra",
+      "scoreable": false,
+      "event_id_corrigido": "",
+      "attribution_rule": "R_CASO_NOMEADO_NAO_IMPUTA_AUTORIA",
+      "attribution_confidence": "media",
+      "attribution_evidence": "",
+      "nota": "\"duke energy fraud case\" nomeia o processo; quem responde é terceiro, não Duke Energy"
+     }
+    ]
+   }
   },
   "https://www.infomoney.com.br/business/hapvida-anuncia-troca-no-comando-e-nomeia-cfo-como-novo-ceo/": {
    "title": "Hapvida anuncia troca no comando e nomeia CFO como novo CEO",
@@ -13586,9 +13692,7 @@
     "fraude"
    ],
    "events_by_company": {
-    "Duke Energy": [
-     "fraude"
-    ]
+    "Duke Energy": []
    },
    "mention_roles": {
     "Duke Energy": {
@@ -13599,10 +13703,10 @@
      "direction_hint": ""
     }
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Duke Energy"
    ],
-   "context_companies": [],
    "corroborations": [
     {
      "source": "CBS17.com",
@@ -13664,7 +13768,62 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.630668+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.630668+00:00",
+   "event_assessments": [
+    {
+     "company": "Duke Energy",
+     "event_id": "fraude",
+     "assessed_by": "semantic_audit",
+     "subject_company": "",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "indireto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_CASO_NOMEADO_NAO_IMPUTA_AUTORIA",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "\"duke energy fraud case\" nomeia o processo; quem responde é terceiro, não Duke Energy",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Duke Energy",
+     "event_id": "fraude",
+     "event_id_corrigido": "",
+     "regra": "R_CASO_NOMEADO_NAO_IMPUTA_AUTORIA",
+     "motivo": "\"duke energy fraud case\" nomeia o processo; quem responde é terceiro, não Duke Energy",
+     "subject_company": ""
+    }
+   ],
+   "context_events_by_company": {
+    "Duke Energy": [
+     {
+      "event_id": "fraude",
+      "event_label": "fraude",
+      "subject_company": "",
+      "relation_type": "entidade_que_nomeia_o_caso",
+      "impact_type": "indireto_material",
+      "event_scope": "indireto",
+      "event_phase": "",
+      "direction": "neutra",
+      "scoreable": false,
+      "event_id_corrigido": "",
+      "attribution_rule": "R_CASO_NOMEADO_NAO_IMPUTA_AUTORIA",
+      "attribution_confidence": "media",
+      "attribution_evidence": "",
+      "nota": "\"duke energy fraud case\" nomeia o processo; quem responde é terceiro, não Duke Energy"
+     }
+    ]
+   }
   },
   "https://news.google.com/rss/articles/CBMizAFBVV95cUxOWVI1cE13elhtMmxCMEFTX25IN291bW9obW1FWDd5Z05yREhybE1VVHFTb1lOWWtzMkJvT3BwMFZHbWlmYmQ1Y3NVaFJwN3BnT2VPQjYwYW0yZEtWU3lnWDF1bGtKZ0Y5UmlCaTVJTm00YW5NT1BJTHRVTWJ4TUZuVHpjd19OTlFlUEt4TEVlSHE3VFlBdjFab2p4Y3RJZ0ZjTHFGckNoZ19GX3RNMHF2MjZFdk9IZmtxdWNOZjBsWTRPQk9JTktEZE1FN3M?oc=5": {
    "title": "Tribunal declara falência de Mauricio Pinilla por dívidas que superam $1.670 milhões",
@@ -58642,12 +58801,12 @@
   }
  },
  "last_run": {
-  "ts": 1786730410,
-  "iso": "14 ago 2026 · 15:00 BRT",
+  "ts": 1786735963,
+  "iso": "14 ago 2026 · 16:32 BRT",
   "status": {
    "Cosan": {
     "status": "atencao",
-    "score": 70
+    "score": 69
    },
    "Engie Brasil": {
     "status": "atencao",
@@ -58655,7 +58814,7 @@
    },
    "Rumo": {
     "status": "atencao",
-    "score": 61
+    "score": 60
    },
    "JBS": {
     "status": "atencao",
@@ -58685,13 +58844,13 @@
     "status": "monitorar",
     "score": 35
    },
-   "Axia Energia": {
-    "status": "monitorar",
-    "score": 34
-   },
    "B3": {
     "status": "monitorar",
     "score": 34
+   },
+   "Axia Energia": {
+    "status": "monitorar",
+    "score": 33
    },
    "Sabesp": {
     "status": "monitorar",
@@ -58727,7 +58886,7 @@
    },
    "Lojas Renner": {
     "status": "monitorar",
-    "score": 18
+    "score": 17
    },
    "Yura": {
     "status": "atencao",
@@ -58914,5 +59073,5 @@
  "semantic_reclassified_at": "2026-07-30T21:07:47.714609+00:00",
  "semantic_version": "1.0",
  "links_repaired_at": "2026-07-31T05:45:56.701137+00:00",
- "reclassify_only_applied_at": "2026-08-14T18:00:10.713448+00:00"
+ "reclassify_only_applied_at": "2026-08-14T19:32:43.499690+00:00"
 }

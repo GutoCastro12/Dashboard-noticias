@@ -2064,6 +2064,79 @@ def detect_agencia_em_nome_da_empresa(text: str, monitored: str,
     return ""
 
 
+# ── caso NOMEADO pela empresa, autor terceiro ───────────────────────────────
+# Lacuna medida no diagnóstico da Duke Energy: "<Empresa> fraud case" é o NOME
+# do processo — a empresa qualifica o caso, não o comete. A lista de vítima já
+# tinha um padrão para isso, `charged in {m} fraud`, mas ele exige "charged in"
+# colado ao nome e escapava de três construções reais:
+#   • "charged in THE ONGOING Duke Energy fraud case"  (palavras intercaladas)
+#   • "ARRESTED IN Duke Energy fraud case"             (outro verbo)
+#   • "WEIGHS IN ON Duke Energy Fraud Case"            (comentário)
+#
+# A regra exige DUAS evidências, nunca só o nome do caso:
+#   (a) a construção atributiva "<Empresa> fraud case/investigation/scheme";
+#   (b) um ator TERCEIRO agindo (preso, indiciado, condenado) OU comentário
+#       sobre o caso.
+#
+# Só o nome não basta — seria amplo demais e apagaria fraude real. E é por isso
+# que TIM e Citigroup ficam de fora naturalmente: "condena executivos DA TIM"
+# nomeia insiders da própria companhia, sem a construção de caso nomeado, e
+# "Fraud Showdown Against Citigroup" não tem ator terceiro nem caso nomeado.
+_CASO_NOMEADO = (r"{m}{q}\s+(?:fraud|fraude)\s+"
+                 r"(?:case|investigation|scheme|probe|caso|investiga[çc][ãa]o)")
+# Ator de terceiro: substantivo genérico de pessoa + verbo de responsabilização.
+# `suspeito`, `terceiro` e afins nunca designam a própria companhia.
+_ATOR_TERCEIRO = (
+    r"\b(?:suspects?|suspeit[oa]s?|persons?|man|woman|men|women|individuals?|"
+    r"pessoas?|indiv[íi]duos?|customers?|clientes?|employees?|ex-?employees?|"
+    r"funcion[áa]ri[oa]s?|ex-?funcion[áa]ri[oa]s?|third\s+part(?:y|ies))\b")
+_VERBO_RESPONSABILIZACAO = (
+    r"\b(?:arrested|charged|indicted|detained|convicted|sentenced|pleaded|"
+    r"pled|apprehended|pres[oa]s?|detid[oa]s?|indiciad[oa]s?|denunciad[oa]s?)\b")
+# Comentário/análise sobre o caso: quem comenta não cometeu.
+_COMENTARIO_SOBRE_CASO = (
+    r"\b(?:weighs?\s+in|weighed\s+in|comments?\s+on|commented\s+on|discusses|"
+    r"discussed|analysis\s+of|analyzes|explains|explained|opinion\s+on|"
+    r"comenta|analisa|discute|opina)\b")
+
+
+def is_caso_nomeado_com_autor_terceiro(
+        text: str, monitored: str, aliases: list[str] | None = None) -> str:
+    """Evidência de que o texto NOMEIA o caso pela empresa e o autor é outro.
+
+    Devolve o trecho que sustenta a decisão, ou "". Exige as duas evidências:
+    a construção de caso nomeado E (ator terceiro OU comentário). Só a
+    expressão "<Empresa> fraud case" jamais basta.
+    """
+    t = _n(text)
+    nomes = [re.escape(_n(a)) for a in ((aliases or []) + [monitored]) if a]
+    if not nomes:
+        return ""
+    alt = "(?:" + "|".join(nomes) + ")"
+
+    m = re.search(_CASO_NOMEADO.format(m=alt, q=_QUALIF), t)
+    if not m:
+        return ""
+
+    # (b1) ator terceiro responsabilizado, em qualquer ordem na mesma frase
+    tem_ator = (re.search(_ATOR_TERCEIRO, t)
+                and re.search(_VERBO_RESPONSABILIZACAO, t))
+    # (b2) comentário/análise sobre o caso
+    tem_comentario = re.search(_COMENTARIO_SOBRE_CASO, t)
+    if not (tem_ator or tem_comentario):
+        return ""
+
+    # Guarda: se o ator descrito PERTENCE à companhia ("executivos da <M>",
+    # "<M> executives"), a responsabilização alcança a casa e não é terceiro.
+    if re.search(r"(?:executiv|diretor|director|officer|gerente|manager|"
+                 r"funcion[áa]ri)\w*\s+(?:e\s+\w+\s+)?(?:d[aeo]s?|of)\s+" + alt, t):
+        return ""
+    if re.search(alt + r"\s+(?:executives?|directors?|officers?|managers?)", t):
+        return ""
+
+    return re.sub(r"\s+", " ", m.group(0))[:120]
+
+
 def detect_fraud_role(text: str, monitored: str,
                       aliases: list[str] | None = None) -> str:
     """Papel da monitorada num evento de fraude: "agente", "vitima" ou "".
@@ -2090,6 +2163,11 @@ def detect_fraud_role(text: str, monitored: str,
         vitima = FRAUDE_VITIMA
     if any(re.search(p.format(m=alt, q=_QUALIF, a=_ART), t, re.I) for p in vitima):
         return "vitima"
+    # Mesma família — a companhia não é a autora —, mas por outra evidência: o
+    # caso leva o nome dela e quem responde é um terceiro. Vem DEPOIS da lista
+    # de vítima e DEPOIS do agente, de modo que nada que já decidia muda.
+    if is_caso_nomeado_com_autor_terceiro(text, monitored, aliases):
+        return "caso_nomeado"
     return ""
 
 
@@ -2934,6 +3012,18 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                          attribution_rule="R_VITIMA_NAO_E_AUTORA_DA_FRAUDE",
                          rejection_reason=(f"{monitored} é vítima/alvo da fraude neste "
                                             f"texto, não quem a praticou"))
+                decisoes.append(d)
+                continue
+            if _fr == "caso_nomeado":
+                _ev = is_caso_nomeado_com_autor_terceiro(texto, monitored, _al)
+                d.update(scoreable=False, event_scope="indireto",
+                         # `subject_company` vazio: sabemos que NÃO é a
+                         # monitorada; quem é o autor o texto não nomeia.
+                         subject_company="",
+                         relation_type="entidade_que_nomeia_o_caso",
+                         attribution_rule="R_CASO_NOMEADO_NAO_IMPUTA_AUTORIA",
+                         rejection_reason=(f"\"{_ev}\" nomeia o processo; quem responde "
+                                           f"é terceiro, não {monitored}"))
                 decisoes.append(d)
                 continue
         # 2h) PAPEL NÃO-SUJEITO: vítima / comentarista / investigador (Wave A7)

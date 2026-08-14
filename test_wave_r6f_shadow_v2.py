@@ -123,9 +123,21 @@ _g, _r = pont("Bankruptcy Court Orders Texas to Strike Allegations In State Data
               "Privacy Suit Against General Motors", "General Motors", True)
 check("falencia" not in _g and _r.get("falencia") == "R_FORO_JUDICIAL_NAO_PROVA_INSOLVENCIA",
       "[14] GM/W&W: falência não reintroduzida")
-_g, _ = pont(D3, "Duke Energy", True)
-check("fraude" in _g,
-      "[15] Duke #1/#3 sem enrichment seguem BLOCKED_BY_INPUT — sem heurística")
+_g, _r = pont(D3, "Duke Energy", True)
+# ATUALIZADO 2026-08-14 (wave CASO NOMEADO). A checagem original media "o
+# shadow não chuta sem enrichment" por um PROXY: o evento continuar pontuando
+# em produção. O proxy quebrou quando a produção passou a rejeitar por uma via
+# própria — mas a propriedade que interessa não mudou, e agora é medida
+# diretamente, no veredito do próprio motor de papel.
+with sa.shadow_fraud_roles():
+    _p = sa.detect_fraud_victim_evidence(D3, "Duke Energy",
+                                         AL.get("Duke Energy") or ["Duke Energy"])
+check(not _p.get("role"),
+      f"[15] Duke #3 sem enrichment: o motor de papel não opina ({_p.get('role')!r}) "
+      f"— segue BLOCKED_BY_INPUT, sem heurística")
+check("fraude" not in _g and _r.get("fraude") == "R_CASO_NOMEADO_NAO_IMPUTA_AUTORIA",
+      f"[15b] e quem rejeita é a regra determinística de produção, não o shadow "
+      f"({_r.get('fraude')})")
 
 print()
 print("=" * 96)
