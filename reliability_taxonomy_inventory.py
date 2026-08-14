@@ -141,6 +141,11 @@ REGRAS = {
     "R_MONITORADA_E_CREDORA_LESADA": (("role", "relation"), (_ESTRITO, _CREDITO), False),
     "R_CREDOR_NAO_HERDA_EVENTO_DO_DEVEDOR": (("subject", "role", "relation"),
                                              (_ESTRITO, _CREDITO), False),
+    # Irmã da anterior, para quando o devedor NÃO é nomeado: o polo ativo é
+    # inequívoco pelo verbo ("X requer a falência"), mesmo sem saber quem é o
+    # requerido. Adjudicada em Santander/Minera Cobre Verde (2026-08-12).
+    "R_REQUERENTE_DE_FALENCIA_NAO_E_O_FALIDO": (("subject", "role", "relation"),
+                                                (_ESTRITO, _CREDITO), False),
     "R_MONITORADA_E_FINANCIADORA": (("role", "relation"), ("emissao_divida",), False),
     "R_VITIMA_NAO_E_AUTORA_DA_FRAUDE": (("role", "relation"), _FRAUDE, False),
     "R_FORO_JUDICIAL_NAO_PROVA_INSOLVENCIA": (("event_evidence", "subject"),

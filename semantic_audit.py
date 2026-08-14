@@ -1086,6 +1086,95 @@ def detect_debtor_subject(text: str, monitored: str, aliases: list[str] | None =
     return ""
 
 
+# ── credor REQUERENTE: quem PEDE a falência não é quem vai à falência ───────
+# Lacuna medida no caso Santander/Minera Cobre Verde (2026-08-12): a família
+# credor≠devedor cobria duas construções — devedor nomeado por possessivo
+# ("falência DA Oi") e monitorada como FINANCIADORA ("junto ao banco") — e
+# nenhuma alcança "Santander entra na Justiça para solicitar falência". Ali o
+# devedor NÃO é nomeado e o banco não financia nada: ele REQUER. Sem sujeito
+# possessivo para extrair, `detect_debtor_subject` devolvia vazio e o evento
+# seguia atribuído ao próprio requerente.
+#
+# A estrutura que decide é verbal, não lexical: SUJEITO + VERBO DE
+# REQUERIMENTO + falência. Quem requer está no polo ativo; o falido é o
+# requerido. Vale mesmo quando o devedor não é nomeado no texto local — e é
+# justamente aí que precisa funcionar, porque muitas vezes só há a manchete.
+_VERBOS_REQUERIMENTO = (
+    r"(?:pede|pediu|pedir|solicita|solicitou|solicitar|requer|requereu|requerer|"
+    r"ajuiza|ajuizou|ajuizar|protocola|protocolou|move|moveu|impetra|impetrou|"
+    r"entra\s+na\s+justica|entrou\s+na\s+justica|aciona\s+a\s+justica|"
+    r"seeks|files|filed|petitions|petitioned|"
+    r"pide|pidio|solicito|demanda|demando)"
+)
+# "entra na Justiça PARA SOLICITAR falência": ponte entre o verbo de ação e o
+# substantivo de insolvência.
+_PONTE_REQUERIMENTO = (
+    r"(?:\s+(?:para|a\s+fim\s+de|com\s+o\s+objetivo\s+de|buscando|to)"
+    r"(?:\s+\w+){0,2})?"
+)
+# SÓ falência/quiebra/bankruptcy. `recuperacao judicial` fica de fora de
+# propósito: "X pede recuperação judicial" é, na esmagadora maioria, o pedido
+# da PRÓPRIA empresa — incluí-la apagaria evento legítimo do emissor.
+_INSOLVENCIA_REQUERIDA = r"(?:falencia|quiebra|bankruptcy)"
+# Marcadores de que o pedido é sobre si mesma — aí o evento É da monitorada.
+_AUTOFALENCIA = r"(?:propri[ao]|autofalencia|its\s+own|own\s+bankruptcy)"
+
+
+def is_monitored_requerente_insolvencia(
+        text: str, monitored: str, aliases: list[str] | None = None) -> str:
+    """Evidência de que a monitorada REQUER a falência de outrem, ou "".
+
+    Devolve o trecho que sustenta a decisão — nunca um booleano nu — porque a
+    rejeição precisa citar o que a motivou. Não adivinha o nome do devedor: a
+    conclusão "a monitorada é a requerente, logo não é a falida" independe de
+    o requerido estar nomeado no texto disponível.
+    """
+    t = _n(text)
+    nomes = [re.escape(_n(a)) for a in ((aliases or []) + [monitored]) if a]
+    if not nomes:
+        return ""
+    alt = "(?:" + "|".join(nomes) + ")"
+
+    # a falência é explicitamente DA monitorada → evento dela, não bloqueia
+    if re.search(_INSOLVENCIA_REQUERIDA + r"\s+" + _POSS + r"\s+" + alt, t):
+        return ""
+
+    # (a) verbal: "<monitorada> … solicita/entra na Justiça para solicitar falência"
+    rx = re.compile(
+        alt + r"\b[^.;!?]{0,90}?\b" + _VERBOS_REQUERIMENTO
+        + _PONTE_REQUERIMENTO
+        + r"\s+(?:a|o|the|la|el|de)?\s*" + _INSOLVENCIA_REQUERIDA)
+    m = rx.search(t)
+    if not m:
+        # (b) nominal: "<monitorada> … pedido de falência CONTRA <alguém>".
+        # A preposição adversativa é obrigatória aqui. Sem ela, "entra com
+        # pedido de falência" é ambíguo — pode ser autofalência —, e bloquear
+        # apagaria evento legítimo do próprio emissor.
+        rx_nom = re.compile(
+            alt + r"\b[^.;!?]{0,90}?\b"
+            r"(?:pedido|requerimento|solicitacao|acao|peticao|petition)"
+            r"\s+de\s+" + _INSOLVENCIA_REQUERIDA
+            + r"\s+(?:contra|against|em\s+face\s+de|frente\s+a)")
+        m = rx_nom.search(t)
+    if not m:
+        # (c) inglês: "files/seeks (for) bankruptcy AGAINST <alguém>".
+        # O `against` é obrigatório porque, em inglês, "X files for bankruptcy"
+        # sem preposição adversativa é justamente a autofalência — bloquear
+        # ali apagaria o evento próprio do emissor.
+        rx_en = re.compile(
+            alt + r"\b[^.;!?]{0,90}?\b"
+            r"(?:files?|filed|filing|seeks?|sought|petitions?|petitioned)"
+            r"(?:\s+for)?\s+" + _INSOLVENCIA_REQUERIDA
+            + r"\s+(?:against|of)\b")
+        m = rx_en.search(t)
+    if not m:
+        return ""
+    # "pediu a PRÓPRIA falência" continua sendo evento da monitorada
+    if re.search(_AUTOFALENCIA, t[m.start():m.end() + 40]):
+        return ""
+    return re.sub(r"\s+", " ", m.group(0))[:140]
+
+
 def is_monitored_credor(text: str, monitored: str, aliases: list[str] | None = None) -> bool:
     """A monitorada aparece explicitamente como financiadora da operação."""
     t = _n(text)
@@ -2798,6 +2887,29 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                          attribution_rule="R_CREDOR_NAO_HERDA_EVENTO_DO_DEVEDOR",
                          rejection_reason=(f"o evento de crédito pertence a '{_dev}'; "
                                             f"{monitored} não é o devedor"))
+                decisoes.append(d)
+                continue
+            # A monitorada REQUER a falência de outrem. Vem depois do detector
+            # possessivo de propósito: quando o devedor está nomeado, aquele
+            # bloco já resolve e diz QUEM é. Esta regra cobre o caso em que o
+            # requerido não aparece no texto — e mesmo assim o polo ativo é
+            # inequívoco. `subject_company` fica vazio porque não sabemos o
+            # nome do falido, e inventá-lo seria pior do que admitir a lacuna.
+            _req = is_monitored_requerente_insolvencia(texto, monitored, _al)
+            if _req:
+                d.update(scoreable=False, event_scope="indireto",
+                         # `subject_company` volta a VAZIO: o padrão do bloco é
+                         # a própria monitorada, e deixá-lo assim registraria
+                         # que ela é o sujeito da falência — exatamente a
+                         # atribuição que esta regra existe para negar. Vazio
+                         # diz a verdade: sabemos que não é ela, não sabemos
+                         # quem é.
+                         subject_company="",
+                         relation_type="credor_requerente",
+                         attribution_rule="R_REQUERENTE_DE_FALENCIA_NAO_E_O_FALIDO",
+                         rejection_reason=(f"{monitored} REQUER a falência "
+                                           f"(\"{_req}\"); o falido é o requerido, "
+                                           f"não o requerente"))
                 decisoes.append(d)
                 continue
         if ev in ("emissao_divida",) and is_monitored_credor(texto, monitored, _al):

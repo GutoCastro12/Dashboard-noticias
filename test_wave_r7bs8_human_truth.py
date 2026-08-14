@@ -202,8 +202,14 @@ _live = json.load(io.open("test_fixtures_reliability/live_reviews.json",
                           encoding="utf-8"))
 _shadow = json.load(io.open("test_fixtures_reliability/shadow_reviews.json",
                             encoding="utf-8"))
-check(len([k for k in _live if k != "_meta"]) == 31,
-      "[20] live_reviews continua com 31 itens — nada foi mexido lá")
+# 31 na R7b-S8; 32 desde a adjudicação humana de Santander Brasil/falencia
+# (2026-08-14, família CREDITOR_VS_DEBTOR). A asserção protege contra
+# CONTAMINAÇÃO entre populações, não contra crescimento legítimo desta: o item
+# entrou na população certa, por revisor humano, e as outras três continuam
+# intactas — que é o que as checagens seguintes verificam.
+check(len([k for k in _live if k != "_meta"]) == 32,
+      "[20] live_reviews tem 32 itens: os 31 da R7b-S8 mais a adjudicação "
+      "humana do Santander")
 check(len([k for k in _shadow if k != "_meta"]) == 1,
       "[21] shadow_reviews continua com 1 item")
 check(len([k for k in MA if k != "_meta"]) == 3,

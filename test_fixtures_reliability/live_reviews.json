@@ -69,6 +69,15 @@
   "reviewer_type": "imported_prior_adjudication",
   "status": "TRUE"
  },
+ "https://diariodocomercio.com.br/mix/santander-surpreende-e-entra-na-justica-para-solicitar-falencia/||Santander Brasil||falencia": {
+  "company": "Santander Brasil",
+  "event_id": "falencia",
+  "family_id": "CREDITOR_VS_DEBTOR",
+  "note": "Santander e o CREDOR requerente; a falencia e da Minera Cobre Verde, que tentou reorganizacao judicial e acabou declarada falida, com ativos destinados a liquidacao. Verificado externamente na materia original pelo usuario.",
+  "reviewed_at": 1786710897,
+  "reviewer_type": "human",
+  "status": "FALSE_POSITIVE"
+ },
  "https://economia.uol.com.br/colunas/graciliano-rocha/2026/04/01/agencia-de-rating-rebaixa-nota-de-credito-da-aegea-gigante-do-saneamento.htm||Aegea Saneamento||rebaixamento_rating": {
   "company": "Aegea Saneamento",
   "event_id": "rebaixamento_rating",
