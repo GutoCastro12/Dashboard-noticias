@@ -127,6 +127,23 @@ jobs:
         run: |
           python reliability_input_shadow.py --prospective
 
+      # Shadow prospectivo do Contract V2. Roda DEPOIS do dashboard pela mesma
+      # razão dos outros shadows: o score já foi calculado e publicado, e nada
+      # daqui pode alterá-lo. Valida o contrato em artigos que não existiam
+      # quando ele foi escrito — os 8 controles do benchmark viraram evidência
+      # de desenvolvimento e não servem mais como holdout.
+      # Teto de 5 casos por ciclo, dois modelos, zero retry. `continue-on-error`
+      # somado ao fail-open interno garante que cota ou provider fora do ar
+      # jamais impeçam a publicação: isto é observação, não insumo de risco.
+      - name: Semantic V2 shadow (prospective, no scoring impact)
+        continue-on-error: true
+        timeout-minutes: 6
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PYTHONIOENCODING: utf-8
+        run: |
+          python semantic_v2_shadow_run.py
+
       # Histórico persistido via commit no repositório — não via actions/cache,
       # que evicta entradas não acessadas há 7 dias e tem limite de 10GB/repo.
       - name: Commit history + dashboard
@@ -150,6 +167,12 @@ jobs:
           # cada run e a coleta deixaria de ser prospectiva. É dado gerado,
           # vive FORA de risk_history.json e nenhum caminho de produção o lê.
           git add -f risk_input_shadow.json 2>/dev/null || true
+          # Shadow prospectivo do Contract V2. Mesma razão dos demais
+          # sidecars: o runner é efêmero e, sem persistir, a observação
+          # prospectiva se perderia e o holdout nunca acumularia. Um ciclo sem
+          # caso novo deixa o arquivo byte-idêntico, então isto não passa a
+          # gerar commit a cada cron.
+          git add -f risk_semantic_v2_shadow.json 2>/dev/null || true
           # Cache de traduções. A razão é a MESMA dos dois acima — o runner é
           # efêmero — mas a consequência é outra: sem persistir, todo cron
           # recomeça com o cache vazio e retraduz os mesmos títulos para
