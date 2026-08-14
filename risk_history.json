@@ -724,7 +724,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T14:25:18.834112+00:00"
+     "last_checked_at": "2026-08-14T17:07:02.186704+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2593,7 +2593,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T14:25:19.234372+00:00"
+     "last_checked_at": "2026-08-14T17:07:02.586939+00:00"
     }
    ],
    "corrob_sources": [
@@ -10264,7 +10264,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T14:25:19.634719+00:00"
+     "last_checked_at": "2026-08-14T17:07:02.987241+00:00"
     },
     {
      "source": "Demarest",
@@ -10284,7 +10284,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T14:25:20.035037+00:00"
+     "last_checked_at": "2026-08-14T17:07:03.387481+00:00"
     }
    ],
    "corrob_sources": [
@@ -11867,7 +11867,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T14:25:20.435260+00:00"
+     "last_checked_at": "2026-08-14T17:07:03.787695+00:00"
     }
    ],
    "corrob_sources": [
@@ -15621,7 +15621,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T14:25:22.013197+00:00"
+     "last_checked_at": "2026-08-14T17:07:04.420601+00:00"
     }
    ],
    "corrob_sources": [
@@ -18174,7 +18174,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T14:25:22.612882+00:00"
+     "last_checked_at": "2026-08-14T17:07:05.069921+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -18280,7 +18280,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T14:25:23.222967+00:00"
+     "last_checked_at": "2026-08-14T17:07:05.754326+00:00"
     },
     {
      "source": "Moomoo",
@@ -19685,7 +19685,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T14:25:23.984315+00:00"
+     "last_checked_at": "2026-08-14T17:07:06.548403+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19728,7 +19728,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T14:25:24.735295+00:00"
+     "last_checked_at": "2026-08-14T17:07:07.363376+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -20552,7 +20552,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T14:25:25.330341+00:00",
+     "last_checked_at": "2026-08-14T17:07:07.994351+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20577,7 +20577,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T14:25:25.917360+00:00",
+     "last_checked_at": "2026-08-14T17:07:08.678956+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21697,7 +21697,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-14T14:25:26.317670+00:00",
+     "last_checked_at": "2026-08-14T17:07:09.079206+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21762,7 +21762,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-14T14:25:26.717950+00:00",
+     "last_checked_at": "2026-08-14T17:07:09.479412+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22851,7 +22851,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T14:25:27.337780+00:00"
+     "last_checked_at": "2026-08-14T17:07:10.144002+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22936,7 +22936,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T14:25:27.938911+00:00"
+     "last_checked_at": "2026-08-14T17:07:10.797701+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -23738,7 +23738,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T14:25:28.553097+00:00",
+     "last_checked_at": "2026-08-14T17:07:11.448922+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -23761,7 +23761,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T14:25:29.166540+00:00",
+     "last_checked_at": "2026-08-14T17:07:12.086770+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24796,7 +24796,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T14:25:29.778957+00:00",
+     "last_checked_at": "2026-08-14T17:07:12.736027+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24966,7 +24966,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T14:25:30.360343+00:00",
+     "last_checked_at": "2026-08-14T17:07:13.380444+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -29202,7 +29202,9 @@
    "resolution_error": "",
    "link_render_anchor": true,
    "link_label": "Abrir notícia →",
-   "last_checked_at": "2026-07-31T03:04:35.646022+00:00"
+   "last_checked_at": "2026-07-31T03:04:35.646022+00:00",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "http://www.dars.gov.et/first-dry/EQT-Corporation-Receives-Moodys-Upgrade-Potential-Tailwind-for-Natural-Gas-Producer-32-13375": {
    "title": "EQT Corporation Receives Moody's Upgrade: Potential Tailwind for Natural Gas Producer",
@@ -39029,7 +39031,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T14:25:31.131029+00:00"
+     "last_checked_at": "2026-08-14T17:07:14.227846+00:00"
     }
    ],
    "corrob_sources": [
@@ -42100,7 +42102,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T14:25:31.724556+00:00"
+     "last_checked_at": "2026-08-14T17:07:14.841335+00:00"
     },
     {
      "source": "Virginia Business",
@@ -42143,7 +42145,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T14:25:32.336316+00:00"
+     "last_checked_at": "2026-08-14T17:07:15.484111+00:00"
     },
     {
      "source": "Virginia Business",
@@ -48926,7 +48928,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T14:25:32.946998+00:00",
+     "last_checked_at": "2026-08-14T17:07:16.124509+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48949,7 +48951,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T14:25:33.533702+00:00",
+     "last_checked_at": "2026-08-14T17:07:16.763132+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -52179,7 +52181,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "nenhum",
-     "last_checked_at": "2026-08-14T14:25:34.282169+00:00",
+     "last_checked_at": "2026-08-14T17:07:17.606295+00:00",
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -52202,7 +52204,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "nenhum",
-     "last_checked_at": "2026-08-14T14:25:35.057962+00:00",
+     "last_checked_at": "2026-08-14T17:07:18.456059+00:00",
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -52836,7 +52838,9 @@
     "Vale"
    ],
    "captured_ts": 1786717513,
-   "cap_iso": "2026-08-14 11:25"
+   "cap_iso": "2026-08-14 11:25",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMif0FVX3lxTE9WUjhIVGVjUVlPNkRFTUVEdVhuTUU2cXpUa1Job2tBU1JqSjMxMmtYTE5MQW9nYnl5Ul9PVlBwQWUya1pxelhMakFyTGNhd2FGMHVtRVVMckpoeTI4aXVxNUxTdnF3UWFLQVUyeWp6Umk3RUxaMlczekJjODNyNmM?oc=5": {
    "title": "Governo do Rio pede falência da Refit na Justiça por dívida bilionária",
@@ -52909,9 +52913,118 @@
    ],
    "captured_ts": 1786717513,
    "cap_iso": "2026-08-14 11:25"
+  },
+  "https://www.xtb.com/cl/analisis-y-noticias/analisis-de-mercado/latam-airlines-se-consolida-como-lider-en-sudamerica-con-un-retorno-del-76-tras-su-quiebra": {
+   "title": "LATAM Airlines se consolida como líder na América do Sul com um retorno de 76% após sua recuperação judicial",
+   "url": "https://www.xtb.com/cl/analisis-y-noticias/analisis-de-mercado/latam-airlines-se-consolida-como-lider-en-sudamerica-con-un-retorno-del-76-tras-su-quiebra",
+   "summary": "LATAM Airlines se consolida como líder na América do Sul com um retorno de 76% após sua recuperação judicial &nbsp;&nbsp; XTB.com",
+   "source": "XTB.com",
+   "domain": "xtb.com",
+   "pub_ts": 1771833600,
+   "pub_iso": "2026-02-23 05:00",
+   "language": "es",
+   "title_original": "LATAM Airlines se consolida como líder en Sudamérica con un retorno del 76% tras su quiebra",
+   "summary_original": "LATAM Airlines se consolida como líder en Sudamérica con un retorno del 76% tras su quiebra &nbsp;&nbsp; XTB.com",
+   "companies": [
+    "LATAM Airlines"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "event_assessments": [
+    {
+     "company": "LATAM Airlines",
+     "event_id": "recuperacao_judicial",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Sul",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "acusacao_civil",
+     "event_scope": "indireto",
+     "direction": "neutra",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "nao_confirmado",
+     "attribution_rule": "R_POSSESSIVO_MESMA_ORACAO",
+     "attribution_confidence": "alta",
+     "scoreable": false,
+     "rejection_reason": "sujeito verdadeiro é Sul; não representa recuperacao_judicial de LATAM Airlines",
+     "legal_status": "acusacao_civil",
+     "confirmation_status": "nao_confirmado"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "LATAM Airlines",
+     "event_id": "recuperacao_judicial",
+     "event_id_corrigido": "",
+     "regra": "R_POSSESSIVO_MESMA_ORACAO",
+     "motivo": "sujeito verdadeiro é Sul; não representa recuperacao_judicial de LATAM Airlines",
+     "subject_company": "Sul"
+    }
+   ],
+   "mention_roles": {
+    "LATAM Airlines": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "context_companies": [
+    "LATAM Airlines"
+   ],
+   "context_events_by_company": {
+    "LATAM Airlines": [
+     {
+      "event_id": "recuperacao_judicial",
+      "event_label": "recuperacao judicial",
+      "subject_company": "Sul",
+      "relation_type": "investida_jv",
+      "impact_type": "indireto_material",
+      "event_scope": "indireto",
+      "event_phase": "acusacao_civil",
+      "direction": "neutra",
+      "scoreable": false,
+      "event_id_corrigido": "",
+      "attribution_rule": "R_POSSESSIVO_MESMA_ORACAO",
+      "attribution_confidence": "alta",
+      "attribution_evidence": "do Sul",
+      "nota": "sujeito verdadeiro é Sul; não representa recuperacao_judicial de LATAM Airlines"
+     }
+    ]
+   },
+   "events_by_company": {
+    "LATAM Airlines": []
+   },
+   "companies_attributed": [],
+   "captured_ts": 1786727217,
+   "cap_iso": "2026-08-14 14:06"
+  },
+  "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQb0dzd0RhdGxTRDRXQlRVaDhjNThtbktBd3Uwd0NISnVDd1dmaVhBZXdidEp1LXdDcmwxRGVPdjNwVTIwZkxQZ0phNHgxeTlHbTlCQXQ3UUY0OXJHeXBZdEZVSkRSNTF5TnFpYzlXVTNiVnlZbEpOYlg2NkZuTFF2OEJJMFdiYXhoMmJIMjk2YWFpUjFKYkVIam40djV1TzA2akEyWXVUYjFxQWE4WTRhYzU5T1doclFmck5VS2tGLVB6b3B6bFJmM0dCUlIwTXJyS3A5Yklyd1Zoazh3?oc=5": {
+   "title": "Adeus a 89 lojas: uma das redes de móveis mais tradicionais entra em falência após quase 80 anos",
+   "url": "https://www.em.com.br/emfoco/2026/08/07/adeus-a-89-lojas-uma-das-redes-de-moveis-mais-tradicionais-dos-eua-entra-em-falencia-apos-quase-80-anos/",
+   "summary": "Adeus a 89 lojas: uma das redes de móveis mais tradicionais entra em falência após quase 80 anos &nbsp;&nbsp; Estado de Minas",
+   "source": "Estado de Minas",
+   "domain": "em.com.br",
+   "pub_ts": 1786123500,
+   "pub_iso": "2026-08-07 14:25",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1786727217,
+   "cap_iso": "2026-08-14 14:06"
   }
  },
- "run_count": 126,
+ "run_count": 127,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -58280,11 +58393,15 @@
   "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWFVuYzd3eHJkZzJfUDh1Qm5WdHoza1ZYdTcxT3RUTnZ5OC1NY3B5NkpRazRNYXNzZFN2LVFQVzJZeE9ybUliTHVCSjk4UzhURmtBeTk5X2g0N0M5MnExVWR0V1I1djUzTm9sNVZhZUFZUEZyeHJITW91aWdhQklhYWtodWIzNVkteE1CZDVYaVNYS1RIdEJneGp5b1JlZDQzRVJHbNIBqgFBVV95cUxOa1dnX282ZzRPMkZiOVRWQmloaFBtX0JKQVpPUC1HNHNBeDVYUG81allRdUNsZE93TjhMaHBIRVphTFVKR2w5WW1YaTFYTHJWRnNYb2hUc2N1VjNwaHhPRGh5VV9rMDJLRm9WUmE2dUpQR0xBa2ItMXF2Qy1JdjkwWTZhTXN0NjU5dzVsUDdEU0dDcEhyOFJGLUMwR2hFbGJXSlNPVkZqSkRMZw?oc=5": {
    "url": "https://investidor10.com.br/noticias/smart-fit-smft3-anuncia-troca-de-ceo-e-diretor-financeiro-118563/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQb0dzd0RhdGxTRDRXQlRVaDhjNThtbktBd3Uwd0NISnVDd1dmaVhBZXdidEp1LXdDcmwxRGVPdjNwVTIwZkxQZ0phNHgxeTlHbTlCQXQ3UUY0OXJHeXBZdEZVSkRSNTF5TnFpYzlXVTNiVnlZbEpOYlg2NkZuTFF2OEJJMFdiYXhoMmJIMjk2YWFpUjFKYkVIam40djV1TzA2akEyWXVUYjFxQWE4WTRhYzU5T1doclFmck5VS2tGLVB6b3B6bFJmM0dCUlIwTXJyS3A5Yklyd1Zoazh3?oc=5": {
+   "url": "https://www.em.com.br/emfoco/2026/08/07/adeus-a-89-lojas-uma-das-redes-de-moveis-mais-tradicionais-dos-eua-entra-em-falencia-apos-quase-80-anos/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786717577,
-  "iso": "14 ago 2026 · 11:26 BRT",
+  "ts": 1786727285,
+  "iso": "14 ago 2026 · 14:08 BRT",
   "status": {
    "Santander Brasil": {
     "status": "critico",
@@ -58378,21 +58495,21 @@
     "status": "monitorar",
     "score": 18
    },
-   "Aegea Saneamento": {
-    "status": "monitorar",
-    "score": 17
-   },
-   "Suzano": {
-    "status": "monitorar",
-    "score": 16
-   },
    "Yura": {
     "status": "atencao",
+    "score": 16
+   },
+   "Aegea Saneamento": {
+    "status": "monitorar",
     "score": 16
    },
    "Tupy": {
     "status": "monitorar",
     "score": 16
+   },
+   "Suzano": {
+    "status": "monitorar",
+    "score": 15
    },
    "Embraer": {
     "status": "monitorar",
@@ -58422,13 +58539,13 @@
     "status": "monitorar",
     "score": 12
    },
-   "Cemig": {
-    "status": "atencao",
-    "score": 10
-   },
    "Bradesco": {
     "status": "atencao",
     "score": 10
+   },
+   "Cemig": {
+    "status": "atencao",
+    "score": 9
    },
    "Copel": {
     "status": "monitorar",
@@ -58466,13 +58583,13 @@
     "status": "monitorar",
     "score": 5
    },
-   "Caixa Seguridade": {
-    "status": "monitorar",
-    "score": 5
-   },
    "Halliburton": {
     "status": "monitorar",
     "score": 5
+   },
+   "Caixa Seguridade": {
+    "status": "monitorar",
+    "score": 4
    },
    "Direcional Engenharia": {
     "status": "monitorar",

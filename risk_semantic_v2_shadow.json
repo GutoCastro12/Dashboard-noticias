@@ -1,0 +1,243 @@
+{
+ "_meta": {
+  "contract_freeze_commit": "7526667d36e0266fc01f9f15af2aea1aa92404ac",
+  "contract_freeze_iso": "2026-08-14T12:06:33Z",
+  "shadow_version": "sem.v2.shadow.v1"
+ },
+ "observacoes": {
+  "8f820bbc8fc89c13911b|Eneva|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "8f820bbc8fc89c13911b",
+   "article_pub_iso": "2026-08-11 12:57",
+   "candidate_event": "ma",
+   "case_id": "8f820bbc8fc89c13911b|Eneva|ma|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "Eneva",
+   "contract_version": "v2",
+   "created_at": "2026-08-14T17:08:58Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-14 11:25",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "aprovacao",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "ANP aprova aquisição",
+      "phase": "CONFIRMED",
+      "phase_quote": "aprova",
+      "related_entity": "Atem",
+      "relation": "BUYER",
+      "relation_quote": "aquisição de parte da Atem em Japiim pela Eneva",
+      "role_quote": "pela Eneva",
+      "subject": "Eneva",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Eneva",
+      "transaction_object": "ASSET_OR_BUSINESS_UNIT",
+      "transaction_object_quote": "parte da Atem em Japiim"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-14 11:25",
+   "human_review": null,
+   "latencia_s": 5.68,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "ANP aprova aquisição",
+      "phase": "CONFIRMED",
+      "phase_quote": "aprova",
+      "related_entity": "Atem",
+      "relation": "BUYER",
+      "relation_quote": "aquisição de parte da Atem em Japiim pela Eneva",
+      "role_quote": "pela Eneva",
+      "subject": "Eneva",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Eneva",
+      "transaction_object": "ASSET_OR_BUSINESS_UNIT",
+      "transaction_object_quote": "parte da Atem em Japiim"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Editora Brasil Energia",
+   "title": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva",
+   "url": "https://brasilenergia.com.br/petroleoegas/ep/anp-aprova-aquisicao-de-parte-da-atem-em-japiim-pela-eneva",
+   "usage": {
+    "candidates_token_count": 315,
+    "prompt_token_count": 1319,
+    "total_token_count": 1634
+   }
+  },
+  "8f820bbc8fc89c13911b|Eneva|ma|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "8f820bbc8fc89c13911b",
+   "article_pub_iso": "2026-08-11 12:57",
+   "candidate_event": "ma",
+   "case_id": "8f820bbc8fc89c13911b|Eneva|ma|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "Eneva",
+   "contract_version": "v2",
+   "created_at": "2026-08-14T17:09:08Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-14 11:25",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "aprovacao",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva",
+      "phase": "CONFIRMED",
+      "phase_quote": "aprova",
+      "related_entity": "Atem",
+      "relation": "acquires stake from",
+      "relation_quote": "aquisição de parte da Atem em Japiim pela Eneva",
+      "role_quote": "pela Eneva",
+      "subject": "Eneva",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Eneva",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "aquisição de parte"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-14 11:25",
+   "human_review": null,
+   "latencia_s": 1.86,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva",
+      "phase": "CONFIRMED",
+      "phase_quote": "aprova",
+      "related_entity": "Atem",
+      "relation": "acquires stake from",
+      "relation_quote": "aquisição de parte da Atem em Japiim pela Eneva",
+      "role_quote": "pela Eneva",
+      "subject": "Eneva",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Eneva",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "aquisição de parte"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Editora Brasil Energia",
+   "title": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva",
+   "url": "https://brasilenergia.com.br/petroleoegas/ep/anp-aprova-aquisicao-de-parte-da-atem-em-japiim-pela-eneva",
+   "usage": {
+    "candidates_token_count": 323,
+    "prompt_token_count": 1319,
+    "total_token_count": 1642
+   }
+  }
+ }
+}
