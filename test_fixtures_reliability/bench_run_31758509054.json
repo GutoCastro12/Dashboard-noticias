@@ -1,0 +1,2004 @@
+{
+ "modo": "live",
+ "estado": "OK",
+ "gates": {
+  "escopo": "semantic",
+  "lotes_traducao": [],
+  "schema_adaptado": {
+   "campos_anulaveis": [
+    "currentness_quote",
+    "event_quote",
+    "phase_quote",
+    "related_entity",
+    "relation",
+    "relation_quote",
+    "role_quote",
+    "subject",
+    "subject_quote"
+   ],
+   "n_anulaveis": 9,
+   "required_antes": [
+    [
+     "events"
+    ],
+    [
+     "event_id",
+     "event_asserted",
+     "subject",
+     "company_role",
+     "currentness",
+     "phase",
+     "centrality",
+     "field_support"
+    ]
+   ],
+   "required_depois": [
+    [
+     "events"
+    ],
+    [
+     "event_id",
+     "event_asserted",
+     "company_role",
+     "currentness",
+     "phase",
+     "centrality",
+     "field_support"
+    ]
+   ],
+   "removidos_de_required": [
+    "subject"
+   ],
+   "tipos_em_lista_restantes": []
+  },
+  "bench_version": "bench.freellm.v1",
+  "modelos": [
+   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite"
+  ],
+  "modelo_excluido": "gemini-3.6-flash",
+  "vazamento": "OK",
+  "vazamentos": [],
+  "itens_ausentes": [],
+  "casos": 11,
+  "chamadas_planejadas": 22,
+  "teto": 22,
+  "plano_dentro_do_teto": true,
+  "output_token_cap": 1600,
+  "structured_output": true,
+  "retry": 0,
+  "fallback_entre_modelos": 0
+ },
+ "por_modelo": {
+  "gemini-3.1-flash-lite": {
+   "contadores": {
+    "planejadas": 11,
+    "execucoes_cliente": 11,
+    "falhas_de_cliente": 0,
+    "invocacoes_sdk": 11,
+    "sucessos_provider": 11,
+    "rejeitadas_por_cota": 0,
+    "puladas_pelo_disjuntor": 0,
+    "orcamento_esgotado": 0
+   },
+   "linhas": [
+    {
+     "sample_id": "P1-002",
+     "company": "Cemig",
+     "event_id": "ma",
+     "stratum": "S3",
+     "input_track": "degraded",
+     "role": "DEV_CONTROL",
+     "estado": "OK",
+     "human_scoreable": false,
+     "human_label": "FALSE_POSITIVE",
+     "failure_dimension": "attribution",
+     "s3_family": "S3-A_seller_role",
+     "deterministic_scoreable": false,
+     "deterministic_rule": "R_MA_PAPEL_VENDEDOR",
+     "llm_scoreable": true,
+     "acertou": false,
+     "llm_subject": "Cemig",
+     "llm_company_role": "SELLER",
+     "llm_currentness": "CURRENT",
+     "llm_phase": "CONCLUDED",
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": "ASSERTED",
+     "llm_transaction_object": null,
+     "call_type": "AUDIT",
+     "modelo": "gemini-3.1-flash-lite",
+     "latencia_s": 77.19,
+     "uso": {
+      "prompt_token_count": 857,
+      "candidates_token_count": 244,
+      "total_token_count": 1101
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "event_id": "ma",
+        "event_asserted": "ASSERTED",
+        "company_role": "SELLER",
+        "currentness": "CURRENT",
+        "phase": "CONCLUDED",
+        "centrality": "MAIN",
+        "field_support": "SUPPORTED",
+        "currentness_quote": "concluiu nesta quinta-feira (16)",
+        "event_quote": "Âmbar Energia conclui a aquisição de 4 hidrelétricas da Cemig",
+        "phase_quote": "concluiu",
+        "related_entity": "Âmbar Energia",
+        "relation": "SELLER",
+        "relation_quote": "aquisição de 4 hidrelétricas da Cemig",
+        "role_quote": "aquisição de 4 hidrelétricas da Cemig",
+        "subject": "Cemig",
+        "subject_basis": "EXPLICIT",
+        "subject_quote": "Cemig",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "event_quote",
+           "subject_quote",
+           "role_quote",
+           "relation_quote",
+           "currentness_quote",
+           "phase_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [],
+         "aceito": true
+        }
+       }
+      ],
+      "marcas": [],
+      "aceitos": 1,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-003",
+     "company": "Sabesp",
+     "event_id": "ma",
+     "stratum": "S8",
+     "input_track": "degraded",
+     "role": "DEV_CONTROL",
+     "estado": "OK",
+     "human_scoreable": false,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "deterministic_scoreable": true,
+     "deterministic_rule": "R_MA_LEGITIMO",
+     "llm_scoreable": true,
+     "acertou": false,
+     "llm_subject": "Sabesp",
+     "llm_company_role": "BUYER",
+     "llm_currentness": "CURRENT",
+     "llm_phase": "ANNOUNCED",
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": "ASSERTED",
+     "llm_transaction_object": null,
+     "call_type": "AUDIT",
+     "modelo": "gemini-3.1-flash-lite",
+     "latencia_s": 33.09,
+     "uso": {
+      "prompt_token_count": 841,
+      "candidates_token_count": 268,
+      "total_token_count": 1109
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "event_id": "ma",
+        "event_asserted": "ASSERTED",
+        "company_role": "BUYER",
+        "currentness": "CURRENT",
+        "phase": "ANNOUNCED",
+        "centrality": "MAIN",
+        "field_support": "SUPPORTED",
+        "currentness_quote": "nesta terça-feira (6)",
+        "event_quote": "Aquisição da Emae pela Sabesp sobe ao Tribunal do Cade",
+        "phase_quote": "O Tribunal do Cade (Conselho Administrativo de Defesa Econômica) analisará a aquisição da Emae (Empresa Metropolitana de Águas e Energia) pela Sabesp",
+        "related_entity": "Emae",
+        "relation": "TARGET",
+        "relation_quote": "aquisição da Emae",
+        "role_quote": "aquisição da Emae (Empresa Metropolitana de Águas e Energia) pela Sabesp",
+        "subject": "Sabesp",
+        "subject_basis": "EXPLICIT",
+        "subject_quote": "Sabesp",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "event_quote",
+           "subject_quote",
+           "role_quote",
+           "relation_quote",
+           "currentness_quote",
+           "phase_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [],
+         "aceito": true
+        }
+       }
+      ],
+      "marcas": [],
+      "aceitos": 1,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-004",
+     "company": "BTG Pactual",
+     "event_id": "ma",
+     "stratum": "S2",
+     "input_track": "degraded",
+     "role": "DEV_CONTROL",
+     "estado": "OK",
+     "human_scoreable": false,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "deterministic_scoreable": false,
+     "deterministic_rule": "R_MA_OBJETO_ESCOPO",
+     "llm_scoreable": true,
+     "acertou": false,
+     "llm_subject": "BTG Pactual",
+     "llm_company_role": "BUYER",
+     "llm_currentness": "CURRENT",
+     "llm_phase": "CONCLUDED",
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": "ASSERTED",
+     "llm_transaction_object": null,
+     "call_type": "AUDIT",
+     "modelo": "gemini-3.1-flash-lite",
+     "latencia_s": 37.67,
+     "uso": {
+      "prompt_token_count": 764,
+      "candidates_token_count": 249,
+      "total_token_count": 1013
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "event_id": "ma",
+        "event_asserted": "ASSERTED",
+        "company_role": "BUYER",
+        "currentness": "CURRENT",
+        "phase": "CONCLUDED",
+        "centrality": "MAIN",
+        "field_support": "SUPPORTED",
+        "currentness_quote": "Justiça do Mato Grosso mantém aquisição de fazenda bilionária por banco do BTG",
+        "event_quote": "Justiça do Mato Grosso mantém aquisição de fazenda bilionária por banco do BTG",
+        "phase_quote": "mantém aquisição",
+        "related_entity": "Fazenda",
+        "relation": "BUYER",
+        "relation_quote": "aquisição de fazenda bilionária por banco do BTG",
+        "role_quote": "banco do BTG",
+        "subject": "BTG Pactual",
+        "subject_basis": "EXPLICIT",
+        "subject_quote": "BTG",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "event_quote",
+           "subject_quote",
+           "role_quote",
+           "relation_quote",
+           "currentness_quote",
+           "phase_quote"
+          ],
+          "invalidas": [
+           "subject_quote"
+          ],
+          "valida": false
+         },
+         "marcas": [
+          "H1_QUOTE_INEXISTENTE",
+          "H3_ENTIDADE_AUSENTE"
+         ],
+         "aceito": false
+        }
+       }
+      ],
+      "marcas": [
+       "H1_QUOTE_INEXISTENTE",
+       "H3_ENTIDADE_AUSENTE"
+      ],
+      "aceitos": 0,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-005",
+     "company": "B3",
+     "event_id": "troca_ceo",
+     "stratum": "S8",
+     "input_track": "degraded",
+     "role": "DEV_CONTROL",
+     "estado": "OK",
+     "human_scoreable": false,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "deterministic_scoreable": true,
+     "deterministic_rule": "",
+     "llm_scoreable": true,
+     "acertou": false,
+     "llm_subject": "B3",
+     "llm_company_role": "SUBJECT",
+     "llm_currentness": "CURRENT",
+     "llm_phase": "CONCLUDED",
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": "ASSERTED",
+     "llm_transaction_object": null,
+     "call_type": "AUDIT",
+     "modelo": "gemini-3.1-flash-lite",
+     "latencia_s": 25.51,
+     "uso": {
+      "prompt_token_count": 1136,
+      "candidates_token_count": 216,
+      "total_token_count": 1352
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "event_id": "troca_ceo",
+        "event_asserted": "ASSERTED",
+        "company_role": "SUBJECT",
+        "currentness": "CURRENT",
+        "phase": "CONCLUDED",
+        "centrality": "MAIN",
+        "field_support": "SUPPORTED",
+        "currentness_quote": "novo CEO da B3",
+        "event_quote": "novo CEO da B3",
+        "phase_quote": "novo CEO da B3",
+        "related_entity": "Christian Egan",
+        "relation": "CEO",
+        "relation_quote": "novo CEO da B3",
+        "role_quote": "novo CEO da B3",
+        "subject": "B3",
+        "subject_basis": "EXPLICIT",
+        "subject_quote": "novo CEO da B3",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "event_quote",
+           "subject_quote",
+           "role_quote",
+           "relation_quote",
+           "currentness_quote",
+           "phase_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [
+          "H3_ENTIDADE_AUSENTE"
+         ],
+         "aceito": false
+        }
+       }
+      ],
+      "marcas": [
+       "H3_ENTIDADE_AUSENTE"
+      ],
+      "aceitos": 0,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-007",
+     "company": "Grupo Security",
+     "event_id": "ma",
+     "stratum": "S3",
+     "input_track": "degraded",
+     "role": "DEV_CONTROL",
+     "estado": "OK",
+     "human_scoreable": false,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "deterministic_scoreable": false,
+     "deterministic_rule": "R_MA_OBJETO_ESCOPO",
+     "llm_scoreable": true,
+     "acertou": false,
+     "llm_subject": "Grupo Security",
+     "llm_company_role": "TARGET",
+     "llm_currentness": "CURRENT",
+     "llm_phase": "CONCLUDED",
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": "ASSERTED",
+     "llm_transaction_object": null,
+     "call_type": "AUDIT",
+     "modelo": "gemini-3.1-flash-lite",
+     "latencia_s": 7.58,
+     "uso": {
+      "prompt_token_count": 753,
+      "candidates_token_count": 219,
+      "total_token_count": 972
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "event_id": "ma",
+        "event_asserted": "ASSERTED",
+        "company_role": "TARGET",
+        "currentness": "CURRENT",
+        "phase": "CONCLUDED",
+        "centrality": "MAIN",
+        "field_support": "SUPPORTED",
+        "currentness_quote": "Fusión Bicecorp y Grupo Security ya tiene nombre",
+        "event_quote": "Fusión Bicecorp y Grupo Security",
+        "phase_quote": "ya tiene nombre",
+        "related_entity": "Bicecorp",
+        "relation": "MERGER",
+        "relation_quote": "Fusión Bicecorp y Grupo Security",
+        "role_quote": "Grupo Security",
+        "subject": "Grupo Security",
+        "subject_basis": "EXPLICIT",
+        "subject_quote": "Grupo Security",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "event_quote",
+           "subject_quote",
+           "role_quote",
+           "relation_quote",
+           "currentness_quote",
+           "phase_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [],
+         "aceito": true
+        }
+       }
+      ],
+      "marcas": [],
+      "aceitos": 1,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-008",
+     "company": "YPF",
+     "event_id": "falencia",
+     "stratum": "S8",
+     "input_track": "rich",
+     "role": "DEV_CONTROL",
+     "estado": "OK",
+     "human_scoreable": false,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "deterministic_scoreable": false,
+     "deterministic_rule": "R_EVENTO_CITADO_COMO_PASSADO",
+     "llm_scoreable": false,
+     "acertou": true,
+     "llm_subject": "Aconcagua Energía",
+     "llm_company_role": "UNRELATED",
+     "llm_currentness": "HISTORICAL",
+     "llm_phase": "CONCLUDED",
+     "llm_centrality": "INCIDENTAL",
+     "llm_event_asserted": "MENTIONED_ONLY",
+     "llm_transaction_object": null,
+     "call_type": "AUDIT",
+     "modelo": "gemini-3.1-flash-lite",
+     "latencia_s": 4.33,
+     "uso": {
+      "prompt_token_count": 1156,
+      "candidates_token_count": 258,
+      "total_token_count": 1414
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "event_id": "falencia",
+        "event_asserted": "MENTIONED_ONLY",
+        "company_role": "UNRELATED",
+        "currentness": "HISTORICAL",
+        "phase": "CONCLUDED",
+        "centrality": "INCIDENTAL",
+        "field_support": "SUPPORTED",
+        "currentness_quote": "El exCEO de YPF que busca recuperar Aconcagua tras la quiebra",
+        "event_quote": "tras la quiebra",
+        "phase_quote": "tras la quiebra",
+        "related_entity": "Aconcagua Energía",
+        "relation": "Aconcagua Energía está en proceso de recuperación tras su quiebra",
+        "relation_quote": "El exCEO de YPF que busca recuperar Aconcagua tras la quiebra",
+        "role_quote": "El exCEO de YPF",
+        "subject": "Aconcagua Energía",
+        "subject_basis": "APPOSITIVE",
+        "subject_quote": "Aconcagua",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "event_quote",
+           "subject_quote",
+           "role_quote",
+           "relation_quote",
+           "currentness_quote",
+           "phase_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [],
+         "aceito": true
+        }
+       }
+      ],
+      "marcas": [],
+      "aceitos": 1,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-009",
+     "company": "PRIO",
+     "event_id": "ma",
+     "stratum": "S3",
+     "input_track": "degraded",
+     "role": "DEV_CONTROL",
+     "estado": "OK",
+     "human_scoreable": false,
+     "human_label": "FALSE_POSITIVE",
+     "failure_dimension": "centrality_currentness",
+     "s3_family": "S3-C_ma_como_contexto_de_outro_evento",
+     "deterministic_scoreable": false,
+     "deterministic_rule": "R_MA_OBJETO_ESCOPO",
+     "llm_scoreable": true,
+     "acertou": false,
+     "llm_subject": "PRIO",
+     "llm_company_role": "BUYER",
+     "llm_currentness": "CURRENT",
+     "llm_phase": "CONCLUDED",
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": "ASSERTED",
+     "llm_transaction_object": null,
+     "call_type": "AUDIT",
+     "modelo": "gemini-3.1-flash-lite",
+     "latencia_s": 7.26,
+     "uso": {
+      "prompt_token_count": 821,
+      "candidates_token_count": 223,
+      "total_token_count": 1044
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "event_id": "ma",
+        "event_asserted": "ASSERTED",
+        "company_role": "BUYER",
+        "currentness": "CURRENT",
+        "phase": "CONCLUDED",
+        "centrality": "MAIN",
+        "field_support": "SUPPORTED",
+        "currentness_quote": "após recente aquisição",
+        "event_quote": "após aquisição de Peregrino",
+        "phase_quote": "após recente aquisição",
+        "related_entity": "Peregrino",
+        "relation": "ACQUISITION",
+        "relation_quote": "aquisição de Peregrino",
+        "role_quote": "Prio (PRIO3)",
+        "subject": "PRIO",
+        "subject_basis": "EXPLICIT",
+        "subject_quote": "Prio (PRIO3)",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "event_quote",
+           "subject_quote",
+           "role_quote",
+           "relation_quote",
+           "currentness_quote",
+           "phase_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [],
+         "aceito": true
+        }
+       }
+      ],
+      "marcas": [],
+      "aceitos": 1,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-010",
+     "company": "TIM Brasil",
+     "event_id": "ma",
+     "stratum": "S3",
+     "input_track": "degraded",
+     "role": "DEV_CONTROL",
+     "estado": "OK",
+     "human_scoreable": false,
+     "human_label": "FALSE_POSITIVE",
+     "failure_dimension": "occurrence_currentness",
+     "s3_family": "S3-B_follow_up_de_transacao_verdadeira",
+     "deterministic_scoreable": false,
+     "deterministic_rule": "R_PAPEL_NAO_SUJEITO",
+     "llm_scoreable": false,
+     "acertou": true,
+     "llm_subject": "TIM Brasil",
+     "llm_company_role": "TARGET",
+     "llm_currentness": "CURRENT",
+     "llm_phase": "CONCLUDED",
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": "DENIED",
+     "llm_transaction_object": null,
+     "call_type": "AUDIT",
+     "modelo": "gemini-3.1-flash-lite",
+     "latencia_s": 9.65,
+     "uso": {
+      "prompt_token_count": 823,
+      "candidates_token_count": 209,
+      "total_token_count": 1032
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "event_id": "ma",
+        "event_asserted": "DENIED",
+        "company_role": "TARGET",
+        "currentness": "CURRENT",
+        "phase": "CONCLUDED",
+        "centrality": "MAIN",
+        "field_support": "SUPPORTED",
+        "currentness_quote": "Alberto Griselli reafirma que a TIM Brasil não está à venda",
+        "event_quote": "TIM Brasil não está à venda",
+        "phase_quote": "reafirma",
+        "related_entity": "null",
+        "relation": "null",
+        "relation_quote": "null",
+        "role_quote": "TIM Brasil",
+        "subject": "TIM Brasil",
+        "subject_basis": "EXPLICIT",
+        "subject_quote": "TIM Brasil",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "event_quote",
+           "subject_quote",
+           "role_quote",
+           "relation_quote",
+           "currentness_quote",
+           "phase_quote"
+          ],
+          "invalidas": [
+           "relation_quote"
+          ],
+          "valida": false
+         },
+         "marcas": [
+          "H1_QUOTE_INEXISTENTE",
+          "H3_ENTIDADE_AUSENTE"
+         ],
+         "aceito": false
+        }
+       }
+      ],
+      "marcas": [
+       "H1_QUOTE_INEXISTENTE",
+       "H3_ENTIDADE_AUSENTE"
+      ],
+      "aceitos": 0,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-011",
+     "company": "Mercado (geral)",
+     "event_id": "",
+     "stratum": "S6",
+     "input_track": "rich",
+     "role": "HOLDOUT",
+     "estado": "OK",
+     "human_scoreable": null,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "deterministic_scoreable": null,
+     "deterministic_rule": null,
+     "llm_scoreable": false,
+     "acertou": null,
+     "llm_subject": null,
+     "llm_company_role": null,
+     "llm_currentness": "CURRENT",
+     "llm_phase": null,
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": null,
+     "llm_transaction_object": null,
+     "call_type": "DISCOVERY",
+     "modelo": "gemini-3.1-flash-lite",
+     "latencia_s": 6.67,
+     "uso": {
+      "prompt_token_count": 1108,
+      "candidates_token_count": 384,
+      "total_token_count": 1492
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "organization": "Fiscalía General de Justicia de la Ciudad de México",
+        "risk_channel": "regulatorio",
+        "event_description": "Abertura de investigação oficial por parte da promotoria após o falecimento de uma pessoa nas dependências do estádio.",
+        "currentness": "CURRENT",
+        "centrality": "MAIN",
+        "evidence_quote": "La Fiscalía General de Justicia de la Ciudad de México abrió una investigación tras el fallecimiento de una persona ocurrido el pasado 28 de marzo dentro del Estadio Banorte",
+        "field_support": "SUPPORTED",
+        "magnitude_quote": "28 de marzo",
+        "organization_role": "SUBJECT",
+        "persistence": "ONE_OFF",
+        "provisional_subtype": "investigacion_judicial",
+        "scope": "COMPANY",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "evidence_quote",
+           "magnitude_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [],
+         "aceito": true
+        }
+       },
+       {
+        "organization": "Estadio Banorte",
+        "risk_channel": "operacional",
+        "event_description": "Ocorrência de um falecimento nas dependências do estádio durante evento de reabertura, gerando investigação das autoridades.",
+        "currentness": "CURRENT",
+        "centrality": "MAIN",
+        "evidence_quote": "tras el fallecimiento de una persona ocurrido el pasado 28 de marzo dentro del Estadio Banorte",
+        "field_support": "SUPPORTED",
+        "magnitude_quote": "28 de marzo",
+        "organization_role": "SUBJECT",
+        "persistence": "ONE_OFF",
+        "provisional_subtype": "incidente_seguranca",
+        "scope": "COMPANY",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "evidence_quote",
+           "magnitude_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [],
+         "aceito": true
+        }
+       }
+      ],
+      "marcas": [],
+      "aceitos": 2,
+      "total": 2
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-013",
+     "company": "YPF",
+     "event_id": "",
+     "stratum": "S6",
+     "input_track": "rich",
+     "role": "HOLDOUT",
+     "estado": "OK",
+     "human_scoreable": null,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "deterministic_scoreable": null,
+     "deterministic_rule": null,
+     "llm_scoreable": false,
+     "acertou": null,
+     "llm_subject": null,
+     "llm_company_role": null,
+     "llm_currentness": "CURRENT",
+     "llm_phase": null,
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": null,
+     "llm_transaction_object": null,
+     "call_type": "DISCOVERY",
+     "modelo": "gemini-3.1-flash-lite",
+     "latencia_s": 41.71,
+     "uso": {
+      "prompt_token_count": 1083,
+      "candidates_token_count": 203,
+      "total_token_count": 1286
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "organization": "Aconcagua Energía",
+        "risk_channel": "credito",
+        "event_description": "A empresa enfrenta risco iminente de falência caso não alcance um acordo de reestruturação de dívida com seus credores até o prazo estipulado.",
+        "currentness": "CURRENT",
+        "centrality": "MAIN",
+        "evidence_quote": "Si no se alcanza el acuerdo con los acreedores, la compañía irá a la quiebra",
+        "field_support": "SUPPORTED",
+        "magnitude_quote": "acuerdo con el 90% de los acreedores",
+        "organization_role": "SUBJECT",
+        "persistence": "ONGOING",
+        "provisional_subtype": "risco_de_falencia",
+        "scope": "COMPANY",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "evidence_quote",
+           "magnitude_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [],
+         "aceito": true
+        }
+       }
+      ],
+      "marcas": [],
+      "aceitos": 1,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-014",
+     "company": "General Motors",
+     "event_id": "",
+     "stratum": "S6",
+     "input_track": "rich",
+     "role": "HOLDOUT",
+     "estado": "OK",
+     "human_scoreable": null,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "deterministic_scoreable": null,
+     "deterministic_rule": null,
+     "llm_scoreable": false,
+     "acertou": null,
+     "llm_subject": null,
+     "llm_company_role": null,
+     "llm_currentness": "CURRENT",
+     "llm_phase": null,
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": null,
+     "llm_transaction_object": null,
+     "call_type": "DISCOVERY",
+     "modelo": "gemini-3.1-flash-lite",
+     "latencia_s": 6.43,
+     "uso": {
+      "prompt_token_count": 1009,
+      "candidates_token_count": 238,
+      "total_token_count": 1247
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "organization": "General Motors LLC",
+        "risk_channel": "regulatorio",
+        "event_description": "A bankruptcy court ordered the state of Texas to strike allegations in a data privacy lawsuit against General Motors, enforcing protections from a 2009 sale order that shielded the company from successor liability.",
+        "currentness": "CURRENT",
+        "centrality": "MAIN",
+        "evidence_quote": "New GM prevailed in its efforts to have the bankruptcy court specifically enforce certain provisions of the 2009 sale order entered by the court (\"Sale Order\") authorizing the sale of substantially all assets from Chapter 11 debtor General Motors Corp. (\"Old GM\") to New GM.",
+        "field_support": "SUPPORTED",
+        "magnitude_quote": "2009",
+        "organization_role": "SUBJECT",
+        "persistence": "ONE_OFF",
+        "provisional_subtype": "legal_enforcement_order",
+        "scope": "COMPANY",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "evidence_quote",
+           "magnitude_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [],
+         "aceito": true
+        }
+       }
+      ],
+      "marcas": [],
+      "aceitos": 1,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    }
+   ],
+   "traducao": [],
+   "traducao_resumo": {
+    "lotes_ok": 0,
+    "mapeamento_completo": 0,
+    "entidades_preservadas": 0,
+    "entidades_perdidas": [],
+    "numeros_preservados": 0,
+    "numeros_perdidos": [],
+    "titulos_traduzidos": 0
+   },
+   "contagem": {
+    "audit:OK": 8,
+    "discovery:OK": 3
+   },
+   "circuit_breaker": null,
+   "invocacoes": null,
+   "audits_comparaveis": 8,
+   "acertos": 2,
+   "schema_valido": 11,
+   "evidencia_valida": 11,
+   "latencia_media": 23.37,
+   "tokens_saida": 2711
+  },
+  "gemini-3.5-flash-lite": {
+   "contadores": {
+    "planejadas": 11,
+    "execucoes_cliente": 11,
+    "falhas_de_cliente": 0,
+    "invocacoes_sdk": 11,
+    "sucessos_provider": 11,
+    "rejeitadas_por_cota": 0,
+    "puladas_pelo_disjuntor": 0,
+    "orcamento_esgotado": 0
+   },
+   "linhas": [
+    {
+     "sample_id": "P1-002",
+     "company": "Cemig",
+     "event_id": "ma",
+     "stratum": "S3",
+     "input_track": "degraded",
+     "role": "DEV_CONTROL",
+     "estado": "OK",
+     "human_scoreable": false,
+     "human_label": "FALSE_POSITIVE",
+     "failure_dimension": "attribution",
+     "s3_family": "S3-A_seller_role",
+     "deterministic_scoreable": false,
+     "deterministic_rule": "R_MA_PAPEL_VENDEDOR",
+     "llm_scoreable": true,
+     "acertou": false,
+     "llm_subject": "Cemig",
+     "llm_company_role": "SELLER",
+     "llm_currentness": "CURRENT",
+     "llm_phase": "CONCLUDED",
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": "ASSERTED",
+     "llm_transaction_object": null,
+     "call_type": "AUDIT",
+     "modelo": "gemini-3.5-flash-lite",
+     "latencia_s": 11.25,
+     "uso": {
+      "prompt_token_count": 857,
+      "candidates_token_count": 246,
+      "total_token_count": 1103
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "event_id": "ma",
+        "event_asserted": "ASSERTED",
+        "company_role": "SELLER",
+        "currentness": "CURRENT",
+        "phase": "CONCLUDED",
+        "centrality": "MAIN",
+        "field_support": "SUPPORTED",
+        "currentness_quote": "concluiu nesta quinta-feira (16) a compra",
+        "event_quote": "Âmbar Energia conclui a aquisição de 4 hidrelétricas da Cemig em MG",
+        "phase_quote": "concluiu",
+        "related_entity": "Âmbar Energia",
+        "relation": "VENDEU",
+        "relation_quote": "a compra de quatro usinas hidrelétricas da Cemig",
+        "role_quote": "hidrelétricas da Cemig",
+        "subject": "Cemig",
+        "subject_basis": "EXPLICIT",
+        "subject_quote": "Cemig",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "event_quote",
+           "subject_quote",
+           "role_quote",
+           "relation_quote",
+           "currentness_quote",
+           "phase_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [],
+         "aceito": true
+        }
+       }
+      ],
+      "marcas": [],
+      "aceitos": 1,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-003",
+     "company": "Sabesp",
+     "event_id": "ma",
+     "stratum": "S8",
+     "input_track": "degraded",
+     "role": "DEV_CONTROL",
+     "estado": "OK",
+     "human_scoreable": false,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "deterministic_scoreable": true,
+     "deterministic_rule": "R_MA_LEGITIMO",
+     "llm_scoreable": true,
+     "acertou": false,
+     "llm_subject": "Sabesp",
+     "llm_company_role": "BUYER",
+     "llm_currentness": "CURRENT",
+     "llm_phase": "INVESTIGATION",
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": "ASSERTED",
+     "llm_transaction_object": null,
+     "call_type": "AUDIT",
+     "modelo": "gemini-3.5-flash-lite",
+     "latencia_s": 1.45,
+     "uso": {
+      "prompt_token_count": 841,
+      "candidates_token_count": 268,
+      "total_token_count": 1109
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "event_id": "ma",
+        "event_asserted": "ASSERTED",
+        "company_role": "BUYER",
+        "currentness": "CURRENT",
+        "phase": "INVESTIGATION",
+        "centrality": "MAIN",
+        "field_support": "SUPPORTED",
+        "currentness_quote": "nesta terça-feira (6)",
+        "event_quote": "Aquisição da Emae pela Sabesp sobe ao Tribunal do Cade após recurso",
+        "phase_quote": "analisará a aquisição da Emae (Empresa Metropolitana de Águas e Energia) pela Sabesp",
+        "related_entity": "Emae",
+        "relation": "acquiring",
+        "relation_quote": "aquisição da Emae (Empresa Metropolitana de Águas e Energia) pela Sabesp",
+        "role_quote": "aquisição da Emae (Empresa Metropolitana de Águas e Energia) pela Sabesp",
+        "subject": "Sabesp",
+        "subject_basis": "EXPLICIT",
+        "subject_quote": "Sabesp",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "event_quote",
+           "subject_quote",
+           "role_quote",
+           "relation_quote",
+           "currentness_quote",
+           "phase_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [],
+         "aceito": true
+        }
+       }
+      ],
+      "marcas": [],
+      "aceitos": 1,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-004",
+     "company": "BTG Pactual",
+     "event_id": "ma",
+     "stratum": "S2",
+     "input_track": "degraded",
+     "role": "DEV_CONTROL",
+     "estado": "OK",
+     "human_scoreable": false,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "deterministic_scoreable": false,
+     "deterministic_rule": "R_MA_OBJETO_ESCOPO",
+     "llm_scoreable": true,
+     "acertou": false,
+     "llm_subject": "BTG Pactual",
+     "llm_company_role": "SUBJECT",
+     "llm_currentness": "CURRENT",
+     "llm_phase": "CONFIRMED",
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": "ASSERTED",
+     "llm_transaction_object": null,
+     "call_type": "AUDIT",
+     "modelo": "gemini-3.5-flash-lite",
+     "latencia_s": 1.44,
+     "uso": {
+      "prompt_token_count": 764,
+      "candidates_token_count": 236,
+      "total_token_count": 1000
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "event_id": "ma",
+        "event_asserted": "ASSERTED",
+        "company_role": "SUBJECT",
+        "currentness": "CURRENT",
+        "phase": "CONFIRMED",
+        "centrality": "MAIN",
+        "field_support": "SUPPORTED",
+        "currentness_quote": "Justiça do Mato Grosso mantém aquisição de fazenda bilionária por banco do BTG",
+        "event_quote": "aquisição de fazenda bilionária",
+        "phase_quote": "mantém",
+        "related_entity": "fazenda",
+        "relation": "acquires",
+        "relation_quote": "aquisição de fazenda bilionária por banco do BTG",
+        "role_quote": "banco do BTG",
+        "subject": "BTG Pactual",
+        "subject_basis": "EXPLICIT",
+        "subject_quote": "BTG",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "event_quote",
+           "subject_quote",
+           "role_quote",
+           "relation_quote",
+           "currentness_quote",
+           "phase_quote"
+          ],
+          "invalidas": [
+           "subject_quote"
+          ],
+          "valida": false
+         },
+         "marcas": [
+          "H1_QUOTE_INEXISTENTE",
+          "H3_ENTIDADE_AUSENTE"
+         ],
+         "aceito": false
+        }
+       }
+      ],
+      "marcas": [
+       "H1_QUOTE_INEXISTENTE",
+       "H3_ENTIDADE_AUSENTE"
+      ],
+      "aceitos": 0,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-005",
+     "company": "B3",
+     "event_id": "troca_ceo",
+     "stratum": "S8",
+     "input_track": "degraded",
+     "role": "DEV_CONTROL",
+     "estado": "OK",
+     "human_scoreable": false,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "deterministic_scoreable": true,
+     "deterministic_rule": "",
+     "llm_scoreable": true,
+     "acertou": false,
+     "llm_subject": "B3",
+     "llm_company_role": "SUBJECT",
+     "llm_currentness": "CURRENT",
+     "llm_phase": "CONFIRMED",
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": "ASSERTED",
+     "llm_transaction_object": null,
+     "call_type": "AUDIT",
+     "modelo": "gemini-3.5-flash-lite",
+     "latencia_s": 12.33,
+     "uso": {
+      "prompt_token_count": 1136,
+      "candidates_token_count": 214,
+      "total_token_count": 1350
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "event_id": "troca_ceo",
+        "event_asserted": "ASSERTED",
+        "company_role": "SUBJECT",
+        "currentness": "CURRENT",
+        "phase": "CONFIRMED",
+        "centrality": "MAIN",
+        "field_support": "SUPPORTED",
+        "currentness_quote": "novo CEO da B3",
+        "event_quote": "novo CEO da B3",
+        "phase_quote": "novo CEO da B3",
+        "related_entity": "Christian Egan",
+        "relation": "HIRED",
+        "relation_quote": "afirma Christian Egan",
+        "role_quote": "novo CEO da B3",
+        "subject": "B3",
+        "subject_basis": "EXPLICIT",
+        "subject_quote": "B3",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "event_quote",
+           "subject_quote",
+           "role_quote",
+           "relation_quote",
+           "currentness_quote",
+           "phase_quote"
+          ],
+          "invalidas": [
+           "subject_quote"
+          ],
+          "valida": false
+         },
+         "marcas": [
+          "H1_QUOTE_INEXISTENTE",
+          "H3_ENTIDADE_AUSENTE"
+         ],
+         "aceito": false
+        }
+       }
+      ],
+      "marcas": [
+       "H1_QUOTE_INEXISTENTE",
+       "H3_ENTIDADE_AUSENTE"
+      ],
+      "aceitos": 0,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-007",
+     "company": "Grupo Security",
+     "event_id": "ma",
+     "stratum": "S3",
+     "input_track": "degraded",
+     "role": "DEV_CONTROL",
+     "estado": "OK",
+     "human_scoreable": false,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "deterministic_scoreable": false,
+     "deterministic_rule": "R_MA_OBJETO_ESCOPO",
+     "llm_scoreable": true,
+     "acertou": false,
+     "llm_subject": "Grupo Security",
+     "llm_company_role": "SUBJECT",
+     "llm_currentness": "CURRENT",
+     "llm_phase": "CONFIRMED",
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": "ASSERTED",
+     "llm_transaction_object": null,
+     "call_type": "AUDIT",
+     "modelo": "gemini-3.5-flash-lite",
+     "latencia_s": 17.0,
+     "uso": {
+      "prompt_token_count": 753,
+      "candidates_token_count": 247,
+      "total_token_count": 1000
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "event_id": "ma",
+        "event_asserted": "ASSERTED",
+        "company_role": "SUBJECT",
+        "currentness": "CURRENT",
+        "phase": "CONFIRMED",
+        "centrality": "MAIN",
+        "field_support": "SUPPORTED",
+        "currentness_quote": "Fusión Bicecorp y Grupo Security ya tiene nombre: la marca elegida para el grupo financiero es BICE",
+        "event_quote": "Fusión Bicecorp y Grupo Security",
+        "phase_quote": "ya tiene nombre: la marca elegida para el grupo financiero es BICE",
+        "related_entity": "Bicecorp",
+        "relation": "MERGER_PARTNER",
+        "relation_quote": "Fusión Bicecorp y Grupo Security",
+        "role_quote": "Grupo Security",
+        "subject": "Grupo Security",
+        "subject_basis": "EXPLICIT",
+        "subject_quote": "Grupo Security",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "event_quote",
+           "subject_quote",
+           "role_quote",
+           "relation_quote",
+           "currentness_quote",
+           "phase_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [],
+         "aceito": true
+        }
+       }
+      ],
+      "marcas": [],
+      "aceitos": 1,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-008",
+     "company": "YPF",
+     "event_id": "falencia",
+     "stratum": "S8",
+     "input_track": "rich",
+     "role": "DEV_CONTROL",
+     "estado": "OK",
+     "human_scoreable": false,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "deterministic_scoreable": false,
+     "deterministic_rule": "R_EVENTO_CITADO_COMO_PASSADO",
+     "llm_scoreable": false,
+     "acertou": true,
+     "llm_subject": "Aconcagua",
+     "llm_company_role": "MENTIONED",
+     "llm_currentness": "HISTORICAL",
+     "llm_phase": "UNKNOWN",
+     "llm_centrality": "BACKGROUND",
+     "llm_event_asserted": "MENTIONED_ONLY",
+     "llm_transaction_object": null,
+     "call_type": "AUDIT",
+     "modelo": "gemini-3.5-flash-lite",
+     "latencia_s": 19.68,
+     "uso": {
+      "prompt_token_count": 1156,
+      "candidates_token_count": 250,
+      "total_token_count": 1406
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "event_id": "falencia",
+        "event_asserted": "MENTIONED_ONLY",
+        "company_role": "MENTIONED",
+        "currentness": "HISTORICAL",
+        "phase": "UNKNOWN",
+        "centrality": "BACKGROUND",
+        "field_support": "SUPPORTED",
+        "currentness_quote": "El exCEO de YPF que busca recuperar Aconcagua tras la quiebra",
+        "event_quote": "tras la quiebra",
+        "phase_quote": "tras la quiebra",
+        "related_entity": "Aconcagua",
+        "relation": "associated_with",
+        "relation_quote": "El exCEO de YPF que busca recuperar Aconcagua tras la quiebra",
+        "role_quote": "Pablo Iuliano, exCEO de YPF",
+        "subject": "Aconcagua",
+        "subject_basis": "EXPLICIT",
+        "subject_quote": "Aconcagua",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "event_quote",
+           "subject_quote",
+           "role_quote",
+           "relation_quote",
+           "currentness_quote",
+           "phase_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [],
+         "aceito": true
+        }
+       }
+      ],
+      "marcas": [],
+      "aceitos": 1,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-009",
+     "company": "PRIO",
+     "event_id": "ma",
+     "stratum": "S3",
+     "input_track": "degraded",
+     "role": "DEV_CONTROL",
+     "estado": "OK",
+     "human_scoreable": false,
+     "human_label": "FALSE_POSITIVE",
+     "failure_dimension": "centrality_currentness",
+     "s3_family": "S3-C_ma_como_contexto_de_outro_evento",
+     "deterministic_scoreable": false,
+     "deterministic_rule": "R_MA_OBJETO_ESCOPO",
+     "llm_scoreable": true,
+     "acertou": false,
+     "llm_subject": "Prio",
+     "llm_company_role": "SUBJECT",
+     "llm_currentness": "CURRENT",
+     "llm_phase": "CONCLUDED",
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": "ASSERTED",
+     "llm_transaction_object": null,
+     "call_type": "AUDIT",
+     "modelo": "gemini-3.5-flash-lite",
+     "latencia_s": 1.3,
+     "uso": {
+      "prompt_token_count": 821,
+      "candidates_token_count": 219,
+      "total_token_count": 1040
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "event_id": "ma",
+        "event_asserted": "ASSERTED",
+        "company_role": "SUBJECT",
+        "currentness": "CURRENT",
+        "phase": "CONCLUDED",
+        "centrality": "MAIN",
+        "field_support": "SUPPORTED",
+        "currentness_quote": "após recente aquisição",
+        "event_quote": "aquisição de Peregrino",
+        "phase_quote": "após recente aquisição",
+        "related_entity": "Peregrino",
+        "relation": "aquisição",
+        "relation_quote": "aquisição de Peregrino",
+        "role_quote": "Prio (PRIO3)",
+        "subject": "Prio",
+        "subject_basis": "EXPLICIT",
+        "subject_quote": "Prio (PRIO3)",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "event_quote",
+           "subject_quote",
+           "role_quote",
+           "relation_quote",
+           "currentness_quote",
+           "phase_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [],
+         "aceito": true
+        }
+       }
+      ],
+      "marcas": [],
+      "aceitos": 1,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-010",
+     "company": "TIM Brasil",
+     "event_id": "ma",
+     "stratum": "S3",
+     "input_track": "degraded",
+     "role": "DEV_CONTROL",
+     "estado": "OK",
+     "human_scoreable": false,
+     "human_label": "FALSE_POSITIVE",
+     "failure_dimension": "occurrence_currentness",
+     "s3_family": "S3-B_follow_up_de_transacao_verdadeira",
+     "deterministic_scoreable": false,
+     "deterministic_rule": "R_PAPEL_NAO_SUJEITO",
+     "llm_scoreable": false,
+     "acertou": true,
+     "llm_subject": "empresa na Itália",
+     "llm_company_role": "TARGET",
+     "llm_currentness": "CURRENT",
+     "llm_phase": "ANNOUNCED",
+     "llm_centrality": "BACKGROUND",
+     "llm_event_asserted": "MENTIONED_ONLY",
+     "llm_transaction_object": null,
+     "call_type": "AUDIT",
+     "modelo": "gemini-3.5-flash-lite",
+     "latencia_s": 8.62,
+     "uso": {
+      "prompt_token_count": 823,
+      "candidates_token_count": 230,
+      "total_token_count": 1053
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "event_id": "ma",
+        "event_asserted": "MENTIONED_ONLY",
+        "company_role": "TARGET",
+        "currentness": "CURRENT",
+        "phase": "ANNOUNCED",
+        "centrality": "BACKGROUND",
+        "field_support": "SUPPORTED",
+        "currentness_quote": "Presidente da TIM Brasil vê potencial estratégico após nova aquisição na Itália",
+        "event_quote": "nova aquisição na Itália",
+        "phase_quote": "nova aquisição na Itália",
+        "related_entity": "Itália",
+        "relation": "OUTSIDE_ACQUISITION",
+        "relation_quote": "nova aquisição na Itália",
+        "role_quote": "TIM Brasil",
+        "subject": "empresa na Itália",
+        "subject_basis": "EXPLICIT",
+        "subject_quote": "nova aquisição na Itália",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "event_quote",
+           "subject_quote",
+           "role_quote",
+           "relation_quote",
+           "currentness_quote",
+           "phase_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [
+          "H3_ENTIDADE_AUSENTE"
+         ],
+         "aceito": false
+        }
+       }
+      ],
+      "marcas": [
+       "H3_ENTIDADE_AUSENTE"
+      ],
+      "aceitos": 0,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-011",
+     "company": "Mercado (geral)",
+     "event_id": "",
+     "stratum": "S6",
+     "input_track": "rich",
+     "role": "HOLDOUT",
+     "estado": "OK",
+     "human_scoreable": null,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "deterministic_scoreable": null,
+     "deterministic_rule": null,
+     "llm_scoreable": false,
+     "acertou": null,
+     "llm_subject": null,
+     "llm_company_role": null,
+     "llm_currentness": "CURRENT",
+     "llm_phase": null,
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": null,
+     "llm_transaction_object": null,
+     "call_type": "DISCOVERY",
+     "modelo": "gemini-3.5-flash-lite",
+     "latencia_s": 1.59,
+     "uso": {
+      "prompt_token_count": 1108,
+      "candidates_token_count": 209,
+      "total_token_count": 1317
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "organization": "Fiscalía General de Justicia de la Ciudad de México",
+        "risk_channel": "regulatorio",
+        "event_description": "La Fiscalía General de Justicia de la Ciudad de México abrió una investigación tras el fallecimiento de una persona dentro del Estadio Banorte.",
+        "currentness": "CURRENT",
+        "centrality": "MAIN",
+        "evidence_quote": "La Fiscalía General de Justicia de la Ciudad de México abrió una investigación tras el fallecimiento de una persona ocurrido el pasado 28 de marzo dentro del Estadio Banorte",
+        "field_support": "SUPPORTED",
+        "magnitude_quote": "28 de marzo",
+        "organization_role": "SUBJECT",
+        "persistence": "ONE_OFF",
+        "provisional_subtype": "investigacion_penal",
+        "scope": "COMPANY",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "evidence_quote",
+           "magnitude_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [],
+         "aceito": true
+        }
+       }
+      ],
+      "marcas": [],
+      "aceitos": 1,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-013",
+     "company": "YPF",
+     "event_id": "",
+     "stratum": "S6",
+     "input_track": "rich",
+     "role": "HOLDOUT",
+     "estado": "OK",
+     "human_scoreable": null,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "deterministic_scoreable": null,
+     "deterministic_rule": null,
+     "llm_scoreable": false,
+     "acertou": null,
+     "llm_subject": null,
+     "llm_company_role": null,
+     "llm_currentness": "CURRENT",
+     "llm_phase": null,
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": null,
+     "llm_transaction_object": null,
+     "call_type": "DISCOVERY",
+     "modelo": "gemini-3.5-flash-lite",
+     "latencia_s": 1.85,
+     "uso": {
+      "prompt_token_count": 1083,
+      "candidates_token_count": 188,
+      "total_token_count": 1271
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "organization": "Aconcagua Energía",
+        "risk_channel": "credito",
+        "event_description": "A empresa enfrenta risco iminente de falência caso não consiga reestruturar sua dívida e fechar um acordo com os credores.",
+        "currentness": "CURRENT",
+        "centrality": "MAIN",
+        "evidence_quote": "Si no se alcanza el acuerdo con los acreedores, la compañía irá a la quiebra",
+        "field_support": "SUPPORTED",
+        "magnitude_quote": "90%",
+        "organization_role": "SUBJECT",
+        "persistence": "ONGOING",
+        "provisional_subtype": "risco_falencia",
+        "scope": "COMPANY",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "evidence_quote",
+           "magnitude_quote"
+          ],
+          "invalidas": [
+           "magnitude_quote"
+          ],
+          "valida": false
+         },
+         "marcas": [
+          "H1_QUOTE_INEXISTENTE"
+         ],
+         "aceito": false
+        }
+       }
+      ],
+      "marcas": [
+       "H1_QUOTE_INEXISTENTE"
+      ],
+      "aceitos": 0,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    },
+    {
+     "sample_id": "P1-014",
+     "company": "General Motors",
+     "event_id": "",
+     "stratum": "S6",
+     "input_track": "rich",
+     "role": "HOLDOUT",
+     "estado": "OK",
+     "human_scoreable": null,
+     "human_label": null,
+     "failure_dimension": null,
+     "s3_family": null,
+     "deterministic_scoreable": null,
+     "deterministic_rule": null,
+     "llm_scoreable": false,
+     "acertou": null,
+     "llm_subject": null,
+     "llm_company_role": null,
+     "llm_currentness": "CURRENT",
+     "llm_phase": null,
+     "llm_centrality": "MAIN",
+     "llm_event_asserted": null,
+     "llm_transaction_object": null,
+     "call_type": "DISCOVERY",
+     "modelo": "gemini-3.5-flash-lite",
+     "latencia_s": 7.12,
+     "uso": {
+      "prompt_token_count": 1009,
+      "candidates_token_count": 187,
+      "total_token_count": 1196
+     },
+     "finish": {
+      "finish_reason_nome": "STOP"
+     },
+     "validacao": {
+      "ok": true,
+      "falha": "",
+      "erros": [],
+      "eventos": [
+       {
+        "organization": "General Motors LLC",
+        "risk_channel": "regulatorio",
+        "event_description": "Bankruptcy court ordered Texas to strike allegations in a state data privacy suit against General Motors, enforcing protections from a 2009 sale order against successor liability.",
+        "currentness": "CURRENT",
+        "centrality": "MAIN",
+        "evidence_quote": "Bankruptcy Court Orders Texas to Strike Allegations In State Data Privacy Suit Against General Motors",
+        "field_support": "SUPPORTED",
+        "magnitude_quote": "6 minute read",
+        "organization_role": "SUBJECT",
+        "persistence": "ONE_OFF",
+        "provisional_subtype": "court_order",
+        "scope": "COMPANY",
+        "_validacao": {
+         "quotes": {
+          "checadas": [
+           "evidence_quote",
+           "magnitude_quote"
+          ],
+          "invalidas": [],
+          "valida": true
+         },
+         "marcas": [],
+         "aceito": true
+        }
+       }
+      ],
+      "marcas": [],
+      "aceitos": 1,
+      "total": 1
+     },
+     "erro": null,
+     "invocou_sdk": true
+    }
+   ],
+   "traducao": [],
+   "traducao_resumo": {
+    "lotes_ok": 0,
+    "mapeamento_completo": 0,
+    "entidades_preservadas": 0,
+    "entidades_perdidas": [],
+    "numeros_preservados": 0,
+    "numeros_perdidos": [],
+    "titulos_traduzidos": 0
+   },
+   "contagem": {
+    "audit:OK": 8,
+    "discovery:OK": 3
+   },
+   "circuit_breaker": null,
+   "invocacoes": null,
+   "audits_comparaveis": 8,
+   "acertos": 2,
+   "schema_valido": 11,
+   "evidencia_valida": 11,
+   "latencia_media": 7.6,
+   "tokens_saida": 2494
+  }
+ },
+ "contadores": {
+  "planejadas": 22,
+  "execucoes_cliente": 22,
+  "falhas_de_cliente": 0,
+  "invocacoes_sdk": 22,
+  "sucessos_provider": 22,
+  "rejeitadas_por_cota": 0,
+  "puladas_pelo_disjuntor": 0,
+  "orcamento_esgotado": 0
+ },
+ "execucoes_cliente": 22,
+ "invocacoes_sdk": 22,
+ "invocacoes_simuladas": 0,
+ "_meta": {
+  "bench_version": "bench.freellm.v1",
+  "sample_version": "r7b.pilot1.sample.v2",
+  "producao_antes": {
+   "risk_history.json": "a857b4a4e4d2b8ee",
+   "risk_enrichment_shadow.json": "5bcbb24dee3fc15b",
+   "risk_input_shadow.json": "c9c5e2737a2b2052",
+   "index.html": "2316d1c2fdd2f866",
+   "dashboard_risco.html": "2316d1c2fdd2f866",
+   "run_meta.json": "b68b9ee1513c884a",
+   "config_risco.yaml": "fe38af3cfff1b638"
+  },
+  "producao_depois": {
+   "risk_history.json": "a857b4a4e4d2b8ee",
+   "risk_enrichment_shadow.json": "5bcbb24dee3fc15b",
+   "risk_input_shadow.json": "c9c5e2737a2b2052",
+   "index.html": "2316d1c2fdd2f866",
+   "dashboard_risco.html": "2316d1c2fdd2f866",
+   "run_meta.json": "b68b9ee1513c884a",
+   "config_risco.yaml": "fe38af3cfff1b638"
+  },
+  "producao_tocada": []
+ }
+}
