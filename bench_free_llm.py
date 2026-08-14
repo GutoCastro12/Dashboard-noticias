@@ -39,10 +39,12 @@ import gemini_schema_adapter as ga
 import reliability_pilot1_payloads as pp
 import reliability_pilot1_sample as ps
 import reliability_pilot_contract as pc
+import reliability_pilot_contract_v2 as pcv2
 import reliability_pilot_validators as pv
 import risk_dashboard as rd
 
-BENCH_VERSION = "bench.freellm.v1"
+BENCH_VERSION = "bench.freellm.v2"
+CONTRATO_PADRAO = "v2"
 G1 = "gemini-3.1-flash-lite"
 G2 = "gemini-3.5-flash-lite"
 MODELOS = (G1, G2)
@@ -120,9 +122,37 @@ def hashes_de_producao() -> dict:
 
 
 # ── seleção ─────────────────────────────────────────────────────────────────
-def montar_plano(man: dict, cfg: dict) -> tuple[list, list]:
+def _reconstruir_audit_v2(entrada: dict, item: dict, cfg: dict) -> dict:
+    """Troca o payload AUDIT pelo do contrato V2, preservando o resto.
+
+    Reconstruir aqui, e não em `construir_payloads`, mantém o construtor
+    compartilhado servindo o V1 — que precisa continuar existindo para as
+    medições anteriores permanecerem reproduzíveis.
+    """
+    import semantic_audit as sa
+    aliases = sa._aliases_map(cfg)
+    nova = dict(entrada)
+    nova["payload"] = pcv2.payload_audit(
+        texto=item["input"]["texto"], organizacao=item["company"],
+        aliases=list(aliases.get(item["company"]) or []),
+        event_ids=list(item["candidate_events"]),
+        pub_iso=item.get("pub_iso") or "",
+        genero=pc.genero_da_fonte(item.get("domain") or ""))
+    nova["task_version"] = pcv2.PROMPT_VERSION
+    # a chave de cache muda com o contrato: resposta V1 não pode ser servida
+    # como se fosse V2.
+    nova["cache_key"] = nova["cache_key"] + "|" + pcv2.CONTRACT_VERSION
+    return nova
+
+
+def montar_plano(man: dict, cfg: dict, contrato: str = "v1") -> tuple[list, list]:
     """Um plano declarado: (entradas, ausentes). Ausência é ausência."""
     pl = pp.construir_payloads(man, cfg)
+    if contrato == "v2":
+        porid_ = {i["sample_id"]: i for i in man["itens"]}
+        pl = dict(pl)
+        pl["audit"] = [_reconstruir_audit_v2(e, porid_[e["sample_id"]], cfg)
+                       for e in pl["audit"]]
     por = {(e["sample_id"], e["call_type"]): e
            for e in pl["audit"] + pl["discovery"]}
     entradas, ausentes = [], []
@@ -219,6 +249,7 @@ def avaliar_caso(item: dict, saida: dict | None, estado: str) -> dict:
         "llm_centrality": (ev or {}).get("centrality"),
         "llm_event_asserted": (ev or {}).get("event_asserted"),
         "llm_transaction_object": (ev or {}).get("transaction_object"),
+        "llm_occurrence_novelty": (ev or {}).get("occurrence_novelty"),
     }
 
 
@@ -492,7 +523,8 @@ def chamada_unica(genai, modelo: str, ent: dict) -> dict:
 # ── execução ────────────────────────────────────────────────────────────────
 def executar(modo: str, *, confirmado: bool, teto: int | None = None,
              espacamento_s: float = 8.0, provedores=None,
-             escopo: str = ESCOPO_SEMANTICO) -> dict:
+             escopo: str = ESCOPO_SEMANTICO,
+             contrato: str = CONTRATO_PADRAO) -> dict:
     if escopo not in ESCOPOS:
         raise ValueError(f"escopo desconhecido: {escopo!r}")
     if teto is None:
@@ -500,7 +532,7 @@ def executar(modo: str, *, confirmado: bool, teto: int | None = None,
     cfg = rd.load_config("config_risco.yaml")
     man = ps.carregar_manifesto()
     porid = {i["sample_id"]: i for i in man["itens"]}
-    entradas, ausentes = montar_plano(man, cfg)
+    entradas, ausentes = montar_plano(man, cfg, contrato)
 
     vaz = []
     for ent in entradas:
@@ -517,6 +549,9 @@ def executar(modo: str, *, confirmado: bool, teto: int | None = None,
     planejadas = (len(entradas) + len(lotes_trad)) * len(MODELOS)
     gates = {
         "escopo": escopo,
+        "contrato": contrato,
+        "contrato_versoes": pcv2.descrever() if contrato == "v2" else {
+            "contract_version": "v1", "schema_version": pc.SCHEMA_VERSION},
         "lotes_traducao": [{"idioma": l["idioma"], "ids": l["ids"]}
                            for l in lotes_trad],
         "schema_adaptado": ga.descrever(
@@ -730,6 +765,8 @@ def main() -> int:
     ap.add_argument("--mode", choices=("dry", "mock", "live"), default="dry")
     ap.add_argument("--confirm", default="")
     ap.add_argument("--inter-call-seconds", type=float, default=8.0)
+    ap.add_argument("--contract", choices=("v1","v2"), default=CONTRATO_PADRAO,
+                    help="contrato semântico do payload de audit")
     ap.add_argument("--scope", choices=tuple(ESCOPOS), default=ESCOPO_SEMANTICO,
                     help="semantic = só audit+discovery (22); full inclui a "
                          "tradução, que já foi medida no run 31754386165")
@@ -737,7 +774,8 @@ def main() -> int:
 
     antes = hashes_de_producao()
     res = executar(args.mode, confirmado=(args.confirm == CONFIRMACAO),
-                   espacamento_s=args.inter_call_seconds, escopo=args.scope)
+                   espacamento_s=args.inter_call_seconds, escopo=args.scope,
+                   contrato=args.contract)
     depois = hashes_de_producao()
     res["_meta"] = {"bench_version": BENCH_VERSION,
                     "sample_version": ps.SAMPLE_VERSION,

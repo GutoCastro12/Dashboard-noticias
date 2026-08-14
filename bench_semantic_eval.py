@@ -57,6 +57,20 @@ PAPEIS_NAO_ATRIBUTIVOS = frozenset({"MENTIONED", "UNRELATED", "UNKNOWN"})
 PAPEL_MA_CONTRAPARTE = frozenset({"SELLER"})
 
 CURRENTNESS_QUE_PONTUA = frozenset({"CURRENT"})
+
+# ── V2 ──────────────────────────────────────────────────────────────────────
+# A única novidade que cria ocorrência. FOLLOW_UP, HISTORICAL_CONTEXT e
+# DESCRIPTOR_OR_BACKGROUND são justamente as três formas de "o fato existe mas
+# este artigo não o está noticiando" que o V1 não sabia expressar.
+NOVIDADE_QUE_PONTUA = frozenset({"NEW_OCCURRENCE"})
+# UNDETERMINED não pontua: na dúvida, palavra-chave não vira ocorrência.
+
+# Objetos que não caracterizam transação de controle societário — três
+# adjudicações independentes já registradas.
+OBJETO_NAO_SOCIETARIO = frozenset({
+    "ASSET_OR_BUSINESS_UNIT", "PROPERTY_OR_REAL_ESTATE",
+    "CONCESSION_OR_LICENSE", "EXPLORATION_OR_RESOURCE_RIGHT",
+})
 CENTRALIDADE_CONTEXTUAL = frozenset({"BACKGROUND", "INCIDENTAL"})
 FASES_SEM_FATO = frozenset({"RUMOR"})
 
@@ -133,6 +147,49 @@ def projetar_pontuavel(ev: dict, empresa: str, aliases=None,
 
     return {"pontuavel": True, "porta": "NENHUMA",
             "motivo": "todas as portas passaram"}
+
+
+def projetar_pontuavel_v2(ev: dict, empresa: str, aliases=None,
+                          event_id: str = "") -> dict:
+    """Projeção V2 — as portas do V1 mais as duas dimensões novas.
+
+    CONGELADA antes de tocar o artefato do terceiro benchmark. Nenhuma porta
+    menciona empresa ou caso; cada uma vem de adjudicação anterior.
+
+    A ordem importa e é declarada: novidade da ocorrência é avaliada ANTES de
+    objeto, porque um follow-up não vira ocorrência independentemente do que
+    foi transacionado.
+    """
+    if not ev:
+        return {"pontuavel": None, "porta": "SEM_EVENTO",
+                "motivo": "o modelo não devolveu evento para este candidato"}
+
+    # 1-5: as portas do V1, inalteradas.
+    base = projetar_pontuavel(ev, empresa, aliases, event_id)
+    if base["pontuavel"] is False and base["porta"] != "VIGENCIA":
+        return base
+
+    # 6. NOVIDADE DA OCORRÊNCIA — a pergunta que o V1 não fazia.
+    #    Substitui a porta VIGENCIA como critério de "isto é ocorrência nova?":
+    #    `currentness` volta a responder só quando o FATO ocorreu.
+    nov = ev.get("occurrence_novelty")
+    if nov is None:
+        # contrato V1: a dimensão não existe, então a porta antiga permanece
+        return base
+    if nov not in NOVIDADE_QUE_PONTUA:
+        return {"pontuavel": False, "porta": "NOVIDADE",
+                "motivo": f"o artigo não relata ocorrência nova ({nov})"}
+
+    # 7. OBJETO DA TRANSAÇÃO — só para a família M&A.
+    if event_id == FAMILIA_MA:
+        obj = ev.get("transaction_object")
+        if obj in OBJETO_NAO_SOCIETARIO:
+            return {"pontuavel": False, "porta": "OBJETO",
+                    "motivo": f"objeto {obj} não é transação de controle "
+                              f"societário"}
+
+    return {"pontuavel": True, "porta": "NENHUMA",
+            "motivo": "todas as portas passaram (V2)"}
 
 
 # ── VERDADE DIMENSIONAL ─────────────────────────────────────────────────────

@@ -55,10 +55,12 @@ def main() -> int:
 
     cfg = rd.load_config("config_risco.yaml")
     man = ps.carregar_manifesto()
-    entradas, ausentes = bench.montar_plano(man, cfg)
+    entradas, ausentes = bench.montar_plano(man, cfg,
+                                            bench.CONTRATO_PADRAO)
     if ausentes:
         _falhou(f"itens planejados ausentes do manifesto: {ausentes}")
-    _ok(f"{len(entradas)} entradas no plano")
+    _ok(f"{len(entradas)} entradas no plano "
+        f"(contrato {bench.CONTRATO_PADRAO})")
 
     # 1) o canônico REALMENTE tem o padrão que quebrava — se não tiver mais,
     #    este preflight virou vazio e alguém precisa saber.

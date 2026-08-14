@@ -75,6 +75,8 @@ jobs:
         run: |
           python reliability_pilot1_payloads.py
           python test_wave_schema_adapter.py
+          python test_wave_contract_v2.py
+          python test_wave_semantic_eval.py
           python test_wave_bench_freellm.py
 
       # O primeiro benchmark real gastou o dispatch inteiro para descobrir, 22

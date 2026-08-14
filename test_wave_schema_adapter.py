@@ -261,8 +261,14 @@ check(_g2t["chamadas_planejadas"] == 22 and _g2t["teto"] == 22,
 check(_g2t["lotes_traducao"] == [],
       "[43] a tradução NÃO é repetida — já foi medida no run 31754386165")
 check(_g2t["escopo"] == "semantic", "[44] o artefato declara o escopo")
-check(_g2t["schema_adaptado"]["n_anulaveis"] == 9,
-      "[45] o artefato registra o que a adaptação fez")
+# V1 tem 9 campos anuláveis; o V2 acrescenta as duas citações das dimensões
+# novas, então 11. O que o teste protege é o registro auditável, não o número
+# congelado de um contrato específico.
+_esperado_nul = 11 if _g2t.get("contrato") == "v2" else 9
+check(_g2t["schema_adaptado"]["n_anulaveis"] == _esperado_nul,
+      f"[45] o artefato registra o que a adaptação fez "
+      f"({_g2t['schema_adaptado']['n_anulaveis']} anuláveis, contrato "
+      f"{_g2t.get('contrato')})")
 _pf = io.open("preflight_gemini_schema.py", encoding="utf-8").read()
 _pf_codigo = "\n".join(l.split("#")[0] for l in _pf.splitlines())
 _pf_codigo = re.sub(r'("""|\'\'\')(?:.|\n)*?\1', "", _pf_codigo)
