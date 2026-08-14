@@ -5,6 +5,252 @@
   "shadow_version": "sem.v2.shadow.v1"
  },
  "observacoes": {
+  "5d05e84444486491a30b|JBS|troca_ceo|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "5d05e84444486491a30b",
+   "article_pub_iso": "2026-08-14 14:48",
+   "candidate_event": "troca_ceo",
+   "case_id": "5d05e84444486491a30b|JBS|troca_ceo|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "JBS",
+   "contract_version": "v2",
+   "created_at": "2026-08-14T19:59:20Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-14 16:57",
+    "contexto": false,
+    "event_id": "troca_ceo",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 0,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": false,
+       "marcas": [
+        "H1_QUOTE_INEXISTENTE"
+       ],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [
+         "subject_quote"
+        ],
+        "valida": false
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+      "event_asserted": "ASSERTED",
+      "event_id": "troca_ceo",
+      "event_quote": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+      "phase": "ANNOUNCED",
+      "phase_quote": "será o novo CEO Global",
+      "related_entity": "Wesley Batista Filho",
+      "relation": "CEO",
+      "relation_quote": "CEO Global",
+      "role_quote": "CEO Global",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ],
+    "falha": "",
+    "marcas": [
+     "H1_QUOTE_INEXISTENTE"
+    ],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-14 16:57",
+   "human_review": null,
+   "latencia_s": 4.36,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+      "event_asserted": "ASSERTED",
+      "event_id": "troca_ceo",
+      "event_quote": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+      "phase": "ANNOUNCED",
+      "phase_quote": "será o novo CEO Global",
+      "related_entity": "Wesley Batista Filho",
+      "relation": "CEO",
+      "relation_quote": "CEO Global",
+      "role_quote": "CEO Global",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "O Presente Rural",
+   "title": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+   "url": "https://opresenterural.com.br/wesley-batista-filho-sera-o-novo-ceo-global-da-jbs-a-partir-de-janeiro-de-2027/",
+   "usage": {
+    "candidates_token_count": 321,
+    "prompt_token_count": 1322,
+    "total_token_count": 1643
+   }
+  },
+  "5d05e84444486491a30b|JBS|troca_ceo|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "5d05e84444486491a30b",
+   "article_pub_iso": "2026-08-14 14:48",
+   "candidate_event": "troca_ceo",
+   "case_id": "5d05e84444486491a30b|JBS|troca_ceo|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "JBS",
+   "contract_version": "v2",
+   "created_at": "2026-08-14T19:59:29Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-14 16:57",
+    "contexto": false,
+    "event_id": "troca_ceo",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 0,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": false,
+       "marcas": [
+        "H1_QUOTE_INEXISTENTE"
+       ],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [
+         "subject_quote"
+        ],
+        "valida": false
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+      "event_asserted": "ASSERTED",
+      "event_id": "troca_ceo",
+      "event_quote": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+      "phase": "ANNOUNCED",
+      "phase_quote": "será o novo CEO Global",
+      "related_entity": "Wesley Batista Filho",
+      "relation": "CEO_APPOINTMENT",
+      "relation_quote": "será o novo CEO Global",
+      "role_quote": "da JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": ""
+     }
+    ],
+    "falha": "",
+    "marcas": [
+     "H1_QUOTE_INEXISTENTE"
+    ],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-14 16:57",
+   "human_review": null,
+   "latencia_s": 1.85,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+      "event_asserted": "ASSERTED",
+      "event_id": "troca_ceo",
+      "event_quote": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+      "phase": "ANNOUNCED",
+      "phase_quote": "será o novo CEO Global",
+      "related_entity": "Wesley Batista Filho",
+      "relation": "CEO_APPOINTMENT",
+      "relation_quote": "será o novo CEO Global",
+      "role_quote": "da JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": ""
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "O Presente Rural",
+   "title": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+   "url": "https://opresenterural.com.br/wesley-batista-filho-sera-o-novo-ceo-global-da-jbs-a-partir-de-janeiro-de-2027/",
+   "usage": {
+    "candidates_token_count": 323,
+    "prompt_token_count": 1322,
+    "total_token_count": 1645
+   }
+  },
   "8f820bbc8fc89c13911b|Eneva|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {
    "actual_model": "gemini-3.1-flash-lite",
    "article_id": "8f820bbc8fc89c13911b",

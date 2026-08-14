@@ -724,7 +724,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T17:07:02.186704+00:00"
+     "last_checked_at": "2026-08-14T19:57:41.637452+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2593,7 +2593,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T17:07:02.586939+00:00"
+     "last_checked_at": "2026-08-14T19:57:42.037737+00:00"
     }
    ],
    "corrob_sources": [
@@ -10370,7 +10370,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T17:07:02.987241+00:00"
+     "last_checked_at": "2026-08-14T19:57:42.438053+00:00"
     },
     {
      "source": "Demarest",
@@ -10390,7 +10390,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T17:07:03.387481+00:00"
+     "last_checked_at": "2026-08-14T19:57:42.838367+00:00"
     }
    ],
    "corrob_sources": [
@@ -11973,7 +11973,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T17:07:03.787695+00:00"
+     "last_checked_at": "2026-08-14T19:57:43.238633+00:00"
     }
    ],
    "corrob_sources": [
@@ -15780,7 +15780,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T17:07:04.420601+00:00"
+     "last_checked_at": "2026-08-14T19:57:43.862053+00:00"
     }
    ],
    "corrob_sources": [
@@ -18333,7 +18333,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T17:07:05.069921+00:00"
+     "last_checked_at": "2026-08-14T19:57:44.452982+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -18439,7 +18439,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T17:07:05.754326+00:00"
+     "last_checked_at": "2026-08-14T19:57:45.129097+00:00"
     },
     {
      "source": "Moomoo",
@@ -19844,7 +19844,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T17:07:06.548403+00:00"
+     "last_checked_at": "2026-08-14T19:57:45.866136+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19887,7 +19887,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T17:07:07.363376+00:00"
+     "last_checked_at": "2026-08-14T19:57:46.570635+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -20711,7 +20711,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T17:07:07.994351+00:00",
+     "last_checked_at": "2026-08-14T19:57:47.242542+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20736,7 +20736,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T17:07:08.678956+00:00",
+     "last_checked_at": "2026-08-14T19:57:47.818856+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21856,7 +21856,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-14T17:07:09.079206+00:00",
+     "last_checked_at": "2026-08-14T19:57:48.219161+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21921,7 +21921,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-14T17:07:09.479412+00:00",
+     "last_checked_at": "2026-08-14T19:57:48.619439+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -23010,7 +23010,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T17:07:10.144002+00:00"
+     "last_checked_at": "2026-08-14T19:57:49.195598+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -23095,7 +23095,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T17:07:10.797701+00:00"
+     "last_checked_at": "2026-08-14T19:57:49.771218+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -23897,7 +23897,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T17:07:11.448922+00:00",
+     "last_checked_at": "2026-08-14T19:57:50.402294+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -23920,7 +23920,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T17:07:12.086770+00:00",
+     "last_checked_at": "2026-08-14T19:57:50.998892+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -25018,7 +25018,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T17:07:12.736027+00:00",
+     "last_checked_at": "2026-08-14T19:57:51.628299+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -25188,7 +25188,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T17:07:13.380444+00:00",
+     "last_checked_at": "2026-08-14T19:57:52.235030+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -39316,7 +39316,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T17:07:14.227846+00:00"
+     "last_checked_at": "2026-08-14T19:57:52.940468+00:00"
     }
    ],
    "corrob_sources": [
@@ -42387,7 +42387,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T17:07:14.841335+00:00"
+     "last_checked_at": "2026-08-14T19:57:53.572260+00:00"
     },
     {
      "source": "Virginia Business",
@@ -42430,7 +42430,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T17:07:15.484111+00:00"
+     "last_checked_at": "2026-08-14T19:57:54.143859+00:00"
     },
     {
      "source": "Virginia Business",
@@ -49276,7 +49276,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T17:07:16.124509+00:00",
+     "last_checked_at": "2026-08-14T19:57:54.746451+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -49299,7 +49299,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T17:07:16.763132+00:00",
+     "last_checked_at": "2026-08-14T19:57:55.337679+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -52529,7 +52529,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "nenhum",
-     "last_checked_at": "2026-08-14T17:07:17.606295+00:00",
+     "last_checked_at": "2026-08-14T19:57:56.048126+00:00",
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -52552,7 +52552,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "nenhum",
-     "last_checked_at": "2026-08-14T17:07:18.456059+00:00",
+     "last_checked_at": "2026-08-14T19:57:56.804014+00:00",
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -53240,8 +53240,51 @@
    ],
    "captured_ts": 1786717513,
    "cap_iso": "2026-08-14 11:25",
-   "corroborations": [],
-   "corrob_sources": []
+   "corroborations": [
+    {
+     "source": "Folha de S.Paulo",
+     "domain": "www1.folha.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOWnFraHkzdk9yNWx4cmxQdkZzOU1aTXdvb2lPdGtJbEtVY09XQV80MkI2RnpTem02eGg0cGpYWUwtOWhzdTR0Y011dUZHNFd5b01kOFBDSzNhUXVVMGhocnNpbEZaakFsbDA0WDItUDJYRWhxM0V5djlnaW5xRklTd05CdjB1V0traDVzcExTb3pQb25OMlVJU2p3LWx1TGRxQ1hScDlBWkRKUzJDT0tIdTBPdE5OMlM0eWYzbU1hTk04QQ?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOWnFraHkzdk9yNWx4cmxQdkZzOU1aTXdvb2lPdGtJbEtVY09XQV80MkI2RnpTem02eGg0cGpYWUwtOWhzdTR0Y011dUZHNFd5b01kOFBDSzNhUXVVMGhocnNpbEZaakFsbDA0WDItUDJYRWhxM0V5djlnaW5xRklTd05CdjB1V0traDVzcExTb3pQb25OMlVJU2p3LWx1TGRxQ1hScDlBWkRKUzJDT0tIdTBPdE5OMlM0eWYzbU1hTk04QQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOWnFraHkzdk9yNWx4cmxQdkZzOU1aTXdvb2lPdGtJbEtVY09XQV80MkI2RnpTem02eGg0cGpYWUwtOWhzdTR0Y011dUZHNFd5b01kOFBDSzNhUXVVMGhocnNpbEZaakFsbDA0WDItUDJYRWhxM0V5djlnaW5xRklTd05CdjB1V0traDVzcExTb3pQb25OMlVJU2p3LWx1TGRxQ1hScDlBWkRKUzJDT0tIdTBPdE5OMlM0eWYzbU1hTk04QQ?oc=5",
+     "resolved_url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
+     "canonical_url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
+     "display_url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www1.folha.uol.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-14T19:57:57.204359+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "Folha de S.Paulo",
+     "domain": "www1.folha.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOWnFraHkzdk9yNWx4cmxQdkZzOU1aTXdvb2lPdGtJbEtVY09XQV80MkI2RnpTem02eGg0cGpYWUwtOWhzdTR0Y011dUZHNFd5b01kOFBDSzNhUXVVMGhocnNpbEZaakFsbDA0WDItUDJYRWhxM0V5djlnaW5xRklTd05CdjB1V0traDVzcExTb3pQb25OMlVJU2p3LWx1TGRxQ1hScDlBWkRKUzJDT0tIdTBPdE5OMlM0eWYzbU1hTk04QQ?oc=5",
+     "when": "08/07 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOWnFraHkzdk9yNWx4cmxQdkZzOU1aTXdvb2lPdGtJbEtVY09XQV80MkI2RnpTem02eGg0cGpYWUwtOWhzdTR0Y011dUZHNFd5b01kOFBDSzNhUXVVMGhocnNpbEZaakFsbDA0WDItUDJYRWhxM0V5djlnaW5xRklTd05CdjB1V0traDVzcExTb3pQb25OMlVJU2p3LWx1TGRxQ1hScDlBWkRKUzJDT0tIdTBPdE5OMlM0eWYzbU1hTk04QQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOWnFraHkzdk9yNWx4cmxQdkZzOU1aTXdvb2lPdGtJbEtVY09XQV80MkI2RnpTem02eGg0cGpYWUwtOWhzdTR0Y011dUZHNFd5b01kOFBDSzNhUXVVMGhocnNpbEZaakFsbDA0WDItUDJYRWhxM0V5djlnaW5xRklTd05CdjB1V0traDVzcExTb3pQb25OMlVJU2p3LWx1TGRxQ1hScDlBWkRKUzJDT0tIdTBPdE5OMlM0eWYzbU1hTk04QQ?oc=5",
+     "resolved_url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
+     "canonical_url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
+     "display_url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www1.folha.uol.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-14T19:57:57.604609+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ]
   },
   "https://news.google.com/rss/articles/CBMif0FVX3lxTE9WUjhIVGVjUVlPNkRFTUVEdVhuTUU2cXpUa1Job2tBU1JqSjMxMmtYTE5MQW9nYnl5Ul9PVlBwQWUya1pxelhMakFyTGNhd2FGMHVtRVVMckpoeTI4aXVxNUxTdnF3UWFLQVUyeWp6Umk3RUxaMlczekJjODNyNmM?oc=5": {
    "title": "Governo do Rio pede falência da Refit na Justiça por dívida bilionária",
@@ -53423,9 +53466,103 @@
    ],
    "captured_ts": 1786727217,
    "cap_iso": "2026-08-14 14:06"
+  },
+  "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNb01FR1BZb1dvUGRVZER6b0RZTHdrYXBjdy1UUmlhSzZEcEpVa0NseWFTR0x6d3hOMldBV09IdHlHaUc5Um9SdVpYd2dXeDNYX0ZlRFh5QjVqN0R1aXRJME9RSVJXOU95dlRrRHFhUGtuXzdkblM2c3FTZzFTN1FsdXJ0MGF4aWoxM2lIWXFVNUlYUEhjeG45aVBQaFZqMkJvcWs2QXFyNFc0VXNySXdwSHkzcEZnc3V2QTJSZTRtYklmX3I5cWdVNGNlWlpoYXBqNU03MHk5Y1RMOUFVcFFraTZOQkd4UQ?oc=5": {
+   "title": "Revelam o sonho frustrado de renomado banqueiro colombiano que enfrenta o abismo devido à falência",
+   "url": "https://redmas.com.co/tendencias/destapan-el-sueno-frustrado-de-reconocido-banquero-colombiano-que-enfrenta-el-abismo-por-la-quiebra-20260416-0022.html",
+   "summary": "Revelam o sonho frustrado de renomado banqueiro colombiano que enfrenta o abismo devido à falência &nbsp;&nbsp; redmas.com.co",
+   "source": "redmas.com.co",
+   "domain": "redmas.com.co",
+   "pub_ts": 1776322800,
+   "pub_iso": "2026-04-16 04:00",
+   "language": "es",
+   "title_original": "Destapan el sueño frustrado de reconocido banquero colombiano que enfrenta el abismo por la quiebra",
+   "summary_original": "Destapan el sueño frustrado de reconocido banquero colombiano que enfrenta el abismo por la quiebra &nbsp;&nbsp; redmas.com.co",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1786737456,
+   "cap_iso": "2026-08-14 16:57"
+  },
+  "https://news.google.com/rss/articles/CBMiigFBVV95cUxPdG1fRVRfTktfbWh2aVJFV0RBMGtNZUc1MGIyRkNHY0lMRHlkdElaNDdtNG5FaVoyUjFnZlhaYzdNUXZmWGZnSlFxMlAwU2FxMFFmS01WOURCLUF4Tm9jUl9OQkhmN1NwUmNSVDVRQW9kMl9uc0g4aFBmcmdDeGtvWVZrM3Y1RTVsbFE?oc=5": {
+   "title": "SpaceX credit-default swaps start trading after bond sale",
+   "url": "https://ca.finance.yahoo.com/news/spacex-credit-default-swaps-start-172408144.html",
+   "summary": "SpaceX credit-default swaps start trading after bond sale &nbsp;&nbsp; Yahoo! Finance Canada",
+   "source": "Yahoo! Finance Canada",
+   "domain": "ca.finance.yahoo.com",
+   "pub_ts": 1782370800,
+   "pub_iso": "2026-06-25 04:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "default"
+   ],
+   "captured_ts": 1786737456,
+   "cap_iso": "2026-08-14 16:57"
+  },
+  "https://news.google.com/rss/articles/CBMipAFBVV95cUxQVWVIMWc5bS1RUUdkMmlxVU1kQ19URjZfUWt4Z20yM3ZxSFMxZlE1NGcwRFpYaGNfdVhzSDV5TUNSeW9lWXlBTmFmdWd6b2toNGdic0Y3UnJocEZHZVVLVG80ZTlIcE9HOVBjSktObmdsWTNqZFZQeHFZbzFEcG9ZWnlnM293Q1Ayc3ZNMEh4amU2SmhVelUwNXpUaWtmN1FQei1GdQ?oc=5": {
+   "title": "Empresa de energia da Carolina do Norte acusada de fraude entra com pedido de falência",
+   "url": "https://ncnewsline.com/2026/07/22/north-carolina-energy-company-accused-of-fraud-files-for-bankruptcy/",
+   "summary": "Empresa de energia da Carolina do Norte acusada de fraude entra com pedido de falência &nbsp;&nbsp; NC Newsline",
+   "source": "NC Newsline",
+   "domain": "ncnewsline.com",
+   "pub_ts": 1784703600,
+   "pub_iso": "2026-07-22 04:00",
+   "language": "en",
+   "title_original": "North Carolina energy company accused of fraud files for bankruptcy",
+   "summary_original": "North Carolina energy company accused of fraud files for bankruptcy &nbsp;&nbsp; NC Newsline",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1786737456,
+   "cap_iso": "2026-08-14 16:57"
+  },
+  "https://opresenterural.com.br/wesley-batista-filho-sera-o-novo-ceo-global-da-jbs-a-partir-de-janeiro-de-2027/": {
+   "title": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+   "url": "https://opresenterural.com.br/wesley-batista-filho-sera-o-novo-ceo-global-da-jbs-a-partir-de-janeiro-de-2027/",
+   "summary": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027 &nbsp;&nbsp; O Presente Rural",
+   "source": "O Presente Rural",
+   "domain": "opresenterural.com.br",
+   "pub_ts": 1786729697,
+   "pub_iso": "2026-08-14 14:48",
+   "language": "pt",
+   "companies": [
+    "JBS"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "mention_roles": {
+    "JBS": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "JBS": [
+     "troca_ceo"
+    ]
+   },
+   "companies_attributed": [
+    "JBS"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786737456,
+   "cap_iso": "2026-08-14 16:57"
   }
  },
- "run_count": 127,
+ "run_count": 128,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -58798,11 +58935,27 @@
   "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQb0dzd0RhdGxTRDRXQlRVaDhjNThtbktBd3Uwd0NISnVDd1dmaVhBZXdidEp1LXdDcmwxRGVPdjNwVTIwZkxQZ0phNHgxeTlHbTlCQXQ3UUY0OXJHeXBZdEZVSkRSNTF5TnFpYzlXVTNiVnlZbEpOYlg2NkZuTFF2OEJJMFdiYXhoMmJIMjk2YWFpUjFKYkVIam40djV1TzA2akEyWXVUYjFxQWE4WTRhYzU5T1doclFmck5VS2tGLVB6b3B6bFJmM0dCUlIwTXJyS3A5Yklyd1Zoazh3?oc=5": {
    "url": "https://www.em.com.br/emfoco/2026/08/07/adeus-a-89-lojas-uma-das-redes-de-moveis-mais-tradicionais-dos-eua-entra-em-falencia-apos-quase-80-anos/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMirgFBVV95cUxOcnNwVWJYTnFBWVE4WGVYaWFxVHF3R3Uxdy1DYlR1S0tfQWZ1NjVLeHRUbUdhVFZDTFNwRzh3cU93TTVkNWlwTFBnSUxqNk5JMWlWT2gwNE5NeGlvSm1McTlicHNxdmhXSk9ZUGZyM1NJSjZSQ21waE91NlpSNG1aU2gyWmwzc0x4Sk5pZVZlZFJnaEdkNkRkSzNRbHdYQUZsb2tGQnV2bTAwOGJRZ0E?oc=5": {
+   "url": "https://opresenterural.com.br/wesley-batista-filho-sera-o-novo-ceo-global-da-jbs-a-partir-de-janeiro-de-2027/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNb01FR1BZb1dvUGRVZER6b0RZTHdrYXBjdy1UUmlhSzZEcEpVa0NseWFTR0x6d3hOMldBV09IdHlHaUc5Um9SdVpYd2dXeDNYX0ZlRFh5QjVqN0R1aXRJME9RSVJXOU95dlRrRHFhUGtuXzdkblM2c3FTZzFTN1FsdXJ0MGF4aWoxM2lIWXFVNUlYUEhjeG45aVBQaFZqMkJvcWs2QXFyNFc0VXNySXdwSHkzcEZnc3V2QTJSZTRtYklmX3I5cWdVNGNlWlpoYXBqNU03MHk5Y1RMOUFVcFFraTZOQkd4UQ?oc=5": {
+   "url": "https://redmas.com.co/tendencias/destapan-el-sueno-frustrado-de-reconocido-banquero-colombiano-que-enfrenta-el-abismo-por-la-quiebra-20260416-0022.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiigFBVV95cUxPdG1fRVRfTktfbWh2aVJFV0RBMGtNZUc1MGIyRkNHY0lMRHlkdElaNDdtNG5FaVoyUjFnZlhaYzdNUXZmWGZnSlFxMlAwU2FxMFFmS01WOURCLUF4Tm9jUl9OQkhmN1NwUmNSVDVRQW9kMl9uc0g4aFBmcmdDeGtvWVZrM3Y1RTVsbFE?oc=5": {
+   "url": "https://ca.finance.yahoo.com/news/spacex-credit-default-swaps-start-172408144.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipAFBVV95cUxQVWVIMWc5bS1RUUdkMmlxVU1kQ19URjZfUWt4Z20yM3ZxSFMxZlE1NGcwRFpYaGNfdVhzSDV5TUNSeW9lWXlBTmFmdWd6b2toNGdic0Y3UnJocEZHZVVLVG80ZTlIcE9HOVBjSktObmdsWTNqZFZQeHFZbzFEcG9ZWnlnM293Q1Ayc3ZNMEh4amU2SmhVelUwNXpUaWtmN1FQei1GdQ?oc=5": {
+   "url": "https://ncnewsline.com/2026/07/22/north-carolina-energy-company-accused-of-fraud-files-for-bankruptcy/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786735963,
-  "iso": "14 ago 2026 · 16:32 BRT",
+  "ts": 1786737517,
+  "iso": "14 ago 2026 · 16:58 BRT",
   "status": {
    "Cosan": {
     "status": "atencao",
@@ -58818,7 +58971,7 @@
    },
    "JBS": {
     "status": "atencao",
-    "score": 56
+    "score": 55
    },
    "Vale": {
     "status": "atencao",
