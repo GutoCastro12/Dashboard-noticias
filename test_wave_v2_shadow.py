@@ -26,12 +26,15 @@ NENHUMA CHAMADA A PROVIDER.
 """
 from __future__ import annotations
 
+import calendar
+import datetime
 import importlib
 import io
 import json
 import os
 import re
 import tempfile
+import time
 from pathlib import Path
 
 TMP = Path(tempfile.mkdtemp(prefix="v2shadow_"))
@@ -76,6 +79,53 @@ def A(url="http://x/1", ts=None, empresa="Acme", ev="ma", titulo="Alfa compra Be
     return a
 
 
+print("=" * 98)
+print("BLOCO A0 — ROUND-TRIP DO FREEZE: o bug que a suíte anterior não viu")
+print("=" * 98)
+# A checagem antiga afirmava o ISO contra ele mesmo, e todos os casos
+# sintéticos usavam `CONTRACT_FREEZE_TS ± 3600` — relativos à constante. Com
+# isso a suíte ficou 57/57 enquanto o epoch estava 86400 s à frente do ISO e o
+# holdout era impossível de alimentar. Aqui o epoch é derivado DE FORMA
+# INDEPENDENTE e comparado; se alguém mudar o ISO e esquecer o resto, fica
+# vermelho.
+_ESPERADO_TS = calendar.timegm(
+    time.strptime("2026-08-14T12:06:33Z", "%Y-%m-%dT%H:%M:%SZ"))
+check(sh.CONTRACT_FREEZE_TS == _ESPERADO_TS == 1786709193,
+      f"[0a] epoch do freeze = {sh.CONTRACT_FREEZE_TS} "
+      f"(derivado independentemente: {_ESPERADO_TS})")
+check(time.strftime("%Y-%m-%dT%H:%M:%SZ",
+                    time.gmtime(sh.CONTRACT_FREEZE_TS))
+      == sh.CONTRACT_FREEZE_ISO,
+      "[0b] round-trip: epoch → UTC devolve exatamente o ISO canônico")
+check(sh.CONTRACT_FREEZE_TS < time.time(),
+      "[0c] e o freeze está no PASSADO — um freeze futuro torna o holdout "
+      "impossível de alimentar, que foi o defeito observado")
+# fuso da máquina não pode interferir: o mesmo ISO tem que dar o mesmo epoch
+_iso_dt = datetime.datetime(2026, 8, 14, 12, 6, 33,
+                            tzinfo=datetime.timezone.utc)
+check(int(_iso_dt.timestamp()) == sh.CONTRACT_FREEZE_TS,
+      "[0d] conversão timezone-safe: bate com datetime aware em UTC")
+check(sh._epoch_utc("2026-01-01T00:00:00Z") == 1767225600,
+      "[0e] a função de conversão é correta para outra data conhecida")
+try:
+    sh._epoch_utc("2026-08-14T12:06:33")
+    _rej = False
+except ValueError:
+    _rej = True
+check(_rej, "[0f] instante sem sufixo Z é REJEITADO — sem UTC explícito não há "
+            "como saber o instante")
+_src_sh = io.open("semantic_v2_shadow.py", encoding="utf-8").read()
+_cod_sh = re.sub(r'("""|\'\'\')(?:.|\n)*?\1', "",
+                 "\n".join(l.split("#")[0] for l in _src_sh.splitlines()))
+check("CONTRACT_FREEZE_TS = _epoch_utc(" in _cod_sh,
+      "[0g] o epoch é DERIVADO do ISO — uma fonte de verdade, não dois "
+      "literais que podem divergir")
+check(not re.search(r"CONTRACT_FREEZE_TS\s*=\s*\d", _cod_sh),
+      "[0h] e não sobrou nenhum epoch escrito à mão")
+check("time.mktime" not in _cod_sh,
+      "[0i] não usa time.mktime, que aplicaria o fuso local do runner")
+
+print()
 print("=" * 98)
 print("BLOCO A — FREEZE E ELEGIBILIDADE PROSPECTIVA")
 print("=" * 98)
@@ -368,6 +418,60 @@ if _fila:
 else:
     check(True, "[53] fila vazia é resultado válido quando nada diverge")
     check(True, "[54] (sem itens para ordenar)")
+
+print()
+print("=" * 98)
+print("BLOCO I2 — REGRESSÃO EXATA: o primeiro caso prospectivo real")
+print("=" * 98)
+# Metadados REAIS do artigo que o cron 31808760930 trouxe e que o freeze
+# quebrado tornou inelegível. Fixados aqui como regressão: se a elegibilidade
+# temporal regredir de novo, este caso denuncia.
+_ENEVA_TS = 1786717513          # 2026-08-14T14:25:13Z
+_ENEVA_URL = ("https://brasilenergia.com.br/petroleoegas/ep/"
+              "anp-aprova-aquisicao-de-parte-da-atem-em-japiim-pela-eneva")
+_ENEVA = {"url": _ENEVA_URL,
+          "title": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva",
+          "summary": "", "captured_ts": _ENEVA_TS, "companies": ["Eneva"],
+          "events_by_company": {"Eneva": ["ma"]},
+          "companies_attributed": ["Eneva"], "context_companies": [],
+          "mention_roles": {"Eneva": {"relation_type": "direto",
+                                      "subject_company": "",
+                                      "impact_type": "direto",
+                                      "event_phase": "aprovacao"}},
+          "cap_iso": "2026-08-14 11:25", "pub_iso": "2026-08-11 12:57",
+          "source": "Editora Brasil Energia"}
+_dev_real = sh.corpus_de_desenvolvimento()
+check(_ENEVA_TS > sh.CONTRACT_FREEZE_TS,
+      f"[58] capturado {time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(_ENEVA_TS))} "
+      f"— depois do freeze {sh.CONTRACT_FREEZE_ISO}")
+check(_ENEVA_URL not in _dev_real,
+      "[59] fora do corpus de desenvolvimento do V2")
+check(len(_dev_real) == 25 and _ENEVA_URL not in _dev_real,
+      "[60] e não é nenhuma das 25 URLs do manifesto congelado")
+_ok_en, _m_en = sh.elegivel(_ENEVA, _dev_real)
+check(_ok_en and _m_en == "prospectivo",
+      f"[61] ELEGÍVEL como prospectivo ({_m_en})")
+_snap_en = sh.snapshot_deterministico(_ENEVA, "Eneva", "ma")
+check(_snap_en["scoreable"] is True and _snap_en["event_phase"] == "aprovacao",
+      "[62] o snapshot determinístico contemporâneo é capturado "
+      "(pontuável, fase=aprovacao)")
+check(sh.prioridade(_ENEVA, "ma") > 0,
+      f"[63] entra na fila com prioridade {sh.prioridade(_ENEVA, 'ma')}")
+# O epoch QUEBRADO teria rejeitado este caso. Provado executando a mesma
+# função com a constante trocada, e restaurando em seguida.
+_EPOCH_QUEBRADO = 1786795593
+_orig_ts = sh.CONTRACT_FREEZE_TS
+try:
+    sh.CONTRACT_FREEZE_TS = _EPOCH_QUEBRADO
+    _ok_bug, _m_bug = sh.elegivel(_ENEVA, _dev_real)
+finally:
+    sh.CONTRACT_FREEZE_TS = _orig_ts
+check(not _ok_bug and "anterior ao freeze" in _m_bug,
+      f"[64] com o epoch antigo ({_EPOCH_QUEBRADO}) este caso REAL era "
+      f"rejeitado ({_m_bug})")
+check(sh.elegivel(_ENEVA, _dev_real)[0] is True,
+      "[65] e com o epoch derivado ele é aceito — a diferença entre ter e não "
+      "ter holdout")
 
 print()
 print("=" * 98)

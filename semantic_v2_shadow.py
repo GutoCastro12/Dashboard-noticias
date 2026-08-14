@@ -29,6 +29,7 @@ cada caso novo, nunca teremos holdout — por isso o V2 está congelado.
 """
 from __future__ import annotations
 
+import calendar
 import hashlib
 import io
 import json
@@ -38,8 +39,34 @@ from pathlib import Path
 
 SHADOW_VERSION = "sem.v2.shadow.v1"
 CONTRACT_FREEZE_COMMIT = "7526667d36e0266fc01f9f15af2aea1aa92404ac"
+
+# ── o instante do freeze: UMA fonte de verdade ──────────────────────────────
+# O ISO é canônico; o epoch é DERIVADO. Antes eram dois literais independentes
+# e eles divergiram: o epoch gravado à mão (1786795593) correspondia a
+# 2026-08-15T12:06:33Z — exatamente 86400 s à frente do ISO. Como a
+# elegibilidade compara `captured_ts > freeze`, o holdout ficou impossível de
+# alimentar: nenhum artigo podia ser posterior a um instante que ainda não
+# havia chegado. O cron 31808760930 rodou e selecionou zero casos por isso.
+#
+# Derivar elimina a classe inteira do problema: não há segundo valor para
+# alguém editar pela metade.
 CONTRACT_FREEZE_ISO = "2026-08-14T12:06:33Z"
-CONTRACT_FREEZE_TS = 1786795593        # epoch do commit acima
+
+
+def _epoch_utc(iso: str) -> int:
+    """ISO com sufixo `Z` → epoch UTC, sem depender do fuso da máquina.
+
+    `calendar.timegm` interpreta a tupla como UTC. `time.mktime` NÃO serviria:
+    ele aplica o fuso local, e o mesmo código daria resultados diferentes no
+    Windows do usuário (BRT) e no runner do Actions (UTC).
+    """
+    if not iso.endswith("Z"):
+        raise ValueError(f"o instante do freeze precisa ser UTC explícito "
+                         f"(sufixo Z): {iso!r}")
+    return calendar.timegm(time.strptime(iso, "%Y-%m-%dT%H:%M:%SZ"))
+
+
+CONTRACT_FREEZE_TS = _epoch_utc(CONTRACT_FREEZE_ISO)
 
 CAMINHO = Path(os.environ.get("RISK_SEMANTIC_V2_SHADOW",
                               "risk_semantic_v2_shadow.json"))
