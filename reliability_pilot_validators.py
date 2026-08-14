@@ -85,13 +85,69 @@ SCHEMAS = {"AUDIT": SCHEMA_AUDIT, "DISCOVERY": SCHEMA_DISCOVERY,
 
 
 # ── H1: quote literal ───────────────────────────────────────────────────────
-def quote_valida(quote: str, texto: str) -> bool:
+# O piso de 4 caracteres da v1 existia para barrar citação trivial — "de", "of",
+# "a" —, que aparece em qualquer texto e não sustenta campo nenhum. O efeito
+# colateral só apareceu com dado real: no case #2 prospectivo, ambos os modelos
+# citaram `subject_quote = "JBS"`, que está LITERALMENTE na manchete, e os dois
+# foram marcados H1_QUOTE_INEXISTENTE. Isso não é alucinação — é falso negativo
+# do validador, e atinge toda empresa de nome curto (B3, BRF, JBS, WEG, ...).
+#
+# A v2 separa as duas coisas que o piso confundia: COMPRIMENTO e TRIVIALIDADE.
+# Quote longa continua idêntica à v1 — substring na forma normalizada. Quote
+# curta passa a ser aceita quando é um TOKEN COMPLETO e não é palavra funcional.
+# Assim "JBS" em "...da JBS a partir..." vale, "de" em "modelo de negócio" não,
+# e "b3" dentro de "b3sa3" não — porque não fecha token.
+#
+# Nenhum nome de empresa é citado aqui: a regra é sobre a natureza do token.
+QUOTE_VALIDATOR_VERSION = "r7ba.q2"
+
+# Palavras funcionais de 1–3 caracteres em pt/en/es. Só entram tokens que não
+# sustentam campo algum sozinhos; nenhum alias real de emissor é palavra
+# funcional, então esta lista não pode barrar entidade legítima.
+# Só tokens de 1–3 caracteres: acima disso a regra nem consulta esta lista, e
+# entrada mais longa seria peso morto que dá falsa impressão de cobertura.
+_QUOTE_TRIVIAL = frozenset("""
+a à ao aos as às o os um uns e é ou se de do da dos das em no na nos nas por
+que com sem sua seu sob ate até já há ha nao não mas foi ser tem lhe me te
+vos ela ele eu tu
+an and the of to in is it on at as by or be he we do if no so up us are was
+has its not but all can for her his had may new one two off out per
+el la los las del un una y con su sus mas más ese esa
+""".split())
+
+# Casa TOKEN COMPLETO: nem `\b` (que falha quando a citação termina em símbolo,
+# como "r$"), nem substring solta (que aceitaria "b3" dentro de "b3sa3").
+def _token_completo(q: str, t: str) -> bool:
+    return re.search(r"(?<!\w)" + re.escape(q) + r"(?!\w)", t) is not None
+
+
+def quote_valida_v1(quote: str, texto: str) -> bool:
+    """Comportamento ORIGINAL, preservado para reavaliar o que foi observado.
+
+    Não é código morto: sem ele não dá para dizer "na época o validador
+    respondeu X, sob a regra corrigida responderia Y" sem reescrever a
+    telemetria histórica — que é justamente o que não se pode fazer.
+    """
     if quote is None or quote == "":
         return True          # ausência declarada não é alucinação
     q = normalizar_para_comparacao(quote)
     if len(q) < 4:
         return False
     return q in normalizar_para_comparacao(texto)
+
+
+def quote_valida(quote: str, texto: str) -> bool:
+    if quote is None or quote == "":
+        return True          # ausência declarada não é alucinação
+    q = normalizar_para_comparacao(quote)
+    if not q:
+        return False
+    t = normalizar_para_comparacao(texto)
+    if len(q) >= 4:
+        return q in t        # idêntico à v1 — nada muda para quote longa
+    if q in _QUOTE_TRIVIAL:
+        return False         # literal, mas não sustenta campo algum
+    return _token_completo(q, t)
 
 
 def validar_quotes(evento: dict, texto: str) -> dict:
