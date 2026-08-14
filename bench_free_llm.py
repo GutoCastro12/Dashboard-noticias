@@ -35,6 +35,7 @@ import os
 import time
 from pathlib import Path
 
+import gemini_schema_adapter as ga
 import reliability_pilot1_payloads as pp
 import reliability_pilot1_sample as ps
 import reliability_pilot_contract as pc
@@ -53,6 +54,18 @@ EXCLUIDO = "gemini-3.6-flash"
 
 MAX_PROVIDER_CALLS = 30
 CONFIRMACAO = "EXECUTAR-BENCHMARK"
+
+# ── escopo ──────────────────────────────────────────────────────────────────
+# A tradução JÁ FOI MEDIDA no run 31754386165 e deu empate de fidelidade com
+# vantagem operacional do 3.5-flash-lite. Repetir aquilo agora gastaria 4
+# chamadas para reconfirmar o que já está publicado. O escopo default passa a
+# ser só a semântica, que é o que ficou sem dado.
+ESCOPO_SEMANTICO = "semantic"
+ESCOPO_COMPLETO = "full"
+ESCOPOS = {
+    ESCOPO_SEMANTICO: {"traducao": False, "teto": 22},
+    ESCOPO_COMPLETO: {"traducao": True, "teto": MAX_PROVIDER_CALLS},
+}
 
 # O cap antigo de 900 tokens nunca foi provado suficiente para este schema. São
 # 11 dimensões, cada uma com uma citação literal, e um artigo pode trazer mais
@@ -333,7 +346,7 @@ def chamada_traducao(genai, modelo: str, lote: dict) -> dict:
         bruto = resp.text
         comum = {"latencia_s": dt, "uso": uso, "finish": fim,
                  "modelo_real": getattr(resp, "model_version", "") or "",
-                 "raw_output": bruto}
+                 "raw_output": bruto, "invocou_sdk": True}
         try:
             return {"estado": "OK", "saida": json.loads(bruto), **comum}
         except Exception:
@@ -342,7 +355,8 @@ def chamada_traducao(genai, modelo: str, lote: dict) -> dict:
         cls = classificar(exc)
         return {"estado": cls["classe"], "saida": None,
                 "latencia_s": round(time.time() - t0, 2), "uso": {},
-                "finish": {}, "modelo_real": "", "erro": cls}
+                "finish": {}, "modelo_real": "", "invocou_sdk": True,
+                "erro": cls}
 
 
 # ── provider ────────────────────────────────────────────────────────────────
@@ -402,20 +416,42 @@ def classificar(exc: Exception) -> dict:
                                      "AUTH_ERROR", "MODEL_UNAVAILABLE")}
 
 
+CLIENT_SCHEMA_ERROR = "CLIENT_SCHEMA_ERROR"
+
+
 def chamada_unica(genai, modelo: str, ent: dict) -> dict:
-    """Exatamente um generate_content. Structured output nos DOIS modelos."""
+    """Exatamente um generate_content. Structured output nos DOIS modelos.
+
+    A montagem do `GenerationConfig` acontece num bloco PRÓPRIO, antes da
+    chamada. Não é estilo: no run 31754386165 a conversão do schema explodiu
+    aí dentro e o contador registrou 22 "chamadas ao provider" que nunca
+    existiram. Separando as duas etapas, uma falha de conversão é
+    CLIENT_SCHEMA_ERROR e não incrementa invocação do SDK.
+    """
     t0 = time.time()
+    esquema_canonico = (ent.get("payload") or {}).get("schema")
     try:
         m = genai.GenerativeModel(modelo)
         cfg_gen = {"temperature": 0.0,
                    "response_mime_type": "application/json",
                    "max_output_tokens": OUTPUT_TOKEN_CAP}
-        esquema = (ent.get("payload") or {}).get("schema")
-        if esquema:
-            cfg_gen["response_schema"] = esquema
+        if esquema_canonico:
+            # representação do PROVIDER; o contrato canônico não muda
+            cfg_gen["response_schema"] = ga.adaptar_schema(esquema_canonico)
+        generation_config = genai.types.GenerationConfig(**cfg_gen)
+    except Exception as exc:
+        return {"estado": CLIENT_SCHEMA_ERROR, "saida": None,
+                "latencia_s": round(time.time() - t0, 2), "uso": {},
+                "finish": {}, "modelo_real": "", "invocou_sdk": False,
+                "erro": {"classe": CLIENT_SCHEMA_ERROR,
+                         "excecao": type(exc).__name__,
+                         "mensagem": str(exc)[:240],
+                         "onde": "montagem do generation_config, antes da rede",
+                         "interrompe": True}}
+    try:
         resp = m.generate_content(
             ent["payload"]["prompt"],
-            generation_config=genai.types.GenerationConfig(**cfg_gen),
+            generation_config=generation_config,
             request_options={"timeout": 90})
         dt = round(time.time() - t0, 2)
         uso, fim = {}, {}
@@ -435,21 +471,32 @@ def chamada_unica(genai, modelo: str, ent: dict) -> dict:
         bruto = resp.text
         comum = {"latencia_s": dt, "uso": uso, "finish": fim,
                  "modelo_real": getattr(resp, "model_version", "") or "",
-                 "raw_output": bruto, "output_cap_solicitado": OUTPUT_TOKEN_CAP}
+                 "raw_output": bruto, "output_cap_solicitado": OUTPUT_TOKEN_CAP,
+                 "invocou_sdk": True}
         try:
-            return {"estado": "OK", "saida": json.loads(bruto), **comum}
+            saida = json.loads(bruto)
         except Exception:
             return {"estado": "JSON_INVALIDO", "saida": None, **comum}
+        # ausência de campo anulável ⇒ null canônico, nunca string vazia
+        if esquema_canonico:
+            saida = ga.normalizar_saida(saida, esquema_canonico)
+        return {"estado": "OK", "saida": saida, **comum}
     except Exception as exc:
         cls = classificar(exc)
         return {"estado": cls["classe"], "saida": None,
                 "latencia_s": round(time.time() - t0, 2), "uso": {},
-                "finish": {}, "modelo_real": "", "erro": cls}
+                "finish": {}, "modelo_real": "", "invocou_sdk": True,
+                "erro": cls}
 
 
 # ── execução ────────────────────────────────────────────────────────────────
-def executar(modo: str, *, confirmado: bool, teto: int = MAX_PROVIDER_CALLS,
-             espacamento_s: float = 8.0, provedores=None) -> dict:
+def executar(modo: str, *, confirmado: bool, teto: int | None = None,
+             espacamento_s: float = 8.0, provedores=None,
+             escopo: str = ESCOPO_SEMANTICO) -> dict:
+    if escopo not in ESCOPOS:
+        raise ValueError(f"escopo desconhecido: {escopo!r}")
+    if teto is None:
+        teto = ESCOPOS[escopo]["teto"]
     cfg = rd.load_config("config_risco.yaml")
     man = ps.carregar_manifesto()
     porid = {i["sample_id"]: i for i in man["itens"]}
@@ -465,11 +512,16 @@ def executar(modo: str, *, confirmado: bool, teto: int = MAX_PROVIDER_CALLS,
         if not r["ok"]:
             vaz.append((ent["sample_id"], ent["call_type"], r["problemas"]))
 
-    lotes_trad = montar_lotes_traducao(man)
+    lotes_trad = (montar_lotes_traducao(man) if ESCOPOS[escopo]["traducao"]
+                  else [])
     planejadas = (len(entradas) + len(lotes_trad)) * len(MODELOS)
     gates = {
+        "escopo": escopo,
         "lotes_traducao": [{"idioma": l["idioma"], "ids": l["ids"]}
                            for l in lotes_trad],
+        "schema_adaptado": ga.descrever(
+            (entradas[0].get("payload") or {}).get("schema") or {})
+        if entradas else {},
         "bench_version": BENCH_VERSION,
         "modelos": list(MODELOS),
         "modelo_excluido": EXCLUIDO,
@@ -487,16 +539,16 @@ def executar(modo: str, *, confirmado: bool, teto: int = MAX_PROVIDER_CALLS,
     }
     if vaz or ausentes or planejadas > teto:
         return {"modo": modo, "estado": "ABORTADO_ANTES_DE_CHAMAR",
-                "gates": gates, "por_modelo": {}, "provider_calls": 0}
+                "gates": gates, "por_modelo": {}, "invocacoes_sdk": 0, "execucoes_cliente": 0}
 
     if modo == "dry":
         return {"modo": "dry", "estado": "OK", "gates": gates,
-                "por_modelo": {}, "provider_calls": 0,
+                "por_modelo": {}, "invocacoes_sdk": 0, "execucoes_cliente": 0,
                 "nota": "nenhuma chamada; apenas montagem e auditoria"}
 
     if modo == "live" and not confirmado:
         return {"modo": "live", "estado": "ABORTADO_SEM_CONFIRMACAO",
-                "gates": gates, "por_modelo": {}, "provider_calls": 0,
+                "gates": gates, "por_modelo": {}, "invocacoes_sdk": 0, "execucoes_cliente": 0,
                 "nota": f"--confirm {CONFIRMACAO} é obrigatório"}
 
     simulado = (modo == "mock")
@@ -504,13 +556,13 @@ def executar(modo: str, *, confirmado: bool, teto: int = MAX_PROVIDER_CALLS,
         chave = os.environ.get("GEMINI_API_KEY", "")
         if not chave:
             return {"modo": modo, "estado": "ABORTADO_SEM_CHAVE",
-                    "gates": gates, "por_modelo": {}, "provider_calls": 0,
+                    "gates": gates, "por_modelo": {}, "invocacoes_sdk": 0, "execucoes_cliente": 0,
                     "nota": "GEMINI_API_KEY ausente — nada foi chamado"}
         try:
             import google.generativeai as genai
         except Exception as exc:
             return {"modo": modo, "estado": "ABORTADO_SEM_SDK",
-                    "gates": gates, "por_modelo": {}, "provider_calls": 0,
+                    "gates": gates, "por_modelo": {}, "invocacoes_sdk": 0, "execucoes_cliente": 0,
                     "nota": f"SDK indisponível: {exc}"}
         genai.configure(api_key=chave)
 
@@ -562,7 +614,10 @@ def executar(modo: str, *, confirmado: bool, teto: int = MAX_PROVIDER_CALLS,
             linha.update({"call_type": ent["call_type"], "modelo": modelo,
                           "latencia_s": r.get("latencia_s"),
                           "uso": r.get("uso") or {}, "finish": r.get("finish"),
-                          "validacao": val, "erro": r.get("erro")})
+                          "validacao": val, "erro": r.get("erro"),
+                          # sem propagar isto, o contador de invocações do SDK
+                          # lê sempre False e volta a mentir — de outro jeito
+                          "invocou_sdk": r.get("invocou_sdk", False)})
             linhas.append(linha)
 
         # ── tradução: mesmos lotes, mesmo teto, mesmo disjuntor ────────────
@@ -586,13 +641,45 @@ def executar(modo: str, *, confirmado: bool, teto: int = MAX_PROVIDER_CALLS,
             aval = avaliar_traducao(lote, rt.get("saida"), rt["estado"])
             aval.update({"modelo": modelo, "latencia_s": rt.get("latencia_s"),
                          "uso": rt.get("uso") or {}, "finish": rt.get("finish"),
-                         "erro": rt.get("erro")})
+                         "erro": rt.get("erro"),
+                         "invocou_sdk": rt.get("invocou_sdk", False)})
             contagem[f"traducao:{rt['estado']}"] += 1
             trad.append(aval)
+
+        # ── contabilidade honesta ───────────────────────────────────────────
+        # Seis números distintos, porque o primeiro artefato colapsou tudo num
+        # só e reportou "26 chamadas ao provider" quando 22 morreram antes da
+        # serialização. Cada contador diz exatamente uma coisa.
+        _todas = linhas + [{"estado": t["estado"], "invocou_sdk":
+                            t.get("invocou_sdk", False)} for t in trad]
+        _cont = {
+            # linhas que o plano previa para este modelo
+            "planejadas": len(entradas) + len(lotes_trad),
+            # entradas que chegaram ao executor (consumiram orçamento)
+            "execucoes_cliente": sum(
+                1 for l in _todas
+                if not str(l["estado"]).startswith("SKIPPED_")
+                and l["estado"] != "CALL_BUDGET_EXHAUSTED"),
+            # falharam ANTES da rede, montando o config/schema
+            "falhas_de_cliente": sum(1 for l in _todas
+                                     if l["estado"] == CLIENT_SCHEMA_ERROR),
+            # `generate_content` de fato invocado. NÃO afirmamos bytes na rede:
+            # o SDK não expõe esse gancho, e inventar precisão seria pior.
+            "invocacoes_sdk": sum(1 for l in _todas if l.get("invocou_sdk")),
+            "sucessos_provider": sum(1 for l in _todas if l["estado"] == "OK"),
+            "rejeitadas_por_cota": sum(
+                1 for l in _todas
+                if l["estado"] in ("QUOTA_EXHAUSTED", "RATE_LIMITED")),
+            "puladas_pelo_disjuntor": sum(
+                1 for l in _todas if str(l["estado"]).startswith("SKIPPED_")),
+            "orcamento_esgotado": sum(
+                1 for l in _todas if l["estado"] == "CALL_BUDGET_EXHAUSTED"),
+        }
 
         audits = [l for l in linhas if l["call_type"] == pc.CALL_AUDIT]
         comparaveis = [l for l in audits if l["acertou"] is not None]
         por_modelo[modelo] = {
+            "contadores": _cont,
             "linhas": linhas,
             "traducao": trad,
             "traducao_resumo": {
@@ -620,9 +707,21 @@ def executar(modo: str, *, confirmado: bool, teto: int = MAX_PROVIDER_CALLS,
                                 for l in linhas),
         }
 
+    def _soma(chave):
+        return sum(v["contadores"][chave] for v in por_modelo.values())
+
+    totais = {k: _soma(k) for k in
+              ("planejadas", "execucoes_cliente", "falhas_de_cliente",
+               "invocacoes_sdk", "sucessos_provider", "rejeitadas_por_cota",
+               "puladas_pelo_disjuntor", "orcamento_esgotado")}
     return {"modo": modo, "estado": "OK", "gates": gates,
             "por_modelo": por_modelo,
-            "provider_calls": 0 if simulado else chamadas,
+            "contadores": totais,
+            # mantido só por compatibilidade de leitura; o número que importa
+            # é `invocacoes_sdk`. `execucoes_cliente` inclui o que morreu antes
+            # da rede e NÃO deve ser lido como chamada ao provider.
+            "execucoes_cliente": 0 if simulado else totais["execucoes_cliente"],
+            "invocacoes_sdk": 0 if simulado else totais["invocacoes_sdk"],
             "invocacoes_simuladas": chamadas if simulado else 0}
 
 
@@ -631,11 +730,14 @@ def main() -> int:
     ap.add_argument("--mode", choices=("dry", "mock", "live"), default="dry")
     ap.add_argument("--confirm", default="")
     ap.add_argument("--inter-call-seconds", type=float, default=8.0)
+    ap.add_argument("--scope", choices=tuple(ESCOPOS), default=ESCOPO_SEMANTICO,
+                    help="semantic = só audit+discovery (22); full inclui a "
+                         "tradução, que já foi medida no run 31754386165")
     args = ap.parse_args()
 
     antes = hashes_de_producao()
     res = executar(args.mode, confirmado=(args.confirm == CONFIRMACAO),
-                   espacamento_s=args.inter_call_seconds)
+                   espacamento_s=args.inter_call_seconds, escopo=args.scope)
     depois = hashes_de_producao()
     res["_meta"] = {"bench_version": BENCH_VERSION,
                     "sample_version": ps.SAMPLE_VERSION,
@@ -653,7 +755,13 @@ def main() -> int:
     print(f"  modelos: {g['modelos']} (excluído: {g['modelo_excluido']})")
     print(f"  casos: {g['casos']} | planejadas: {g['chamadas_planejadas']}"
           f"/{g['teto']} | vazamento: {g['vazamento']}")
-    print(f"  chamadas reais ao provider: {res['provider_calls']}")
+    c = res.get("contadores") or {}
+    print(f"  execuções no cliente : {c.get('execucoes_cliente', 0)}")
+    print(f"  falhas ANTES da rede : {c.get('falhas_de_cliente', 0)}")
+    print(f"  invocações do SDK    : {c.get('invocacoes_sdk', 0)}")
+    print(f"  sucessos do provider : {c.get('sucessos_provider', 0)}")
+    print(f"  rejeitadas por cota  : {c.get('rejeitadas_por_cota', 0)}")
+    print(f"  puladas (disjuntor)  : {c.get('puladas_pelo_disjuntor', 0)}")
     for m, d in (res.get("por_modelo") or {}).items():
         print(f"    {m:26s} acertos={d['acertos']}/{d['audits_comparaveis']} "
               f"estados={d['contagem']}")

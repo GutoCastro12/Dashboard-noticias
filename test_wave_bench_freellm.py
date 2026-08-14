@@ -68,15 +68,16 @@ check(bench.MAX_PROVIDER_CALLS == 30, "[4] teto duro de 30 invocações reais")
 
 _d = bench.executar("dry", confirmado=False)
 _g = _d["gates"]
-check(_d["provider_calls"] == 0, "[5] dry: ZERO chamadas ao provider")
-check(_g["plano_dentro_do_teto"] and _g["chamadas_planejadas"] <= 30,
-      f"[6] plano dentro do teto ({_g['chamadas_planejadas']}/30)")
-_esperado = (len(bench.AUDIT_CASES) + len(bench.DISCOVERY_CASES)
-             + len(bench.LOTES_TRADUCAO)) * 2
-check(_g["chamadas_planejadas"] == _esperado,
+check(_d["invocacoes_sdk"] == 0 and _d["execucoes_cliente"] == 0,
+      "[5] dry: ZERO invocações do SDK e ZERO execuções no cliente")
+check(_g["plano_dentro_do_teto"] and _g["chamadas_planejadas"] <= _g["teto"],
+      f"[6] plano dentro do teto ({_g['chamadas_planejadas']}/{_g['teto']})")
+# escopo default = semântico: a tradução já foi medida no run 31754386165 e
+# não é repetida.
+_esperado = (len(bench.AUDIT_CASES) + len(bench.DISCOVERY_CASES)) * 2
+check(_g["chamadas_planejadas"] == _esperado == 22,
       f"[7] {len(bench.AUDIT_CASES)} audit + {len(bench.DISCOVERY_CASES)} "
-      f"discovery + {len(bench.LOTES_TRADUCAO)} tradução, ×2 modelos "
-      f"= {_esperado}")
+      f"discovery, ×2 modelos = {_esperado}")
 check(8 <= len(bench.AUDIT_CASES) <= 12,
       f"[8] amostra de audit dentro de 8–12 ({len(bench.AUDIT_CASES)})")
 check(2 <= len(bench.DISCOVERY_CASES) <= 4,
@@ -123,7 +124,7 @@ print("=" * 98)
 print("BLOCO C — ISOLAMENTO: disjuntor por modelo, sem contaminação cruzada")
 print("=" * 98)
 _m = bench.executar("mock", confirmado=False)
-check(_m["provider_calls"] == 0 and _m["estado"] == "OK",
+check(_m["invocacoes_sdk"] == 0 and _m["estado"] == "OK",
       "[20] mock percorre o caminho completo sem provider real")
 check(set(_m["por_modelo"]) == set(bench.MODELOS),
       "[21] os dois modelos são medidos SEPARADAMENTE")
@@ -131,18 +132,19 @@ check(set(_m["por_modelo"]) == set(bench.MODELOS),
 _quota = type("ResourceExhausted", (Exception,),
               {})("429 quota exceeded requests per day")
 _g1 = bench.ProvedorFalsoBench([_quota])
-_g2 = bench.ProvedorFalsoBench(['{"events":[]}'] * 13)
+_g2 = bench.ProvedorFalsoBench(['{"events":[]}'] * 11)
 _iso = bench.executar("mock", confirmado=False,
                       provedores={bench.G1: _g1, bench.G2: _g2})
 _l1, _l2 = _iso["por_modelo"][bench.G1], _iso["por_modelo"][bench.G2]
 check(_l1["circuit_breaker"] is not None, "[22] G1 com cota: disjuntor disparou")
 check(_g1.invocacoes == 1, f"[23] G1 fez UMA tentativa e parou (={_g1.invocacoes})")
 _skip = sum(1 for l in _l1["linhas"] if str(l["estado"]).startswith("SKIPPED_"))
-check(_skip == 10, f"[24] as 10 audit/discovery restantes de G1 viraram SKIPPED (={_skip})")
-check(all(str(t["estado"]).startswith("SKIPPED_") for t in _l1["traducao"]),
-      "[25] e os lotes de tradução de G1 também foram pulados")
-check(_l2["circuit_breaker"] is None and _g2.invocacoes == 13,
-      f"[26] G2 rodou os 13 planejados INTEIROS — cota é por modelo "
+check(_skip == 10, f"[24] as 10 restantes de G1 viraram SKIPPED (={_skip})")
+check(_l1["contadores"]["invocacoes_sdk"] == 1
+      and _l1["contadores"]["rejeitadas_por_cota"] == 1,
+      "[25] a contabilidade de G1 registra 1 invocação e 1 rejeição por cota")
+check(_l2["circuit_breaker"] is None and _g2.invocacoes == 11,
+      f"[26] G2 rodou os 11 planejados INTEIROS — cota é por modelo "
       f"(={_g2.invocacoes})")
 check(all(l["modelo"] == bench.G1 for l in _l1["linhas"]),
       "[27] nenhuma linha de G1 foi respondida por G2 — zero fallback cruzado")

@@ -35,6 +35,11 @@ on:
         type: choice
         options: [dry, live]
         default: dry
+      escopo:
+        description: 'semantic = só audit+discovery (22 chamadas). full inclui tradução, já medida no run 31754386165.'
+        type: choice
+        options: [semantic, full]
+        default: semantic
       espacamento:
         description: 'Segundos entre CADA tentativa (pacing conservador).'
         default: '8'
@@ -64,26 +69,36 @@ jobs:
       - name: Dependências
         run: pip install -r requirements.txt google-generativeai
 
-      - name: Preflight — plano, teto, vazamento e cegueira (zero rede)
+      - name: Testes de unidade (adapter, telemetria, plano, cegueira)
         env:
           PYTHONIOENCODING: utf-8
         run: |
           python reliability_pilot1_payloads.py
+          python test_wave_schema_adapter.py
           python test_wave_bench_freellm.py
+
+      # O primeiro benchmark real gastou o dispatch inteiro para descobrir, 22
+      # vezes, que o SDK não converte `{"type": ["string","null"]}`. A falha era
+      # determinística e local. Este step roda o MESMO conversor, com o MESMO
+      # SDK, sobre TODOS os schemas do plano — e zero requisições.
+      - name: Preflight de schema com o SDK real (zero rede)
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python preflight_gemini_schema.py
 
       # Portão seco obrigatório antes do live: um erro de invocação já custou
       # um run inteiro noutra frente, e ali ele só apareceu na hora de gastar.
       - name: Dry gate (obrigatório antes do live)
         env:
           PYTHONIOENCODING: utf-8
-        run: python bench_free_llm.py --mode dry
+        run: python bench_free_llm.py --mode dry --scope ${{ inputs.escopo }}
 
       - name: Executar benchmark (live)
         if: ${{ inputs.modo == 'live' }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PYTHONIOENCODING: utf-8
-        run: python bench_free_llm.py --mode live --confirm EXECUTAR-BENCHMARK --inter-call-seconds ${{ inputs.espacamento }}
+        run: python bench_free_llm.py --mode live --confirm EXECUTAR-BENCHMARK --scope ${{ inputs.escopo }} --inter-call-seconds ${{ inputs.espacamento }}
 
       # `always()`: provar que o benchmark não tocou produção importa MAIS
       # quando algo falha, não menos.
