@@ -724,7 +724,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T11:15:20.598236+00:00"
+     "last_checked_at": "2026-08-14T14:25:18.834112+00:00"
     }
    ],
    "captured_ts": 1785345276,
@@ -2593,7 +2593,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T11:15:20.998508+00:00"
+     "last_checked_at": "2026-08-14T14:25:19.234372+00:00"
     }
    ],
    "corrob_sources": [
@@ -10264,7 +10264,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T11:15:21.398765+00:00"
+     "last_checked_at": "2026-08-14T14:25:19.634719+00:00"
     },
     {
      "source": "Demarest",
@@ -10284,7 +10284,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T11:15:21.799075+00:00"
+     "last_checked_at": "2026-08-14T14:25:20.035037+00:00"
     }
    ],
    "corrob_sources": [
@@ -11867,7 +11867,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T11:15:22.199301+00:00"
+     "last_checked_at": "2026-08-14T14:25:20.435260+00:00"
     }
    ],
    "corrob_sources": [
@@ -12231,6 +12231,26 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T05:45:18.799756+00:00"
+    },
+    {
+     "source": "Investidor10",
+     "domain": "investidor10.com.br",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWFVuYzd3eHJkZzJfUDh1Qm5WdHoza1ZYdTcxT3RUTnZ5OC1NY3B5NkpRazRNYXNzZFN2LVFQVzJZeE9ybUliTHVCSjk4UzhURmtBeTk5X2g0N0M5MnExVWR0V1I1djUzTm9sNVZhZUFZUEZyeHJITW91aWdhQklhYWtodWIzNVkteE1CZDVYaVNYS1RIdEJneGp5b1JlZDQzRVJHbNIBqgFBVV95cUxOa1dnX282ZzRPMkZiOVRWQmloaFBtX0JKQVpPUC1HNHNBeDVYUG81allRdUNsZE93TjhMaHBIRVphTFVKR2w5WW1YaTFYTHJWRnNYb2hUc2N1VjNwaHhPRGh5VV9rMDJLRm9WUmE2dUpQR0xBa2ItMXF2Qy1JdjkwWTZhTXN0NjU5dzVsUDdEU0dDcEhyOFJGLUMwR2hFbGJXSlNPVkZqSkRMZw?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWFVuYzd3eHJkZzJfUDh1Qm5WdHoza1ZYdTcxT3RUTnZ5OC1NY3B5NkpRazRNYXNzZFN2LVFQVzJZeE9ybUliTHVCSjk4UzhURmtBeTk5X2g0N0M5MnExVWR0V1I1djUzTm9sNVZhZUFZUEZyeHJITW91aWdhQklhYWtodWIzNVkteE1CZDVYaVNYS1RIdEJneGp5b1JlZDQzRVJHbNIBqgFBVV95cUxOa1dnX282ZzRPMkZiOVRWQmloaFBtX0JKQVpPUC1HNHNBeDVYUG81allRdUNsZE93TjhMaHBIRVphTFVKR2w5WW1YaTFYTHJWRnNYb2hUc2N1VjNwaHhPRGh5VV9rMDJLRm9WUmE2dUpQR0xBa2ItMXF2Qy1JdjkwWTZhTXN0NjU5dzVsUDdEU0dDcEhyOFJGLUMwR2hFbGJXSlNPVkZqSkRMZw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWFVuYzd3eHJkZzJfUDh1Qm5WdHoza1ZYdTcxT3RUTnZ5OC1NY3B5NkpRazRNYXNzZFN2LVFQVzJZeE9ybUliTHVCSjk4UzhURmtBeTk5X2g0N0M5MnExVWR0V1I1djUzTm9sNVZhZUFZUEZyeHJITW91aWdhQklhYWtodWIzNVkteE1CZDVYaVNYS1RIdEJneGp5b1JlZDQzRVJHbNIBqgFBVV95cUxOa1dnX282ZzRPMkZiOVRWQmloaFBtX0JKQVpPUC1HNHNBeDVYUG81allRdUNsZE93TjhMaHBIRVphTFVKR2w5WW1YaTFYTHJWRnNYb2hUc2N1VjNwaHhPRGh5VV9rMDJLRm9WUmE2dUpQR0xBa2ItMXF2Qy1JdjkwWTZhTXN0NjU5dzVsUDdEU0dDcEhyOFJGLUMwR2hFbGJXSlNPVkZqSkRMZw?oc=5",
+     "resolved_url": "https://investidor10.com.br/noticias/smart-fit-smft3-anuncia-troca-de-ceo-e-diretor-financeiro-118563/",
+     "canonical_url": "https://investidor10.com.br/noticias/smart-fit-smft3-anuncia-troca-de-ceo-e-diretor-financeiro-118563/",
+     "display_url": "https://investidor10.com.br/noticias/smart-fit-smft3-anuncia-troca-de-ceo-e-diretor-financeiro-118563/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "investidor10.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-14T14:25:21.027908+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "corrob_sources": [
@@ -12275,6 +12295,27 @@
      "link_render_anchor": true,
      "link_label": "Abrir notícia →",
      "last_checked_at": "2026-07-31T05:45:18.799840+00:00"
+    },
+    {
+     "source": "Investidor10",
+     "domain": "investidor10.com.br",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWFVuYzd3eHJkZzJfUDh1Qm5WdHoza1ZYdTcxT3RUTnZ5OC1NY3B5NkpRazRNYXNzZFN2LVFQVzJZeE9ybUliTHVCSjk4UzhURmtBeTk5X2g0N0M5MnExVWR0V1I1djUzTm9sNVZhZUFZUEZyeHJITW91aWdhQklhYWtodWIzNVkteE1CZDVYaVNYS1RIdEJneGp5b1JlZDQzRVJHbNIBqgFBVV95cUxOa1dnX282ZzRPMkZiOVRWQmloaFBtX0JKQVpPUC1HNHNBeDVYUG81allRdUNsZE93TjhMaHBIRVphTFVKR2w5WW1YaTFYTHJWRnNYb2hUc2N1VjNwaHhPRGh5VV9rMDJLRm9WUmE2dUpQR0xBa2ItMXF2Qy1JdjkwWTZhTXN0NjU5dzVsUDdEU0dDcEhyOFJGLUMwR2hFbGJXSlNPVkZqSkRMZw?oc=5",
+     "when": "11/02 05:00",
+     "original_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWFVuYzd3eHJkZzJfUDh1Qm5WdHoza1ZYdTcxT3RUTnZ5OC1NY3B5NkpRazRNYXNzZFN2LVFQVzJZeE9ybUliTHVCSjk4UzhURmtBeTk5X2g0N0M5MnExVWR0V1I1djUzTm9sNVZhZUFZUEZyeHJITW91aWdhQklhYWtodWIzNVkteE1CZDVYaVNYS1RIdEJneGp5b1JlZDQzRVJHbNIBqgFBVV95cUxOa1dnX282ZzRPMkZiOVRWQmloaFBtX0JKQVpPUC1HNHNBeDVYUG81allRdUNsZE93TjhMaHBIRVphTFVKR2w5WW1YaTFYTHJWRnNYb2hUc2N1VjNwaHhPRGh5VV9rMDJLRm9WUmE2dUpQR0xBa2ItMXF2Qy1JdjkwWTZhTXN0NjU5dzVsUDdEU0dDcEhyOFJGLUMwR2hFbGJXSlNPVkZqSkRMZw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWFVuYzd3eHJkZzJfUDh1Qm5WdHoza1ZYdTcxT3RUTnZ5OC1NY3B5NkpRazRNYXNzZFN2LVFQVzJZeE9ybUliTHVCSjk4UzhURmtBeTk5X2g0N0M5MnExVWR0V1I1djUzTm9sNVZhZUFZUEZyeHJITW91aWdhQklhYWtodWIzNVkteE1CZDVYaVNYS1RIdEJneGp5b1JlZDQzRVJHbNIBqgFBVV95cUxOa1dnX282ZzRPMkZiOVRWQmloaFBtX0JKQVpPUC1HNHNBeDVYUG81allRdUNsZE93TjhMaHBIRVphTFVKR2w5WW1YaTFYTHJWRnNYb2hUc2N1VjNwaHhPRGh5VV9rMDJLRm9WUmE2dUpQR0xBa2ItMXF2Qy1JdjkwWTZhTXN0NjU5dzVsUDdEU0dDcEhyOFJGLUMwR2hFbGJXSlNPVkZqSkRMZw?oc=5",
+     "resolved_url": "https://investidor10.com.br/noticias/smart-fit-smft3-anuncia-troca-de-ceo-e-diretor-financeiro-118563/",
+     "canonical_url": "https://investidor10.com.br/noticias/smart-fit-smft3-anuncia-troca-de-ceo-e-diretor-financeiro-118563/",
+     "display_url": "https://investidor10.com.br/noticias/smart-fit-smft3-anuncia-troca-de-ceo-e-diretor-financeiro-118563/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "investidor10.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-14T14:25:21.428171+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "captured_ts": 1785345276,
@@ -15580,7 +15621,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T11:15:22.753199+00:00"
+     "last_checked_at": "2026-08-14T14:25:22.013197+00:00"
     }
    ],
    "corrob_sources": [
@@ -18133,7 +18174,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T11:15:23.299966+00:00"
+     "last_checked_at": "2026-08-14T14:25:22.612882+00:00"
     },
     {
      "source": "Yahoo! Finance Canada",
@@ -18239,7 +18280,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T11:15:23.856266+00:00"
+     "last_checked_at": "2026-08-14T14:25:23.222967+00:00"
     },
     {
      "source": "Moomoo",
@@ -19644,7 +19685,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T11:15:24.507911+00:00"
+     "last_checked_at": "2026-08-14T14:25:23.984315+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -19687,7 +19728,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T11:15:25.152156+00:00"
+     "last_checked_at": "2026-08-14T14:25:24.735295+00:00"
     },
     {
      "source": "Seeking Alpha",
@@ -20511,7 +20552,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T11:15:25.700685+00:00",
+     "last_checked_at": "2026-08-14T14:25:25.330341+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -20536,7 +20577,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T11:15:26.251577+00:00",
+     "last_checked_at": "2026-08-14T14:25:25.917360+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21656,7 +21697,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-14T11:15:26.651857+00:00",
+     "last_checked_at": "2026-08-14T14:25:26.317670+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -21721,7 +21762,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "cache",
-     "last_checked_at": "2026-08-14T11:15:27.052063+00:00",
+     "last_checked_at": "2026-08-14T14:25:26.717950+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -22810,7 +22851,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T11:15:27.594779+00:00"
+     "last_checked_at": "2026-08-14T14:25:27.337780+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -22895,7 +22936,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T11:15:28.154006+00:00"
+     "last_checked_at": "2026-08-14T14:25:27.938911+00:00"
     },
     {
      "source": "Energy and Policy Institute",
@@ -23697,7 +23738,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T11:15:28.695502+00:00",
+     "last_checked_at": "2026-08-14T14:25:28.553097+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -23720,7 +23761,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T11:15:29.240910+00:00",
+     "last_checked_at": "2026-08-14T14:25:29.166540+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24755,7 +24796,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T11:15:29.804936+00:00",
+     "last_checked_at": "2026-08-14T14:25:29.778957+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -24925,7 +24966,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T11:15:30.364074+00:00",
+     "last_checked_at": "2026-08-14T14:25:30.360343+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -38988,7 +39029,7 @@
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T11:15:31.046146+00:00"
+     "last_checked_at": "2026-08-14T14:25:31.131029+00:00"
     }
    ],
    "corrob_sources": [
@@ -42059,7 +42100,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T11:15:31.603586+00:00"
+     "last_checked_at": "2026-08-14T14:25:31.724556+00:00"
     },
     {
      "source": "Virginia Business",
@@ -42102,7 +42143,7 @@
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →",
-     "last_checked_at": "2026-08-14T11:15:32.155730+00:00"
+     "last_checked_at": "2026-08-14T14:25:32.336316+00:00"
     },
     {
      "source": "Virginia Business",
@@ -47253,7 +47294,9 @@
       "nota": "a troca de CEO é da 'Organon'; Cigna Group aparece lateralmente"
      }
     ]
-   }
+   },
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRXZ3Rm1waXBRR05YX1otUG9XdTlKWTF3MWs4M3ZyTllReFNYRm40VGNwUkEwSVRxVktsOFptV0hKbEZYOHlZRUE1TXkydFRuVEVMV09SUzFmUHctR0JQZVh3WDRfdzJvSUJPcXhpQkM0OVFabVM1cVdLMDlQRTZfZHJrdUNNaVN5blVicHhoMTRVMEQ5SEhB?oc=5": {
    "title": "Efeito colateral na decisão sobre falência de estatais",
@@ -48883,7 +48926,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T11:15:32.708004+00:00",
+     "last_checked_at": "2026-08-14T14:25:32.946998+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -48906,7 +48949,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-14T11:15:33.258699+00:00",
+     "last_checked_at": "2026-08-14T14:25:33.533702+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -52136,7 +52179,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "nenhum",
-     "last_checked_at": "2026-08-14T11:15:33.927782+00:00",
+     "last_checked_at": "2026-08-14T14:25:34.282169+00:00",
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -52159,7 +52202,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "nenhum",
-     "last_checked_at": "2026-08-14T11:15:34.598221+00:00",
+     "last_checked_at": "2026-08-14T14:25:35.057962+00:00",
      "resolution_error": "inline_decode:sem_url_embutida; batchexecute:url_nao_encontrada_na_resposta; redirect_http:destino_final_ainda_e_google",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -52508,7 +52551,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1786706114,
-   "cap_iso": "2026-08-14 08:15"
+   "cap_iso": "2026-08-14 08:15",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQcmJTdUVMNE1Qa0ZQNTBrb0pLTTFfYnNZdjZObnF5TDNwVkZKNENTLVBuYnh1c2h4bG14SHJUQWRabzVDX3ZGdE5udGRGRjZOam5lT2VHbUctWnZTUUVqczdBcU5ydEQteWpMSW84LXBtMVdHRmMxM2YtSXdrSkJKQ0xscW5PeXpiYTlIenZEeVZ0dWthV2FtSzJiUGJ6OEVsanZCa2YtYVJBdTk0TDBXZkh3bmZvVWtjNXdGc2dPQ1NoWklWMS1sVmh5cjRWbVI3cXBvVV9hNE9VTmVNRVM4SHNQYi3SAeQBQVVfeXFMUHJiU3VFTDRNUGtGUDUwa29KS00xX2JzWXY2Tm5xeUwzcFZGSjRDUy1QbmJ4dXNoeGxteEhyVEFkWm81Q192RnRObnRkRkY2TmpuZU9lR21HLVp2U1FFanM3QXFOcnRELXlqTElvOC1wbTFXR0ZjMTNmLUl3a0pCSkNMbHFuT3l6YmE5SHp2RHlWdHVrYVdhbUsyYlBiejhFbGp2QmtmLWFSQXU5NEwwV2ZId25mb1VrYzV3RnNnT0NTaFpJVjEtbFZoeXI0Vm1SN3Fwb1VfYTRPVU5lTUVTOEhzUGIt?oc=5": {
    "title": "Orizon acerta aquisição de 51% da empresa titular do aterro de Rondonópolis",
@@ -52690,10 +52735,183 @@
    },
    "context_companies": [],
    "captured_ts": 1786706114,
-   "cap_iso": "2026-08-14 08:15"
+   "cap_iso": "2026-08-14 08:15",
+   "corroborations": [],
+   "corrob_sources": []
+  },
+  "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/": {
+   "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
+   "url": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/",
+   "summary": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal &nbsp;&nbsp; InfoMoney",
+   "source": "InfoMoney",
+   "domain": "infomoney.com.br",
+   "pub_ts": 1783494000,
+   "pub_iso": "2026-07-08 04:00",
+   "language": "pt",
+   "companies": [
+    "Vale"
+   ],
+   "event_ids": [
+    "investigacao_regulatoria"
+   ],
+   "event_assessments": [
+    {
+     "company": "Vale",
+     "event_id": "investigacao_regulatoria",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Vale",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "indireto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_PAPEL_NAO_SUJEITO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "Vale atua como individual_subject neste texto, não como sujeito do evento",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Vale",
+     "event_id": "investigacao_regulatoria",
+     "event_id_corrigido": "",
+     "regra": "R_PAPEL_NAO_SUJEITO",
+     "motivo": "Vale atua como individual_subject neste texto, não como sujeito do evento",
+     "subject_company": "Vale"
+    }
+   ],
+   "mention_roles": {
+    "Vale": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "informational_events_by_company": {
+    "Vale": [
+     {
+      "company": "Vale",
+      "event_id": "investigacao_regulatoria",
+      "event_label": "investigacao regulatoria",
+      "subject_company": "Vale",
+      "monitored_company": "Vale",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_PAPEL_NAO_SUJEITO",
+      "attribution_confidence": "media",
+      "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOU93WVNoT0tjSW96XzBfWU54MGlPbm9IUXJtb1MwVG1pN2ZUZmF3UUpZN3ZNR0ZoQmw3M3lZT0psX2VaLVdaM1lBNzZ2aHpIM3F2bGpWaEh3bEktNTBXZTdnRDd5UWVEdkRkTzd4aHhwWXZnWkVpMWQyZEx4cDRlTy1ERjZNQmNFRzlWTHp5N1hWOFU4NDY2OFRFSmdXYVRSM25VaEo0LVJqSkZTMGgtaTA4Z1EwWWtHUkRPdjRSUUPSAcYBQVVfeXFMUFJqQ2JsVE5yZENES2pndGtXa2VYNDFPTnBtVHlzWlV3eFYwczZxSGlDY0dMM25TZS1ScEtPaVdIbEpCQUR6WThLRk9jWmtYZXE4MjhzUDhzQ2JUZmVaVnpfN3lHM1FXckdKR0xZRmE3bTlaRG9jVU1zRTV3NmRLcmRvWHhUNVA1eXhGaUhuOEdFQ3haR25OR2txQ0dQU3hFam9zSktjVkNGZGFCeGFQZm5jVl9YN2VBdXZtcjRSMmJfdUgxVk1n?oc=5",
+      "pub_ts": 1783494000,
+      "observation": "Vale atua como individual_subject neste texto, não como sujeito do evento",
+      "source_record_id": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOU93WVNoT0tjSW96XzBfWU54MGlPbm9IUXJtb1MwVG1pN2ZUZmF3UUpZN3ZNR0ZoQmw3M3lZT0psX2VaLVdaM1lBNzZ2aHpIM3F2bGpWaEh3bEktNTBXZTdnRDd5UWVEdkRkTzd4aHhwWXZnWkVpMWQyZEx4cDRlTy1ERjZNQmNFRzlWTHp5N1hWOFU4NDY2OFRFSmdXYVRSM25VaEo0LVJqSkZTMGgtaTA4Z1EwWWtHUkRPdjRSUUPSAcYBQVVfeXFMUFJqQ2JsVE5yZENES2pndGtXa2VYNDFPTnBtVHlzWlV3eFYwczZxSGlDY0dMM25TZS1ScEtPaVdIbEpCQUR6WThLRk9jWmtYZXE4MjhzUDhzQ2JUZmVaVnpfN3lHM1FXckdKR0xZRmE3bTlaRG9jVU1zRTV3NmRLcmRvWHhUNVA1eXhGaUhuOEdFQ3haR25OR2txQ0dQU3hFam9zSktjVkNGZGFCeGFQZm5jVl9YN2VBdXZtcjRSMmJfdUgxVk1n?oc=5"
+     }
+    ]
+   },
+   "events_by_company": {
+    "Vale": []
+   },
+   "companies_attributed": [],
+   "context_companies": [
+    "Vale"
+   ],
+   "captured_ts": 1786717513,
+   "cap_iso": "2026-08-14 11:25"
+  },
+  "https://news.google.com/rss/articles/CBMif0FVX3lxTE9WUjhIVGVjUVlPNkRFTUVEdVhuTUU2cXpUa1Job2tBU1JqSjMxMmtYTE5MQW9nYnl5Ul9PVlBwQWUya1pxelhMakFyTGNhd2FGMHVtRVVMckpoeTI4aXVxNUxTdnF3UWFLQVUyeWp6Umk3RUxaMlczekJjODNyNmM?oc=5": {
+   "title": "Governo do Rio pede falência da Refit na Justiça por dívida bilionária",
+   "url": "https://diariodocomercio.com.br/economia/falencia-refit-divida-bilionaria/",
+   "summary": "Governo do Rio pede falência da Refit na Justiça por dívida bilionária &nbsp;&nbsp; Diário do Comércio",
+   "source": "Diário do Comércio",
+   "domain": "diariodocomercio.com.br",
+   "pub_ts": 1786116600,
+   "pub_iso": "2026-08-07 12:30",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1786717513,
+   "cap_iso": "2026-08-14 11:25"
+  },
+  "https://brasilenergia.com.br/petroleoegas/ep/anp-aprova-aquisicao-de-parte-da-atem-em-japiim-pela-eneva": {
+   "title": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva",
+   "url": "https://brasilenergia.com.br/petroleoegas/ep/anp-aprova-aquisicao-de-parte-da-atem-em-japiim-pela-eneva",
+   "summary": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva &nbsp;&nbsp; Editora Brasil Energia",
+   "source": "Editora Brasil Energia",
+   "domain": "brasilenergia.com.br",
+   "pub_ts": 1786463839,
+   "pub_iso": "2026-08-11 12:57",
+   "language": "pt",
+   "companies": [
+    "Eneva"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "mention_roles": {
+    "Eneva": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "aprovacao",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "Eneva": [
+     "ma"
+    ]
+   },
+   "companies_attributed": [
+    "Eneva"
+   ],
+   "context_companies": [],
+   "captured_ts": 1786717513,
+   "cap_iso": "2026-08-14 11:25"
+  },
+  "https://news.google.com/rss/articles/CBMiakFVX3lxTE95UzBobnBwZzdtMUlkU1NIeHpRQWZ0Rl9DWHBYcFlYWk85SDlhdm1UTHlqU0JJZ2VfblpSLXV2QkFseU9Pd3JLSUU3eDZrTGNJQ0JCZURBSjBFcTFtRmotU2dzb0Z0ODhRMkE?oc=5": {
+   "title": "Justiça do Rio marca julgamento da falência da Oi para 25 de agosto",
+   "url": "https://teletime.com.br/13/08/2026/oi-falencia-julgamento/",
+   "summary": "Justiça do Rio marca julgamento da falência da Oi para 25 de agosto &nbsp;&nbsp; TELETIME News",
+   "source": "TELETIME News",
+   "domain": "teletime.com.br",
+   "pub_ts": 1786634158,
+   "pub_iso": "2026-08-13 12:15",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1786717513,
+   "cap_iso": "2026-08-14 11:25"
   }
  },
- "run_count": 125,
+ "run_count": 126,
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZWNsU1R0NUZFUllSMTZpVTREa2o2Z3BQejBKT2ZaRHl2bW13ZHB3VHFnNk9kLXozR0k0S3c5X1NCLXhWM3llUU8td2JScGtMN2xLeWp4dV9BRV9yMzB4R0FuLVZGZjdIYVl3dU5XTFlDSHgtZzhCSHJUR0N0dzdTLXkwU2RQZVlnSVBvbmU2OE1jSVM4Ylp3MW9Wb3FMWGw2anpfYWNfR1lZRkpMTFRzREg4UVhKVUHSAcYBQVVfeXFMUDJ1X29tMGJ6MDRMZ2xBOUpoSTlNdEd3TDZIU1dTQlk3QVlIV01SRnF0SS1kLXpPVU5IeTZaOHljWS1OQXNhU0JvT2ZpU3NIeTRBVGQ4NWJJaHVGcVdaRzRMTzMxOEJrcEVvSXpYMGdGdGQwTEpIamR2bUU0b2wwT1FsNkl0R1pkSWRpV3ZWUmRrdENYS0JudDhDRVZQM0V2U2lTUFFJa2xkRWFqbm9uQTVXdUNZdTN0RXljd0daMzVnc3dEa0p3?oc=5": {
    "url": "https://valor.globo.com/empresas/noticia/2019/12/06/novo-ceo-da-ambev-pede-menos-burocracia-ao-ministro-guedes.ghtml",
@@ -58046,15 +58264,31 @@
   "https://news.google.com/rss/articles/CBMixAFBVV95cUxQbFRZcE1yNXVQOXdnb2FmZzBwbGlHZWRnYkMzUC0ySWl6ckNJQTZxVHZnbUhieUV0YjBwVWJNdGZEeU1VLWgtdldUbTVmemN0LVprWk1Jb3UwY2tWNmx3YlUzR2dvSHZMSnUwQ3BxVUVIXzd3YjgweFB5R1haRmxSaS10eWFKZXN5MHpXY2dmRTFwNUhmb3dSa3g2Qm92MS10ajBoN1Zjc1dxdVhreEsxM2txNDNoTF9sNEo1b3BhRHozWm5O?oc=5": {
    "url": "https://financenews.com.br/2026/08/ibovespa-futuro-dolar-lucro-do-banrisul-aquisicao-da-orizon-e-outras-noticias-corporativas/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipgFBVV95cUxQcUxlRS05WkNCT2tGclp0Mmo3MWpKZlNaRlJoZDROMVZoN0R3b0xiYTZBQk14bFNLN0VNR1R5ZzdwVGRldnFVbjE1NXl0cVdpaFNRTmRWS252WU1qeGxMV0dfR3JkTlBHLXFHNTN4ZzBqTGFTT21nWmp0Q3o4TGxUcy1JT0w2Q1phUTN0TzNaNUdJZ0F1VjYxUFBFNmlxbW43WmRTeGx3?oc=5": {
+   "url": "https://brasilenergia.com.br/petroleoegas/ep/anp-aprova-aquisicao-de-parte-da-atem-em-japiim-pela-eneva",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMif0FVX3lxTE9WUjhIVGVjUVlPNkRFTUVEdVhuTUU2cXpUa1Job2tBU1JqSjMxMmtYTE5MQW9nYnl5Ul9PVlBwQWUya1pxelhMakFyTGNhd2FGMHVtRVVMckpoeTI4aXVxNUxTdnF3UWFLQVUyeWp6Umk3RUxaMlczekJjODNyNmM?oc=5": {
+   "url": "https://diariodocomercio.com.br/economia/falencia-refit-divida-bilionaria/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiakFVX3lxTE95UzBobnBwZzdtMUlkU1NIeHpRQWZ0Rl9DWHBYcFlYWk85SDlhdm1UTHlqU0JJZ2VfblpSLXV2QkFseU9Pd3JLSUU3eDZrTGNJQ0JCZURBSjBFcTFtRmotU2dzb0Z0ODhRMkE?oc=5": {
+   "url": "https://teletime.com.br/13/08/2026/oi-falencia-julgamento/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWFVuYzd3eHJkZzJfUDh1Qm5WdHoza1ZYdTcxT3RUTnZ5OC1NY3B5NkpRazRNYXNzZFN2LVFQVzJZeE9ybUliTHVCSjk4UzhURmtBeTk5X2g0N0M5MnExVWR0V1I1djUzTm9sNVZhZUFZUEZyeHJITW91aWdhQklhYWtodWIzNVkteE1CZDVYaVNYS1RIdEJneGp5b1JlZDQzRVJHbNIBqgFBVV95cUxOa1dnX282ZzRPMkZiOVRWQmloaFBtX0JKQVpPUC1HNHNBeDVYUG81allRdUNsZE93TjhMaHBIRVphTFVKR2w5WW1YaTFYTHJWRnNYb2hUc2N1VjNwaHhPRGh5VV9rMDJLRm9WUmE2dUpQR0xBa2ItMXF2Qy1JdjkwWTZhTXN0NjU5dzVsUDdEU0dDcEhyOFJGLUMwR2hFbGJXSlNPVkZqSkRMZw?oc=5": {
+   "url": "https://investidor10.com.br/noticias/smart-fit-smft3-anuncia-troca-de-ceo-e-diretor-financeiro-118563/",
+   "exact": true
   }
  },
  "last_run": {
-  "ts": 1786706178,
-  "iso": "14 ago 2026 · 08:16 BRT",
+  "ts": 1786717577,
+  "iso": "14 ago 2026 · 11:26 BRT",
   "status": {
    "Santander Brasil": {
     "status": "critico",
-    "score": 98
+    "score": 97
    },
    "Cosan": {
     "status": "atencao",
@@ -58080,12 +58314,16 @@
     "status": "critico",
     "score": 48
    },
-   "Smart Fit": {
-    "status": "monitorar",
-    "score": 36
-   },
    "Samarco Mineração": {
     "status": "critico",
+    "score": 35
+   },
+   "Smart Fit": {
+    "status": "monitorar",
+    "score": 35
+   },
+   "Eneva": {
+    "status": "monitorar",
     "score": 35
    },
    "Axia Energia": {
@@ -58179,10 +58417,6 @@
    "Energisa": {
     "status": "monitorar",
     "score": 14
-   },
-   "Eneva": {
-    "status": "monitorar",
-    "score": 12
    },
    "Ecopetrol": {
     "status": "monitorar",

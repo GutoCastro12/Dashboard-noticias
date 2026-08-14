@@ -1,12 +1,12 @@
 # Matriz de cobertura — emissores priorizados (reconciliação runtime)
 
-run_id: 2026-08-14T11:16:18.401815+00:00 · generated_at: 2026-08-14T11:16:18.401815+00:00 · commit_base: c4f0fba8006c1cad1da6020856742aba5e97d129 · payload_hash: dfa580715dd6272c4309f6b0abf0eafa168056a90e9efcb3b9c15879d2b35c11
+run_id: 2026-08-14T14:26:17.464121+00:00 · generated_at: 2026-08-14T14:26:17.464121+00:00 · commit_base: 33149fa8d5e221e605119c528bc575333fccd470 · payload_hash: bab838d6b402e112f0fb9fdf308b6395e479b6159ac6d885af64b9e36ce3f1b8
 
 | Emissor | Tipo | Ciclo atual | Consolidado | Frescor |
 |---|---|---|---|---|
 | Ambev | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
-| B3 | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
-| BTG Pactual | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
+| B3 | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
+| BTG Pactual | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
 | Banco do Brasil | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
 | Bradesco | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
 | Eletrobras | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
@@ -20,9 +20,9 @@ run_id: 2026-08-14T11:16:18.401815+00:00 · generated_at: 2026-08-14T11:16:18.40
 | Suzano | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
 | Vale | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
 | Vibra Energia | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
-| Yura | Peru | FALLBACK_ONLY | FALLBACK_ONLY | valida |
+| Yura | Peru | PARTIAL_COVERAGE | PARTIAL_COVERAGE | valida |
 | Trupal | Peru | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | valida |
-| Coazucar | Peru | PARTIAL_COVERAGE | PARTIAL_COVERAGE | valida |
+| Coazucar | Peru | FALLBACK_ONLY | FALLBACK_ONLY | valida |
 | Yobel | Peru | COLLECTION_FAILURE | PARTIAL_COVERAGE | parcial |
 | Casa Grande S.A.A. | Subsidiária Coazucar | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | valida |
 | Cartavio S.A.A. | Subsidiária Coazucar | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | valida |
