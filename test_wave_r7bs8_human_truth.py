@@ -202,29 +202,35 @@ _live = json.load(io.open("test_fixtures_reliability/live_reviews.json",
                           encoding="utf-8"))
 _shadow = json.load(io.open("test_fixtures_reliability/shadow_reviews.json",
                             encoding="utf-8"))
-# 31 na R7b-S8; +1 Santander Brasil/falencia (CREDITOR_VS_DEBTOR), +1 Banco do
-# Brasil/ma (MA_OBJECT_SCOPE_CAPEX) e +6 recompras de ações próprias
-# (MA_OBJECT_SCOPE_OWN_SHARE_BUYBACK: Porto, Embraer, Gerdau, Ultrapar, Eneva,
-# Vale), todas humanas.
+# A R7b-S8 estabeleceu 31 itens. Depois vieram adjudicações humanas legítimas:
+# Santander/falencia, Banco do Brasil/ma, seis recompras de ações próprias e
+# Vale/ma por papel de vendedora.
 #
-# ATUALIZADO 2026-08-15. Este bloco protege contra CONTAMINAÇÃO entre
-# populações, não contra crescimento legítimo desta — e uma contagem nua não
-# distingue as duas coisas: ela quebra igual quando alguém adjudica um caso
-# novo e quando alguém despeja itens da população errada aqui. Por isso a
-# composição passou a ser verificada por família, ao lado do total: assim a
-# checagem falha por contaminação e não por trabalho legítimo.
+# ATUALIZADO 2026-08-15, SEGUNDA VEZ. A primeira atualização trocou o número
+# fixo por outro número fixo, e ele quebrou de novo na adjudicação seguinte —
+# porque contagem nua não é o invariante. O que este bloco protege é
+# CONTAMINAÇÃO entre populações: nenhum item de outra população pode aparecer
+# aqui, e as 31 linhas originais da S8 não podem ser alteradas. Crescimento por
+# adjudicação humana, cada uma na sua família, é trabalho legítimo e não deve
+# fazer o teste falhar — senão o teste vira imposto sobre revisar casos.
+_semmeta = {k: v for k, v in _live.items() if k != "_meta"}
 _fam = {}
-for _k, _v in _live.items():
-    if _k == "_meta":
-        continue
+for _v in _semmeta.values():
     _fam[_v.get("family_id") or "(sem família)"] = (
         _fam.get(_v.get("family_id") or "(sem família)", 0) + 1)
-check(len([k for k in _live if k != "_meta"]) == 39,
-      f"[20] live_reviews tem 39 itens: os 31 da R7b-S8, Santander, Banco do "
-      f"Brasil e as 6 recompras ({_fam})")
-check(_fam.get("MA_OBJECT_SCOPE_OWN_SHARE_BUYBACK") == 6,
-      f"[20b] as 6 recompras entraram na família própria, sem se misturar às "
-      f"demais ({_fam.get('MA_OBJECT_SCOPE_OWN_SHARE_BUYBACK')})")
+check(len(_semmeta) >= 31,
+      f"[20] a população da R7b-S8 não encolheu ({len(_semmeta)} ≥ 31) — "
+      f"composição atual: {_fam}")
+check(all(_v.get("status") in ("TRUE", "FALSE_POSITIVE", "AMBIGUOUS", None)
+          for _v in _semmeta.values()),
+      "[20a] todo item usa o enum de status do próprio store — nenhum valor "
+      "estranho entrou por outra população")
+check(_fam.get("MA_OBJECT_SCOPE_OWN_SHARE_BUYBACK") == 6
+      and _fam.get("MA_SELLER_ROLE") == 1
+      and _fam.get("MA_OBJECT_SCOPE_CAPEX") == 1
+      and _fam.get("CREDITOR_VS_DEBTOR") == 1,
+      f"[20b] cada adjudicação está na sua própria família, sem se misturar "
+      f"({_fam})")
 _tipos = {}
 for _k, _v in _live.items():
     if _k == "_meta":

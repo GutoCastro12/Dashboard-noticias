@@ -200,22 +200,49 @@ print()
 print("=" * 98)
 print("BLOCO G — BLAST RADIUS SOBRE O CORPUS REAL")
 print("=" * 98)
+# ATUALIZADO 2026-08-15. A versão original contava quantos artigos que AINDA
+# pontuam `ma` são recompras. Isso media o mundo de antes da reclassificação:
+# depois que ela foi aplicada a resposta virou 0 e o bloco passaria a "passar"
+# por vacuidade — o mesmo erro que já havia sido corrigido na wave do Duke e
+# que eu repeti aqui por rodar a bateria antes do apply, não depois.
+#
+# Agora mede os DOIS lados: nenhuma recompra pode estar pontuável, e as oito
+# têm de estar presentes na família informativa correta.
 _h = json.load(io.open("risk_history.json", encoding="utf-8"))
-_alcancados, _preservados = [], 0
+_pontuaveis, _recompras, _preservados = [], [], 0
 for _u, _a in _h["articles"].items():
+    _txt = (_a.get("title") or "") + " " + (_a.get("summary") or "")
+    _e_recompra = objeto(_txt) == "acoes_proprias"
     for _emp, _evs in (_a.get("events_by_company") or {}).items():
-        if "ma" not in (_evs or []):
-            continue
-        _txt = (_a.get("title") or "") + " " + (_a.get("summary") or "")
-        if objeto(_txt) == "acoes_proprias":
-            _alcancados.append((_emp, _u))
-        else:
-            _preservados += 1
-check(len(_alcancados) == 6,
-      f"[50] exatamente 6 artigos alcançados ({len(_alcancados)})")
-check({e for e, _ in _alcancados} == set(SEIS),
-      f"[51] e são exatamente as seis empresas adjudicadas "
-      f"({sorted({e for e, _ in _alcancados})})")
+        if "ma" in (_evs or []):
+            if _e_recompra:
+                _pontuaveis.append((_emp, _u))
+            else:
+                _preservados += 1
+    if _e_recompra:
+        for _emp, _evs in ((_a.get("informational_events_by_company") or {})
+                           .items()):
+            if any(e.get("event_id") == "recompra_acoes" for e in (_evs or [])):
+                _recompras.append((_emp, _u))
+check(not _pontuaveis,
+      f"[50] nenhuma recompra segue pontuável como M&A ({_pontuaveis})")
+check(len(_recompras) == 9,
+      f"[51] há 9 registros em `recompra_acoes`: os 8 do formulário da CVM mais "
+      f"um achado pré-existente, abaixo ({len(_recompras)})")
+check({e for e, _ in _recompras} >= set(SEIS) | {"Cyrela Brazil Realty"},
+      f"[51b] cobrem as seis adjudicadas e os dois controles "
+      f"({sorted({e for e, _ in _recompras})})")
+# ACHADO REGISTRADO, NÃO CORRIGIDO. A nona é a BRF: "aprova cancelamento de
+# ações e pede mudança de registro na CVM para concretizar FUSÃO COM MARFRIG".
+# É M&A real, suprimida como recompra porque "cancelamento de ações" — padrão
+# que já existia antes desta série de waves — é ali o INSTRUMENTO da fusão, não
+# uma recompra. Falso negativo, e falso negativo não aparece no painel.
+# Nenhum dos padrões acrescentados nesta wave casa com ela; corrigir exigiria
+# mexer no vocabulário antigo, o que não foi autorizado aqui.
+_brf = [u for e, u in _recompras if e == "BRF"]
+check(len(_brf) == 1,
+      "[51c] o falso negativo pré-existente da BRF/Marfrig segue presente e "
+      "isolado — registrado para correção futura, não silenciado")
 check(_preservados >= 120,
       f"[52] os demais artigos que pontuam M&A seguem intactos ({_preservados})")
 

@@ -168,6 +168,15 @@
   "reviewer_type": "imported_prior_adjudication",
   "status": "TRUE"
  },
+ "https://www.demarest.com.br/mattos-filho-e-demarest-atuam-em-aquisicao-da-vale-pela-gip-na-alianca-energia/||Vale||ma": {
+  "company": "Vale",
+  "event_id": "ma",
+  "family_id": "MA_SELLER_ROLE",
+  "note": "A GIP adquire a participacao DA VALE na Alianca Energia. A Vale e a VENDEDORA de sua participacao, nao compradora nem alvo; o objeto e participacao societaria e a entidade cuja composicao muda e a Alianca Energia. Pela policy vigente (R_MA_PAPEL_VENDEDOR) o vendedor nao pontua ma. Caso preservado como candidato de regressao: a construcao 'aquisicao da <MONITORADA>' e ambigua no corpus real (em 'aquisicao da Rumo' a monitorada e o ALVO), entao a generalizacao gramatical NAO foi implementada nesta wave.",
+  "reviewed_at": 1786822185,
+  "reviewer_type": "human",
+  "status": "FALSE_POSITIVE"
+ },
  "https://www.eldiariodechihuahua.mx/economia/2025/jul/31/para-gmexico-plataformas-por-impago-de-pemex-720456.html||Pemex (Petróleos Mexicanos)||default": {
   "company": "Pemex (Petróleos Mexicanos)",
   "event_id": "default",
