@@ -164,8 +164,13 @@ def aplicar(caminho_historico: str, alvo: str, html: str, *,
     backup = p.with_suffix(p.suffix + f".backup_{REPAIR_VERSION}")
     backup.write_bytes(bruto)
     tmp = p.with_suffix(p.suffix + ".tmp")
+    # MESMA serialização que o pipeline usa em `risk_dashboard.py:4211`
+    # (`indent=1`, sem `sort_keys`). Ordenar as chaves aqui não mudaria dado
+    # algum, mas reescreveria o arquivo inteiro e produziria um diff de dezenas
+    # de milhares de linhas em que a única mudança real — uma data — ficaria
+    # invisível. Uma correção cirúrgica precisa parecer cirúrgica no diff.
     io.open(tmp, "w", encoding="utf-8").write(
-        json.dumps(novo, ensure_ascii=False, indent=1, sort_keys=True))
+        json.dumps(novo, ensure_ascii=False, indent=1))
     tmp.replace(p)
     plano.update(aplicado=True,
                  backup=str(backup),
