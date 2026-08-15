@@ -4762,7 +4762,15 @@ def _marcadores_operacao(titulo: str, emissor: str, aliases) -> str:
                for _f, rx in _FASE_HINTS):
             continue
         out.append(n)
-    return "|".join(sorted(set(out))[:2])
+    # [fix: marker cap removal] SEM truncagem. O `[:2]` anterior guardava as duas
+    # primeiras em ordem ALFABÉTICA, que não é ordem de relevância: em
+    # "Smart Fit Avança no Centro-Oeste Com Aquisição da Evolve" ele escolhia
+    # 'avanca|centro' e descartava 'evolve' — o único token que identifica a
+    # operação —, partindo em DUAS uma aquisição que é UMA. O consumidor
+    # (`assign_occurrence_clusters`, passo 3) já faz split("|") para um SET e
+    # aceita qualquer cardinalidade; o cap nunca foi requisito de interface.
+    # A ordenação permanece: a saída continua determinística.
+    return "|".join(sorted(set(out)))
 
 
 def occurrence_identity(titulo: str, event_id: str, emissor: str,
