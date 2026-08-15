@@ -4394,6 +4394,77 @@ def event_ids_for(rec: dict, company: str) -> list:
 
 
 
+def verify_publication_dates(articles: list[dict], cfg: dict,
+                             session=None) -> dict:
+    """Confere a data do feed contra a data que a PÁGINA declara.
+
+    O `<pubDate>` do Google News era a única autoridade de data do pipeline, e
+    o Google reapresenta páginas antigas. Uma página oficial da Vale de
+    31/05/2023 entrou como notícia de 22/07/2026 e sustentou sozinha a Samarco
+    como CRÍTICA. A página trazia `datePublished` em JSON-LD o tempo todo.
+
+    Roda sobre os candidatos que JÁ têm evento e emissor — não sobre todo item
+    bruto do RSS —, com uma requisição por URL canônica por execução. Fail-open
+    em tudo: sem rede, sem JSON-LD, 403 ou HTML quebrado, o feed permanece e o
+    registro fica marcado como não verificado. Data inventada seria pior que
+    data suspeita.
+    """
+    import link_debt_audit as _lk
+    import reliability_page_date as _pd
+    tel = {"avaliados": 0, "buscados": 0, "com_data_de_pagina": 0,
+           "conflitos": 0, "travados": 0, "falhas": 0,
+           "policy": _pd.POLICY_VERSION}
+    if not articles:
+        return tel
+    if not (cfg.get("page_date_verification") or {}).get("enabled", True):
+        return tel
+    try:
+        import requests
+    except Exception:                                          # noqa: BLE001
+        return tel
+    s = session or requests.Session()
+    cache: dict[str, str] = {}
+    for art in articles:
+        alvo = (art.get("canonical_url") or art.get("resolved_url")
+                or art.get("url") or "")
+        if not alvo or _lk.is_redirector(alvo):
+            continue
+        tel["avaliados"] += 1
+        if _pd.campos_travados(art) & {"pub_ts", "pub_iso"}:
+            tel["travados"] += 1
+            art["pub_date_verification"] = "ignorado_correcao_manual"
+            continue
+        chave = _lk.canonicalize(alvo) or alvo
+        if chave not in cache:
+            try:
+                r = s.get(alvo, timeout=15,
+                          headers={"User-Agent": "Mozilla/5.0 (compatible; "
+                                                 "RadarRisco/1.0)"})
+                cache[chave] = r.text if r.status_code == 200 else ""
+                tel["buscados"] += 1
+                if r.status_code != 200:
+                    tel["falhas"] += 1
+            except Exception:                                  # noqa: BLE001
+                cache[chave] = ""
+                tel["buscados"] += 1
+                tel["falhas"] += 1
+        campos = _pd.verificar_registro(art, cache.get(chave) or "")
+        if campos.get("page_pub_ts"):
+            tel["com_data_de_pagina"] += 1
+        if campos.get("pub_date_origin") == "pagina" and campos.get("pub_date_conflict_s"):
+            tel["conflitos"] += 1
+            print(f"   📅 data corrigida pela página: "
+                  f"{campos.get('feed_pub_iso')} → {campos.get('pub_iso')}  "
+                  f"{(art.get('title') or '')[:56]}")
+        art.update(campos)
+    if tel["avaliados"]:
+        print(f" 📅 verificação de data de publicação ({_pd.POLICY_VERSION}): "
+              f"{tel['avaliados']} candidato(s), {tel['buscados']} página(s), "
+              f"{tel['com_data_de_pagina']} com data própria, "
+              f"{tel['conflitos']} conflito(s) material(is)")
+    return tel
+
+
 def merge_into_history(history: dict, articles: list[dict], keep_days: int = 120) -> list[str]:
     added_urls: list[str] = []
     cutoff = int((datetime.now(timezone.utc) - timedelta(days=keep_days)).timestamp())
@@ -9452,6 +9523,13 @@ def main():
     # histórico inteiro (não só os novos): registros antigos com link do Google
     # ainda não resolvido, ou que caíram no fallback, são corrigidos aqui.
     resolve_google_news_urls(matched, history, cfg)
+
+    # A data do feed não é a data do fato. O Google News reapresenta páginas
+    # antigas com `pubDate` recente — uma página da Vale de 2023 entrou como
+    # notícia de 2026 e sustentou sozinha a Samarco como CRÍTICA. Roda aqui,
+    # sobre `matched` (já tem evento e emissor) e com as URLs já resolvidas,
+    # mas ANTES de persistir: corrigir depois exigiria reprocessar histórico.
+    verify_publication_dates(matched, cfg)
 
     # 3) Histórico + agregações
     added_urls = merge_into_history(
