@@ -142,9 +142,27 @@ OBJ_NAO_EMPRESA = {
     # O que distingue recompra de aquisição real é a AUTORREFERÊNCIA — própria
     # companhia, sua própria emissão, own shares. "Ações de emissão da
     # Companhia Beta" continua sendo M&A legítimo e não pode casar aqui.
+    # `cancelamento de ações` solto NÃO entra: era o único padrão da família que
+    # não exigia autorreferência, e ações também são canceladas em fusão,
+    # incorporação e redução de capital. Ele suprimia a fusão BRF/Marfrig como
+    # se fosse recompra — o cancelamento ali é etapa de implementação da
+    # combinação, não compra das próprias ações. Falso negativo de M&A, e falso
+    # negativo não aparece no painel.
+    #
+    # Medido antes de trocar: no corpus inteiro o padrão amplo era evidência
+    # ÚNICA em um único artigo (justamente o falso negativo). Nos casos de
+    # recompra verdadeira ele era redundante — havia sempre outra evidência
+    # autorreferente no mesmo texto. Estreitá-lo remove só o dano.
     "acoes_proprias": [r"recompra\s+de\s+a[çc][õo]es", r"buyback", r"share\s+repurchase",
                        r"treasury\s+shares?", r"a[çc][õo]es\s+pr[óo]prias",
-                       r"cancelamento\s+de\s+a[çc][õo]es", r"a[çc][õo]es\s+em\s+tesouraria",
+                       r"cancelamento\s+d[ae]s?\s+a[çc][õo]es\s+"
+                       r"(?:pr[óo]prias|em\s+tesouraria|mantidas\s+em\s+tesouraria|"
+                       r"de\s+(?:sua\s+)?pr[óo]pria\s+emiss[ãa]o|"
+                       r"de\s+emiss[ãa]o\s+pr[óo]pria|"
+                       r"de\s+emiss[ãa]o\s+d[ao]\s+pr[óo]pri[ao]\s+"
+                       r"(?:companhia|empresa|sociedade|emissora))",
+                       r"cancellation\s+of\s+(?:its\s+)?(?:own|treasury)\s+shares?",
+                       r"a[çc][õo]es\s+em\s+tesouraria",
                        r"recompra\s+de\s+d[íi]vida", r"deb[êe]ntures\s+pr[óo]prias",
                        r"cotas\s+do\s+pr[óo]prio\s+fundo",
                        # emissão autorreferente: o possessivo é obrigatório

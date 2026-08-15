@@ -226,23 +226,25 @@ for _u, _a in _h["articles"].items():
                 _recompras.append((_emp, _u))
 check(not _pontuaveis,
       f"[50] nenhuma recompra segue pontuável como M&A ({_pontuaveis})")
-check(len(_recompras) == 9,
-      f"[51] há 9 registros em `recompra_acoes`: os 8 do formulário da CVM mais "
-      f"um achado pré-existente, abaixo ({len(_recompras)})")
-check({e for e, _ in _recompras} >= set(SEIS) | {"Cyrela Brazil Realty"},
+check(len(_recompras) == 8,
+      f"[51] há 8 registros em `recompra_acoes`: os do formulário da CVM "
+      f"({len(_recompras)})")
+check({e for e, _ in _recompras} == set(SEIS) | {"Cyrela Brazil Realty"},
       f"[51b] cobrem as seis adjudicadas e os dois controles "
       f"({sorted({e for e, _ in _recompras})})")
-# ACHADO REGISTRADO, NÃO CORRIGIDO. A nona é a BRF: "aprova cancelamento de
-# ações e pede mudança de registro na CVM para concretizar FUSÃO COM MARFRIG".
-# É M&A real, suprimida como recompra porque "cancelamento de ações" — padrão
-# que já existia antes desta série de waves — é ali o INSTRUMENTO da fusão, não
-# uma recompra. Falso negativo, e falso negativo não aparece no painel.
-# Nenhum dos padrões acrescentados nesta wave casa com ela; corrigir exigiria
-# mexer no vocabulário antigo, o que não foi autorizado aqui.
-_brf = [u for e, u in _recompras if e == "BRF"]
-check(len(_brf) == 1,
-      "[51c] o falso negativo pré-existente da BRF/Marfrig segue presente e "
-      "isolado — registrado para correção futura, não silenciado")
+# ATUALIZADO 2026-08-15. Esta checagem registrava um nono item — a BRF, cuja
+# matéria sobre a fusão com a Marfrig era suprimida como recompra porque
+# "cancelamento de ações" entrava solto no vocabulário. Aquele achado FOI
+# CORRIGIDO numa wave posterior, estreitando o token para construções
+# autorreferentes.
+#
+# Uma asserção que continuasse exigindo a presença do defeito passaria a
+# proteger o bug em vez do comportamento. Ela vira o seu oposto: a BRF NÃO pode
+# mais estar aqui. `test_wave_cancelamento_acoes_fusao.py` cobre o caso por
+# inteiro.
+check(not [u for e, u in _recompras if e == "BRF"],
+      "[51c] a BRF saiu da população de recompra — o falso negativo de M&A "
+      "foi corrigido, não silenciado")
 check(_preservados >= 120,
       f"[52] os demais artigos que pontuam M&A seguem intactos ({_preservados})")
 
