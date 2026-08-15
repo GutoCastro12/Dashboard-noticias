@@ -249,6 +249,60 @@
   "reviewer_type": "imported_prior_adjudication",
   "status": "TRUE"
  },
+ "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1473324&numSequencia=998030&numVersao=1||Porto||ma": {
+  "company": "Porto",
+  "event_id": "ma",
+  "family_id": "MA_OBJECT_SCOPE_OWN_SHARE_BUYBACK",
+  "note": "A companhia adquire acoes de SUA PROPRIA emissao (Fato Relevante da CVM). Nao ha aquisicao de terceiro, target societario distinto, participacao em terceiro, mudanca de controle nem unidade de negocio. Recompra de acoes proprias nao e M&A para esta taxonomia. Destino coerente: recompra_acoes (informativo), familia que o runtime ja usava para os casos reconhecidos.",
+  "reviewed_at": 1786819388,
+  "reviewer_type": "human",
+  "status": "FALSE_POSITIVE"
+ },
+ "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1486331&numSequencia=1011037&numVersao=1||Embraer||ma": {
+  "company": "Embraer",
+  "event_id": "ma",
+  "family_id": "MA_OBJECT_SCOPE_OWN_SHARE_BUYBACK",
+  "note": "A companhia adquire acoes de SUA PROPRIA emissao (Fato Relevante da CVM). Nao ha aquisicao de terceiro, target societario distinto, participacao em terceiro, mudanca de controle nem unidade de negocio. Recompra de acoes proprias nao e M&A para esta taxonomia. Destino coerente: recompra_acoes (informativo), familia que o runtime ja usava para os casos reconhecidos.",
+  "reviewed_at": 1786819388,
+  "reviewer_type": "human",
+  "status": "FALSE_POSITIVE"
+ },
+ "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1509340&numSequencia=1034046&numVersao=1||Gerdau||ma": {
+  "company": "Gerdau",
+  "event_id": "ma",
+  "family_id": "MA_OBJECT_SCOPE_OWN_SHARE_BUYBACK",
+  "note": "A companhia adquire acoes de SUA PROPRIA emissao (Fato Relevante da CVM). Nao ha aquisicao de terceiro, target societario distinto, participacao em terceiro, mudanca de controle nem unidade de negocio. Recompra de acoes proprias nao e M&A para esta taxonomia. Destino coerente: recompra_acoes (informativo), familia que o runtime ja usava para os casos reconhecidos.",
+  "reviewed_at": 1786819388,
+  "reviewer_type": "human",
+  "status": "FALSE_POSITIVE"
+ },
+ "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1535827&numSequencia=1060533&numVersao=1||Ultrapar||ma": {
+  "company": "Ultrapar",
+  "event_id": "ma",
+  "family_id": "MA_OBJECT_SCOPE_OWN_SHARE_BUYBACK",
+  "note": "A companhia adquire acoes de SUA PROPRIA emissao (Fato Relevante da CVM). Nao ha aquisicao de terceiro, target societario distinto, participacao em terceiro, mudanca de controle nem unidade de negocio. Recompra de acoes proprias nao e M&A para esta taxonomia. Destino coerente: recompra_acoes (informativo), familia que o runtime ja usava para os casos reconhecidos.",
+  "reviewed_at": 1786819388,
+  "reviewer_type": "human",
+  "status": "FALSE_POSITIVE"
+ },
+ "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1538640&numSequencia=1063346&numVersao=1||Eneva||ma": {
+  "company": "Eneva",
+  "event_id": "ma",
+  "family_id": "MA_OBJECT_SCOPE_OWN_SHARE_BUYBACK",
+  "note": "A companhia adquire acoes de SUA PROPRIA emissao (Fato Relevante da CVM). Nao ha aquisicao de terceiro, target societario distinto, participacao em terceiro, mudanca de controle nem unidade de negocio. Recompra de acoes proprias nao e M&A para esta taxonomia. Destino coerente: recompra_acoes (informativo), familia que o runtime ja usava para os casos reconhecidos.",
+  "reviewed_at": 1786819388,
+  "reviewer_type": "human",
+  "status": "FALSE_POSITIVE"
+ },
+ "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1549982&numSequencia=1074688&numVersao=1||Vale||ma": {
+  "company": "Vale",
+  "event_id": "ma",
+  "family_id": "MA_OBJECT_SCOPE_OWN_SHARE_BUYBACK",
+  "note": "A companhia adquire acoes de SUA PROPRIA emissao (Fato Relevante da CVM). Nao ha aquisicao de terceiro, target societario distinto, participacao em terceiro, mudanca de controle nem unidade de negocio. Recompra de acoes proprias nao e M&A para esta taxonomia. Destino coerente: recompra_acoes (informativo), familia que o runtime ja usava para os casos reconhecidos.",
+  "reviewed_at": 1786819388,
+  "reviewer_type": "human",
+  "status": "FALSE_POSITIVE"
+ },
  "https://www.rionegro.com.ar/energia/sociedad/sin-reestructuracion-aconcagua-ira-a-la-quiebra-el-duro-pronostico-del-exceo-de-ypf-4247338/||YPF||falencia": {
   "company": "YPF",
   "event_id": "falencia",

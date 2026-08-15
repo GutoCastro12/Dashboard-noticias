@@ -46885,10 +46885,10 @@
    "companies": [
     "Porto"
    ],
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Porto"
    ],
-   "context_companies": [],
    "corrob_sources": [
     {
      "canonical_url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/porto-seguro-pssa3-programa-recompra-aquisicao-acoes-ordinarias/",
@@ -46940,9 +46940,7 @@
     "ma"
    ],
    "events_by_company": {
-    "Porto": [
-     "ma"
-    ]
+    "Porto": []
    },
    "final_host": "www.rad.cvm.gov.br",
    "http_status": "",
@@ -46972,7 +46970,72 @@
    "source": "CVM · Fato Relevante",
    "summary": "Aquisição de Ações de Emissão da Própria Companhia",
    "title": "[Fato Relevante] Porto: Aquisição de Ações de Emissão da Própria Companhia",
-   "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1473324&numSequencia=998030&numVersao=1"
+   "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1473324&numSequencia=998030&numVersao=1",
+   "event_assessments": [
+    {
+     "company": "Porto",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Porto",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "acoes_proprias",
+     "transaction_scope": "capital_proprio",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "positiva",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "recompra_de_acoes_proprias_nao_e_ma",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Porto",
+     "event_id": "ma",
+     "event_id_corrigido": "recompra_acoes",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "recompra_de_acoes_proprias_nao_e_ma",
+     "subject_company": "Porto"
+    }
+   ],
+   "informational_events_by_company": {
+    "Porto": [
+     {
+      "company": "Porto",
+      "event_id": "recompra_acoes",
+      "event_label": "recompra acoes",
+      "subject_company": "Porto",
+      "monitored_company": "Porto",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "recompra_acoes",
+      "transaction_scope": "capital_proprio",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "[Fato Relevante] Porto: Aquisição de Ações de Emissão da Própria Companhia",
+      "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1473324&numSequencia=998030&numVersao=1",
+      "pub_ts": 1770163200,
+      "observation": "recompra_de_acoes_proprias_nao_e_ma",
+      "source_record_id": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1473324&numSequencia=998030&numVersao=1"
+     }
+    ]
+   }
   },
   "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1474630&numSequencia=999336&numVersao=1": {
    "canonical_url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1474630&numSequencia=999336&numVersao=1",
@@ -47345,19 +47408,17 @@
    "companies": [
     "Embraer"
    ],
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Embraer"
    ],
-   "context_companies": [],
    "display_url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1486331&numSequencia=1011037&numVersao=1",
    "domain": "cvm.gov.br",
    "event_ids": [
     "ma"
    ],
    "events_by_company": {
-    "Embraer": [
-     "ma"
-    ]
+    "Embraer": []
    },
    "final_host": "www.rad.cvm.gov.br",
    "http_status": "",
@@ -47387,7 +47448,72 @@
    "source": "CVM · Fato Relevante",
    "summary": "Aquisição de Ações de Emissão da Própria Companhia",
    "title": "[Fato Relevante] Embraer: Aquisição de Ações de Emissão da Própria Companhia",
-   "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1486331&numSequencia=1011037&numVersao=1"
+   "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1486331&numSequencia=1011037&numVersao=1",
+   "event_assessments": [
+    {
+     "company": "Embraer",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Embraer",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "acoes_proprias",
+     "transaction_scope": "capital_proprio",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "positiva",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "recompra_de_acoes_proprias_nao_e_ma",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Embraer",
+     "event_id": "ma",
+     "event_id_corrigido": "recompra_acoes",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "recompra_de_acoes_proprias_nao_e_ma",
+     "subject_company": "Embraer"
+    }
+   ],
+   "informational_events_by_company": {
+    "Embraer": [
+     {
+      "company": "Embraer",
+      "event_id": "recompra_acoes",
+      "event_label": "recompra acoes",
+      "subject_company": "Embraer",
+      "monitored_company": "Embraer",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "recompra_acoes",
+      "transaction_scope": "capital_proprio",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "[Fato Relevante] Embraer: Aquisição de Ações de Emissão da Própria Companhia",
+      "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1486331&numSequencia=1011037&numVersao=1",
+      "pub_ts": 1772668800,
+      "observation": "recompra_de_acoes_proprias_nao_e_ma",
+      "source_record_id": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1486331&numSequencia=1011037&numVersao=1"
+     }
+    ]
+   }
   },
   "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1486335&numSequencia=1011041&numVersao=1": {
    "canonical_url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1486335&numSequencia=1011041&numVersao=1",
@@ -48200,19 +48326,17 @@
    "companies": [
     "Gerdau"
    ],
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Gerdau"
    ],
-   "context_companies": [],
    "display_url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1509340&numSequencia=1034046&numVersao=1",
    "domain": "cvm.gov.br",
    "event_ids": [
     "ma"
    ],
    "events_by_company": {
-    "Gerdau": [
-     "ma"
-    ]
+    "Gerdau": []
    },
    "final_host": "www.rad.cvm.gov.br",
    "http_status": "",
@@ -48242,7 +48366,72 @@
    "source": "CVM · Fato Relevante",
    "summary": "Aquisição de Ações de Emissão da Própria Companhia",
    "title": "[Fato Relevante] Gerdau: Aquisição de Ações de Emissão da Própria Companhia",
-   "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1509340&numSequencia=1034046&numVersao=1"
+   "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1509340&numSequencia=1034046&numVersao=1",
+   "event_assessments": [
+    {
+     "company": "Gerdau",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Gerdau",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "acoes_proprias",
+     "transaction_scope": "capital_proprio",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "positiva",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "recompra_de_acoes_proprias_nao_e_ma",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Gerdau",
+     "event_id": "ma",
+     "event_id_corrigido": "recompra_acoes",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "recompra_de_acoes_proprias_nao_e_ma",
+     "subject_company": "Gerdau"
+    }
+   ],
+   "informational_events_by_company": {
+    "Gerdau": [
+     {
+      "company": "Gerdau",
+      "event_id": "recompra_acoes",
+      "event_label": "recompra acoes",
+      "subject_company": "Gerdau",
+      "monitored_company": "Gerdau",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "recompra_acoes",
+      "transaction_scope": "capital_proprio",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "[Fato Relevante] Gerdau: Aquisição de Ações de Emissão da Própria Companhia",
+      "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1509340&numSequencia=1034046&numVersao=1",
+      "pub_ts": 1777248000,
+      "observation": "recompra_de_acoes_proprias_nao_e_ma",
+      "source_record_id": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1509340&numSequencia=1034046&numVersao=1"
+     }
+    ]
+   }
   },
   "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1523294&numSequencia=1048000&numVersao=1": {
    "canonical_url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1523294&numSequencia=1048000&numVersao=1",
@@ -49030,19 +49219,17 @@
    "companies": [
     "Ultrapar"
    ],
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Ultrapar"
    ],
-   "context_companies": [],
    "display_url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1535827&numSequencia=1060533&numVersao=1",
    "domain": "cvm.gov.br",
    "event_ids": [
     "ma"
    ],
    "events_by_company": {
-    "Ultrapar": [
-     "ma"
-    ]
+    "Ultrapar": []
    },
    "final_host": "www.rad.cvm.gov.br",
    "http_status": "",
@@ -49072,7 +49259,72 @@
    "source": "CVM · Fato Relevante",
    "summary": "Aquisição de Ações de Emissão da Própria Companhia",
    "title": "[Fato Relevante] Ultrapar: Aquisição de Ações de Emissão da Própria Companhia",
-   "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1535827&numSequencia=1060533&numVersao=1"
+   "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1535827&numSequencia=1060533&numVersao=1",
+   "event_assessments": [
+    {
+     "company": "Ultrapar",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Ultrapar",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "acoes_proprias",
+     "transaction_scope": "capital_proprio",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "positiva",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "recompra_de_acoes_proprias_nao_e_ma",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Ultrapar",
+     "event_id": "ma",
+     "event_id_corrigido": "recompra_acoes",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "recompra_de_acoes_proprias_nao_e_ma",
+     "subject_company": "Ultrapar"
+    }
+   ],
+   "informational_events_by_company": {
+    "Ultrapar": [
+     {
+      "company": "Ultrapar",
+      "event_id": "recompra_acoes",
+      "event_label": "recompra acoes",
+      "subject_company": "Ultrapar",
+      "monitored_company": "Ultrapar",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "recompra_acoes",
+      "transaction_scope": "capital_proprio",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "[Fato Relevante] Ultrapar: Aquisição de Ações de Emissão da Própria Companhia",
+      "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1535827&numSequencia=1060533&numVersao=1",
+      "pub_ts": 1781654400,
+      "observation": "recompra_de_acoes_proprias_nao_e_ma",
+      "source_record_id": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1535827&numSequencia=1060533&numVersao=1"
+     }
+    ]
+   }
   },
   "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1537229&numSequencia=1061935&numVersao=1": {
    "canonical_url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1537229&numSequencia=1061935&numVersao=1",
@@ -49300,19 +49552,17 @@
    "companies": [
     "Eneva"
    ],
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Eneva"
    ],
-   "context_companies": [],
    "display_url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1538640&numSequencia=1063346&numVersao=1",
    "domain": "cvm.gov.br",
    "event_ids": [
     "ma"
    ],
    "events_by_company": {
-    "Eneva": [
-     "ma"
-    ]
+    "Eneva": []
    },
    "final_host": "www.rad.cvm.gov.br",
    "http_status": "",
@@ -49342,7 +49592,72 @@
    "source": "CVM · Fato Relevante",
    "summary": "Aquisição de Ações de Emissão da Própria Companhia",
    "title": "[Fato Relevante] Eneva: Aquisição de Ações de Emissão da Própria Companhia",
-   "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1538640&numSequencia=1063346&numVersao=1"
+   "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1538640&numSequencia=1063346&numVersao=1",
+   "event_assessments": [
+    {
+     "company": "Eneva",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Eneva",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "acoes_proprias",
+     "transaction_scope": "capital_proprio",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "positiva",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "recompra_de_acoes_proprias_nao_e_ma",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Eneva",
+     "event_id": "ma",
+     "event_id_corrigido": "recompra_acoes",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "recompra_de_acoes_proprias_nao_e_ma",
+     "subject_company": "Eneva"
+    }
+   ],
+   "informational_events_by_company": {
+    "Eneva": [
+     {
+      "company": "Eneva",
+      "event_id": "recompra_acoes",
+      "event_label": "recompra acoes",
+      "subject_company": "Eneva",
+      "monitored_company": "Eneva",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "recompra_acoes",
+      "transaction_scope": "capital_proprio",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "[Fato Relevante] Eneva: Aquisição de Ações de Emissão da Própria Companhia",
+      "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1538640&numSequencia=1063346&numVersao=1",
+      "pub_ts": 1782345600,
+      "observation": "recompra_de_acoes_proprias_nao_e_ma",
+      "source_record_id": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1538640&numSequencia=1063346&numVersao=1"
+     }
+    ]
+   }
   },
   "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1539108&numSequencia=1063814&numVersao=1": {
    "canonical_url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1539108&numSequencia=1063814&numVersao=1",
@@ -50075,18 +50390,16 @@
    "companies": [
     "Vale"
    ],
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Vale"
    ],
-   "context_companies": [],
    "domain": "cvm.gov.br",
    "event_ids": [
     "ma"
    ],
    "events_by_company": {
-    "Vale": [
-     "ma"
-    ]
+    "Vale": []
    },
    "language": "pt",
    "mention_roles": {
@@ -50103,7 +50416,72 @@
    "source": "CVM · Fato Relevante",
    "summary": "Aquisição de Ações de Emissão da Própria Companhia",
    "title": "[Fato Relevante] Vale: Aquisição de Ações de Emissão da Própria Companhia",
-   "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1549982&numSequencia=1074688&numVersao=1"
+   "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1549982&numSequencia=1074688&numVersao=1",
+   "event_assessments": [
+    {
+     "company": "Vale",
+     "event_id": "ma",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Vale",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "acoes_proprias",
+     "transaction_scope": "capital_proprio",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "positiva",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_MA_OBJETO_ESCOPO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "recompra_de_acoes_proprias_nao_e_ma",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Vale",
+     "event_id": "ma",
+     "event_id_corrigido": "recompra_acoes",
+     "regra": "R_MA_OBJETO_ESCOPO",
+     "motivo": "recompra_de_acoes_proprias_nao_e_ma",
+     "subject_company": "Vale"
+    }
+   ],
+   "informational_events_by_company": {
+    "Vale": [
+     {
+      "company": "Vale",
+      "event_id": "recompra_acoes",
+      "event_label": "recompra acoes",
+      "subject_company": "Vale",
+      "monitored_company": "Vale",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "positiva",
+      "scoreable": false,
+      "display_category": "positivo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "recompra_acoes",
+      "transaction_scope": "capital_proprio",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_MA_OBJETO_ESCOPO",
+      "attribution_confidence": "media",
+      "title": "[Fato Relevante] Vale: Aquisição de Ações de Emissão da Própria Companhia",
+      "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1549982&numSequencia=1074688&numVersao=1",
+      "pub_ts": 1785369600,
+      "observation": "recompra_de_acoes_proprias_nao_e_ma",
+      "source_record_id": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1549982&numSequencia=1074688&numVersao=1"
+     }
+    ]
+   }
   },
   "https://www.record.com.mx/historia/fiscalia-cdmx-abre-investigacion-por-muerte-en-el-estadio-banorte-previo-al-mexico-vs-portugal-2026032906081088330": {
    "canonical_url": "https://www.record.com.mx/historia/fiscalia-cdmx-abre-investigacion-por-muerte-en-el-estadio-banorte-previo-al-mexico-vs-portugal-2026032906081088330",
@@ -53574,8 +53952,8 @@
   }
  },
  "last_run": {
-  "ts": 1786818516,
-  "iso": "15 ago 2026 · 15:28 BRT",
+  "ts": 1786820296,
+  "iso": "15 ago 2026 · 15:58 BRT",
   "status": {
    "Cosan": {
     "status": "atencao",
@@ -53583,7 +53961,7 @@
    },
    "Engie Brasil": {
     "status": "atencao",
-    "score": 64
+    "score": 63
    },
    "Rumo": {
     "status": "atencao",
@@ -53592,10 +53970,6 @@
    "JBS": {
     "status": "atencao",
     "score": 54
-   },
-   "Vale": {
-    "status": "atencao",
-    "score": 51
    },
    "Tok&Stok": {
     "status": "critico",
@@ -53608,10 +53982,6 @@
    "Smart Fit": {
     "status": "monitorar",
     "score": 35
-   },
-   "Eneva": {
-    "status": "monitorar",
-    "score": 34
    },
    "Axia Energia": {
     "status": "monitorar",
@@ -53633,7 +54003,15 @@
     "status": "monitorar",
     "score": 24
    },
+   "Vale": {
+    "status": "atencao",
+    "score": 23
+   },
    "Baker Hughes": {
+    "status": "monitorar",
+    "score": 22
+   },
+   "Eneva": {
     "status": "monitorar",
     "score": 22
    },
@@ -53676,10 +54054,6 @@
    "Suzano": {
     "status": "monitorar",
     "score": 15
-   },
-   "Ultrapar": {
-    "status": "atencao",
-    "score": 14
    },
    "Natura &Co": {
     "status": "monitorar",
@@ -53750,6 +54124,10 @@
     "score": 5
    },
    "Caixa Seguridade": {
+    "status": "monitorar",
+    "score": 4
+   },
+   "Ultrapar": {
     "status": "monitorar",
     "score": 4
    },
@@ -53840,7 +54218,7 @@
   }
  },
  "links_repaired_at": "2026-07-31T05:45:56.701137+00:00",
- "reclassify_only_applied_at": "2026-08-15T18:28:36.404685+00:00",
+ "reclassify_only_applied_at": "2026-08-15T18:58:16.976895+00:00",
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNQjN5VFFLLTZwZkc3OFYzTk5SZFludkE1OXcxSTdRUzR1N0hkVU5MM21MajJjdFZzTlFvcHZiTk1CdG9GWGo5QmhUdWRtM3phOHhuamwxR2V5dHlqQmdEQVQycUg0ZGhhZzYtYUlpbDhTbkpaRl9mczQtRFl1anlBNVdZeVdGX1loODZKOThPcE9xM2RROGt4T3dwTHpNZEVXb2xzVmswM0pMLTR3bVVMVEg1RXRDcVlVVVdUTS1RYUYyUE5YUXVDd3RlbTk5TW1EbXJaZXpac1JFanA1dWlNbDRUN3RLWE9TdjNQQ0FISUQ0U3V0WEFhUQ?oc=5": {
    "exact": true,

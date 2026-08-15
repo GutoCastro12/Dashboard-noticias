@@ -202,15 +202,43 @@ _live = json.load(io.open("test_fixtures_reliability/live_reviews.json",
                           encoding="utf-8"))
 _shadow = json.load(io.open("test_fixtures_reliability/shadow_reviews.json",
                             encoding="utf-8"))
-# 31 na R7b-S8; +1 Santander Brasil/falencia (CREDITOR_VS_DEBTOR) e
-# +1 Banco do Brasil/ma (MA_OBJECT_SCOPE_CAPEX), ambas humanas, ambas de
-# 2026-08-14. A asserção protege contra CONTAMINAÇÃO entre populações, não
-# contra crescimento legítimo desta: os dois itens entraram na população
-# certa, por revisor humano, e as outras três seguem intactas — que é o que
-# as checagens seguintes verificam.
-check(len([k for k in _live if k != "_meta"]) == 33,
-      "[20] live_reviews tem 33 itens: os 31 da R7b-S8 mais as adjudicações "
-      "humanas de Santander e Banco do Brasil")
+# 31 na R7b-S8; +1 Santander Brasil/falencia (CREDITOR_VS_DEBTOR), +1 Banco do
+# Brasil/ma (MA_OBJECT_SCOPE_CAPEX) e +6 recompras de ações próprias
+# (MA_OBJECT_SCOPE_OWN_SHARE_BUYBACK: Porto, Embraer, Gerdau, Ultrapar, Eneva,
+# Vale), todas humanas.
+#
+# ATUALIZADO 2026-08-15. Este bloco protege contra CONTAMINAÇÃO entre
+# populações, não contra crescimento legítimo desta — e uma contagem nua não
+# distingue as duas coisas: ela quebra igual quando alguém adjudica um caso
+# novo e quando alguém despeja itens da população errada aqui. Por isso a
+# composição passou a ser verificada por família, ao lado do total: assim a
+# checagem falha por contaminação e não por trabalho legítimo.
+_fam = {}
+for _k, _v in _live.items():
+    if _k == "_meta":
+        continue
+    _fam[_v.get("family_id") or "(sem família)"] = (
+        _fam.get(_v.get("family_id") or "(sem família)", 0) + 1)
+check(len([k for k in _live if k != "_meta"]) == 39,
+      f"[20] live_reviews tem 39 itens: os 31 da R7b-S8, Santander, Banco do "
+      f"Brasil e as 6 recompras ({_fam})")
+check(_fam.get("MA_OBJECT_SCOPE_OWN_SHARE_BUYBACK") == 6,
+      f"[20b] as 6 recompras entraram na família própria, sem se misturar às "
+      f"demais ({_fam.get('MA_OBJECT_SCOPE_OWN_SHARE_BUYBACK')})")
+_tipos = {}
+for _k, _v in _live.items():
+    if _k == "_meta":
+        continue
+    _tipos[_v.get("reviewer_type")] = _tipos.get(_v.get("reviewer_type"), 0) + 1
+# Medido, não presumido: a população tem 26 adjudicações importadas, 12
+# humanas e 1 marcada `assistant` — herdada, anterior a esta wave e deixada
+# como está. O que a checagem garante é que NENHUM tipo novo apareceu e que as
+# seis recompras entraram como humanas.
+check(set(_tipos) == {"human", "imported_prior_adjudication", "assistant"},
+      f"[20c] nenhum tipo de revisor novo apareceu na população ({_tipos})")
+check(all(_v.get("reviewer_type") == "human" for _v in _live.values()
+          if _v.get("family_id") == "MA_OBJECT_SCOPE_OWN_SHARE_BUYBACK"),
+      "[20d] e as seis recompras foram gravadas como verdade humana")
 check(len([k for k in _shadow if k != "_meta"]) == 1,
       "[21] shadow_reviews continua com 1 item")
 check(len([k for k in MA if k != "_meta"]) == 3,

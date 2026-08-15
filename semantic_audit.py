@@ -130,11 +130,35 @@ def detect_historical_reference(text: str, article_year: int | None = None) -> d
 
 # ─────────────── 4/11/13. objeto e escopo da transação ───────────────
 OBJ_NAO_EMPRESA = {
+    # A companhia comprando as próprias ações não adquire ninguém. Esta lista
+    # já dizia isso — e `ma_is_legitimate` já devolvia
+    # `recompra_de_acoes_proprias_nao_e_ma` — mas o vocabulário não alcançava a
+    # construção do Fato Relevante da CVM, "Aquisição de Ações de Emissão da
+    # Própria Companhia". Seis recompras (Porto, Embraer, Gerdau, Ultrapar,
+    # Eneva, Vale) pontuavam como M&A; na Vale era 53% do score e definia o
+    # pior evento. Duas do MESMO formulário eram barradas por acidente, porque
+    # traziam "Cancelamento de Ações" no resumo e casavam por outro padrão.
+    #
+    # O que distingue recompra de aquisição real é a AUTORREFERÊNCIA — própria
+    # companhia, sua própria emissão, own shares. "Ações de emissão da
+    # Companhia Beta" continua sendo M&A legítimo e não pode casar aqui.
     "acoes_proprias": [r"recompra\s+de\s+a[çc][õo]es", r"buyback", r"share\s+repurchase",
                        r"treasury\s+shares?", r"a[çc][õo]es\s+pr[óo]prias",
                        r"cancelamento\s+de\s+a[çc][õo]es", r"a[çc][õo]es\s+em\s+tesouraria",
                        r"recompra\s+de\s+d[íi]vida", r"deb[êe]ntures\s+pr[óo]prias",
-                       r"cotas\s+do\s+pr[óo]prio\s+fundo"],
+                       r"cotas\s+do\s+pr[óo]prio\s+fundo",
+                       # emissão autorreferente: o possessivo é obrigatório
+                       r"a[çc][õo]es\s+de\s+emiss[ãa]o\s+d[ao]\s+pr[óo]pri[ao]\s+"
+                       r"(?:companhia|empresa|sociedade|emissora)",
+                       r"a[çc][õo]es\s+de\s+(?:sua\s+)?pr[óo]pria\s+emiss[ãa]o",
+                       r"a[çc][õo]es\s+de\s+emiss[ãa]o\s+pr[óo]pria",
+                       r"a[çc][õo]es\s+de\s+sua\s+emiss[ãa]o",
+                       # inglês e espanhol, mesma exigência de autorreferência
+                       r"(?:its|their)\s+own\s+(?:shares?|stock)",
+                       r"repurchase\s+of\s+(?:its\s+)?own\s+shares?",
+                       r"shares?\s+of\s+its\s+own\s+issuance",
+                       r"acciones\s+propias",
+                       r"acciones\s+de\s+(?:su\s+)?propia\s+emisi[óo]n"],
     # 4I.2 Wave C2: `kc[- ]390` é designação de MODELO, mesma natureza dos
     # `e190`/`e195` já presentes — "aquisição dos três Embraer KC-390" é compra
     # de N unidades de um produto, não da companhia.
