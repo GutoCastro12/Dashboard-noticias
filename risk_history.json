@@ -35631,75 +35631,22 @@
    "companies": [
     "BRF"
    ],
-   "companies_attributed": [],
-   "context_companies": [
+   "companies_attributed": [
     "BRF"
    ],
+   "context_companies": [],
    "display_url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/brf-cancelamento-acoes-registro-cvm-fusao-marfrig/",
    "domain": "estadao.com.br",
-   "event_assessments": [
-    {
-     "company": "BRF",
-     "event_id": "ma",
-     "assessed_by": "semantic_audit",
-     "subject_company": "BRF",
-     "actor_company": "",
-     "affected_company": "",
-     "transaction_object": "acoes_proprias",
-     "transaction_scope": "capital_proprio",
-     "transaction_role": "",
-     "event_phase": "",
-     "event_scope": "direto",
-     "direction": "positiva",
-     "historical_reference": false,
-     "new_occurrence": true,
-     "confirmation_level": "indefinido",
-     "attribution_rule": "R_MA_OBJETO_ESCOPO",
-     "attribution_confidence": "media",
-     "scoreable": false,
-     "rejection_reason": "recompra_de_acoes_proprias_nao_e_ma",
-     "legal_status": "",
-     "confirmation_status": "indefinido"
-    }
-   ],
    "event_ids": [
     "ma"
    ],
    "events_by_company": {
-    "BRF": []
+    "BRF": [
+     "ma"
+    ]
    },
    "final_host": "www.estadao.com.br",
    "http_status": "",
-   "informational_events_by_company": {
-    "BRF": [
-     {
-      "company": "BRF",
-      "event_id": "recompra_acoes",
-      "event_label": "recompra acoes",
-      "subject_company": "BRF",
-      "monitored_company": "BRF",
-      "relation_type": "direto",
-      "event_scope": "direto",
-      "direction": "positiva",
-      "scoreable": false,
-      "display_category": "positivo",
-      "new_ma_occurrence": false,
-      "change_of_control": false,
-      "external_ma": false,
-      "historical_transaction_reference": false,
-      "secondary_context": "recompra_acoes",
-      "transaction_scope": "capital_proprio",
-      "confirmation_status": "indefinido",
-      "attribution_rule": "R_MA_OBJETO_ESCOPO",
-      "attribution_confidence": "media",
-      "title": "BRF aprova cancelamento de ações e pede mudança de registro na CVM para concretizar fusão com Marfrig na Bolsa",
-      "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/brf-cancelamento-acoes-registro-cvm-fusao-marfrig/",
-      "pub_ts": 1758178800,
-      "observation": "recompra_de_acoes_proprias_nao_e_ma",
-      "source_record_id": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/brf-cancelamento-acoes-registro-cvm-fusao-marfrig/"
-     }
-    ]
-   },
    "language": "pt",
    "last_checked_at": "2026-07-31T03:04:35.620731+00:00",
    "link_health": "url_direta_valida",
@@ -35723,21 +35670,93 @@
    "resolution_error": "",
    "resolution_method": "direto",
    "resolved_url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/brf-cancelamento-acoes-registro-cvm-fusao-marfrig/",
-   "semantic_discards": [
-    {
-     "empresa": "BRF",
-     "event_id": "ma",
-     "event_id_corrigido": "recompra_acoes",
-     "regra": "R_MA_OBJETO_ESCOPO",
-     "motivo": "recompra_de_acoes_proprias_nao_e_ma",
-     "subject_company": "BRF"
-    }
-   ],
    "semantic_version": "1.0",
    "source": "Estadão",
    "summary": "BRF aprova cancelamento de ações e pede mudança de registro na CVM para concretizar fusão com Marfrig na Bolsa &nbsp;&nbsp; Estadão",
    "title": "BRF aprova cancelamento de ações e pede mudança de registro na CVM para concretizar fusão com Marfrig na Bolsa",
-   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/brf-cancelamento-acoes-registro-cvm-fusao-marfrig/"
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/brf-cancelamento-acoes-registro-cvm-fusao-marfrig/",
+   "manual_correction": {
+    "correction_id": "brf_marfrig_cancelamento_nao_e_recompra",
+    "corrected_at": "2026-08-15T18:25:46-03:00",
+    "corrected_by": "Gustavo",
+    "tool": "manualfix.v1",
+    "locked_fields": [],
+    "reason": "O cancelamento de acoes e etapa de implementacao da fusao BRF/Marfrig ja conhecida, nao recompra de acoes proprias. A regra de producao foi corrigida (o token de cancelamento passou a exigir autorreferencia), mas o registro ficou preso no estado antigo porque a reclassificacao oficial nao pode ACRESCENTAR evento (portao G5 added==0, preservado). Esta correcao traz o registro para o estado que o runtime atual calcula. O artigo NAO representa nova ocorrencia economica: entra na ocorrencia BRF/Marfrig existente pelo marcador da operacao e, com a data real de 2025-09-18, nao e ancora — score inalterado. Verdade humana: MA_POST_MERGER_PROCESS_STEP.",
+    "previous_state": {
+     "events_by_company": {
+      "BRF": []
+     },
+     "informational_events_by_company": {
+      "BRF": [
+       {
+        "company": "BRF",
+        "event_id": "recompra_acoes",
+        "event_label": "recompra acoes",
+        "subject_company": "BRF",
+        "monitored_company": "BRF",
+        "relation_type": "direto",
+        "event_scope": "direto",
+        "direction": "positiva",
+        "scoreable": false,
+        "display_category": "positivo",
+        "new_ma_occurrence": false,
+        "change_of_control": false,
+        "external_ma": false,
+        "historical_transaction_reference": false,
+        "secondary_context": "recompra_acoes",
+        "transaction_scope": "capital_proprio",
+        "confirmation_status": "indefinido",
+        "attribution_rule": "R_MA_OBJETO_ESCOPO",
+        "attribution_confidence": "media",
+        "title": "BRF aprova cancelamento de ações e pede mudança de registro na CVM para concretizar fusão com Marfrig na Bolsa",
+        "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/brf-cancelamento-acoes-registro-cvm-fusao-marfrig/",
+        "pub_ts": 1758178800,
+        "observation": "recompra_de_acoes_proprias_nao_e_ma",
+        "source_record_id": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/brf-cancelamento-acoes-registro-cvm-fusao-marfrig/"
+       }
+      ]
+     },
+     "companies_attributed": [],
+     "context_companies": [
+      "BRF"
+     ],
+     "semantic_discards": [
+      {
+       "empresa": "BRF",
+       "event_id": "ma",
+       "event_id_corrigido": "recompra_acoes",
+       "regra": "R_MA_OBJETO_ESCOPO",
+       "motivo": "recompra_de_acoes_proprias_nao_e_ma",
+       "subject_company": "BRF"
+      }
+     ],
+     "event_assessments": [
+      {
+       "company": "BRF",
+       "event_id": "ma",
+       "assessed_by": "semantic_audit",
+       "subject_company": "BRF",
+       "actor_company": "",
+       "affected_company": "",
+       "transaction_object": "acoes_proprias",
+       "transaction_scope": "capital_proprio",
+       "transaction_role": "",
+       "event_phase": "",
+       "event_scope": "direto",
+       "direction": "positiva",
+       "historical_reference": false,
+       "new_occurrence": true,
+       "confirmation_level": "indefinido",
+       "attribution_rule": "R_MA_OBJETO_ESCOPO",
+       "attribution_confidence": "media",
+       "scoreable": false,
+       "rejection_reason": "recompra_de_acoes_proprias_nao_e_ma",
+       "legal_status": "",
+       "confirmation_status": "indefinido"
+      }
+     ]
+    }
+   }
   },
   "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/cade-aprova-aquisicao-do-controle-da-evolve-pela-smartfit-smft3/": {
    "cap_iso": "2026-08-10 23:21",
@@ -53952,8 +53971,8 @@
   }
  },
  "last_run": {
-  "ts": 1786820296,
-  "iso": "15 ago 2026 · 15:58 BRT",
+  "ts": 1786829306,
+  "iso": "15 ago 2026 · 18:28 BRT",
   "status": {
    "Cosan": {
     "status": "atencao",
@@ -53981,7 +54000,7 @@
    },
    "Smart Fit": {
     "status": "monitorar",
-    "score": 35
+    "score": 34
    },
    "Axia Energia": {
     "status": "monitorar",
@@ -54218,7 +54237,7 @@
   }
  },
  "links_repaired_at": "2026-07-31T05:45:56.701137+00:00",
- "reclassify_only_applied_at": "2026-08-15T18:58:16.976895+00:00",
+ "reclassify_only_applied_at": "2026-08-15T21:28:26.086606+00:00",
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNQjN5VFFLLTZwZkc3OFYzTk5SZFludkE1OXcxSTdRUzR1N0hkVU5MM21MajJjdFZzTlFvcHZiTk1CdG9GWGo5QmhUdWRtM3phOHhuamwxR2V5dHlqQmdEQVQycUg0ZGhhZzYtYUlpbDhTbkpaRl9mczQtRFl1anlBNVdZeVdGX1loODZKOThPcE9xM2RROGt4T3dwTHpNZEVXb2xzVmswM0pMLTR3bVVMVEg1RXRDcVlVVVdUTS1RYUYyUE5YUXVDd3RlbTk5TW1EbXJaZXpac1JFanA1dWlNbDRUN3RLWE9TdjNQQ0FISUQ0U3V0WEFhUQ?oc=5": {
    "exact": true,

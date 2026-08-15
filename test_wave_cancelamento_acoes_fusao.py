@@ -96,25 +96,28 @@ check(sa.ma_is_legitimate(BRF_T)[0],
       "[2] e volta a ser reconhecido como transação empresarial legítima")
 _H = json.load(io.open("risk_history.json", encoding="utf-8"))
 _a = _H["articles"][BRF_URL]
-# O REGISTRO ARMAZENADO NÃO FOI CORRIGIDO, e isso é deliberado.
+# ATUALIZADO. Estas duas linhas registravam o registro AINDA pendente: a
+# reclassificação oficial não pode ACRESCENTAR evento (`G5 added == 0`), então
+# o artigo ficava preso no estado antigo mesmo com a regra já corrigida. A
+# pendência foi resolvida depois por correção versionada
+# (`reliability_manual_correction.py`), que traz o registro para o estado que o
+# runtime calcula, sem afrouxar o G5.
 #
-# Os dois caminhos oficiais de reclassificação recusam ACRESCENTAR evento a um
-# registro: `--reclassify-only --apply` aborta no portão `G5 added == 0`, e
-# `--reclassify-semantic-only` só remove score (devolveu 0 mudanças). Como a
-# correção precisa devolver `ma` ao registro, ela é estruturalmente impossível
-# por esses caminhos, e cirurgia manual em JSON não é opção.
-#
-# A regra — que é a autoridade de produção — está corrigida: qualquer artigo
-# desta classe que chegue daqui em diante é classificado certo. O registro
-# antigo fica pendente, e este teste registra isso em vez de fingir que foi
-# resolvido.
+# Manter a asserção antiga passaria a exigir a presença do defeito — ela vira o
+# seu oposto.
 _inf_brf = [e.get("event_id") for e in
             ((_a.get("informational_events_by_company") or {}).get("BRF") or [])]
-check("recompra_acoes" in _inf_brf,
-      "[3] o registro ARMAZENADO segue em `recompra_acoes` — pendência "
-      "conhecida, bloqueada pelo portão G5 do mecanismo oficial")
-check(not ((_a.get("events_by_company") or {}).get("BRF") or []),
-      "[4] e por isso ainda não pontua M&A no histórico")
+check("recompra_acoes" not in _inf_brf,
+      "[3] o registro armazenado não está mais em `recompra_acoes`")
+check("ma" in ((_a.get("events_by_company") or {}).get("BRF") or []),
+      "[4] e é representado na família M&A, que é a correta")
+_mc = _a.get("manual_correction") or {}
+check(_mc.get("correction_id") == "brf_marfrig_cancelamento_nao_e_recompra"
+      and _mc.get("previous_state"),
+      "[4b] com proveniência versionada e o estado anterior preservado")
+check(_mc.get("locked_fields") == [],
+      "[4c] e sem travar campo algum — o runtime já calcula este estado, então "
+      "travar congelaria o registro contra melhorias futuras legítimas")
 
 print()
 print("=" * 98)
@@ -261,21 +264,19 @@ for _u, _a in _H["articles"].items():
     for _emp, _evs in ((_a.get("informational_events_by_company") or {}).items()):
         if any(e.get("event_id") == "recompra_acoes" for e in (_evs or [])):
             _recompra += 1
-check(_ma_total == 127,
-      f"[40] o corpus de M&A segue íntegro — 127 registros pontuáveis, o mesmo "
-      f"de antes da mudança ({_ma_total})")
-check(_recompra == 9,
-      f"[41] a população ARMAZENADA de recompra segue em 9 — a do registro pendente "
-      f"({_recompra})")
+check(_ma_total == 128,
+      f"[40] o corpus de M&A tem 128 registros pontuáveis — 127 de antes mais o "
+      f"da BRF, recuperado ({_ma_total})")
+check(_recompra == 8,
+      f"[41] a população de recompra caiu de 9 para 8 — só a BRF saiu ({_recompra})")
 _supr = [(_a.get("title") or "")[:50] for _a in _H["articles"].values()
          if re.search(r"fus[ãa]o|incorpora|merger", _n(_a.get("title") or ""))
          and any(e.get("event_id") == "recompra_acoes"
                  for _evs in (_a.get("informational_events_by_company")
                               or {}).values() for e in (_evs or []))]
-check(len(_supr) == 1,
-      f"[42] resta UMA matéria de fusão suprimida como recompra no histórico — "
-      f"a pendência da BRF, que a regra já resolve mas o mecanismo não pode "
-      f"gravar ({_supr})")
+check(not _supr,
+      f"[42] nenhuma matéria de fusão/incorporação segue suprimida como "
+      f"recompra ({_supr})")
 
 print()
 print("=" * 98)
