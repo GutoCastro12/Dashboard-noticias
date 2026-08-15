@@ -195,6 +195,15 @@
   "reviewer_type": "imported_prior_adjudication",
   "status": "TRUE"
  },
+ "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/brf-cancelamento-acoes-registro-cvm-fusao-marfrig/||BRF||ma": {
+  "company": "BRF",
+  "event_id": "ma",
+  "family_id": "MA_POST_MERGER_PROCESS_STEP",
+  "note": "O artigo e um follow-up operacional da fusao BRF/Marfrig ja existente. O cancelamento de acoes e etapa de implementacao da fusao (junto com a mudanca de registro na CVM), nao recompra de acoes proprias. O artigo NAO representa uma nova ocorrencia de M&A e nao deve gerar novo score. Cinco afirmacoes que devem permanecer separadas: a fusao existe no mundo = VERDADE; o artigo esta relacionado ao M&A = VERDADE; o artigo anuncia a ocorrencia de M&A = FALSO; o artigo e um M&A pontuavel novo = FALSO; o artigo e recompra de acoes proprias = FALSO. O status FALSE_POSITIVE deste registro significa 'nao deve gerar score de ma', nao 'nao tem relacao com o M&A'.",
+  "reviewed_at": 1786825142,
+  "reviewer_type": "human",
+  "status": "FALSE_POSITIVE"
+ },
  "https://www.findlaw.com/legalblogs/federal-courts/scotus-declines-to-intervene-in-billion-dollar-fraud-showdown-against-citigroup/||Citigroup||fraude": {
   "company": "Citigroup",
   "event_id": "fraude",
