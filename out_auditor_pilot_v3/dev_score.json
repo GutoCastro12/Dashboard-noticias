@@ -1,0 +1,823 @@
+{
+ "baselines": {
+  "ALWAYS_CANDIDATE_1": {
+   "accuracy": 0.824,
+   "correct": 14,
+   "false_merge_like": 3,
+   "hapvida_wrong": 2,
+   "total": 17
+  },
+  "ALWAYS_CANDIDATE_2": {
+   "accuracy": 0.412,
+   "correct": 7,
+   "false_merge_like": 10,
+   "hapvida_wrong": 2,
+   "total": 17
+  },
+  "ALWAYS_NO_CANDIDATE": {
+   "accuracy": 0.059,
+   "correct": 1,
+   "false_merge_like": 0,
+   "hapvida_wrong": 4,
+   "total": 17
+  },
+  "ALWAYS_UNDETERMINED": {
+   "accuracy": 0.0,
+   "correct": 0,
+   "false_merge_like": 0,
+   "hapvida_wrong": 4,
+   "total": 17
+  }
+ },
+ "detalhe": [
+  {
+   "abstencao": false,
+   "article_ref": "03cd0b1b2edd82cb03ee",
+   "company": "Smart Fit",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.1-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": false,
+   "target_id": "ma::03cd0b1b2edd82cb03ee"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "03cd0b1b2edd82cb03ee",
+   "company": "Smart Fit",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.5-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": false,
+   "target_id": "ma::03cd0b1b2edd82cb03ee"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "07ce401cec9d67803577",
+   "company": "Smart Fit",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.1-flash-lite",
+   "novelty_correct": false,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "NEW_OCCURRENCE",
+   "ocorrencia_partida": false,
+   "target_id": "ma::07ce401cec9d67803577"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "07ce401cec9d67803577",
+   "company": "Smart Fit",
+   "erro": "FALSE_SPLIT",
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": true,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": false,
+   "linked_predito": "NO_CANDIDATE",
+   "mixed_candidate": false,
+   "model": "gemini-3.5-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "NEW_OCCURRENCE",
+   "novelty_verdade": "NEW_OCCURRENCE",
+   "ocorrencia_partida": false,
+   "target_id": "ma::07ce401cec9d67803577"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "601562a812028d796edb",
+   "company": "Smart Fit",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.1-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": false,
+   "target_id": "ma::601562a812028d796edb"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "601562a812028d796edb",
+   "company": "Smart Fit",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.5-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": false,
+   "target_id": "ma::601562a812028d796edb"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "66a3cefcdc58b2a64470",
+   "company": "BRF",
+   "erro": "FALSE_MERGE",
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": true,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "NO_CANDIDATE"
+   ],
+   "linkage_correct": false,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.1-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": false,
+   "target_id": "ma::66a3cefcdc58b2a64470"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "66a3cefcdc58b2a64470",
+   "company": "BRF",
+   "erro": "FALSE_MERGE",
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": true,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "NO_CANDIDATE"
+   ],
+   "linkage_correct": false,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.5-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": false,
+   "target_id": "ma::66a3cefcdc58b2a64470"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "0acaf3fd3287eb18e27e",
+   "company": "Tupy",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1",
+    "CANDIDATE_2"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.1-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": true,
+   "target_id": "troca_ceo::0acaf3fd3287eb18e27e"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "0acaf3fd3287eb18e27e",
+   "company": "Tupy",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1",
+    "CANDIDATE_2"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.5-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": true,
+   "target_id": "troca_ceo::0acaf3fd3287eb18e27e"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "1f9cd868028a5dc68d6b",
+   "company": "Hapvida",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_2"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_2",
+   "mixed_candidate": false,
+   "model": "gemini-3.1-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": false,
+   "target_id": "troca_ceo::1f9cd868028a5dc68d6b"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "1f9cd868028a5dc68d6b",
+   "company": "Hapvida",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_2"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_2",
+   "mixed_candidate": false,
+   "model": "gemini-3.5-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": false,
+   "target_id": "troca_ceo::1f9cd868028a5dc68d6b"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "20bc6bc761994288fdc5",
+   "company": "Yura",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.1-flash-lite",
+   "novelty_correct": false,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "NEW_OCCURRENCE",
+   "ocorrencia_partida": false,
+   "target_id": "troca_ceo::20bc6bc761994288fdc5"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "20bc6bc761994288fdc5",
+   "company": "Yura",
+   "erro": "MODEL_FAILURE",
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": false,
+   "mixed_candidate": false,
+   "model": "gemini-3.5-flash-lite",
+   "novelty_correct": false,
+   "novelty_verdade": "NEW_OCCURRENCE",
+   "ocorrencia_partida": false,
+   "parse_problems": [
+    "CANDIDATO_DESCONHECIDO"
+   ],
+   "target_id": "troca_ceo::20bc6bc761994288fdc5"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "37b2b8073eb11004c665",
+   "company": "Hapvida",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.1-flash-lite",
+   "novelty_correct": false,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "NEW_OCCURRENCE",
+   "ocorrencia_partida": false,
+   "target_id": "troca_ceo::37b2b8073eb11004c665"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "37b2b8073eb11004c665",
+   "company": "Hapvida",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.5-flash-lite",
+   "novelty_correct": false,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "NEW_OCCURRENCE",
+   "ocorrencia_partida": false,
+   "target_id": "troca_ceo::37b2b8073eb11004c665"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "478244266a93f748a9d2",
+   "company": "Tupy",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1",
+    "CANDIDATE_2"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.1-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": true,
+   "target_id": "troca_ceo::478244266a93f748a9d2"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "478244266a93f748a9d2",
+   "company": "Tupy",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1",
+    "CANDIDATE_2"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.5-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": true,
+   "target_id": "troca_ceo::478244266a93f748a9d2"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "54defbfc21b61d431ead",
+   "company": "Hapvida",
+   "erro": "FALSE_MERGE",
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": true,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_2"
+   ],
+   "linkage_correct": false,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.1-flash-lite",
+   "novelty_correct": false,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "NEW_OCCURRENCE",
+   "ocorrencia_partida": false,
+   "target_id": "troca_ceo::54defbfc21b61d431ead"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "54defbfc21b61d431ead",
+   "company": "Hapvida",
+   "erro": "FALSE_MERGE",
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": true,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_2"
+   ],
+   "linkage_correct": false,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.5-flash-lite",
+   "novelty_correct": false,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "NEW_OCCURRENCE",
+   "ocorrencia_partida": false,
+   "target_id": "troca_ceo::54defbfc21b61d431ead"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "59016eebd860937c7b89",
+   "company": "Hapvida",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.1-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": false,
+   "target_id": "troca_ceo::59016eebd860937c7b89"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "59016eebd860937c7b89",
+   "company": "Hapvida",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.5-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": false,
+   "target_id": "troca_ceo::59016eebd860937c7b89"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "6957d2d34de79a99466c",
+   "company": "Santander Brasil",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1",
+    "CANDIDATE_2"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.1-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": true,
+   "target_id": "troca_ceo::6957d2d34de79a99466c"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "6957d2d34de79a99466c",
+   "company": "Santander Brasil",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1",
+    "CANDIDATE_2"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.5-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": true,
+   "target_id": "troca_ceo::6957d2d34de79a99466c"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "88d41012b4ef62c3c3c3",
+   "company": "Santander Brasil",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1",
+    "CANDIDATE_2"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.1-flash-lite",
+   "novelty_correct": false,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "NEW_OCCURRENCE",
+   "ocorrencia_partida": true,
+   "target_id": "troca_ceo::88d41012b4ef62c3c3c3"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "88d41012b4ef62c3c3c3",
+   "company": "Santander Brasil",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1",
+    "CANDIDATE_2"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.5-flash-lite",
+   "novelty_correct": false,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "NEW_OCCURRENCE",
+   "ocorrencia_partida": true,
+   "target_id": "troca_ceo::88d41012b4ef62c3c3c3"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "8c22ad696759a8820c0a",
+   "company": "Yura",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.1-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": false,
+   "target_id": "troca_ceo::8c22ad696759a8820c0a"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "8c22ad696759a8820c0a",
+   "company": "Yura",
+   "erro": "FALSE_SPLIT",
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": true,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": false,
+   "linked_predito": "NO_CANDIDATE",
+   "mixed_candidate": false,
+   "model": "gemini-3.5-flash-lite",
+   "novelty_correct": false,
+   "novelty_predito": "NEW_OCCURRENCE",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": false,
+   "target_id": "troca_ceo::8c22ad696759a8820c0a"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "9eb803c2493e648262ec",
+   "company": "Tupy",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.1-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": false,
+   "target_id": "troca_ceo::9eb803c2493e648262ec"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "9eb803c2493e648262ec",
+   "company": "Tupy",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.5-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": false,
+   "target_id": "troca_ceo::9eb803c2493e648262ec"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "cad44d85917e8bb50e46",
+   "company": "Santander Brasil",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.1-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": false,
+   "target_id": "troca_ceo::cad44d85917e8bb50e46"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "cad44d85917e8bb50e46",
+   "company": "Santander Brasil",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.5-flash-lite",
+   "novelty_correct": true,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "FOLLOW_UP",
+   "ocorrencia_partida": false,
+   "target_id": "troca_ceo::cad44d85917e8bb50e46"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "ff933e4b6fd0aae34605",
+   "company": "Tupy",
+   "erro": null,
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1",
+    "CANDIDATE_2"
+   ],
+   "linkage_correct": true,
+   "linked_predito": "CANDIDATE_1",
+   "mixed_candidate": false,
+   "model": "gemini-3.1-flash-lite",
+   "novelty_correct": false,
+   "novelty_predito": "FOLLOW_UP",
+   "novelty_verdade": "NEW_OCCURRENCE",
+   "ocorrencia_partida": true,
+   "target_id": "troca_ceo::ff933e4b6fd0aae34605"
+  },
+  {
+   "abstencao": false,
+   "article_ref": "ff933e4b6fd0aae34605",
+   "company": "Tupy",
+   "erro": "MODEL_FAILURE",
+   "evaluator_version": "occurrence.auditor.eval.v3",
+   "false_merge": false,
+   "false_split": false,
+   "linkage_aceitaveis": [
+    "CANDIDATE_1",
+    "CANDIDATE_2"
+   ],
+   "linkage_correct": false,
+   "mixed_candidate": false,
+   "model": "gemini-3.5-flash-lite",
+   "novelty_correct": false,
+   "novelty_verdade": "NEW_OCCURRENCE",
+   "ocorrencia_partida": true,
+   "parse_problems": [
+    "CANDIDATO_DESCONHECIDO"
+   ],
+   "target_id": "troca_ceo::ff933e4b6fd0aae34605"
+  }
+ ],
+ "minority_targets": [
+  "1f9cd868028a5dc68d6b",
+  "54defbfc21b61d431ead",
+  "66a3cefcdc58b2a64470"
+ ],
+ "por_modelo": {
+  "gemini-3.1-flash-lite": {
+   "abstencoes": 0,
+   "beats_trivial": true,
+   "classes_preditas": [
+    "CANDIDATE_1",
+    "CANDIDATE_2"
+   ],
+   "development_sane": false,
+   "false_merge": 2,
+   "false_split": 0,
+   "hapvida_false_merge": 1,
+   "linkage_accuracy": 0.882,
+   "linkage_correct": 15,
+   "minority_correct": 1,
+   "minority_n": 3,
+   "mixed_candidate": 0,
+   "n_falhas_de_parse": 0,
+   "n_total": 17,
+   "non_collapse": true,
+   "novelty_correct": 11,
+   "novelty_denominador": 17,
+   "parse_success": 1.0,
+   "required_to_beat": 15,
+   "strongest_trivial_baseline": "ALWAYS_CANDIDATE_1",
+   "strongest_trivial_correct": 14
+  },
+  "gemini-3.5-flash-lite": {
+   "abstencoes": 0,
+   "beats_trivial": false,
+   "classes_preditas": [
+    "CANDIDATE_1",
+    "CANDIDATE_2",
+    "NO_CANDIDATE"
+   ],
+   "development_sane": false,
+   "false_merge": 2,
+   "false_split": 2,
+   "hapvida_false_merge": 1,
+   "linkage_accuracy": 0.647,
+   "linkage_correct": 11,
+   "minority_correct": 1,
+   "minority_n": 3,
+   "mixed_candidate": 0,
+   "n_falhas_de_parse": 2,
+   "n_total": 17,
+   "non_collapse": true,
+   "novelty_correct": 11,
+   "novelty_denominador": 17,
+   "parse_success": 0.882,
+   "required_to_beat": 15,
+   "strongest_trivial_baseline": "ALWAYS_CANDIDATE_1",
+   "strongest_trivial_correct": 14
+  }
+ },
+ "required_to_beat": 15,
+ "strongest_trivial": "ALWAYS_CANDIDATE_1",
+ "strongest_trivial_correct": 14
+}

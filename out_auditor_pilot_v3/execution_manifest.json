@@ -1,0 +1,55 @@
+{
+ "attempted_calls": 34,
+ "config": {
+  "circuit_breaker_consecutive_infra_failures": 3,
+  "evaluator_version": "occurrence.auditor.eval.v3",
+  "fallback": 0,
+  "max_output_tokens": 1600,
+  "models": {
+   "G1": "gemini-3.1-flash-lite",
+   "G2": "gemini-3.5-flash-lite"
+  },
+  "pacing_s": 8.0,
+  "parser_version": "occurrence.auditor.output.v3",
+  "retry": 0,
+  "structured_output": "response_mime_type=application/json + response_schema",
+  "temperature": 0.0,
+  "timeout_s": 90
+ },
+ "dataset_role": "DEVELOPMENT",
+ "freeze_hashes": {
+  "baseline_hash": "41ffcd20d2afd027",
+  "dev_manifest_hash": "82cda660cdece064",
+  "evaluator_hash": "99985aac21da670b",
+  "example_outputs_hash": "20508067c2274365",
+  "example_set_hash": "6ea9a6519b3066bb",
+  "freeze_manifest_hash": "d5c31ee1810a770b",
+  "input_hash": "e9d33218fd811d13",
+  "output_hash": "bb0ee5497d352542",
+  "prompt_hash": "e527dad21516f853"
+ },
+ "freeze_version": "occurrence.auditor.freeze.v3",
+ "git_sha": "955b46597d96b4eecc18dc11f7e5db2536015f41",
+ "operating_mode": "POST_BUILD_OCCURRENCE_ANOMALY_AUDITOR",
+ "pilot_version": "occurrence.auditor.v3.dev.results.v1",
+ "planned_calls": 34,
+ "por_modelo": {
+  "gemini-3.1-flash-lite": {
+   "attempted": 17,
+   "breaker_tripped": null,
+   "model_failure": 0,
+   "parse_failure": 0,
+   "raw_ok": 17,
+   "skipped_breaker": 0
+  },
+  "gemini-3.5-flash-lite": {
+   "attempted": 17,
+   "breaker_tripped": null,
+   "model_failure": 0,
+   "parse_failure": 2,
+   "raw_ok": 17,
+   "skipped_breaker": 0
+  }
+ },
+ "production_authority": "NONE"
+}

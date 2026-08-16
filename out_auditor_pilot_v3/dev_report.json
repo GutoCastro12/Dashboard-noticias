@@ -1,0 +1,108 @@
+{
+ "dataset_role": "DEVELOPMENT",
+ "freeze_hashes": {
+  "baseline_hash": "41ffcd20d2afd027",
+  "dev_manifest_hash": "82cda660cdece064",
+  "evaluator_hash": "99985aac21da670b",
+  "example_outputs_hash": "20508067c2274365",
+  "example_set_hash": "6ea9a6519b3066bb",
+  "freeze_manifest_hash": "d5c31ee1810a770b",
+  "input_hash": "e9d33218fd811d13",
+  "output_hash": "bb0ee5497d352542",
+  "prompt_hash": "e527dad21516f853"
+ },
+ "freeze_version": "occurrence.auditor.freeze.v3",
+ "git_sha": "955b46597d96b4eecc18dc11f7e5db2536015f41",
+ "is_holdout": false,
+ "is_prospective": false,
+ "linkage_collapse": false,
+ "linkage_predicted": {
+  "gemini-3.1-flash-lite": {
+   "CANDIDATE_1": 16,
+   "CANDIDATE_2": 1
+  },
+  "gemini-3.5-flash-lite": {
+   "CANDIDATE_1": 12,
+   "CANDIDATE_2": 1,
+   "NO_CANDIDATE": 2,
+   "null": 2
+  }
+ },
+ "minority_targets": [
+  "1f9cd868028a5dc68d6b",
+  "54defbfc21b61d431ead",
+  "66a3cefcdc58b2a64470"
+ ],
+ "novelty_collapse": true,
+ "novelty_collapse_evidence": {
+  "gemini-3.1-flash-lite": {
+   "FOLLOW_UP": 17
+  },
+  "gemini-3.5-flash-lite": {
+   "FOLLOW_UP": 13,
+   "NEW_OCCURRENCE": 4
+  }
+ },
+ "operating_mode": "POST_BUILD_OCCURRENCE_ANOMALY_AUDITOR",
+ "por_modelo": {
+  "gemini-3.1-flash-lite": {
+   "abstencoes": 0,
+   "beats_trivial": true,
+   "classes_preditas": [
+    "CANDIDATE_1",
+    "CANDIDATE_2"
+   ],
+   "development_sane": false,
+   "false_merge": 2,
+   "false_split": 0,
+   "hapvida_false_merge": 1,
+   "linkage_accuracy": 0.882,
+   "linkage_correct": 15,
+   "minority_correct": 1,
+   "minority_n": 3,
+   "mixed_candidate": 0,
+   "n_falhas_de_parse": 0,
+   "n_total": 17,
+   "non_collapse": true,
+   "novelty_correct": 11,
+   "novelty_denominador": 17,
+   "parse_success": 1.0,
+   "required_to_beat": 15,
+   "strongest_trivial_baseline": "ALWAYS_CANDIDATE_1",
+   "strongest_trivial_correct": 14
+  },
+  "gemini-3.5-flash-lite": {
+   "abstencoes": 0,
+   "beats_trivial": false,
+   "classes_preditas": [
+    "CANDIDATE_1",
+    "CANDIDATE_2",
+    "NO_CANDIDATE"
+   ],
+   "development_sane": false,
+   "false_merge": 2,
+   "false_split": 2,
+   "hapvida_false_merge": 1,
+   "linkage_accuracy": 0.647,
+   "linkage_correct": 11,
+   "minority_correct": 1,
+   "minority_n": 3,
+   "mixed_candidate": 0,
+   "n_falhas_de_parse": 2,
+   "n_total": 17,
+   "non_collapse": true,
+   "novelty_correct": 11,
+   "novelty_denominador": 17,
+   "parse_success": 0.882,
+   "required_to_beat": 15,
+   "strongest_trivial_baseline": "ALWAYS_CANDIDATE_1",
+   "strongest_trivial_correct": 14
+  }
+ },
+ "production_authority": "NONE",
+ "required_to_beat": 15,
+ "results_version": "occurrence.auditor.v3.dev.results.v1",
+ "run_id": 31977512454,
+ "strongest_trivial": "ALWAYS_CANDIDATE_1",
+ "strongest_trivial_correct": 14
+}
