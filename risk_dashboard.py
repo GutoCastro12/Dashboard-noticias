@@ -4691,6 +4691,18 @@ _STOP_MARCADORES = {
     "emissao", "debentures", "aquisicao", "venda", "compra", "empresa", "grupo",
     "banco", "companhia", "sa", "reais", "bilhoes", "milhoes", "follow", "on",
     "capital", "social", "conselho", "diretoria", "resultado", "lucro", "receita",
+    # [fix: acquisition is not a transaction identity] A lista nasceu num corpus
+    # só em português, então `aquisicao` estava aqui desde sempre e seu equivalente
+    # inglês não. Manchete em inglês capitaliza "Acquisition", e ele virava
+    # identidade de operação: "Could AES Acquisition Change EQT Corporation's
+    # Future Prospects?" e "EQT Corporation: Another Acquisition" — dois negócios
+    # distintos, 160 dias de distância — eram unidos acima do gap por essa única
+    # palavra, embora a segunda manchete diga literalmente "Another".
+    # Ablação token a token nos 22 genéricos ingleses presentes no corpus: só
+    # este tem efeito. Os outros 21 (`merger`, `billion`, `strategic`,
+    # `announces`...) são dormentes hoje — adicioná-los seria mudança semântica
+    # futura sem caso que a valide, então ficam de fora.
+    "acquisition",
 }
 
 # [fix: deduplicate operational events across articles] vocabulário genérico

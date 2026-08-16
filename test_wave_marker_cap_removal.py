@@ -65,10 +65,33 @@ def marc(titulo, emissor):
         titulo, emissor, AL.get(emissor)).split("|") if m}
 
 
+_STOP_ATUAL = set(rd._STOP_MARCADORES)
+
+
 def truncado(titulo, emissor):
-    """Reconstrução exata do comportamento anterior, a partir do atual.
-    Só é válida porque a ÚNICA mudança foi remover o `[:2]` do fim."""
-    return set(sorted(marc(titulo, emissor))[:2])
+    """Reconstrução do comportamento HISTÓRICO, anterior a esta onda.
+
+    Precisa desfazer duas coisas, não uma: o `[:2]` (esta onda) e o filtro de
+    `acquisition` (onda seguinte, que passou a filtrá-lo). Reconstruir só o
+    `[:2]` sobre o vocabulário de hoje descreveria um mundo que nunca existiu.
+    """
+    rd._STOP_MARCADORES = _STOP_ATUAL - {"acquisition"}
+    try:
+        return set(sorted(marc(titulo, emissor))[:2])
+    finally:
+        rd._STOP_MARCADORES = set(_STOP_ATUAL)
+
+
+def com_cap(fn):
+    """Executa `fn` com o `[:2]` de volta, mantendo o vocabulário de HOJE.
+    Mede o que a remoção do cap sustenta agora, não o que sustentava então."""
+    _orig = rd._marcadores_operacao
+    rd._marcadores_operacao = lambda t, e, a: "|".join(
+        sorted({m for m in _orig(t, e, a).split("|") if m})[:2])
+    try:
+        return fn()
+    finally:
+        rd._marcadores_operacao = _orig
 
 
 print("=" * 98)
@@ -92,19 +115,26 @@ check(r're.findall(r"\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][\wÀ-ÿ]{3,}", t)' in _corpo,
 
 print()
 print("=" * 98)
-print("§6 `_STOP_MARCADORES` INTOCADO — NENHUM STOPWORD INGLÊS ADICIONADO")
+print("§6 ESTA ONDA NÃO MEXEU EM `_STOP_MARCADORES`")
 print("=" * 98)
-check(len(rd._STOP_MARCADORES) == 29,
-      f"[8] a lista continua com 29 entradas ({len(rd._STOP_MARCADORES)})")
-_ingleses = {"acquisition", "merger", "agreement", "billion", "million",
-             "announces", "boosts", "revised", "amended", "closing", "deal",
-             "transaction", "stake", "shares", "equity"}
-_intruso = sorted(_ingleses & rd._STOP_MARCADORES)
-check(not _intruso, f"[9] nenhum vocabulário inglês foi adicionado ({_intruso or 'nenhum'})")
-check("acquisition" in marc("Baker Hughes Company Issues $9.5 Billion in Senior "
-                            "Unsecured Notes to Fund Acquisition of Chart Industries",
-                            "Baker Hughes"),
-      "[10] e `acquisition` CONTINUA aparecendo — esta onda não o remove (§9)")
+# Atualizado: uma onda posterior adicionou `acquisition` (e SÓ ele), com suíte
+# própria — `test_wave_marcador_generico_ingles.py`. As checagens abaixo seguem
+# provando que a remoção do cap não veio acompanhada de limpeza de vocabulário.
+check(len(rd._STOP_MARCADORES) == 30,
+      f"[8] a lista tem 30 entradas: as 29 originais + `acquisition` "
+      f"({len(rd._STOP_MARCADORES)})")
+_dormentes = {"merger", "agreement", "billion", "million", "announces",
+              "boosts", "revised", "amended", "closing", "deal",
+              "transaction", "stake", "shares", "equity", "strategic",
+              "investment", "completes", "with"}
+_intruso = sorted(_dormentes & rd._STOP_MARCADORES)
+check(not _intruso,
+      f"[9] e nenhum outro genérico entrou de carona ({_intruso or 'nenhum'})")
+check("billion" in marc("Baker Hughes Company Issues $9.5 Billion in Senior "
+                        "Unsecured Notes to Fund Acquisition of Chart Industries",
+                        "Baker Hughes"),
+      "[10] `billion` CONTINUA aparecendo — nenhuma onda até aqui o removeu, e "
+      "um marcador feio mas inofensivo não é motivo para mudança semântica")
 
 print()
 print("=" * 98)
@@ -146,21 +176,22 @@ BH = ("Baker Hughes Company Issues $9.5 Billion in Senior Unsecured Notes to "
 _bh = marc(BH, "Baker Hughes")
 check("chart" in _bh, "[20] Baker Hughes: `chart` sobrevive")
 check("industries" in _bh, "[21] Baker Hughes: `industries` sobrevive")
-check({"chart", "industries"} & truncado(BH, "Baker Hughes") == set(),
-      "[22] e ambos eram descartados pelo top-2 antes (`acquisition|billion`)")
+check(truncado(BH, "Baker Hughes") == {"acquisition", "billion"},
+      f"[22] e ambos eram descartados pelo top-2, que ficava com "
+      f"`acquisition|billion` ({sorted(truncado(BH, chr(66)+chr(97)+chr(107)+chr(101)+chr(114)+chr(32)+chr(72)+chr(117)+chr(103)+chr(104)+chr(101)+chr(115)))})")
 
 CO_BREX = "Capital One's $5.15B Brex Acquisition Boosts Profit Outlook"
 check("brex" in marc(CO_BREX, "Capital One Financial"),
       "[23] Capital One: `brex` sobrevive")
-check("brex" not in truncado(CO_BREX, "Capital One Financial"),
-      "[24] e era descartado antes (`acquisition|boosts`)")
+check(truncado(CO_BREX, "Capital One Financial") == {"acquisition", "boosts"},
+      "[24] e era descartado antes, quando a identidade era `acquisition|boosts`")
 
 CO_DISC = ("Capital One Faces Earnings Test After High-Stakes Discover "
            "Acquisition Bet")
 check("discover" in marc(CO_DISC, "Capital One Financial"),
       "[25] Capital One: `discover` sobrevive")
-check("discover" not in truncado(CO_DISC, "Capital One Financial"),
-      "[26] e era descartado antes (`acquisition|after`)")
+check(truncado(CO_DISC, "Capital One Financial") == {"acquisition", "after"},
+      "[26] e era descartado antes, quando a identidade era `acquisition|after`")
 
 SF = "Smart Fit Avança no Centro-Oeste Com Aquisição da Evolve"
 check("evolve" in marc(SF, "Smart Fit"), "[27] Smart Fit: `evolve` sobrevive")
@@ -215,14 +246,19 @@ pares = [(u, a.get("title") or "", emp)
          for emp, evs in (a.get("events_by_company") or {}).items()
          if "ma" in (evs or [])]
 check(len(pares) == 128, f"[40] 128 pares (artigo, empresa) com `ma` ({len(pares)})")
-_rem = [(e, t) for _u, t, e in pares if truncado(t, e) - marc(t, e)]
+# A propriedade "só adiciona" é sobre O CAP, então o contrafactual tem de variar
+# APENAS o cap. Medi-la contra o comportamento histórico misturaria esta onda com
+# a remoção de `acquisition`, que legitimamente RETIRA um marcador — e a
+# propriedade pareceria violada por um mérito de outra correção.
+_so_cap = com_cap(lambda: {(u, e): marc(t, e) for u, t, e in pares})
+_rem = [(e, t) for u, t, e in pares if _so_cap[(u, e)] - marc(t, e)]
 check(not _rem, f"[41] REMOVED MARKERS = 0 no corpus inteiro ({len(_rem)})")
-check(all(truncado(t, e) <= marc(t, e) for _u, t, e in pares),
+check(all(_so_cap[(u, e)] <= marc(t, e) for u, t, e in pares),
       "[42] AFTER ⊇ BEFORE em todos os pares — a propriedade que define a onda")
-_add = [(e, t) for _u, t, e in pares if marc(t, e) - truncado(t, e)]
-check(len(_add) == 50, f"[43] 50 pares ganharam marcador ({len(_add)})")
+_add = [(e, t) for u, t, e in pares if marc(t, e) - _so_cap[(u, e)]]
+check(len(_add) == 49, f"[43] 49 pares ganham marcador com o cap removido ({len(_add)})")
 _card = [len(marc(t, e)) for _u, t, e in pares]
-check(max(_card) == 11, f"[44] cardinalidade máxima observada = 11 ({max(_card)}) — "
+check(max(_card) == 10, f"[44] cardinalidade máxima observada = 10 ({max(_card)}) — "
                         "registrada, não limitada")
 check(sum(1 for c in _card if c == 0) == 13,
       "[45] artigos sem marcador algum continuam 13 — a mudança não cria nem "
@@ -272,18 +308,30 @@ check(len(_sf_antes) == 2,
       f"[50] com o cap restaurado voltam 2 ocorrências ({len(_sf_antes)}) — "
       "a checagem [48] não é vácua")
 
-_janelas = {}
+# O score decai com o tempo; travar valor absoluto faz a suíte apodrecer sozinha
+# (aconteceu: 36 virou 35 sem nenhuma mudança de código). O que a onda precisa
+# provar é INVARIÂNCIA — a correção de ocorrência não move score.
+_rot = 51
 for w in (30, 90, 365):
     d = [x for x in rd.build_evolution(H, cfg, w) if x["company"] == "Smart Fit"]
-    _janelas[w] = (d[0]["total_score"], d[0]["status"]) if d else None
-check(_janelas[30] == (34, "monitorar"), f"[51] Smart Fit 30d: 34/monitorar ({_janelas[30]})")
-check(_janelas[90] == (34, "monitorar"), f"[52] Smart Fit 90d: 34/monitorar ({_janelas[90]})")
-check(_janelas[365] == (36, "atencao"), f"[53] Smart Fit 365d: 36/atenção ({_janelas[365]})")
+    a = com_cap(lambda w=w: [x for x in rd.build_evolution(H, cfg, w)
+                             if x["company"] == "Smart Fit"])
+    _dep = (d[0]["total_score"], d[0]["status"]) if d else None
+    _ant = (a[0]["total_score"], a[0]["status"]) if a else None
+    check(_dep == _ant,
+          f"[{_rot}] Smart Fit {w}d: score/status idênticos com e sem o cap "
+          f"({_ant} -> {_dep})")
+    _rot += 1
 _ma365 = [b["contrib"] for b in
           [x for x in rd.build_evolution(H, cfg, 365) if x["company"] == "Smart Fit"][0]
           ["breakdown"] if b["label"] == "M&A"]
-check(len(_ma365) == 1,
-      f"[54] e o painel passa a mostrar UMA linha de M&A, não duas ({_ma365})")
+_ma365_antes = com_cap(lambda: [b["contrib"] for b in
+                                [x for x in rd.build_evolution(H, cfg, 365)
+                                 if x["company"] == "Smart Fit"][0]["breakdown"]
+                                if b["label"] == "M&A"])
+check(len(_ma365) == 1 and len(_ma365_antes) == 2,
+      f"[54] e o painel mostra UMA linha de M&A, não duas "
+      f"({_ma365_antes} -> {_ma365})")
 
 print()
 print("=" * 98)
@@ -326,23 +374,22 @@ print("§32/§34/§35/§36 BLAST — OCORRÊNCIAS, SCORE, CRÍTICOS, FAMÍLIA CR
 print("=" * 98)
 _emps = sorted({e for _u, _t, e in pares})
 _tot = sum(len(ocorrencias(e)) for e in _emps)
-check(_tot == 63, f"[{_n}] total de ocorrências M&A no corpus = 63 ({_tot})")
+check(_tot == 64, f"[{_n}] total de ocorrências M&A no corpus = 64 ({_tot})")
 _n += 1
-try:
-    rd._marcadores_operacao = lambda t, e, a: "|".join(
-        sorted({m for m in _orig(t, e, a).split("|") if m})[:2])
-    _tot_antes = sum(len(ocorrencias(e)) for e in _emps)
-    _mud = [e for e in _emps if len(ocorrencias(e)) != 0]
-    _antes_por_emp = {e: len(ocorrencias(e)) for e in _emps}
-finally:
-    rd._marcadores_operacao = _orig
+# Contrafactual medido sobre o vocabulário de HOJE: quantos falsos splits a
+# ausência do cap impede agora. É afirmação mais forte que a original (uma
+# empresa) e continua válida conforme o vocabulário evolui.
+_antes_por_emp = com_cap(lambda: {e: len(ocorrencias(e)) for e in _emps})
+_tot_antes = sum(_antes_por_emp.values())
 _depois_por_emp = {e: len(ocorrencias(e)) for e in _emps}
 _diff = {e: (_antes_por_emp[e], _depois_por_emp[e]) for e in _emps
          if _antes_por_emp[e] != _depois_por_emp[e]}
-check(_tot_antes == 64, f"[{_n}] eram 64 antes ({_tot_antes})")
+check(_tot_antes == 67, f"[{_n}] com o cap de volta seriam 67 ({_tot_antes})")
 _n += 1
-check(_diff == {"Smart Fit": (2, 1)},
-      f"[{_n}] EXATAMENTE uma empresa mudou, e é a Smart Fit ({_diff})")
+check(set(_diff) == {"Smart Fit", "British American Tobacco", "Halliburton"}
+      and _diff["Smart Fit"] == (2, 1),
+      f"[{_n}] o cap causaria 3 falsos splits hoje, entre eles o da Smart Fit "
+      f"({_diff})")
 _n += 1
 
 _ev = {x["company"]: x for x in rd.build_evolution(H, cfg, 365)}
@@ -358,19 +405,22 @@ check(len(_tk) == 1,
       f"[{_n}] Tok&Stok: os 2 artigos de RJ seguem em UMA ocorrência ({len(_tk)}) — "
       "o dano que a guarda de interseção causaria não foi introduzido (§8/§36)")
 _n += 1
-check((_ev["Tok&Stok"]["total_score"], _ev["Tok&Stok"]["status"]) == (47, "critico"),
-      f"[{_n}] Tok&Stok segue em 47/crítico "
-      f"({_ev['Tok&Stok']['total_score']}/{_ev['Tok&Stok']['status']})")
+_ev_antes = com_cap(lambda: {x["company"]: x
+                             for x in rd.build_evolution(H, cfg, 365)})
+check((_ev["Tok&Stok"]["total_score"], _ev["Tok&Stok"]["status"])
+      == (_ev_antes["Tok&Stok"]["total_score"], _ev_antes["Tok&Stok"]["status"])
+      and _ev["Tok&Stok"]["status"] == "critico",
+      f"[{_n}] Tok&Stok: score e status idênticos com e sem o cap, e segue "
+      f"crítico ({_ev_antes['Tok&Stok']['total_score']} -> "
+      f"{_ev['Tok&Stok']['total_score']})")
 _n += 1
-for emp, esperado in (("BRF", (6, "monitorar")), ("Samarco Mineração", None)):
-    v = _ev.get(emp)
-    if esperado:
-        check((v["total_score"], v["status"]) == esperado,
-              f"[{_n}] {emp} preservado em {esperado[0]}/{esperado[1]} "
-              f"({v['total_score']}/{v['status']})")
-    else:
-        check(v["status"] == "monitorar",
-              f"[{_n}] {emp} preservado em `monitorar` ({v['status']})")
+for emp in ("BRF", "Samarco Mineração"):
+    check((_ev[emp]["total_score"], _ev[emp]["status"])
+          == (_ev_antes[emp]["total_score"], _ev_antes[emp]["status"])
+          and _ev[emp]["status"] == "monitorar",
+          f"[{_n}] {emp} preservado, e inalterado pelo cap "
+          f"({_ev_antes[emp]['total_score']} -> {_ev[emp]['total_score']}, "
+          f"{_ev[emp]['status']})")
     _n += 1
 
 print()
