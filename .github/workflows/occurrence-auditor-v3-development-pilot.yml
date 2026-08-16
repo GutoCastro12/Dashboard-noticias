@@ -1,0 +1,154 @@
+name: Occurrence Auditor V3 — development pilot
+
+# Terceira e primeira medição limpa do auditor de novidade de ocorrência.
+#
+# V1 mediu capacidade sob parser quebrado. V2 mediu capacidade sob few-shot sem
+# contraste. Nenhuma das duas mediu capacidade. A V3 separa pertinência de
+# novidade, trata a verdade de pertinência como conjunto de rótulos aceitáveis e
+# exige superar o baseline trivial (ALWAYS_CANDIDATE_1 = 14/17).
+#
+# Workflow SEPARADO dos de V1 e V2, não uma edição deles. Editar qualquer um
+# apagaria o arranjo que produziu resultados já publicados.
+#
+# Não commita nada. Não toca `risk_history.json`, `index.html`, verdade humana
+# nem `config_risco.yaml`. `contents: read` faz disso restrição, não intenção.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  # Duas execuções simultâneas produziriam dois "primeiros resultados" para o
+  # mesmo par modelo×alvo, e o primeiro é o único que vale.
+  group: occurrence-auditor-v3-pilot
+  cancel-in-progress: false
+
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # `google-generativeai` está COMENTADO no requirements.txt; o cron
+      # principal o instala na linha de comando. Instalar só o requirements
+      # deixa o SDK de fora e a execução morre na importação — foi o que
+      # aconteceu no run 31967786427 da V1.
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt google-generativeai
+
+      # Os portões rodam AQUI, não só na máquina de quem preparou. As três
+      # versões são verificadas: se a V3 tivesse alterado V1 ou V2, as
+      # comparações históricas perderiam sentido.
+      - name: Verify frozen V3 (and that V1/V2 are untouched) before the secret
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python - <<'PY'
+          import io, json, sys
+          import reliability_occurrence_auditor_freeze as v1
+          import reliability_occurrence_auditor_freeze_v2 as v2
+          import reliability_occurrence_auditor_freeze_v3 as v3
+          import reliability_occurrence_auditor_input as ai
+          import reliability_occurrence_truth as ot
+          D = json.load(io.open("risk_semantic_v2_shadow.json", encoding="utf-8"))
+          for nome, mod in (("V1", v1), ("V2", v2), ("V3", v3)):
+              div = mod.verificar_congelamento(D)
+              if div:
+                  print(f"CONGELAMENTO {nome} VIOLADO:", div)
+                  sys.exit(1)
+          EX = v3.exemplos_congelados(D)
+          for emp, ex in EX.items():
+              p = v3.validar_saida(ex["expected_output"], ex["candidate_labels"])
+              if p:
+                  print(f"EXEMPLO INVALIDO ({emp}):", p)
+                  sys.exit(1)
+          # Contraste POR FOLD. Verificar só o conjunto global não teria
+          # detectado o colapso da V2.
+          for f in v3.folds(D):
+              perm = {k: EX[k] for k in v3.exemplos_do_fold(f["company"])
+                      if k in EX}
+              d = v3.diversidade(perm)
+              if not d["ok"]:
+                  print(f"FOLD SEM CONTRASTE ({f['company']}):", d)
+                  sys.exit(1)
+          alvos = v3.alvos_com_verdade(D)
+          ids = set(ot.ocorrencias(D))
+          vaz = same = 0
+          for a in alvos:
+              p = v3.montar_prompt(a["exemplos_permitidos"], a["pacote"], EX)
+              if ai.vazamentos({"prompt_payload": p["target"]}):
+                  vaz += 1
+              if any(i in json.dumps(p["target"], ensure_ascii=False)
+                     for i in ids):
+                  vaz += 1
+              if a["company"] in json.dumps(p["examples"], ensure_ascii=False):
+                  same += 1
+          bl = v3.baselines_triviais(D)
+          print(f"alvos={len(alvos)} vazamento={vaz} mesma-empresa={same} "
+                f"baseline={bl['_strongest']}={bl['_strongest_correct']} "
+                f"exigido={bl['_required_to_beat']} minoria={bl['_minority_n']}")
+          if (len(alvos) != 17 or vaz or same
+                  or bl["_strongest_correct"] != 14
+                  or bl["_required_to_beat"] != 15
+                  or bl["_minority_n"] != 3):
+              sys.exit(1)
+          print("V3 íntegro, V1/V2 intactas, 17 alvos, vazamento zero, "
+                "contraste em todos os folds")
+          PY
+
+      - name: Pre-call test gate
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          set -e
+          for t in test_wave_occurrence_auditor_freeze_v3.py \
+                   test_wave_occurrence_auditor_pilot_v3.py \
+                   test_wave_occurrence_auditor_freeze_v2.py \
+                   test_wave_occurrence_auditor_freeze.py \
+                   test_wave_occurrence_auditor_results.py \
+                   test_wave_occurrence_auditor_results_v2.py \
+                   test_wave_occurrence_auditor_input.py \
+                   test_wave_occurrence_auditor_pilot.py \
+                   test_wave_occurrence_truth_live.py \
+                   test_wave_occurrence_truth.py \
+                   test_wave_ceo_duplicate_detector.py; do
+            echo "--- $t"
+            python "$t" | tail -2
+          done
+
+      # A partir daqui o secret entra em cena. Passa pelo ambiente e nunca é
+      # impresso, medido, fatiado ou hasheado.
+      - name: Run frozen 17×2 development benchmark (V3)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PYTHONIOENCODING: utf-8
+          RISK_AUDITOR_PACING_S: '8'
+          GITHUB_SHA: ${{ github.sha }}
+        run: |
+          python reliability_occurrence_auditor_pilot_v3.py \
+            --out out_auditor_pilot_v3/dev_results.jsonl \
+            --manifest-out out_auditor_pilot_v3/execution_manifest.json \
+            --score-out out_auditor_pilot_v3/dev_score.json
+
+      # `always()` porque um benchmark interrompido no meio ainda produziu
+      # primeiras respostas imutáveis, e perdê-las obrigaria a gastar cota de
+      # novo para reproduzi-las.
+      - name: Upload development artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: occurrence-auditor-v3-dev-results
+          path: out_auditor_pilot_v3/
+          if-no-files-found: warn
+          retention-days: 30
