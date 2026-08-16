@@ -1,0 +1,54 @@
+{
+ "attempted_calls": 34,
+ "call_order": "target asc; G1 then G2",
+ "config": {
+  "circuit_breaker_consecutive_infra_failures": 3,
+  "fallback": 0,
+  "max_output_tokens": 1600,
+  "models": {
+   "G1": "gemini-3.1-flash-lite",
+   "G2": "gemini-3.5-flash-lite"
+  },
+  "pacing_s": 8.0,
+  "retry": 0,
+  "structured_output": "response_mime_type=application/json + response_schema",
+  "temperature": 0.0,
+  "timeout_s": 90
+ },
+ "dataset_role": "DEVELOPMENT",
+ "finished_at_iso": "2026-08-16T19:43:02Z",
+ "freeze_hashes": {
+  "dev_manifest_hash": "82cda660cdece064",
+  "evaluator_hash": "6c6511f94306f7cc",
+  "example_outputs_hash": "fe90648e7749282e",
+  "example_set_hash": "83f8233d21881caf",
+  "freeze_manifest_hash": "cfb16c04bddd7e5d",
+  "input_hash": "e9d33218fd811d13",
+  "output_hash": "6de8d0e452552de3",
+  "prompt_hash": "bff1ae906e67963f"
+ },
+ "freeze_version": "occurrence.auditor.freeze.v1",
+ "git_sha": "a0b5959eebeb2eeb5cafdd48dfa5bcfc4d57ab3e",
+ "pilot_version": "occurrence.auditor.dev.results.v1",
+ "planned_calls": 34,
+ "por_modelo": {
+  "gemini-3.1-flash-lite": {
+   "attempted": 17,
+   "breaker_tripped": null,
+   "model_failure": 0,
+   "parse_failure": 3,
+   "raw_ok": 14,
+   "skipped_breaker": 0
+  },
+  "gemini-3.5-flash-lite": {
+   "attempted": 17,
+   "breaker_tripped": null,
+   "model_failure": 0,
+   "parse_failure": 6,
+   "raw_ok": 11,
+   "skipped_breaker": 0
+  }
+ },
+ "production_authority": "NONE",
+ "started_at_iso": "2026-08-16T19:36:13Z"
+}
