@@ -38,10 +38,15 @@ jobs:
         with:
           python-version: '3.11'
 
+      # `google-generativeai` está COMENTADO no requirements.txt e o cron
+      # principal o instala explicitamente na linha de comando. Repetir a mesma
+      # convenção aqui; instalar só o requirements deixa o SDK de fora, e a
+      # execução morre na importação — foi o que aconteceu no run 31967786427.
+      # `playwright` não entra: este job não renderiza nada.
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r requirements.txt google-generativeai
 
       # Os portões rodam AQUI também, e não só na máquina de quem preparou.
       # Verificar o congelamento apenas localmente deixaria passar exatamente o
