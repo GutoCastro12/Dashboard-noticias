@@ -1,0 +1,82 @@
+{
+ "dataset_role": "DEVELOPMENT",
+ "degeneracy_evidence": {
+  "NO_CANDIDATE_used": 0,
+  "of_total": 34,
+  "on_multi_candidate_targets": "18/18",
+  "selected_candidate_CANDIDATE_1": 34
+ },
+ "degenerate_constant_predictor": true,
+ "freeze_hashes": {
+  "dev_manifest_hash": "82cda660cdece064",
+  "evaluator_hash": "b24da8c74ede6504",
+  "example_outputs_hash": "7e5c7a0edc47f921",
+  "example_set_hash": "6b05974f265ffaff",
+  "freeze_manifest_hash": "62f037f52dbbcf65",
+  "input_hash": "e9d33218fd811d13",
+  "output_hash": "58c974d167b819c5",
+  "prompt_hash": "f1baf77e20d54cc5"
+ },
+ "freeze_version": "occurrence.auditor.freeze.v2",
+ "git_sha": "92493ee1de28979d31ee2ea6a0aa62977b098b90",
+ "is_holdout": false,
+ "is_prospective": false,
+ "operating_mode": "POST_BUILD_OCCURRENCE_ANOMALY_AUDITOR",
+ "por_modelo": {
+  "gemini-3.1-flash-lite": {
+   "anchor_avaliaveis": 2,
+   "anchor_exact": 2,
+   "evaluator_version": "occurrence.auditor.eval.v1",
+   "false_merge": 2,
+   "false_split": 0,
+   "high_impact_error": 2,
+   "linkage_correct": 14,
+   "material_phase_avaliaveis": 17,
+   "material_phase_correct": 12,
+   "mixed_candidate_link": 0,
+   "n_abstencoes": 0,
+   "n_avaliados": 17,
+   "n_falhas_de_modelo": 0,
+   "n_total": 17,
+   "novelty_avaliaveis": 11,
+   "novelty_correct": 11,
+   "novelty_inexpressivel": 6,
+   "sanidade": {
+    "clean_linkage_accuracy": 0.824,
+    "development_sane": false,
+    "false_merge": 2,
+    "hapvida_false_merge": 2,
+    "parse_success": 1.0
+   }
+  },
+  "gemini-3.5-flash-lite": {
+   "anchor_avaliaveis": 2,
+   "anchor_exact": 1,
+   "evaluator_version": "occurrence.auditor.eval.v1",
+   "false_merge": 2,
+   "false_split": 0,
+   "high_impact_error": 2,
+   "linkage_correct": 13,
+   "material_phase_avaliaveis": 16,
+   "material_phase_correct": 14,
+   "mixed_candidate_link": 0,
+   "n_abstencoes": 0,
+   "n_avaliados": 16,
+   "n_falhas_de_modelo": 1,
+   "n_total": 17,
+   "novelty_avaliaveis": 11,
+   "novelty_correct": 11,
+   "novelty_inexpressivel": 5,
+   "sanidade": {
+    "clean_linkage_accuracy": 0.812,
+    "development_sane": false,
+    "false_merge": 2,
+    "hapvida_false_merge": 2,
+    "parse_success": 0.941
+   }
+  }
+ },
+ "production_authority": "NONE",
+ "results_version": "occurrence.auditor.v2.dev.results.v1",
+ "run_id": 31972141148
+}
