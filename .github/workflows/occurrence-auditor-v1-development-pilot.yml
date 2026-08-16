@@ -1,0 +1,121 @@
+name: Occurrence Auditor V1 — development pilot
+
+# Benchmark de DESENVOLVIMENTO do auditor de novidade de ocorrência.
+#
+# Separado do cron do painel de propósito: ele gasta cota de LLM, e um
+# experimento que dispara sozinho junto da publicação diária acabaria rodando
+# sem ninguém decidir que era hora. Só `workflow_dispatch`.
+#
+# Não commita nada. Não toca `risk_history.json`, `index.html`, verdade humana
+# nem `config_risco.yaml`. Os resultados saem como artefato do Actions, e a
+# decisão de incorporá-los é de quem baixa.
+#
+# `contents: read` — o job não tem permissão para escrever no repositório, o
+# que torna a promessa acima uma restrição e não uma intenção.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  # Duas execuções simultâneas gastariam cota em cima do mesmo experimento e
+  # produziriam dois "primeiros resultados" para o mesmo par modelo×alvo.
+  group: occurrence-auditor-v1-pilot
+  cancel-in-progress: false
+
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Os portões rodam AQUI também, e não só na máquina de quem preparou.
+      # Verificar o congelamento apenas localmente deixaria passar exatamente o
+      # caso que importa: o ambiente credenciado executando um artefato
+      # diferente do que foi conferido.
+      - name: Verify frozen V1 before touching the secret
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python - <<'PY'
+          import io, json, sys
+          import reliability_occurrence_auditor_freeze as fz
+          import reliability_occurrence_auditor_input as ai
+          import reliability_occurrence_truth as ot
+          D = json.load(io.open("risk_semantic_v2_shadow.json", encoding="utf-8"))
+          div = fz.verificar_congelamento(D)
+          if div:
+              print("CONGELAMENTO VIOLADO:", div)
+              sys.exit(1)
+          fs = fz.folds(D); EX = fz.exemplos_congelados(D)
+          alvos = [(f, a) for f in fs for a in f["alvos_elegiveis"]]
+          ids = set(ot.ocorrencias(D))
+          vaz = same = 0
+          for f, a in alvos:
+              p = fz.montar_prompt(f["exemplos_permitidos"], a["pacote"], EX)
+              if ai.vazamentos({"prompt_payload": p["target"]}):
+                  vaz += 1
+              if any(i in json.dumps(p["target"], ensure_ascii=False) for i in ids):
+                  vaz += 1
+              if f["company"] in json.dumps(p["examples"], ensure_ascii=False):
+                  same += 1
+          print(f"alvos={len(alvos)} vazamento={vaz} mesma-empresa={same}")
+          if len(alvos) != 17 or vaz or same:
+              sys.exit(1)
+          print("congelamento íntegro, 17 alvos, vazamento zero")
+          PY
+
+      - name: Pre-call test gate
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          set -e
+          for t in test_wave_occurrence_auditor_freeze.py \
+                   test_wave_occurrence_auditor_input.py \
+                   test_wave_occurrence_auditor_pilot.py \
+                   test_wave_occurrence_truth_live.py \
+                   test_wave_occurrence_truth.py \
+                   test_wave_ceo_duplicate_detector.py; do
+            echo "--- $t"
+            python "$t" | tail -2
+          done
+
+      # A partir daqui o secret entra em cena. Ele é passado ao processo pelo
+      # ambiente e nunca impresso, medido ou fatiado.
+      - name: Run frozen 17×2 development benchmark
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PYTHONIOENCODING: utf-8
+          RISK_AUDITOR_PACING_S: '8'
+          GITHUB_SHA: ${{ github.sha }}
+        run: |
+          python reliability_occurrence_auditor_pilot.py \
+            --out out_auditor_pilot/dev_results.jsonl \
+            --manifest-out out_auditor_pilot/execution_manifest.json \
+            --score-out out_auditor_pilot/dev_score.json
+
+      # `always()` porque um benchmark interrompido no meio ainda produziu
+      # primeiras respostas imutáveis, e perdê-las obrigaria a gastar cota de
+      # novo — o que o §52 proíbe.
+      - name: Upload development artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: occurrence-auditor-v1-dev-results
+          path: out_auditor_pilot/
+          if-no-files-found: warn
+          retention-days: 30
