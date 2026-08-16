@@ -144,6 +144,23 @@ jobs:
         run: |
           python semantic_v2_shadow_run.py
 
+      # Triagem de ocorrências de `troca_ceo` que parecem a MESMA transição
+      # contada duas vezes. Existe porque a duplicata do Santander ficou dois
+      # meses no ar e só foi descoberta porque alguém olhou o painel — enquanto
+      # a inspeção manual for o mecanismo de segurança, toda duplicata custa o
+      # tempo de uma pessoa e fica em produção até ser notada.
+      # Roda DEPOIS do dashboard e é SOMENTE AVISO: não funde ocorrência, não
+      # toca score, âncora, histórico nem classificação. `continue-on-error`
+      # porque falha de formatação de relatório jamais pode impedir a
+      # publicação do risco — o aviso é acessório, o painel não é.
+      - name: CEO duplicate suspects (warning only)
+        continue-on-error: true
+        timeout-minutes: 3
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          python reliability_ceo_duplicate_detector.py --step-summary
+
       # Histórico persistido via commit no repositório — não via actions/cache,
       # que evicta entradas não acessadas há 7 dias e tem limite de 10GB/repo.
       - name: Commit history + dashboard

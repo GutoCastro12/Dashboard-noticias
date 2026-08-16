@@ -281,16 +281,31 @@ _n += 1
 _ev = {x["company"]: x for x in rd.build_evolution(H, cfg, 365)}
 _ev_antes = sem_o_filtro(lambda: {x["company"]: x
                                   for x in rd.build_evolution(H, cfg, 365)})
+# O efeito da correção é a transação restaurada aparecer como ocorrência
+# própria. Se ela move ou não o TOTAL arredondado depende do decaimento, e
+# portanto do dia em que o teste roda: quando a onda publicou, a EQT ia de 14
+# para 15; meses depois a ocorrência antiga decaiu e 14,0 + 0,5 arredonda para
+# o mesmo 14. Travar o delta seria gravar o calendário como se fosse semântica.
+# O invariante durável é a LINHA a mais no painel.
+_ma_dep = [b["contrib"] for b in _ev["EQT Corporation"]["breakdown"]
+           if b["label"] == "M&A"]
+_ma_ant = sem_o_filtro(lambda: [b["contrib"] for b in
+                                [x for x in rd.build_evolution(H, cfg, 365)
+                                 if x["company"] == "EQT Corporation"][0]["breakdown"]
+                                if b["label"] == "M&A"])
+check(len(_ma_ant) == 1 and len(_ma_dep) == 2,
+      f"[{_n}] a EQT passa a mostrar DUAS linhas de M&A, não uma "
+      f"({_ma_ant} -> {_ma_dep})")
+_n += 1
+check(_ev["EQT Corporation"]["total_score"] >= _ev_antes["EQT Corporation"]["total_score"],
+      f"[{_n}] e o score nunca cai ao restaurar uma transação oculta "
+      f"({_ev_antes['EQT Corporation']['total_score']} -> "
+      f"{_ev['EQT Corporation']['total_score']})")
+_n += 1
 _sc = sorted(c for c in _ev if c in _ev_antes
              and _ev[c]["total_score"] != _ev_antes[c]["total_score"])
-check(_sc == ["EQT Corporation"],
-      f"[{_n}] só a EQT muda de score ({_sc})")
-_n += 1
-check((_ev_antes["EQT Corporation"]["total_score"],
-       _ev["EQT Corporation"]["total_score"]) == (14, 15),
-      f"[{_n}] EQT 14 → 15 — aumento correto por restaurar transação oculta "
-      f"({_ev_antes['EQT Corporation']['total_score']} → "
-      f"{_ev['EQT Corporation']['total_score']})")
+check(_sc in ([], ["EQT Corporation"]),
+      f"[{_n}] nenhuma outra empresa muda de score ({_sc})")
 _n += 1
 check(_ev["EQT Corporation"]["status"] == _ev_antes["EQT Corporation"]["status"] == "monitorar",
       f"[{_n}] e o status não muda (monitorar)")
