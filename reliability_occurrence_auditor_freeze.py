@@ -58,6 +58,48 @@ EVALUATOR_VERSION = "occurrence.auditor.eval.v1"
 
 MODO_DE_OPERACAO = "POST_BUILD_OCCURRENCE_ANOMALY_AUDITOR"
 
+# Hashes canônicos da V1, do artefato publicado em `b1a9902`.
+#
+# POR QUE ISTO PRECISOU EXISTIR
+#
+# O congelamento foi publicado sem que ninguém afirmasse os valores. O teste
+# checava `len(hash) == 16` — confirmava que o hash EXISTE, nunca que ele É o
+# publicado. Resultado: editei `avaliar_v1` depois de imprimir o relatório, a
+# suíte seguiu verde, e o checkpoint registrou dois hashes obsoletos. Um
+# congelamento cujos hashes não são afirmados não está congelado; ele pegaria a
+# troca de um arquivo, mas não pegou a minha própria edição — que é justamente o
+# caso contra o qual ele existe.
+#
+# Estes são LITERAIS. Escrevê-los como `esperado = calcular_agora()` provaria
+# nada: passaria depois de qualquer alteração. A verificação só tem valor
+# porque o número está fixo aqui e falha quando o conteúdo muda sem trocar de
+# versão. Mudança legítima exige `freeze.v2`.
+#
+# Não houve deriva de artefato: cada componente entrou em UM commit e nenhum
+# mudou depois. O que se corrige aqui é o registro, não a V1.
+HASHES_V1 = {
+    "input_hash": "e9d33218fd811d13",
+    "output_hash": "6de8d0e452552de3",
+    "prompt_hash": "bff1ae906e67963f",
+    "example_set_hash": "83f8233d21881caf",
+    "example_outputs_hash": "fe90648e7749282e",
+    "dev_manifest_hash": "82cda660cdece064",
+    "evaluator_hash": "6c6511f94306f7cc",
+    "freeze_manifest_hash": "cfb16c04bddd7e5d",
+}
+
+
+def verificar_congelamento(dados: dict, historico="risk_history.json",
+                           config="config_risco.yaml") -> list:
+    """Divergências entre o artefato de hoje e a V1 canônica.
+
+    Lista vazia = íntegro. Qualquer item significa que um componente congelado
+    mudou sem trocar de versão, e nenhuma chamada de modelo deve acontecer:
+    medir contra um experimento alterado não é medir."""
+    m = manifesto(dados, historico=historico, config=config)
+    return sorted((k, HASHES_V1[k], m.get(k))
+                  for k in HASHES_V1 if m.get(k) != HASHES_V1[k])
+
 # §8/§11/§12/§13 — enums fechados. Novidade vem do Contract V2 por importação.
 OUT_NOVELTY = v2.OCCURRENCE_NOVELTY
 OUT_PHASE = ot.MATERIAL_PHASE

@@ -63,11 +63,39 @@ print("§6/§64 MANIFESTO DO CONGELAMENTO")
 print("=" * 98)
 check(fz.FREEZE_VERSION == "occurrence.auditor.freeze.v1",
       f"[1] versão do congelamento ({fz.FREEZE_VERSION})")
+# Checar `len(hash) == 16` confirma que o hash EXISTE, nunca que ele É o
+# publicado. Foi por isso que a suíte ficou verde depois de eu editar
+# `avaliar_v1` e o checkpoint registrar um hash obsoleto: a asserção não tinha
+# como falhar. Agora cada valor é comparado ao literal canônico da V1, e a
+# checagem de formato fica como secundária.
 _n = 2
 for k in ("input_hash", "output_hash", "prompt_hash", "example_set_hash",
-          "dev_manifest_hash", "evaluator_hash", "freeze_manifest_hash"):
-    check(len(MAN[k]) == 16, f"[{_n}] `{k}` presente e fixo ({MAN[k]})")
+          "example_outputs_hash", "dev_manifest_hash", "evaluator_hash",
+          "freeze_manifest_hash"):
+    check(MAN[k] == fz.HASHES_V1[k],
+          f"[{_n}] `{k}` == `{fz.HASHES_V1[k]}` ({MAN[k]})")
     _n += 1
+check(all(len(v) == 16 for v in fz.HASHES_V1.values()),
+      f"[{_n}] e todos têm o formato esperado")
+_n += 1
+check(fz.verificar_congelamento(D) == [],
+      f"[{_n}] a verificação do módulo confirma integridade "
+      f"({fz.verificar_congelamento(D) or 'sem divergência'})")
+_n += 1
+_lit = io.open("reliability_occurrence_auditor_freeze.py", encoding="utf-8").read()
+_bloco = _lit.split("HASHES_V1 = {")[1].split("}")[0]
+check('"' in _bloco and "_hash(" not in _bloco and "manifesto(" not in _bloco,
+      f"[{_n}] §11 os esperados são LITERAIS, não recalculados — "
+      "`esperado = calcular_agora()` passaria depois de qualquer alteração")
+_n += 1
+check(set(fz.HASHES_V1) <= set(MAN),
+      f"[{_n}] §9 e todo hash fixado existe no manifesto")
+_n += 1
+_amarrados = {k for k in MAN if k.endswith("_hash") and k != "freeze_manifest_hash"}
+check(_amarrados <= set(fz.HASHES_V1),
+      f"[{_n}] §36 o manifesto não tem hash de componente fora do conjunto "
+      f"fixado ({sorted(_amarrados - set(fz.HASHES_V1)) or 'nenhum'})")
+_n += 1
 check(MAN["freeze_version"] != v2.__name__ and "v2" not in fz.FREEZE_VERSION,
       f"[{_n}] §6 o congelamento é identificador PRÓPRIO, separado do Contract V2")
 _n += 1
@@ -465,6 +493,64 @@ fz.folds(D); fz.manifesto(D)
 _depois = json.dumps(json.load(io.open("risk_semantic_v2_shadow.json", encoding="utf-8")),
                      sort_keys=True)
 check(_antes == _depois, f"[{_n}] e rodar o arnês não altera o store")
+_n += 1
+
+print()
+print("=" * 98)
+print("§8/§10 O TESTE DO TESTE — MUTAÇÃO TEM DE FALHAR")
+print("=" * 98)
+# Nenhum arquivo real é tocado: as constantes do módulo são trocadas em memória
+# e restauradas. Sem isto, a fixação de hash seria mais uma asserção que nunca
+# falha — exatamente o defeito que ela veio corrigir.
+_orig_prompt = fz.PROMPT_V1
+try:
+    fz.PROMPT_V1 = _orig_prompt + "\ninstrução extra"
+    _mut = fz.manifesto(D)
+    check(_mut["prompt_hash"] != fz.HASHES_V1["prompt_hash"],
+          f"[{_n}] §33 alterar UM byte do prompt muda `prompt_hash`")
+    _n += 1
+    check(_mut["freeze_manifest_hash"] != fz.HASHES_V1["freeze_manifest_hash"],
+          f"[{_n}] e o `freeze_manifest_hash` muda junto — ele amarra o prompt")
+    _n += 1
+    check(len(fz.verificar_congelamento(D)) >= 2,
+          f"[{_n}] a verificação acusa a divergência")
+    _n += 1
+finally:
+    fz.PROMPT_V1 = _orig_prompt
+check(fz.verificar_congelamento(D) == [],
+      f"[{_n}] e volta a íntegro quando a mutação é desfeita")
+_n += 1
+
+_orig_ex = fz.DEFAULT_CURATED_SET
+try:
+    fz.DEFAULT_CURATED_SET = ("Santander Brasil", "Hapvida")
+    _mut = fz.manifesto(D)
+    check(_mut["example_set_hash"] != fz.HASHES_V1["example_set_hash"]
+          and _mut["freeze_manifest_hash"] != fz.HASHES_V1["freeze_manifest_hash"],
+          f"[{_n}] trocar o conjunto de exemplos muda o hash dos exemplos E o "
+          "do manifesto")
+    _n += 1
+finally:
+    fz.DEFAULT_CURATED_SET = _orig_ex
+
+_orig_src = io.open("reliability_occurrence_auditor_freeze.py", encoding="utf-8").read()
+_falso = _orig_src.replace('r["high_impact_error"] = bool(r["false_merge"])',
+                           'r["high_impact_error"] = False')
+check(_falso != _orig_src, f"[{_n}] §34 (preparação) a lógica do avaliador é localizável")
+_n += 1
+import hashlib as _hl
+_trecho_orig = _orig_src.split("def avaliar_v1")[1].split("def agregar")[0]
+_trecho_mut = _falso.split("def avaliar_v1")[1].split("def agregar")[0]
+check(_hl.sha256(_trecho_mut.encode()).hexdigest()[:16] != fz.HASHES_V1["evaluator_hash"],
+      f"[{_n}] §34 e alterar a lógica do avaliador muda `evaluator_hash`")
+_n += 1
+check(_hl.sha256(_trecho_orig.encode()).hexdigest()[:16] == fz.HASHES_V1["evaluator_hash"],
+      f"[{_n}] §35 enquanto o trecho real bate com o literal canônico")
+_n += 1
+check(fz.FREEZE_VERSION == "occurrence.auditor.freeze.v1"
+      and fz.verificar_congelamento(D) == [],
+      f"[{_n}] §10 invariante em código: se a versão é `v1`, os hashes têm de "
+      "ser estes. Mudança legítima exige versão nova.")
 _n += 1
 
 print()
