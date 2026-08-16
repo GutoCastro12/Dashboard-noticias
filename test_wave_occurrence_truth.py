@@ -159,7 +159,9 @@ print()
 print("=" * 98)
 print("§31 FIXTURE TUPY — âncora é UNKNOWN onde ninguém adjudicou")
 print("=" * 98)
-TUP = criar(D, "Tupy", "troca_ceo", "2026-03-30",
+# Data do fato VAZIA de propósito, igual à verdade viva: ninguém adjudicou se
+# o fato é a renúncia de março ou a escolha do sucessor em maio.
+TUP = criar(D, "Tupy", "troca_ceo", None,
             {"incoming_person": "harro burmann"})
 membro(D, TUP, "art-tup-0330", "Tupy", "troca_ceo", "NEW_OCCURRENCE", "ANNOUNCEMENT")
 membro(D, TUP, "art-tup-0504", "Tupy", "troca_ceo", "FOLLOW_UP", "APPOINTMENT")
@@ -204,7 +206,9 @@ check(len(ot.membros_de(D, SF)) == 3 and len(ot.ocorrencias(D)) == 4,
 check({m["material_phase"] for m in ot.membros_de(D, SF)}
       == {"ANNOUNCEMENT", "REGULATORY_APPROVAL", "CLOSING"},
       "[29] com fases distintas — prova que o esquema vale fora de CEO")
-BRF = criar(D, "BRF", "ma", "2025-08-05", {"counterparties": ["marfrig"]})
+# Idem: o anúncio da fusão BRF/Marfrig é anterior ao corpus, e nenhuma onda
+# adjudicou uma data para ele.
+BRF = criar(D, "BRF", "ma", None, {"counterparties": ["marfrig"]})
 membro(D, BRF, "art-brf-0918", "BRF", "ma", "FOLLOW_UP", "IMPLEMENTATION")
 check(len(ot.membros_de(D, BRF)) == 1
       and ot.membros_de(D, BRF)[0]["material_phase"] == "IMPLEMENTATION",
