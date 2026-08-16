@@ -302,7 +302,106 @@ def relatorio(res: dict) -> str:
     return "\n".join(L)
 
 
+# ── verdade de OCORRÊNCIA ───────────────────────────────────────────────────
+# Unidade diferente da revisão de artigo, então porta de entrada diferente —
+# mas o mesmo arquivo e o mesmo contrato de segurança: dry-run por padrão,
+# recusa explícita em vez de escrita parcial, nada de sobrescrever em silêncio.
+# Uma função única que fizesse as duas coisas ficaria ambígua sobre o que
+# exatamente está sendo afirmado.
+#
+# O roteamento acontece ANTES do parser existente, e não como subcomando, para
+# que nenhuma invocação atual mude de forma: `--empresa` e `--evento` seguem
+# obrigatórios exatamente onde já eram.
+ACOES_OCORRENCIA = ("occurrence-create", "occurrence-member",
+                    "occurrence-relation", "occurrence-report")
+
+
+def _main_ocorrencia(args: list) -> int:
+    import reliability_occurrence_truth as ot
+    from pathlib import Path
+    acao, resto = args[0], args[1:]
+    p = argparse.ArgumentParser(prog=f"writer {acao}",
+                                description="Verdade humana de OCORRÊNCIA "
+                                            "(dry-run por padrão).")
+    p.add_argument("--sidecar", default=None)
+    p.add_argument("--apply", action="store_true",
+                   help="sem esta flag, nada é escrito")
+    p.add_argument("--empresa", default="")
+    p.add_argument("--evento", default="")
+    p.add_argument("--occurrence-id", default="")
+    p.add_argument("--occurrence-b", default="")
+    p.add_argument("--url", default="")
+    p.add_argument("--artigo-id", default="")
+    p.add_argument("--data-do-fato", default=None,
+                   help="AAAA-MM-DD; ausente quando desconhecida")
+    p.add_argument("--novidade", default="")
+    p.add_argument("--fase", default="UNKNOWN")
+    p.add_argument("--ancora", default="unknown",
+                   choices=("true", "false", "unknown"))
+    p.add_argument("--relacao", default="")
+    p.add_argument("--identidade", default="",
+                   help="JSON com a identidade específica da família")
+    p.add_argument("--evidencia", default="")
+    p.add_argument("--supersedes", default="")
+    p.add_argument("--revisor", default="")
+    p.add_argument("--quando", default="")
+    a = p.parse_args(resto)
+    caminho = Path(a.sidecar) if a.sidecar else None
+    dados = sh.carregar(caminho)
+    antes = json.dumps(dados, ensure_ascii=False, sort_keys=True)
+    try:
+        if acao == "occurrence-report":
+            print(ot.relatorio(dados))
+            return 0
+        if not a.revisor or not a.quando:
+            raise ot.VerdadeRecusada("SEM_PROVENIENCIA: --revisor e --quando "
+                                     "são obrigatórios")
+        if acao == "occurrence-create":
+            oid = ot.criar_ocorrencia(
+                dados, company=a.empresa, event_id=a.evento,
+                material_event_date=a.data_do_fato,
+                family_identity=(json.loads(a.identidade) if a.identidade else None),
+                adjudicated_by=a.revisor, adjudicated_at_iso=a.quando)
+            print(f"ocorrência criada: {oid}")
+        elif acao == "occurrence-member":
+            ancora = {"true": True, "false": False, "unknown": None}[a.ancora]
+            mid = ot.adicionar_membership(
+                dados, occurrence_truth_id=a.occurrence_id,
+                article_ref_=(a.artigo_id or ot.article_ref(a.url)),
+                company=a.empresa, event_id=a.evento,
+                occurrence_novelty=a.novidade, material_phase=a.fase,
+                should_refresh_anchor=ancora, evidence=a.evidencia,
+                adjudicated_by=a.revisor, adjudicated_at_iso=a.quando,
+                supersedes=a.supersedes)
+            print(f"pertinência criada: {mid}")
+        elif acao == "occurrence-relation":
+            ot.adicionar_relacao(
+                dados, occurrence_a=a.occurrence_id, occurrence_b=a.occurrence_b,
+                relation=a.relacao, evidence=a.evidencia,
+                adjudicated_by=a.revisor, adjudicated_at_iso=a.quando)
+            print(f"relação {a.relacao} registrada")
+    except ot.VerdadeRecusada as exc:
+        print(f"RECUSADO: {exc}")
+        return 2
+    probs = ot.validar(dados)
+    if probs:
+        print(f"RECUSADO: STORE_INCONSISTENTE após a operação: {probs}")
+        return 2
+    if not a.apply:
+        print("DRY-RUN — nada foi escrito. Use --apply para persistir.")
+        return 0
+    if json.dumps(dados, ensure_ascii=False, sort_keys=True) == antes:
+        print("nada mudou")
+        return 0
+    sh.gravar(dados, caminho)
+    print("aplicado.")
+    return 0
+
+
 def main(argv=None) -> int:
+    _args = list(__import__("sys").argv[1:] if argv is None else argv)
+    if _args and _args[0] in ACOES_OCORRENCIA:
+        return _main_ocorrencia(_args)
     p = argparse.ArgumentParser(
         description="Grava verdade humana no shadow prospectivo (dry-run por "
                     "padrão).")

@@ -139,8 +139,18 @@ def fundir(base: dict, outro: dict) -> dict:
     porque o dado é intercambiável; aqui a primeira observação é o dado
     prospectivo válido, e sobrescrevê-la destruiria a medição.
     """
-    saida = {"_meta": dict(base.get("_meta") or {}),
-             "observacoes": dict(outro.get("observacoes") or {})}
+    # Namespaces de topo que esta função não conhece são PRESERVADOS. Antes ela
+    # reconstruía o dicionário com `_meta` e `observacoes` e só: qualquer outra
+    # chave do arquivo era descartada em silêncio no primeiro cron. Verdade
+    # humana de ocorrência vive num namespace desses, e teria evaporado sem
+    # nenhum erro, que é a pior forma de perder dado.
+    saida = {k: v for k, v in (base or {}).items()
+             if k not in ("_meta", "observacoes")}
+    for k, v in (outro or {}).items():
+        if k not in ("_meta", "observacoes") and k not in saida:
+            saida[k] = v
+    saida["_meta"] = dict(base.get("_meta") or {})
+    saida["observacoes"] = dict(outro.get("observacoes") or {})
     saida["observacoes"].update(base.get("observacoes") or {})
     for k, v in (outro.get("observacoes") or {}).items():
         if k in (base.get("observacoes") or {}):
