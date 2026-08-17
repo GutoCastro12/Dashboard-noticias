@@ -4667,7 +4667,7 @@
      "domain": "poder360.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:50:52.361933+00:00",
+     "last_checked_at": "2026-08-17T10:51:51.250524+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -7353,7 +7353,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:50:53.162505+00:00",
+     "last_checked_at": "2026-08-17T10:51:52.051053+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -7416,7 +7416,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:50:52.762254+00:00",
+     "last_checked_at": "2026-08-17T10:51:51.650816+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -9183,7 +9183,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:50:54.255003+00:00",
+     "last_checked_at": "2026-08-17T10:51:53.175806+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -9246,7 +9246,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:50:53.703746+00:00",
+     "last_checked_at": "2026-08-17T10:51:52.617154+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -9438,8 +9438,51 @@
     "Smart Fit"
    ],
    "context_companies": [],
-   "corrob_sources": [],
-   "corroborations": [],
+   "corrob_sources": [
+    {
+     "source": "Investidor10",
+     "domain": "investidor10.com.br",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWFVuYzd3eHJkZzJfUDh1Qm5WdHoza1ZYdTcxT3RUTnZ5OC1NY3B5NkpRazRNYXNzZFN2LVFQVzJZeE9ybUliTHVCSjk4UzhURmtBeTk5X2g0N0M5MnExVWR0V1I1djUzTm9sNVZhZUFZUEZyeHJITW91aWdhQklhYWtodWIzNVkteE1CZDVYaVNYS1RIdEJneGp5b1JlZDQzRVJHbNIBqgFBVV95cUxOa1dnX282ZzRPMkZiOVRWQmloaFBtX0JKQVpPUC1HNHNBeDVYUG81allRdUNsZE93TjhMaHBIRVphTFVKR2w5WW1YaTFYTHJWRnNYb2hUc2N1VjNwaHhPRGh5VV9rMDJLRm9WUmE2dUpQR0xBa2ItMXF2Qy1JdjkwWTZhTXN0NjU5dzVsUDdEU0dDcEhyOFJGLUMwR2hFbGJXSlNPVkZqSkRMZw?oc=5",
+     "when": "11/02 05:00",
+     "original_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWFVuYzd3eHJkZzJfUDh1Qm5WdHoza1ZYdTcxT3RUTnZ5OC1NY3B5NkpRazRNYXNzZFN2LVFQVzJZeE9ybUliTHVCSjk4UzhURmtBeTk5X2g0N0M5MnExVWR0V1I1djUzTm9sNVZhZUFZUEZyeHJITW91aWdhQklhYWtodWIzNVkteE1CZDVYaVNYS1RIdEJneGp5b1JlZDQzRVJHbNIBqgFBVV95cUxOa1dnX282ZzRPMkZiOVRWQmloaFBtX0JKQVpPUC1HNHNBeDVYUG81allRdUNsZE93TjhMaHBIRVphTFVKR2w5WW1YaTFYTHJWRnNYb2hUc2N1VjNwaHhPRGh5VV9rMDJLRm9WUmE2dUpQR0xBa2ItMXF2Qy1JdjkwWTZhTXN0NjU5dzVsUDdEU0dDcEhyOFJGLUMwR2hFbGJXSlNPVkZqSkRMZw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWFVuYzd3eHJkZzJfUDh1Qm5WdHoza1ZYdTcxT3RUTnZ5OC1NY3B5NkpRazRNYXNzZFN2LVFQVzJZeE9ybUliTHVCSjk4UzhURmtBeTk5X2g0N0M5MnExVWR0V1I1djUzTm9sNVZhZUFZUEZyeHJITW91aWdhQklhYWtodWIzNVkteE1CZDVYaVNYS1RIdEJneGp5b1JlZDQzRVJHbNIBqgFBVV95cUxOa1dnX282ZzRPMkZiOVRWQmloaFBtX0JKQVpPUC1HNHNBeDVYUG81allRdUNsZE93TjhMaHBIRVphTFVKR2w5WW1YaTFYTHJWRnNYb2hUc2N1VjNwaHhPRGh5VV9rMDJLRm9WUmE2dUpQR0xBa2ItMXF2Qy1JdjkwWTZhTXN0NjU5dzVsUDdEU0dDcEhyOFJGLUMwR2hFbGJXSlNPVkZqSkRMZw?oc=5",
+     "resolved_url": "https://investidor10.com.br/noticias/smart-fit-smft3-anuncia-troca-de-ceo-e-diretor-financeiro-118563/",
+     "canonical_url": "https://investidor10.com.br/noticias/smart-fit-smft3-anuncia-troca-de-ceo-e-diretor-financeiro-118563/",
+     "display_url": "https://investidor10.com.br/noticias/smart-fit-smft3-anuncia-troca-de-ceo-e-diretor-financeiro-118563/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "investidor10.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-17T10:51:53.976378+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corroborations": [
+    {
+     "source": "Investidor10",
+     "domain": "investidor10.com.br",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWFVuYzd3eHJkZzJfUDh1Qm5WdHoza1ZYdTcxT3RUTnZ5OC1NY3B5NkpRazRNYXNzZFN2LVFQVzJZeE9ybUliTHVCSjk4UzhURmtBeTk5X2g0N0M5MnExVWR0V1I1djUzTm9sNVZhZUFZUEZyeHJITW91aWdhQklhYWtodWIzNVkteE1CZDVYaVNYS1RIdEJneGp5b1JlZDQzRVJHbNIBqgFBVV95cUxOa1dnX282ZzRPMkZiOVRWQmloaFBtX0JKQVpPUC1HNHNBeDVYUG81allRdUNsZE93TjhMaHBIRVphTFVKR2w5WW1YaTFYTHJWRnNYb2hUc2N1VjNwaHhPRGh5VV9rMDJLRm9WUmE2dUpQR0xBa2ItMXF2Qy1JdjkwWTZhTXN0NjU5dzVsUDdEU0dDcEhyOFJGLUMwR2hFbGJXSlNPVkZqSkRMZw?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWFVuYzd3eHJkZzJfUDh1Qm5WdHoza1ZYdTcxT3RUTnZ5OC1NY3B5NkpRazRNYXNzZFN2LVFQVzJZeE9ybUliTHVCSjk4UzhURmtBeTk5X2g0N0M5MnExVWR0V1I1djUzTm9sNVZhZUFZUEZyeHJITW91aWdhQklhYWtodWIzNVkteE1CZDVYaVNYS1RIdEJneGp5b1JlZDQzRVJHbNIBqgFBVV95cUxOa1dnX282ZzRPMkZiOVRWQmloaFBtX0JKQVpPUC1HNHNBeDVYUG81allRdUNsZE93TjhMaHBIRVphTFVKR2w5WW1YaTFYTHJWRnNYb2hUc2N1VjNwaHhPRGh5VV9rMDJLRm9WUmE2dUpQR0xBa2ItMXF2Qy1JdjkwWTZhTXN0NjU5dzVsUDdEU0dDcEhyOFJGLUMwR2hFbGJXSlNPVkZqSkRMZw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWFVuYzd3eHJkZzJfUDh1Qm5WdHoza1ZYdTcxT3RUTnZ5OC1NY3B5NkpRazRNYXNzZFN2LVFQVzJZeE9ybUliTHVCSjk4UzhURmtBeTk5X2g0N0M5MnExVWR0V1I1djUzTm9sNVZhZUFZUEZyeHJITW91aWdhQklhYWtodWIzNVkteE1CZDVYaVNYS1RIdEJneGp5b1JlZDQzRVJHbNIBqgFBVV95cUxOa1dnX282ZzRPMkZiOVRWQmloaFBtX0JKQVpPUC1HNHNBeDVYUG81allRdUNsZE93TjhMaHBIRVphTFVKR2w5WW1YaTFYTHJWRnNYb2hUc2N1VjNwaHhPRGh5VV9rMDJLRm9WUmE2dUpQR0xBa2ItMXF2Qy1JdjkwWTZhTXN0NjU5dzVsUDdEU0dDcEhyOFJGLUMwR2hFbGJXSlNPVkZqSkRMZw?oc=5",
+     "resolved_url": "https://investidor10.com.br/noticias/smart-fit-smft3-anuncia-troca-de-ceo-e-diretor-financeiro-118563/",
+     "canonical_url": "https://investidor10.com.br/noticias/smart-fit-smft3-anuncia-troca-de-ceo-e-diretor-financeiro-118563/",
+     "display_url": "https://investidor10.com.br/noticias/smart-fit-smft3-anuncia-troca-de-ceo-e-diretor-financeiro-118563/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "investidor10.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-17T10:51:53.576121+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
    "display_url": "https://mercadoeconsumo.com.br/14/02/2026/gestao/smart-fit-tem-novo-ceo-confira-outras-mudancas/",
    "domain": "mercadoeconsumo.com.br",
    "event_ids": [
@@ -15207,7 +15250,7 @@
      "domain": "globallegalpost.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:50:55.355186+00:00",
+     "last_checked_at": "2026-08-17T10:51:55.093365+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -15291,7 +15334,7 @@
      "domain": "globallegalpost.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:50:54.799376+00:00",
+     "last_checked_at": "2026-08-17T10:51:54.539774+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -18667,7 +18710,7 @@
      "domain": "globallegalpost.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:50:56.460636+00:00",
+     "last_checked_at": "2026-08-17T10:51:56.209430+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -18711,7 +18754,7 @@
      "domain": "globallegalpost.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:50:55.913185+00:00",
+     "last_checked_at": "2026-08-17T10:51:55.659536+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -21188,7 +21231,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:50:57.562489+00:00",
+     "last_checked_at": "2026-08-17T10:51:57.362616+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -21211,7 +21254,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:50:57.007337+00:00",
+     "last_checked_at": "2026-08-17T10:51:56.789687+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -24582,7 +24625,7 @@
      "domain": "ootimista.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:50:58.865712+00:00",
+     "last_checked_at": "2026-08-17T10:51:58.710409+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -24605,7 +24648,7 @@
      "domain": "ootimista.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:50:58.221791+00:00",
+     "last_checked_at": "2026-08-17T10:51:58.025270+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -25286,42 +25329,6 @@
    "summary": "Sem aquisição pelo BTG, mercado e agências de classificação de risco veem situação do Digimais se complicar &nbsp;&nbsp; O GLOBO",
    "title": "Sem aquisição pelo BTG, mercado e agências de classificação de risco veem situação do Digimais se complicar",
    "url": "https://oglobo.globo.com/economia/noticia/2026/06/24/sem-aquisicao-pelo-btg-mercado-e-agencias-de-clasificacao-de-risco-veem-situacao-do-digimais-se-complicar.ghtml"
-  },
-  "https://opresenterural.com.br/wesley-batista-filho-sera-o-novo-ceo-global-da-jbs-a-partir-de-janeiro-de-2027/": {
-   "cap_iso": "2026-08-14 16:57",
-   "captured_ts": 1786737456,
-   "companies": [
-    "JBS"
-   ],
-   "companies_attributed": [
-    "JBS"
-   ],
-   "context_companies": [],
-   "domain": "opresenterural.com.br",
-   "event_ids": [
-    "troca_ceo"
-   ],
-   "events_by_company": {
-    "JBS": [
-     "troca_ceo"
-    ]
-   },
-   "language": "pt",
-   "mention_roles": {
-    "JBS": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "pub_iso": "2026-08-14 14:48",
-   "pub_ts": 1786729697,
-   "source": "O Presente Rural",
-   "summary": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027 &nbsp;&nbsp; O Presente Rural",
-   "title": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
-   "url": "https://opresenterural.com.br/wesley-batista-filho-sera-o-novo-ceo-global-da-jbs-a-partir-de-janeiro-de-2027/"
   },
   "https://pbn.com/bankruptcy-judge-approves-sale-of-cvs-health-subsidiary-omnicare-to-genierx/": {
    "canonical_url": "https://pbn.com/bankruptcy-judge-approves-sale-of-cvs-health-subsidiary-omnicare-to-genierx/",
@@ -29593,7 +29600,7 @@
      "domain": "demarest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:50:59.266009+00:00",
+     "last_checked_at": "2026-08-17T10:51:59.110723+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -30441,7 +30448,7 @@
      "domain": "bitget.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:51:00.372724+00:00",
+     "last_checked_at": "2026-08-17T10:52:00.253399+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -30464,7 +30471,7 @@
      "domain": "bitget.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:50:59.818248+00:00",
+     "last_checked_at": "2026-08-17T10:51:59.687433+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -36539,7 +36546,7 @@
      "domain": "demarest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:51:00.773033+00:00",
+     "last_checked_at": "2026-08-17T10:52:00.653682+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -36739,7 +36746,7 @@
      "domain": "demarest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:51:01.173283+00:00",
+     "last_checked_at": "2026-08-17T10:52:01.053981+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -40722,7 +40729,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:51:01.573647+00:00",
+     "last_checked_at": "2026-08-17T10:52:01.454313+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -40742,7 +40749,7 @@
      "domain": "demarest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:51:01.973896+00:00",
+     "last_checked_at": "2026-08-17T10:52:01.854574+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -41720,7 +41727,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:51:02.531440+00:00",
+     "last_checked_at": "2026-08-17T10:52:02.415900+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -42066,7 +42073,7 @@
      "domain": "gurufocus.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:51:03.842510+00:00",
+     "last_checked_at": "2026-08-17T10:52:03.795642+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -42110,7 +42117,7 @@
      "domain": "gurufocus.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:51:03.188222+00:00",
+     "last_checked_at": "2026-08-17T10:52:03.104416+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -48712,7 +48719,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:51:04.957408+00:00",
+     "last_checked_at": "2026-08-17T10:52:04.919424+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -48875,7 +48882,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:51:04.408599+00:00",
+     "last_checked_at": "2026-08-17T10:52:04.345839+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -50709,7 +50716,7 @@
      "domain": "quiverquant.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:51:06.060698+00:00",
+     "last_checked_at": "2026-08-17T10:52:06.046629+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -50895,7 +50902,7 @@
      "domain": "quiverquant.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T06:51:05.515318+00:00",
+     "last_checked_at": "2026-08-17T10:52:05.480337+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -54092,7 +54099,22 @@
     {
      "source": "Forbes Brasil",
      "domain": "forbes.com.br",
-     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPakExM0RuSzV4eGU5OGJGNEFNQVNvb3pwa1Vnellkb05rYTdnTk1ZQ3NMZkcxeDR4ZS1rRnNlYjN4TzRpc2dhcFNrVTdfRFJjaDYyOWxjekpHakhEU1czVzNqYlhaM1Y2c0FuU0dHN1dSMFBTQl81NWVjdjFTaENqcDR2SW9tNndfZ05NaUhR?oc=5"
+     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPakExM0RuSzV4eGU5OGJGNEFNQVNvb3pwa1Vnellkb05rYTdnTk1ZQ3NMZkcxeDR4ZS1rRnNlYjN4TzRpc2dhcFNrVTdfRFJjaDYyOWxjekpHakhEU1czVzNqYlhaM1Y2c0FuU0dHN1dSMFBTQl81NWVjdjFTaENqcDR2SW9tNndfZ05NaUhR?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPakExM0RuSzV4eGU5OGJGNEFNQVNvb3pwa1Vnellkb05rYTdnTk1ZQ3NMZkcxeDR4ZS1rRnNlYjN4TzRpc2dhcFNrVTdfRFJjaDYyOWxjekpHakhEU1czVzNqYlhaM1Y2c0FuU0dHN1dSMFBTQl81NWVjdjFTaENqcDR2SW9tNndfZ05NaUhR?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPakExM0RuSzV4eGU5OGJGNEFNQVNvb3pwa1Vnellkb05rYTdnTk1ZQ3NMZkcxeDR4ZS1rRnNlYjN4TzRpc2dhcFNrVTdfRFJjaDYyOWxjekpHakhEU1czVzNqYlhaM1Y2c0FuU0dHN1dSMFBTQl81NWVjdjFTaENqcDR2SW9tNndfZ05NaUhR?oc=5",
+     "resolved_url": "https://forbes.com.br/forbes-money/2026/08/casas-bahia-prejuizo-recuperacao-judicial/",
+     "canonical_url": "https://forbes.com.br/forbes-money/2026/08/casas-bahia-prejuizo-recuperacao-judicial/",
+     "display_url": "https://forbes.com.br/forbes-money/2026/08/casas-bahia-prejuizo-recuperacao-judicial/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "forbes.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-17T10:52:06.599582+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "corrob_sources": [
@@ -54100,13 +54122,43 @@
      "source": "Migalhas",
      "domain": "migalhas.com.br",
      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPOUJTTEJYSDhKRFU2UEJaWFlVTC1aUE1DekRsUG8wejBfdk9ZTXVsSFJFRmZZaEk2WUFJTkVNSEZSN3hCWWtLcnpuNm5hbko5LTR5R0FSMGJsOHMwZTRQQTNmSkRWSkZrU2x1cUM3SHZWdTdYa0VFc3czZ3lnVzVlLWFSd2tDUnNDdHdvM0hHZzYzME1wcjNzUEZ2Nm5PcGU5OXF0dnpEQUY?oc=5",
-     "when": "14/08 17:15"
+     "when": "14/08 17:15",
+     "original_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPOUJTTEJYSDhKRFU2UEJaWFlVTC1aUE1DekRsUG8wejBfdk9ZTXVsSFJFRmZZaEk2WUFJTkVNSEZSN3hCWWtLcnpuNm5hbko5LTR5R0FSMGJsOHMwZTRQQTNmSkRWSkZrU2x1cUM3SHZWdTdYa0VFc3czZ3lnVzVlLWFSd2tDUnNDdHdvM0hHZzYzME1wcjNzUEZ2Nm5PcGU5OXF0dnpEQUY?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPOUJTTEJYSDhKRFU2UEJaWFlVTC1aUE1DekRsUG8wejBfdk9ZTXVsSFJFRmZZaEk2WUFJTkVNSEZSN3hCWWtLcnpuNm5hbko5LTR5R0FSMGJsOHMwZTRQQTNmSkRWSkZrU2x1cUM3SHZWdTdYa0VFc3czZ3lnVzVlLWFSd2tDUnNDdHdvM0hHZzYzME1wcjNzUEZ2Nm5PcGU5OXF0dnpEQUY?oc=5",
+     "resolved_url": "https://www.migalhas.com.br/depeso/462382/recuperacao-judicial-e-juros-altos-uma-relacao-mal-compreendida",
+     "canonical_url": "https://www.migalhas.com.br/depeso/462382/recuperacao-judicial-e-juros-altos-uma-relacao-mal-compreendida",
+     "display_url": "https://www.migalhas.com.br/depeso/462382/recuperacao-judicial-e-juros-altos-uma-relacao-mal-compreendida",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.migalhas.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-17T10:52:06.999892+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     },
     {
      "source": "Forbes Brasil",
      "domain": "forbes.com.br",
      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPakExM0RuSzV4eGU5OGJGNEFNQVNvb3pwa1Vnellkb05rYTdnTk1ZQ3NMZkcxeDR4ZS1rRnNlYjN4TzRpc2dhcFNrVTdfRFJjaDYyOWxjekpHakhEU1czVzNqYlhaM1Y2c0FuU0dHN1dSMFBTQl81NWVjdjFTaENqcDR2SW9tNndfZ05NaUhR?oc=5",
-     "when": "16/08 11:52"
+     "when": "16/08 11:52",
+     "original_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPakExM0RuSzV4eGU5OGJGNEFNQVNvb3pwa1Vnellkb05rYTdnTk1ZQ3NMZkcxeDR4ZS1rRnNlYjN4TzRpc2dhcFNrVTdfRFJjaDYyOWxjekpHakhEU1czVzNqYlhaM1Y2c0FuU0dHN1dSMFBTQl81NWVjdjFTaENqcDR2SW9tNndfZ05NaUhR?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPakExM0RuSzV4eGU5OGJGNEFNQVNvb3pwa1Vnellkb05rYTdnTk1ZQ3NMZkcxeDR4ZS1rRnNlYjN4TzRpc2dhcFNrVTdfRFJjaDYyOWxjekpHakhEU1czVzNqYlhaM1Y2c0FuU0dHN1dSMFBTQl81NWVjdjFTaENqcDR2SW9tNndfZ05NaUhR?oc=5",
+     "resolved_url": "https://forbes.com.br/forbes-money/2026/08/casas-bahia-prejuizo-recuperacao-judicial/",
+     "canonical_url": "https://forbes.com.br/forbes-money/2026/08/casas-bahia-prejuizo-recuperacao-judicial/",
+     "display_url": "https://forbes.com.br/forbes-money/2026/08/casas-bahia-prejuizo-recuperacao-judicial/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "forbes.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-17T10:52:07.400137+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "captured_ts": 1786949440,
@@ -54320,12 +54372,42 @@
     {
      "source": "Times Brasil | CNBC",
      "domain": "timesbrasil.com.br",
-     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNLTl4RXk1RF91OVRkY1JsWlBwYU5ZaTgyLXJPUTdoQmpiUW9NZXRSM1lRMkhxWkJqQUhyRTdlejhMTVgyVVM0ek9ZcU50LU94LU5iX1R1MFA4UVN6MmhxcTcydW1neTR2UWQ5VHpqUDNxQ0doSjVRUzVxMGozazVkNDM3SHNTRnUwWXBIQTJiMHoyVkFiekNGbldHVklSdjBiRFg3UWFyTjhEQjdkTzk0aDIyUlpOc2M?oc=5"
+     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNLTl4RXk1RF91OVRkY1JsWlBwYU5ZaTgyLXJPUTdoQmpiUW9NZXRSM1lRMkhxWkJqQUhyRTdlejhMTVgyVVM0ek9ZcU50LU94LU5iX1R1MFA4UVN6MmhxcTcydW1neTR2UWQ5VHpqUDNxQ0doSjVRUzVxMGozazVkNDM3SHNTRnUwWXBIQTJiMHoyVkFiekNGbldHVklSdjBiRFg3UWFyTjhEQjdkTzk0aDIyUlpOc2M?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNLTl4RXk1RF91OVRkY1JsWlBwYU5ZaTgyLXJPUTdoQmpiUW9NZXRSM1lRMkhxWkJqQUhyRTdlejhMTVgyVVM0ek9ZcU50LU94LU5iX1R1MFA4UVN6MmhxcTcydW1neTR2UWQ5VHpqUDNxQ0doSjVRUzVxMGozazVkNDM3SHNTRnUwWXBIQTJiMHoyVkFiekNGbldHVklSdjBiRFg3UWFyTjhEQjdkTzk0aDIyUlpOc2M?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNLTl4RXk1RF91OVRkY1JsWlBwYU5ZaTgyLXJPUTdoQmpiUW9NZXRSM1lRMkhxWkJqQUhyRTdlejhMTVgyVVM0ek9ZcU50LU94LU5iX1R1MFA4UVN6MmhxcTcydW1neTR2UWQ5VHpqUDNxQ0doSjVRUzVxMGozazVkNDM3SHNTRnUwWXBIQTJiMHoyVkFiekNGbldHVklSdjBiRFg3UWFyTjhEQjdkTzk0aDIyUlpOc2M?oc=5",
+     "resolved_url": "https://timesbrasil.com.br/brasil/judiciario/recuperacao-judicial/marabraz-recuperacao-judicial-dividas-140-milhoes/",
+     "canonical_url": "https://timesbrasil.com.br/brasil/judiciario/recuperacao-judicial/marabraz-recuperacao-judicial-dividas-140-milhoes/",
+     "display_url": "https://timesbrasil.com.br/brasil/judiciario/recuperacao-judicial/marabraz-recuperacao-judicial-dividas-140-milhoes/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "timesbrasil.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-17T10:52:07.960297+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     },
     {
      "source": "O GLOBO",
      "domain": "oglobo.globo.com",
-     "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPSDFTeTY2b0hLekdDNmVyQ3lhazFYY1Z3Q0hJSmM2R2M4UEYxemRhaThtV2RYbGZLbC1ieUtoLUJBaFJndzhjY2ZpanUyVHNtdm1HTlV0VGtpa1N1VVFOTFREeExTMXh6YXEteE1oajVGMVl1bHpjRVhEU1NpcUx4ME5TZ0M3S3g3RFdibDZPcl9BeTdqbFZ0NVg2TzJmbl91ZlRvV3JycFpTdG4tUVBRbHJPQk1saDFYSk9zcDVkUUw2RU9BNzgwWjZWVU9HaHktdzhvYzRWTUE1Mk9VYzJQUElGVGhXMFVhb3JDR09LUDJqcDRfZ1kzZ9IBhwJBVV95cUxNTkNFWmQ1LTAxX1NlVURLaEJNMTEtNk1SLW95c0UwLUxsdVFLT3NjcFp4R1ZfUzQ2LWdVYUgxbXVHdnU3Y1dLNGRMaXdMODhmcG1VdVlkU21Rbk1kdm0yRWFGZWkxRS1yYmFHR08tNXB5WVBScVhROWVBMzdnWW9wX1JsTmluQmJVN2E3aTRFR3pBWkQ4cGdnazdsR3pQeFdEbzFzcmpKUlAxUjFMajZZS2NDUVZZekZ5eG8wQ0h2azY1ZFNmT3cyZ2lER0VxSl9tdFJNWlpZODVoNUZxOHRPVEh4cE0yNnZnT29OM0FNNElwbUYzQmJ4U3lTcG9FeFo1cUFRTVdmcw?oc=5"
+     "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPSDFTeTY2b0hLekdDNmVyQ3lhazFYY1Z3Q0hJSmM2R2M4UEYxemRhaThtV2RYbGZLbC1ieUtoLUJBaFJndzhjY2ZpanUyVHNtdm1HTlV0VGtpa1N1VVFOTFREeExTMXh6YXEteE1oajVGMVl1bHpjRVhEU1NpcUx4ME5TZ0M3S3g3RFdibDZPcl9BeTdqbFZ0NVg2TzJmbl91ZlRvV3JycFpTdG4tUVBRbHJPQk1saDFYSk9zcDVkUUw2RU9BNzgwWjZWVU9HaHktdzhvYzRWTUE1Mk9VYzJQUElGVGhXMFVhb3JDR09LUDJqcDRfZ1kzZ9IBhwJBVV95cUxNTkNFWmQ1LTAxX1NlVURLaEJNMTEtNk1SLW95c0UwLUxsdVFLT3NjcFp4R1ZfUzQ2LWdVYUgxbXVHdnU3Y1dLNGRMaXdMODhmcG1VdVlkU21Rbk1kdm0yRWFGZWkxRS1yYmFHR08tNXB5WVBScVhROWVBMzdnWW9wX1JsTmluQmJVN2E3aTRFR3pBWkQ4cGdnazdsR3pQeFdEbzFzcmpKUlAxUjFMajZZS2NDUVZZekZ5eG8wQ0h2azY1ZFNmT3cyZ2lER0VxSl9tdFJNWlpZODVoNUZxOHRPVEh4cE0yNnZnT29OM0FNNElwbUYzQmJ4U3lTcG9FeFo1cUFRTVdmcw?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPSDFTeTY2b0hLekdDNmVyQ3lhazFYY1Z3Q0hJSmM2R2M4UEYxemRhaThtV2RYbGZLbC1ieUtoLUJBaFJndzhjY2ZpanUyVHNtdm1HTlV0VGtpa1N1VVFOTFREeExTMXh6YXEteE1oajVGMVl1bHpjRVhEU1NpcUx4ME5TZ0M3S3g3RFdibDZPcl9BeTdqbFZ0NVg2TzJmbl91ZlRvV3JycFpTdG4tUVBRbHJPQk1saDFYSk9zcDVkUUw2RU9BNzgwWjZWVU9HaHktdzhvYzRWTUE1Mk9VYzJQUElGVGhXMFVhb3JDR09LUDJqcDRfZ1kzZ9IBhwJBVV95cUxNTkNFWmQ1LTAxX1NlVURLaEJNMTEtNk1SLW95c0UwLUxsdVFLT3NjcFp4R1ZfUzQ2LWdVYUgxbXVHdnU3Y1dLNGRMaXdMODhmcG1VdVlkU21Rbk1kdm0yRWFGZWkxRS1yYmFHR08tNXB5WVBScVhROWVBMzdnWW9wX1JsTmluQmJVN2E3aTRFR3pBWkQ4cGdnazdsR3pQeFdEbzFzcmpKUlAxUjFMajZZS2NDUVZZekZ5eG8wQ0h2azY1ZFNmT3cyZ2lER0VxSl9tdFJNWlpZODVoNUZxOHRPVEh4cE0yNnZnT29OM0FNNElwbUYzQmJ4U3lTcG9FeFo1cUFRTVdmcw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPSDFTeTY2b0hLekdDNmVyQ3lhazFYY1Z3Q0hJSmM2R2M4UEYxemRhaThtV2RYbGZLbC1ieUtoLUJBaFJndzhjY2ZpanUyVHNtdm1HTlV0VGtpa1N1VVFOTFREeExTMXh6YXEteE1oajVGMVl1bHpjRVhEU1NpcUx4ME5TZ0M3S3g3RFdibDZPcl9BeTdqbFZ0NVg2TzJmbl91ZlRvV3JycFpTdG4tUVBRbHJPQk1saDFYSk9zcDVkUUw2RU9BNzgwWjZWVU9HaHktdzhvYzRWTUE1Mk9VYzJQUElGVGhXMFVhb3JDR09LUDJqcDRfZ1kzZ9IBhwJBVV95cUxNTkNFWmQ1LTAxX1NlVURLaEJNMTEtNk1SLW95c0UwLUxsdVFLT3NjcFp4R1ZfUzQ2LWdVYUgxbXVHdnU3Y1dLNGRMaXdMODhmcG1VdVlkU21Rbk1kdm0yRWFGZWkxRS1yYmFHR08tNXB5WVBScVhROWVBMzdnWW9wX1JsTmluQmJVN2E3aTRFR3pBWkQ4cGdnazdsR3pQeFdEbzFzcmpKUlAxUjFMajZZS2NDUVZZekZ5eG8wQ0h2azY1ZFNmT3cyZ2lER0VxSl9tdFJNWlpZODVoNUZxOHRPVEh4cE0yNnZnT29OM0FNNElwbUYzQmJ4U3lTcG9FeFo1cUFRTVdmcw?oc=5",
+     "resolved_url": "https://oglobo.globo.com/economia/negocios/noticia/2026/08/16/com-r-1402-milhoes-em-dividas-empresas-do-grupo-dono-da-lojas-marabraz-pedem-recuperacao-judicial.ghtml",
+     "canonical_url": "https://oglobo.globo.com/economia/negocios/noticia/2026/08/16/com-r-1402-milhoes-em-dividas-empresas-do-grupo-dono-da-lojas-marabraz-pedem-recuperacao-judicial.ghtml",
+     "display_url": "https://oglobo.globo.com/economia/negocios/noticia/2026/08/16/com-r-1402-milhoes-em-dividas-empresas-do-grupo-dono-da-lojas-marabraz-pedem-recuperacao-judicial.ghtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "oglobo.globo.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-17T10:52:08.522239+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "corrob_sources": [
@@ -54333,13 +54415,43 @@
      "source": "Times Brasil | CNBC",
      "domain": "timesbrasil.com.br",
      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNLTl4RXk1RF91OVRkY1JsWlBwYU5ZaTgyLXJPUTdoQmpiUW9NZXRSM1lRMkhxWkJqQUhyRTdlejhMTVgyVVM0ek9ZcU50LU94LU5iX1R1MFA4UVN6MmhxcTcydW1neTR2UWQ5VHpqUDNxQ0doSjVRUzVxMGozazVkNDM3SHNTRnUwWXBIQTJiMHoyVkFiekNGbldHVklSdjBiRFg3UWFyTjhEQjdkTzk0aDIyUlpOc2M?oc=5",
-     "when": "16/08 13:09"
+     "when": "16/08 13:09",
+     "original_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNLTl4RXk1RF91OVRkY1JsWlBwYU5ZaTgyLXJPUTdoQmpiUW9NZXRSM1lRMkhxWkJqQUhyRTdlejhMTVgyVVM0ek9ZcU50LU94LU5iX1R1MFA4UVN6MmhxcTcydW1neTR2UWQ5VHpqUDNxQ0doSjVRUzVxMGozazVkNDM3SHNTRnUwWXBIQTJiMHoyVkFiekNGbldHVklSdjBiRFg3UWFyTjhEQjdkTzk0aDIyUlpOc2M?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNLTl4RXk1RF91OVRkY1JsWlBwYU5ZaTgyLXJPUTdoQmpiUW9NZXRSM1lRMkhxWkJqQUhyRTdlejhMTVgyVVM0ek9ZcU50LU94LU5iX1R1MFA4UVN6MmhxcTcydW1neTR2UWQ5VHpqUDNxQ0doSjVRUzVxMGozazVkNDM3SHNTRnUwWXBIQTJiMHoyVkFiekNGbldHVklSdjBiRFg3UWFyTjhEQjdkTzk0aDIyUlpOc2M?oc=5",
+     "resolved_url": "https://timesbrasil.com.br/brasil/judiciario/recuperacao-judicial/marabraz-recuperacao-judicial-dividas-140-milhoes/",
+     "canonical_url": "https://timesbrasil.com.br/brasil/judiciario/recuperacao-judicial/marabraz-recuperacao-judicial-dividas-140-milhoes/",
+     "display_url": "https://timesbrasil.com.br/brasil/judiciario/recuperacao-judicial/marabraz-recuperacao-judicial-dividas-140-milhoes/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "timesbrasil.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-17T10:52:08.922478+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     },
     {
      "source": "O GLOBO",
      "domain": "oglobo.globo.com",
      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPSDFTeTY2b0hLekdDNmVyQ3lhazFYY1Z3Q0hJSmM2R2M4UEYxemRhaThtV2RYbGZLbC1ieUtoLUJBaFJndzhjY2ZpanUyVHNtdm1HTlV0VGtpa1N1VVFOTFREeExTMXh6YXEteE1oajVGMVl1bHpjRVhEU1NpcUx4ME5TZ0M3S3g3RFdibDZPcl9BeTdqbFZ0NVg2TzJmbl91ZlRvV3JycFpTdG4tUVBRbHJPQk1saDFYSk9zcDVkUUw2RU9BNzgwWjZWVU9HaHktdzhvYzRWTUE1Mk9VYzJQUElGVGhXMFVhb3JDR09LUDJqcDRfZ1kzZ9IBhwJBVV95cUxNTkNFWmQ1LTAxX1NlVURLaEJNMTEtNk1SLW95c0UwLUxsdVFLT3NjcFp4R1ZfUzQ2LWdVYUgxbXVHdnU3Y1dLNGRMaXdMODhmcG1VdVlkU21Rbk1kdm0yRWFGZWkxRS1yYmFHR08tNXB5WVBScVhROWVBMzdnWW9wX1JsTmluQmJVN2E3aTRFR3pBWkQ4cGdnazdsR3pQeFdEbzFzcmpKUlAxUjFMajZZS2NDUVZZekZ5eG8wQ0h2azY1ZFNmT3cyZ2lER0VxSl9tdFJNWlpZODVoNUZxOHRPVEh4cE0yNnZnT29OM0FNNElwbUYzQmJ4U3lTcG9FeFo1cUFRTVdmcw?oc=5",
-     "when": "16/08 17:58"
+     "when": "16/08 17:58",
+     "original_url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPSDFTeTY2b0hLekdDNmVyQ3lhazFYY1Z3Q0hJSmM2R2M4UEYxemRhaThtV2RYbGZLbC1ieUtoLUJBaFJndzhjY2ZpanUyVHNtdm1HTlV0VGtpa1N1VVFOTFREeExTMXh6YXEteE1oajVGMVl1bHpjRVhEU1NpcUx4ME5TZ0M3S3g3RFdibDZPcl9BeTdqbFZ0NVg2TzJmbl91ZlRvV3JycFpTdG4tUVBRbHJPQk1saDFYSk9zcDVkUUw2RU9BNzgwWjZWVU9HaHktdzhvYzRWTUE1Mk9VYzJQUElGVGhXMFVhb3JDR09LUDJqcDRfZ1kzZ9IBhwJBVV95cUxNTkNFWmQ1LTAxX1NlVURLaEJNMTEtNk1SLW95c0UwLUxsdVFLT3NjcFp4R1ZfUzQ2LWdVYUgxbXVHdnU3Y1dLNGRMaXdMODhmcG1VdVlkU21Rbk1kdm0yRWFGZWkxRS1yYmFHR08tNXB5WVBScVhROWVBMzdnWW9wX1JsTmluQmJVN2E3aTRFR3pBWkQ4cGdnazdsR3pQeFdEbzFzcmpKUlAxUjFMajZZS2NDUVZZekZ5eG8wQ0h2azY1ZFNmT3cyZ2lER0VxSl9tdFJNWlpZODVoNUZxOHRPVEh4cE0yNnZnT29OM0FNNElwbUYzQmJ4U3lTcG9FeFo1cUFRTVdmcw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPSDFTeTY2b0hLekdDNmVyQ3lhazFYY1Z3Q0hJSmM2R2M4UEYxemRhaThtV2RYbGZLbC1ieUtoLUJBaFJndzhjY2ZpanUyVHNtdm1HTlV0VGtpa1N1VVFOTFREeExTMXh6YXEteE1oajVGMVl1bHpjRVhEU1NpcUx4ME5TZ0M3S3g3RFdibDZPcl9BeTdqbFZ0NVg2TzJmbl91ZlRvV3JycFpTdG4tUVBRbHJPQk1saDFYSk9zcDVkUUw2RU9BNzgwWjZWVU9HaHktdzhvYzRWTUE1Mk9VYzJQUElGVGhXMFVhb3JDR09LUDJqcDRfZ1kzZ9IBhwJBVV95cUxNTkNFWmQ1LTAxX1NlVURLaEJNMTEtNk1SLW95c0UwLUxsdVFLT3NjcFp4R1ZfUzQ2LWdVYUgxbXVHdnU3Y1dLNGRMaXdMODhmcG1VdVlkU21Rbk1kdm0yRWFGZWkxRS1yYmFHR08tNXB5WVBScVhROWVBMzdnWW9wX1JsTmluQmJVN2E3aTRFR3pBWkQ4cGdnazdsR3pQeFdEbzFzcmpKUlAxUjFMajZZS2NDUVZZekZ5eG8wQ0h2azY1ZFNmT3cyZ2lER0VxSl9tdFJNWlpZODVoNUZxOHRPVEh4cE0yNnZnT29OM0FNNElwbUYzQmJ4U3lTcG9FeFo1cUFRTVdmcw?oc=5",
+     "resolved_url": "https://oglobo.globo.com/economia/negocios/noticia/2026/08/16/com-r-1402-milhoes-em-dividas-empresas-do-grupo-dono-da-lojas-marabraz-pedem-recuperacao-judicial.ghtml",
+     "canonical_url": "https://oglobo.globo.com/economia/negocios/noticia/2026/08/16/com-r-1402-milhoes-em-dividas-empresas-do-grupo-dono-da-lojas-marabraz-pedem-recuperacao-judicial.ghtml",
+     "display_url": "https://oglobo.globo.com/economia/negocios/noticia/2026/08/16/com-r-1402-milhoes-em-dividas-empresas-do-grupo-dono-da-lojas-marabraz-pedem-recuperacao-judicial.ghtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "oglobo.globo.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-17T10:52:09.322731+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "captured_ts": 1786949440,
@@ -54364,15 +54476,149 @@
    ],
    "captured_ts": 1786949440,
    "cap_iso": "2026-08-17 03:50"
+  },
+  "https://news.google.com/rss/articles/CBMisgFBVV95cUxOQjl5ZGthcWxvb1FOR1JuMXRlZlcwd3FndFUycENmcS1obkgwZzZvNU5OSUVHZWk3VFpsczdIWkVNR1d2UEl3R3dPb2JkVVZvWVdaeklWMlZSc3FiUGRKenRrSTY3WFlIRnJaNUNoUlkzRmNPdlZSZ3VqbmxWdVc3N1BoWmQzVUJUb2VlV05iZFI4M1loTUJOeHFTdHNnVExEb3Z3QUdvNnBGMWJRdkFRNkVB?oc=5": {
+   "title": "O que vem por aí na integração BICE-Security: fusão de AGF e corretoras, impulsionar o negócio no Peru e crescer no financiamento automotivo",
+   "url": "https://www.df.cl/mercados/banca-fintech/lo-que-viene-en-la-integracion-bice-security-fusion-de-agf-y-corredoras",
+   "summary": "O que vem por aí na integração BICE-Security: fusão de AGF e corretoras, impulsionar o negócio no Peru e crescer no financiamento automotivo &nbsp;&nbsp; Diario Financiero",
+   "source": "Diario Financiero",
+   "domain": "df.cl",
+   "pub_ts": 1780556400,
+   "pub_iso": "2026-06-04 04:00",
+   "language": "es",
+   "title_original": "Lo que viene en la integración BICE-Security: fusión de AGF y corredoras, potenciar negocio en Perú y crecer en financiamiento automotriz",
+   "summary_original": "Lo que viene en la integración BICE-Security: fusión de AGF y corredoras, potenciar negocio en Perú y crecer en financiamiento automotriz &nbsp;&nbsp; Diario Financiero",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1786963906,
+   "cap_iso": "2026-08-17 07:51"
+  },
+  "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQVGk0bS14dWVuSWwyOHZFY3c4VUd0eGdNTlk0RUh0TE5Dbm0yVVF4eDdfdG92U19Na01OdEdXOURNMWx0ZXpiMC1tcm9HT1FPa2VIc2lySDgwZngyRkZ2TUs4ZVFPUGlFc00xbDdqOV9Edm5meXdRMVFVeWlYY040aXZzRjhYTmF6TThCSFpXcGZad1pzcEFtMzNYVTVnVXJudlc3aGh4aFAwY1BnZkhoaTNxZ25VOXNnSjZCd0pLQmZMcTlDb1hJV0JqN3J0TUJrRHltUF9mVzNsREJJdGc?oc=5": {
+   "title": "Após 55 anos de história e dívida de R$ 133 milhões, tradicional empresa de móveis de SC tem falência decretada",
+   "url": "https://omunicipio.com.br/economia/apos-55-anos-de-historia-e-divida-de-r-133-milhoes-tradicional-empresa-de-moveis-de-sc-tem-falencia-decretada/",
+   "summary": "Após 55 anos de história e dívida de R$ 133 milhões, tradicional empresa de móveis de SC tem falência decretada &nbsp;&nbsp; O Município",
+   "source": "O Município",
+   "domain": "omunicipio.com.br",
+   "pub_ts": 1786367019,
+   "pub_iso": "2026-08-10 10:03",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "corroborations": [
+    {
+     "source": "NSC Total",
+     "domain": "nsctotal.com.br",
+     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaGU1cEZodDRLemgxb3pqN05Ga2VTSXljR0xydlJsV2dtc21kb1VaaWVYZ1BpaVpMRGpnYlBnSUEtVHN1ZEEzbGYySjRwaDJqelExMVU5U3lqVDdGdW5HTlR6XzlXd2pZS1M2bWdqOTQzUzBFU2NaOXFCRjlnWkpfZXZTSEhDY1d6R2lJTW5NSDlCb1Y3bFZRbjNTX0FCcmt4UjJsWDVmLS0xR09qWHJxNWFoRFAxckkyX3pNZVA3d2FDMmVKMWk1dXV3T0pxaWs?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaGU1cEZodDRLemgxb3pqN05Ga2VTSXljR0xydlJsV2dtc21kb1VaaWVYZ1BpaVpMRGpnYlBnSUEtVHN1ZEEzbGYySjRwaDJqelExMVU5U3lqVDdGdW5HTlR6XzlXd2pZS1M2bWdqOTQzUzBFU2NaOXFCRjlnWkpfZXZTSEhDY1d6R2lJTW5NSDlCb1Y3bFZRbjNTX0FCcmt4UjJsWDVmLS0xR09qWHJxNWFoRFAxckkyX3pNZVA3d2FDMmVKMWk1dXV3T0pxaWs?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaGU1cEZodDRLemgxb3pqN05Ga2VTSXljR0xydlJsV2dtc21kb1VaaWVYZ1BpaVpMRGpnYlBnSUEtVHN1ZEEzbGYySjRwaDJqelExMVU5U3lqVDdGdW5HTlR6XzlXd2pZS1M2bWdqOTQzUzBFU2NaOXFCRjlnWkpfZXZTSEhDY1d6R2lJTW5NSDlCb1Y3bFZRbjNTX0FCcmt4UjJsWDVmLS0xR09qWHJxNWFoRFAxckkyX3pNZVA3d2FDMmVKMWk1dXV3T0pxaWs?oc=5",
+     "resolved_url": "https://www.nsctotal.com.br/economia/empresa-de-moveis-de-sc-tem-falencia-decretada-apos-55-anos-de-historia-e-divida-de-r-133-milhoes",
+     "canonical_url": "https://www.nsctotal.com.br/economia/empresa-de-moveis-de-sc-tem-falencia-decretada-apos-55-anos-de-historia-e-divida-de-r-133-milhoes",
+     "display_url": "https://www.nsctotal.com.br/economia/empresa-de-moveis-de-sc-tem-falencia-decretada-apos-55-anos-de-historia-e-divida-de-r-133-milhoes",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.nsctotal.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-17T10:52:09.723053+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "NSC Total",
+     "domain": "nsctotal.com.br",
+     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaGU1cEZodDRLemgxb3pqN05Ga2VTSXljR0xydlJsV2dtc21kb1VaaWVYZ1BpaVpMRGpnYlBnSUEtVHN1ZEEzbGYySjRwaDJqelExMVU5U3lqVDdGdW5HTlR6XzlXd2pZS1M2bWdqOTQzUzBFU2NaOXFCRjlnWkpfZXZTSEhDY1d6R2lJTW5NSDlCb1Y3bFZRbjNTX0FCcmt4UjJsWDVmLS0xR09qWHJxNWFoRFAxckkyX3pNZVA3d2FDMmVKMWk1dXV3T0pxaWs?oc=5",
+     "when": "10/08 16:34",
+     "original_url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaGU1cEZodDRLemgxb3pqN05Ga2VTSXljR0xydlJsV2dtc21kb1VaaWVYZ1BpaVpMRGpnYlBnSUEtVHN1ZEEzbGYySjRwaDJqelExMVU5U3lqVDdGdW5HTlR6XzlXd2pZS1M2bWdqOTQzUzBFU2NaOXFCRjlnWkpfZXZTSEhDY1d6R2lJTW5NSDlCb1Y3bFZRbjNTX0FCcmt4UjJsWDVmLS0xR09qWHJxNWFoRFAxckkyX3pNZVA3d2FDMmVKMWk1dXV3T0pxaWs?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaGU1cEZodDRLemgxb3pqN05Ga2VTSXljR0xydlJsV2dtc21kb1VaaWVYZ1BpaVpMRGpnYlBnSUEtVHN1ZEEzbGYySjRwaDJqelExMVU5U3lqVDdGdW5HTlR6XzlXd2pZS1M2bWdqOTQzUzBFU2NaOXFCRjlnWkpfZXZTSEhDY1d6R2lJTW5NSDlCb1Y3bFZRbjNTX0FCcmt4UjJsWDVmLS0xR09qWHJxNWFoRFAxckkyX3pNZVA3d2FDMmVKMWk1dXV3T0pxaWs?oc=5",
+     "resolved_url": "https://www.nsctotal.com.br/economia/empresa-de-moveis-de-sc-tem-falencia-decretada-apos-55-anos-de-historia-e-divida-de-r-133-milhoes",
+     "canonical_url": "https://www.nsctotal.com.br/economia/empresa-de-moveis-de-sc-tem-falencia-decretada-apos-55-anos-de-historia-e-divida-de-r-133-milhoes",
+     "display_url": "https://www.nsctotal.com.br/economia/empresa-de-moveis-de-sc-tem-falencia-decretada-apos-55-anos-de-historia-e-divida-de-r-133-milhoes",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.nsctotal.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-17T10:52:10.123310+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "captured_ts": 1786963906,
+   "cap_iso": "2026-08-17 07:51"
+  },
+  "https://www.bloomberglinea.com.br/agro/jbs-busca-recuperar-margens-nos-eua-com-gado-mexicano-e-novo-ceo-promete-continuidade/": {
+   "title": "JBS busca recuperar margens nos EUA com gado mexicano, e novo CEO promete continuidade",
+   "url": "https://www.bloomberglinea.com.br/agro/jbs-busca-recuperar-margens-nos-eua-com-gado-mexicano-e-novo-ceo-promete-continuidade/",
+   "summary": "JBS busca recuperar margens nos EUA com gado mexicano, e novo CEO promete continuidade &nbsp;&nbsp; Bloomberg Línea Brasil",
+   "source": "Bloomberg Línea Brasil",
+   "domain": "bloomberglinea.com.br",
+   "pub_ts": 1786534466,
+   "pub_iso": "2026-08-12 08:34",
+   "language": "pt",
+   "companies": [
+    "JBS"
+   ],
+   "event_ids": [
+    "troca_ceo"
+   ],
+   "mention_roles": {
+    "JBS": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "JBS": [
+     "troca_ceo"
+    ]
+   },
+   "companies_attributed": [
+    "JBS"
+   ],
+   "context_companies": [],
+   "corroborations": [
+    {
+     "source": "O Presente Rural",
+     "domain": "opresenterural.com.br",
+     "url": "https://opresenterural.com.br/wesley-batista-filho-sera-o-novo-ceo-global-da-jbs-a-partir-de-janeiro-de-2027/"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "O Presente Rural",
+     "domain": "opresenterural.com.br",
+     "url": "https://opresenterural.com.br/wesley-batista-filho-sera-o-novo-ceo-global-da-jbs-a-partir-de-janeiro-de-2027/",
+     "when": "14/08 14:48"
+    }
+   ],
+   "captured_ts": 1786963906,
+   "cap_iso": "2026-08-17 07:51"
   }
  },
  "last_run": {
-  "ts": 1786949505,
-  "iso": "17 ago 2026 · 03:51 BRT",
+  "ts": 1786963968,
+  "iso": "17 ago 2026 · 07:52 BRT",
   "status": {
    "Cosan": {
     "status": "atencao",
-    "score": 66
+    "score": 65
    },
    "Engie Brasil": {
     "status": "atencao",
@@ -54406,11 +54652,11 @@
     "status": "monitorar",
     "score": 32
    },
-   "B3": {
-    "status": "monitorar",
-    "score": 32
-   },
    "Sabesp": {
+    "status": "monitorar",
+    "score": 28
+   },
+   "B3": {
     "status": "monitorar",
     "score": 28
    },
@@ -54418,12 +54664,12 @@
     "status": "monitorar",
     "score": 25
    },
-   "NextEra Energy": {
-    "status": "monitorar",
-    "score": 24
-   },
    "Vale": {
     "status": "atencao",
+    "score": 23
+   },
+   "NextEra Energy": {
+    "status": "monitorar",
     "score": 23
    },
    "Baker Hughes": {
@@ -54434,23 +54680,19 @@
     "status": "monitorar",
     "score": 21
    },
-   "BTG Pactual": {
-    "status": "atencao",
-    "score": 20
-   },
-   "PRIO": {
-    "status": "monitorar",
-    "score": 20
-   },
    "ISA Energia Brasil": {
     "status": "monitorar",
     "score": 20
    },
-   "Lojas Renner": {
-    "status": "monitorar",
-    "score": 17
+   "BTG Pactual": {
+    "status": "atencao",
+    "score": 19
    },
-   "Aegea Saneamento": {
+   "PRIO": {
+    "status": "monitorar",
+    "score": 19
+   },
+   "Lojas Renner": {
     "status": "monitorar",
     "score": 16
    },
@@ -54460,6 +54702,10 @@
    },
    "Yura": {
     "status": "atencao",
+    "score": 15
+   },
+   "Aegea Saneamento": {
+    "status": "monitorar",
     "score": 15
    },
    "Tupy": {
@@ -54522,15 +54768,15 @@
     "status": "monitorar",
     "score": 6
    },
-   "Pemex (Petróleos Mexicanos)": {
-    "status": "monitorar",
-    "score": 6
-   },
    "Vamos": {
     "status": "monitorar",
     "score": 5
    },
    "Halliburton": {
+    "status": "monitorar",
+    "score": 5
+   },
+   "Pemex (Petróleos Mexicanos)": {
     "status": "monitorar",
     "score": 5
    },
@@ -57468,8 +57714,8 @@
    "url": "https://www.moneytimes.com.br/caixa-seguridade-cxse3-pode-ter-follow-on-de-ate-r-3-bilhoes-diz-jornal/"
   },
   "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWFVuYzd3eHJkZzJfUDh1Qm5WdHoza1ZYdTcxT3RUTnZ5OC1NY3B5NkpRazRNYXNzZFN2LVFQVzJZeE9ybUliTHVCSjk4UzhURmtBeTk5X2g0N0M5MnExVWR0V1I1djUzTm9sNVZhZUFZUEZyeHJITW91aWdhQklhYWtodWIzNVkteE1CZDVYaVNYS1RIdEJneGp5b1JlZDQzRVJHbNIBqgFBVV95cUxOa1dnX282ZzRPMkZiOVRWQmloaFBtX0JKQVpPUC1HNHNBeDVYUG81allRdUNsZE93TjhMaHBIRVphTFVKR2w5WW1YaTFYTHJWRnNYb2hUc2N1VjNwaHhPRGh5VV9rMDJLRm9WUmE2dUpQR0xBa2ItMXF2Qy1JdjkwWTZhTXN0NjU5dzVsUDdEU0dDcEhyOFJGLUMwR2hFbGJXSlNPVkZqSkRMZw?oc=5": {
-   "exact": true,
-   "url": "https://investidor10.com.br/noticias/smart-fit-smft3-anuncia-troca-de-ceo-e-diretor-financeiro-118563/"
+   "url": "https://investidor10.com.br/noticias/smart-fit-smft3-anuncia-troca-de-ceo-e-diretor-financeiro-118563/",
+   "exact": true
   },
   "https://news.google.com/rss/articles/CBMipAFBVV95cUxQX2pQNG1CTzZQcHhaZDdMOURZc2JGbW94b3JaRGtQZ1JZN0ZidGR1aUJ5eEw4eUVwVm9ycUViUUhld3pxUm9WOGlzd1RKRHNtU2ZsYUozbV8xb3hpdTdTM3Vtd25WZ1c4VlltYVdtaXJhUDlDRHc3ZkhBRjNab1NsOFFsQzJmYWJGWmdsSWZVNmRsVV9QcXVVSGladmdTeEVTR010R9IBuAFBVV95cUxQb0JyMm80ZXA1YXMtclh4Uy1oNFZURTFwU0hqbEhrLXh3andZdkEwZERLdjJyNm1sMGswU2xXSlBJMldXTWg3NDlHYjhNLUpjdzJOb3lTOUpIVi1BY2hycTI1RDlNWk1tWU5teFlheHdRRW1RVUdDbnMyODdHYXp0UndVaGZDTzlVeVVsSG1QSFVDdDVMWkhkV05BZ3pQRXlHdkZsSVpMby1RSUxfSml3Z2UzUV83V1J4?oc=5": {
    "exact": true,
@@ -60012,8 +60258,8 @@
    "url": "https://elizeupires.com/artigos/geral/109336-nova-iguacu-empresa-em-recuperacao-judicial-ja-recebeu-cerca-r-425-milhoes-da-prefeitura/"
   },
   "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaGU1cEZodDRLemgxb3pqN05Ga2VTSXljR0xydlJsV2dtc21kb1VaaWVYZ1BpaVpMRGpnYlBnSUEtVHN1ZEEzbGYySjRwaDJqelExMVU5U3lqVDdGdW5HTlR6XzlXd2pZS1M2bWdqOTQzUzBFU2NaOXFCRjlnWkpfZXZTSEhDY1d6R2lJTW5NSDlCb1Y3bFZRbjNTX0FCcmt4UjJsWDVmLS0xR09qWHJxNWFoRFAxckkyX3pNZVA3d2FDMmVKMWk1dXV3T0pxaWs?oc=5": {
-   "exact": true,
-   "url": "https://www.nsctotal.com.br/economia/empresa-de-moveis-de-sc-tem-falencia-decretada-apos-55-anos-de-historia-e-divida-de-r-133-milhoes"
+   "url": "https://www.nsctotal.com.br/economia/empresa-de-moveis-de-sc-tem-falencia-decretada-apos-55-anos-de-historia-e-divida-de-r-133-milhoes",
+   "exact": true
   },
   "https://news.google.com/rss/articles/CBMizwFBVV95cUxQdm05elk1TzJYdmJ5T1gxUGxNRy0wVW9MbUJFQWRCZzVFSTN0RHU0aFdMZWlpWng4X3ZMcnhQQVllMnNiMl9nYTJSYnl1RmdaOW96STh2dWZSTndHOXI4cGxzTktuN1RSdHNURnRXWnBEazdMNXU4bFpXaUNYTHVVWUN3YzdBNkZxd3dxN2I0Z2xHOGZVNExnSE1KeDlTcEpaVTFNakR4cTFzTnBsZ0t4Q2ZkTGNRdWVuaHlxVWVITkY0YUNoMFJCM0Ria1BFMWs?oc=5": {
    "exact": true,
@@ -60082,9 +60328,37 @@
   "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPOUJTTEJYSDhKRFU2UEJaWFlVTC1aUE1DekRsUG8wejBfdk9ZTXVsSFJFRmZZaEk2WUFJTkVNSEZSN3hCWWtLcnpuNm5hbko5LTR5R0FSMGJsOHMwZTRQQTNmSkRWSkZrU2x1cUM3SHZWdTdYa0VFc3czZ3lnVzVlLWFSd2tDUnNDdHdvM0hHZzYzME1wcjNzUEZ2Nm5PcGU5OXF0dnpEQUY?oc=5": {
    "url": "https://www.migalhas.com.br/depeso/462382/recuperacao-judicial-e-juros-altos-uma-relacao-mal-compreendida",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMisgFBVV95cUxNNTd5TTEtTWg3aG1iT1ZGQ25sSXp6U3VnZTg4WWZHd2JGVVpBYXliT2RqUDFab3JLTFNZRWJlMFV6YUhPbXFBWWJHMm9QOVNxQzFnVzJ6cEZTbGNCMkNhRktoNXBkRzN0ZVVYZ2lBZjlIOUxPVnk5Yy1rMDF4dm4wVGlxcXRqYTU2VTZRTTlfZ1pqUFVlcFpHRlBJRDhqdVl6Y0dKbXZYNmJ4QWwxdm9PeTJB0gG3AUFVX3lxTFBoNG1sYkp4bnVFZko2NXhQYlJvYUc0cnN5ekRoQ0RKVV9iUlFzdVdpalhJSUVLc0d6NEhhVXZ0V29sbTBsMWY2TkpVS2hENzdvWmR6YnBfS0JHZVpXQmx2d0hYbktCNW5ib3lkNW45Z25NMG5IRk50LXgwdHhNNGRZX0RmLW5nMG9aMGdCVlBLcnhONG9sYWMyc2tGY0ptaklXZDIzM1U3VFFFa2dKM3VpSUdhNC1wUQ?oc=5": {
+   "url": "https://www.theclinic.cl/2024/01/25/nuevo-banco-2-millones-clientes-chile-claves-fusion-grupo-security-bicecorp/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNUzVvU3JPYzBmN0tRLTdsVUdZTlNBOFVxRUJPNVZXRHBTUVNQOHM0MnU3UkMxclFuT2JKUUVfUWZxamhWTVh0cmhDdWNEc0J2aEYwZGVhQmdoV2hMcktiZUZPY2wyQUtSQWtrcHc0N0JSUW5tblBoeDZCWlBDSVFXMExYYmtIeWJURXlDbzZrdmNGNXJZRzBHaWdCNEJVSkRjTXdTbkozWnVPX2tOVGtMTFlSMS1VTF9yN1hYeUdYbkR0MnfSAdcBQVVfeXFMUGdWb1JLNjVYc0VfTl9uN3pKVS10aVVFYW5DN1luc0JIWjhGY21IanBVb2UtYjZTZm1WU3FnQWM5QkotUk1fSUxLaTA4NnhWVHNfNHRyc1FDSjdTcVpOSDAwQVhQRVNYbDRzOTA0aENPanlKNGlvaHdfSmR0bmNqbjIxZlRWQWtHWWNWRkhCMkRQWHNRTnV0NU85emZvYVdtVG1PM3RLZkZqUkkzc2lMRGdnMG83NThaWVFOZ2d6bUdkQlVNOVNUelFranRIUTZtd25YQjR4ZWM?oc=5": {
+   "url": "https://www.bloomberglinea.com.br/agro/jbs-busca-recuperar-margens-nos-eua-com-gado-mexicano-e-novo-ceo-promete-continuidade/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMisgFBVV95cUxOQjl5ZGthcWxvb1FOR1JuMXRlZlcwd3FndFUycENmcS1obkgwZzZvNU5OSUVHZWk3VFpsczdIWkVNR1d2UEl3R3dPb2JkVVZvWVdaeklWMlZSc3FiUGRKenRrSTY3WFlIRnJaNUNoUlkzRmNPdlZSZ3VqbmxWdVc3N1BoWmQzVUJUb2VlV05iZFI4M1loTUJOeHFTdHNnVExEb3Z3QUdvNnBGMWJRdkFRNkVB?oc=5": {
+   "url": "https://www.df.cl/mercados/banca-fintech/lo-que-viene-en-la-integracion-bice-security-fusion-de-agf-y-corredoras",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQVGk0bS14dWVuSWwyOHZFY3c4VUd0eGdNTlk0RUh0TE5Dbm0yVVF4eDdfdG92U19Na01OdEdXOURNMWx0ZXpiMC1tcm9HT1FPa2VIc2lySDgwZngyRkZ2TUs4ZVFPUGlFc00xbDdqOV9Edm5meXdRMVFVeWlYY040aXZzRjhYTmF6TThCSFpXcGZad1pzcEFtMzNYVTVnVXJudlc3aGh4aFAwY1BnZkhoaTNxZ25VOXNnSjZCd0pLQmZMcTlDb1hJV0JqN3J0TUJrRHltUF9mVzNsREJJdGc?oc=5": {
+   "url": "https://omunicipio.com.br/economia/apos-55-anos-de-historia-e-divida-de-r-133-milhoes-tradicional-empresa-de-moveis-de-sc-tem-falencia-decretada/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMijgFBVV95cUxPakExM0RuSzV4eGU5OGJGNEFNQVNvb3pwa1Vnellkb05rYTdnTk1ZQ3NMZkcxeDR4ZS1rRnNlYjN4TzRpc2dhcFNrVTdfRFJjaDYyOWxjekpHakhEU1czVzNqYlhaM1Y2c0FuU0dHN1dSMFBTQl81NWVjdjFTaENqcDR2SW9tNndfZ05NaUhR?oc=5": {
+   "url": "https://forbes.com.br/forbes-money/2026/08/casas-bahia-prejuizo-recuperacao-judicial/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMitwFBVV95cUxNLTl4RXk1RF91OVRkY1JsWlBwYU5ZaTgyLXJPUTdoQmpiUW9NZXRSM1lRMkhxWkJqQUhyRTdlejhMTVgyVVM0ek9ZcU50LU94LU5iX1R1MFA4UVN6MmhxcTcydW1neTR2UWQ5VHpqUDNxQ0doSjVRUzVxMGozazVkNDM3SHNTRnUwWXBIQTJiMHoyVkFiekNGbldHVklSdjBiRFg3UWFyTjhEQjdkTzk0aDIyUlpOc2M?oc=5": {
+   "url": "https://timesbrasil.com.br/brasil/judiciario/recuperacao-judicial/marabraz-recuperacao-judicial-dividas-140-milhoes/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPSDFTeTY2b0hLekdDNmVyQ3lhazFYY1Z3Q0hJSmM2R2M4UEYxemRhaThtV2RYbGZLbC1ieUtoLUJBaFJndzhjY2ZpanUyVHNtdm1HTlV0VGtpa1N1VVFOTFREeExTMXh6YXEteE1oajVGMVl1bHpjRVhEU1NpcUx4ME5TZ0M3S3g3RFdibDZPcl9BeTdqbFZ0NVg2TzJmbl91ZlRvV3JycFpTdG4tUVBRbHJPQk1saDFYSk9zcDVkUUw2RU9BNzgwWjZWVU9HaHktdzhvYzRWTUE1Mk9VYzJQUElGVGhXMFVhb3JDR09LUDJqcDRfZ1kzZ9IBhwJBVV95cUxNTkNFWmQ1LTAxX1NlVURLaEJNMTEtNk1SLW95c0UwLUxsdVFLT3NjcFp4R1ZfUzQ2LWdVYUgxbXVHdnU3Y1dLNGRMaXdMODhmcG1VdVlkU21Rbk1kdm0yRWFGZWkxRS1yYmFHR08tNXB5WVBScVhROWVBMzdnWW9wX1JsTmluQmJVN2E3aTRFR3pBWkQ4cGdnazdsR3pQeFdEbzFzcmpKUlAxUjFMajZZS2NDUVZZekZ5eG8wQ0h2azY1ZFNmT3cyZ2lER0VxSl9tdFJNWlpZODVoNUZxOHRPVEh4cE0yNnZnT29OM0FNNElwbUYzQmJ4U3lTcG9FeFo1cUFRTVdmcw?oc=5": {
+   "url": "https://oglobo.globo.com/economia/negocios/noticia/2026/08/16/com-r-1402-milhoes-em-dividas-empresas-do-grupo-dono-da-lojas-marabraz-pedem-recuperacao-judicial.ghtml",
+   "exact": true
   }
  },
- "run_count": 129,
+ "run_count": 130,
  "semantic_reclassified_at": "2026-07-30T21:07:47.714609+00:00",
  "semantic_version": "1.0"
 }

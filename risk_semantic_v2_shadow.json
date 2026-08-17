@@ -5,6 +5,240 @@
   "shadow_version": "sem.v2.shadow.v1"
  },
  "observacoes": {
+  "201b91aa6b3c1d9e780c|JBS|troca_ceo|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "201b91aa6b3c1d9e780c",
+   "article_pub_iso": "2026-08-12 08:34",
+   "candidate_event": "troca_ceo",
+   "case_id": "201b91aa6b3c1d9e780c|JBS|troca_ceo|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "JBS",
+   "contract_version": "v2",
+   "created_at": "2026-08-17T10:53:29Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-17 07:51",
+    "contexto": false,
+    "event_id": "troca_ceo",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "novo CEO promete continuidade",
+      "event_asserted": "MENTIONED_ONLY",
+      "event_id": "troca_ceo",
+      "event_quote": "novo CEO promete continuidade",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+      "occurrence_novelty_quote": "novo CEO promete continuidade",
+      "phase": "CONFIRMED",
+      "phase_quote": "novo CEO promete continuidade",
+      "related_entity": "JBS",
+      "relation": "SUBJECT",
+      "relation_quote": "JBS busca recuperar margens nos EUA com gado mexicano, e novo CEO promete continuidade",
+      "role_quote": "JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-17 07:51",
+   "human_review": null,
+   "latencia_s": 6.4,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "novo CEO promete continuidade",
+      "event_asserted": "MENTIONED_ONLY",
+      "event_id": "troca_ceo",
+      "event_quote": "novo CEO promete continuidade",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+      "occurrence_novelty_quote": "novo CEO promete continuidade",
+      "phase": "CONFIRMED",
+      "phase_quote": "novo CEO promete continuidade",
+      "related_entity": "JBS",
+      "relation": "SUBJECT",
+      "relation_quote": "JBS busca recuperar margens nos EUA com gado mexicano, e novo CEO promete continuidade",
+      "role_quote": "JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Bloomberg Línea Brasil",
+   "title": "JBS busca recuperar margens nos EUA com gado mexicano, e novo CEO promete continuidade",
+   "url": "https://www.bloomberglinea.com.br/agro/jbs-busca-recuperar-margens-nos-eua-com-gado-mexicano-e-novo-ceo-promete-continuidade/",
+   "usage": {
+    "candidates_token_count": 285,
+    "prompt_token_count": 1319,
+    "total_token_count": 1604
+   }
+  },
+  "201b91aa6b3c1d9e780c|JBS|troca_ceo|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "201b91aa6b3c1d9e780c",
+   "article_pub_iso": "2026-08-12 08:34",
+   "candidate_event": "troca_ceo",
+   "case_id": "201b91aa6b3c1d9e780c|JBS|troca_ceo|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "JBS",
+   "contract_version": "v2",
+   "created_at": "2026-08-17T10:53:38Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-17 07:51",
+    "contexto": false,
+    "event_id": "troca_ceo",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "JBS busca recuperar margens nos EUA com gado mexicano, e novo CEO promete continuidade",
+      "event_asserted": "ASSERTED",
+      "event_id": "troca_ceo",
+      "event_quote": "novo CEO promete continuidade",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+      "occurrence_novelty_quote": "novo CEO",
+      "phase": "CONFIRMED",
+      "phase_quote": "novo CEO",
+      "related_entity": "Bloomberg Línea Brasil",
+      "relation": "PUBLISHED_BY",
+      "relation_quote": "Bloomberg Línea Brasil",
+      "role_quote": "JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-17 07:51",
+   "human_review": null,
+   "latencia_s": 1.38,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "JBS busca recuperar margens nos EUA com gado mexicano, e novo CEO promete continuidade",
+      "event_asserted": "ASSERTED",
+      "event_id": "troca_ceo",
+      "event_quote": "novo CEO promete continuidade",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+      "occurrence_novelty_quote": "novo CEO",
+      "phase": "CONFIRMED",
+      "phase_quote": "novo CEO",
+      "related_entity": "Bloomberg Línea Brasil",
+      "relation": "PUBLISHED_BY",
+      "relation_quote": "Bloomberg Línea Brasil",
+      "role_quote": "JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Bloomberg Línea Brasil",
+   "title": "JBS busca recuperar margens nos EUA com gado mexicano, e novo CEO promete continuidade",
+   "url": "https://www.bloomberglinea.com.br/agro/jbs-busca-recuperar-margens-nos-eua-com-gado-mexicano-e-novo-ceo-promete-continuidade/",
+   "usage": {
+    "candidates_token_count": 283,
+    "prompt_token_count": 1319,
+    "total_token_count": 1602
+   }
+  },
   "2e440c297fa646ce331f|Orizon Valorização de Resíduos|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {
    "actual_model": "gemini-3.1-flash-lite",
    "article_id": "2e440c297fa646ce331f",

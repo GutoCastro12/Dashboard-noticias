@@ -1,6 +1,6 @@
 # Matriz de cobertura — emissores priorizados (reconciliação runtime)
 
-run_id: 2026-08-17T06:51:45.753387+00:00 · generated_at: 2026-08-17T06:51:45.753387+00:00 · commit_base: 686a5e6c1ec4aab7e100371a0e473e1dd808affa · payload_hash: 82873785837ec564cc8918b2b73d67ccc9e44e3209fac1dd0be5ffcd9d0de79d
+run_id: 2026-08-17T10:52:48.474440+00:00 · generated_at: 2026-08-17T10:52:48.474440+00:00 · commit_base: c33e17dc362d50f63a80f662f33c72aa8d7e765e · payload_hash: 06ffee5c726fb52c2d2c97a58122cc2c522aa39c511e0a3ba4a490a3adb8c56f
 
 | Emissor | Tipo | Ciclo atual | Consolidado | Frescor |
 |---|---|---|---|---|
@@ -20,9 +20,9 @@ run_id: 2026-08-17T06:51:45.753387+00:00 · generated_at: 2026-08-17T06:51:45.75
 | Suzano | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
 | Vale | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
 | Vibra Energia | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
-| Yura | Peru | FALLBACK_ONLY | FALLBACK_ONLY | valida |
+| Yura | Peru | PARTIAL_COVERAGE | PARTIAL_COVERAGE | valida |
 | Trupal | Peru | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | valida |
-| Coazucar | Peru | PARTIAL_COVERAGE | PARTIAL_COVERAGE | valida |
+| Coazucar | Peru | FALLBACK_ONLY | FALLBACK_ONLY | valida |
 | Yobel | Peru | COLLECTION_FAILURE | PARTIAL_COVERAGE | parcial |
 | Casa Grande S.A.A. | Subsidiária Coazucar | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | valida |
 | Cartavio S.A.A. | Subsidiária Coazucar | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | valida |
