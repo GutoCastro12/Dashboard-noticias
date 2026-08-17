@@ -1,12 +1,12 @@
 # Matriz de cobertura — emissores priorizados (reconciliação runtime)
 
-run_id: 2026-08-17T16:40:45.454219+00:00 · generated_at: 2026-08-17T16:40:45.454219+00:00 · commit_base: cb3b41169a5639e0f26e81d884266383f658036f · payload_hash: 4a60744c1f3f10bafd2aa12b79a5ba9e1c72084dc909f9592cc4a4e56fdae74f
+run_id: 2026-08-17T19:38:15.689391+00:00 · generated_at: 2026-08-17T19:38:15.689391+00:00 · commit_base: b6582b8d2752ab1793608e66d28e4ceaf968827a · payload_hash: 51cec1bbb8e006cbad2f39647668d3e26952c45b23ee934a893675f608db50c1
 
 | Emissor | Tipo | Ciclo atual | Consolidado | Frescor |
 |---|---|---|---|---|
 | Ambev | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
 | B3 | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
-| BTG Pactual | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
+| BTG Pactual | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
 | Banco do Brasil | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
 | Bradesco | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
 | Eletrobras | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
@@ -20,9 +20,9 @@ run_id: 2026-08-17T16:40:45.454219+00:00 · generated_at: 2026-08-17T16:40:45.45
 | Suzano | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
 | Vale | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
 | Vibra Energia | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
-| Yura | Peru | PARTIAL_COVERAGE | PARTIAL_COVERAGE | valida |
+| Yura | Peru | FALLBACK_ONLY | FALLBACK_ONLY | valida |
 | Trupal | Peru | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | valida |
-| Coazucar | Peru | FALLBACK_ONLY | FALLBACK_ONLY | valida |
+| Coazucar | Peru | PARTIAL_COVERAGE | PARTIAL_COVERAGE | valida |
 | Yobel | Peru | COLLECTION_FAILURE | PARTIAL_COVERAGE | parcial |
 | Casa Grande S.A.A. | Subsidiária Coazucar | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | valida |
 | Cartavio S.A.A. | Subsidiária Coazucar | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | valida |

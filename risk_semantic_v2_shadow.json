@@ -5,6 +5,247 @@
   "shadow_version": "sem.v2.shadow.v1"
  },
  "observacoes": {
+  "10e297f95c5954630150|Tok&Stok|recuperacao_judicial|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "10e297f95c5954630150",
+   "article_pub_iso": "2026-08-17 15:08",
+   "candidate_event": "recuperacao_judicial",
+   "case_id": "10e297f95c5954630150|Tok&Stok|recuperacao_judicial|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "Tok&Stok",
+   "contract_version": "v2",
+   "created_at": "2026-08-17T19:38:59Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-17 16:37",
+    "contexto": false,
+    "event_id": "recuperacao_judicial",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MATERIAL_SECONDARY",
+      "company_role": "MENTIONED",
+      "currentness": "UNDATABLE",
+      "currentness_quote": "por que tantas empresas de varejo estão pedindo recuperação judicial?",
+      "event_asserted": "MENTIONED_ONLY",
+      "event_id": "recuperacao_judicial",
+      "event_quote": "Casas Bahia, Marabraz, Mobly e Tok&STok: por que tantas empresas de varejo estão pedindo recuperação judicial?",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+      "occurrence_novelty_quote": "por que tantas empresas de varejo estão pedindo recuperação judicial?",
+      "phase": "UNKNOWN",
+      "phase_quote": "pedindo recuperação judicial",
+      "related_entity": "Casas Bahia, Marabraz, Mobly",
+      "relation": "concorrentes no setor de varejo",
+      "relation_quote": "empresas de varejo",
+      "role_quote": "Tok&STok",
+      "subject": "Tok&Stok",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Tok&STok",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-17 16:37",
+   "human_review": null,
+   "latencia_s": 2.53,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MATERIAL_SECONDARY",
+      "company_role": "MENTIONED",
+      "currentness": "UNDATABLE",
+      "currentness_quote": "por que tantas empresas de varejo estão pedindo recuperação judicial?",
+      "event_asserted": "MENTIONED_ONLY",
+      "event_id": "recuperacao_judicial",
+      "event_quote": "Casas Bahia, Marabraz, Mobly e Tok&STok: por que tantas empresas de varejo estão pedindo recuperação judicial?",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+      "occurrence_novelty_quote": "por que tantas empresas de varejo estão pedindo recuperação judicial?",
+      "phase": "UNKNOWN",
+      "phase_quote": "pedindo recuperação judicial",
+      "related_entity": "Casas Bahia, Marabraz, Mobly",
+      "relation": "concorrentes no setor de varejo",
+      "relation_quote": "empresas de varejo",
+      "role_quote": "Tok&STok",
+      "subject": "Tok&Stok",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Tok&STok",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "O GLOBO",
+   "title": "Casas Bahia, Marabraz, Mobly e Tok&STok: por que tantas empresas de varejo estão pedindo recuperação judicial?",
+   "url": "https://oglobo.globo.com/google/amp/economia/negocios/noticia/2026/08/17/casas-bahia-marabraz-mobly-e-tokandstok-por-que-tantas-empresas-de-varejo-estao-pedindo-recuperacao-judicial.ghtml",
+   "usage": {
+    "candidates_token_count": 338,
+    "prompt_token_count": 1336,
+    "total_token_count": 1674
+   }
+  },
+  "10e297f95c5954630150|Tok&Stok|recuperacao_judicial|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "10e297f95c5954630150",
+   "article_pub_iso": "2026-08-17 15:08",
+   "candidate_event": "recuperacao_judicial",
+   "case_id": "10e297f95c5954630150|Tok&Stok|recuperacao_judicial|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "Tok&Stok",
+   "contract_version": "v2",
+   "created_at": "2026-08-17T19:39:09Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-17 16:37",
+    "contexto": false,
+    "event_id": "recuperacao_judicial",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 0,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": false,
+       "marcas": [
+        "H1_QUOTE_INEXISTENTE"
+       ],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [
+         "event_quote",
+         "phase_quote"
+        ],
+        "valida": false
+       }
+      },
+      "centrality": "BACKGROUND",
+      "company_role": "MENTIONED",
+      "currentness": "UNDATABLE",
+      "currentness_quote": "Casas Bahia, Marabraz, Mobly e Tok&STok: por que tantas empresas de varejo estão pedindo recuperação judicial?",
+      "event_asserted": "MENTIONED_ONLY",
+      "event_id": "recuperacao_judicial",
+      "event_quote": "recuperacao_judicial",
+      "field_support": "PARTIALLY_SUPPORTED",
+      "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+      "occurrence_novelty_quote": "Casas Bahia, Marabraz, Mobly e Tok&STok: por que tantas empresas de varejo estão pedindo recuperação judicial?",
+      "phase": "UNKNOWN",
+      "phase_quote": "recuperacao_judicial",
+      "related_entity": "Casas Bahia, Marabraz, Mobly",
+      "relation": "mention_in_list",
+      "relation_quote": "Casas Bahia, Marabraz, Mobly e Tok&STok",
+      "role_quote": "Tok&STok",
+      "subject": "Tok&Stok",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Tok&STok",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "not_applicable"
+     }
+    ],
+    "falha": "",
+    "marcas": [
+     "H1_QUOTE_INEXISTENTE"
+    ],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-17 16:37",
+   "human_review": null,
+   "latencia_s": 1.99,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "BACKGROUND",
+      "company_role": "MENTIONED",
+      "currentness": "UNDATABLE",
+      "currentness_quote": "Casas Bahia, Marabraz, Mobly e Tok&STok: por que tantas empresas de varejo estão pedindo recuperação judicial?",
+      "event_asserted": "MENTIONED_ONLY",
+      "event_id": "recuperacao_judicial",
+      "event_quote": "recuperacao_judicial",
+      "field_support": "PARTIALLY_SUPPORTED",
+      "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+      "occurrence_novelty_quote": "Casas Bahia, Marabraz, Mobly e Tok&STok: por que tantas empresas de varejo estão pedindo recuperação judicial?",
+      "phase": "UNKNOWN",
+      "phase_quote": "recuperacao_judicial",
+      "related_entity": "Casas Bahia, Marabraz, Mobly",
+      "relation": "mention_in_list",
+      "relation_quote": "Casas Bahia, Marabraz, Mobly e Tok&STok",
+      "role_quote": "Tok&STok",
+      "subject": "Tok&Stok",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Tok&STok",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "not_applicable"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "O GLOBO",
+   "title": "Casas Bahia, Marabraz, Mobly e Tok&STok: por que tantas empresas de varejo estão pedindo recuperação judicial?",
+   "url": "https://oglobo.globo.com/google/amp/economia/negocios/noticia/2026/08/17/casas-bahia-marabraz-mobly-e-tokandstok-por-que-tantas-empresas-de-varejo-estao-pedindo-recuperacao-judicial.ghtml",
+   "usage": {
+    "candidates_token_count": 355,
+    "prompt_token_count": 1336,
+    "total_token_count": 1691
+   }
+  },
   "201b91aa6b3c1d9e780c|JBS|troca_ceo|v2|r7ba.p2|gemini-3.1-flash-lite": {
    "actual_model": "gemini-3.1-flash-lite",
    "article_id": "201b91aa6b3c1d9e780c",
