@@ -2454,8 +2454,14 @@ _INSOLV_ESTRITA = (r"(?:recupera[çc](?:[ãa]o|[õo]es)\s+judicia(?:l|is)|"
 # A monitorada É a devedora: possessivo, verbo próprio ou pedido nomeado.
 _INSOLV_SUJEITO_PROPRIO = [
     _INSOLV_ESTRITA + r"\s+d[aeo]s?\s+(?:{m})\b",
-    r"(?:{m})\s+(?:\w+\s+){{0,2}}?(?:pede|pediu|pedir[áa]|entra|entrou|"
-    r"solicita|solicitou|requer|requereu|ajuiza|ajuizou|protocola|protocolou)"
+    # Plural incluído para que um sujeito NOMEADO e coordenado ("Casas Bahia
+    # e Tok&Stok PEDEM recuperação judicial") continue sendo sujeito próprio.
+    # Sem isso, a regra coletiva verbal abaixo poderia roubar o caso: aqui a
+    # monitorada é a devedora, e tem de pontuar.
+    r"(?:{m})\s+(?:\w+\s+){{0,2}}?(?:pede|pedem|pediu|pediram|pedir[áa]|"
+    r"pedir[ãa]o|entra|entram|entrou|entraram|solicita|solicitam|solicitou|"
+    r"solicitaram|requer|requerem|requereu|requereram|ajuiza|ajuizam|ajuizou|"
+    r"ajuizaram|protocola|protocolam|protocolou|protocolaram)"
     r"\s+(?:\w+\s+){{0,3}}?" + _INSOLV_ESTRITA,
     r"(?:{m})\s+(?:est[áa]|entrou|permanece|segue|encontra-se)\s+"
     r"(?:\w+\s+){{0,2}}?em\s+" + _INSOLV_ESTRITA,
@@ -2482,6 +2488,28 @@ _INSOLV_SUJEITO_COLETIVO = [
     # Plural nu, sem nenhuma entidade ligada: "recuperações judiciais crescem",
     # "as falências no país". O plural já indica classe, não uma empresa.
     r"(?:recupera[çc][õo]es\s+judiciais|fal[êe]ncias)",
+    # [fix: verbal collective subject] Coletivo no PLURAL com predicado
+    # VERBAL: "tantas empresas de varejo estão PEDINDO recuperação judicial",
+    # "construtoras entram com pedido de falência". O padrão 4 acima só cobre
+    # a forma NOMINAL/preposicional ("empresas EM recuperação judicial"); a
+    # forma verbal escapava, e era exatamente por onde uma análise setorial
+    # virava evento direto e pontuável de uma monitorada citada como exemplo.
+    #
+    # PLURAL é obrigatório e não é detalhe: no corpus, "empresa chilena de
+    # lácteos solicita su quiebra" e "empresa responsável pela Storj entra com
+    # pedido de falência" são companhias ESPECÍFICAS descritas genericamente —
+    # sujeito próprio, não coletivo. O singular as arrastaria junto.
+    #
+    # Sujeito próprio tem precedência (é checado antes, em
+    # `detect_insolvencia_setorial`): "Tok&Stok pede recuperação judicial" e
+    # "Casas Bahia e Tok&Stok pedem recuperação judicial" seguem pontuando.
+    r"(?:empresas|companhias|firmas|varejistas|construtoras|usinas|lojistas|"
+    r"ind[úu]strias|clientes|produtores|fornecedores|devedores|tomadores)"
+    r"(?:\s+\w+){0,4}?\s+"
+    r"(?:pedem|pediram|pedindo|entram|entraram|entrando|solicitam|"
+    r"solicitaram|solicitando|requerem|requereram|requerendo|ajuizam|"
+    r"ajuizaram|protocolam|protocolaram|recorrem|recorreram)"
+    r"(?:\s+\w+){0,3}?\s+" + _INSOLV_ESTRITA,
 ]
 
 # Papel da monitorada quando o sujeito é coletivo: exposta, credora, provisiona,
