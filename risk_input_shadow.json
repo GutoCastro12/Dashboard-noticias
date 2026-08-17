@@ -47,7 +47,7 @@
    },
    "first_seen_run": 116,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -141,7 +141,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 123,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -419,7 +419,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -597,7 +597,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -689,7 +689,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -788,7 +788,7 @@
    },
    "first_seen_run": 115,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 2,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -1154,7 +1154,7 @@
    },
    "first_seen_run": 125,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -1530,7 +1530,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -1574,6 +1574,101 @@
    "titulo": "Localiza aprova emissão de R$1,25 bi em debêntures",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNdXgxSjVJT0dzMWtuUDlwOXgxUkZQVXBFc0cyNkZwejl2dnBnMjhjV0cxd2dQcnh5U2tZUjFPMkpoR1lPcFZuYlBzYlc4QzZZNkE0NnNCZFFKcXVwRVB4M1pwVkdfejhwSjlOd3pGTC1IQXVKSzVIWTFadlAxZVYtdEJwcHVJY1VrSDNUekY2WUbSAZYBQVVfeXFMTm40SF9DT0JXNXFjbHVXZ09uaElRQXUyNWJxYmxneldlSnJHMzlVZDlVdzVWNE10TUR2R0JEcUMzb1lmcEJBMWV0X18zM2NYLVJldVBXN1VBUW90bDd4LXZBd2UtMms0Rk41ZDN6WHB2NDJKcjEtY3Y1bEtSbjcxMUFlZU9GNGJZZlQ4TlRTWkttRnB2Vk9R?oc=5",
+   "url_resolvida": ""
+  },
+  "0e2ab7fe44ac44dc": {
+   "article_id": "0e2ab7fe44ac44dc",
+   "best_input_chars": 1405,
+   "chars_antes_do_cap": 1405,
+   "content_hash": "83c8417aafd15c24f704c90cb0c68233",
+   "dominio": "valor.globo.com",
+   "empresas": [
+    {
+     "candidatos": [
+      "ma"
+     ],
+     "empresa": "Eletrobras",
+     "tem_candidato": true
+    }
+   ],
+   "enrichment": {
+    "falha": "OK",
+    "metodo": "html:paragrafos",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R2_BODY"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "DIRTY_ONLY",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 1229,
+    "faltou": [
+     "sentences<3",
+     "dirty"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 49,
+    "nav_flag": true,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 2,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 49,
+    "useful_chars": 1229
+   },
+   "first_seen_run": 129,
+   "fonte": "company_query",
+   "last_seen_run": 129,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 87,
+     "metodo": "title"
+    },
+    {
+     "chars": 116,
+     "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 1200,
+     "metodo": "html:paragrafos"
+    }
+   ],
+   "pub_iso": "2025-04-29 04:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 28
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "sentence_like_count": 0,
+    "useful_chars": 28
+   },
+   "r1_tentado": true,
+   "r2_tentado": true,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": true,
+   "tier_final": "R2_BODY",
+   "titulo": "Eletrobras conclui aquisição de fatia na Eletronet e consolida controle sobre a empresa",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPTnNVZjN6cmRwdDcxM1I3N09iaHlXaFNtVDd2cVJpMHE2RXFFYkxLWUlsdjRWWnpxYXVNSkd5cU5OVjJtMEVvRE9LMFVVQ1FKd2pLZjRXVlJJWE5BcU54QmJjczViaEVDa0NzdU1UTXJkVThYWTEwZWxNdmZ5Y1JJdVhlZGhJVGc1Wjdhek96Nmk0cExHRDdxa1czN2ZHSXRHYXNXVjhYQmNLb1ZmcHlrdVZod1pTTXJHUXBfY0RuaHh6bG9lUTI4OGFYckZUMnlTbkFjY0xMUVNFeFHSAeoBQVVfeXFMTURaOVdhM1Roa3RLanJpV1BnQ3MxUzJKUWljbmg4OGdDeWhSckIzdWhObmtUNTVOVzNmc1RLRzZ0WEh4NUVNdm9mak5NVmhid2pMb0RUc2tWZUNZaS1uQnktdGdlb19fdXBwTXlUTG9oQ1hod3V4dkhhVkFoeG9NUGFWenBWcmZHZlRhb0lFNExkb0ZaVFFwOTNNV05fajF0aGtWUUtVZFFjTVlaUHRxXzNaLVJWVmtud2ZBdkNmcjhQbDRBS2hBaTlZMUZIeU1kRlAzZkxYUldPcy1yZVZLUDNUWC1QYjE5Y0VB?oc=5",
    "url_resolvida": ""
   },
   "1133789db51831b8": {
@@ -1720,7 +1815,7 @@
    },
    "first_seen_run": 123,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -1814,7 +1909,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -2087,7 +2182,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -2177,7 +2272,7 @@
    },
    "first_seen_run": 115,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -2267,7 +2362,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -2449,7 +2544,7 @@
    },
    "first_seen_run": 116,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -2640,7 +2735,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -2820,7 +2915,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -2911,7 +3006,7 @@
    },
    "first_seen_run": 125,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3005,7 +3100,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3099,7 +3194,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3189,7 +3284,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3237,9 +3332,9 @@
   },
   "1df4c760923676fb": {
    "article_id": "1df4c760923676fb",
-   "best_input_chars": 152,
-   "chars_antes_do_cap": 152,
-   "content_hash": "d646600fc7e7634e94f37dffea58957f",
+   "best_input_chars": 1794,
+   "chars_antes_do_cap": 1794,
+   "content_hash": "63b172f0bd1f082f1a763e4b0c37b1f0",
    "dominio": "neofeed.com.br",
    "empresas": [
     {
@@ -3249,41 +3344,37 @@
     }
    ],
    "enrichment": {
-    "falha": "RESOLUTION_FAILED",
-    "metodo": "",
-    "metodo_resolucao": "nao_resolvido",
-    "origem": "NAO_RESOLVIDO",
-    "tier": "THIN"
+    "falha": "OK",
+    "metodo": "jsonld:articleBody",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
    },
    "extractor_version": "r7c.x1",
-   "falha": "RESOLUTION_FAILED",
+   "falha": "OK",
    "final": {
     "boilerplate_flag": false,
     "bordas_removidas": [
      "titulo_repetido",
      "titulo_repetido"
     ],
-    "chars_totais": 20,
-    "faltou": [
-     "useful_chars<400",
-     "sentences<3",
-     "novos_tokens<30"
-    ],
-    "input_ready_under_r7c_policy": false,
-    "meaningful_gain_vs_title": 2,
+    "chars_totais": 1662,
+    "faltou": [],
+    "input_ready_under_r7c_policy": true,
+    "meaningful_gain_vs_title": 99,
     "nav_flag": false,
     "paywall_flag": false,
     "policy": "SELECTED",
     "policy_version": "r7c.policy2",
-    "sentence_like_count": 0,
+    "sentence_like_count": 13,
     "title_duplication": 0.0,
-    "title_summary_overlap": 0.0,
-    "unique_meaningful_tokens": 2,
-    "useful_chars": 20
+    "title_summary_overlap": 0.667,
+    "unique_meaningful_tokens": 103,
+    "useful_chars": 1662
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 113,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3296,6 +3387,10 @@
     {
      "chars": 86,
      "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 1641,
+     "metodo": "jsonld:articleBody"
     }
    ],
    "pub_iso": "2026-05-19 04:00",
@@ -3319,7 +3414,7 @@
    "shadow_version": "r7cp.1",
    "source_kind": "NEWS",
    "tem_algum_candidato": false,
-   "tier_final": "THIN",
+   "tier_final": "R1_STRUCTURED",
    "titulo": "A sucessão inesperada e a agenda de Christian Egan à frente da B3",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxORVQxR3M4TlBKSHJlbFJWMTVIZ3BDSVFlNVA3U25PcUVOWGgxZnl0MGFOdlhNVTY1c1I4dGpWSDRoWExyZFpxMUdaaER0UnljZF9jblRPa1JWNkRVMFg3bVNLcWt3X1VyMmRaYXIxbG55b2xDbTFZcnJVVXN0Y2FIclhzbmZWNWNqclFfU3puVm5BNDBkaW9WcV9WRDJmUGs?oc=5",
@@ -3373,7 +3468,7 @@
    },
    "first_seen_run": 121,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3463,7 +3558,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3569,7 +3664,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 3,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3661,7 +3756,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3747,7 +3842,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -3931,7 +4026,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -4021,7 +4116,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -4207,7 +4302,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -4293,7 +4388,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -4386,7 +4481,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -4570,7 +4665,7 @@
    },
    "first_seen_run": 127,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -4656,7 +4751,7 @@
    },
    "first_seen_run": 125,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -4746,7 +4841,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -4932,7 +5027,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -5022,7 +5117,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -5108,7 +5203,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 126,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -5152,6 +5247,99 @@
    "titulo": "Bradesco: Crescimento do crédito deve convergir para guidance até dezembro",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZ3FQN0REV3luZ19oWnluZF9xZ1BFZWxJTlVNaVRjRmlBbXZUcjVHM2J4dnU4VkIybGhCSUIzTl82d2FDd2NaOFVjX3J2dmllY2NjMjlDdU1CRE5wNENjSWlnYlVsUDZFal9NYmF5MVE3OWUwX3lPMW9URjZwaEFObWp6WFpvTm1Kdy1yZEE5MHFGaWNBdzBOSm9yLXpoM0xTNGxNZjVkdU1zampHc1M1Y2I3Q09XVW80WXMxZzRn?oc=5",
+   "url_resolvida": ""
+  },
+  "337577516eb2a825": {
+   "article_id": "337577516eb2a825",
+   "best_input_chars": 1349,
+   "chars_antes_do_cap": 1349,
+   "content_hash": "afbe3f844e8a6a4e08b30252b4502f3a",
+   "dominio": "valor.globo.com",
+   "empresas": [
+    {
+     "candidatos": [],
+     "empresa": "Bradesco",
+     "tem_candidato": false
+    }
+   ],
+   "enrichment": {
+    "falha": "OK",
+    "metodo": "html:paragrafos",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R2_BODY"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "DIRTY_ONLY",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 1229,
+    "faltou": [
+     "sentences<3",
+     "dirty"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 49,
+    "nav_flag": true,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 2,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 49,
+    "useful_chars": 1229
+   },
+   "first_seen_run": 129,
+   "fonte": "company_query",
+   "last_seen_run": 129,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 59,
+     "metodo": "title"
+    },
+    {
+     "chars": 88,
+     "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 1200,
+     "metodo": "html:paragrafos"
+    }
+   ],
+   "pub_iso": "2026-06-23 04:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 28
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "sentence_like_count": 0,
+    "useful_chars": 28
+   },
+   "r1_tentado": true,
+   "r2_tentado": true,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "R2_BODY",
+   "titulo": "CVM revoga suspensão de oferta pública de fundo do Bradesco",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQcmZ2WHI2MF9ONEtoQkQ2SU5ldGd0ZHRUNGgwNFZZQVpYMkZqX29kMzJDV0tuakxUX1hyR2J2bkFzek91cTc0NGw0VHVqSWg3NVJ3d1dfeHBsejNQaF8xVWtGdVZmSXluSHNkYkIyeHBCbFhBMmVndHRoVndTZlc1ejdsTThXWFl2OWRpSmZCZGhrLUpmSGhfeDdCR0F5REZ2ZEdUYkUyVVZPNlU0NEkwckRidHdBUdIBxAFBVV95cUxNRlRDbjVxczIxSkJIeXA5b0JWOW1ydzlzOFRSQkx5RGpMRXRmRmNzTzk1UzhWU3ZWUWJ2U2M3OXhka3ZhUnBPcVlNVjdjSW42LW43NEVhYmJmVTAwakNvU2M3cmg1MXUzV3FISy1CNHY0M0FLUEJtNU9GT3VfVE9qbHRsLTlmS1VoZEhva1lheGNZaE8wZi1LT3lzaXoydGhzaUNRTzNuZE5jVUtXN1dKNGZJakJBV3pPMDhyVGx2YjctdTU1?oc=5",
    "url_resolvida": ""
   },
   "34d27ef220c52e37": {
@@ -5472,7 +5660,7 @@
    },
    "first_seen_run": 113,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -5567,7 +5755,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 2,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -5657,7 +5845,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -5751,7 +5939,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -5841,7 +6029,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -5937,7 +6125,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6030,7 +6218,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6122,7 +6310,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6302,7 +6490,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6398,7 +6586,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6489,7 +6677,7 @@
    },
    "first_seen_run": 121,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 2,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6585,7 +6773,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6675,7 +6863,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6769,7 +6957,7 @@
    },
    "first_seen_run": 115,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -6863,7 +7051,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -7315,7 +7503,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -7588,7 +7776,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -7628,6 +7816,100 @@
    "titulo": "‘Cerveja precisa ir além do bar e do fim de semana’, diz CEO da Ambev",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOUU1PZ1Z3RnZnblB2VjNlOFByak5LTFM4YVJOS0VBaVhhWjloXzJrcXJBd2xyTnhmcllrWUNPNUFUTWk2Z1Z4aEFtN2lEMUkwRTMwY2hpZnZuTUFBRXB0V3VxdmxZMDdPVjl3dUg4Z1J1dWhCd3kzZ0tBRFJLdTR4dmdGRVNlLVpTMXJOOUFmVjdRN0xJcjVtd3Iwd3NHalBNUGRYeVl30gGrAUFVX3lxTFBISGV1WmNnRnctTl8tekp2MEtxWkZNcTRyT0dBSGNHNjljRWRkcmFEd1NLRDhLc1FoR0pKNEEwa3ZZNW03WHZNTzE1UlFNWXhudWtNWVpoNDRlcnRraXJob05KMUdfTEZ4Um53UFgyd1hueHdrU0tLX2hiVG1ENkQyZEVIUm9tZ3Zkb1Q4N0RGVmVUbGpadUROUzlOWEJORTIyMFRJYzFCV0Z3VQ?oc=5",
+   "url_resolvida": ""
+  },
+  "560c486138c88096": {
+   "article_id": "560c486138c88096",
+   "best_input_chars": 408,
+   "chars_antes_do_cap": 408,
+   "content_hash": "d14167224aa47fff393ed09e673c9669",
+   "dominio": "mprs.mp.br",
+   "empresas": [
+    {
+     "candidatos": [],
+     "empresa": "Equatorial Energia",
+     "tem_candidato": false
+    }
+   ],
+   "enrichment": {
+    "falha": "OK",
+    "metodo": "meta:og:description",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "THIN_AFTER_ENRICHMENT",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 240,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 14,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 1,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.556,
+    "unique_meaningful_tokens": 19,
+    "useful_chars": 240
+   },
+   "first_seen_run": 129,
+   "fonte": "company_query",
+   "last_seen_run": 129,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 83,
+     "metodo": "title"
+    },
+    {
+     "chars": 120,
+     "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 203,
+     "metodo": "meta:og:description"
+    }
+   ],
+   "pub_iso": "2025-12-11 05:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 36
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "sentence_like_count": 0,
+    "useful_chars": 36
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "R1_STRUCTURED",
+   "titulo": "MPRS obtém liminar que suspende cobranças abusivas da CEEE Equatorial em Rio Grande",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1GQXA2SnVLZXdkOHpfemlzRm04WEZ0UzdKOVB0cXVNb1hCTWt1T3FkazZvc1dmUEhxTXJLZjEzWHRyWldKbzNHa3VkZkNPcFFCMk1fdTBoRFVoZVNpdFE?oc=5",
    "url_resolvida": ""
   },
   "56e945bcbbc44ee8": {
@@ -7680,7 +7962,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -7766,7 +8048,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -7961,7 +8243,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -8055,7 +8337,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -8141,7 +8423,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -8325,7 +8607,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -8415,7 +8697,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -8691,7 +8973,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -8781,7 +9063,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -8875,7 +9157,7 @@
    },
    "first_seen_run": 119,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -8969,7 +9251,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9061,7 +9343,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9105,6 +9387,96 @@
    "titulo": "Com 'inconsistências financeiras' na Apex Partners, BTG bloqueia saques em FIDC",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNWjdUb3pDTTFFY1dqWnFxeHZScFpMOWo4ZXdpb3o4eTBUTGtnVF9vRXlKTWRfQ3o4TlpGQlNqdHEwMk9YMnlvSGM1X3gxaU1xM05oRHZtdXBGaDFHVlZRdm5MaXRudXk1Z2l6U0t3ZDZlb1Y4RmNoenVMOEwzc0dfeXNra3haeVJUQ1ZwXzJZN1lRMXkwYjlfdXVoWE90SDRfaVJ2ZGdUNUdaeWNzRExhNXV6ajQxeXd3b2VUQlVQS2t1cnp6LUoyUzBIUVNvM1BGTVhPa0xOd0lIZWUtc3JKZG5yWXVPbFQwYmxaZWJpZU90MEnSAYICQVVfeXFMUDJ0cHhkRHc1dXpZZk1CVmphc1ktcW1mbU1mVWg0V1JhU200bmx3aEU2Rl9EZlVpTWFKbzJiaW5FMDFGZnVZRzRuZC1MVS1vVXRDenB2WlB3aE1SYy1Fb3lsaEJ5Sy1qam0xSTJLbE5taVBmZnJvWkYwQTRhV0lqVFdGTUd5dWJUempEcmYta2kxRFA3ajNjd0VSOF94ekJVSWlBNDNBeDJzaGRfeWtXdm5KcTQ5YWdFV0Yzb3lFeHVlbGdDN1E2UkpJaHFlN3ZxenkzQjdNOVg3QXZHdXpHRVBqeHJzWG10dTRrdHdYZC1VRklPREYxbW8ybGtkTTVJeGN3?oc=5",
+   "url_resolvida": ""
+  },
+  "67c8486b89def6b0": {
+   "article_id": "67c8486b89def6b0",
+   "best_input_chars": 169,
+   "chars_antes_do_cap": 169,
+   "content_hash": "e415f976d2b37c19ef5c29ed3ed81e3e",
+   "dominio": "pipelinevalor.globo.com",
+   "empresas": [
+    {
+     "candidatos": [],
+     "empresa": "Equatorial Energia",
+     "tem_candidato": false
+    }
+   ],
+   "enrichment": {
+    "falha": "ROBOTS_BLOCKED",
+    "metodo": "",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "THIN"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "ROBOTS_BLOCKED",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 21,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 0,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 2,
+    "useful_chars": 21
+   },
+   "first_seen_run": 129,
+   "fonte": "company_query",
+   "last_seen_run": 129,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 73,
+     "metodo": "title"
+    },
+    {
+     "chars": 95,
+     "metodo": "R0_LEGACY"
+    }
+   ],
+   "pub_iso": "2023-05-12 04:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 21
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "sentence_like_count": 0,
+    "useful_chars": 21
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "THIN",
+   "titulo": "Credores da Light buscam alternativas e Equatorial surge como interessada",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPZWtNT0puRXhCd3hrS2U2ZDZqSWJSZ1R2LVA3MHVPMzhjVThuTVAwMWp5cXp0NllVOE9oZTFBd2hQeS1pbzEtMlk1dElnUVVRakx1aFBzN3p6V0xYcmhTSlhuLW5KbzZ2c2VmajVrb3hNSlc4V3Q5RDdBTi01SVdORlI0Mkw5aUpiRU00dUw1SzA2UmRuQWJmeThacGJkdV9Ua0ozczExYVJ5U0NsN0pFNmNKNHlwR1VQMS1HTXloZEpXUdIB0AFBVV95cUxPV2hxYk9OcFFQTWZzeWZJOFNyRng4YVlxNm1femE0S1JMVzdBcDZjTjRrYlBsdktaNHhiMGN1amJEa1dGaUd1djBLQ2toaklHeDBsS3lsdGwtUDZoTE53dktVbmlnMWRmSXFCTkZTTGh4ZDA4Y0dqZ1l4X24ybnNkcUdMNTExMThEZFVJU2lkQUljT24tdEQ5RlYtNEo1cWtma2t5S2Y4eVFaUXZYZ1lScFFmRVVobGlrSTZCRVFvQmxPNU9qVGljcVlvamxCZTRR?oc=5",
    "url_resolvida": ""
   },
   "68f5e15ab51c20e5": {
@@ -9151,7 +9523,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9241,7 +9613,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9331,7 +9703,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9424,7 +9796,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9516,7 +9888,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9610,7 +9982,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9790,7 +10162,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -9979,7 +10351,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -10069,7 +10441,7 @@
    },
    "first_seen_run": 115,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -10159,7 +10531,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -10335,7 +10707,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -10517,7 +10889,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -10561,6 +10933,96 @@
    "titulo": "Como o pedido de recuperação judicial do Grupo Petrópolis pode ameaçar a Ambev (ABEV3)",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPcmo5TjZxZGhFY0NkZmVOUnh1Qy05UDNDMDRSQzZ6dll3eWJFVFdOekhrSWZwb3N4REtJMXlkQ0swV3JyX0p5bWNLVGg5eFZvSkVoYWZmeUFTNEJwaHBlU2FROUxSdDhxWkZpNkQyZ3BtamJjOFFGWkVHTEtlN0hXMzRSdjdqNkFTaFF4NmxOZnBiMW4wZzBoWVp1aldBbUV3TGFEWHJRVFZiR3pDYm85UFQxU2M0dw?oc=5",
+   "url_resolvida": ""
+  },
+  "7b9dfef3d4ea30ac": {
+   "article_id": "7b9dfef3d4ea30ac",
+   "best_input_chars": 191,
+   "chars_antes_do_cap": 191,
+   "content_hash": "d9c7a39498b400953641525e26d8244e",
+   "dominio": "midiamax.com.br",
+   "empresas": [
+    {
+     "candidatos": [],
+     "empresa": "Localiza",
+     "tem_candidato": false
+    }
+   ],
+   "enrichment": {
+    "falha": "ROBOTS_BLOCKED",
+    "metodo": "",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "THIN"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "ROBOTS_BLOCKED",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 21,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 0,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 2,
+    "useful_chars": 21
+   },
+   "first_seen_run": 129,
+   "fonte": "company_query",
+   "last_seen_run": 129,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 84,
+     "metodo": "title"
+    },
+    {
+     "chars": 106,
+     "metodo": "R0_LEGACY"
+    }
+   ],
+   "pub_iso": "2026-07-23 04:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 21
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "sentence_like_count": 0,
+    "useful_chars": 21
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "THIN",
+   "titulo": "PF localiza fraude em pensão de mais de R$ 1 milhão acumulados durante 11 anos em GO",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOMWVLblM0VS1GMEE5bEZiZklYRldvMnlYci03MTlMdGpkWWU4VUY4NVplVm02U09ENDh4ZWVtQ1NfLThjR1pwX0J0ZWN4cnlFbHdzbFFfMndFRXdXZ1N3OTFSQ0xPc0tGVmxvUkJqVFFXNDJBNUhROTdiQ05wZTZkcXg5eldlTmRVX1ZYcFpES3J6ZS1iUHd6Rzl1dVZIZ2pnWjg4WXI0RG5IcHRI?oc=5",
    "url_resolvida": ""
   },
   "7bbb1b007129a365": {
@@ -10700,7 +11162,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -10982,7 +11444,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 2,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11092,7 +11554,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 3,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11182,7 +11644,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11274,7 +11736,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11366,7 +11828,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 123,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11461,7 +11923,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 2,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11501,6 +11963,98 @@
    "titulo": "Privatização da Copasa é concluída na B3; Equatorial assume 30% da companhia",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFAwSUVjWC04NkpTZllSdklLNDhHcGZlNXRyN3IzX29lX1FxOTJUR0hESkk2MzRyc3ZUa1FFUFF3U1dTY1JZelFCWExiSHZDOTRtYmJXQUhPdmc4b3k0VU5wN2FKU0hxRWEzY3oyekRLdkJPRUFRQU1nM0gxTjM?oc=5",
+   "url_resolvida": ""
+  },
+  "844eacb589481cf2": {
+   "article_id": "844eacb589481cf2",
+   "best_input_chars": 93,
+   "chars_antes_do_cap": 93,
+   "content_hash": "d63780c92d889d3c2caf8f358edcc9c7",
+   "dominio": "pipelinevalor.globo.com",
+   "empresas": [
+    {
+     "candidatos": [
+      "follow_on"
+     ],
+     "empresa": "Localiza",
+     "tem_candidato": true
+    }
+   ],
+   "enrichment": {
+    "falha": "ROBOTS_BLOCKED",
+    "metodo": "",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "THIN"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "ROBOTS_BLOCKED",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 21,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 0,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 2,
+    "useful_chars": 21
+   },
+   "first_seen_run": 129,
+   "fonte": "company_query",
+   "last_seen_run": 129,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 35,
+     "metodo": "title"
+    },
+    {
+     "chars": 57,
+     "metodo": "R0_LEGACY"
+    }
+   ],
+   "pub_iso": "2023-06-16 04:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 21
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "sentence_like_count": 0,
+    "useful_chars": 21
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": true,
+   "tier_final": "THIN",
+   "titulo": "Localiza lança follow-on de R$ 4 bi",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNeTRyUjR3SmFrVGFFTWtVM012Q0x4UGowQk9BYWhzMXZQcGRCVGJWZ3czWkNFT0RiN055UGhPRWJDYlY3ZXUxeEh2LWRxN0xsa21JREV4OXdqV3lVNUtYblRrc2xRaGtPNW4waUtwZlJBV3VfYTZwc3puTWZkLVAtTm9MVS1OTFRfOEZfd1NPeUdueDNVUFHSAaQBQVVfeXFMUFVGOXAtN0EwaWJDT0Q5YndQbjdlTVI4WEVZNzZTdm1Ga1A3bE5pYWlfalVVMzc0WUxIVHBxdUJvMGhVSk00YzNvb3pRNEdybHliLU5DR3ZQTDg1cWtRSldlRE1HOVI1aS10OTE2ajNsTmN4cXBLV0FScE1ZamprUDRUUGNhM0dvc0VGOF9UdERQczBaNkdZNVgtQktEZTZxSWZheTA?oc=5",
    "url_resolvida": ""
   },
   "8567d5beafc5e538": {
@@ -11643,7 +12197,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11734,7 +12288,7 @@
    },
    "first_seen_run": 121,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11828,7 +12382,7 @@
    },
    "first_seen_run": 122,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -11914,7 +12468,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12008,7 +12562,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12193,7 +12747,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12290,7 +12844,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12376,7 +12930,7 @@
    },
    "first_seen_run": 122,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12468,7 +13022,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12562,7 +13116,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12656,7 +13210,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12748,7 +13302,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -12834,7 +13388,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -13017,7 +13571,7 @@
    },
    "first_seen_run": 121,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -13480,7 +14034,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -13756,7 +14310,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -13943,7 +14497,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14033,7 +14587,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14123,7 +14677,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14219,7 +14773,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14313,7 +14867,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14495,7 +15049,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14539,6 +15093,96 @@
    "titulo": "B+ Summit | CEO da Prio: \"Não peço que os governos me ajudem com dinheiro, peço que me ajudem com regulação\"",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNU3BnQVkwWTdVazliWkZQNFBzX3pjcHlSVzFXWnVkX3RrU0l6RTlhYXBXampDY2tpcHpEcnhZRlRLcFh5WW5nNy1LZTFxLWhSRFpKTGFSVTRoUkQyR2RlSmFhN0xhYXIxRFpIZFdBbzNBVGUtMVJZRU8wVXptU2F2bUYtZDRlZWlKREg3cjhEMjgwMlpJNTQ4ZWpaSVlNWVBBWEZSYVJUcmVJRkw1YjJtaUlUXzk2MnBIMmJWQndoQW1haEtjOGRHUThJVC1jNVpCYm9JWjFtRXRLN3BMM3BuM3U1VHFsMTV3R1o5SkVoSkM0LTF6RjJBU3hvel9RbnVU?oc=5",
+   "url_resolvida": ""
+  },
+  "acc45c89b1c122d9": {
+   "article_id": "acc45c89b1c122d9",
+   "best_input_chars": 193,
+   "chars_antes_do_cap": 193,
+   "content_hash": "6fe11eeae79bc5833faa82634ad588a6",
+   "dominio": "conteudos.xpi.com.br",
+   "empresas": [
+    {
+     "candidatos": [],
+     "empresa": "Eneva",
+     "tem_candidato": false
+    }
+   ],
+   "enrichment": {
+    "falha": "ROBOTS_BLOCKED",
+    "metodo": "",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "THIN"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "ROBOTS_BLOCKED",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 41,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 4,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 1,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 4,
+    "useful_chars": 41
+   },
+   "first_seen_run": 129,
+   "fonte": "company_query",
+   "last_seen_run": 129,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 74,
+     "metodo": "title"
+    },
+    {
+     "chars": 118,
+     "metodo": "R0_LEGACY"
+    }
+   ],
+   "pub_iso": "2026-08-14 04:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 4,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 1,
+    "useful_chars": 41
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 4,
+    "sentence_like_count": 1,
+    "useful_chars": 41
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "THIN",
+   "titulo": "Eneva já se prepara para chamada de duas usinas no LRCap após revés da EPP",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNQ0tOVmFaRzg5QjBhQ2dyVW05X1pZQkItZlROTEFqeG5PNm1ZTXkwUVlkMk5Fa2RLeENmQ3M3WEd5NXVpMkRiTm5kVWtYNVYxcUhmdjdqVWxYV2oxemtiZ3c2c3RNYTBvZ2s1Rl9YUzMxY3YxdkQydUh5bDYxYnVqWF91M3RRYmxpVkgxRk9XQXJCR1VfOEE?oc=5",
    "url_resolvida": ""
   },
   "adcb3ad141724ce2": {
@@ -14682,7 +15326,7 @@
    },
    "first_seen_run": 121,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14771,7 +15415,7 @@
    },
    "first_seen_run": 125,
    "fonte": "company_query",
-   "last_seen_run": 127,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -14815,6 +15459,99 @@
    "titulo": "CVM suspende oferta de fundo de infraestrutura do Bradesco por irregularidades",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNM3liUnpBMjh3RU5xT1RjZEVra21tRkQwTmsxVnhzLXQ1RzJXZlF0X3NkTm4wNFFsbkRqYmZIblF2TDRDdy1IWHFzSjJvV1ZDWTZvWHAxdlQzWnNmOFpDbk8xc2FiUlhKRTZLaG56NVd5N3k5NWQ5LXd1b282Z1pESURqeE5mTk53dzdxQ3gtUEZISERRWl9Nc1FMMzVQUTEzeGQ5V0Y4MTJhanZBNU8yVmJ6Sl9OVTBZa0w2MTUzaldjZ21wc0FjRFFDT3BJdEJIc2fSAeABQVVfeXFMUGtST1J5bEJjcC0zZE9kNVdaM1ZTT0x5NzVzUHdRU192bjNTSkN0T3RkN3JXUElvUkh6MUQ1alpJSGFDODJqTEZpbU14UWtHT0FPRkFzWXFYNnZSWjZxZ0ZFamllZ1Y0RXpDM1dlV0hsSWdwRml3RWUwZW9xTzBybmRkZmphQlN0UzdxZnFxSlNCcmljMk93bXFNbVRnMjdKY2FjUWFwOFRiS3hwc1hDXzBmUTJPbjNaMWdTbkRmTGdMRTA0MVdNZ0t2UWtBOUloc0NfX3FKaGp5Q0JrNmZaMFg?oc=5",
+   "url_resolvida": ""
+  },
+  "b02d118f49a2caa1": {
+   "article_id": "b02d118f49a2caa1",
+   "best_input_chars": 185,
+   "chars_antes_do_cap": 185,
+   "content_hash": "00471cd28d62ab606149b473c4e64cec",
+   "dominio": "investidor10.com.br",
+   "empresas": [
+    {
+     "candidatos": [
+      "recuperacao_judicial",
+      "troca_ceo"
+     ],
+     "empresa": "B3",
+     "tem_candidato": true
+    }
+   ],
+   "enrichment": {
+    "falha": "ROBOTS_BLOCKED",
+    "metodo": "",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "THIN"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "ROBOTS_BLOCKED",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 25,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 0,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 2,
+    "useful_chars": 25
+   },
+   "first_seen_run": 129,
+   "fonte": "company_query",
+   "last_seen_run": 129,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 79,
+     "metodo": "title"
+    },
+    {
+     "chars": 105,
+     "metodo": "R0_LEGACY"
+    }
+   ],
+   "pub_iso": "2026-08-13 21:56",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 25
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "sentence_like_count": 0,
+    "useful_chars": 25
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "IR",
+   "tem_algum_candidato": true,
+   "tier_final": "THIN",
+   "titulo": "Após Chapter 11 e saída da B3, Gol anuncia novo CEO e faz mudanças na diretoria",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQMDBjRUtNUDk4dVFlaU1CNEQ1dW9ITFlROU85NU9XTzNSY3hnZ2FpMC1lWmpsQS00UVRHQ1BOdzYtSUd5dWtWMkJuUU5lVFl2WnBvcVYybTR0aUp3VGVuS0E0Mm91anV2X0lkOTdRbjVHMldDd015Tjl3Y3lxejk1N1ptNDJNcWpMS2NiY3d0cVB1NU5IX1J3N2tWZjNTRTNZOXJTQU1KQjVTWTUyS1czR25oSDFselVsM3BFRmdRUHPSAcYBQVVfeXFMTnFrdURvcW95MklubnczcVlMV0xuTzFSRnNweWozdXZBUHEtUUJwa1ZLazY0NDRSSDRmeWxQaExGQm45cXgzTHBFaUNidlRUMFhmRHJqYjhUSVNMWHNneHViYUY5NW4yZGhQdkcwY1JGZzJtSzZTZUxBQ3VfUUxEcXpUS0FMTW5JMUNBVXdBVnlaSTdtcExPcjJBYXl1aU55ZDJvY2FwcFBOT2lySWRYWHNMZUg5UEZmSTlYRDRubGNzQVlaRjF3?oc=5",
    "url_resolvida": ""
   },
   "b0fa24a9c76fb95e": {
@@ -14865,7 +15602,7 @@
    },
    "first_seen_run": 122,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15142,7 +15879,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15233,7 +15970,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15329,7 +16066,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15419,7 +16156,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15505,7 +16242,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15795,7 +16532,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15889,7 +16626,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -15979,7 +16716,7 @@
    },
    "first_seen_run": 125,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16167,7 +16904,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16267,7 +17004,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 3,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16356,7 +17093,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16447,7 +17184,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16543,7 +17280,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16638,7 +17375,7 @@
    },
    "first_seen_run": 123,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 2,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16724,7 +17461,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -16908,7 +17645,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -17002,7 +17739,7 @@
    },
    "first_seen_run": 125,
    "fonte": "company_query",
-   "last_seen_run": 125,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -17140,6 +17877,102 @@
    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWndpY21Id1hBX0xUb050Nm44Q0VDT2tDMUdiUl9FOXdFZzlmR0Qxdi1QYmRHVmFNRkpKS1Rudjg5YVhkeGE1blMybDQxSVRhUFp5RUk1TzVNemFFbnN1ajBtdFR1VHJGb2dMZjJwRmRnYzhtT0xJS3FtdkZCb0NWSGJaZWRoaEFXd1lldWRpT3hFal9QMHZpN1hkYkxmeUlldFFOS3NpTHBPTWZaZEttSko4WHk5azZQeWfSAb8BQVVfeXFMTlo3UVFaRGQyNDR4X2gzZURqb0hSa2U0Sjlvd19jbnhsd0lCWml1ODlvaXZmbzlMNlRKRzJuR25OSXhpd3FtSEVvbG53WFJPRFRmbW0xNU1qckRxdW83RHRGT2FhTEkzdmRENjllWVp3T2djOFhqZDMwQ1ZqRjFFV1N1QVg2MUh2bzB2WFdBY2c4OVoyb0dnQkxHMzBtWl9EN1NHOUNGZm1NM0lxdEdmRS1pVE8yNDR4OWFVUUV6UjA?oc=5",
    "url_resolvida": ""
   },
+  "c2aefc2d2bd22424": {
+   "article_id": "c2aefc2d2bd22424",
+   "best_input_chars": 252,
+   "chars_antes_do_cap": 252,
+   "content_hash": "5cea77a7ae675e81753321936a2530fd",
+   "dominio": "eixos.com.br",
+   "empresas": [
+    {
+     "candidatos": [
+      "ma"
+     ],
+     "empresa": "PRIO",
+     "tem_candidato": true
+    }
+   ],
+   "enrichment": {
+    "falha": "OK",
+    "metodo": "jsonld:description",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "THIN_AFTER_ENRICHMENT",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 118,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 9,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 2,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.125,
+    "unique_meaningful_tokens": 10,
+    "useful_chars": 118
+   },
+   "first_seen_run": 129,
+   "fonte": "company_query",
+   "last_seen_run": 129,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 66,
+     "metodo": "title"
+    },
+    {
+     "chars": 92,
+     "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 92,
+     "metodo": "jsonld:description"
+    }
+   ],
+   "pub_iso": "2024-10-08 04:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 25
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "sentence_like_count": 0,
+    "useful_chars": 25
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": true,
+   "tier_final": "R1_STRUCTURED",
+   "titulo": "Cade dá aval para aquisição de 40% do campo de Peregrino pela Prio",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOUzR3QVFvanpzM0pjdTFpelFKY0tSTVNMTVJzancwaGpub050OUVfVy1oZkx0bmlEVFFEc0owdVVqWUpqREJTZnpaMWpVRmlqMEE1ay1jbFVIVEFleUxIRUFfczFhZndIYmRXSnF4dlpSdUpnbFRiM3RZUlAwLUtFTklXYjZqX2d6dTZTLWpKelYxSno5Ym5vMkJ4LWo?oc=5",
+   "url_resolvida": ""
+  },
   "c3b15463a4217545": {
    "article_id": "c3b15463a4217545",
    "best_input_chars": 191,
@@ -17188,7 +18021,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -17274,7 +18107,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -17364,7 +18197,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -17458,7 +18291,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -17544,7 +18377,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -17588,6 +18421,188 @@
    "titulo": "Subsídio na conta de luz distorce e deve ser reduzido, diz CEO da Eletrobras",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQNmVwSFVoTG9FX01RMkNCLUlxWTBkazhZd0RvMzl4RDQwVzdWcFlQVXlTUDlfNjNXXzdxUXZ4VUwzM1dLRkpvN282Nmd2YldQWGViT09sUVU5QmdXU3pJR3k3c2JsN2Mzdk5ROXdBdVpxN2dIQUZFRVg0dHpnTklQWEYwVmh1RXJlWlFsN3dOX0ItWEN4WjBYamFQbTkyWlg2S0Z1ZXhQWXpKd2p2Rko3d1NsRlloNV9pLUdIc0xWTndJVnJjVnfSAcsBQVVfeXFMTnhoa1ZQc1VDa1h5Z2FvQm91dmVaTUVRenJsWjd5VGhkRTFHMnE3OXMwTDhkeVhTTkgtekVNQ3dxbEFydGZaWC1ZXzN2UEc5LWNzT1hCbVZ2ekk3SzB6NktKMXQ1UjhPV3RZc1d2OVUtRC0xTHZkbC0xVzFLVS1URHhYaFowOTV5TlZ3Qlh3NjUtT294NGdXVURDcC1iMEpXTWV1V1oxTG01d1I5Vk4tRUZra09sTXdrdlB0cWRoQ2t4VDVZcGtwdnpqbWs?oc=5",
+   "url_resolvida": ""
+  },
+  "c5a85b8fe98ece00": {
+   "article_id": "c5a85b8fe98ece00",
+   "best_input_chars": 629,
+   "chars_antes_do_cap": 629,
+   "content_hash": "19d0040b7dc0ad042d88152d9fb7c92a",
+   "dominio": "investnews.com.br",
+   "empresas": [
+    {
+     "candidatos": [],
+     "empresa": "Eletrobras",
+     "tem_candidato": false
+    }
+   ],
+   "enrichment": {
+    "falha": "OK",
+    "metodo": "jsonld:description",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "THIN_AFTER_ENRICHMENT",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 499,
+    "faltou": [
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 13,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 4,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 13,
+    "useful_chars": 499
+   },
+   "first_seen_run": 129,
+   "fonte": "company_query",
+   "last_seen_run": 129,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 64,
+     "metodo": "title"
+    },
+    {
+     "chars": 88,
+     "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 475,
+     "metodo": "jsonld:description"
+    }
+   ],
+   "pub_iso": "2023-08-28 04:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 23
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "sentence_like_count": 0,
+    "useful_chars": 23
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "R1_STRUCTURED",
+   "titulo": "Eletrobras anuncia emissão de R$ 7 bilhões em debêntures simples",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQc05zN2FXVXBvRm1yWFpmRTBOVklKUGkxZk55R3JDenNvNTYxMlE2SUJpRGxvRWhHRVlMQVJ5NHFIMUotamtqTkdnNkNxR0hrYlBrdGs1cV92a2x1TDNqTXJVc3o1OUdKbThZRjRQWHZnazRDc0R0b1oteW82QWd0UktZZXg2RXpEZUJMNTlKQV90eHRFZ2lTTmJuQ3BGT09Z0gGmAUFVX3lxTE5ELVltQjRvbzYxZU9fbjhnZjFjMFh6RWZMM1pPbzd0Z0dSVUNQeHdjNVUzcXpBaEd1Wno1MGJjekttLXFfMjljMnVOOFE3aDBoZHJUS3Z4Rk15OFVnRndrVExkRHBYVkhCT1VvNEFiSl9pRzNsaXlWZTNNdmtOemxsbDlJUzROaW1hS24xTU5MYmg2ZGNTVThVNnZWcG9xY005NVdhMFE?oc=5",
+   "url_resolvida": ""
+  },
+  "c6fb2220f1e84737": {
+   "article_id": "c6fb2220f1e84737",
+   "best_input_chars": 199,
+   "chars_antes_do_cap": 199,
+   "content_hash": "57426a99f3f8aeb18eaf63d02a6f2633",
+   "dominio": "noticias.uol.com.br",
+   "empresas": [
+    {
+     "candidatos": [],
+     "empresa": "Rede D'Or",
+     "tem_candidato": false
+    }
+   ],
+   "enrichment": {
+    "falha": "ROBOTS_BLOCKED",
+    "metodo": "",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "THIN"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "ROBOTS_BLOCKED",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 25,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 0,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 2,
+    "useful_chars": 25
+   },
+   "first_seen_run": 129,
+   "fonte": "company_query",
+   "last_seen_run": 129,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 86,
+     "metodo": "title"
+    },
+    {
+     "chars": 112,
+     "metodo": "R0_LEGACY"
+    }
+   ],
+   "pub_iso": "2026-06-13 04:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 25
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "sentence_like_count": 0,
+    "useful_chars": 25
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "THIN",
+   "titulo": "A gente vê liminares para coberturas que não beneficiam paciente, diz CEO da Rede D'or",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxObVBveGtQSmZSLVhjYUhkLUgyTTExVHZqaUVqeVhnOGY5OF94V0RpTzVzS1AwT2dPcFdyV0lUSm9VdHVYdmJVVXNZeVl2MkVxdm1QSWV3U2RTSTY2WlRPRk41MFdpc3RkWDk0MWdjd3ZLY0dIVmM4YUpDb3cyQmw4UFpqZlpqeUFKaGJIZngzWkhxRWk1Mlc2Vm5uQmY4TnNhN0dYZnhmaWpJSktfcWFyaTJuX1JSTC1PS2dFVERReXBRb3BaYW9GVzR0NEc0eFdnTVlHc1gzZzltNDdWaHkzcEwxYm1UZ3FWR0lrY1RyeF8?oc=5",
    "url_resolvida": ""
   },
   "c7a8d41052c8b693": {
@@ -17638,7 +18653,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -17909,7 +18924,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -18047,6 +19062,100 @@
    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOTFdXeHFEVkdlOUE3MHFscHBxWDdMWFkyVWZQRFNjejZsbGtRb0ZyeG9kZVoyVFFRbzBERHVMUFFHQkZ0LXBpVHJPQmt5bW96aXNvb2UwN1JrWFV5N1ZReGVQaERETjlTZG5qcUlfQnRkZjdibGlyUC10N0U3aHRocFFQUjBOVklfYktnWXduTDM4WjBrRmVuTk00TV9hazZHaS0w?oc=5",
    "url_resolvida": ""
   },
+  "cd2c36908cfa983f": {
+   "article_id": "cd2c36908cfa983f",
+   "best_input_chars": 458,
+   "chars_antes_do_cap": 458,
+   "content_hash": "8b19051018705677cb093f7baf182940",
+   "dominio": "infomoney.com.br",
+   "empresas": [
+    {
+     "candidatos": [],
+     "empresa": "Itaú Unibanco",
+     "tem_candidato": false
+    }
+   ],
+   "enrichment": {
+    "falha": "OK",
+    "metodo": "jsonld:description",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "THIN_AFTER_ENRICHMENT",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 290,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 26,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 2,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.125,
+    "unique_meaningful_tokens": 27,
+    "useful_chars": 290
+   },
+   "first_seen_run": 129,
+   "fonte": "company_query",
+   "last_seen_run": 129,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 83,
+     "metodo": "title"
+    },
+    {
+     "chars": 106,
+     "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 267,
+     "metodo": "jsonld:description"
+    }
+   ],
+   "pub_iso": "2026-08-05 04:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 22
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "sentence_like_count": 0,
+    "useful_chars": 22
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": false,
+   "tier_final": "R1_STRUCTURED",
+   "titulo": "“Como banco pode ser conivente com Americanas se perdeu dinheiro?”, diz CEO do Itaú",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQTENLZGJOR09mS1lDRk8tRkJsb3lCdmtaWkxmT3pCR3NzU2RpUHFxUUZjSHRfbDc0d0s4ZGM2Rks4Y2l6OVZHdmhEOXN6b09hNkRMLXZPNkU0U0JhS0REZmc1bGdOVDVWVlN5UFRYd0tCN3d0YnA3R1M0cldzU20wREJtSUhlMXBFSm44R2hQdkdwM2V2eVZRWkNNTlFFQjZYdG9FakZFek8yNWRhMWh4S2NvTS0yM3Qzc2fSAb8BQVVfeXFMTm5yN3hhS1JQTGotckF2LVNtSnplYjY0akJTNk1xOVQzNXd4bGlnSERvb3AwVS1BVVo5dW4tRUhNNnJ2ODI1LUlSSEZGUWxJNV9rRzE5RjNoSjM3M0Z4MnMwT0dCSXg3dk5fZFQ1djRfemxPaktaNzJzdlRvVFNRQllINjB1SFI3YlhaTEo2NTJnbTRmeTZrQlZVbElLdnowSHFuMHgwOUdvLTJKSDdMNmVMbjM1dGlvYndJRVlCMXM?oc=5",
+   "url_resolvida": ""
+  },
   "cd34daac42bfcb00": {
    "article_id": "cd34daac42bfcb00",
    "best_input_chars": 841,
@@ -18091,7 +19200,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -18185,7 +19294,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -18279,7 +19388,7 @@
    },
    "first_seen_run": 116,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -18367,7 +19476,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -18411,6 +19520,98 @@
    "titulo": "Suzano (SUZB3) recebe aval da Comissão Europeia para aquisição da Kimberly-Clark IFP",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQkJpbWhrZHdTYXhmRkdfcnkzSFdvOFdjOUdLUlhGa1p4WVBMUTh0cEdTMnM3UnBlMnFiSldsdjU2aUFDVTRQX3dTRXFqNmVDX1RZSG5mSkJOUkcyM2xwellrNVBWWjFnMTBuWlZDX0Y4enRNUHpRSE1PUllTWTRJNkRpcnpZYmxjVmN5eVkxNzJScDA5S0dTQnVSTElwTzdFN3dTSGhvTzNYSEVZV0dPTlBENFpURTVCUEE?oc=5",
+   "url_resolvida": ""
+  },
+  "d07fb643828304b3": {
+   "article_id": "d07fb643828304b3",
+   "best_input_chars": 238,
+   "chars_antes_do_cap": 238,
+   "content_hash": "a4f44fcf8558013b656daf9ebaa0ce8c",
+   "dominio": "br.advfn.com",
+   "empresas": [
+    {
+     "candidatos": [
+      "ma"
+     ],
+     "empresa": "Suzano",
+     "tem_candidato": true
+    }
+   ],
+   "enrichment": {
+    "falha": "ROBOTS_BLOCKED",
+    "metodo": "",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "THIN"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "ROBOTS_BLOCKED",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 18,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 0,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 2,
+    "useful_chars": 18
+   },
+   "first_seen_run": 129,
+   "fonte": "company_query",
+   "last_seen_run": 129,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 109,
+     "metodo": "title"
+    },
+    {
+     "chars": 128,
+     "metodo": "R0_LEGACY"
+    }
+   ],
+   "pub_iso": "2026-07-02 04:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 18
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "sentence_like_count": 0,
+    "useful_chars": 18
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": true,
+   "tier_final": "THIN",
+   "titulo": "Suzano conclui aquisição de 51% da Arbex e amplia diversificação, mas mercado monitora impacto na alavancagem",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNSE9EUlQ1MGl5TFRUd0Eyc3BoNFVGdE1BUVhndGloNlA2YmxiV1FNckpDZi1ILWdLWWJzRzI5VGJ4aWp3d3l5X0Rmc3BtUFdwOTFNOHFCbmIzNHZJMS1tYkVSeE5LV2tyUnk1b1ZvRGNfX2w1dENlcDROVkJ4YTJwY3VPaHJCSEpkRkJMZHBqSFdQM1FKRkozLXFuUVBIVUJ1aGhiMmtUR3hadENxdExZSV9sWG9PYWpoVk1iT2JveW9YT0kzb2dmVVkzdXhTdzRlUHJtRG1xazVCV2s?oc=5",
    "url_resolvida": ""
   },
   "d081c19e98bccb87": {
@@ -18457,7 +19658,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -18550,7 +19751,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -18640,7 +19841,7 @@
    },
    "first_seen_run": 123,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -18684,6 +19885,101 @@
    "titulo": "Problemas no Banco do Brasil afetam Lula nas urnas? Veja o que diz a CEO",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOZFZfdHFTMEhVbThkUzRzTC1BeDQ1RjA1OHZlWjVnOTgya0tPUXhSM1ZLMW9TNnRaT0FlSEpEbFR2bzlBcVBpSHh0MHhPWjJYc1ZkT0NFYUppS19nNlp4Y2w3YUxLS0ZGSlU3WTRBZGtEWWdUNVJUbnN0TVQ4WGNOaGlqZGI1b0hXaFU2UjVQM0JTR0xVMlhZdGNybWl3MkVzdXhKclFnODJsMzQ?oc=5",
+   "url_resolvida": ""
+  },
+  "d3fe0d9128532998": {
+   "article_id": "d3fe0d9128532998",
+   "best_input_chars": 385,
+   "chars_antes_do_cap": 385,
+   "content_hash": "a5ae24041fb6bfb885c6ccf5c177dfc3",
+   "dominio": "moneytimes.com.br",
+   "empresas": [
+    {
+     "candidatos": [
+      "ma"
+     ],
+     "empresa": "PRIO",
+     "tem_candidato": true
+    }
+   ],
+   "enrichment": {
+    "falha": "OK",
+    "metodo": "jsonld:description",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "THIN_AFTER_ENRICHMENT",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 273,
+    "faltou": [
+     "useful_chars<400",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 25,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 3,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.5,
+    "unique_meaningful_tokens": 28,
+    "useful_chars": 273
+   },
+   "first_seen_run": 129,
+   "fonte": "company_query",
+   "last_seen_run": 129,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 55,
+     "metodo": "title"
+    },
+    {
+     "chars": 80,
+     "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 248,
+     "metodo": "jsonld:description"
+    }
+   ],
+   "pub_iso": "2025-11-12 05:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 24
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "sentence_like_count": 0,
+    "useful_chars": 24
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": true,
+   "tier_final": "R1_STRUCTURED",
+   "titulo": "Prio (PRIO3): O que esperar após aquisição de Peregrino",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOM2p5YUlBLWczVmZaSVlRU1VHbzRUM0FkZElnWFp1ODFLdjhTVEhhLVJ5cjhjRklnZUtTdngxTFZNLUZLUVBFMjRzYUpKZ1EwS2N3YlkxZkN4YzJhaGZLcWxhMkNjdENDbENtdDRHU0NkRS1ucEp0cXRHMWNsejJDcE1DZXVZbGxfa2d3?oc=5",
    "url_resolvida": ""
   },
   "d47f7b1d3aa2f293": {
@@ -18734,7 +20030,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 125,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -18822,7 +20118,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -18866,6 +20162,98 @@
    "titulo": "Troca de CEO pega Ambev em momento decisivo",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPVjRCTlVBNzRZMVdDRHlQempVX2lCdXQwUEh6bTEzOHdxczR1b0U0Z0pvSHMzZUxwS3JKMUNmV2RMODBZU1JUbjkxMXBfSGJCVEJGajZyaU1NYUF4MF9sMTVNSURWWmk5ODZScHlTdkNkaVhNTzBEd2l2Mm1DSGZpb3F3?oc=5",
+   "url_resolvida": ""
+  },
+  "d762eb79ce7fa77d": {
+   "article_id": "d762eb79ce7fa77d",
+   "best_input_chars": 133,
+   "chars_antes_do_cap": 133,
+   "content_hash": "24b0b454c419df71d499f7ea806aae74",
+   "dominio": "conteudos.xpi.com.br",
+   "empresas": [
+    {
+     "candidatos": [
+      "recuperacao_judicial"
+     ],
+     "empresa": "Ambev",
+     "tem_candidato": true
+    }
+   ],
+   "enrichment": {
+    "falha": "ROBOTS_BLOCKED",
+    "metodo": "",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "THIN"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "ROBOTS_BLOCKED",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 29,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 0,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 2,
+    "useful_chars": 29
+   },
+   "first_seen_run": 129,
+   "fonte": "company_query",
+   "last_seen_run": 129,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 51,
+     "metodo": "title"
+    },
+    {
+     "chars": 81,
+     "metodo": "R0_LEGACY"
+    }
+   ],
+   "pub_iso": "2023-03-28 16:10",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 29
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "sentence_like_count": 0,
+    "useful_chars": 29
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": true,
+   "tier_final": "THIN",
+   "titulo": "AmBev (ABEV3): Petrópolis pede recuperação judicial",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE92Q1FiQ25VQTlUTk1sV3FXaFYyR1c4Z1JKMGVKbHlHXy0zRlJYVy1oLXRFZ2x4cGVUV2pUMG9CQ1pqNGpFVzJid2JmUldsSEQ1T1lVdkpjcU8xR2trRVlIZUJxMGc4ejBrc3RZeG5IZXdUTzNPbVNTOTJPYw?oc=5",
    "url_resolvida": ""
   },
   "d76fc2a0e90efb00": {
@@ -18914,7 +20302,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -19098,7 +20486,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -19190,7 +20578,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -19548,7 +20936,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 123,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -19592,6 +20980,98 @@
    "titulo": "Decisão da CVM pode custar R$ 1,2 bi à Localiza",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOX0tfNUtXQzZDRG5sdW5ZcUJXTzQ4eF9vRTRLZ1NqQ3ZHWDdMVTNGV284NTZuNGNaV1NfQkpzZjJIS2NkbmdmbzdFeE5vb2J6ZHRLYTYzeFRtNVZfUDNVZVVtWWdNd0NyYXkzUlZQc1g2OVpwRkNJRU92SmdDSUd0UWdhR0ZRTUQzWlBLUGlRc3I3ZGk1TlZpV1A3OEw?oc=5",
+   "url_resolvida": ""
+  },
+  "dd7e2a2d8f717421": {
+   "article_id": "dd7e2a2d8f717421",
+   "best_input_chars": 252,
+   "chars_antes_do_cap": 252,
+   "content_hash": "caa5a96991878dae57774e3d1c1ed756",
+   "dominio": "oglobo.globo.com",
+   "empresas": [
+    {
+     "candidatos": [
+      "ma"
+     ],
+     "empresa": "PRIO",
+     "tem_candidato": true
+    }
+   ],
+   "enrichment": {
+    "falha": "ROBOTS_BLOCKED",
+    "metodo": "",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "THIN"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "ROBOTS_BLOCKED",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 20,
+    "faltou": [
+     "useful_chars<400",
+     "sentences<3",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 0,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.0,
+    "unique_meaningful_tokens": 2,
+    "useful_chars": 20
+   },
+   "first_seen_run": 129,
+   "fonte": "company_query",
+   "last_seen_run": 129,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 115,
+     "metodo": "title"
+    },
+    {
+     "chars": 136,
+     "metodo": "R0_LEGACY"
+    }
+   ],
+   "pub_iso": "2025-06-07 04:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 20
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 2,
+    "sentence_like_count": 0,
+    "useful_chars": 20
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": true,
+   "tier_final": "THIN",
+   "titulo": "Petroleira Prio vai dobrar de tamanho após aquisição de US$ 3,3 bi. Agora, quer ‘olhar mais para dentro’, conta CEO",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPNVp0aWFza0xtbjJVVWtxc3BtNUViTHh6eGJ5OVBjbF9neFpUSzNUOHNhUW1PZ1BxRnlYQmJkb2ZPRzZRNXdIdjEtcmtvSHdtdkNycUdMLUQ3dFY3VUJ4UDNBOFNaNEtWR3FyeVFzcEhTVkpKZEEtYTZ0VVVrWTB0b2pSc01KaXh4S0RaUFgxekxsS1hlZ0h5UHNlRVE1ZUwwcHRQWTNUdzhXTjlmWG9YcG5iT0dBdDR6WkVhWVdfOTVYTTBQMFdoZ2Y1T2U3OW9HS3J3YWhJbFNwQWtTZ1ZGbDh0T2htMmJQWVBtdTlHc2RqRXcweG8xR25B0gGIAkFVX3lxTE1nUzdlX0lyR2g2OWdLOUpKYkNhVWZMNTQtQ2QwZmlGRUdEQ0g5bUlaYjJaUWNVakxwTHdwQ29KTVNBSDFzZE4zNkd4ZUw4aHNQVWhCUkRBXzdjc3Jtc3lrTzVZNHZwYnVWZWVJenhGZi1oTmF3cTNadXJ1cFNKTElwUnFwVWJvSXlIMHBMTnpVV3Z6bXFzSVoxVTZaUmJwQTdLMS1rM3U5N2Rac3BPd2Qyc3BkUkNkelVVbEEwb1VmRDFtUzZ1a250NEswY2VEWEh6Ri1EOHFyTkhrVVh1NE03a1lNcWhmeXpVOWZMMTV4UGpzRzFUeU9Obk1QMG93U0FIb2g2OUJJZg?oc=5",
    "url_resolvida": ""
   },
   "ddd6feda95c2ecd8": {
@@ -19646,7 +21126,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 125,
+   "last_seen_run": 129,
    "n_empresas": 2,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -19830,7 +21310,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -20016,7 +21496,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -20102,7 +21582,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -20196,7 +21676,7 @@
    },
    "first_seen_run": 125,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -20288,7 +21768,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -20374,7 +21854,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -20468,7 +21948,7 @@
    },
    "first_seen_run": 115,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -20558,7 +22038,7 @@
    },
    "first_seen_run": 122,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -20740,7 +22220,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -20835,7 +22315,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -20879,6 +22359,102 @@
    "titulo": "Prio (PRIO3): Moody's eleva nota de crédito após compra de Peregrino e de olho em reforço na produção",
    "truncado": false,
    "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNaXZKaC1DQzNCdG9IVDZqQ0txSXRWYmZiVzNERHdQcUMxcFc1cWxtcHJZNWUtSE9HRmZfdEQ4RDRWRVdWOEw4d2lqZTZWdDE3eGlnREhaOTJHbDZXZlNxeTVhaHQxQ3gtNXVWRGd5VE5KdThnd3k3eDgycEp4NjJLZUJxeVNtdHMxS09aMVk0Z09PdEdQVFhIZ19uVnBLbmpIVjlFZzJiT3RPWVJ3dEpLTXRMOU9MTm1vLXVEeE4xZG5FeEtxRWZQdmRHUjBLdw?oc=5",
+   "url_resolvida": ""
+  },
+  "eedbba4909e10272": {
+   "article_id": "eedbba4909e10272",
+   "best_input_chars": 453,
+   "chars_antes_do_cap": 453,
+   "content_hash": "af814d847afd12dc7a4e138af85aaa0f",
+   "dominio": "moneytimes.com.br",
+   "empresas": [
+    {
+     "candidatos": [
+      "ma",
+      "rating_elevado"
+     ],
+     "empresa": "PRIO",
+     "tem_candidato": true
+    }
+   ],
+   "enrichment": {
+    "falha": "OK",
+    "metodo": "jsonld:description",
+    "metodo_resolucao": "batchexecute",
+    "origem": "FETCHED",
+    "tier": "R1_STRUCTURED"
+   },
+   "extractor_version": "r7c.x1",
+   "falha": "THIN_AFTER_ENRICHMENT",
+   "final": {
+    "boilerplate_flag": false,
+    "bordas_removidas": [
+     "titulo_repetido",
+     "titulo_repetido"
+    ],
+    "chars_totais": 273,
+    "faltou": [
+     "useful_chars<400",
+     "novos_tokens<30"
+    ],
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 25,
+    "nav_flag": false,
+    "paywall_flag": false,
+    "policy": "SELECTED",
+    "policy_version": "r7c.policy2",
+    "sentence_like_count": 3,
+    "title_duplication": 0.0,
+    "title_summary_overlap": 0.4,
+    "unique_meaningful_tokens": 29,
+    "useful_chars": 273
+   },
+   "first_seen_run": 129,
+   "fonte": "company_query",
+   "last_seen_run": 129,
+   "n_empresas": 1,
+   "normalization_version": "r7c.n1",
+   "policy_version": "r7c.policy2",
+   "procedencia": "PROSPECTIVE",
+   "provenance": [
+    {
+     "chars": 89,
+     "metodo": "title"
+    },
+    {
+     "chars": 114,
+     "metodo": "R0_LEGACY"
+    },
+    {
+     "chars": 248,
+     "metodo": "jsonld:description"
+    }
+   ],
+   "pub_iso": "2025-11-14 05:00",
+   "query_kind": "company_query",
+   "r0_extended": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "metodo": "R0_LEGACY",
+    "sentence_like_count": 0,
+    "useful_chars": 24
+   },
+   "r0_legacy": {
+    "input_ready_under_r7c_policy": false,
+    "meaningful_gain_vs_title": 3,
+    "sentence_like_count": 0,
+    "useful_chars": 24
+   },
+   "r1_tentado": true,
+   "r2_tentado": false,
+   "schema_version": "r7cp.s1",
+   "shadow_version": "r7cp.1",
+   "source_kind": "NEWS",
+   "tem_algum_candidato": true,
+   "tier_final": "R1_STRUCTURED",
+   "titulo": "Prio (PRIO3): S&P Global eleva nota de crédito da petrolífera após aquisição de Peregrino",
+   "truncado": false,
+   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOSlRONi1iQnltNldCU0tUUGhuV1hxajA0Rjh5NGZDajBibG90MDNaejJGcE1PbkRqQm1LRWVsaFhPQklrMVRoSWx4cnB4X0Vhd21PWTV6d1BRQTZNd05lV0NlR2pVUzZ0X1hyN3RTOTY1eV9VMmRnS2llSTdEY2FUenNBdXdwQTl5X05tcG1kOHZhbXNWXzlOYTY4S2ZUR2xRVmtGaDNmbWhRdHpVYk9mSjdXOG5qZV8yQmJ3MlJR?oc=5",
    "url_resolvida": ""
   },
   "efc7620f8870d568": {
@@ -21019,7 +22595,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -21202,7 +22778,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -21386,7 +22962,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -21476,7 +23052,7 @@
    },
    "first_seen_run": 122,
    "fonte": "company_query",
-   "last_seen_run": 122,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -21564,7 +23140,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -21755,7 +23331,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 2,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -21843,7 +23419,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -21942,7 +23518,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 2,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -22031,7 +23607,7 @@
    },
    "first_seen_run": 111,
    "fonte": "company_query",
-   "last_seen_run": 128,
+   "last_seen_run": 129,
    "n_empresas": 1,
    "normalization_version": "r7c.n1",
    "policy_version": "r7c.policy2",
@@ -23218,6 +24794,75 @@
     "com_candidato": 51,
     "sem_candidato": 131,
     "sem_empresa": 28
+   }
+  },
+  {
+   "artigos_no_run": 184,
+   "backlog_adiado": 0,
+   "backlog_budget": 25,
+   "backlog_selecionado": 2,
+   "backlog_total": 2,
+   "cap_estrutural": 80,
+   "funil": {
+    "artigos_unicos": 184,
+    "com_candidato": 54,
+    "denominador_tentado": 183,
+    "duplicatas_evitadas": 0,
+    "falhas": {
+     "DIRTY_ONLY": 16,
+     "OK": 41,
+     "RESOLUTION_FAILED": 1,
+     "ROBOTS_BLOCKED": 82,
+     "THIN_AFTER_ENRICHMENT": 44
+    },
+    "final_insufficient": 143,
+    "final_ready": 41,
+    "limite_fetch": 80,
+    "max_requests_um_host": 2,
+    "mediana_final_chars": 102,
+    "nao_tentados_por_cap": 0,
+    "network_fetches": 18,
+    "pares_empresa_artigo": 199,
+    "r0_extended_ready": 0,
+    "r0_legacy_ready": 0,
+    "r1_attempted": 184,
+    "r1_ready": 35,
+    "r2_attempted": 21,
+    "r2_ready": 6,
+    "requests_evitadas_por_dedup": 15,
+    "requests_por_host": {
+     "br.advfn.com": 1,
+     "conteudos.xpi.com.br": 2,
+     "eixos.com.br": 1,
+     "investidor10.com.br": 1,
+     "oglobo.globo.com": 1,
+     "pipelinevalor.globo.com": 2,
+     "valor.globo.com": 2,
+     "www.moneytimes.com.br": 2
+    },
+    "resolucao_falhou": 1,
+    "resolucoes": 19,
+    "reuso_sidecar": 0,
+    "sem_candidato": 130,
+    "tiers": {
+     "R1_STRUCTURED": 80,
+     "R2_BODY": 21,
+     "THIN": 83
+    },
+    "truncados": 0
+   },
+   "gerado_em": 1786949558,
+   "marco": 111,
+   "novos": 17,
+   "prospectivos": 19,
+   "reaproveitados": 165,
+   "run_count": 129,
+   "telemetria_coleta": {
+    "atribuido": 184,
+    "bruto": 210,
+    "com_candidato": 54,
+    "sem_candidato": 130,
+    "sem_empresa": 26
    }
   }
  ],

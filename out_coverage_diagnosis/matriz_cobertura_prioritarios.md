@@ -1,18 +1,18 @@
 # Matriz de cobertura — emissores priorizados (reconciliação runtime)
 
-run_id: 2026-08-14T19:58:37.718145+00:00 · generated_at: 2026-08-14T19:58:37.718145+00:00 · commit_base: 631bbddfb00fc7652884df71a63881da28c345fa · payload_hash: cff3f8c1681c757c2c8c0f5ab461febaf19571797cc8f870965e4561c6868264
+run_id: 2026-08-17T06:51:45.753387+00:00 · generated_at: 2026-08-17T06:51:45.753387+00:00 · commit_base: 686a5e6c1ec4aab7e100371a0e473e1dd808affa · payload_hash: 82873785837ec564cc8918b2b73d67ccc9e44e3209fac1dd0be5ffcd9d0de79d
 
 | Emissor | Tipo | Ciclo atual | Consolidado | Frescor |
 |---|---|---|---|---|
 | Ambev | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
 | B3 | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
-| BTG Pactual | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
+| BTG Pactual | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
 | Banco do Brasil | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
 | Bradesco | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
 | Eletrobras | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
 | Equatorial Energia | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
 | Itaú Unibanco | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
-| Localiza | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
+| Localiza | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
 | PRIO | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
 | Petrobras | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
 | Raia Drogasil | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
@@ -20,9 +20,9 @@ run_id: 2026-08-14T19:58:37.718145+00:00 · generated_at: 2026-08-14T19:58:37.71
 | Suzano | Tier 1 | COVERAGE_OK_EVENTS_FOUND | COVERAGE_OK_EVENTS_FOUND | valida |
 | Vale | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
 | Vibra Energia | Tier 1 | ONLY_INFORMATIONAL_FOUND | ONLY_INFORMATIONAL_FOUND | valida |
-| Yura | Peru | PARTIAL_COVERAGE | PARTIAL_COVERAGE | valida |
+| Yura | Peru | FALLBACK_ONLY | FALLBACK_ONLY | valida |
 | Trupal | Peru | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | valida |
-| Coazucar | Peru | FALLBACK_ONLY | FALLBACK_ONLY | valida |
+| Coazucar | Peru | PARTIAL_COVERAGE | PARTIAL_COVERAGE | valida |
 | Yobel | Peru | COLLECTION_FAILURE | PARTIAL_COVERAGE | parcial |
 | Casa Grande S.A.A. | Subsidiária Coazucar | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | valida |
 | Cartavio S.A.A. | Subsidiária Coazucar | NO_VALIDATED_OFFICIAL_SOURCE | NO_VALIDATED_OFFICIAL_SOURCE | valida |

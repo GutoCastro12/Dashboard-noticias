@@ -5,6 +5,244 @@
   "shadow_version": "sem.v2.shadow.v1"
  },
  "observacoes": {
+  "2e440c297fa646ce331f|Orizon Valorização de Resíduos|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "2e440c297fa646ce331f",
+   "article_pub_iso": "2026-08-13",
+   "candidate_event": "ma",
+   "case_id": "2e440c297fa646ce331f|Orizon Valorização de Resíduos|ma|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "Orizon Valorização de Resíduos",
+   "contract_version": "v2",
+   "created_at": "2026-08-17T06:52:48Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-17 03:50",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": null,
+    "impact_type": null,
+    "relation_type": null,
+    "scoreable": true,
+    "subject_company": null
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 0,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": false,
+       "marcas": [
+        "H3_ENTIDADE_AUSENTE"
+       ],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "UNDATABLE",
+      "currentness_quote": "Aquisição de Rondonópolis",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Aquisição de Rondonópolis",
+      "field_support": "PARTIALLY_SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Aquisição de Rondonópolis",
+      "phase": "UNKNOWN",
+      "phase_quote": "Aquisição de Rondonópolis",
+      "related_entity": "Rondonópolis",
+      "relation": "ACQUISITION",
+      "relation_quote": "Aquisição",
+      "role_quote": "Aquisição",
+      "subject": "Orizon Valorização de Resíduos",
+      "subject_basis": "INFERRED",
+      "subject_quote": "Aquisição de Rondonópolis",
+      "transaction_object": "ASSET_OR_BUSINESS_UNIT",
+      "transaction_object_quote": "Rondonópolis"
+     }
+    ],
+    "falha": "",
+    "marcas": [
+     "H3_ENTIDADE_AUSENTE"
+    ],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-17 03:50",
+   "human_review": null,
+   "latencia_s": 1.73,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "UNDATABLE",
+      "currentness_quote": "Aquisição de Rondonópolis",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Aquisição de Rondonópolis",
+      "field_support": "PARTIALLY_SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Aquisição de Rondonópolis",
+      "phase": "UNKNOWN",
+      "phase_quote": "Aquisição de Rondonópolis",
+      "related_entity": "Rondonópolis",
+      "relation": "ACQUISITION",
+      "relation_quote": "Aquisição",
+      "role_quote": "Aquisição",
+      "subject": "Orizon Valorização de Resíduos",
+      "subject_basis": "INFERRED",
+      "subject_quote": "Aquisição de Rondonópolis",
+      "transaction_object": "ASSET_OR_BUSINESS_UNIT",
+      "transaction_object_quote": "Rondonópolis"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "CVM · Fato Relevante",
+   "title": "[Fato Relevante] Orizon Valorização de Resíduos: Aquisição de Rondonópolis",
+   "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1556796&numSequencia=1081502&numVersao=1",
+   "usage": {
+    "candidates_token_count": 289,
+    "prompt_token_count": 1302,
+    "total_token_count": 1591
+   }
+  },
+  "2e440c297fa646ce331f|Orizon Valorização de Resíduos|ma|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "2e440c297fa646ce331f",
+   "article_pub_iso": "2026-08-13",
+   "candidate_event": "ma",
+   "case_id": "2e440c297fa646ce331f|Orizon Valorização de Resíduos|ma|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "Orizon Valorização de Resíduos",
+   "contract_version": "v2",
+   "created_at": "2026-08-17T06:52:58Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-17 03:50",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": null,
+    "impact_type": null,
+    "relation_type": null,
+    "scoreable": true,
+    "subject_company": null
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "INCIDENTAL",
+      "company_role": "MENTIONED",
+      "currentness": "UNDATABLE",
+      "currentness_quote": "Aquisição de Rondonópolis",
+      "event_asserted": "MENTIONED_ONLY",
+      "event_id": "ma",
+      "event_quote": "Aquisição de Rondonópolis",
+      "field_support": "INSUFFICIENT_INPUT",
+      "occurrence_novelty": "UNDETERMINED",
+      "occurrence_novelty_quote": "Aquisição de Rondonópolis",
+      "phase": "UNKNOWN",
+      "phase_quote": "Aquisição de Rondonópolis",
+      "related_entity": "Rondonópolis",
+      "relation": "MENTIONED_WITH",
+      "relation_quote": "Aquisição de Rondonópolis",
+      "role_quote": "Aquisição de Rondonópolis",
+      "subject": "Aquisição de Rondonópolis",
+      "subject_basis": "UNKNOWN",
+      "subject_quote": "Aquisição de Rondonópolis",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "Aquisição de Rondonópolis"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-17 03:50",
+   "human_review": null,
+   "latencia_s": 1.65,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "INCIDENTAL",
+      "company_role": "MENTIONED",
+      "currentness": "UNDATABLE",
+      "currentness_quote": "Aquisição de Rondonópolis",
+      "event_asserted": "MENTIONED_ONLY",
+      "event_id": "ma",
+      "event_quote": "Aquisição de Rondonópolis",
+      "field_support": "INSUFFICIENT_INPUT",
+      "occurrence_novelty": "UNDETERMINED",
+      "occurrence_novelty_quote": "Aquisição de Rondonópolis",
+      "phase": "UNKNOWN",
+      "phase_quote": "Aquisição de Rondonópolis",
+      "related_entity": "Rondonópolis",
+      "relation": "MENTIONED_WITH",
+      "relation_quote": "Aquisição de Rondonópolis",
+      "role_quote": "Aquisição de Rondonópolis",
+      "subject": "Aquisição de Rondonópolis",
+      "subject_basis": "UNKNOWN",
+      "subject_quote": "Aquisição de Rondonópolis",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "Aquisição de Rondonópolis"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "CVM · Fato Relevante",
+   "title": "[Fato Relevante] Orizon Valorização de Resíduos: Aquisição de Rondonópolis",
+   "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1556796&numSequencia=1081502&numVersao=1",
+   "usage": {
+    "candidates_token_count": 300,
+    "prompt_token_count": 1302,
+    "total_token_count": 1602
+   }
+  },
   "5d05e84444486491a30b|JBS|troca_ceo|v2|r7ba.p2|gemini-3.1-flash-lite": {
    "actual_model": "gemini-3.1-flash-lite",
    "article_id": "5d05e84444486491a30b",
