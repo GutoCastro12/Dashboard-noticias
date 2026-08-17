@@ -813,6 +813,244 @@
     "total_token_count": 1645
    }
   },
+  "6cf40fc7ad1d8e108226|Citigroup|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "6cf40fc7ad1d8e108226",
+   "article_pub_iso": "2026-05-05 04:18",
+   "candidate_event": "ma",
+   "case_id": "6cf40fc7ad1d8e108226|Citigroup|ma|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "Citigroup",
+   "contract_version": "v2",
+   "created_at": "2026-08-17T13:51:05Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-17 10:49",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "encerramento",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "HISTORICAL",
+      "currentness_quote": "Citigroup conclui com sucesso a aquisição da Associates First Capital Corp.",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Citigroup conclui com sucesso a aquisição da Associates First Capital Corp.",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "FOLLOW_UP",
+      "occurrence_novelty_quote": "Citigroup conclui com sucesso a aquisição da Associates First Capital Corp.",
+      "phase": "CONCLUDED",
+      "phase_quote": "conclui com sucesso",
+      "related_entity": "Associates First Capital Corp.",
+      "relation": "ACQUISITION",
+      "relation_quote": "aquisição da",
+      "role_quote": "Citigroup",
+      "subject": "Citigroup",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Citigroup",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "aquisição da Associates First Capital Corp."
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-17 10:49",
+   "human_review": null,
+   "latencia_s": 3.61,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "HISTORICAL",
+      "currentness_quote": "Citigroup conclui com sucesso a aquisição da Associates First Capital Corp.",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Citigroup conclui com sucesso a aquisição da Associates First Capital Corp.",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "FOLLOW_UP",
+      "occurrence_novelty_quote": "Citigroup conclui com sucesso a aquisição da Associates First Capital Corp.",
+      "phase": "CONCLUDED",
+      "phase_quote": "conclui com sucesso",
+      "related_entity": "Associates First Capital Corp.",
+      "relation": "ACQUISITION",
+      "relation_quote": "aquisição da",
+      "role_quote": "Citigroup",
+      "subject": "Citigroup",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Citigroup",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "aquisição da Associates First Capital Corp."
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Automotive Fleet",
+   "title": "Citigroup conclui com sucesso a aquisição da Associates First Capital Corp.",
+   "url": "https://www.automotive-fleet.com/news/citigroup-successfully-completes-acquisition-of-associates-first-capital-corp",
+   "usage": {
+    "candidates_token_count": 299,
+    "prompt_token_count": 1310,
+    "total_token_count": 1609
+   }
+  },
+  "6cf40fc7ad1d8e108226|Citigroup|ma|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "6cf40fc7ad1d8e108226",
+   "article_pub_iso": "2026-05-05 04:18",
+   "candidate_event": "ma",
+   "case_id": "6cf40fc7ad1d8e108226|Citigroup|ma|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "Citigroup",
+   "contract_version": "v2",
+   "created_at": "2026-08-17T13:51:15Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-17 10:49",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "encerramento",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 0,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": false,
+       "marcas": [
+        "H3_ENTIDADE_AUSENTE"
+       ],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "HISTORICAL",
+      "currentness_quote": "Citigroup conclui com sucesso a aquisição da Associates First Capital Corp. &nbsp;&nbsp; Automotive Fleet",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Citigroup conclui com sucesso a aquisição da Associates First Capital Corp. &nbsp;&nbsp; Automotive Fleet",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "FOLLOW_UP",
+      "occurrence_novelty_quote": "Citigroup conclui com sucesso a aquisição da Associates First Capital Corp. &nbsp;&nbsp; Automotive Fleet",
+      "phase": "CONCLUDED",
+      "phase_quote": "conclui com sucesso",
+      "related_entity": "Associates First Capital Corp. &nbsp;&nbsp; Automotive Fleet",
+      "relation": "acquires",
+      "relation_quote": "aquisição da",
+      "role_quote": "Citigroup",
+      "subject": "Citigroup",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Citigroup",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "Associates First Capital Corp. &nbsp;&nbsp; Automotive Fleet"
+     }
+    ],
+    "falha": "",
+    "marcas": [
+     "H3_ENTIDADE_AUSENTE"
+    ],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-17 10:49",
+   "human_review": null,
+   "latencia_s": 1.82,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "HISTORICAL",
+      "currentness_quote": "Citigroup conclui com sucesso a aquisição da Associates First Capital Corp. &nbsp;&nbsp; Automotive Fleet",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Citigroup conclui com sucesso a aquisição da Associates First Capital Corp. &nbsp;&nbsp; Automotive Fleet",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "FOLLOW_UP",
+      "occurrence_novelty_quote": "Citigroup conclui com sucesso a aquisição da Associates First Capital Corp. &nbsp;&nbsp; Automotive Fleet",
+      "phase": "CONCLUDED",
+      "phase_quote": "conclui com sucesso",
+      "related_entity": "Associates First Capital Corp. &nbsp;&nbsp; Automotive Fleet",
+      "relation": "acquires",
+      "relation_quote": "aquisição da",
+      "role_quote": "Citigroup",
+      "subject": "Citigroup",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Citigroup",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "Associates First Capital Corp. &nbsp;&nbsp; Automotive Fleet"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Automotive Fleet",
+   "title": "Citigroup conclui com sucesso a aquisição da Associates First Capital Corp.",
+   "url": "https://www.automotive-fleet.com/news/citigroup-successfully-completes-acquisition-of-associates-first-capital-corp",
+   "usage": {
+    "candidates_token_count": 336,
+    "prompt_token_count": 1310,
+    "total_token_count": 1646
+   }
+  },
   "8f820bbc8fc89c13911b|Eneva|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {
    "actual_model": "gemini-3.1-flash-lite",
    "article_id": "8f820bbc8fc89c13911b",
@@ -1095,6 +1333,240 @@
     "candidates_token_count": 323,
     "prompt_token_count": 1319,
     "total_token_count": 1642
+   }
+  },
+  "d566e840bd3c1d4f43bc|Citigroup|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "d566e840bd3c1d4f43bc",
+   "article_pub_iso": "2026-08-14 13:44",
+   "candidate_event": "ma",
+   "case_id": "d566e840bd3c1d4f43bc|Citigroup|ma|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "Citigroup",
+   "contract_version": "v2",
+   "created_at": "2026-08-17T13:51:26Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-17 10:49",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "aprovacao",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "Acordo de Aquisição da Kard pelo Citigroup",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Acordo de Aquisição da Kard pelo Citigroup",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Acordo de Aquisição da Kard pelo Citigroup",
+      "phase": "AGREED",
+      "phase_quote": "Acordo de Aquisição",
+      "related_entity": "Kard",
+      "relation": "BUYER",
+      "relation_quote": "Acordo de Aquisição da Kard pelo Citigroup",
+      "role_quote": "pelo Citigroup",
+      "subject": "Citigroup",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Citigroup",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "Acordo de Aquisição da Kard"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-17 10:49",
+   "human_review": null,
+   "latencia_s": 2.76,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "Acordo de Aquisição da Kard pelo Citigroup",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Acordo de Aquisição da Kard pelo Citigroup",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Acordo de Aquisição da Kard pelo Citigroup",
+      "phase": "AGREED",
+      "phase_quote": "Acordo de Aquisição",
+      "related_entity": "Kard",
+      "relation": "BUYER",
+      "relation_quote": "Acordo de Aquisição da Kard pelo Citigroup",
+      "role_quote": "pelo Citigroup",
+      "subject": "Citigroup",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Citigroup",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "Acordo de Aquisição da Kard"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Yahoo Finance",
+   "title": "Acordo de Aquisição da Kard pelo Citigroup: Um Novo Motor de Crescimento para os Cartões dos EUA?",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/citigroups-kard-acquisition-deal-growth-164400609.html",
+   "usage": {
+    "candidates_token_count": 294,
+    "prompt_token_count": 1319,
+    "total_token_count": 1613
+   }
+  },
+  "d566e840bd3c1d4f43bc|Citigroup|ma|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "d566e840bd3c1d4f43bc",
+   "article_pub_iso": "2026-08-14 13:44",
+   "candidate_event": "ma",
+   "case_id": "d566e840bd3c1d4f43bc|Citigroup|ma|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "Citigroup",
+   "contract_version": "v2",
+   "created_at": "2026-08-17T13:51:35Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-17 10:49",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "aprovacao",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "Acordo de Aquisição da Kard pelo Citigroup",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Acordo de Aquisição da Kard pelo Citigroup",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Acordo de Aquisição da Kard pelo Citigroup",
+      "phase": "AGREED",
+      "phase_quote": "Acordo de Aquisição da Kard pelo Citigroup",
+      "related_entity": "Kard",
+      "relation": "Acquire",
+      "relation_quote": "Aquisição",
+      "role_quote": "Citigroup",
+      "subject": "Citigroup",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Citigroup",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "Kard"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-17 10:49",
+   "human_review": null,
+   "latencia_s": 1.32,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "Acordo de Aquisição da Kard pelo Citigroup",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Acordo de Aquisição da Kard pelo Citigroup",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Acordo de Aquisição da Kard pelo Citigroup",
+      "phase": "AGREED",
+      "phase_quote": "Acordo de Aquisição da Kard pelo Citigroup",
+      "related_entity": "Kard",
+      "relation": "Acquire",
+      "relation_quote": "Aquisição",
+      "role_quote": "Citigroup",
+      "subject": "Citigroup",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Citigroup",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "Kard"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Yahoo Finance",
+   "title": "Acordo de Aquisição da Kard pelo Citigroup: Um Novo Motor de Crescimento para os Cartões dos EUA?",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/citigroups-kard-acquisition-deal-growth-164400609.html",
+   "usage": {
+    "candidates_token_count": 228,
+    "prompt_token_count": 1319,
+    "total_token_count": 1547
    }
   }
  },
