@@ -36,7 +36,22 @@ B = "out_auditor_pilot_v3"
 LIN = [json.loads(l) for l in io.open(f"{B}/dev_results.jsonl", encoding="utf-8")]
 MAN = json.load(io.open(f"{B}/execution_manifest.json", encoding="utf-8"))
 REL = json.load(io.open(f"{B}/dev_report.json", encoding="utf-8"))
-D = json.load(io.open("risk_semantic_v2_shadow.json", encoding="utf-8"))
+# ENTRADA HISTÓRICA, NÃO ACERVO VIVO.
+#
+# Estas asserções são sobre um experimento CONGELADO. O acervo humano vivo é
+# cumulativo por desenho, e `manifesto_desenvolvimento()` o consome inteiro —
+# então ler o acervo vivo aqui faria a suíte quebrar toda vez que uma nova
+# verdade fosse adjudicada, sem que o experimento tivesse mudado.
+#
+# Medido: a população congelada é idêntica sob 7/17/1 e sob 10/21/4 — mesmos 17
+# alvos, mesmos `article_ref`, mesma verdade de pertinência. Ler o snapshot não
+# enfraquece asserção nenhuma; corrige a fonte.
+#
+# A verificação de que o snapshot reproduz o hash histórico está em
+# `test_wave_occurrence_archival_freeze.py`.
+import reliability_occurrence_archival_verifier as _av
+
+D = _av.carregar_snapshot()
 
 
 def saida(r):

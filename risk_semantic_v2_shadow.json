@@ -916,6 +916,74 @@
     "should_refresh_anchor": null,
     "superseded_by": null,
     "supersedes": null
+   },
+   {
+    "adjudicated_at_iso": "2026-08-16T00:00:00Z",
+    "adjudicated_by": "gustavo",
+    "adjudicator_type": "human",
+    "article_ref": "https://tagdlaw.com.br/cade-aprova-aquisicao-no-campo-de-argonauta-pela-petrobras/",
+    "company": "Petrobras",
+    "event_id": "ma",
+    "evidence": "Cade aprova aquisicao no campo de Argonauta pela Petrobras",
+    "material_phase": "REGULATORY_APPROVAL",
+    "membership_id": "9327704cb8714fe0",
+    "occurrence_novelty": "UNDETERMINED",
+    "occurrence_truth_id": "ma:petrobras:f1415ef283f6",
+    "schema_version": 1,
+    "should_refresh_anchor": null,
+    "superseded_by": null,
+    "supersedes": null
+   },
+   {
+    "adjudicated_at_iso": "2026-08-16T00:00:00Z",
+    "adjudicated_by": "gustavo",
+    "adjudicator_type": "human",
+    "article_ref": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1509255&numSequencia=1033961&numVersao=1",
+    "company": "Petrobras",
+    "event_id": "ma",
+    "evidence": "amplia presenca na Bacia de Campos com a aquisicao de parte do ring-fence de Argonauta",
+    "material_phase": "UNKNOWN",
+    "membership_id": "b0110e749c1743da",
+    "occurrence_novelty": "UNDETERMINED",
+    "occurrence_truth_id": "ma:petrobras:f1415ef283f6",
+    "schema_version": 1,
+    "should_refresh_anchor": null,
+    "superseded_by": null,
+    "supersedes": null
+   },
+   {
+    "adjudicated_at_iso": "2026-08-16T00:00:00Z",
+    "adjudicated_by": "gustavo",
+    "adjudicator_type": "human",
+    "article_ref": "https://canalsolar.com.br/petrobras-aquisicao-lightsource-bp-solar-eolica-baterias/",
+    "company": "Petrobras",
+    "event_id": "ma",
+    "evidence": "conclui aquisicao de quase metade da Lightsource bp no Brasil",
+    "material_phase": "COMPLETION",
+    "membership_id": "195d64da5d21467f",
+    "occurrence_novelty": "UNDETERMINED",
+    "occurrence_truth_id": "ma:petrobras:a0aaf7a36337",
+    "schema_version": 1,
+    "should_refresh_anchor": null,
+    "superseded_by": null,
+    "supersedes": null
+   },
+   {
+    "adjudicated_at_iso": "2026-08-16T00:00:00Z",
+    "adjudicated_by": "gustavo",
+    "adjudicator_type": "human",
+    "article_ref": "https://tagdlaw.com.br/petrobras-solicita-reanalise-da-aquisicao-da-jv-da-wilson-sons/",
+    "company": "Petrobras",
+    "event_id": "ma",
+    "evidence": "solicita reanalise da aquisicao da JV da Wilson Sons",
+    "material_phase": "UNKNOWN",
+    "membership_id": "d41ee135c77a41bf",
+    "occurrence_novelty": "UNDETERMINED",
+    "occurrence_truth_id": "ma:petrobras:229079ca4a05",
+    "schema_version": 1,
+    "should_refresh_anchor": null,
+    "superseded_by": null,
+    "supersedes": null
    }
   ],
   "occurrences": {
@@ -933,6 +1001,54 @@
     "material_event_date": null,
     "nota": "",
     "occurrence_truth_id": "ma:brf:71db98a1b8ae",
+    "schema_version": 1
+   },
+   "ma:petrobras:229079ca4a05": {
+    "adjudicated_at_iso": "2026-08-16T00:00:00Z",
+    "adjudicated_by": "gustavo",
+    "adjudicator_type": "human",
+    "company": "Petrobras",
+    "event_id": "ma",
+    "family_identity": {
+     "acquirer": "Petrobras",
+     "target": "Wilson Sons",
+     "transaction_object": "JV"
+    },
+    "material_event_date": null,
+    "nota": "Wilson Sons: terceira operacao distinta",
+    "occurrence_truth_id": "ma:petrobras:229079ca4a05",
+    "schema_version": 1
+   },
+   "ma:petrobras:a0aaf7a36337": {
+    "adjudicated_at_iso": "2026-08-16T00:00:00Z",
+    "adjudicated_by": "gustavo",
+    "adjudicator_type": "human",
+    "company": "Petrobras",
+    "event_id": "ma",
+    "family_identity": {
+     "acquirer": "Petrobras",
+     "target": "Lightsource bp Brasil",
+     "transaction_object": "participacao societaria"
+    },
+    "material_event_date": null,
+    "nota": "Lightsource bp: operacao distinta",
+    "occurrence_truth_id": "ma:petrobras:a0aaf7a36337",
+    "schema_version": 1
+   },
+   "ma:petrobras:f1415ef283f6": {
+    "adjudicated_at_iso": "2026-08-16T00:00:00Z",
+    "adjudicated_by": "gustavo",
+    "adjudicator_type": "human",
+    "company": "Petrobras",
+    "event_id": "ma",
+    "family_identity": {
+     "acquirer": "Petrobras",
+     "geography": "Bacia de Campos",
+     "transaction_object": "campo/ring-fence de Argonauta"
+    },
+    "material_event_date": null,
+    "nota": "Argonauta: aprovacao do Cade e fato relevante da mesma operacao",
+    "occurrence_truth_id": "ma:petrobras:f1415ef283f6",
     "schema_version": 1
    },
    "ma:smart-fit:1aa8da6e9f5c": {
@@ -1028,6 +1144,36 @@
     "evidence": "duas trocas de comando reais em quatro meses",
     "occurrence_a": "troca_ceo:hapvida:3b55e5fc412d",
     "occurrence_b": "troca_ceo:hapvida:dc829e29aab1",
+    "relation": "DISTINCT_OCCURRENCE",
+    "schema_version": 1
+   },
+   {
+    "adjudicated_at_iso": "2026-08-16T00:00:00Z",
+    "adjudicated_by": "gustavo",
+    "adjudicator_type": "human",
+    "evidence": "ativos, contrapartes e objetos de transacao diferentes",
+    "occurrence_a": "ma:petrobras:a0aaf7a36337",
+    "occurrence_b": "ma:petrobras:f1415ef283f6",
+    "relation": "DISTINCT_OCCURRENCE",
+    "schema_version": 1
+   },
+   {
+    "adjudicated_at_iso": "2026-08-16T00:00:00Z",
+    "adjudicated_by": "gustavo",
+    "adjudicator_type": "human",
+    "evidence": "ativos, contrapartes e objetos de transacao diferentes",
+    "occurrence_a": "ma:petrobras:229079ca4a05",
+    "occurrence_b": "ma:petrobras:f1415ef283f6",
+    "relation": "DISTINCT_OCCURRENCE",
+    "schema_version": 1
+   },
+   {
+    "adjudicated_at_iso": "2026-08-16T00:00:00Z",
+    "adjudicated_by": "gustavo",
+    "adjudicator_type": "human",
+    "evidence": "ativos, contrapartes e objetos de transacao diferentes",
+    "occurrence_a": "ma:petrobras:229079ca4a05",
+    "occurrence_b": "ma:petrobras:a0aaf7a36337",
     "relation": "DISTINCT_OCCURRENCE",
     "schema_version": 1
    }

@@ -70,10 +70,10 @@ print("=" * 98)
 print("§32/§33 O STORE INTEIRO")
 print("=" * 98)
 check(not ot.validar(D), f"[1] validador sem problemas ({ot.validar(D)})")
-check(len(OCC) == 7, f"[2] sete ocorrências econômicas ({len(OCC)})")
-check(len(ot.memberships(D)) == 17 and len(ot.memberships_ativas(D)) == 17,
-      f"[3] dezessete pertinências, todas ativas ({len(ot.memberships(D))})")
-check(len(ot.relacoes(D)) == 1, f"[4] uma relação ({len(ot.relacoes(D))})")
+check(len(OCC) == 10, f"[2] dez ocorrências econômicas ({len(OCC)})")
+check(len(ot.memberships(D)) == 21 and len(ot.memberships_ativas(D)) == 21,
+      f"[3] vinte e uma pertinências, todas ativas ({len(ot.memberships(D))})")
+check(len(ot.relacoes(D)) == 4, f"[4] quatro relações ({len(ot.relacoes(D))})")
 check(len(set(OCC)) == len(OCC), "[5] nenhum id repetido")
 _ids = {m["occurrence_truth_id"] for m in ot.memberships(D)}
 check(_ids <= set(OCC), "[6] toda pertinência resolve para uma ocorrência existente")
@@ -216,11 +216,36 @@ print("=" * 98)
 print("§25/§26/§27 O QUE NÃO FOI ESCRITO")
 print("=" * 98)
 _emp = {o["company"] for o in OCC.values()}
-for nome in ("Ambev", "B3", "Capital One Financial", "Petrobras"):
-    check(nome not in _emp, f"[{50 + ('Ambev B3 Capital One Financial Petrobras'.split().index(nome.split()[0]))}] "
+for nome in ("Ambev", "B3", "Capital One Financial"):
+    check(nome not in _emp,
+          f"[{50 + 'Ambev B3 Capital'.split().index(nome.split()[0])}] "
           f"{nome} não tem verdade gravada")
-check(_emp == {"Santander Brasil", "Tupy", "Yura", "Smart Fit", "BRF", "Hapvida"},
-      f"[54] exatamente as seis empresas autorizadas ({sorted(_emp)})")
+check(_emp == {"Santander Brasil", "Tupy", "Yura", "Smart Fit", "BRF",
+               "Hapvida", "Petrobras"},
+      f"[53] exatamente as sete empresas autorizadas ({sorted(_emp)})")
+
+# A guarda anterior dizia "Petrobras não tem verdade gravada" e existia para
+# barrar escrita não autorizada. A autorização veio, e substituí-la por nada
+# deixaria a escrita sem verificação nenhuma — então ela vira uma afirmação
+# MAIS forte: a forma exata do que foi adjudicado.
+_pt = [m for m in ot.memberships_ativas(D) if m["company"] == "Petrobras"]
+_pid = {m["occurrence_truth_id"] for m in _pt}
+check(len(_pt) == 4 and len(_pid) == 3,
+      f"[54] Petrobras: 4 pertinências em 3 ocorrências ({len(_pt)}/{len(_pid)})")
+_arg = [m for m in _pt if "argonauta" in m["article_ref"].lower()
+        or "rad.cvm.gov.br" in m["article_ref"]]
+check(len(_arg) == 2 and len({m["occurrence_truth_id"] for m in _arg}) == 1,
+      "[54b] Argonauta: os dois artigos compartilham UMA ocorrência, e a "
+      "igualdade está no ID — sem relação SAME redundante")
+check(len([r for r in ot.relacoes(D)
+           if r["occurrence_a"] in _pid and r["occurrence_b"] in _pid
+           and r["relation"] == "DISTINCT_OCCURRENCE"]) == 3,
+      "[54c] e três relações DISTINCT entre as três ocorrências")
+check(all(m["occurrence_novelty"] == "UNDETERMINED" for m in _pt),
+      "[54d] novidade UNDETERMINED nas quatro — a adjudicação foi de "
+      "identidade, não de papel cronológico")
+check("africa" not in json.dumps(ot.memberships(D), ensure_ascii=False).lower(),
+      "[54e] o artigo do bloco na África NÃO entrou — decisão adiada")
 
 print()
 print("=" * 98)
