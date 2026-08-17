@@ -80,7 +80,30 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-17 07:51",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+    "camada_artigo": {
+     "criterio": "O assunto central e margem nos EUA e gado mexicano. O novo CEO aparece lateralmente, prometendo continuidade. O artigo NAO anuncia uma troca de CEO.",
+     "scoreable": false
+    },
+    "camada_sistema": {
+     "criterio": "A troca de CEO da JBS ja esta ancorada em 5d05e844 (Wesley Batista Filho, a partir de janeiro de 2027). Este artigo nao abre segunda ocorrencia nem pontua de novo: uma ocorrencia economica pontua uma vez.",
+     "nao_e_novo_anuncio": true,
+     "ocorrencia_ja_ancorada_em": "5d05e84444486491a30b"
+    },
+    "dimensoes_adjudicadas": {
+     "company_role": "SUBJECT",
+     "event_asserted": "MENTIONED_ONLY",
+     "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+     "subject": "JBS"
+    },
+    "reviewed_at": 1786970863,
+    "reviewed_at_iso": "2026-08-17T12:47:43Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "verdict": "MENCIONA_SEM_ANUNCIAR",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 6.4,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.1-flash-lite",
@@ -197,7 +220,30 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-17 07:51",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+    "camada_artigo": {
+     "criterio": "O assunto central e margem nos EUA e gado mexicano. O novo CEO aparece lateralmente, prometendo continuidade. O artigo NAO anuncia uma troca de CEO.",
+     "scoreable": false
+    },
+    "camada_sistema": {
+     "criterio": "A troca de CEO da JBS ja esta ancorada em 5d05e844 (Wesley Batista Filho, a partir de janeiro de 2027). Este artigo nao abre segunda ocorrencia nem pontua de novo: uma ocorrencia economica pontua uma vez.",
+     "nao_e_novo_anuncio": true,
+     "ocorrencia_ja_ancorada_em": "5d05e84444486491a30b"
+    },
+    "dimensoes_adjudicadas": {
+     "company_role": "SUBJECT",
+     "event_asserted": "MENTIONED_ONLY",
+     "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+     "subject": "JBS"
+    },
+    "reviewed_at": 1786970863,
+    "reviewed_at_iso": "2026-08-17T12:47:43Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "verdict": "MENCIONA_SEM_ANUNCIAR",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 1.38,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.5-flash-lite",
@@ -318,7 +364,74 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-17 03:50",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+    "camada_artigo": {
+     "criterio": "Aquisicao de 51% do Aterro de Rondonopolis (MT), EV ~R$ 45,4 mi, sujeita a aprovacao do CADE e outras condicoes precedentes. 51% transfere CONTROLE — por isso COMPANY_CONTROL e nao EQUITY_STAKE minoritario, e nao ASSET_OR_BUSINESS_UNIT: o objeto e participacao societaria, ainda que o negocio operado seja um aterro.",
+     "distincao_do_precedente": "Difere do bloco exploratorio da Petrobras (direito, nao controle) exatamente no ponto que importa: aqui ha transferencia de controle societario.",
+     "scoreable": true
+    },
+    "camada_sistema": {
+     "criterio": "FASE = ANNOUNCED, nao CONCLUDED: a evidencia diz que a operacao seguia condicionada ao CADE. Nenhuma data do fato foi adjudicada porque a evidencia disponivel nao a fixa.",
+     "evidencia_externa": true,
+     "input_congelado_era_insuficiente": true
+    },
+    "dimensoes_adjudicadas": {
+     "centrality": "MAIN",
+     "company_role": "BUYER",
+     "event_asserted": "ASSERTED",
+     "occurrence_novelty": "NEW_OCCURRENCE",
+     "phase": "ANNOUNCED",
+     "subject": "Orizon Valorizacao de Residuos",
+     "transaction_object": "COMPANY_CONTROL"
+    },
+    "input_sufficiency": {
+     "INPUT_SUFFICIENCY_FOR_TRANSACTION_OBJECT": "INSUFFICIENT",
+     "criterio": "O input congelado dos modelos continha SOMENTE o titulo '[Fato Relevante] Orizon Valorizacao de Residuos: Aquisicao de Rondonopolis'. Os 51%, o EV e a condicao do CADE NAO estavam la. A verdade humana pode usar evidencia verificada depois; a avaliacao do modelo tem de lembrar o que o modelo viu. Este campo e diagnostico suplementar e NAO altera a metrica congelada."
+    },
+    "nota": "Aquisicao de 51% do Aterro de Rondonopolis (MT), EV ~R$45,4 mi, sujeita a CADE. 51% transfere CONTROLE — participacao societaria, nao ativo. Difere do precedente Eneva/Japiim (interesse em ATIVO) e do bloco exploratorio da Petrobras (direito) exatamente nesse ponto.",
+    "override_de": {
+     "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+     "camada_artigo": {
+      "criterio": "Aquisicao de 51% do Aterro de Rondonopolis (MT), EV ~R$ 45,4 mi, sujeita a aprovacao do CADE e outras condicoes precedentes. 51% transfere CONTROLE — por isso COMPANY_CONTROL e nao EQUITY_STAKE minoritario, e nao ASSET_OR_BUSINESS_UNIT: o objeto e participacao societaria, ainda que o negocio operado seja um aterro.",
+      "distincao_do_precedente": "Difere do bloco exploratorio da Petrobras (direito, nao controle) exatamente no ponto que importa: aqui ha transferencia de controle societario.",
+      "scoreable": true
+     },
+     "camada_sistema": {
+      "criterio": "FASE = ANNOUNCED, nao CONCLUDED: a evidencia diz que a operacao seguia condicionada ao CADE. Nenhuma data do fato foi adjudicada porque a evidencia disponivel nao a fixa.",
+      "evidencia_externa": true,
+      "input_congelado_era_insuficiente": true
+     },
+     "dimensoes_adjudicadas": {
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "event_asserted": "ASSERTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "phase": "ANNOUNCED",
+      "subject": "Orizon Valorizacao de Residuos",
+      "transaction_object": "COMPANY_CONTROL"
+     },
+     "input_sufficiency": {
+      "INPUT_SUFFICIENCY_FOR_TRANSACTION_OBJECT": "INSUFFICIENT",
+      "criterio": "O input congelado dos modelos continha SOMENTE o titulo '[Fato Relevante] Orizon Valorizacao de Residuos: Aquisicao de Rondonopolis'. Os 51%, o EV e a condicao do CADE NAO estavam la. A verdade humana pode usar evidencia verificada depois; a avaliacao do modelo tem de lembrar o que o modelo viu. Este campo e diagnostico suplementar e NAO altera a metrica congelada."
+     },
+     "reviewed_at": 1786971137,
+     "reviewed_at_iso": "2026-08-17T12:52:17Z",
+     "reviewer": "gustavo",
+     "reviewer_type": "human",
+     "verdict": "MA_SOCIETARIO_PONTUAVEL",
+     "writer_version": "r7ba.hrw.v1"
+    },
+    "override_motivo": "completar o registro na forma canonica: o relatorio le pontuabilidade de scoreable_as_ma no topo, como no precedente Eneva",
+    "razao_primaria": "object_scope",
+    "reviewed_at": 1786971210,
+    "reviewed_at_iso": "2026-08-17T12:53:30Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "scoreable_as_ma": true,
+    "verdict": "MA_SOCIETARIO_PONTUAVEL",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 1.73,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.1-flash-lite",
@@ -435,7 +548,74 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-17 03:50",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+    "camada_artigo": {
+     "criterio": "Aquisicao de 51% do Aterro de Rondonopolis (MT), EV ~R$ 45,4 mi, sujeita a aprovacao do CADE e outras condicoes precedentes. 51% transfere CONTROLE — por isso COMPANY_CONTROL e nao EQUITY_STAKE minoritario, e nao ASSET_OR_BUSINESS_UNIT: o objeto e participacao societaria, ainda que o negocio operado seja um aterro.",
+     "distincao_do_precedente": "Difere do bloco exploratorio da Petrobras (direito, nao controle) exatamente no ponto que importa: aqui ha transferencia de controle societario.",
+     "scoreable": true
+    },
+    "camada_sistema": {
+     "criterio": "FASE = ANNOUNCED, nao CONCLUDED: a evidencia diz que a operacao seguia condicionada ao CADE. Nenhuma data do fato foi adjudicada porque a evidencia disponivel nao a fixa.",
+     "evidencia_externa": true,
+     "input_congelado_era_insuficiente": true
+    },
+    "dimensoes_adjudicadas": {
+     "centrality": "MAIN",
+     "company_role": "BUYER",
+     "event_asserted": "ASSERTED",
+     "occurrence_novelty": "NEW_OCCURRENCE",
+     "phase": "ANNOUNCED",
+     "subject": "Orizon Valorizacao de Residuos",
+     "transaction_object": "COMPANY_CONTROL"
+    },
+    "input_sufficiency": {
+     "INPUT_SUFFICIENCY_FOR_TRANSACTION_OBJECT": "INSUFFICIENT",
+     "criterio": "O input congelado dos modelos continha SOMENTE o titulo '[Fato Relevante] Orizon Valorizacao de Residuos: Aquisicao de Rondonopolis'. Os 51%, o EV e a condicao do CADE NAO estavam la. A verdade humana pode usar evidencia verificada depois; a avaliacao do modelo tem de lembrar o que o modelo viu. Este campo e diagnostico suplementar e NAO altera a metrica congelada."
+    },
+    "nota": "Aquisicao de 51% do Aterro de Rondonopolis (MT), EV ~R$45,4 mi, sujeita a CADE. 51% transfere CONTROLE — participacao societaria, nao ativo. Difere do precedente Eneva/Japiim (interesse em ATIVO) e do bloco exploratorio da Petrobras (direito) exatamente nesse ponto.",
+    "override_de": {
+     "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+     "camada_artigo": {
+      "criterio": "Aquisicao de 51% do Aterro de Rondonopolis (MT), EV ~R$ 45,4 mi, sujeita a aprovacao do CADE e outras condicoes precedentes. 51% transfere CONTROLE — por isso COMPANY_CONTROL e nao EQUITY_STAKE minoritario, e nao ASSET_OR_BUSINESS_UNIT: o objeto e participacao societaria, ainda que o negocio operado seja um aterro.",
+      "distincao_do_precedente": "Difere do bloco exploratorio da Petrobras (direito, nao controle) exatamente no ponto que importa: aqui ha transferencia de controle societario.",
+      "scoreable": true
+     },
+     "camada_sistema": {
+      "criterio": "FASE = ANNOUNCED, nao CONCLUDED: a evidencia diz que a operacao seguia condicionada ao CADE. Nenhuma data do fato foi adjudicada porque a evidencia disponivel nao a fixa.",
+      "evidencia_externa": true,
+      "input_congelado_era_insuficiente": true
+     },
+     "dimensoes_adjudicadas": {
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "event_asserted": "ASSERTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "phase": "ANNOUNCED",
+      "subject": "Orizon Valorizacao de Residuos",
+      "transaction_object": "COMPANY_CONTROL"
+     },
+     "input_sufficiency": {
+      "INPUT_SUFFICIENCY_FOR_TRANSACTION_OBJECT": "INSUFFICIENT",
+      "criterio": "O input congelado dos modelos continha SOMENTE o titulo '[Fato Relevante] Orizon Valorizacao de Residuos: Aquisicao de Rondonopolis'. Os 51%, o EV e a condicao do CADE NAO estavam la. A verdade humana pode usar evidencia verificada depois; a avaliacao do modelo tem de lembrar o que o modelo viu. Este campo e diagnostico suplementar e NAO altera a metrica congelada."
+     },
+     "reviewed_at": 1786971137,
+     "reviewed_at_iso": "2026-08-17T12:52:17Z",
+     "reviewer": "gustavo",
+     "reviewer_type": "human",
+     "verdict": "MA_SOCIETARIO_PONTUAVEL",
+     "writer_version": "r7ba.hrw.v1"
+    },
+    "override_motivo": "completar o registro na forma canonica: o relatorio le pontuabilidade de scoreable_as_ma no topo, como no precedente Eneva",
+    "razao_primaria": "object_scope",
+    "reviewed_at": 1786971210,
+    "reviewed_at_iso": "2026-08-17T12:53:30Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "scoreable_as_ma": true,
+    "verdict": "MA_SOCIETARIO_PONTUAVEL",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 1.65,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.5-flash-lite",
@@ -888,7 +1068,33 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-17 13:39",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+    "camada_artigo": {
+     "adquirente_legal": "Pilgrim's Pride",
+     "alvo": "Walkers Deli & Sausage Company",
+     "geografia": "Reino Unido"
+    },
+    "dimensoes_adjudicadas": {
+     "centrality": "MAIN",
+     "company_role": "SUBJECT",
+     "currentness": "CURRENT",
+     "event_asserted": "ASSERTED",
+     "occurrence_novelty": "NEW_OCCURRENCE",
+     "phase": "ANNOUNCED",
+     "subject": "JBS",
+     "transaction_object": "COMPANY_CONTROL"
+    },
+    "nota": "Adquirente LEGAL e a Pilgrim's; a JBS e a controladora majoritaria. O evento e economicamente atribuivel ao grupo JBS. LACUNA DE ENUM: `company_role` nao tem valor para matriz-de-adquirente (nao existe PARENT_OF_ACQUIRER nem CONTROLLED_SUBSIDIARY); usei SUBJECT, que e o mais defensavel, e registro a distincao aqui em vez de inventar enum.",
+    "razao_primaria": "group_subsidiary_acquirer",
+    "reviewed_at": 1786990950,
+    "reviewed_at_iso": "2026-08-17T18:22:30Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "scoreable_as_ma": true,
+    "verdict": "MA_DE_CONTROLADA_ATRIBUIVEL_AO_GRUPO",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 6.19,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.1-flash-lite",
@@ -1005,7 +1211,33 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-17 13:39",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+    "camada_artigo": {
+     "adquirente_legal": "Pilgrim's Pride",
+     "alvo": "Walkers Deli & Sausage Company",
+     "geografia": "Reino Unido"
+    },
+    "dimensoes_adjudicadas": {
+     "centrality": "MAIN",
+     "company_role": "SUBJECT",
+     "currentness": "CURRENT",
+     "event_asserted": "ASSERTED",
+     "occurrence_novelty": "NEW_OCCURRENCE",
+     "phase": "ANNOUNCED",
+     "subject": "JBS",
+     "transaction_object": "COMPANY_CONTROL"
+    },
+    "nota": "Adquirente LEGAL e a Pilgrim's; a JBS e a controladora majoritaria. O evento e economicamente atribuivel ao grupo JBS. LACUNA DE ENUM: `company_role` nao tem valor para matriz-de-adquirente (nao existe PARENT_OF_ACQUIRER nem CONTROLLED_SUBSIDIARY); usei SUBJECT, que e o mais defensavel, e registro a distincao aqui em vez de inventar enum.",
+    "razao_primaria": "group_subsidiary_acquirer",
+    "reviewed_at": 1786990950,
+    "reviewed_at_iso": "2026-08-17T18:22:30Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "scoreable_as_ma": true,
+    "verdict": "MA_DE_CONTROLADA_ATRIBUIVEL_AO_GRUPO",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 1.46,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.5-flash-lite",
@@ -1122,7 +1354,33 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-17 10:49",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+    "camada_sistema": {
+     "ano_do_fato": 2000,
+     "falha": "CURRENTNESS, nao escopo de M&A",
+     "scoreable_now": false
+    },
+    "dimensoes_adjudicadas": {
+     "centrality": "MAIN",
+     "company_role": "BUYER",
+     "currentness": "HISTORICAL",
+     "event_asserted": "ASSERTED",
+     "occurrence_novelty": "HISTORICAL_CONTEXT",
+     "phase": "CONCLUDED",
+     "subject": "Citigroup",
+     "transaction_object": "COMPANY_CONTROL"
+    },
+    "nota": "A aquisicao da Associates First Capital pelo Citigroup ocorreu em 2000. O evento e real, a atribuicao e direta e a fase e conclusao — e mesmo assim NAO e noticia corrente de risco em 2026. A data do fato economico domina a atualidade; 'conclui' no titulo nao a torna corrente.",
+    "razao_primaria": "currentness",
+    "reviewed_at": 1786990951,
+    "reviewed_at_iso": "2026-08-17T18:22:31Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "scoreable_as_ma": false,
+    "verdict": "MA_REAL_MAS_HISTORICO",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 3.61,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.1-flash-lite",
@@ -1243,7 +1501,33 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-17 10:49",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+    "camada_sistema": {
+     "ano_do_fato": 2000,
+     "falha": "CURRENTNESS, nao escopo de M&A",
+     "scoreable_now": false
+    },
+    "dimensoes_adjudicadas": {
+     "centrality": "MAIN",
+     "company_role": "BUYER",
+     "currentness": "HISTORICAL",
+     "event_asserted": "ASSERTED",
+     "occurrence_novelty": "HISTORICAL_CONTEXT",
+     "phase": "CONCLUDED",
+     "subject": "Citigroup",
+     "transaction_object": "COMPANY_CONTROL"
+    },
+    "nota": "A aquisicao da Associates First Capital pelo Citigroup ocorreu em 2000. O evento e real, a atribuicao e direta e a fase e conclusao — e mesmo assim NAO e noticia corrente de risco em 2026. A data do fato economico domina a atualidade; 'conclui' no titulo nao a torna corrente.",
+    "razao_primaria": "currentness",
+    "reviewed_at": 1786990951,
+    "reviewed_at_iso": "2026-08-17T18:22:31Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "scoreable_as_ma": false,
+    "verdict": "MA_REAL_MAS_HISTORICO",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 1.82,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.5-flash-lite",
@@ -1644,7 +1928,32 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-17 10:49",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+    "camada_artigo": {
+     "alvo": "Kard Financial",
+     "pergunta_do_titulo": "sobre consequencia, nao sobre existencia"
+    },
+    "dimensoes_adjudicadas": {
+     "centrality": "MAIN",
+     "company_role": "BUYER",
+     "currentness": "CURRENT",
+     "event_asserted": "ASSERTED",
+     "occurrence_novelty": "NEW_OCCURRENCE",
+     "phase": "ANNOUNCED",
+     "subject": "Citigroup",
+     "transaction_object": "COMPANY_CONTROL"
+    },
+    "nota": "A interrogacao do titulo pergunta se a aquisicao sera um motor de crescimento, NAO se ela existe. Evento confirmado, alvo Kard Financial. Nao deriva regra generica de que '?' implica especulacao.",
+    "razao_primaria": "confirmed_announcement",
+    "reviewed_at": 1786990951,
+    "reviewed_at_iso": "2026-08-17T18:22:31Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "scoreable_as_ma": true,
+    "verdict": "MA_CONFIRMADO_NOVO",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 2.76,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.1-flash-lite",
@@ -1761,7 +2070,32 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-17 10:49",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+    "camada_artigo": {
+     "alvo": "Kard Financial",
+     "pergunta_do_titulo": "sobre consequencia, nao sobre existencia"
+    },
+    "dimensoes_adjudicadas": {
+     "centrality": "MAIN",
+     "company_role": "BUYER",
+     "currentness": "CURRENT",
+     "event_asserted": "ASSERTED",
+     "occurrence_novelty": "NEW_OCCURRENCE",
+     "phase": "ANNOUNCED",
+     "subject": "Citigroup",
+     "transaction_object": "COMPANY_CONTROL"
+    },
+    "nota": "A interrogacao do titulo pergunta se a aquisicao sera um motor de crescimento, NAO se ela existe. Evento confirmado, alvo Kard Financial. Nao deriva regra generica de que '?' implica especulacao.",
+    "razao_primaria": "confirmed_announcement",
+    "reviewed_at": 1786990951,
+    "reviewed_at_iso": "2026-08-17T18:22:31Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "scoreable_as_ma": true,
+    "verdict": "MA_CONFIRMADO_NOVO",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 1.32,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.5-flash-lite",

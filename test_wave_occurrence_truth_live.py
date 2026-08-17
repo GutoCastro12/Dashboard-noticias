@@ -251,14 +251,21 @@ print()
 print("=" * 98)
 print("§30/§31 O QUE JÁ EXISTIA CONTINUA COMO ESTAVA")
 print("=" * 98)
+# OBSERVAÇÕES DO SHADOW CRESCEM; VERDADE DE OCORRÊNCIA NÃO.
+#
+# O cron adiciona casos prospectivos continuamente — fixar a contagem em 4
+# fazia a suíte quebrar por dado novo, sem que nada tivesse regredido. O que
+# precisa ser invariante é outra coisa: as revisões humanas nunca somem, e o
+# acervo de ocorrência não cresce por conta disso.
 _obs = D["observacoes"]
-check(len(_obs) == 4, f"[55] as quatro observações seguem lá ({len(_obs)})")
+check(len(_obs) >= 4, f"[55] observações crescem monotonicamente ({len(_obs)})")
 _com_hr = [o for o in _obs.values() if o.get("human_review")]
-check(len(_com_hr) == 4, "[56] todas com revisão humana")
-_nov_legado = [(o.get("human_review") or {}).get("dimensoes_adjudicadas", {})
-               .get("occurrence_novelty") for o in _obs.values()]
-check(sorted(set(_nov_legado)) == ["FOLLOW_UP", "NEW_OCCURRENCE"],
-      f"[57] com `occurrence_novelty` preservado ({sorted(set(_nov_legado))})")
+check(len(_com_hr) >= 4,
+      f"[56] e as revisões humanas nunca desaparecem ({len(_com_hr)})")
+_nov_legado = {(o.get("human_review") or {}).get("dimensoes_adjudicadas", {})
+               .get("occurrence_novelty") for o in _obs.values()} - {None}
+check({"FOLLOW_UP", "NEW_OCCURRENCE"} <= _nov_legado,
+      f"[57] com as novidades já adjudicadas preservadas ({sorted(_nov_legado)})")
 _eneva = [o for o in _obs.values()
           if (o.get("human_review") or {}).get("artigo_anterior_mesma_transacao")]
 check(len(_eneva) == 2,

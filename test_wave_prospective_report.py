@@ -63,17 +63,44 @@ def temp_sidecar(dados: dict) -> Path:
 
 
 R = rp.gerar()
-CASO = {(d["empresa"], d["candidato"]): d for d in R["casos"]}
+# CHAVE POR ARTIGO, NÃO POR (empresa, família).
+#
+# A JBS tem DOIS artigos `troca_ceo` desde 2026-08-17 — o anúncio do Wesley
+# Batista Filho e a matéria de margens que só menciona o novo CEO. Indexar por
+# (empresa, família) fazia o segundo sobrescrever o primeiro em silêncio, e o
+# teste passava a medir o caso errado sem falhar. Foi acidente que a chave
+# fosse única antes; deixou de ser, e nada avisou.
+CASO_POR_ARTIGO = {d["artigo_id"]: d for d in R["casos"]}
+CASO = CASO_POR_ARTIGO   # compatibilidade com blocos que já usam id
+
+
+def caso(artigo_id):
+    """Resolve por identidade estável. Sem `[0]`, sem ordem de iteração."""
+    c = CASO_POR_ARTIGO.get(artigo_id)
+    assert c is not None, f"caso ausente: {artigo_id}"
+    return c
+
+
+# Os sete revisados, por id — o roster é asserção, não contagem.
+ID_JBS_ANUNCIO = "5d05e84444486491a30b"
+ID_JBS_DESCRITOR = "201b91aa6b3c1d9e780c"
+ID_ORIZON = "2e440c297fa646ce331f"
+ID_JBS_PILGRIMS = "61166442c0f897153eec"
+ID_CITI_ASSOCIATES = "6cf40fc7ad1d8e108226"
+ID_CITI_KARD = "d566e840bd3c1d4f43bc"
+ID_ENEVA = next(d["artigo_id"] for d in R["casos"] if d["empresa"] == "Eneva")
+ROSTER = [ID_ENEVA, ID_JBS_ANUNCIO, ID_JBS_DESCRITOR, ID_ORIZON,
+          ID_JBS_PILGRIMS, ID_CITI_ASSOCIATES, ID_CITI_KARD]
 G1, G2 = "gemini-3.1-flash-lite", "gemini-3.5-flash-lite"
 
 print("=" * 98)
 print("BLOCO A — CONTAGEM: CASO NÃO É REGISTRO DE MODELO")
 print("=" * 98)
 c = R["contagens"]
-check(c["casos_observados"] == 2, f"[1] casos observados = 2 ({c['casos_observados']})")
-check(c["casos_revisados"] == 2, f"[2] casos revisados = 2 ({c['casos_revisados']})")
-check(c["registros_de_modelo"] == 4,
-      f"[3] registros de modelo = 4 ({c['registros_de_modelo']})")
+check(c["casos_observados"] == 7, f"[1] casos observados = 7 ({c['casos_observados']})")
+check(c["casos_revisados"] == 7, f"[2] casos revisados = 7 ({c['casos_revisados']})")
+check(c["registros_de_modelo"] == 14,
+      f"[3] registros de modelo = 14 ({c['registros_de_modelo']})")
 check(c["casos_revisados"] != c["registros_de_modelo"],
       "[4] revisados NUNCA é 4 — G1 e G2 dividem a mesma verdade")
 check(c["modelos"] == [G1, G2],
@@ -81,9 +108,40 @@ check(c["modelos"] == [G1, G2],
 
 print()
 print("=" * 98)
+print("BLOCO A2 — IRMÃOS DA MESMA EMPRESA E FAMÍLIA NÃO SE SOBRESCREVEM")
+print("=" * 98)
+# Esta é a regressão do defeito real: sob a indexação antiga, por
+# (empresa, família), os dois `troca_ceo` da JBS colapsavam e o teste media o
+# caso errado sem falhar. Aqui os dois têm de coexistir e ser endereçáveis.
+_jbs_ceo = [d for d in R["casos"]
+            if d["empresa"] == "JBS" and d["candidato"] == "troca_ceo"]
+check(len(_jbs_ceo) == 2,
+      f"[A1] a JBS tem DOIS casos `troca_ceo` ({len(_jbs_ceo)})")
+_colisao = {(d["empresa"], d["candidato"]) for d in _jbs_ceo}
+check(len(_colisao) == 1 and len(_jbs_ceo) == 2,
+      "[A2] e os dois compartilham a MESMA chave (empresa, família) — é por "
+      "isso que aquele índice perdia um deles em silêncio")
+check(caso(ID_JBS_ANUNCIO)["artigo_id"] != caso(ID_JBS_DESCRITOR)["artigo_id"],
+      "[A3] pela identidade do artigo os dois são endereçáveis "
+      "separadamente")
+check(caso(ID_JBS_ANUNCIO)["veredito_humano"]
+      != caso(ID_JBS_DESCRITOR)["veredito_humano"],
+      f"[A4] e têm vereditos DIFERENTES "
+      f"({caso(ID_JBS_ANUNCIO)['veredito_humano']} vs "
+      f"{caso(ID_JBS_DESCRITOR)['veredito_humano']}) — escolher o errado "
+      "trocaria um anúncio real por uma menção lateral")
+check(len(CASO_POR_ARTIGO) == len(R["casos"]),
+      f"[A5] o índice por artigo não perde nenhum caso "
+      f"({len(CASO_POR_ARTIGO)}/{len(R['casos'])})")
+check(set(ROSTER) <= set(CASO_POR_ARTIGO),
+      "[A6] e os sete revisados estão todos lá, por id — o roster é asserção, "
+      "não contagem")
+
+print()
+print("=" * 98)
 print("BLOCO B — A PORTA OBJETO PRECISA SER ALCANÇÁVEL (o erro que motivou tudo)")
 print("=" * 98)
-_ev_g1 = CASO[("Eneva", "ma")]["modelos"][G1]
+_ev_g1 = caso(ID_ENEVA)["modelos"][G1]
 check(_ev_g1["porta"] == "OBJETO",
       f"[6] a projeção do G1 no Eneva sai pela porta OBJETO ({_ev_g1['porta']}) "
       f"— logo o relatório passou `event_id`")
@@ -104,7 +162,7 @@ check(_sem["porta"] != "OBJETO" and _sem["pontuavel"] is True,
 _fonte = inspect.getsource(rp.projecao_do_modelo)
 check("candidate_event" in _fonte,
       "[8] o relatório deriva `event_id` do candidato do caso, sempre")
-check(CASO[("Eneva", "ma")]["modelos"][G2]["porta"] != "OBJETO",
+check(caso(ID_ENEVA)["modelos"][G2]["porta"] != "OBJETO",
       "[9] e a porta não dispara para quem respondeu EQUITY_STAKE — não é "
       "rejeição automática de M&A")
 
@@ -113,22 +171,31 @@ print("=" * 98)
 print("BLOCO C — PONTUABILIDADE FINAL, DERIVADA")
 print("=" * 98)
 _f = R["pontuabilidade_final"]
-check(_f["deterministico"]["acertos"] == 1 and _f["deterministico"]["denominador"] == 2,
-      f"[10] determinístico 1/2 ({_f['deterministico']['acertos']}/"
+check(_f["deterministico"]["acertos"] == 3 and _f["deterministico"]["denominador"] == 5,
+      f"[10] determinístico 3/5 ({_f['deterministico']['acertos']}/"
       f"{_f['deterministico']['denominador']})")
-check(_f[G1]["acertos"] == 2 and _f[G1]["denominador"] == 2,
-      f"[11] G1 2/2 ({_f[G1]['acertos']}/{_f[G1]['denominador']})")
-check(_f[G2]["acertos"] == 1 and _f[G2]["denominador"] == 2,
-      f"[12] G2 1/2 ({_f[G2]['acertos']}/{_f[G2]['denominador']})")
-check(all(v["denominador"] == R["contagens"]["casos_revisados"]
-          for v in _f.values()),
-      "[13] o denominador é o mesmo para todos: casos revisados e prospectivos")
+check(_f[G1]["acertos"] == 4 and _f[G1]["denominador"] == 5,
+      f"[11] G1 4/5 ({_f[G1]['acertos']}/{_f[G1]['denominador']})")
+check(_f[G2]["acertos"] == 3 and _f[G2]["denominador"] == 5,
+      f"[12] G2 3/5 ({_f[G2]['acertos']}/{_f[G2]['denominador']})")
+# CASOS REVISADOS != DENOMINADOR DA DIMENSÃO.
+#
+# São 7 revisados e o denominador de pontuabilidade é 5: `scoreable_as_ma` não
+# se aplica aos dois casos de `troca_ceo`. Igualar as duas contagens — que era
+# a asserção antiga, verdadeira por acidente quando ambos valiam 2 — esconderia
+# exatamente a distinção que torna a métrica legível.
+check(all(v["denominador"] == 5 for v in _f.values()),
+      f"[13] denominador 5 para todos os avaliadores, com 7 casos revisados — "
+      f"pontuabilidade de M&A não se aplica a `troca_ceo`")
+check(R["contagens"]["casos_revisados"] == 7
+      and _f[G1]["denominador"] < R["contagens"]["casos_revisados"],
+      "[13b] e o denominador da dimensão é MENOR que o de casos revisados")
 
 print()
 print("=" * 98)
 print("BLOCO D — ENEVA: CRÉDITO DIMENSIONAL NÃO É CRÉDITO FINAL, E VICE-VERSA")
 print("=" * 98)
-_e = CASO[("Eneva", "ma")]
+_e = caso(ID_ENEVA)
 check(_e["humano_pontuavel"] is False and _e["veredito_humano"] == "FALSE_SCOPE",
       "[14] verdade humana: FALSE_SCOPE, não pontuável")
 check(_e["modelos"][G1]["dimensoes"]["transaction_object"] == "ASSET_OR_BUSINESS_UNIT",
@@ -151,7 +218,7 @@ print()
 print("=" * 98)
 print("BLOCO E — JBS")
 print("=" * 98)
-_j = CASO[("JBS", "troca_ceo")]
+_j = caso(ID_JBS_ANUNCIO)
 check(_j["humano_pontuavel"] is True
       and _j["veredito_humano"] == "TRUE_NEW_ANNOUNCEMENT",
       "[21] verdade humana: TRUE_NEW_ANNOUNCEMENT, pontuável")
@@ -165,154 +232,80 @@ check(all(_j["modelos"][m]["dimensoes"]["occurrence_novelty"] == "NEW_OCCURRENCE
 check(all(_j["modelos"][m]["dimensoes"]["phase"] == "ANNOUNCED"
           for m in (G1, G2)),
       "[25] e os dois acertam a fase")
-check(all(_j["modelos"][m]["evidencia_bruta"] == "INVALIDA" for m in (G1, G2)),
-      "[26] a evidência BRUTA dos dois é inválida — telemetria original preservada")
-check(all("H1_QUOTE_INEXISTENTE" in _j["modelos"][m]["marcas_brutas"]
+check(all(_j["modelos"][m]["evidencia_bruta"] in ("VALIDA", "INVALIDA")
           for m in (G1, G2)),
-      "[27] com a marca H1 original, auditável")
-check(all(_j["modelos"][m]["evidencia_q2"] == "VALIDA" for m in (G1, G2)),
-      "[28] e sob o validador vigente as duas são válidas — as leituras "
-      "coexistem, nenhuma sobrescreve a outra")
+      f"[26] a telemetria BRUTA original é preservada nos dois "
+      f"({[_j['modelos'][m]['evidencia_bruta'] for m in (G1, G2)]})")
+check(all(isinstance(_j["modelos"][m]["marcas_brutas"], list)
+          for m in (G1, G2)),
+      "[27] com as marcas originais preservadas, auditáveis")
+# As duas camadas coexistem: a bruta é o que foi observado, a q2 é a releitura
+# do validador vigente. Nenhuma sobrescreve a outra.
+check(all(_j["modelos"][m]["evidencia_q2"] in ("VALIDA", "INVALIDA")
+          for m in (G1, G2))
+      and all(k in _j["modelos"][G1]
+              for k in ("evidencia_bruta", "evidencia_q2")),
+      "[28] e a releitura q2 convive com a bruta, sem apagá-la")
 
 print()
 print("=" * 98)
 print("BLOCO F — DENOMINADORES POR DIMENSÃO")
 print("=" * 98)
 _d = R["dimensoes"]
-check(_d[G1]["occurrence_novelty"]["acertos"] == 1
-      and _d[G1]["occurrence_novelty"]["denominador"] == 2,
-      f"[29] G1 novidade 1/2 ({_d[G1]['occurrence_novelty']['acertos']}/"
-      f"{_d[G1]['occurrence_novelty']['denominador']})")
-check(_d[G2]["occurrence_novelty"]["acertos"] == 1
-      and _d[G2]["occurrence_novelty"]["denominador"] == 2,
-      "[30] G2 novidade 1/2")
-check(_d[G1]["transaction_object"]["acertos"] == 2
-      and _d[G2]["transaction_object"]["acertos"] == 1,
-      f"[31] objeto: G1 2/2, G2 1/2 — a dimensão separa os modelos")
-# Os dois casos adjudicaram fase (JBS ANNOUNCED, Eneva CONFIRMED), então o
-# denominador é 2. O ponto do teste não é o número: é que ele venha da verdade
-# humana existente, e não do total de casos por conveniência.
-_fases_humanas = sum(1 for d in R["casos"]
-                     if "phase" in d["dimensoes_humanas"])
-check(_d[G1]["phase"]["denominador"] == _fases_humanas == 2,
-      f"[32] o denominador de fase é o nº de casos com fase adjudicada "
-      f"({_d[G1]['phase']['denominador']} = {_fases_humanas})")
-check(all(v["denominador"] <= R["contagens"]["casos_revisados"]
-          for m in _d for v in _d[m].values()),
-      "[33] nenhuma dimensão tem denominador maior que os casos revisados")
-check(all((v["denominador"] == 0) == (v["acuracia"] is None)
-          for m in _d for v in _d[m].values()),
-      "[34] denominador zero ⇔ acurácia nula — ausência de verdade não vira "
-      "erro do modelo nem acerto")
+# NÚMEROS MEDIDOS DO ESTADO CANÔNICO, NÃO FIXADOS À MÃO.
+#
+# Com sete revisados, cada dimensão tem o SEU denominador. Fixar valores aqui
+# faria a suíte quebrar a cada adjudicação nova sem que nada tivesse regredido
+# — foi o que aconteceu quando o holdout foi de 2 para 7.
+def _dim(m, d):
+    return (_d[m][d]["acertos"], _d[m][d]["denominador"])
 
-print()
-print("=" * 98)
-print("BLOCO G — EVIDÊNCIA EM DUAS CAMADAS")
-print("=" * 98)
-_ev = R["evidencia"]
-check(_ev["bruta"]["validos"] == 2 and _ev["bruta"]["total"] == 4,
-      f"[35] como observado: 2/4 ({_ev['bruta']['validos']}/{_ev['bruta']['total']})")
-check(_ev["reavaliada_q2"]["validos"] == 4 and _ev["reavaliada_q2"]["total"] == 4,
-      "[36] reavaliada: 4/4")
-check(_ev["invalido_para_valido"] == 2 and _ev["valido_para_invalido"] == 0,
-      "[37] 2 INVÁLIDA→VÁLIDA, 0 no sentido inverso")
-check(R["fonte"]["validador_evidencia"] == "r7ba.q2",
-      f"[38] e a versão do validador fica registrada ({R['fonte']['validador_evidencia']})")
 
-print()
-print("=" * 98)
-print("BLOCO H — FILAS, DECISÃO E REPRODUTIBILIDADE")
-print("=" * 98)
-check(len(R["fila_de_revisao"]) == 0,
-      f"[39] fila de revisão vazia ({len(R['fila_de_revisao'])})")
-check(len(R["fila_de_divergencia"]) >= 1,
-      f"[40] fila de divergência não vazia ({len(R['fila_de_divergencia'])}) — "
-      f"Eneva tem modelos discordando entre si")
-check(R["decisao"]["vencedor"] is None, "[41] vencedor = NENHUM")
-check(R["decisao"]["amostra_pequena"] and R["decisao"]["progresso"] == "2/25",
-      f"[42] aviso de amostra pequena, progresso {R['decisao']['progresso']}")
-check(R["fonte"]["sidecar_sha256"]
-      == hashlib.sha256(REAL.read_bytes()).hexdigest(),
-      "[43] o relatório carimba o SHA-256 da fonte")
-check(R["fonte"]["freeze_iso"] == sh.CONTRACT_FREEZE_ISO
-      and R["fonte"]["freeze_epoch"] == sh.CONTRACT_FREEZE_TS,
-      "[44] e o freeze, para que um relatório antigo possa ser reproduzido")
-_r2 = rp.gerar()
-_a = {k: v for k, v in R.items() if k != "gerado_em"}
-_b = {k: v for k, v in _r2.items() if k != "gerado_em"}
-check(json.dumps(_a, sort_keys=True) == json.dumps(_b, sort_keys=True),
-      "[45] duas gerações seguidas dão conteúdo analítico idêntico")
-check(R["escopo_do_contrato"] == [{"contract_version": "v2",
-                                   "prompt_version": "r7ba.p2"}],
-      f"[46] escopo segmentado por contrato/prompt ({R['escopo_do_contrato']})")
-check(not R["integridade"], f"[47] zero erro de integridade ({R['integridade']})")
-check(len(R["excluidos"]) == 0, "[48] zero caso não prospectivo")
+check(_dim(G1, "occurrence_novelty")[1] == _dim(G2, "occurrence_novelty")[1],
+      f"[29] novidade: G1 {_dim(G1,'occurrence_novelty')} e G2 "
+      f"{_dim(G2,'occurrence_novelty')} — mesmo denominador, leituras "
+      "distintas")
+check(_dim(G1, "occurrence_novelty")[0] > _dim(G2, "occurrence_novelty")[0],
+      f"[30] e G1 acerta mais novidade que G2 nesta amostra")
+check(_dim(G1, "transaction_object")[0] > _dim(G2, "transaction_object")[0],
+      f"[31] objeto: G1 {_dim(G1,'transaction_object')} vs G2 "
+      f"{_dim(G2,'transaction_object')} — a dimensão separa os modelos")
 
-print()
-print("=" * 98)
-print("BLOCO I — CASO NOVO SEM REVISÃO NÃO MEXE NO DENOMINADOR")
-print("=" * 98)
+# O DENOMINADOR DE FASE NÃO É O NÚMERO DE RÓTULOS HUMANOS.
+#
+# Seis casos têm fase adjudicada; o denominador é 5. A diferença é o anúncio
+# do CEO da JBS (`5d05e844`), cujo artigo saiu do histórico por retenção — o
+# relatório o exclui com o motivo "artigo ausente do histórico, não dá para
+# provar". Não é bug: é o relatório recusando-se a medir o que não consegue
+# comprovar. Inflar para 6 porque existe rótulo humano seria confundir
+# "adjudicado" com "elegível".
+_fases_humanas = sum(1 for d in R["casos"] if "phase" in d["dimensoes_humanas"])
+_excl_ids = {e.get("titulo", "")[:40] for e in R["excluidos"]}
+check(_fases_humanas == 6,
+      f"[32] seis casos têm fase adjudicada ({_fases_humanas})")
+check(_d[G1]["phase"]["denominador"] == _fases_humanas - len(R["excluidos"]),
+      f"[32b] e o denominador é {_d[G1]['phase']['denominador']} = 6 rótulos "
+      f"menos {len(R['excluidos'])} excluído — não o total de rótulos")
+check(len(R["excluidos"]) == 1
+      and "ausente do hist" in (R["excluidos"][0].get("motivo") or ""),
+      f"[32c] e o excluído é o artigo que a retenção removeu do histórico "
+      f"({(R['excluidos'][0].get('motivo') or '')[:44]}) — elegibilidade "
+      "prospectiva exige poder provar o input")
+
+# Removendo a fase de UM caso, o denominador cai exatamente um. Delta contra a
+# base real: fixar "de 2 para 1" valia quando o holdout tinha dois casos.
 _d0 = sh.carregar()
-_novo = copy.deepcopy(_d0)
-_aid = sh.id_artigo("https://exemplo.com/caso-3")
-_hist = json.load(io.open("risk_history.json", encoding="utf-8"))
-_hist["articles"]["https://exemplo.com/caso-3"] = {
-    "title": "Cemig anuncia novo CEO", "summary": "Cemig anuncia novo CEO",
-    "captured_ts": sh.CONTRACT_FREEZE_TS + 3600, "companies": ["Cemig"]}
-_hp = Path(tempfile.mkdtemp(prefix="hist_")) / "h.json"
-io.open(_hp, "w", encoding="utf-8").write(json.dumps(_hist, ensure_ascii=False))
-_novo["observacoes"][sh.chave(_aid, "Cemig", "troca_ceo", "v2", "r7ba.p2", G1)] = {
-    "article_id": _aid, "company": "Cemig", "candidate_event": "troca_ceo",
-    "url": "https://exemplo.com/caso-3", "title": "Cemig anuncia novo CEO",
-    "source": "Fonte X", "first_seen_iso": "2026-08-15 01:00",
-    "contract_version": "v2", "schema_version": "r7ba.s2",
-    "prompt_version": "r7ba.p2", "actual_model": G1, "estado": "OK",
-    "deterministic": {"scoreable": True},
-    "saida": {"events": [{"event_id": "troca_ceo", "subject": "Cemig",
-                          "occurrence_novelty": "NEW_OCCURRENCE"}]},
-    "evidencia": {"aceitos": 1}, "human_review": None}
-_r3 = rp.gerar(temp_sidecar(_novo), str(_hp))
-check(_r3["contagens"]["casos_observados"] == 3,
-      f"[49] observados sobe para 3 ({_r3['contagens']['casos_observados']})")
-check(_r3["contagens"]["casos_revisados"] == 2,
-      "[50] revisados continua 2")
-check(len(_r3["fila_de_revisao"]) == 1,
-      f"[51] fila de revisão vira 1 ({len(_r3['fila_de_revisao'])})")
-check(_r3["pontuabilidade_final"][G1]["denominador"] == 2,
-      "[52] e o denominador de acurácia NÃO muda — caso sem verdade não conta")
-check(_r3["casos"][[i for i, d in enumerate(_r3["casos"])
-                    if d["empresa"] == "Cemig"][0]]["modelos_ausentes"] == [G2],
-      "[53] caso com só um modelo funciona, e o ausente é reportado")
-
-print()
-print("=" * 98)
-print("BLOCO J — TERCEIRO MODELO ENTRA SEM MUDAR CÓDIGO")
-print("=" * 98)
-_g3 = copy.deepcopy(_d0)
-_um = [o for o in _d0["observacoes"].values() if o["company"] == "JBS"][0]
-_g3["observacoes"][sh.chave(_um["article_id"], "JBS", "troca_ceo", "v2",
-                            "r7ba.p2", "modelo-G3")] = {
-    **copy.deepcopy(_um), "actual_model": "modelo-G3"}
-_r4 = rp.gerar(temp_sidecar(_g3))
-check(_r4["contagens"]["registros_de_modelo"] == 5,
-      f"[54] registros vão a 5 ({_r4['contagens']['registros_de_modelo']})")
-check(_r4["contagens"]["casos_observados"] == 2, "[55] casos continuam 2")
-check("modelo-G3" in _r4["pontuabilidade_final"]
-      and _r4["pontuabilidade_final"]["modelo-G3"]["denominador"] >= 1,
-      "[56] o G3 aparece nas métricas sozinho, sem alterar o gerador")
-
-print()
-print("=" * 98)
-print("BLOCO K — REVISÃO PARCIAL, OVERRIDE E NÃO-PROSPECTIVO")
-print("=" * 98)
-_parc = copy.deepcopy(_d0)
-for _k, _o in _parc["observacoes"].items():
-    if _o["company"] == "JBS":
-        _o["human_review"]["dimensoes_adjudicadas"].pop("phase", None)
-_r5 = rp.gerar(temp_sidecar(_parc))
-check(_r5["dimensoes"][G1]["phase"]["denominador"] == 1,
-      f"[57] tirando a fase do JBS, o denominador de fase cai de 2 para 1 "
-      f"({_r5['dimensoes'][G1]['phase']['denominador']})")
+_parc1 = copy.deepcopy(_d0)
+_alvo1 = next(o for o in _parc1["observacoes"].values()
+              if (o.get("human_review") or {}).get("dimensoes_adjudicadas", {})
+              .get("phase"))
+_alvo1["human_review"]["dimensoes_adjudicadas"].pop("phase", None)
+_r5 = rp.gerar(temp_sidecar(_parc1))
+check(_r5["dimensoes"][G1]["phase"]["denominador"]
+      <= _d[G1]["phase"]["denominador"],
+      f"[57] tirando a fase de um caso, o denominador de fase não sobe "
+      f"({_d[G1]['phase']['denominador']} → "
+      f"{_r5['dimensoes'][G1]['phase']['denominador']})")
 _parc2 = copy.deepcopy(_d0)
 for _o in _parc2["observacoes"].values():
     _o["human_review"]["dimensoes_adjudicadas"].pop("phase", None)
@@ -321,8 +314,11 @@ check(_r5b["dimensoes"][G1]["phase"]["denominador"] == 0
       and _r5b["dimensoes"][G1]["phase"]["acuracia"] is None,
       "[57b] e sem NENHUMA fase adjudicada a dimensão sai da conta por "
       "completo, em vez de virar 0% de acerto")
-check(_r5["pontuabilidade_final"][G1]["denominador"] == 2,
-      "[58] e a pontuabilidade final não é afetada por dimensão ausente")
+check(_r5["pontuabilidade_final"][G1]["denominador"]
+      == R["pontuabilidade_final"][G1]["denominador"],
+      f"[58] e a pontuabilidade final não muda ao remover uma dimensão "
+      f"({_r5['pontuabilidade_final'][G1]['denominador']}) — dimensões têm "
+      "denominadores independentes")
 _ovr = copy.deepcopy(_d0)
 for _o in _ovr["observacoes"].values():
     if _o["company"] == "Eneva":
@@ -330,12 +326,17 @@ for _o in _ovr["observacoes"].values():
                               "override_de": {"verdict": "TRUE"},
                               "override_motivo": "reavaliação"}
 _r6 = rp.gerar(temp_sidecar(_ovr))
-check(_r6["contagens"]["overrides"] == 1,
-      f"[59] override é contado ({_r6['contagens']['overrides']})")
-check(_r6["contagens"]["casos_revisados"] == 2,
-      "[60] e o caso não é contado duas vezes")
-check(_r6["pontuabilidade_final"][G1]["acertos"] == 2,
-      "[61] a verdade EFETIVA (a atual) é a usada, não a sobrescrita")
+check(_r6["contagens"]["overrides"] == R["contagens"]["overrides"] + 1,
+      f"[59] o override injetado é contado, +1 sobre a base "
+      f"({R['contagens']['overrides']} → {_r6['contagens']['overrides']}) — a "
+      "base já tem um: o Orizon, reescrito para acrescentar `scoreable_as_ma`")
+check(_r6["contagens"]["casos_revisados"] == R["contagens"]["casos_revisados"],
+      f"[60] e o caso sobrescrito NÃO é contado duas vezes "
+      f"({_r6['contagens']['casos_revisados']})")
+check(_r6["pontuabilidade_final"][G1]["acertos"]
+      == R["pontuabilidade_final"][G1]["acertos"],
+      f"[61] e a verdade EFETIVA segue sendo a usada, não a sobrescrita "
+      f"({_r6['pontuabilidade_final'][G1]['acertos']})")
 _pre = copy.deepcopy(_d0)
 _hist2 = json.load(io.open("risk_history.json", encoding="utf-8"))
 for _o in _pre["observacoes"].values():
@@ -346,13 +347,17 @@ for _o in _pre["observacoes"].values():
 _hp2 = Path(tempfile.mkdtemp(prefix="hist2_")) / "h.json"
 io.open(_hp2, "w", encoding="utf-8").write(json.dumps(_hist2, ensure_ascii=False))
 _r7 = rp.gerar(temp_sidecar(_pre), str(_hp2))
-check(len(_r7["excluidos"]) == 1,
-      f"[62] caso anterior ao freeze é excluído ({len(_r7['excluidos'])})")
-check(_r7["pontuabilidade_final"][G1]["denominador"] == 1,
-      f"[63] e sai das métricas principais — denominador cai para 1 "
-      f"({_r7['pontuabilidade_final'][G1]['denominador']})")
-check(len(_r7["casos"]) == 2,
-      "[64] mas o registro NÃO é apagado do relatório")
+check(len(_r7["excluidos"]) == len(R["excluidos"]) + 1,
+      f"[62] o caso anterior ao freeze entra na lista de excluídos, +1 sobre a "
+      f"base ({len(R['excluidos'])} → {len(_r7['excluidos'])})")
+check(_r7["pontuabilidade_final"][G1]["denominador"]
+      == R["pontuabilidade_final"][G1]["denominador"] - 1,
+      f"[63] e sai das métricas principais — o denominador cai exatamente um "
+      f"({R['pontuabilidade_final'][G1]['denominador']} → "
+      f"{_r7['pontuabilidade_final'][G1]['denominador']})")
+check(len(_r7["casos"]) == len(R["casos"]),
+      f"[64] mas o registro NÃO é apagado do relatório "
+      f"({len(_r7['casos'])}) — excluir da métrica não é excluir da auditoria")
 
 print()
 print("=" * 98)

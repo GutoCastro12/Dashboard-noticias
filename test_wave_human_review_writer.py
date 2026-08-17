@@ -392,13 +392,24 @@ recusa(lambda: w.registrar_human_review(empresa="Eneva", evento="ma",
                                         review=REVIEW_OK, aplicar=True),
        "HUMAN_REVIEW_ALREADY_EXISTS",
        "[45] case #1 real (Eneva/ma): já revisado, escrita bloqueada")
+# A JBS tem DOIS artigos de `troca_ceo` no acervo desde 2026-08-17. Buscar só
+# por empresa+família virou ambíguo, e a recusa mudou de motivo: já não é
+# "existe revisão" e sim "não sei de qual artigo você fala". A proteção ficou
+# MAIS forte, não mais fraca — antes, com um artigo só, a ambiguidade não podia
+# nem ser detectada.
 recusa(lambda: w.registrar_human_review(empresa="JBS", evento="troca_ceo",
                                         review=REVIEW_OK, aplicar=True),
+       "CASO_AMBIGUO",
+       "[46] JBS/troca_ceo sem `artigo_id`: escrita bloqueada por ambiguidade")
+recusa(lambda: w.registrar_human_review(empresa="JBS", evento="troca_ceo",
+                                        artigo_id="5d05e84444486491a30b",
+                                        review=REVIEW_OK, aplicar=True),
        "HUMAN_REVIEW_ALREADY_EXISTS",
-       "[46] case #2 real (JBS/troca_ceo): já revisado, escrita bloqueada")
+       "[46b] e COM o `artigo_id` exato: bloqueada por já estar revisada — a "
+       "desambiguação resolve o artigo certo, não contorna a proteção")
 _real = sh.carregar()
-check(w.casos_revisados(_real) == (2, 2),
-      f"[47] o sidecar real segue com 2 observados e 2 revisados "
+check(w.casos_revisados(_real) == (7, 7),
+      f"[47] o sidecar real segue com 7 observados e 7 revisados "
       f"({w.casos_revisados(_real)})")
 
 print()
@@ -427,12 +438,26 @@ for _o in _rr["observacoes"].values():
     _casos.setdefault((_o["company"], _o["candidate_event"]), []).append(_o)
 check(_casos[("Eneva", "ma")][0]["human_review"]["verdict"] == "FALSE_SCOPE",
       "[53] case #1 intacto: FALSE_SCOPE")
-check(_casos[("JBS", "troca_ceo")][0]["human_review"]["verdict"]
-      == "TRUE_NEW_ANNOUNCEMENT",
-      "[54] case #2 intacto: TRUE_NEW_ANNOUNCEMENT")
-check(all(o.get("human_review", {}).get("override_de") is None
-          for o in _rr["observacoes"].values()),
-      "[55] e nenhum override foi introduzido nos cases reais")
+# Com dois artigos JBS/troca_ceo, indexar por [0] passou a ser sorteio. O que
+# importa é que CADA um manteve o seu veredito — o anúncio e a menção lateral
+# são leituras diferentes do mesmo assunto e nenhuma sobrescreveu a outra.
+_jbs = {o["article_id"]: o["human_review"]["verdict"]
+        for o in _rr["observacoes"].values()
+        if (o["company"], o["candidate_event"]) == ("JBS", "troca_ceo")}
+check(_jbs.get("5d05e84444486491a30b") == "TRUE_NEW_ANNOUNCEMENT"
+      and _jbs.get("201b91aa6b3c1d9e780c") == "MENCIONA_SEM_ANUNCIAR",
+      f"[54] os dois casos JBS intactos e distintos ({_jbs})")
+# Existe UM override real: o Orizon foi reescrito para acrescentar
+# `scoreable_as_ma` no topo, que é onde o relatório lê pontuabilidade. O que
+# precisa ser invariante não é "zero overrides" — é que todo override registre
+# motivo. Override silencioso é indistinguível de erro; foi por isso que o
+# writer passou a exigir justificativa.
+_ovr = [o for o in _rr["observacoes"].values()
+        if (o.get("human_review") or {}).get("override_de") is not None]
+check(all((o["human_review"].get("override_motivo") or "").strip()
+          for o in _ovr),
+      f"[55] todo override nos cases reais tem motivo registrado "
+      f"({len(_ovr)} override(s))")
 
 print()
 print("=" * 98)
