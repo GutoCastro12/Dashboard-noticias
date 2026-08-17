@@ -408,9 +408,12 @@ recusa(lambda: w.registrar_human_review(empresa="JBS", evento="troca_ceo",
        "[46b] e COM o `artigo_id` exato: bloqueada por já estar revisada — a "
        "desambiguação resolve o artigo certo, não contorna a proteção")
 _real = sh.carregar()
-check(w.casos_revisados(_real) == (7, 7),
-      f"[47] o sidecar real segue com 7 observados e 7 revisados "
-      f"({w.casos_revisados(_real)})")
+# Observados crescem com o cron; revisados só crescem por decisão humana.
+# Fixar o par era voltar a acoplar o teste à cardinalidade viva.
+_obs, _rev = w.casos_revisados(_real)
+check(_rev >= 7 and _obs >= _rev,
+      f"[47] o sidecar real tem {_obs} observados e {_rev} revisados — nunca "
+      "menos que os sete adjudicados, e observados nunca abaixo de revisados")
 
 print()
 print("=" * 98)

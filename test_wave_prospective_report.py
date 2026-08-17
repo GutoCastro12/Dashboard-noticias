@@ -97,10 +97,26 @@ print("=" * 98)
 print("BLOCO A — CONTAGEM: CASO NÃO É REGISTRO DE MODELO")
 print("=" * 98)
 c = R["contagens"]
-check(c["casos_observados"] == 7, f"[1] casos observados = 7 ({c['casos_observados']})")
-check(c["casos_revisados"] == 7, f"[2] casos revisados = 7 ({c['casos_revisados']})")
-check(c["registros_de_modelo"] == 14,
-      f"[3] registros de modelo = 14 ({c['registros_de_modelo']})")
+# CONTAGEM VIVA CONFERIDA CONTRA O ESTADO, NÃO CONTRA CONSTANTE.
+#
+# Escrevi estas três como absolutas nesta mesma onda, e o cron seguinte trouxe
+# o caso Tok&Stok — quebraram na hora. Era o erro que a onda existia para
+# corrigir, cometido no arquivo que a corrigia. O que precisa ser invariante é
+# a RELAÇÃO entre as contagens, não o valor de cada uma.
+_obs_reais = len({k.split("|")[0] for k in sh.carregar()["observacoes"]})
+_rev_reais = len({k.split("|")[0] for k, o in sh.carregar()["observacoes"].items()
+                  if o.get("human_review")})
+check(c["casos_observados"] == _obs_reais,
+      f"[1] casos observados = {c['casos_observados']}, igual ao sidecar")
+check(c["casos_revisados"] == _rev_reais and c["casos_revisados"] >= 7,
+      f"[2] casos revisados = {c['casos_revisados']} — nunca abaixo dos sete "
+      "já adjudicados; revisão humana não desaparece")
+check(c["registros_de_modelo"] == c["casos_observados"] * len(c["modelos"]),
+      f"[3] registros de modelo = {c['registros_de_modelo']} = "
+      f"{c['casos_observados']} casos × {len(c['modelos'])} modelos")
+check(c["casos_observados"] >= c["casos_revisados"],
+      f"[3b] e observados nunca fica abaixo de revisados — o cron adiciona "
+      "observação, não verdade")
 check(c["casos_revisados"] != c["registros_de_modelo"],
       "[4] revisados NUNCA é 4 — G1 e G2 dividem a mesma verdade")
 check(c["modelos"] == [G1, G2],
@@ -308,7 +324,11 @@ check(_r5["dimensoes"][G1]["phase"]["denominador"]
       f"{_r5['dimensoes'][G1]['phase']['denominador']})")
 _parc2 = copy.deepcopy(_d0)
 for _o in _parc2["observacoes"].values():
-    _o["human_review"]["dimensoes_adjudicadas"].pop("phase", None)
+    # O cron traz observações ainda não adjudicadas — `human_review` é None
+    # nelas. Assumir que toda observação tem revisão era verdade só enquanto
+    # a fila estava vazia.
+    _hr = _o.get("human_review") or {}
+    (_hr.get("dimensoes_adjudicadas") or {}).pop("phase", None)
 _r5b = rp.gerar(temp_sidecar(_parc2))
 check(_r5b["dimensoes"][G1]["phase"]["denominador"] == 0
       and _r5b["dimensoes"][G1]["phase"]["acuracia"] is None,
@@ -321,7 +341,7 @@ check(_r5["pontuabilidade_final"][G1]["denominador"]
       "denominadores independentes")
 _ovr = copy.deepcopy(_d0)
 for _o in _ovr["observacoes"].values():
-    if _o["company"] == "Eneva":
+    if _o["company"] == "Eneva" and _o.get("human_review"):
         _o["human_review"] = {**_o["human_review"],
                               "override_de": {"verdict": "TRUE"},
                               "override_motivo": "reavaliação"}
@@ -420,8 +440,14 @@ print("=" * 98)
 check(hashlib.sha256(REAL.read_bytes()).hexdigest() == SHA_REAL_INICIAL,
       "[78] risk_semantic_v2_shadow.json byte a byte idêntico ao início")
 _atual = sh.carregar()
-check(all(o.get("human_review") for o in _atual["observacoes"].values()),
-      "[79] as quatro adjudicações reais seguem no lugar")
+# "toda observação tem revisão" era verdade só enquanto a fila de adjudicação
+# estava vazia. O invariante real é que as JÁ adjudicadas permaneçam — o cron
+# pode acrescentar casos novos sem revisão a qualquer momento.
+_rev_agora = {k.split("|")[0] for k, o in _atual["observacoes"].items()
+              if o.get("human_review")}
+check(set(ROSTER) <= _rev_agora,
+      f"[79] as sete adjudicações reais seguem no lugar "
+      f"({len(_rev_agora)} casos revisados), mesmo com a fila crescendo")
 
 print()
 print("=" * 98)
