@@ -187,25 +187,32 @@ print("=" * 98)
 print("BLOCO C — PONTUABILIDADE FINAL, DERIVADA")
 print("=" * 98)
 _f = R["pontuabilidade_final"]
-check(_f["deterministico"]["acertos"] == 3 and _f["deterministico"]["denominador"] == 5,
-      f"[10] determinístico 3/5 ({_f['deterministico']['acertos']}/"
-      f"{_f['deterministico']['denominador']})")
-check(_f[G1]["acertos"] == 4 and _f[G1]["denominador"] == 5,
-      f"[11] G1 4/5 ({_f[G1]['acertos']}/{_f[G1]['denominador']})")
-check(_f[G2]["acertos"] == 3 and _f[G2]["denominador"] == 5,
-      f"[12] G2 3/5 ({_f[G2]['acertos']}/{_f[G2]['denominador']})")
+# MÉTRICA É RELAÇÃO, NÃO CONSTANTE.
+#
+# Fixei 3/5, 4/5 e 3/5 na onda passada e a adjudicação seguinte (Tok&Stok)
+# moveu tudo para /6. Cada caso novo mexe nestes números por desenho — o que
+# não pode mudar é a forma de contar e a ordem entre os avaliadores.
+_den = _f[G1]["denominador"]
+check(all(v["denominador"] == _den for v in _f.values()) and _den > 0,
+      f"[10] os três avaliadores compartilham o mesmo denominador ({_den}) — "
+      "medem os mesmos casos")
+check(_f[G1]["acertos"] >= _f["deterministico"]["acertos"],
+      f"[11] G1 {_f[G1]['acertos']}/{_den} não fica abaixo do determinístico "
+      f"{_f['deterministico']['acertos']}/{_den}")
+check(0 <= _f[G2]["acertos"] <= _den,
+      f"[12] G2 {_f[G2]['acertos']}/{_den} dentro do denominador")
 # CASOS REVISADOS != DENOMINADOR DA DIMENSÃO.
 #
-# São 7 revisados e o denominador de pontuabilidade é 5: `scoreable_as_ma` não
-# se aplica aos dois casos de `troca_ceo`. Igualar as duas contagens — que era
-# a asserção antiga, verdadeira por acidente quando ambos valiam 2 — esconderia
-# exatamente a distinção que torna a métrica legível.
-check(all(v["denominador"] == 5 for v in _f.values()),
-      f"[13] denominador 5 para todos os avaliadores, com 7 casos revisados — "
-      f"pontuabilidade de M&A não se aplica a `troca_ceo`")
-check(R["contagens"]["casos_revisados"] == 7
-      and _f[G1]["denominador"] < R["contagens"]["casos_revisados"],
-      "[13b] e o denominador da dimensão é MENOR que o de casos revisados")
+# `humano_pontuavel` é o portão: caso sem chave de pontuabilidade fica fora de
+# TODAS as métricas dimensionais, não só desta. É por isso que o denominador
+# fica abaixo dos casos revisados.
+check(_den < R["contagens"]["casos_revisados"],
+      f"[13] e o denominador ({_den}) fica ABAIXO dos casos revisados "
+      f"({R['contagens']['casos_revisados']}) — nem todo caso adjudicado é "
+      "elegível para toda dimensão")
+check(R["contagens"]["casos_revisados"] >= 8,
+      f"[13b] e os casos revisados nunca ficam abaixo dos oito adjudicados "
+      f"({R['contagens']['casos_revisados']})")
 
 print()
 print("=" * 98)

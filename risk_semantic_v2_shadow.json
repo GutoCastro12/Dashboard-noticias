@@ -80,7 +80,63 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-17 16:37",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+    "camada_artigo": {
+     "criterio": "Mencionar uma situacao existente nao e afirmar evento novo. A RJ da Tok&Stok e real e ja esta ancorada no artigo de 2026-06-18 (Justica aceita RJ de R$ 1,1 bi); este artigo nao pode criar um segundo evento pontuavel.",
+     "scoreable": false
+    },
+    "camada_sistema": {
+     "criterio": "Mesma ocorrencia economica, sem pertinencia pontuavel. Identidade economica e pontuabilidade sao eixos separados: dizer SAME_OCCURRENCE nao implica que o artigo pontue. Esta relacao NAO foi persistida em occurrence_truth — fica registrada aqui para a onda de supervisao de ocorrencia.",
+     "deterministico_divergente": "o caminho deterministico marcou scoreable=True e relation_type=direto; os dois modelos leram MENTIONED_ONLY/MENTIONED/DESCRIPTOR_OR_BACKGROUND",
+     "ocorrencia_ja_ancorada_em": "Tok&Stok: Justica aceita recuperacao judicial de R$ 1,1 bilhao (2026-06-18)",
+     "relacao_economica": "SAME_OCCURRENCE"
+    },
+    "dimensoes_adjudicadas": {
+     "company_role": "MENTIONED",
+     "event_asserted": "MENTIONED_ONLY",
+     "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+     "subject": "Tok&Stok"
+    },
+    "nota": "Manchete de analise setorial com quatro varejistas (Casas Bahia, Marabraz, Mobly, Tok&Stok). O artigo NAO anuncia, confirma nem atualiza materialmente uma RJ da Tok&Stok — usa a RJ existente como exemplo. Fase e atualidade NAO foram adjudicadas: a manchete setorial nao fixa fase, e publicacao corrente nao torna o evento corrente. Centralidade tambem fica sem adjudicacao: G1 leu MATERIAL_SECONDARY e G2 BACKGROUND, e a diferenca nao muda a decisao.",
+    "override_de": {
+     "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+     "camada_artigo": {
+      "criterio": "Mencionar uma situacao existente nao e afirmar evento novo. A RJ da Tok&Stok e real e ja esta ancorada no artigo de 2026-06-18 (Justica aceita RJ de R$ 1,1 bi); este artigo nao pode criar um segundo evento pontuavel.",
+      "scoreable": false
+     },
+     "camada_sistema": {
+      "criterio": "Mesma ocorrencia economica, sem pertinencia pontuavel. Identidade economica e pontuabilidade sao eixos separados: dizer SAME_OCCURRENCE nao implica que o artigo pontue. Esta relacao NAO foi persistida em occurrence_truth — fica registrada aqui para a onda de supervisao de ocorrencia.",
+      "deterministico_divergente": "o caminho deterministico marcou scoreable=True e relation_type=direto; os dois modelos leram MENTIONED_ONLY/MENTIONED/DESCRIPTOR_OR_BACKGROUND",
+      "ocorrencia_ja_ancorada_em": "Tok&Stok: Justica aceita recuperacao judicial de R$ 1,1 bilhao (2026-06-18)",
+      "relacao_economica": "SAME_OCCURRENCE"
+     },
+     "dimensoes_adjudicadas": {
+      "company_role": "MENTIONED",
+      "event_asserted": "MENTIONED_ONLY",
+      "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+      "subject": "Tok&Stok"
+     },
+     "nota": "Manchete de analise setorial com quatro varejistas (Casas Bahia, Marabraz, Mobly, Tok&Stok). O artigo NAO anuncia, confirma nem atualiza materialmente uma RJ da Tok&Stok — usa a RJ existente como exemplo. Fase e atualidade NAO foram adjudicadas: a manchete setorial nao fixa fase, e publicacao corrente nao torna o evento corrente. Centralidade tambem fica sem adjudicacao: G1 leu MATERIAL_SECONDARY e G2 BACKGROUND, e a diferenca nao muda a decisao.",
+     "razao_primaria": "mention_not_assertion",
+     "reviewed_at": 1786997915,
+     "reviewed_at_iso": "2026-08-17T20:18:35Z",
+     "reviewer": "gustavo",
+     "reviewer_type": "human",
+     "scoreable_as_ma": null,
+     "verdict": "MENCAO_EM_ANALISE_SETORIAL",
+     "writer_version": "r7ba.hrw.v1"
+    },
+    "override_motivo": "corrigir a codificacao da pontuabilidade: gravei scoreable_as_ma=null numa familia que e recuperacao_judicial, e a decisao humana diz explicitamente nao-pontuavel. Nulo excluia o caso de TODAS as metricas dimensionais, nao so da pontuabilidade",
+    "razao_primaria": "mention_not_assertion",
+    "reviewed_at": 1786998001,
+    "reviewed_at_iso": "2026-08-17T20:20:01Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "scoreable": false,
+    "verdict": "MENCAO_EM_ANALISE_SETORIAL",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 2.53,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.1-flash-lite",
@@ -204,7 +260,63 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-17 16:37",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+    "camada_artigo": {
+     "criterio": "Mencionar uma situacao existente nao e afirmar evento novo. A RJ da Tok&Stok e real e ja esta ancorada no artigo de 2026-06-18 (Justica aceita RJ de R$ 1,1 bi); este artigo nao pode criar um segundo evento pontuavel.",
+     "scoreable": false
+    },
+    "camada_sistema": {
+     "criterio": "Mesma ocorrencia economica, sem pertinencia pontuavel. Identidade economica e pontuabilidade sao eixos separados: dizer SAME_OCCURRENCE nao implica que o artigo pontue. Esta relacao NAO foi persistida em occurrence_truth — fica registrada aqui para a onda de supervisao de ocorrencia.",
+     "deterministico_divergente": "o caminho deterministico marcou scoreable=True e relation_type=direto; os dois modelos leram MENTIONED_ONLY/MENTIONED/DESCRIPTOR_OR_BACKGROUND",
+     "ocorrencia_ja_ancorada_em": "Tok&Stok: Justica aceita recuperacao judicial de R$ 1,1 bilhao (2026-06-18)",
+     "relacao_economica": "SAME_OCCURRENCE"
+    },
+    "dimensoes_adjudicadas": {
+     "company_role": "MENTIONED",
+     "event_asserted": "MENTIONED_ONLY",
+     "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+     "subject": "Tok&Stok"
+    },
+    "nota": "Manchete de analise setorial com quatro varejistas (Casas Bahia, Marabraz, Mobly, Tok&Stok). O artigo NAO anuncia, confirma nem atualiza materialmente uma RJ da Tok&Stok — usa a RJ existente como exemplo. Fase e atualidade NAO foram adjudicadas: a manchete setorial nao fixa fase, e publicacao corrente nao torna o evento corrente. Centralidade tambem fica sem adjudicacao: G1 leu MATERIAL_SECONDARY e G2 BACKGROUND, e a diferenca nao muda a decisao.",
+    "override_de": {
+     "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+     "camada_artigo": {
+      "criterio": "Mencionar uma situacao existente nao e afirmar evento novo. A RJ da Tok&Stok e real e ja esta ancorada no artigo de 2026-06-18 (Justica aceita RJ de R$ 1,1 bi); este artigo nao pode criar um segundo evento pontuavel.",
+      "scoreable": false
+     },
+     "camada_sistema": {
+      "criterio": "Mesma ocorrencia economica, sem pertinencia pontuavel. Identidade economica e pontuabilidade sao eixos separados: dizer SAME_OCCURRENCE nao implica que o artigo pontue. Esta relacao NAO foi persistida em occurrence_truth — fica registrada aqui para a onda de supervisao de ocorrencia.",
+      "deterministico_divergente": "o caminho deterministico marcou scoreable=True e relation_type=direto; os dois modelos leram MENTIONED_ONLY/MENTIONED/DESCRIPTOR_OR_BACKGROUND",
+      "ocorrencia_ja_ancorada_em": "Tok&Stok: Justica aceita recuperacao judicial de R$ 1,1 bilhao (2026-06-18)",
+      "relacao_economica": "SAME_OCCURRENCE"
+     },
+     "dimensoes_adjudicadas": {
+      "company_role": "MENTIONED",
+      "event_asserted": "MENTIONED_ONLY",
+      "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+      "subject": "Tok&Stok"
+     },
+     "nota": "Manchete de analise setorial com quatro varejistas (Casas Bahia, Marabraz, Mobly, Tok&Stok). O artigo NAO anuncia, confirma nem atualiza materialmente uma RJ da Tok&Stok — usa a RJ existente como exemplo. Fase e atualidade NAO foram adjudicadas: a manchete setorial nao fixa fase, e publicacao corrente nao torna o evento corrente. Centralidade tambem fica sem adjudicacao: G1 leu MATERIAL_SECONDARY e G2 BACKGROUND, e a diferenca nao muda a decisao.",
+     "razao_primaria": "mention_not_assertion",
+     "reviewed_at": 1786997915,
+     "reviewed_at_iso": "2026-08-17T20:18:35Z",
+     "reviewer": "gustavo",
+     "reviewer_type": "human",
+     "scoreable_as_ma": null,
+     "verdict": "MENCAO_EM_ANALISE_SETORIAL",
+     "writer_version": "r7ba.hrw.v1"
+    },
+    "override_motivo": "corrigir a codificacao da pontuabilidade: gravei scoreable_as_ma=null numa familia que e recuperacao_judicial, e a decisao humana diz explicitamente nao-pontuavel. Nulo excluia o caso de TODAS as metricas dimensionais, nao so da pontuabilidade",
+    "razao_primaria": "mention_not_assertion",
+    "reviewed_at": 1786998001,
+    "reviewed_at_iso": "2026-08-17T20:20:01Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "scoreable": false,
+    "verdict": "MENCAO_EM_ANALISE_SETORIAL",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 1.99,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.5-flash-lite",
