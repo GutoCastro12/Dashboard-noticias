@@ -2,19 +2,28 @@
  "_meta": {
   "purpose": "Ground truth HUMANO sobre ATUALIDADE e OCORRENCIA: este artigo representa um evento NOVO, ATUAL e DA PROPRIA empresa? Separado de live_reviews.json (que registra veredito de pontuabilidade sobre item do inventario critico) e de ma_transaction_reviews.json (que registra as dimensoes de uma transacao). Sao tres perguntas distintas e nenhuma pode contaminar o denominador das outras.",
   "chave": "url||company||event_id",
-  "origem": "Wave R7b-S2/S8. Gustavo adjudicou pessoalmente os tres controles S8 apresentados no checkpoint R7b-S2, em 2026-08-12. Wave R7b-S3 (2026-08-13) acrescentou o controle S3 do Grupo Security, adjudicado com CONTEXTO EXTERNO fornecido pelo proprio Gustavo -- nao veio de fetch experimental.",
+  "origem": "Wave R7b-S2/S8. Gustavo adjudicou pessoalmente os tres controles S8 apresentados no checkpoint R7b-S2, em 2026-08-12. Wave R7b-S3 (2026-08-13) acrescentou o controle S3 do Grupo Security, adjudicado com CONTEXTO EXTERNO fornecido pelo proprio Gustavo -- nao veio de fetch experimental. Wave R7d (2026-08-17) acrescentou os tres controles da auditoria de mencao-como-assercao (BRF, Ambev, Aegea), adjudicados explicitamente por Gustavo no brief da onda.",
   "dimensoes": {
    "human_scoreable": "o evento candidato deve pontuar para esta empresa neste artigo?",
    "event_subject": "de quem e o evento",
    "company_role": "papel da monitorada no artigo",
    "currentness": "o fato e atual, anterior, ou acompanhamento de fato ja ocorrido",
    "new_occurrence": "e uma NOVA ocorrencia economica?",
-   "article_role": "o que este artigo e, editorialmente"
+   "article_role": "o que este artigo e, editorialmente",
+   "event_asserted": "o artigo AFIRMA um evento para esta empresa, ou apenas a menciona?"
   },
   "principio_s8_c2": "UMA OCORRENCIA ECONOMICA PONTUA UMA VEZ. Follow-up regulatorio de operacao ja contada nao e evento novo.",
   "limite_de_escopo": "Estas labels dizem apenas o que dizem. Nenhum evento ALTERNATIVO foi rotulado por inferencia -- em particular, `incidente_operacional` no caso da B3 NAO recebeu label humana.",
   "principio_s3_grupo_security": "EVENTO VERDADEIRO NAO E NOVA OCORRENCIA EM TODO ARTIGO QUE O MENCIONA. A fusao Bicecorp + Grupo Security existiu e foi concluida em 01/09/2025; ela deve pontuar no artigo que a anunciou/confirmou/concluiu. Materias posteriores sobre nome, marca, integracao ou consequencias NAO geram nova ocorrencia de `ma`. Nao apagar a fusao verdadeira.",
-  "reviewer_types": ["human", "assistant", "imported_prior_adjudication", "unknown"]
+  "reviewer_types": [
+   "human",
+   "assistant",
+   "imported_prior_adjudication",
+   "unknown"
+  ],
+  "production_authority": "none — nenhuma entrada deste fixture altera classificacao de producao, risk_history, scoring ou o dashboard. Serve a supervisao/regressao.",
+  "failure_dimension": "eixo do erro, para que os denominadores nao se misturem: `occurrence_currentness` (o fato e real e afirmado, mas nao e atual/novo) e `event_assertion` (o artigo nem chega a afirmar o evento para a empresa) sao perguntas distintas. R7d: BRF e currentness; Ambev e Aegea sao assercao.",
+  "principio_r7d": "AFIRMAR NAO E O MESMO QUE MENCIONAR, E AFIRMAR NAO E O MESMO QUE SER ATUAL. A manchete da BRF AFIRMA o adiamento da CVM — por isso NAO e MENTIONED_ONLY —, mas trata de fusao ja concluida em setembro de 2025 (Cade 2025-09-05, estreia da MBRF3 2025-09-22) e nao e desdobramento novo de 2026. Ambev e Aegea sao o outro eixo: nenhuma das duas manchetes chega a afirmar o evento para a empresa monitorada."
  },
  "https://www.df.cl/mercados/banca-fintech/fusion-bicecorp-y-grupo-security-ya-tiene-nombre-la-marca-elegida-para-el||Grupo Security||ma": {
   "company": "Grupo Security",
@@ -26,7 +35,10 @@
   "human_scoreable": false,
   "underlying_ma_transaction": true,
   "transaction_type": "merger",
-  "transaction_parties": ["BICECORP", "Grupo Security"],
+  "transaction_parties": [
+   "BICECORP",
+   "Grupo Security"
+  ],
   "transaction_completed": true,
   "transaction_completed_at": "2025-09-01",
   "combined_entity_brand": "BICE",
@@ -235,5 +247,105 @@
    "detalhe": "Nenhuma regra semantica atuou -- `attribution_rule` vem vazio. O evento nasce do keyword 'novo CEO' (familia troca_ceo no config de producao, junto de 'new ceo', 'nuevo director ejecutivo') e sobrevive por AUSENCIA DE BLOCKER. Respondendo a pergunta do brief: sim, o motor confunde DESCRITOR DE CARGO com EVENTO DE TROCA, e a confusao nasce no nivel do candidato, sem nada a jusante que a apanhe."
   },
   "provenance": "adjudicacao explicita do usuario no brief da wave R7b-S2/S8"
+ },
+ "https://www.estadao.com.br/web-stories/einvestidor/o-que-fez-cvm-adiar-assembleia-fusao-marfrig-e-brf/||BRF||ma": {
+  "company": "BRF",
+  "event_id": "ma",
+  "article_id": "972a2d5f184545235f9d",
+  "stratum": "R7d",
+  "failure_dimension": "occurrence_currentness",
+  "title": "O que fez a CVM adiar a assembleia de fusão entre Marfrig e BRF?",
+  "source": "Estadão",
+  "pub_iso": "2026-05-28 09:24",
+  "human_label": "FALSE_POSITIVE",
+  "human_scoreable": false,
+  "event_asserted": "ASSERTED",
+  "event_subject": "BRF",
+  "company_role": "sujeito",
+  "currentness": "HISTORICAL",
+  "new_occurrence": false,
+  "occurrence_novelty": "HISTORICAL_CONTEXT",
+  "underlying_ma_transaction": true,
+  "acquisition_actually_happened": true,
+  "new_ma_occurrence_in_this_article": false,
+  "scoreable_as_new_ma": false,
+  "article_role": "historical_process_background",
+  "reviewer_type": "human",
+  "reviewed_at": "2026-08-17",
+  "in_production_history": true,
+  "cronologia_fornecida_na_adjudicacao": {
+   "cade_aprovacao": "2025-09-05",
+   "mbrf3_estreia": "2025-09-22",
+   "publicacao_do_candidato": "2026-05-28"
+  },
+  "note": "A manchete AFIRMA que houve adiamento pela CVM — por isso NAO recebe MENTIONED_ONLY. O erro esta na ATUALIDADE: a fusao Marfrig/BRF ja estava concluida (Cade em 2025-09-05, estreia da MBRF3 em 2025-09-22), e este texto e fundo processual/historico, nao desdobramento novo de 2026. NAO contar este caso como falso positivo de mencao-como-assercao: o eixo do erro e outro.",
+  "deterministic_comparison": {
+   "output": "TRUE (CONFLITA com a verdade humana)",
+   "rule": "",
+   "classification": "conflict",
+   "detalhe": "Nenhuma regra semantica atuou. Medido na auditoria R7d: contribuicao marginal 5 pontos; sem este artigo a BRF vai a 0 e SAI DO RADAR — ele e o unico evento ativo dela. Erro ATIVO e confirmado por humano, deixado de proposito para a onda de correcao de atualidade."
+  },
+  "provenance": "adjudicacao explicita do usuario no brief da wave R7d"
+ },
+ "https://investnews.com.br/negocios/ambev-novo-ceo-retomada-abev3/||Ambev||troca_ceo": {
+  "company": "Ambev",
+  "event_id": "troca_ceo",
+  "article_id": "527b96378703e4cba06a",
+  "stratum": "R7d",
+  "failure_dimension": "event_assertion",
+  "title": "O jogo da Ambev: como o novo CEO tenta romper a inércia da maior cervejaria da América Latina - InvestNews",
+  "source": "InvestNews",
+  "pub_iso": "2025-08-05 04:00",
+  "human_label": "FALSE_POSITIVE",
+  "human_scoreable": false,
+  "event_asserted": "MENTIONED_ONLY",
+  "event_subject": "Ambev",
+  "company_role": "sujeito",
+  "currentness": "descritor_de_cargo_nao_evento",
+  "new_occurrence": false,
+  "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+  "current_article_event": "not_ceo_change",
+  "article_role": "perfil_de_gestao_sobre_ceo_ja_dado",
+  "reviewer_type": "human",
+  "reviewed_at": "2026-08-17",
+  "in_production_history": true,
+  "note": "A manchete NAO anuncia nomeacao, saida nem substituicao. 'novo CEO' vem pressuposto e o predicado e sobre o que esse CEO ja dado TENTA fazer. Mesmo eixo do controle B3/troca_ceo ja neste fixture, e irmao estrutural do descritor JBS 201b91aa. NAO inferir ocorrencia nova de troca de CEO.",
+  "deterministic_comparison": {
+   "output": "TRUE (CONFLITA com a verdade humana)",
+   "rule": "",
+   "classification": "conflict",
+   "detalhe": "O evento nasce do keyword 'novo CEO' e sobrevive por AUSENCIA DE BLOCKER — nenhum descarte semantico atuou. Fora da janela de 90 dias: contribuicao atual ZERO. Segunda supervisao humana da familia CEO, ao lado do descritor JBS; a correcao da familia NAO foi feita nesta onda."
+  },
+  "provenance": "adjudicacao explicita do usuario no brief da wave R7d"
+ },
+ "https://investnews.com.br/negocios/copasa-brk-e-aegea-ipo-saneamento/||Aegea Saneamento||follow_on": {
+  "company": "Aegea Saneamento",
+  "event_id": "follow_on",
+  "article_id": "ede6b04347e5b2f36c16",
+  "stratum": "R7d",
+  "failure_dimension": "event_assertion",
+  "title": "Copasa, BRK e Aegea: saneamento disputa investidores 'órfãos' de elétricas em oferta de ações",
+  "source": "InvestNews",
+  "pub_iso": "2026-02-09 05:00",
+  "human_label": "FALSE_POSITIVE",
+  "human_scoreable": false,
+  "event_asserted": "MENTIONED_ONLY",
+  "event_subject": "setor de saneamento (Copasa, BRK, Aegea como exemplos)",
+  "company_role": "mencionada",
+  "currentness": "nao_adjudicada",
+  "new_occurrence": false,
+  "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+  "article_role": "analise_setorial_com_lista_de_empresas",
+  "reviewer_type": "human",
+  "reviewed_at": "2026-08-17",
+  "in_production_history": true,
+  "note": "Enquadramento de SETOR/LISTA: tres empresas aparecem como exemplos de um movimento do saneamento. A manchete NAO afirma que a Aegea esteja conduzindo um follow-on novo e pontuavel. Analogo estrutural do caso Tok&Stok, porem FORA da insolvencia — e por isso a correcao da familia `follow_on` NAO foi feita nesta onda: prova que a lacuna de lista/setor existe fora de `recuperacao_judicial`.",
+  "deterministic_comparison": {
+   "output": "TRUE (CONFLITA com a verdade humana)",
+   "rule": "",
+   "classification": "conflict",
+   "detalhe": "Nenhum descarte semantico atuou; `mention_roles` traz relation_type=direto e subject_company vazio, como em 265/265 dos pares severos pontuaveis medidos na auditoria R7d. Fora da janela de 90 dias: contribuicao atual ZERO."
+  },
+  "provenance": "adjudicacao explicita do usuario no brief da wave R7d"
  }
 }
