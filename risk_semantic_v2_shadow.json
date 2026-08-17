@@ -450,10 +450,36 @@
      "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
      "subject": "JBS"
     },
+    "override_de": {
+     "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+     "camada_artigo": {
+      "criterio": "O assunto central e margem nos EUA e gado mexicano. O novo CEO aparece lateralmente, prometendo continuidade. O artigo NAO anuncia uma troca de CEO.",
+      "scoreable": false
+     },
+     "camada_sistema": {
+      "criterio": "A troca de CEO da JBS ja esta ancorada em 5d05e844 (Wesley Batista Filho, a partir de janeiro de 2027). Este artigo nao abre segunda ocorrencia nem pontua de novo: uma ocorrencia economica pontua uma vez.",
+      "nao_e_novo_anuncio": true,
+      "ocorrencia_ja_ancorada_em": "5d05e84444486491a30b"
+     },
+     "dimensoes_adjudicadas": {
+      "company_role": "SUBJECT",
+      "event_asserted": "MENTIONED_ONLY",
+      "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+      "subject": "JBS"
+     },
+     "reviewed_at": 1786970863,
+     "reviewed_at_iso": "2026-08-17T12:47:43Z",
+     "reviewer": "gustavo",
+     "reviewer_type": "human",
+     "verdict": "MENCIONA_SEM_ANUNCIAR",
+     "writer_version": "r7ba.hrw.v1"
+    },
+    "override_motivo": "completar pontuabilidade humana ausente que excluia o caso das metricas",
     "reviewed_at": 1786970863,
     "reviewed_at_iso": "2026-08-17T12:47:43Z",
     "reviewer": "gustavo",
     "reviewer_type": "human",
+    "scoreable": false,
     "verdict": "MENCIONA_SEM_ANUNCIAR",
     "writer_version": "r7ba.hrw.v1"
    },
@@ -590,10 +616,36 @@
      "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
      "subject": "JBS"
     },
+    "override_de": {
+     "adjudicated_at_iso": "2026-08-17T00:00:00Z",
+     "camada_artigo": {
+      "criterio": "O assunto central e margem nos EUA e gado mexicano. O novo CEO aparece lateralmente, prometendo continuidade. O artigo NAO anuncia uma troca de CEO.",
+      "scoreable": false
+     },
+     "camada_sistema": {
+      "criterio": "A troca de CEO da JBS ja esta ancorada em 5d05e844 (Wesley Batista Filho, a partir de janeiro de 2027). Este artigo nao abre segunda ocorrencia nem pontua de novo: uma ocorrencia economica pontua uma vez.",
+      "nao_e_novo_anuncio": true,
+      "ocorrencia_ja_ancorada_em": "5d05e84444486491a30b"
+     },
+     "dimensoes_adjudicadas": {
+      "company_role": "SUBJECT",
+      "event_asserted": "MENTIONED_ONLY",
+      "occurrence_novelty": "DESCRIPTOR_OR_BACKGROUND",
+      "subject": "JBS"
+     },
+     "reviewed_at": 1786970863,
+     "reviewed_at_iso": "2026-08-17T12:47:43Z",
+     "reviewer": "gustavo",
+     "reviewer_type": "human",
+     "verdict": "MENCIONA_SEM_ANUNCIAR",
+     "writer_version": "r7ba.hrw.v1"
+    },
+    "override_motivo": "completar pontuabilidade humana ausente que excluia o caso das metricas",
     "reviewed_at": 1786970863,
     "reviewed_at_iso": "2026-08-17T12:47:43Z",
     "reviewer": "gustavo",
     "reviewer_type": "human",
+    "scoreable": false,
     "verdict": "MENCIONA_SEM_ANUNCIAR",
     "writer_version": "r7ba.hrw.v1"
    },
