@@ -53997,7 +53997,16 @@
    ],
    "context_companies": [],
    "captured_ts": 1786949440,
-   "cap_iso": "2026-08-17 03:50"
+   "cap_iso": "2026-08-17 03:50",
+   "mention_roles": {
+    "Orizon Valorização de Resíduos": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   }
   },
   "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOUE1oM3FMNkxKYTd0cTVHcVdRN2hObmlXZTBJMXVacFJ1TDVUVG5LUkF2am1Zb0ZtX1VnLTZRYnJRVkZraEh3VjNaWmx6VlQ0cmtJRTJ4a1ZXZmI5c1hSQV9ZTV9ZanNKcWVqejJpdWtOd1ZFRlczVDRiek5QMHRBRFJINjJkVGFCVkxkRmZDSDJZUkl5ZEd6QThTZk5oOU96d3JzSkFuM2YwZmRGeVpFcTd2VkJJNHFXN1gxdkE0TnhVWXlhcE5CWTlfdy1RV09tQ0dVbWZR0gHkAUFVX3lxTFByYlN1RUw0TVBrRlA1MGtvSktNMV9ic1l2Nk5ucXlMM3BWRko0Q1MtUG5ieHVzaHhsbXhIclRBZFpvNUNfdkZ0Tm50ZEZGNk5qbmVPZUdtRy1adlNRRWpzN0FxTnJ0RC15akxJbzgtcG0xV0dGYzEzZi1Jd2tKQkpDTGxxbk95emJhOUh6dkR5VnR1a2FXYW1LMmJQYno4RWxqdkJrZi1hUkF1OTRMMFdmSHduZm9Va2M1d0ZzZ09DU2haSVYxLWxWaHlyNFZtUjdxcG9VX2E0T1VOZU1FUzhIc1BiLQ?oc=5": {
    "title": "Orizon acerta aquisição de 51% da empresa titular do aterro de Rondonópolis",
@@ -54876,14 +54885,12 @@
     }
    },
    "events_by_company": {
-    "Tok&Stok": [
-     "recuperacao_judicial"
-    ]
+    "Tok&Stok": []
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Tok&Stok"
    ],
-   "context_companies": [],
    "corroborations": [
     {
      "source": "Times Brasil | CNBC",
@@ -54920,17 +54927,68 @@
     }
    ],
    "captured_ts": 1786995435,
-   "cap_iso": "2026-08-17 16:37"
+   "cap_iso": "2026-08-17 16:37",
+   "event_assessments": [
+    {
+     "company": "Tok&Stok",
+     "event_id": "recuperacao_judicial",
+     "assessed_by": "semantic_audit",
+     "subject_company": "empresas de varejo estao pedindo recuperacao judicial",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "acusacao_civil",
+     "event_scope": "indireto",
+     "direction": "neutra",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "nao_confirmado",
+     "attribution_rule": "R_INSOLVENCIA_SETORIAL_OU_DE_TERCEIRO",
+     "attribution_confidence": "alta",
+     "scoreable": false,
+     "rejection_reason": "a insolvência é de 'empresas de varejo estao pedindo recuperacao judicial'; Tok&Stok aparece como parte exposta/citada",
+     "legal_status": "acusacao_civil",
+     "confirmation_status": "nao_confirmado"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Tok&Stok",
+     "event_id": "recuperacao_judicial",
+     "event_id_corrigido": "",
+     "regra": "R_INSOLVENCIA_SETORIAL_OU_DE_TERCEIRO",
+     "motivo": "a insolvência é de 'empresas de varejo estao pedindo recuperacao judicial'; Tok&Stok aparece como parte exposta/citada",
+     "subject_company": "empresas de varejo estao pedindo recuperacao judicial"
+    }
+   ],
+   "context_events_by_company": {
+    "Tok&Stok": [
+     {
+      "event_id": "recuperacao_judicial",
+      "event_label": "recuperacao judicial",
+      "subject_company": "empresas de varejo estao pedindo recuperacao judicial",
+      "relation_type": "setorial_ou_terceiro",
+      "impact_type": "indireto_material",
+      "event_scope": "indireto",
+      "event_phase": "acusacao_civil",
+      "direction": "neutra",
+      "scoreable": false,
+      "event_id_corrigido": "",
+      "attribution_rule": "R_INSOLVENCIA_SETORIAL_OU_DE_TERCEIRO",
+      "attribution_confidence": "alta",
+      "attribution_evidence": "empresas de varejo estao pedindo recuperacao judicial",
+      "nota": "a insolvência é de 'empresas de varejo estao pedindo recuperacao judicial'; Tok&Stok aparece como parte exposta/citada"
+     }
+    ]
+   }
   }
  },
  "last_run": {
-  "ts": 1786995495,
-  "iso": "17 ago 2026 · 16:38 BRT",
+  "ts": 1787009856,
+  "iso": "17 ago 2026 · 20:37 BRT",
   "status": {
-   "Tok&Stok": {
-    "status": "critico",
-    "score": 93
-   },
    "Cosan": {
     "status": "atencao",
     "score": 65
@@ -54941,11 +54999,15 @@
    },
    "Engie Brasil": {
     "status": "atencao",
-    "score": 61
+    "score": 60
    },
    "Rumo": {
     "status": "atencao",
     "score": 56
+   },
+   "Tok&Stok": {
+    "status": "critico",
+    "score": 44
    },
    "Santander Brasil": {
     "status": "atencao",
@@ -55079,11 +55141,11 @@
     "status": "monitorar",
     "score": 6
    },
-   "BRF": {
-    "status": "monitorar",
-    "score": 6
-   },
    "Vamos": {
+    "status": "monitorar",
+    "score": 5
+   },
+   "BRF": {
     "status": "monitorar",
     "score": 5
    },
@@ -55190,7 +55252,7 @@
   }
  },
  "links_repaired_at": "2026-07-31T05:45:56.701137+00:00",
- "reclassify_only_applied_at": "2026-08-15T21:28:26.086606+00:00",
+ "reclassify_only_applied_at": "2026-08-17T23:37:36.523570+00:00",
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNQjN5VFFLLTZwZkc3OFYzTk5SZFludkE1OXcxSTdRUzR1N0hkVU5MM21MajJjdFZzTlFvcHZiTk1CdG9GWGo5QmhUdWRtM3phOHhuamwxR2V5dHlqQmdEQVQycUg0ZGhhZzYtYUlpbDhTbkpaRl9mczQtRFl1anlBNVdZeVdGX1loODZKOThPcE9xM2RROGt4T3dwTHpNZEVXb2xzVmswM0pMLTR3bVVMVEg1RXRDcVlVVVdUTS1RYUYyUE5YUXVDd3RlbTk5TW1EbXJaZXpac1JFanA1dWlNbDRUN3RLWE9TdjNQQ0FISUQ0U3V0WEFhUQ?oc=5": {
    "exact": true,
