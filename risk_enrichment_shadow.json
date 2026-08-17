@@ -2763,9 +2763,60 @@
     "policy_version": "r5b.1"
    },
    "first_seen_run": 110
+  },
+  "https://www.cnbc.com/2026/08/17/pskys-wbd-bid-has-1-in-4-odds-of-falling-through-kalshi-traders-say.html": {
+   "attempted_at": 1786984846,
+   "fragments": [
+    {
+     "method": "collector:summary",
+     "tier": 0,
+     "kind": "collector",
+     "text_excerpt": "As probabilidades são maiores do que antes de 12 estados entrarem com ação para bloquear a fusão, mas menores do que após a Paramount adiar a aquisição no final de julho.",
+     "content_hash": "c58c57254784e4e8",
+     "effective_new_tokens": 17,
+     "effective_new_chars": 102,
+     "containment": 0.15,
+     "quality_flags": [],
+     "sentence_like": true,
+     "length": 170
+    }
+   ],
+   "extractor_version": "r6b.1",
+   "policy_version": "r5b.1",
+   "schema_version": "1.1",
+   "status": "OK",
+   "early_stop": true,
+   "tier0_sufficient": true,
+   "page_fetch": false,
+   "robots_status": "nao_aplicavel (sem fetch de página)",
+   "selected": {
+    "method": "collector:summary",
+    "tier": 0,
+    "content_hash": "c58c57254784e4e8",
+    "effective_new_tokens": 17,
+    "selection_reason": "melhor fragmento limpo, por procedência"
+   },
+   "canonical_url": "https://www.cnbc.com/2026/08/17/pskys-wbd-bid-has-1-in-4-odds-of-falling-through-kalshi-traders-say.html",
+   "title": "Traders de mercado de previsão veem probabilidade de aproximadamente 1 em 4 de que a oferta da Paramount para comprar a Warner Bros. Discovery falhe",
+   "eligibility": {
+    "eventos": [
+     "ma"
+    ],
+    "severidade_max": "alto",
+    "tokens_novos": 17,
+    "input_marginal": false,
+    "marcas_ambiguidade": [
+     "termo_processual"
+    ],
+    "familia_sensivel": true,
+    "multiplas_empresas": false,
+    "policy": "E",
+    "policy_version": "r5b.1"
+   },
+   "first_seen_run": 132
   }
  },
- "gerado_em": 1786974618,
+ "gerado_em": 1786984846,
  "first_seen_run": {
   "https://www.cnbc.com/2025/07/11/capital-one-has-more-room-to-run-after-its-acquisition-jim-cramer-says.html": 104,
   "https://www.infomoney.com.br/mercados/telefonica-assume-100-da-fibrasil-e-reforca-estrategia-de-infraestrutura-propria/": 104,
@@ -3521,7 +3572,11 @@
   "https://www.automotive-fleet.com/news/citigroup-successfully-completes-acquisition-of-associates-first-capital-corp": 131,
   "https://finance.yahoo.com/markets/stocks/articles/citigroups-kard-acquisition-deal-growth-164400609.html": 131,
   "https://news.google.com/rss/articles/CBMimAFBVV95cUxNN0cyYzBLWVM5YWdHTWR4QnJWd042dC1iSXhEcmFuTDdNb0RGZ2RoRnV0eFZDS0VYd2xyWWhkNHVuSFNWODUtbXoxNlVEaG1tcE1VYmJyTHNTdl9YZUVpWnJzRDNKT2RpM0pFM1pQVkI5ZVFnSWZhcmdlaGZzbmVsUWhJcWdqaTl5aG5DMjV2Sk9DRXROY3l0NdIBngFBVV95cUxPSEtXeUE1bl9peHlBYTJlLVY4S2lTWW9halpPbnhrYjdEZVhQcWxJWG1MM0xqbWN4cDZRVG9vXzVmV2VRZ1RSOHZlWG9WS2IwaVRzNkROc1RjSWNUa20wU0V6YmJiVTIzdXRWQ2l4c29uSkdoREN4OXRkTnFyMHBPRnQxZ1h6b1JPZW5jWEl3dUl2anE4amJJeExQQjY4UQ?oc=5": 131,
-  "https://valor.globo.com/google/amp/empresas/noticia/2026/08/17/agenda-de-empresas-casas-bahia-entra-com-pedido-de-recuperacao-judicial-cosan-tem-prejuizo-de-r-320-milhoes.ghtml": 131
+  "https://valor.globo.com/google/amp/empresas/noticia/2026/08/17/agenda-de-empresas-casas-bahia-entra-com-pedido-de-recuperacao-judicial-cosan-tem-prejuizo-de-r-320-milhoes.ghtml": 131,
+  "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPOUJTTEJYSDhKRFU2UEJaWFlVTC1aUE1DekRsUG8wejBfdk9ZTXVsSFJFRmZZaEk2WUFJTkVNSEZSN3hCWWtLcnpuNm5hbko5LTR5R0FSMGJsOHMwZTRQQTNmSkRWSkZrU2x1cUM3SHZWdTdYa0VFc3czZ3lnVzVlLWFSd2tDUnNDdHdvM0hHZzYzME1wcjNzUEZ2Nm5PcGU5OXF0dnpEQUY?oc=5": 132,
+  "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPakItR2p4eWYxQlJvWnBIWEJwVU9uaDgwYUZHbG5ZbzNwdGFEejFSMDhzYVlfcWVZaEhrN3dIMmpRZG5BejNKNjc1Wk02a0toRzRjb2FTdlFDQUphZnl0djBseFBmcVNBOTZreG9JX1M0RjFqQVFNRGpYN1o4bTNrZE5qS0NyR2c4NXdhZjN6SkM3dEtqVUd0MW1zbUpUb2JIZVA2a1RQdG9ZV3fSAboBQVVfeXFMUFh6ZzE1cmw1X0Frbll4Q0xWRy1uVTR3YXF6WG03Qlo4WTUybzlNRUc5djhoUzlYenNDTDFBbkFuOFZhSHdOZm5aZ0d0Q2I4X2lKNGg4REpFdGhoWFJUZFNYT3M5cFVkY3ZHVENQWEQycm1URTRralRSOUt2d3JPY3BLcTFac3ZpM0hYdUFqSWhNODg1eGc1Vk0tQlRIT3BkdG40NUVRVGhxUmRQcnZmZEI5ZXVOR0pPQXVR?oc=5": 132,
+  "https://globorural.globo.com/negocios/noticia/2026/08/pilgrims-da-jbs-anuncia-aquisicao-da-walkers-deli-and-sausage-company-no-reino-unido.ghtml": 132,
+  "https://www.cnbc.com/2026/08/17/pskys-wbd-bid-has-1-in-4-odds-of-falling-through-kalshi-traders-say.html": 132
  },
  "seeded_at_run": null,
  "r6f_publicado_no_run": 108

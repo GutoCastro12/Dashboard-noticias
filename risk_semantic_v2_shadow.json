@@ -813,6 +813,240 @@
     "total_token_count": 1645
    }
   },
+  "61166442c0f897153eec|JBS|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "61166442c0f897153eec",
+   "article_pub_iso": "2026-08-17 12:43",
+   "candidate_event": "ma",
+   "case_id": "61166442c0f897153eec|JBS|ma|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "JBS",
+   "contract_version": "v2",
+   "created_at": "2026-08-17T16:41:33Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-17 13:39",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "anuncio",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "anuncia aquisição",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Pilgrim's, da JBS, anuncia aquisição da Walkers Deli & Sausage Company no Reino Unido",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "anuncia aquisição",
+      "phase": "ANNOUNCED",
+      "phase_quote": "anuncia",
+      "related_entity": "Walkers Deli & Sausage Company",
+      "relation": "ACQUIRER",
+      "relation_quote": "anuncia aquisição da Walkers Deli & Sausage Company",
+      "role_quote": "Pilgrim's, da JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "aquisição da Walkers Deli & Sausage Company"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-17 13:39",
+   "human_review": null,
+   "latencia_s": 6.19,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "anuncia aquisição",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Pilgrim's, da JBS, anuncia aquisição da Walkers Deli & Sausage Company no Reino Unido",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "anuncia aquisição",
+      "phase": "ANNOUNCED",
+      "phase_quote": "anuncia",
+      "related_entity": "Walkers Deli & Sausage Company",
+      "relation": "ACQUIRER",
+      "relation_quote": "anuncia aquisição da Walkers Deli & Sausage Company",
+      "role_quote": "Pilgrim's, da JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "aquisição da Walkers Deli & Sausage Company"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Globo Rural",
+   "title": "Pilgrim's, da JBS, anuncia aquisição da Walkers Deli & Sausage Company no Reino Unido",
+   "url": "https://globorural.globo.com/negocios/noticia/2026/08/pilgrims-da-jbs-anuncia-aquisicao-da-walkers-deli-and-sausage-company-no-reino-unido.ghtml",
+   "usage": {
+    "candidates_token_count": 303,
+    "prompt_token_count": 1319,
+    "total_token_count": 1622
+   }
+  },
+  "61166442c0f897153eec|JBS|ma|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "61166442c0f897153eec",
+   "article_pub_iso": "2026-08-17 12:43",
+   "candidate_event": "ma",
+   "case_id": "61166442c0f897153eec|JBS|ma|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "JBS",
+   "contract_version": "v2",
+   "created_at": "2026-08-17T16:41:42Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-17 13:39",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "anuncio",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Pilgrim's, da JBS, anuncia aquisição da Walkers Deli & Sausage Company no Reino Unido",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Pilgrim's, da JBS, anuncia aquisição da Walkers Deli & Sausage Company no Reino Unido",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "anuncia aquisição",
+      "phase": "ANNOUNCED",
+      "phase_quote": "anuncia",
+      "related_entity": "Walkers Deli & Sausage Company",
+      "relation": "acquisitions",
+      "relation_quote": "aquisição",
+      "role_quote": "JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "Walkers Deli & Sausage Company"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-17 13:39",
+   "human_review": null,
+   "latencia_s": 1.46,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Pilgrim's, da JBS, anuncia aquisição da Walkers Deli & Sausage Company no Reino Unido",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Pilgrim's, da JBS, anuncia aquisição da Walkers Deli & Sausage Company no Reino Unido",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "anuncia aquisição",
+      "phase": "ANNOUNCED",
+      "phase_quote": "anuncia",
+      "related_entity": "Walkers Deli & Sausage Company",
+      "relation": "acquisitions",
+      "relation_quote": "aquisição",
+      "role_quote": "JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "Walkers Deli & Sausage Company"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Globo Rural",
+   "title": "Pilgrim's, da JBS, anuncia aquisição da Walkers Deli & Sausage Company no Reino Unido",
+   "url": "https://globorural.globo.com/negocios/noticia/2026/08/pilgrims-da-jbs-anuncia-aquisicao-da-walkers-deli-and-sausage-company-no-reino-unido.ghtml",
+   "usage": {
+    "candidates_token_count": 301,
+    "prompt_token_count": 1319,
+    "total_token_count": 1620
+   }
+  },
   "6cf40fc7ad1d8e108226|Citigroup|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {
    "actual_model": "gemini-3.1-flash-lite",
    "article_id": "6cf40fc7ad1d8e108226",
