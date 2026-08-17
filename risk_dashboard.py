@@ -48,6 +48,8 @@ try:
     import requests
 except ImportError:
     sys.exit(" requests não encontrado. Rode: pip install requests")
+
+import cvm_document_evidence          # evidência do documento oficial da CVM
 try:
     import yaml
 except ImportError:
@@ -1145,7 +1147,29 @@ def fetch_cvm_fatos(cfg: dict) -> list[dict]:
                 "pub_iso": entrega,
                 "forced_companies": [company],
             })
-    print(f"   ✅ {len(articles)} fatos relevantes de emissores da watchlist.")
+    # ── evidência do documento oficial (Fase 1, prospectiva) ────────────────
+    # O CSV do IPE dá só `assunto`, que já é o sufixo do título — daí 78% dos
+    # registros da CVM terem evidência redundante. O `Link_Download` sempre
+    # apontou para o fato relevante inteiro e nunca era buscado.
+    #
+    # Aqui, e só aqui: são artigos RECÉM-montados do dataset, ainda não
+    # persistidos. Nenhum registro histórico passa por este ponto, então isto
+    # não tem como virar backfill implícito. Falha de um documento não derruba
+    # a coleta — o artigo segue com título/resumo, como antes.
+    #
+    # FASE 1: nada lê `semantic_evidence`. Capturar e decidir são ondas
+    # separadas, para que uma mudança de score seja atribuível a uma delas.
+    _n_ev = 0
+    for _art in articles:
+        try:
+            _ev = cvm_document_evidence.evidencia_do_documento(_art.get("url", ""))
+        except Exception:
+            _ev = None
+        if _ev:
+            _art["semantic_evidence"] = _ev
+            _n_ev += 1
+    print(f"   ✅ {len(articles)} fatos relevantes de emissores da watchlist "
+          f"({_n_ev} com texto do documento oficial).")
     return articles
 
 
