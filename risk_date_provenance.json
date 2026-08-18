@@ -193,37 +193,6 @@
    "title": "Eletrobras recebe aval do Cade para aquisição de 51% da Eletronet",
    "url": "https://teletime.com.br/19/02/2025/eletrobras-recebe-aval-do-cade-para-aquisicao-de-51-da-eletronet/"
   },
-  "21d8d04410e46b6127ed": {
-   "article_id": "21d8d04410e46b6127ed",
-   "companies": [
-    "Vale",
-    "Samarco Mineração"
-   ],
-   "event_ids": [
-    "recuperacao_judicial"
-   ],
-   "first_seen_at": "pubdate.p1",
-   "first_seen_via": "date_repair",
-   "provenance": {
-    "feed_pub_iso": "2026-07-22 11:14",
-    "feed_pub_ts": 1784729650,
-    "page_date_modified": "2022-11-22T23:01:00.000Z",
-    "page_date_source": "jsonld",
-    "page_pub_iso": "2023-05-31 03:00",
-    "page_pub_ts": 1685502000,
-    "pub_date_conflict_s": 99227650,
-    "pub_date_note": "FEED_PAGE_DATE_CONFLICT: feed e página divergem 1148 dia(s); a página é a autoridade",
-    "pub_date_origin": "pagina",
-    "pub_date_policy": "pubdate.p1",
-    "pub_date_verification": "verificado_pagina",
-    "pub_iso": "2023-05-31 00:00",
-    "pub_ts": 1685502000
-   },
-   "revisions": [],
-   "source": "vale.com",
-   "title": "Vale informa sobre Plano de Recuperação Judicial da Samarco",
-   "url": "https://www.vale.com/pt/w/vale-informa-sobre-plano-de-recuperacao-judicial-da-samarco/-/categories/64919"
-  },
   "35738d27b5b7e209e6b3": {
    "article_id": "35738d27b5b7e209e6b3",
    "companies": [
@@ -697,36 +666,6 @@
    "source": "Brazil Journal",
    "title": "BREAKING: Dasa faz aquisição de R$ 1,77 bi e não descarta IPO",
    "url": "https://braziljournal.com/breaking-dasa-faz-aquisicao-de-r-177-bi-e-nao-descarta-ipo/"
-  },
-  "be7c8a47831d5b8a337f": {
-   "article_id": "be7c8a47831d5b8a337f",
-   "companies": [
-    "Alfa"
-   ],
-   "event_ids": [
-    "ma"
-   ],
-   "first_seen_at": "pubdate.p1",
-   "first_seen_via": "date_repair",
-   "provenance": {
-    "feed_pub_iso": "2026-08-01 12:00",
-    "feed_pub_ts": 1786000000,
-    "page_date_modified": "2025-10-10T07:06:40+00:00",
-    "page_date_source": "jsonld",
-    "page_pub_iso": "2025-10-10 07:06",
-    "page_pub_ts": 1760080000,
-    "pub_date_conflict_s": 25920000,
-    "pub_date_note": "FEED_PAGE_DATE_CONFLICT: feed e página divergem 300 dia(s); a página é a autoridade",
-    "pub_date_origin": "pagina",
-    "pub_date_policy": "pubdate.p1",
-    "pub_date_verification": "verificado_pagina",
-    "pub_iso": "2025-10-10 04:06",
-    "pub_ts": 1760080000
-   },
-   "revisions": [],
-   "source": "Fonte de Teste",
-   "title": "Titulo de teste",
-   "url": "https://exemplo.invalido/artigo"
   },
   "c6e2220e58fa3605c77a": {
    "article_id": "c6e2220e58fa3605c77a",
