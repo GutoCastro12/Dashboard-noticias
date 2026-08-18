@@ -56,9 +56,13 @@ PASS = FAIL = 0
 import reliability_occurrence_archival_verifier as _av
 
 D = _av.carregar_snapshot()
-EX = v3.exemplos_congelados(D)
+# A entrada de ARTIGOS dos experimentos congelados e o snapshot historico,
+# nao o acervo vivo: `risk_history.json` cresce e recebe correcoes legitimas
+# de producao (foi o reparo da data da BRF que expos isso). Ver `4cda805`.
+H_ARQ = _av.SNAPSHOT_HISTORICO
+EX = v3.exemplos_congelados(D, historico=H_ARQ)
 AL = v3.alvos_com_verdade(D)
-BL = v3.baselines_triviais(D)
+BL = v3.baselines_triviais(D, historico=H_ARQ)
 
 ESPERADO_V3 = {
     "input_hash": "e9d33218fd811d13",
@@ -175,7 +179,7 @@ check(v3.SEM_CANDIDATO in _d["linkage_labels"],
       "(BRF), não por controle sintético"); n += 1
 check(all(e["evaluation_metadata"]["provenance"] == "HUMAN_ADJUDICATED"
           for e in EX.values())
-      and v3.manifesto(D)["synthetic_controls"] == [],
+      and v3.manifesto(D, historico=H_ARQ)["synthetic_controls"] == [],
       f"[{n}] nenhum exemplo é sintético, e nada sintético é contado como "
       "verdade humana"); n += 1
 
@@ -184,7 +188,7 @@ print("=" * 98)
 print("§34 CONTRASTE DEPOIS DAS EXCLUSÕES LOOCV — FOLD A FOLD")
 print("=" * 98)
 _colapso = []
-for f in v3.folds(D):
+for f in v3.folds(D, historico=H_ARQ):
     perm = {k: EX[k] for k in v3.exemplos_do_fold(f["company"]) if k in EX}
     d = v3.diversidade(perm)
     if not d["ok"]:
@@ -246,7 +250,7 @@ check(v3.avaliar_v3(_a2, base(sorted(_novo)[0], "NEW_OCCURRENCE"))["novelty_corr
       == (_alvo["novelty_verdade"] == "NEW_OCCURRENCE"),
       f"[{n}] a novidade NÃO muda com a permutação — é papel histórico, não "
       "posição na lista"); n += 1
-check(v3.manifesto(D)["candidate_order_rule"]
+check(v3.manifesto(D, historico=H_ARQ)["candidate_order_rule"]
       == "chronological_by_first_date_oldest_is_1",
       f"[{n}] §38 e a regra de ordenação está documentada: cronológica, mais "
       "antigo é CANDIDATE_1"); n += 1
@@ -282,20 +286,20 @@ check(_ag2["linkage_correct"] == 17 and _ag2["development_sane"] is True,
       f"{_ag2['linkage_correct']}/17) — o portão é exigente, não impossível"); n += 1
 check(_ag2["novelty_correct"] == 17 and _ag2["novelty_denominador"] == 17,
       f"[{n}] §30 denominador de novidade é 17, não 11"); n += 1
-check(v3.manifesto(D)["sanity_gate"]["linkage_correct_min"] == 15,
+check(v3.manifesto(D, historico=H_ARQ)["sanity_gate"]["linkage_correct_min"] == 15,
       f"[{n}] e o portão está no manifesto congelado"); n += 1
 
 print()
 print("=" * 98)
 print("§6 V1 E V2 SEGUEM INTACTAS")
 print("=" * 98)
-check(not v1.verificar_congelamento(D), f"[{n}] pins da V1 exatos"); n += 1
-check(not v2.verificar_congelamento(D), f"[{n}] pins da V2 exatos"); n += 1
-check(v3.manifesto(D)["input_hash"] == v1.HASHES_V1["input_hash"]
+check(not v1.verificar_congelamento(D, historico=H_ARQ), f"[{n}] pins da V1 exatos"); n += 1
+check(not v2.verificar_congelamento(D, historico=H_ARQ), f"[{n}] pins da V2 exatos"); n += 1
+check(v3.manifesto(D, historico=H_ARQ)["input_hash"] == v1.HASHES_V1["input_hash"]
       == v2.HASHES_V2["input_hash"],
       f"[{n}] §44 a entrada NÃO mudou — mesmo contrato, mesmo hash, nenhum "
       "drift semântico gratuito"); n += 1
-check(v3.manifesto(D)["dev_manifest_hash"] == v1.HASHES_V1["dev_manifest_hash"],
+check(v3.manifesto(D, historico=H_ARQ)["dev_manifest_hash"] == v1.HASHES_V1["dev_manifest_hash"],
       f"[{n}] §45 e o devset é a MESMA população: 7 verdades, 17 "
       "pertinências, sem Capital One nem Petrobras"); n += 1
 check(list(v3.OUT_NOVELTY) == list(v2.OUT_NOVELTY) == list(v1.OUT_NOVELTY),
@@ -307,21 +311,21 @@ print("§46/§47 HASHES FIXADOS À MÃO E A FIXAÇÃO DETECTA MUTAÇÃO")
 print("=" * 98)
 check(dict(v3.HASHES_V3) == ESPERADO_V3,
       f"[{n}] os 9 hashes batem com literais desta suíte"); n += 1
-check(not v3.verificar_congelamento(D),
+check(not v3.verificar_congelamento(D, historico=H_ARQ),
       f"[{n}] e o módulo concorda consigo mesmo"); n += 1
 _o = dict(v3.HASHES_V3)
 for alvo in ("prompt_hash", "example_outputs_hash", "evaluator_hash",
              "baseline_hash", "output_hash"):
     try:
         v3.HASHES_V3[alvo] = "0" * 16
-        _div = v3.verificar_congelamento(D)
+        _div = v3.verificar_congelamento(D, historico=H_ARQ)
         check(any(k == alvo for k, _, _ in _div),
               f"[{n}] mutar `{alvo}` REPROVA a verificação")
         n += 1
     finally:
         v3.HASHES_V3.clear()
         v3.HASHES_V3.update(_o)
-check(not v3.verificar_congelamento(D),
+check(not v3.verificar_congelamento(D, historico=H_ARQ),
       f"[{n}] e tudo volta a passar depois de restaurado"); n += 1
 
 print()

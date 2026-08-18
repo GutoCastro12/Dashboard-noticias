@@ -41,7 +41,11 @@ PASS = FAIL = 0
 import reliability_occurrence_archival_verifier as _av
 
 D = _av.carregar_snapshot()
-BL = v3.baselines_triviais(D)
+# A entrada de ARTIGOS dos experimentos congelados e o snapshot historico,
+# nao o acervo vivo: `risk_history.json` cresce e recebe correcoes legitimas
+# de producao (foi o reparo da data da BRF que expos isso). Ver `4cda805`.
+H_ARQ = _av.SNAPSHOT_HISTORICO
+BL = v3.baselines_triviais(D, historico=H_ARQ)
 TMP = tempfile.mkdtemp(prefix="v3pilot")
 
 
@@ -67,11 +71,11 @@ def resposta(lk, nov="FOLLOW_UP"):
 def roda(fn, nome):
     j = os.path.join(TMP, f"{nome}.jsonl")
     p3.PACING_S = 0.0
-    tel = p3.executar(D, chamada=fn, saida_jsonl=j)
-    return tel, p3.pontuar(D, j), j
+    tel = p3.executar(D, chamada=fn, saida_jsonl=j, historico=H_ARQ)
+    return tel, p3.pontuar(D, j, historico=H_ARQ), j
 
 
-ALVOS = p3.alvos_congelados(D)
+ALVOS = p3.alvos_congelados(D, historico=H_ARQ)
 VERD = {a["target_id"]: a for a in ALVOS}
 n = 1
 

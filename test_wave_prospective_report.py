@@ -397,7 +397,13 @@ _r8 = rp.gerar(temp_sidecar(_dup))
 check(any(e["tipo"] == "REGISTRO_DUPLICADO" for e in _r8["integridade"]),
       f"[65] registro duplicado do mesmo modelo é sinalizado ({_r8['integridade']})")
 _div = copy.deepcopy(_d0)
-_ks = [k for k, o in _d0["observacoes"].items() if o["company"] == "JBS"]
+# SO observacoes REVISADAS tem verdade humana. Um caso prospectivo novo entra
+# no acervo sem `human_review` e continua assim ate alguem adjudicar — filtrar
+# por isso e a invariante, nao um contorno. Pegar `[0]` cegamente quebrou o
+# teste quando o cron trouxe o caso #9 (JBS, ainda sem revisao).
+_ks = [k for k, o in _d0["observacoes"].items()
+       if o["company"] == "JBS" and o.get("human_review")]
+assert _ks, "esperado ao menos um caso JBS revisado"
 _div["observacoes"][_ks[0]]["human_review"] = {
     **_div["observacoes"][_ks[0]]["human_review"], "verdict": "OUTRA_COISA"}
 _r9 = rp.gerar(temp_sidecar(_div))
@@ -406,11 +412,59 @@ check(any(e["tipo"] == "VERDADE_DIVERGENTE_ENTRE_MODELOS"
       "[66] verdade humana divergente entre modelos do mesmo caso é sinalizada")
 _enum = copy.deepcopy(_d0)
 for _o in _enum["observacoes"].values():
-    if _o["company"] == "JBS":
+    if _o["company"] == "JBS" and _o.get("human_review"):
         _o["human_review"]["dimensoes_adjudicadas"]["phase"] = "POSSE"
 _r10 = rp.gerar(temp_sidecar(_enum))
 check(any(e["tipo"] == "ENUM_HUMANO_INVALIDO" for e in _r10["integridade"]),
       "[67] enum humano fora do contrato é sinalizado, não calculado em silêncio")
+
+print()
+print("=" * 98)
+print("BLOCO L2 — OBSERVAÇÃO NÃO REVISADA É ESTADO NORMAL, NÃO DEFEITO")
+print("=" * 98)
+# O cron cria observações prospectivas continuamente; a adjudicação humana vem
+# depois, e às vezes muito depois. Entre uma coisa e outra o acervo fica com
+# observação SEM `human_review` — e isso não pode derrubar o relatório nem
+# contaminar denominador. Medido por DELTA contra o estado vivo: fixar 9/8 aqui
+# só adiaria a mesma quebra para o próximo caso que o cron trouxer.
+_base = rp.gerar(temp_sidecar(_d0))
+_obs0 = _base["contagens"]["casos_observados"]
+_rev0 = _base["contagens"]["casos_revisados"]
+_den0 = _base["pontuabilidade_final"][rp.AVALIADOR_DETERMINISTICO]["denominador"]
+_num0 = _base["pontuabilidade_final"][rp.AVALIADOR_DETERMINISTICO]["acertos"]
+_dim0 = {k: v["denominador"]
+         for k, v in _base["dimensoes"]["gemini-3.1-flash-lite"].items()}
+
+_nr = copy.deepcopy(_d0)
+_modelo_de = [o for o in _d0["observacoes"].values() if o.get("human_review")][0]
+for _m in ("gemini-3.1-flash-lite", "gemini-3.5-flash-lite"):
+    _novo = copy.deepcopy(_modelo_de)
+    _novo["article_id"] = "9999naorevisado9999"
+    _novo["company"] = "Emissor Sintetico"
+    _novo["titulo"] = "Caso sintetico ainda sem adjudicacao humana"
+    _novo["human_review"] = None          # ausência é semanticamente distinta de {}
+    _novo["modelo"] = _m
+    _nr["observacoes"][f"9999naorevisado9999|Emissor Sintetico|ma|v2|r7ba.p2|{_m}"] = _novo
+_rnr = rp.gerar(temp_sidecar(_nr))
+
+check(_rnr["contagens"]["casos_observados"] == _obs0 + 1,
+      f"[67b] observação nova SOBE o observado ({_obs0} -> "
+      f"{_rnr['contagens']['casos_observados']})")
+check(_rnr["contagens"]["casos_revisados"] == _rev0,
+      f"[67c] e NÃO sobe o revisado ({_rev0})")
+check(_rnr["pontuabilidade_final"][rp.AVALIADOR_DETERMINISTICO]["denominador"] == _den0,
+      f"[67d] denominador de pontuabilidade intacto ({_den0})")
+check(_rnr["pontuabilidade_final"][rp.AVALIADOR_DETERMINISTICO]["acertos"] == _num0,
+      f"[67e] numerador intacto ({_num0})")
+check({k: v["denominador"]
+       for k, v in _rnr["dimensoes"]["gemini-3.1-flash-lite"].items()} == _dim0,
+      "[67f] nenhum denominador dimensional se mexe")
+check(any(x.get("empresa") == "Emissor Sintetico"
+          for x in (_rnr.get("fila_de_revisao") or [])),
+      "[67g] o caso aparece na FILA DE REVISÃO — não some da auditoria")
+_sem_review = [o for o in _nr["observacoes"].values() if o.get("human_review") is None]
+check(all(o.get("human_review") is None for o in _sem_review),
+      "[67h] ausência de verdade continua ausência: nada de `{}` de fachada")
 
 print()
 print("=" * 98)

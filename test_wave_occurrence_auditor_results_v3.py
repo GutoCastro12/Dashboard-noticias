@@ -52,6 +52,10 @@ REL = json.load(io.open(f"{B}/dev_report.json", encoding="utf-8"))
 import reliability_occurrence_archival_verifier as _av
 
 D = _av.carregar_snapshot()
+# A entrada de ARTIGOS dos experimentos congelados e o snapshot historico,
+# nao o acervo vivo: `risk_history.json` cresce e recebe correcoes legitimas
+# de producao (foi o reparo da data da BRF que expos isso). Ver `4cda805`.
+H_ARQ = _av.SNAPSHOT_HISTORICO
 
 
 def saida(r):
@@ -205,7 +209,7 @@ print("=" * 98)
 print("§4 V1, V2 E V3 CONGELADAS SEGUEM INTACTAS")
 print("=" * 98)
 for nome, mod in (("V1", v1), ("V2", v2), ("V3", v3)):
-    check(not mod.verificar_congelamento(D), f"[{n}] pins da {nome} exatos"); n += 1
+    check(not mod.verificar_congelamento(D, historico=H_ARQ), f"[{n}] pins da {nome} exatos"); n += 1
 
 print()
 print("=" * 98)
