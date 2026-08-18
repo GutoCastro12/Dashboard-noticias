@@ -33,6 +33,33 @@ O verificador carrega o snapshot histórico e roda contra ele a MESMA geração 
 manifesto congelada, sem alterá-la. O arquivo vivo nunca é tocado durante a
 verificação.
 
+O SEGUNDO DEFEITO, ENCONTRADO DEPOIS
+
+A primeira versão desta camada consertou metade do problema e disse, em
+comentário, que a outra metade não existia: "os demais hashes do experimento
+vêm do acervo vivo, porque não dependem dele". Isso era falso.
+`exemplos_congelados()` reconstrói o payload dos exemplos a partir de
+`risk_history.json` — o acervo de ARTIGOS, que também cresce e também é
+corrigido.
+
+O que expôs isso foi uma correção de produção legítima: o artigo da BRF sobre
+o adiamento da assembleia estava gravado com a data do feed (2026-05-28)
+quando a própria página declara 2025-06-17. Reparar a data (`f62199e`) mudou o
+payload do exemplo da BRF, e com ele `example_set_hash` e
+`freeze_manifest_hash` — sem que V1, V2 ou V3 tivessem mudado um byte.
+
+Mesmo erro da primeira vez, em outro eixo: congelar um hash derivado de algo
+feito para mudar. Por isso há dois snapshots, não um:
+
+  verdade humana consumida  -> occurrence_auditor_dev_truth_snapshot_v1
+  artigos consumidos        -> occurrence_auditor_freeze_history_snapshot_v1
+
+Nenhum hash histórico foi reescrito. `example_set_hash` continua sendo
+`6ea9a6519b3066bb`, e agora volta a bater porque a entrada voltou a ser a
+histórica. A correção da BRF em produção permanece de pé: o exemplo congelado
+guarda o que a V3 VIU, o histórico vivo guarda o que é VERDADE hoje. As duas
+coisas convivem, e é isso que o arquivo tinha de garantir desde o começo.
+
 POR QUE O SNAPSHOT É HONESTO SOBRE SI MESMO
 
 Ele foi reconstruído agora, não commitado antes da V1. Diz isso no próprio
@@ -54,7 +81,13 @@ import reliability_occurrence_auditor_freeze_v3 as v3
 SNAPSHOT = "occurrence_auditor_dev_truth_snapshot_v1.json"
 SNAPSHOT_SHA256 = "622082c16255ce7a"
 MANIFESTO_HISTORICO = "82cda660cdece064"
-VERIFIER_VERSION = "occurrence.auditor.archival.v1"
+# Segundo snapshot imutável: os ARTIGOS que os experimentos consumiram. O
+# primeiro desacoplou a verdade humana; este desacopla a entrada de artigos.
+# Ver `SNAPSHOT_HISTORICO` abaixo e o cabeçalho "O SEGUNDO DEFEITO".
+SNAPSHOT_HISTORICO = "occurrence_auditor_freeze_history_snapshot_v1.json"
+SNAPSHOT_HISTORICO_SHA256 = "430da3e4973b227e"
+EXAMPLE_SET_HISTORICO = "6ea9a6519b3066bb"
+VERIFIER_VERSION = "occurrence.auditor.archival.v2"
 
 # Cada experimento e o hash de manifesto que ele realmente carregou ao ser
 # publicado. Literais, escritos à mão: `esperado = calcular()` passaria por
@@ -92,7 +125,8 @@ def manifesto_historico(snap: dict) -> str:
     return _hash(v1.manifesto_desenvolvimento(snap))
 
 
-def verificar_historico(caminho: str = SNAPSHOT) -> dict:
+def verificar_historico(caminho: str = SNAPSHOT,
+                        historico: str = SNAPSHOT_HISTORICO) -> dict:
     """Verifica os três experimentos contra o snapshot, e o snapshot contra si.
 
     Devolve um relatório em vez de levantar exceção: quem chama precisa poder
@@ -112,14 +146,28 @@ def verificar_historico(caminho: str = SNAPSHOT) -> dict:
     obtido = manifesto_historico(snap)
     if obtido != MANIFESTO_HISTORICO:
         problemas.append(("dev_manifest_hash", MANIFESTO_HISTORICO, obtido))
+    cs_hist = checksum_snapshot(historico)
+    if cs_hist != SNAPSHOT_HISTORICO_SHA256:
+        problemas.append(("snapshot_historico_checksum",
+                          SNAPSHOT_HISTORICO_SHA256, cs_hist))
+    meta_h = carregar_snapshot(historico).get("_meta", {})
+    if meta_h.get("role") != "HISTORICAL_FREEZE_INPUT":
+        problemas.append(("snapshot_historico_role", "HISTORICAL_FREEZE_INPUT",
+                          meta_h.get("role")))
+    if meta_h.get("current_authority") != "NONE":
+        problemas.append(("snapshot_historico_authority", "NONE",
+                          meta_h.get("current_authority")))
     por_experimento = {}
     for nome, (mod, esperado) in EXPERIMENTOS.items():
-        # O manifesto vem do SNAPSHOT; os demais hashes do experimento vêm do
-        # acervo vivo, porque não dependem dele (entrada, prompt, exemplos,
-        # avaliador). Misturar as duas fontes seria esconder uma regressão real
-        # atrás da fachada arquival.
+        # AMBAS as entradas vêm de snapshot. A versão anterior deixava a
+        # entrada de ARTIGOS no acervo vivo, "porque não depende da verdade" —
+        # e isso era falso: `exemplos_congelados` reconstrói o payload dos
+        # exemplos a partir de `risk_history.json`. Bastou a correção legítima
+        # da data de publicação do artigo da BRF (f62199e) para `example_set_
+        # hash` e `freeze_manifest_hash` mudarem sem que experimento nenhum
+        # tivesse mudado. O acervo vivo não é entrada de arquivo.
         div = [d for d in mod.verificar_congelamento(
-            json.loads(json.dumps(snap))) ]
+            json.loads(json.dumps(snap)), historico=historico)]
         por_experimento[nome] = {
             "dev_manifest_esperado": esperado,
             "dev_manifest_obtido": obtido,
@@ -130,6 +178,8 @@ def verificar_historico(caminho: str = SNAPSHOT) -> dict:
             problemas.append((f"experimento_{nome}", esperado, div or obtido))
     return {"verifier_version": VERIFIER_VERSION,
             "snapshot": caminho, "snapshot_checksum": cs,
+            "snapshot_historico": historico,
+            "snapshot_historico_checksum": cs_hist,
             "snapshot_counts": meta.get("source_truth_counts"),
             "dev_manifest_hash": obtido,
             "por_experimento": por_experimento,
@@ -140,9 +190,10 @@ def main(argv=None) -> int:
     p = argparse.ArgumentParser(
         description="Verifica V1/V2/V3 contra o snapshot histórico (só leitura).")
     p.add_argument("--snapshot", default=SNAPSHOT)
+    p.add_argument("--snapshot-historico", default=SNAPSHOT_HISTORICO)
     p.add_argument("--json-out", default=None)
     a = p.parse_args(argv)
-    rel = verificar_historico(a.snapshot)
+    rel = verificar_historico(a.snapshot, a.snapshot_historico)
     saida = json.dumps(rel, ensure_ascii=False, indent=1, sort_keys=True)
     if a.json_out:
         io.open(a.json_out, "w", encoding="utf-8").write(saida)
