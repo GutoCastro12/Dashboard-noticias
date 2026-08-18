@@ -2865,7 +2865,37 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-18 10:55",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-18T00:00:00Z",
+    "backlog_relacionado": "CORRELATED_EVENT_CASCADE: pontuar evento correlacionado NAO e o mesmo problema que deduplicar ocorrencia. Se algum dia se quiser tratar cascata causal (emissor revisa guidance -> analistas reagem), isso e desenho de scoring proprio, com aprovacao propria. Este caso NAO o justifica e nada foi implementado.",
+    "camada_artigo": {
+     "criterio": "A manchete AFIRMA uma acao de analista: o Citi CORTA o preco-alvo da Lojas Renner. Nao e mencao de passagem, nao e especulacao e nao e descritor. O Citi e a casa de analise (ator gramatical); a Lojas Renner e o alvo economico da acao, por isso company_role=SUBJECT.",
+     "scoreable": true
+    },
+    "camada_sistema": {
+     "criterio": "NEW_OCCURRENCE no escopo da acao do analista: nenhum outro artigo do corpus menciona Citi junto da Lojas Renner, e nao ha cobertura duplicada deste corte de preco-alvo. Ocorrencia de membro unico dentro de `recomendacao_negativa`.",
+     "deterministico_convergente": "o caminho deterministico marcou scoreable=True por `corta preco-alvo`, atribuiu direto a Lojas Renner via alias LREN3 e leu new_occurrence=True. A verdade humana CONFIRMA: este caso NAO e erro deterministico.",
+     "ocorrencia_unica_na_familia": true,
+     "relacao_com_guidance_negativo": "DISTINTA. A revisao de guidance da propria Lojas Renner (2026-08-06, familia `guidance_negativo`) e evento/informacao DO EMISSOR. O corte de preco-alvo pelo Citi (2026-08-17) e acao POSTERIOR e INDEPENDENTE de um analista externo. Dependencia causal NAO e identidade de ocorrencia: o titulo diz 'apos revisao do guidance' e isso explica o motivo, nao funde os dois fatos economicos. Nenhuma deduplicacao entre familias e justificada por este caso.",
+     "relacao_economica": "DISTINCT_OCCURRENCE"
+    },
+    "dimensoes_adjudicadas": {
+     "company_role": "SUBJECT",
+     "currentness": "CURRENT",
+     "event_asserted": "ASSERTED",
+     "occurrence_novelty": "NEW_OCCURRENCE",
+     "subject": "Lojas Renner"
+    },
+    "nota": "Publicado 2026-08-17 e capturado 2026-08-18, sem ano antigo, sem marcador historico e sem conflito de proveniencia de data para este artigo: CURRENT. FASE e CENTRALIDADE NAO ADJUDICADAS de proposito — G1 e G2 emitiram ANNOUNCED e MAIN, mas saida de modelo existente nao e dimensao humana adjudicada, e inflar denominador sem necessidade estragaria a metrica. SEGUNDO precedente humano da familia `recomendacao_negativa`, ao lado do caso #9 (JBS/Stephens): la o corte de preco-alvo era isolado; aqui ele e disparado por uma revisao de guidance ja pontuada em OUTRA familia, e continua pontuavel. Nao confundir com `rebaixamento_rating`, que e rebaixamento de rating de credito por agencia, familia critica de peso 80 e dimensao credito.",
+    "razao_primaria": "acao_de_analista_distinta_do_evento_do_emissor",
+    "reviewed_at": 1787085246,
+    "reviewed_at_iso": "2026-08-18T20:34:06Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "scoreable": true,
+    "verdict": "RECOMENDACAO_NEGATIVA_CONFIRMADA",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 1.75,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.1-flash-lite",
@@ -2982,7 +3012,37 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-18 10:55",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-18T00:00:00Z",
+    "backlog_relacionado": "CORRELATED_EVENT_CASCADE: pontuar evento correlacionado NAO e o mesmo problema que deduplicar ocorrencia. Se algum dia se quiser tratar cascata causal (emissor revisa guidance -> analistas reagem), isso e desenho de scoring proprio, com aprovacao propria. Este caso NAO o justifica e nada foi implementado.",
+    "camada_artigo": {
+     "criterio": "A manchete AFIRMA uma acao de analista: o Citi CORTA o preco-alvo da Lojas Renner. Nao e mencao de passagem, nao e especulacao e nao e descritor. O Citi e a casa de analise (ator gramatical); a Lojas Renner e o alvo economico da acao, por isso company_role=SUBJECT.",
+     "scoreable": true
+    },
+    "camada_sistema": {
+     "criterio": "NEW_OCCURRENCE no escopo da acao do analista: nenhum outro artigo do corpus menciona Citi junto da Lojas Renner, e nao ha cobertura duplicada deste corte de preco-alvo. Ocorrencia de membro unico dentro de `recomendacao_negativa`.",
+     "deterministico_convergente": "o caminho deterministico marcou scoreable=True por `corta preco-alvo`, atribuiu direto a Lojas Renner via alias LREN3 e leu new_occurrence=True. A verdade humana CONFIRMA: este caso NAO e erro deterministico.",
+     "ocorrencia_unica_na_familia": true,
+     "relacao_com_guidance_negativo": "DISTINTA. A revisao de guidance da propria Lojas Renner (2026-08-06, familia `guidance_negativo`) e evento/informacao DO EMISSOR. O corte de preco-alvo pelo Citi (2026-08-17) e acao POSTERIOR e INDEPENDENTE de um analista externo. Dependencia causal NAO e identidade de ocorrencia: o titulo diz 'apos revisao do guidance' e isso explica o motivo, nao funde os dois fatos economicos. Nenhuma deduplicacao entre familias e justificada por este caso.",
+     "relacao_economica": "DISTINCT_OCCURRENCE"
+    },
+    "dimensoes_adjudicadas": {
+     "company_role": "SUBJECT",
+     "currentness": "CURRENT",
+     "event_asserted": "ASSERTED",
+     "occurrence_novelty": "NEW_OCCURRENCE",
+     "subject": "Lojas Renner"
+    },
+    "nota": "Publicado 2026-08-17 e capturado 2026-08-18, sem ano antigo, sem marcador historico e sem conflito de proveniencia de data para este artigo: CURRENT. FASE e CENTRALIDADE NAO ADJUDICADAS de proposito — G1 e G2 emitiram ANNOUNCED e MAIN, mas saida de modelo existente nao e dimensao humana adjudicada, e inflar denominador sem necessidade estragaria a metrica. SEGUNDO precedente humano da familia `recomendacao_negativa`, ao lado do caso #9 (JBS/Stephens): la o corte de preco-alvo era isolado; aqui ele e disparado por uma revisao de guidance ja pontuada em OUTRA familia, e continua pontuavel. Nao confundir com `rebaixamento_rating`, que e rebaixamento de rating de credito por agencia, familia critica de peso 80 e dimensao credito.",
+    "razao_primaria": "acao_de_analista_distinta_do_evento_do_emissor",
+    "reviewed_at": 1787085246,
+    "reviewed_at_iso": "2026-08-18T20:34:06Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "scoreable": true,
+    "verdict": "RECOMENDACAO_NEGATIVA_CONFIRMADA",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 1.49,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.5-flash-lite",
