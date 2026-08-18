@@ -108,7 +108,10 @@ def preparar(historico: dict, alvo: str, html: str, *,
         raise ReparoRecusado(
             f"SEM_DATA_NA_PAGINA: {pagina.get('motivo') or 'não declarada'} — "
             f"sem data forte não se corrige nada")
-    decisao = pd.decidir_data_efetiva(int(rec.get("pub_ts") or 0), pagina,
+    # `pub_ts` é a data EM VIGOR, não a do feed: depois da primeira correção
+    # ela já é a data da página. Comparar página com página daria delta 0 e
+    # apagaria a proveniência do conflito real na segunda passada.
+    decisao = pd.decidir_data_efetiva(pd.feed_original_ts(rec), pagina,
                                       tolerancia=tolerancia)
     campos = pd.campos_de_proveniencia(rec, pagina, decisao)
     mudancas = {k: (rec.get(k), v) for k, v in campos.items()

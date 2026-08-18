@@ -255,6 +255,31 @@ def decidir_data_efetiva(feed_ts: int, pagina: dict, *,
                        f"{delta // 86400} dia(s); a página é a autoridade")}
 
 
+def feed_original_ts(registro: dict) -> int:
+    """A data que a INGESTÃO originalmente trouxe — não a data em vigor.
+
+    Depois de uma correção baseada em página, `pub_ts` passa a ser a data da
+    PÁGINA. Reler `pub_ts` como se fosse o feed faz a segunda passada comparar
+    página com página: delta 0, conflito falso-negativo, e a proveniência do
+    conflito real seria apagada (`origem: pagina → feed`,
+    `verificacao: verificado_pagina → verificado_sem_conflito`). O caso da BRF
+    (feed 2026-05-28 × página 2025-06-17, 344 dias) foi o que expôs isso.
+
+    A precedência é a mesma que `campos_de_proveniencia` já usa para gravar:
+    `feed_pub_ts` quando existe, `pub_ts` quando é a primeira passada. Registro
+    novo, sem proveniência, comporta-se exatamente como antes."""
+    try:
+        original = int(registro.get("feed_pub_ts") or 0)
+    except (TypeError, ValueError):
+        original = 0
+    if original > 0:
+        return original
+    try:
+        return int(registro.get("pub_ts") or 0)
+    except (TypeError, ValueError):
+        return 0
+
+
 def campos_de_proveniencia(registro: dict, pagina: dict, decisao: dict) -> dict:
     """Campos a gravar. O feed original é SEMPRE preservado."""
     saida = {
@@ -298,6 +323,6 @@ def verificar_registro(registro: dict, html: str, *,
     pagina = extrair_data_da_pagina(
         html, url=registro.get("canonical_url") or registro.get("url") or "",
         headline=registro.get("title") or "", agora=agora)
-    decisao = decidir_data_efetiva(int(registro.get("pub_ts") or 0), pagina,
+    decisao = decidir_data_efetiva(feed_original_ts(registro), pagina,
                                    tolerancia=tolerancia)
     return campos_de_proveniencia(registro, pagina, decisao)
