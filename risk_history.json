@@ -55694,16 +55694,79 @@
     }
    },
    "events_by_company": {
-    "Banco do Brasil": [
-     "investigacao_regulatoria"
-    ]
+    "Banco do Brasil": []
    },
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Banco do Brasil"
    ],
-   "context_companies": [],
    "captured_ts": 1787081871,
-   "cap_iso": "2026-08-18 16:37"
+   "cap_iso": "2026-08-18 16:37",
+   "event_assessments": [
+    {
+     "company": "Banco do Brasil",
+     "event_id": "investigacao_regulatoria",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Banco do Brasil",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "indireto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_PAPEL_NAO_SUJEITO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "Banco do Brasil atua como individual_subject neste texto, não como sujeito do evento",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Banco do Brasil",
+     "event_id": "investigacao_regulatoria",
+     "event_id_corrigido": "",
+     "regra": "R_PAPEL_NAO_SUJEITO",
+     "motivo": "Banco do Brasil atua como individual_subject neste texto, não como sujeito do evento",
+     "subject_company": "Banco do Brasil"
+    }
+   ],
+   "informational_events_by_company": {
+    "Banco do Brasil": [
+     {
+      "company": "Banco do Brasil",
+      "event_id": "investigacao_regulatoria",
+      "event_label": "investigacao regulatoria",
+      "subject_company": "Banco do Brasil",
+      "monitored_company": "Banco do Brasil",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_PAPEL_NAO_SUJEITO",
+      "attribution_confidence": "media",
+      "title": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre ações",
+      "url": "https://br.advfn.com/jornal/2026/08/cvm-abre-processo-contra-presidente-do-banco-do-brasil-apos-declaracao-sobre-acoes",
+      "pub_ts": 1787076105,
+      "observation": "Banco do Brasil atua como individual_subject neste texto, não como sujeito do evento",
+      "source_record_id": "https://br.advfn.com/jornal/2026/08/cvm-abre-processo-contra-presidente-do-banco-do-brasil-apos-declaracao-sobre-acoes"
+     }
+    ]
+   }
   },
   "https://www.marketwatch.com/story/too-many-people-go-bankrupt-should-medicare-provide-catastrophic-coverage-f7c653da?mod=mw_rss_topstories": {
    "title": "‘Muitas pessoas vão à falência’: O Medicare deveria fornecer cobertura catastrófica?",
@@ -55728,8 +55791,8 @@
   }
  },
  "last_run": {
-  "ts": 1787081941,
-  "iso": "18 ago 2026 · 16:39 BRT",
+  "ts": 1787090617,
+  "iso": "18 ago 2026 · 19:03 BRT",
   "status": {
    "JBS": {
     "status": "atencao",
@@ -55749,7 +55812,7 @@
    },
    "Tok&Stok": {
     "status": "critico",
-    "score": 44
+    "score": 43
    },
    "Santander Brasil": {
     "status": "atencao",
@@ -55769,7 +55832,7 @@
    },
    "Axia Energia": {
     "status": "monitorar",
-    "score": 31
+    "score": 30
    },
    "Lojas Renner": {
     "status": "atencao",
@@ -55814,10 +55877,6 @@
    "PRIO": {
     "status": "monitorar",
     "score": 19
-   },
-   "Banco do Brasil": {
-    "status": "monitorar",
-    "score": 18
    },
    "Yura": {
     "status": "atencao",
@@ -55935,6 +55994,10 @@
     "status": "monitorar",
     "score": 0
    },
+   "Banco do Brasil": {
+    "status": "monitorar",
+    "score": 0
+   },
    "Itaúsa": {
     "status": "monitorar",
     "score": 0
@@ -55990,7 +56053,7 @@
   }
  },
  "links_repaired_at": "2026-07-31T05:45:56.701137+00:00",
- "reclassify_only_applied_at": "2026-08-17T23:37:36.523570+00:00",
+ "reclassify_only_applied_at": "2026-08-18T22:03:37.495048+00:00",
  "resolved_urls": {
   "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNQjN5VFFLLTZwZkc3OFYzTk5SZFludkE1OXcxSTdRUzR1N0hkVU5MM21MajJjdFZzTlFvcHZiTk1CdG9GWGo5QmhUdWRtM3phOHhuamwxR2V5dHlqQmdEQVQycUg0ZGhhZzYtYUlpbDhTbkpaRl9mczQtRFl1anlBNVdZeVdGX1loODZKOThPcE9xM2RROGt4T3dwTHpNZEVXb2xzVmswM0pMLTR3bVVMVEg1RXRDcVlVVVdUTS1RYUYyUE5YUXVDd3RlbTk5TW1EbXJaZXpac1JFanA1dWlNbDRUN3RLWE9TdjNQQ0FISUQ0U3V0WEFhUQ?oc=5": {
    "exact": true,

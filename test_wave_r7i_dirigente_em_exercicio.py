@@ -394,12 +394,20 @@ check(list(_pc.COMPANY_ROLE) == ["SUBJECT", "BUYER", "SELLER", "TARGET",
 check("pessoa" not in _pc.PROMPT_AUDIT.lower()
       and "dirigente" not in _pc.PROMPT_AUDIT.lower(),
       "[72] o prompt do Contract V2 NAO foi alterado nesta onda")
+# A versao original desta checagem afirmava que o historico PERSISTIDO ainda
+# continha o registro antigo — era a prova de que a onda de CODIGO nao havia
+# tocado em dado. Aquele estado era transitorio de proposito: a onda seguinte,
+# autorizada, alinhou o registro pelo caminho canonico `--reclassify-only`.
+# Manter a assercao anterior seria travar o repositorio no meio do caminho, e
+# apaga-la perderia cobertura. Ela vira, entao, a assercao mais forte: as TRES
+# autoridades concordam na pontuabilidade.
 _hist_bb = [r for u, r in _H["articles"].items()
             if sh.id_artigo(r.get("url") or u, r.get("title") or "") == BB_ID]
-check(_hist_bb and (_hist_bb[0].get("events_by_company") or {}).get(
-          "Banco do Brasil") == ["investigacao_regulatoria"],
-      "[73] o HISTORICO PERSISTIDO segue com o registro antigo — a onda muda "
-      "codigo, nao dado (alinhamento de producao e onda separada)")
+check(_hist_bb, "[73a] o artigo permanece no historico — corrigir atribuicao "
+                "nao e apagar historia")
+check(_hist_bb and not rd.event_ids_for(_hist_bb[0], "Banco do Brasil"),
+      "[73b] e o PERSISTIDO nao concede mais autoridade de score ao BB: "
+      "verdade humana == codigo atual == producao")
 check("R_PAPEL_NAO_SUJEITO" in io.open("reliability_taxonomy_inventory.py",
                                        encoding="utf-8").read(),
       "[74] o ID de regra continua registrado no inventario de taxonomia")
