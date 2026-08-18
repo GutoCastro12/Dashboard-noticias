@@ -12,6 +12,187 @@
   "store_version": "pubdate.audit.store.v1"
  },
  "articles": {
+  "061eb3b6f37708a1986e": {
+   "article_id": "061eb3b6f37708a1986e",
+   "companies": [
+    "Banco do Brasil"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2026-08-18 15:01",
+    "feed_pub_ts": 1787076105,
+    "page_date_modified": "2026-08-18T12:01:45-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2026-08-18 18:01",
+    "page_pub_ts": 1787076105,
+    "pub_date_conflict_s": 0,
+    "pub_date_note": "divergência de 0s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2026-08-18 15:01",
+    "pub_ts": 1787076105
+   },
+   "revisions": [],
+   "source": "ADVFN",
+   "title": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre ações",
+   "url": "https://br.advfn.com/jornal/2026/08/cvm-abre-processo-contra-presidente-do-banco-do-brasil-apos-declaracao-sobre-acoes"
+  },
+  "0d5f2a1a061ae84162cc": {
+   "article_id": "0d5f2a1a061ae84162cc",
+   "companies": [
+    "Raia Drogasil"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2022-01-14 05:00",
+    "feed_pub_ts": 1642147200,
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2022-01-14 23:13",
+    "page_pub_ts": 1642201983,
+    "pub_date_conflict_s": 54783,
+    "pub_date_note": "divergência de 54783s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2022-01-14 05:00",
+    "pub_ts": 1642147200
+   },
+   "revisions": [],
+   "source": "suno.com.br",
+   "title": "Raia Drogasil (RADL3) aprova emissão de debêntures de até R$ 500 mi",
+   "url": "https://www.suno.com.br/noticias/raia-drogasil-radl3-emissao-debentures-500-mi/"
+  },
+  "0e232917632e811f69cf": {
+   "article_id": "0e232917632e811f69cf",
+   "companies": [
+    "Dasa"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2023-03-24 04:00",
+    "feed_pub_ts": 1679641200,
+    "page_date_modified": "2023-03-24T23:10:34-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2023-03-25 02:10",
+    "page_pub_ts": 1679710234,
+    "pub_date_conflict_s": 69034,
+    "pub_date_note": "divergência de 69034s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2023-03-24 04:00",
+    "pub_ts": 1679641200
+   },
+   "revisions": [],
+   "source": "CNN Brasil",
+   "title": "Dasa prepara potencial follow-on de R$ 1,5 bi; controladores comprometem-se com R$ 1 bi",
+   "url": "https://www.cnnbrasil.com.br/economia/financas/dasa-prepara-potencial-follow-on-de-r-15-bi-controladores-comprometem-se-com-r-1-bi/"
+  },
+  "114f7b685499f7149c69": {
+   "article_id": "114f7b685499f7149c69",
+   "companies": [
+    "Copel"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2025-07-04 04:00",
+    "feed_pub_ts": 1751612400,
+    "page_date_modified": "2025-07-04T18:13:42-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2025-07-04 21:13",
+    "page_pub_ts": 1751663622,
+    "pub_date_conflict_s": 51222,
+    "pub_date_note": "divergência de 51222s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2025-07-04 04:00",
+    "pub_ts": 1751612400
+   },
+   "revisions": [],
+   "source": "estadao.com.br",
+   "title": "Copel (CPLE6) aprova 10ª emissão de debêntures no valor de R$ 3 bilhões; veja data de vencimento",
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/copel-emissao-debentures-data-de-vencimento-valor-total/"
+  },
+  "13fb08532c1e98cc9375": {
+   "article_id": "13fb08532c1e98cc9375",
+   "companies": [
+    "Caixa Seguridade"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2025-03-10 04:00",
+    "feed_pub_ts": 1741590000,
+    "page_date_modified": "2025-03-11T09:31:57-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2025-03-10 12:46",
+    "page_pub_ts": 1741610770,
+    "pub_date_conflict_s": 20770,
+    "pub_date_note": "divergência de 20770s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2025-03-10 04:00",
+    "pub_ts": 1741590000
+   },
+   "revisions": [],
+   "source": "NeoFeed",
+   "title": "Na Caixa Seguridade, um follow-on \"protocolar\"",
+   "url": "https://neofeed.com.br/negocios/na-caixa-seguridade-um-follow-on-protocolar/"
+  },
+  "15a7e52d9022faee03e8": {
+   "article_id": "15a7e52d9022faee03e8",
+   "companies": [
+    "Albioma"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2022-03-14 04:00",
+    "feed_pub_ts": 1647241200,
+    "page_date_modified": "2026-05-06T05:12:35.328Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2022-03-14 10:09",
+    "page_pub_ts": 1647252540,
+    "pub_date_conflict_s": 11340,
+    "pub_date_note": "divergência de 11340s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2022-03-14 04:00",
+    "pub_ts": 1647241200
+   },
+   "revisions": [],
+   "source": "Le Revenu",
+   "title": "OPA, rumeurs : Umanis, Albioma et Casino en évidence",
+   "url": "https://www.lerevenu.com/reussir-bourse/coeur-operations/opa-rumeurs-umanis-albioma-et-casino-en-evidence/"
+  },
+  "15fab00c7987e171283e": {
+   "article_id": "15fab00c7987e171283e",
+   "companies": [
+    "Eletrobras"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2025-02-19 05:00",
+    "feed_pub_ts": 1739952000,
+    "page_date_modified": "2025-02-19T17:20:52-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2025-02-19 19:35",
+    "page_pub_ts": 1739993734,
+    "pub_date_conflict_s": 41734,
+    "pub_date_note": "divergência de 41734s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2025-02-19 05:00",
+    "pub_ts": 1739952000
+   },
+   "revisions": [],
+   "source": "TELETIME News",
+   "title": "Eletrobras recebe aval do Cade para aquisição de 51% da Eletronet",
+   "url": "https://teletime.com.br/19/02/2025/eletrobras-recebe-aval-do-cade-para-aquisicao-de-51-da-eletronet/"
+  },
   "21d8d04410e46b6127ed": {
    "article_id": "21d8d04410e46b6127ed",
    "companies": [
@@ -43,6 +224,292 @@
    "title": "Vale informa sobre Plano de Recuperação Judicial da Samarco",
    "url": "https://www.vale.com/pt/w/vale-informa-sobre-plano-de-recuperacao-judicial-da-samarco/-/categories/64919"
   },
+  "35738d27b5b7e209e6b3": {
+   "article_id": "35738d27b5b7e209e6b3",
+   "companies": [
+    "StoneCo"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2020-08-13 04:00",
+    "feed_pub_ts": 1597302000,
+    "page_date_modified": "2020-08-13 10:52:34",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2020-08-13 13:52",
+    "page_pub_ts": 1597326753,
+    "pub_date_conflict_s": 24753,
+    "pub_date_note": "divergência de 24753s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2020-08-13 04:00",
+    "pub_ts": 1597302000
+   },
+   "revisions": [],
+   "source": "Época Negócios",
+   "title": "StoneCo precifica oferta de ações a US$47,50 por papel",
+   "url": "https://epocanegocios.globo.com/Empresa/noticia/2020/08/epoca-negocios-stoneco-precifica-oferta-de-acoes-a-us4750-por-papel.html"
+  },
+  "37ba0775899db1817444": {
+   "article_id": "37ba0775899db1817444",
+   "companies": [
+    "PRIO"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2025-05-02 04:00",
+    "feed_pub_ts": 1746169200,
+    "page_date_modified": "2025-05-02T20:32:13+00:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2025-05-02 20:31",
+    "page_pub_ts": 1746217910,
+    "pub_date_conflict_s": 48710,
+    "pub_date_note": "divergência de 48710s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2025-05-02 04:00",
+    "pub_ts": 1746169200
+   },
+   "revisions": [],
+   "source": "InfoMoney",
+   "title": "PRIO (PRIO3) sobe mais de 8% com aquisição bilionária do campo de Peregrino",
+   "url": "https://www.infomoney.com.br/mercados/acoes-da-prio-sobem-mais-de-5-com-aquisicao-bilionaria-do-campo-de-peregrino/"
+  },
+  "53d735498a660fe4b088": {
+   "article_id": "53d735498a660fe4b088",
+   "companies": [
+    "Vinci Logística FII"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2021-12-08 05:00",
+    "feed_pub_ts": 1638950400,
+    "page_date_modified": "2021-12-08 10:41:03",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2021-12-08 10:41",
+    "page_pub_ts": 1638960063,
+    "pub_date_conflict_s": 9663,
+    "pub_date_note": "divergência de 9663s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2021-12-08 05:00",
+    "pub_ts": 1638950400
+   },
+   "revisions": [],
+   "source": "Fiis",
+   "title": "VILG11 divulga resultados e detalha sobre aquisição de novo ativo -",
+   "url": "https://fiis.com.br/noticias/vilg11-divulga-resultados-detalha-aquisicao-ativo/"
+  },
+  "5804f93c47fd6d44c055": {
+   "article_id": "5804f93c47fd6d44c055",
+   "companies": [
+    "Eletrobras"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2022-07-06 04:00",
+    "feed_pub_ts": 1657090800,
+    "page_date_modified": "2022-07-06T10:38:58-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2022-07-06 13:38",
+    "page_pub_ts": 1657114738,
+    "pub_date_conflict_s": 23938,
+    "pub_date_note": "divergência de 23938s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2022-07-06 04:00",
+    "pub_ts": 1657090800
+   },
+   "revisions": [],
+   "source": "estadao.com.br",
+   "title": "Eletrobras encerra follow on e 53,3% das ações ficam com fundos",
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/eletrobras-encerra-follow-on-investimentos-acoes/"
+  },
+  "6609bf1f6c1304b0edac": {
+   "article_id": "6609bf1f6c1304b0edac",
+   "companies": [
+    "LATAM Airlines"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2020-07-09 04:00",
+    "feed_pub_ts": 1594278000,
+    "page_date_modified": "2020-07-09T15:33:53+02:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2020-07-09 13:33",
+    "page_pub_ts": 1594301633,
+    "pub_date_conflict_s": 23633,
+    "pub_date_note": "divergência de 23633s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2020-07-09 04:00",
+    "pub_ts": 1594278000
+   },
+   "revisions": [],
+   "source": "EL PAÍS",
+   "title": "Latam Brasil se incorpora ao processo de falência iniciado pelo grupo nos Estados Unidos",
+   "url": "https://elpais.com/economia/2020-07-09/latam-brasil-se-incorpora-al-proceso-de-quiebra-iniciado-por-el-grupo-en-estados-unidos.html"
+  },
+  "741727b32365430dd471": {
+   "article_id": "741727b32365430dd471",
+   "companies": [
+    "Suzano"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2025-05-22 04:00",
+    "feed_pub_ts": 1747897200,
+    "page_date_modified": "2025-05-22T17:13:34-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2025-05-22 20:13",
+    "page_pub_ts": 1747944811,
+    "pub_date_conflict_s": 47611,
+    "pub_date_note": "divergência de 47611s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2025-05-22 04:00",
+    "pub_ts": 1747897200
+   },
+   "revisions": [],
+   "source": "seculodiario.com.br",
+   "title": "MPF reafirma fraude da Suzano na aquisição de terras no Sapê do Norte",
+   "url": "https://www.seculodiario.com.br/cidades/mpf-reafirma-fraude-da-suzano-na-aquisicao-de-terras-no-sape-do-norte/"
+  },
+  "743beef63b2b7ddeb557": {
+   "article_id": "743beef63b2b7ddeb557",
+   "companies": [
+    "LATAM Airlines"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2020-05-28 17:03",
+    "feed_pub_ts": 1590696230,
+    "page_date_modified": "2020-05-28T19:49:48+00:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2020-05-28 19:49",
+    "page_pub_ts": 1590695345,
+    "pub_date_conflict_s": 885,
+    "pub_date_note": "divergência de 885s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2020-05-28 17:03",
+    "pub_ts": 1590696230
+   },
+   "revisions": [],
+   "source": "Connectas",
+   "title": "A companhia aérea Latam declara falência nos Estados Unidos",
+   "url": "https://www.connectas.org/la-aerolinea-latam-se-declara-en-bancarrota-en-estados-unidos/"
+  },
+  "7d3526c4e7377690134d": {
+   "article_id": "7d3526c4e7377690134d",
+   "companies": [
+    "Ambev"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2024-08-28 04:00",
+    "feed_pub_ts": 1724828400,
+    "page_date_modified": "2024-08-30T11:10:57-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2024-08-28 15:18",
+    "page_pub_ts": 1724858296,
+    "pub_date_conflict_s": 29896,
+    "pub_date_note": "divergência de 29896s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2024-08-28 04:00",
+    "pub_ts": 1724828400
+   },
+   "revisions": [],
+   "source": "NeoFeed",
+   "title": "Troca de CEO pega Ambev em momento decisivo",
+   "url": "https://neofeed.com.br/negocios/troca-de-ceo-pega-ambev-em-momento-decisivo/"
+  },
+  "838fd060b3c5a982e0f2": {
+   "article_id": "838fd060b3c5a982e0f2",
+   "companies": [
+    "Suzano"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2020-10-07 04:00",
+    "feed_pub_ts": 1602054000,
+    "page_date_modified": "2020-10-07T11:58:43+00:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2020-10-07 10:51",
+    "page_pub_ts": 1602067898,
+    "pub_date_conflict_s": 13898,
+    "pub_date_note": "divergência de 13898s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2020-10-07 04:00",
+    "pub_ts": 1602054000
+   },
+   "revisions": [],
+   "source": "suno.com.br",
+   "title": "Suzano (SUZB3) conclui follow-on de R$ 6,9 bilhões",
+   "url": "https://www.suno.com.br/noticias/suzano-suzb3-follow-on-r-6-9-bilhoes/"
+  },
+  "83e2092bfffbe14eb2d5": {
+   "article_id": "83e2092bfffbe14eb2d5",
+   "companies": [
+    "StoneCo"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2021-06-23 04:00",
+    "feed_pub_ts": 1624431600,
+    "page_date_modified": "2021-06-23T09:40:52-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2020-08-14 10:56",
+    "page_pub_ts": 1597402594,
+    "pub_date_conflict_s": 27029006,
+    "pub_date_note": "FEED_PAGE_DATE_CONFLICT: feed e página divergem 312 dia(s); a página é a autoridade",
+    "pub_date_origin": "pagina",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_pagina",
+    "pub_iso": "2020-08-14 07:56",
+    "pub_ts": 1597402594
+   },
+   "revisions": [],
+   "source": "CNN Brasil",
+   "title": "CVM abre duas investigações envolvendo Linx após anúncio de fusão com StoneCo",
+   "url": "https://www.cnnbrasil.com.br/economia/macroeconomia/cvm-abre-duas-investigacoes-envolvendo-linx-apos-anuncio-de-fusao-com-stoneco/"
+  },
+  "8d9414bcdc871283449d": {
+   "article_id": "8d9414bcdc871283449d",
+   "companies": [
+    "Dasa"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2021-07-01 04:00",
+    "feed_pub_ts": 1625122800,
+    "page_date_modified": "2021-07-01T08:47:57-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2021-07-01 11:47",
+    "page_pub_ts": 1625140077,
+    "pub_date_conflict_s": 17277,
+    "pub_date_note": "divergência de 17277s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2021-07-01 04:00",
+    "pub_ts": 1625122800
+   },
+   "revisions": [],
+   "source": "Brazil Journal",
+   "title": "Dasa faz aquisição de R$ 750 milhões e cresce na oncologia",
+   "url": "https://braziljournal.com/dasa-faz-aquisicao-de-r-750-milhoes-e-cresce-na-oncologia/"
+  },
   "972a2d5f184545235f9d": {
    "article_id": "972a2d5f184545235f9d",
    "companies": [
@@ -73,6 +540,164 @@
    "title": "O que fez a CVM adiar a assembleia de fusão entre Marfrig e BRF?",
    "url": "https://www.estadao.com.br/web-stories/einvestidor/o-que-fez-cvm-adiar-assembleia-fusao-marfrig-e-brf/"
   },
+  "9c39a5cffa2956ad69b6": {
+   "article_id": "9c39a5cffa2956ad69b6",
+   "companies": [
+    "Baker Hughes",
+    "Halliburton"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2016-04-06 04:00",
+    "feed_pub_ts": 1459926000,
+    "page_date_modified": "2016-05-10T17:11:44-05:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2016-04-06 16:06",
+    "page_pub_ts": 1459958788,
+    "pub_date_conflict_s": 32788,
+    "pub_date_note": "divergência de 32788s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2016-04-06 04:00",
+    "pub_ts": 1459926000
+   },
+   "revisions": [],
+   "source": "Houston Public Media",
+   "title": "Departamento de Justiça processa a Halliburton para impedir aquisição da Baker Hughes",
+   "url": "https://www.houstonpublicmedia.org/articles/news/2016/04/06/144232/justice-department-sues-halliburton-from-acquiring-baker-hughes/"
+  },
+  "9cd257b8f777b6cfb835": {
+   "article_id": "9cd257b8f777b6cfb835",
+   "companies": [
+    "YPF"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2025-07-04 04:00",
+    "feed_pub_ts": 1751612400,
+    "page_date_modified": "2025-07-04T14:23:47.000Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2025-07-04 14:23",
+    "page_pub_ts": 1751639027,
+    "pub_date_conflict_s": 26627,
+    "pub_date_note": "divergência de 26627s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2025-07-04 04:00",
+    "pub_ts": 1751612400
+   },
+   "revisions": [],
+   "source": "Clarin.com",
+   "title": "Novos credores reivindicam ações da YPF para cobrar dívidas em default: cresce a pressão judicial sobre a Argentina",
+   "url": "https://www.clarin.com/economia/nuevos-acreedores-reclaman-acciones-ypf-cobrar-deudas-default-crece-presion-judicial-argentina_0_qTtMHGSoys.html"
+  },
+  "9f3ac732a69e4112f6ca": {
+   "article_id": "9f3ac732a69e4112f6ca",
+   "companies": [
+    "CIBanco"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2025-06-27 04:00",
+    "feed_pub_ts": 1751007600,
+    "page_date_modified": "2025-06-27T08:35:14-0600",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2025-06-27 14:35",
+    "page_pub_ts": 1751034914,
+    "pub_date_conflict_s": 27314,
+    "pub_date_note": "divergência de 27314s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2025-06-27 04:00",
+    "pub_ts": 1751007600
+   },
+   "revisions": [],
+   "source": "El Informador",
+   "title": "O que aconteceria se o CIBanco e o Intercam declarassem falência?",
+   "url": "https://www.informador.mx/economia/Lavado-de-dinero-Que-pasaria-si-CIBanco-e-Intercam-se-declaran-en-quiebra-20250627-0061.html"
+  },
+  "a15d0afabf5b83617c0a": {
+   "article_id": "a15d0afabf5b83617c0a",
+   "companies": [
+    "LATAM Airlines"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2026-02-28 05:00",
+    "feed_pub_ts": 1772265600,
+    "page_date_modified": "2026-02-28T05:00:01.419Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2026-02-28 05:00",
+    "page_pub_ts": 1772254800,
+    "pub_date_conflict_s": 10800,
+    "pub_date_note": "divergência de 10800s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2026-02-28 05:00",
+    "pub_ts": 1772265600
+   },
+   "revisions": [],
+   "source": "Bloomberg Línea",
+   "title": "Após sair da recuperação judicial, Latam Airlines sobe 76% e lidera entre seus rivais",
+   "url": "https://www.bloomberglinea.com/negocios/tras-salir-de-la-quiebra-latam-airlines-repunta-76-y-lidera-entre-sus-rivales/"
+  },
+  "ac3f2705257e7c48cfe8": {
+   "article_id": "ac3f2705257e7c48cfe8",
+   "companies": [
+    "PRIO",
+    "Dommo Energia"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2022-10-03 04:00",
+    "feed_pub_ts": 1664780400,
+    "page_date_modified": "2022-10-10T18:23:01+00:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2022-10-03 14:48",
+    "page_pub_ts": 1664808487,
+    "pub_date_conflict_s": 28087,
+    "pub_date_note": "divergência de 28087s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2022-10-03 04:00",
+    "pub_ts": 1664780400
+   },
+   "revisions": [],
+   "source": "Seu Dinheiro",
+   "title": "PetroRio (PRIO3) caminha na aquisição da Dommo (DMMO3), de Eike Batista, e anuncia recompra de ações",
+   "url": "https://www.seudinheiro.com/2022/empresas/petrorio-prio3-aquisicao-dommo-dmmo3-recompra-de-acoes-miql/"
+  },
+  "b6532a7b091bac73848f": {
+   "article_id": "b6532a7b091bac73848f",
+   "companies": [
+    "Dasa"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2020-12-03 05:00",
+    "feed_pub_ts": 1606982400,
+    "page_date_modified": "2020-12-03T20:49:32-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2020-12-03 23:49",
+    "page_pub_ts": 1607039372,
+    "pub_date_conflict_s": 56972,
+    "pub_date_note": "divergência de 56972s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2020-12-03 05:00",
+    "pub_ts": 1606982400
+   },
+   "revisions": [],
+   "source": "Brazil Journal",
+   "title": "BREAKING: Dasa faz aquisição de R$ 1,77 bi e não descarta IPO",
+   "url": "https://braziljournal.com/breaking-dasa-faz-aquisicao-de-r-177-bi-e-nao-descarta-ipo/"
+  },
   "be7c8a47831d5b8a337f": {
    "article_id": "be7c8a47831d5b8a337f",
    "companies": [
@@ -102,6 +727,188 @@
    "source": "Fonte de Teste",
    "title": "Titulo de teste",
    "url": "https://exemplo.invalido/artigo"
+  },
+  "c6e2220e58fa3605c77a": {
+   "article_id": "c6e2220e58fa3605c77a",
+   "companies": [
+    "Embraer"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2026-08-12 04:00",
+    "feed_pub_ts": 1786518000,
+    "page_date_modified": "2026-08-12 19:09:45-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2026-07-30 20:00",
+    "page_pub_ts": 1785441642,
+    "pub_date_conflict_s": 1076358,
+    "pub_date_note": "FEED_PAGE_DATE_CONFLICT: feed e página divergem 12 dia(s); a página é a autoridade",
+    "pub_date_origin": "pagina",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_pagina",
+    "pub_iso": "2026-07-30 17:00",
+    "pub_ts": 1785441642
+   },
+   "revisions": [],
+   "source": "Revista Forca Aérea",
+   "title": "Grécia investirá 600 milhões de euros na aquisição dos três Embraer KC-390 Millennium",
+   "url": "https://forcaaerea.com.br/grecia-investira-600-milhoes-de-euros-na-aquisicao-dos-tres-embraer-kc-390-millennium/"
+  },
+  "cf016fb1269219c4c160": {
+   "article_id": "cf016fb1269219c4c160",
+   "companies": [
+    "PRIO"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2024-10-08 04:00",
+    "feed_pub_ts": 1728370800,
+    "page_date_modified": "2026-03-28T03:02:30+00:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2024-10-08 21:28",
+    "page_pub_ts": 1728422936,
+    "pub_date_conflict_s": 52136,
+    "pub_date_note": "divergência de 52136s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2024-10-08 04:00",
+    "pub_ts": 1728370800
+   },
+   "revisions": [],
+   "source": "Agência eixos",
+   "title": "Cade dá aval para aquisição de 40% do campo de Peregrino pela Prio",
+   "url": "https://eixos.com.br/empresas/cade-da-aval-para-aquisicao-de-40-do-campo-de-peregrino-pela-prio/"
+  },
+  "dbac821240a3bf50ca12": {
+   "article_id": "dbac821240a3bf50ca12",
+   "companies": [
+    "Grupo Nutresa"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2022-11-24 05:00",
+    "feed_pub_ts": 1669276800,
+    "page_date_modified": "2022-11-24T15:57:51-05:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2022-11-24 18:48",
+    "page_pub_ts": 1669315716,
+    "pub_date_conflict_s": 38916,
+    "pub_date_note": "divergência de 38916s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2022-11-24 05:00",
+    "pub_ts": 1669276800
+   },
+   "revisions": [],
+   "source": "Caracol Radio",
+   "title": "Fiscalía investigará presunta corrupción en demandas contra OPA de Grupo Nutresa",
+   "url": "https://caracol.com.co/2022/11/24/fiscalia-investigara-presunta-corrupcion-en-demandas-contra-opa-de-grupo-nutresa/"
+  },
+  "dc8af7d56cf2f4a0d8d6": {
+   "article_id": "dc8af7d56cf2f4a0d8d6",
+   "companies": [
+    "Dasa"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2025-07-01 04:00",
+    "feed_pub_ts": 1751353200,
+    "page_date_modified": "2025-07-01T09:20:33-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2025-07-01 12:20",
+    "page_pub_ts": 1751372433,
+    "pub_date_conflict_s": 19233,
+    "pub_date_note": "divergência de 19233s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2025-07-01 04:00",
+    "pub_ts": 1751353200
+   },
+   "revisions": [],
+   "source": "InvestNews",
+   "title": "Dasa amanhece com novo CEO: Rafael Lucchesi assume após renúncia de Lício Cintra",
+   "url": "https://investnews.com.br/negocios/dasa-amanhece-com-novo-ceo-rafael-lucchesi-assume-apos-renuncia-de-licio-cintra/"
+  },
+  "de1cd829c4a0955b2a55": {
+   "article_id": "de1cd829c4a0955b2a55",
+   "companies": [
+    "Energisa"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2024-06-20 04:00",
+    "feed_pub_ts": 1718866800,
+    "page_date_modified": "2026-03-27T22:02:00+00:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2024-06-20 21:12",
+    "page_pub_ts": 1718917967,
+    "pub_date_conflict_s": 51167,
+    "pub_date_note": "divergência de 51167s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2024-06-20 04:00",
+    "pub_ts": 1718866800
+   },
+   "revisions": [],
+   "source": "Agência eixos",
+   "title": "Cade aprova aquisição de distribuidoras de gás do Nordeste pela Energisa",
+   "url": "https://eixos.com.br/empresas/cade-aprova-aquisicao-de-distribuidoras-de-gas-do-nordeste-pela-energisa/"
+  },
+  "df041c83dd36f6dacba8": {
+   "article_id": "df041c83dd36f6dacba8",
+   "companies": [
+    "LATAM Airlines"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2025-02-02 05:00",
+    "feed_pub_ts": 1738483200,
+    "page_date_modified": "2025-02-03T11:17:55-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2025-02-03 00:16",
+    "page_pub_ts": 1738541817,
+    "pub_date_conflict_s": 58617,
+    "pub_date_note": "divergência de 58617s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2025-02-02 05:00",
+    "pub_ts": 1738483200
+   },
+   "revisions": [],
+   "source": "Ex-ante",
+   "title": "Perfil: A ascensão de Roberto Alvo, o executivo que resgatou a LATAM da recuperação judicial e a levou a lucros históricos",
+   "url": "https://www.ex-ante.cl/economia/perfil-el-fulminante-ascenso-de-roberto-alvo-el-ejecutivo-que-rescato-a-latam-de-la-quiebra-y-la-llevo-a-ganancias-historicas/"
+  },
+  "f5051635b78b29795cb0": {
+   "article_id": "f5051635b78b29795cb0",
+   "companies": [
+    "StoneCo"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2022-11-03 04:00",
+    "feed_pub_ts": 1667458800,
+    "page_date_modified": "2022-11-03T21:23:13+00:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2022-11-03 21:23",
+    "page_pub_ts": 1667510592,
+    "pub_date_conflict_s": 51792,
+    "pub_date_note": "divergência de 51792s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2022-11-03 04:00",
+    "pub_ts": 1667458800
+   },
+   "revisions": [],
+   "source": "Finsiders Brasil",
+   "title": "Pedro Zinner será o novo CEO da StoneCo, em substituição a Thiago Piau, que vai para o Conselho",
+   "url": "https://finsidersbrasil.com.br/gente-em-fintechs/pedro-zinner-sera-o-novo-ceo-da-stoneco-em-substituicao-a-thiago-piau-que-vai-para-o-conselho/"
   }
  }
 }

@@ -5,6 +5,240 @@
   "shadow_version": "sem.v2.shadow.v1"
  },
  "observacoes": {
+  "061eb3b6f37708a1986e|Banco do Brasil|investigacao_regulatoria|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "061eb3b6f37708a1986e",
+   "article_pub_iso": "2026-08-18 15:01",
+   "candidate_event": "investigacao_regulatoria",
+   "case_id": "061eb3b6f37708a1986e|Banco do Brasil|investigacao_regulatoria|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "Banco do Brasil",
+   "contract_version": "v2",
+   "created_at": "2026-08-18T19:39:45Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-18 16:37",
+    "contexto": false,
+    "event_id": "investigacao_regulatoria",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "CVM abre processo contra presidente do Banco do Brasil",
+      "event_asserted": "ASSERTED",
+      "event_id": "investigacao_regulatoria",
+      "event_quote": "CVM abre processo contra presidente do Banco do Brasil",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "CVM abre processo",
+      "phase": "INVESTIGATION",
+      "phase_quote": "abre processo",
+      "related_entity": "CVM",
+      "relation": "investigador",
+      "relation_quote": "CVM abre processo contra",
+      "role_quote": "Banco do Brasil",
+      "subject": "Banco do Brasil",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Banco do Brasil",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-18 16:37",
+   "human_review": null,
+   "latencia_s": 4.55,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "CVM abre processo contra presidente do Banco do Brasil",
+      "event_asserted": "ASSERTED",
+      "event_id": "investigacao_regulatoria",
+      "event_quote": "CVM abre processo contra presidente do Banco do Brasil",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "CVM abre processo",
+      "phase": "INVESTIGATION",
+      "phase_quote": "abre processo",
+      "related_entity": "CVM",
+      "relation": "investigador",
+      "relation_quote": "CVM abre processo contra",
+      "role_quote": "Banco do Brasil",
+      "subject": "Banco do Brasil",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Banco do Brasil",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "ADVFN",
+   "title": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre ações",
+   "url": "https://br.advfn.com/jornal/2026/08/cvm-abre-processo-contra-presidente-do-banco-do-brasil-apos-declaracao-sobre-acoes",
+   "usage": {
+    "candidates_token_count": 286,
+    "prompt_token_count": 1318,
+    "total_token_count": 1604
+   }
+  },
+  "061eb3b6f37708a1986e|Banco do Brasil|investigacao_regulatoria|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "061eb3b6f37708a1986e",
+   "article_pub_iso": "2026-08-18 15:01",
+   "candidate_event": "investigacao_regulatoria",
+   "case_id": "061eb3b6f37708a1986e|Banco do Brasil|investigacao_regulatoria|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "Banco do Brasil",
+   "contract_version": "v2",
+   "created_at": "2026-08-18T19:39:54Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-18 16:37",
+    "contexto": false,
+    "event_id": "investigacao_regulatoria",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre ações",
+      "event_asserted": "ASSERTED",
+      "event_id": "investigacao_regulatoria",
+      "event_quote": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre ações",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre ações",
+      "phase": "INVESTIGATION",
+      "phase_quote": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre ações",
+      "related_entity": "CVM",
+      "relation": "investigador",
+      "relation_quote": "CVM abre processo contra",
+      "role_quote": "presidente do Banco do Brasil",
+      "subject": "Banco do Brasil",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Banco do Brasil",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-18 16:37",
+   "human_review": null,
+   "latencia_s": 1.51,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre ações",
+      "event_asserted": "ASSERTED",
+      "event_id": "investigacao_regulatoria",
+      "event_quote": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre ações",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre ações",
+      "phase": "INVESTIGATION",
+      "phase_quote": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre ações",
+      "related_entity": "CVM",
+      "relation": "investigador",
+      "relation_quote": "CVM abre processo contra",
+      "role_quote": "presidente do Banco do Brasil",
+      "subject": "Banco do Brasil",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Banco do Brasil",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "ADVFN",
+   "title": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre ações",
+   "url": "https://br.advfn.com/jornal/2026/08/cvm-abre-processo-contra-presidente-do-banco-do-brasil-apos-declaracao-sobre-acoes",
+   "usage": {
+    "candidates_token_count": 266,
+    "prompt_token_count": 1318,
+    "total_token_count": 1584
+   }
+  },
   "10e297f95c5954630150|Tok&Stok|recuperacao_judicial|v2|r7ba.p2|gemini-3.1-flash-lite": {
    "actual_model": "gemini-3.1-flash-lite",
    "article_id": "10e297f95c5954630150",

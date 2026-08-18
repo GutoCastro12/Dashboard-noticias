@@ -2843,9 +2843,38 @@
     "policy_version": "r5b.1"
    },
    "first_seen_run": 134
+  },
+  "https://br.advfn.com/jornal/2026/08/cvm-abre-processo-contra-presidente-do-banco-do-brasil-apos-declaracao-sobre-acoes": {
+   "attempted_at": 1787081942,
+   "fragments": [],
+   "extractor_version": "r6b.1",
+   "policy_version": "r5b.1",
+   "schema_version": "1.1",
+   "tier0_sufficient": false,
+   "page_fetch": true,
+   "robots_status": "robots_lido",
+   "status": "BLOCKED_BY_ROBOTS",
+   "canonical_url": "https://br.advfn.com/jornal/2026/08/cvm-abre-processo-contra-presidente-do-banco-do-brasil-apos-declaracao-sobre-acoes",
+   "title": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre ações",
+   "eligibility": {
+    "eventos": [
+     "investigacao_regulatoria"
+    ],
+    "severidade_max": "alto",
+    "tokens_novos": 2,
+    "input_marginal": true,
+    "marcas_ambiguidade": [
+     "termo_processual"
+    ],
+    "familia_sensivel": true,
+    "multiplas_empresas": false,
+    "policy": "E",
+    "policy_version": "r5b.1"
+   },
+   "first_seen_run": 137
   }
  },
- "gerado_em": 1787071882,
+ "gerado_em": 1787081943,
  "first_seen_run": {
   "https://www.cnbc.com/2025/07/11/capital-one-has-more-room-to-run-after-its-acquisition-jim-cramer-says.html": 104,
   "https://www.infomoney.com.br/mercados/telefonica-assume-100-da-fibrasil-e-reforca-estrategia-de-infraestrutura-propria/": 104,
@@ -3617,7 +3646,11 @@
   "https://news.google.com/rss/articles/CBMiowFBVV95cUxPSTlPZmZZemZvaEk4M01TTFBhMXBmeWFCajdtWS1ZSFJmMmh6WVFZUXNuTzJQM2Vra05zNXhTTEZXdHFPcWRSTVRSMTRtZGpwbTA4S3AtcHFzcU9XUFcxNlItMURPcUlFUlRyc0lxV3NtNkc5Tno4OGJHakpnbHlydWRndmM3TlNPTWhKVXdPZ0RZY1NVSE4xX1JkbThGdmdjTU9R?oc=5": 136,
   "https://news.google.com/rss/articles/CBMid0FVX3lxTE8xS1g3em83NjVKSGhfa3BuekhHbV9XbTY5Ml9CZDk2ODNYMkt3Ym5HR1h2MVZlMV9WdTVXckY5UjAxOWVJbzlfNFFzR2QwRjZHSzJRbk1SYks5b1Q3eDlGUndmb2xQeG1iUlBDTEl1WEc3OExfSG5R?oc=5": 136,
   "https://news.google.com/rss/articles/CBMimgFBVV95cUxQWGZOWFM5cXRwdV9QckVORmRCSTZHMEhWQUFnZ2w5S2RXZVNQOTdnNFJZdmdNN3BLdHBOcnNubEJuNm9iNE42LTJrU3MyWjJYREE0amdOTnppcTBzOXliRkI0UXdDbVdUZUFNcU5VMVR5TGk3bHdJUHJ4UWNkN0JSbjhvNkNOdndSQkZ4VTRWbElubFN1QzlOOUdB?oc=5": 136,
-  "https://news.google.com/rss/articles/CBMiigFBVV95cUxOYTZsN3o1N3R3Tm9tUU9VNlpSMDN3YkpHVGhjRzZrdlpYZ2x0QXplYlY2UUw2akFGSHV4TzRiZU5la05haVR2UV9yWm52TXJjWlNGNzhkUTVMS01EQUgzSGplXzc0eU9EZnpEb25YWUkyaGVZU2JNWWhmSTU0UlhUWk1sSDRnZmNEUkE?oc=5": 136
+  "https://news.google.com/rss/articles/CBMiigFBVV95cUxOYTZsN3o1N3R3Tm9tUU9VNlpSMDN3YkpHVGhjRzZrdlpYZ2x0QXplYlY2UUw2akFGSHV4TzRiZU5la05haVR2UV9yWm52TXJjWlNGNzhkUTVMS01EQUgzSGplXzc0eU9EZnpEb25YWUkyaGVZU2JNWWhmSTU0UlhUWk1sSDRnZmNEUkE?oc=5": 136,
+  "https://news.google.com/rss/articles/CBMiygFBVV95cUxOY3Voc1FNQ1dscUtHQkJkTFYzRlo0SzhGSXkzdzFjTTBuLVpMbkUwYWR2TjA4cWxmUERaTUZaazhobXdDYVJJYjI5M0djaVhWS0xmS2YtdnB1Y2pJeXcyZGYzQkRHakl6YnVCakFpUmpJSEtPM0pNa3BnV3BMaHd2NlJIb3p0SWR6dF9pNVgwNkx3WUtzZHVtOS10MVZKRDhOTEZicm9ybVdfaWlWSkx2ZmFMMTBqYWtJUjdlNDlxdlEwRlZoU1JHWGpB?oc=5": 137,
+  "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPSDFTeTY2b0hLekdDNmVyQ3lhazFYY1Z3Q0hJSmM2R2M4UEYxemRhaThtV2RYbGZLbC1ieUtoLUJBaFJndzhjY2ZpanUyVHNtdm1HTlV0VGtpa1N1VVFOTFREeExTMXh6YXEteE1oajVGMVl1bHpjRVhEU1NpcUx4ME5TZ0M3S3g3RFdibDZPcl9BeTdqbFZ0NVg2TzJmbl91ZlRvV3JycFpTdG4tUVBRbHJPQk1saDFYSk9zcDVkUUw2RU9BNzgwWjZWVU9HaHktdzhvYzRWTUE1Mk9VYzJQUElGVGhXMFVhb3JDR09LUDJqcDRfZ1kzZ9IBhwJBVV95cUxNTkNFWmQ1LTAxX1NlVURLaEJNMTEtNk1SLW95c0UwLUxsdVFLT3NjcFp4R1ZfUzQ2LWdVYUgxbXVHdnU3Y1dLNGRMaXdMODhmcG1VdVlkU21Rbk1kdm0yRWFGZWkxRS1yYmFHR08tNXB5WVBScVhROWVBMzdnWW9wX1JsTmluQmJVN2E3aTRFR3pBWkQ4cGdnazdsR3pQeFdEbzFzcmpKUlAxUjFMajZZS2NDUVZZekZ5eG8wQ0h2azY1ZFNmT3cyZ2lER0VxSl9tdFJNWlpZODVoNUZxOHRPVEh4cE0yNnZnT29OM0FNNElwbUYzQmJ4U3lTcG9FeFo1cUFRTVdmcw?oc=5": 137,
+  "https://br.advfn.com/jornal/2026/08/cvm-abre-processo-contra-presidente-do-banco-do-brasil-apos-declaracao-sobre-acoes": 137,
+  "https://www.marketwatch.com/story/too-many-people-go-bankrupt-should-medicare-provide-catastrophic-coverage-f7c653da?mod=mw_rss_topstories": 137
  },
  "seeded_at_run": null,
  "r6f_publicado_no_run": 108
