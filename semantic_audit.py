@@ -1259,11 +1259,26 @@ _PAPEL_NAO_SUJEITO = {
     # nunca basta: exige ATO FORMAL + preposição de ALVO + CARGO + vínculo.
     # Escopo linguístico: PT apenas — única evidência real observada (B8a,
     # N=1). EN/ES ficam para quando houver caso.
+    #
+    # 4I.2 R7i — DIRIGENTE EM EXERCÍCIO. O `ex-` era OBRIGATÓRIO, e por isso
+    # "CVM abre processo contra presidente do Banco do Brasil" caía no default
+    # `direto` e pontuava para o banco (caso #11 do holdout, adjudicado por
+    # humano como NÃO pontuável). O prefixo nunca foi a invariante semântica:
+    # era o formato léxico do único exemplo que criou a regra (B8a, N=1) — o
+    # caso-semente da Vale é estruturalmente idêntico ao do BB exceto por ele.
+    #
+    # A invariante real é PESSOA COMO ALVO FORMAL + empresa só como afiliação,
+    # e ela não distingue ocupante atual de ex-ocupante. Por isso o prefixo
+    # passa a ser OPCIONAL. Tornar o prefixo opcional E PARAR AÍ foi medido e
+    # REPROVADO: suprimia "ações do próprio emissor", "em nome da companhia" e
+    # até "a companhia também é investigada" — 4 falsos negativos de controle.
+    # A generalização só é segura acompanhada da promoção por evidência
+    # corporativa positiva; ver `_EVIDENCIA_CORPORATIVA_PROMOVE`.
     "individual_subject": [
         r"(?:processo|procedimento|inqu[ée]rito|investiga\w*|apura\w*|a[çc][ãa]o)"
         r"(?:\s+\w+){{0,2}}\s+contra\s+"        # ato formal + preposição de alvo
         r"(?:[^,]{{0,40}},\s*)?"                # nome próprio em aposto, opcional
-        r"(?:o\s+|a\s+)?ex[- ]?"                # cargo de EX-ocupante
+        r"(?:o\s+|a\s+)?(?:ex[- ]?)?"           # ocupante ATUAL ou EX-ocupante
         r"(?:presidente|diretor\w*|conselheir[oa]|executiv[oa]|ceo|chairman|"
         r"gerente|administrador|s[óo]ci[oa]|superintendente)"
         r"(?:\s+\w+){{0,3}}\s+d[aeo]\s+{m}\b",  # vínculo: "… da <monitorada>"
@@ -1279,6 +1294,76 @@ _ALVO_E_A_PROPRIA_EMPRESA = [
     r"{m}\s+(?:e\s+(?:seus?|suas?)\s+\w+\s+)?(?:s[ãa]o|[ée])\s+(?:alvo|investigad)",
     r"{m}\s+(?:e\s+\w+){{0,3}}\s+s[ãa]o\s+alvo",
 ]
+
+# ── 4I.2 R7i: EVIDÊNCIA CORPORATIVA POSITIVA ────────────────────────────────
+# Contrapeso do `individual_subject` generalizado. A guarda de alvo-pessoa é
+# uma PRESUNÇÃO, não um veredito: quando o texto liga LITERALMENTE a própria
+# companhia ao fato, a presunção cai e o evento volta a ser dela.
+#
+# É evidência POSITIVA de propósito. A alternativa — uma exclusão ampla que
+# tentasse enumerar tudo que "não é evento da empresa" — foi o desenho que
+# nesta base já produziu 142 falsos positivos numa iteração anterior.
+#
+# Cada padrão exige a monitorada DENTRO da construção; nenhum promove por mera
+# coocorrência no texto.
+_EVIDENCIA_CORPORATIVA_PROMOVE = [
+    # (a) valores mobiliários do PRÓPRIO emissor como OBJETO do ato. Exige a
+    # construção de objeto ("ações da X"): é isto que separa o objeto real de
+    # um ticker solto entre parênteses, que nunca promove sozinho (§20 da
+    # auditoria — no corpus, todo ticker aparece como aposto identificador).
+    r"(?:a[çc][õo]es|papeis|pap[ée]is|t[íi]tulos|deb[êe]ntures|"
+    r"valores\s+mobili[áa]rios)\s+(?:d[aeo]s?\s+)(?:a\s+|o\s+)?{m}\b",
+    # (b) capacidade institucional DECLARADA — não o mero título do cargo.
+    r"em\s+nome\s+d[aeo]s?\s+(?:a\s+|o\s+)?{m}\b",
+    r"na\s+qualidade\s+de\s+(?:\w+\s+){{1,3}}d[aeo]s?\s+(?:a\s+|o\s+)?{m}\b",
+    # (c) ato ou divulgação corporativa oficial atado à monitorada.
+    r"(?:fato\s+relevante|comunicado|teleconfer[êe]ncia|balan[çc]o|"
+    r"demonstra[çc][õo]es(?:\s+financeiras)?)\s+d[aeo]s?\s+(?:a\s+|o\s+)?{m}\b",
+    # (d) responsabilidade corporativa afirmada.
+    r"responsabilidade\s+d[aeo]s?\s+(?:a\s+|o\s+)?{m}\b",
+    # (e) co-alvo explícito: "o Banco do Brasil e seu presidente".
+    r"{m}\s+e\s+(?:seus?|suas?)\s+\w+",
+]
+
+# Sintagma de afiliação: "<[ex-]cargo> d[aeo] <monitorada>". Serve para
+# perguntar se a monitorada aparece SÓ dentro dele — menção independente fora
+# do aposto é evidência forte de que a companhia é parte, não crachá.
+_SPAN_AFILIACAO_CARGO = (
+    r"(?:ex[-\s]?|former\s+|antigo\s+)?"
+    r"(?:presidente|diretor\w*|conselheir[oa]|executiv[oa]s?|ceo|chairman|"
+    r"gerente|administrador\w*|s[óo]ci[oa]|superintendente|cfo|coo)"
+    r"(?:\s+\w+){{0,3}}?\s+d[aeo]s?\s+(?:a\s+|o\s+)?{m}\b")
+
+# Ticker: maiúsculas seguidas de dígito, sem espaço (BBAS3, SANB11, VALE3).
+# Estrutural, não lista de empresas. Fica FORA da checagem de menção
+# independente porque "(BBAS3)" é aposto identificador da matéria, não prova
+# de que o emissor é alvo do ato — promover por ele reintroduziria, por outra
+# porta, a atribuição por mera presença do nome.
+_RE_TICKER = re.compile(r"^[A-Z]{2,6}\d{1,2}$")
+
+
+def _e_ticker(alias: str) -> bool:
+    return bool(_RE_TICKER.fullmatch((alias or "").strip()))
+
+
+def _mencao_independente_da_afiliacao(t: str, alias_alt: str,
+                                      nome_alt: str) -> str:
+    """A monitorada aparece FORA de todo sintagma de afiliação de cargo?
+
+    `alias_alt` delimita os spans (inclui ticker, para que "(BBAS3)" colado ao
+    cargo não conte como menção livre); `nome_alt` é quem pode PROVAR a menção
+    independente — só formas nominais, nunca ticker sozinho."""
+    if not nome_alt:
+        return ""
+    spans = [m.span() for m in
+             re.finditer(_SPAN_AFILIACAO_CARGO.format(m=alias_alt), t, re.I)]
+    # Fronteira de palavra OBRIGATÓRIA: sem ela "Vale" casa DENTRO de "VALE3"
+    # e o ticker entre parênteses vira "menção independente", promovendo o
+    # evento de volta — exatamente o que a política de ticker proíbe.
+    for m in re.finditer(r"\b" + nome_alt + r"\b", t, re.I):
+        if not any(a <= m.start() and m.end() <= b for a, b in spans):
+            return t[max(0, m.start() - 30):m.end() + 30].strip()
+    return ""
 
 # Investigação dirigida à PRÓPRIA monitorada. Tem PRECEDÊNCIA sobre o papel
 # de analista (§6): sujeito formal explícito vence papel lateral, mesmo que
@@ -2421,10 +2506,25 @@ def detect_papel_nao_sujeito(text: str, monitored: str,
             continue
         # 4I.2 Wave B8 §9: mesma precedência para o alvo individual — se a
         # companhia também é alvo formal, o evento continua dela.
-        if papel == "individual_subject" and any(
-                re.search(p.format(m=alt), t, re.I)
-                for p in _INVESTIGACAO_PROPRIA + _ALVO_E_A_PROPRIA_EMPRESA):
-            continue
+        # 4I.2 R7i: com o `ex-` opcional, a guarda passa a alcançar dirigente
+        # EM EXERCÍCIO, e a precedência ganha duas provas positivas a mais —
+        # evidência corporativa literal e menção da monitorada FORA do aposto
+        # de cargo. Sem elas, generalizar o prefixo suprimiria evento legítimo
+        # da própria companhia (medido: 4 falsos negativos de controle).
+        if papel == "individual_subject":
+            if any(re.search(p.format(m=alt), t, re.I)
+                   for p in (_INVESTIGACAO_PROPRIA + _ALVO_E_A_PROPRIA_EMPRESA
+                             + _EVIDENCIA_CORPORATIVA_PROMOVE)):
+                continue
+            # Mais longo primeiro: com "vale|vale s.a." a alternância pararia
+            # em "vale" e a forma completa nunca seria reconhecida.
+            nomes_sem_ticker = sorted(
+                {re.escape(_n(a)) for a in ((aliases or []) + [monitored])
+                 if a and not _e_ticker(a)}, key=len, reverse=True)
+            nome_alt = ("(?:" + "|".join(nomes_sem_ticker) + ")"
+                        if nomes_sem_ticker else "")
+            if _mencao_independente_da_afiliacao(t, alt, nome_alt):
+                continue
         return papel
     return ""
 
