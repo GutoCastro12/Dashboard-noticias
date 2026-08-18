@@ -2055,7 +2055,36 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-18 07:48",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-18T00:00:00Z",
+    "camada_artigo": {
+     "criterio": "A manchete AFIRMA uma acao nova de analista: a Stephens REDUZ o preco-alvo da JBS. Nao e mencao de passagem, nao e descritor e nao e comentario hipotetico. O input congelado NAO traz rebaixamento formal da recomendacao — so o corte de preco-alvo, com a recomendacao nao especificada.",
+     "scoreable": true
+    },
+    "camada_sistema": {
+     "criterio": "Reducao de preco-alvo E sinal negativo de mercado valido na familia `recomendacao_negativa` mesmo sem rebaixamento formal declarado. A taxonomia ja contem `reduz preco-alvo` e `corta preco-alvo` de proposito, e a familia positiva traz `eleva preco-alvo` simetricamente. A adjudicacao humana ENDOSSA essa escolha de modelagem — nao e vazamento acidental de keyword.",
+     "deterministico_convergente": "o caminho deterministico marcou scoreable=True por `reduz preco-alvo`, atribuiu direto a JBS e leu new_occurrence=True. A verdade humana CONFIRMA: este caso NAO e erro deterministico.",
+     "ocorrencia_unica": true,
+     "relacao_economica": "DISTINCT_OCCURRENCE"
+    },
+    "dimensoes_adjudicadas": {
+     "company_role": "SUBJECT",
+     "currentness": "CURRENT",
+     "event_asserted": "ASSERTED",
+     "occurrence_novelty": "NEW_OCCURRENCE",
+     "subject": "JBS"
+    },
+    "nota": "Stephens e a casa de analise (ator gramatical); a JBS e o alvo economico da acao, por isso company_role=SUBJECT. Nenhum outro artigo do corpus menciona Stephens e nao ha cobertura duplicada desta revisao de preco-alvo — ocorrencia de membro unico, NEW_OCCURRENCE. Publicado 2026-08-17 e capturado 2026-08-18, sem ano antigo, sem marcador historico e sem anomalia de data: CURRENT. FASE NAO ADJUDICADA de proposito — G1 leu UNKNOWN e G2 CONFIRMED, e a fase nao e necessaria para decidir validade nem pontuabilidade nesta familia; preencher so para fechar tabela seria pior que o vazio. PRIMEIRO precedente humano da familia `recomendacao_negativa`; nao confundir com `rebaixamento_rating`, que e rebaixamento de rating de credito por agencia, familia critica de peso 80 e dimensao credito.",
+    "observacao_de_taxonomia": "TAXONOMY_LABEL_PRECISION_BACKLOG: o rotulo da familia e 'Recomendacao rebaixada' enquanto ela cobre tambem revisao negativa de preco-alvo. Observacao de rotulo/UI para o futuro, NAO erro semantico neste caso. Nenhuma mudanca de config autorizada.",
+    "razao_primaria": "target_price_cut_e_sinal_negativo_de_mercado",
+    "reviewed_at": 1787058947,
+    "reviewed_at_iso": "2026-08-18T13:15:47Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "scoreable": true,
+    "verdict": "RECOMENDACAO_NEGATIVA_CONFIRMADA",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 1.72,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.1-flash-lite",
@@ -2172,7 +2201,36 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-18 07:48",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-18T00:00:00Z",
+    "camada_artigo": {
+     "criterio": "A manchete AFIRMA uma acao nova de analista: a Stephens REDUZ o preco-alvo da JBS. Nao e mencao de passagem, nao e descritor e nao e comentario hipotetico. O input congelado NAO traz rebaixamento formal da recomendacao — so o corte de preco-alvo, com a recomendacao nao especificada.",
+     "scoreable": true
+    },
+    "camada_sistema": {
+     "criterio": "Reducao de preco-alvo E sinal negativo de mercado valido na familia `recomendacao_negativa` mesmo sem rebaixamento formal declarado. A taxonomia ja contem `reduz preco-alvo` e `corta preco-alvo` de proposito, e a familia positiva traz `eleva preco-alvo` simetricamente. A adjudicacao humana ENDOSSA essa escolha de modelagem — nao e vazamento acidental de keyword.",
+     "deterministico_convergente": "o caminho deterministico marcou scoreable=True por `reduz preco-alvo`, atribuiu direto a JBS e leu new_occurrence=True. A verdade humana CONFIRMA: este caso NAO e erro deterministico.",
+     "ocorrencia_unica": true,
+     "relacao_economica": "DISTINCT_OCCURRENCE"
+    },
+    "dimensoes_adjudicadas": {
+     "company_role": "SUBJECT",
+     "currentness": "CURRENT",
+     "event_asserted": "ASSERTED",
+     "occurrence_novelty": "NEW_OCCURRENCE",
+     "subject": "JBS"
+    },
+    "nota": "Stephens e a casa de analise (ator gramatical); a JBS e o alvo economico da acao, por isso company_role=SUBJECT. Nenhum outro artigo do corpus menciona Stephens e nao ha cobertura duplicada desta revisao de preco-alvo — ocorrencia de membro unico, NEW_OCCURRENCE. Publicado 2026-08-17 e capturado 2026-08-18, sem ano antigo, sem marcador historico e sem anomalia de data: CURRENT. FASE NAO ADJUDICADA de proposito — G1 leu UNKNOWN e G2 CONFIRMED, e a fase nao e necessaria para decidir validade nem pontuabilidade nesta familia; preencher so para fechar tabela seria pior que o vazio. PRIMEIRO precedente humano da familia `recomendacao_negativa`; nao confundir com `rebaixamento_rating`, que e rebaixamento de rating de credito por agencia, familia critica de peso 80 e dimensao credito.",
+    "observacao_de_taxonomia": "TAXONOMY_LABEL_PRECISION_BACKLOG: o rotulo da familia e 'Recomendacao rebaixada' enquanto ela cobre tambem revisao negativa de preco-alvo. Observacao de rotulo/UI para o futuro, NAO erro semantico neste caso. Nenhuma mudanca de config autorizada.",
+    "razao_primaria": "target_price_cut_e_sinal_negativo_de_mercado",
+    "reviewed_at": 1787058947,
+    "reviewed_at_iso": "2026-08-18T13:15:47Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "scoreable": true,
+    "verdict": "RECOMENDACAO_NEGATIVA_CONFIRMADA",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 1.72,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.5-flash-lite",
