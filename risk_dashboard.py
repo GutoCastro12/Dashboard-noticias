@@ -4448,6 +4448,12 @@ def verify_publication_dates(articles: list[dict], cfg: dict,
         return tel
     s = session or requests.Session()
     cache: dict[str, str] = {}
+    # Trilha permanente de proveniência de data. `merge_into_history` copia
+    # `pub_ts`/`pub_iso` mas descarta os 11 campos de proveniência, e a
+    # retenção de 400 dias pode levar o artigo embora — então a evidência de
+    # COMO a data foi decidida precisa viver fora do histórico operacional.
+    # Sem autoridade de score nem semântica: ninguém lê isto para pontuar.
+    _auditar: list = []
     for art in articles:
         alvo = (art.get("canonical_url") or art.get("resolved_url")
                 or art.get("url") or "")
@@ -4475,12 +4481,22 @@ def verify_publication_dates(articles: list[dict], cfg: dict,
         campos = _pd.verificar_registro(art, cache.get(chave) or "")
         if campos.get("page_pub_ts"):
             tel["com_data_de_pagina"] += 1
+            _auditar.append((alvo, {**art, **campos}))
         if campos.get("pub_date_origin") == "pagina" and campos.get("pub_date_conflict_s"):
             tel["conflitos"] += 1
             print(f"   📅 data corrigida pela página: "
                   f"{campos.get('feed_pub_iso')} → {campos.get('pub_iso')}  "
                   f"{(art.get('title') or '')[:56]}")
         art.update(campos)
+    if _auditar:
+        try:
+            import reliability_date_provenance as _dp
+            tel["auditoria_proveniencia"] = _dp.registrar_muitos(
+                _auditar, origem="ingestao", aplicar=True)
+        except Exception as _e:                                # noqa: BLE001
+            # Fail-open, como o resto desta camada: perder a trilha é ruim,
+            # mas derrubar a coleta por causa dela seria pior.
+            tel["auditoria_proveniencia"] = {"erro": type(_e).__name__}
     if tel["avaliados"]:
         print(f" 📅 verificação de data de publicação ({_pd.POLICY_VERSION}): "
               f"{tel['avaliados']} candidato(s), {tel['buscados']} página(s), "

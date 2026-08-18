@@ -190,6 +190,15 @@ jobs:
           # caso novo deixa o arquivo byte-idêntico, então isto não passa a
           # gerar commit a cada cron.
           git add -f risk_semantic_v2_shadow.json 2>/dev/null || true
+          # Trilha permanente de proveniência de data. `merge_into_history`
+          # copia `pub_ts`/`pub_iso` mas descarta os 11 campos que dizem DE
+          # ONDE a data veio, e a retenção de 400 dias pode levar o artigo
+          # embora — foi o que aconteceu com o artigo da BRF, cuja correção
+          # para 2025-06-17 o empurrou além do horizonte e o cron o podou.
+          # Vive FORA de risk_history.json, não alimenta score nem semântica
+          # e nenhum caminho de produção o lê. Ciclo sem data de página nova
+          # deixa o arquivo byte-idêntico, então isto não gera commit por si.
+          git add -f risk_date_provenance.json 2>/dev/null || true
           # Cache de traduções. A razão é a MESMA dos dois acima — o runner é
           # efêmero — mas a consequência é outra: sem persistir, todo cron
           # recomeça com o cache vazio e retraduz os mesmos títulos para

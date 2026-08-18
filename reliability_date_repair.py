@@ -36,6 +36,7 @@ import io
 import json
 from pathlib import Path
 
+import reliability_date_provenance as dp
 import reliability_page_date as pd
 
 REPAIR_VERSION = "pubdate.repair.v1"
@@ -180,6 +181,14 @@ def aplicar(caminho_historico: str, alvo: str, html: str, *,
                  sha256_antes=hashlib.sha256(bruto).hexdigest(),
                  sha256_depois=hashlib.sha256(p.read_bytes()).hexdigest(),
                  registros_alterados=1)
+    # A trilha vai para o side-car de proveniência ANTES que a retenção possa
+    # levar o artigo embora. Foi corrigindo a data da BRF para 2025-06-17 que o
+    # registro passou dos 400 dias e o cron seguinte o podou: a correção some
+    # justamente por ter sido feita. O side-car não tem autoridade de score nem
+    # semântica — guarda só como a data foi decidida.
+    plano["auditoria_proveniencia"] = dp.registrar_muitos(
+        [(plano["url"], rec)], origem="date_repair",
+        quando=plano["campos"].get("pub_date_policy", ""), aplicar=True)
     return plano
 
 
