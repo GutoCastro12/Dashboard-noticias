@@ -4708,7 +4708,7 @@
      "domain": "poder360.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:20.320516+00:00",
+     "last_checked_at": "2026-08-18T10:48:50.823357+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -7394,7 +7394,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:21.121002+00:00",
+     "last_checked_at": "2026-08-18T10:48:51.623914+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -7457,7 +7457,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:20.720782+00:00",
+     "last_checked_at": "2026-08-18T10:48:51.223658+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -9224,7 +9224,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:22.273781+00:00",
+     "last_checked_at": "2026-08-18T10:48:52.740079+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -9287,7 +9287,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:21.696673+00:00",
+     "last_checked_at": "2026-08-18T10:48:52.180930+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -15011,39 +15011,6 @@
    "title": "This Day in Michigan History: GM files for bankruptcy",
    "url": "https://www.wilx.com/2026/06/02/this-day-michigan-history-gm-files-bankruptcy/"
   },
-  "https://news.google.com/rss/articles/CBMihAJBVV95cUxOMHZYb0pDMm9abmlWZGd0LUc2MkxxU1I3TGhxVzNnS1dMdkJMZFlBZHVJd2JJUGtBOWl3Wlk2dkpiamhPckxwX0l1TVM5WjNOQm82dEczTEt1MU5hT01lVVZ0QUlmWFJWbGFwVHl4NXpFT0U0VTBKb1hIUGw1Q1VWbjhvTnhSNWUxVi1jamdiRXBkd1FqUXQzSkt1RlVuOTlJUTVoV2xRamRDTGdvRWMxajVXUFpmUEFpVFdmWUtIcGdFaGVuaVlaT1NjQ3k1c1p4bHMxalJjM2hfMklSaC1sVHhra0MtSUhJdVJhTTdzQ3dQUEF6R1RKMUxsWlJrM29qb1poZQ?oc=5": {
-   "canonical_url": "https://www.eldinamo.cl/economia/negocios-economia/2025/07/15/adelco-la-historica-mayorista-de-los-paulmann-busca-salvarse-de-la-quiebra-con-venta-de-activos-y-nuevos-socios/",
-   "cap_iso": "2026-07-29 14:14",
-   "captured_ts": 1785345276,
-   "companies": [
-    "Mercado (geral)"
-   ],
-   "display_url": "https://www.eldinamo.cl/economia/negocios-economia/2025/07/15/adelco-la-historica-mayorista-de-los-paulmann-busca-salvarse-de-la-quiebra-con-venta-de-activos-y-nuevos-socios/",
-   "domain": "eldinamo.cl",
-   "event_ids": [
-    "falencia"
-   ],
-   "final_host": "www.eldinamo.cl",
-   "http_status": "",
-   "language": "es",
-   "last_checked_at": "2026-07-31T03:04:35.619206+00:00",
-   "link_health": "url_direta_valida",
-   "link_label": "Abrir notícia →",
-   "link_render_anchor": true,
-   "original_host": "www.eldinamo.cl",
-   "original_url": "https://www.eldinamo.cl/economia/negocios-economia/2025/07/15/adelco-la-historica-mayorista-de-los-paulmann-busca-salvarse-de-la-quiebra-con-venta-de-activos-y-nuevos-socios/",
-   "pub_iso": "2025-07-14 04:00",
-   "pub_ts": 1752476400,
-   "redirect_chain": "",
-   "redirect_url": "",
-   "resolution_error": "",
-   "resolution_method": "direto",
-   "resolved_url": "https://www.eldinamo.cl/economia/negocios-economia/2025/07/15/adelco-la-historica-mayorista-de-los-paulmann-busca-salvarse-de-la-quiebra-con-venta-de-activos-y-nuevos-socios/",
-   "source": "El Dínamo",
-   "summary": "Adelco, la histórica mayorista de los Paulmann, busca salvarse de la quiebra con venta de activos y nuevos socios &nbsp;&nbsp; El Dínamo",
-   "title": "Adelco, la histórica mayorista de los Paulmann, busca salvarse de la quiebra con venta de activos y nuevos socios",
-   "url": "https://www.eldinamo.cl/economia/negocios-economia/2025/07/15/adelco-la-historica-mayorista-de-los-paulmann-busca-salvarse-de-la-quiebra-con-venta-de-activos-y-nuevos-socios/"
-  },
   "https://news.google.com/rss/articles/CBMihAJBVV95cUxQdlJ2dV9ENXZjMDBjdkFnVlhwa25DcjZJS09yZ092RHo2QmwzMTZWZlB3TWdYZVc5aHBQUjF0em9PNXhBdzNhWDZmd1JOQkk2cVNhcDhUd1ItaTQzRXlqVUlWUXZKSl9BX2JhQzY4WnZtMmhsUU5FWk1pY1gtdW5rUjJoanZfd2NSUnlFSFp6OXdZMmtxNTdCd2l6S3VUVUdQaGJyVFd5ZFJiYnUzU0hQZ1ZXTHFjN1kyYVBRWTFLSHV4OFpxSlpZcEZsTVJMUUVXUWg0dTVZTm02TE8yUFlDQTZvQjNyaEM2TDA0Vk85WlR4VjdnTGQ2SWxEajZxQ1g3bXBUeNIBkwJBVV95cUxOVm1CbjRhVGVNdHcybjloSUhRb2dDSU5GX2psYkhabWxpanNld2lmRC1GT1VNcXU2TXJPMU1ZZjZBeFQ3N0IwT2F6SVl4bkJybHVsN3JZX1pSOWpQN09pUTR4SDFOTl9obEhPUkx1U29oeDlpcHlHdFVrS0pDLXZtUDVtOFNhQjhpT091SDhwcUFBRVB3X2ZTU1BrVGtwYnhaVkgtZWs4MEw1emJBa2NDVWRPRktvNmNPRkxKTDllM2trZUJwWlN4aHZxN2NfVFRKajZNYzJmVmtPQ2loN0tLXzF6cWxRVUJlcXZLQ2FNY1BWTEgxdC1IYlVmekNCU1FweE9UNE9HM3BvV2doN21GQWcxUQ?oc=5": {
    "canonical_url": "https://valor.globo.com/financas/noticia/2026/05/21/credores-veem-esvaziamento-patrimonial-e-pedem-que-justica-decrete-falencia-de-grupo-que-tentou-comprar-banco-master.ghtml",
    "cap_iso": "2026-07-29 14:14",
@@ -15291,7 +15258,7 @@
      "domain": "globallegalpost.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:23.427530+00:00",
+     "last_checked_at": "2026-08-18T10:48:53.870951+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -15375,7 +15342,7 @@
      "domain": "globallegalpost.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:22.854147+00:00",
+     "last_checked_at": "2026-08-18T10:48:53.310665+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -18751,7 +18718,7 @@
      "domain": "globallegalpost.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:24.597679+00:00",
+     "last_checked_at": "2026-08-18T10:48:54.986764+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -18795,7 +18762,7 @@
      "domain": "globallegalpost.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:24.026611+00:00",
+     "last_checked_at": "2026-08-18T10:48:54.425189+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -21272,7 +21239,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:25.745403+00:00",
+     "last_checked_at": "2026-08-18T10:48:56.100288+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -21295,7 +21262,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:25.162044+00:00",
+     "last_checked_at": "2026-08-18T10:48:55.544542+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -24666,7 +24633,7 @@
      "domain": "ootimista.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:27.141313+00:00",
+     "last_checked_at": "2026-08-18T10:48:57.437861+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -24689,7 +24656,7 @@
      "domain": "ootimista.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:26.441184+00:00",
+     "last_checked_at": "2026-08-18T10:48:56.758040+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -28609,6 +28576,27 @@
      "source": "MegaWhat",
      "url": "",
      "when": "03/07 04:00"
+    },
+    {
+     "source": "Investidor10",
+     "domain": "investidor10.com.br",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRG9QR3FvRElrbzl4bkd3VDQxTWVMeTM4Q0tOMG8zeWdZeFlIcVUwYVlJNTV1YXRxNXlYV0Z1cXBYb3VUd092cFhGbUV3QWhlUUQ5QXVUaGhUazZ1OUlrSnNnRGphTVJ4Vjk3S1E2dmJCRTJGX2tNSm5UeHduOUZ6Ykx5RlJlN0k0YVg3RDg4Rm1Gb1pKdDFvdEhpV1drNDA3cXhxb29FSUJnTzNq0gGyAUFVX3lxTFA1Z3ZYUDdzNnlhVW10SFl2ZVVHUEwxN21RYTNKeTEwUHoyRlU0WkRPLTVyamNRZHZhSE94cjJCYWxJMFRMcUlORjJHUlVfa0RPOEhWaHY4SUVjUmRCMHRfQlFrWlNTVFdPUGpYaUcxUGxkY3dyYTFqU0E3TUdVMkhVU091cEN2dWNVVlgyekpqNDlmckdoWTRGWkExSmt3VEpsTXVNMkZkT1Z5V0VEZzlNd1E?oc=5",
+     "when": "03/07 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRG9QR3FvRElrbzl4bkd3VDQxTWVMeTM4Q0tOMG8zeWdZeFlIcVUwYVlJNTV1YXRxNXlYV0Z1cXBYb3VUd092cFhGbUV3QWhlUUQ5QXVUaGhUazZ1OUlrSnNnRGphTVJ4Vjk3S1E2dmJCRTJGX2tNSm5UeHduOUZ6Ykx5RlJlN0k0YVg3RDg4Rm1Gb1pKdDFvdEhpV1drNDA3cXhxb29FSUJnTzNq0gGyAUFVX3lxTFA1Z3ZYUDdzNnlhVW10SFl2ZVVHUEwxN21RYTNKeTEwUHoyRlU0WkRPLTVyamNRZHZhSE94cjJCYWxJMFRMcUlORjJHUlVfa0RPOEhWaHY4SUVjUmRCMHRfQlFrWlNTVFdPUGpYaUcxUGxkY3dyYTFqU0E3TUdVMkhVU091cEN2dWNVVlgyekpqNDlmckdoWTRGWkExSmt3VEpsTXVNMkZkT1Z5V0VEZzlNd1E?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRG9QR3FvRElrbzl4bkd3VDQxTWVMeTM4Q0tOMG8zeWdZeFlIcVUwYVlJNTV1YXRxNXlYV0Z1cXBYb3VUd092cFhGbUV3QWhlUUQ5QXVUaGhUazZ1OUlrSnNnRGphTVJ4Vjk3S1E2dmJCRTJGX2tNSm5UeHduOUZ6Ykx5RlJlN0k0YVg3RDg4Rm1Gb1pKdDFvdEhpV1drNDA3cXhxb29FSUJnTzNq0gGyAUFVX3lxTFA1Z3ZYUDdzNnlhVW10SFl2ZVVHUEwxN21RYTNKeTEwUHoyRlU0WkRPLTVyamNRZHZhSE94cjJCYWxJMFRMcUlORjJHUlVfa0RPOEhWaHY4SUVjUmRCMHRfQlFrWlNTVFdPUGpYaUcxUGxkY3dyYTFqU0E3TUdVMkhVU091cEN2dWNVVlgyekpqNDlmckdoWTRGWkExSmt3VEpsTXVNMkZkT1Z5V0VEZzlNd1E?oc=5",
+     "resolved_url": "https://investidor10.com.br/noticias/isa-energia-isae4-avalia-potencial-oferta-de-acoes-veja-valores-121265/",
+     "canonical_url": "https://investidor10.com.br/noticias/isa-energia-isae4-avalia-potencial-oferta-de-acoes-veja-valores-121265/",
+     "display_url": "https://investidor10.com.br/noticias/isa-energia-isae4-avalia-potencial-oferta-de-acoes-veja-valores-121265/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "investidor10.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-18T10:48:58.001513+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "corroborations": [
@@ -29641,7 +29629,7 @@
      "domain": "demarest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:27.541592+00:00",
+     "last_checked_at": "2026-08-18T10:48:58.401783+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -30489,7 +30477,7 @@
      "domain": "bitget.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:28.720136+00:00",
+     "last_checked_at": "2026-08-18T10:48:59.525284+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -30512,7 +30500,7 @@
      "domain": "bitget.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:28.129260+00:00",
+     "last_checked_at": "2026-08-18T10:48:58.960329+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -31831,6 +31819,27 @@
      "source": "Money Times",
      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQQmZDM2NzbEpxRTg4STM2V214QUpmSWhDNVF0dUNPMWVjbjdVeDVIYXhUWUgzXy1NeHFYN1BtdHlqR2YxeHhhRnhUTGxWLTVsLXdDNlhsUU1hX2N3OXUtX3ktSE5tc2ZUZmExcTEtZkROenhaVUltQURSUnQ0akw2NnIxNWxnRTZJU1hBLUpwaEc5bURqU2Zwek5yVjJjSmdyWThvcUIycUF2MWpCZEE?oc=5",
      "when": "09/07 04:00"
+    },
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNSTZXaUM2ZTZmQUtDQlQ5UFBPSkVDMnJweW8xQlNxT0gxNnl5ZVRFMEN6MlNRSE85ZEpOYkQ2aGRLa2NjUU5DY1lEbXd4V0VTbnFDWUh2c01fallZT3FWb0JQc2NRdFBYN1p0LWdlYXZGR2t0T0NoOXJ0NFhyaTdTZnJuZmJNZUpQRWhWOFhYaTNGa2FmbXNrYUFWbU55Sjc0N3RJajh3bTJHaGlxRFd2S0pOVU52UkFsd1pfamF4M3o1WGZOR3Q3VnlQSkNsQzhOMXlENjhydE5RWnY1cmVQcGZmOTBrU2h6ZTZR?oc=5",
+     "when": "10/07 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNSTZXaUM2ZTZmQUtDQlQ5UFBPSkVDMnJweW8xQlNxT0gxNnl5ZVRFMEN6MlNRSE85ZEpOYkQ2aGRLa2NjUU5DY1lEbXd4V0VTbnFDWUh2c01fallZT3FWb0JQc2NRdFBYN1p0LWdlYXZGR2t0T0NoOXJ0NFhyaTdTZnJuZmJNZUpQRWhWOFhYaTNGa2FmbXNrYUFWbU55Sjc0N3RJajh3bTJHaGlxRFd2S0pOVU52UkFsd1pfamF4M3o1WGZOR3Q3VnlQSkNsQzhOMXlENjhydE5RWnY1cmVQcGZmOTBrU2h6ZTZR?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNSTZXaUM2ZTZmQUtDQlQ5UFBPSkVDMnJweW8xQlNxT0gxNnl5ZVRFMEN6MlNRSE85ZEpOYkQ2aGRLa2NjUU5DY1lEbXd4V0VTbnFDWUh2c01fallZT3FWb0JQc2NRdFBYN1p0LWdlYXZGR2t0T0NoOXJ0NFhyaTdTZnJuZmJNZUpQRWhWOFhYaTNGa2FmbXNrYUFWbU55Sjc0N3RJajh3bTJHaGlxRFd2S0pOVU52UkFsd1pfamF4M3o1WGZOR3Q3VnlQSkNsQzhOMXlENjhydE5RWnY1cmVQcGZmOTBrU2h6ZTZR?oc=5",
+     "resolved_url": "https://br.advfn.com/jornal/2026/07/petrobras-conclui-aquisicao-de-bloco-exploratorio-em-sao-tome-e-principe-e-reforca-estrategia-de-expansao-internacional",
+     "canonical_url": "https://br.advfn.com/jornal/2026/07/petrobras-conclui-aquisicao-de-bloco-exploratorio-em-sao-tome-e-principe-e-reforca-estrategia-de-expansao-internacional",
+     "display_url": "https://br.advfn.com/jornal/2026/07/petrobras-conclui-aquisicao-de-bloco-exploratorio-em-sao-tome-e-principe-e-reforca-estrategia-de-expansao-internacional",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "br.advfn.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-18T10:49:00.466316+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "corroborations": [
@@ -31953,6 +31962,26 @@
      "resolved_url": "https://agencia.petrobras.com.br/w/negocio/petrobras-conclui-aquisi%C3%A7%C3%A3o-de-bloco-explorat%C3%B3rio-em-s%C3%A3o-tom%C3%A9-e-pr%C3%ADncipe",
      "source": "Agência Petrobras de Notícias",
      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNcXRQQWtCdm1LZHVQcmtoRmVBT1laWWFHZmp6YWxjamtXTkx1d1NyVmlpa3hpbTJGc3p3bmhDWng3ODN5Mk9Dei1DdVE1UkdUQ0ZIZkFwRW8zaU5xODZUd2hud1JEdlk1R09nNHFJQWI4aFY1THFDY25USGw5U0pBdzd3MmprSGd6a21OV2VXb1ZybzYyMWdBVTA4ZlZkQ0J4NEYyQ3NPNlRLTl92bHlYNE1INGFzVDhzNklQS2pTVFJhRkRjdy0wbEhUeUlBQTVOS0xoRFZ1SENvdjBwZkE?oc=5"
+    },
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNSTZXaUM2ZTZmQUtDQlQ5UFBPSkVDMnJweW8xQlNxT0gxNnl5ZVRFMEN6MlNRSE85ZEpOYkQ2aGRLa2NjUU5DY1lEbXd4V0VTbnFDWUh2c01fallZT3FWb0JQc2NRdFBYN1p0LWdlYXZGR2t0T0NoOXJ0NFhyaTdTZnJuZmJNZUpQRWhWOFhYaTNGa2FmbXNrYUFWbU55Sjc0N3RJajh3bTJHaGlxRFd2S0pOVU52UkFsd1pfamF4M3o1WGZOR3Q3VnlQSkNsQzhOMXlENjhydE5RWnY1cmVQcGZmOTBrU2h6ZTZR?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNSTZXaUM2ZTZmQUtDQlQ5UFBPSkVDMnJweW8xQlNxT0gxNnl5ZVRFMEN6MlNRSE85ZEpOYkQ2aGRLa2NjUU5DY1lEbXd4V0VTbnFDWUh2c01fallZT3FWb0JQc2NRdFBYN1p0LWdlYXZGR2t0T0NoOXJ0NFhyaTdTZnJuZmJNZUpQRWhWOFhYaTNGa2FmbXNrYUFWbU55Sjc0N3RJajh3bTJHaGlxRFd2S0pOVU52UkFsd1pfamF4M3o1WGZOR3Q3VnlQSkNsQzhOMXlENjhydE5RWnY1cmVQcGZmOTBrU2h6ZTZR?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNSTZXaUM2ZTZmQUtDQlQ5UFBPSkVDMnJweW8xQlNxT0gxNnl5ZVRFMEN6MlNRSE85ZEpOYkQ2aGRLa2NjUU5DY1lEbXd4V0VTbnFDWUh2c01fallZT3FWb0JQc2NRdFBYN1p0LWdlYXZGR2t0T0NoOXJ0NFhyaTdTZnJuZmJNZUpQRWhWOFhYaTNGa2FmbXNrYUFWbU55Sjc0N3RJajh3bTJHaGlxRFd2S0pOVU52UkFsd1pfamF4M3o1WGZOR3Q3VnlQSkNsQzhOMXlENjhydE5RWnY1cmVQcGZmOTBrU2h6ZTZR?oc=5",
+     "resolved_url": "https://br.advfn.com/jornal/2026/07/petrobras-conclui-aquisicao-de-bloco-exploratorio-em-sao-tome-e-principe-e-reforca-estrategia-de-expansao-internacional",
+     "canonical_url": "https://br.advfn.com/jornal/2026/07/petrobras-conclui-aquisicao-de-bloco-exploratorio-em-sao-tome-e-principe-e-reforca-estrategia-de-expansao-internacional",
+     "display_url": "https://br.advfn.com/jornal/2026/07/petrobras-conclui-aquisicao-de-bloco-exploratorio-em-sao-tome-e-principe-e-reforca-estrategia-de-expansao-internacional",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "br.advfn.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-18T10:49:00.066036+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "display_url": "https://www.bloomberglinea.com.br/negocios/petrobras-reforca-expansao-internacional-com-aquisicao-de-bloco-exploratorio-na-africa/",
@@ -36587,7 +36616,7 @@
      "domain": "demarest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:29.120395+00:00",
+     "last_checked_at": "2026-08-18T10:49:00.866640+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -36787,7 +36816,7 @@
      "domain": "demarest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:29.520647+00:00",
+     "last_checked_at": "2026-08-18T10:49:01.266949+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -40770,7 +40799,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:29.920904+00:00",
+     "last_checked_at": "2026-08-18T10:49:01.667285+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -40790,7 +40819,7 @@
      "domain": "demarest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:30.321165+00:00",
+     "last_checked_at": "2026-08-18T10:49:02.067571+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -41768,7 +41797,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:30.896905+00:00",
+     "last_checked_at": "2026-08-18T10:49:02.623324+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -42114,7 +42143,7 @@
      "domain": "gurufocus.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:32.252744+00:00",
+     "last_checked_at": "2026-08-18T10:49:03.964514+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -42158,7 +42187,7 @@
      "domain": "gurufocus.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:31.573657+00:00",
+     "last_checked_at": "2026-08-18T10:49:03.286705+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -48760,7 +48789,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:33.420714+00:00",
+     "last_checked_at": "2026-08-18T10:49:05.082001+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -48923,7 +48952,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:32.835154+00:00",
+     "last_checked_at": "2026-08-18T10:49:04.525628+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -50757,7 +50786,7 @@
      "domain": "quiverquant.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:34.598302+00:00",
+     "last_checked_at": "2026-08-18T10:49:06.199973+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -50943,7 +50972,7 @@
      "domain": "quiverquant.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-17T19:37:33.993487+00:00",
+     "last_checked_at": "2026-08-18T10:49:05.642168+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -54817,7 +54846,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1786984782,
-   "cap_iso": "2026-08-17 13:39"
+   "cap_iso": "2026-08-17 13:39",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.cnbc.com/2026/08/17/pskys-wbd-bid-has-1-in-4-odds-of-falling-through-kalshi-traders-say.html": {
    "title": "Traders de mercado de previsão veem probabilidade de aproximadamente 1 em 4 de que a oferta da Paramount para comprar a Warner Bros. Discovery falhe",
@@ -54983,19 +55014,322 @@
      }
     ]
    }
+  },
+  "https://news.google.com/rss/articles/CBMizwFBVV95cUxOWnNMLTNxSkpRTGFfMHB6NlBPOWdkSXdGVGtXbWhEbUlPMDM5SzJ2My1sMVVLOUxVTGNZWGc3N3piSGNtNGVXSXBtaEs4d1VWQmVZWmhnOWFoaE5wVmdVd19tVnM5WlhWQVZuMkgyWWVOODkxbHhPUC1vSjdBVDVXZHV5aEk2bHpJalM3WGVseFFQa2JXQWpfeU1vUk9xcjNtVktsUGxEZE5kS3JHRURxN3JMRVR6bGpYWFFzUEpJWXl0ZFdMQnVxRDQzZ3FCV2_SAd4BQVVfeXFMUGtkemJBcmhiRmJJRlBuNzBJWjduVEpjeml3VWR5RkNKUzBVVFY5UU9KV0p6SlZTTDNvQTY4STJ1cEFLdjBjTUhhOExFcnMwWUdVeGlBR0lZYm9nYUhLZEF0aHZmTXJRdlA5YVdkMzB5LXc0QmZXRGEzMjZiZERBSk1OdVoxU19IYnVIRHlEWFRyVHBDN3k4a0ZEWWRMekJQREdmNlNIUDYyeGpHUXpjajhLa0hkTmF0UXpUZkhBUDF6clVhUTNYcUJPNkZYYnV2czI1SWhHRnFKaGZuUzR3?oc=5": {
+   "title": "Casas Bahia pede recuperação judicial com passivo de R$ 17,3 bilhões",
+   "url": "https://valor.globo.com/empresas/noticia/2026/08/17/exclusivo-casas-bahia-pede-recuperacao-judicial-com-passivo-de-r-173-bilhoes.ghtml",
+   "summary": "Casas Bahia pede recuperação judicial com passivo de R$ 17,3 bilhões &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1786939225,
+   "pub_iso": "2026-08-17 01:00",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "recuperacao_judicial"
+   ],
+   "corroborations": [
+    {
+     "source": "O GLOBO",
+     "domain": "oglobo.globo.com",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNM0RCeDFsN3FHcVBNcG1TWW0tSHo1bjg5OG92RGhVNENUcGh6R0RlSXdvYTJtRlNIZVpLeHRkM0lyVFVPWjI5amM2TzlDc3JGTVBDenV0YUNscGRMcmR4Z3huT283YXhyX3gyUVlGeEZnWVJHU2tpNE43LWQ4bHlBLWZibloxLXVoQS1sZmlNNUlZLTBwakZUYkVsYzVZT3FVZG55ekpLVnYxMHd1YmZsTTVIWUUtOTR2Y1VkdU0xY1ZNSElpWWfSAdQBQVVfeXFMUGFNZnNBX0VJc1ZJM0NhbXNmY2Z5eHd3akY4Rzhaa2FSTjFIdnp2MndHQzZGUERadWtRclZONGdrd2dRdVhFczRseGp1eDZqLURkbjdOTGN6aHNCVEZQVjNneHgyazFUekV3NE5qVEdDcTFVQUEtbm9DQ1hUUlBJNW9WLWtfY1pSM2J4eHJWa1FycHhfOF80UjFfV19jTUplcTNqRHAwV2ZBUHg4Rmd1R0J3TmgwUGgxOG9HY21BM01tRTd2SmJpOXMteEtzUWFkTzJIVnA?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNM0RCeDFsN3FHcVBNcG1TWW0tSHo1bjg5OG92RGhVNENUcGh6R0RlSXdvYTJtRlNIZVpLeHRkM0lyVFVPWjI5amM2TzlDc3JGTVBDenV0YUNscGRMcmR4Z3huT283YXhyX3gyUVlGeEZnWVJHU2tpNE43LWQ4bHlBLWZibloxLXVoQS1sZmlNNUlZLTBwakZUYkVsYzVZT3FVZG55ekpLVnYxMHd1YmZsTTVIWUUtOTR2Y1VkdU0xY1ZNSElpWWfSAdQBQVVfeXFMUGFNZnNBX0VJc1ZJM0NhbXNmY2Z5eHd3akY4Rzhaa2FSTjFIdnp2MndHQzZGUERadWtRclZONGdrd2dRdVhFczRseGp1eDZqLURkbjdOTGN6aHNCVEZQVjNneHgyazFUekV3NE5qVEdDcTFVQUEtbm9DQ1hUUlBJNW9WLWtfY1pSM2J4eHJWa1FycHhfOF80UjFfV19jTUplcTNqRHAwV2ZBUHg4Rmd1R0J3TmgwUGgxOG9HY21BM01tRTd2SmJpOXMteEtzUWFkTzJIVnA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNM0RCeDFsN3FHcVBNcG1TWW0tSHo1bjg5OG92RGhVNENUcGh6R0RlSXdvYTJtRlNIZVpLeHRkM0lyVFVPWjI5amM2TzlDc3JGTVBDenV0YUNscGRMcmR4Z3huT283YXhyX3gyUVlGeEZnWVJHU2tpNE43LWQ4bHlBLWZibloxLXVoQS1sZmlNNUlZLTBwakZUYkVsYzVZT3FVZG55ekpLVnYxMHd1YmZsTTVIWUUtOTR2Y1VkdU0xY1ZNSElpWWfSAdQBQVVfeXFMUGFNZnNBX0VJc1ZJM0NhbXNmY2Z5eHd3akY4Rzhaa2FSTjFIdnp2MndHQzZGUERadWtRclZONGdrd2dRdVhFczRseGp1eDZqLURkbjdOTGN6aHNCVEZQVjNneHgyazFUekV3NE5qVEdDcTFVQUEtbm9DQ1hUUlBJNW9WLWtfY1pSM2J4eHJWa1FycHhfOF80UjFfV19jTUplcTNqRHAwV2ZBUHg4Rmd1R0J3TmgwUGgxOG9HY21BM01tRTd2SmJpOXMteEtzUWFkTzJIVnA?oc=5",
+     "resolved_url": "https://oglobo.globo.com/economia/noticia/2026/08/17/casas-bahia-pede-recuperacao-judicial-apos-prejuizo-de-r-101-bilhoes.ghtml",
+     "canonical_url": "https://oglobo.globo.com/economia/noticia/2026/08/17/casas-bahia-pede-recuperacao-judicial-apos-prejuizo-de-r-101-bilhoes.ghtml",
+     "display_url": "https://oglobo.globo.com/economia/noticia/2026/08/17/casas-bahia-pede-recuperacao-judicial-apos-prejuizo-de-r-101-bilhoes.ghtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "oglobo.globo.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-18T10:49:06.759451+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "G1",
+     "domain": "g1.globo.com",
+     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQNGkwbVcxYTQ0dHlTRmVxcFJqWHhSRkdNNE5kd2tkWEZwMUVDMVZQMFR5enBOTW5Ebnl0OXhLVXhjVlNNVTBlMTYyaHhhM2hHaTZnRHBYZGY4WE1DMEtscnFWTzBVX2U4a2dya29MVkVYNmlpa0xaTDNYZzl1UEZ0T2g4N244cGdjVUtVV1ZHcGlNVk1GOUtqZ3pTOTQzZ0FYWEpmVVZubzdqelHSAboBQVVfeXFMTndFTWpGeHJ1OTBWNDFfdU1DSjZDeEpNdDNzMV80UnVwNi11QVA2ZEp3QkJSTkJzeExkalljV0l0UDhwRjBVVlE5bHFmRlgzNFlSRlVWYm1fX3ByQ2x5SjZoMkhoNklQTmw3ZnlUMFl5aGRkaVZ2RGFMeEVRSFpHZ3BGdXlTb0pVNnpDREdWTm9fRHRfNXpUb2ZRczFRWHNUZUQ2NXZLTnlQRFljM3R1QzhyWXQ5M2Z1Mzln?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQNGkwbVcxYTQ0dHlTRmVxcFJqWHhSRkdNNE5kd2tkWEZwMUVDMVZQMFR5enBOTW5Ebnl0OXhLVXhjVlNNVTBlMTYyaHhhM2hHaTZnRHBYZGY4WE1DMEtscnFWTzBVX2U4a2dya29MVkVYNmlpa0xaTDNYZzl1UEZ0T2g4N244cGdjVUtVV1ZHcGlNVk1GOUtqZ3pTOTQzZ0FYWEpmVVZubzdqelHSAboBQVVfeXFMTndFTWpGeHJ1OTBWNDFfdU1DSjZDeEpNdDNzMV80UnVwNi11QVA2ZEp3QkJSTkJzeExkalljV0l0UDhwRjBVVlE5bHFmRlgzNFlSRlVWYm1fX3ByQ2x5SjZoMkhoNklQTmw3ZnlUMFl5aGRkaVZ2RGFMeEVRSFpHZ3BGdXlTb0pVNnpDREdWTm9fRHRfNXpUb2ZRczFRWHNUZUQ2NXZLTnlQRFljM3R1QzhyWXQ5M2Z1Mzln?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQNGkwbVcxYTQ0dHlTRmVxcFJqWHhSRkdNNE5kd2tkWEZwMUVDMVZQMFR5enBOTW5Ebnl0OXhLVXhjVlNNVTBlMTYyaHhhM2hHaTZnRHBYZGY4WE1DMEtscnFWTzBVX2U4a2dya29MVkVYNmlpa0xaTDNYZzl1UEZ0T2g4N244cGdjVUtVV1ZHcGlNVk1GOUtqZ3pTOTQzZ0FYWEpmVVZubzdqelHSAboBQVVfeXFMTndFTWpGeHJ1OTBWNDFfdU1DSjZDeEpNdDNzMV80UnVwNi11QVA2ZEp3QkJSTkJzeExkalljV0l0UDhwRjBVVlE5bHFmRlgzNFlSRlVWYm1fX3ByQ2x5SjZoMkhoNklQTmw3ZnlUMFl5aGRkaVZ2RGFMeEVRSFpHZ3BGdXlTb0pVNnpDREdWTm9fRHRfNXpUb2ZRczFRWHNUZUQ2NXZLTnlQRFljM3R1QzhyWXQ5M2Z1Mzln?oc=5",
+     "resolved_url": "https://g1.globo.com/economia/noticia/2026/08/17/casas-bahia-entra-com-pedido-de-recuperacao-judicial.ghtml",
+     "canonical_url": "https://g1.globo.com/economia/noticia/2026/08/17/casas-bahia-entra-com-pedido-de-recuperacao-judicial.ghtml",
+     "display_url": "https://g1.globo.com/economia/noticia/2026/08/17/casas-bahia-entra-com-pedido-de-recuperacao-judicial.ghtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "g1.globo.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-18T10:49:07.330038+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Folha de S.Paulo",
+     "domain": "www1.folha.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdmxaNTBzSkhfdF9ueXE2bms0cmdKdVU0QlU2RXE1ZnFadGdKNVRwV2oyUHZPQXctM3dzZU5CUjVMT1FId3ZoT3VFbUlTUG5XOWZCUGtxNy1hY2xFYVpwcktWdXRkTnFVXzZud1lsY1RPOTdHVzE4dzRnSzcwWGlJREl1THdJbEMzcHdfemc0ejEzX1pUX0Y1Vk9ySkNUaHA0TDZoVFJEOA?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdmxaNTBzSkhfdF9ueXE2bms0cmdKdVU0QlU2RXE1ZnFadGdKNVRwV2oyUHZPQXctM3dzZU5CUjVMT1FId3ZoT3VFbUlTUG5XOWZCUGtxNy1hY2xFYVpwcktWdXRkTnFVXzZud1lsY1RPOTdHVzE4dzRnSzcwWGlJREl1THdJbEMzcHdfemc0ejEzX1pUX0Y1Vk9ySkNUaHA0TDZoVFJEOA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdmxaNTBzSkhfdF9ueXE2bms0cmdKdVU0QlU2RXE1ZnFadGdKNVRwV2oyUHZPQXctM3dzZU5CUjVMT1FId3ZoT3VFbUlTUG5XOWZCUGtxNy1hY2xFYVpwcktWdXRkTnFVXzZud1lsY1RPOTdHVzE4dzRnSzcwWGlJREl1THdJbEMzcHdfemc0ejEzX1pUX0Y1Vk9ySkNUaHA0TDZoVFJEOA?oc=5",
+     "resolved_url": "https://www1.folha.uol.com.br/mercado/2026/08/casas-bahia-entra-com-pedido-de-recuperacao-judicial.shtml",
+     "canonical_url": "https://www1.folha.uol.com.br/mercado/2026/08/casas-bahia-entra-com-pedido-de-recuperacao-judicial.shtml",
+     "display_url": "https://www1.folha.uol.com.br/mercado/2026/08/casas-bahia-entra-com-pedido-de-recuperacao-judicial.shtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www1.folha.uol.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-18T10:49:07.891101+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "CNN Brasil",
+     "domain": "cnnbrasil.com.br",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVXFWTkpjOHFnMmFGWkxIWEotMEtxOUlnRVNCWHdZa2N1d2xXejIxU3ZKaFhVd1oxb21qMzFkc2ZJUDF0OUJNRTA5X1oxRElhc2RwMEJZTE1iQ0FBQ0sxN2lpSk01NnE2LVcxQTRFUm56VksxMlg2d2dDdFd5MDZNVDg1dDZkZHVQdXZmUzgyMDFPc2NFUHBvRWZrVkV2QThHaVBtWlM5enlTc1F6blhmV0Q0VnZxelZpd25zTW9yX2lyVEpoT2x3?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVXFWTkpjOHFnMmFGWkxIWEotMEtxOUlnRVNCWHdZa2N1d2xXejIxU3ZKaFhVd1oxb21qMzFkc2ZJUDF0OUJNRTA5X1oxRElhc2RwMEJZTE1iQ0FBQ0sxN2lpSk01NnE2LVcxQTRFUm56VksxMlg2d2dDdFd5MDZNVDg1dDZkZHVQdXZmUzgyMDFPc2NFUHBvRWZrVkV2QThHaVBtWlM5enlTc1F6blhmV0Q0VnZxelZpd25zTW9yX2lyVEpoT2x3?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVXFWTkpjOHFnMmFGWkxIWEotMEtxOUlnRVNCWHdZa2N1d2xXejIxU3ZKaFhVd1oxb21qMzFkc2ZJUDF0OUJNRTA5X1oxRElhc2RwMEJZTE1iQ0FBQ0sxN2lpSk01NnE2LVcxQTRFUm56VksxMlg2d2dDdFd5MDZNVDg1dDZkZHVQdXZmUzgyMDFPc2NFUHBvRWZrVkV2QThHaVBtWlM5enlTc1F6blhmV0Q0VnZxelZpd25zTW9yX2lyVEpoT2x3?oc=5",
+     "resolved_url": "https://www.cnnbrasil.com.br/economia/money/negocios/por-que-as-casas-bahia-pediram-recuperacao-judicial-veja-o-que-empresa-diz/",
+     "canonical_url": "https://www.cnnbrasil.com.br/economia/money/negocios/por-que-as-casas-bahia-pediram-recuperacao-judicial-veja-o-que-empresa-diz/",
+     "display_url": "https://www.cnnbrasil.com.br/economia/money/negocios/por-que-as-casas-bahia-pediram-recuperacao-judicial-veja-o-que-empresa-diz/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.cnnbrasil.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-18T10:49:08.459329+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Terra",
+     "domain": "terra.com.br",
+     "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxNY2tjX2c4anpDR0FrdHd4dVNJU1JmeUlBVllQNXV0dWFPWG14ZlJhaC05QmV3UVN3NUdpTzdBV3VtWWdCajgwOS1wdEtLT09LdUNndTE1LTM2NzJkaXpoVWJKNzNHLXNya01kZk04UW9aTWk4a0FuR2d1Q05YQ0t1Y1dMN2dVcmxTZ0lYdF85Wkl4cDZtYV8wZDFJY0lDQ0NXdzdHX0hSUEVaejNqdjVHQmtTMzBWZndCNnlFY0szNDZCOWxsX181Q2tnREhlZEw0YTJvZ2FERlFaWDBmbDFma0l6NTJtOWhld3hTckNmazhvdWRYUXdpNXNrSVloSlJTR1gydFBrNDF1MHBS?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxNY2tjX2c4anpDR0FrdHd4dVNJU1JmeUlBVllQNXV0dWFPWG14ZlJhaC05QmV3UVN3NUdpTzdBV3VtWWdCajgwOS1wdEtLT09LdUNndTE1LTM2NzJkaXpoVWJKNzNHLXNya01kZk04UW9aTWk4a0FuR2d1Q05YQ0t1Y1dMN2dVcmxTZ0lYdF85Wkl4cDZtYV8wZDFJY0lDQ0NXdzdHX0hSUEVaejNqdjVHQmtTMzBWZndCNnlFY0szNDZCOWxsX181Q2tnREhlZEw0YTJvZ2FERlFaWDBmbDFma0l6NTJtOWhld3hTckNmazhvdWRYUXdpNXNrSVloSlJTR1gydFBrNDF1MHBS?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxNY2tjX2c4anpDR0FrdHd4dVNJU1JmeUlBVllQNXV0dWFPWG14ZlJhaC05QmV3UVN3NUdpTzdBV3VtWWdCajgwOS1wdEtLT09LdUNndTE1LTM2NzJkaXpoVWJKNzNHLXNya01kZk04UW9aTWk4a0FuR2d1Q05YQ0t1Y1dMN2dVcmxTZ0lYdF85Wkl4cDZtYV8wZDFJY0lDQ0NXdzdHX0hSUEVaejNqdjVHQmtTMzBWZndCNnlFY0szNDZCOWxsX181Q2tnREhlZEw0YTJvZ2FERlFaWDBmbDFma0l6NTJtOWhld3hTckNmazhvdWRYUXdpNXNrSVloSlJTR1gydFBrNDF1MHBS?oc=5",
+     "resolved_url": "https://www.terra.com.br/economia/relacao-de-credores-plano-e-mais-o-que-acontece-apos-o-pedido-de-recuperacao-judicial-da-casas-bahia,f60179090c2d8bd2d5eda5719fb15e85yrlv7agt.html",
+     "canonical_url": "https://www.terra.com.br/economia/relacao-de-credores-plano-e-mais-o-que-acontece-apos-o-pedido-de-recuperacao-judicial-da-casas-bahia,f60179090c2d8bd2d5eda5719fb15e85yrlv7agt.html",
+     "display_url": "https://www.terra.com.br/economia/relacao-de-credores-plano-e-mais-o-que-acontece-apos-o-pedido-de-recuperacao-judicial-da-casas-bahia,f60179090c2d8bd2d5eda5719fb15e85yrlv7agt.html",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.terra.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-18T10:49:09.028679+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "JOTA Info",
+     "domain": "jota.info",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZzBRbHBUaWpYQzFHRHdhMmNha2FnZmpQUWQ3ZXZlUEkwMUJpYW1DaVlacnpYMWdBQmUxSHkybHJXVFNtZ19WZ2FSdXVOeTQ4YkVVM2cwa1duQ1JqUFVQQkw0bUt0d3pLckw5T3lXWHRhVHFIbzJWbXhvTERrTTFRb1kyR0pfeG4wRjNZRVBqcms2Sl92MldXM2dwMVk1RzlnOUxoV2FiMTdDczBob0RMWDlzSXFJeW5o?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZzBRbHBUaWpYQzFHRHdhMmNha2FnZmpQUWQ3ZXZlUEkwMUJpYW1DaVlacnpYMWdBQmUxSHkybHJXVFNtZ19WZ2FSdXVOeTQ4YkVVM2cwa1duQ1JqUFVQQkw0bUt0d3pLckw5T3lXWHRhVHFIbzJWbXhvTERrTTFRb1kyR0pfeG4wRjNZRVBqcms2Sl92MldXM2dwMVk1RzlnOUxoV2FiMTdDczBob0RMWDlzSXFJeW5o?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZzBRbHBUaWpYQzFHRHdhMmNha2FnZmpQUWQ3ZXZlUEkwMUJpYW1DaVlacnpYMWdBQmUxSHkybHJXVFNtZ19WZ2FSdXVOeTQ4YkVVM2cwa1duQ1JqUFVQQkw0bUt0d3pLckw5T3lXWHRhVHFIbzJWbXhvTERrTTFRb1kyR0pfeG4wRjNZRVBqcms2Sl92MldXM2dwMVk1RzlnOUxoV2FiMTdDczBob0RMWDlzSXFJeW5o?oc=5",
+     "resolved_url": "https://www.jota.info/justica/casas-bahia-pedem-recuperacao-judicial-por-dividas-de-r-173-bi-leia-a-integra-do-pedido",
+     "canonical_url": "https://www.jota.info/justica/casas-bahia-pedem-recuperacao-judicial-por-dividas-de-r-173-bi-leia-a-integra-do-pedido",
+     "display_url": "https://www.jota.info/justica/casas-bahia-pedem-recuperacao-judicial-por-dividas-de-r-173-bi-leia-a-integra-do-pedido",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.jota.info",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-18T10:49:09.598831+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "UOL Economia",
+     "domain": "economia.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQQnBnQ1V2UGd3OV8wMDI5ZTZwNkJoYzJZYU94MFI5c3NiZlk3M0RLRVBTWFlfTGNITEV4eFVDbUdBUlVzVDQ3c1Zma2xvRmtKREltWFIxT2JSMUlqZFVXQldPS3BsQVIwaFVGRlo1SkpMdGtteDlzZC1hMTBmYjhCNTNZeFdqX2t5c2hmQmdCQkdoR3J3cUs3cjVEbXNxS0hsc0dLOVIyWHIwci1Hd3JJUG5xRQ?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQQnBnQ1V2UGd3OV8wMDI5ZTZwNkJoYzJZYU94MFI5c3NiZlk3M0RLRVBTWFlfTGNITEV4eFVDbUdBUlVzVDQ3c1Zma2xvRmtKREltWFIxT2JSMUlqZFVXQldPS3BsQVIwaFVGRlo1SkpMdGtteDlzZC1hMTBmYjhCNTNZeFdqX2t5c2hmQmdCQkdoR3J3cUs3cjVEbXNxS0hsc0dLOVIyWHIwci1Hd3JJUG5xRQ?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQQnBnQ1V2UGd3OV8wMDI5ZTZwNkJoYzJZYU94MFI5c3NiZlk3M0RLRVBTWFlfTGNITEV4eFVDbUdBUlVzVDQ3c1Zma2xvRmtKREltWFIxT2JSMUlqZFVXQldPS3BsQVIwaFVGRlo1SkpMdGtteDlzZC1hMTBmYjhCNTNZeFdqX2t5c2hmQmdCQkdoR3J3cUs3cjVEbXNxS0hsc0dLOVIyWHIwci1Hd3JJUG5xRQ?oc=5",
+     "resolved_url": "https://economia.uol.com.br/noticias/redacao/2026/08/17/o-que-e-recuperacao-judicial-pedida-pela-casas-bahia.ghtm",
+     "canonical_url": "https://economia.uol.com.br/noticias/redacao/2026/08/17/o-que-e-recuperacao-judicial-pedida-pela-casas-bahia.ghtm",
+     "display_url": "https://economia.uol.com.br/noticias/redacao/2026/08/17/o-que-e-recuperacao-judicial-pedida-pela-casas-bahia.ghtm",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "economia.uol.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-18T10:49:10.205047+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "O GLOBO",
+     "domain": "oglobo.globo.com",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNM0RCeDFsN3FHcVBNcG1TWW0tSHo1bjg5OG92RGhVNENUcGh6R0RlSXdvYTJtRlNIZVpLeHRkM0lyVFVPWjI5amM2TzlDc3JGTVBDenV0YUNscGRMcmR4Z3huT283YXhyX3gyUVlGeEZnWVJHU2tpNE43LWQ4bHlBLWZibloxLXVoQS1sZmlNNUlZLTBwakZUYkVsYzVZT3FVZG55ekpLVnYxMHd1YmZsTTVIWUUtOTR2Y1VkdU0xY1ZNSElpWWfSAdQBQVVfeXFMUGFNZnNBX0VJc1ZJM0NhbXNmY2Z5eHd3akY4Rzhaa2FSTjFIdnp2MndHQzZGUERadWtRclZONGdrd2dRdVhFczRseGp1eDZqLURkbjdOTGN6aHNCVEZQVjNneHgyazFUekV3NE5qVEdDcTFVQUEtbm9DQ1hUUlBJNW9WLWtfY1pSM2J4eHJWa1FycHhfOF80UjFfV19jTUplcTNqRHAwV2ZBUHg4Rmd1R0J3TmgwUGgxOG9HY21BM01tRTd2SmJpOXMteEtzUWFkTzJIVnA?oc=5",
+     "when": "17/08 07:09",
+     "original_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNM0RCeDFsN3FHcVBNcG1TWW0tSHo1bjg5OG92RGhVNENUcGh6R0RlSXdvYTJtRlNIZVpLeHRkM0lyVFVPWjI5amM2TzlDc3JGTVBDenV0YUNscGRMcmR4Z3huT283YXhyX3gyUVlGeEZnWVJHU2tpNE43LWQ4bHlBLWZibloxLXVoQS1sZmlNNUlZLTBwakZUYkVsYzVZT3FVZG55ekpLVnYxMHd1YmZsTTVIWUUtOTR2Y1VkdU0xY1ZNSElpWWfSAdQBQVVfeXFMUGFNZnNBX0VJc1ZJM0NhbXNmY2Z5eHd3akY4Rzhaa2FSTjFIdnp2MndHQzZGUERadWtRclZONGdrd2dRdVhFczRseGp1eDZqLURkbjdOTGN6aHNCVEZQVjNneHgyazFUekV3NE5qVEdDcTFVQUEtbm9DQ1hUUlBJNW9WLWtfY1pSM2J4eHJWa1FycHhfOF80UjFfV19jTUplcTNqRHAwV2ZBUHg4Rmd1R0J3TmgwUGgxOG9HY21BM01tRTd2SmJpOXMteEtzUWFkTzJIVnA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNM0RCeDFsN3FHcVBNcG1TWW0tSHo1bjg5OG92RGhVNENUcGh6R0RlSXdvYTJtRlNIZVpLeHRkM0lyVFVPWjI5amM2TzlDc3JGTVBDenV0YUNscGRMcmR4Z3huT283YXhyX3gyUVlGeEZnWVJHU2tpNE43LWQ4bHlBLWZibloxLXVoQS1sZmlNNUlZLTBwakZUYkVsYzVZT3FVZG55ekpLVnYxMHd1YmZsTTVIWUUtOTR2Y1VkdU0xY1ZNSElpWWfSAdQBQVVfeXFMUGFNZnNBX0VJc1ZJM0NhbXNmY2Z5eHd3akY4Rzhaa2FSTjFIdnp2MndHQzZGUERadWtRclZONGdrd2dRdVhFczRseGp1eDZqLURkbjdOTGN6aHNCVEZQVjNneHgyazFUekV3NE5qVEdDcTFVQUEtbm9DQ1hUUlBJNW9WLWtfY1pSM2J4eHJWa1FycHhfOF80UjFfV19jTUplcTNqRHAwV2ZBUHg4Rmd1R0J3TmgwUGgxOG9HY21BM01tRTd2SmJpOXMteEtzUWFkTzJIVnA?oc=5",
+     "resolved_url": "https://oglobo.globo.com/economia/noticia/2026/08/17/casas-bahia-pede-recuperacao-judicial-apos-prejuizo-de-r-101-bilhoes.ghtml",
+     "canonical_url": "https://oglobo.globo.com/economia/noticia/2026/08/17/casas-bahia-pede-recuperacao-judicial-apos-prejuizo-de-r-101-bilhoes.ghtml",
+     "display_url": "https://oglobo.globo.com/economia/noticia/2026/08/17/casas-bahia-pede-recuperacao-judicial-apos-prejuizo-de-r-101-bilhoes.ghtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "oglobo.globo.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-18T10:49:10.605309+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "G1",
+     "domain": "g1.globo.com",
+     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQNGkwbVcxYTQ0dHlTRmVxcFJqWHhSRkdNNE5kd2tkWEZwMUVDMVZQMFR5enBOTW5Ebnl0OXhLVXhjVlNNVTBlMTYyaHhhM2hHaTZnRHBYZGY4WE1DMEtscnFWTzBVX2U4a2dya29MVkVYNmlpa0xaTDNYZzl1UEZ0T2g4N244cGdjVUtVV1ZHcGlNVk1GOUtqZ3pTOTQzZ0FYWEpmVVZubzdqelHSAboBQVVfeXFMTndFTWpGeHJ1OTBWNDFfdU1DSjZDeEpNdDNzMV80UnVwNi11QVA2ZEp3QkJSTkJzeExkalljV0l0UDhwRjBVVlE5bHFmRlgzNFlSRlVWYm1fX3ByQ2x5SjZoMkhoNklQTmw3ZnlUMFl5aGRkaVZ2RGFMeEVRSFpHZ3BGdXlTb0pVNnpDREdWTm9fRHRfNXpUb2ZRczFRWHNUZUQ2NXZLTnlQRFljM3R1QzhyWXQ5M2Z1Mzln?oc=5",
+     "when": "17/08 07:15",
+     "original_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQNGkwbVcxYTQ0dHlTRmVxcFJqWHhSRkdNNE5kd2tkWEZwMUVDMVZQMFR5enBOTW5Ebnl0OXhLVXhjVlNNVTBlMTYyaHhhM2hHaTZnRHBYZGY4WE1DMEtscnFWTzBVX2U4a2dya29MVkVYNmlpa0xaTDNYZzl1UEZ0T2g4N244cGdjVUtVV1ZHcGlNVk1GOUtqZ3pTOTQzZ0FYWEpmVVZubzdqelHSAboBQVVfeXFMTndFTWpGeHJ1OTBWNDFfdU1DSjZDeEpNdDNzMV80UnVwNi11QVA2ZEp3QkJSTkJzeExkalljV0l0UDhwRjBVVlE5bHFmRlgzNFlSRlVWYm1fX3ByQ2x5SjZoMkhoNklQTmw3ZnlUMFl5aGRkaVZ2RGFMeEVRSFpHZ3BGdXlTb0pVNnpDREdWTm9fRHRfNXpUb2ZRczFRWHNUZUQ2NXZLTnlQRFljM3R1QzhyWXQ5M2Z1Mzln?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQNGkwbVcxYTQ0dHlTRmVxcFJqWHhSRkdNNE5kd2tkWEZwMUVDMVZQMFR5enBOTW5Ebnl0OXhLVXhjVlNNVTBlMTYyaHhhM2hHaTZnRHBYZGY4WE1DMEtscnFWTzBVX2U4a2dya29MVkVYNmlpa0xaTDNYZzl1UEZ0T2g4N244cGdjVUtVV1ZHcGlNVk1GOUtqZ3pTOTQzZ0FYWEpmVVZubzdqelHSAboBQVVfeXFMTndFTWpGeHJ1OTBWNDFfdU1DSjZDeEpNdDNzMV80UnVwNi11QVA2ZEp3QkJSTkJzeExkalljV0l0UDhwRjBVVlE5bHFmRlgzNFlSRlVWYm1fX3ByQ2x5SjZoMkhoNklQTmw3ZnlUMFl5aGRkaVZ2RGFMeEVRSFpHZ3BGdXlTb0pVNnpDREdWTm9fRHRfNXpUb2ZRczFRWHNUZUQ2NXZLTnlQRFljM3R1QzhyWXQ5M2Z1Mzln?oc=5",
+     "resolved_url": "https://g1.globo.com/economia/noticia/2026/08/17/casas-bahia-entra-com-pedido-de-recuperacao-judicial.ghtml",
+     "canonical_url": "https://g1.globo.com/economia/noticia/2026/08/17/casas-bahia-entra-com-pedido-de-recuperacao-judicial.ghtml",
+     "display_url": "https://g1.globo.com/economia/noticia/2026/08/17/casas-bahia-entra-com-pedido-de-recuperacao-judicial.ghtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "g1.globo.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-18T10:49:11.005603+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "Folha de S.Paulo",
+     "domain": "www1.folha.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdmxaNTBzSkhfdF9ueXE2bms0cmdKdVU0QlU2RXE1ZnFadGdKNVRwV2oyUHZPQXctM3dzZU5CUjVMT1FId3ZoT3VFbUlTUG5XOWZCUGtxNy1hY2xFYVpwcktWdXRkTnFVXzZud1lsY1RPOTdHVzE4dzRnSzcwWGlJREl1THdJbEMzcHdfemc0ejEzX1pUX0Y1Vk9ySkNUaHA0TDZoVFJEOA?oc=5",
+     "when": "17/08 07:24",
+     "original_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdmxaNTBzSkhfdF9ueXE2bms0cmdKdVU0QlU2RXE1ZnFadGdKNVRwV2oyUHZPQXctM3dzZU5CUjVMT1FId3ZoT3VFbUlTUG5XOWZCUGtxNy1hY2xFYVpwcktWdXRkTnFVXzZud1lsY1RPOTdHVzE4dzRnSzcwWGlJREl1THdJbEMzcHdfemc0ejEzX1pUX0Y1Vk9ySkNUaHA0TDZoVFJEOA?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdmxaNTBzSkhfdF9ueXE2bms0cmdKdVU0QlU2RXE1ZnFadGdKNVRwV2oyUHZPQXctM3dzZU5CUjVMT1FId3ZoT3VFbUlTUG5XOWZCUGtxNy1hY2xFYVpwcktWdXRkTnFVXzZud1lsY1RPOTdHVzE4dzRnSzcwWGlJREl1THdJbEMzcHdfemc0ejEzX1pUX0Y1Vk9ySkNUaHA0TDZoVFJEOA?oc=5",
+     "resolved_url": "https://www1.folha.uol.com.br/mercado/2026/08/casas-bahia-entra-com-pedido-de-recuperacao-judicial.shtml",
+     "canonical_url": "https://www1.folha.uol.com.br/mercado/2026/08/casas-bahia-entra-com-pedido-de-recuperacao-judicial.shtml",
+     "display_url": "https://www1.folha.uol.com.br/mercado/2026/08/casas-bahia-entra-com-pedido-de-recuperacao-judicial.shtml",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www1.folha.uol.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-18T10:49:11.405864+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "CNN Brasil",
+     "domain": "cnnbrasil.com.br",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVXFWTkpjOHFnMmFGWkxIWEotMEtxOUlnRVNCWHdZa2N1d2xXejIxU3ZKaFhVd1oxb21qMzFkc2ZJUDF0OUJNRTA5X1oxRElhc2RwMEJZTE1iQ0FBQ0sxN2lpSk01NnE2LVcxQTRFUm56VksxMlg2d2dDdFd5MDZNVDg1dDZkZHVQdXZmUzgyMDFPc2NFUHBvRWZrVkV2QThHaVBtWlM5enlTc1F6blhmV0Q0VnZxelZpd25zTW9yX2lyVEpoT2x3?oc=5",
+     "when": "17/08 08:55"
+    },
+    {
+     "source": "Terra",
+     "domain": "terra.com.br",
+     "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxNY2tjX2c4anpDR0FrdHd4dVNJU1JmeUlBVllQNXV0dWFPWG14ZlJhaC05QmV3UVN3NUdpTzdBV3VtWWdCajgwOS1wdEtLT09LdUNndTE1LTM2NzJkaXpoVWJKNzNHLXNya01kZk04UW9aTWk4a0FuR2d1Q05YQ0t1Y1dMN2dVcmxTZ0lYdF85Wkl4cDZtYV8wZDFJY0lDQ0NXdzdHX0hSUEVaejNqdjVHQmtTMzBWZndCNnlFY0szNDZCOWxsX181Q2tnREhlZEw0YTJvZ2FERlFaWDBmbDFma0l6NTJtOWhld3hTckNmazhvdWRYUXdpNXNrSVloSlJTR1gydFBrNDF1MHBS?oc=5",
+     "when": "17/08 14:13"
+    },
+    {
+     "source": "JOTA Info",
+     "domain": "jota.info",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZzBRbHBUaWpYQzFHRHdhMmNha2FnZmpQUWQ3ZXZlUEkwMUJpYW1DaVlacnpYMWdBQmUxSHkybHJXVFNtZ19WZ2FSdXVOeTQ4YkVVM2cwa1duQ1JqUFVQQkw0bUt0d3pLckw5T3lXWHRhVHFIbzJWbXhvTERrTTFRb1kyR0pfeG4wRjNZRVBqcms2Sl92MldXM2dwMVk1RzlnOUxoV2FiMTdDczBob0RMWDlzSXFJeW5o?oc=5",
+     "when": "17/08 16:37"
+    },
+    {
+     "source": "UOL Economia",
+     "domain": "economia.uol.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQQnBnQ1V2UGd3OV8wMDI5ZTZwNkJoYzJZYU94MFI5c3NiZlk3M0RLRVBTWFlfTGNITEV4eFVDbUdBUlVzVDQ3c1Zma2xvRmtKREltWFIxT2JSMUlqZFVXQldPS3BsQVIwaFVGRlo1SkpMdGtteDlzZC1hMTBmYjhCNTNZeFdqX2t5c2hmQmdCQkdoR3J3cUs3cjVEbXNxS0hsc0dLOVIyWHIwci1Hd3JJUG5xRQ?oc=5",
+     "when": "17/08 18:27"
+    }
+   ],
+   "captured_ts": 1787050125,
+   "cap_iso": "2026-08-18 07:48"
+  },
+  "https://br.investing.com/news/analyst-ratings/stephens-reduz-precoalvo-da-jbs-apos-resultado-misto-93CH-2041188": {
+   "title": "Stephens reduz preço-alvo da JBS após resultado misto",
+   "url": "https://br.investing.com/news/analyst-ratings/stephens-reduz-precoalvo-da-jbs-apos-resultado-misto-93CH-2041188",
+   "summary": "Stephens reduz preço-alvo da JBS após resultado misto &nbsp;&nbsp; Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "domain": "br.investing.com",
+   "pub_ts": 1786966560,
+   "pub_iso": "2026-08-17 08:36",
+   "language": "pt",
+   "companies": [
+    "JBS"
+   ],
+   "event_ids": [
+    "recomendacao_negativa"
+   ],
+   "mention_roles": {
+    "JBS": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "companies_attributed": [
+    "JBS"
+   ],
+   "events_by_company": {
+    "JBS": [
+     "recomendacao_negativa"
+    ]
+   },
+   "context_companies": [],
+   "captured_ts": 1787050125,
+   "cap_iso": "2026-08-18 07:48"
+  },
+  "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOWnRqVVVld21FUUptZTBHb1ZJT2JJWTlhMGlCQ3U4VDZMbWJfb01KY0JIeExQd2k0UGFReG0zTkdSSEtXUWRjNTc2dWltQW5QUDJfT0FYOFQ5U1lKR1FBYmVreU1uU21pYmpPMEVFeFhpU3ByZjF2QWlqLURCdXZIdlBiVUs4UHI3dTFwZGZBT05feThGS3RUOFZ6RFRoYkpDakg3VURBOUhpR2NBY3o2cjluV1ZacjZLd2J1Ymk4emR0VHFUVmE5M3lLWHlvZ1dGQmxWWHVXSU1xVUJhazlJSkVQYml4Zw?oc=5": {
+   "title": "CVM abre processo contra presidente do BB por supostas falas que podem induzir investidores ao erro",
+   "url": "https://www1.folha.uol.com.br/mercado/2026/08/cvm-abre-processo-contra-presidente-do-bb-por-supostas-falas-que-podem-induzir-investidores-ao-erro.shtml",
+   "summary": "CVM abre processo contra presidente do BB por supostas falas que podem induzir investidores ao erro &nbsp;&nbsp; Folha de S.Paulo",
+   "source": "Folha de S.Paulo",
+   "domain": "www1.folha.uol.com.br",
+   "pub_ts": 1787014980,
+   "pub_iso": "2026-08-17 22:03",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "investigacao_regulatoria"
+   ],
+   "captured_ts": 1787050125,
+   "cap_iso": "2026-08-18 07:48"
   }
  },
  "last_run": {
-  "ts": 1787009856,
-  "iso": "17 ago 2026 · 20:37 BRT",
+  "ts": 1787050191,
+  "iso": "18 ago 2026 · 07:49 BRT",
   "status": {
-   "Cosan": {
-    "status": "atencao",
-    "score": 65
-   },
    "JBS": {
     "status": "atencao",
-    "score": 62
+    "score": 75
+   },
+   "Cosan": {
+    "status": "atencao",
+    "score": 64
    },
    "Engie Brasil": {
     "status": "atencao",
@@ -55011,19 +55345,19 @@
    },
    "Santander Brasil": {
     "status": "atencao",
-    "score": 40
+    "score": 39
    },
    "Orizon Valorização de Resíduos": {
     "status": "monitorar",
-    "score": 36
-   },
-   "Smart Fit": {
-    "status": "monitorar",
-    "score": 33
+    "score": 35
    },
    "Citigroup": {
     "status": "monitorar",
     "score": 33
+   },
+   "Smart Fit": {
+    "status": "monitorar",
+    "score": 32
    },
    "Axia Energia": {
     "status": "monitorar",
@@ -55035,7 +55369,7 @@
    },
    "B3": {
     "status": "monitorar",
-    "score": 28
+    "score": 27
    },
    "Yobel": {
     "status": "monitorar",
@@ -55049,13 +55383,13 @@
     "status": "atencao",
     "score": 22
    },
-   "Baker Hughes": {
-    "status": "monitorar",
-    "score": 21
-   },
    "Eneva": {
     "status": "monitorar",
     "score": 21
+   },
+   "Baker Hughes": {
+    "status": "monitorar",
+    "score": 20
    },
    "ISA Energia Brasil": {
     "status": "monitorar",
@@ -55095,17 +55429,17 @@
    },
    "Natura &Co": {
     "status": "monitorar",
-    "score": 14
-   },
-   "EQT Corporation": {
-    "status": "monitorar",
-    "score": 14
+    "score": 13
    },
    "Albioma": {
     "status": "monitorar",
     "score": 13
    },
    "Energisa": {
+    "status": "monitorar",
+    "score": 13
+   },
+   "EQT Corporation": {
     "status": "monitorar",
     "score": 13
    },
@@ -60789,9 +61123,57 @@
   "https://news.google.com/rss/articles/CBMitgFBVV95cUxPV2E3UFJHLUtBcnNVbDIxaG44YmVOS3VWQ1F0RW9ib05Jc1plVTZJY1JHRTY4TThiUmo0VzJGcy10c3VKeEJnNE9hQWktQ1o2VWNyeGlzLVIzU2tsNklqVVZpd0dtNUNKblB2T1lkWnpWMVQzVGV5NkJWZ0pDZ05uQTBhd2hLWHJ3MktjSGx4TzJWTjZXWW5WakwwRFBVZ01nQjZxMll5b3p1S3J1WVlrZC1CSnExUQ?oc=5": {
    "url": "https://veja.abril.com.br/economia/em-recuperacao-judicial-dona-da-tokstok-ve-o-prejuizo-mais-que-dobrar-em-um-ano/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMisAFBVV95cUxOdVVSTzFOdzAzZ2JuQjhFTEV5V0JlT25LZ3NUaFN1dlhWcG5pLUo4SkduaTBqWWNLN0VLTVRfZ1ViQ2NDYkp2SngzWVJRT2h6VlNGeFFSYWNVQVpLOXYtNXdnQVd3djBPWTZobFpjZzVDU1Z5TFdoZlI1NDBvZVlET0I5anQ3VUNpWlotV3lhOWg1SFkwZWhFc0lscTBLVWJ1U1d5cWRSczhjWUwyc0llQg?oc=5": {
+   "url": "https://br.investing.com/news/analyst-ratings/stephens-reduz-precoalvo-da-jbs-apos-resultado-misto-93CH-2041188",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMizwFBVV95cUxOWnNMLTNxSkpRTGFfMHB6NlBPOWdkSXdGVGtXbWhEbUlPMDM5SzJ2My1sMVVLOUxVTGNZWGc3N3piSGNtNGVXSXBtaEs4d1VWQmVZWmhnOWFoaE5wVmdVd19tVnM5WlhWQVZuMkgyWWVOODkxbHhPUC1vSjdBVDVXZHV5aEk2bHpJalM3WGVseFFQa2JXQWpfeU1vUk9xcjNtVktsUGxEZE5kS3JHRURxN3JMRVR6bGpYWFFzUEpJWXl0ZFdMQnVxRDQzZ3FCV2_SAd4BQVVfeXFMUGtkemJBcmhiRmJJRlBuNzBJWjduVEpjeml3VWR5RkNKUzBVVFY5UU9KV0p6SlZTTDNvQTY4STJ1cEFLdjBjTUhhOExFcnMwWUdVeGlBR0lZYm9nYUhLZEF0aHZmTXJRdlA5YVdkMzB5LXc0QmZXRGEzMjZiZERBSk1OdVoxU19IYnVIRHlEWFRyVHBDN3k4a0ZEWWRMekJQREdmNlNIUDYyeGpHUXpjajhLa0hkTmF0UXpUZkhBUDF6clVhUTNYcUJPNkZYYnV2czI1SWhHRnFKaGZuUzR3?oc=5": {
+   "url": "https://valor.globo.com/empresas/noticia/2026/08/17/exclusivo-casas-bahia-pede-recuperacao-judicial-com-passivo-de-r-173-bilhoes.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOWnRqVVVld21FUUptZTBHb1ZJT2JJWTlhMGlCQ3U4VDZMbWJfb01KY0JIeExQd2k0UGFReG0zTkdSSEtXUWRjNTc2dWltQW5QUDJfT0FYOFQ5U1lKR1FBYmVreU1uU21pYmpPMEVFeFhpU3ByZjF2QWlqLURCdXZIdlBiVUs4UHI3dTFwZGZBT05feThGS3RUOFZ6RFRoYkpDakg3VURBOUhpR2NBY3o2cjluV1ZacjZLd2J1Ymk4emR0VHFUVmE5M3lLWHlvZ1dGQmxWWHVXSU1xVUJhazlJSkVQYml4Zw?oc=5": {
+   "url": "https://www1.folha.uol.com.br/mercado/2026/08/cvm-abre-processo-contra-presidente-do-bb-por-supostas-falas-que-podem-induzir-investidores-ao-erro.shtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRG9QR3FvRElrbzl4bkd3VDQxTWVMeTM4Q0tOMG8zeWdZeFlIcVUwYVlJNTV1YXRxNXlYV0Z1cXBYb3VUd092cFhGbUV3QWhlUUQ5QXVUaGhUazZ1OUlrSnNnRGphTVJ4Vjk3S1E2dmJCRTJGX2tNSm5UeHduOUZ6Ykx5RlJlN0k0YVg3RDg4Rm1Gb1pKdDFvdEhpV1drNDA3cXhxb29FSUJnTzNq0gGyAUFVX3lxTFA1Z3ZYUDdzNnlhVW10SFl2ZVVHUEwxN21RYTNKeTEwUHoyRlU0WkRPLTVyamNRZHZhSE94cjJCYWxJMFRMcUlORjJHUlVfa0RPOEhWaHY4SUVjUmRCMHRfQlFrWlNTVFdPUGpYaUcxUGxkY3dyYTFqU0E3TUdVMkhVU091cEN2dWNVVlgyekpqNDlmckdoWTRGWkExSmt3VEpsTXVNMkZkT1Z5V0VEZzlNd1E?oc=5": {
+   "url": "https://investidor10.com.br/noticias/isa-energia-isae4-avalia-potencial-oferta-de-acoes-veja-valores-121265/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNSTZXaUM2ZTZmQUtDQlQ5UFBPSkVDMnJweW8xQlNxT0gxNnl5ZVRFMEN6MlNRSE85ZEpOYkQ2aGRLa2NjUU5DY1lEbXd4V0VTbnFDWUh2c01fallZT3FWb0JQc2NRdFBYN1p0LWdlYXZGR2t0T0NoOXJ0NFhyaTdTZnJuZmJNZUpQRWhWOFhYaTNGa2FmbXNrYUFWbU55Sjc0N3RJajh3bTJHaGlxRFd2S0pOVU52UkFsd1pfamF4M3o1WGZOR3Q3VnlQSkNsQzhOMXlENjhydE5RWnY1cmVQcGZmOTBrU2h6ZTZR?oc=5": {
+   "url": "https://br.advfn.com/jornal/2026/07/petrobras-conclui-aquisicao-de-bloco-exploratorio-em-sao-tome-e-principe-e-reforca-estrategia-de-expansao-internacional",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMixgFBVV95cUxNM0RCeDFsN3FHcVBNcG1TWW0tSHo1bjg5OG92RGhVNENUcGh6R0RlSXdvYTJtRlNIZVpLeHRkM0lyVFVPWjI5amM2TzlDc3JGTVBDenV0YUNscGRMcmR4Z3huT283YXhyX3gyUVlGeEZnWVJHU2tpNE43LWQ4bHlBLWZibloxLXVoQS1sZmlNNUlZLTBwakZUYkVsYzVZT3FVZG55ekpLVnYxMHd1YmZsTTVIWUUtOTR2Y1VkdU0xY1ZNSElpWWfSAdQBQVVfeXFMUGFNZnNBX0VJc1ZJM0NhbXNmY2Z5eHd3akY4Rzhaa2FSTjFIdnp2MndHQzZGUERadWtRclZONGdrd2dRdVhFczRseGp1eDZqLURkbjdOTGN6aHNCVEZQVjNneHgyazFUekV3NE5qVEdDcTFVQUEtbm9DQ1hUUlBJNW9WLWtfY1pSM2J4eHJWa1FycHhfOF80UjFfV19jTUplcTNqRHAwV2ZBUHg4Rmd1R0J3TmgwUGgxOG9HY21BM01tRTd2SmJpOXMteEtzUWFkTzJIVnA?oc=5": {
+   "url": "https://oglobo.globo.com/economia/noticia/2026/08/17/casas-bahia-pede-recuperacao-judicial-apos-prejuizo-de-r-101-bilhoes.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQNGkwbVcxYTQ0dHlTRmVxcFJqWHhSRkdNNE5kd2tkWEZwMUVDMVZQMFR5enBOTW5Ebnl0OXhLVXhjVlNNVTBlMTYyaHhhM2hHaTZnRHBYZGY4WE1DMEtscnFWTzBVX2U4a2dya29MVkVYNmlpa0xaTDNYZzl1UEZ0T2g4N244cGdjVUtVV1ZHcGlNVk1GOUtqZ3pTOTQzZ0FYWEpmVVZubzdqelHSAboBQVVfeXFMTndFTWpGeHJ1OTBWNDFfdU1DSjZDeEpNdDNzMV80UnVwNi11QVA2ZEp3QkJSTkJzeExkalljV0l0UDhwRjBVVlE5bHFmRlgzNFlSRlVWYm1fX3ByQ2x5SjZoMkhoNklQTmw3ZnlUMFl5aGRkaVZ2RGFMeEVRSFpHZ3BGdXlTb0pVNnpDREdWTm9fRHRfNXpUb2ZRczFRWHNUZUQ2NXZLTnlQRFljM3R1QzhyWXQ5M2Z1Mzln?oc=5": {
+   "url": "https://g1.globo.com/economia/noticia/2026/08/17/casas-bahia-entra-com-pedido-de-recuperacao-judicial.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdmxaNTBzSkhfdF9ueXE2bms0cmdKdVU0QlU2RXE1ZnFadGdKNVRwV2oyUHZPQXctM3dzZU5CUjVMT1FId3ZoT3VFbUlTUG5XOWZCUGtxNy1hY2xFYVpwcktWdXRkTnFVXzZud1lsY1RPOTdHVzE4dzRnSzcwWGlJREl1THdJbEMzcHdfemc0ejEzX1pUX0Y1Vk9ySkNUaHA0TDZoVFJEOA?oc=5": {
+   "url": "https://www1.folha.uol.com.br/mercado/2026/08/casas-bahia-entra-com-pedido-de-recuperacao-judicial.shtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVXFWTkpjOHFnMmFGWkxIWEotMEtxOUlnRVNCWHdZa2N1d2xXejIxU3ZKaFhVd1oxb21qMzFkc2ZJUDF0OUJNRTA5X1oxRElhc2RwMEJZTE1iQ0FBQ0sxN2lpSk01NnE2LVcxQTRFUm56VksxMlg2d2dDdFd5MDZNVDg1dDZkZHVQdXZmUzgyMDFPc2NFUHBvRWZrVkV2QThHaVBtWlM5enlTc1F6blhmV0Q0VnZxelZpd25zTW9yX2lyVEpoT2x3?oc=5": {
+   "url": "https://www.cnnbrasil.com.br/economia/money/negocios/por-que-as-casas-bahia-pediram-recuperacao-judicial-veja-o-que-empresa-diz/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMijAJBVV95cUxNY2tjX2c4anpDR0FrdHd4dVNJU1JmeUlBVllQNXV0dWFPWG14ZlJhaC05QmV3UVN3NUdpTzdBV3VtWWdCajgwOS1wdEtLT09LdUNndTE1LTM2NzJkaXpoVWJKNzNHLXNya01kZk04UW9aTWk4a0FuR2d1Q05YQ0t1Y1dMN2dVcmxTZ0lYdF85Wkl4cDZtYV8wZDFJY0lDQ0NXdzdHX0hSUEVaejNqdjVHQmtTMzBWZndCNnlFY0szNDZCOWxsX181Q2tnREhlZEw0YTJvZ2FERlFaWDBmbDFma0l6NTJtOWhld3hTckNmazhvdWRYUXdpNXNrSVloSlJTR1gydFBrNDF1MHBS?oc=5": {
+   "url": "https://www.terra.com.br/economia/relacao-de-credores-plano-e-mais-o-que-acontece-apos-o-pedido-de-recuperacao-judicial-da-casas-bahia,f60179090c2d8bd2d5eda5719fb15e85yrlv7agt.html",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZzBRbHBUaWpYQzFHRHdhMmNha2FnZmpQUWQ3ZXZlUEkwMUJpYW1DaVlacnpYMWdBQmUxSHkybHJXVFNtZ19WZ2FSdXVOeTQ4YkVVM2cwa1duQ1JqUFVQQkw0bUt0d3pLckw5T3lXWHRhVHFIbzJWbXhvTERrTTFRb1kyR0pfeG4wRjNZRVBqcms2Sl92MldXM2dwMVk1RzlnOUxoV2FiMTdDczBob0RMWDlzSXFJeW5o?oc=5": {
+   "url": "https://www.jota.info/justica/casas-bahia-pedem-recuperacao-judicial-por-dividas-de-r-173-bi-leia-a-integra-do-pedido",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiswFBVV95cUxQQnBnQ1V2UGd3OV8wMDI5ZTZwNkJoYzJZYU94MFI5c3NiZlk3M0RLRVBTWFlfTGNITEV4eFVDbUdBUlVzVDQ3c1Zma2xvRmtKREltWFIxT2JSMUlqZFVXQldPS3BsQVIwaFVGRlo1SkpMdGtteDlzZC1hMTBmYjhCNTNZeFdqX2t5c2hmQmdCQkdoR3J3cUs3cjVEbXNxS0hsc0dLOVIyWHIwci1Hd3JJUG5xRQ?oc=5": {
+   "url": "https://economia.uol.com.br/noticias/redacao/2026/08/17/o-que-e-recuperacao-judicial-pedida-pela-casas-bahia.ghtm",
+   "exact": true
   }
  },
- "run_count": 133,
+ "run_count": 134,
  "semantic_reclassified_at": "2026-07-30T21:07:47.714609+00:00",
  "semantic_version": "1.0"
 }

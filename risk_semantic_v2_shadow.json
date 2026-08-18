@@ -1974,6 +1974,246 @@
     "total_token_count": 1646
    }
   },
+  "83effbd842777700232f|JBS|recomendacao_negativa|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "83effbd842777700232f",
+   "article_pub_iso": "2026-08-17 08:36",
+   "candidate_event": "recomendacao_negativa",
+   "case_id": "83effbd842777700232f|JBS|recomendacao_negativa|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "JBS",
+   "contract_version": "v2",
+   "created_at": "2026-08-18T10:50:42Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-18 07:48",
+    "contexto": false,
+    "event_id": "recomendacao_negativa",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 0,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": false,
+       "marcas": [
+        "H1_QUOTE_INEXISTENTE"
+       ],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [
+         "phase_quote"
+        ],
+        "valida": false
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Stephens reduz preço-alvo da JBS após resultado misto",
+      "event_asserted": "MENTIONED_ONLY",
+      "event_id": "recomendacao_negativa",
+      "event_quote": "Stephens reduz preço-alvo da JBS",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Stephens reduz preço-alvo da JBS",
+      "phase": "UNKNOWN",
+      "phase_quote": "null",
+      "related_entity": "Stephens",
+      "relation": "analista financeiro",
+      "relation_quote": "Stephens",
+      "role_quote": "JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "null"
+     }
+    ],
+    "falha": "",
+    "marcas": [
+     "H1_QUOTE_INEXISTENTE"
+    ],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-18 07:48",
+   "human_review": null,
+   "latencia_s": 1.72,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Stephens reduz preço-alvo da JBS após resultado misto",
+      "event_asserted": "MENTIONED_ONLY",
+      "event_id": "recomendacao_negativa",
+      "event_quote": "Stephens reduz preço-alvo da JBS",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Stephens reduz preço-alvo da JBS",
+      "phase": "UNKNOWN",
+      "phase_quote": "null",
+      "related_entity": "Stephens",
+      "relation": "analista financeiro",
+      "relation_quote": "Stephens",
+      "role_quote": "JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "null"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "title": "Stephens reduz preço-alvo da JBS após resultado misto",
+   "url": "https://br.investing.com/news/analyst-ratings/stephens-reduz-precoalvo-da-jbs-apos-resultado-misto-93CH-2041188",
+   "usage": {
+    "candidates_token_count": 286,
+    "prompt_token_count": 1327,
+    "total_token_count": 1613
+   }
+  },
+  "83effbd842777700232f|JBS|recomendacao_negativa|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "83effbd842777700232f",
+   "article_pub_iso": "2026-08-17 08:36",
+   "candidate_event": "recomendacao_negativa",
+   "case_id": "83effbd842777700232f|JBS|recomendacao_negativa|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "JBS",
+   "contract_version": "v2",
+   "created_at": "2026-08-18T10:50:52Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-18 07:48",
+    "contexto": false,
+    "event_id": "recomendacao_negativa",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Stephens reduz preço-alvo da JBS após resultado misto",
+      "event_asserted": "ASSERTED",
+      "event_id": "recomendacao_negativa",
+      "event_quote": "Stephens reduz preço-alvo da JBS",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Stephens reduz preço-alvo da JBS após resultado misto",
+      "phase": "CONFIRMED",
+      "phase_quote": "Stephens reduz preço-alvo da JBS",
+      "related_entity": "Stephens",
+      "relation": "reduz preço-alvo da",
+      "relation_quote": "reduz preço-alvo da",
+      "role_quote": "JBS",
+      "subject": "Stephens",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Stephens",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-18 07:48",
+   "human_review": null,
+   "latencia_s": 1.72,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Stephens reduz preço-alvo da JBS após resultado misto",
+      "event_asserted": "ASSERTED",
+      "event_id": "recomendacao_negativa",
+      "event_quote": "Stephens reduz preço-alvo da JBS",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Stephens reduz preço-alvo da JBS após resultado misto",
+      "phase": "CONFIRMED",
+      "phase_quote": "Stephens reduz preço-alvo da JBS",
+      "related_entity": "Stephens",
+      "relation": "reduz preço-alvo da",
+      "relation_quote": "reduz preço-alvo da",
+      "role_quote": "JBS",
+      "subject": "Stephens",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Stephens",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "title": "Stephens reduz preço-alvo da JBS após resultado misto",
+   "url": "https://br.investing.com/news/analyst-ratings/stephens-reduz-precoalvo-da-jbs-apos-resultado-misto-93CH-2041188",
+   "usage": {
+    "candidates_token_count": 310,
+    "prompt_token_count": 1327,
+    "total_token_count": 1637
+   }
+  },
   "8f820bbc8fc89c13911b|Eneva|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {
    "actual_model": "gemini-3.1-flash-lite",
    "article_id": "8f820bbc8fc89c13911b",
