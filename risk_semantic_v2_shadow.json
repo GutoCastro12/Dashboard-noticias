@@ -80,7 +80,41 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-18 16:37",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-18T00:00:00Z",
+    "aproximacao_de_enum": "COMPANY_ROLE_ENUM_GAP = OPEN. O enum atual (SUBJECT, BUYER, SELLER, TARGET, INVESTOR, CREDITOR, DEBTOR, VICTIM, PERPETRATOR, MENTIONED, UNRELATED, UNKNOWN) nao expressa 'dirigente em exercicio e o alvo do evento; a companhia monitorada e relacionada institucionalmente'. Usei MENTIONED por ser o papel nao-sujeito mais proximo disponivel — e uma APROXIMACAO, registrada como tal. SUBJECT superestima: o banco nao e parte formal nem sujeito economico estabelecido. UNRELATED subestima: a relacao nao e incidental, e o cargo e do proprio banco. Nenhum enum novo foi criado nesta onda.",
+    "backlog_relacionado": "Guarda para dirigente EM EXERCICIO ainda NAO implementada. `R_AFILIACAO_INDIVIDUAL` existe mas seu padrao exige ex-/former/antigo, entao alcanca ex-dirigente e nao alcanca dirigente atual. Generalizar NAO e simplesmente tornar o prefixo opcional: uma onda propria precisa medir blast no corpus e construir controles positivos (dirigente investigado por ato praticado em nome da companhia, companhia co-investigada, acoes do proprio emissor, responsabilidade corporativa afirmada) e negativos (pessoa como alvo formal, empresa so no titulo do cargo, sem evidencia de capacidade institucional).",
+    "camada_artigo": {
+     "criterio": "O EVENTO E REAL E AFIRMADO: a CVM abriu processo. Por isso event_asserted=ASSERTED, e nao MENTIONED_ONLY. O erro nao esta na existencia do evento, esta na ATRIBUICAO. O alvo formal, pela literalidade do input congelado, e 'presidente do Banco do Brasil' — a pessoa. O banco aparece como genitivo do cargo.",
+     "scoreable": false
+    },
+    "camada_sistema": {
+     "alvo_formal": "PRESIDENT_OF_BANCO_DO_BRASIL_PERSON",
+     "capacidade_institucional_declarada": false,
+     "conduta_declarada": "declaracao sobre acoes — o input nao diz quais acoes, onde, nem em que qualidade",
+     "criterio": "Para o Banco do Brasil monitorado, a evidencia congelada NAO estabelece investigacao regulatoria direta da companhia. O titulo nao diz que o banco e parte/investigado, nao diz que a declaracao foi feita em nome do banco, nao diz que as acoes sao do proprio BB, e nao afirma responsabilidade corporativa. Relevancia de governanca NAO e o mesmo que evento regulatorio direto pontuavel do emissor: afiliacao, sozinha, nao da autoridade de score ao emissor.",
+     "deterministico_divergente": "o caminho deterministico marcou scoreable=True, relation_type=direto e tratou o BB como sujeito. A verdade humana CONFLITA: este e erro de atribuicao/pontuabilidade.",
+     "nova_ocorrencia_mas_nao_pontuavel": "occurrence_novelty=NEW_OCCURRENCE descreve o EVENTO (processo novo, sem irmao do mesmo processo ou da mesma pessoa no acervo). Nao implica pontuabilidade para o BB: ocorrencia nova nao e ocorrencia pontuavel da monitorada.",
+     "relacao_economica": "DISTINCT_OCCURRENCE"
+    },
+    "classe_de_falha": "CURRENT_OFFICER_AFFILIATION_ATTRIBUTED_AS_COMPANY_DIRECT",
+    "dimensoes_adjudicadas": {
+     "company_role": "MENTIONED",
+     "currentness": "CURRENT",
+     "event_asserted": "ASSERTED",
+     "occurrence_novelty": "NEW_OCCURRENCE",
+     "subject": "presidente do Banco do Brasil (pessoa fisica)"
+    },
+    "nota": "PRIMEIRO precedente humano de DIRIGENTE EM EXERCICIO como alvo formal de evento regulatorio. Distingue-se do precedente da YPF ('El exCEO de YPF que busca recuperar Aconcagua tras la quiebra', nao pontuavel): la a pessoa e EX-CEO e o fato e de terceiro, caso que a regra `R_AFILIACAO_INDIVIDUAL` ja cobre porque seu vocabulario exige ex-/former/antigo antes do cargo. Aqui o dirigente esta em exercicio e nenhum guarda atua. FASE e CENTRALIDADE NAO ADJUDICADAS de proposito: os dois modelos escreveram INVESTIGATION e MAIN, mas saida de modelo existente nao e dimensao humana adjudicada, e nenhuma das duas e necessaria para resolver a atribuicao. Adjudicado SOMENTE sobre a evidencia congelada — nenhum corpo de fonte foi buscado, porque o holdout mede o que deterministico, G1 e G2 viram no momento da inferencia.",
+    "razao_primaria": "alvo_formal_e_a_pessoa_empresa_e_vinculo_funcional",
+    "reviewed_at": 1787086610,
+    "reviewed_at_iso": "2026-08-18T20:56:50Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "scoreable": false,
+    "verdict": "PROCESSO_CONTRA_DIRIGENTE_NAO_E_EVENTO_DA_COMPANHIA",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 4.55,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.1-flash-lite",
@@ -197,7 +231,41 @@
     "finish_reason_nome": "STOP"
    },
    "first_seen_iso": "2026-08-18 16:37",
-   "human_review": null,
+   "human_review": {
+    "adjudicated_at_iso": "2026-08-18T00:00:00Z",
+    "aproximacao_de_enum": "COMPANY_ROLE_ENUM_GAP = OPEN. O enum atual (SUBJECT, BUYER, SELLER, TARGET, INVESTOR, CREDITOR, DEBTOR, VICTIM, PERPETRATOR, MENTIONED, UNRELATED, UNKNOWN) nao expressa 'dirigente em exercicio e o alvo do evento; a companhia monitorada e relacionada institucionalmente'. Usei MENTIONED por ser o papel nao-sujeito mais proximo disponivel — e uma APROXIMACAO, registrada como tal. SUBJECT superestima: o banco nao e parte formal nem sujeito economico estabelecido. UNRELATED subestima: a relacao nao e incidental, e o cargo e do proprio banco. Nenhum enum novo foi criado nesta onda.",
+    "backlog_relacionado": "Guarda para dirigente EM EXERCICIO ainda NAO implementada. `R_AFILIACAO_INDIVIDUAL` existe mas seu padrao exige ex-/former/antigo, entao alcanca ex-dirigente e nao alcanca dirigente atual. Generalizar NAO e simplesmente tornar o prefixo opcional: uma onda propria precisa medir blast no corpus e construir controles positivos (dirigente investigado por ato praticado em nome da companhia, companhia co-investigada, acoes do proprio emissor, responsabilidade corporativa afirmada) e negativos (pessoa como alvo formal, empresa so no titulo do cargo, sem evidencia de capacidade institucional).",
+    "camada_artigo": {
+     "criterio": "O EVENTO E REAL E AFIRMADO: a CVM abriu processo. Por isso event_asserted=ASSERTED, e nao MENTIONED_ONLY. O erro nao esta na existencia do evento, esta na ATRIBUICAO. O alvo formal, pela literalidade do input congelado, e 'presidente do Banco do Brasil' — a pessoa. O banco aparece como genitivo do cargo.",
+     "scoreable": false
+    },
+    "camada_sistema": {
+     "alvo_formal": "PRESIDENT_OF_BANCO_DO_BRASIL_PERSON",
+     "capacidade_institucional_declarada": false,
+     "conduta_declarada": "declaracao sobre acoes — o input nao diz quais acoes, onde, nem em que qualidade",
+     "criterio": "Para o Banco do Brasil monitorado, a evidencia congelada NAO estabelece investigacao regulatoria direta da companhia. O titulo nao diz que o banco e parte/investigado, nao diz que a declaracao foi feita em nome do banco, nao diz que as acoes sao do proprio BB, e nao afirma responsabilidade corporativa. Relevancia de governanca NAO e o mesmo que evento regulatorio direto pontuavel do emissor: afiliacao, sozinha, nao da autoridade de score ao emissor.",
+     "deterministico_divergente": "o caminho deterministico marcou scoreable=True, relation_type=direto e tratou o BB como sujeito. A verdade humana CONFLITA: este e erro de atribuicao/pontuabilidade.",
+     "nova_ocorrencia_mas_nao_pontuavel": "occurrence_novelty=NEW_OCCURRENCE descreve o EVENTO (processo novo, sem irmao do mesmo processo ou da mesma pessoa no acervo). Nao implica pontuabilidade para o BB: ocorrencia nova nao e ocorrencia pontuavel da monitorada.",
+     "relacao_economica": "DISTINCT_OCCURRENCE"
+    },
+    "classe_de_falha": "CURRENT_OFFICER_AFFILIATION_ATTRIBUTED_AS_COMPANY_DIRECT",
+    "dimensoes_adjudicadas": {
+     "company_role": "MENTIONED",
+     "currentness": "CURRENT",
+     "event_asserted": "ASSERTED",
+     "occurrence_novelty": "NEW_OCCURRENCE",
+     "subject": "presidente do Banco do Brasil (pessoa fisica)"
+    },
+    "nota": "PRIMEIRO precedente humano de DIRIGENTE EM EXERCICIO como alvo formal de evento regulatorio. Distingue-se do precedente da YPF ('El exCEO de YPF que busca recuperar Aconcagua tras la quiebra', nao pontuavel): la a pessoa e EX-CEO e o fato e de terceiro, caso que a regra `R_AFILIACAO_INDIVIDUAL` ja cobre porque seu vocabulario exige ex-/former/antigo antes do cargo. Aqui o dirigente esta em exercicio e nenhum guarda atua. FASE e CENTRALIDADE NAO ADJUDICADAS de proposito: os dois modelos escreveram INVESTIGATION e MAIN, mas saida de modelo existente nao e dimensao humana adjudicada, e nenhuma das duas e necessaria para resolver a atribuicao. Adjudicado SOMENTE sobre a evidencia congelada — nenhum corpo de fonte foi buscado, porque o holdout mede o que deterministico, G1 e G2 viram no momento da inferencia.",
+    "razao_primaria": "alvo_formal_e_a_pessoa_empresa_e_vinculo_funcional",
+    "reviewed_at": 1787086610,
+    "reviewed_at_iso": "2026-08-18T20:56:50Z",
+    "reviewer": "gustavo",
+    "reviewer_type": "human",
+    "scoreable": false,
+    "verdict": "PROCESSO_CONTRA_DIRIGENTE_NAO_E_EVENTO_DA_COMPANHIA",
+    "writer_version": "r7ba.hrw.v1"
+   },
    "latencia_s": 1.51,
    "prompt_version": "r7ba.p2",
    "requested_model": "gemini-3.5-flash-lite",
