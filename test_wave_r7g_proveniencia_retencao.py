@@ -271,17 +271,15 @@ _hist_tmp = _tmp("hist.json")
 io.open(_hist_tmp, "w", encoding="utf-8").write(
     json.dumps({"articles": {r1["url"]: _rec(FEED_TS)}}, ensure_ascii=False))
 _cam_j = _tmp("prov3.json")
-_orig_cam = dp.CAMINHO
-try:
-    dp.CAMINHO = _cam_j
-    _pl = rep.aplicar(_hist_tmp, r1["url"], _html(_iso_de(PAG_TS)),
-                      aplicar_de_fato=True)
-    check(_pl.get("auditoria_proveniencia", {}).get("novos"),
-          f"[48] `--apply` grava a trilha ({_pl.get('auditoria_proveniencia')})")
-    check(dp.consultar(dp.id_do_registro(_rec(FEED_TS)), _cam_j) is not None,
-          "[49] e a entrada e consultavel logo apos o reparo")
-finally:
-    dp.CAMINHO = _orig_cam
+# Injecao explicita, nao monkeypatch de `dp.CAMINHO`: o parametro e o contrato,
+# e teste que depende de reatribuir global volta a vazar para producao no dia
+# em que alguem esquecer o `finally`.
+_pl = rep.aplicar(_hist_tmp, r1["url"], _html(_iso_de(PAG_TS)),
+                  aplicar_de_fato=True, caminho_proveniencia=_cam_j)
+check(_pl.get("auditoria_proveniencia", {}).get("novos"),
+      f"[48] `--apply` grava a trilha ({_pl.get('auditoria_proveniencia')})")
+check(dp.consultar(dp.id_do_registro(_rec(FEED_TS)), _cam_j) is not None,
+      "[49] e a entrada e consultavel logo apos o reparo")
 _travado = _rec(FEED_TS, manual_correction={"locked_fields": ["pub_ts", "pub_iso"]})
 _ct = pd.verificar_registro(_travado, _html(_iso_de(PAG_TS)))
 check(_ct.get("pub_date_verification") == "ignorado_correcao_manual",

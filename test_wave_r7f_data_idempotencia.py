@@ -262,7 +262,9 @@ io.open(_tmp, "w", encoding="utf-8").write(
 _html_p = _html(_iso_de(PAG_TS))
 _prev = rep.preparar(json.load(io.open(_tmp, encoding="utf-8")),
                      "https://exemplo.invalido/artigo", _html_p)
-rep.aplicar(_tmp, "https://exemplo.invalido/artigo", _html_p, aplicar_de_fato=True)
+_prov_tmp = os.path.join(os.path.dirname(_tmp), "prov.json")
+rep.aplicar(_tmp, "https://exemplo.invalido/artigo", _html_p,
+            aplicar_de_fato=True, caminho_proveniencia=_prov_tmp)
 _depois = json.load(io.open(_tmp, encoding="utf-8"))
 _rec = _depois["articles"]["https://exemplo.invalido/artigo"]
 check(all(_rec.get(k) == v for k, v in _prev["campos"].items()),

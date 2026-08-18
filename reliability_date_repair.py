@@ -130,8 +130,19 @@ def preparar(historico: dict, alvo: str, html: str, *,
 
 def aplicar(caminho_historico: str, alvo: str, html: str, *,
             agora: int | None = None, tolerancia: int = pd.TOLERANCIA_S,
-            aplicar_de_fato: bool = False) -> dict:
-    """Dry-run por padrão. Só grava com `aplicar_de_fato=True`."""
+            aplicar_de_fato: bool = False,
+            caminho_proveniencia: str | None = None) -> dict:
+    """Dry-run por padrão. Só grava com `aplicar_de_fato=True`.
+
+    `caminho_proveniencia` existe para que TESTE nenhum escreva no side-car de
+    produção. Sem ele, dois testes que aplicavam reparo de verdade gravaram
+    `exemplo.invalido` e a URL da Vale dentro de `risk_date_provenance.json`, e
+    isso foi publicado. Um arquivo de auditoria contaminado por fixture não
+    serve de auditoria.
+
+    `None` — e não `dp.CAMINHO` — de propósito: default avaliado no `def`
+    congela no import e reintroduz exatamente o defeito de captura que já
+    corrigimos dentro do próprio módulo de proveniência."""
     historico = json.load(io.open(caminho_historico, encoding="utf-8"))
     plano = preparar(historico, alvo, html, agora=agora, tolerancia=tolerancia)
     plano["aplicado"] = False
@@ -187,7 +198,8 @@ def aplicar(caminho_historico: str, alvo: str, html: str, *,
     # justamente por ter sido feita. O side-car não tem autoridade de score nem
     # semântica — guarda só como a data foi decidida.
     plano["auditoria_proveniencia"] = dp.registrar_muitos(
-        [(plano["url"], rec)], origem="date_repair",
+        [(plano["url"], rec)], caminho=caminho_proveniencia,
+        origem="date_repair",
         quando=plano["campos"].get("pub_date_policy", ""), aplicar=True)
     return plano
 
@@ -251,7 +263,8 @@ def main(argv=None) -> int:
             return 2
         html = r.text
     try:
-        p = aplicar(a.history, a.url, html, aplicar_de_fato=a.apply)
+        p = aplicar(a.history, a.url, html, aplicar_de_fato=a.apply,
+                    caminho_proveniencia=a.provenance)
     except ReparoRecusado as exc:
         print(f"RECUSADO: {exc}")
         return 2

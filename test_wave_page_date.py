@@ -28,12 +28,18 @@ from __future__ import annotations
 import copy
 import hashlib
 import io
+import os
 import json
 import tempfile
 from pathlib import Path
 
 import reliability_page_date as pd
 import reliability_date_repair as rep
+
+# Side-car de proveniência ISOLADO. Sem ele, um `aplicar` de verdade grava a
+# URL da Vale dentro do arquivo de auditoria de PRODUÇÃO — foi assim que a
+# entrada `21d8d044` acabou publicada por um teste.
+_PROV_TMP = os.path.join(tempfile.mkdtemp(prefix='pd_prov_'), 'prov.json')
 
 PASS = FAIL = 0
 FIXTURE = Path("test_fixtures_reliability/page_vale_samarco_2023.html")
@@ -294,17 +300,17 @@ _dois[URL_VALE + "?utm_source=x"] = copy.deepcopy(_H[URL_VALE])
 _dois[URL_VALE + "?utm_source=x"]["canonical_url"] = URL_VALE
 recusa(lambda: rep.aplicar(hist_temp(_dois), URL_VALE, HTML_VALE),
        "REGISTRO_AMBIGUO", "[51] dois registros com a mesma URL canônica abortam")
-recusa(lambda: rep.aplicar(_p, URL_VALE, "<html>sem data</html>", aplicar_de_fato=True),
+recusa(lambda: rep.aplicar(_p, URL_VALE, "<html>sem data</html>", aplicar_de_fato=True, caminho_proveniencia=_PROV_TMP),
        "SEM_DATA_NA_PAGINA", "[52] sem data forte na página, não corrige nada")
 _semconf = copy.deepcopy(_H)
 _semconf[URL_VALE]["pub_ts"] = PAGINA_TS + 3600
 recusa(lambda: rep.aplicar(hist_temp(_semconf), URL_VALE, HTML_VALE,
-                           aplicar_de_fato=True),
+                           aplicar_de_fato=True, caminho_proveniencia=_PROV_TMP),
        "SEM_CONFLITO_MATERIAL", "[53] sem conflito material, apply é recusado")
 _lock = copy.deepcopy(_H)
 _lock[URL_VALE]["manual_correction"] = {"locked_fields": ["pub_ts"]}
 recusa(lambda: rep.aplicar(hist_temp(_lock), URL_VALE, HTML_VALE,
-                           aplicar_de_fato=True),
+                           aplicar_de_fato=True, caminho_proveniencia=_PROV_TMP),
        "CORRECAO_MANUAL_TRAVADA", "[54] lock manual impede o reparo")
 
 print()
@@ -312,7 +318,7 @@ print("=" * 98)
 print("BLOCO L — APPLY EM FIXTURE: CIRÚRGICO E VERIFICADO")
 print("=" * 98)
 _p2 = hist_temp(copy.deepcopy(_H))
-_ap = rep.aplicar(_p2, URL_VALE, HTML_VALE, aplicar_de_fato=True)
+_ap = rep.aplicar(_p2, URL_VALE, HTML_VALE, aplicar_de_fato=True, caminho_proveniencia=_PROV_TMP)
 _novo = json.load(io.open(_p2, encoding="utf-8"))
 check(_ap["aplicado"] and _ap["registros_alterados"] == 1,
       "[55] exatamente um registro alterado")
