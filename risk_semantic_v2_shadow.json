@@ -2858,6 +2858,708 @@
     "total_token_count": 1642
    }
   },
+  "9107879a6502b164d2f9|JBS|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "9107879a6502b164d2f9",
+   "article_pub_iso": "2026-08-19 04:44",
+   "candidate_event": "ma",
+   "case_id": "9107879a6502b164d2f9|JBS|ma|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "JBS",
+   "contract_version": "v2",
+   "created_at": "2026-08-19T10:53:28Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-19 07:51",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "UBS reitera recomendação de compra para JBS após proposta de aquisição da PPC",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "proposta de aquisição da PPC",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "proposta de aquisição da PPC",
+      "phase": "ANNOUNCED",
+      "phase_quote": "proposta de aquisição",
+      "related_entity": "PPC",
+      "relation": "TARGET",
+      "relation_quote": "aquisição da PPC",
+      "role_quote": "JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "aquisição da PPC"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-19 07:51",
+   "human_review": null,
+   "latencia_s": 4.77,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "UBS reitera recomendação de compra para JBS após proposta de aquisição da PPC",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "proposta de aquisição da PPC",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "proposta de aquisição da PPC",
+      "phase": "ANNOUNCED",
+      "phase_quote": "proposta de aquisição",
+      "related_entity": "PPC",
+      "relation": "TARGET",
+      "relation_quote": "aquisição da PPC",
+      "role_quote": "JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "aquisição da PPC"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "title": "UBS reitera recomendação de compra para JBS após proposta de aquisição da PPC",
+   "url": "https://br.investing.com/news/analyst-ratings/ubs-reitera-recomendacao-de-compra-para-jbs-apos-proposta-de-aquisicao-da-ppc-93CH-2043656",
+   "usage": {
+    "candidates_token_count": 284,
+    "prompt_token_count": 1327,
+    "total_token_count": 1611
+   }
+  },
+  "9107879a6502b164d2f9|JBS|ma|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "9107879a6502b164d2f9",
+   "article_pub_iso": "2026-08-19 04:44",
+   "candidate_event": "ma",
+   "case_id": "9107879a6502b164d2f9|JBS|ma|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "JBS",
+   "contract_version": "v2",
+   "created_at": "2026-08-19T10:53:37Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-19 07:51",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "TARGET",
+      "currentness": "CURRENT",
+      "currentness_quote": "UBS reitera recomendação de compra para JBS após proposta de aquisição da PPC",
+      "event_asserted": "MENTIONED_ONLY",
+      "event_id": "ma",
+      "event_quote": "proposta de aquisição da PPC",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "após proposta de aquisição da PPC",
+      "phase": "ANNOUNCED",
+      "phase_quote": "proposta de aquisição",
+      "related_entity": "PPC",
+      "relation": "TARGET_OF_ACQUISITION",
+      "relation_quote": "aquisição da PPC",
+      "role_quote": "JBS",
+      "subject": "UBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "UBS",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "aquisição da PPC"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-19 07:51",
+   "human_review": null,
+   "latencia_s": 1.46,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "TARGET",
+      "currentness": "CURRENT",
+      "currentness_quote": "UBS reitera recomendação de compra para JBS após proposta de aquisição da PPC",
+      "event_asserted": "MENTIONED_ONLY",
+      "event_id": "ma",
+      "event_quote": "proposta de aquisição da PPC",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "após proposta de aquisição da PPC",
+      "phase": "ANNOUNCED",
+      "phase_quote": "proposta de aquisição",
+      "related_entity": "PPC",
+      "relation": "TARGET_OF_ACQUISITION",
+      "relation_quote": "aquisição da PPC",
+      "role_quote": "JBS",
+      "subject": "UBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "UBS",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "aquisição da PPC"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "title": "UBS reitera recomendação de compra para JBS após proposta de aquisição da PPC",
+   "url": "https://br.investing.com/news/analyst-ratings/ubs-reitera-recomendacao-de-compra-para-jbs-apos-proposta-de-aquisicao-da-ppc-93CH-2043656",
+   "usage": {
+    "candidates_token_count": 291,
+    "prompt_token_count": 1327,
+    "total_token_count": 1618
+   }
+  },
+  "9307e232d8826f80d230|Suzano|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "9307e232d8826f80d230",
+   "article_pub_iso": "2026-05-11 04:00",
+   "candidate_event": "ma",
+   "case_id": "9307e232d8826f80d230|Suzano|ma|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "Suzano",
+   "contract_version": "v2",
+   "created_at": "2026-08-19T10:53:49Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-19 07:51",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "aprovacao",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "União Europeia aprova aquisição pela Suzano",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "União Europeia aprova aquisição pela Suzano de participação majoritária na Kimberly-Clark",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "União Europeia aprova aquisição",
+      "phase": "CONFIRMED",
+      "phase_quote": "aprova",
+      "related_entity": "Kimberly-Clark",
+      "relation": "ACQUISITION",
+      "relation_quote": "aquisição pela Suzano de participação majoritária na Kimberly-Clark",
+      "role_quote": "aquisição pela Suzano",
+      "subject": "Suzano",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Suzano",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "participação majoritária"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-19 07:51",
+   "human_review": null,
+   "latencia_s": 3.27,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "União Europeia aprova aquisição pela Suzano",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "União Europeia aprova aquisição pela Suzano de participação majoritária na Kimberly-Clark",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "União Europeia aprova aquisição",
+      "phase": "CONFIRMED",
+      "phase_quote": "aprova",
+      "related_entity": "Kimberly-Clark",
+      "relation": "ACQUISITION",
+      "relation_quote": "aquisição pela Suzano de participação majoritária na Kimberly-Clark",
+      "role_quote": "aquisição pela Suzano",
+      "subject": "Suzano",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Suzano",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "participação majoritária"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Valor Econômico",
+   "title": "União Europeia aprova aquisição pela Suzano de participação majoritária na Kimberly-Clark",
+   "url": "https://valor.globo.com/empresas/noticia/2026/05/11/uniao-europeia-aprova-aquisicao-pela-suzano-de-participacao-majoritaria-na-kimberly-clark.ghtml",
+   "usage": {
+    "candidates_token_count": 308,
+    "prompt_token_count": 1319,
+    "total_token_count": 1627
+   }
+  },
+  "9307e232d8826f80d230|Suzano|ma|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "9307e232d8826f80d230",
+   "article_pub_iso": "2026-05-11 04:00",
+   "candidate_event": "ma",
+   "case_id": "9307e232d8826f80d230|Suzano|ma|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "Suzano",
+   "contract_version": "v2",
+   "created_at": "2026-08-19T10:53:58Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-19 07:51",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "aprovacao",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "União Europeia aprova aquisição pela Suzano de participação majoritária na Kimberly-Clark",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "União Europeia aprova aquisição pela Suzano de participação majoritária na Kimberly-Clark",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "União Europeia aprova aquisição pela Suzano de participação majoritária na Kimberly-Clark",
+      "phase": "CONFIRMED",
+      "phase_quote": "União Europeia aprova",
+      "related_entity": "Kimberly-Clark",
+      "relation": "acquires_stake",
+      "relation_quote": "aquisição",
+      "role_quote": "pela Suzano",
+      "subject": "Suzano",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Suzano",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "participação majoritária"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-19 07:51",
+   "human_review": null,
+   "latencia_s": 1.55,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "União Europeia aprova aquisição pela Suzano de participação majoritária na Kimberly-Clark",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "União Europeia aprova aquisição pela Suzano de participação majoritária na Kimberly-Clark",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "União Europeia aprova aquisição pela Suzano de participação majoritária na Kimberly-Clark",
+      "phase": "CONFIRMED",
+      "phase_quote": "União Europeia aprova",
+      "related_entity": "Kimberly-Clark",
+      "relation": "acquires_stake",
+      "relation_quote": "aquisição",
+      "role_quote": "pela Suzano",
+      "subject": "Suzano",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Suzano",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "participação majoritária"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Valor Econômico",
+   "title": "União Europeia aprova aquisição pela Suzano de participação majoritária na Kimberly-Clark",
+   "url": "https://valor.globo.com/empresas/noticia/2026/05/11/uniao-europeia-aprova-aquisicao-pela-suzano-de-participacao-majoritaria-na-kimberly-clark.ghtml",
+   "usage": {
+    "candidates_token_count": 321,
+    "prompt_token_count": 1319,
+    "total_token_count": 1640
+   }
+  },
+  "ac0be217149db21ae564|JBS|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "ac0be217149db21ae564",
+   "article_pub_iso": "2026-08-18 19:21",
+   "candidate_event": "ma",
+   "case_id": "ac0be217149db21ae564|JBS|ma|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "JBS",
+   "contract_version": "v2",
+   "created_at": "2026-08-19T10:54:08Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-19 07:51",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "JBS propõe aquisição dos 18% restantes da Pilgrim\"s Pride",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "JBS propõe aquisição dos 18% restantes da Pilgrim\"s Pride",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "JBS propõe aquisição",
+      "phase": "ANNOUNCED",
+      "phase_quote": "propõe",
+      "related_entity": "Pilgrim's Pride",
+      "relation": "ACQUISITION",
+      "relation_quote": "aquisição",
+      "role_quote": "JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "18% restantes da Pilgrim\"s Pride"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-19 07:51",
+   "human_review": null,
+   "latencia_s": 1.93,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "JBS propõe aquisição dos 18% restantes da Pilgrim\"s Pride",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "JBS propõe aquisição dos 18% restantes da Pilgrim\"s Pride",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "JBS propõe aquisição",
+      "phase": "ANNOUNCED",
+      "phase_quote": "propõe",
+      "related_entity": "Pilgrim's Pride",
+      "relation": "ACQUISITION",
+      "relation_quote": "aquisição",
+      "role_quote": "JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "18% restantes da Pilgrim\"s Pride"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "title": "JBS propõe aquisição dos 18% restantes da Pilgrim’s Pride",
+   "url": "https://br.investing.com/news/company-news/jbs-propoe-aquisicao-dos-18-restantes-da-pilgrims-pride-93CH-2043398",
+   "usage": {
+    "candidates_token_count": 299,
+    "prompt_token_count": 1326,
+    "total_token_count": 1625
+   }
+  },
+  "ac0be217149db21ae564|JBS|ma|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "ac0be217149db21ae564",
+   "article_pub_iso": "2026-08-18 19:21",
+   "candidate_event": "ma",
+   "case_id": "ac0be217149db21ae564|JBS|ma|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "JBS",
+   "contract_version": "v2",
+   "created_at": "2026-08-19T10:54:18Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-19 07:51",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "JBS propõe aquisição dos 18% restantes da Pilgrim\"s Pride",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "JBS propõe aquisição dos 18% restantes da Pilgrim\"s Pride",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "JBS propõe aquisição dos 18% restantes da Pilgrim\"s Pride",
+      "phase": "ANNOUNCED",
+      "phase_quote": "JBS propõe aquisição",
+      "related_entity": "Pilgrim's Pride",
+      "relation": "acquiring remaining stake",
+      "relation_quote": "propõe aquisição dos 18% restantes",
+      "role_quote": "JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "18% restantes da Pilgrim\"s Pride"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-19 07:51",
+   "human_review": null,
+   "latencia_s": 1.4,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "JBS propõe aquisição dos 18% restantes da Pilgrim\"s Pride",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "JBS propõe aquisição dos 18% restantes da Pilgrim\"s Pride",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "JBS propõe aquisição dos 18% restantes da Pilgrim\"s Pride",
+      "phase": "ANNOUNCED",
+      "phase_quote": "JBS propõe aquisição",
+      "related_entity": "Pilgrim's Pride",
+      "relation": "acquiring remaining stake",
+      "relation_quote": "propõe aquisição dos 18% restantes",
+      "role_quote": "JBS",
+      "subject": "JBS",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "JBS",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "18% restantes da Pilgrim\"s Pride"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+   "title": "JBS propõe aquisição dos 18% restantes da Pilgrim’s Pride",
+   "url": "https://br.investing.com/news/company-news/jbs-propoe-aquisicao-dos-18-restantes-da-pilgrims-pride-93CH-2043398",
+   "usage": {
+    "candidates_token_count": 322,
+    "prompt_token_count": 1326,
+    "total_token_count": 1648
+   }
+  },
   "bf449889bcebca2a7d7a|Lojas Renner|recomendacao_negativa|v2|r7ba.p2|gemini-3.1-flash-lite": {
    "actual_model": "gemini-3.1-flash-lite",
    "article_id": "bf449889bcebca2a7d7a",
@@ -3150,6 +3852,240 @@
     "candidates_token_count": 260,
     "prompt_token_count": 1326,
     "total_token_count": 1586
+   }
+  },
+  "c8b94e33ce070747ba16|Cosan|rebaixamento_rating|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "c8b94e33ce070747ba16",
+   "article_pub_iso": "2026-08-05 10:33",
+   "candidate_event": "rebaixamento_rating",
+   "case_id": "c8b94e33ce070747ba16|Cosan|rebaixamento_rating|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "Cosan",
+   "contract_version": "v2",
+   "created_at": "2026-08-19T10:54:27Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-19 07:51",
+    "contexto": false,
+    "event_id": "rebaixamento_rating",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "S&P rebaixa rating da Cosan",
+      "event_asserted": "ASSERTED",
+      "event_id": "rebaixamento_rating",
+      "event_quote": "S&P rebaixa rating da Cosan para \"B+\"",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "S&P rebaixa rating da Cosan",
+      "phase": "CONFIRMED",
+      "phase_quote": "S&P rebaixa rating da Cosan para \"B+\"",
+      "related_entity": "S&P",
+      "relation": "CREDIT_RATING_AGENCY",
+      "relation_quote": "S&P",
+      "role_quote": "Cosan",
+      "subject": "Cosan",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Cosan",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-19 07:51",
+   "human_review": null,
+   "latencia_s": 1.85,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "S&P rebaixa rating da Cosan",
+      "event_asserted": "ASSERTED",
+      "event_id": "rebaixamento_rating",
+      "event_quote": "S&P rebaixa rating da Cosan para \"B+\"",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "S&P rebaixa rating da Cosan",
+      "phase": "CONFIRMED",
+      "phase_quote": "S&P rebaixa rating da Cosan para \"B+\"",
+      "related_entity": "S&P",
+      "relation": "CREDIT_RATING_AGENCY",
+      "relation_quote": "S&P",
+      "role_quote": "Cosan",
+      "subject": "Cosan",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Cosan",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "revistarpanews.com.br",
+   "title": "S&P rebaixa rating da Cosan para ‘B+’ e mantém perspectiva negativa",
+   "url": "https://revistarpanews.com.br/sp-rebaixa-rating-da-cosan-para-b-e-mantem-perspectiva-negativa/",
+   "usage": {
+    "candidates_token_count": 308,
+    "prompt_token_count": 1325,
+    "total_token_count": 1633
+   }
+  },
+  "c8b94e33ce070747ba16|Cosan|rebaixamento_rating|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "c8b94e33ce070747ba16",
+   "article_pub_iso": "2026-08-05 10:33",
+   "candidate_event": "rebaixamento_rating",
+   "case_id": "c8b94e33ce070747ba16|Cosan|rebaixamento_rating|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "Cosan",
+   "contract_version": "v2",
+   "created_at": "2026-08-19T10:54:37Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-19 07:51",
+    "contexto": false,
+    "event_id": "rebaixamento_rating",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "S&P rebaixa rating da Cosan para \"B+\"",
+      "event_asserted": "ASSERTED",
+      "event_id": "rebaixamento_rating",
+      "event_quote": "S&P rebaixa rating da Cosan para \"B+\"",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "S&P rebaixa rating da Cosan para \"B+\"",
+      "phase": "CONFIRMED",
+      "phase_quote": "rebaixa",
+      "related_entity": "S&P",
+      "relation": "rebaixa rating de",
+      "relation_quote": "rebaixa rating da",
+      "role_quote": "Cosan",
+      "subject": "Cosan",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Cosan",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": ""
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-19 07:51",
+   "human_review": null,
+   "latencia_s": 1.46,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "S&P rebaixa rating da Cosan para \"B+\"",
+      "event_asserted": "ASSERTED",
+      "event_id": "rebaixamento_rating",
+      "event_quote": "S&P rebaixa rating da Cosan para \"B+\"",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "S&P rebaixa rating da Cosan para \"B+\"",
+      "phase": "CONFIRMED",
+      "phase_quote": "rebaixa",
+      "related_entity": "S&P",
+      "relation": "rebaixa rating de",
+      "relation_quote": "rebaixa rating da",
+      "role_quote": "Cosan",
+      "subject": "Cosan",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Cosan",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": ""
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "revistarpanews.com.br",
+   "title": "S&P rebaixa rating da Cosan para ‘B+’ e mantém perspectiva negativa",
+   "url": "https://revistarpanews.com.br/sp-rebaixa-rating-da-cosan-para-b-e-mantem-perspectiva-negativa/",
+   "usage": {
+    "candidates_token_count": 298,
+    "prompt_token_count": 1325,
+    "total_token_count": 1623
    }
   },
   "d566e840bd3c1d4f43bc|Citigroup|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {

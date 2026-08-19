@@ -12,6 +12,32 @@
   "store_version": "pubdate.audit.store.v1"
  },
  "articles": {
+  "00284b38e96fe6d3f521": {
+   "article_id": "00284b38e96fe6d3f521",
+   "companies": [
+    "Cigna Group"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2025-03-19 04:00",
+    "feed_pub_ts": 1742367600,
+    "page_date_modified": "2025-03-19T08:27:09-04:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2025-03-19 12:26",
+    "page_pub_ts": 1742387160,
+    "pub_date_conflict_s": 19560,
+    "pub_date_note": "divergência de 19560s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2025-03-19 04:00",
+    "pub_ts": 1742367600
+   },
+   "revisions": [],
+   "source": "PR Newswire",
+   "title": "HCSC Conclui a Aquisição dos Negócios de Medicare e CareAllies do The Cigna Group",
+   "url": "https://www.prnewswire.com/news-releases/hcsc-completes-the-acquisition-of-the-cigna-groups-medicare-and-careallies-businesses-302405814.html"
+  },
   "061eb3b6f37708a1986e": {
    "article_id": "061eb3b6f37708a1986e",
    "companies": [
@@ -140,6 +166,32 @@
    "source": "NeoFeed",
    "title": "Na Caixa Seguridade, um follow-on \"protocolar\"",
    "url": "https://neofeed.com.br/negocios/na-caixa-seguridade-um-follow-on-protocolar/"
+  },
+  "143ecf31122c23daaeed": {
+   "article_id": "143ecf31122c23daaeed",
+   "companies": [
+    "Cigna Group"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2026-03-31 04:00",
+    "feed_pub_ts": 1774940400,
+    "page_date_modified": "2026-08-13G 03:40:09 +0530",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2026-03-02 12:13",
+    "page_pub_ts": 1772453580,
+    "pub_date_conflict_s": 2486820,
+    "pub_date_note": "FEED_PAGE_DATE_CONFLICT: feed e página divergem 28 dia(s); a página é a autoridade",
+    "pub_date_origin": "pagina",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_pagina",
+    "pub_iso": "2026-03-02 09:13",
+    "pub_ts": 1772453580
+   },
+   "revisions": [],
+   "source": "Digital Health News",
+   "title": "Evernorth, da Cigna, Conclui a Aquisição da CarepathRx",
+   "url": "https://www.digitalhealthnews.com/cigna-s-evernorth-completes-acquisition-of-carepathrx"
   },
   "15a7e52d9022faee03e8": {
    "article_id": "15a7e52d9022faee03e8",
@@ -323,6 +375,32 @@
    "title": "Latam Brasil se incorpora ao processo de falência iniciado pelo grupo nos Estados Unidos",
    "url": "https://elpais.com/economia/2020-07-09/latam-brasil-se-incorpora-al-proceso-de-quiebra-iniciado-por-el-grupo-en-estados-unidos.html"
   },
+  "6f4aee47ee774f80d43e": {
+   "article_id": "6f4aee47ee774f80d43e",
+   "companies": [
+    "Ultrapar"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2025-04-17 04:00",
+    "feed_pub_ts": 1744873200,
+    "page_date_modified": "2025-04-17T09:29:15-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2025-04-17 12:29",
+    "page_pub_ts": 1744892955,
+    "pub_date_conflict_s": 19755,
+    "pub_date_note": "divergência de 19755s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2025-04-17 04:00",
+    "pub_ts": 1744873200
+   },
+   "revisions": [],
+   "source": "Estadão",
+   "title": "Ultrapar (UGPA3) confirma novo CEO e chairman à frente dos negócios; veja os executivos",
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/ultrapar-ugpa3-novo-ceo-chairman/"
+  },
   "741727b32365430dd471": {
    "article_id": "741727b32365430dd471",
    "companies": [
@@ -479,6 +557,31 @@
    "title": "Dasa faz aquisição de R$ 750 milhões e cresce na oncologia",
    "url": "https://braziljournal.com/dasa-faz-aquisicao-de-r-750-milhoes-e-cresce-na-oncologia/"
   },
+  "94be2201f5b2c4f79603": {
+   "article_id": "94be2201f5b2c4f79603",
+   "companies": [
+    "Banco CNH Industrial"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2022-04-29 04:00",
+    "feed_pub_ts": 1651215600,
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2022-04-29 16:40",
+    "page_pub_ts": 1651250446,
+    "pub_date_conflict_s": 34846,
+    "pub_date_note": "divergência de 34846s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2022-04-29 04:00",
+    "pub_ts": 1651215600
+   },
+   "revisions": [],
+   "source": "Money Times",
+   "title": "Banco CNH Industrial capta R$ 600 milhões em 1ª emissão de Letras Financeiras do ano",
+   "url": "https://www.moneytimes.com.br/banco-cnh-industrial-capta-r-600-milhoes-em-1a-emissao-de-letras-financeiras-do-ano/"
+  },
   "972a2d5f184545235f9d": {
    "article_id": "972a2d5f184545235f9d",
    "companies": [
@@ -614,6 +717,32 @@
    "title": "Após sair da recuperação judicial, Latam Airlines sobe 76% e lidera entre seus rivais",
    "url": "https://www.bloomberglinea.com/negocios/tras-salir-de-la-quiebra-latam-airlines-repunta-76-y-lidera-entre-sus-rivales/"
   },
+  "a8caaa9098aaddc3d834": {
+   "article_id": "a8caaa9098aaddc3d834",
+   "companies": [
+    "Eneva"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2024-07-16 04:00",
+    "feed_pub_ts": 1721113200,
+    "page_date_modified": "2026-01-17T11:22:31-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2024-07-16 10:11",
+    "page_pub_ts": 1721124716,
+    "pub_date_conflict_s": 11516,
+    "pub_date_note": "divergência de 11516s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2024-07-16 04:00",
+    "pub_ts": 1721113200
+   },
+   "revisions": [],
+   "source": "Brazil Journal",
+   "title": "BREAKING: Eneva anuncia follow-on de até R$ 4,2 bi e compra térmicas do BTG",
+   "url": "https://braziljournal.com/breaking-eneva-anuncia-follow-on-de-ate-r-42-bi-e-compra-termicas-do-btg/"
+  },
   "ac3f2705257e7c48cfe8": {
    "article_id": "ac3f2705257e7c48cfe8",
    "companies": [
@@ -640,6 +769,32 @@
    "source": "Seu Dinheiro",
    "title": "PetroRio (PRIO3) caminha na aquisição da Dommo (DMMO3), de Eike Batista, e anuncia recompra de ações",
    "url": "https://www.seudinheiro.com/2022/empresas/petrorio-prio3-aquisicao-dommo-dmmo3-recompra-de-acoes-miql/"
+  },
+  "b03b6dfcc4c4769b0f36": {
+   "article_id": "b03b6dfcc4c4769b0f36",
+   "companies": [
+    "Grupo Security"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2024-09-30 04:00",
+    "feed_pub_ts": 1727679600,
+    "page_date_modified": "2024-09-30T11:09:59.698Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2024-09-30 10:00",
+    "page_pub_ts": 1727690401,
+    "pub_date_conflict_s": 10801,
+    "pub_date_note": "divergência de 10801s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2024-09-30 04:00",
+    "pub_ts": 1727679600
+   },
+   "revisions": [],
+   "source": "La Tercera",
+   "title": "Os números do Grupo Security e da Bicecorp diante da fusão e das agências duplicadas",
+   "url": "https://www.latercera.com/pulso/noticia/las-cifras-de-grupo-security-y-bicecorp-de-cara-la-fusion-y-las-sucursales-duplicadas/ORFAOZ67RFBUXNPLS4OXH7ZA7Q/"
   },
   "b6532a7b091bac73848f": {
    "article_id": "b6532a7b091bac73848f",
@@ -693,6 +848,32 @@
    "title": "Grécia investirá 600 milhões de euros na aquisição dos três Embraer KC-390 Millennium",
    "url": "https://forcaaerea.com.br/grecia-investira-600-milhoes-de-euros-na-aquisicao-dos-tres-embraer-kc-390-millennium/"
   },
+  "c8b94e33ce070747ba16": {
+   "article_id": "c8b94e33ce070747ba16",
+   "companies": [
+    "Cosan"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2026-08-05 10:33",
+    "feed_pub_ts": 1785936820,
+    "page_date_modified": "2026-08-05T10:30:45-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2026-08-05 13:30",
+    "page_pub_ts": 1785936645,
+    "pub_date_conflict_s": 175,
+    "pub_date_note": "divergência de 175s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2026-08-05 10:33",
+    "pub_ts": 1785936820
+   },
+   "revisions": [],
+   "source": "revistarpanews.com.br",
+   "title": "S&P rebaixa rating da Cosan para ‘B+’ e mantém perspectiva negativa",
+   "url": "https://revistarpanews.com.br/sp-rebaixa-rating-da-cosan-para-b-e-mantem-perspectiva-negativa/"
+  },
   "cf016fb1269219c4c160": {
    "article_id": "cf016fb1269219c4c160",
    "companies": [
@@ -718,6 +899,32 @@
    "source": "Agência eixos",
    "title": "Cade dá aval para aquisição de 40% do campo de Peregrino pela Prio",
    "url": "https://eixos.com.br/empresas/cade-da-aval-para-aquisicao-de-40-do-campo-de-peregrino-pela-prio/"
+  },
+  "d58623901ccb3df233b4": {
+   "article_id": "d58623901ccb3df233b4",
+   "companies": [
+    "Multiplan"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2023-03-09 05:00",
+    "feed_pub_ts": 1678348800,
+    "page_date_modified": "2023-03-09T20:21:41.065Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2023-03-09 20:21",
+    "page_pub_ts": 1678393300,
+    "pub_date_conflict_s": 44500,
+    "pub_date_note": "divergência de 44500s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2023-03-09 05:00",
+    "pub_ts": 1678348800
+   },
+   "revisions": [],
+   "source": "Bloomberg Línea Brasil",
+   "title": "Multiplan mira expansão ao interior e Nordeste e renovar quadros, diz novo CEO",
+   "url": "https://www.bloomberglinea.com.br/2023/03/09/multiplan-mira-expansao-para-o-nordeste-e-renovacao-de-quadros-diz-novo-ceo/"
   },
   "dbac821240a3bf50ca12": {
    "article_id": "dbac821240a3bf50ca12",
