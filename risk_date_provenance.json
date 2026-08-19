@@ -141,6 +141,32 @@
    "title": "Copel (CPLE6) aprova 10ª emissão de debêntures no valor de R$ 3 bilhões; veja data de vencimento",
    "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/copel-emissao-debentures-data-de-vencimento-valor-total/"
   },
+  "1334e14fb7d5f4aa0e1a": {
+   "article_id": "1334e14fb7d5f4aa0e1a",
+   "companies": [
+    "Direcional Engenharia"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2023-06-30 04:00",
+    "feed_pub_ts": 1688108400,
+    "page_date_modified": "2023-07-03T11:48:22-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2023-06-30 21:47",
+    "page_pub_ts": 1688161648,
+    "pub_date_conflict_s": 53248,
+    "pub_date_note": "divergência de 53248s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2023-06-30 04:00",
+    "pub_ts": 1688108400
+   },
+   "revisions": [],
+   "source": "Brazil Journal",
+   "title": "Direcional: follow-on sai a R$ 18,25 com book 5x coberto",
+   "url": "https://braziljournal.com/direcional-follow-on-sai-a-r-1825-com-book-5x-coberto/"
+  },
   "13fb08532c1e98cc9375": {
    "article_id": "13fb08532c1e98cc9375",
    "companies": [
@@ -219,6 +245,32 @@
    "title": "OPA, rumeurs : Umanis, Albioma et Casino en évidence",
    "url": "https://www.lerevenu.com/reussir-bourse/coeur-operations/opa-rumeurs-umanis-albioma-et-casino-en-evidence/"
   },
+  "15d95834a0ec4f72ff90": {
+   "article_id": "15d95834a0ec4f72ff90",
+   "companies": [
+    "Direcional Engenharia"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2023-07-27 04:00",
+    "feed_pub_ts": 1690441200,
+    "page_date_modified": "2023-07-27T08:47:46-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2023-07-27 10:26",
+    "page_pub_ts": 1690453590,
+    "pub_date_conflict_s": 12390,
+    "pub_date_note": "divergência de 12390s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2023-07-27 04:00",
+    "pub_ts": 1690441200
+   },
+   "revisions": [],
+   "source": "Migalhas",
+   "title": "Tauil & Chequer Advogados atua em follow-on da Direcional Engenharia",
+   "url": "https://www.migalhas.com.br/quentes/390641/tauil--chequer-advogados-atua-em-follow-on-da-direcional-engenharia"
+  },
   "15fab00c7987e171283e": {
    "article_id": "15fab00c7987e171283e",
    "companies": [
@@ -244,6 +296,31 @@
    "source": "TELETIME News",
    "title": "Eletrobras recebe aval do Cade para aquisição de 51% da Eletronet",
    "url": "https://teletime.com.br/19/02/2025/eletrobras-recebe-aval-do-cade-para-aquisicao-de-51-da-eletronet/"
+  },
+  "1c07e55914b1bd3b560f": {
+   "article_id": "1c07e55914b1bd3b560f",
+   "companies": [
+    "Citigroup"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2025-05-08 04:00",
+    "feed_pub_ts": 1746687600,
+    "page_date_source": "opengraph",
+    "page_pub_iso": "2025-05-08 10:04",
+    "page_pub_ts": 1746698663,
+    "pub_date_conflict_s": 11063,
+    "pub_date_note": "divergência de 11063s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2025-05-08 04:00",
+    "pub_ts": 1746687600
+   },
+   "revisions": [],
+   "source": "Courthouse News",
+   "title": "11th Circuit revives investor suit against Citigroup over fraud at Mexican company",
+   "url": "https://www.courthousenews.com/11th-circuit-revives-investor-suit-against-citigroup-over-fraud-at-mexican-company/"
   },
   "35738d27b5b7e209e6b3": {
    "article_id": "35738d27b5b7e209e6b3",
@@ -348,6 +425,32 @@
    "source": "estadao.com.br",
    "title": "Eletrobras encerra follow on e 53,3% das ações ficam com fundos",
    "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/eletrobras-encerra-follow-on-investimentos-acoes/"
+  },
+  "637c5d230692c6d1cf7e": {
+   "article_id": "637c5d230692c6d1cf7e",
+   "companies": [
+    "Besalco"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2022-07-06 04:00",
+    "feed_pub_ts": 1657090800,
+    "page_date_modified": "2022-07-07T09:20:54Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2022-07-06 17:51",
+    "page_pub_ts": 1657129874,
+    "pub_date_conflict_s": 39074,
+    "pub_date_note": "divergência de 39074s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2022-07-06 04:00",
+    "pub_ts": 1657090800
+   },
+   "revisions": [],
+   "source": "Diario Financiero",
+   "title": "Ataque explosivo en oficinas de Besalco: constructora informa que no hubo heridos y Fiscalía abre investigación",
+   "url": "https://www.df.cl/empresas/construccion/ataque-explosivo-en-oficinas-de-besalco-constructora-informa-que-no"
   },
   "6609bf1f6c1304b0edac": {
    "article_id": "6609bf1f6c1304b0edac",
@@ -556,6 +659,32 @@
    "source": "Brazil Journal",
    "title": "Dasa faz aquisição de R$ 750 milhões e cresce na oncologia",
    "url": "https://braziljournal.com/dasa-faz-aquisicao-de-r-750-milhoes-e-cresce-na-oncologia/"
+  },
+  "8faec9a6c29c748a5ce0": {
+   "article_id": "8faec9a6c29c748a5ce0",
+   "companies": [
+    "LATAM Airlines"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2022-06-19 04:00",
+    "feed_pub_ts": 1655622000,
+    "page_date_modified": "2022-06-19T02:04:53.718Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2022-06-19 02:04",
+    "page_pub_ts": 1655604293,
+    "pub_date_conflict_s": 17707,
+    "pub_date_note": "divergência de 17707s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2022-06-19 04:00",
+    "pub_ts": 1655622000
+   },
+   "revisions": [],
+   "source": "dw.com",
+   "title": "Aprovam plano da LATAM Airlines para sair da falência",
+   "url": "https://www.dw.com/es/corte-de-eeuu-aprueba-plan-de-latam-airlines-para-salir-de-la-quiebra/a-62180731"
   },
   "94be2201f5b2c4f79603": {
    "article_id": "94be2201f5b2c4f79603",
@@ -1029,6 +1158,31 @@
    "source": "Ex-ante",
    "title": "Perfil: A ascensão de Roberto Alvo, o executivo que resgatou a LATAM da recuperação judicial e a levou a lucros históricos",
    "url": "https://www.ex-ante.cl/economia/perfil-el-fulminante-ascenso-de-roberto-alvo-el-ejecutivo-que-rescato-a-latam-de-la-quiebra-y-la-llevo-a-ganancias-historicas/"
+  },
+  "ea80510ac468950f11e5": {
+   "article_id": "ea80510ac468950f11e5",
+   "companies": [
+    "Raia Drogasil"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2021-11-18 05:00",
+    "feed_pub_ts": 1637222400,
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2021-11-19 01:47",
+    "page_pub_ts": 1637286427,
+    "pub_date_conflict_s": 64027,
+    "pub_date_note": "divergência de 64027s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2021-11-18 05:00",
+    "pub_ts": 1637222400
+   },
+   "revisions": [],
+   "source": "suno.com.br",
+   "title": "Raia Drogasil (RADL3) aprova aquisição da startup CUCO Health",
+   "url": "https://www.suno.com.br/noticias/raia-drogasil-radl3-cuco-health/"
   },
   "f5051635b78b29795cb0": {
    "article_id": "f5051635b78b29795cb0",

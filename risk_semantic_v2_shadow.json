@@ -307,6 +307,244 @@
     "total_token_count": 1584
    }
   },
+  "102869a4560c662f6005|Capital One Financial|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "102869a4560c662f6005",
+   "article_pub_iso": "2026-07-28 04:00",
+   "candidate_event": "ma",
+   "case_id": "102869a4560c662f6005|Capital One Financial|ma|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "Capital One Financial",
+   "contract_version": "v2",
+   "created_at": "2026-08-19T14:00:56Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-19 10:57",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 0,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": false,
+       "marcas": [
+        "H3_ENTIDADE_AUSENTE"
+       ],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "Capital One Faces Crucial Test as Discover Acquisition Justification Looms",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Discover Acquisition",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "FOLLOW_UP",
+      "occurrence_novelty_quote": "Justification Looms",
+      "phase": "ANNOUNCED",
+      "phase_quote": "Acquisition",
+      "related_entity": "Discover",
+      "relation": "ACQUIRER",
+      "relation_quote": "Capital One Faces Crucial Test as Discover Acquisition",
+      "role_quote": "Capital One",
+      "subject": "Capital One Financial",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Capital One",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "Discover Acquisition"
+     }
+    ],
+    "falha": "",
+    "marcas": [
+     "H3_ENTIDADE_AUSENTE"
+    ],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-19 10:57",
+   "human_review": null,
+   "latencia_s": 5.94,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "Capital One Faces Crucial Test as Discover Acquisition Justification Looms",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Discover Acquisition",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "FOLLOW_UP",
+      "occurrence_novelty_quote": "Justification Looms",
+      "phase": "ANNOUNCED",
+      "phase_quote": "Acquisition",
+      "related_entity": "Discover",
+      "relation": "ACQUIRER",
+      "relation_quote": "Capital One Faces Crucial Test as Discover Acquisition",
+      "role_quote": "Capital One",
+      "subject": "Capital One Financial",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Capital One",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "Discover Acquisition"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Vinanet",
+   "title": "Capital One Faces Crucial Test as Discover Acquisition Justification Looms - Earnings Risk Report",
+   "url": "http://vinanet.vn/aticles-market/Capital-One-Faces-Crucial-Test-as-Discover-Acquisition-Justification-Looms-56-141",
+   "usage": {
+    "candidates_token_count": 272,
+    "prompt_token_count": 1314,
+    "total_token_count": 1586
+   }
+  },
+  "102869a4560c662f6005|Capital One Financial|ma|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "102869a4560c662f6005",
+   "article_pub_iso": "2026-07-28 04:00",
+   "candidate_event": "ma",
+   "case_id": "102869a4560c662f6005|Capital One Financial|ma|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "Capital One Financial",
+   "contract_version": "v2",
+   "created_at": "2026-08-19T14:01:05Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-19 10:57",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "Capital One Faces Crucial Test as Discover Acquisition Justification Looms",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Discover Acquisition",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "FOLLOW_UP",
+      "occurrence_novelty_quote": "Discover Acquisition Justification Looms",
+      "phase": "ANNOUNCED",
+      "phase_quote": "Discover Acquisition Justification Looms",
+      "related_entity": "Discover",
+      "relation": "ACQUIRER",
+      "relation_quote": "Discover Acquisition",
+      "role_quote": "Capital One",
+      "subject": "Capital One",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Capital One",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "Discover Acquisition"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-19 10:57",
+   "human_review": null,
+   "latencia_s": 1.36,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "Capital One Faces Crucial Test as Discover Acquisition Justification Looms",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Discover Acquisition",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "FOLLOW_UP",
+      "occurrence_novelty_quote": "Discover Acquisition Justification Looms",
+      "phase": "ANNOUNCED",
+      "phase_quote": "Discover Acquisition Justification Looms",
+      "related_entity": "Discover",
+      "relation": "ACQUIRER",
+      "relation_quote": "Discover Acquisition",
+      "role_quote": "Capital One",
+      "subject": "Capital One",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Capital One",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "Discover Acquisition"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Vinanet",
+   "title": "Capital One Faces Crucial Test as Discover Acquisition Justification Looms - Earnings Risk Report",
+   "url": "http://vinanet.vn/aticles-market/Capital-One-Faces-Crucial-Test-as-Discover-Acquisition-Justification-Looms-56-141",
+   "usage": {
+    "candidates_token_count": 214,
+    "prompt_token_count": 1314,
+    "total_token_count": 1528
+   }
+  },
   "10e297f95c5954630150|Tok&Stok|recuperacao_judicial|v2|r7ba.p2|gemini-3.1-flash-lite": {
    "actual_model": "gemini-3.1-flash-lite",
    "article_id": "10e297f95c5954630150",
@@ -990,6 +1228,248 @@
     "candidates_token_count": 283,
     "prompt_token_count": 1319,
     "total_token_count": 1602
+   }
+  },
+  "2a609d270c0ff23b4629|Capital One Financial|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "2a609d270c0ff23b4629",
+   "article_pub_iso": "2026-07-27 04:00",
+   "candidate_event": "ma",
+   "case_id": "2a609d270c0ff23b4629|Capital One Financial|ma|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "Capital One Financial",
+   "contract_version": "v2",
+   "created_at": "2026-08-19T14:01:15Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-19 10:57",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 0,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": false,
+       "marcas": [
+        "H3_ENTIDADE_AUSENTE"
+       ],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "Capital One Faces Key Test as Discover Acquisition Bet Hinges on Q2 Results",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Discover Acquisition",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "FOLLOW_UP",
+      "occurrence_novelty_quote": "Discover Acquisition Bet Hinges on Q2 Results",
+      "phase": "ANNOUNCED",
+      "phase_quote": "Acquisition",
+      "related_entity": "Discover",
+      "relation": "ACQUIRER",
+      "relation_quote": "Capital One Faces Key Test as Discover Acquisition",
+      "role_quote": "Capital One",
+      "subject": "Capital One Financial",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Capital One",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "Discover Acquisition"
+     }
+    ],
+    "falha": "",
+    "marcas": [
+     "H3_ENTIDADE_AUSENTE"
+    ],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-19 10:57",
+   "human_review": null,
+   "latencia_s": 2.02,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "BUYER",
+      "currentness": "CURRENT",
+      "currentness_quote": "Capital One Faces Key Test as Discover Acquisition Bet Hinges on Q2 Results",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Discover Acquisition",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "FOLLOW_UP",
+      "occurrence_novelty_quote": "Discover Acquisition Bet Hinges on Q2 Results",
+      "phase": "ANNOUNCED",
+      "phase_quote": "Acquisition",
+      "related_entity": "Discover",
+      "relation": "ACQUIRER",
+      "relation_quote": "Capital One Faces Key Test as Discover Acquisition",
+      "role_quote": "Capital One",
+      "subject": "Capital One Financial",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Capital One",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "Discover Acquisition"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Vinanet",
+   "title": "Capital One Faces Key Test as Discover Acquisition Bet Hinges on Q2 Results - Guidance Upgrade Report",
+   "url": "http://vinanet.vn/aticles-market/Capital-One-Faces-Key-Test-as-Discover-Acquisition-Bet-Hinges-on-Q2-Results-46-19110",
+   "usage": {
+    "candidates_token_count": 278,
+    "prompt_token_count": 1316,
+    "total_token_count": 1594
+   }
+  },
+  "2a609d270c0ff23b4629|Capital One Financial|ma|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "2a609d270c0ff23b4629",
+   "article_pub_iso": "2026-07-27 04:00",
+   "candidate_event": "ma",
+   "case_id": "2a609d270c0ff23b4629|Capital One Financial|ma|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "Capital One Financial",
+   "contract_version": "v2",
+   "created_at": "2026-08-19T14:01:25Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-19 10:57",
+    "contexto": false,
+    "event_id": "ma",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 0,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": false,
+       "marcas": [
+        "H3_ENTIDADE_AUSENTE"
+       ],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Capital One Faces Key Test as Discover Acquisition Bet Hinges on Q2 Results",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Discover Acquisition",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "FOLLOW_UP",
+      "occurrence_novelty_quote": "Discover Acquisition Bet Hinges on Q2 Results",
+      "phase": "ANNOUNCED",
+      "phase_quote": "Discover Acquisition",
+      "related_entity": "Discover",
+      "relation": "ACQUIRES",
+      "relation_quote": "Discover Acquisition",
+      "role_quote": "Capital One",
+      "subject": "Capital One Financial",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Capital One",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "Discover Acquisition"
+     }
+    ],
+    "falha": "",
+    "marcas": [
+     "H3_ENTIDADE_AUSENTE"
+    ],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-19 10:57",
+   "human_review": null,
+   "latencia_s": 1.49,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Capital One Faces Key Test as Discover Acquisition Bet Hinges on Q2 Results",
+      "event_asserted": "ASSERTED",
+      "event_id": "ma",
+      "event_quote": "Discover Acquisition",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "FOLLOW_UP",
+      "occurrence_novelty_quote": "Discover Acquisition Bet Hinges on Q2 Results",
+      "phase": "ANNOUNCED",
+      "phase_quote": "Discover Acquisition",
+      "related_entity": "Discover",
+      "relation": "ACQUIRES",
+      "relation_quote": "Discover Acquisition",
+      "role_quote": "Capital One",
+      "subject": "Capital One Financial",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Capital One",
+      "transaction_object": "COMPANY_CONTROL",
+      "transaction_object_quote": "Discover Acquisition"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Vinanet",
+   "title": "Capital One Faces Key Test as Discover Acquisition Bet Hinges on Q2 Results - Guidance Upgrade Report",
+   "url": "http://vinanet.vn/aticles-market/Capital-One-Faces-Key-Test-as-Discover-Acquisition-Bet-Hinges-on-Q2-Results-46-19110",
+   "usage": {
+    "candidates_token_count": 270,
+    "prompt_token_count": 1316,
+    "total_token_count": 1586
    }
   },
   "2e440c297fa646ce331f|Orizon Valorização de Resíduos|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {
