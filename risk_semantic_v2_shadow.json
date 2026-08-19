@@ -898,6 +898,248 @@
     "total_token_count": 1691
    }
   },
+  "1250147b9068772a93fb|BTG Pactual|follow_on|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "1250147b9068772a93fb",
+   "article_pub_iso": "2026-07-08 04:00",
+   "candidate_event": "follow_on",
+   "case_id": "1250147b9068772a93fb|BTG Pactual|follow_on|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "BTG Pactual",
+   "contract_version": "v2",
+   "created_at": "2026-08-19T19:40:36Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-19 16:38",
+    "contexto": false,
+    "event_id": "follow_on",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 0,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": false,
+       "marcas": [
+        "H3_ENTIDADE_AUSENTE"
+       ],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "MENTIONED",
+      "currentness": "CURRENT",
+      "currentness_quote": "Brava (BRAV3) pode subir 10% com avanço de oferta de ações, diz BTG",
+      "event_asserted": "ASSERTED",
+      "event_id": "follow_on",
+      "event_quote": "avanço de oferta de ações",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "avanço de oferta de ações",
+      "phase": "ANNOUNCED",
+      "phase_quote": "avanço de oferta de ações",
+      "related_entity": "Brava",
+      "relation": "analista",
+      "relation_quote": "diz BTG",
+      "role_quote": "diz BTG",
+      "subject": "BTG Pactual",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "BTG",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "oferta de ações"
+     }
+    ],
+    "falha": "",
+    "marcas": [
+     "H3_ENTIDADE_AUSENTE"
+    ],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-19 16:38",
+   "human_review": null,
+   "latencia_s": 3.57,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "MENTIONED",
+      "currentness": "CURRENT",
+      "currentness_quote": "Brava (BRAV3) pode subir 10% com avanço de oferta de ações, diz BTG",
+      "event_asserted": "ASSERTED",
+      "event_id": "follow_on",
+      "event_quote": "avanço de oferta de ações",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "avanço de oferta de ações",
+      "phase": "ANNOUNCED",
+      "phase_quote": "avanço de oferta de ações",
+      "related_entity": "Brava",
+      "relation": "analista",
+      "relation_quote": "diz BTG",
+      "role_quote": "diz BTG",
+      "subject": "BTG Pactual",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "BTG",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "oferta de ações"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Estadão",
+   "title": "Brava (BRAV3) pode subir 10% com avanço de oferta de ações, diz BTG",
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/btg-ve-opa-da-brava-brav3-mais-proxima-apos-sinalizacao-da-cvm-acao-pode-subir-10/",
+   "usage": {
+    "candidates_token_count": 299,
+    "prompt_token_count": 1337,
+    "total_token_count": 1636
+   }
+  },
+  "1250147b9068772a93fb|BTG Pactual|follow_on|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "1250147b9068772a93fb",
+   "article_pub_iso": "2026-07-08 04:00",
+   "candidate_event": "follow_on",
+   "case_id": "1250147b9068772a93fb|BTG Pactual|follow_on|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "BTG Pactual",
+   "contract_version": "v2",
+   "created_at": "2026-08-19T19:40:46Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-19 16:38",
+    "contexto": false,
+    "event_id": "follow_on",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 0,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": false,
+       "marcas": [
+        "H3_ENTIDADE_AUSENTE"
+       ],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "MENTIONED",
+      "currentness": "CURRENT",
+      "currentness_quote": "Brava (BRAV3) pode subir 10% com avanço de oferta de ações, diz BTG",
+      "event_asserted": "ASSERTED",
+      "event_id": "follow_on",
+      "event_quote": "oferta de ações",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Brava (BRAV3) pode subir 10% com avanço de oferta de ações, diz BTG",
+      "phase": "ANNOUNCED",
+      "phase_quote": "avanço de oferta de ações",
+      "related_entity": "Brava",
+      "relation": "analyst_coverage",
+      "relation_quote": "diz BTG",
+      "role_quote": "BTG",
+      "subject": "BTG Pactual",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "BTG",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "oferta de ações"
+     }
+    ],
+    "falha": "",
+    "marcas": [
+     "H3_ENTIDADE_AUSENTE"
+    ],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-19 16:38",
+   "human_review": null,
+   "latencia_s": 1.76,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "MENTIONED",
+      "currentness": "CURRENT",
+      "currentness_quote": "Brava (BRAV3) pode subir 10% com avanço de oferta de ações, diz BTG",
+      "event_asserted": "ASSERTED",
+      "event_id": "follow_on",
+      "event_quote": "oferta de ações",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Brava (BRAV3) pode subir 10% com avanço de oferta de ações, diz BTG",
+      "phase": "ANNOUNCED",
+      "phase_quote": "avanço de oferta de ações",
+      "related_entity": "Brava",
+      "relation": "analyst_coverage",
+      "relation_quote": "diz BTG",
+      "role_quote": "BTG",
+      "subject": "BTG Pactual",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "BTG",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "oferta de ações"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Estadão",
+   "title": "Brava (BRAV3) pode subir 10% com avanço de oferta de ações, diz BTG",
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/btg-ve-opa-da-brava-brav3-mais-proxima-apos-sinalizacao-da-cvm-acao-pode-subir-10/",
+   "usage": {
+    "candidates_token_count": 315,
+    "prompt_token_count": 1337,
+    "total_token_count": 1652
+   }
+  },
   "201b91aa6b3c1d9e780c|JBS|troca_ceo|v2|r7ba.p2|gemini-3.1-flash-lite": {
    "actual_model": "gemini-3.1-flash-lite",
    "article_id": "201b91aa6b3c1d9e780c",
@@ -2754,6 +2996,248 @@
     "candidates_token_count": 336,
     "prompt_token_count": 1310,
     "total_token_count": 1646
+   }
+  },
+  "7334950058186f17f96c|B3|suspensao_negociacao|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "7334950058186f17f96c",
+   "article_pub_iso": "2026-08-19 15:33",
+   "candidate_event": "suspensao_negociacao",
+   "case_id": "7334950058186f17f96c|B3|suspensao_negociacao|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "B3",
+   "contract_version": "v2",
+   "created_at": "2026-08-19T19:41:00Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-19 16:38",
+    "contexto": false,
+    "event_id": "suspensao_negociacao",
+    "event_phase": "anuncio",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 0,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": false,
+       "marcas": [
+        "H3_ENTIDADE_AUSENTE"
+       ],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "B3 suspende negociação de ações da Refit",
+      "event_asserted": "ASSERTED",
+      "event_id": "suspensao_negociacao",
+      "event_quote": "B3 suspende negociação de ações da Refit",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "B3 suspende negociação de ações da Refit",
+      "phase": "CONFIRMED",
+      "phase_quote": "suspende",
+      "related_entity": "Refit",
+      "relation": "suspensão de negociação de ativos",
+      "relation_quote": "B3 suspende negociação de ações da Refit",
+      "role_quote": "B3",
+      "subject": "B3",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "B3",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ],
+    "falha": "",
+    "marcas": [
+     "H3_ENTIDADE_AUSENTE"
+    ],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-19 16:38",
+   "human_review": null,
+   "latencia_s": 6.17,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "B3 suspende negociação de ações da Refit",
+      "event_asserted": "ASSERTED",
+      "event_id": "suspensao_negociacao",
+      "event_quote": "B3 suspende negociação de ações da Refit",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "B3 suspende negociação de ações da Refit",
+      "phase": "CONFIRMED",
+      "phase_quote": "suspende",
+      "related_entity": "Refit",
+      "relation": "suspensão de negociação de ativos",
+      "relation_quote": "B3 suspende negociação de ações da Refit",
+      "role_quote": "B3",
+      "subject": "B3",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "B3",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Valor Econômico",
+   "title": "B3 suspende negociação de ações da Refit",
+   "url": "https://valor.globo.com/empresas/noticia/2026/08/19/b3-suspende-negociao-de-aes-da-refit.ghtml",
+   "usage": {
+    "candidates_token_count": 303,
+    "prompt_token_count": 1323,
+    "total_token_count": 1626
+   }
+  },
+  "7334950058186f17f96c|B3|suspensao_negociacao|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "7334950058186f17f96c",
+   "article_pub_iso": "2026-08-19 15:33",
+   "candidate_event": "suspensao_negociacao",
+   "case_id": "7334950058186f17f96c|B3|suspensao_negociacao|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "B3",
+   "contract_version": "v2",
+   "created_at": "2026-08-19T19:41:10Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-19 16:38",
+    "contexto": false,
+    "event_id": "suspensao_negociacao",
+    "event_phase": "anuncio",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 0,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": false,
+       "marcas": [
+        "H3_ENTIDADE_AUSENTE"
+       ],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "B3 suspende negociação de ações da Refit",
+      "event_asserted": "ASSERTED",
+      "event_id": "suspensao_negociacao",
+      "event_quote": "B3 suspende negociação de ações da Refit",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "B3 suspende negociação de ações da Refit",
+      "phase": "ANNOUNCED",
+      "phase_quote": "B3 suspende negociação de ações da Refit",
+      "related_entity": "Refit",
+      "relation": "suspension of trading",
+      "relation_quote": "suspende negociação de ações",
+      "role_quote": "B3",
+      "subject": "B3",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "B3",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "not_applicable"
+     }
+    ],
+    "falha": "",
+    "marcas": [
+     "H3_ENTIDADE_AUSENTE"
+    ],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-19 16:38",
+   "human_review": null,
+   "latencia_s": 1.41,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "B3 suspende negociação de ações da Refit",
+      "event_asserted": "ASSERTED",
+      "event_id": "suspensao_negociacao",
+      "event_quote": "B3 suspende negociação de ações da Refit",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "B3 suspende negociação de ações da Refit",
+      "phase": "ANNOUNCED",
+      "phase_quote": "B3 suspende negociação de ações da Refit",
+      "related_entity": "Refit",
+      "relation": "suspension of trading",
+      "relation_quote": "suspende negociação de ações",
+      "role_quote": "B3",
+      "subject": "B3",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "B3",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "not_applicable"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Valor Econômico",
+   "title": "B3 suspende negociação de ações da Refit",
+   "url": "https://valor.globo.com/empresas/noticia/2026/08/19/b3-suspende-negociao-de-aes-da-refit.ghtml",
+   "usage": {
+    "candidates_token_count": 302,
+    "prompt_token_count": 1323,
+    "total_token_count": 1625
    }
   },
   "83effbd842777700232f|JBS|recomendacao_negativa|v2|r7ba.p2|gemini-3.1-flash-lite": {

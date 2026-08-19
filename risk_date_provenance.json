@@ -38,6 +38,32 @@
    "title": "HCSC Conclui a Aquisição dos Negócios de Medicare e CareAllies do The Cigna Group",
    "url": "https://www.prnewswire.com/news-releases/hcsc-completes-the-acquisition-of-the-cigna-groups-medicare-and-careallies-businesses-302405814.html"
   },
+  "03d529491b533f28f250": {
+   "article_id": "03d529491b533f28f250",
+   "companies": [
+    "Usiminas"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2023-07-04 04:00",
+    "feed_pub_ts": 1688454000,
+    "page_date_modified": "2023-07-04T21:17:07+00:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2023-07-04 21:16",
+    "page_pub_ts": 1688505390,
+    "pub_date_conflict_s": 51390,
+    "pub_date_note": "divergência de 51390s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2023-07-04 04:00",
+    "pub_ts": 1688454000
+   },
+   "revisions": [],
+   "source": "InfoMoney",
+   "title": "Usiminas (USIM5) elege Marcelo Chara como novo CEO e Alberto Ono como presidente do Conselho",
+   "url": "https://www.infomoney.com.br/mercados/usiminas-usim5-elege-marcelo-chara-como-novo-ceo-e-alberto-ono-como-presidente-do-conselho/"
+  },
   "061eb3b6f37708a1986e": {
    "article_id": "061eb3b6f37708a1986e",
    "companies": [
@@ -140,6 +166,32 @@
    "source": "estadao.com.br",
    "title": "Copel (CPLE6) aprova 10ª emissão de debêntures no valor de R$ 3 bilhões; veja data de vencimento",
    "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/copel-emissao-debentures-data-de-vencimento-valor-total/"
+  },
+  "1250147b9068772a93fb": {
+   "article_id": "1250147b9068772a93fb",
+   "companies": [
+    "BTG Pactual"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2026-07-08 04:00",
+    "feed_pub_ts": 1783494000,
+    "page_date_modified": "2026-07-08T17:32:59-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2026-07-08 19:16",
+    "page_pub_ts": 1783538205,
+    "pub_date_conflict_s": 44205,
+    "pub_date_note": "divergência de 44205s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2026-07-08 04:00",
+    "pub_ts": 1783494000
+   },
+   "revisions": [],
+   "source": "Estadão",
+   "title": "Brava (BRAV3) pode subir 10% com avanço de oferta de ações, diz BTG",
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/btg-ve-opa-da-brava-brav3-mais-proxima-apos-sinalizacao-da-cvm-acao-pode-subir-10/"
   },
   "1334e14fb7d5f4aa0e1a": {
    "article_id": "1334e14fb7d5f4aa0e1a",
@@ -322,6 +374,85 @@
    "title": "11th Circuit revives investor suit against Citigroup over fraud at Mexican company",
    "url": "https://www.courthousenews.com/11th-circuit-revives-investor-suit-against-citigroup-over-fraud-at-mexican-company/"
   },
+  "2b987cab1236c8ed36e0": {
+   "article_id": "2b987cab1236c8ed36e0",
+   "companies": [
+    "Vale",
+    "Samarco Mineração"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2021-04-09 04:00",
+    "feed_pub_ts": 1617951600,
+    "page_date_modified": "2021-04-09T20:20:22+00:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2021-04-09 20:14",
+    "page_pub_ts": 1617999248,
+    "pub_date_conflict_s": 47648,
+    "pub_date_note": "divergência de 47648s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2021-04-09 04:00",
+    "pub_ts": 1617951600
+   },
+   "revisions": [],
+   "source": "InfoMoney",
+   "title": "Samarco, da Vale e da BHP, entra com pedido de recuperação judicial",
+   "url": "https://www.infomoney.com.br/mercados/samarco-joint-venture-entre-vale-e-bhp-entra-com-pedido-de-recuperacao-judicial/"
+  },
+  "2ecc1020e4348bd6565a": {
+   "article_id": "2ecc1020e4348bd6565a",
+   "companies": [
+    "Natura &Co"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2024-08-13 04:00",
+    "feed_pub_ts": 1723532400,
+    "page_date_modified": "2024-08-13T08:47:58-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2024-08-13 11:47",
+    "page_pub_ts": 1723549678,
+    "pub_date_conflict_s": 17278,
+    "pub_date_note": "divergência de 17278s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2024-08-13 04:00",
+    "pub_ts": 1723532400
+   },
+   "revisions": [],
+   "source": "CNN Brasil",
+   "title": "Avon Products, subsidiária da Natura &Co, entra com pedido de recuperação judicial nos EUA",
+   "url": "https://www.cnnbrasil.com.br/economia/negocios/avon-products-subsidiaria-da-natura-co-entra-com-pedido-de-recuperacao-judicial-nos-eua/"
+  },
+  "30f5cf792267e24a43c8": {
+   "article_id": "30f5cf792267e24a43c8",
+   "companies": [
+    "Odontoprev"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2017-11-14 05:00",
+    "feed_pub_ts": 1510646400,
+    "page_date_modified": "2017-11-14T17:31:07-02:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2017-11-14 19:31",
+    "page_pub_ts": 1510687867,
+    "pub_date_conflict_s": 41467,
+    "pub_date_note": "divergência de 41467s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2017-11-14 05:00",
+    "pub_ts": 1510646400
+   },
+   "revisions": [],
+   "source": "Brazil Journal",
+   "title": "Com aquisição rara, Odontoprev cresce no Nordeste",
+   "url": "https://braziljournal.com/em-aquisicao-rara-odontoprev-cresce-no-nordeste/"
+  },
   "35738d27b5b7e209e6b3": {
    "article_id": "35738d27b5b7e209e6b3",
    "companies": [
@@ -399,6 +530,32 @@
    "source": "Fiis",
    "title": "VILG11 divulga resultados e detalha sobre aquisição de novo ativo -",
    "url": "https://fiis.com.br/noticias/vilg11-divulga-resultados-detalha-aquisicao-ativo/"
+  },
+  "5596d2ca2671b599ff42": {
+   "article_id": "5596d2ca2671b599ff42",
+   "companies": [
+    "Usiminas"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2023-03-09 05:00",
+    "feed_pub_ts": 1678348800,
+    "page_date_modified": "2023-03-09T16:04:29-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2023-03-09 18:55",
+    "page_pub_ts": 1678388121,
+    "pub_date_conflict_s": 39321,
+    "pub_date_note": "divergência de 39321s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2023-03-09 05:00",
+    "pub_ts": 1678348800
+   },
+   "revisions": [],
+   "source": "Migalhas",
+   "title": "STJ: Grupo que comprou ações da Usiminas não precisa promover OPA",
+   "url": "https://www.migalhas.com.br/quentes/382793/stj-grupo-que-comprou-acoes-da-usiminas-nao-precisa-promover-opa"
   },
   "5804f93c47fd6d44c055": {
    "article_id": "5804f93c47fd6d44c055",
@@ -582,6 +739,31 @@
    "title": "Troca de CEO pega Ambev em momento decisivo",
    "url": "https://neofeed.com.br/negocios/troca-de-ceo-pega-ambev-em-momento-decisivo/"
   },
+  "823b91c56c0fbf9d4c77": {
+   "article_id": "823b91c56c0fbf9d4c77",
+   "companies": [
+    "Usiminas"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2023-07-03 04:00",
+    "feed_pub_ts": 1688367600,
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2023-07-03 22:32",
+    "page_pub_ts": 1688423528,
+    "pub_date_conflict_s": 55928,
+    "pub_date_note": "divergência de 55928s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2023-07-03 04:00",
+    "pub_ts": 1688367600
+   },
+   "revisions": [],
+   "source": "InfoMoney",
+   "title": "Ternium conclui aquisição do controle da Usiminas (USIM5) e celebra novo acordo de acionistas",
+   "url": "https://www.infomoney.com.br/mercados/ternium-conclui-aquisicao-do-controle-da-usiminas-usim5-e-celebra-novo-acordo-de-acionistas/"
+  },
   "838fd060b3c5a982e0f2": {
    "article_id": "838fd060b3c5a982e0f2",
    "companies": [
@@ -633,6 +815,32 @@
    "source": "CNN Brasil",
    "title": "CVM abre duas investigações envolvendo Linx após anúncio de fusão com StoneCo",
    "url": "https://www.cnnbrasil.com.br/economia/macroeconomia/cvm-abre-duas-investigacoes-envolvendo-linx-apos-anuncio-de-fusao-com-stoneco/"
+  },
+  "882a4cc1aec84baf8c2b": {
+   "article_id": "882a4cc1aec84baf8c2b",
+   "companies": [
+    "Coca-Cola Embonor"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2018-05-20 04:00",
+    "feed_pub_ts": 1526799600,
+    "page_date_modified": "2020-02-08T05:30:04.120Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2018-05-20 08:00",
+    "page_pub_ts": 1526803215,
+    "pub_date_conflict_s": 3615,
+    "pub_date_note": "divergência de 3615s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2018-05-20 04:00",
+    "pub_ts": 1526799600
+   },
+   "revisions": [],
+   "source": "La Tercera",
+   "title": "Presidente da Embonor, Andrés Vicuña: \"A fusão com a Andina não é um tema que esteja sobre a mesa\"",
+   "url": "https://www.latercera.com/pulso/noticia/presidente-embonor-andres-vicuna-la-fusion-andina-no-tema-este-la-mesa/172460/"
   },
   "8d9414bcdc871283449d": {
    "article_id": "8d9414bcdc871283449d",
@@ -899,6 +1107,58 @@
    "title": "PetroRio (PRIO3) caminha na aquisição da Dommo (DMMO3), de Eike Batista, e anuncia recompra de ações",
    "url": "https://www.seudinheiro.com/2022/empresas/petrorio-prio3-aquisicao-dommo-dmmo3-recompra-de-acoes-miql/"
   },
+  "adc6efd87cc54c555a51": {
+   "article_id": "adc6efd87cc54c555a51",
+   "companies": [
+    "Usiminas"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2024-06-18 04:00",
+    "feed_pub_ts": 1718694000,
+    "page_date_modified": "2026-07-27T07:58:57+00:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2024-06-18 14:15",
+    "page_pub_ts": 1718720118,
+    "pub_date_conflict_s": 26118,
+    "pub_date_note": "divergência de 26118s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2024-06-18 04:00",
+    "pub_ts": 1718694000
+   },
+   "revisions": [],
+   "source": "Consultor Jurídico",
+   "title": "Em reviravolta, STJ obriga grupo que assumiu Usiminas a fazer oferta de ações",
+   "url": "https://www.conjur.com.br/2024-jun-18/em-reviravolta-stj-obriga-grupo-que-assumiu-usiminas-a-fazer-oferta-de-acoes/"
+  },
+  "ae363bfa6fc72807068c": {
+   "article_id": "ae363bfa6fc72807068c",
+   "companies": [
+    "Natura &Co"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2024-02-13 05:00",
+    "feed_pub_ts": 1707811200,
+    "page_date_modified": "2024-02-13T19:01:14.809Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2024-02-13 19:01",
+    "page_pub_ts": 1707850874,
+    "pub_date_conflict_s": 39674,
+    "pub_date_note": "divergência de 39674s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2024-02-13 05:00",
+    "pub_ts": 1707811200
+   },
+   "revisions": [],
+   "source": "Bloomberg Línea Brasil",
+   "title": "The Body Shop do Reino Unido entra em recuperação judicial após venda pela Natura &Co",
+   "url": "https://www.bloomberglinea.com.br/negocios/the-body-shop-do-reino-unido-entra-em-recuperacao-judicial-apos-venda-pela-natura-co/"
+  },
   "b03b6dfcc4c4769b0f36": {
    "article_id": "b03b6dfcc4c4769b0f36",
    "companies": [
@@ -1158,6 +1418,32 @@
    "source": "Ex-ante",
    "title": "Perfil: A ascensão de Roberto Alvo, o executivo que resgatou a LATAM da recuperação judicial e a levou a lucros históricos",
    "url": "https://www.ex-ante.cl/economia/perfil-el-fulminante-ascenso-de-roberto-alvo-el-ejecutivo-que-rescato-a-latam-de-la-quiebra-y-la-llevo-a-ganancias-historicas/"
+  },
+  "e669ca420b19fc1283f5": {
+   "article_id": "e669ca420b19fc1283f5",
+   "companies": [
+    "Coca-Cola Embonor"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2024-05-25 04:00",
+    "feed_pub_ts": 1716620400,
+    "page_date_modified": "2024-05-25T15:44:27Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2024-05-24 19:19",
+    "page_pub_ts": 1716578354,
+    "pub_date_conflict_s": 42046,
+    "pub_date_note": "divergência de 42046s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2024-05-25 04:00",
+    "pub_ts": 1716620400
+   },
+   "revisions": [],
+   "source": "Diario Financiero",
+   "title": "Andrés Wainer, CFO da Andina: Coca-Cola e fusão com a Embonor",
+   "url": "https://www.df.cl/senal-df/en-la-mente-del-cfo/andres-wainer-cfo-de-andina-coca-cola-veria-con-buenos-ojos-una"
   },
   "ea80510ac468950f11e5": {
    "article_id": "ea80510ac468950f11e5",

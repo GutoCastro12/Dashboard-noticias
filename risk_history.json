@@ -4708,7 +4708,7 @@
      "domain": "poder360.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:20.530000+00:00",
+     "last_checked_at": "2026-08-19T19:38:53.543478+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -7394,7 +7394,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:21.330558+00:00",
+     "last_checked_at": "2026-08-19T19:38:54.343912+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -7457,7 +7457,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:20.930303+00:00",
+     "last_checked_at": "2026-08-19T19:38:53.943713+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -9224,7 +9224,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:23.083073+00:00",
+     "last_checked_at": "2026-08-19T19:38:55.447212+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -9238,6 +9238,27 @@
      "source": "Visno Invest",
      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOYnU3QTd5S25vQm81SGxKMWQwejdNdUdpTVFtWWVRQWRQLU05OWUwdFVMUXUwd0s5Rm9CZ3NpVE9pNVNXRzEzM0RRdUlVWmR0MzhJaDlSTFZ2cmxQdTdWejhWZ1drUmVBaHZfRktWblN2N3AzOFM4T2JoSXNrMnFuei1XQm9vSXQ5T0dHalBnelUtd1pY?oc=5",
      "when": "16/04 04:00"
+    },
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQMFNfdXFhMDdqNDh4d3J1TWNONUJCZnJiaDk0bFEwdnNnQXJtMG1RazZsZENBcld6LWxjLWJQOC1iNTdocHdDSE5FVDNpM0xFNHNhMUtnektYVUVmMFA4MTdlY3BreTkwYjlpUmZpX3dzVjJrYnBXQUFOWWpWYVRqSkc0Y1dydFdKVlQ3Q3hlV25fQ0Z0NFlHbXZjVTJja0stczVwN01iN3cwVmJzY3V4RzY2U195aXZEM0FvOURNWGFib2tZZEZCUDBxazc2QlAwakE?oc=5",
+     "when": "17/04 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQMFNfdXFhMDdqNDh4d3J1TWNONUJCZnJiaDk0bFEwdnNnQXJtMG1RazZsZENBcld6LWxjLWJQOC1iNTdocHdDSE5FVDNpM0xFNHNhMUtnektYVUVmMFA4MTdlY3BreTkwYjlpUmZpX3dzVjJrYnBXQUFOWWpWYVRqSkc0Y1dydFdKVlQ3Q3hlV25fQ0Z0NFlHbXZjVTJja0stczVwN01iN3cwVmJzY3V4RzY2U195aXZEM0FvOURNWGFib2tZZEZCUDBxazc2QlAwakE?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQMFNfdXFhMDdqNDh4d3J1TWNONUJCZnJiaDk0bFEwdnNnQXJtMG1RazZsZENBcld6LWxjLWJQOC1iNTdocHdDSE5FVDNpM0xFNHNhMUtnektYVUVmMFA4MTdlY3BreTkwYjlpUmZpX3dzVjJrYnBXQUFOWWpWYVRqSkc0Y1dydFdKVlQ3Q3hlV25fQ0Z0NFlHbXZjVTJja0stczVwN01iN3cwVmJzY3V4RzY2U195aXZEM0FvOURNWGFib2tZZEZCUDBxazc2QlAwakE?oc=5",
+     "resolved_url": "https://br.advfn.com/jornal/2026/04/gerdau-propoe-aquisicao-de-participacao-na-usina-dona-francisca-e-amplia-estrategia-em-energia-na-b3",
+     "canonical_url": "https://br.advfn.com/jornal/2026/04/gerdau-propoe-aquisicao-de-participacao-na-usina-dona-francisca-e-amplia-estrategia-em-energia-na-b3",
+     "display_url": "https://br.advfn.com/jornal/2026/04/gerdau-propoe-aquisicao-de-participacao-na-usina-dona-francisca-e-amplia-estrategia-em-energia-na-b3",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "br.advfn.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-19T19:38:55.847457+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "corroborations": [
@@ -9287,7 +9308,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:22.131651+00:00",
+     "last_checked_at": "2026-08-19T19:38:54.896089+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -15258,7 +15279,7 @@
      "domain": "globallegalpost.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:24.641133+00:00",
+     "last_checked_at": "2026-08-19T19:38:56.982702+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -15342,7 +15363,7 @@
      "domain": "globallegalpost.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:23.852999+00:00",
+     "last_checked_at": "2026-08-19T19:38:56.395090+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -18718,7 +18739,7 @@
      "domain": "globallegalpost.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:26.483689+00:00",
+     "last_checked_at": "2026-08-19T19:38:58.097865+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -18762,7 +18783,7 @@
      "domain": "globallegalpost.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:25.480318+00:00",
+     "last_checked_at": "2026-08-19T19:38:57.530352+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -21239,7 +21260,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:28.334328+00:00",
+     "last_checked_at": "2026-08-19T19:38:59.195082+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -21262,7 +21283,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:27.409997+00:00",
+     "last_checked_at": "2026-08-19T19:38:58.649048+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -24633,7 +24654,7 @@
      "domain": "ootimista.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:30.045786+00:00",
+     "last_checked_at": "2026-08-19T19:39:00.501469+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -24656,7 +24677,7 @@
      "domain": "ootimista.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:29.163232+00:00",
+     "last_checked_at": "2026-08-19T19:38:59.847550+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -29672,7 +29693,7 @@
      "domain": "demarest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:31.369820+00:00",
+     "last_checked_at": "2026-08-19T19:39:00.901724+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -30520,7 +30541,7 @@
      "domain": "bitget.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:32.425808+00:00",
+     "last_checked_at": "2026-08-19T19:39:02.036668+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -30543,7 +30564,7 @@
      "domain": "bitget.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:31.898111+00:00",
+     "last_checked_at": "2026-08-19T19:39:01.484494+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -36702,7 +36723,7 @@
      "domain": "demarest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:32.826095+00:00",
+     "last_checked_at": "2026-08-19T19:39:02.436897+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -36902,7 +36923,7 @@
      "domain": "demarest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:33.226351+00:00",
+     "last_checked_at": "2026-08-19T19:39:02.837108+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -37651,7 +37672,9 @@
    "source": "Estadão",
    "summary": "Troca de CEO da Ultrapar (UGPA3) surpreende Citi; veja qual é a visão do banco para a mudança &nbsp;&nbsp; Estadão",
    "title": "Troca de CEO da Ultrapar (UGPA3) surpreende Citi; veja qual é a visão do banco para a mudança",
-   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/ultrapar-ugpa3-troca-ceo-surpreende-citi/"
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/ultrapar-ugpa3-troca-ceo-surpreende-citi/",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/vibra-vbbr3-cvm-opa-exigencia-comerc/": {
    "canonical_url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/vibra-vbbr3-cvm-opa-exigencia-comerc/",
@@ -40688,7 +40711,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:33.626644+00:00",
+     "last_checked_at": "2026-08-19T19:39:03.237340+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -40708,7 +40731,7 @@
      "domain": "demarest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:34.026857+00:00",
+     "last_checked_at": "2026-08-19T19:39:03.637572+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -41686,7 +41709,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:34.539896+00:00",
+     "last_checked_at": "2026-08-19T19:39:04.206243+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -42032,7 +42055,7 @@
      "domain": "gurufocus.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:35.754472+00:00",
+     "last_checked_at": "2026-08-19T19:39:05.526234+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -42076,7 +42099,7 @@
      "domain": "gurufocus.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:35.146308+00:00",
+     "last_checked_at": "2026-08-19T19:39:04.873573+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -48623,7 +48646,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:37.729963+00:00",
+     "last_checked_at": "2026-08-19T19:39:06.654599+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -48786,7 +48809,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:37.206944+00:00",
+     "last_checked_at": "2026-08-19T19:39:06.094113+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -50620,7 +50643,7 @@
      "domain": "quiverquant.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:39.318114+00:00",
+     "last_checked_at": "2026-08-19T19:39:07.757189+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -50827,7 +50850,7 @@
      "domain": "quiverquant.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-19T13:57:38.259897+00:00",
+     "last_checked_at": "2026-08-19T19:39:07.200799+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -55657,8 +55680,51 @@
      }
     ]
    },
-   "corroborations": [],
-   "corrob_sources": []
+   "corroborations": [
+    {
+     "source": "suno.com.br",
+     "domain": "suno.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQUXcxNFNXanF6N2k5R3VMTWRsUm1ycVd5TnhjVXBJMW5lUlQ4UmFtNkpGQ0M1MWF6UGx5bWJlM2ZNTDRsam01UTdTMUh5WlBzMDVUQ2JXclFhVlJYS2RzWnU1UDgwWFpXa2JJWDNUcG02VXJkdnVmWm9xcHJrYTRGTG9ud3ptU05aZGfSAY8BQVVfeXFMT2hFRWpVeHBMTDh2MkR1R2EzTnE3emJKUlBkdEFFWlJfcnpObEJOdTFYRlVDSEY0YmxQRFBGOW02d2lzMzNKazVRV0ZtUjdNa2o3WTJHMjdfeU5iUmRRLU5EN2tadWJiMmdlNWFvR0Vwek00bGlLdmVJai1xXy1zNllfZ2FyVUUtbm1hbVZxaVE?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQUXcxNFNXanF6N2k5R3VMTWRsUm1ycVd5TnhjVXBJMW5lUlQ4UmFtNkpGQ0M1MWF6UGx5bWJlM2ZNTDRsam01UTdTMUh5WlBzMDVUQ2JXclFhVlJYS2RzWnU1UDgwWFpXa2JJWDNUcG02VXJkdnVmWm9xcHJrYTRGTG9ud3ptU05aZGfSAY8BQVVfeXFMT2hFRWpVeHBMTDh2MkR1R2EzTnE3emJKUlBkdEFFWlJfcnpObEJOdTFYRlVDSEY0YmxQRFBGOW02d2lzMzNKazVRV0ZtUjdNa2o3WTJHMjdfeU5iUmRRLU5EN2tadWJiMmdlNWFvR0Vwek00bGlLdmVJai1xXy1zNllfZ2FyVUUtbm1hbVZxaVE?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQUXcxNFNXanF6N2k5R3VMTWRsUm1ycVd5TnhjVXBJMW5lUlQ4UmFtNkpGQ0M1MWF6UGx5bWJlM2ZNTDRsam01UTdTMUh5WlBzMDVUQ2JXclFhVlJYS2RzWnU1UDgwWFpXa2JJWDNUcG02VXJkdnVmWm9xcHJrYTRGTG9ud3ptU05aZGfSAY8BQVVfeXFMT2hFRWpVeHBMTDh2MkR1R2EzTnE3emJKUlBkdEFFWlJfcnpObEJOdTFYRlVDSEY0YmxQRFBGOW02d2lzMzNKazVRV0ZtUjdNa2o3WTJHMjdfeU5iUmRRLU5EN2tadWJiMmdlNWFvR0Vwek00bGlLdmVJai1xXy1zNllfZ2FyVUUtbm1hbVZxaVE?oc=5",
+     "resolved_url": "https://www.suno.com.br/noticias/cvm-processo-presidente-banco-do-brasil-acoes-mt/",
+     "canonical_url": "https://www.suno.com.br/noticias/cvm-processo-presidente-banco-do-brasil-acoes-mt/",
+     "display_url": "https://www.suno.com.br/noticias/cvm-processo-presidente-banco-do-brasil-acoes-mt/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.suno.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-19T19:39:08.328977+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ],
+   "corrob_sources": [
+    {
+     "source": "suno.com.br",
+     "domain": "suno.com.br",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQUXcxNFNXanF6N2k5R3VMTWRsUm1ycVd5TnhjVXBJMW5lUlQ4UmFtNkpGQ0M1MWF6UGx5bWJlM2ZNTDRsam01UTdTMUh5WlBzMDVUQ2JXclFhVlJYS2RzWnU1UDgwWFpXa2JJWDNUcG02VXJkdnVmWm9xcHJrYTRGTG9ud3ptU05aZGfSAY8BQVVfeXFMT2hFRWpVeHBMTDh2MkR1R2EzTnE3emJKUlBkdEFFWlJfcnpObEJOdTFYRlVDSEY0YmxQRFBGOW02d2lzMzNKazVRV0ZtUjdNa2o3WTJHMjdfeU5iUmRRLU5EN2tadWJiMmdlNWFvR0Vwek00bGlLdmVJai1xXy1zNllfZ2FyVUUtbm1hbVZxaVE?oc=5",
+     "when": "19/08 13:33",
+     "original_url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQUXcxNFNXanF6N2k5R3VMTWRsUm1ycVd5TnhjVXBJMW5lUlQ4UmFtNkpGQ0M1MWF6UGx5bWJlM2ZNTDRsam01UTdTMUh5WlBzMDVUQ2JXclFhVlJYS2RzWnU1UDgwWFpXa2JJWDNUcG02VXJkdnVmWm9xcHJrYTRGTG9ud3ptU05aZGfSAY8BQVVfeXFMT2hFRWpVeHBMTDh2MkR1R2EzTnE3emJKUlBkdEFFWlJfcnpObEJOdTFYRlVDSEY0YmxQRFBGOW02d2lzMzNKazVRV0ZtUjdNa2o3WTJHMjdfeU5iUmRRLU5EN2tadWJiMmdlNWFvR0Vwek00bGlLdmVJai1xXy1zNllfZ2FyVUUtbm1hbVZxaVE?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQUXcxNFNXanF6N2k5R3VMTWRsUm1ycVd5TnhjVXBJMW5lUlQ4UmFtNkpGQ0M1MWF6UGx5bWJlM2ZNTDRsam01UTdTMUh5WlBzMDVUQ2JXclFhVlJYS2RzWnU1UDgwWFpXa2JJWDNUcG02VXJkdnVmWm9xcHJrYTRGTG9ud3ptU05aZGfSAY8BQVVfeXFMT2hFRWpVeHBMTDh2MkR1R2EzTnE3emJKUlBkdEFFWlJfcnpObEJOdTFYRlVDSEY0YmxQRFBGOW02d2lzMzNKazVRV0ZtUjdNa2o3WTJHMjdfeU5iUmRRLU5EN2tadWJiMmdlNWFvR0Vwek00bGlLdmVJai1xXy1zNllfZ2FyVUUtbm1hbVZxaVE?oc=5",
+     "resolved_url": "https://www.suno.com.br/noticias/cvm-processo-presidente-banco-do-brasil-acoes-mt/",
+     "canonical_url": "https://www.suno.com.br/noticias/cvm-processo-presidente-banco-do-brasil-acoes-mt/",
+     "display_url": "https://www.suno.com.br/noticias/cvm-processo-presidente-banco-do-brasil-acoes-mt/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.suno.com.br",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-19T19:39:08.729176+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    }
+   ]
   },
   "https://www.marketwatch.com/story/too-many-people-go-bankrupt-should-medicare-provide-catastrophic-coverage-f7c653da?mod=mw_rss_topstories": {
    "title": "‘Muitas pessoas vão à falência’: O Medicare deveria fornecer cobertura catastrófica?",
@@ -55835,7 +55901,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1787136684,
-   "cap_iso": "2026-08-19 07:51"
+   "cap_iso": "2026-08-19 07:51",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMizgFBVV95cUxNNlhRejFIMGduNlBpbDkzVUNJRzBEVWFCMHRzdHRrckFyeVdfVzFObnNMOW1WSWlRbm54OTNLaUFMZEpvWjlfTmx6azRIdmN5X01jMHoxUXl6SFdxZ3d2RGpFV2RfYTNxcEw1c0xsVmZ2dXM3QkxXUXo1aFdtTWpnS0VOcmRDbVdxaUF2d3lDYWNFdFFzTU8tRXdUOEF0VFRTMWQ3WGN5YnFZcDV3dWRrNmpHMWUtNzRDOWlDTE5VbGZEYzZZNkFfV2RLVlBtZ9IB0wFBVV95cUxQUDAtSVNXVlJ6ZW5yNUtScUphQW1URS00TmtTYlZ6VVRhZ1QwZlRnc2NJQTRKSUFCMS1YZ01qbThBT2dsNm9zaXVoeU0zMVRDTkxuZnBPVUZOSENUQ2V0aUQyYmtfc1lvSkRyLUJENmRkeEs0Uk1faHVuUWppY005UnExLXp5Z2RBeWhVQy1sZklJNi1obE8ydzJEc3YtRklsZlBOWGQ3RWFzQVNQdkxxLVgxQUNoQ1RpOXNNTkZDR25Zbnd5dHNwYnlHdnJRMkFvREZz?oc=5": {
    "title": "Empresa de energia pede recuperação judicial dois meses após dizer que faturaria R$ 1 bi este ano",
@@ -55951,6 +56019,46 @@
      "resolution_error": "",
      "link_render_anchor": true,
      "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNdkRuLXlQMUtrYTBwYjloN2hzZmgzeUZYX3lLT0kyTGFTcXQ5bFp1c3d0ampiRVhYSy10djUyNDl2ckpZY0tPMkxJczI0ZkxFRUN1ZUpDaG1HX1Z4YVFJRVlGQlFLNHltTDRoRDQzaVNaNzhBUFlDdHlzZGhyQVpXOGVDeGZGQy1xbmNIc0xVSlpzT1BacVFGRUU0Yw?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNdkRuLXlQMUtrYTBwYjloN2hzZmgzeUZYX3lLT0kyTGFTcXQ5bFp1c3d0ampiRVhYSy10djUyNDl2ckpZY0tPMkxJczI0ZkxFRUN1ZUpDaG1HX1Z4YVFJRVlGQlFLNHltTDRoRDQzaVNaNzhBUFlDdHlzZGhyQVpXOGVDeGZGQy1xbmNIc0xVSlpzT1BacVFGRUU0Yw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNdkRuLXlQMUtrYTBwYjloN2hzZmgzeUZYX3lLT0kyTGFTcXQ5bFp1c3d0ampiRVhYSy10djUyNDl2ckpZY0tPMkxJczI0ZkxFRUN1ZUpDaG1HX1Z4YVFJRVlGQlFLNHltTDRoRDQzaVNaNzhBUFlDdHlzZGhyQVpXOGVDeGZGQy1xbmNIc0xVSlpzT1BacVFGRUU0Yw?oc=5",
+     "resolved_url": "https://br.advfn.com/jornal/2026/08/jbs-propoe-aquisicao-das-acoes-restantes-da-pilgrim-s-pride",
+     "canonical_url": "https://br.advfn.com/jornal/2026/08/jbs-propoe-aquisicao-das-acoes-restantes-da-pilgrim-s-pride",
+     "display_url": "https://br.advfn.com/jornal/2026/08/jbs-propoe-aquisicao-das-acoes-restantes-da-pilgrim-s-pride",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "br.advfn.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-19T19:39:09.280846+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "TradingView",
+     "domain": "br.tradingview.com",
+     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1nM0lkeGFXOFlteGxJaC16cFZLQ0JQYk9qZ09sYXU1SUNpZXhrSlRfa0llQk5Lb25KQ3FpZkhtUm5Yd2ZwcWNOMjFDd2toX2h6RFBQYTFYRFRzUVBwOHJ5VU1oVjJDaHdtQ181LVRPTE03M1RpcDMw?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1nM0lkeGFXOFlteGxJaC16cFZLQ0JQYk9qZ09sYXU1SUNpZXhrSlRfa0llQk5Lb25KQ3FpZkhtUm5Yd2ZwcWNOMjFDd2toX2h6RFBQYTFYRFRzUVBwOHJ5VU1oVjJDaHdtQ181LVRPTE03M1RpcDMw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1nM0lkeGFXOFlteGxJaC16cFZLQ0JQYk9qZ09sYXU1SUNpZXhrSlRfa0llQk5Lb25KQ3FpZkhtUm5Yd2ZwcWNOMjFDd2toX2h6RFBQYTFYRFRzUVBwOHJ5VU1oVjJDaHdtQ181LVRPTE03M1RpcDMw?oc=5",
+     "resolved_url": "https://br.tradingview.com/news/reuters.com,2026:newsml_L6N44G157:0/",
+     "canonical_url": "https://br.tradingview.com/news/reuters.com,2026:newsml_L6N44G157:0/",
+     "display_url": "https://br.tradingview.com/news/reuters.com,2026:newsml_L6N44G157:0/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "br.tradingview.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-19T19:39:09.827614+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "corrob_sources": [
@@ -55998,6 +56106,48 @@
      "link_health": "redirect_resolvido",
      "resolution_method": "cache_historico",
      "last_checked_at": "2026-08-19T10:51:51.719533+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "ADVFN",
+     "domain": "br.advfn.com",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNdkRuLXlQMUtrYTBwYjloN2hzZmgzeUZYX3lLT0kyTGFTcXQ5bFp1c3d0ampiRVhYSy10djUyNDl2ckpZY0tPMkxJczI0ZkxFRUN1ZUpDaG1HX1Z4YVFJRVlGQlFLNHltTDRoRDQzaVNaNzhBUFlDdHlzZGhyQVpXOGVDeGZGQy1xbmNIc0xVSlpzT1BacVFGRUU0Yw?oc=5",
+     "when": "19/08 08:27",
+     "original_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNdkRuLXlQMUtrYTBwYjloN2hzZmgzeUZYX3lLT0kyTGFTcXQ5bFp1c3d0ampiRVhYSy10djUyNDl2ckpZY0tPMkxJczI0ZkxFRUN1ZUpDaG1HX1Z4YVFJRVlGQlFLNHltTDRoRDQzaVNaNzhBUFlDdHlzZGhyQVpXOGVDeGZGQy1xbmNIc0xVSlpzT1BacVFGRUU0Yw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNdkRuLXlQMUtrYTBwYjloN2hzZmgzeUZYX3lLT0kyTGFTcXQ5bFp1c3d0ampiRVhYSy10djUyNDl2ckpZY0tPMkxJczI0ZkxFRUN1ZUpDaG1HX1Z4YVFJRVlGQlFLNHltTDRoRDQzaVNaNzhBUFlDdHlzZGhyQVpXOGVDeGZGQy1xbmNIc0xVSlpzT1BacVFGRUU0Yw?oc=5",
+     "resolved_url": "https://br.advfn.com/jornal/2026/08/jbs-propoe-aquisicao-das-acoes-restantes-da-pilgrim-s-pride",
+     "canonical_url": "https://br.advfn.com/jornal/2026/08/jbs-propoe-aquisicao-das-acoes-restantes-da-pilgrim-s-pride",
+     "display_url": "https://br.advfn.com/jornal/2026/08/jbs-propoe-aquisicao-das-acoes-restantes-da-pilgrim-s-pride",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "br.advfn.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-19T19:39:10.227881+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
+    },
+    {
+     "source": "TradingView",
+     "domain": "br.tradingview.com",
+     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1nM0lkeGFXOFlteGxJaC16cFZLQ0JQYk9qZ09sYXU1SUNpZXhrSlRfa0llQk5Lb25KQ3FpZkhtUm5Yd2ZwcWNOMjFDd2toX2h6RFBQYTFYRFRzUVBwOHJ5VU1oVjJDaHdtQ181LVRPTE03M1RpcDMw?oc=5",
+     "when": "19/08 15:15",
+     "original_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1nM0lkeGFXOFlteGxJaC16cFZLQ0JQYk9qZ09sYXU1SUNpZXhrSlRfa0llQk5Lb25KQ3FpZkhtUm5Yd2ZwcWNOMjFDd2toX2h6RFBQYTFYRFRzUVBwOHJ5VU1oVjJDaHdtQ181LVRPTE03M1RpcDMw?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1nM0lkeGFXOFlteGxJaC16cFZLQ0JQYk9qZ09sYXU1SUNpZXhrSlRfa0llQk5Lb25KQ3FpZkhtUm5Yd2ZwcWNOMjFDd2toX2h6RFBQYTFYRFRzUVBwOHJ5VU1oVjJDaHdtQ181LVRPTE03M1RpcDMw?oc=5",
+     "resolved_url": "https://br.tradingview.com/news/reuters.com,2026:newsml_L6N44G157:0/",
+     "canonical_url": "https://br.tradingview.com/news/reuters.com,2026:newsml_L6N44G157:0/",
+     "display_url": "https://br.tradingview.com/news/reuters.com,2026:newsml_L6N44G157:0/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "br.tradingview.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-19T19:39:10.628104+00:00",
      "resolution_error": "",
      "link_render_anchor": true,
      "link_label": "Abrir notícia →"
@@ -56082,7 +56232,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1787136684,
-   "cap_iso": "2026-08-19 07:51"
+   "cap_iso": "2026-08-19 07:51",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "http://vinanet.vn/aticles-market/Capital-One-Faces-Key-Test-as-Discover-Acquisition-Bet-Hinges-on-Q2-Results-46-19110": {
    "title": "Capital One Faces Key Test as Discover Acquisition Bet Hinges on Q2 Results - Guidance Upgrade Report",
@@ -56242,15 +56394,129 @@
    ],
    "captured_ts": 1787147834,
    "cap_iso": "2026-08-19 10:57"
+  },
+  "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOeGJaSXpjdUNOWmhWX2xZS2ZIUTAxMjVoaFF6OGtoRGhUVm10V2tMSXViRU0zWUdWOFNqdmQyREVIYmxTZkhTMWRmZW54ZUZTWFBydHoyblBiZkd6R0YwN0xDV0lYZXhhbjVKYXB6bUh4QkNfb3ZIeV9fT1o1WEV6ZjYwS1ZOZlpBekVfT3pQbklNOXVkeGJlU3ZPX1V5cTcyZnlnNWJQcm9wdW8?oc=5": {
+   "title": "DAX, a marca que passou da falência ao crescimento sob o comando de Carlos Slim",
+   "url": "https://elceo.com/negocios/dax-la-marca-que-paso-de-la-quiebra-al-crecimiento-bajo-el-mando-de-carlos-slim/",
+   "summary": "DAX, a marca que passou da falência ao crescimento sob o comando de Carlos Slim &nbsp;&nbsp; EL CEO",
+   "source": "EL CEO",
+   "domain": "elceo.com",
+   "pub_ts": 1768636800,
+   "pub_iso": "2026-01-17 05:00",
+   "language": "es",
+   "title_original": "DAX, la marca que pasó de la quiebra al crecimiento bajo el mando de Carlos Slim",
+   "summary_original": "DAX, la marca que pasó de la quiebra al crecimiento bajo el mando de Carlos Slim &nbsp;&nbsp; EL CEO",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "falencia"
+   ],
+   "captured_ts": 1787168328,
+   "cap_iso": "2026-08-19 16:38"
+  },
+  "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/btg-ve-opa-da-brava-brav3-mais-proxima-apos-sinalizacao-da-cvm-acao-pode-subir-10/": {
+   "title": "Brava (BRAV3) pode subir 10% com avanço de oferta de ações, diz BTG",
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/btg-ve-opa-da-brava-brav3-mais-proxima-apos-sinalizacao-da-cvm-acao-pode-subir-10/",
+   "summary": "Brava (BRAV3) pode subir 10% com avanço de oferta de ações, diz BTG &nbsp;&nbsp; Estadão",
+   "source": "Estadão",
+   "domain": "estadao.com.br",
+   "pub_ts": 1783494000,
+   "pub_iso": "2026-07-08 04:00",
+   "language": "pt",
+   "companies": [
+    "BTG Pactual"
+   ],
+   "event_ids": [
+    "follow_on"
+   ],
+   "mention_roles": {
+    "BTG Pactual": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "BTG Pactual": [
+     "follow_on"
+    ]
+   },
+   "companies_attributed": [
+    "BTG Pactual"
+   ],
+   "context_companies": [],
+   "captured_ts": 1787168328,
+   "cap_iso": "2026-08-19 16:38"
+  },
+  "https://news.google.com/rss/articles/CBMiywFBVV95cUxQemVYOGdwX3liZ2k4SEdqd3FyTWx6eWd0TVBKV3RnaVRKcHp4UkhERGJ4Y0Rwb05ianJGYUVzY2tjSHFzTTA3QXhkNHNvTjFkaUczWlpiYmt0NVRPSE5ua0hWWEVoZmRYTFJuMGNGeTc5d0pSVW8wclpTZ1hGblE4dVpySlBqNTdWcVNKMDFFbExLdm5mYjZMd3pxMXE4eTJFTXQ0M0R0UXRKNTl5WVFnSjJGY3NKZC1TWEF4VUtfbmFwUVphaTFvbUN3NA?oc=5": {
+   "title": "Pantages Capital Acquisition Right (PGACR) Holds Flat at $0.17 as Tight Trading Range Persists - Diamond Pattern",
+   "url": "http://vinanet.vn/aticles-market/Pantages-Capital-Acquisition-Right-PGACR-Holds-Flat-at-017-as-Tight-Trading-Range-Persists-55-7573",
+   "summary": "Pantages Capital Acquisition Right (PGACR) Holds Flat at $0.17 as Tight Trading Range Persists - Diamond Pattern &nbsp;&nbsp; Vinanet",
+   "source": "Vinanet",
+   "domain": "vinanet.vn",
+   "pub_ts": 1786621548,
+   "pub_iso": "2026-08-13 08:45",
+   "language": "pt",
+   "companies": [
+    "Mercado (geral)"
+   ],
+   "event_ids": [
+    "ma"
+   ],
+   "captured_ts": 1787168328,
+   "cap_iso": "2026-08-19 16:38"
+  },
+  "https://valor.globo.com/empresas/noticia/2026/08/19/b3-suspende-negociao-de-aes-da-refit.ghtml": {
+   "title": "B3 suspende negociação de ações da Refit",
+   "url": "https://valor.globo.com/empresas/noticia/2026/08/19/b3-suspende-negociao-de-aes-da-refit.ghtml",
+   "summary": "B3 suspende negociação de ações da Refit &nbsp;&nbsp; Valor Econômico",
+   "source": "Valor Econômico",
+   "domain": "valor.globo.com",
+   "pub_ts": 1787164407,
+   "pub_iso": "2026-08-19 15:33",
+   "language": "pt",
+   "companies": [
+    "B3"
+   ],
+   "event_ids": [
+    "suspensao_negociacao"
+   ],
+   "mention_roles": {
+    "B3": {
+     "relation_type": "direto",
+     "subject_company": "",
+     "impact_type": "direto",
+     "event_phase": "anuncio",
+     "direction_hint": ""
+    }
+   },
+   "events_by_company": {
+    "B3": [
+     "suspensao_negociacao"
+    ]
+   },
+   "companies_attributed": [
+    "B3"
+   ],
+   "context_companies": [],
+   "captured_ts": 1787168328,
+   "cap_iso": "2026-08-19 16:38"
   }
  },
  "last_run": {
-  "ts": 1787147901,
-  "iso": "19 ago 2026 · 10:58 BRT",
+  "ts": 1787168390,
+  "iso": "19 ago 2026 · 16:39 BRT",
   "status": {
+   "B3": {
+    "status": "critico",
+    "score": 109
+   },
    "JBS": {
     "status": "critico",
-    "score": 93
+    "score": 92
    },
    "Cosan": {
     "status": "atencao",
@@ -56276,17 +56542,21 @@
     "status": "monitorar",
     "score": 34
    },
-   "Smart Fit": {
-    "status": "monitorar",
-    "score": 32
-   },
    "Citigroup": {
     "status": "monitorar",
     "score": 32
    },
+   "Smart Fit": {
+    "status": "monitorar",
+    "score": 31
+   },
    "Axia Energia": {
     "status": "monitorar",
     "score": 30
+   },
+   "BTG Pactual": {
+    "status": "atencao",
+    "score": 29
    },
    "Lojas Renner": {
     "status": "atencao",
@@ -56296,21 +56566,17 @@
     "status": "monitorar",
     "score": 27
    },
-   "B3": {
-    "status": "monitorar",
-    "score": 27
-   },
    "Yobel": {
     "status": "monitorar",
     "score": 23
    },
-   "Vale": {
-    "status": "atencao",
-    "score": 22
-   },
    "NextEra Energy": {
     "status": "monitorar",
     "score": 22
+   },
+   "Vale": {
+    "status": "atencao",
+    "score": 21
    },
    "Baker Hughes": {
     "status": "monitorar",
@@ -56320,17 +56586,13 @@
     "status": "monitorar",
     "score": 20
    },
-   "BTG Pactual": {
-    "status": "atencao",
+   "ISA Energia Brasil": {
+    "status": "monitorar",
     "score": 19
    },
    "PRIO": {
     "status": "monitorar",
-    "score": 19
-   },
-   "ISA Energia Brasil": {
-    "status": "monitorar",
-    "score": 19
+    "score": 18
    },
    "Aegea Saneamento": {
     "status": "monitorar",
@@ -56638,8 +56900,8 @@
    "url": "https://oglobo.globo.com/economia/negocios/noticia/2026/08/03/receio-de-calote-e-dificuldade-de-comprovar-renda-travam-move-brasil.ghtml"
   },
   "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQMFNfdXFhMDdqNDh4d3J1TWNONUJCZnJiaDk0bFEwdnNnQXJtMG1RazZsZENBcld6LWxjLWJQOC1iNTdocHdDSE5FVDNpM0xFNHNhMUtnektYVUVmMFA4MTdlY3BreTkwYjlpUmZpX3dzVjJrYnBXQUFOWWpWYVRqSkc0Y1dydFdKVlQ3Q3hlV25fQ0Z0NFlHbXZjVTJja0stczVwN01iN3cwVmJzY3V4RzY2U195aXZEM0FvOURNWGFib2tZZEZCUDBxazc2QlAwakE?oc=5": {
-   "exact": true,
-   "url": "https://br.advfn.com/jornal/2026/04/gerdau-propoe-aquisicao-de-participacao-na-usina-dona-francisca-e-amplia-estrategia-em-energia-na-b3"
+   "url": "https://br.advfn.com/jornal/2026/04/gerdau-propoe-aquisicao-de-participacao-na-usina-dona-francisca-e-amplia-estrategia-em-energia-na-b3",
+   "exact": true
   },
   "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQRGdvbDJZcURRT01ZSGk5NlVIUWtoZjhtZkZwMlRCN0ZVQkh1UFZQOXJDRlMycC1ZQU9CVnVJSU9aQXJrT3RqX0ZMZFVRQzR3OGxibG15ZzJpRldDVkZvNmtQcm9xbVl4Q3hHVUZnVGhTeTVhM3hpUGV0cTA1Rk1lQS1SQkFQU04ybUVPREZKXzJkVlVRQ0tlLVlWSXVCaDNfQ1lZMGo3N0pYQTNvZTlycnBsR3l4THl4Ujh4R0hRZmJZWnlGV1dLWEI5Q1pFQ3NhOGc?oc=5": {
    "exact": true,
@@ -62216,9 +62478,37 @@
   "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9RTFctMU5CZGFTM29wSkdSdmRXZEdobVIwX241bjFPbnQwU2IweVZFT2JLc0Qzcmwwb1FxdTFibUN4QWVSNnBkYXJCYlBYSHBaUHVIRG4xSG4?oc=5": {
    "url": "https://cryptonews.net/news/finance/32617507/",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNbFRRTTQxcUFrUWpOTzQ5a0piWm1EOU5kaDhUZnVEZlppOEt1VGVDS09ud1pPY3h3Mm1qZndEdXdic0Nscm9ycTFwaWJaUFJGcVhSODFjQ0RVV3V3cWhsbnkwT0RTdWxyNUt6X29HTjZtYUs5aGJCNTA5R0lINk9uemR0WjNjT2t3cnc3TUtwbXFpZm41ZTZoZ05naXNwY3RteFRWVVVBTmRqNi1aMDEwNExlX1lTWjRodEs0bnlXNTNwZnhzbTQ1NjkzNWlJckxka21WVVFma9IB3AFBVV95cUxQZEJjMW5WbUxzcE1NU1lnMXZidWtVUHBYb2JuSnp4M01XTWdtV3FGZWZSWDEyal9JRkJxeXIwenRZU2IyMGpFVFVoZ1hTb2I5MDlpQmo3czBPTUUzQld6eWp0SGVwTXRsZWRHWWMxeWZwdHBKV01Db3ByYlFBaGh3ci1odGFaS004akVUZkRsa3JScThSVEhuM1RNMnJtRHBxVUdacDRydlN6RXdLUjRJZVlHWHpjbXpuYk92RzVxQVlEblV5c2xkSWNOT2NLSDdIX0FDMGZyOXpoRkZW?oc=5": {
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/btg-ve-opa-da-brava-brav3-mais-proxima-apos-sinalizacao-da-cvm-acao-pode-subir-10/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMimgFBVV95cUxPZHdzSDBPTG54Qi12NXFzQ2w3Sm5fbGZxdVoxNEs1dmpzeWpHXzQ0ZHlHVzdrTm85TlhIb2lFbjhMbW1yZzVGNlR1RWxrN2pMODlHREN0TzRUTjJWeWdvdkZKRjl1OFVldktlZGtiVUtLWVhwakhuMWtudzFJRm1WMzZTZ29tbXVwYVpZakloMGFabGpIZ1k1RGFR0gGoAUFVX3lxTFBVYzNMaHJMa1pOX2tMMmJNNEp5Wk9mVmJLYWNQaGRPU1B3MU1oYWZ6ZTgxY0NDdzBVRjBIbHlRZlYwUmVucDFuZ3hITHdzRGxUN2o2aDNtd0FqdEtybkluNVpkMzVmTFFkTWx4VlBWNko0Y1BOZTRxeGdvenpPNEkxaGROWGpUOGRhNjBIaTFJYXRBUkZuVkhIVTZwdGZyWnU3RmdRcE5VcA?oc=5": {
+   "url": "https://valor.globo.com/empresas/noticia/2026/08/19/b3-suspende-negociao-de-aes-da-refit.ghtml",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOeGJaSXpjdUNOWmhWX2xZS2ZIUTAxMjVoaFF6OGtoRGhUVm10V2tMSXViRU0zWUdWOFNqdmQyREVIYmxTZkhTMWRmZW54ZUZTWFBydHoyblBiZkd6R0YwN0xDV0lYZXhhbjVKYXB6bUh4QkNfb3ZIeV9fT1o1WEV6ZjYwS1ZOZlpBekVfT3pQbklNOXVkeGJlU3ZPX1V5cTcyZnlnNWJQcm9wdW8?oc=5": {
+   "url": "https://elceo.com/negocios/dax-la-marca-que-paso-de-la-quiebra-al-crecimiento-bajo-el-mando-de-carlos-slim/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiywFBVV95cUxQemVYOGdwX3liZ2k4SEdqd3FyTWx6eWd0TVBKV3RnaVRKcHp4UkhERGJ4Y0Rwb05ianJGYUVzY2tjSHFzTTA3QXhkNHNvTjFkaUczWlpiYmt0NVRPSE5ua0hWWEVoZmRYTFJuMGNGeTc5d0pSVW8wclpTZ1hGblE4dVpySlBqNTdWcVNKMDFFbExLdm5mYjZMd3pxMXE4eTJFTXQ0M0R0UXRKNTl5WVFnSjJGY3NKZC1TWEF4VUtfbmFwUVphaTFvbUN3NA?oc=5": {
+   "url": "http://vinanet.vn/aticles-market/Pantages-Capital-Acquisition-Right-PGACR-Holds-Flat-at-017-as-Tight-Trading-Range-Persists-55-7573",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMiigFBVV95cUxQUXcxNFNXanF6N2k5R3VMTWRsUm1ycVd5TnhjVXBJMW5lUlQ4UmFtNkpGQ0M1MWF6UGx5bWJlM2ZNTDRsam01UTdTMUh5WlBzMDVUQ2JXclFhVlJYS2RzWnU1UDgwWFpXa2JJWDNUcG02VXJkdnVmWm9xcHJrYTRGTG9ud3ptU05aZGfSAY8BQVVfeXFMT2hFRWpVeHBMTDh2MkR1R2EzTnE3emJKUlBkdEFFWlJfcnpObEJOdTFYRlVDSEY0YmxQRFBGOW02d2lzMzNKazVRV0ZtUjdNa2o3WTJHMjdfeU5iUmRRLU5EN2tadWJiMmdlNWFvR0Vwek00bGlLdmVJai1xXy1zNllfZ2FyVUUtbm1hbVZxaVE?oc=5": {
+   "url": "https://www.suno.com.br/noticias/cvm-processo-presidente-banco-do-brasil-acoes-mt/",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMimwFBVV95cUxNdkRuLXlQMUtrYTBwYjloN2hzZmgzeUZYX3lLT0kyTGFTcXQ5bFp1c3d0ampiRVhYSy10djUyNDl2ckpZY0tPMkxJczI0ZkxFRUN1ZUpDaG1HX1Z4YVFJRVlGQlFLNHltTDRoRDQzaVNaNzhBUFlDdHlzZGhyQVpXOGVDeGZGQy1xbmNIc0xVSlpzT1BacVFGRUU0Yw?oc=5": {
+   "url": "https://br.advfn.com/jornal/2026/08/jbs-propoe-aquisicao-das-acoes-restantes-da-pilgrim-s-pride",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMid0FVX3lxTE1nM0lkeGFXOFlteGxJaC16cFZLQ0JQYk9qZ09sYXU1SUNpZXhrSlRfa0llQk5Lb25KQ3FpZkhtUm5Yd2ZwcWNOMjFDd2toX2h6RFBQYTFYRFRzUVBwOHJ5VU1oVjJDaHdtQ181LVRPTE03M1RpcDMw?oc=5": {
+   "url": "https://br.tradingview.com/news/reuters.com,2026:newsml_L6N44G157:0/",
+   "exact": true
   }
  },
- "run_count": 139,
+ "run_count": 140,
  "semantic_reclassified_at": "2026-07-30T21:07:47.714609+00:00",
  "semantic_version": "1.0"
 }
