@@ -251,9 +251,15 @@ check(len([k for k in MA if k != "_meta"]) == 3,
       "[22] ma_transaction_reviews continua com os 3 controles S2")
 check(set(k for k in S8 if k != "_meta").isdisjoint(k for k in _live if k != "_meta"),
       "[23] as chaves S8 não colidem com o inventário crítico")
-check(len(ADJ["adjudicacoes"]) == 2,
-      f"[24] o arquivo de adjudicações tem 2 entradas — a antiga preservada "
+# 4I.2 R7k: passou a 3 com a adjudicação G286 (Santander / `troca_ceo`), em que
+# a supervisão humana do lote V1 reverteu um positivo do gold — comentário de
+# analista sobre troca já anunciada não é ocorrência nova. O que este teste
+# protege continua sendo o mesmo: adjudicação nova NÃO apaga as anteriores.
+check(len(ADJ["adjudicacoes"]) == 3,
+      f"[24] o arquivo de adjudicações tem 3 entradas — as antigas preservadas "
       f"({len(ADJ['adjudicacoes'])})")
+check(any(a["case_id"] == "G286" for a in ADJ["adjudicacoes"]),
+      "[24b] incluindo a G286, do lote V1 de supervisão humana")
 check(any(a["company"] == "Grupo Nutresa" for a in ADJ["adjudicacoes"]),
       "[25] inclusive a adjudicação da Nutresa, intocada")
 
