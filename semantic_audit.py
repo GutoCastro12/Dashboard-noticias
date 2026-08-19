@@ -2571,6 +2571,122 @@ _INSOLV_SUJEITO_PROPRIO = [
     r"(?:\w+\s+){{0,2}}?" + _INSOLV_ESTRITA,
 ]
 
+# ── 4I.2 R7k: TROCA DE CEO EXIGE ASSERÇÃO, NÃO DESCRITOR DE CARGO ──────────
+# Supervisão humana, lote V1 (`risk_human_supervision.json`), invariante H4:
+# DESCRITOR != ASSERÇÃO DE EVENTO.
+#
+# A keyword da taxonomia é `novo CEO` — um ADJETIVO DE STATUS. Ela dispara
+# igual no anúncio verdadeiro ("é escolhido como novo CEO da B3") e no
+# descritor puro ("diz novo CEO da B3"). Por isso NÃO existe blacklist
+# possível da expressão: ela mataria os positivos.
+#
+# O que o humano separou, e que foi medido antes de virar regra:
+#
+#   NEGATIVO  o dirigente é ATOR ou LOCUTOR de um verbo de comentário
+#             ("novo CEO faz giro", "vai viajar", "diz novo CEO")
+#   NEGATIVO  casa de análise enquadra uma troca JÁ conhecida
+#             ("XP vê troca de CEO no Santander", "Citi vê incerteza com...")
+#   POSITIVO  a matéria AFIRMA nomeação, eleição, sucessão, assunção ou saída
+#
+# Duas armadilhas medidas e evitadas de propósito:
+#
+# 1) Exigir verbo de asserção e parar aí REPROVA: suprime o positivo humano da
+#    Vale (o título não traz verbo de mudança) e PRESERVA Santander e Rumo, em
+#    que "troca de CEO" é sintagma nominal sob enquadramento de analista. Erra
+#    3 dos 6 casos humanos.
+# 2) A Vale só se distingue por "cargo como tópico antes de dois-pontos" —
+#    feature que dispara em 1 de 46 pares. Construir sobre ela seria repetir o
+#    defeito do prefixo `ex-` da B8: forma léxica de exemplo único virando
+#    falsa invariante.
+#
+# A guarda é, então, NEGATIVA E POSICIONAL: só atua quando o próprio dirigente
+# ocupa o papel de quem fala/age, ou quando um analista enquadra o fato. Na
+# Vale quem "diz" são Embraer e Klabin — o cargo não é ator —, e por isso ela
+# sobrevive sem nenhuma regra feita sob medida para ela.
+# Trilíngue de propósito: a asserção já cobre PT/EN/ES, e um descritor só em
+# PT deixaria "New CEO of X says…" e "El nuevo gerente general de X dice…"
+# passarem — assimetria que os controles pegaram.
+_CEO_CARGO = (r"(?:nov[oa]s?|new|nuev[oa]s?)\s+"
+              r"(?:ceo|presidente|president|diretor[- ]presidente|comandante|"
+              r"gerente\s+general|director\s+ejecutivo|chief\s+executive|"
+              r"head\s+of)")
+# Verbos de COMENTÁRIO/AÇÃO cotidiana — não de mudança de comando.
+_CEO_VERBO_COMENTARIO = (r"diz|disse|dice|afirma|afirmou|v[êe]|viu|promete|"
+                         r"prometeu|comenta|comentou|fala|falou|explica|"
+                         r"explicou|avalia|avaliou|projeta|aposta|defende|"
+                         r"admite|reconhece|faz|fez|vai|tra[çc]a|tenta|quer|"
+                         r"busca|planeja|se[ñn]ala|asegura|considera|"
+                         r"says?|sees?|promises?|comments?|tells?|plans?")
+# (a) o cargo é o ATOR: "novo CEO faz giro", "Novo CEO da Pemex vai viajar".
+# A oração relativa é permitida ("novo CEO da Vale, QUE promete cortar custos")
+# porque o núcleo do sujeito continua sendo o cargo — o pronome só o retoma.
+_CEO_DESCRITOR_ATOR = (r"\b" + _CEO_CARGO + r"\b(?:\s+d[aeo]s?\s+\w+){0,2}"
+                       r"(?:\s*,?\s*(?:que|quien|who))?"
+                       r"(?:\s+\w+){0,2}?\s+(?:" + _CEO_VERBO_COMENTARIO + r")\b")
+# (b) o cargo é o LOCUTOR citado: "…, diz novo CEO da B3".
+_CEO_DESCRITOR_LOCUTOR = (r"\b(?:" + _CEO_VERBO_COMENTARIO +
+                          r"|segundo|para)\s+(?:o\s+|a\s+)?" + _CEO_CARGO + r"\b")
+# (c) o cargo é MOLDURA TEMPORAL do texto, não o fato: "sob comando do novo
+# CEO, a empresa muda…", "desde que assumiu como CEO…". A mudança já é
+# pressuposta — pressuposição não é asserção.
+_CEO_DESCRITOR_MOLDURA = (r"\b(?:sob\s+(?:o\s+)?comando|sob\s+a\s+gest[ãa]o|"
+                          r"desde\s+que\s+assumiu|na\s+gest[ãa]o|under\s+the\s+"
+                          r"new|bajo\s+(?:el\s+)?mando)\b[^.;]{0,30}?"
+                          r"(?:" + _CEO_CARGO + r"|ceo|presidente)\b")
+# (d) casa de análise enquadrando o fato: "XP vê troca de CEO no Santander".
+_CEO_ENQUADRAMENTO_ANALISTA = (
+    r"^\s*[A-Z][\w&.\-]{1,20}(?:\s+[A-Z][\w&.\-]{1,20}){0,2}\s+"
+    r"(?:v[êe]|avalia|projeta|aposta|comenta|analisa|reage|mant[ée]m)\b")
+# ASSERÇÃO DE MUDANÇA DE COMANDO. Exclui de propósito o sintagma nominal solto
+# "troca de CEO": ele aparece tanto no fato quanto no comentário sobre o fato,
+# e é justamente o que Santander e Rumo têm. Nomeação, eleição, sucessão,
+# assunção e saída são atos; "troca de CEO" sozinho é só o nome do assunto.
+_CEO_ASSERCAO = [
+    r"\b(?:anuncia|anunciou|anúncio|anuncio)\b",
+    r"\bnomea\w*\b", r"\bnomeia\b", r"\bnomeou\b",
+    r"\belege\b", r"\belegeu\b", r"\belei[çc][ãa]o\b",
+    r"\bescolhe\b", r"\bescolheu\b", r"\bescolhid[oa]\b",
+    r"\bdesigna\w*\b", r"\bindica\b|\bindicou\b",
+    r"\bser[áa]\s+(?:o\s+|a\s+)?nov[oa]\b",
+    r"\bassum(?:e|iu|ir[áa])\b", r"\btoma\s+posse\b",
+    r"\bsucede\b|\bsucess[ãa]o\b|\bsucessor\b",
+    r"\bsubstitui\w*\b",
+    r"\bren[úu]ncia\w*\b|\brenuncia\b|\brenunciou\b",
+    r"\bdeixa(?:r[áa])?\s+(?:o\s+)?(?:cargo|comando|a\s+presid[êe]ncia)\b",
+    r"\bsa[íi]da\s+d[eo]\s+(?:ceo|presidente|gerente)\b",
+    r"\bdestitu\w*\b",
+    # EN
+    r"\bnames?\s+new\b", r"\bappoint\w*\b", r"\bwill\s+become\b",
+    r"\bsteps?\s+down\b", r"\bresign\w*\b", r"\bto\s+leave\b", r"\bsucceeds?\b",
+    # ES
+    r"\bnombra\w*\b", r"\bes\s+el\s+nuev[oa]\b", r"\basumir[áa]?\b",
+    r"\bdeja\s+la\s+gerencia\b", r"\bsale\s+como\b", r"\bsustituye\b",
+]
+_RE_CEO_ASSERCAO = re.compile("|".join(_CEO_ASSERCAO), re.I)
+
+
+def detect_troca_ceo_sem_assercao(text: str, title: str = "") -> str:
+    """O texto usa o cargo como DESCRITOR e não afirma mudança de comando.
+
+    Devolve a evidência do descritor, ou "". Asserção positiva SEMPRE vence:
+    "Novo CEO diz que assumirá o cargo em setembro" tem verbo de comentário E
+    assunção explícita, e continua sendo evento."""
+    t = _n(text)
+    if _RE_CEO_ASSERCAO.search(t):
+        return ""                      # evidência positiva prevalece (§8)
+    for p in (_CEO_DESCRITOR_ATOR, _CEO_DESCRITOR_LOCUTOR,
+              _CEO_DESCRITOR_MOLDURA):
+        m = re.search(p, t, re.I)
+        if m:
+            return m.group(0).strip()
+    # O enquadramento de analista é lido no TÍTULO, com caixa preservada: é a
+    # posição inicial + nome próprio que caracterizam a casa de análise.
+    m = re.search(_CEO_ENQUADRAMENTO_ANALISTA, _norm_caixa(title or text))
+    if m:
+        return m.group(0).strip()
+    return ""
+
+
 # O sujeito é COLETIVO ou terceiro: setor, classe de empresas, clientes,
 # fornecedores, produtores. "Pedidos de RJ no agronegócio", "RJ de clientes".
 _INSOLV_SUJEITO_COLETIVO = [
@@ -3043,6 +3159,24 @@ def resolve_article_semantics(title: str, summary: str, monitored: str,
                          attribution_rule="R_FOLLOW_ON_DE_TERCEIRO",
                          rejection_reason=(f"o follow-on/aumento de capital é da "
                                             f"'{_emissor}'; {monitored} apenas aporta"))
+                decisoes.append(d)
+                continue
+        # R7k) TROCA DE CEO SEM ASSERÇÃO DE MUDANÇA (4I.2)
+        # Roda ANTES da regra de terceiro: se não houve troca afirmada, a
+        # pergunta "de quem é a troca" não chega a existir. Escopo restrito a
+        # `troca_ceo` — a invariante H4 pode generalizar depois, mas nesta onda
+        # não vira primitivo de asserção global.
+        if ev == "troca_ceo":
+            _desc = detect_troca_ceo_sem_assercao(texto, title)
+            if _desc:
+                d.update(scoreable=False, event_scope="direto",
+                         subject_company=monitored,
+                         subject_evidence=_desc,
+                         relation_type="descritor_de_cargo",
+                         attribution_rule="R_TROCA_CEO_SEM_ASSERCAO",
+                         rejection_reason=(
+                             f"\"{_desc}\" usa o cargo como descritor; o texto não "
+                             f"afirma nomeação, sucessão ou saída"))
                 decisoes.append(d)
                 continue
         # B7b-1) TROCA DE CEO DE TERCEIRO, POR POSSESSIVO (4I.2)

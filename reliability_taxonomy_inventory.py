@@ -131,6 +131,12 @@ REGRAS = {
     "R_EVENTO_CITADO_COMO_PASSADO": (("currentness",), _GLOBAL, False),
     "R_FOLLOW_ON_DE_TERCEIRO": (("subject",), ("follow_on",), False),
     "R_TROCA_CEO_DE_TERCEIRO": (("subject",), ("troca_ceo",), False),
+    # 4I.2 R7k: irmã da anterior, num eixo ANTERIOR a ela. A regra de terceiro
+    # responde "de quem é a troca"; esta responde "houve troca?". Dimensão
+    # `event_evidence` porque a keyword `novo CEO` é adjetivo de status e não
+    # prova evento — supervisão humana, lote V1, invariante H4.
+    "R_TROCA_CEO_SEM_ASSERCAO": (("event_evidence", "centrality"),
+                                 ("troca_ceo",), False),
     "R_EVENTO_DE_SUBSIDIARIA_NOMEADA": (("subject", "relation"), _GLOBAL, False),
     "R_EVENTO_NAO_CONSUMADO_OU_DE_CARTEIRA": (("phase", "event_evidence"),
                                               (_ESTRITO, _CREDITO), False),

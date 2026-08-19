@@ -32,6 +32,22 @@
    "evidence_summary": "O proprio racional do caso base G183 registra 'aquisicao de bloco (ativo estrategico)' e 'ma_role_real: BUYER' — a auditoria original ja havia lido o objeto como ATIVO e ainda assim manteve o event_id `ma`. A inconsistencia estava no gold antigo, nao na regra. Mesma classe semantica do controle S2-C3 adjudicado no mesmo dia (Petrobras / bloco exploratorio em Sao Tome e Principe, `ma` = FALSE), registrado em test_fixtures_reliability/ma_transaction_reviews.json.",
    "verdict_escolhido": "WRONG_EVENT e o unico veredito do schema que e VERDADEIRO aqui: existe transacao real e a empresa e mesmo a adquirente; o que esta errado e o event_id. Mapeia para a assertion `reclass`, avaliada de forma IDENTICA a `drop` — o evento proibido nao pode pontuar. O brief pediu KEEP -> DROP e o efeito e exatamente esse, sem precisar afirmar um veredito falso (WRONG_SUBJECT, HISTORICAL_MA e afins nao descrevem este caso).",
    "impacto_no_gold": "positivo -> negativo: POSITIVOS 116->115 (denominador tambem 116->115), NEGATIVOS 89->90"
+  },
+  {
+   "case_id": "G286",
+   "company": "Santander Brasil",
+   "event_id": "troca_ceo",
+   "title_fragment": "XP vê troca de CEO no Santander",
+   "old_verdict": "CORRECT",
+   "new_verdict": "HISTORICAL_REFERENCE",
+   "adjudication_stage": "R7k / HUMAN SUPERVISION BATCH V1 (caso 20)",
+   "adjudicated_by": "gustavo (lote V1 de supervisao humana)",
+   "reviewer_type": "human",
+   "adjudicated_at": "2026-08-19",
+   "reason": "COMENTARIO DE ANALISTA SOBRE TROCA JA ANUNCIADA NAO E OCORRENCIA NOVA. O anuncio real esta no acervo: 'Gilson Finkelsztain sera o novo CEO do Santander' (2026-03-19). Esta materia da XP analisa expectativas, ausencia de ruptura e rentabilidade. Pode CORROBORAR o mesmo evento; nao pode criar outra troca de CEO nem renovar decaimento. Adjudicado por humano no lote V1, caso 20: article_role=ANALYST_COMMENTARY_CORROBORATION, occurrence_relation=SAME_OCCURRENCE, score_refresh=FALSE, scoreable=NO. A adjudicacao atual PREVALECE sobre o veredito da auditoria 4I.",
+   "evidence_summary": "Fonte da verdade: risk_human_supervision.json, chave 'cad44d85917e8bb50e46|Santander Brasil|troca_ceo', publicado em 7f66a9d. O gold 4I rotulou este caso como positivo legitimo quando a unica pergunta feita era ATRIBUICAO ('de quem e a troca?'). A supervisao humana acrescentou a pergunta anterior — ASSERCAO ('houve troca nesta materia?') — e a resposta e nao. O irmao Rumo ('Citi ve incerteza com troca de CEO da Rumo') recebeu o mesmo veredito no caso 18, e sua `recomendacao_negativa` permanece pontuavel.",
+   "verdict_escolhido": "HISTORICAL_REFERENCE e o veredito do schema que descreve o caso: a troca de CEO existe, mas como fato ANTERIOR referido pela materia, nao como evento nela afirmado. Mapeia para a assertion `drop`. WRONG_SUBJECT e WRONG_RELATION seriam falsos — o sujeito e a relacao sempre estiveram certos; NEGATED_EVENT seria falso porque nada e negado.",
+   "impacto_no_gold": "positivo -> negativo: POSITIVOS 115->114 (denominador tambem 115->114), NEGATIVOS 90->91"
   }
  ]
 }

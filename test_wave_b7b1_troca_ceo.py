@@ -70,8 +70,20 @@ _PEMEX = ("Novo CEO da Pemex vai viajar ao Brasil para avançar agenda de parcer
           "com a Petrobras")
 check("troca_ceo" not in pontua(_PEMEX, "Petrobras"),
       "[5 Petrobras/Pemex] Petrobras NÃO recebe troca_ceo")
-check("troca_ceo" in pontua(_PEMEX, "Pemex (Petróleos Mexicanos)"),
-      "[5b] Pemex — o sujeito REAL — MANTÉM troca_ceo no mesmo artigo")
+# 4I.2 R7k: este artigo deixou de ser evento para QUALQUER empresa. A
+# supervisão humana (lote V1, caso 16, `risk_human_supervision.json`)
+# adjudicou "Novo CEO da Pemex vai viajar" como DESCRIPTOR_BACKGROUND,
+# `scoreable=NO`: o cargo é o ator de uma viagem, e nada afirma troca.
+# A propriedade deste bloco é ATRIBUIÇÃO, não asserção — então ela passa a
+# ser verificada também num veículo que de fato afirma a troca.
+check("troca_ceo" not in pontua(_PEMEX, "Pemex (Petróleos Mexicanos)"),
+      "[5b] nem a própria Pemex recebe: o texto não afirma troca (humano: NÃO)")
+_PEMEX_REAL = ("Novo CEO da Pemex é nomeado e viajará ao Brasil para agenda "
+               "com a Petrobras")
+check("troca_ceo" in pontua(_PEMEX_REAL, "Pemex (Petróleos Mexicanos)"),
+      "[5c] mas com a troca AFIRMADA, a Pemex volta a receber…")
+check("troca_ceo" not in pontua(_PEMEX_REAL, "Petrobras"),
+      "[5d] …e a Petrobras segue sem receber — a atribuição continua correta")
 
 print()
 print("=" * 96)
@@ -127,13 +139,22 @@ print()
 print("=" * 96)
 print("BLOCO E — §7 R1: 'CEO' solto não busca possessivo distante")
 print("=" * 96)
-for _t, _c in (("XP vê troca de CEO no Santander (SANB11) sem ruptura e aposta em "
-                "alta rentabilidade", "Santander Brasil"),
+# 4I.2 R7k: o veículo do Santander trocou. "XP vê troca de CEO no Santander"
+# foi adjudicado por humano (lote V1, caso 20) como
+# ANALYST_COMMENTARY_CORROBORATION, `scoreable=NO` — casa de análise
+# enquadrando uma troca já anunciada não é ocorrência nova. O anúncio real do
+# próprio Santander entra no lugar e continua provando o que este bloco testa:
+# que "CEO" solto não sai buscando possessivo distante.
+for _t, _c in (("Gilson Finkelsztain será o novo CEO do Santander", "Santander Brasil"),
                ("Smart Fit (SMFT3) anuncia troca de CEO e diretor financeiro", "Smart Fit"),
                ("Tupy anuncia renúncia do CEO e inicia processo de sucessão com apoio "
                 "internacional", "Tupy")):
     check("troca_ceo" in pontua(_t, _c),
           f"[R1] positivo legítimo preservado: {_c} — {_t[:44]}")
+check("troca_ceo" not in pontua("XP vê troca de CEO no Santander (SANB11) sem "
+                                "ruptura e aposta em alta rentabilidade",
+                                "Santander Brasil"),
+      "[R1b] e o comentário de analista sobre a mesma troca NÃO pontua (humano: NÃO)")
 
 print()
 print("=" * 96)
