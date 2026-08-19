@@ -34,6 +34,7 @@ from pathlib import Path
 
 os.environ["RISK_AUDITOR_PACING_S"] = "0"
 
+import reliability_occurrence_archival_source as arq
 import reliability_occurrence_auditor_freeze as fz
 import reliability_occurrence_auditor_pilot as pl
 import reliability_occurrence_truth as ot
@@ -368,7 +369,7 @@ try:
 finally:
     fz.PROMPT_V1 = _orig
 _n += 1
-check(fz.verificar_congelamento(D) == [],
+check(fz.verificar_congelamento(D, historico=arq.HISTORICO) == [],
       f"[{_n}] e o congelamento volta íntegro")
 _n += 1
 

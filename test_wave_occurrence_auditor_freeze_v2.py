@@ -29,6 +29,7 @@ from __future__ import annotations
 import io
 import json
 
+import reliability_occurrence_archival_source as arq
 import reliability_occurrence_auditor_freeze as v1
 import reliability_occurrence_auditor_freeze_v2 as v2
 import reliability_occurrence_auditor_input as ai
@@ -91,7 +92,7 @@ n = 1
 print("=" * 98)
 print("A V1 NÃO FOI TOCADA")
 print("=" * 98)
-check(not v1.verificar_congelamento(D),
+check(not v1.verificar_congelamento(D, historico=arq.HISTORICO),
       f"[{n}] os oito hashes da V1 seguem batendo — a V2 não reescreve o "
       "registro contra o qual será comparada"); n += 1
 check(v1.FREEZE_VERSION == "occurrence.auditor.freeze.v1"
@@ -103,7 +104,7 @@ print()
 print("=" * 98)
 print("O DEFEITO EXISTIA — EXIBIDO, NÃO AFIRMADO")
 print("=" * 98)
-_ex1 = v1.exemplos_congelados(D)
+_ex1 = v1.exemplos_congelados(D, historico=arq.HISTORICO)
 _ruins = {k: v1.validar_saida(v["expected_output"], v["candidate_labels"])
           for k, v in _ex1.items()
           if v1.validar_saida(v["expected_output"], v["candidate_labels"])}
@@ -126,7 +127,7 @@ print()
 print("=" * 98)
 print("TODO EXEMPLO DA V2 PASSA NO PRÓPRIO VALIDADOR DA V2")
 print("=" * 98)
-_ex2 = v2.exemplos_congelados(D)
+_ex2 = v2.exemplos_congelados(D, historico=arq.HISTORICO)
 check(len(_ex2) == 3 and set(_ex2) == set(v2.DEFAULT_CURATED_SET),
       f"[{n}] as mesmas três empresas da V1 — o conjunto curado não mudou"); n += 1
 for emp, v in sorted(_ex2.items()):
@@ -218,19 +219,19 @@ print("=" * 98)
 check(dict(v2.HASHES_V2) == ESPERADO_V2,
       f"[{n}] os 8 hashes batem com literais escritos nesta suíte, não com "
       "`esperado = calcular()`"); n += 1
-check(not v2.verificar_congelamento(D),
+check(not v2.verificar_congelamento(D, historico=arq.HISTORICO),
       f"[{n}] e o módulo concorda consigo mesmo"); n += 1
 _orig = dict(v2.HASHES_V2)
 try:
     v2.HASHES_V2["prompt_hash"] = "0" * 16
-    _div = v2.verificar_congelamento(D)
+    _div = v2.verificar_congelamento(D, historico=arq.HISTORICO)
     check(any(k == "prompt_hash" for k, _, _ in _div),
           f"[{n}] mutando um hash, a verificação REPROVA — a fixação tem efeito")
     n += 1
 finally:
     v2.HASHES_V2.clear()
     v2.HASHES_V2.update(_orig)
-check(not v2.verificar_congelamento(D),
+check(not v2.verificar_congelamento(D, historico=arq.HISTORICO),
       f"[{n}] e volta a passar depois de restaurado"); n += 1
 _mud = {k for k in ESPERADO_V2 if ESPERADO_V2[k] != v1.HASHES_V1[k]}
 check(_mud == {"output_hash", "prompt_hash", "example_set_hash",

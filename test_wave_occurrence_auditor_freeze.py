@@ -33,6 +33,7 @@ from __future__ import annotations
 import io
 import json
 
+import reliability_occurrence_archival_source as arq
 import reliability_occurrence_auditor_freeze as fz
 import reliability_occurrence_auditor_input as ai
 import reliability_occurrence_truth as ot
@@ -55,12 +56,12 @@ PASS = FAIL = 0
 import reliability_occurrence_archival_verifier as _av
 
 D = _av.carregar_snapshot()
-FOLDS = fz.folds(D)
+FOLDS = fz.folds(D, historico=arq.HISTORICO)
 POR_EMPRESA = {}
 for _f in FOLDS:
     POR_EMPRESA.setdefault(_f["company"], []).append(_f)
-EX = fz.exemplos_congelados(D)
-MAN = fz.manifesto(D, git_sha="teste", criado_em="2026-08-16T00:00:00Z")
+EX = fz.exemplos_congelados(D, historico=arq.HISTORICO)
+MAN = fz.manifesto(D, historico=arq.HISTORICO, git_sha="teste", criado_em="2026-08-16T00:00:00Z")
 
 
 def check(cond, label):
@@ -93,9 +94,9 @@ for k in ("input_hash", "output_hash", "prompt_hash", "example_set_hash",
 check(all(len(v) == 16 for v in fz.HASHES_V1.values()),
       f"[{_n}] e todos têm o formato esperado")
 _n += 1
-check(fz.verificar_congelamento(D) == [],
+check(fz.verificar_congelamento(D, historico=arq.HISTORICO) == [],
       f"[{_n}] a verificação do módulo confirma integridade "
-      f"({fz.verificar_congelamento(D) or 'sem divergência'})")
+      f"({fz.verificar_congelamento(D, historico=arq.HISTORICO) or 'sem divergência'})")
 _n += 1
 _lit = io.open("reliability_occurrence_auditor_freeze.py", encoding="utf-8").read()
 _bloco = _lit.split("HASHES_V1 = {")[1].split("}")[0]
@@ -117,7 +118,7 @@ _n += 1
 check(fz.FREEZE_VERSION != "ceo.dup.v1" and fz.PROMPT_VERSION != ai.INPUT_CONTRACT,
       f"[{_n}] e separado do detector e dos esquemas de entrada/saída")
 _n += 1
-_m2 = fz.manifesto(D, git_sha="outro", criado_em="2027-01-01T00:00:00Z")
+_m2 = fz.manifesto(D, historico=arq.HISTORICO, git_sha="outro", criado_em="2027-01-01T00:00:00Z")
 check(_m2["freeze_manifest_hash"] == MAN["freeze_manifest_hash"],
       f"[{_n}] o hash do manifesto não depende de SHA nem de relógio — só do "
       "que descreve o experimento")
@@ -504,7 +505,7 @@ check(MAN["dev_manifest_version"] and
 _n += 1
 _antes = json.dumps(json.load(io.open("risk_semantic_v2_shadow.json", encoding="utf-8")),
                     sort_keys=True)
-fz.folds(D); fz.manifesto(D)
+fz.folds(D, historico=arq.HISTORICO); fz.manifesto(D)
 _depois = json.dumps(json.load(io.open("risk_semantic_v2_shadow.json", encoding="utf-8")),
                      sort_keys=True)
 check(_antes == _depois, f"[{_n}] e rodar o arnês não altera o store")
@@ -527,12 +528,12 @@ try:
     check(_mut["freeze_manifest_hash"] != fz.HASHES_V1["freeze_manifest_hash"],
           f"[{_n}] e o `freeze_manifest_hash` muda junto — ele amarra o prompt")
     _n += 1
-    check(len(fz.verificar_congelamento(D)) >= 2,
+    check(len(fz.verificar_congelamento(D, historico=arq.HISTORICO)) >= 2,
           f"[{_n}] a verificação acusa a divergência")
     _n += 1
 finally:
     fz.PROMPT_V1 = _orig_prompt
-check(fz.verificar_congelamento(D) == [],
+check(fz.verificar_congelamento(D, historico=arq.HISTORICO) == [],
       f"[{_n}] e volta a íntegro quando a mutação é desfeita")
 _n += 1
 
@@ -563,7 +564,7 @@ check(_hl.sha256(_trecho_orig.encode()).hexdigest()[:16] == fz.HASHES_V1["evalua
       f"[{_n}] §35 enquanto o trecho real bate com o literal canônico")
 _n += 1
 check(fz.FREEZE_VERSION == "occurrence.auditor.freeze.v1"
-      and fz.verificar_congelamento(D) == [],
+      and fz.verificar_congelamento(D, historico=arq.HISTORICO) == [],
       f"[{_n}] §10 invariante em código: se a versão é `v1`, os hashes têm de "
       "ser estes. Mudança legítima exige versão nova.")
 _n += 1
