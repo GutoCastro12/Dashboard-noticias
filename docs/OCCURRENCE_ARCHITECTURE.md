@@ -223,6 +223,98 @@ tamanho do patch.
 inexplicado · corroboração e representante preservados · score/status simulados e
 revisados · snapshots arquivais intactos · bateria completa.
 
+---
+
+# Adendo — o que a Sombra V1 corrigiu neste desenho
+
+> Escrito depois de implementar a opção C em `reliability_occurrence_shadow.py`.
+> Três afirmações desta página não sobreviveram ao contato com o corpus.
+
+## 1 · `company | family | objeto canônico` **não basta** como identidade
+
+Esta página propôs identidade estável a partir de empresa + família + objeto
+canônico. **É insuficiente**, e a própria verdade humana já o dizia: a Hapvida
+tem **duas** trocas de CEO reais em quatro meses
+(`troca_ceo:hapvida:3b55e5fc412d` × `…dc829e29aab1`, adjudicadas
+`DISTINCT_OCCURRENCE`). Mesma empresa, mesma família, mesmo tipo de objeto —
+dois eventos econômicos distintos. O mesmo vale para 16ª × 17ª emissão.
+
+A identidade precisa de **duas camadas**:
+
+| camada | pergunta | de onde sai |
+|---|---|---|
+| **objeto** | que ativo/entidade está envolvido? | marcadores com papel `OBJECT_MARKER` + alias declarado |
+| **instância** | *qual* evento econômico sobre esse objeto é este? | feature discriminante do adaptador de família |
+
+Discriminantes por família: `ma` → valor; `emissao_divida`/`follow_on` → série;
+`troca_ceo` → pessoas; rating → agência + direção.
+
+## 2 · O nome canônico do objeto **não pode** ser frequência nem núcleo comum
+
+A formulação óbvia — token mais frequente do grupo, ou núcleo comum a todos os
+membros — **quebra a invariante de id estável**: frequência cresce e núcleo
+encolhe quando um membro entra. A primeira implementação trocou o
+`occurrence_id` ao receber a etapa regulatória; o teste metamórfico pegou.
+
+O nome sai do **membro de abertura** (a INICIAÇÃO mais antiga, ou o membro mais
+antigo na falta dela) — imutável sob acréscimo posterior, e é a *initial
+material event signature* de §16. Limite honesto: uma fonte publicada **antes**
+da abertura conhecida desloca a abertura; por isso cada ocorrência carrega
+`id_stability` (`CONTENT_STABLE` × `DATE_ANCHORED`).
+
+## 3 · Nem toda família tem objeto **externo**
+
+A oferta, a emissão, a recuperação judicial e a ação de rating são do **próprio
+emissor**. Ali um nome próprio no título é o destino dos recursos (Engie/Jirau)
+ou um terceiro citado de passagem (Tok&Stok/Mobly) — não a identidade do fato.
+Deixar esses tokens fatiarem produziu *over-split* pior que a produção.
+
+Foi também o que causou a única **colisão de `occurrence_id`** medida: dois
+artigos sobre o mesmo rebaixamento da S&P na Cosan, a 28 dias, caíam em baldes
+anônimos distintos (janela de 10 dias) e geravam o mesmo id. A colisão é
+**detectada e reportada** como bloqueador — remendá-la com sufixo de ordem
+reintroduziria o índice de cluster que a arquitetura proíbe.
+
+## O que a Sombra V1 entrega, medido
+
+| | produção | sombra V1 |
+|---|---:|---:|
+| ocorrências (janela de 90d) | 62 | **79** |
+| membros com `article_id` | — | **127/127** |
+| artigos absorvidos sem id resolvível | **106** de 133 | **0** |
+| colisões de id | — | **0** |
+
+Concordância humana por dimensão: **fase 13/14** · **renovação 5/6** ·
+**identidade 11/14** (mais 2 casos onde o artigo de abertura está **fora** da
+janela de score — limite de janela, não erro de identidade). `occurrence_truth`:
+fase **4/4** onde avaliável, nenhuma verdade fragmentada.
+
+Controles: Sabesp separa `emae` × `castilho`; Smart Fit reancora no fechamento
+(+); Suzano funde por alias declarado e a âncora **não se move** (já era o
+fechamento); Tok&Stok, ISA e Engie não renovam por acompanhamento; **nenhum**
+membro `ETAPA`/`ACOMPANHAMENTO` posterior à âncora renovou.
+
+Engie demonstra §18 em dado real: representante = anúncio de 17/07, âncora =
+conclusão de 10/08. **São campos diferentes porque são perguntas diferentes.**
+
+## Bloqueadores de promoção que permanecem
+
+1. **Cosan** — Moody's rebaixa; humano diz `NEW_OCCURRENCE`, sombra funde. O
+   discriminante agência+direção não distingue dois rebaixamentos da **mesma**
+   agência.
+2. **Vale / investigação** — mesma classe: família sem discriminante.
+3. **Natura** — humano diz `SAME_OCCURRENCE`; nenhum antecessor localizável no
+   acervo.
+4. **Engie / recapitulação** — "Engie lucra R$ 694 mi no 2º tri **e conclui**
+   follow-on" é lido como `MATERIAL`. A asserção primária é o resultado; a
+   conclusão vem em oração coordenada secundária. Distinguir isso exige análise
+   de oração, não vocabulário — e **não** foi implementado para não sobreajustar.
+   Mitigação medida: a âncora da Engie não muda por causa disso, porque o
+   fechamento genuíno de 10/08 já a governa.
+
+Nenhum deles foi "resolvido" ajustando regra até o número fechar. Todos estão na
+fila de revisão como `REVIEW_CANDIDATE`.
+
 ## Fora de escopo, e permanecem separados
 
 - **B3/Gol** — `ATTRIBUTION_REVIEW_CANDIDATE`; a raiz é atribuição, não ocorrência.

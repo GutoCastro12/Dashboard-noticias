@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "schema": "occurrence.alias.shadow.v1",
+    "purpose": "Aliases DECLARADOS de objeto economico para a Sombra de Ocorrencia V1. Diagnostico apenas.",
+    "production_score_authority": "NONE",
+    "production_occurrence_authority": "NONE",
+    "write_authority": "NONE",
+    "fuzzy_matching": "FORBIDDEN",
+    "nota": "Um alias afirma SOMENTE que dois nomes designam o MESMO OBJETO. Nao afirma que dois artigos sao a MESMA OCORRENCIA — a camada de instancia decide isso separadamente. Nenhuma entrada pode ser criada por similaridade de string: exige fonte humana ou adjudicacao explicita."
+  },
+  "aliases": [
+    {
+      "alias_id": "ma:suzano:tissue-ifp",
+      "company": "Suzano",
+      "family": "ma",
+      "canonical": "suzano-tissue-ifp",
+      "members": ["kimberly", "clark", "ifp", "arbex"],
+      "claim": "SAME_OBJECT",
+      "evidence": "A operacao de tissue anunciada como aquisicao da sociedade de tissue da Kimberly-Clark (IFP) e a mesma cujo fechamento e noticiado sob o nome Arbex.",
+      "source": "human_supervision:BATCH_V1:case_08",
+      "adjudicated_by": "gustavo",
+      "adjudicated_at_iso": "2026-08-19T00:00:00Z",
+      "adjudicator_type": "human"
+    }
+  ]
+}
