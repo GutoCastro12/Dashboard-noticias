@@ -374,6 +374,58 @@
    "title": "11th Circuit revives investor suit against Citigroup over fraud at Mexican company",
    "url": "https://www.courthousenews.com/11th-circuit-revives-investor-suit-against-citigroup-over-fraud-at-mexican-company/"
   },
+  "1fc3fc6a391f1772c843": {
+   "article_id": "1fc3fc6a391f1772c843",
+   "companies": [
+    "Vale"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2026-07-08 04:00",
+    "feed_pub_ts": 1783494000,
+    "page_date_modified": "2026-07-08T20:06:30+00:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2026-07-08 18:29",
+    "page_pub_ts": 1783535379,
+    "pub_date_conflict_s": 41379,
+    "pub_date_note": "divergência de 41379s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2026-07-08 04:00",
+    "pub_ts": 1783494000
+   },
+   "revisions": [],
+   "source": "InfoMoney",
+   "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
+   "url": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/"
+  },
+  "2a810c6d7796d4db9605": {
+   "article_id": "2a810c6d7796d4db9605",
+   "companies": [
+    "PRIO"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2025-05-04 04:00",
+    "feed_pub_ts": 1746342000,
+    "page_date_modified": "2025-05-05T01:39:04.277Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2025-05-05 01:39",
+    "page_pub_ts": 1746409144,
+    "pub_date_conflict_s": 67144,
+    "pub_date_note": "divergência de 67144s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2025-05-04 04:00",
+    "pub_ts": 1746342000
+   },
+   "revisions": [],
+   "source": "Bloomberg Línea Brasil",
+   "title": "Prio: como aquisição bilionária do campo de Peregrino pode impulsionar a empresa",
+   "url": "https://www.bloomberglinea.com.br/negocios/prio-como-a-aquisicao-bilionaria-do-campo-de-peregrino-pode-impulsionar-a-empresa/"
+  },
   "2b987cab1236c8ed36e0": {
    "article_id": "2b987cab1236c8ed36e0",
    "companies": [
@@ -504,6 +556,32 @@
    "source": "InfoMoney",
    "title": "PRIO (PRIO3) sobe mais de 8% com aquisição bilionária do campo de Peregrino",
    "url": "https://www.infomoney.com.br/mercados/acoes-da-prio-sobem-mais-de-5-com-aquisicao-bilionaria-do-campo-de-peregrino/"
+  },
+  "51f693acf215de6dca76": {
+   "article_id": "51f693acf215de6dca76",
+   "companies": [
+    "Itaúsa"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2024-03-14 04:00",
+    "feed_pub_ts": 1710399600,
+    "page_date_modified": "2024-03-14T17:46:19-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2024-03-14 20:46",
+    "page_pub_ts": 1710449179,
+    "pub_date_conflict_s": 49579,
+    "pub_date_note": "divergência de 49579s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2024-03-14 04:00",
+    "pub_ts": 1710399600
+   },
+   "revisions": [],
+   "source": "Estadão",
+   "title": "Itaúsa (ITSA4) faz aquisição milionária de ações; veja detalhes",
+   "url": "https://www.estadao.com.br/einvestidor/radar/itausa-itsa4-aquisicao-milionaria/"
   },
   "53d735498a660fe4b088": {
    "article_id": "53d735498a660fe4b088",
