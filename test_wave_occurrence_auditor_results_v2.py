@@ -28,6 +28,7 @@ import json
 from collections import Counter
 
 import reliability_occurrence_auditor_freeze as v1
+import reliability_occurrence_archival_source as arq
 import reliability_occurrence_auditor_freeze_v2 as v2
 import reliability_occurrence_auditor_pilot_v2 as p2
 
@@ -133,8 +134,13 @@ _v2nov = Counter(saida(r).get("occurrence_novelty") for r in LIN)
 check(_v1nov["NEW_OCCURRENCE"] == 9 and _v2nov["NEW_OCCURRENCE"] == 1,
       f"[{n}] `NEW_OCCURRENCE` caiu de 9 para 1 — a direção DISTINCT quase "
       "desapareceu da saída"); n += 1
+# 4I.2 R7m: os exemplos são ARQUIVAIS — a fonte de artigos é o snapshot
+# imutável, não o acervo vivo. Hoje esta checagem não quebraria de qualquer
+# forma, mas deixar a dependência implícita é o defeito que já custou uma
+# reversão de alinhamento de produção.
 _ex = v2.exemplos_congelados(
-    json.load(io.open("risk_semantic_v2_shadow.json", encoding="utf-8")))
+    json.load(io.open("risk_semantic_v2_shadow.json", encoding="utf-8")),
+    historico=arq.HISTORICO)
 _formas = {(e["expected_output"]["selected_candidate"],
             e["expected_output"]["occurrence_novelty"]) for e in _ex.values()}
 check(len(_formas) == 1,
