@@ -30,6 +30,7 @@ import io
 import json
 import os
 
+import reliability_occurrence_archival_source as arq
 import reliability_occurrence_archival_verifier as av
 import reliability_occurrence_auditor_freeze as v1
 import reliability_occurrence_auditor_freeze_v2 as v2
@@ -280,7 +281,7 @@ check(rel["snapshot_historico_checksum"] == av.SNAPSHOT_HISTORICO_SHA256,
       "[43] o relatorio expoe o checksum do snapshot historico")
 check(rel["verifier_version"] == "occurrence.auditor.archival.v2",
       f"[44] versao do verificador anunciada ({rel['verifier_version']})")
-check(len(p3.alvos_congelados(SNAP)) == 17,
+check(len(p3.alvos_congelados(SNAP, historico=arq.HISTORICO)) == 17,
       "[45] devset V3 continua com 17 alvos")
 
 print()

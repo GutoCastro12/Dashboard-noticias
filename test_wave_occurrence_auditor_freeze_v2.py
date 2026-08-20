@@ -97,7 +97,7 @@ check(not v1.verificar_congelamento(D, historico=arq.HISTORICO),
       "registro contra o qual será comparada"); n += 1
 check(v1.FREEZE_VERSION == "occurrence.auditor.freeze.v1"
       and v2.FREEZE_VERSION == "occurrence.auditor.freeze.v2"
-      and v2.manifesto(D)["supersedes"] == v1.FREEZE_VERSION,
+      and v2.manifesto(D, historico=arq.HISTORICO)["supersedes"] == v1.FREEZE_VERSION,
       f"[{n}] identidade NOVA que declara quem supera, não reedição da V1"); n += 1
 
 print()
@@ -186,7 +186,7 @@ print()
 print("=" * 98)
 print("O RESTO DO EXPERIMENTO NÃO MUDOU")
 print("=" * 98)
-_f = v2.folds(D)
+_f = v2.folds(D, historico=arq.HISTORICO)
 _alvos = [(f, a) for f in _f for a in f["alvos_elegiveis"]]
 check(len(_alvos) == 17, f"[{n}] os mesmos 17 alvos ({len(_alvos)})"); n += 1
 _ids = set(ot.ocorrencias(D))
@@ -203,13 +203,13 @@ check(_vaz == 0, f"[{n}] vazamento de verdade humana para o alvo: zero ({_vaz})"
 check(_same == 0,
       f"[{n}] nenhum alvo vê exemplo da própria empresa ({_same})"); n += 1
 check(v2.MODO_DE_OPERACAO == v1.MODO_DE_OPERACAO
-      and v2.manifesto(D)["ingestion_time_auditor"] is False,
+      and v2.manifesto(D, historico=arq.HISTORICO)["ingestion_time_auditor"] is False,
       f"[{n}] mesmo modo pós-build, ainda não é auditor de ingestão"); n += 1
 check(list(v2.OUT_NOVELTY) == list(v1.OUT_NOVELTY),
       f"[{n}] enum de novidade idêntico — o Contract V2 segue congelado"); n += 1
 check(v2.agregar is v1.agregar,
       f"[{n}] a agregação de métricas é literalmente a mesma função"); n += 1
-check(v2.manifesto(D)["change_scope"] == "no_candidate_representation_only",
+check(v2.manifesto(D, historico=arq.HISTORICO)["change_scope"] == "no_candidate_representation_only",
       f"[{n}] e o manifesto declara o escopo da mudança"); n += 1
 
 print()

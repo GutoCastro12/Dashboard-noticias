@@ -1,0 +1,34 @@
+# Contrato de fim de linha para os EXECUTORES CONGELADOS do auditor de
+# ocorrência.
+#
+# POR QUE ISTO PRECISOU EXISTIR
+#
+# `test_wave_r7e_arquival_exemplos.py` (BLOCO G) verifica o SHA-256 dos bytes
+# em disco desses arquivos. O repositório roda com `core.autocrlf=true` e não
+# tinha `.gitattributes`, então a forma em disco dependia de quando cada
+# arquivo foi materializado — e as expectativas acabaram gravadas em momentos
+# diferentes, sob formas diferentes:
+#
+#   gravados a partir de LF    pilot.py, pilot_v3.py, input.py
+#   gravados a partir de CRLF  freeze.py, freeze_v2.py, freeze_v3.py
+#
+# Enquanto ninguém tocava nos arquivos, todos batiam. Bastou um `git checkout`
+# rematerializar os três de LF para CRLF e o congelamento quebrou — sem que
+# uma linha de código tivesse mudado. Pior: num clone novo o BLOCO G falharia
+# de saída, porque o autocrlf entregaria CRLF para arquivos cujo hash foi
+# gravado em LF.
+#
+# Declarar a forma resolve os dois problemas de uma vez: o disco passa a ser
+# determinístico, e o hash congelado volta a significar "o executor não mudou"
+# em vez de "o executor não foi tocado desde a última materialização".
+#
+# NÃO é normalização em massa: só os arquivos cujo byte-hash é verificado
+# entram aqui, e cada um recebe a forma em que sua expectativa já foi gravada.
+# Trocar a forma exigiria regravar o hash congelado, que é justamente o que
+# não se pode fazer para fazer teste passar.
+reliability_occurrence_auditor_pilot.py     eol=lf
+reliability_occurrence_auditor_pilot_v3.py  eol=lf
+reliability_occurrence_auditor_input.py     eol=lf
+reliability_occurrence_auditor_freeze.py    eol=crlf
+reliability_occurrence_auditor_freeze_v2.py eol=crlf
+reliability_occurrence_auditor_freeze_v3.py eol=crlf

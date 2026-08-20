@@ -33,6 +33,7 @@ import json
 import os
 import tempfile
 
+import reliability_occurrence_archival_source as arq
 import reliability_occurrence_archival_verifier as av
 import reliability_occurrence_auditor_freeze as v1
 import reliability_occurrence_auditor_freeze_v2 as v2
@@ -81,10 +82,10 @@ n = 1
 print("=" * 98)
 print("1. O EXPERIMENTO NÃO DERIVOU — SÓ O MANIFESTO É LARGO DEMAIS")
 print("=" * 98)
-_a = v3.alvos_com_verdade(SNAP)
-_b = v3.alvos_com_verdade(VIVO)
+_a = v3.alvos_com_verdade(SNAP, historico=arq.HISTORICO)
+_b = v3.alvos_com_verdade(VIVO, historico=arq.HISTORICO)
 check(len(_a) == 17 and len(_b) == 17,
-      f"[{n}] 17 alvos no snapshot e 17 no acervo vivo com Petrobras "
+      f"[{n}] 17 alvos pela verdade congelada e 17 pela verdade viva "
       f"({len(_a)}/{len(_b)})"); n += 1
 check([x["article_ref"] for x in _a] == [x["article_ref"] for x in _b],
       f"[{n}] e são os MESMOS `article_ref` — a população congelada é idêntica, "
@@ -246,9 +247,9 @@ for nome, mod, esperado in (("V1", v1, "cfb16c04bddd7e5d"),
           and pin["dev_manifest_hash"] == HIST,
           f"[{n}] {nome}: hashes publicados inalterados "
           f"(freeze `{pin['freeze_manifest_hash']}`, dev `{HIST}`)"); n += 1
-check(v3.alvos_com_verdade(VIVO).__len__() == 17,
+check(len(v3.alvos_com_verdade(VIVO, historico=arq.HISTORICO)) == 17,
       f"[{n}] §29 o devset congelado da V3 segue com 17 alvos — o acervo "
-      "crescer não adiciona Petrobras ao experimento"); n += 1
+      "vivo crescer OU encolher não move o experimento"); n += 1
 
 print()
 print("=" * 98)

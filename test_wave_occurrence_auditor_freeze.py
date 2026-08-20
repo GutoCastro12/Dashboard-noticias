@@ -505,7 +505,7 @@ check(MAN["dev_manifest_version"] and
 _n += 1
 _antes = json.dumps(json.load(io.open("risk_semantic_v2_shadow.json", encoding="utf-8")),
                     sort_keys=True)
-fz.folds(D, historico=arq.HISTORICO); fz.manifesto(D)
+fz.folds(D, historico=arq.HISTORICO); fz.manifesto(D, historico=arq.HISTORICO)
 _depois = json.dumps(json.load(io.open("risk_semantic_v2_shadow.json", encoding="utf-8")),
                      sort_keys=True)
 check(_antes == _depois, f"[{_n}] e rodar o arnês não altera o store")
@@ -521,7 +521,7 @@ print("=" * 98)
 _orig_prompt = fz.PROMPT_V1
 try:
     fz.PROMPT_V1 = _orig_prompt + "\ninstrução extra"
-    _mut = fz.manifesto(D)
+    _mut = fz.manifesto(D, historico=arq.HISTORICO)
     check(_mut["prompt_hash"] != fz.HASHES_V1["prompt_hash"],
           f"[{_n}] §33 alterar UM byte do prompt muda `prompt_hash`")
     _n += 1
@@ -540,7 +540,7 @@ _n += 1
 _orig_ex = fz.DEFAULT_CURATED_SET
 try:
     fz.DEFAULT_CURATED_SET = ("Santander Brasil", "Hapvida")
-    _mut = fz.manifesto(D)
+    _mut = fz.manifesto(D, historico=arq.HISTORICO)
     check(_mut["example_set_hash"] != fz.HASHES_V1["example_set_hash"]
           and _mut["freeze_manifest_hash"] != fz.HASHES_V1["freeze_manifest_hash"],
           f"[{_n}] trocar o conjunto de exemplos muda o hash dos exemplos E o "

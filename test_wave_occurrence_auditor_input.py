@@ -30,6 +30,7 @@ from __future__ import annotations
 import io
 import json
 
+import reliability_occurrence_archival_source as arq
 import reliability_occurrence_auditor_input as ai
 import reliability_occurrence_truth as ot
 import reliability_pilot_contract_v2 as v2
@@ -62,7 +63,7 @@ def check(cond, label):
 
 
 def pacote(empresa, familia, ref):
-    return ai.construir_pacote(empresa, familia, ref)
+    return ai.construir_pacote(empresa, familia, ref, arq.HISTORICO)
 
 
 print("=" * 98)
@@ -282,8 +283,12 @@ check("article_ref" in _COD,
       f"[{_n}] e a avaliação casa por `article_ref` — comparar `ma#0` com um id "
       "humano não significaria nada, são espaços distintos")
 _n += 1
+# 4I.2 R7m: o defeito medido por este experimento é HISTÓRICO — as duas
+# ocorrências provisórias do Santander vivem no snapshot congelado. Ler o
+# acervo vivo aqui faria a correção semântica de `troca_ceo` apagar o próprio
+# defeito que o auditor existe para medir.
 _san_prov = len(ai._ocorrencias_provisorias(
-    json.load(io.open("risk_history.json", encoding="utf-8")),
+    json.load(io.open(arq.HISTORICO, encoding="utf-8")),
     __import__("risk_dashboard").load_config("config_risco.yaml"),
     "Santander Brasil", "troca_ceo"))
 _san_hum = len({m["occurrence_truth_id"] for m in ot.memberships_ativas(D)

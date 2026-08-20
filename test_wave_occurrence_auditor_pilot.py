@@ -56,7 +56,7 @@ PASS = FAIL = 0
 import reliability_occurrence_archival_verifier as _av
 
 D = _av.carregar_snapshot()
-ALVOS = pl.alvos_congelados(D)
+ALVOS = pl.alvos_congelados(D, historico=arq.HISTORICO)
 SRC = io.open("reliability_occurrence_auditor_pilot.py", encoding="utf-8").read()
 import re as _re
 COD = "\n".join(l.split("#")[0] for l in
@@ -118,7 +118,8 @@ check(len(ALVOS) == 17, f"[10] 17 alvos congelados ({len(ALVOS)})")
 check([a["target_id"] for a in ALVOS] == sorted(a["target_id"] for a in ALVOS),
       "[11] ordem determinística por identificador de alvo")
 _p = tmp()
-_tel = pl.executar(D, chamada=ok(), saida_jsonl=_p)
+_tel = pl.executar(D, chamada=ok(), saida_jsonl=_p,
+                  historico=arq.HISTORICO)
 check(_tel["planned_calls"] == 34 and _tel["attempted_calls"] == 34,
       f"[12] 34 planejadas, 34 tentadas ({_tel['attempted_calls']})")
 _linhas = [json.loads(l) for l in io.open(_p, encoding="utf-8")]
@@ -130,7 +131,7 @@ check(_seq == [pl.G1, pl.G2, pl.G1, pl.G2],
 _pares = {(r["model"], r["target_id"]) for r in _linhas}
 check(len(_pares) == 34, "[15] um registro por par modelo×alvo, sem duplicata")
 try:
-    pl.executar(D, chamada=ok(), saida_jsonl=tmp(), teto=5)
+    pl.executar(D, chamada=ok(), saida_jsonl=tmp(), teto=5, historico=arq.HISTORICO)
     check(False, "[16] o teto deveria interromper")
 except SystemExit as e:
     check("TETO_DE_CHAMADAS" in str(e), f"[16] §16 o teto interrompe de verdade ({e})")
@@ -154,7 +155,7 @@ def conta(modelo, texto):
 
 
 _p2 = tmp()
-pl.executar(D, chamada=conta, saida_jsonl=_p2)
+pl.executar(D, chamada=conta, saida_jsonl=_p2, historico=arq.HISTORICO)
 check(len(_chamadas) == 34,
       f"[17] saída inválida em TODAS as 34 e ainda assim 34 chamadas — "
       f"nenhuma segunda tentativa ({len(_chamadas)})")
@@ -193,7 +194,7 @@ def falha_g1(modelo, texto):
 
 
 _p3 = tmp()
-_t3 = pl.executar(D, chamada=falha_g1, saida_jsonl=_p3)
+_t3 = pl.executar(D, chamada=falha_g1, saida_jsonl=_p3, historico=arq.HISTORICO)
 check(_t3["por_modelo"][pl.G1]["breaker_tripped"] == "RATE_LIMITED",
       f"[{_n}] o disjuntor de G1 dispara após 3 falhas consecutivas")
 _n += 1
@@ -213,7 +214,7 @@ _n += 1
 check(all(r["raw_response"] is None for r in _pulados),
       f"[{_n}] §25 sem resposta inventada para eles")
 _n += 1
-_sc3 = pl.pontuar(D, _p3)
+_sc3 = pl.pontuar(D, _p3, historico=arq.HISTORICO)
 _est = {d["estado"] for d in _sc3["detalhe"] if d["model"] == pl.G1}
 check("MODEL_ABSTENTION" not in _est,
       f"[{_n}] §25 falha de provider NUNCA vira abstenção semântica ({sorted(_est)})")
@@ -225,7 +226,7 @@ def erra_semantica(modelo, texto):
     return ok("CANDIDATE_1", "FOLLOW_UP")(modelo, texto)
 
 
-_t4 = pl.executar(D, chamada=erra_semantica, saida_jsonl=tmp())
+_t4 = pl.executar(D, chamada=erra_semantica, saida_jsonl=tmp(), historico=arq.HISTORICO)
 check(all(v["breaker_tripped"] is None for v in _t4["por_modelo"].values()),
       f"[{_n}] resposta semanticamente errada NÃO aciona o disjuntor — seria "
       "calar o modelo justamente quando ele está sendo medido")
@@ -236,9 +237,9 @@ print("=" * 98)
 print("§18 A PRIMEIRA RESPOSTA É IMUTÁVEL")
 print("=" * 98)
 _p5 = tmp()
-pl.executar(D, chamada=ok("CANDIDATE_1", "FOLLOW_UP"), saida_jsonl=_p5)
+pl.executar(D, chamada=ok("CANDIDATE_1", "FOLLOW_UP"), saida_jsonl=_p5, historico=arq.HISTORICO)
 _antes = io.open(_p5, encoding="utf-8").read()
-pl.executar(D, chamada=ok(None, "NEW_OCCURRENCE"), saida_jsonl=_p5)
+pl.executar(D, chamada=ok(None, "NEW_OCCURRENCE"), saida_jsonl=_p5, historico=arq.HISTORICO)
 _depois = io.open(_p5, encoding="utf-8").read()
 check(_depois.startswith(_antes),
       f"[{_n}] uma segunda execução ANEXA e nunca sobrescreve o já gravado")
@@ -264,8 +265,8 @@ print("=" * 98)
 print("§14 O PORTÃO DE SANIDADE PRECISA SABER REPROVAR")
 print("=" * 98)
 _p6 = tmp()
-pl.executar(D, chamada=ok("CANDIDATE_1", "FOLLOW_UP"), saida_jsonl=_p6)
-_sc6 = pl.pontuar(D, _p6)
+pl.executar(D, chamada=ok("CANDIDATE_1", "FOLLOW_UP"), saida_jsonl=_p6, historico=arq.HISTORICO)
+_sc6 = pl.pontuar(D, _p6, historico=arq.HISTORICO)
 _s6 = pl.sanidade(_sc6["por_modelo"][pl.G1], _sc6["detalhe"], pl.G1)
 check(_s6["hapvida_false_merge"] > 0,
       f"[{_n}] responder sempre CANDIDATE_1 produz falso merge na Hapvida "
@@ -288,7 +289,7 @@ print("=" * 98)
 check(pl.PILOT_VERSION == "occurrence.auditor.dev.results.v1",
       f"[{_n}] artefato versionado ({pl.PILOT_VERSION})")
 _n += 1
-_tel6 = pl.executar(D, chamada=ok(), saida_jsonl=tmp())
+_tel6 = pl.executar(D, chamada=ok(), saida_jsonl=tmp(), historico=arq.HISTORICO)
 check(_tel6["dataset_role"] == "DEVELOPMENT"
       and _tel6["production_authority"] == "NONE",
       f"[{_n}] §2 o manifesto declara desenvolvimento e ausência de autoridade")
@@ -342,7 +343,7 @@ check("print(chave" not in COD and "len(chave" not in COD
 _n += 1
 _antes_truth = json.dumps(json.load(io.open("risk_semantic_v2_shadow.json",
                                             encoding="utf-8")), sort_keys=True)
-pl.executar(D, chamada=ok(), saida_jsonl=tmp())
+pl.executar(D, chamada=ok(), saida_jsonl=tmp(), historico=arq.HISTORICO)
 _depois_truth = json.dumps(json.load(io.open("risk_semantic_v2_shadow.json",
                                              encoding="utf-8")), sort_keys=True)
 check(_antes_truth == _depois_truth,
@@ -360,7 +361,7 @@ _orig = fz.PROMPT_V1
 try:
     fz.PROMPT_V1 = _orig + "\nmutação"
     try:
-        pl.executar(D, chamada=ok(), saida_jsonl=tmp())
+        pl.executar(D, chamada=ok(), saida_jsonl=tmp(), historico=arq.HISTORICO)
         check(False, f"[{_n}] deveria recusar com congelamento violado")
     except SystemExit as e:
         check("CONGELAMENTO_VIOLADO" in str(e),

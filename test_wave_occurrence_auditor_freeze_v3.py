@@ -33,6 +33,7 @@ from __future__ import annotations
 import io
 import json
 
+import reliability_occurrence_archival_source as arq
 import reliability_occurrence_auditor_freeze as v1
 import reliability_occurrence_auditor_freeze_v2 as v2
 import reliability_occurrence_auditor_freeze_v3 as v3
@@ -61,7 +62,7 @@ D = _av.carregar_snapshot()
 # de producao (foi o reparo da data da BRF que expos isso). Ver `4cda805`.
 H_ARQ = _av.SNAPSHOT_HISTORICO
 EX = v3.exemplos_congelados(D, historico=H_ARQ)
-AL = v3.alvos_com_verdade(D)
+AL = v3.alvos_com_verdade(D, historico=arq.HISTORICO)
 BL = v3.baselines_triviais(D, historico=H_ARQ)
 
 ESPERADO_V3 = {
