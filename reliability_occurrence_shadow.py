@@ -160,7 +160,9 @@ _RX_INICIACAO = re.compile(
     r"\banunci\w*|\bannounce\w*|\bassina\w*|\bfirma\w*|\bacord\w*|"
     r"\bprotocol\w*|\bpede\s+registro\b|\bsolicita\w*|\bnegocia\w*|"
     r"\bavalia\w*|\bestuda\w*|\blan[cç]\w*|\bprop[oõ]\w*|\boferta\b|"
-    r"\bcompra\w*|\badquire\w*|\bagrees?\s+to\b|\bto\s+acquire\b|\bdeal\b",
+    # `adquire` deixava de fora `adquirir`/`adquiriu`, e era justamente a forma
+    # do anuncio do compromisso vinculante da Natura
+    r"\bcompra\w*|\badquir\w*|\bagrees?\s+to\b|\bto\s+acquire\b|\bdeal\b",
     re.I)
 _RX_ACOMPANHAMENTO = re.compile(
     r"\bcoment\w*|\bcomment\w*|\bopini\w*|\bapos\s+a?\s*(?:conclus|aquisic|fusao)|"
@@ -186,10 +188,66 @@ _FAMILIA_PONTUAL = frozenset({
 })
 
 
+# §15/§17 — RECAPITULACAO COORDENADA, calibrada pela revisao humana de
+# 2026-08-20 (Engie). "Engie Brasil lucra R$ 694 mi no 2o tri E CONCLUI
+# follow-on" nao e um fechamento: a assercao PRIMARIA e o resultado
+# trimestral, e a conclusao vem em oracao coordenada, referindo fato que JA
+# ocorreu. A palavra `conclui` sozinha nao pode decidir fase — foi exatamente
+# esse atalho que a revisao humana derrubou.
+#
+# O guarda nao e lexical sobre `conclui`: exige (a) assercao de OUTRO evento na
+# oracao principal e (b) o verbo material depois da coordenacao.
+_ASSERCAO_PRIMARIA_OUTRA = (
+    r"lucr\w*|preju[ií]z\w*|resultad\w*|receita\w*|ebitda|balanc\w*|"
+    r"fatur\w*|margem|dividend\w*|jcp\b|earnings|revenue|profit\w*|"
+    r"posts?\b|reports?\b")
+_RX_RECAP_COORDENADO = re.compile(
+    r"\b(?:" + _ASSERCAO_PRIMARIA_OUTRA + r")\b[^,;]{0,80}?"
+    r"\s+(?:e|and)\s+(?:tamb[eé]m\s+)?"
+    r"(?:conclui\w*|finaliz\w*|encerr\w*|complet\w*|fecha\b)", re.I)
+# §14 — vinculo economico EXPLICITO com um compromisso anterior. Nao e
+# similaridade de nome: e o texto dizendo que este ato DECORRE daquele.
+_RX_DECORRE_COMPROMISSO = re.compile(
+    r"decorre\s+d[oa]s?\s+(?:compromisso|acordo|contrato)\w*|"
+    r"em\s+cumprimento\s+a[o]?\s+(?:compromisso|acordo)|"
+    r"nos\s+termos\s+d[oa]\s+(?:compromisso|acordo)|"
+    r"pursuant\s+to\s+the\s+(?:binding\s+)?(?:commitment|agreement)|"
+    r"under\s+the\s+(?:binding\s+)?commitment|"
+    # §11 — atingir o piso COMPROMETIDO e cumprimento do compromisso, nao
+    # etapa societaria. E a razao que a propria revisao humana deu para o
+    # marco de 31/07 da Natura ser material, e nao a palavra "assembleia"
+    # que aparece na mesma manchete.
+    r"(?:m[ií]nimo|patamar|limiar|piso)\s+(?:estabelecid\w+\s+)?"
+    r"d[oa]\s+(?:compromisso|acordo)|"
+    r"atinge\s+o\s+(?:m[ií]nimo|patamar|limiar)\s+"
+    r"(?:comprometid\w+|estabelecid\w+)", re.I)
+# §23 — abertura de processo e identificador de processo
+_RX_ABRE_PROCESSO = re.compile(
+    r"\babre\s+(?:um\s+)?(?:processo|inqu[eé]rito|investiga\w+)|"
+    r"\binstaura\w*\s+(?:processo|inqu[eé]rito)|"
+    r"\bopens?\s+(?:an?\s+)?(?:proceeding|investigation|probe)", re.I)
+_RX_PROCESSO_ID = re.compile(
+    r"\b(?:processo|proc\.?|inqu[eé]rito|pas)\s*(?:administrativo\s*)?"
+    r"(?:sancionador\s*)?n?[.ºo°]*\s*"
+    r"(\d{2,5}[./]\d{3,6}[./-]?\d{0,6}(?:[-/]\d{1,4})?)", re.I)
+
+
 def fase_de(titulo: str, family: str = "") -> dict:
     """Quatro estados + UNKNOWN. Nao forca classificacao sem evidencia."""
     t = titulo or ""
     bruta = rd._fase_do_evento(t)
+    _rc = _RX_RECAP_COORDENADO.search(t)
+    if _rc:
+        return {"fase": ACOMPANHAMENTO,
+                "fase_evidencia": "recap_coordenado:" + _rc.group(0)[:52],
+                "fase_bruta": bruta}
+    # §11/§14 — ato que DECORRE de compromisso anterior e marco MATERIAL da
+    # mesma transacao, nunca uma ocorrencia nova
+    _dc = _RX_DECORRE_COMPROMISSO.search(t)
+    if _dc:
+        return {"fase": MATERIAL,
+                "fase_evidencia": "decorre_de_compromisso:" + _dc.group(0)[:52],
+                "fase_bruta": bruta}
     for rx, fase in ((_RX_MATERIAL, MATERIAL), (_RX_ACOMPANHAMENTO, ACOMPANHAMENTO),
                      (_RX_ETAPA, ETAPA), (_RX_INICIACAO, INICIACAO)):
         m = rx.search(t)
@@ -257,6 +315,14 @@ _RX_AGENCIA = re.compile(
 _RX_DIRECAO_RATING = re.compile(
     r"\b(rebaix\w*|downgrade\w*|corta\b|eleva\w*|upgrade\w*|reafirm\w*|"
     r"mant[eê]m\b|revis\w+|perspectiva\s+negativa|outlook\s+negative)\b", re.I)
+# §4/§22 — o NIVEL atribuido e a evidencia local que separa "a mesma acao
+# noticiada duas vezes" de "outra acao da mesma agencia". Escalas Moody's
+# (Baa1, B1, Caa2) e S&P/Fitch (BB-, B+, AAA).
+_RX_NIVEL_RATING = re.compile(
+    r"\b(?:para|to|em|for)\s+[‘'\"]?"
+    r"((?:aaa|aa|a|bbb|bb|b|ccc|cc|c|d)[+-]?|"
+    r"(?:aaa|aa|a|baa|ba|b|caa|ca|c)[123])"
+    r"[’'\"]?(?:\s|,|$|\.)", re.I)
 
 
 def _pessoas(titulo: str, empresa: str, aliases_emp) -> list:
@@ -303,9 +369,17 @@ def _ad_troca_ceo(ctx: dict) -> dict:
 
 
 def _ad_rating(ctx: dict) -> dict:
-    """§17 — acao de rating: agencia + direcao + episodio."""
+    """§4/§22 — acao de rating: AGENCIA + direcao + nivel + episodio.
+
+    Calibrado por revisao humana de 2026-08-20 (Cosan): duas acoes de AGENCIAS
+    DIFERENTES sao ocorrencias distintas, e nao se fundem por empresa, familia,
+    direcao ou proximidade de data. O inverso tambem nao vale — mesma agencia
+    NAO implica mesma ocorrencia: a Moody's rebaixou a Cosan em 16/07 (para B1)
+    e de novo em 10/08. Quem separa e o NIVEL atribuido mais a janela de
+    corroboracao; ver `_mesmo_episodio_rating`."""
     forte = bool(ctx["agencia"]) and bool(ctx["direcao_rating"])
-    return {"features": {"agencia": ctx["agencia"], "direcao": ctx["direcao_rating"]},
+    return {"features": {"agencia": ctx["agencia"], "direcao": ctx["direcao_rating"],
+                         "nivel": ctx["nivel_rating"]},
             "confidence": "STRONG" if forte else "WEAK", "gap_days": 60}
 
 
@@ -328,10 +402,97 @@ def _ad_incidente(ctx: dict) -> dict:
             "confidence": "STRONG" if ctx["locais"] else "WEAK", "gap_days": 30}
 
 
+def _ad_investigacao(ctx: dict) -> dict:
+    """§23 — processo regulatorio: REGULADOR SOZINHO NAO BASTA.
+
+    Calibrado por revisao humana de 2026-08-20 (Vale). O identificador do
+    processo, quando existe, e evidencia forte de mesma ocorrencia; na falta
+    dele vale o ASSUNTO investigado. Dois artigos que ambos dizem "abre
+    processo" sobre assuntos diferentes sao dois processos, nao um."""
+    return {"features": {"regulador": ctx["regulador"],
+                         "processo_id": ctx["processo_id"],
+                         "assunto": "|".join(sorted(ctx["objeto_tokens"]))},
+            "confidence": "STRONG" if ctx["processo_id"] else "WEAK",
+            "gap_days": 180}
+
+
 def _ad_fallback(ctx: dict) -> dict:
     """§4 — o fallback e CONSERVADOR, nao 'funde tudo'."""
     return {"features": {"objeto": "|".join(sorted(ctx["objeto_tokens"]))},
             "confidence": "UNKNOWN", "gap_days": 45}
+
+
+# ── §22/§23 · quando dois membros da MESMA chave sao o MESMO episodio ────────
+def _mesmo_episodio_rating(a: dict, b: dict, janela_dias: int) -> tuple:
+    """Duas acoes da mesma agencia e mesma direcao. Sao a MESMA acao noticiada
+    duas vezes, ou duas acoes?"""
+    if abs(a["pub_ts"] - b["pub_ts"]) <= janela_dias * 86400:
+        return True, "janela de corroboracao"
+    na, nb = a.get("nivel_rating", ""), b.get("nivel_rating", "")
+    if na and nb:
+        return (na == nb), ("mesmo nivel " + na if na == nb
+                            else "niveis diferentes " + na + " x " + nb)
+    # sem nivel dos dois lados e fora da janela: cada publicacao de acao de
+    # rating vale como acao. Conservador na direcao de NAO fundir.
+    return False, "sem nivel comparavel fora da janela"
+
+
+def _mesmo_episodio_investigacao(a: dict, b: dict, janela_dias: int) -> tuple:
+    pa, pb = a.get("processo_id", ""), b.get("processo_id", "")
+    if pa and pb:
+        return (pa == pb), ("mesmo processo " + pa if pa == pb
+                            else "processos " + pa + " x " + pb)
+    if a.get("abre_processo") and b.get("abre_processo"):
+        comum = a["objeto_tokens"] & b["objeto_tokens"]
+        if not comum:
+            return False, "duas aberturas de processo com assuntos disjuntos"
+        return True, "duas aberturas com assunto comum " + "|".join(sorted(comum))
+    if b.get("abre_processo") and not a.get("abre_processo"):
+        # abrir um processo e ASSERCAO de procedimento novo. Sem identificador
+        # que ligue os dois, ele nao pode ser absorvido como corroboracao de um
+        # artigo anterior que nao abriu processo nenhum — foi este atalho, pela
+        # janela de 10 dias, que fundiu a abertura de 23/07 na Vale com a
+        # eleicao de presidente interino de 15/07.
+        return False, "abertura de processo nao corrobora artigo anterior"
+    if abs(a["pub_ts"] - b["pub_ts"]) <= janela_dias * 86400:
+        return True, "janela de corroboracao"
+    comum = a["objeto_tokens"] & b["objeto_tokens"]
+    if comum:
+        return True, "assunto comum " + "|".join(sorted(comum))
+    return False, "sem identificador de processo nem assunto comum"
+
+
+_MESMO_EPISODIO = {
+    "rebaixamento_rating": _mesmo_episodio_rating,
+    "recomendacao_negativa": _mesmo_episodio_rating,
+    "investigacao_regulatoria": _mesmo_episodio_investigacao,
+}
+
+
+def mesmo_episodio(family: str, a: dict, b: dict, janela_dias: int) -> tuple:
+    fn = _MESMO_EPISODIO.get(family)
+    return fn(a, b, janela_dias) if fn else (True, "")
+
+
+# Quando o corte por episodio divide uma chave discriminante, a assinatura da
+# instancia PRECISA carregar o que os separou — senao duas ocorrencias
+# legitimamente distintas nascem com o mesmo occurrence_id. Foi o que o
+# detector de colisao pegou nos dois rebaixamentos da Moody's na Cosan.
+_CHAVE_EPISODIO = {
+    "rebaixamento_rating": lambda m: m.get("nivel_rating", ""),
+    "recomendacao_negativa": lambda m: m.get("nivel_rating", ""),
+    "investigacao_regulatoria": lambda m: m.get("processo_id", ""),
+}
+
+
+def chave_episodio(family: str, abertura: dict) -> tuple:
+    """(chave, estavel_por_conteudo). Sem evidencia propria, cai na data de
+    abertura — e o registro sai marcado DATE_ANCHORED."""
+    fn = _CHAVE_EPISODIO.get(family)
+    if fn is None:
+        return "", True
+    v = fn(abertura)
+    return (v, True) if v else (abertura["article_date"], False)
 
 
 ADAPTADORES = {
@@ -343,6 +504,7 @@ ADAPTADORES = {
     "rebaixamento_rating": _ad_rating,
     "recomendacao_negativa": _ad_recomendacao,
     "recuperacao_judicial": _ad_recuperacao_judicial,
+    "investigacao_regulatoria": _ad_investigacao,
     "incidente_operacional_grave": _ad_incidente,
     "disrupcao_operacional": _ad_incidente,
 }
@@ -381,6 +543,12 @@ def candidatos(historico="risk_history.json", config="config_risco.yaml") -> dic
             for c in cfg.get("watchlist", [])}
     ali_por_emp = {c["name"]: (c.get("aliases") or [c["name"]])
                    for c in cfg.get("watchlist", [])}
+    # §27 — a producao agrupa em UMA ocorrencia economica os event_ids de uma
+    # familia opt-in (`merge_occurrences_across_articles`). Sem isto a sombra
+    # partia o incendio da Yobel em `incidente_operacional`,
+    # `incidente_operacional_grave` e `paralisacao_operacional`, triplicando o
+    # score — regressao contra um comportamento que ja estava CERTO.
+    fam_map = rd.cross_article_family_map(cfg)
     ev_cfg = cfg.get("evolution", {})
     window_days = ev_cfg.get("window_days", 90)
     now_ts = int(datetime.now(timezone.utc).timestamp())
@@ -408,7 +576,16 @@ def candidatos(historico="risk_history.json", config="config_risco.yaml") -> dic
                 objeto_expl = rd.normalize(
                     (rec.get("mention_roles") or {}).get(company, {})
                     .get("subject_company", ""))
-                brutos = set(papeis[OBJECT_MARKER])
+                locais = sorted(rd._marcadores_locais_operacionais(
+                    titulo, company, ali_por_emp.get(company)))
+                if fam_map.get(eid):
+                    # familia opt-in: quem identifica o fato e a INSTALACAO, e
+                    # e esse mesmo marcador que a producao usa no seu gate.
+                    # Usar os marcadores genericos aqui partia o incendio da
+                    # Yobel em tres.
+                    brutos = set(locais)
+                else:
+                    brutos = set(papeis[OBJECT_MARKER])
                 if objeto_expl:
                     brutos |= set(objeto_expl.split())
                 brutos = {t for t in brutos if papel_marcador(t) == OBJECT_MARKER}
@@ -422,6 +599,7 @@ def candidatos(historico="risk_history.json", config="config_risco.yaml") -> dic
                     "title": titulo,
                     "company": company,
                     "family": eid,
+                    "family_key": fam_map.get(eid, eid),
                     "article_date": (rec.get("pub_iso") or "")[:10],
                     "pub_ts": pub_ts,
                     "source": rec.get("source", ""),
@@ -452,8 +630,22 @@ def candidatos(historico="risk_history.json", config="config_risco.yaml") -> dic
                                 if _RX_AGENCIA.search(titulo) else ""),
                     "direcao_rating": (_RX_DIRECAO_RATING.search(titulo).group(1).lower()
                                        if _RX_DIRECAO_RATING.search(titulo) else ""),
-                    "locais": sorted(rd._marcadores_locais_operacionais(
-                        titulo, company, ali_por_emp.get(company))),
+                    # §22 — o nivel atribuido separa "mesma acao renoticiada"
+                    # de "outra acao da mesma agencia"
+                    "nivel_rating": (_RX_NIVEL_RATING.search(titulo).group(1).lower()
+                                     if _RX_NIVEL_RATING.search(titulo) else ""),
+                    # §23 — identidade do processo regulatorio
+                    "regulador": "|".join(sorted(papeis[REGULATOR_MARKER])),
+                    "processo_id": (_RX_PROCESSO_ID.search(titulo).group(1)
+                                    if _RX_PROCESSO_ID.search(titulo) else ""),
+                    "abre_processo": bool(_RX_ABRE_PROCESSO.search(titulo)),
+                    # §14 — vinculo explicito com compromisso anterior
+                    "decorre_de_compromisso": bool(
+                        _RX_DECORRE_COMPROMISSO.search(titulo)),
+                    "locais": locais,
+                    # a ausencia de marcador de local NAO contradiz um local
+                    # conhecido — e o mesmo criterio do gate da producao
+                    "marcador_nao_contradiz": bool(fam_map.get(eid)),
                     **f,
                 })
     return {"_meta": {"shadow_version": SHADOW_VERSION, **AUTORIDADE},
@@ -514,6 +706,7 @@ _DISCRIMINANTE = {
     "rebaixamento_rating": ("agencia", "direcao"),
     "recomendacao_negativa": ("instituicao", "direcao"),
     "incidente_operacional_grave": ("local",), "disrupcao_operacional": ("local",),
+    "investigacao_regulatoria": ("regulador",),
 }
 
 
@@ -544,7 +737,14 @@ def _discriminante(m: dict, family: str) -> tuple:
     return ("::".join(vals) if all(vals) else ""), ad
 
 
-def _instancias(grupo: list, family: str) -> list:
+def _instancias(grupo: list, family: str, janela_corrob: int = 10) -> list:
+    # Familia opt-in: a identidade E o marcador de instalacao, e ela nao expira
+    # com o tempo — e exatamente a semantica da producao ("mantem unida a mesma
+    # operacao mesmo quando as etapas passam de 45 dias"). Aplicar aqui
+    # discriminante ou corte por gap re-partiria o que o agrupamento por objeto
+    # ja uniu, que foi o que triplicou o incendio da Yobel.
+    if any(m.get("marcador_nao_contradiz") for m in grupo):
+        return [sorted(grupo, key=lambda x: (x["pub_ts"], x["article_id"]))]
     """Divide um grupo de OBJETO em INSTANCIAS economicas distintas.
 
     Divide-se apenas com evidencia POSITIVA de distincao: ou duas features
@@ -576,14 +776,24 @@ def _instancias(grupo: list, family: str) -> list:
         else:
             inst.append([m])
 
-    # gap de INICIACAO: duas aberturas distantes sao dois eventos economicos
+    # dois cortes, nesta ordem:
+    #   (a) EPISODIO — regra calibrada por familia (agencia+nivel de rating,
+    #       identificador/assunto de processo). Vale mesmo dentro da mesma
+    #       chave discriminante: foi o que a revisao humana da Cosan e da Vale
+    #       exigiu, porque `moody::rebaixa` casa DUAS acoes distintas.
+    #   (b) gap de INICIACAO — duas aberturas distantes sao dois eventos.
     final = []
     for g in inst:
-        g = sorted(g, key=lambda x: x["pub_ts"])
+        g = sorted(g, key=lambda x: (x["pub_ts"], x["article_id"]))
         atual = [g[0]]
         for ant, cur in zip(g, g[1:]):
-            if (cur["fase"] == INICIACAO and ant["fase"] == INICIACAO
-                    and cur["pub_ts"] - ant["pub_ts"] > gap):
+            junto, razao = mesmo_episodio(family, ant, cur, janela_corrob)
+            cur["_episodio_razao"] = razao
+            if not junto:
+                final.append(atual)
+                atual = [cur]
+            elif (cur["fase"] == INICIACAO and ant["fase"] == INICIACAO
+                  and cur["pub_ts"] - ant["pub_ts"] > gap):
                 final.append(atual)
                 atual = [cur]
             else:
@@ -607,10 +817,35 @@ _PESO_FASE_REPRESENTANTE = {INICIACAO: 3, MATERIAL: 3, ETAPA: 2,
                             ACOMPANHAMENTO: 1, UNKNOWN: 1}
 
 
-def escolher_representante(membros: list) -> dict:
-    """Politica deterministica: assercao primaria de evento (fase que EXPLICA o
-    fato) > qualidade da fonte > completude do titulo > data mais antiga como
-    ultimo desempate. Nunca 'o mais novo' nem 'o mais velho' por si so."""
+# §25 — familias de ESTADO CONTINUO DE RISCO. Uma investigacao regulatoria ou
+# uma recuperacao judicial nao "acontecem" numa data: elas seguem correndo, e o
+# que o leitor precisa ver e o desenvolvimento substantivo mais RECENTE, nao a
+# primeira noticia. A revisao humana de 2026-08-20 (Vale) trouxe exatamente
+# esse contraexemplo a regra "a iniciacao e sempre o melhor representante".
+#
+# Isto muda o REPRESENTANTE DE EXIBICAO e nada mais. A ancora de score continua
+# governada por `refresh_eligible`/`refresh_effective` — o proprio prompt
+# humano avisou para nao equiparar as duas coisas, e §7 deixou a renovacao de
+# investigacao explicitamente EM ABERTO.
+_FAMILIA_ESTADO_CONTINUO = frozenset({
+    "investigacao_regulatoria", "recuperacao_judicial",
+})
+_FASES_SUBSTANTIVAS = (INICIACAO, ETAPA, MATERIAL)
+
+
+def escolher_representante(membros: list, family: str = "") -> dict:
+    """Politica deterministica.
+
+    Familia de TRANSACAO: assercao primaria de evento (fase que EXPLICA o fato)
+    > qualidade da fonte > completude do titulo > data mais antiga como ultimo
+    desempate. Familia de ESTADO CONTINUO: desenvolvimento substantivo mais
+    RECENTE. Em nenhum dos dois casos a regra e "o mais novo" ou "o mais velho"
+    sozinha."""
+    if family in _FAMILIA_ESTADO_CONTINUO:
+        subst = [m for m in membros if m["fase"] in _FASES_SUBSTANTIVAS]
+        return max(subst or membros,
+                   key=lambda m: (m["pub_ts"], m.get("trust_w") or 0.0,
+                                  len(m.get("title") or "")))
     return max(membros, key=lambda m: (
         _PESO_FASE_REPRESENTANTE.get(m["fase"], 1),
         m.get("trust_w") or 0.0,
@@ -635,6 +870,54 @@ def politica_refresh(family: str) -> dict:
     return POLITICA_REFRESH.get(family, _POLITICA_PADRAO)
 
 
+# §35 — o que a calibracao de 2026-08-20 estabeleceu e o que NAO estabeleceu.
+# Publicado inteiro para que a incerteza restante nao fique escondida.
+POLITICA_STATUS_FAMILIA = {
+    "ma": {
+        "status": "HUMAN_CONFIRMED",
+        "estabelecido": "fechamento material renova a ancora para frente",
+        "fonte": "human_supervision:BATCH_V1:case_05,case_08",
+        "aberto": "",
+    },
+    "follow_on": {
+        "status": "PARTIALLY_ESTABLISHED",
+        "estabelecido": "recapitulacao retrospectiva NAO renova "
+                        "(HUMAN_REVIEW_2026_08_20, Engie)",
+        "fonte": "human_supervision:BATCH_V1:case_11 + HUMAN_REVIEW_2026_08_20",
+        "aberto": "se uma conclusao CORRENTE e genuina deve renovar segue "
+                  "sem decisao humana",
+    },
+    "rebaixamento_rating": {
+        "status": "IDENTITY_ONLY",
+        "estabelecido": "agencias diferentes sao ocorrencias distintas "
+                        "(HUMAN_REVIEW_2026_08_20, Cosan)",
+        "fonte": "HUMAN_REVIEW_2026_08_20",
+        "aberto": "isto e IDENTIDADE, nao politica de renovacao — nenhuma "
+                  "decisao humana sobre renovacao de rating existe",
+    },
+    "emissao_divida": {
+        "status": "UNREVIEWED",
+        "estabelecido": "",
+        "fonte": "",
+        "aberto": "nenhuma verdade humana sobre renovacao",
+    },
+    "investigacao_regulatoria": {
+        "status": "REPRESENTATIVE_ONLY",
+        "estabelecido": "o desenvolvimento substantivo mais recente e o "
+                        "REPRESENTANTE (HUMAN_REVIEW_2026_08_20, Vale)",
+        "fonte": "HUMAN_REVIEW_2026_08_20",
+        "aberto": "se um desenvolvimento novo RENOVA o score segue sem "
+                  "decisao humana — deliberadamente nao inventado",
+    },
+}
+
+
+def politica_familias() -> dict:
+    return {"politicas": POLITICA_STATUS_FAMILIA,
+            "calibracao": "HUMAN_REVIEW_2026_08_20",
+            "authority": "SHADOW / SIMULATED"}
+
+
 # ── §6 · a estrutura de ocorrencia da sombra ─────────────────────────────────
 def construir(historico="risk_history.json", config="config_risco.yaml") -> dict:
     C = candidatos(historico, config)
@@ -650,7 +933,7 @@ def construir(historico="risk_history.json", config="config_risco.yaml") -> dict
 
     por_par: dict = defaultdict(list)
     for m in C["membros"]:
-        por_par[(m["company"], m["family"])].append(m)
+        por_par[(m["company"], m["family_key"])].append(m)
 
     ocorrencias = []
     for (emp, fam), itens in sorted(por_par.items()):
@@ -664,6 +947,10 @@ def construir(historico="risk_history.json", config="config_risco.yaml") -> dict
         # NAO entram num grupo nomeado por conveniencia. Eles se agrupam entre
         # si pela mesma janela curta que a producao ja usa, e o registro sai
         # marcado UNKNOWN para que nada finja identidade que nao tem.
+        if len(grupos) == 1 and anonimos and all(
+                m.get("marcador_nao_contradiz") for m in anonimos):
+            grupos[0].extend(anonimos)
+            anonimos = []
         anonimos.sort(key=lambda m: m["pub_ts"])
         atual: list = []
         for m in anonimos:
@@ -677,7 +964,7 @@ def construir(historico="risk_history.json", config="config_risco.yaml") -> dict
             grupos.append(atual)
 
         for grupo in grupos:
-            for inst in _instancias(grupo, fam):
+            for inst in _instancias(grupo, fam, collapse):
                 inst.sort(key=lambda m: (m["pub_ts"], m["article_id"]))
                 if fam in _FAMILIA_SEM_OBJETO_EXTERNO:
                     # rotular 'mobly' como objeto da RJ da Tok&Stok seria
@@ -687,10 +974,14 @@ def construir(historico="risk_history.json", config="config_risco.yaml") -> dict
                     objeto, obj_conf = _objeto_canonico(inst)
                 disc = next((_discriminante(m, fam)[0] for m in inst
                              if _discriminante(m, fam)[0]), "")
+                abertura = _membro_de_abertura(inst)
+                ep, ep_estavel = chave_episodio(fam, abertura)
                 if disc:
-                    assinatura, estabilidade = "disc:" + disc, "CONTENT_STABLE"
+                    assinatura = "disc:" + disc + (("|ep:" + ep) if ep else "")
+                    estabilidade = ("CONTENT_STABLE" if ep_estavel
+                                    else "DATE_ANCHORED")
                 else:
-                    assinatura = "epoch:" + _membro_de_abertura(inst)["article_date"]
+                    assinatura = "epoch:" + abertura["article_date"]
                     estabilidade = "DATE_ANCHORED"
                 oid = occurrence_id(emp, fam, objeto, assinatura)
 
@@ -709,7 +1000,7 @@ def construir(historico="risk_history.json", config="config_risco.yaml") -> dict
                         motivo = "MATERIAL_PHASE::" + (m["fase_evidencia"] or "?")
                     elif eleg and motivo == "INITIAL_MEMBER":
                         motivo = "MATERIAL_NOT_NEWER_THAN_ANCHOR"
-                rep = escolher_representante(inst)
+                rep = escolher_representante(inst, fam)
                 base = max(m["score_base"] or 0 for m in inst)
                 contrib = base * (membro_ancora.get("trust_w") or 1.0) * decay(
                     membro_ancora["pub_ts"])
@@ -718,6 +1009,7 @@ def construir(historico="risk_history.json", config="config_risco.yaml") -> dict
                     "occurrence_id": oid,
                     "company": emp,
                     "family": fam,
+                    "familias_membros": sorted({m["family"] for m in inst}),
                     "canonical_object": objeto,
                     "object_confidence": obj_conf,
                     "occurrence_instance_signature": assinatura,
@@ -725,12 +1017,23 @@ def construir(historico="risk_history.json", config="config_risco.yaml") -> dict
                     "aliases": sorted({a for m in inst for a in m["alias_ids"]}),
                     "n_membros": len(inst),
                     "membros": [{
-                        "article_id": m["article_id"],
+                        "article_id": m["article_id"], "family": m["family"],
                         "article_date": m["article_date"], "pub_ts": m["pub_ts"],
                         # §20 — sem inferencia silenciosa: a data efetiva cai na
                         # data do artigo e o rotulo diz que foi fallback
-                        "effective_event_date": m["article_date"],
-                        "effective_event_date_source": "ARTICLE_DATE_FALLBACK",
+                        # §16/§20 — um ACOMPANHAMENTO refere fato que JA
+                        # ocorreu: a data do artigo NAO e a data do evento, e o
+                        # acervo local nao diz qual e. Declara-se a lacuna em
+                        # vez de carimbar a data da publicacao como se fosse a
+                        # do fato — foi esse carimbo que a revisao humana da
+                        # Engie derrubou.
+                        "effective_event_date": (
+                            None if m["fase"] == ACOMPANHAMENTO
+                            else m["article_date"]),
+                        "effective_event_date_source": (
+                            "RETROSPECTIVE_REFERENCE_DATE_UNKNOWN"
+                            if m["fase"] == ACOMPANHAMENTO
+                            else "ARTICLE_DATE_FALLBACK"),
                         "phase": m["fase"], "phase_evidence": m["fase_evidencia"],
                         "phase_raw": m["fase_bruta"],
                         "article_role": m["relation_type"],
@@ -924,6 +1227,56 @@ def _antecessor_fora_da_janela(company, family, tokens, pub_ts, historico, windo
     return None
 
 
+def _objeto_existe_no_corpus(company, family, tokens, exceto_ts, historico) -> bool:
+    """O objeto desta ocorrencia aparece em ALGUM outro artigo do acervo — em
+    qualquer familia, dentro ou fora da janela?
+
+    Serve para separar duas coisas que nao podem ser contadas juntas: um erro
+    de IDENTIDADE (a peca existe e a sombra nao a ligou) e uma lacuna de
+    COLETA (a peca nunca foi capturada). No caso Natura/Advent o anuncio de
+    30/03 simplesmente nao esta em `risk_history.json` — nenhuma regra de
+    ocorrencia poderia liga-lo."""
+    if not tokens:
+        return False
+    for u, r in historico["articles"].items():
+        if (r.get("pub_ts") or 0) == exceto_ts:
+            continue
+        if company not in (r.get("companies") or []):
+            continue
+        marc = marcadores_por_papel(r.get("title") or "", family, company)
+        antes, _ = canonicalizar(marc[OBJECT_MARKER], company, family,
+                                 carregar_aliases())
+        if tokens & antes:
+            return True
+    return False
+
+
+# Papeis humanos que descrevem um artigo que NAO assere o evento na propria
+# data de publicacao.
+_PAPEL_RETROSPECTIVO = frozenset({
+    "RETROSPECTIVE_RECAP", "FOLLOW_UP", "STRATEGIC_COMMENTARY",
+    "THIRD_PARTY_COMMENTARY", "ANALYST_COMMENTARY_CORROBORATION",
+    "DESCRIPTOR_BACKGROUND",
+})
+# Papeis que NUNCA deveriam virar o representante principal.
+_PAPEL_NAO_PRINCIPAL = frozenset({
+    "RETROSPECTIVE_RECAP", "STRATEGIC_COMMENTARY", "THIRD_PARTY_COMMENTARY",
+    "ANALYST_COMMENTARY_CORROBORATION", "DESCRIPTOR_BACKGROUND", "FOLLOW_UP",
+})
+
+
+def _representante_esperado(h: dict, o: dict, m: dict):
+    papel = h.get("article_role") or ""
+    e_rep = o["display_representative"] == m["article_id"]
+    if papel in _PAPEL_NAO_PRINCIPAL:
+        return not e_rep
+    if o["family"] in _FAMILIA_ESTADO_CONTINUO and o["n_membros"] > 1:
+        # §6 — o desenvolvimento substantivo mais recente e o principal
+        mais_novo = max(o["membros"], key=lambda x: x["article_date"])
+        return e_rep == (m["article_id"] == mais_novo["article_id"])
+    return None
+
+
 def matriz_humana(S: dict, caminho_humano: str | None = None,
                   historico="risk_history.json") -> dict:
     import reliability_human_supervision as hs
@@ -933,7 +1286,7 @@ def matriz_humana(S: dict, caminho_humano: str | None = None,
     por_artigo = {}
     for o in S["ocorrencias"]:
         for m in o["membros"]:
-            por_artigo[(m["article_id"], o["company"], o["family"])] = (o, m)
+            por_artigo[(m["article_id"], o["company"], m["family"])] = (o, m)
 
     linhas = []
     for _k, h in sorted(MS.items(), key=lambda x: (x[1]["case_id"], x[1]["company"])):
@@ -950,11 +1303,16 @@ def matriz_humana(S: dict, caminho_humano: str | None = None,
         abre = (m["article_date"] == o["initial_date"])
         rel_h = h.get("occurrence_relation")
         rel_s = "NEW_OCCURRENCE" if abre else "SAME_OCCURRENCE"
-        janela = None
+        janela = corpus = None
         if rel_h == "SAME_OCCURRENCE" and rel_s == "NEW_OCCURRENCE":
             janela = _antecessor_fora_da_janela(
                 h["company"], h["family"], set(m["objeto_tokens"]),
                 m["pub_ts"], H, S["window_days"])
+            if janela is None and not _objeto_existe_no_corpus(
+                    h["company"], h["family"], set(m["objeto_tokens"]),
+                    m["pub_ts"], H):
+                corpus = ("o artigo de abertura nao existe no acervo — lacuna "
+                          "de COLETA, nao de identidade")
         # §8 — fase NAO e autoridade de renovacao: a verdade humana
         # `score_refresh` responde "esta fase PODE renovar", que e
         # ELEGIBILIDADE. Se a fase material ja E a ancora, `refresh_effective`
@@ -966,8 +1324,9 @@ def matriz_humana(S: dict, caminho_humano: str | None = None,
             "avaliavel": True,
             "identidade_humana": rel_h, "identidade_sombra": rel_s,
             "identidade_ok": (None if rel_h in ("NOT_APPLICABLE", "UNDETERMINED")
-                              or janela else rel_h == rel_s),
+                              or janela or corpus else rel_h == rel_s),
             "identidade_limitada_pela_janela": janela,
+            "identidade_limitada_pelo_corpus": corpus,
             "fase_humana": fase_h or "SEM_MAPA", "fase_sombra": m["phase"],
             "fase_ok": (None if not fase_h or m["phase"] == UNKNOWN
                         else fase_h == m["phase"]),
@@ -978,6 +1337,18 @@ def matriz_humana(S: dict, caminho_humano: str | None = None,
                            else ref_h == ref_s),
             "representante_sombra_e_este": (
                 o["display_representative"] == m["article_id"]),
+            # §26 — o humano so opina sobre representante quando o papel do
+            # artigo o define: quem RECAPITULA ou COMENTA nunca deveria ser o
+            # principal; quem e o desenvolvimento mais recente de um estado
+            # continuo deveria.
+            "representante_ok": _representante_esperado(h, o, m),
+            # §26/§16 — a data efetiva so e avaliavel quando o papel humano diz
+            # que o artigo NAO assere o evento na propria data
+            "data_efetiva_ok": (
+                None if h.get("article_role") not in _PAPEL_RETROSPECTIVO
+                else m["effective_event_date"] != m["article_date"]),
+            "data_efetiva_sombra": m["effective_event_date"],
+            "data_efetiva_fonte": m["effective_event_date_source"],
             "occurrence_id": o["occurrence_id"], "anchor_date": o["anchor_date"],
             "article_role_humano": h.get("article_role"),
             "titulo": m["title"][:110],
@@ -996,6 +1367,10 @@ def matriz_humana(S: dict, caminho_humano: str | None = None,
             "fase_indefinida": sum(1 for l in linhas if l.get("fase_indefinida")),
             "identidade_limitada_pela_janela": sum(
                 1 for l in linhas if l.get("identidade_limitada_pela_janela")),
+            "identidade_limitada_pelo_corpus": sum(
+                1 for l in linhas if l.get("identidade_limitada_pelo_corpus")),
+            "representante": taxa("representante_ok"),
+            "data_efetiva": taxa("data_efetiva_ok"),
             "authority": "SHADOW / SIMULATED"}
 
 
@@ -1011,8 +1386,7 @@ def avaliar_occurrence_truth(S: dict, caminho="risk_semantic_v2_shadow.json") ->
     por_artigo = {}
     for o in S["ocorrencias"]:
         for m in o["membros"]:
-            por_artigo[(m["article_id"], o["company"], o["event_id"]
-                        if "event_id" in o else o["family"])] = (o, m)
+            por_artigo[(m["article_id"], o["company"], m["family"])] = (o, m)
     linhas, mesma_occ = [], {}
     for mb in ot["memberships"]:
         par = por_artigo.get((mb["article_ref"], mb["company"], mb["event_id"]))
@@ -1156,14 +1530,20 @@ def blast(S: dict, prod: dict, M: dict, sim: dict) -> dict:
         if emp in infiel or v["simulated_status"] == p["status"]:
             continue
         causa = [x for x in divisoes + fusoes if x["company"] == emp]
+        # §33 — nomear a causa NAO e o mesmo que ter respaldo humano para ela.
+        # Uma mudanca de status so deixa de bloquear quando a divisao que a
+        # produziu foi confirmada por humano; estar no lote de supervisao por
+        # outro motivo nao serve de aval.
         status_delta.append({
             "company": emp, "producao": p["status"],
             "sombra_simulado": v["simulated_status"],
             "delta_score": d,
-            "explicado": bool(causa) or any(
-                l.get("avaliavel") and l["company"] == emp for l in M["linhas"]),
+            "explicado": bool(causa),
+            "suportado_por_humano": bool(causa) and all(
+                x["confianca"] == "HUMAN_CONFIRMED" for x in causa),
             "causa": [f"{x['family']}: {x['producao_ocorrencias']}->"
-                      f"{x['sombra_ocorrencias']}" for x in causa]})
+                      f"{x['sombra_ocorrencias']} ({x['confianca']})"
+                      for x in causa]})
     return {
         "sobre_fusao_divisoes": sorted(divisoes,
                                        key=lambda x: -abs(x["delta_score_simulado"])),
@@ -1244,6 +1624,11 @@ def promocao(S, prod, M, T, B, F) -> dict:
     naoexp = [x for x in B["delta_status"] if not x["explicado"]]
     if naoexp:
         bloqueios.append(f"status muda sem explicacao: {len(naoexp)} empresa(s)")
+    semaval = [x for x in B["delta_status"]
+               if x["explicado"] and not x["suportado_por_humano"]]
+    if semaval:
+        bloqueios.append("status muda por divisao ainda NAO confirmada por "
+                         f"humano: {[x['company'] for x in semaval]}")
     if F["membros_sem_article_id"]:
         bloqueios.append("proveniencia perdida na sombra")
     amb = [x for x in B["sobre_fusao_divisoes"] if x["confianca"] == "AMBIGUOUS"]
@@ -1277,6 +1662,8 @@ def rodar_tudo(historico="risk_history.json", config="config_risco.yaml") -> dic
             "sombra": S, "producao": prod, "simulacao": sim, "matriz_humana": M,
             "occurrence_truth": T, "fidelidade": F, "blast": B,
             "fila_revisao": fila_revisao(B, M),
+            "politica_familias": politica_familias(),
+            "colisoes_de_id": colisoes_de_id(S),
             "promocao": promocao(S, prod, M, T, B, F),
             "equivalencia_producao": rp.equivalencia(prod)}
 

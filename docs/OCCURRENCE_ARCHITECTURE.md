@@ -315,6 +315,142 @@ conclusão de 10/08. **São campos diferentes porque são perguntas diferentes.*
 Nenhum deles foi "resolvido" ajustando regra até o número fechar. Todos estão na
 fila de revisão como `REVIEW_CANDIDATE`.
 
+---
+
+# Adendo 2 — Sombra V2, calibrada por decisão humana
+
+> `HUMAN_REVIEW_2026_08_20`. As quatro adjudicações P1 chegaram e são
+> autoridade. Nada foi promovido à produção.
+
+## O que cada decisão mudou na regra — e o que ela não autorizou
+
+### Cosan · a agência é discriminante de instância
+
+**Decisão:** ações de **agências diferentes** são ocorrências distintas; nem
+empresa, nem família, nem direção, nem proximidade de data as fundem.
+
+A V1 já separava S&P de Moody's. O que faltava era o inverso — §22-C: *mesma*
+agência não implica mesma ocorrência. O adaptador passou a carregar o **nível
+atribuído**, e o corte de episódio ficou: dentro da janela de corroboração, ou
+mesmo nível ⇒ mesma ação; fora da janela sem nível comum ⇒ ações distintas.
+
+| | |
+|---|---|
+| S&P 08/07 `B+` × S&P 05/08 `B+` | mesma ação renoticiada |
+| Moody's 16/07 `B1` × Moody's 10/08 (sem nível) | **ações distintas** |
+
+Isto é **identidade**, não política de renovação — e a página registra isso
+explicitamente, porque a decisão humana não falou de renovação de rating.
+
+### Vale · regulador sozinho não é identidade; e o representante muda
+
+**Decisão:** desenvolvimentos do mesmo processo são a mesma ocorrência, e o
+desenvolvimento substantivo **mais recente** é o representante principal.
+
+O que a evidência local mostrou: **não há um processo único**. Dois artigos
+*abrem* processos (20/07 sobre apoio da Previ a candidato; 23/07 sobre
+destituição de conselheiro) com assuntos disjuntos. A regra passou a tratar
+"abre processo" como **asserção de procedimento novo** — não absorvível como
+corroboração de um artigo anterior que não abriu nenhum, nem dentro da janela de
+10 dias. Sem identificador de processo e sem assunto comum, **não se força**
+mesma ocorrência a partir de empresa + CVM.
+
+A política de representante ganhou consciência de família:
+
+| tipo de família | representante |
+|---|---|
+| **transação** (`ma`, `follow_on`, emissão) | a iniciação, que explica o fato |
+| **estado contínuo** (`investigacao_regulatoria`, `recuperacao_judicial`) | o desenvolvimento **substantivo** mais recente |
+
+"Mais recente" não é "o último publicado": um acompanhamento nunca vira
+principal. Tok&Stok continua representada pela aceitação da RJ, não pela matéria
+de consequência.
+
+E a **renovação da investigação segue em aberto**. A decisão humana foi sobre
+exibição; equiparar as duas coisas teria inventado verdade.
+
+### Natura · um compromisso, marcos sucessivos
+
+**Decisão:** 30/03 (compromisso vinculante de 8%–10%), 02/07 (6,6% + 1,4% via
+TRS) e 31/07 (8%, o mínimo comprometido) são **uma** transação econômica.
+
+O gancho não é o nome *Advent*: é o **vínculo econômico explícito** — o fato
+relevante diz que a aquisição *"decorre do Compromisso Vinculante"*. Atingir o
+piso comprometido também conta como cumprimento, e não como a "assembleia" que
+aparece na mesma manchete. Sem a frase de vínculo, o mesmo fato **não** vira
+marco material.
+
+Os três marcos preservam o mesmo `occurrence_id`.
+
+> **Limite de coleta, não de identidade.** O acervo tem **um único** artigo
+> Advent (02/07). Os de 30/03 e 31/07 nunca foram capturados — nenhuma regra de
+> ocorrência poderia ligá-los. A métrica passou a separar `WINDOW_LIMITED`
+> (existe, fora da janela) de `CORPUS_LIMITED` (nunca coletado), para não
+> contabilizar lacuna de cobertura como erro de identidade. A cronologia entra
+> como fixture com proveniência; `risk_human_supervision.json` fica intocado,
+> porque seu schema indexa por `article_id` e esses artigos não têm um.
+
+### Engie · `conclui` sozinho não decide fase
+
+**Decisão:** *"lucra R$ 694 mi no 2º tri e conclui follow-on"* é recapitulação
+de fato já ocorrido — acompanhamento, sem renovação.
+
+Era exatamente o bloqueador que o Adendo 1 se recusou a resolver por vocabulário.
+A distinção implementada é **sintática**: asserção primária de *outro* evento na
+oração principal + verbo material depois da coordenação. A ordem importa —
+"conclui aquisição **e** lucra R$ 100 mi" continua material.
+
+E a data efetiva de qualquer `ACOMPANHAMENTO` passou a ser declarada
+**desconhecida** em vez de carimbar a data de publicação como data do fato.
+
+## Uma regressão que a V1 tinha introduzido
+
+Ao medir a Yobel descobriu-se que a V1 **partia** o incêndio em três
+(`incidente_operacional`, `incidente_operacional_grave`,
+`paralisacao_operacional`), triplicando o score. A produção já agrupava esses
+`event_id` por família opt-in (`merge_occurrences_across_articles`) — a sombra
+não. Corrigido: famílias opt-in agrupam pela **instalação**, ausência de marcador
+não contradiz um local conhecido, e a identidade por marcador não expira com o
+tempo. Yobel voltou a ser **uma** ocorrência, e sua mudança de status sumiu.
+
+Era uma regressão contra comportamento que já estava certo — o tipo de coisa que
+só aparece quando se mede tudo, não só os casos em disputa.
+
+## Resultado
+
+| dimensão | V1 | V2 |
+|---|---:|---:|
+| identidade | 11/14 | **13/13** |
+| fase | 13/14 | **14/14** |
+| renovação | 5/6 | **6/6** |
+| representante | — | **3/3** |
+| data efetiva | — | **3/3** |
+| ocorrências | 79 | 79 |
+| colisões de id | 0 | **0** |
+| proveniência | 127/127 | **127/127** |
+
+Âncoras anteriores intactas: Tok&Stok, Sabesp (`emae` × `castilho`), Smart Fit
+(renova), Suzano (alias, delta zero), Santander (zero ocorrências), ISA.
+
+## O que continua bloqueando a promoção
+
+**Uma** mudança de status: JBS `atenção → crítico`, +56,7, causada por divisões
+ainda `AMBIGUOUS` em `ma` (1→3) e `troca_ceo` (1→2). Nomear a causa não é ter
+respaldo humano para ela, e o portão foi endurecido para exigir o segundo.
+
+Política de renovação, sem esconder incerteza:
+
+| família | estado | aberto |
+|---|---|---|
+| `ma` | `HUMAN_CONFIRMED` | — |
+| `follow_on` | `PARTIALLY_ESTABLISHED` | se uma conclusão **corrente** genuína renova |
+| `rebaixamento_rating` | `IDENTITY_ONLY` | nenhuma decisão sobre renovação |
+| `investigacao_regulatoria` | `REPRESENTATIVE_ONLY` | se um desenvolvimento novo renova |
+| `emissao_divida` | `UNREVIEWED` | tudo |
+
+BTG e Baker Hughes seguem `UNREVIEWED`: a calibração de hoje não lhes empresta
+verdade.
+
 ## Fora de escopo, e permanecem separados
 
 - **B3/Gol** — `ATTRIBUTION_REVIEW_CANDIDATE`; a raiz é atribuição, não ocorrência.
