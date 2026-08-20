@@ -1037,6 +1037,18 @@
    "target": "pt",
    "title": "Matías Videla, o CEO do gigante supermercadista chileno Cencosud, sancionado por uso de informação privilegiada"
   },
+  "0743935f0286c3ad227ba39851e267788d3a1f428b3f87da865ac3d3ec4e085f": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Bice Corp e Grupo Security definem detalhes para o encerramento do acordo de fusão &nbsp;&nbsp; La Tercera",
+   "target": "pt",
+   "title": "Bice Corp e Grupo Security definem detalhes para o encerramento do acordo de fusão"
+  },
   "074d3783f86d7f882815eb836a088562f78a366c289511539a2409642d45e07a": {
    "cache_version": "tc.v1",
    "created_at": 1786705561,
@@ -1109,6 +1121,18 @@
    "target": "pt",
    "title": "Cruz Azul deixa escapar vaga nas quartas de final: Resultados da Leagues Cup HOJE, 13 de agosto"
   },
+  "07c24caf38fe6207d35844d59f18231b2f7f1859f7d53a296a09fb7ee718e7e2": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "O gigante asiático acusa Washington de recorrer à segurança nacional para impor barreiras comerciais de até 100% em um setor dominado pela tecnologia chinesa, na antevéspera do encontro entre Xi Jinping e Donald Trump.",
+   "target": "pt",
+   "title": "Ressurge a tensão comercial: China denuncia os EUA por discriminação aos seus drones após novas tarifas"
+  },
   "07d10463268e54b7bccac30dd6862ebfd6cd6fdb8448d1e4686d0458e4832d95": {
    "cache_version": "tc.v1",
    "created_at": 1786705488,
@@ -1145,6 +1169,18 @@
    "target": "pt",
    "title": "Anthropic pode superar a SpaceX de Elon Musk para o maior IPO de 2026, mostram mercados de previsão"
   },
+  "0828b4f60cddc74edcf693ad18ab61e729e09209d97371cbf2d21ca1612ba795": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "A IA, não Trump, é a grande força motriz da economia, diz este analista — e isso só vai crescer.",
+   "target": "pt",
+   "title": "Todos vocês ouviram que a IA está refazendo a economia. Eis como ela está mudando vidas — para melhor ou para pior."
+  },
   "082b602d98ac5cbbc5acc0b55d792cf6a255ec40539aa91cb8ad35fbf90ad7e6": {
    "cache_version": "tc.v1",
    "created_at": 1786737350,
@@ -1168,6 +1204,18 @@
    "summary": "Tribunal de Apelação de Ontário rejeita pedido de indenização por negligência de US$ 5 bi relacionado ao esquema Ponzi de Stanford &nbsp;&nbsp; McCarthy Tetrault",
    "target": "pt",
    "title": "Tribunal de Apelação de Ontário rejeita pedido de indenização por negligência de US$ 5 bi relacionado ao esquema Ponzi de Stanford"
+  },
+  "083427739b18c497c8298fd1b6e85b9eece66850687b2c42ed27bd70e07489e3": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "Polymarket enfrenta novo escrutínio de negociação com informação privilegiada após 152 carteiras supostamente lucrarem US$ 8 milhões apostando em mercados militares dos EUA: Relatório"
   },
   "08490ffd5c23c8ba712aef0f03c48d0a2bbedb78e49a8962b1a28dcf518ab3e5": {
    "cache_version": "tc.v1",
@@ -1324,6 +1372,18 @@
    "summary": "Clean Virginia: A fusão NextEra-Dominion é mais do que sobre energia; é um teste para saber se a Virgínia colocará seu povo acima do poder de monopólio &nbsp;&nbsp; Cardinal News",
    "target": "pt",
    "title": "Clean Virginia: A fusão NextEra-Dominion é mais do que sobre energia; é um teste para saber se a Virgínia colocará seu povo acima do poder de monopólio"
+  },
+  "097e78c1d43c6e8cc9b42c3157d0af4ec323361b82f69ac6940323d6b71e0589": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "A rede de supermercados relatou um crescimento comparável de vendas nos EUA de 2,6% em seus resultados do segundo trimestre, o menor em mais de seis anos.",
+   "target": "pt",
+   "title": "As ações do Walmart caem com as vendas nos EUA sendo atingidas pela queda nos preços de medicamentos"
   },
   "0982c1caf192cf74d9e4c4c30a00d87aca1296cdcbafc274bdf0d05a7a5faf99": {
    "cache_version": "tc.v1",
@@ -1612,6 +1672,18 @@
    "summary": "Sabotagem informática a clientes BCI: $124 milhões chegam a 217 contas do Banco Estado &nbsp;&nbsp; biobiochile.cl",
    "target": "pt",
    "title": "Sabotagem informática a clientes BCI: $124 milhões chegam a 217 contas do Banco Estado"
+  },
+  "0b5c2373a2e834ece4a34d5858ee9c3fd4d987871a73386b75a00b992a12813f": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Uma campanha busca mobilizar doações nacionais e internacionais para as famílias desabrigadas.",
+   "target": "pt",
+   "title": "Terremoto atingiu cafeicultores: 8.070 trabalhadores do setor têm suas moradias afetadas em seis departamentos"
   },
   "0b5fd488091d15bbfe4ee5b9ac2d2264acff5d99a64fdb40e259678a13807022": {
    "cache_version": "tc.v1",
@@ -1913,6 +1985,18 @@
    "target": "pt",
    "title": "Toronto Dominion Bank (TSX:TD) pode estar 4% superavaliado após atualização de seu aplicativo de depósito direto"
   },
+  "0d5d0bea106b3c37e46ab4ae32fe18f0d736a5d19541cb328ca950114f6200ae": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Embora sua queda não seja tão acentuada quanto a do dólar, o euro continua perdendo valor.",
+   "target": "pt",
+   "title": "O euro também se mantém em baixa: assim está a divisa hoje"
+  },
   "0d611f67325d9a16761f6db0831b3972ad60fa8a9e6f5c3d7de5bbf73b7d0398": {
    "cache_version": "tc.v1",
    "created_at": 1787168248,
@@ -2189,6 +2273,18 @@
    "target": "pt",
    "title": "Czar de fronteira defende uso de luvas elétricas para agentes do ICE: ‘Evitarão confrontos’"
   },
+  "0f5ecc3e9fdb1b1558c6d8e9cbc0176dcdf99f77c1dc19c6faa5683a8d8423f8": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Atualizar o RUT é gratuito e deve ser feito dentro do mês seguinte ao fato que origine a modificação.",
+   "target": "pt",
+   "title": "Responsabilidade das empresas na temporada de imposto de renda: o que devem revisar no RUT perante a Dian"
+  },
   "0f61ecaa3a8b8bbfb212c7f3b08c72799599df4161763fad91d04a459028e971": {
    "cache_version": "tc.v1",
    "created_at": 1786717284,
@@ -2260,6 +2356,18 @@
    "summary": "8-K",
    "target": "pt",
    "title": "Cigna Group — 8-K: 8-K (itens 2.02,9.01)"
+  },
+  "0fac0f99cb8b6429650cd9acb764777a750c1f738f80d7c26fef5da51f7511aa": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Exigir responsabilidade da mídia não é censura. Tampouco podemos ignorar o risco que implica que um órgão administrativo, que além disso não é autônomo, tenha faculdades para determinar o que deve ser entendido por informação verdadeira ou para intervir sobre conteúdos.",
+   "target": "pt",
+   "title": "O direito das audiências: um falso debate"
   },
   "0fb9ad2c8152c2215d1f8e0168e16028ed6530297756549de88114c23309d7ca": {
    "cache_version": "tc.v1",
@@ -2825,6 +2933,18 @@
    "target": "pt",
    "title": "Combatendo IA com IA: Prevenção mais inteligente contra fraudes no e-commerce"
   },
+  "130410e74fe9b21b4bc5ac11cca5669cbd00556aca65c42266dd62eb5c1df66d": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "As microempresas e os setores de comércio e serviços concentram a maior parte dos casos.",
+   "target": "pt",
+   "title": "Devido aos efeitos do terremoto, quase metade das empresas afetadas não consegue operar"
+  },
   "1330795ea83f8d74aeea8e078376de70ba61ef769d1a0cb2d81d3080f60542a7": {
    "cache_version": "tc.v1",
    "created_at": 1787071732,
@@ -2981,6 +3101,18 @@
    "target": "pt",
    "title": "Latam Brasil adere ao processo de falência iniciado pelo grupo nos Estados Unidos"
   },
+  "147610eb35225afe8b40fc95ac1e86c235efd9f21b9cb68293fbec4a95af173a": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "EXCLUSIVO: airBaltic da Letônia busca novo financiamento com detentores de títulos enquanto problemas de dívida pioram &nbsp;&nbsp; Reuters",
+   "target": "pt",
+   "title": "EXCLUSIVO: airBaltic da Letônia busca novo financiamento com detentores de títulos enquanto problemas de dívida pioram"
+  },
   "1481a4390ff3b9a22466728e439d0e70b01cc42e945b5da67ccc3762ee162c47": {
    "cache_version": "tc.v1",
    "created_at": 1787049529,
@@ -3136,6 +3268,18 @@
    "summary": "",
    "target": "pt",
    "title": "Robert Kiyosaki revela 'o maior passivo' que o deixa à mercê de Wall Street. Suas economias estão prestes a ruir?"
+  },
+  "159c8409b1499cc629baa674814c7c8330ec9eac1e8aaccfbe29adfa0fabba57": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234161,
+   "last_used_at": 1787234161,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Conheça as cotações do dólar blue, o oficial, o MEP e o CCL.",
+   "target": "pt",
+   "title": "Dólar hoje: a quanto cota nesta quinta-feira, 20 de agosto"
   },
   "15b4d453aa207e281c855d8df97d93cdc367d4c7764e03e091037bc2a4558c4b": {
    "cache_version": "tc.v1",
@@ -4373,6 +4517,18 @@
    "target": "pt",
    "title": "Parábola da calçada"
   },
+  "1df867fa55aeb31f9c265218a7551ea1d9749056f99575ff80d187f7fee5ddfe": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "O problema aparece quando todo alívio se torna intocável. Então deixa de competir com outras prioridades e se instala como parte fixa da vida, ainda que esteja deslocando poupança, proteção ou patrimônio.",
+   "target": "pt",
+   "title": "Gastar para continuar funcionando"
+  },
   "1e0a34d5fef8b41907305d8ae142510f1dc1009fb8d2d2609fd8b110e000dc60": {
    "cache_version": "tc.v1",
    "created_at": 1786727154,
@@ -4661,6 +4817,18 @@
    "target": "pt",
    "title": "Real blue: a quanto opera nesta quarta-feira, 19 de agosto"
   },
+  "2091b7ee6ea46ceafe97ea89cb6640ad61c9e870828fd03969de9de33098b058": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "Diretor de banco regional vende mais de 4.500 ações avaliadas em aproximadamente US$ 185.000"
+  },
   "209559891497deb658759a085dc740fcbe64556f2fe142c2c0bffd4a605386d3": {
    "cache_version": "tc.v1",
    "created_at": 1786963249,
@@ -4708,6 +4876,18 @@
    "summary": "Justiça autoriza recuperação judicial da BMG Foods &nbsp;&nbsp; The AgriBiz",
    "target": "pt",
    "title": "Justiça autoriza recuperação judicial da BMG Foods"
+  },
+  "20f09ca5fc7b737c11a1315a2e6b572bac01e89c6680caa2e5a38e7741dc8d29": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "No mês passado, a indústria global de ETF emendou o 86º mês consecutivo de entradas líquidas, marcando novos recordes em ativos e em fluxos acumulados. As preferências dos investidores voltaram-se para a renda variável.",
+   "target": "pt",
+   "title": "Investimentos: fundos ETF globais já superam os US$ 23 trilhões"
   },
   "20f88733df7e26d068f063fc57545abd2b717d064ba4e9b3d1d0ecb8dced61e0": {
    "cache_version": "tc.v1",
@@ -4973,6 +5153,18 @@
    "target": "pt",
    "title": "Reforma tributária de Galán continua sob a lupa: o que propõe e por que aumentam as pressões para retirá-la"
   },
+  "222c8267eae42015ddf9d06c73941d2190882579154981962a109dba5042d420": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "No Palácio Nacional iniciou-se uma busca detalhada e uma varredura completa de pessoas \"expostas\" que, por sua posição ou responsabilidade, pudessem estar mantendo conversas com autoridades norte-americanas.",
+   "target": "pt",
+   "title": "As \"toupeiras\" de Morena"
+  },
   "223c449dde78eef0d9f60148668649e3cddba59e44827d7bb2071894014187af": {
    "cache_version": "tc.v1",
    "created_at": 1786995337,
@@ -5141,6 +5333,18 @@
    "target": "pt",
    "title": "Vento de contestação contra o pedido de licença exclusiva de pesquisa geotérmica formulado pela Albioma"
   },
+  "234fb94c6f42119d28d1b589f6d95754b9506fdeed175a3a4d1cf652bb645a72": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "Ações do UnitedHealth Group despencam após relato de investigação de fraude no Medicare &nbsp;&nbsp; The Guardian",
+   "target": "pt",
+   "title": "Ações do UnitedHealth Group despencam após relato de investigação de fraude no Medicare"
+  },
   "235288bac66985b25a32765ca35d4d2751c074bf5ceb4190fa11dc56dc801d95": {
    "cache_version": "tc.v1",
    "created_at": 1787061154,
@@ -5188,6 +5392,18 @@
    "summary": "Banamex, BBVA, Banorte, HSBC: reportam novo modus operandi para roubar sua participação nos lucros &nbsp;&nbsp; La Silla Rota",
    "target": "pt",
    "title": "Banamex, BBVA, Banorte, HSBC: reportam novo modus operandi para roubar sua participação nos lucros"
+  },
+  "23d00d6fe8954def1a35ea39325b928f8a8df4def0334c40b2342aa3ff956b71": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Os indícios importam, e muito. Por isso surpreende que a oposição pareça empenhada em transformar cada novo elo em desfecho.",
+   "target": "pt",
+   "title": "O erro da oposição"
   },
   "23d7d5acc1bd534a991dc8f315fa4e536091be27044fb9bb680ef8b5806ebc3a": {
    "cache_version": "tc.v1",
@@ -5513,6 +5729,18 @@
    "target": "pt",
    "title": "Empresa salineira Multiexport Foods encerra com sucesso negociação coletiva antecipada"
   },
+  "2547e721a18aaf24188b90cb17a11550e3cfb70c8d5767ff644fe9be53550bb8": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "",
+   "target": "pt",
+   "title": "A quarta transformação continua"
+  },
   "2554f395616db17a629fa6324458ca43c01043086249ff52bb5fb91de9258d78": {
    "cache_version": "tc.v1",
    "created_at": 1787168217,
@@ -5740,6 +5968,18 @@
    "summary": "Fernando Salinas deixa a gerência-geral do Grupo Security em meio à fusão com o Bicecorp &nbsp;&nbsp; Diario Financiero",
    "target": "pt",
    "title": "Fernando Salinas deixa a gerência-geral do Grupo Security em meio à fusão com o Bicecorp"
+  },
+  "26da5bb415202af54bb60a5a8b17b67a90f731500f6faf435b859d19655fb757": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "O vice-ministro de Economia garantiu que o processo de desinflação continuará e afirmou que a aprovação da lei do BCRA provocará um \"choque de confiança\" na economia. Além disso, destacou o superávit fiscal e externo e sustentou que a mudança econômica da Argentina \"é permanente\".",
+   "target": "pt",
+   "title": "José Luis Daza garantiu que continuará a desaceleração de preços: \"A inflação para já não é um tema\""
   },
   "26f3f7cef3721537b394236fff4d4f5fd0edce2382ef4910e1abcfb143f6a039": {
    "cache_version": "tc.v1",
@@ -6292,6 +6532,18 @@
    "summary": "Um novo banco com mais de 2 milhões de clientes no Chile: as chaves da fusão do Grupo Security e do Bicecorp &nbsp;&nbsp; The Clinic",
    "target": "pt",
    "title": "Um novo banco com mais de 2 milhões de clientes no Chile: as chaves da fusão do Grupo Security e do Bicecorp"
+  },
+  "2a3fbd93ee337df546eb9f613ea0a995041bf646485e0fbba38c267756e4b424": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "Mercado de ações hoje: Dow, S&P 500, Nasdaq caem enquanto os rendimentos dos títulos se recuperam após intervenção do Tesouro, petróleo sobe"
   },
   "2a5a0fb91109bf8a9917a21529e039e1ed5cd73983c7dea5bdbd0f6a82196744": {
    "cache_version": "tc.v1",
@@ -7121,6 +7373,18 @@
    "target": "pt",
    "title": "Meu filho não trabalha, mas paga US$ 500 pelo seguro-saúde do ACA. Como isso é justo?"
   },
+  "308624fb5664f2dac857f1396d3a64f4561e30e3b4fbb98278b348772093faf2": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "Cargojet repassará grande aumento salarial de pilotos aos clientes"
+  },
   "308b5b8ec722df4db6129c8ce443972581fec7f7f326cd41daeca9dda8abe50a": {
    "cache_version": "tc.v1",
    "created_at": 1786705656,
@@ -7216,6 +7480,18 @@
    "summary": "Por que a Casas Bahia pediu recuperação judicial? Veja o que empresa diz &nbsp;&nbsp; CNN Brasil",
    "target": "pt",
    "title": "Por que a Casas Bahia pediu recuperação judicial? Veja o que empresa diz"
+  },
+  "3122c8141a911d594b1f227d91235332df64b6f57f37c171d1489b3d016d8dff": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Estes foram os temas mais relevantes da coletiva matinal de Claudia Sheinbaum neste 20 de agosto a partir do Palácio Nacional.",
+   "target": "pt",
+   "title": "Conferência 'mañanera' de Claudia Sheinbaum hoje 20 de agosto: Acompanhe aqui ao vivo"
   },
   "312f0a1fabe31b72cefa74120d74a204f90b109a9e3856419e975e78590b89af": {
    "cache_version": "tc.v1",
@@ -7684,6 +7960,18 @@
    "summary": "O atacadista voltou a $ 1.495 e o mercado acompanha de perto as intervenções do Banco Central e do Tesouro. A contrapartida aparece nas taxas de juros e em um ritmo menor de compra de reservas durante agosto.",
    "target": "pt",
    "title": "Dólar e barreira de $ 1.500: qual é a estratégia oficial que volta a tensionar as taxas e o mercado"
+  },
+  "33dc4ccbfb82aceba1e720d1faf0a88fa607edd9cb71d9e83230c781c4b68f1f": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "Dívida dos EUA ultrapassa US$ 40 trilhões. Como a disparada da dívida federal afeta você pessoalmente."
   },
   "33e3ac854bfb5640f1494e214ffe37c889f489324e70347e6a77f7cc4fa19108": {
    "cache_version": "tc.v1",
@@ -8273,6 +8561,18 @@
    "target": "pt",
    "title": "Truist expande recursos de open banking com o Plaid"
   },
+  "37d0db5ca6f84909d37f1a597b9969ffc7a3d2423e3ad941d71247ee203132bb": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "O endividamento americano acelera seu ritmo e volta a colocar no centro do debate o risco de uma crise fiscal.",
+   "target": "pt",
+   "title": "Mercados em alerta pela dívida dos EUA: alcançou recorde de US$ 40 trilhões e cresce o alarme pelo déficit e pelos juros"
+  },
   "381de4a2958d6d9d90f4f7b4ac4bf9f501513e67d21ecfb748ab66f5f8c3d564": {
    "cache_version": "tc.v1",
    "created_at": 1786984659,
@@ -8681,6 +8981,18 @@
    "target": "pt",
    "title": "Resultados do exame de admissão para o ensino médio da UNAM e do IPN: Passo a passo para consultá-los online"
   },
+  "3a3faea4aa282d3a3e0946bf4c8d4fc9a406dc262e1637e687912a0e70a974d6": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "Os estrategistas Jay Barry e Jason Hunter estão prevendo repercussões da medida do Tesouro que eles consideram nem sequer necessária.",
+   "target": "pt",
+   "title": "A blitz de recompra do Tesouro pode acabar elevando os rendimentos dos títulos, alerta o JPMorgan. Aqui estão seus conselhos para investidores."
+  },
   "3a46a0315b0f21ae2303649496383ec4d540250d54f0a0b988210136b13af4fa": {
    "cache_version": "tc.v1",
    "created_at": 1786737422,
@@ -9005,6 +9317,18 @@
    "target": "pt",
    "title": "Gestora SPX Capital negocia saída do Grupo Toky e sócio renuncia ao conselho"
   },
+  "3c12f03d7fe8997efe3838fd27ace00d393382a13bdeac6740dcb71ad7db7855": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Em seu discurso da semana passada, o secretário de Defesa Pete Hegseth equiparou os narcotraficantes ao ISIS ou à Al-Qaeda, grupos extremistas islâmicos que dominaram durante décadas as prioridades de segurança nacional dos Estados Unidos.",
+   "target": "pt",
+   "title": "Tropa dos EUA em países da AL"
+  },
   "3c22bca107dcf2aa399585f4aba5ac9e4594cd7fddd5c03b21f51cff648a3982": {
    "cache_version": "tc.v1",
    "created_at": 1786727058,
@@ -9137,6 +9461,18 @@
    "target": "pt",
    "title": "'Conclui-se um ciclo': Mónica Soto renuncia ao Tribunal Eleitoral; seu último dia será 31 de agosto"
   },
+  "3d2dde26a6e764806ede1f65e484387e6a2eed31fa523092ff522dad5a0d90fc": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234161,
+   "last_used_at": 1787234161,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "A recuperação dos títulos do Tesouro dos EUA de longo prazo perdeu força e os futuros das ações americanas operam sem uma tendência clara. O aumento do petróleo voltou a colocar os riscos inflacionários no radar dos investidores.",
+   "target": "pt",
+   "title": "Os futuros de Wall Street caem após uma nova baixa dos títulos do Tesouro e o repique do petróleo"
+  },
   "3d35b2025c7f88af85664e3620d4856a798b4cf2dd9a8aa7e42700e1ffbacda0": {
    "cache_version": "tc.v1",
    "created_at": 1786727142,
@@ -9148,6 +9484,18 @@
    "summary": "A divisa japonesa avançou impulsionada pela menor força do dólar após o relatório de trabalho estadunidense. Apesar do repunte, o mercado mantém a cautela diante da possibilidade de novas ações conjuntas de Tóquio e Washington.",
    "target": "pt",
    "title": "O iene reage após o fraco dado de emprego nos EUA e cresce a expectativa de uma nova intervenção"
+  },
+  "3daa253096d29a964e21101a3a0facd6188d9d8515f88b3b1d76711aa1d7a36b": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "O projeto busca aproximar cidadãos e visitantes da história, da arquitetura e da paisagem de Bogotá.",
+   "target": "pt",
+   "title": "Atrio soma um novo inquilino de grande formato: Poin ocupará 1.478 m2 com abertura prevista para 2027"
   },
   "3daa812b468a64fdcf006143da96bf04f3d16d961e8d99c3a75feb25d11f5655": {
    "cache_version": "tc.v1",
@@ -9461,6 +9809,18 @@
    "target": "pt",
    "title": "Raia Drogasil anuncia aquisições da Amplimed, Labi e Conecta Lá"
   },
+  "4091bb810ea9cb884ab852cf686e7383d78b8252789d6465233e87b0639be10f": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234161,
+   "last_used_at": 1787234161,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Conheça as cotações do dólar blue, o oficial, o MEP e o CCL.",
+   "target": "pt",
+   "title": "Dólar blue hoje: a quanto opera nesta quinta-feira, 20 de agosto"
+  },
   "40b92efb82cfbe2d256816f584692ccb5229282afc22b23d15acd2bfb2487b9c": {
    "cache_version": "tc.v1",
    "created_at": 1786705488,
@@ -9520,6 +9880,18 @@
    "summary": "",
    "target": "pt",
    "title": "Quanto o SEO realmente custa — e quando você está pagando caro demais"
+  },
+  "40dd5a63df667ce0baa505c87ae015e3782d2b0ed21d95cc035110a51649f89b": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "El Niño aumenta riscos de inflação, diz Morgan Stanley &nbsp;&nbsp; Valor International",
+   "target": "pt",
+   "title": "El Niño aumenta riscos de inflação, diz Morgan Stanley"
   },
   "40fb2b5a885856d9089beec63ae8f2bc77b99774f7077e4b58b0a050ba688501": {
    "cache_version": "tc.v1",
@@ -9604,6 +9976,18 @@
    "summary": "",
    "target": "pt",
    "title": "A sequência de 50 anos de dividendos da Stanley Black & Decker (NYSE:SWK) é difícil de ignorar"
+  },
+  "41db6c5e42cb9b71c38804867dcec4d9fd605b4a10c77b0818ffff18d0551475": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "A diretoria do Banco Central acredita que o sistema bancário é um \"conjunto vazio\" se acumula dólares em depósitos e não pode emprestá-los.",
+   "target": "pt",
+   "title": "Créditos em dólares: o BCRA deixa as portas abertas para estender os empréstimos a pessoas, embora com advertências"
   },
   "41e990f44f628a612409828b2ad58daae417d05f56ee1e3dc6e705bb339f1579": {
    "cache_version": "tc.v1",
@@ -11405,6 +11789,18 @@
    "target": "pt",
    "title": "BBVA lucra $769.000 milhões na Colômbia e assina o melhor primeiro semestre de sua história recente"
   },
+  "4eb28ade9fe3c69a961df05cfb29681336d00f3f322ee4647660ba1d2a73ab4e": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "Morgan Stanley lança iniciativa de inovação de US$ 1,5 tri nos EUA; bancos chineses buscam descarregar US$ 8,2 bi em dívidas caloteadas de cartão de crédito &nbsp;&nbsp; TheBanker.com",
+   "target": "pt",
+   "title": "Morgan Stanley lança iniciativa de inovação de US$ 1,5 tri nos EUA; bancos chineses buscam descarregar US$ 8,2 bi em dívidas caloteadas de cartão de crédito"
+  },
   "4ed4328500164168445bd9778c2e5a6742738aef58f53aa6fe0f4dce1eff8a2d": {
    "cache_version": "tc.v1",
    "created_at": 1786727047,
@@ -11956,6 +12352,18 @@
    "summary": "",
    "target": "pt",
    "title": "Wall Street abre em baixa antes do anúncio do Fed: Como opera HOJE?"
+  },
+  "5348d5aaeba6b0e8de3bdf7d7234e319ce9d7c99d0b2a94a9e457db8a624fe60": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "Jovens chineses estão alugando câmeras, drones e equipamentos de camping em vez de comprá-los. É uma maneira inteligente de economizar dinheiro — mas também o mais recente desafio ao esforço de Pequim para fazer os consumidores gastarem.",
+   "target": "pt",
+   "title": "Uma câmera de US$ 420 por US$ 10: os jovens consumidores da China preferem alugar a comprar. É um problema para o governo e para a economia."
   },
   "5350c26a62e9c9037168efdc7b538277730840cea16a245fafe1737f31c67193": {
    "cache_version": "tc.v1",
@@ -13492,6 +13900,18 @@
    "summary": "",
    "target": "pt",
    "title": "Bank of America diz que o boom de memória de IA não acabou: por que vê os lucros da Micron disparando 34% ao ano"
+  },
+  "5f832f702ba24b82a7e58f74e31562e867f724707373d410e6fb86c06ffdfe7a": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234161,
+   "last_used_at": 1787234161,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Embora seja mencionada a próxima segunda-feira, outras fontes apontam 1º de setembro como a nova data-alvo. A desaceleração do crescimento e o aumento de custos afetam o interesse dos investidores.",
+   "target": "pt",
+   "title": "Dúvidas sobre a estreia da Shein na bolsa: pode atrasar até 1º de setembro"
   },
   "5f8fabc308e39ea2a7b5f8b92eaa31b20468ce6403ab6301542857106d16011d": {
    "cache_version": "tc.v1",
@@ -15245,6 +15665,18 @@
    "target": "pt",
    "title": "NextEra Energy — 8-K: FORM 8-K (itens 1.01,7.01,9.01)"
   },
+  "6aebff394735123847e34c3fcc7b451fddc9bb2ecb1c0e89e1f30522e434b09b": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "Preços do bitcoin e ethereum hoje, quarta-feira, 19 de agosto de 2026: Preços das criptomoedas sobem após SEC anunciar proposta de regulamentação"
+  },
   "6b1de740e6e450aa50e6c793daaa6e3c650468d1f976cdd996a6327e7cf09daa": {
    "cache_version": "tc.v1",
    "created_at": 1786727088,
@@ -16889,6 +17321,18 @@
    "target": "pt",
    "title": "Shein faz sua estreia na bolsa: do boom à avaliação em US$ 25 bilhões"
   },
+  "753715ed3d7e956e0a20dcc1016cc6ae98ca30170b84cfba147172f0be362b83": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Um porta-voz garantiu que Zuckerberg e sua família estarão encantados em continuar com o cuidado da histórica propriedade.",
+   "target": "pt",
+   "title": "Mark Zuckerberg compra o castelo de Strancally na Irlanda, onde a Meta tem sua sede internacional"
+  },
   "7581bf147d1d4e15f12407cadcb7848bbeced9ace12ba1d1ebb5eb49437820c0": {
    "cache_version": "tc.v1",
    "created_at": 1786705761,
@@ -17069,6 +17513,18 @@
    "target": "pt",
    "title": "ChatGPT discorda de Michael Burry sobre a Nebius (NBIS)"
   },
+  "770a2df55b25f6584dd44b69a068ff8975066a7b4f06724005389449b691a4d5": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Ormuz, Taiwan e Panamá mostram como as rotas estratégicas se tornaram espaços-chave de disputa geopolítica.",
+   "target": "pt",
+   "title": "A geopolítica das rotas"
+  },
   "771387f84391f85349fd2be4359dcca635a8bf6c99eae78d00f01dd00f4ed570": {
    "cache_version": "tc.v1",
    "created_at": 1786984659,
@@ -17080,6 +17536,18 @@
    "summary": "",
    "target": "pt",
    "title": "Preços do bitcoin e ethereum hoje, segunda-feira, 17 de agosto de 2026: Preços das criptomoedas em leve baixa enquanto analistas questionam o timing do fundo do mercado de baixa"
+  },
+  "77305b24269d355cbbfe2e9f7615f06ea8781c9d2ea5328d1a94e9f74e202ad0": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "PRH recua levemente enquanto detentores de títulos pesam taxas de juros e dinâmica de crédito - Notícias de Sentimento &nbsp;&nbsp; Vinanet",
+   "target": "pt",
+   "title": "PRH recua levemente enquanto detentores de títulos pesam taxas de juros e dinâmica de crédito - Notícias de Sentimento"
   },
   "7748d8344c4cc0194eea209d3e11a44b7f0a24f0fc862eaa14aaf058dc6dc1b1": {
    "cache_version": "tc.v1",
@@ -17909,6 +18377,18 @@
    "target": "pt",
    "title": "Melhores taxas de juros de contas poupança de alto rendimento hoje, terça-feira, 18 de agosto de 2026: ganhe até 4,15% de APY"
   },
+  "7e6b960b9183e78a6625f4abdc306be114a5bd1fff39a5811e6c268af2b3b44b": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "CVC aprofunda aposta em seguros com parceria com a Standard Life"
+  },
   "7e70c20d132eae8b425640b68c04b59ec0fb1c270e85a332a9a37bead1903bbe": {
    "cache_version": "tc.v1",
    "created_at": 1786727068,
@@ -18316,6 +18796,18 @@
    "summary": "Concessionária falida de St. Louis fecha após a Ford cortar o dinheiro &nbsp;&nbsp; The Business Journals",
    "target": "pt",
    "title": "Concessionária fal ಸದida de St. Louis fecha após a Ford cortar o dinheiro"
+  },
+  "8162a239a0a56d864f74129c7db151e19d1a906d03bf85cdf9924c697d76e238": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Fiscalía Nacional Económica inicia primeira fase de investigação na fusão de Bicecorp e Grupo Security &nbsp;&nbsp; La Tercera",
+   "target": "pt",
+   "title": "Fiscalía Nacional Económica inicia primeira fase de investigação na fusão de Bicecorp e Grupo Security"
   },
   "8163344a286b96d0eb5eac594e38bd07cf2a603ea4ba836cd3dc2c1a686b85ed": {
    "cache_version": "tc.v1",
@@ -19265,6 +19757,18 @@
    "target": "pt",
    "title": "Motiva capta R$ 1,8 bi em debêntures para Linha 4-Amarela em SP"
   },
+  "87317042af714f3d2853680097690c64ba808fcfb652b8d4eeb97dc0fdca81b8": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Na abertura do Council 2026, o presidente da Câmara Argentina de Comércio e Serviços reconheceu que \"há empresas que fecharam e postos de trabalho foram perdidos\", mas sustentou que os custos do processo são necessários para transformar a Argentina e alcançar um país \"normal e crível\".",
+   "target": "pt",
+   "title": "Mario Grinman falou sobre a atividade econômica: \"As mudanças implicam sacrifícios\""
+  },
   "8734a0ae1b9095633e1348d07f91484f3a2779789857cf072322456939bb19d1": {
    "cache_version": "tc.v1",
    "created_at": 1786948747,
@@ -19385,6 +19889,18 @@
    "target": "pt",
    "title": "O que é recuperação judicial? Entenda o recurso pedido pela Casas Bahia"
   },
+  "8897e10aeeb8bcf35938e291fa6121aa106c9faf06c2f142ca586ed1d380afe3": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "",
+   "target": "pt",
+   "title": "SANTAS BATI-ESTRELAS!..."
+  },
   "88983007fc384971f36eddb3d0680dbac045569f73a74b7b3e26c485a099baf7": {
    "cache_version": "tc.v1",
    "created_at": 1786727088,
@@ -19408,6 +19924,18 @@
    "summary": "O amargo império do Grupo Gloria &nbsp;&nbsp; connectas.org",
    "target": "pt",
    "title": "O amargo império do Grupo Gloria"
+  },
+  "88dd82821c39206ab1167a85d632f848729974db230e97f0c0469d005df20d28": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "Sob pressão: Monitorando a dor na dívida pública do G7"
   },
   "88ecc271da5fc5bed9c6374fee0eab403e5d455e19fc9ee6641dd783ad723225": {
    "cache_version": "tc.v1",
@@ -19745,6 +20273,18 @@
    "target": "pt",
    "title": "UnitedHealth vende US$ 9 bilhões em títulos para financiar M&A"
   },
+  "8b497ebe3f022164b94c7740a9eb592419454503c50052253582c4b273d4f7f8": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "A decisão de primeira instância vincula outras 12 entidades ao pagamento de recursos por dano à saúde.",
+   "target": "pt",
+   "title": "Cementos Argos apelará de decisão que ordena indenização por supostos danos ambientais em Cartagena"
+  },
   "8b53bf2eb950ded2c46a6c120bf2fe323c77b2d7ffdd8f06bd7e891f80ba67f3": {
    "cache_version": "tc.v1",
    "created_at": 1786727037,
@@ -19984,6 +20524,18 @@
    "summary": "UnitedHealth compra a Amedisys por US$ 3,3 bilhões enquanto empresa de saúde domiciliar desiste de acordo com a Option &nbsp;&nbsp; Reuters",
    "target": "pt",
    "title": "UnitedHealth compra a Amedisys por US$ 3,3 bilhões enquanto empresa de saúde domiciliar desiste de acordo com a Option"
+  },
+  "8d35192ae3ced6f62e46b07c48995856b953f6b3bad99968553f32068553a2c5": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "Médicos entram em conflito com a Cigna por causa de nova política que pode cortar reembolsos &nbsp;&nbsp; STAT",
+   "target": "pt",
+   "title": "Médicos entram em conflito com a Cigna por causa de nova política que pode cortar reembolsos"
   },
   "8d6d41c9894b887e4ce7211011d93fc70164add46dfc52293fe22fade563e653": {
    "cache_version": "tc.v1",
@@ -20333,6 +20885,18 @@
    "target": "pt",
    "title": "Gonzalo Rodríguez, da LarrainVial: “Fomos depor (na CMF) como foram outros fundos que também compravam faturas da Factop”"
   },
+  "8fe4521bea7302d97966b0f413deb0ec52d25ad2af46c8e1e483135866c94bac": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "A medida cobriria Caixas com presença em Valle del Cauca, Chocó, Risaralda e Caldas após a emergência.",
+   "target": "pt",
+   "title": "Caixas de Compensação afetadas pelo sismo pedem alívios temporários em trâmites administrativos"
+  },
   "8ffec3cc67864c3b61b0ce6ea19908931203c22b652e84ba01a2713f0d35c2a1": {
    "cache_version": "tc.v1",
    "created_at": 1786727027,
@@ -20537,6 +21101,18 @@
    "target": "pt",
    "title": "DeepSeek eleva preços de seus modelos de IA antes de sua oferta pública de ações"
   },
+  "9188c5ce93c519b201632dda68ca196a2199474abd76d5ec4ed5e1ce67b547b4": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Segundo relatório, um único evento chegou a representar perdas próximas a $300 milhões para uma empresa.",
+   "target": "pt",
+   "title": "Furto contra empresas cresceu 16,5% na Colômbia e gerou perdas de mais de $5.572 milhões no primeiro semestre"
+  },
   "91c654d9964bf23a7b6bc516f74d4b6ff93da86b28f469aaef5b548c247be1c9": {
    "cache_version": "tc.v1",
    "created_at": 1787222444,
@@ -20560,6 +21136,18 @@
    "summary": "A Procuradoria solicitou a suspensão do contrato por quase 293 bilhões de pesos após encontrar falhas nos suportes.",
    "target": "pt",
    "title": "Procuradoria pede para suspender licitação de 292,914 bilhões de pesos para remodelar o San Juan de Dios"
+  },
+  "91d74c8aba500d188b31d343185756d8c6a9f8d1e58dc22851310b4f08a58292": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "A EQT (EQT) poderia ser uma grande vencedora da demanda de energia de GNL e data centers?"
   },
   "91dac2900ec44c5e6c632e5fc968ecf144e157ff19a214c60010165320a6f976": {
    "cache_version": "tc.v1",
@@ -21353,6 +21941,18 @@
    "target": "pt",
    "title": "Prioridades orçamentárias: fatos são amores"
   },
+  "986ec1f90927f30ee51667f1ee825821e51f93b9204be54283c31613727771ab": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "Bank of America envia mensagem sobre as ações da Capital One"
+  },
   "986ed201bc69b4ac84173457e92c1f3c50a6bd010ec4a75737e01cd0b7dcda95": {
    "cache_version": "tc.v1",
    "created_at": 1786717254,
@@ -21832,6 +22432,18 @@
    "summary": "",
    "target": "pt",
    "title": "Elon Musk acabou de proferir 3 palavras massivamente otimistas para Micron, Sandisk e SK Hynix"
+  },
+  "9c339b680430d19eef2cd120d3295552d1fcd3de6d651dddb85620da2a3657cb": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234161,
+   "last_used_at": 1787234161,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "A acumulação de reservas desacelerou em agosto, com compras diárias de US$ 33 milhões, em um contexto de tensão nas taxas de juros.",
+   "target": "pt",
+   "title": "O dólar atacadista cota perto dos $1.500 e o Governo mantém a intervenção sobre a taxa de câmbio"
   },
   "9c402f45b24e1e1279a2a7935239982a08f6e91d4640031eb8677c5d5bc2af43": {
    "cache_version": "tc.v1",
@@ -22397,6 +23009,18 @@
    "target": "pt",
    "title": "A Liga MX está de volta! Onde e a quais horas assistir AO VIVO aos jogos da Rodada 4 do Abertura 2026?"
   },
+  "9f7dd54b0773a75fe78f05e21bef08ee725161f083647fa77e915a5eb37c82bb": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "O presidente Donald Trump disse em uma postagem no Truth Social que qualquer país que apoiasse a economia do Irã enfrentaria “consequências econômicas tremendas”.",
+   "target": "pt",
+   "title": "Preços do petróleo sobem após Trump declarar guerra econômica ao Irã"
+  },
   "9f9e2a7a3fd849e176fb42f793687ec91a84d9609f327d3568a7c073977a4d96": {
    "cache_version": "tc.v1",
    "created_at": 1786984678,
@@ -22912,6 +23536,18 @@
    "summary": "",
    "target": "pt",
    "title": "Qual é o preço-alvo dos analistas de Wall Street para as ações da Edison International?"
+  },
+  "a2d22ba188ef624d8e2e9411ff7c33fe1e54726ba14e5a878f5d1cece80623b8": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "O economista descartou complicações severas do dólar com vistas a 2027, mas advertiu que a tensão cambial responde à falta de aceitabilidade do peso como moeda. Seu diagnóstico mais duro: o Governo enfrenta quatro metas incompatíveis.",
+   "target": "pt",
+   "title": "Dólar sob pressão: Carlos Melconian explicou por que ele não disparou, mas tampouco gera confiança"
   },
   "a2ea84e427e6bd5613f1e4b31132b46476a1f1a30ef4cea4687adda8a5c6f79a": {
    "cache_version": "tc.v1",
@@ -23837,6 +24473,18 @@
    "target": "pt",
    "title": "CVS Pharmacy conclui aquisição de ativos da Rite Aid em todo o país"
   },
+  "a95b7a70304da78d2e6ba509e7454b2356218ec5f381a243805388b05630af23": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "Sony Life enfrenta dezenas de casos suspeitos de fraude contra clientes &nbsp;&nbsp; Nikkei Asia",
+   "target": "pt",
+   "title": "Sony Life enfrenta dezenas de casos suspeitos de fraude contra clientes"
+  },
   "a96bf483cec5da8d5decc40b05328f9b00f41b26796941b1dac19a9261ae488a": {
    "cache_version": "tc.v1",
    "created_at": 1787222434,
@@ -24016,6 +24664,18 @@
    "summary": "Lançamento das Contas Trump: O que são e como se qualificar? &nbsp;&nbsp; WFTV",
    "target": "pt",
    "title": "Lançamento das Contas Trump: O que são e como se qualificar?"
+  },
+  "aabe325b23594194ffa3e390f766035e7c046cca46b9e38f89b478c842db8cbc": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Em julho de 2025 estabeleceu-se uma rota para simplificar, homologar e digitalizar trâmites; o prazo para sua implementação municipal tinha como referência janeiro de 2026 e o objetivo era claro, combater a burocracia, mas a maior parte dos municípios ainda não terminou de cumpri-la.",
+   "target": "pt",
+   "title": "Um ano da lei e trâmites demais continuam no papel"
   },
   "aabec386fd330f0d9e32ef8da75fc8ebbe3de3489cf0997d452fba7a7b05881a": {
    "cache_version": "tc.v1",
@@ -25145,6 +25805,18 @@
    "target": "pt",
    "title": "Suprema Corte dos EUA Atualiza a Presunção de Confiança de Basic Inc. v. Levinson para Moções de Certificação de Classe em Halliburton Co. v. Erica P. John Fund, Inc."
   },
+  "b216a8d29c7202629f7494803e3b6fb6115e2bc024610efa7ce5b1e83a40b214": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Acredito que um fator que explica o comportamento diferenciado do peso é o fato de que os mercados percebem que, em um mundo de maior protecionismo e apesar da retórica, o México conserva um bom acesso para exportar bens para o mercado americano.",
+   "target": "pt",
+   "title": "¿O que explica a força do peso?"
+  },
   "b21fd1632a0b8a365ac3c4a0e6808faa0ac4c1ace3fdd943119310e313b66259": {
    "cache_version": "tc.v1",
    "created_at": 1786737350,
@@ -25409,6 +26081,18 @@
    "target": "pt",
    "title": "Dois lotes que a Argos cedeu como áreas verdes em Puerto Colombia acabaram em mãos privadas"
   },
+  "b41b4c1f817a7bea889f3d27523d99c066c0c55a5d1763097a2df9c38878ac8c": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Esqueça o absurdo dos 15% mensais, isto não é sobre dinheiro, mas sobre o coração. É fácil explicar por que um rendimento assim é impossível, o importante seria entender como decidi acreditar que não era.",
+   "target": "pt",
+   "title": "Se é bom demais para ser verdade, é bom demais para ser verdade"
+  },
   "b4209408a7d892adf25727481f6544607095e3b99fe8ac6c4f0889af1cd3682f": {
    "cache_version": "tc.v1",
    "created_at": 1786705477,
@@ -25444,6 +26128,18 @@
    "summary": "A queda do petróleo e um fraco relatório de trabalho aliviaram a pressão sobre os títulos e reimpulsionaram as ações norte-americanas. O mercado aposta em um entendimento com Teerã que permita reabrir o Estreito de Ormuz.",
    "target": "pt",
    "title": "Wall Street retoma o caminho dos recordes enquanto Donald Trump e Scott Bessent prometem um acordo com o Irã \"em um dia ou dois\""
+  },
+  "b46fcd4773fc7ff1f085dbd21b8488a94d8a75fb1ddf90b9956117190e42100b": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "Aperto estrutural da oferta impulsiona tese de alta plurianual para a Alcoa Corp. (AA)"
   },
   "b482b5d270e6860313134775e23b3052e68115af80abf35baac2092ecc984d98": {
    "cache_version": "tc.v1",
@@ -25829,6 +26525,18 @@
    "target": "pt",
    "title": "Probabilidades de o Fed subir as taxas em setembro despencam após grande queda nos empregos de julho"
   },
+  "b8195c7e9bba8e4d5fe4973ff3c55161d495eaa869ba6b54c60f52a73754a782": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "Melhores cartões de crédito para restaurantes (agosto de 2026)"
+  },
   "b8565737d10d35428f087c80f78e7687930fb42f2ae699f69fde50bd145d0e73": {
    "cache_version": "tc.v1",
    "created_at": 1786984669,
@@ -25972,6 +26680,18 @@
    "summary": "Energia verde: Albioma adquire a Fazenda Solar de Corossony &nbsp;&nbsp; mesinfos",
    "target": "pt",
    "title": "Energia verde: Albioma adquire a Fazenda Solar de Corossony"
+  },
+  "b8fb44891ba94efa41d19840275437092f928d80b00cea8cdf5975ba339de0d4": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Autoridades confirmaram a detenção de três criminosos, que se somam aos nove presos mais cedo após uma operação em Michoacán.",
+   "target": "pt",
+   "title": "Bloqueios em Michoacán: Há 12 detidos após operação em que prenderam companheira do ‘Tío Lako’"
   },
   "b904791dd96b64d77d4bd1c856db7f6ae1d191cfbac6c3db922a17e73af357b6": {
    "cache_version": "tc.v1",
@@ -26140,6 +26860,18 @@
    "summary": "Os investidores precisam depositar montantes milionários em agosto para conseguir rendimentos altos durante o nono mês do ano. Conheça os detalhes.",
    "target": "pt",
    "title": "Prazo fixo: quanto tenho que investir para gerar $ 500.000 em setembro de 2026"
+  },
+  "ba6ad4df344c8415d9e4e4533c8725b1c3e5bc5b926826e8817e9e7ce8870dea": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "A carteira de pedidos recorde da AECOM (ACM) colide com uma despesa custosa"
   },
   "ba8aca509f283816288c5ba05e2df820605a6ad8c214401909229c7f18b4c874": {
    "cache_version": "tc.v1",
@@ -27425,6 +28157,18 @@
    "target": "pt",
    "title": "Banamex, BBVA México, Banco Azteca, Santander e mais bancos mudam requisito para depositar ou sacar dinheiro em espécie"
   },
+  "c2e18f6660f90ca646bb220af9587e13eecbcbdee7fd8810189ab46942cd5a29": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "EQT anuncia transação transformadora com a Alta Resources &nbsp;&nbsp; PR Newswire",
+   "target": "pt",
+   "title": "EQT anuncia transação transformadora com a Alta Resources"
+  },
   "c2e29169bd225d1d7b28926b022e25253905dcf3207e715bf949fa0379b5996c": {
    "cache_version": "tc.v1",
    "created_at": 1787135920,
@@ -28373,6 +29117,18 @@
    "target": "pt",
    "title": "Jovens americanos esperam herdar dinheiro e ativos, mas isso pode não ser a realidade"
   },
+  "c8fb99f720a51a61a8f7722e9d35ee0be2b640ebf2ee55787828d66a74dbe6c3": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Um dos principais motores está fora do México, já que o dólar perdeu força frente a diferentes moedas, devido às expectativas sobre a política monetária do Federal Reserve, à evolução da economia americana e a uma menor demanda por ativos de refúgio.",
+   "target": "pt",
+   "title": "Super peso: novo equilíbrio ou uma apreciação passageira?"
+  },
   "c8fd2cecf19154e1bd24433b3d576de7f6f615a82463958a9da1435e69d1ece0": {
    "cache_version": "tc.v1",
    "created_at": 1786717342,
@@ -29225,6 +29981,18 @@
    "target": "pt",
    "title": "Salmones Camanchaca quase dobra lucros no exercício"
   },
+  "cf4f23179436ce5c46e6095d9ce62f2bf2d9e052752943b879b6884715178daa": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "Qual é uma boa taxa de juros de conta poupança em 2026?"
+  },
   "cf73c71f733bdefa8b2fe385c68c455e26b07ddebf34b038555a172c8ea20118": {
    "cache_version": "tc.v1",
    "created_at": 1786705769,
@@ -29765,6 +30533,18 @@
    "target": "pt",
    "title": "Após 17 anos de sofrimento, vítimas do socorro financeiro ('bailout') da GM merecem justiça"
   },
+  "d30bdd0244904f8ff8a84d6a59096aee77e7ec19978920659de90b26d34de7f1": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "Por que a Capital One (COF) pode ver tanto o crescimento de lucros quanto a expansão de múltiplos?"
+  },
   "d327f5ba812ad63c36bcdbfc50cb7dbef10f3c55dfc6b0c0041851c9e0d498d1": {
    "cache_version": "tc.v1",
    "created_at": 1786727000,
@@ -30041,6 +30821,18 @@
    "target": "pt",
    "title": "Nova previsão para o dólar: a quanto cotará no fim do ano, segundo bancos e consultorias"
   },
+  "d4c47ecff732e39414bc7cf247156e58d819a184b1e38cd3992da1d06eb1e865": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "ACV Auctions (ACVA) registra receita recorde e crescimento de EBITDA com o enfraquecimento do mercado"
+  },
   "d4d6e2ed55724bf6734a8c30132ee2175ba3c660c8a566e0efc90b2ba1a6f0f4": {
    "cache_version": "tc.v1",
    "created_at": 1786974405,
@@ -30100,6 +30892,18 @@
    "summary": "A contribuição pode ser feita na declaração de imposto de renda, não afeta benefícios e teria descontos tributários em 2027.",
    "target": "pt",
    "title": "A DIAN convida sete milhões de contribuintes declarantes a doar para atender às áreas afetadas pelo terremoto desta semana"
+  },
+  "d509ec390e2110b852cbb5cb085bfa10e8eea7bf04c1818eed2e344a963ae357": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "VillageMD adquire Summit Health-CityMD, criando um dos maiores grupos de fornecedores independentes nos EUA &nbsp;&nbsp; The Cigna Group Newsroom",
+   "target": "pt",
+   "title": "VillageMD adquire Summit Health-CityMD, criando um dos maiores grupos de fornecedores independentes nos EUA"
   },
   "d50f7630302ad395eed684dcd3980d92c25b49456064a222f7d62500de54a771": {
    "cache_version": "tc.v1",
@@ -30425,6 +31229,18 @@
    "target": "pt",
    "title": "Crescimento de fibra colide com pressão de receita legada na Telephone & Data Systems (TDS)"
   },
+  "d7be0f6178a869b76f53136b8ba6b69686cfd8709aaaa6123d6d6ac69b4f5465": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "Broadcom se mantém firme enquanto ARK compra na baixa, Intel cai, AMD recua após acordo de chip da Marvell do Google"
+  },
   "d7becf276680bb21791eaa6576f7f1f70e8102084b824772a62777599c1bc29b": {
    "cache_version": "tc.v1",
    "created_at": 1786974394,
@@ -30532,6 +31348,18 @@
    "summary": "Indecopi multa Yura e empresa vinculada por práticas que limitaram a concorrência no sul &nbsp;&nbsp; revistaganamas.com.pe",
    "target": "pt",
    "title": "Indecopi multa Yura e empresa vinculada por práticas que limitaram a concorrência no sul"
+  },
+  "d85dbd720b923b7a3ec488c85ce52fe6f6ef179489e8c3744b9edb2603ed1332": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "Ações de tecnologia hoje: Crescimento da OpenAI decepciona, resultados da Nvidia fornecem o próximo teste para o comércio de IA"
   },
   "d86890915f8b6e9a4d7f3db7d524a30823c756e6c63c8313bde2417f0d5465d6": {
    "cache_version": "tc.v1",
@@ -31024,6 +31852,18 @@
    "summary": "Fitch Ratings eleva classificação de inadimplência de emissor de prazo para British American Tobacco (BTI) &nbsp;&nbsp; finance.yahoo.com",
    "target": "pt",
    "title": "Fitch Ratings eleva classificação de inadimplência de emissor de prazo para British American Tobacco (BTI)"
+  },
+  "dbd62009281bd79548605c024e785804811a8b4f50d50c153f180d22be16ec1f": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "A CNIH busca incorporar mais empresas mexicanas como fornecedoras de matérias-primas, químicos, compostos, pigmentos, aditivos, polímeros, borracha natural e sintética, maquinário, tecnologia e serviços especializados.",
+   "target": "pt",
+   "title": "A borracha mexicana"
   },
   "dbed5a2c4590aae8f0dcad8c390b91356edac7aa198128072cb75a53713d1454": {
    "cache_version": "tc.v1",
@@ -32129,6 +32969,18 @@
    "target": "pt",
    "title": "Os melhores cartões de crédito para agosto: Veja nossas escolhas para os melhores cartões de cashback, recompensas, viagens e mais"
   },
+  "e42ad9243ec7bdccaf5b3a77fc6d45fa71d292c9f4eb17d530355918f6e20b97": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "A Taxa Representativa do Mercado deste dia é de $3.053,48.",
+   "target": "pt",
+   "title": "Dólar hoje na Colômbia despenca e fica perto dos $3.000: assim está a divisa neste 20 de agosto"
+  },
   "e42c7f188040eb6ffb4c4f64c1a8fd815ab6fb0e8f6864327020b9e6558a0767": {
    "cache_version": "tc.v1",
    "created_at": 1786963239,
@@ -32140,6 +32992,18 @@
    "summary": "",
    "target": "pt",
    "title": "Quanto você realmente precisa ter investido para substituir um salário de US$ 75.000 com dividendos?"
+  },
+  "e453595c4eb03ea46783734b52bd3f0f23cc4268e9392b3c1f6f6e3a83097cf1": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "À medida que novos formandos universitários enfrentam taxas elevadas de desemprego, a preocupação com o impacto da IA nos empregos está disparando entre os jovens americanos.",
+   "target": "pt",
+   "title": "A maior parte da Geração Z agora tem medo de que a IA roube seus empregos."
   },
   "e46490b6613afa9b220e16cc65d5fcd6e9b7d5f4cc8264e4ed26dc98ed8db6b2": {
    "cache_version": "tc.v1",
@@ -32248,6 +33112,30 @@
    "summary": "Bci pede a falência de conhecida rede de academias no Chile: acusam inadimplências milionárias &nbsp;&nbsp; ADN Radio",
    "target": "pt",
    "title": "Bci pede a falência de conhecida rede de academias no Chile: acusam inadimplências milionárias"
+  },
+  "e59bda36969c496cad1e49fd3da11bf33c8c070a4f046a5d8ac0d7730cb739ac": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Os milhões que o MercadoLibre investiu para ficar com o nome de um estádio no Brasil &nbsp;&nbsp; Bloomberg Línea",
+   "target": "pt",
+   "title": "Os milhões que o MercadoLibre investiu para ficar com o nome de um estádio no Brasil"
+  },
+  "e59cf014eb47ad570d4fe1f5ba3a3d640ca4c5e30c6de37373a79e053a4583de": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "A presidente Sheinbaum tem rejeitado reiteradamente que exista qualquer intenção de censurar e seu governo assegura que a autoridade não determinará qual informação é verdadeira nem sancionará conteúdos jornalísticos.",
+   "target": "pt",
+   "title": "Termina a farsa, vem a censura"
   },
   "e5b2d8277fddf144e83884e65824885f368a5ddc11212610e049baef6f319edf": {
    "cache_version": "tc.v1",
@@ -32393,6 +33281,18 @@
    "target": "pt",
    "title": "Aqui está o verdadeiro motivo pelo qual os preços do petróleo não estão subindo"
   },
+  "e6b4e904e84a90847f3441131c93b3fa94ed7cc9bf451a826177a8f1c0d20bea": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Os governos da Colômbia e de Israel acordaram restabelecer a isenção de visto para os cidadãos de ambos os países.",
+   "target": "pt",
+   "title": "Colombianos já não precisarão de visto para viajar a Israel a partir desta data"
+  },
   "e6bf24184294e669b452d0627ca42c56d521844c38d16b5f13858cac83e1229f": {
    "cache_version": "tc.v1",
    "created_at": 1786705623,
@@ -32512,6 +33412,18 @@
    "summary": "Academia de Ciências pede a Antioquia salvar o centro que a Nutresa, de Gilinski, fechou &nbsp;&nbsp; El Espectador",
    "target": "pt",
    "title": "Academia de Ciências pede a Antioquia salvar o centro que a Nutresa, de Gilinski, fechou"
+  },
+  "e755806d9eabfb6d4dc41389c239eef4daba4173a0de4fb3a22aeedf817f9912": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Os doadores podem enviar insumos sem limites de valor nem de quantidade para apoiar a população afetada.",
+   "target": "pt",
+   "title": "Governo facilita a entrada de doações estrangeiras mediante a eliminação total de taxas aduaneiras"
   },
   "e7607150ff11ef8701a15b052cfe3e0f44f59180d0c37b94f730707ff1b16f25": {
    "cache_version": "tc.v1",
@@ -32693,6 +33605,18 @@
    "target": "pt",
    "title": "CVS Pharmacy Conclui Aquisição de Localizações Selecionadas da Rite Aid"
   },
+  "e86bf4bc8065a4b8f23cef25b3b12b73720f0014cfe4e1aa418d71918b0647aa": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234161,
+   "last_used_at": 1787234161,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Restaurantes, bares, táxis e hotéis seguem regras diferentes que é preciso conhecer antes de pagar para evitar erros ou gastos desnecessários.",
+   "target": "pt",
+   "title": "Gorjetas nos Estados Unidos: costumes e valores sugeridos para não gastar dólares a mais"
+  },
   "e8a0bc4bfd5d96ff7433b5ce9c67b04963955392d39467b743bef6af2887bec6": {
    "cache_version": "tc.v1",
    "created_at": 1786737412,
@@ -32849,6 +33773,18 @@
    "target": "pt",
    "title": "Irã fecha as portas para os EUA: Advertência de que impedirá a entrada no Golfo Pérsico, Ormuz e no Mar de Omã"
   },
+  "ea06724c4043ad9b8107d41860d297f765a3aa98a4f74d15e2a905c972dc783d": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Antes de que em 2018 o primeiro governo de Trump impusesse as tarifas da Seção 301, a brecha entre a tarifa aplicada à China e a aplicada ao resto do mundo era de menos de um ponto percentual. Hoje, segundo cálculos da The Economist, ronda os 29 pontos.",
+   "target": "pt",
+   "title": "A \"grande fraude\" de Peter Navarro"
+  },
   "ea488252f1f1084b02337afd58e6514bc7b7b98c89b8bff91025c9e1d83ef159": {
    "cache_version": "tc.v1",
    "created_at": 1787061154,
@@ -32993,6 +33929,18 @@
    "target": "pt",
    "title": "As reservas do BCRA voltaram a superar os US$ 50 bilhões impulsionadas pela alta do ouro"
   },
+  "ebb757590e935b809f52c0a8ef6dacfb9990342088da974b0d0bade134c46120": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "O seguro para inquilinos cobre animais de estimação, mordidas de cachorro e danos causados por animais de estimação?"
+  },
   "ebb82ad80d156a5aaccfe059d91b35694d7c3b1ff3b8e422f94e6fe4f801eb67": {
    "cache_version": "tc.v1",
    "created_at": 1786984659,
@@ -33041,6 +33989,18 @@
    "target": "pt",
    "title": "Déficit fiscal em Misiones: apresentam o projeto de orçamento de 2027 com um vermelho de $ 787.500 milhões"
   },
+  "ebefd8386be2d8a4cde61db2ef491d917a6d5db7789892f0552ed40156dff77c": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "BHP e SiTration testarão tecnologia de recuperação de cobre em mina no Arizona"
+  },
   "ec01d1ae7059ad526402f434087cc05ba58cce95bdc063f23bf82b8eb0cf2b9b": {
    "cache_version": "tc.v1",
    "created_at": 1787071721,
@@ -33052,6 +34012,18 @@
    "summary": "",
    "target": "pt",
    "title": "Ackman acabou de se afastar do Google"
+  },
+  "ec1c7f3a44818bfddac48e719c2b7679fd45d553bd2419da353b96aa87d15c0c": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234122,
+   "last_used_at": 1787234122,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "New York Life vai adquirir o negócio de seguro de vida e invalidez em grupo da Cigna &nbsp;&nbsp; The Cigna Group Newsroom",
+   "target": "pt",
+   "title": "New York Life vai adquirir o negócio de seguro de vida e invalidez em grupo da Cigna"
   },
   "ec6e06aee91a7617c0ecf087861adbc14de8c76cceb0b70f5b72a09d8ffd52cc": {
    "cache_version": "tc.v1",
@@ -34109,6 +35081,18 @@
    "target": "pt",
    "title": "The Cigna Group Reporta Fortes Resultados para o Segundo Trimestre de 2026 e Eleva Perspectiva para 2026"
   },
+  "f44d2bbd2cb046418ca0acaced3850239f1ce3fb29ff1535470d3c413ef8655f": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234161,
+   "last_used_at": 1787234161,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "O presidente instou o Congresso a aprovar \"uma versão justa\" da lei de estrutura de mercados de ativos digitais durante um evento na Casa Branca com os principais CEOs do setor tecnológico e cripto.",
+   "target": "pt",
+   "title": "Bitcoin disparou 11% depois que Donald Trump pressionou o Congresso dos EUA por regulação cripto"
+  },
   "f45ca29f887f9ca2be9e5af4fcf76a6c333aae23059570495ab2445cc746fcb8": {
    "cache_version": "tc.v1",
    "created_at": 1786705541,
@@ -34493,6 +35477,18 @@
    "target": "pt",
    "title": "JPMorgan Chase — 8-K: 8-K (itens 2.02,9.01)"
   },
+  "f65d3952e1a785889a6c1eb52f7bddcf0ad9c200f0a545cd60f16e1d64ff4644": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "O Fundo Monetário, em sua mais recente Perspectiva da Economia Mundial, projeta um crescimento global de apenas 3,1% para 2026, arrastado por um conflito no Oriente Médio e por um gasto em defesa que erodiu o espaço fiscal de economias que mal terminavam de consolidar suas contas.",
+   "target": "pt",
+   "title": "O quadrilátero"
+  },
   "f697a751ea4f8465763a06ef41b5edbaf2cc4fd2dc4b3f86fb4b77ae059a0b3e": {
    "cache_version": "tc.v1",
    "created_at": 1786705561,
@@ -34709,6 +35705,18 @@
    "target": "pt",
    "title": "A UCA advertiu pela incerteza econômica e mostrou os limites da assistência para a pobreza infantil"
   },
+  "f84ee51b3f5ac3ba8d4ecac905c05ed7bed520cca4c93b44a2ae34e5fefadc08": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234152,
+   "last_used_at": 1787234152,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "O Conselho Nacional do Emprego, da Produtividade e do Salário Mínimo, Vital e Móvel foi convocado para sexta-feira, 28 de agosto. A reunião será virtual e terá como eixo a determinação do novo piso salarial e a atualização dos benefícios de seguro-desemprego.",
+   "target": "pt",
+   "title": "O Governo convocou uma reunião para definir o novo salário mínimo e atualizar os benefícios de seguro-desemprego"
+  },
   "f85fcc0df902172313976949421b8e0103778f810e11c483f5351e26436e4a3d": {
    "cache_version": "tc.v1",
    "created_at": 1786705440,
@@ -34744,6 +35752,18 @@
    "summary": "A atriz Hayden Panettiere enfrentou durante anos problemas de dependência, depressão e ansiedade, além de fortes dores nas costas e dificuldades de mobilidade antes de sua morte.",
    "target": "pt",
    "title": "Hayden Panettiere sofreu problemas de saúde antes de sua morte: 'Custava-lhe mover as pernas'"
+  },
+  "f8a1cf9a402c738e15fbe44a8779609a31546869d23e330cb0e3cd7e38c43001": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234141,
+   "last_used_at": 1787234141,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "es",
+   "summary": "Quem chegou com boas notícias ao Palácio Nacional foi o governador de Hidalgo, Julio Menchaca.",
+   "target": "pt",
+   "title": "Julio Menchaca sobe a aposta em Hidalgo"
   },
   "f8bad7b07078b45964f61c5b04efb398183ff2044bb0dda1f7e93bf224cdc937": {
    "cache_version": "tc.v1",
@@ -35249,6 +36269,18 @@
    "target": "pt",
    "title": "CFE fortalece la red eléctrica entre Mexicali y Tecate con nueva línea de transmisión"
   },
+  "fca602e5668eca1a6ac234cc562c16ccb849753eb3c7177c98f7e5dc2d9d674d": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "Rendimento de fluxo de caixa livre de 30% posiciona a Charter Communications (CHTR) para des alavancagem e retorno aos acionistas"
+  },
   "fcc53bb6069b0ffa78bca7ec2fb6dbd37ef26d1015df1b6fec4b3b92979ceda6": {
    "cache_version": "tc.v1",
    "created_at": 1787168228,
@@ -35440,6 +36472,18 @@
    "summary": "Multiexport Foods encerra seus centros de cultivos nos lagos do sul do Chile &nbsp;&nbsp; La Tercera",
    "target": "pt",
    "title": "Multiexport Foods encerra seus centros de cultivos nos lagos do sul do Chile"
+  },
+  "fe501962a53cdc1d28b29c3b72ffde9dd03b4df92000ae0fd5de308cc8c826dd": {
+   "cache_version": "tc.v1",
+   "created_at": 1787234131,
+   "last_used_at": 1787234131,
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "policy": "trad.p1",
+   "src_lang": "en",
+   "summary": "",
+   "target": "pt",
+   "title": "Previsão: Este ETF pode garantir sua vida se você comprá-lo hoje"
   },
   "fe55f9e694833bff027bad40f62824f93184b611a3a02300f557c6e55d3c153c": {
    "cache_version": "tc.v1",

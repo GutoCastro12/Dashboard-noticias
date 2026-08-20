@@ -90,6 +90,32 @@
    "title": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre ações",
    "url": "https://br.advfn.com/jornal/2026/08/cvm-abre-processo-contra-presidente-do-banco-do-brasil-apos-declaracao-sobre-acoes"
   },
+  "09c76a6ab8de22c3f938": {
+   "article_id": "09c76a6ab8de22c3f938",
+   "companies": [
+    "Cigna Group"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2024-11-11 05:00",
+    "feed_pub_ts": 1731312000,
+    "page_date_modified": "1731347582",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2024-11-11 16:00",
+    "page_pub_ts": 1731340800,
+    "pub_date_conflict_s": 28800,
+    "pub_date_note": "divergência de 28800s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2024-11-11 05:00",
+    "pub_ts": 1731312000
+   },
+   "revisions": [],
+   "source": "Fierce Healthcare",
+   "title": "Cigna officially confirms it's not pursuing a Humana acquisition",
+   "url": "https://www.fiercehealthcare.com/payers/cigna-officially-confirms-its-not-pursuing-humana-acquisition"
+  },
   "0d5f2a1a061ae84162cc": {
    "article_id": "0d5f2a1a061ae84162cc",
    "companies": [
@@ -453,6 +479,32 @@
    "title": "Samarco, da Vale e da BHP, entra com pedido de recuperação judicial",
    "url": "https://www.infomoney.com.br/mercados/samarco-joint-venture-entre-vale-e-bhp-entra-com-pedido-de-recuperacao-judicial/"
   },
+  "2c2eccbd359415af18c5": {
+   "article_id": "2c2eccbd359415af18c5",
+   "companies": [
+    "Grupo Security"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2024-04-10 04:00",
+    "feed_pub_ts": 1712732400,
+    "page_date_modified": "2024-04-11T00:15:20.516Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2024-04-11 00:15",
+    "page_pub_ts": 1712794519,
+    "pub_date_conflict_s": 62119,
+    "pub_date_note": "divergência de 62119s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2024-04-10 04:00",
+    "pub_ts": 1712732400
+   },
+   "revisions": [],
+   "source": "La Tercera",
+   "title": "Bice Corp e Grupo Security definem detalhes para o encerramento do acordo de fusão",
+   "url": "https://www.latercera.com/pulso/noticia/bice-corp-y-grupo-security-definen-detalles-para-el-cierre-del-acuerdo-de-fusion/HR4PRTH7D5HJNA7WRQBEJROADM/"
+  },
   "2ecc1020e4348bd6565a": {
    "article_id": "2ecc1020e4348bd6565a",
    "companies": [
@@ -478,6 +530,31 @@
    "source": "CNN Brasil",
    "title": "Avon Products, subsidiária da Natura &Co, entra com pedido de recuperação judicial nos EUA",
    "url": "https://www.cnnbrasil.com.br/economia/negocios/avon-products-subsidiaria-da-natura-co-entra-com-pedido-de-recuperacao-judicial-nos-eua/"
+  },
+  "30d4ccddc7827a594186": {
+   "article_id": "30d4ccddc7827a594186",
+   "companies": [
+    "Blackstone"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2024-04-09 04:00",
+    "feed_pub_ts": 1712646000,
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2024-04-09 15:24",
+    "page_pub_ts": 1712676240,
+    "pub_date_conflict_s": 30240,
+    "pub_date_note": "divergência de 30240s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2024-04-09 04:00",
+    "pub_ts": 1712646000
+   },
+   "revisions": [],
+   "source": "the deep dive",
+   "title": "Antara Capital, Apoiada pela Blackstone, Suspende Resgates devido a Perdas",
+   "url": "https://thedeepdive.ca/antara-capital-backed-by-blackstone-halts-redemptions-on-losses/"
   },
   "30f5cf792267e24a43c8": {
    "article_id": "30f5cf792267e24a43c8",
@@ -920,6 +997,31 @@
    "title": "Presidente da Embonor, Andrés Vicuña: \"A fusão com a Andina não é um tema que esteja sobre a mesa\"",
    "url": "https://www.latercera.com/pulso/noticia/presidente-embonor-andres-vicuna-la-fusion-andina-no-tema-este-la-mesa/172460/"
   },
+  "8bd9aea6c4caa17b8243": {
+   "article_id": "8bd9aea6c4caa17b8243",
+   "companies": [
+    "Grupo Security"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2025-03-06 01:20",
+    "feed_pub_ts": 1741234817,
+    "page_date_source": "opengraph",
+    "page_pub_iso": "2025-03-06 02:57",
+    "page_pub_ts": 1741229861,
+    "pub_date_conflict_s": 4956,
+    "pub_date_note": "divergência de 4956s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2025-03-06 01:20",
+    "pub_ts": 1741234817
+   },
+   "revisions": [],
+   "source": "RankiaPro",
+   "title": "Mudanças em diretorias e gerências gerais da BICECORP, Grupo Security e suas filiais diante da fusão no Chile",
+   "url": "https://rankiapro.com/latam/noticias/xxxx/"
+  },
   "8d9414bcdc871283449d": {
    "article_id": "8d9414bcdc871283449d",
    "companies": [
@@ -1262,6 +1364,32 @@
    "source": "La Tercera",
    "title": "Os números do Grupo Security e da Bicecorp diante da fusão e das agências duplicadas",
    "url": "https://www.latercera.com/pulso/noticia/las-cifras-de-grupo-security-y-bicecorp-de-cara-la-fusion-y-las-sucursales-duplicadas/ORFAOZ67RFBUXNPLS4OXH7ZA7Q/"
+  },
+  "b0e602f181e3d873ea1e": {
+   "article_id": "b0e602f181e3d873ea1e",
+   "companies": [
+    "Grupo Security"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2024-07-04 04:00",
+    "feed_pub_ts": 1720076400,
+    "page_date_modified": "2024-07-05T11:49:36.306Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2024-07-05 01:32",
+    "page_pub_ts": 1720143151,
+    "pub_date_conflict_s": 66751,
+    "pub_date_note": "divergência de 66751s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2024-07-04 04:00",
+    "pub_ts": 1720076400
+   },
+   "revisions": [],
+   "source": "La Tercera",
+   "title": "Fiscalía Nacional Económica inicia primeira fase de investigação na fusão de Bicecorp e Grupo Security",
+   "url": "https://www.latercera.com/pulso/noticia/fiscalia-nacional-economica-inicia-primera-fase-de-investigacion-en-la-fusion-de-bicecorp-y-grupo-security/JNUAGJ2YBBC3XNQILKA7X4EX5E/"
   },
   "b6532a7b091bac73848f": {
    "article_id": "b6532a7b091bac73848f",
