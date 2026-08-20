@@ -144,31 +144,48 @@ _seg = [a.get("title") for a in H["articles"].values()
 # acompanhamento de troca de CEO: "vai viajar" e "o que ... dizem sobre".
 # Estreitar aqui é a direção segura — perder um aviso custa menos que sinalizar
 # uma transição real como duplicata.
-check(len(_seg) == 7,
-      f"[17] no corpus, 7 artigos de `troca_ceo` casam acompanhamento ({len(_seg)})")
+# 4I.2 R7n: a contagem caiu porque o problema foi resolvido A MONTANTE. A
+# guarda de assercao (`R_TROCA_CEO_SEM_ASSERCAO`, `91f863e`) tirou o
+# `troca_ceo` dos artigos de acompanhamento, e o alinhamento de producao
+# gravou isso no historico. Artigo que nao e mais evento de CEO nao pode abrir
+# ocorrencia duplicada — e o filtro acima exige `troca_ceo` em
+# `events_by_company`. A assercao passa a ser sobre a DIRECAO: o numero nao
+# pode voltar a subir sem que alguem explique por que.
+check(len(_seg) <= 4,
+      f"[17] no corpus, no maximo 4 artigos de `troca_ceo` ainda casam "
+      f"acompanhamento ({len(_seg)}) — eram 7 antes da guarda de assercao")
 
 print()
 print("=" * 98)
 print("§14/§15/§16 OS TRÊS POSITIVOS CONGELADOS")
 print("=" * 98)
+# Santander e Tupy ORIGINARAM este detector. A duplicata deixou de existir: a
+# analise da XP e o giro do CEO da Tupy nao sao mais eventos de troca de CEO,
+# por verdade humana (lote V1, casos 20 e 07) ja gravada no historico.
+# Sinaliza-los agora exigiria reintroduzir o falso positivo — entao o contrato
+# INVERTE, e passa a exigir que NAO aparecam, pelo motivo certo.
 _sa = POR_EMPRESA.get("Santander Brasil")
-check(_sa is not None, "[18] Santander SINALIZADO")
-check(_sa and "LATER_OCCURRENCE_ALL_FOLLOW_UP" in _sa["reasons"]
-      and "FOLLOW_UP_WITH_NO_NEW_PERSON_CONFLICT" in _sa["reasons"],
-      f"[19] pelo motivo certo: a ocorrência posterior é inteira de "
-      f"acompanhamento ({_sa['reasons'] if _sa else None})")
-check(_sa and _sa["occurrence_a"]["incoming_persons"] == ["gilson finkelsztain"],
-      "[20] e a ocorrência anterior tem quem entra identificado")
-check(_sa and _sa["occurrence_b"]["n_artigos"] == 1
-      and all(x["seguimento"] for x in _sa["occurrence_b"]["artigos"]),
-      "[21] a posterior tem 1 artigo, e ele é de acompanhamento")
+check(_sa is None,
+      "[18] Santander NAO e mais sinalizado — a duplicata sumiu na origem")
+_sa_arts = [a for a in H["articles"].values()
+            if "troca_ceo" in ((a.get("events_by_company") or {})
+                               .get("Santander Brasil") or [])]
+check(len(_sa_arts) >= 1,
+      f"[19] o Santander mantem seus artigos LEGITIMOS de CEO ({len(_sa_arts)})")
+check(any("será o novo CEO" in (a.get("title") or "") for a in _sa_arts),
+      "[20] inclusive o anuncio de Gilson Finkelsztain, que e a ocorrencia real")
+check(not any("XP vê troca de CEO" in (a.get("title") or "") for a in _sa_arts),
+      "[21] e o comentario da XP saiu — nao e mais evento de CEO")
 
 _tu = POR_EMPRESA.get("Tupy")
-check(_tu is not None, "[22] Tupy SINALIZADA")
-check(_tu and "LATER_OCCURRENCE_ALL_FOLLOW_UP" in _tu["reasons"],
-      f"[23] pelo mesmo motivo ({_tu['reasons'] if _tu else None})")
-check(_tu and _tu["occurrence_a"]["incoming_persons"] == ["harro burmann"],
-      "[24] com o sucessor identificado na ocorrência anterior")
+check(_tu is None, "[22] Tupy tambem nao e mais sinalizada — mesmo motivo")
+_tu_arts = [a for a in H["articles"].values()
+            if "troca_ceo" in ((a.get("events_by_company") or {})
+                               .get("Tupy") or [])]
+check(any("Harro Burmann" in (a.get("title") or "") for a in _tu_arts),
+      f"[23] a sucessao real da Tupy segue inteira ({len(_tu_arts)} artigos)")
+check(not any("faz giro" in (a.get("title") or "") for a in _tu_arts),
+      "[24] e o giro por unidades saiu — nao e mais evento de CEO")
 
 _yu = POR_EMPRESA.get("Yura")
 check(_yu is not None, "[25] Yura SINALIZADA")
@@ -196,13 +213,16 @@ check(not all(o["seguimento"] for o in _hap[1]),
 check(det._razoes(_hap[0], _hap[1]) == [],
       f"[32] e o detector não produz nenhum motivo para ela "
       f"({det._razoes(_hap[0], _hap[1])})")
-_dias_tupy = _tu["dias_entre_ocorrencias"] if _tu else 0
 _dias_hap = int((min(o["pub_ts"] for o in _hap[1])
                  - max(o["pub_ts"] for o in _hap[0])) / 86400)
-check(abs(_dias_hap - _dias_tupy) < 40,
-      f"[33] §10 a Tupy (duplicata, {_dias_tupy}d) e a Hapvida (transições "
-      f"distintas, {_dias_hap}d) estão a distâncias parecidas — prazo não "
-      "distingue, e nenhuma janela foi implementada")
+_dias_yu = _yu["dias_entre_ocorrencias"] if _yu else 0
+# 4I.2 R7n: a Tupy deixou de ser duplicata, entao o par de distancias passa a
+# usar a Yura — que continua sendo duplicata confirmada. O argumento e o mesmo
+# e segue valendo: PRAZO NAO DISTINGUE duplicata de transicao real.
+check(_dias_yu > _dias_hap,
+      f"[33] §10 a Yura (duplicata, {_dias_yu}d) esta MAIS distante que a "
+      f"Hapvida (transicoes distintas, {_dias_hap}d) — prazo nao distingue, e "
+      "nenhuma janela foi implementada")
 check("45" not in SRC.split("_ocorrencias")[1].split("def _identidade")[0]
       or "assign_occurrence_clusters(its, 45" in SRC,
       "[34] o único 45 do módulo é o gap do resolvedor de produção, não uma "
@@ -235,14 +255,19 @@ print()
 print("=" * 98)
 print("§29 CONJUNTO DE CANDIDATOS NO CORPUS INTEIRO")
 print("=" * 98)
-check(sorted(POR_EMPRESA) == ["Santander Brasil", "Tupy", "Yura"],
-      f"[{_n}] exatamente as 3 duplicatas confirmadas ({sorted(POR_EMPRESA)})")
+# Santander e Tupy sairam porque a duplicata deixou de existir na origem.
+# Sobra a Yura, cuja duplicata e de PAPEIS COMPLEMENTARES e nao depende de
+# linguagem de acompanhamento — por isso a correcao de assercao nao a alcanca.
+check(sorted(POR_EMPRESA) == ["Yura"],
+      f"[{_n}] resta 1 duplicata confirmada ({sorted(POR_EMPRESA)}) — eram 3 "
+      f"antes da guarda de assercao")
 _n += 1
-check(R["empresas_avaliadas"] == 20,
-      f"[{_n}] 20 empresas com `troca_ceo` avaliadas ({R['empresas_avaliadas']})")
+check(R["empresas_avaliadas"] >= 19,
+      f"[{_n}] as empresas com `troca_ceo` seguem avaliadas "
+      f"({R['empresas_avaliadas']})")
 _n += 1
-check(R["ocorrencias_avaliadas"] == 26,
-      f"[{_n}] 26 ocorrências avaliadas ({R['ocorrencias_avaliadas']})")
+check(R["ocorrencias_avaliadas"] >= 23,
+      f"[{_n}] e as ocorrencias tambem ({R['ocorrencias_avaliadas']})")
 _n += 1
 check(all(c["classificacao"] == "suspected_duplicate" for c in R["candidatos"]),
       f"[{_n}] §31 todos são SUSPEITA, nenhum se declara duplicata confirmada")
@@ -329,8 +354,8 @@ _md = det.markdown(R)
 check("Suspeitas de duplicata" in _md and "somente aviso" in _md,
       f"[{_n}] §22 o resumo legível existe e se declara aviso")
 _n += 1
-check("gilson finkelsztain" in _md and "juan carlos burga" in _md,
-      f"[{_n}] §22 e mostra as pessoas detectadas, não JSON cru")
+check("juan carlos burga" in _md and "gonzalo rueda castillo" in _md,
+      f"[{_n}] §22 e mostra as pessoas detectadas, nao JSON cru")
 _n += 1
 check(len(_md) < 12000,
       f"[{_n}] §22 o resumo é conciso ({len(_md)} chars), não um despejo")

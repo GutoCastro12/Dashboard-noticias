@@ -29367,10 +29367,10 @@
    "companies": [
     "B3"
    ],
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "B3"
    ],
-   "context_companies": [],
    "corrob_sources": [
     {
      "canonical_url": "https://www.infomoney.com.br/mercados/pane-que-atrasou-abertura-da-bolsa-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3/",
@@ -29503,9 +29503,7 @@
     "troca_ceo"
    ],
    "events_by_company": {
-    "B3": [
-     "troca_ceo"
-    ]
+    "B3": []
    },
    "language": "pt",
    "mention_roles": {
@@ -29522,7 +29520,72 @@
    "source": "Valor Econômico",
    "summary": "Falha que atrasou abertura dos mercados em julho é ‘chamado à ação’, diz novo CEO da B3 &nbsp;&nbsp; Valor Econômico",
    "title": "Falha que atrasou abertura dos mercados em julho é ‘chamado à ação’, diz novo CEO da B3",
-   "url": "https://valor.globo.com/financas/noticia/2026/08/12/falha-que-atrasou-abertura-dos-mercados-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3.ghtml"
+   "url": "https://valor.globo.com/financas/noticia/2026/08/12/falha-que-atrasou-abertura-dos-mercados-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3.ghtml",
+   "event_assessments": [
+    {
+     "company": "B3",
+     "event_id": "troca_ceo",
+     "assessed_by": "semantic_audit",
+     "subject_company": "B3",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_TROCA_CEO_SEM_ASSERCAO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "\"diz novo ceo\" usa o cargo como descritor; o texto não afirma nomeação, sucessão ou saída",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "B3",
+     "event_id": "troca_ceo",
+     "event_id_corrigido": "",
+     "regra": "R_TROCA_CEO_SEM_ASSERCAO",
+     "motivo": "\"diz novo ceo\" usa o cargo como descritor; o texto não afirma nomeação, sucessão ou saída",
+     "subject_company": "B3"
+    }
+   ],
+   "informational_events_by_company": {
+    "B3": [
+     {
+      "company": "B3",
+      "event_id": "troca_ceo",
+      "event_label": "troca ceo",
+      "subject_company": "B3",
+      "monitored_company": "B3",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_TROCA_CEO_SEM_ASSERCAO",
+      "attribution_confidence": "media",
+      "title": "Falha que atrasou abertura dos mercados em julho é ‘chamado à ação’, diz novo CEO da B3",
+      "url": "https://valor.globo.com/financas/noticia/2026/08/12/falha-que-atrasou-abertura-dos-mercados-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3.ghtml",
+      "pub_ts": 1786542275,
+      "observation": "\"diz novo ceo\" usa o cargo como descritor; o texto não afirma nomeação, sucessão ou saída",
+      "source_record_id": "https://valor.globo.com/financas/noticia/2026/08/12/falha-que-atrasou-abertura-dos-mercados-em-julho-e-chamado-a-acao-diz-novo-ceo-da-b3.ghtml"
+     }
+    ]
+   }
   },
   "https://veja.abril.com.br/coluna/radar-economico/direcional-compra-fatia-da-xp-na-startup-direto/": {
    "canonical_url": "https://veja.abril.com.br/coluna/radar-economico/direcional-compra-fatia-da-xp-na-startup-direto/",
@@ -31561,32 +31624,11 @@
     "Petrobras",
     "Pemex (Petróleos Mexicanos)"
    ],
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
+    "Petrobras",
     "Pemex (Petróleos Mexicanos)"
    ],
-   "context_companies": [
-    "Petrobras"
-   ],
-   "context_events_by_company": {
-    "Petrobras": [
-     {
-      "event_id": "troca_ceo",
-      "event_label": "troca ceo",
-      "subject_company": "Pemex (Petróleos Mexicanos)",
-      "relation_type": "terceiro_citado",
-      "impact_type": "indireto_material",
-      "event_scope": "indireto",
-      "event_phase": "",
-      "direction": "neutra",
-      "scoreable": false,
-      "event_id_corrigido": "",
-      "attribution_rule": "R_TROCA_CEO_DE_TERCEIRO",
-      "attribution_confidence": "media",
-      "attribution_evidence": "da Pemex",
-      "nota": "a troca de CEO é da 'Pemex (Petróleos Mexicanos)'; Petrobras aparece lateralmente"
-     }
-    ]
-   },
    "corrob_sources": [],
    "corroborations": [],
    "display_url": "https://www.bloomberglinea.com.br/negocios/novo-ceo-da-pemex-vai-viajar-ao-brasil-para-avancar-agenda-de-parceria-com-a-petrobras/",
@@ -31596,22 +31638,22 @@
      "company": "Petrobras",
      "event_id": "troca_ceo",
      "assessed_by": "semantic_audit",
-     "subject_company": "Pemex (Petróleos Mexicanos)",
+     "subject_company": "Petrobras",
      "actor_company": "",
      "affected_company": "",
      "transaction_object": "indefinido",
      "transaction_scope": "indefinido",
      "transaction_role": "",
      "event_phase": "",
-     "event_scope": "indireto",
+     "event_scope": "direto",
      "direction": "",
      "historical_reference": false,
      "new_occurrence": true,
      "confirmation_level": "indefinido",
-     "attribution_rule": "R_TROCA_CEO_DE_TERCEIRO",
+     "attribution_rule": "R_TROCA_CEO_SEM_ASSERCAO",
      "attribution_confidence": "media",
      "scoreable": false,
-     "rejection_reason": "a troca de CEO é da 'Pemex (Petróleos Mexicanos)'; Petrobras aparece lateralmente",
+     "rejection_reason": "\"novo ceo da pemex vai\" usa o cargo como descritor; o texto não afirma nomeação, sucessão ou saída",
      "legal_status": "",
      "confirmation_status": "indefinido"
     },
@@ -31631,10 +31673,10 @@
      "historical_reference": false,
      "new_occurrence": true,
      "confirmation_level": "indefinido",
-     "attribution_rule": "",
+     "attribution_rule": "R_TROCA_CEO_SEM_ASSERCAO",
      "attribution_confidence": "media",
-     "scoreable": true,
-     "rejection_reason": "",
+     "scoreable": false,
+     "rejection_reason": "\"novo ceo da pemex vai\" usa o cargo como descritor; o texto não afirma nomeação, sucessão ou saída",
      "legal_status": "",
      "confirmation_status": "indefinido"
     }
@@ -31644,9 +31686,7 @@
    ],
    "events_by_company": {
     "Petrobras": [],
-    "Pemex (Petróleos Mexicanos)": [
-     "troca_ceo"
-    ]
+    "Pemex (Petróleos Mexicanos)": []
    },
    "final_host": "www.bloomberglinea.com.br",
    "http_status": "",
@@ -31685,15 +31725,81 @@
      "empresa": "Petrobras",
      "event_id": "troca_ceo",
      "event_id_corrigido": "",
-     "regra": "R_TROCA_CEO_DE_TERCEIRO",
-     "motivo": "a troca de CEO é da 'Pemex (Petróleos Mexicanos)'; Petrobras aparece lateralmente",
+     "regra": "R_TROCA_CEO_SEM_ASSERCAO",
+     "motivo": "\"novo ceo da pemex vai\" usa o cargo como descritor; o texto não afirma nomeação, sucessão ou saída",
+     "subject_company": "Petrobras"
+    },
+    {
+     "empresa": "Pemex (Petróleos Mexicanos)",
+     "event_id": "troca_ceo",
+     "event_id_corrigido": "",
+     "regra": "R_TROCA_CEO_SEM_ASSERCAO",
+     "motivo": "\"novo ceo da pemex vai\" usa o cargo como descritor; o texto não afirma nomeação, sucessão ou saída",
      "subject_company": "Pemex (Petróleos Mexicanos)"
     }
    ],
    "source": "Bloomberg Línea Brasil",
    "summary": "Novo CEO da Pemex vai viajar ao Brasil para avançar agenda de parceria com a Petrobras &nbsp;&nbsp; Bloomberg Línea Brasil",
    "title": "Novo CEO da Pemex vai viajar ao Brasil para avançar agenda de parceria com a Petrobras",
-   "url": "https://www.bloomberglinea.com.br/negocios/novo-ceo-da-pemex-vai-viajar-ao-brasil-para-avancar-agenda-de-parceria-com-a-petrobras/"
+   "url": "https://www.bloomberglinea.com.br/negocios/novo-ceo-da-pemex-vai-viajar-ao-brasil-para-avancar-agenda-de-parceria-com-a-petrobras/",
+   "informational_events_by_company": {
+    "Petrobras": [
+     {
+      "company": "Petrobras",
+      "event_id": "troca_ceo",
+      "event_label": "troca ceo",
+      "subject_company": "Petrobras",
+      "monitored_company": "Petrobras",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_TROCA_CEO_SEM_ASSERCAO",
+      "attribution_confidence": "media",
+      "title": "Novo CEO da Pemex vai viajar ao Brasil para avançar agenda de parceria com a Petrobras",
+      "url": "https://www.bloomberglinea.com.br/negocios/novo-ceo-da-pemex-vai-viajar-ao-brasil-para-avancar-agenda-de-parceria-com-a-petrobras/",
+      "pub_ts": 1781334000,
+      "observation": "\"novo ceo da pemex vai\" usa o cargo como descritor; o texto não afirma nomeação, sucessão ou saída",
+      "source_record_id": "https://www.bloomberglinea.com.br/negocios/novo-ceo-da-pemex-vai-viajar-ao-brasil-para-avancar-agenda-de-parceria-com-a-petrobras/"
+     }
+    ],
+    "Pemex (Petróleos Mexicanos)": [
+     {
+      "company": "Pemex (Petróleos Mexicanos)",
+      "event_id": "troca_ceo",
+      "event_label": "troca ceo",
+      "subject_company": "Pemex (Petróleos Mexicanos)",
+      "monitored_company": "Pemex (Petróleos Mexicanos)",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_TROCA_CEO_SEM_ASSERCAO",
+      "attribution_confidence": "media",
+      "title": "Novo CEO da Pemex vai viajar ao Brasil para avançar agenda de parceria com a Petrobras",
+      "url": "https://www.bloomberglinea.com.br/negocios/novo-ceo-da-pemex-vai-viajar-ao-brasil-para-avancar-agenda-de-parceria-com-a-petrobras/",
+      "pub_ts": 1781334000,
+      "observation": "\"novo ceo da pemex vai\" usa o cargo como descritor; o texto não afirma nomeação, sucessão ou saída",
+      "source_record_id": "https://www.bloomberglinea.com.br/negocios/novo-ceo-da-pemex-vai-viajar-ao-brasil-para-avancar-agenda-de-parceria-com-a-petrobras/"
+     }
+    ]
+   }
   },
   "https://www.bloomberglinea.com.br/negocios/ouro-urbano-os-planos-por-tras-da-aquisicao-bilionaria-da-aegea-em-residuos-solidos/": {
    "canonical_url": "https://www.bloomberglinea.com.br/negocios/ouro-urbano-os-planos-por-tras-da-aquisicao-bilionaria-da-aegea-em-residuos-solidos/",
@@ -36325,7 +36431,6 @@
    ],
    "events_by_company": {
     "Rumo": [
-     "troca_ceo",
      "recomendacao_negativa"
     ]
    },
@@ -36357,7 +36462,69 @@
    "source": "Estadão",
    "summary": "Citi vê incerteza com troca de CEO da Rumo (RAIL3) e mantém recomendação de venda &nbsp;&nbsp; Estadão",
    "title": "Citi vê incerteza com troca de CEO da Rumo (RAIL3) e mantém recomendação de venda",
-   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/citi-ve-incerteza-com-troca-de-ceo-da-rumo-rail3-e-mantem-recomendacao-de-venda/"
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/citi-ve-incerteza-com-troca-de-ceo-da-rumo-rail3-e-mantem-recomendacao-de-venda/",
+   "event_assessments": [
+    {
+     "company": "Rumo",
+     "event_id": "troca_ceo",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Rumo",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_TROCA_CEO_SEM_ASSERCAO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "\"Citi ve\" usa o cargo como descritor; o texto não afirma nomeação, sucessão ou saída",
+     "legal_status": "",
+     "confirmation_status": "indefinido",
+     "family_secondary": true,
+     "primary_event_id": "recomendacao_negativa"
+    },
+    {
+     "company": "Rumo",
+     "event_id": "recomendacao_negativa",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Rumo",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "",
+     "attribution_confidence": "media",
+     "scoreable": true,
+     "rejection_reason": "",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Rumo",
+     "event_id": "troca_ceo",
+     "event_id_corrigido": "",
+     "regra": "R_TROCA_CEO_SEM_ASSERCAO",
+     "motivo": "\"Citi ve\" usa o cargo como descritor; o texto não afirma nomeação, sucessão ou saída",
+     "subject_company": "Rumo",
+     "family_secondary": true,
+     "primary_event_id": "recomendacao_negativa"
+    }
+   ]
   },
   "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/energisa-engi11-aquisicao-facultativa-debentures-preco/": {
    "canonical_url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/energisa-engi11-aquisicao-facultativa-debentures-preco/",
@@ -37589,19 +37756,17 @@
    "companies": [
     "Santander Brasil"
    ],
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Santander Brasil"
    ],
-   "context_companies": [],
    "display_url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/santander-brasil-sanb11-estrategia-novo-ceo-roe-xp/",
    "domain": "estadao.com.br",
    "event_ids": [
     "troca_ceo"
    ],
    "events_by_company": {
-    "Santander Brasil": [
-     "troca_ceo"
-    ]
+    "Santander Brasil": []
    },
    "final_host": "www.estadao.com.br",
    "http_status": "",
@@ -37631,7 +37796,72 @@
    "source": "Estadão",
    "summary": "XP vê troca de CEO no Santander (SANB11) sem ruptura e aposta em alta rentabilidade &nbsp;&nbsp; Estadão",
    "title": "XP vê troca de CEO no Santander (SANB11) sem ruptura e aposta em alta rentabilidade",
-   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/santander-brasil-sanb11-estrategia-novo-ceo-roe-xp/"
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/santander-brasil-sanb11-estrategia-novo-ceo-roe-xp/",
+   "event_assessments": [
+    {
+     "company": "Santander Brasil",
+     "event_id": "troca_ceo",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Santander Brasil",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_TROCA_CEO_SEM_ASSERCAO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "\"XP ve\" usa o cargo como descritor; o texto não afirma nomeação, sucessão ou saída",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Santander Brasil",
+     "event_id": "troca_ceo",
+     "event_id_corrigido": "",
+     "regra": "R_TROCA_CEO_SEM_ASSERCAO",
+     "motivo": "\"XP ve\" usa o cargo como descritor; o texto não afirma nomeação, sucessão ou saída",
+     "subject_company": "Santander Brasil"
+    }
+   ],
+   "informational_events_by_company": {
+    "Santander Brasil": [
+     {
+      "company": "Santander Brasil",
+      "event_id": "troca_ceo",
+      "event_label": "troca ceo",
+      "subject_company": "Santander Brasil",
+      "monitored_company": "Santander Brasil",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_TROCA_CEO_SEM_ASSERCAO",
+      "attribution_confidence": "media",
+      "title": "XP vê troca de CEO no Santander (SANB11) sem ruptura e aposta em alta rentabilidade",
+      "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/santander-brasil-sanb11-estrategia-novo-ceo-roe-xp/",
+      "pub_ts": 1780177598,
+      "observation": "\"XP ve\" usa o cargo como descritor; o texto não afirma nomeação, sucessão ou saída",
+      "source_record_id": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/santander-brasil-sanb11-estrategia-novo-ceo-roe-xp/"
+     }
+    ]
+   }
   },
   "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/sp-eleva-rating-embraer-bbb-perspectiva-estavel/": {
    "canonical_url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/sp-eleva-rating-embraer-bbb-perspectiva-estavel/",
@@ -45952,10 +46182,10 @@
    "companies": [
     "Tupy"
    ],
-   "companies_attributed": [
+   "companies_attributed": [],
+   "context_companies": [
     "Tupy"
    ],
-   "context_companies": [],
    "corrob_sources": [],
    "corroborations": [],
    "domain": "nsctotal.com.br",
@@ -45963,9 +46193,7 @@
     "troca_ceo"
    ],
    "events_by_company": {
-    "Tupy": [
-     "troca_ceo"
-    ]
+    "Tupy": []
    },
    "language": "pt",
    "mention_roles": {
@@ -45982,7 +46210,72 @@
    "source": "NSC Total",
    "summary": "“Tupy do futuro”: novo CEO faz giro por unidades e reconhece solução para falta de mão de obra em Joinville &nbsp;&nbsp; NSC Total",
    "title": "“Tupy do futuro”: novo CEO faz giro por unidades e reconhece solução para falta de mão de obra em Joinville",
-   "url": "https://www.nsctotal.com.br/economia/tupy-do-futuro-novo-ceo-faz-giro-por-unidades-e-reconhece-solucao-para-falta-de-mao-de-obra-em-joinville"
+   "url": "https://www.nsctotal.com.br/economia/tupy-do-futuro-novo-ceo-faz-giro-por-unidades-e-reconhece-solucao-para-falta-de-mao-de-obra-em-joinville",
+   "event_assessments": [
+    {
+     "company": "Tupy",
+     "event_id": "troca_ceo",
+     "assessed_by": "semantic_audit",
+     "subject_company": "Tupy",
+     "actor_company": "",
+     "affected_company": "",
+     "transaction_object": "indefinido",
+     "transaction_scope": "indefinido",
+     "transaction_role": "",
+     "event_phase": "",
+     "event_scope": "direto",
+     "direction": "",
+     "historical_reference": false,
+     "new_occurrence": true,
+     "confirmation_level": "indefinido",
+     "attribution_rule": "R_TROCA_CEO_SEM_ASSERCAO",
+     "attribution_confidence": "media",
+     "scoreable": false,
+     "rejection_reason": "\"novo ceo faz\" usa o cargo como descritor; o texto não afirma nomeação, sucessão ou saída",
+     "legal_status": "",
+     "confirmation_status": "indefinido"
+    }
+   ],
+   "semantic_discards": [
+    {
+     "empresa": "Tupy",
+     "event_id": "troca_ceo",
+     "event_id_corrigido": "",
+     "regra": "R_TROCA_CEO_SEM_ASSERCAO",
+     "motivo": "\"novo ceo faz\" usa o cargo como descritor; o texto não afirma nomeação, sucessão ou saída",
+     "subject_company": "Tupy"
+    }
+   ],
+   "informational_events_by_company": {
+    "Tupy": [
+     {
+      "company": "Tupy",
+      "event_id": "troca_ceo",
+      "event_label": "troca ceo",
+      "subject_company": "Tupy",
+      "monitored_company": "Tupy",
+      "relation_type": "direto",
+      "event_scope": "direto",
+      "direction": "neutra",
+      "scoreable": false,
+      "display_category": "informativo",
+      "new_ma_occurrence": false,
+      "change_of_control": false,
+      "external_ma": false,
+      "historical_transaction_reference": false,
+      "secondary_context": "",
+      "transaction_scope": "indefinido",
+      "confirmation_status": "indefinido",
+      "attribution_rule": "R_TROCA_CEO_SEM_ASSERCAO",
+      "attribution_confidence": "media",
+      "title": "“Tupy do futuro”: novo CEO faz giro por unidades e reconhece solução para falta de mão de obra em Joinville",
+      "url": "https://www.nsctotal.com.br/economia/tupy-do-futuro-novo-ceo-faz-giro-por-unidades-e-reconhece-solucao-para-falta-de-mao-de-obra-em-joinville",
+      "pub_ts": 1786374766,
+      "observation": "\"novo ceo faz\" usa o cargo como descritor; o texto não afirma nomeação, sucessão ou saída",
+      "source_record_id": "https://www.nsctotal.com.br/economia/tupy-do-futuro-novo-ceo-faz-giro-por-unidades-e-reconhece-solucao-para-falta-de-mao-de-obra-em-joinville"
+     }
+    ]
+   }
   },
   "https://www.otempo.com.br/economia/2026/1/7/usiminas-cade-aprova-aquisicao-de-fatia-da-nippon-e-mitsubishi-pela-ternium": {
    "canonical_url": "https://www.otempo.com.br/economia/2026/1/7/usiminas-cade-aprova-aquisicao-de-fatia-da-nippon-e-mitsubishi-pela-ternium",

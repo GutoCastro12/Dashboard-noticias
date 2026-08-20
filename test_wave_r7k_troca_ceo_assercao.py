@@ -315,11 +315,19 @@ print()
 print("=" * 98)
 print("BLOCO J - o que esta onda NAO pode ter tocado")
 print("=" * 98)
+# A versao original desta checagem afirmava que o historico PERSISTIDO ainda
+# trazia `troca_ceo` na Rumo — era a prova de que a onda de CODIGO nao havia
+# tocado em dado. Aquele estado era transitorio DE PROPOSITO: a onda de
+# alinhamento, autorizada e com verdade humana, gravou os cinco negativos no
+# historico. Ela vira a assercao mais forte, e a mais dificil de satisfazer
+# por acidente: o artigo permanece, o CEO sai, a recomendacao fica.
 _u = _url("6c6de2598d9b")
-check(rd.event_ids_for(_H["articles"][_u], "Rumo") == ["troca_ceo",
-                                                       "recomendacao_negativa"],
-      "[58] o HISTORICO PERSISTIDO segue com o estado antigo — esta onda muda "
-      "codigo, nao dado")
+check(_u is not None,
+      "[58a] o artigo da Rumo permanece no historico — corrigir atribuicao "
+      "nao e apagar historia")
+check(rd.event_ids_for(_H["articles"][_u], "Rumo") == ["recomendacao_negativa"],
+      "[58b] e o PERSISTIDO ja concorda com o humano: `troca_ceo` fora, "
+      "`recomendacao_negativa` preservada no MESMO artigo")
 check(len(_MS) == 27 and len({m["case_id"] for m in _MS.values()}) == 24,
       "[59] a supervisao humana segue intacta (27 filiacoes / 24 casos)")
 _S = json.load(io.open("risk_semantic_v2_shadow.json", encoding="utf-8"))
