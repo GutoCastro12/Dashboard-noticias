@@ -634,6 +634,32 @@
    "title": "PRIO (PRIO3) sobe mais de 8% com aquisição bilionária do campo de Peregrino",
    "url": "https://www.infomoney.com.br/mercados/acoes-da-prio-sobem-mais-de-5-com-aquisicao-bilionaria-do-campo-de-peregrino/"
   },
+  "47624bd2256dfaa4742c": {
+   "article_id": "47624bd2256dfaa4742c",
+   "companies": [
+    "SMU"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2016-06-08 04:00",
+    "feed_pub_ts": 1465369200,
+    "page_date_modified": "2025-06-23T18:54:33-04:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2016-06-08 13:00",
+    "page_pub_ts": 1465390838,
+    "pub_date_conflict_s": 21638,
+    "pub_date_note": "divergência de 21638s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2016-06-08 04:00",
+    "pub_ts": 1465369200
+   },
+   "revisions": [],
+   "source": "El Mostrador",
+   "title": "Como Álvaro Saieh e Raúl Sotomayor firmaram a paz, deram a volta na SMU e a salvaram da falência",
+   "url": "https://www.elmostrador.cl/mercados/2016/06/08/como-alvaro-saieh-y-raul-sotomayor-firmaron-la-paz-dieron-vuelta-smu-y-la-salvaron-de-la-quiebra/"
+  },
   "51f693acf215de6dca76": {
    "article_id": "51f693acf215de6dca76",
    "companies": [
