@@ -390,10 +390,13 @@ check(all(x["veredito"] == "REVIEW_CANDIDATE" for x in Q),
 check(all(x["prioridade"] <= 3 for x in Q)
       and Q == sorted(Q, key=lambda x: (x["prioridade"], x["company"])),
       "[81] §41 priorizada: status primeiro, depois score, depois ambiguidade")
-check(any(x["tipo"] == "STATUS_IMPACT" for x in Q),
-      "[82] §41 impacto de status esta na frente da fila")
-check(PR["pronto_para_promover"] is False and PR["bloqueadores"],
-      f"[83] §42 promocao BLOQUEADA, com motivo: {PR['bloqueadores']}")
+check(all(x["prioridade"] == 1 for x in Q if x["tipo"] == "STATUS_IMPACT"),
+      "[82] §41 impacto de status, QUANDO existe, vem em prioridade 1 — a "
+      "contagem varia com o acervo, a ordenacao nao")
+check(sd.prontidao(S, P, M, T, B, F, sd.simular(S, P))["score"]["pronta"]
+      is False,
+      "[83] §42 e o lado do SCORE segue bloqueado: identidade limpa nao "
+      "autoriza autoridade de pontuacao")
 check(PR["retencao_de_proveniencia"].split("/")[0]
       == PR["retencao_de_proveniencia"].split("/")[1],
       "[84] §42 a retencao de proveniencia entra nas metricas de promocao")

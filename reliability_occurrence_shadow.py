@@ -56,6 +56,7 @@ from datetime import datetime, timezone
 
 import reliability_occurrence_reproducer as rp
 import risk_dashboard as rd
+import semantic_audit as sa
 import semantic_v2_shadow as sh
 
 SHADOW_VERSION = "occurrence.shadow.v1"
@@ -132,14 +133,27 @@ def papel_marcador(token: str) -> str:
     return OBJECT_MARKER
 
 
+# `_marcadores_operacao` da producao so aceita nome proprio com 4+ caracteres, e
+# por isso perde "Oma" — o objeto de uma das tres transacoes de M&A da JBS.
+# Aqui se recupera o nome proprio de EXATAMENTE 3 letras, que na pratica e
+# geografia (Oma, EUA sai por generico) ou sigla de ativo. Nada mais curto:
+# duas letras seriam ruido garantido.
+_RX_PROPRIO_CURTO = re.compile(r"\b([A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-zà-ÿ]{2})\b")
+
+
 def marcadores_por_papel(titulo: str, event_id: str, empresa: str,
                          aliases=None) -> dict:
     ident = rd.occurrence_identity(titulo or "", event_id, empresa, aliases)
     saida = {OBJECT_MARKER: set(), CONTEXT_MARKER: set(),
              REGULATOR_MARKER: set(), GENERIC_MARKER: set()}
-    for m in (ident.get("marcadores") or "").split("|"):
-        if m:
-            saida[papel_marcador(m)].add(m)
+    brutos = [m for m in (ident.get("marcadores") or "").split("|") if m]
+    ali = {rd.normalize(a) for a in (list(aliases or []) + [empresa]) if a}
+    for m in _RX_PROPRIO_CURTO.findall(titulo or ""):
+        n = rd.normalize(m)
+        if n not in ali and n not in rd._STOP_MARCADORES:
+            brutos.append(n)
+    for m in brutos:
+        saida[papel_marcador(m)].add(m)
     return saida
 
 
@@ -232,10 +246,39 @@ _RX_PROCESSO_ID = re.compile(
     r"(\d{2,5}[./]\d{3,6}[./-]?\d{0,6}(?:[-/]\d{1,4})?)", re.I)
 
 
+# Familias em que a acao do ANALISTA e o proprio evento. Fora delas, uma casa
+# reiterando recomendacao ou mexendo em preco-alvo esta COMENTANDO um fato, nao
+# praticando-o: "UBS reitera recomendacao de compra para JBS apos proposta de
+# aquisicao da PPC" nao e uma terceira transacao de M&A.
+_FAMILIA_DE_ANALISTA = frozenset({"recomendacao_negativa", "rebaixamento_rating"})
+_RX_ANALISTA_PRIMARIO = re.compile(
+    r"^[^,;:]{0,60}?\b(?:reitera\w*|mant[eé]m|eleva\w*|reduz\w*|corta\b|"
+    r"rebaix\w*|inicia\s+cobertura|reafirm\w*)\s+"
+    r"(?:a\s+|o\s+|sua\s+)?(?:recomenda\w+|pre[cç]o[- ]alvo|rating|"
+    r"cobertura|classifica\w+|target)", re.I)
+
+
 def fase_de(titulo: str, family: str = "") -> dict:
     """Quatro estados + UNKNOWN. Nao forca classificacao sem evidencia."""
     t = titulo or ""
     bruta = rd._fase_do_evento(t)
+    if family not in _FAMILIA_DE_ANALISTA:
+        _an = _RX_ANALISTA_PRIMARIO.search(t)
+        if _an:
+            return {"fase": ACOMPANHAMENTO,
+                    "fase_evidencia": "analista_como_assercao_primaria:"
+                                      + _an.group(0)[:44],
+                    "fase_bruta": bruta}
+    if family == "troca_ceo":
+        # reusa o guarda JA PUBLICADO em producao
+        # (`R_TROCA_CEO_SEM_ASSERCAO`), em vez de reimplementar a deteccao de
+        # descritor de cargo. Se a producao mudar de opiniao, a sombra muda
+        # junto — que e o comportamento certo para uma sombra.
+        _dc = sa.detect_troca_ceo_sem_assercao(t, t)
+        if _dc:
+            return {"fase": ACOMPANHAMENTO,
+                    "fase_evidencia": "descritor_sem_assercao:" + _dc[:44],
+                    "fase_bruta": bruta}
     _rc = _RX_RECAP_COORDENADO.search(t)
     if _rc:
         return {"fase": ACOMPANHAMENTO,
@@ -263,6 +306,38 @@ def fase_de(titulo: str, family: str = "") -> dict:
         return {"fase": INICIACAO, "fase_evidencia": "familia_pontual",
                 "fase_bruta": bruta}
     return {"fase": UNKNOWN, "fase_evidencia": "", "fase_bruta": bruta}
+
+
+# ── §24 · em M&A o objeto e o ALVO, nao qualquer parte nomeada ──────────────
+# "JBS propoe aquisicao dos 18% restantes da Pilgrim's Pride" e "Pilgrim's
+# Pride anuncia aquisicao da Walkers Deli" citam ambos a Pilgrim's — mas numa
+# ela e ALVO e na outra e COMPRADORA. Somar os nomes proprios do titulo inteiro
+# funde duas transacoes distintas; foi o que aconteceu no controle sintetico da
+# JBS. O alvo e o que vem DEPOIS do verbo/substantivo de aquisicao.
+#
+# A pista so vale se for SEGUIDA de conectivo de complemento ("aquisição DA
+# Walkers", "aquisição EM Omã"). Sem essa exigencia, "aquisição DECORRE do
+# Compromisso Vinculante" tomaria "Compromisso Vinculante" como alvo — e foi
+# assim que a primeira versao trocou o occurrence_id da Natura.
+_RX_CUE_AQUISICAO = re.compile(
+    r"\b(?:aquisi[cç][aã]o|aquisi[cç][oõ]es|compra|adquir\w*|"
+    r"incorpora[cç][aã]o|takeover|acquisition|acquires?|to\s+acquire|"
+    r"stake)\s+(?:d[aeo]s?|pel[ao]s?|em|of|in|no|na|nos|nas)\b", re.I)
+
+
+def alvo_da_transacao(titulo: str, event_id: str, empresa: str,
+                      aliases=None) -> set:
+    """Marcadores de objeto que aparecem DEPOIS da pista de aquisicao. Conjunto
+    vazio significa 'nao identificavel' — e o chamador cai no comportamento
+    anterior em vez de inventar um alvo."""
+    m = _RX_CUE_AQUISICAO.search(titulo or "")
+    if not m:
+        return set()
+    depois = (titulo or "")[m.end():]
+    if not depois.strip():
+        return set()
+    return marcadores_por_papel(depois, event_id, empresa,
+                                aliases)[OBJECT_MARKER]
 
 
 # ── §14 · alias DECLARADO ────────────────────────────────────────────────────
@@ -586,6 +661,13 @@ def candidatos(historico="risk_history.json", config="config_risco.yaml") -> dic
                     brutos = set(locais)
                 else:
                     brutos = set(papeis[OBJECT_MARKER])
+                    # §24 — quando o titulo diz claramente o que foi comprado,
+                    # o objeto e o ALVO. Sem pista de aquisicao, mantem-se o
+                    # comportamento anterior: nada e inventado.
+                    alvo = alvo_da_transacao(titulo, eid,
+                                             company, ali_por_emp.get(company))
+                    if alvo:
+                        brutos = set(alvo)
                 if objeto_expl:
                     brutos |= set(objeto_expl.split())
                 brutos = {t for t in brutos if papel_marcador(t) == OBJECT_MARKER}
@@ -918,6 +1000,233 @@ def politica_familias() -> dict:
             "authority": "SHADOW / SIMULATED"}
 
 
+# ── §9/§10/§14/§15 · MATERIALIDADE nao e DIRECAO nao e AUTORIDADE DE SCORE ──
+#
+# Tres perguntas distintas que hoje chegam coladas no painel:
+#
+#   MATERIALIDADE   aconteceu algo economicamente relevante?
+#   DIRECAO         a evidencia indica adverso, favoravel, neutro ou incerto?
+#   AUTORIDADE      isto deve somar pontos de risco, e quantos?
+#
+# Este bloco NAO decide nenhuma delas para a producao. Ele MEDE onde as tres
+# estao conflacionadas, usando o campo `direction` que a PROPRIA taxonomia ja
+# declara — nenhum motor de polaridade novo e criado (§10).
+ADVERSO = "INHERENTLY_ADVERSE"
+CONTEXTUAL = "CONTEXT_DEPENDENT"
+PENDENTE = "POLICY_PENDING"
+DIRECAO_INDETERMINADA = "DIRECTION_UNDETERMINED"
+
+
+def classificar_direcao_familia(ev: dict) -> str:
+    """A taxonomia ja carrega `direction`. Familia declarada `negativa` e
+    adversa pelo proprio cadastro; `neutra` e dependente de contexto — e e ali
+    que pontuar pela MERA EXISTENCIA do evento confunde fato material com fato
+    ruim."""
+    d = (ev.get("direction") or "").lower()
+    if d == "negativa":
+        return ADVERSO
+    if d in ("neutra", ""):
+        return CONTEXTUAL
+    return PENDENTE          # positiva / mitigadora: politica em aberto
+
+
+def matriz_materialidade(config="config_risco.yaml") -> dict:
+    """§15 — tabela diagnostica familia a familia. Nenhum peso alterado."""
+    cfg = rd.load_config(config) if isinstance(config, str) else config
+    linhas = []
+    for ev in cfg["taxonomy"]:
+        cls = classificar_direcao_familia(ev)
+        linhas.append({
+            "family": ev["id"],
+            "evento_material": True,       # estar na taxonomia ja afirma isso
+            "direcao_declarada": ev.get("direction", ""),
+            "classificacao": cls,
+            "peso_base": ev.get("score", 0),
+            "severidade": ev.get("severity", ""),
+            "pontua_por_existir": cls == CONTEXTUAL and (ev.get("score", 0) > 0),
+            "status_politica": (PENDENTE if cls == CONTEXTUAL
+                                else "TAXONOMY_DECLARED")})
+    conflito = [x for x in linhas if x["pontua_por_existir"]]
+    return {"linhas": sorted(linhas, key=lambda x: -x["peso_base"]),
+            "familias": len(linhas),
+            "conflacao_materialidade_x_adversidade": sorted(
+                conflito, key=lambda x: -x["peso_base"]),
+            "peso_somado_das_neutras_que_pontuam": sum(
+                x["peso_base"] for x in conflito),
+            "authority": "SHADOW / SIMULATED · SOMENTE LEITURA"}
+
+
+def direcao_de_ocorrencia(o: dict, tax: dict) -> dict:
+    """§10 — classifica SO o que a evidencia sustenta. Nada e rotulado
+    automaticamente como positivo; na duvida, DIRECTION_UNDETERMINED."""
+    ev = tax.get(o["membros"][0]["family"], {})
+    cls = classificar_direcao_familia(ev)
+    if cls == ADVERSO:
+        return {"direcao": "ADVERSE", "base": "taxonomia declara `negativa`"}
+    return {"direcao": DIRECAO_INDETERMINADA,
+            "base": "taxonomia declara `" + (ev.get("direction") or "?")
+                    + "`; nenhuma evidencia local de deterioracao"}
+
+
+def decomposicao(company: str, S: dict, prod: dict, sim: dict,
+                 config="config_risco.yaml") -> dict:
+    """§11 — de onde vem cada ponto de um emissor."""
+    cfg = rd.load_config(config) if isinstance(config, str) else config
+    tax = {e["id"]: e for e in cfg["taxonomy"]}
+    linhas = []
+    for o in S["ocorrencias"]:
+        if o["company"] != company:
+            continue
+        d = direcao_de_ocorrencia(o, tax)
+        linhas.append({
+            "occurrence_id": o["occurrence_id"], "family": o["family"],
+            "canonical_object": o["canonical_object"],
+            "peso_base": o["score_base"],
+            "trust_w": o["membros"][0]["trust_w"],
+            "anchor_date": o["anchor_date"],
+            "contribuicao_simulada": o["simulated_contribution"],
+            "direcao": d["direcao"], "base_da_direcao": d["base"],
+            "representante": o["display_representative_title"][:100],
+            "n_membros": o["n_membros"]})
+    adv = sum(x["contribuicao_simulada"] for x in linhas
+              if x["direcao"] == "ADVERSE")
+    ind = sum(x["contribuicao_simulada"] for x in linhas
+              if x["direcao"] == DIRECAO_INDETERMINADA)
+    return {"company": company,
+            "producao": prod["empresas"].get(company),
+            "sombra": sim["empresas"].get(company),
+            "ocorrencias": sorted(linhas, key=lambda x: -x["contribuicao_simulada"]),
+            "contribuicao_de_familias_adversas": round(adv, 1),
+            "contribuicao_de_direcao_indeterminada": round(ind, 1),
+            "fracao_indeterminada": (round(ind / (adv + ind), 3)
+                                     if (adv + ind) else None),
+            "authority": "SHADOW / SIMULATED"}
+
+
+# ── §16/§17 · o score consome a CONTAGEM de ocorrencia? ─────────────────────
+def acoplamento_score_ocorrencia(caminho="risk_dashboard.py") -> dict:
+    """Le a producao para responder se promover a estrutura de ocorrencia SEM
+    mexer no score e tecnicamente possivel. Nao adivinha: procura a evidencia
+    no proprio codigo."""
+    src = io.open(caminho, encoding="utf-8").read()
+    chaveia = 'k = o.get("_occ_key") or o["event_id"]' in src
+    soma = ('return sum(b["contrib"] for b in '
+            'best_contribs(negatives, as_of_ts).values())' in src)
+    return {"best_contribs_chaveia_por_occ_key": chaveia,
+            "total_e_soma_por_chave": soma,
+            "score_consome_contagem_de_ocorrencia": chaveia and soma,
+            "conclusao": (
+                "o total do emissor e literalmente UMA contribuicao por "
+                "`_occ_key` somada: dividir uma ocorrencia em duas ACRESCENTA "
+                "uma parcela. Promover a estrutura sem mudar o score exigiria "
+                "manter duas chaves de ocorrencia vivas ao mesmo tempo — uma "
+                "para exibir e outra para pontuar — que e a verdade dupla "
+                "inconsistente que §16 proibe."
+                if chaveia and soma
+                else "acoplamento nao confirmado por leitura de codigo"),
+            "promocao_em_dois_estagios_segura": not (chaveia and soma),
+            "authority": "SHADOW / SIMULATED · SOMENTE LEITURA"}
+
+
+# ── §21/§23 · prontidao de OCORRENCIA e prontidao de SCORE, separadas ──────
+ERRO_OCORRENCIA = "OCCURRENCE_ERROR"
+LACUNA_POLITICA = "HUMAN_CONFIRMED_CORRECT_OCCURRENCE_BUT_SCORING_POLICY_GAP"
+NAO_REVISADO = "UNREVIEWED"
+EXPLICADO_OUTRO = "EXPLAINED_OTHER"
+
+
+def classificar_status_deltas(B: dict, S: dict, M: dict, prod: dict, sim: dict,
+                              config="config_risco.yaml") -> list:
+    """§23 — uma mudanca de status pode vir de identidade ERRADA ou de
+    identidade CERTA com politica de score em aberto. Sao coisas diferentes e
+    nao podem ser contadas juntas."""
+    cfg = rd.load_config(config) if isinstance(config, str) else config
+    fora = []
+    for x in B["delta_status"]:
+        dec = decomposicao(x["company"], S, prod, sim, cfg)
+        erro_humano = any(l.get("avaliavel") and l["company"] == x["company"]
+                          and l["identidade_ok"] is False for l in M["linhas"])
+        confirmado = any(l.get("avaliavel") and l["company"] == x["company"]
+                         and l["identidade_ok"] is True for l in M["linhas"])
+        if erro_humano:
+            cat = ERRO_OCORRENCIA
+        elif confirmado and dec["fracao_indeterminada"] is not None \
+                and dec["fracao_indeterminada"] >= 0.5:
+            cat = LACUNA_POLITICA
+        elif not x["explicado"]:
+            cat = NAO_REVISADO
+        else:
+            cat = EXPLICADO_OUTRO
+        fora.append({**x, "categoria": cat,
+                     "fracao_indeterminada": dec["fracao_indeterminada"],
+                     "contribuicao_adversa": dec["contribuicao_de_familias_adversas"],
+                     "contribuicao_indeterminada":
+                         dec["contribuicao_de_direcao_indeterminada"]})
+    return fora
+
+
+def prontidao(S, prod, M, T, B, F, sim, config="config_risco.yaml") -> dict:
+    """§21 — DOIS veredictos, nunca um booleano so ate o fim."""
+    cats = classificar_status_deltas(B, S, M, prod, sim, config)
+    col = colisoes_de_id(S)
+    amb = [x for x in B["sobre_fusao_divisoes"] if x["confianca"] == "AMBIGUOUS"]
+    bloq_occ = []
+    if M["identidade"]["erros"]:
+        bloq_occ.append("identidade humana: " + str(M["identidade"]["erros"]))
+    if M["fase"]["erros"]:
+        bloq_occ.append("fase humana: " + str(M["fase"]["erros"]))
+    if M["refresh"]["erros"]:
+        bloq_occ.append("renovacao humana: " + str(M["refresh"]["erros"]))
+    if M["representante"]["erros"]:
+        bloq_occ.append("representante humano: " + str(M["representante"]["erros"]))
+    if col:
+        bloq_occ.append("colisao de id: " + str(len(col)))
+    if F["membros_sem_article_id"]:
+        bloq_occ.append("proveniencia perdida")
+    if B["sub_fusao_fusoes"]:
+        bloq_occ.append("fusao inexplicada: " + str(len(B["sub_fusao_fusoes"])))
+    if [x for x in cats if x["categoria"] == ERRO_OCORRENCIA]:
+        bloq_occ.append("status muda por identidade errada")
+
+    bloq_score = []
+    if [x for x in cats if x["categoria"] == LACUNA_POLITICA]:
+        bloq_score.append(
+            "status muda com identidade CERTA e direcao indeterminada: "
+            + str([x["company"] for x in cats if x["categoria"] == LACUNA_POLITICA]))
+    if [x for x in cats if x["categoria"] == NAO_REVISADO]:
+        bloq_score.append("status muda sem explicacao")
+    aberto = [f for f, v in POLITICA_STATUS_FAMILIA.items()
+              if v["status"] != "HUMAN_CONFIRMED"]
+    if aberto:
+        bloq_score.append("politica de renovacao em aberto: " + str(sorted(aberto)))
+    mat = matriz_materialidade(config)
+    if mat["conflacao_materialidade_x_adversidade"]:
+        bloq_score.append(
+            "familias `neutra` que pontuam por existir: "
+            + str(len(mat["conflacao_materialidade_x_adversidade"]))
+            + " (peso somado " + str(mat["peso_somado_das_neutras_que_pontuam"]) + ")")
+    return {
+        "ocorrencia": {
+            "identidade": M["identidade"], "fase": M["fase"],
+            "renovacao": M["refresh"], "representante": M["representante"],
+            "data_efetiva": M["data_efetiva"],
+            "ids_estaveis": not col,
+            "proveniencia": (str(F["membros_com_article_id"]) + "/"
+                             + str(F["membros_sombra"])),
+            "fusoes_inexplicadas": len(B["sub_fusao_fusoes"]),
+            "divisoes_ambiguas": len(amb),
+            "bloqueadores": bloq_occ,
+            "pronta": not bloq_occ},
+        "score": {
+            "delta_total": B["delta_score_total"],
+            "empresas_com_delta": len(B["delta_score_por_empresa"]),
+            "status_deltas": cats,
+            "bloqueadores": bloq_score,
+            "pronta": not bloq_score},
+        "acoplamento": acoplamento_score_ocorrencia(),
+        "authority": "SHADOW / SIMULATED"}
+
+
 # ── §6 · a estrutura de ocorrencia da sombra ─────────────────────────────────
 def construir(historico="risk_history.json", config="config_risco.yaml") -> dict:
     C = candidatos(historico, config)
@@ -951,6 +1260,22 @@ def construir(historico="risk_history.json", config="config_risco.yaml") -> dict
                 m.get("marcador_nao_contradiz") for m in anonimos):
             grupos[0].extend(anonimos)
             anonimos = []
+        # Um ACOMPANHAMENTO, por definicao, se refere a um fato que ja existe.
+        # Sem objeto proprio ele nao pode ABRIR ocorrencia: cria-la seria
+        # inventar um evento economico a partir de um comentario. Ancora-se na
+        # ocorrencia mais proxima no tempo. Nada disso depende de score — e a
+        # mesma regra vale se o peso da familia for zero.
+        if grupos:
+            resto = []
+            for m in anonimos:
+                if m["fase"] != ACOMPANHAMENTO:
+                    resto.append(m)
+                    continue
+                perto = min(grupos, key=lambda g: min(
+                    abs(m["pub_ts"] - x["pub_ts"]) for x in g))
+                perto.append(m)
+                m["_ancorado_por_acompanhamento"] = True
+            anonimos = resto
         anonimos.sort(key=lambda m: m["pub_ts"])
         atual: list = []
         for m in anonimos:
@@ -1439,7 +1764,27 @@ def avaliar_occurrence_truth(S: dict, caminho="risk_semantic_v2_shadow.json") ->
 
 
 # ── §26/§27/§28/§29/§30 · os blasts ─────────────────────────────────────────
+ARQUIVO_CALIBRACAO = "occurrence_calibration_shadow.json"
+
+
+def carregar_calibracao(caminho: str = ARQUIVO_CALIBRACAO) -> dict:
+    """Confirmacoes humanas de NIVEL DE PAR (emissor x familia).
+
+    `risk_human_supervision.json` e indexado por `article_id|company|family` e
+    ja esta congelado; parte das decisoes desta calibracao se refere a artigos
+    que nem existem no acervo (a transacao Walkers). Registrar aqui evita bump
+    de schema e evita reescrever verdade humana anterior."""
+    try:
+        d = json.load(io.open(caminho, encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    return {(c["company"], c["family"]): c for c in d.get("confirmacoes", [])
+            if c.get("company") and c.get("family")}
+
+
 def _humano_confirmado(M: dict, company: str, family: str) -> bool:
+    if (company, family) in carregar_calibracao():
+        return True
     return any(l.get("avaliavel") and l["company"] == company
                and l["family"] == family for l in M["linhas"])
 
@@ -1664,6 +2009,8 @@ def rodar_tudo(historico="risk_history.json", config="config_risco.yaml") -> dic
             "fila_revisao": fila_revisao(B, M),
             "politica_familias": politica_familias(),
             "colisoes_de_id": colisoes_de_id(S),
+            "matriz_materialidade": matriz_materialidade(config),
+            "prontidao": prontidao(S, prod, M, T, B, F, sim, config),
             "promocao": promocao(S, prod, M, T, B, F),
             "equivalencia_producao": rp.equivalencia(prod)}
 

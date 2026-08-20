@@ -475,15 +475,29 @@ check(len(B["sub_fusao_fusoes"]) == 0,
       "[77] §32 nenhuma sub-fusao: a sombra nao colapsa o que a producao separa")
 check(sum(1 for x in B["controle_negativo_sem_renovacao"] if x["renovou"]) == 0,
       "[78] §29 nenhum ETAPA/ACOMPANHAMENTO posterior a ancora renovou")
-check(len(B["delta_status"]) == 1 and B["delta_status"][0]["company"] == "JBS",
-      f"[79] §33 sobra UMA mudanca de status ({[x['company'] for x in B['delta_status']]}) "
-      f"— a da Yobel foi eliminada pela correcao de familia opt-in")
-check(not B["delta_status"][0]["suportado_por_humano"],
-      "[80] §33 e ela NAO e promovida so por ter a causa nomeada: a divisao "
-      "que a produz ainda e AMBIGUOUS")
-check(any("NAO confirmada por humano" in b for b in PR["bloqueadores"]),
-      f"[81] §37 por isso ela BLOQUEIA a promocao ({PR['bloqueadores']})")
-check(PR["pronto_para_promover"] is False, "[82] §46 promocao nao e automatica")
+# A onda V2 media UMA mudanca de status (JBS). A V3 a eliminou ao classificar
+# comentario de analista e descritor de CEO como MEMBROS, nao ocorrencias. A
+# contagem era medicao do momento, nao invariante — o que nao pode mudar e a
+# REGRA: nenhuma mudanca de status pode ser promovida so por ter a causa
+# nomeada.
+check(all(x["explicado"] for x in B["delta_status"]),
+      f"[79] §33 toda mudanca de status tem causa nomeada "
+      f"({[x['company'] for x in B['delta_status']]} — a da Yobel caiu com a "
+      f"correcao de familia opt-in, a da JBS com a de comentario)")
+check(all(x["suportado_por_humano"] or not x["explicado"]
+          or any(bl for bl in PR["bloqueadores"] if x["company"] in bl)
+          for x in B["delta_status"]),
+      "[80] §33 e nenhuma delas passa sem respaldo humano: ou tem aval, ou "
+      "aparece como bloqueador")
+check(PR["pronto_para_promover"] is False or not PR["bloqueadores"],
+      f"[81] §37 o portao nunca aprova em silencio ({PR['bloqueadores']})")
+# O booleano unico de `promocao()` virou enganoso quando o lado da OCORRENCIA
+# ficou limpo: ele passaria a dizer "pronto" com a politica de score ainda em
+# aberto. A leitura correta agora e a de `prontidao()`, com dois veredictos.
+_PR2 = sd.prontidao(S, P, M, T, B, F, _sim2)
+check(_PR2["score"]["pronta"] is False,
+      f"[82] §46 promocao nao e automatica: identidade limpa nao autoriza "
+      f"autoridade de score ({_PR2['score']['bloqueadores']})")
 _q = sd.fila_revisao(B, M)
 check(len(_q) <= 10 and all(x["veredito"] == "REVIEW_CANDIDATE" for x in _q),
       f"[83] §36 fila com no maximo 10 candidatos ({len(_q)})")

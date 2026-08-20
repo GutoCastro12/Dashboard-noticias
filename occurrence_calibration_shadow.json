@@ -1,0 +1,35 @@
+{
+  "_meta": {
+    "schema": "occurrence.calibration.shadow.v1",
+    "provenance": "HUMAN_REVIEW_2026_08_20",
+    "adjudicated_by": "gustavo",
+    "adjudicator_type": "human",
+    "production_score_authority": "NONE",
+    "production_occurrence_authority": "NONE",
+    "write_authority": "NONE",
+    "porque_nao_esta_em_risk_human_supervision": "aquele artefato e indexado por article_id|company|family e ja esta congelado em 27 memberships / 24 casos. Estas decisoes sao de NIVEL DE PAR emissor x familia (identidade de ocorrencia), e parte delas se refere a artigos que nem existem no acervo. Registrar aqui evita bump de schema e evita reescrever verdade humana anterior."
+  },
+  "confirmacoes": [
+    {
+      "company": "JBS",
+      "family": "ma",
+      "decisao": "DISTINCT_OCCURRENCES",
+      "transacoes": [
+        {"rotulo": "Pilgrim's Pride 18% restantes", "article_id": "ac0be217149db21ae564", "no_acervo": true},
+        {"rotulo": "Pilgrim's Pride compra Walkers Deli (Reino Unido)", "article_id": null, "no_acervo": false,
+         "nota": "nao existe em risk_history.json — lacuna de COLETA, nao de identidade"},
+        {"rotulo": "US$ 150 mi em ativos em Oma", "article_id": "f11950284cc8d9a152f5", "no_acervo": true}
+      ],
+      "ressalva_humana": "estes eventos NAO sao necessariamente adversos; separacao correta de ocorrencia nao prova severidade de risco maior",
+      "evidence": "tres transacoes economicas distintas, com alvos e contrapartes diferentes"
+    },
+    {
+      "company": "JBS",
+      "family": "troca_ceo",
+      "decisao": "ONE_OCCURRENCE",
+      "confirmada": {"rotulo": "Wesley Batista Filho, CEO global a partir de janeiro", "article_id": "edeb694bf05ba64f3430"},
+      "segundo_candidato": {"article_id": "201b91aa6b3c1d9e780c", "classificacao": "DESCRIPTOR_FOLLOW_UP",
+                            "evidence": "assercao primaria e sobre margens nos EUA; 'novo CEO promete continuidade' e descritor de cargo, capturado pela guarda R_TROCA_CEO_SEM_ASSERCAO ja publicada em producao"}
+    }
+  ]
+}

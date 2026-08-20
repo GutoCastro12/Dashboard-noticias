@@ -451,6 +451,128 @@ Política de renovação, sem esconder incerteza:
 BTG e Baker Hughes seguem `UNREVIEWED`: a calibração de hoje não lhes empresta
 verdade.
 
+---
+
+# Adendo 3 — Sombra V3: JBS, e a separação entre ocorrência e score
+
+> `HUMAN_REVIEW_2026_08_20`. A decisão da JBS fechou o último bloqueador de
+> ocorrência. Nada foi promovido.
+
+## A decisão e a ressalva que veio junto
+
+As três transações da JBS são **ocorrências distintas**: os 18% restantes da
+Pilgrim's Pride, a compra da Walkers Deli pela Pilgrim's no Reino Unido, e os
+US$ 150 mi em Omã. E o humano acrescentou o que importa: **elas não são
+necessariamente adversas**. Separar corretamente não prova que a JBS merece
+severidade maior.
+
+Essa ressalva reorganizou a onda inteira.
+
+## A inflação não vinha das transações
+
+A V2 media JBS `atenção → crítico`, +56,4, e eu a classifiquei como divisão
+ambígua. **Estava errado.** Medindo artigo a artigo, as duas parcelas extras
+vinham de dois textos que não são eventos econômicos:
+
+| artigo | o que a V2 fazia | o que é |
+|---|---|---|
+| "UBS reitera recomendação de compra para JBS **após** proposta de aquisição da PPC" | abria uma 3ª ocorrência de M&A | análise de casa **sobre** a proposta |
+| "JBS busca recuperar margens nos EUA com gado mexicano, **e novo CEO promete continuidade**" | abria uma 2ª ocorrência de CEO | descritor de cargo, sem asserção |
+
+Duas regras, ambas escopadas:
+
+- **asserção primária de analista** → `ACOMPANHAMENTO`, **exceto** nas famílias
+  em que a ação da casa *é* o evento (`recomendacao_negativa`,
+  `rebaixamento_rating`). O corte de preço-alvo da Stephens segue sendo evento.
+- **descritor sem asserção** → reusa `detect_troca_ceo_sem_assercao`, a guarda
+  `R_TROCA_CEO_SEM_ASSERCAO` **já publicada em produção**. Reimplementá-la
+  criaria duas opiniões sobre a mesma coisa.
+
+E um princípio geral: **um acompanhamento não abre ocorrência**. Sem objeto
+próprio, ele se ancora na ocorrência mais próxima — criar uma seria inventar um
+evento econômico a partir de um comentário.
+
+Resultado: JBS **90,3** simulado contra **90** de produção, mesmo status. O
+delta de status desapareceu **do corpus inteiro** — zero.
+
+## Em M&A o objeto é o ALVO
+
+O controle sintético fundiu a proposta pela Pilgrim's com a compra da Walkers
+*pela* Pilgrim's: os dois títulos citam a Pilgrim's, mas numa ela é alvo e na
+outra é compradora. O objeto passou a ser o que vem **depois** da pista de
+aquisição — e a pista só vale seguida de conectivo de complemento
+("aquisição **da** Walkers", "aquisição **em** Omã"), senão "aquisição
+**decorre** do Compromisso Vinculante" tomaria o compromisso como alvo.
+
+Também se recuperou o nome próprio de exatamente três letras, que a produção
+descarta pelo mínimo de quatro em `_marcadores_operacao` — era o objeto de uma
+das três transações: **Omã**.
+
+## O que não está no acervo
+
+**A transação Walkers não existe em `risk_history.json`.** A sombra alcança 2
+das 3 transações humanas; a terceira é reportada como não coletada, não
+fabricada. Mesma classe do caso Natura: lacuna de **coleta**, e nomeá-la é
+melhor do que fingir concordância.
+
+## Identidade não pode depender de score
+
+Metamórfica obrigatória, agora travada: os mesmos artigos com peso de `ma`
+**zero**, normal e **dobrado** produzem `occurrence_id` e membros **idênticos**.
+Só a contribuição muda. Sem isso, "corrigir" identidade até o score fechar
+seria sempre possível — e a arquitetura não valeria nada.
+
+## O que a taxonomia já dizia, e ninguém tinha somado
+
+O `config_risco.yaml` declara `direction` para cada família. **Oito famílias
+declaradas `neutra` pontuam pela mera existência do evento**, somando **180
+pontos** de peso-base:
+
+| família | peso | severidade | direção declarada |
+|---|---:|---|---|
+| `ma` | 40 | alto | **neutra** |
+| `emissao_divida` | 35 | alto | **neutra** |
+| `follow_on` | 30 | alto | **neutra** |
+| `troca_ceo` | 25 | alto | **neutra** |
+| `mudanca_regulatoria` · `emissao_cotas` · `indice` · `pequenas_aquisicoes` | 15·15·10·10 | médio | **neutra** |
+
+Na JBS isso é literal: **86%** do score simulado vem de famílias de direção
+indeterminada. Das cinco ocorrências, **uma** é adversa pela declaração da
+própria taxonomia — o corte de preço-alvo, 12,6 de 90,3.
+
+O painel hoje conflaciona **evento material** com **evento ruim**. Nenhum peso
+foi tocado; a medição é somente leitura, e não se criou motor de polaridade
+nenhum: fora do que a taxonomia declara `negativa`, a direção sai
+`DIRECTION_UNDETERMINED` — nunca "positiva" por conta própria.
+
+## Promoção em dois estágios não é segura
+
+Lido do código, não suposto:
+
+```python
+k = o.get("_occ_key") or o["event_id"]          # best_contribs
+return sum(b["contrib"] for b in best_contribs(...).values())
+```
+
+O total do emissor é **uma contribuição por `_occ_key`, somada**. Dividir uma
+ocorrência em duas **acrescenta uma parcela**. Promover a estrutura de
+ocorrência sem mexer no score exigiria manter duas chaves vivas ao mesmo tempo
+— uma para exibir e outra para pontuar — que é a verdade dupla inconsistente
+que a própria onda proíbe.
+
+**Portanto: calibração de política de score ANTES da promoção de ocorrência.**
+
+## Dois veredictos, não um
+
+| | estado |
+|---|---|
+| **Ocorrência** | identidade 13/13 · fase 14/14 · renovação 6/6 · representante 3/3 · data efetiva 3/3 · ids estáveis · proveniência 127/127 · zero fusão inexplicada · **zero bloqueadores** |
+| **Score** | política de renovação aberta em 4 famílias · 8 famílias `neutra` pontuando por existir · **não pronta** |
+
+O booleano único de `promocao()` teria dito "pronto" agora que a identidade está
+limpa. Foi substituído por `prontidao()`, que reporta os dois lados separados —
+identidade limpa **não** autoriza autoridade de pontuação.
+
 ## Fora de escopo, e permanecem separados
 
 - **B3/Gol** — `ATTRIBUTION_REVIEW_CANDIDATE`; a raiz é atribuição, não ocorrência.
