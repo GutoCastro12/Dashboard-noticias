@@ -3481,6 +3481,240 @@
     "total_token_count": 1625
    }
   },
+  "82d4ee2f88f8b8f932a5|CPFL Energia|troca_ceo|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "82d4ee2f88f8b8f932a5",
+   "article_pub_iso": "2026-08-20 14:33",
+   "candidate_event": "troca_ceo",
+   "case_id": "82d4ee2f88f8b8f932a5|CPFL Energia|troca_ceo|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "CPFL Energia",
+   "contract_version": "v2",
+   "created_at": "2026-08-21T13:58:09Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-21 10:56",
+    "contexto": false,
+    "event_id": "troca_ceo",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Bruno Monte Assume A Presidência",
+      "event_asserted": "ASSERTED",
+      "event_id": "troca_ceo",
+      "event_quote": "Bruno Monte Assume A Presidência Da CPFL Renováveis",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Bruno Monte Assume A Presidência",
+      "phase": "CONFIRMED",
+      "phase_quote": "Assume A Presidência",
+      "related_entity": "Bruno Monte",
+      "relation": "CEO",
+      "relation_quote": "CEO",
+      "role_quote": "Presidência",
+      "subject": "CPFL Energia",
+      "subject_basis": "INFERRED",
+      "subject_quote": "CPFL Renováveis",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-21 10:56",
+   "human_review": null,
+   "latencia_s": 1.81,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Bruno Monte Assume A Presidência",
+      "event_asserted": "ASSERTED",
+      "event_id": "troca_ceo",
+      "event_quote": "Bruno Monte Assume A Presidência Da CPFL Renováveis",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Bruno Monte Assume A Presidência",
+      "phase": "CONFIRMED",
+      "phase_quote": "Assume A Presidência",
+      "related_entity": "Bruno Monte",
+      "relation": "CEO",
+      "relation_quote": "CEO",
+      "role_quote": "Presidência",
+      "subject": "CPFL Energia",
+      "subject_basis": "INFERRED",
+      "subject_quote": "CPFL Renováveis",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Cenário Energia",
+   "title": "De Estagiário A CEO: Bruno Monte Assume A Presidência Da CPFL Renováveis",
+   "url": "https://cenarioenergia.com.br/2026/08/20/de-estagiario-a-ceo-bruno-monte-assume-a-presidencia-da-cpfl-renovaveis/",
+   "usage": {
+    "candidates_token_count": 285,
+    "prompt_token_count": 1324,
+    "total_token_count": 1609
+   }
+  },
+  "82d4ee2f88f8b8f932a5|CPFL Energia|troca_ceo|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "82d4ee2f88f8b8f932a5",
+   "article_pub_iso": "2026-08-20 14:33",
+   "candidate_event": "troca_ceo",
+   "case_id": "82d4ee2f88f8b8f932a5|CPFL Energia|troca_ceo|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "CPFL Energia",
+   "contract_version": "v2",
+   "created_at": "2026-08-21T13:58:19Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-21 10:56",
+    "contexto": false,
+    "event_id": "troca_ceo",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Bruno Monte Assume A Presidência Da CPFL Renováveis",
+      "event_asserted": "ASSERTED",
+      "event_id": "troca_ceo",
+      "event_quote": "Bruno Monte Assume A Presidência Da CPFL Renováveis",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Bruno Monte Assume A Presidência Da CPFL Renováveis",
+      "phase": "CONCLUDED",
+      "phase_quote": "Bruno Monte Assume A Presidência Da CPFL Renováveis",
+      "related_entity": "Bruno Monte",
+      "relation": "ASSUMED_CEO",
+      "relation_quote": "Assume A Presidência",
+      "role_quote": "CPFL",
+      "subject": "CPFL Energia",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "CPFL",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": ""
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-21 10:56",
+   "human_review": null,
+   "latencia_s": 1.59,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Bruno Monte Assume A Presidência Da CPFL Renováveis",
+      "event_asserted": "ASSERTED",
+      "event_id": "troca_ceo",
+      "event_quote": "Bruno Monte Assume A Presidência Da CPFL Renováveis",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Bruno Monte Assume A Presidência Da CPFL Renováveis",
+      "phase": "CONCLUDED",
+      "phase_quote": "Bruno Monte Assume A Presidência Da CPFL Renováveis",
+      "related_entity": "Bruno Monte",
+      "relation": "ASSUMED_CEO",
+      "relation_quote": "Assume A Presidência",
+      "role_quote": "CPFL",
+      "subject": "CPFL Energia",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "CPFL",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": ""
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Cenário Energia",
+   "title": "De Estagiário A CEO: Bruno Monte Assume A Presidência Da CPFL Renováveis",
+   "url": "https://cenarioenergia.com.br/2026/08/20/de-estagiario-a-ceo-bruno-monte-assume-a-presidencia-da-cpfl-renovaveis/",
+   "usage": {
+    "candidates_token_count": 303,
+    "prompt_token_count": 1324,
+    "total_token_count": 1627
+   }
+  },
   "83effbd842777700232f|JBS|recomendacao_negativa|v2|r7ba.p2|gemini-3.1-flash-lite": {
    "actual_model": "gemini-3.1-flash-lite",
    "article_id": "83effbd842777700232f",
@@ -4763,6 +4997,253 @@
     "candidates_token_count": 322,
     "prompt_token_count": 1326,
     "total_token_count": 1648
+   }
+  },
+  "afc57f77f7524d931777|CPFL Energia|follow_on|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "afc57f77f7524d931777",
+   "article_pub_iso": "2025-11-19 05:00",
+   "candidate_event": "follow_on",
+   "case_id": "afc57f77f7524d931777|CPFL Energia|follow_on|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "CPFL Energia",
+   "contract_version": "v2",
+   "created_at": "2026-08-21T13:58:29Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-21 10:56",
+    "contexto": false,
+    "event_id": "follow_on",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 0,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": false,
+       "marcas": [
+        "H1_QUOTE_INEXISTENTE",
+        "H3_ENTIDADE_AUSENTE",
+        "H3_ENTIDADE_AUSENTE"
+       ],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [
+         "relation_quote"
+        ],
+        "valida": false
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Oferta secundária de debêntures da CPFL deve movimentar R$ 451 milhões",
+      "event_asserted": "ASSERTED",
+      "event_id": "follow_on",
+      "event_quote": "Oferta secundária de debêntures da CPFL deve movimentar R$ 451 milhões",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Oferta secundária de debêntures da CPFL deve movimentar R$ 451 milhões",
+      "phase": "ANNOUNCED",
+      "phase_quote": "deve movimentar",
+      "related_entity": "null",
+      "relation": "null",
+      "relation_quote": "null",
+      "role_quote": "CPFL",
+      "subject": "CPFL Energia",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "CPFL",
+      "transaction_object": "OTHER",
+      "transaction_object_quote": "debêntures"
+     }
+    ],
+    "falha": "",
+    "marcas": [
+     "H1_QUOTE_INEXISTENTE",
+     "H3_ENTIDADE_AUSENTE"
+    ],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-21 10:56",
+   "human_review": null,
+   "latencia_s": 1.92,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Oferta secundária de debêntures da CPFL deve movimentar R$ 451 milhões",
+      "event_asserted": "ASSERTED",
+      "event_id": "follow_on",
+      "event_quote": "Oferta secundária de debêntures da CPFL deve movimentar R$ 451 milhões",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Oferta secundária de debêntures da CPFL deve movimentar R$ 451 milhões",
+      "phase": "ANNOUNCED",
+      "phase_quote": "deve movimentar",
+      "related_entity": "null",
+      "relation": "null",
+      "relation_quote": "null",
+      "role_quote": "CPFL",
+      "subject": "CPFL Energia",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "CPFL",
+      "transaction_object": "OTHER",
+      "transaction_object_quote": "debêntures"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Valor Econômico",
+   "title": "Oferta secundária de debêntures da CPFL deve movimentar R$ 451 milhões",
+   "url": "https://valor.globo.com/financas/noticia/2025/11/19/oferta-secundria-de-debntures-da-cpfl-deve-movimentar-r-451-milhes.ghtml",
+   "usage": {
+    "candidates_token_count": 309,
+    "prompt_token_count": 1326,
+    "total_token_count": 1635
+   }
+  },
+  "afc57f77f7524d931777|CPFL Energia|follow_on|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "afc57f77f7524d931777",
+   "article_pub_iso": "2025-11-19 05:00",
+   "candidate_event": "follow_on",
+   "case_id": "afc57f77f7524d931777|CPFL Energia|follow_on|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "CPFL Energia",
+   "contract_version": "v2",
+   "created_at": "2026-08-21T13:58:38Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-21 10:56",
+    "contexto": false,
+    "event_id": "follow_on",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 0,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": false,
+       "marcas": [
+        "H3_ENTIDADE_AUSENTE"
+       ],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "MENTIONED",
+      "currentness": "CURRENT",
+      "currentness_quote": "Oferta secundária de debêntures da CPFL deve movimentar R$ 451 milhões",
+      "event_asserted": "MENTIONED_ONLY",
+      "event_id": "follow_on",
+      "event_quote": "Oferta secundária de debêntures da CPFL",
+      "field_support": "PARTIALLY_SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Oferta secundária de debêntures da CPFL deve movimentar R$ 451 milhões",
+      "phase": "ANNOUNCED",
+      "phase_quote": "deve movimentar",
+      "related_entity": "Valor Econômico",
+      "relation": "issuance",
+      "relation_quote": "Oferta secundária de debêntures da CPFL",
+      "role_quote": "CPFL",
+      "subject": "CPFL Energia",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "CPFL",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "debêntures"
+     }
+    ],
+    "falha": "",
+    "marcas": [
+     "H3_ENTIDADE_AUSENTE"
+    ],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-21 10:56",
+   "human_review": null,
+   "latencia_s": 1.66,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "MENTIONED",
+      "currentness": "CURRENT",
+      "currentness_quote": "Oferta secundária de debêntures da CPFL deve movimentar R$ 451 milhões",
+      "event_asserted": "MENTIONED_ONLY",
+      "event_id": "follow_on",
+      "event_quote": "Oferta secundária de debêntures da CPFL",
+      "field_support": "PARTIALLY_SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Oferta secundária de debêntures da CPFL deve movimentar R$ 451 milhões",
+      "phase": "ANNOUNCED",
+      "phase_quote": "deve movimentar",
+      "related_entity": "Valor Econômico",
+      "relation": "issuance",
+      "relation_quote": "Oferta secundária de debêntures da CPFL",
+      "role_quote": "CPFL",
+      "subject": "CPFL Energia",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "CPFL",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "debêntures"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Valor Econômico",
+   "title": "Oferta secundária de debêntures da CPFL deve movimentar R$ 451 milhões",
+   "url": "https://valor.globo.com/financas/noticia/2025/11/19/oferta-secundria-de-debntures-da-cpfl-deve-movimentar-r-451-milhes.ghtml",
+   "usage": {
+    "candidates_token_count": 326,
+    "prompt_token_count": 1326,
+    "total_token_count": 1652
    }
   },
   "bf449889bcebca2a7d7a|Lojas Renner|recomendacao_negativa|v2|r7ba.p2|gemini-3.1-flash-lite": {

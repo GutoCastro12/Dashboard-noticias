@@ -426,6 +426,32 @@
    "title": "CVM abre processo administrativo contra ex-presidente do conselho da Vale, diz jornal",
    "url": "https://www.infomoney.com.br/mercados/cvm-abre-processo-administrativo-contra-ex-presidente-do-conselho-da-vale-diz-jornal/"
   },
+  "228cf75a11cbfd598e5e": {
+   "article_id": "228cf75a11cbfd598e5e",
+   "companies": [
+    "Ultrapar"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2021-09-28 04:00",
+    "feed_pub_ts": 1632812400,
+    "page_date_modified": "2021-09-29T17:06:00.000Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2021-09-28 20:21",
+    "page_pub_ts": 1632860512,
+    "pub_date_conflict_s": 48112,
+    "pub_date_note": "divergência de 48112s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2021-09-28 04:00",
+    "pub_ts": 1632812400
+   },
+   "revisions": [],
+   "source": "Exame",
+   "title": "Ultrapar: Marcos Lutz, novo CEO, compra ações e vira sócio dos donos",
+   "url": "https://exame.com/insight/ultrapar-marcos-lutz-novo-ceo-compra-acoes-e-vira-socio-dos-donos/p"
+  },
   "2a810c6d7796d4db9605": {
    "article_id": "2a810c6d7796d4db9605",
    "companies": [
@@ -945,6 +971,32 @@
    "title": "Ternium conclui aquisição do controle da Usiminas (USIM5) e celebra novo acordo de acionistas",
    "url": "https://www.infomoney.com.br/mercados/ternium-conclui-aquisicao-do-controle-da-usiminas-usim5-e-celebra-novo-acordo-de-acionistas/"
   },
+  "82d4ee2f88f8b8f932a5": {
+   "article_id": "82d4ee2f88f8b8f932a5",
+   "companies": [
+    "CPFL Energia"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2026-08-20 14:33",
+    "feed_pub_ts": 1787247234,
+    "page_date_modified": "2026-08-20T14:33:58-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2026-08-20 17:33",
+    "page_pub_ts": 1787247234,
+    "pub_date_conflict_s": 0,
+    "pub_date_note": "divergência de 0s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2026-08-20 14:33",
+    "pub_ts": 1787247234
+   },
+   "revisions": [],
+   "source": "Cenário Energia",
+   "title": "De Estagiário A CEO: Bruno Monte Assume A Presidência Da CPFL Renováveis",
+   "url": "https://cenarioenergia.com.br/2026/08/20/de-estagiario-a-ceo-bruno-monte-assume-a-presidencia-da-cpfl-renovaveis/"
+  },
   "838fd060b3c5a982e0f2": {
    "article_id": "838fd060b3c5a982e0f2",
    "companies": [
@@ -1234,6 +1286,32 @@
    "title": "O que aconteceria se o CIBanco e o Intercam declarassem falência?",
    "url": "https://www.informador.mx/economia/Lavado-de-dinero-Que-pasaria-si-CIBanco-e-Intercam-se-declaran-en-quiebra-20250627-0061.html"
   },
+  "9f42a66addf127a0f506": {
+   "article_id": "9f42a66addf127a0f506",
+   "companies": [
+    "Gerdau"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2026-07-03 04:00",
+    "feed_pub_ts": 1783062000,
+    "page_date_modified": "2026-07-03T18:09:19.000Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2026-07-03 18:09",
+    "page_pub_ts": 1783102159,
+    "pub_date_conflict_s": 40159,
+    "pub_date_note": "divergência de 40159s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2026-07-03 04:00",
+    "pub_ts": 1783062000
+   },
+   "revisions": [],
+   "source": "Brasil Mineral",
+   "title": "SIDERURGIA | Recuperação gradual das operações da Gerdau no Brasil eleva rating",
+   "url": "https://brasilmineral.com.br/noticias/recuperacao-gradual-das-operacoes-da-gerdau-no-brasil-eleva-rating"
+  },
   "a15d0afabf5b83617c0a": {
    "article_id": "a15d0afabf5b83617c0a",
    "companies": [
@@ -1443,6 +1521,58 @@
    "title": "BREAKING: Dasa faz aquisição de R$ 1,77 bi e não descarta IPO",
    "url": "https://braziljournal.com/breaking-dasa-faz-aquisicao-de-r-177-bi-e-nao-descarta-ipo/"
   },
+  "bd2150c1e0abf7bba57f": {
+   "article_id": "bd2150c1e0abf7bba57f",
+   "companies": [
+    "Fisia"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2025-07-03 04:00",
+    "feed_pub_ts": 1751526000,
+    "page_date_modified": "2025-07-03T08:38:02-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2025-07-03 11:38",
+    "page_pub_ts": 1751542682,
+    "pub_date_conflict_s": 16682,
+    "pub_date_note": "divergência de 16682s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2025-07-03 04:00",
+    "pub_ts": 1751526000
+   },
+   "revisions": [],
+   "source": "Estadão",
+   "title": "Fisia, do Grupo SBF (SBFG3), fará 5ª emissão de debêntures milionários; veja valor total",
+   "url": "https://www.estadao.com.br/einvestidor/onde-investir/debentures-simples-fisia-grupo-sbf/"
+  },
+  "bd7f525c64eecb23e0c5": {
+   "article_id": "bd7f525c64eecb23e0c5",
+   "companies": [
+    "Ultrapar"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2024-12-16 05:00",
+    "feed_pub_ts": 1734336000,
+    "page_date_modified": "2024-12-16T13:55:30-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2024-12-16 16:55",
+    "page_pub_ts": 1734368130,
+    "pub_date_conflict_s": 32130,
+    "pub_date_note": "divergência de 32130s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2024-12-16 05:00",
+    "pub_ts": 1734336000
+   },
+   "revisions": [],
+   "source": "Estadão",
+   "title": "Troca de CEO da Ultrapar (UGPA3) surpreende Citi; veja qual é a visão do banco para a mudança",
+   "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/ultrapar-ugpa3-troca-ceo-surpreende-citi/"
+  },
   "c6e2220e58fa3605c77a": {
    "article_id": "c6e2220e58fa3605c77a",
    "companies": [
@@ -1546,6 +1676,32 @@
    "source": "Bloomberg Línea Brasil",
    "title": "Multiplan mira expansão ao interior e Nordeste e renovar quadros, diz novo CEO",
    "url": "https://www.bloomberglinea.com.br/2023/03/09/multiplan-mira-expansao-para-o-nordeste-e-renovacao-de-quadros-diz-novo-ceo/"
+  },
+  "d88899866ad91f0f33c6": {
+   "article_id": "d88899866ad91f0f33c6",
+   "companies": [
+    "Grupo Security"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2025-03-03 05:00",
+    "feed_pub_ts": 1740988800,
+    "page_date_modified": "2025-03-07T15:33:22+00:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2025-03-03 01:33",
+    "page_pub_ts": 1740965615,
+    "pub_date_conflict_s": 23185,
+    "pub_date_note": "divergência de 23185s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2025-03-03 05:00",
+    "pub_ts": 1740988800
+   },
+   "revisions": [],
+   "source": "Funds Society",
+   "title": "BICE encerra sua OPA e obtém o controle do Grupo Security",
+   "url": "https://www.fundssociety.com/es/noticias/negocio/bice-cierra-su-opa-y-toma-el-control-de-grupo-security/"
   },
   "dbac821240a3bf50ca12": {
    "article_id": "dbac821240a3bf50ca12",
