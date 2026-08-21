@@ -375,6 +375,58 @@
    "title": "Eletrobras recebe aval do Cade para aquisição de 51% da Eletronet",
    "url": "https://teletime.com.br/19/02/2025/eletrobras-recebe-aval-do-cade-para-aquisicao-de-51-da-eletronet/"
   },
+  "170fc086fb760a0a2fd4": {
+   "article_id": "170fc086fb760a0a2fd4",
+   "companies": [
+    "LATAM Airlines"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2020-05-26 04:00",
+    "feed_pub_ts": 1590476400,
+    "page_date_modified": "2020-05-27T00:58:38.598Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2020-05-26 12:08",
+    "page_pub_ts": 1590494916,
+    "pub_date_conflict_s": 18516,
+    "pub_date_note": "divergência de 18516s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2020-05-26 04:00",
+    "pub_ts": 1590476400
+   },
+   "revisions": [],
+   "source": "La Tercera",
+   "title": "Recorrer ao Capítulo 11 equivale a cair em falência? As perguntas-chave do processo de reorganização que iniciou a Latam Airlines",
+   "url": "https://www.latercera.com/pulso/noticia/las-preguntas-clave-del-proceso-de-reorganizacion-que-inicio-latam-airlines/55AD3ZRTCJD65FSLXJ3QWHUZBI/"
+  },
+  "187d4b1829b0d5a8db4d": {
+   "article_id": "187d4b1829b0d5a8db4d",
+   "companies": [
+    "Tok&Stok"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2026-08-21 10:51",
+    "feed_pub_ts": 1787320305,
+    "page_date_modified": "2026-08-21T10:50:35.000Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2026-08-21 10:50",
+    "page_pub_ts": 1787309435,
+    "pub_date_conflict_s": 10870,
+    "pub_date_note": "divergência de 10870s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2026-08-21 10:51",
+    "pub_ts": 1787320305
+   },
+   "revisions": [],
+   "source": "Exame",
+   "title": "Em meio à recuperação judicial, empresa compra 13,2% da dona da Tok&Stok; dois fundos deixam grupo",
+   "url": "https://exame.com/negocios/em-meio-a-recuperacao-judicial-empresa-compra-132-da-dona-da-tok-dois-fundos-deixam-grupo/"
+  },
   "1c07e55914b1bd3b560f": {
    "article_id": "1c07e55914b1bd3b560f",
    "companies": [
@@ -868,6 +920,32 @@
    "title": "Ultrapar (UGPA3) confirma novo CEO e chairman à frente dos negócios; veja os executivos",
    "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/ultrapar-ugpa3-novo-ceo-chairman/"
   },
+  "724dd4481987b4ae140a": {
+   "article_id": "724dd4481987b4ae140a",
+   "companies": [
+    "Citigroup"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2026-08-19 23:17",
+    "feed_pub_ts": 1787192235,
+    "page_date_modified": "2026-03-27T17:49:09Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2026-03-27 17:49",
+    "page_pub_ts": 1774633749,
+    "pub_date_conflict_s": 12558486,
+    "pub_date_note": "FEED_PAGE_DATE_CONFLICT: feed e página divergem 145 dia(s); a página é a autoridade",
+    "pub_date_origin": "pagina",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_pagina",
+    "pub_iso": "2026-03-27 14:49",
+    "pub_ts": 1774633749
+   },
+   "revisions": [],
+   "source": "Stocktwits",
+   "title": "Citigroup em Foco Após Banco Negar Relatório de Planos de Aquisição de Credor Regional – Ação C Cai 3%",
+   "url": "https://stocktwits.com/news-articles/markets/equity/c-stock-falls-regional-bank-acquisition-report/cZ3HaQrRImX"
+  },
   "741727b32365430dd471": {
    "article_id": "741727b32365430dd471",
    "companies": [
@@ -1151,6 +1229,32 @@
    "source": "dw.com",
    "title": "Aprovam plano da LATAM Airlines para sair da falência",
    "url": "https://www.dw.com/es/corte-de-eeuu-aprueba-plan-de-latam-airlines-para-salir-de-la-quiebra/a-62180731"
+  },
+  "9377c16767bb9660d88b": {
+   "article_id": "9377c16767bb9660d88b",
+   "companies": [
+    "British American Tobacco"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2017-08-01 04:00",
+    "feed_pub_ts": 1501570800,
+    "page_date_modified": "2017-08-01T08:41:29.000Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2017-08-01 06:40",
+    "page_pub_ts": 1501569611,
+    "pub_date_conflict_s": 1189,
+    "pub_date_note": "divergência de 1189s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2017-08-01 04:00",
+    "pub_ts": 1501570800
+   },
+   "revisions": [],
+   "source": "BBC",
+   "title": "British American Tobacco investigated by Serious Fraud Office",
+   "url": "https://www.bbc.co.uk/news/business-40787784"
   },
   "94be2201f5b2c4f79603": {
    "article_id": "94be2201f5b2c4f79603",

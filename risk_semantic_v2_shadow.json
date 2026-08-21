@@ -1140,6 +1140,240 @@
     "total_token_count": 1652
    }
   },
+  "187d4b1829b0d5a8db4d|Tok&Stok|recuperacao_judicial|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "187d4b1829b0d5a8db4d",
+   "article_pub_iso": "2026-08-21 10:51",
+   "candidate_event": "recuperacao_judicial",
+   "case_id": "187d4b1829b0d5a8db4d|Tok&Stok|recuperacao_judicial|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "Tok&Stok",
+   "contract_version": "v2",
+   "created_at": "2026-08-21T16:46:23Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-21 13:44",
+    "contexto": false,
+    "event_id": "recuperacao_judicial",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Em meio à recuperação judicial",
+      "event_asserted": "ASSERTED",
+      "event_id": "recuperacao_judicial",
+      "event_quote": "Em meio à recuperação judicial",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "FOLLOW_UP",
+      "occurrence_novelty_quote": "Em meio à recuperação judicial",
+      "phase": "CONFIRMED",
+      "phase_quote": "recuperação judicial",
+      "related_entity": "Tok&Stok",
+      "relation": "SUBJECT_OF_RECOVERY",
+      "relation_quote": "dona da Tok&Stok",
+      "role_quote": "dona da Tok&Stok",
+      "subject": "Tok&Stok",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Tok&Stok",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-21 13:44",
+   "human_review": null,
+   "latencia_s": 3.01,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Em meio à recuperação judicial",
+      "event_asserted": "ASSERTED",
+      "event_id": "recuperacao_judicial",
+      "event_quote": "Em meio à recuperação judicial",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "FOLLOW_UP",
+      "occurrence_novelty_quote": "Em meio à recuperação judicial",
+      "phase": "CONFIRMED",
+      "phase_quote": "recuperação judicial",
+      "related_entity": "Tok&Stok",
+      "relation": "SUBJECT_OF_RECOVERY",
+      "relation_quote": "dona da Tok&Stok",
+      "role_quote": "dona da Tok&Stok",
+      "subject": "Tok&Stok",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Tok&Stok",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Exame",
+   "title": "Em meio à recuperação judicial, empresa compra 13,2% da dona da Tok&Stok; dois fundos deixam grupo",
+   "url": "https://exame.com/negocios/em-meio-a-recuperacao-judicial-empresa-compra-132-da-dona-da-tok-dois-fundos-deixam-grupo/",
+   "usage": {
+    "candidates_token_count": 289,
+    "prompt_token_count": 1333,
+    "total_token_count": 1622
+   }
+  },
+  "187d4b1829b0d5a8db4d|Tok&Stok|recuperacao_judicial|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "187d4b1829b0d5a8db4d",
+   "article_pub_iso": "2026-08-21 10:51",
+   "candidate_event": "recuperacao_judicial",
+   "case_id": "187d4b1829b0d5a8db4d|Tok&Stok|recuperacao_judicial|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "Tok&Stok",
+   "contract_version": "v2",
+   "created_at": "2026-08-21T16:46:33Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-21 13:44",
+    "contexto": false,
+    "event_id": "recuperacao_judicial",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Em meio à recuperação judicial",
+      "event_asserted": "ASSERTED",
+      "event_id": "recuperacao_judicial",
+      "event_quote": "recuperação judicial",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "FOLLOW_UP",
+      "occurrence_novelty_quote": "Em meio à recuperação judicial",
+      "phase": "CONFIRMED",
+      "phase_quote": "recuperação judicial",
+      "related_entity": "empresa",
+      "relation": "undergoing",
+      "relation_quote": "Em meio à recuperação judicial",
+      "role_quote": "Tok&Stok",
+      "subject": "Tok&Stok",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Tok&Stok",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-21 13:44",
+   "human_review": null,
+   "latencia_s": 1.75,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Em meio à recuperação judicial",
+      "event_asserted": "ASSERTED",
+      "event_id": "recuperacao_judicial",
+      "event_quote": "recuperação judicial",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "FOLLOW_UP",
+      "occurrence_novelty_quote": "Em meio à recuperação judicial",
+      "phase": "CONFIRMED",
+      "phase_quote": "recuperação judicial",
+      "related_entity": "empresa",
+      "relation": "undergoing",
+      "relation_quote": "Em meio à recuperação judicial",
+      "role_quote": "Tok&Stok",
+      "subject": "Tok&Stok",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Tok&Stok",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Exame",
+   "title": "Em meio à recuperação judicial, empresa compra 13,2% da dona da Tok&Stok; dois fundos deixam grupo",
+   "url": "https://exame.com/negocios/em-meio-a-recuperacao-judicial-empresa-compra-132-da-dona-da-tok-dois-fundos-deixam-grupo/",
+   "usage": {
+    "candidates_token_count": 277,
+    "prompt_token_count": 1333,
+    "total_token_count": 1610
+   }
+  },
   "201b91aa6b3c1d9e780c|JBS|troca_ceo|v2|r7ba.p2|gemini-3.1-flash-lite": {
    "actual_model": "gemini-3.1-flash-lite",
    "article_id": "201b91aa6b3c1d9e780c",
@@ -4763,6 +4997,240 @@
     "candidates_token_count": 321,
     "prompt_token_count": 1319,
     "total_token_count": 1640
+   }
+  },
+  "9617d332535c1b3491da|Rumo|recomendacao_negativa|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "9617d332535c1b3491da",
+   "article_pub_iso": "2026-07-16 14:13",
+   "candidate_event": "recomendacao_negativa",
+   "case_id": "9617d332535c1b3491da|Rumo|recomendacao_negativa|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "Rumo",
+   "contract_version": "v2",
+   "created_at": "2026-08-21T16:46:43Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-21 13:44",
+    "contexto": false,
+    "event_id": "recomendacao_negativa",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Citi vê incerteza com troca de CEO da Rumo (RAIL3) e mantém recomendação de venda",
+      "event_asserted": "ASSERTED",
+      "event_id": "recomendacao_negativa",
+      "event_quote": "mantém recomendação de venda",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "mantém recomendação de venda",
+      "phase": "CONFIRMED",
+      "phase_quote": "mantém recomendação de venda",
+      "related_entity": "Citi",
+      "relation": "analista",
+      "relation_quote": "Citi vê incerteza",
+      "role_quote": "Rumo (RAIL3)",
+      "subject": "Rumo",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Rumo (RAIL3)",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "null"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-21 13:44",
+   "human_review": null,
+   "latencia_s": 1.71,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Citi vê incerteza com troca de CEO da Rumo (RAIL3) e mantém recomendação de venda",
+      "event_asserted": "ASSERTED",
+      "event_id": "recomendacao_negativa",
+      "event_quote": "mantém recomendação de venda",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "mantém recomendação de venda",
+      "phase": "CONFIRMED",
+      "phase_quote": "mantém recomendação de venda",
+      "related_entity": "Citi",
+      "relation": "analista",
+      "relation_quote": "Citi vê incerteza",
+      "role_quote": "Rumo (RAIL3)",
+      "subject": "Rumo",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Rumo (RAIL3)",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "null"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Estadão",
+   "title": "Citi vê incerteza com troca de CEO da Rumo (RAIL3) e mantém recomendação de venda",
+   "url": "https://www.estadao.com.br/em-alta/einvestidor/cenarios-e-mercado/citi-ve-incerteza-com-troca-de-ceo-da-rumo-rail3-e-mantem-recomendacao-de-venda/",
+   "usage": {
+    "candidates_token_count": 299,
+    "prompt_token_count": 1323,
+    "total_token_count": 1622
+   }
+  },
+  "9617d332535c1b3491da|Rumo|recomendacao_negativa|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "9617d332535c1b3491da",
+   "article_pub_iso": "2026-07-16 14:13",
+   "candidate_event": "recomendacao_negativa",
+   "case_id": "9617d332535c1b3491da|Rumo|recomendacao_negativa|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "Rumo",
+   "contract_version": "v2",
+   "created_at": "2026-08-21T16:46:53Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-21 13:44",
+    "contexto": false,
+    "event_id": "recomendacao_negativa",
+    "event_phase": "",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Citi vê incerteza com troca de CEO da Rumo (RAIL3) e mantém recomendação de venda",
+      "event_asserted": "ASSERTED",
+      "event_id": "recomendacao_negativa",
+      "event_quote": "mantém recomendação de venda",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Citi vê incerteza com troca de CEO da Rumo (RAIL3) e mantém recomendação de venda",
+      "phase": "ANNOUNCED",
+      "phase_quote": "mantém",
+      "related_entity": "Citi",
+      "relation": "maintains sell recommendation",
+      "relation_quote": "mantém recomendação de venda",
+      "role_quote": "Rumo (RAIL3)",
+      "subject": "Rumo",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Rumo (RAIL3)",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-21 13:44",
+   "human_review": null,
+   "latencia_s": 1.95,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Citi vê incerteza com troca de CEO da Rumo (RAIL3) e mantém recomendação de venda",
+      "event_asserted": "ASSERTED",
+      "event_id": "recomendacao_negativa",
+      "event_quote": "mantém recomendação de venda",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "Citi vê incerteza com troca de CEO da Rumo (RAIL3) e mantém recomendação de venda",
+      "phase": "ANNOUNCED",
+      "phase_quote": "mantém",
+      "related_entity": "Citi",
+      "relation": "maintains sell recommendation",
+      "relation_quote": "mantém recomendação de venda",
+      "role_quote": "Rumo (RAIL3)",
+      "subject": "Rumo",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Rumo (RAIL3)",
+      "transaction_object": "NOT_APPLICABLE",
+      "transaction_object_quote": "NOT_APPLICABLE"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Estadão",
+   "title": "Citi vê incerteza com troca de CEO da Rumo (RAIL3) e mantém recomendação de venda",
+   "url": "https://www.estadao.com.br/em-alta/einvestidor/cenarios-e-mercado/citi-ve-incerteza-com-troca-de-ceo-da-rumo-rail3-e-mantem-recomendacao-de-venda/",
+   "usage": {
+    "candidates_token_count": 319,
+    "prompt_token_count": 1323,
+    "total_token_count": 1642
    }
   },
   "ac0be217149db21ae564|JBS|ma|v2|r7ba.p2|gemini-3.1-flash-lite": {
