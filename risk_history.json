@@ -4749,7 +4749,7 @@
      "domain": "poder360.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:48.351458+00:00",
+     "last_checked_at": "2026-08-21T19:35:16.064494+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -7435,7 +7435,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:49.152002+00:00",
+     "last_checked_at": "2026-08-21T19:35:16.864993+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -7498,7 +7498,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:48.751751+00:00",
+     "last_checked_at": "2026-08-21T19:35:16.464744+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -7633,44 +7633,6 @@
    "summary": "Moody’s rebaja calificación crediticia de Ecopetrol a Ba2 y cambia perspectiva a negativa &nbsp;&nbsp; Forbes Colombia",
    "title": "Moody’s rebaja calificación crediticia de Ecopetrol a Ba2 y cambia perspectiva a negativa",
    "url": "https://forbes.co/2026/04/24/economia-y-finanzas/moodys-rebaja-calificacion-crediticia-de-ecopetrol-a-ba2-y-cambia-perspectiva-a-negativa/"
-  },
-  "https://forbes.com.br/forbes-money/2025/12/smart-fit-avanca-no-centro-oeste-com-aquisicao-da-evolve/": {
-   "cap_iso": "2026-08-03 10:06",
-   "captured_ts": 1785762394,
-   "companies": [
-    "Smart Fit"
-   ],
-   "companies_attributed": [
-    "Smart Fit"
-   ],
-   "context_companies": [],
-   "corrob_sources": [],
-   "corroborations": [],
-   "domain": "forbes.com.br",
-   "event_ids": [
-    "ma"
-   ],
-   "events_by_company": {
-    "Smart Fit": [
-     "ma"
-    ]
-   },
-   "language": "pt",
-   "mention_roles": {
-    "Smart Fit": {
-     "relation_type": "direto",
-     "subject_company": "",
-     "impact_type": "direto",
-     "event_phase": "",
-     "direction_hint": ""
-    }
-   },
-   "pub_iso": "2025-12-02 05:00",
-   "pub_ts": 1764662400,
-   "source": "Forbes Brasil",
-   "summary": "Smart Fit Avança no Centro-Oeste Com Aquisição da Evolve &nbsp;&nbsp; Forbes Brasil",
-   "title": "Smart Fit Avança no Centro-Oeste Com Aquisição da Evolve",
-   "url": "https://forbes.com.br/forbes-money/2025/12/smart-fit-avanca-no-centro-oeste-com-aquisicao-da-evolve/"
   },
   "https://forcaaerea.com.br/grecia-investira-600-milhoes-de-euros-na-aquisicao-dos-tres-embraer-kc-390-millennium/": {
    "cap_iso": "2026-08-02 01:36",
@@ -9265,7 +9227,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:50.286678+00:00",
+     "last_checked_at": "2026-08-21T19:35:18.107456+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -9349,7 +9311,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:49.717960+00:00",
+     "last_checked_at": "2026-08-21T19:35:17.502662+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -15320,7 +15282,7 @@
      "domain": "globallegalpost.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:51.393588+00:00",
+     "last_checked_at": "2026-08-21T19:35:19.352644+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -15404,7 +15366,7 @@
      "domain": "globallegalpost.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:50.836085+00:00",
+     "last_checked_at": "2026-08-21T19:35:18.730726+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -18780,7 +18742,7 @@
      "domain": "globallegalpost.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:52.547955+00:00",
+     "last_checked_at": "2026-08-21T19:35:20.641678+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -18824,7 +18786,7 @@
      "domain": "globallegalpost.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:51.988301+00:00",
+     "last_checked_at": "2026-08-21T19:35:19.996668+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -21301,7 +21263,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:53.645473+00:00",
+     "last_checked_at": "2026-08-21T19:35:21.880995+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -21324,7 +21286,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:53.096939+00:00",
+     "last_checked_at": "2026-08-21T19:35:21.255772+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -24695,7 +24657,7 @@
      "domain": "ootimista.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:54.973903+00:00",
+     "last_checked_at": "2026-08-21T19:35:23.423494+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -24718,7 +24680,7 @@
      "domain": "ootimista.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:54.322082+00:00",
+     "last_checked_at": "2026-08-21T19:35:22.658871+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -29840,7 +29802,7 @@
      "domain": "demarest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:55.374227+00:00",
+     "last_checked_at": "2026-08-21T19:35:23.823750+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -30688,7 +30650,7 @@
      "domain": "bitget.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:56.500398+00:00",
+     "last_checked_at": "2026-08-21T19:35:25.037684+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -30711,7 +30673,7 @@
      "domain": "bitget.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:55.930436+00:00",
+     "last_checked_at": "2026-08-21T19:35:24.442288+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -37046,7 +37008,7 @@
      "domain": "demarest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:56.900668+00:00",
+     "last_checked_at": "2026-08-21T19:35:25.437917+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -37246,7 +37208,7 @@
      "domain": "demarest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:57.300915+00:00",
+     "last_checked_at": "2026-08-21T19:35:25.838083+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -41097,7 +41059,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:57.701215+00:00",
+     "last_checked_at": "2026-08-21T19:35:26.238363+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -41117,7 +41079,7 @@
      "domain": "demarest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:58.101458+00:00",
+     "last_checked_at": "2026-08-21T19:35:26.638539+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -42095,7 +42057,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:44:58.657314+00:00",
+     "last_checked_at": "2026-08-21T19:35:27.286515+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -42220,7 +42182,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-21T16:44:59.764463+00:00",
+     "last_checked_at": "2026-08-21T19:35:28.581605+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -42302,7 +42264,7 @@
      "http_status": "",
      "link_health": "redirect_nao_resolvido",
      "resolution_method": "batchexecute",
-     "last_checked_at": "2026-08-21T16:44:59.218038+00:00",
+     "last_checked_at": "2026-08-21T19:35:27.937654+00:00",
      "resolution_error": "token não resolvido",
      "link_render_anchor": true,
      "link_label": "Abrir notícia (via agregador) →"
@@ -42482,7 +42444,7 @@
      "domain": "gurufocus.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:45:01.091358+00:00",
+     "last_checked_at": "2026-08-21T19:35:30.099022+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -42526,7 +42488,7 @@
      "domain": "gurufocus.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:45:00.421849+00:00",
+     "last_checked_at": "2026-08-21T19:35:29.338571+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -49177,7 +49139,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:45:02.192629+00:00",
+     "last_checked_at": "2026-08-21T19:35:31.358762+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -49340,7 +49302,7 @@
      "domain": "visnoinvest.com.br",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:45:01.645376+00:00",
+     "last_checked_at": "2026-08-21T19:35:30.747679+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -51174,7 +51136,7 @@
      "domain": "quiverquant.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:45:03.317166+00:00",
+     "last_checked_at": "2026-08-21T19:35:32.578728+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -51381,7 +51343,7 @@
      "domain": "quiverquant.com",
      "final_host": "",
      "http_status": "",
-     "last_checked_at": "2026-08-21T16:45:02.757168+00:00",
+     "last_checked_at": "2026-08-21T19:35:31.974695+00:00",
      "link_health": "redirect_nao_resolvido",
      "link_label": "Abrir notícia (via agregador) →",
      "link_render_anchor": true,
@@ -52700,6 +52662,27 @@
      "source": "Migalhas",
      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNQ2lzRm8zUy1DZ1lvdHA3bTJKOU9ld213VmxSYXFvMGdSeUhLT2xJcmZMZy1IUThLRC11a2pCT2JwOVBYLWtqd2EzWjl0WmJfVzJVNnVKSkliV2RlalFqVzBsQU1MaWZURHU5c2VHdzJDSjVSelByY0ZsSUlNZlNLMVVpenI0SnhicTB1SklidU1CTXpUdnZYN05yUEdLQnQ2TkkzZDdwM3ktVHpIMjg3dGFRYw?oc=5",
      "when": "14/08 04:00"
+    },
+    {
+     "source": "Samarco Mineração",
+     "domain": "samarco.com",
+     "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9aRHgwd0VseTZXZ3ZEaTdQbFdROVFBblhUY1BweXlrMnpoam9JWDh5V19QWGxRbzEyRFMxV3cxOTZNX2xlVU1ab1JyZm42dktuUFcxUGQ1Y2tCZTJ0ZGpoYWZOaWt4N2pDSS1kblhn?oc=5",
+     "when": "12/08 04:00",
+     "original_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9aRHgwd0VseTZXZ3ZEaTdQbFdROVFBblhUY1BweXlrMnpoam9JWDh5V19QWGxRbzEyRFMxV3cxOTZNX2xlVU1ab1JyZm42dktuUFcxUGQ1Y2tCZTJ0ZGpoYWZOaWt4N2pDSS1kblhn?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9aRHgwd0VseTZXZ3ZEaTdQbFdROVFBblhUY1BweXlrMnpoam9JWDh5V19QWGxRbzEyRFMxV3cxOTZNX2xlVU1ab1JyZm42dktuUFcxUGQ1Y2tCZTJ0ZGpoYWZOaWt4N2pDSS1kblhn?oc=5",
+     "resolved_url": "https://www.samarco.com/samarco-encerra-recuperacao-judicial/",
+     "canonical_url": "https://www.samarco.com/samarco-encerra-recuperacao-judicial/",
+     "display_url": "https://www.samarco.com/samarco-encerra-recuperacao-judicial/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.samarco.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "cache_historico",
+     "last_checked_at": "2026-08-21T19:35:33.652328+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "corroborations": [
@@ -52742,6 +52725,26 @@
      "resolved_url": "https://www.migalhas.com.br/quentes/436815/juiz-encerra-recuperacao-judicial-da-samarco-apos-cumprimento-de-plano",
      "source": "Migalhas",
      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNQ2lzRm8zUy1DZ1lvdHA3bTJKOU9ld213VmxSYXFvMGdSeUhLT2xJcmZMZy1IUThLRC11a2pCT2JwOVBYLWtqd2EzWjl0WmJfVzJVNnVKSkliV2RlalFqVzBsQU1MaWZURHU5c2VHdzJDSjVSelByY0ZsSUlNZlNLMVVpenI0SnhicTB1SklidU1CTXpUdnZYN05yUEdLQnQ2TkkzZDdwM3ktVHpIMjg3dGFRYw?oc=5"
+    },
+    {
+     "source": "Samarco Mineração",
+     "domain": "samarco.com",
+     "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9aRHgwd0VseTZXZ3ZEaTdQbFdROVFBblhUY1BweXlrMnpoam9JWDh5V19QWGxRbzEyRFMxV3cxOTZNX2xlVU1ab1JyZm42dktuUFcxUGQ1Y2tCZTJ0ZGpoYWZOaWt4N2pDSS1kblhn?oc=5",
+     "original_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9aRHgwd0VseTZXZ3ZEaTdQbFdROVFBblhUY1BweXlrMnpoam9JWDh5V19QWGxRbzEyRFMxV3cxOTZNX2xlVU1ab1JyZm42dktuUFcxUGQ1Y2tCZTJ0ZGpoYWZOaWt4N2pDSS1kblhn?oc=5",
+     "redirect_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9aRHgwd0VseTZXZ3ZEaTdQbFdROVFBblhUY1BweXlrMnpoam9JWDh5V19QWGxRbzEyRFMxV3cxOTZNX2xlVU1ab1JyZm42dktuUFcxUGQ1Y2tCZTJ0ZGpoYWZOaWt4N2pDSS1kblhn?oc=5",
+     "resolved_url": "https://www.samarco.com/samarco-encerra-recuperacao-judicial/",
+     "canonical_url": "https://www.samarco.com/samarco-encerra-recuperacao-judicial/",
+     "display_url": "https://www.samarco.com/samarco-encerra-recuperacao-judicial/",
+     "redirect_chain": "",
+     "original_host": "news.google.com",
+     "final_host": "www.samarco.com",
+     "http_status": "",
+     "link_health": "redirect_resolvido",
+     "resolution_method": "batchexecute",
+     "last_checked_at": "2026-08-21T19:35:33.252075+00:00",
+     "resolution_error": "",
+     "link_render_anchor": true,
+     "link_label": "Abrir notícia →"
     }
    ],
    "display_url": "https://www.suno.com.br/noticias/samarco-encerra-recuperacao-judicial-mt/",
@@ -57574,7 +57577,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1787320588,
-   "cap_iso": "2026-08-21 10:56"
+   "cap_iso": "2026-08-21 10:56",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://brasilmineral.com.br/noticias/recuperacao-gradual-das-operacoes-da-gerdau-no-brasil-eleva-rating": {
    "title": "SIDERURGIA | Recuperação gradual das operações da Gerdau no Brasil eleva rating",
@@ -57631,7 +57636,9 @@
     "Gerdau"
    ],
    "captured_ts": 1787320588,
-   "cap_iso": "2026-08-21 10:56"
+   "cap_iso": "2026-08-21 10:56",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSVFPVGF0QWRWa2huYjVZRU5hOWhWeHEwc2NvSll2T0x1SWhid0FMQWR2TXlYT1MxN19hSVVVM3dBanVXbkc3SHpUWE1WRXlrRHFiYkQ2QUhaRDQwRlZfWVBYZlVVSmR0cWxRX0xIZFg0RlliRGotMnJhQ2pFTTBxLW92MmUzTWpGbHlnclpMQmNqVXdsZmdYd1FVNGtkSGFvOS1v?oc=5": {
    "title": "STJ limita pagamento de honorários em processos de recuperação judicial",
@@ -57685,7 +57692,9 @@
    ],
    "context_companies": [],
    "captured_ts": 1787320588,
-   "cap_iso": "2026-08-21 10:56"
+   "cap_iso": "2026-08-21 10:56",
+   "corroborations": [],
+   "corrob_sources": []
   },
   "https://www.estadao.com.br/em-alta/einvestidor/cenarios-e-mercado/citi-ve-incerteza-com-troca-de-ceo-da-rumo-rail3-e-mantem-recomendacao-de-venda/": {
    "title": "Citi vê incerteza com troca de CEO da Rumo (RAIL3) e mantém recomendação de venda",
@@ -57869,12 +57878,12 @@
   }
  },
  "last_run": {
-  "ts": 1787330744,
-  "iso": "21 ago 2026 · 13:45 BRT",
+  "ts": 1787340978,
+  "iso": "21 ago 2026 · 16:36 BRT",
   "status": {
    "Tok&Stok": {
     "status": "critico",
-    "score": 96
+    "score": 95
    },
    "B3": {
     "status": "critico",
@@ -57914,7 +57923,7 @@
    },
    "Axia Energia": {
     "status": "monitorar",
-    "score": 29
+    "score": 28
    },
    "BTG Pactual": {
     "status": "atencao",
@@ -63980,9 +63989,17 @@
   "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNaFJNTDNKY0pUZjVZQTNtc0RSZFdzM2RRRHA5QTFOQmhiNE81U2pTdV9ualJSR3Ytejlfc2ZERE5qY1BmNTNXQUhvTWpUYW01NzhDTHI5SkZ1ZU11T0tQT3M3eGtvRzRRVmIwVHV1aFFCZk4xLWZJaVBQTTBlVUVPX2lfaS04Vm5oX3BRZWFnWVBmNklPWnpJMENRb1Q3U2VWT1dRdDc5aGZNZ0F5TlBpa3FhZ1dPcU4tQU5abmdrRGZvWkE?oc=5": {
    "url": "https://www1.folha.uol.com.br/mercado/2026/08/paladino-compra-132-das-acoes-da-dona-da-tokstok-dois-fundos-deixam-grupo.shtml",
    "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMigAFBVV95cUxQcEVWTUctSFprVFdLQlBRV0F6NFcyWGtXRm5VRmszeEs5cHY0MjhJNjlaUTJVaWhPRDE2TlRBcGg2emIybGxFa0w3RThza1ZZdmRGMlN4eUxfdGNuRG5yeG0yZUQ5b2FXa2J1YkswWEFMYTZyd1JPR250RXhoYi03Yg?oc=5": {
+   "url": "https://brasilmineral.com.br/noticias/marcelo-chara-da-ternium-e-o-novo-ceo",
+   "exact": true
+  },
+  "https://news.google.com/rss/articles/CBMibkFVX3lxTE9aRHgwd0VseTZXZ3ZEaTdQbFdROVFBblhUY1BweXlrMnpoam9JWDh5V19QWGxRbzEyRFMxV3cxOTZNX2xlVU1ab1JyZm42dktuUFcxUGQ1Y2tCZTJ0ZGpoYWZOaWt4N2pDSS1kblhn?oc=5": {
+   "url": "https://www.samarco.com/samarco-encerra-recuperacao-judicial/",
+   "exact": true
   }
  },
- "run_count": 147,
+ "run_count": 148,
  "semantic_reclassified_at": "2026-07-30T21:07:47.714609+00:00",
  "semantic_version": "1.0"
 }

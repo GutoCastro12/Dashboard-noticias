@@ -712,6 +712,31 @@
    "title": "PRIO (PRIO3) sobe mais de 8% com aquisição bilionária do campo de Peregrino",
    "url": "https://www.infomoney.com.br/mercados/acoes-da-prio-sobem-mais-de-5-com-aquisicao-bilionaria-do-campo-de-peregrino/"
   },
+  "424ba74f5b2dbba1f722": {
+   "article_id": "424ba74f5b2dbba1f722",
+   "companies": [
+    "Cemex"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2016-10-14 04:00",
+    "feed_pub_ts": 1476428400,
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2016-10-14 16:28",
+    "page_pub_ts": 1476462494,
+    "pub_date_conflict_s": 34094,
+    "pub_date_note": "divergência de 34094s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2016-10-14 04:00",
+    "pub_ts": 1476428400
+   },
+   "revisions": [],
+   "source": "Alto Nivel",
+   "title": "A estratégia do CEO que resgatou a Cemex da falência",
+   "url": "https://altonivel.com.mx/la-estrategia-del-ceo-que-rescato-a-cemex-de-la-quiebra-58167/"
+  },
   "47624bd2256dfaa4742c": {
    "article_id": "47624bd2256dfaa4742c",
    "companies": [
@@ -894,6 +919,32 @@
    "title": "Latam Brasil se incorpora ao processo de falência iniciado pelo grupo nos Estados Unidos",
    "url": "https://elpais.com/economia/2020-07-09/latam-brasil-se-incorpora-al-proceso-de-quiebra-iniciado-por-el-grupo-en-estados-unidos.html"
   },
+  "6de24849b11636de4186": {
+   "article_id": "6de24849b11636de4186",
+   "companies": [
+    "Smart Fit"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2025-12-02 05:00",
+    "feed_pub_ts": 1764662400,
+    "page_date_modified": "2025-12-03T11:17:35-03:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2025-12-02 12:48",
+    "page_pub_ts": 1764679694,
+    "pub_date_conflict_s": 17294,
+    "pub_date_note": "divergência de 17294s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2025-12-02 05:00",
+    "pub_ts": 1764662400
+   },
+   "revisions": [],
+   "source": "NeoFeed",
+   "title": "Smart Fit faz novo exercício em M&A e fortalece presença no Centro-Oeste",
+   "url": "https://neofeed.com.br/negocios/smart-fit-faz-novo-exercicio-em-ma-e-fortalece-presenca-no-centro-oeste/"
+  },
   "6f4aee47ee774f80d43e": {
    "article_id": "6f4aee47ee774f80d43e",
    "companies": [
@@ -919,6 +970,32 @@
    "source": "Estadão",
    "title": "Ultrapar (UGPA3) confirma novo CEO e chairman à frente dos negócios; veja os executivos",
    "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/ultrapar-ugpa3-novo-ceo-chairman/"
+  },
+  "6fcc86e5bc6b58da414f": {
+   "article_id": "6fcc86e5bc6b58da414f",
+   "companies": [
+    "Usiminas"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2024-12-03 05:00",
+    "feed_pub_ts": 1733212800,
+    "page_date_modified": "2026-06-05T01:08:14+00:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2024-12-03 17:33",
+    "page_pub_ts": 1733247208,
+    "pub_date_conflict_s": 34408,
+    "pub_date_note": "divergência de 34408s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2024-12-03 05:00",
+    "pub_ts": 1733212800
+   },
+   "revisions": [],
+   "source": "Consultor Jurídico",
+   "title": "Grupo que assumiu Usiminas terá de fazer OPA, confirma STJ",
+   "url": "https://www.conjur.com.br/2024-dez-03/grupo-que-assumiu-usiminas-tera-de-fazer-oferta-de-acoes-confirma-stj/"
   },
   "724dd4481987b4ae140a": {
    "article_id": "724dd4481987b4ae140a",
@@ -1152,6 +1229,32 @@
    "source": "La Tercera",
    "title": "Presidente da Embonor, Andrés Vicuña: \"A fusão com a Andina não é um tema que esteja sobre a mesa\"",
    "url": "https://www.latercera.com/pulso/noticia/presidente-embonor-andres-vicuna-la-fusion-andina-no-tema-este-la-mesa/172460/"
+  },
+  "8ac05f8115597d1cdf5f": {
+   "article_id": "8ac05f8115597d1cdf5f",
+   "companies": [
+    "BRF"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2023-07-13 04:00",
+    "feed_pub_ts": 1689231600,
+    "page_date_modified": "2023-07-17T12:20:47+00:00",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2023-07-14 02:14",
+    "page_pub_ts": 1689300899,
+    "pub_date_conflict_s": 69299,
+    "pub_date_note": "divergência de 69299s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2023-07-13 04:00",
+    "pub_ts": 1689231600
+   },
+   "revisions": [],
+   "source": "InfoMoney",
+   "title": "BRF (BRFS3) levanta R$ 5,4 bilhões em follow-on e vê alívio na alavancagem",
+   "url": "https://www.infomoney.com.br/negocios/brf-brfs3-follow-on-2023-alavancagem/"
   },
   "8bd9aea6c4caa17b8243": {
    "article_id": "8bd9aea6c4caa17b8243",
@@ -1987,6 +2090,32 @@
    "source": "Finsiders Brasil",
    "title": "Pedro Zinner será o novo CEO da StoneCo, em substituição a Thiago Piau, que vai para o Conselho",
    "url": "https://finsidersbrasil.com.br/gente-em-fintechs/pedro-zinner-sera-o-novo-ceo-da-stoneco-em-substituicao-a-thiago-piau-que-vai-para-o-conselho/"
+  },
+  "fb2439c152d696d87b3d": {
+   "article_id": "fb2439c152d696d87b3d",
+   "companies": [
+    "Usiminas"
+   ],
+   "first_seen_via": "ingestao",
+   "provenance": {
+    "feed_pub_iso": "2023-07-05 04:00",
+    "feed_pub_ts": 1688540400,
+    "page_date_modified": "2023-07-05T21:01:39.000Z",
+    "page_date_source": "jsonld",
+    "page_pub_iso": "2023-07-05 21:01",
+    "page_pub_ts": 1688590899,
+    "pub_date_conflict_s": 50499,
+    "pub_date_note": "divergência de 50499s dentro da tolerância",
+    "pub_date_origin": "feed",
+    "pub_date_policy": "pubdate.p1",
+    "pub_date_verification": "verificado_sem_conflito",
+    "pub_iso": "2023-07-05 04:00",
+    "pub_ts": 1688540400
+   },
+   "revisions": [],
+   "source": "Brasil Mineral",
+   "title": "USIMINAS | Marcelo Chara, da Ternium, é o novo CEO",
+   "url": "https://brasilmineral.com.br/noticias/marcelo-chara-da-ternium-e-o-novo-ceo"
   }
  }
 }
