@@ -180,6 +180,8 @@ section{margin-bottom:34px}
 .conf-badge.rumor{color:var(--critico);border-color:rgba(255,59,92,.45)}
 .dir{font-size:9px;margin-right:2px}
 .dir.negativa{color:var(--critico)} .dir.positiva{color:var(--info)} .dir.neutra{color:var(--muted)}
+.bd-sub td{color:var(--muted);font-size:10.5px;padding-top:6px}
+.bd-sub .bd-sub-hint{color:var(--muted);font-weight:400;font-size:9.5px;margin-left:6px}
 .dims{font-family:var(--mono);font-size:9.5px;color:var(--muted)}
 .dual-badges{display:flex;flex-direction:column;gap:6px;margin-top:2px}
 .dual-badge{display:flex;flex-direction:column;gap:2px}
@@ -891,10 +893,12 @@ function renderRadar(){
                 </div>`).join('')}
               </td>
             </tr>`).join('')}
+            <tr class="bd-sub"><td colspan="8">Contribuição adversa <span class="bd-sub-hint">direção adversa estabelecida</span></td><td class="num">${(row.adverse_score ?? 0).toFixed(1)}</td></tr>
+            <tr class="bd-sub"><td colspan="8">Contribuição contextual <span class="bd-sub-hint">evento material, direção ainda não estabelecida — sinal para revisão</span></td><td class="num">${(row.contextual_score ?? 0).toFixed(1)}</td></tr>
             <tr class="bd-total"><td colspan="8">Score ponderado</td><td class="num">${row.total_score}</td></tr>
           </tbody>
         </table>
-        <div class="bd-hint">contribuição = peso-base × decaimento (meia-vida) × confiança da fonte + bônus por fonte independente adicional (2ª: +4, 3ª: +2, 4ª: +1) · republicações do mesmo fato confirmam o evento, mas NÃO multiplicam o score · clique no nome do evento para ver todas as fontes</div>
+        <div class="bd-hint">contribuição = peso-base × decaimento (meia-vida) × confiança da fonte + bônus por fonte independente adicional (2ª: +4, 3ª: +2, 4ª: +1) · republicações do mesmo fato confirmam o evento, mas NÃO multiplicam o score · clique no nome do evento para ver todas as fontes<br><b>Score ponderado é um score de ALERTA conservador</b>, não uma estimativa de deterioração confirmada: a parcela <i>contextual</i> vem de eventos materiais cuja direção a taxonomia determinística ainda não estabelece, e existe para levar o fato à revisão humana — não para afirmar que ele é ruim.</div>
         ${(row.context_events||[]).length ? `
         <div class="context-block">
           <div class="context-title">Contexto relacionado · não pontua</div>

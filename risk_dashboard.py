@@ -5455,15 +5455,19 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
         if _c.get("fetch_related_entities") and _c.get("name"):
             per_company.setdefault(_c["name"], [])
 
-    def _score_authority(o: dict) -> bool:
-        """FONTE ÚNICA da decisão de autoridade adversa (§18).
+    def _classe_sinal(o: dict) -> str:
+        """FONTE ÚNICA de classificação de sinal.
 
-        Consultada pela contribuição, pela contagem de tipos negativos e pelo
-        gatilho de evento crítico. Nunca se deriva autoridade de "score > 0":
+        Consumida pela contribuição, pela decomposição adverso × contextual,
+        pela contagem de tipos, pelo alerta de persistência e pelo gatilho de
+        evento crítico. Nenhuma lista paralela de famílias: tudo sai de
+        `direction` na config. E nunca se deriva classe de "score > 0" —
         decaimento e arredondamento tornariam a regra circular."""
-        if "_score_authority" in o:
-            return bool(o["_score_authority"])
-        return _oe.tem_autoridade_adversa(taxonomy.get(o["event_id"], {}))
+        return _oe.classe_de_sinal(taxonomy.get(o["event_id"], {}))
+
+    def _score_authority(o: dict) -> bool:
+        """Compat: a família estabelece direção ADVERSA?"""
+        return _classe_sinal(o) == _oe.SINAL_ADVERSO
 
     def best_contribs(negatives: list[dict], as_of_ts: int) -> dict[str, dict]:
         """Por tipo de evento, a ocorrência de MAIOR contribuição até as_of_ts:
@@ -5486,24 +5490,59 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
             n_extra = len(o.get("corrob", []))  # fontes além da principal
             bonus = sum(bonus_steps[i] if i < len(bonus_steps) else 0
                         for i in range(n_extra)) * d
-            # [política humana 2026-08-21] PORTÃO DE DIREÇÃO. Um evento de
-            # família declarada `neutra` continua material, visível, com
-            # membros, fase e âncora — mas não soma risco pelo simples fato de
-            # existir. `positiva`/`mitigadora` idem, e nunca subtraem: um
-            # evento favorável não abate um default. Os pesos da config ficam
-            # intactos, porque seguem servindo à materialidade.
-            _autoridade = _score_authority(o)
-            contrib = (base_contrib + bonus) if _autoridade else 0.0
+            # [política humana 2026-08-22] SCORE DE ALERTA CONSERVADOR.
+            #
+            # Um evento de família `neutra` volta a contribuir com o seu peso
+            # determinístico. Não porque se afirme deterioração — a taxonomia
+            # determinística não sabe se a aquisição é boa ou ruim —, mas
+            # porque, enquanto não houver avaliação direcional por ocorrência,
+            # o radar prefere levantar o fato para inspeção humana a atribuir
+            # zero. O que impede isso de virar "deterioração confirmada" é a
+            # DECOMPOSIÇÃO: cada linha declara sua classe, e o total do emissor
+            # se separa em parcela adversa e parcela contextual.
+            #
+            # `positiva`/`mitigadora` seguem em zero, e nunca subtraem: um
+            # evento favorável não abate um default, uma RJ ou um rebaixamento.
+            _classe = _classe_sinal(o)
+            _mult = _oe.multiplicador_de_sinal(taxonomy.get(o["event_id"], {}),
+                                               o.get("_ocorrencia"))
+            _bruto = base_contrib + bonus
+            contrib = _bruto * _mult
             k = o.get("_occ_key") or o["event_id"]
             cur = best.get(k)
             if cur is None or contrib > cur["contrib"]:
                 best[k] = {**o, "decay_f": d, "contrib": contrib,
                                        "base_contrib": round(base_contrib, 1),
                                        "corrob_bonus": round(bonus, 1),
-                                       "score_authority": _autoridade,
+                                       "score_authority": (
+                                           _classe == _oe.SINAL_ADVERSO),
+                                       "contribution_class": _classe,
+                                       "signal_multiplier": _mult,
+                                       # quanto valeria antes da política de
+                                       # direção — auditoria do que o portão
+                                       # (ou a falta dele) está fazendo
+                                       "canonical_contrib": round(_bruto, 4),
                                        "direction_class": _oe.direcao_de(
                                            taxonomy.get(o["event_id"], {}))}
         return best
+
+    def decompor(negatives: list[dict], as_of_ts: int) -> dict:
+        """§9 — o total de um emissor separado por CLASSE DE SINAL.
+
+        Invariante: `total == adverso + contextual`, em precisão canônica —
+        nunca somando valores já arredondados para exibição."""
+        por_classe: dict[str, float] = {}
+        for b in best_contribs(negatives, as_of_ts).values():
+            c = b.get("contribution_class") or _oe.SINAL_DESCONHECIDO
+            por_classe[c] = por_classe.get(c, 0.0) + b["contrib"]
+        adv = por_classe.get(_oe.SINAL_ADVERSO, 0.0)
+        ctx = por_classe.get(_oe.SINAL_CONTEXTUAL, 0.0)
+        nao = por_classe.get(_oe.SINAL_NAO_RISCO, 0.0)
+        tot = adv + ctx + nao
+        return {"total": tot, "adverso": adv, "contextual": ctx,
+                "favoravel": nao,
+                "share_adverso": (adv / tot) if tot else None,
+                "share_contextual": (ctx / tot) if tot else None}
 
     def weighted_total(negatives: list[dict], as_of_ts: int) -> float:
         return sum(b["contrib"] for b in best_contribs(negatives, as_of_ts).values())
@@ -5542,13 +5581,34 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
                                  key=lambda e: (SEVERITY_ORDER[e["severity"]], -e["score"]))
 
         total = weighted_total(negatives, now_ts)
-        # [política humana 2026-08-21] `n_negative_types` deixa de significar
-        # "quantas famílias materiais existem" e passa a significar "quantos
-        # tipos ADVERSOS com autoridade de score estão ativos". Um evento
-        # contextual não promove ninguém a `atenção` por existir.
-        _adversos = [o for o in negatives if _score_authority(o)]
-        n_negative_types = len({o["event_id"] for o in _adversos})
-        has_hard_critical = any(o["score"] >= critico_event for o in _adversos)
+        _decomp = decompor(negatives, now_ts)
+        # [política humana 2026-08-22] SENSIBILIDADE CONSERVADORA RESTAURADA.
+        #
+        # Um evento material contextual volta a contar para o alerta — mas as
+        # contagens ficam SEPARADAS, para que "sinal de risco" nunca seja lido
+        # como "evidência adversa confirmada":
+        #
+        #   n_adverse_types       tipos com direção adversa estabelecida
+        #   n_contextual_types    tipos materiais de direção indeterminada
+        #   n_risk_signal_types   soma dos dois — é o que a regra de status usa
+        #
+        # `n_negative_types` é MANTIDO por compatibilidade com os consumidores
+        # existentes (template, relatórios, testes) e passa a funcionar como a
+        # contagem mais ampla de SINAL DE RISCO. O nome legado permanece; a
+        # semântica correta fica exposta ao lado, sem rename público arriscado.
+        #
+        # Família favorável/mitigadora não entra em nenhuma delas.
+        _adversos = [o for o in negatives
+                     if _classe_sinal(o) == _oe.SINAL_ADVERSO]
+        _contextuais = [o for o in negatives
+                        if _classe_sinal(o) == _oe.SINAL_CONTEXTUAL]
+        _sinais_risco = _adversos + _contextuais
+        n_adverse_types = len({o["event_id"] for o in _adversos})
+        n_contextual_types = len({o["event_id"] for o in _contextuais})
+        n_risk_signal_types = len({o["event_id"] for o in _sinais_risco})
+        n_negative_types = n_risk_signal_types          # compat
+        has_hard_critical = any(o["score"] >= critico_event
+                                for o in _sinais_risco)
 
         # Decomposição auditável do score (o que compõe cada ponto)
         breakdown = []
@@ -5590,6 +5650,11 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
                 # deduzir do numero zero
                 "score_authority": bool(b.get("score_authority", True)),
                 "direction_class": b.get("direction_class", ""),
+                # §8 — a linha diz a que classe pertence e quanto valeria antes
+                # da política de direção
+                "contribution_class": b.get("contribution_class", ""),
+                "signal_multiplier": b.get("signal_multiplier", 1.0),
+                "canonical_contrib": b.get("canonical_contrib", 0.0),
                 "url": b["url"], "title": b["title"],
                 "sources": 1 + len(b.get("corrob", [])),
                 "all_sources": all_sources,
@@ -5617,7 +5682,11 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
                 _clusters[k] = o
         timeline_occ = sorted(_clusters.values(), key=lambda o: o["pub_ts"])
 
-        # Deterioração persistente: acúmulo de sinais negativos em janela curta
+        # Acúmulo de SINAIS DE RISCO em janela curta — adversos e contextuais.
+        # O texto abaixo diz "sinais de risco", não "sinais negativos": desde a
+        # política de 2026-08-22 a contagem inclui evento material de direção
+        # não estabelecida, e chamá-lo de negativo afirmaria deterioração que a
+        # taxonomia determinística não estabelece.
         pa = ev_cfg.get("persistence_alert", {})
         pa_days = pa.get("days", 45)
         pa_cutoff = now_ts - pa_days * 86400
@@ -5626,10 +5695,10 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
         # atividade contextual manteria um emissor em `atenção` exatamente
         # pelo motivo que a política removeu — e criaria uma terceira noção de
         # "negativo" divergente da contribuição e da contagem de tipos.
-        recent = [o for o in _adversos if o["pub_ts"] >= pa_cutoff]
+        recent = [o for o in _sinais_risco if o["pub_ts"] >= pa_cutoff]
         persistent = (len(recent) >= pa.get("min_signals", 3)
                       and len({o["event_id"] for o in recent}) >= pa.get("min_types", 2))
-        persistence_text = (f"{len(recent)} sinais negativos em {pa_days} dias"
+        persistence_text = (f"{len(recent)} sinais de risco em {pa_days} dias"
                             if persistent else "")
 
         # Gestoras/fundos já pontuam — mas SÓ pelos eventos da taxonomia de
@@ -5699,6 +5768,21 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
             "book_pct": book_pct,
             "status": status,
             "total_score": round(total),
+            # §9 — o total separado por CLASSE DE SINAL, para o analista poder
+            # distinguir "score alto porque a evidência adversa é forte" de
+            # "score alto porque há muito evento material a revisar".
+            # `total == adverso + contextual` em precisão canônica.
+            "adverse_score": round(_decomp["adverso"], 1),
+            "contextual_score": round(_decomp["contextual"], 1),
+            "favorable_score": round(_decomp["favoravel"], 1),
+            "adverse_share": (round(_decomp["share_adverso"], 4)
+                              if _decomp["share_adverso"] is not None else None),
+            "contextual_share": (round(_decomp["share_contextual"], 4)
+                                 if _decomp["share_contextual"] is not None
+                                 else None),
+            "n_adverse_types": n_adverse_types,
+            "n_contextual_types": n_contextual_types,
+            "n_risk_signal_types": n_risk_signal_types,
             "score_delta": score_delta,
             "top_event": top_event_label,
             "worst_event": worst_event_label,

@@ -43,7 +43,7 @@ import occurrence_engine as oe
 import risk_dashboard as rd
 
 PASS = FAIL = 0
-POLITICA = "HUMAN_SCORE_POLICY_2026_08_21"
+POLITICA = "HUMAN_SCORE_POLICY_2026_08_22"    # revisada em 2026-08-22
 
 
 def check(cond, label):
@@ -104,8 +104,16 @@ print("=" * 98)
 _ctx = [(c, b) for c, b in BD if (b.get("direction") or "") != "negativa"]
 _adv = [(c, b) for c, b in BD if (b.get("direction") or "") == "negativa"]
 check(_ctx, f"[7] ha ocorrencias contextuais no painel ({len(_ctx)})")
-check(all(b["contrib"] == 0.0 for _, b in _ctx),
-      "[8] POLITICA A: TODAS contribuem exatamente zero")
+# [MIGRADO 2026-08-22] A decisao humana mudou: enquanto nao houver avaliacao
+# direcional por ocorrencia, um evento material contextual VOLTA a contribuir
+# como prior conservador de alerta. A expectativa de "contextual = 0" era
+# POLITICA, nao invariante — e a politica foi revista. O que fica travado e a
+# invariante duravel: contextual contribui SEM ser rotulado adverso, e a
+# decomposicao separa as duas parcelas.
+check(all(b["contribution_class"] == oe.SINAL_CONTEXTUAL for _, b in _ctx)
+      and any(b["contrib"] > 0 for _, b in _ctx),
+      f"[8] contextual CONTRIBUI ({len(_ctx)} ocorrencias) e e rotulado "
+      f"CONTEXTUAL — nunca ADVERSE")
 check(all(b["base"] > 0 for _, b in _ctx if b["base"]),
       "[9] e o peso da config segue intacto — o portao nao zera peso, zera "
       "AUTORIDADE")
@@ -128,14 +136,24 @@ for c, b in BD:
 _so_ctx = [c for c, bs in _por_emp.items()
            if bs and all((b.get("direction") or "") != "negativa" for b in bs)]
 check(_so_ctx, f"[13] ha emissores SO com evento contextual ({len(_so_ctx)})")
-check(all(LINHA[c]["status"] == "monitorar" for c in _so_ctx),
-      f"[14] POLITICA B: nenhum deles e promovido a `atencao` por existir "
-      f"({[c for c in _so_ctx if LINHA[c]['status'] != 'monitorar']})")
-check(all(not LINHA[c].get("persistent") for c in _so_ctx),
-      "[15] e o alerta de persistencia tambem nao dispara por atividade "
-      "contextual — 'N sinais negativos' passou a significar sinais ADVERSOS")
+# Eles PODEM entrar em alerta — e essa e a sensibilidade conservadora que a
+# decisao de 2026-08-22 restaurou. O que nao pode e o alerta parecer evidencia
+# adversa: a decomposicao tem de dizer que 100% do score e contextual.
+check(all(LINHA[c]["adverse_score"] == 0
+          and LINHA[c]["contextual_share"] in (None, 1.0) for c in _so_ctx),
+      f"[14] emissor so-contextual tem parcela adversa ZERO e share contextual "
+      f"100% — o alerta e auditavel como sinal de revisao, nao como "
+      f"deterioracao ({[c for c in _so_ctx if LINHA[c]['adverse_score']]})")
+# [MIGRADO 2026-08-22] A persistencia voltou a contar sinal contextual, por
+# decisao humana. O que se trava e que ela nunca conte familia FAVORAVEL, e que
+# o texto exibido nao chame sinal contextual de "negativo".
+check(all(LINHA[c]["adverse_score"] == 0 for c in _so_ctx),
+      "[15] emissor so-contextual tem parcela adversa zero — a persistencia "
+      "pode dispara-lo, mas a decomposicao mostra de que tipo de sinal se "
+      "trata")
 check(all(not LINHA[c].get("hard_critical") for c in _so_ctx),
-      "[16] nem o gatilho de evento critico")
+      "[16] e nenhum deles dispara o gatilho de evento critico — nenhuma "
+      "familia contextual alcanca o piso de 90 pontos")
 _dois_adv = [c for c, bs in _por_emp.items()
              if len({ROT.get(b["label"], b["label"]) for b in bs
                      if (b.get("direction") or "") == "negativa"}) >= 2]
@@ -258,12 +276,16 @@ check(len([b for b in _jbs if ROT.get(b["label"]) == "troca_ceo"]) == 1,
       "[42] UMA ocorrencia de CEO — o descritor e membro, nao evento")
 check(len(_jadv) == 1,
       f"[43] e SO a recomendacao rebaixada e adversa ({len(_jadv)})")
-check(abs(LINHA["JBS"]["total_score"] - sum(b["contrib"] for b in _jadv)) < 1.0,
-      f"[44] o score da JBS ({LINHA['JBS']['total_score']}) e exatamente a "
-      f"parcela adversa — o resto e material sem ser ruim")
-check(LINHA["JBS"]["status"] == "monitorar",
-      f"[45] e o status cai para `{LINHA['JBS']['status']}`: quatro eventos "
-      f"corporativos de direcao indeterminada nao a deterioram")
+check(abs(LINHA["JBS"]["adverse_score"] - sum(b["contrib"] for b in _jadv))
+      < 0.6,
+      f"[44] a parcela ADVERSA da JBS ({LINHA['JBS']['adverse_score']}) e "
+      f"exatamente a recomendacao rebaixada; o resto "
+      f"({LINHA['JBS']['contextual_score']}) e material sem ser ruim, e esta "
+      f"separado")
+check(LINHA["JBS"]["contextual_share"] > 0.7,
+      f"[45] e {LINHA['JBS']['contextual_share'] * 100:.0f}% do score da JBS e "
+      f"contextual: o status `{LINHA['JBS']['status']}` e um pedido de revisao, "
+      f"nao um veredito de deterioracao")
 
 print()
 print("=" * 98)
@@ -285,10 +307,12 @@ check(all(LINHA[n].get("hard_critical")
           or LINHA[n]["total_score"] >= 125 for n in _crit),
       "[49] e chegou la pela regra de sempre, nao por efeito colateral")
 _at = [l["company"] for l in EVO if l["status"] == "atencao"]
-check(all(any(b.get("direction") == "negativa" for c, b in BD if c == n)
+check(all(LINHA[n]["adverse_score"] + LINHA[n]["contextual_score"] > 0
           for n in _at),
-      f"[50] idem para `atencao` — nenhum emissor em alerta sem evidencia "
-      f"adversa ({len(_at)} emissores)")
+      f"[50] todo emissor em `atencao` tem sinal de risco real, e a composicao "
+      f"adversa x contextual esta exposta em cada um ({len(_at)} emissores; "
+      f"{sum(1 for n in _at if LINHA[n]['adverse_score'] == 0)} sao 100% "
+      f"contextuais)")
 
 print()
 print("=" * 98)
@@ -313,9 +337,11 @@ _prod = io.open("risk_dashboard.py", encoding="utf-8").read()
 check("def best_contribs" in _prod and "def weighted_total" in _prod
       and "def build_evolution" in _prod,
       "[55] build_evolution, best_contribs e weighted_total seguem no lugar")
-check("_score_authority(o)" in _prod and _prod.count("def _score_authority") == 1,
-      "[56] §18 e a autoridade e consultada de UMA fonte so — contribuicao, "
-      "tipos negativos e evento critico bebem da mesma decisao")
+check(_prod.count("def _classe_sinal") == 1
+      and "_classe_sinal(o) == _oe.SINAL_ADVERSO" in _prod,
+      "[56] §18 a classificacao vem de UMA fonte so — contribuicao, "
+      "decomposicao, contagem de tipos, persistencia e evento critico bebem da "
+      "mesma decisao")
 check(not [c for c in io.open("occurrence_engine.py", encoding="utf-8",
                               newline="").read()
            if ord(c) < 32 and c not in "\n\r\t"],

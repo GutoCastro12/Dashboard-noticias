@@ -411,7 +411,8 @@ def pontos_de_insercao(caminho="risk_dashboard.py") -> dict:
         "chave_de_ocorrencia": achar("k = o.get(\"_occ_key\") or o[\"event_id\"]"),
         "weighted_total": achar("def weighted_total(negatives"),
         "regra_de_status": achar("elif has_hard_critical or total >= critico_total"),
-        "n_negative_types": achar("n_negative_types = len({o[\"event_id\"]"),
+        "n_negative_types": (achar("n_negative_types = n_risk_signal_types")
+                             or achar("n_negative_types = len({o[\"event_id\"]")),
         "montagem_de_candidatos": achar("per_company: dict[str, list[dict]] = {}"),
         "fusao_de_gemeos": achar("twin = next((m for m in merged"),
         "clustering": achar("def assign_occurrence_clusters("),
@@ -466,7 +467,8 @@ def fidelidade_vigente(base: dict, sims: dict) -> dict:
         fora[nome] = {"score_identico": s_ok, "status_identico": st_ok,
                       "empresas": len(sim["empresas"])}
     return {"por_politica": fora,
-            "politica_vigente_na_producao": "P1_DIRECTION_GATED",
+            # [2026-08-22] contextual voltou a contribuir com peso 1,0
+            "politica_vigente_na_producao": "P0_CURRENT",
             "authority": "SHADOW / SIMULATED"}
 
 

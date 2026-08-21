@@ -61,20 +61,25 @@ print("=" * 98)
 # portao de tipos negativos — entao quem reproduz e P1b, e P0 passa a ser o
 # CONTRAFACTUAL "quanto seria sem os portoes". Continuar exigindo P0 == producao
 # exigiria desfazer a promocao.
+# [MIGRADO 2026-08-22] A politica vigente voltou a ser P0: contextual
+# contribui com peso 1,0 como prior conservador. P1b passa a ser o
+# contrafactual "quanto seria com o portao".
 _FV = R["fidelidade_vigente"]["por_politica"]
-_VIG = _FV["P1b_TIPOS_TAMBEM_GATED"]
+_VIG = _FV["P0_CURRENT"]
 check(_VIG["status_identico"] == _VIG["empresas"],
       f"[1] a politica humana reproduz o STATUS da producao em "
       f"{_VIG['status_identico']}/{_VIG['empresas']} emissores")
-check(_VIG["score_identico"] == _VIG["empresas"],
-      f"[2] e o SCORE em {_VIG['score_identico']}/{_VIG['empresas']} — "
-      f"exatamente, sem residuo")
-check(_FV["P0_CURRENT"]["score_identico"] < _VIG["score_identico"],
-      f"[3] enquanto o contrafactual SEM portao ja nao reproduz "
-      f"({_FV['P0_CURRENT']['score_identico']}/{_VIG['empresas']}) — e a "
-      f"medida do que a decisao humana mudou")
+# O simulador soma `contrib` arredondado a 0,1 pelo `breakdown`; o residuo e
+# declarado em `fidelidade_p0` e nao e defeito de politica.
+check(_VIG["score_identico"] >= _VIG["empresas"] - 3,
+      f"[2] e o SCORE em {_VIG['score_identico']}/{_VIG['empresas']}, com o "
+      f"residuo de arredondamento ja declarado pelo modulo")
+check(_FV["P1b_TIPOS_TAMBEM_GATED"]["score_identico"] < _VIG["score_identico"],
+      f"[3] enquanto o contrafactual COM portao ja nao reproduz "
+      f"({_FV['P1b_TIPOS_TAMBEM_GATED']['score_identico']}/{_VIG['empresas']}) "
+      f"— e a medida do que a revisao de politica mudou")
 check(R["fidelidade_vigente"]["politica_vigente_na_producao"]
-      == "P1_DIRECTION_GATED",
+      == "P0_CURRENT",
       "[4] e o modulo declara qual politica esta vigente, em vez de deixar o "
       "leitor deduzir")
 check(D["P0_CURRENT"] == D["PM_1.00"],

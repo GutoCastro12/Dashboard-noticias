@@ -19,13 +19,21 @@ exigiria manter duas chaves de ocorrência vivas ao mesmo tempo — uma para
 exibir e outra para pontuar —, que é justamente a verdade dupla que o projeto
 recusou.
 
-A DECISÃO HUMANA
-----------------
-Um evento de família declarada `direction: neutra` continua **material,
-visível, com membros, fase, âncora e representante** — mas NÃO soma pontos de
-risco pelo simples fato de existir, e NÃO conta como tipo negativo. Famílias
-`positiva`/`mitigadora` idem, e nunca subtraem: um evento favorável não abate
-um default. Famílias `negativa` preservam a mecânica atual, intacta.
+A DECISÃO HUMANA (2026-08-22, revisando 2026-08-21)
+---------------------------------------------------
+Um evento de família declarada `direction: neutra` é **material, visível, com
+membros, fase, âncora e representante** — e volta a CONTRIBUIR com o seu peso
+determinístico, como PRIOR CONSERVADOR de alerta. Não porque se afirme
+deterioração, mas porque, enquanto não houver avaliação direcional por
+ocorrência, o radar prefere levar o fato à inspeção humana a atribuir zero.
+
+O que impede isso de virar "deterioração confirmada" é a DECOMPOSIÇÃO:
+
+    total = contribuição adversa + contribuição contextual
+
+Famílias `positiva`/`mitigadora` somam ZERO e nunca subtraem: um evento
+favorável não abate um default. Famílias `negativa` preservam a mecânica
+intacta.
 
 UMA ÚNICA FONTE DE VERDADE
 --------------------------
@@ -44,7 +52,11 @@ from collections import defaultdict
 import risk_dashboard as _rd
 
 ENGINE_VERSION = "occurrence.engine.v1"
-POLITICA_HUMANA = "HUMAN_SCORE_POLICY_2026_08_21"
+# 2026-08-21 separou materialidade de direção; 2026-08-22 revisou o
+# multiplicador contextual de 0 para 1,0 como prior conservador de alerta,
+# mantendo a decomposição. A constante nomeia a política VIGENTE.
+POLITICA_HUMANA = "HUMAN_SCORE_POLICY_2026_08_22"
+POLITICA_ANTERIOR = "HUMAN_SCORE_POLICY_2026_08_21"
 
 # ── autoridade de score ─────────────────────────────────────────────────────
 ADVERSA = "ADVERSE"
@@ -67,12 +79,86 @@ def direcao_de(ev: dict) -> str:
 
 
 def tem_autoridade_adversa(ev: dict) -> bool:
-    """FONTE ÚNICA de autoridade de score adverso.
+    """A família estabelece direção ADVERSA?
 
-    Só família declarada `negativa` soma risco. `neutra` é material sem ser
-    adversa; `positiva`/`mitigadora` são favoráveis e nunca subtraem; ausência
-    de declaração não fabrica sentido adverso a partir de materialidade."""
+    Responde só isso. Quem decide se soma pontos é `multiplicador_de_sinal()`
+    — as duas perguntas foram coladas uma vez e o resultado foi um portão que
+    zerava alerta de evento material sem nenhuma evidência de que ele fosse
+    benigno."""
     return direcao_de(ev) == ADVERSA
+
+
+# ── classificação canônica de SINAL ─────────────────────────────────────────
+# FONTE ÚNICA consumida por: contribuição de score, decomposição, contagem de
+# tipos, alerta de persistência e gatilho de evento crítico. Nenhuma lista
+# paralela de famílias existe em código — tudo sai de `direction` na config.
+SINAL_ADVERSO = "ADVERSE"
+SINAL_CONTEXTUAL = "CONTEXTUAL"
+SINAL_NAO_RISCO = "FAVORABLE_OR_MITIGATING"
+SINAL_DESCONHECIDO = "UNKNOWN"
+
+_DIRECAO_PARA_SINAL = {
+    ADVERSA: SINAL_ADVERSO,
+    CONTEXTUAL: SINAL_CONTEXTUAL,
+    FAVORAVEL: SINAL_NAO_RISCO,
+    DESCONHECIDA: SINAL_DESCONHECIDO,
+}
+
+
+def classe_de_sinal(ev: dict) -> str:
+    """Classificação canônica da ocorrência, derivada de `direction`."""
+    return _DIRECAO_PARA_SINAL[direcao_de(ev)]
+
+
+# Multiplicador DETERMINÍSTICO por classe de sinal.
+#
+# `CONTEXTUAL = 1.0` é um PRIOR CONSERVADOR, não uma afirmação de deterioração.
+# Enquanto não existir avaliação direcional por ocorrência, o radar prefere
+# levantar um M&A, uma troca de comando ou uma emissão para inspeção humana a
+# atribuir zero só porque a taxonomia determinística não sabe dizer se o fato é
+# bom ou ruim. A decomposição adversa × contextual é o que impede isso de virar
+# "deterioração confirmada" aos olhos do analista.
+#
+# `FAVORABLE_OR_MITIGATING = 0.0` — e nunca negativo: um evento favorável não
+# abate um default, uma RJ ou um rebaixamento.
+MULTIPLICADOR_DE_SINAL = {
+    SINAL_ADVERSO: 1.0,
+    SINAL_CONTEXTUAL: 1.0,
+    SINAL_NAO_RISCO: 0.0,
+    SINAL_DESCONHECIDO: 0.0,
+}
+
+
+def multiplicador_direcional(ocorrencia: dict | None = None) -> float:
+    """COSTURA para modulação direcional futura, por OCORRÊNCIA.
+
+        contribuição_contextual_efetiva
+            = contribuição_contextual_base × multiplicador_direcional(occ)
+
+    Hoje devolve 1,0 sempre: nenhum modelo é chamado e nenhuma autoridade de
+    score é delegada. O ponto de entrada existe para que uma avaliação futura
+    possa dizer "esta aquisição específica parece benigna / incerta / adversa"
+    SEM tocar em identidade de ocorrência — que continua determinística.
+
+    A escala do multiplicador é deliberadamente NÃO escolhida aqui."""
+    return 1.0
+
+
+def multiplicador_de_sinal(ev: dict, ocorrencia: dict | None = None) -> float:
+    """Multiplicador efetivo: classe determinística × modulação direcional."""
+    classe = classe_de_sinal(ev)
+    m = MULTIPLICADOR_DE_SINAL[classe]
+    if classe == SINAL_CONTEXTUAL:
+        m *= multiplicador_direcional(ocorrencia)
+    return m
+
+
+def conta_como_sinal_de_risco(ev: dict) -> bool:
+    """Entra na contagem de tipos, na persistência e no gatilho de crítico?
+
+    Adverso e contextual, sim — um evento material merece revisão. Favorável e
+    mitigador, nunca."""
+    return classe_de_sinal(ev) in (SINAL_ADVERSO, SINAL_CONTEXTUAL)
 
 
 # ── papel do marcador ───────────────────────────────────────────────────────

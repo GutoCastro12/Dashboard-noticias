@@ -711,3 +711,125 @@ Sobreposição direcional (evento contextual + qualificador adverso explícito �
 autoridade de score): ponto de entrada documentado, **não implementado**.
 Recalibração de limiar: deliberadamente separável e observável depois, agora
 que a semântica mudou.
+
+---
+
+# Adendo 5 — Sensibilidade contextual restaurada, com decomposição
+
+> Correção **para a frente** sobre `eb2f4b7`. Nenhum `git revert`: a
+> arquitetura de ocorrência daquela promoção permanece inteira. Só a política
+> de score para evento contexto-dependente foi reconsiderada.
+
+## A revisão da política
+
+O portão anterior — contextual = 0 — era **agressivo demais para o estágio
+determinístico atual do radar**. Enquanto não existir avaliação direcional por
+*ocorrência*, o radar prefere levar um M&A, uma troca de comando ou uma emissão
+à inspeção humana a atribuir zero só porque a taxonomia determinística não sabe
+dizer se o fato é bom ou ruim.
+
+| classe | multiplicador | significado |
+|---|---:|---|
+| `ADVERSE` | 1,0 | direção adversa estabelecida — mecânica preservada |
+| `CONTEXTUAL` | **1,0** | **prior conservador de alerta**, não afirmação de deterioração |
+| `FAVORABLE_OR_MITIGATING` | 0,0 | e **nunca negativo** |
+
+O que impede o prior de virar "deterioração confirmada" é a **decomposição**:
+
+```
+total = contribuição adversa + contribuição contextual
+```
+
+## O Score é um score de ALERTA
+
+Registrado onde importa — no próprio painel, sob a tabela de decomposição:
+
+> **Score ponderado é um score de ALERTA conservador**, não uma estimativa de
+> deterioração confirmada: a parcela contextual vem de eventos materiais cuja
+> direção a taxonomia determinística ainda não estabelece, e existe para levar
+> o fato à revisão humana — não para afirmar que ele é ruim.
+
+A tabela de breakdown ganhou duas linhas antes do total: **Contribuição
+adversa** e **Contribuição contextual**. Sem nova aba, sem refatoração de UI.
+
+## JBS: o caso que o produto pedia
+
+| | |
+|---|---:|
+| total | **100** |
+| adversa | **12,3** (12%) |
+| contextual | **87,7** (88%) |
+
+Decomposição: M&A Pilgrim's 40,5 · CEO 24,6 · **recomendação rebaixada 12,3** ·
+M&A Omã 12,3 · emissão 10,3.
+
+O analista consegue dizer exatamente a frase que motivou a onda: *"a JBS tem
+score de alerta alto, mas quase tudo é atividade corporativa contextual, não
+evidência adversa hoje confirmada."*
+
+## Três noções de "negativo", uma classificação
+
+`n_negative_types`, `hard_critical` e `persistent` voltaram a consumir sinal
+contextual — mas passam a beber de **uma** classificação canônica
+(`classe_de_sinal()`, derivada de `direction`), e as contagens ficam separadas:
+
+| campo | significado |
+|---|---|
+| `n_adverse_types` | tipos com direção adversa estabelecida |
+| `n_contextual_types` | tipos materiais de direção indeterminada |
+| `n_risk_signal_types` | soma dos dois — é o que a regra de status usa |
+| `n_negative_types` | **mantido** por compatibilidade, funciona como a contagem ampla |
+
+Nenhum rename público arriscado. E o texto de persistência deixou de dizer
+*"N sinais negativos"* — agora diz **"N sinais de risco"**, porque chamar um
+evento contextual de negativo afirmaria o que a taxonomia não estabelece.
+
+## Zero regressão de ocorrência
+
+| | |
+|---|---:|
+| emissores com qualquer diferença de ocorrência | **0** |
+| ids antes / depois | 63 / 63 |
+| ocorrências pontuáveis antes / depois | 78 / 78 |
+| membros com `article_id` | 107/107 |
+
+E a metamórfica se mantém: peso de `ma` zero, dobrado, ou família adversa
+zerada → **ids, membros, fases, representantes, âncoras e alias idênticos**.
+
+Tok&Stok segue crítica com âncora de estado contínuo. Cosan, Vale, Smart Fit,
+Suzano, Sabesp, Engie, Santander e ISA inalterados.
+
+## As oito que voltaram
+
+`eb2f4b7` derrubou oito emissores de `atenção` para `monitorar`. **Os mesmos
+oito voltaram** — JBS, Engie, Santander, Vale, BTG, Yura, Cemig, Bradesco — e a
+distribuição (51 / 12 / 1) é a mesma de antes da promoção. Zero transições
+inesperadas, nenhuma crítica nova.
+
+Diferença: agora cada uma dessas linhas **diz de que é feita**.
+
+## Costura para a modulação direcional futura
+
+```
+contribuição_contextual_efetiva
+    = contribuição_contextual_base × multiplicador_direcional(ocorrência)
+```
+
+`multiplicador_direcional()` existe, é pura, devolve **1,0** e não chama modelo
+nenhum. O teste [57]–[59] prova que mudá-la altera **só** a parcela contextual —
+não a identidade, nem os membros, nem a fase, nem o representante, nem a
+parcela adversa.
+
+**O futuro LLM não decide se a ocorrência existe.** Isso permanece autoridade
+determinística. O papel possível dele, se validado, limita-se a: esta ocorrência
+já confirmada é adversa, favorável ou incerta? que evidência sustenta a leitura?
+a contribuição contextual base deve ser modulada?
+
+A escala do multiplicador **não** foi escolhida aqui.
+
+## O que continua fora
+
+**Calibração de peso** (`ma` = 40, CEO = 25, emissão = 35, follow-on = 30) é
+questão **separada e futura**. Esta onda tratou de *direção*, não de *peso*.
+Misturar as duas foi o que produziu a confusão que estas cinco ondas
+desfizeram.
