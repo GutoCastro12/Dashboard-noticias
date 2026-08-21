@@ -2086,6 +2086,247 @@
     "total_token_count": 1602
    }
   },
+  "4b07ef4534cf878be593|Engie Brasil|follow_on|v2|r7ba.p2|gemini-3.1-flash-lite": {
+   "actual_model": "gemini-3.1-flash-lite",
+   "article_id": "4b07ef4534cf878be593",
+   "article_pub_iso": "2026-08-17 04:00",
+   "candidate_event": "follow_on",
+   "case_id": "4b07ef4534cf878be593|Engie Brasil|follow_on|v2|r7ba.p2|gemini-3.1-flash-lite",
+   "company": "Engie Brasil",
+   "contract_version": "v2",
+   "created_at": "2026-08-21T10:48:17Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-21 07:46",
+    "contexto": false,
+    "event_id": "follow_on",
+    "event_phase": "anuncio",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 0,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": false,
+       "marcas": [
+        "H1_QUOTE_INEXISTENTE",
+        "H3_ENTIDADE_AUSENTE"
+       ],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "relation_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [
+         "relation_quote"
+        ],
+        "valida": false
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Engie Brasil (EGIE3) pede registro de follow-on",
+      "event_asserted": "ASSERTED",
+      "event_id": "follow_on",
+      "event_quote": "Engie Brasil (EGIE3) pede registro de follow-on",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "pede registro de follow-on",
+      "phase": "ANNOUNCED",
+      "phase_quote": "pede registro",
+      "related_entity": "null",
+      "relation": "null",
+      "relation_quote": "null",
+      "role_quote": "Engie Brasil",
+      "subject": "Engie Brasil",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Engie Brasil",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "follow-on"
+     }
+    ],
+    "falha": "",
+    "marcas": [
+     "H1_QUOTE_INEXISTENTE",
+     "H3_ENTIDADE_AUSENTE"
+    ],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-21 07:46",
+   "human_review": null,
+   "latencia_s": 3.54,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.1-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Engie Brasil (EGIE3) pede registro de follow-on",
+      "event_asserted": "ASSERTED",
+      "event_id": "follow_on",
+      "event_quote": "Engie Brasil (EGIE3) pede registro de follow-on",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "pede registro de follow-on",
+      "phase": "ANNOUNCED",
+      "phase_quote": "pede registro",
+      "related_entity": "null",
+      "relation": "null",
+      "relation_quote": "null",
+      "role_quote": "Engie Brasil",
+      "subject": "Engie Brasil",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Engie Brasil",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "follow-on"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Estadão",
+   "title": "Engie Brasil (EGIE3) pede registro de follow-on que pode movimentar até R$ 10,5 bilhões",
+   "url": "https://www.estadao.com.br/em-alta/einvestidor/cenarios-e-mercado/engie-brasil-egie3-pede-registro-de-follow-on-que-pode-movimentar-ate-r-105-bilhoes/",
+   "usage": {
+    "candidates_token_count": 286,
+    "prompt_token_count": 1330,
+    "total_token_count": 1616
+   }
+  },
+  "4b07ef4534cf878be593|Engie Brasil|follow_on|v2|r7ba.p2|gemini-3.5-flash-lite": {
+   "actual_model": "gemini-3.5-flash-lite",
+   "article_id": "4b07ef4534cf878be593",
+   "article_pub_iso": "2026-08-17 04:00",
+   "candidate_event": "follow_on",
+   "case_id": "4b07ef4534cf878be593|Engie Brasil|follow_on|v2|r7ba.p2|gemini-3.5-flash-lite",
+   "company": "Engie Brasil",
+   "contract_version": "v2",
+   "created_at": "2026-08-21T10:48:26Z",
+   "deterministic": {
+    "atribuida": true,
+    "capturado_em": "2026-08-21 07:46",
+    "contexto": false,
+    "event_id": "follow_on",
+    "event_phase": "anuncio",
+    "impact_type": "direto",
+    "relation_type": "direto",
+    "scoreable": true,
+    "subject_company": ""
+   },
+   "erro": null,
+   "estado": "OK",
+   "evidencia": {
+    "aceitos": 1,
+    "erros": [],
+    "eventos": [
+     {
+      "_validacao": {
+       "aceito": true,
+       "marcas": [],
+       "quotes": {
+        "checadas": [
+         "event_quote",
+         "subject_quote",
+         "role_quote",
+         "currentness_quote",
+         "phase_quote"
+        ],
+        "invalidas": [],
+        "valida": true
+       }
+      },
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Engie Brasil (EGIE3) pede registro de follow-on que pode movimentar até R$ 10,5 bilhões",
+      "event_asserted": "ASSERTED",
+      "event_id": "follow_on",
+      "event_quote": "pede registro de follow-on",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "pede registro de follow-on que pode movimentar até R$ 10,5 bilhões",
+      "phase": "ANNOUNCED",
+      "phase_quote": "pede registro",
+      "related_entity": "",
+      "relation": "",
+      "relation_quote": "",
+      "role_quote": "Engie Brasil (EGIE3)",
+      "subject": "Engie Brasil",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Engie Brasil (EGIE3)",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "follow-on"
+     }
+    ],
+    "falha": "",
+    "marcas": [],
+    "ok": true,
+    "total": 1
+   },
+   "finish": {
+    "finish_reason_nome": "STOP"
+   },
+   "first_seen_iso": "2026-08-21 07:46",
+   "human_review": null,
+   "latencia_s": 1.59,
+   "prompt_version": "r7ba.p2",
+   "requested_model": "gemini-3.5-flash-lite",
+   "saida": {
+    "events": [
+     {
+      "centrality": "MAIN",
+      "company_role": "SUBJECT",
+      "currentness": "CURRENT",
+      "currentness_quote": "Engie Brasil (EGIE3) pede registro de follow-on que pode movimentar até R$ 10,5 bilhões",
+      "event_asserted": "ASSERTED",
+      "event_id": "follow_on",
+      "event_quote": "pede registro de follow-on",
+      "field_support": "SUPPORTED",
+      "occurrence_novelty": "NEW_OCCURRENCE",
+      "occurrence_novelty_quote": "pede registro de follow-on que pode movimentar até R$ 10,5 bilhões",
+      "phase": "ANNOUNCED",
+      "phase_quote": "pede registro",
+      "related_entity": "",
+      "relation": "",
+      "relation_quote": "",
+      "role_quote": "Engie Brasil (EGIE3)",
+      "subject": "Engie Brasil",
+      "subject_basis": "EXPLICIT",
+      "subject_quote": "Engie Brasil (EGIE3)",
+      "transaction_object": "EQUITY_STAKE",
+      "transaction_object_quote": "follow-on"
+     }
+    ]
+   },
+   "schema_version": "r7ba.s2",
+   "shadow_version": "sem.v2.shadow.v1",
+   "source": "Estadão",
+   "title": "Engie Brasil (EGIE3) pede registro de follow-on que pode movimentar até R$ 10,5 bilhões",
+   "url": "https://www.estadao.com.br/em-alta/einvestidor/cenarios-e-mercado/engie-brasil-egie3-pede-registro-de-follow-on-que-pode-movimentar-ate-r-105-bilhoes/",
+   "usage": {
+    "candidates_token_count": 307,
+    "prompt_token_count": 1330,
+    "total_token_count": 1637
+   }
+  },
   "5d05e84444486491a30b|JBS|troca_ceo|v2|r7ba.p2|gemini-3.1-flash-lite": {
    "actual_model": "gemini-3.1-flash-lite",
    "article_id": "5d05e84444486491a30b",
