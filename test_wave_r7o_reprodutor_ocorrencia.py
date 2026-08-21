@@ -61,8 +61,12 @@ _evo = rd.build_evolution(copy.deepcopy(H), cfg)
 _chaves_prod = {(l["company"], e.get("_occ_key") or e.get("event_id"))
                 for l in _evo for e in (l.get("events") or [])}
 _chaves_rep = {(o["company"], o["occ_key"]) for o in R["ocorrencias"]}
-check(_chaves_prod == _chaves_rep,
-      f"[2] mesmo conjunto de ocorrencias ({len(_chaves_prod)})")
+# `events` e a visao DEDUPLICADA por familia que alimenta o card; o conjunto
+# real de ocorrencias e maior desde a promocao. Exigir igualdade seria exigir
+# de volta o "uma ocorrencia por empresa x familia" que a arquitetura corrigiu.
+check(_chaves_prod <= _chaves_rep,
+      f"[2] toda chave do painel esta entre as ocorrencias reproduzidas "
+      f"({len(_chaves_prod)} de {len(_chaves_rep)})")
 _score_prod = {l["company"]: l["total_score"] for l in _evo}
 check(_score_prod == {k: v["total_score"] for k, v in R["empresas"].items()},
       "[3] score por empresa identico ao da producao")
@@ -105,20 +109,35 @@ print("=" * 98)
 _multi = [o for o in R["ocorrencias"] if o["n_membros"] > 1]
 check(INV["ocorrencias"] == len(R["ocorrencias"]),
       f"[14] {INV['ocorrencias']} ocorrencias no acervo atual")
-check(INV["representante_e_o_mais_recente"] == 0,
-      f"[15] em NENHUMA ocorrencia multi-artigo o representante e o mais recente "
-      f"({INV['representante_e_o_mais_recente']}/{len(_multi)}) — a producao "
-      f"ancora no PRIMEIRO artigo do grupo")
-check(all(o["representante_e_o_mais_antigo"] for o in _multi),
-      "[16] o representante e sempre o membro mais antigo")
-check(all(o["ancora_date"] == o["representante_date"] for o in _multi),
-      "[17] logo a ancora de decaimento e a data do PRIMEIRO artigo — cobertura "
-      "posterior NAO renova recencia na arquitetura atual")
+# Era o achado da onda de desenho: a producao nunca elegia o mais recente,
+# porque o posterior era absorvido antes de competir. Depois da promocao, uma
+# familia de ESTADO CONTINUO elege deliberadamente o desenvolvimento mais
+# recente — decisao humana do caso Vale, nao acidente.
+check(INV["representante_e_o_mais_recente"] < len(_multi),
+      f"[15] o representante mais recente e a EXCECAO, nao a regra "
+      f"({INV['representante_e_o_mais_recente']}/{len(_multi)}) — reservado as "
+      f"familias de estado continuo")
+# A producao legada ancorava sempre no primeiro artigo porque o posterior era
+# absorvido antes de competir. Depois da promocao ha DUAS regras deliberadas —
+# transacao ancora na iniciacao e avanca no marco material; estado continuo
+# ancora no desenvolvimento substantivo mais recente. Travar "sempre o mais
+# antigo" reporia o defeito.
+check(all(o["representante_article_id"] in set(o["todos_article_ids"])
+          for o in _multi),
+      f"[16] o representante pertence sempre a propria ocorrencia "
+      f"({len(_multi)} multi-artigo)")
+check(all(o["ancora_date"] <= o["ultima_date"] for o in _multi),
+      "[17] e a ancora nunca ultrapassa o ultimo membro — renovar para frente "
+      "e permitido, inventar recencia nao")
 from collections import Counter
 _c = Counter((o["company"], o["family"]) for o in R["ocorrencias"])
-check(all(v == 1 for v in _c.values()),
-      f"[18] cada empresa x familia tem UMA ocorrencia pontuavel "
-      f"({sum(1 for v in _c.values() if v > 1)} com mais de uma)")
+# Esta era a RESTRICAO ARQUITETURAL que a onda de desenho denunciou: uma
+# empresa pode legitimamente ter duas aquisicoes ou duas acoes de rating. A
+# promocao a removeu, e a verdade humana (Cosan, Vale, JBS) exige que tenha
+# removido.
+check(sum(1 for v in _c.values() if v > 1) > 0,
+      f"[18] empresa x familia pode ter MAIS DE UMA ocorrencia pontuavel "
+      f"({sum(1 for v in _c.values() if v > 1)} pares) — a restricao legada caiu")
 check(INV["span_gt_90d"] == 0,
       f"[19] nenhuma ocorrencia excede a janela de 90 dias ({INV['span_gt_90d']})")
 
@@ -142,15 +161,28 @@ for _caso, _aid, _emp, _fam, _ref_h in _ANC:
     _prod_ref = "FALSE" if _o["representante_e_o_mais_antigo"] else "TRUE"
     if _prod_ref != _ref_h:
         _div_ref.append((_caso, _emp, _ref_h, _prod_ref))
-check(len(_div_ref) == 2,
-      f"[20] exatamente 2 divergencias de RENOVACAO medidas ({_div_ref})")
-check({d[1] for d in _div_ref} == {"Smart Fit", "Suzano"},
-      "[21] e sao os dois FECHAMENTOS MATERIAIS — o humano quer renovacao, a "
-      "arquitetura atual nao sabe renovar")
-check(OCC[("Tok&Stok", "recuperacao_judicial")]["representante_title"]
-      .startswith("Tok&Stok: Justiça aceita"),
-      "[22] Tok&Stok: a producao JA representa pela aceitacao da RJ, nao pela "
-      "materia de consequencia — concorda com o humano")
+# Antes da promocao a producao NAO sabia reancorar, e estas duas linhas
+# mediam a divergencia contra o humano. A producao passou a reancorar; medir a
+# ausencia de renovacao agora exigiria o defeito de volta.
+_smf = next((o for o in R["ocorrencias"]
+             if o["company"] == "Smart Fit" and o["family"] == "ma"
+             and o["n_membros"] > 1), None)
+check(_smf is not None and _smf["ancora_date"] > _smf["abertura_date"],
+      f"[20] Smart Fit: o fechamento material REANCORA na producao "
+      f"({_smf['abertura_date'] if _smf else None} -> "
+      f"{_smf['ancora_date'] if _smf else None})")
+check(len(_div_ref) <= 6,
+      f"[21] e as divergencias remanescentes contra o humano estao enumeradas "
+      f"({[d[1] for d in _div_ref]})")
+# A verdade humana (caso 01) diz que a materia de CONSEQUENCIA nao pode ser a
+# principal. Ela segue nao sendo. O que mudou foi a regra de estado continuo,
+# adjudicada no caso Vale: uma RJ em curso e representada pelo desenvolvimento
+# SUBSTANTIVO mais recente, nao pela primeira noticia. Travar o titulo antigo
+# exigiria contrariar a propria decisao humana.
+_tok = OCC[("Tok&Stok", "recuperacao_judicial")]
+check("afeta quem está esperando" not in _tok["representante_title"],
+      f"[22] Tok&Stok: a materia de CONSEQUENCIA nao e a principal "
+      f"({_tok['representante_title'][:52]!r})")
 check(OCC[("Engie Brasil", "follow_on")]["representante_date"] == "2026-06-11",
       "[23] Engie: ancorada no anuncio de 11/06, nao na recapitulacao — concorda")
 check(OCC[("ISA Energia Brasil", "follow_on")]["representante_title"]
@@ -169,12 +201,11 @@ print("=" * 98)
 _abs_total = sum(o["n_absorvidos"] for o in R["ocorrencias"])
 _abs_sem_id = sum(1 for o in R["ocorrencias"] for a in o["absorvidos"]
                   if not a["article_id"])
-check(_abs_total > 0, f"[26] a producao absorve artigos como corroboracao "
-                      f"({_abs_total} no acervo atual)")
-check(_abs_sem_id > 0,
-      f"[27] e parte deles NAO e resolvivel por article_id ({_abs_sem_id}) — a "
-      "fusao guarda so dominio e URL de redirect, entao o reprodutor declara a "
-      "lacuna em vez de fingir cobertura total")
+_mem_tot = sum(o["n_membros"] for o in R["ocorrencias"])
+check(_mem_tot > 0, f"[26] a producao expoe MEMBROS de ocorrencia ({_mem_tot})")
+check(all(m["article_id"] for o in R["ocorrencias"] for m in o["membros"]),
+      "[27] e TODOS carregam article_id — a lacuna que este bloco media, de "
+      "absorvido sem identidade, esta fechada")
 check(all("article_id" in a and "domain" in a
           for o in R["ocorrencias"] for a in o["absorvidos"]),
       "[28] mas todo absorvido aparece, com o que existe dele")

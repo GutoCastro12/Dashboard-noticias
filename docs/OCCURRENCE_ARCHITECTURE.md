@@ -586,3 +586,128 @@ identidade limpa **não** autoriza autoridade de pontuação.
 Linha do tempo da ocorrência: iniciação → etapa → material → acompanhamento, com
 representante de exibição, âncora de score, motivo da renovação e fontes
 corroboradoras nomeadas.
+
+---
+
+# Adendo 4 — Promoção à produção: ocorrência + score com portão de direção
+
+> Onda de PROMOÇÃO. As duas mudanças foram juntas porque o total do emissor é
+> a soma de uma contribuição por `_occ_key`: mexer na identidade muda o score
+> por construção.
+
+## A decisão humana, implementada
+
+| | |
+|---|---|
+| **Política A** | evento de família `neutra` **não soma risco** por existir |
+| **Política B** | evento de família `neutra` **não conta como tipo negativo** |
+| **Favorável** | zero risco, zero tipo negativo, e **nunca subtrai** |
+| **Adverso** | mecânica de score preservada, intacta |
+
+Uma **fonte única** de autoridade — `tem_autoridade_adversa()` — é consultada
+pela contribuição, pela contagem de tipos negativos e pelo gatilho de evento
+crítico. Nada infere autoridade de "score > 0": decaimento e arredondamento
+tornariam a regra circular.
+
+O motor **não mantém lista paralela de famílias**: lê `direction` da própria
+config, que já estava preenchida e nunca era consultada na hora de pontuar.
+
+## Uma terceira noção de "negativo" que precisava do mesmo portão
+
+`n_negative_types` era a decisão explícita; mas o alerta de **persistência**
+("N sinais negativos em D dias") é a mesma noção sob outro nome. Deixá-lo
+contar atividade contextual manteria um emissor em `atenção` exatamente pelo
+motivo que a política removeu. Foi gateado junto — e é o que move a JBS.
+
+## `is_positive()` não cobria `mitigadora`
+
+Auditando o enum: `is_positive()` cobre só `direction == "positiva"` (9
+famílias). As **6 `mitigadora`** entravam em `negatives` e somavam risco. Todas
+têm peso 0 hoje, então a mudança é **semântica, não numérica** — mas fica
+explícita em vez de latente.
+
+Nenhuma família está sem `direction`: **não há caso UNKNOWN** para o portão
+reinterpretar em silêncio.
+
+## Uma regressão que a promoção criou, e a correção
+
+A âncora da Tok&Stok caiu de 21/08 para 18/06: **95 → 22**, quatro vezes menos
+recência num evento **adverso**. A regra da sombra — âncora na iniciação, só
+avança em fase material — foi desenhada para **transações**, onde o anúncio
+data o fato.
+
+Uma **recuperação judicial em curso com notícia fresca é risco fresco.**
+Famílias de **estado contínuo** (`recuperacao_judicial`,
+`investigacao_regulatoria`) passaram a ancorar no desenvolvimento
+**substantivo** mais recente — a mesma regra que o humano adjudicou para o
+*representante* no caso Vale. Tok&Stok voltou a **98**, crítica.
+
+E o representante virou a compra de 13,2% em meio à RJ, não a matéria de
+consequência ao consumidor — que segue corroboração, como o humano decidiu.
+
+> Esta é a única regra da produção que a Sombra V3 não tem. A sombra continua
+> sendo o oráculo do contrato V3; a produção acrescenta uma regra a mais, com
+> o motivo registrado.
+
+## O blast
+
+| | antes | depois |
+|---|---:|---:|
+| score total | 1034 | **470** |
+| mediana | 9,5 | 0,0 |
+| p90 | 33,0 | 22,5 |
+| crítico | 1 | **1** |
+| atenção | 12 | **4** |
+| monitorar | 51 | **59** |
+| ocorrências pontuáveis | 65 | **78** |
+| membros com `article_id` | — | **107/107** |
+
+**Oito transições, todas `atenção → monitorar`, nenhuma para cima, nenhum
+crítico novo.** Cemig, BTG e Engie tinham **zero** evento adverso; Bradesco,
+Yura, Santander e JBS têm um só tipo adverso; Vale é `BOTH` — seu score
+**subiu** (20 → 38, três processos CVM distintos adjudicados) e ainda assim
+caiu de status, porque um tipo adverso não promove.
+
+Distribuição de tipos negativos: antes **11** emissores tinham ≥2; agora **2**.
+
+## Deriva em famílias adversas: 9 idênticas, 5 explicadas
+
+| emissor | ocorrências | score | por quê |
+|---|---|---|---|
+| Cosan | 1 → 3 | 61 → 120 | separação por agência, adjudicada |
+| Vale | 1 → 3 | 17 → 38 | dois processos CVM distintos, adjudicados |
+| Rumo | 1 → 2 | 5,9 → 9,2 | duas avaliações de analista distintas |
+| Tok&Stok | 1 → 1 | 95 → 98 | 5 fontes em vez de 2 — proveniência recuperada |
+| Yobel | 1 → 1 | 22 → 31 | família opt-in unindo os três estágios |
+
+Nenhuma inesperada.
+
+## Equivalência com os oráculos
+
+- **Ocorrência**: 78 das 79 ocorrências da Sombra V3, com membros e
+  representantes idênticos. A 79ª é artefato da sombra, que monta candidatos
+  por conta própria e inclui um artigo que a produção já filtrava **antes**
+  da promoção.
+- **Score**: a política `P1b` (portão de direção + portão de tipos) reproduz a
+  produção em **64/64 emissores, em score e em status** — exatamente, sem o
+  resíduo de arredondamento do diagnóstico, porque a produção usa a
+  contribuição canônica.
+
+## Migração de testes
+
+Vários testes codificavam o mundo pré-promoção: "a produção perde `article_id`
+dos absorvidos", "uma ocorrência por empresa × família", "o representante é
+sempre o mais antigo", "M&A legítimo pontua". Eram **medidas de defeito**, não
+invariantes — travá-las exigiria manter o defeito.
+
+Cada uma foi trocada pela propriedade que realmente protegia: a lacuna está
+**fechada**; a restrição legada **caiu** (e a verdade humana exige que tenha
+caído); a âncora tem **duas regras deliberadas**; e o M&A legítimo continua
+**visível**, que é o que a guarda dos 142 falsos negativos sempre defendeu.
+
+## O que continua fora
+
+Sobreposição direcional (evento contextual + qualificador adverso explícito →
+autoridade de score): ponto de entrada documentado, **não implementado**.
+Recalibração de limiar: deliberadamente separável e observável depois, agora
+que a semântica mudou.

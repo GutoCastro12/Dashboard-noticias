@@ -448,11 +448,21 @@ def i11_rumo():
 
 
 def i12_ma_legitimo():
-    print("\n[I12] Integração: M&A externo legítimo pontua")
+    print("\n[I12] Integração: M&A externo legítimo NÃO é apagado")
     res = _pipeline(_hist(("Bunge conclui acordo de aquisição da Viterra", {"Bunge": ["ma"]})))
     h = res["history"]["articles"]["https://exemplo.test/0"]
     check("ma" in h["events_by_company"]["Bunge"], "M&A legítimo preservado no histórico")
-    check(_score(res, "Bunge") > 0, f"M&A legítimo pontua (score {_score(res,'Bunge')})")
+    # O que esta guarda protege é o M&A não ser APAGADO — uma regra ampla
+    # demais já produziu 142 falsos negativos. "Pontuar" era o proxy disso
+    # enquanto `ma` somava risco. Desde a decisão humana de 2026-08-21, `ma` é
+    # `direction: neutra` e contribui zero: exigir score > 0 aqui exigiria
+    # desfazer a política. Afirma-se o que a regra realmente defende — a
+    # ocorrência EXISTE, visível e identificável.
+    _bd = (res["evolution"].get("Bunge") or {}).get("breakdown") or []
+    _ma = [b for b in _bd if b.get("label") == "M&A"]
+    check(bool(_ma), f"M&A legítimo continua VISÍVEL como ocorrência ({len(_ma)})")
+    check(all((b.get("direction") or "") == "neutra" for b in _ma),
+          "e é a direção declarada `neutra` que zera o risco, não supressão")
 
 
 def i13_rj_legitima():

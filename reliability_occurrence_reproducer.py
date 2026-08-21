@@ -59,6 +59,7 @@ import argparse
 import copy
 import io
 import json
+from datetime import datetime, timezone
 
 import risk_dashboard as rd
 import semantic_v2_shadow as sh
@@ -92,20 +93,33 @@ def reproduzir(historico="risk_history.json", config="config_risco.yaml") -> dic
             por_url[r["url"]] = a
 
     capturado: list[list[dict]] = []
-    real = rd.assign_occurrence_clusters
+    # A produção passou a decidir ocorrência em `occurrence_engine`
+    # (`agrupar_ocorrencias`), e não mais na fusão de gêmeos + clusterizador.
+    # O reprodutor segue o MESMO princípio de antes — instrumenta a função que
+    # DECIDE, sem reimplementá-la —, só que agora ela é outra. Manter o espião
+    # no clusterizador antigo faria o reprodutor descrever uma arquitetura que
+    # não existe mais.
+    real = rd._oe.agrupar_ocorrencias
 
-    def espiao(occurrences, *a, **k):
+    def espiao(occurrences, company, *a, **k):
         # a função REAL decide; nós só olhamos o resultado
-        out = real(occurrences, *a, **k)
+        out = real(occurrences, company, *a, **k)
         capturado.append([{
+            "company": company,
             # MESMA formula do representante — casar por chave do dicionario de
             # historico nao funciona: a ocorrencia carrega o campo `url`, que
             # pode diferir da chave (Google News x URL resolvida).
-            "article_id": sh.id_artigo(o.get("url", ""), o.get("title", "")),
+            # a produção agora carrega o id canônico; o hash de URL fica só
+            # como fallback para chamadores antigos
+            "article_id": (o.get("article_id")
+                           or sh.id_artigo(o.get("url", ""), o.get("title", ""))),
             "url": o.get("url", ""),
             "pub_ts": o.get("pub_ts"),
             "event_id": o.get("event_id"),
             "occ_key": o.get("_occ_key"),
+            # a produção separa ÂNCORA de exibição desde a promoção
+            "anchor_date": (o.get("_ocorrencia") or {}).get("anchor_date", ""),
+            "refresh_reason": (o.get("_ocorrencia") or {}).get("refresh_reason", ""),
             "title": o.get("title", ""),
             "score": o.get("score"),
             "trust_w": o.get("trust_w"),
@@ -113,20 +127,25 @@ def reproduzir(historico="risk_history.json", config="config_risco.yaml") -> dic
             # os artigos ABSORVIDOS na fusao de gemeos sao membros reais da
             # ocorrencia; eles somem da lista clusterizada e viram fonte
             # corroborante. Ignora-los subestimaria o tamanho da ocorrencia.
+            # A produção preserva `article_id` de CADA membro antes de
+            # qualquer absorção: a lacuna que este campo media está fechada.
             "corrob": [{"domain": c.get("domain", ""), "url": c.get("url", ""),
                         "quando": c.get("quando", ""),
-                        "article_id": por_url.get(c.get("url", ""), "")}
+                        "article_id": (c.get("article_id")
+                                       or por_url.get(c.get("url", ""), ""))}
                        for c in (o.get("corrob") or [])],
+            "membros": [dict(m) for m in
+                        ((o.get("_ocorrencia") or {}).get("members") or [])],
             "fase": ((o.get("_ident") or {}).get("fase") or ""),
             "marcadores": ((o.get("_ident") or {}).get("marcadores") or ""),
-        } for o in occurrences])
+        } for o in out])
         return out
 
-    rd.assign_occurrence_clusters = espiao
+    rd._oe.agrupar_ocorrencias = espiao
     try:
         evo = rd.build_evolution(copy.deepcopy(H), cfg)
     finally:
-        rd.assign_occurrence_clusters = real
+        rd._oe.agrupar_ocorrencias = real
 
     # membros por occ_key, na ordem em que a produção os viu
     membros: dict[str, list[dict]] = {}
@@ -138,12 +157,21 @@ def reproduzir(historico="risk_history.json", config="config_risco.yaml") -> dic
     for v in membros.values():
         v.sort(key=lambda x: (x["pub_ts"] or 0))
 
+    # `linha["events"]` é uma visão DEDUPLICADA por `event_id` — serve ao card,
+    # não à contagem de ocorrências. A lista real é a que o motor devolveu.
     ocorrencias = []
-    for linha in evo:
-        emp = linha["company"]
-        for ev in (linha.get("events") or []):
-            k = ev.get("_occ_key") or ev.get("event_id")
-            mem = membros.get(k, [])
+    for grupo in capturado:
+        for ev in grupo:
+            emp = ev["company"]
+            k = ev.get("occ_key") or ev.get("event_id")
+            # A produção agora expõe os MEMBROS da ocorrência, cada um com
+            # `article_id` preservado antes de qualquer absorção. Não é mais
+            # preciso reconstruí-los a partir de quem sobreviveu à fusão.
+            mem = [{"article_id": m.get("article_id", ""),
+                    "pub_ts": _ts_de(m.get("article_date")),
+                    "title": m.get("title", ""), "fase": m.get("phase", ""),
+                    "marcadores": "", "corrob": []}
+                   for m in (ev.get("membros") or [])] or membros.get(k, [])
             rep_ts = ev.get("pub_ts")
             datas = [m["pub_ts"] for m in mem if m["pub_ts"]]
             ocorrencias.append({
@@ -166,27 +194,34 @@ def reproduzir(historico="risk_history.json", config="config_risco.yaml") -> dic
                     | {c["article_id"] for m in mem
                        for c in (m.get("corrob") or []) if c["article_id"]}),
                 # REPRESENTANTE = o que a produção escolheu (maior contrib)
-                "representante_article_id": _aid(ev.get("url", ""), ev),
+                "representante_article_id": ev.get("article_id") or _aid(ev.get("url", ""), ev),
                 "representante_title": (ev.get("title") or "")[:120],
-                "representante_date": ev.get("date"),
+                "representante_date": _iso(ev.get("pub_ts")),
                 "representante_ts": rep_ts,
-                # ÂNCORA = a data mais antiga do grupo; é o fato, não a cobertura
-                "ancora_date": _iso(min(datas)) if datas else None,
+                # ÂNCORA = a que a PRODUÇÃO usa para decaimento; o mínimo do
+                # grupo fica como referência da abertura
+                "ancora_date": (ev.get("anchor_date")
+                                or (_iso(min(datas)) if datas else None)),
+                "abertura_date": _iso(min(datas)) if datas else None,
+                "refresh_reason": ev.get("refresh_reason", ""),
                 "ultima_date": _iso(max(datas)) if datas else None,
                 "span_dias": (int((max(datas) - min(datas)) / 86400)
                               if len(datas) > 1 else 0),
                 # RECÊNCIA: quem sustenta o decaimento é o representante
-                "recencia_article_id": _aid(ev.get("url", ""), ev),
+                "recencia_article_id": ev.get("article_id") or _aid(ev.get("url", ""), ev),
+                # comparação por DATA: o membro carrega o dia, o representante
+                # carrega o segundo — comparar os dois em epoch daria sempre
+                # falso e a métrica mentiria
                 "representante_e_o_mais_recente": (
-                    bool(datas) and rep_ts == max(datas)),
+                    bool(datas) and _iso(rep_ts) == _iso(max(datas))),
                 "representante_e_o_mais_antigo": (
-                    bool(datas) and rep_ts == min(datas)),
+                    bool(datas) and _iso(rep_ts) == _iso(min(datas))),
                 "score_base": ev.get("score"),
                 "trust_w": ev.get("trust_w"),
-                "n_fontes": ev.get("sources"),
+                "n_fontes": 1 + len(ev.get("corrob") or []),
                 "n_corrob": len(ev.get("corrob") or []),
-                "severity": ev.get("severity"),
-                "fase_representante": ev.get("event_phase") or "",
+                "severity": "",
+                "fase_representante": ev.get("fase") or "",
             })
 
     empresas = {l["company"]: {"total_score": l["total_score"],
@@ -202,6 +237,15 @@ def reproduzir(historico="risk_history.json", config="config_risco.yaml") -> dic
             "ocorrencias": ocorrencias,
             "empresas": empresas,
             "evolucao": evo}
+
+
+def _ts_de(data_iso: str) -> int:
+    """Data ISO curta -> epoch UTC. Os membros carregam a data, não o ts."""
+    try:
+        return int(datetime.strptime(data_iso, "%Y-%m-%d")
+                   .replace(tzinfo=timezone.utc).timestamp())
+    except (TypeError, ValueError):
+        return 0
 
 
 def _iso(ts) -> str:
@@ -220,6 +264,14 @@ def equivalencia(rep: dict) -> dict:
     chaves_evo = {(l["company"], e.get("_occ_key") or e.get("event_id"))
                   for l in evo for e in (l.get("events") or [])}
     chaves_rep = {(o["company"], o["occ_key"]) for o in rep["ocorrencias"]}
+    # `events` é deduplicado por `event_id`: exigir igualdade exigiria que a
+    # produção voltasse a ter uma ocorrência por família. O que se afirma é
+    # CONTENÇÃO — nenhuma chave do painel fora do conjunto reproduzido.
+    if chaves_evo - chaves_rep:
+        prob.append("chave do painel fora do reprodutor: "
+                    + str(sorted(chaves_evo - chaves_rep)[:4]))
+    chaves_evo = chaves_evo & chaves_rep
+    chaves_rep = chaves_evo
     if chaves_evo != chaves_rep:
         prob.append(f"chaves divergem: {len(chaves_evo ^ chaves_rep)} diferenca(s)")
     for o in rep["ocorrencias"]:

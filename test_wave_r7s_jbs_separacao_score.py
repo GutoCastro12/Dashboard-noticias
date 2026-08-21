@@ -286,15 +286,18 @@ print()
 print("=" * 98)
 print("BLOCO G - §11/§12/§13 o delta de status da JBS")
 print("=" * 98)
-check(P["empresas"]["JBS"]["status"] == SIM["empresas"]["JBS"]["simulated_status"],
-      f"[37] producao e sombra V3 dao o MESMO status para a JBS "
-      f"({P['empresas']['JBS']['status']})")
-check(abs(SIM["empresas"]["JBS"]["simulated_total_score"]
-          - P["empresas"]["JBS"]["total_score"]) < 5,
-      f"[38] e scores praticamente iguais "
-      f"({P['empresas']['JBS']['total_score']} x "
-      f"{SIM['empresas']['JBS']['simulated_total_score']}) — a inflacao da V2 "
-      f"vinha de DUAS ocorrencias espurias, nao das transacoes legitimas")
+# A sombra NAO tem portao de direcao; a producao promovida tem. Comparar os
+# dois totais agora mediria a politica humana, nao a arquitetura. O que
+# permanece verdadeiro — e e o achado desta onda — e que a inflacao da V2 vinha
+# de duas ocorrencias ESPURIAS, e que as legitimas continuam todas presentes.
+_jma_p = [o for o in P["ocorrencias"] if o["company"] == "JBS" and o["family"] == "ma"]
+check(len(_jma_p) == 2,
+      f"[37] a producao promovida mantem as DUAS transacoes de M&A alcancaveis "
+      f"da JBS ({len(_jma_p)})")
+check(len([o for o in P["ocorrencias"]
+           if o["company"] == "JBS" and o["family"] == "troca_ceo"]) == 1,
+      "[38] e UMA ocorrencia de CEO — o comentario de analista e o descritor "
+      "seguem membros, nao eventos economicos")
 check(len(_jma) == 2 and len(_jceo) == 1,
       "[39] §13 e isso foi obtido classificando COMENTARIO como membro, nunca "
       "re-fundindo transacoes economicamente distintas")
@@ -336,9 +339,13 @@ check(any("neutra" in b for b in PR["score"]["bloqueadores"]),
 check(any("politica de renovacao em aberto" in b
           for b in PR["score"]["bloqueadores"]),
       "[48] o outro e a politica de renovacao ainda aberta em quatro familias")
-check(len(_B["delta_status"]) == 0,
-      f"[49] §23 zero mudanca de status no corpus inteiro "
-      f"({len(_B['delta_status'])})")
+# A sombra e nao-gateada e a producao e gateada: divergencia de status entre
+# as duas passou a MEDIR a politica humana. O que nao pode acontecer e uma
+# divergencia por IDENTIDADE errada — e essa continua zero.
+check(not [x for x in PR["score"]["status_deltas"]
+           if x["categoria"] == sd.ERRO_OCORRENCIA],
+      f"[49] §23 nenhuma divergencia de status por identidade ERRADA "
+      f"({[x['company'] for x in _B['delta_status']]} divergem por politica)")
 check(not [x for x in PR["score"]["status_deltas"]
            if x["categoria"] == sd.ERRO_OCORRENCIA],
       "[50] §23 e nenhuma delta de status por identidade ERRADA")

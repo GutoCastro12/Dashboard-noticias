@@ -292,8 +292,12 @@ _novas = _depois - _antes
 check(not _novas, f"[51] a guarda nunca CRIA evento ({len(_novas)})")
 check(all(e == "troca_ceo" for _, _, e in _sumidas),
       "[52] e so remove da familia `troca_ceo` — zero vazamento")
-check(len(_sumidas) == 9,
-      f"[53] exatamente 9 triplas removidas no acervo atual ({len(_sumidas)})")
+# O acervo cresce a cada rodada do cron: travar a contagem exata transformaria
+# esta checagem num calendario. O que nao pode mudar e a PROPRIEDADE — a guarda
+# so remove, so na familia certa, e cobre as negativas humanas conhecidas.
+check(len(_sumidas) >= 9,
+      f"[53] a guarda remove ao menos as 9 triplas conhecidas "
+      f"({len(_sumidas)} no acervo atual)")
 _ids = set()
 for u, emp, e in _sumidas:
     r = _H["articles"][u]
@@ -306,10 +310,13 @@ check(_HUM_NEG <= _ids,
 check(("201b91aa6b3c", "JBS") in _ids,
       "[55] e tambem o descritor da JBS, negativo humano no shadow V2")
 _sem_verdade = _ids - _HUM_NEG - {("201b91aa6b3c", "JBS")}
-check(len(_sem_verdade) == 3,
-      f"[56] restam 3 sem verdade humana ({sorted(e for _, e in _sem_verdade)})")
-check({e for _, e in _sem_verdade} == {"Ambev", "Dasa", "Hapvida"},
-      "[57] Ambev, Dasa e Hapvida — mesmo mecanismo auditado (cargo como ator)")
+check(len(_sem_verdade) >= 3,
+      f"[56] e o restante segue enumerado para revisao humana "
+      f"({sorted(e for _, e in _sem_verdade)})")
+check({"Ambev", "Dasa", "Hapvida"} <= {e for _, e in _sem_verdade},
+      f"[57] Ambev, Dasa e Hapvida seguem entre eles — mesmo mecanismo "
+      f"auditado (cargo como ator); novos casos entram na fila, nao no verde "
+      f"({sorted(e for _, e in _sem_verdade)})")
 
 print()
 print("=" * 98)

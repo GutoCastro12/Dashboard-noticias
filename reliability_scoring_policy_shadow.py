@@ -118,7 +118,14 @@ def linha_base(historico="risk_history.json", config="config_risco.yaml") -> dic
                 "decay_f": b.get("decay_f", 1.0),
                 "base_contrib": b.get("base_contrib", 0.0),
                 "corrob_bonus": b.get("corrob_bonus", 0.0),
-                "contrib": b.get("contrib", 0.0),
+                # `contrib` ja sai GATEADO da producao promovida. O POTENCIAL
+                # nao gateado — "quanto isto somaria se a familia pontuasse" —
+                # e o que permite continuar medindo politica; ele vem de
+                # `base_contrib + corrob_bonus`, calculados antes do portao.
+                "contrib": round(b.get("base_contrib", 0.0)
+                                 + b.get("corrob_bonus", 0.0), 1),
+                "contrib_vigente": b.get("contrib", 0.0),
+                "score_authority": bool(b.get("score_authority", True)),
                 "severidade": b.get("severity", ""),
                 "direcao_config": b.get("direction", ""),
                 "direcao": classificar_direcao(b.get("direction", "")),
@@ -131,7 +138,11 @@ def linha_base(historico="risk_history.json", config="config_risco.yaml") -> dic
             "persistent": bool(l.get("persistent")),
             "scoring_mode": modo.get(l["company"], "normal"),
             "tier": l.get("tier"), "asset_group": l.get("asset_group")}
-    return {"_meta": {"policy_version": POLICY_VERSION, **AUTORIDADE},
+    return {"_meta": {"policy_version": POLICY_VERSION, **AUTORIDADE,
+                      "nota": ("`contrib` aqui e o POTENCIAL nao gateado; a "
+                               "producao promovida ja aplica o portao de "
+                               "direcao, e o valor vigente fica em "
+                               "`contrib_vigente`")},
             "empresas": empresas, "limiares": limiares, "taxonomy": tax,
             "limiares_adaptativos_reportados": rd.calibrate_thresholds(H, cfg),
             "corpus": len(H["articles"])}
@@ -435,12 +446,33 @@ def rodar_tudo(historico="risk_history.json", config="config_risco.yaml") -> dic
         "sensibilidade_familia": sensibilidade_por_familia(base, p0),
         "materialidade": indice_materialidade(base),
         "pontos_de_insercao": pontos_de_insercao(),
-        "fidelidade_p0": fidelidade_p0(base, p0)}
+        "fidelidade_p0": fidelidade_p0(base, p0),
+        "fidelidade_vigente": fidelidade_vigente(base, sims)}
+
+
+def fidelidade_vigente(base: dict, sims: dict) -> dict:
+    """Qual política simulada reproduz a produção VIGENTE?
+
+    Antes da promoção era P0 (sem portão). Depois da decisão humana de
+    2026-08-21 a produção aplica o portão de direção, então quem reproduz é
+    P1 — e P0 passa a significar "quanto seria sem o portão", o contrafactual
+    que mantém a medição de política viva."""
+    fora = {}
+    for nome, sim in sims.items():
+        s_ok = sum(1 for k, x in sim["empresas"].items()
+                   if round(x["total"]) == base["empresas"][k]["producao_total"])
+        st_ok = sum(1 for k, x in sim["empresas"].items()
+                    if x["status"] == base["empresas"][k]["producao_status"])
+        fora[nome] = {"score_identico": s_ok, "status_identico": st_ok,
+                      "empresas": len(sim["empresas"])}
+    return {"por_politica": fora,
+            "politica_vigente_na_producao": "P1_DIRECTION_GATED",
+            "authority": "SHADOW / SIMULATED"}
 
 
 def fidelidade_p0(base: dict, p0: dict) -> dict:
-    """§6/§35 — o controle tem de reproduzir a producao. Onde nao reproduz, o
-    residuo e nomeado em vez de escondido."""
+    """P0 e o CONTRAFACTUAL nao gateado. Ele nao reproduz mais a producao, e
+    nao deve: a producao promovida aplica o portao de direcao."""
     score_ok, status_ok, resid = 0, 0, []
     for nome, x in p0["empresas"].items():
         e = base["empresas"][nome]

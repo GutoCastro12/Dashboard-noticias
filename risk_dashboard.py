@@ -23,6 +23,8 @@ import argparse
 import collections
 import translation_cache as _tc          # cache de traduções em sidecar próprio
 import llm_router as _router             # tarefa → provider → modelo
+import semantic_v2_shadow as _sv2        # identidade canônica de artigo
+import occurrence_engine as _oe           # identidade de ocorrência + autoridade
 import copy
 import csv
 import difflib
@@ -5293,6 +5295,12 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
                 t_id, t_w, t_label = trust_of_rec(rec, cfg)
                 per_company.setdefault(company, []).append({
                     "event_id": eid,
+                    # [fix: occurrence provenance] identidade canonica do
+                    # ARTIGO, fixada ANTES da fusao. Sem isto, um artigo que
+                    # vira corroboracao perde a identidade e a linha do tempo
+                    # da ocorrencia fica impossivel de reconstruir.
+                    "article_id": _sv2.id_artigo(rec.get("url") or "",
+                                                 rec.get("title") or ""),
                     "label": ev["label"],
                     "severity": ev["severity"],
                     "score": ev["score"],
@@ -5398,87 +5406,24 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
     def _slugs_de(o):
         return {s for s in (_url_slug(u) for u in _url_variants(o)) if s}
 
+    # ── Fusão CONSCIENTE DE OCORRÊNCIA ──────────────────────────────────
+    # Substitui a fusão de gêmeos, que decidia por FAMÍLIA + janela de tempo,
+    # SEM porta de objeto. Ela absorvia o artigo posterior como corroboração
+    # ANTES do clustering — e por isso duas transações distintas viravam uma
+    # (a Sabesp unia EMAE e Sanessol pelo marcador `cade`), o `article_id` do
+    # absorvido se perdia, e um fechamento material não tinha como reancorar.
+    #
+    # O motor devolve UMA entrada por ocorrência econômica, no mesmo contrato
+    # que o restante do pipeline já consome, agora com membros, fase, âncora
+    # (`_anchor_ts`, separada da exibição) e autoridade de score.
+    def _quando(o):
+        return ((datetime.fromtimestamp(o["pub_ts"], tz=timezone.utc)
+                 - timedelta(hours=3)).strftime("%d/%m %H:%M")
+                if o.get("pub_ts") else "")
+
     for company, occs in list(per_company.items()):
-        occs.sort(key=lambda o: (-o.get("trust_w", 1.0), o["pub_ts"]))
-        merged: list[dict] = []
-        for o in occs:
-            # [fix: deduplicate operational events across articles] para
-            # eventos de família opt-in, o "twin" é procurado por FAMÍLIA
-            # (não só event_id exato) — artigos com estágios diferentes do
-            # MESMO fato (incêndio leve × incêndio grave) viram a MESMA
-            # ocorrência. Gate conservador (SÓ para grupos de família): se
-            # ambos os lados têm marcador de local/instalação identificável
-            # e eles DIVERGEM, não é considerado "twin" (evita fundir
-            # incidentes em unidades diferentes). Para eventos fora de
-            # família opt-in, a comparação continua EXATA por event_id, SEM
-            # nenhum gate de marcador — comportamento legado 100% intacto
-            # (o gate de marcador nunca existiu para esses eventos antes
-            # desta correção e não pode passar a existir agora).
-            o_is_family = _fam_key_ev(o["event_id"]) != o["event_id"]
-            o_marcas = _marcadores_de(o) if o_is_family else set()
-            # slug de URL como critério ADICIONAL de "twin" (mesmo artigo
-            # republicado com URL ligeiramente diferente) — mesmo opt-in
-            # `dedup_republished_sources` do pré-cálculo acima, para não
-            # fundir por coincidência de slug em emissores fora do escopo.
-            o_slugs = _slugs_de(o) if company in _dedup_republish_companies else set()
-            twin = next((m for m in merged
-                         if _fam_key_ev(m["event_id"]) == _fam_key_ev(o["event_id"])
-                         and (abs(m["pub_ts"] - o["pub_ts"]) <= collapse_days * 86400
-                              or (o_slugs and o_slugs & _slugs_de(m)))
-                         and not (o_is_family and o_marcas and _marcadores_de(m)
-                                  and not (o_marcas & _marcadores_de(m)))), None)
-            if twin is None:
-                # começa já com as fontes corroborantes persistidas no histórico
-                o["corrob"] = list(o.get("persisted_corrob", []))
-                merged.append(o)
-                continue
-            if (o["event_id"] != twin["event_id"]
-                    and taxonomy.get(o["event_id"], {}).get("score", 0)
-                        > taxonomy.get(twin["event_id"], {}).get("score", 0)):
-                # [fix: deduplicate operational events across articles]
-                # promoção de estágio: o artigo NOVO descreve um estágio mais
-                # grave (score-base maior) da MESMA família/ocorrência —
-                # ele vira o representante; o antigo representante (e todas
-                # as fontes que já tinha acumulado) vira corroborante do
-                # novo. Nenhum score adicional: best_contribs() usa 1 só
-                # score-base por _occ_key (o do estágio mais grave).
-                o["corrob"] = list(o.get("persisted_corrob", []))
-                dom_prev = twin.get("domain", "")
-                if dom_prev and all(c.get("domain") != dom_prev for c in o["corrob"]):
-                    prev_iso = (datetime.fromtimestamp(twin["pub_ts"], tz=timezone.utc)
-                               - timedelta(hours=3)).strftime("%d/%m %H:%M") if twin.get("pub_ts") else ""
-                    o["corrob"].append({
-                        "source": twin.get("source", ""), "domain": dom_prev,
-                        "url": twin.get("url", ""), "when": prev_iso,
-                        **{k: twin.get(k) for k in
-                           ("display_url", "canonical_url", "resolved_url",
-                            "link_health", "link_render_anchor", "link_label")
-                           if twin.get(k) is not None}})
-                for c in twin.get("corrob", []):
-                    if c.get("domain") and c["domain"] != dom_prev and \
-                       all(x.get("domain") != c["domain"] for x in o["corrob"]):
-                        o["corrob"].append(c)
-                merged[merged.index(twin)] = o
-                continue
-            dom = o.get("domain", "")
-            if dom and dom != twin.get("domain") and \
-               all(c.get("domain") != dom for c in twin["corrob"]):
-                o_iso = (datetime.fromtimestamp(o["pub_ts"], tz=timezone.utc)
-                         - timedelta(hours=3)).strftime("%d/%m %H:%M") if o.get("pub_ts") else ""
-                twin["corrob"].append({
-                    "source": o.get("source", ""), "domain": dom,
-                    "url": o.get("url", ""), "when": o_iso,
-                    # preserva a resolução já persistida pelo reparo
-                    **{k: o.get(k) for k in
-                       ("display_url", "canonical_url", "resolved_url",
-                        "link_health", "link_render_anchor", "link_label")
-                       if o.get(k) is not None}})
-            # herda também as fontes que a duplicata já tinha persistido
-            for c in o.get("persisted_corrob", []):
-                if c.get("domain") and c["domain"] != twin.get("domain") and \
-                   all(x.get("domain") != c["domain"] for x in twin["corrob"]):
-                    twin["corrob"].append(c)
-        per_company[company] = merged
+        per_company[company] = _oe.agrupar_ocorrencias(
+            occs, company, cfg, fam_map, collapse_days, quando_fn=_quando)
 
     # ── Emissor com APENAS contexto continua visível ──
     # Quando a resolução semântica move todos os eventos de um emissor para
@@ -5510,6 +5455,16 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
         if _c.get("fetch_related_entities") and _c.get("name"):
             per_company.setdefault(_c["name"], [])
 
+    def _score_authority(o: dict) -> bool:
+        """FONTE ÚNICA da decisão de autoridade adversa (§18).
+
+        Consultada pela contribuição, pela contagem de tipos negativos e pelo
+        gatilho de evento crítico. Nunca se deriva autoridade de "score > 0":
+        decaimento e arredondamento tornariam a regra circular."""
+        if "_score_authority" in o:
+            return bool(o["_score_authority"])
+        return _oe.tem_autoridade_adversa(taxonomy.get(o["event_id"], {}))
+
     def best_contribs(negatives: list[dict], as_of_ts: int) -> dict[str, dict]:
         """Por tipo de evento, a ocorrência de MAIOR contribuição até as_of_ts:
         contribuição = peso-base × decaimento × confiança da fonte + bônus de
@@ -5522,18 +5477,32 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
         for o in negatives:
             if o["pub_ts"] > as_of_ts:
                 continue
-            d = decay_weight(o["pub_ts"], as_of_ts)
+            # A ÂNCORA governa o decaimento; a exibição fica nos campos
+            # visíveis. São perguntas diferentes: o anúncio explica o fato, o
+            # marco material é que diz quão recente o risco é.
+            _anc = o.get("_anchor_ts") or o["pub_ts"]
+            d = decay_weight(min(_anc, as_of_ts), as_of_ts)
             base_contrib = o["score"] * d * o.get("trust_w", 1.0)
             n_extra = len(o.get("corrob", []))  # fontes além da principal
             bonus = sum(bonus_steps[i] if i < len(bonus_steps) else 0
                         for i in range(n_extra)) * d
-            contrib = base_contrib + bonus
+            # [política humana 2026-08-21] PORTÃO DE DIREÇÃO. Um evento de
+            # família declarada `neutra` continua material, visível, com
+            # membros, fase e âncora — mas não soma risco pelo simples fato de
+            # existir. `positiva`/`mitigadora` idem, e nunca subtraem: um
+            # evento favorável não abate um default. Os pesos da config ficam
+            # intactos, porque seguem servindo à materialidade.
+            _autoridade = _score_authority(o)
+            contrib = (base_contrib + bonus) if _autoridade else 0.0
             k = o.get("_occ_key") or o["event_id"]
             cur = best.get(k)
             if cur is None or contrib > cur["contrib"]:
                 best[k] = {**o, "decay_f": d, "contrib": contrib,
                                        "base_contrib": round(base_contrib, 1),
-                                       "corrob_bonus": round(bonus, 1)}
+                                       "corrob_bonus": round(bonus, 1),
+                                       "score_authority": _autoridade,
+                                       "direction_class": _oe.direcao_de(
+                                           taxonomy.get(o["event_id"], {}))}
         return best
 
     def weighted_total(negatives: list[dict], as_of_ts: int) -> float:
@@ -5542,9 +5511,13 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
     rows = []
     for company, occurrences in per_company.items():
         occurrences.sort(key=lambda o: o["pub_ts"])
-        assign_occurrence_clusters(
-            occurrences, int(ev_cfg.get("occurrence_gap_days", 45)), fam_map=fam_map,
-            aliases_by_company=_aliases_by_company)
+        # `_occ_key` já vem do motor de ocorrência, com identidade estável e
+        # discriminante de instância por família. O clusterizador legado só
+        # atua onde o motor não passou (compatibilidade de chamadores antigos).
+        if any(not o.get("_occ_key") for o in occurrences):
+            assign_occurrence_clusters(
+                occurrences, int(ev_cfg.get("occurrence_gap_days", 45)),
+                fam_map=fam_map, aliases_by_company=_aliases_by_company)
         negatives = [o for o in occurrences if not o["positive"]]
         _tem_contexto = bool(_build_context_events(history, company, cutoff))
         _tem_informativo = bool(_build_informational_events(history, company, cutoff))
@@ -5569,8 +5542,13 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
                                  key=lambda e: (SEVERITY_ORDER[e["severity"]], -e["score"]))
 
         total = weighted_total(negatives, now_ts)
-        n_negative_types = len({o["event_id"] for o in negatives})
-        has_hard_critical = any(o["score"] >= critico_event for o in negatives)
+        # [política humana 2026-08-21] `n_negative_types` deixa de significar
+        # "quantas famílias materiais existem" e passa a significar "quantos
+        # tipos ADVERSOS com autoridade de score estão ativos". Um evento
+        # contextual não promove ninguém a `atenção` por existir.
+        _adversos = [o for o in negatives if _score_authority(o)]
+        n_negative_types = len({o["event_id"] for o in _adversos})
+        has_hard_critical = any(o["score"] >= critico_event for o in _adversos)
 
         # Decomposição auditável do score (o que compõe cada ponto)
         breakdown = []
@@ -5607,6 +5585,11 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
                 "base_contrib": b.get("base_contrib", round(b["contrib"], 1)),
                 "corrob_bonus": b.get("corrob_bonus", 0),
                 "contrib": round(b["contrib"], 1),
+                # auditabilidade do portao de direcao: a linha diz POR QUE
+                # somou (ou nao somou) risco, em vez de deixar o leitor
+                # deduzir do numero zero
+                "score_authority": bool(b.get("score_authority", True)),
+                "direction_class": b.get("direction_class", ""),
                 "url": b["url"], "title": b["title"],
                 "sources": 1 + len(b.get("corrob", [])),
                 "all_sources": all_sources,
@@ -5638,7 +5621,12 @@ def build_evolution(history: dict, cfg: dict, window_days: int | None = None,
         pa = ev_cfg.get("persistence_alert", {})
         pa_days = pa.get("days", 45)
         pa_cutoff = now_ts - pa_days * 86400
-        recent = [o for o in negatives if o["pub_ts"] >= pa_cutoff]
+        # [política humana 2026-08-21] "N sinais NEGATIVOS em D dias" tem de
+        # significar sinais ADVERSOS. Deixar o alerta de persistência contar
+        # atividade contextual manteria um emissor em `atenção` exatamente
+        # pelo motivo que a política removeu — e criaria uma terceira noção de
+        # "negativo" divergente da contribuição e da contagem de tipos.
+        recent = [o for o in _adversos if o["pub_ts"] >= pa_cutoff]
         persistent = (len(recent) >= pa.get("min_signals", 3)
                       and len({o["event_id"] for o in recent}) >= pa.get("min_types", 2))
         persistence_text = (f"{len(recent)} sinais negativos em {pa_days} dias"

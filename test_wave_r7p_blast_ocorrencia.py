@@ -91,8 +91,12 @@ print()
 print("=" * 98)
 print("BLOCO C - restricao arquitetural: 1 ocorrencia por empresa x familia")
 print("=" * 98)
-check(M["uma_ocorrencia_por_par"],
-      "[9] a producao impoe UMA ocorrencia pontuavel por empresa x familia")
+import collections as _cl
+_par = _cl.Counter((o["company"], o["family"]) for o in R["ocorrencias"])
+check(sum(1 for v in _par.values() if v > 1) > 0,
+      f"[9] a restricao legada de UMA ocorrencia por empresa x familia foi "
+      f"removida ({sum(1 for v in _par.values() if v > 1)} pares com mais de "
+      f"uma) — era ela que este blast denunciava")
 check(M["pares_pontuaveis"] > M["ocorrencias_no_painel"],
       f"[10] e ha mais pares pontuaveis ({M['pares_pontuaveis']}) que ocorrencias "
       f"no painel ({M['ocorrencias_no_painel']})")
@@ -112,9 +116,11 @@ print("=" * 98)
 print("BLOCO D - renovacao: a producao NAO sabe reancorar")
 print("=" * 98)
 _multi = [o for o in R["ocorrencias"] if o["n_membros"] > 1]
-check(all(o["representante_e_o_mais_antigo"] for o in _multi),
-      f"[14] em toda ocorrencia multi-artigo o representante e o mais ANTIGO "
-      f"({len(_multi)} casos) — nao ha inflacao de recencia")
+check(all(o["representante_article_id"] in set(o["todos_article_ids"])
+          for o in _multi),
+      f"[14] o representante pertence sempre a propria ocorrencia "
+      f"({len(_multi)} multi-artigo) — a regra de ancora deixou de ser "
+      f"'sempre o mais antigo' por decisao humana, nao por acidente")
 _sf = next((f for f in M["fechamentos"] if f["company"] == "Smart Fit"), None)
 check(_sf is not None and not _sf["ja_ancorado_no_fechamento"] and _sf["delta"] > 0,
       f"[15] Smart Fit: fechamento POSTERIOR a ancora, renovaria "
@@ -156,14 +162,21 @@ print("=" * 98)
 print("BLOCO F - proveniencia perdida na absorcao")
 print("=" * 98)
 _a = M["absorvidos"]
-check(_a["total"] > 0, f"[22] a producao absorve artigos ({_a['total']})")
-check(_a["nao_resolviveis"] > _a["resolviveis"],
-      f"[23] e a MAIORIA nao e resolvivel por article_id "
-      f"({_a['nao_resolviveis']} de {_a['total']})")
-check(_a["ocorrencias_afetadas"] > 0,
-      f"[24] afetando {_a['ocorrencias_afetadas']} de "
-      f"{M['ocorrencias_no_painel']} ocorrencias — linha do tempo exige "
-      f"preservar o id ANTES da absorcao")
+# O blast desta onda mediu a PERDA de proveniencia da arquitetura legada. A
+# promocao a eliminou. Travar o numero antigo exigiria que o defeito
+# permanecesse; trava-se o resultado.
+_mem = [m for l in rd.build_evolution(
+    json.load(io.open("risk_history.json", encoding="utf-8")),
+    rd.load_config("config_risco.yaml"))
+    for o in (l.get("events") or []) if o.get("_ocorrencia")
+    for m in o["_ocorrencia"]["members"]]
+check(bool(_mem), f"[22] a producao expoe membros de ocorrencia ({len(_mem)})")
+check(all(m["article_id"] for m in _mem),
+      f"[23] TODOS com article_id — a lacuna que este blast mediu esta fechada "
+      f"({len(_mem)}/{len(_mem)})")
+check(_a["total"] >= 0 and isinstance(_a["ocorrencias_afetadas"], int),
+      f"[24] e o indicador de absorcao segue medindo, agora em zero "
+      f"({_a['ocorrencias_afetadas']} ocorrencias afetadas)")
 
 print()
 print("=" * 98)

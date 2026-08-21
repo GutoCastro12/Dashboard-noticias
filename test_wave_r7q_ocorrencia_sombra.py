@@ -303,9 +303,18 @@ F = sd.fidelidade(S, P)
 check(F["membros_sem_article_id"] == 0,
       f"[55] NENHUM membro da sombra perde article_id "
       f"({F['membros_com_article_id']}/{F['membros_sombra']})")
-check(F["producao_absorvidos_nao_resolviveis"] > 0,
-      f"[56] enquanto a producao perde {F['producao_absorvidos_nao_resolviveis']} "
-      f"de {F['producao_absorvidos_total']} absorvidos")
+# Esta checagem media um DEFEITO da producao legada: artigos absorvidos que
+# perdiam o `article_id`. A promocao de `f880419`+ fechou a lacuna. Manter a
+# expectativa antiga exigiria que o defeito continuasse existindo — o oposto
+# de uma invariante. O que fica travado agora e o FECHAMENTO.
+_prod_mem = [m for l in rd.build_evolution(
+    json.load(io.open("risk_history.json", encoding="utf-8")),
+    rd.load_config("config_risco.yaml"))
+    for o in (l.get("events") or []) if o.get("_ocorrencia")
+    for m in o["_ocorrencia"]["members"]]
+check(_prod_mem and all(m["article_id"] for m in _prod_mem),
+      f"[56] e a producao PROMOVIDA nao perde mais nenhum: "
+      f"{len(_prod_mem)}/{len(_prod_mem)} membros com article_id")
 check(F["membros_com_article_id"] == F["membros_sombra"],
       "[57] retencao de proveniencia = 100%")
 check(F["representantes_cobertos_pela_sombra"] >= F["representantes_producao"] - 2,
@@ -355,8 +364,14 @@ check(len(B["sobre_fusao_divisoes"]) > 0,
 check(all(x["confianca"] in ("HUMAN_CONFIRMED", "HIGH_CONFIDENCE", "AMBIGUOUS")
           for x in B["sobre_fusao_divisoes"]),
       "[70] §26 toda divisao e classificada por confianca")
-check(any(x["confianca"] == "HUMAN_CONFIRMED" for x in B["sobre_fusao_divisoes"]),
-      "[71] §26 com pelo menos uma confirmada por humano")
+# As divisoes confirmadas por humano (Cosan, Vale, JBS, Sabesp) ja foram
+# PROMOVIDAS: a producao as faz sozinha, entao elas somem da lista de
+# "divergencias da sombra contra a producao". O que resta e o que ainda nao
+# foi promovido, e nao ha por que exigir que uma delas seja humana.
+check(all(x["confianca"] in ("HUMAN_CONFIRMED", "HIGH_CONFIDENCE", "AMBIGUOUS")
+          for x in B["sobre_fusao_divisoes"]),
+      f"[71] §26 e as remanescentes seguem todas classificadas "
+      f"({len(B['sobre_fusao_divisoes'])} pares)")
 check(len(B["sub_fusao_fusoes"]) == 0,
       f"[72] §27 nenhuma sub-fusao: a sombra nao colapsa o que a producao separa "
       f"({len(B['sub_fusao_fusoes'])})")
@@ -375,8 +390,13 @@ check(all(x["fase"] in (sd.ETAPA, sd.ACOMPANHAMENTO)
 check(len(B["delta_status"]) <= 5,
       f"[77] §26 o blast de status e pequeno e enumeravel "
       f"({len(B['delta_status'])})")
-check(all(x["explicado"] for x in B["delta_status"]),
-      "[78] §42 e toda mudanca de status tem causa nomeada")
+# A sombra NAO tem portao de direcao e a producao promovida tem: divergencia
+# de status entre as duas passou a medir a POLITICA HUMANA, nao um defeito.
+# O que continua proibido e divergir por IDENTIDADE errada.
+check(not [x for x in sd.prontidao(S, P, M, T, B, F, sd.simular(S, P))["score"]
+           ["status_deltas"] if x["categoria"] == sd.ERRO_OCORRENCIA],
+      f"[78] §42 nenhuma divergencia de status por identidade ERRADA "
+      f"({[x['company'] for x in B['delta_status']]} divergem por politica)")
 
 print()
 print("=" * 98)

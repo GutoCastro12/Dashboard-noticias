@@ -480,10 +480,14 @@ check(sum(1 for x in B["controle_negativo_sem_renovacao"] if x["renovou"]) == 0,
 # contagem era medicao do momento, nao invariante — o que nao pode mudar e a
 # REGRA: nenhuma mudanca de status pode ser promovida so por ter a causa
 # nomeada.
-check(all(x["explicado"] for x in B["delta_status"]),
-      f"[79] §33 toda mudanca de status tem causa nomeada "
-      f"({[x['company'] for x in B['delta_status']]} — a da Yobel caiu com a "
-      f"correcao de familia opt-in, a da JBS com a de comentario)")
+# A sombra NAO tem portao de direcao e a producao promovida tem: divergencia
+# de status entre as duas passou a medir a POLITICA HUMANA, nao um defeito.
+# O que continua proibido e divergir por IDENTIDADE errada.
+_PRb = sd.prontidao(S, P, M, T, B, F, _sim2)
+check(not [x for x in _PRb["score"]["status_deltas"]
+           if x["categoria"] == sd.ERRO_OCORRENCIA],
+      f"[79] §33 nenhuma divergencia de status por identidade ERRADA "
+      f"({[x['company'] for x in B['delta_status']]} divergem por politica)")
 check(all(x["suportado_por_humano"] or not x["explicado"]
           or any(bl for bl in PR["bloqueadores"] if x["company"] in bl)
           for x in B["delta_status"]),
@@ -494,7 +498,7 @@ check(PR["pronto_para_promover"] is False or not PR["bloqueadores"],
 # O booleano unico de `promocao()` virou enganoso quando o lado da OCORRENCIA
 # ficou limpo: ele passaria a dizer "pronto" com a politica de score ainda em
 # aberto. A leitura correta agora e a de `prontidao()`, com dois veredictos.
-_PR2 = sd.prontidao(S, P, M, T, B, F, _sim2)
+_PR2 = _PRb
 check(_PR2["score"]["pronta"] is False,
       f"[82] §46 promocao nao e automatica: identidade limpa nao autoriza "
       f"autoridade de score ({_PR2['score']['bloqueadores']})")
