@@ -71,9 +71,17 @@ check(_VIG["status_identico"] == _VIG["empresas"],
       f"{_VIG['status_identico']}/{_VIG['empresas']} emissores")
 # O simulador soma `contrib` arredondado a 0,1 pelo `breakdown`; o residuo e
 # declarado em `fidelidade_p0` e nao e defeito de politica.
-check(_VIG["score_identico"] >= _VIG["empresas"] - 3,
-      f"[2] e o SCORE em {_VIG['score_identico']}/{_VIG['empresas']}, com o "
-      f"residuo de arredondamento ja declarado pelo modulo")
+# [MIGRADO 2026-08-23] O teto fixo de 3 emissores divergentes era fragil no
+# tempo: o score decai a cada hora e o residuo de arredondamento atravessa a
+# fronteira dos 0,05 em emissores diferentes conforme o dia. A assercao
+# estavel nao e QUANTOS divergem, e que TODA divergencia seja residuo de
+# arredondamento (<= 0,5) — o que o proprio modulo declara em `residuos`.
+_RES = R["fidelidade_p0"]["residuos"]
+check(_VIG["empresas"] - _VIG["score_identico"] == len(_RES)
+      and all(abs(x["residuo"]) <= 0.5 for x in _RES),
+      f"[2] e o SCORE em {_VIG['score_identico']}/{_VIG['empresas']}, com as "
+      f"{len(_RES)} divergencias sendo residuo de arredondamento (<= 0,5), "
+      f"como o modulo declara")
 check(_FV["P1b_TIPOS_TAMBEM_GATED"]["score_identico"] < _VIG["score_identico"],
       f"[3] enquanto o contrafactual COM portao ja nao reproduz "
       f"({_FV['P1b_TIPOS_TAMBEM_GATED']['score_identico']}/{_VIG['empresas']}) "

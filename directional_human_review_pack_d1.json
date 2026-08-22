@@ -1,0 +1,1844 @@
+{
+ "_meta": {
+  "human_labels_prefilled": false,
+  "human_truth_write_authority": "NONE",
+  "model_predictions_included": false,
+  "output_label": "HUMAN REVIEW PACK — LABELS PENDING",
+  "pack_version": "directional.pack.d1",
+  "production_occurrence_authority": "NONE",
+  "production_score_authority": "NONE",
+  "semantic_authority": "NONE"
+ },
+ "cobertura_futura": {
+  "casos_por_familia": {
+   "emissao_divida": 3,
+   "follow_on": 3,
+   "guidance_negativo": 1,
+   "investigacao_regulatoria": 3,
+   "ma": 7,
+   "rebaixamento_rating": 3,
+   "recomendacao_negativa": 3,
+   "recuperacao_judicial": 1,
+   "suspensao_negociacao": 1,
+   "troca_ceo": 5
+  },
+  "controles_adversos_por_familia": {
+   "guidance_negativo": 1,
+   "investigacao_regulatoria": 3,
+   "rebaixamento_rating": 3,
+   "recomendacao_negativa": 3,
+   "recuperacao_judicial": 1,
+   "suspensao_negociacao": 1
+  },
+  "d1_suficiente_para_primeiro_benchmark": true,
+  "d2_necessario": false,
+  "familias_com_menos_de_2": [],
+  "familias_contextuais_maiores": {
+   "emissao_divida": 3,
+   "follow_on": 3,
+   "ma": 7,
+   "troca_ceo": 5
+  },
+  "nota": "contagem de casos e cobertura de familia apenas — nenhuma distribuicao de rotulo foi prevista",
+  "o_que_d2_precisaria": []
+ },
+ "lacuna_walkers": {
+  "article_id": "61166442c0f897153eec",
+  "classificacao": "COLLECTION_GAP_CONTROL",
+  "elegivel_para_linha_direcional": false,
+  "em_risk_history": false,
+  "nota": "util para trabalho futuro de recall/taxonomia; nao e ocorrencia de producao e nao entra no D1"
+ },
+ "manifesto": {
+  "linhas": [
+   {
+    "article_ids": [
+     "187d4b1829b0d5a8db4d",
+     "513ac4b9cc7e8b520fb7",
+     "d481295fca29979d04cb"
+    ],
+    "company": "Tok&Stok",
+    "evidence_hash": "94d938282f0615d5",
+    "family": "recuperacao_judicial",
+    "occurrence_id": "recuperacao_judicial:tok-stok:56c099cf8930",
+    "review_id": "D01"
+   },
+   {
+    "article_ids": [
+     "7334950058186f17f96c"
+    ],
+    "company": "B3",
+    "evidence_hash": "2d375eefd7523d3a",
+    "family": "suspensao_negociacao",
+    "occurrence_id": "suspensao_negociacao:b3:b982567920ad",
+    "review_id": "D02"
+   },
+   {
+    "article_ids": [
+     "6bc05e51969c6be1e11f"
+    ],
+    "company": "Cosan",
+    "evidence_hash": "b6e099492d97ae70",
+    "family": "rebaixamento_rating",
+    "occurrence_id": "rebaixamento_rating:cosan:6bd9198c800b",
+    "review_id": "D03"
+   },
+   {
+    "article_ids": [
+     "cf120a3fdb20953dc23d"
+    ],
+    "company": "Rumo",
+    "evidence_hash": "5540c716e6735c05",
+    "family": "rebaixamento_rating",
+    "occurrence_id": "rebaixamento_rating:rumo:5537238ccff8",
+    "review_id": "D04"
+   },
+   {
+    "article_ids": [
+     "826b47491b3703fc1269"
+    ],
+    "company": "Cosan",
+    "evidence_hash": "719573e4a68a9704",
+    "family": "rebaixamento_rating",
+    "occurrence_id": "rebaixamento_rating:cosan:7880330e2677",
+    "review_id": "D05"
+   },
+   {
+    "article_ids": [
+     "3c5fafeb65e405877347"
+    ],
+    "company": "Vale",
+    "evidence_hash": "f9ce1b6ed53af84e",
+    "family": "investigacao_regulatoria",
+    "occurrence_id": "investigacao_regulatoria:vale:131373ef3d02",
+    "review_id": "D06"
+   },
+   {
+    "article_ids": [
+     "73015abfb4cfc92815b0"
+    ],
+    "company": "Lojas Renner",
+    "evidence_hash": "1aba0ba0485be9e0",
+    "family": "guidance_negativo",
+    "occurrence_id": "guidance_negativo:lojas-renner:a48efc5f2cad",
+    "review_id": "D07"
+   },
+   {
+    "article_ids": [
+     "eea8fb0b2e52f38f04b8"
+    ],
+    "company": "Vale",
+    "evidence_hash": "e1c97ad6c8b1cf46",
+    "family": "investigacao_regulatoria",
+    "occurrence_id": "investigacao_regulatoria:vale:3ceb7abe6220",
+    "review_id": "D08"
+   },
+   {
+    "article_ids": [
+     "83effbd842777700232f"
+    ],
+    "company": "JBS",
+    "evidence_hash": "88049c9c9e9f55d3",
+    "family": "recomendacao_negativa",
+    "occurrence_id": "recomendacao_negativa:jbs:39d4d9955433",
+    "review_id": "D09"
+   },
+   {
+    "article_ids": [
+     "bf449889bcebca2a7d7a"
+    ],
+    "company": "Lojas Renner",
+    "evidence_hash": "5488f8e82563418f",
+    "family": "recomendacao_negativa",
+    "occurrence_id": "recomendacao_negativa:lojas-renner:848eaa78e1e0",
+    "review_id": "D10"
+   },
+   {
+    "article_ids": [
+     "9617d332535c1b3491da"
+    ],
+    "company": "Rumo",
+    "evidence_hash": "c0865495742c4bc2",
+    "family": "recomendacao_negativa",
+    "occurrence_id": "recomendacao_negativa:rumo:0771760be9bc",
+    "review_id": "D11"
+   },
+   {
+    "article_ids": [
+     "f9250a2285305bbda604"
+    ],
+    "company": "Bradesco",
+    "evidence_hash": "35fa9ff073ddac34",
+    "family": "investigacao_regulatoria",
+    "occurrence_id": "investigacao_regulatoria:bradesco:784c1dc11677",
+    "review_id": "D12"
+   },
+   {
+    "article_ids": [
+     "9107879a6502b164d2f9",
+     "ac0be217149db21ae564"
+    ],
+    "company": "JBS",
+    "evidence_hash": "db4671767162df63",
+    "family": "ma",
+    "occurrence_id": "ma:jbs:557890dbb668",
+    "review_id": "D13"
+   },
+   {
+    "article_ids": [
+     "29b5ebdbf1a391d7557a",
+     "2a10cde17d27bd2a91af",
+     "3aea1813289e41f7318d",
+     "4b07ef4534cf878be593",
+     "a3de08f211694408beb1",
+     "b8e23a79ffb6a23f5da5",
+     "cf4b548d7368b54456af",
+     "dda53221e83a3de9afc8",
+     "f3125011635de116cfcb"
+    ],
+    "company": "Engie Brasil",
+    "evidence_hash": "b77b348afa0654e5",
+    "family": "follow_on",
+    "occurrence_id": "follow_on:engie-brasil:4fbf0fbd9b04",
+    "review_id": "D14"
+   },
+   {
+    "article_ids": [
+     "201b91aa6b3c1d9e780c",
+     "edeb694bf05ba64f3430"
+    ],
+    "company": "JBS",
+    "evidence_hash": "6010e5e964371793",
+    "family": "troca_ceo",
+    "occurrence_id": "troca_ceo:jbs:5d25d77f013e",
+    "review_id": "D15"
+   },
+   {
+    "article_ids": [
+     "b1fc685f3f7d47d63a2c"
+    ],
+    "company": "Sabesp",
+    "evidence_hash": "ee24aa5621ded933",
+    "family": "ma",
+    "occurrence_id": "ma:sabesp:9e5e932409a7",
+    "review_id": "D16"
+   },
+   {
+    "article_ids": [
+     "46e5fc139c31f2689a79"
+    ],
+    "company": "PRIO",
+    "evidence_hash": "1471d7aef78fa6c8",
+    "family": "follow_on",
+    "occurrence_id": "follow_on:prio:abeb7dfa9421",
+    "review_id": "D17"
+   },
+   {
+    "article_ids": [
+     "82d4ee2f88f8b8f932a5"
+    ],
+    "company": "CPFL Energia",
+    "evidence_hash": "0444d9bbf41178b5",
+    "family": "troca_ceo",
+    "occurrence_id": "troca_ceo:cpfl-energia:9c42c02357a7",
+    "review_id": "D18"
+   },
+   {
+    "article_ids": [
+     "6f4ae9a2a77fb2678d11"
+    ],
+    "company": "Suzano",
+    "evidence_hash": "179b7605d9f7f955",
+    "family": "ma",
+    "occurrence_id": "ma:suzano:a5d3c90f6780",
+    "review_id": "D19"
+   },
+   {
+    "article_ids": [
+     "2134325dc125e327b6ac"
+    ],
+    "company": "Engie Brasil",
+    "evidence_hash": "44ad3247b1d16377",
+    "family": "emissao_divida",
+    "occurrence_id": "emissao_divida:engie-brasil:f64ef0b0955b",
+    "review_id": "D20"
+   },
+   {
+    "article_ids": [
+     "63c947b7791d619e5c82"
+    ],
+    "company": "B3",
+    "evidence_hash": "82fe86bc654cc9f7",
+    "family": "troca_ceo",
+    "occurrence_id": "troca_ceo:b3:165ecfcc0c3b",
+    "review_id": "D21"
+   },
+   {
+    "article_ids": [
+     "9d0d1be36f6921025838"
+    ],
+    "company": "Natura &Co",
+    "evidence_hash": "5fc2904cc5c37c90",
+    "family": "ma",
+    "occurrence_id": "ma:natura-co:7be50445cb9c",
+    "review_id": "D22"
+   },
+   {
+    "article_ids": [
+     "f11950284cc8d9a152f5"
+    ],
+    "company": "JBS",
+    "evidence_hash": "9aed9fea15779357",
+    "family": "ma",
+    "occurrence_id": "ma:jbs:0a6cde56d6ff",
+    "review_id": "D23"
+   },
+   {
+    "article_ids": [
+     "58092a392fa773182008",
+     "6ed152ab933e1ec253ca",
+     "a99ddf9e546d96961096",
+     "b60184fed9a4a3438812"
+    ],
+    "company": "Axia Energia",
+    "evidence_hash": "698b5d65a132f76f",
+    "family": "emissao_divida",
+    "occurrence_id": "emissao_divida:axia-energia:a6ef1201c408",
+    "review_id": "D24"
+   },
+   {
+    "article_ids": [
+     "53340f861717b39cbca3"
+    ],
+    "company": "JBS",
+    "evidence_hash": "d8bea3bf6d3ec5fc",
+    "family": "emissao_divida",
+    "occurrence_id": "emissao_divida:jbs:e25e2ea627d2",
+    "review_id": "D25"
+   },
+   {
+    "article_ids": [
+     "1250147b9068772a93fb"
+    ],
+    "company": "BTG Pactual",
+    "evidence_hash": "ec07a0b7578d4c8c",
+    "family": "follow_on",
+    "occurrence_id": "follow_on:btg-pactual:ce0c6d877eea",
+    "review_id": "D26"
+   },
+   {
+    "article_ids": [
+     "868fa15adaef38c3ee1a"
+    ],
+    "company": "Rumo",
+    "evidence_hash": "63c8fca022ea2d3e",
+    "family": "troca_ceo",
+    "occurrence_id": "troca_ceo:rumo:f0c553fa4b3a",
+    "review_id": "D27"
+   },
+   {
+    "article_ids": [
+     "8c15836213be9609398e"
+    ],
+    "company": "Sabesp",
+    "evidence_hash": "efc1880f67b53fa7",
+    "family": "ma",
+    "occurrence_id": "ma:sabesp:8b116385df52",
+    "review_id": "D28"
+   },
+   {
+    "article_ids": [
+     "241a6065d3dfca23392c"
+    ],
+    "company": "Natura &Co",
+    "evidence_hash": "dccd6c3ddf808e54",
+    "family": "ma",
+    "occurrence_id": "ma:natura-co:124e050376a1",
+    "review_id": "D29"
+   },
+   {
+    "article_ids": [
+     "1cc87309f14b40640c31"
+    ],
+    "company": "Vale",
+    "evidence_hash": "8678007b7a07c3ae",
+    "family": "troca_ceo",
+    "occurrence_id": "troca_ceo:vale:1350021bf254",
+    "review_id": "D30"
+   }
+  ],
+  "manifesto_hash": "85f1bfb171b75321",
+  "n": 30,
+  "ordem_deterministica": true
+ },
+ "pack": {
+  "_meta": {
+   "human_labels_prefilled": false,
+   "human_truth_write_authority": "NONE",
+   "model_predictions_included": false,
+   "output_label": "HUMAN REVIEW PACK — LABELS PENDING",
+   "pack_version": "directional.pack.d1",
+   "production_occurrence_authority": "NONE",
+   "production_score_authority": "NONE",
+   "semantic_authority": "NONE"
+  },
+  "excluidos": [
+   {
+    "anchor_date": "2026-07-10",
+    "canonical_contrib": 7.946,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Copel",
+    "contrib_total": 7.946,
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-07-10",
+    "direcao_configurada": "neutra",
+    "empresa_adverso": 0.0,
+    "empresa_contextual": 7.9,
+    "empresa_persistent": false,
+    "empresa_status": "monitorar",
+    "empresa_total": 8,
+    "family": "emissao_divida",
+    "family_label": "Grande emissão de dívida",
+    "fonte": "Monitor Mercantil",
+    "membros": [
+     "593de7c744ef8e7c6f61"
+    ],
+    "motivo": "NOT_ELIGIBLE_FOR_DIRECTIONAL_TRUTH: POLICY_PENDING em Batch V1",
+    "n_contribuicoes": 1,
+    "n_membros": 1,
+    "occurrence_id": "emissao_divida:copel:cc910d141812",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "593de7c744ef8e7c6f61",
+    "titulo": "Fitch: AAA à proposta de 12ª emissão de debêntures da Copel Dis",
+    "url": "https://monitormercantil.com.br/fitch-aaa-a-proposta-de-12a-emissao-de-debentures-da-copel-dis/"
+   }
+  ],
+  "linhas": [
+   {
+    "anchor_date": "2026-08-21",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 97.852,
+    "classe_de_sinal": "ADVERSE",
+    "company": "Tok&Stok",
+    "contribution_class": "ADVERSE",
+    "data_efetiva": "2026-06-18",
+    "direcao_configurada": "negativa",
+    "empresa": {
+     "adverso": 97.9,
+     "contextual": 0.0,
+     "persistent": false,
+     "status": "critico",
+     "total": 98
+    },
+    "estado_evidencia": "TITULOS_MULTIPLOS",
+    "evidencia": [
+     "Tok&Stok: Justiça aceita recuperação judicial de R$ 1,1 bilhão que impacta 2,2 mil funcionários — NSC Total",
+     "Recuperação judicial afeta quem está esperando móveis de Tok&Stok e Mobly? Veja — InfoMoney"
+    ],
+    "evidencia_membros": [
+     {
+      "article_id": "513ac4b9cc7e8b520fb7",
+      "corpo_local": "",
+      "data": "2026-06-18",
+      "fonte": "NSC Total",
+      "titulo": "Tok&Stok: Justiça aceita recuperação judicial de R$ 1,1 bilhão que impacta 2,2 mil funcionários",
+      "url": "https://www.nsctotal.com.br/colunistas/pedro-machado/tokstok-justica-aceita-recuperacao-judicial-de-r-11-bilhao-que-impacta-22-mil-funcionarios"
+     },
+     {
+      "article_id": "d481295fca29979d04cb",
+      "corpo_local": "",
+      "data": "2026-07-14",
+      "fonte": "InfoMoney",
+      "titulo": "Recuperação judicial afeta quem está esperando móveis de Tok&Stok e Mobly? Veja",
+      "url": "https://www.infomoney.com.br/consumo/recuperacao-judicial-afeta-quem-esta-esperando-moveis-de-tokstok-e-mobly-veja/"
+     }
+    ],
+    "expected_control": "ADVERSE",
+    "family": "recuperacao_judicial",
+    "family_label": "Recuperação Judicial",
+    "fonte": "Exame",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "513ac4b9cc7e8b520fb7",
+     "d481295fca29979d04cb",
+     "187d4b1829b0d5a8db4d"
+    ],
+    "motivo_selecao": "S6 controle adverso",
+    "n_membros": 3,
+    "occurrence_id": "recuperacao_judicial:tok-stok:56c099cf8930",
+    "phase": "",
+    "phase_por_membro": [
+     "ETAPA",
+     "ACOMPANHAMENTO",
+     "INICIACAO"
+    ],
+    "representante": "187d4b1829b0d5a8db4d",
+    "review_id": "D01",
+    "tier": "TIER1_ADVERSE_CONTROL",
+    "titulo": "Em meio à recuperação judicial, empresa compra 13,2% da dona da Tok&Stok; dois fundos deixam grupo",
+    "url": "https://exame.com/negocios/em-meio-a-recuperacao-judicial-empresa-compra-132-da-dona-da-tok-dois-fundos-deixam-grupo/"
+   },
+   {
+    "anchor_date": "2026-08-19",
+    "aviso_atribuicao": "ATTRIBUTION_REVIEW_CANDIDATE — a suspensao e das acoes da Refit, terceiro; a B3 e a bolsa que suspende. Ver OCCURRENCE_ARCHITECTURE L578. Se a atribuicao lhe parecer errada, responda UNCERTAIN e diga isso na observacao.",
+    "canonical_contrib": 78.167,
+    "classe_de_sinal": "ADVERSE",
+    "company": "B3",
+    "contribution_class": "ADVERSE",
+    "data_efetiva": "2026-08-19",
+    "direcao_configurada": "negativa",
+    "empresa": {
+     "adverso": 78.2,
+     "contextual": 12.5,
+     "persistent": false,
+     "status": "atencao",
+     "total": 91
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": "ADVERSE",
+    "family": "suspensao_negociacao",
+    "family_label": "Suspensão de negociação",
+    "fonte": "Valor Econômico",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "7334950058186f17f96c"
+    ],
+    "motivo_selecao": "S6 controle adverso",
+    "n_membros": 1,
+    "occurrence_id": "suspensao_negociacao:b3:b982567920ad",
+    "phase": "anuncio",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "7334950058186f17f96c",
+    "review_id": "D02",
+    "tier": "TIER1_ADVERSE_CONTROL",
+    "titulo": "B3 suspende negociação de ações da Refit",
+    "url": "https://valor.globo.com/empresas/noticia/2026/08/19/b3-suspende-negociao-de-aes-da-refit.ghtml"
+   },
+   {
+    "anchor_date": "2026-08-10",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 58.73,
+    "classe_de_sinal": "ADVERSE",
+    "company": "Cosan",
+    "contribution_class": "ADVERSE",
+    "data_efetiva": "2026-08-10",
+    "direcao_configurada": "negativa",
+    "empresa": {
+     "adverso": 119.6,
+     "contextual": 0.0,
+     "persistent": false,
+     "status": "atencao",
+     "total": 120
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": "ADVERSE",
+    "family": "rebaixamento_rating",
+    "family_label": "Rebaixamento de rating",
+    "fonte": "Money Times",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "6bc05e51969c6be1e11f"
+    ],
+    "motivo_selecao": "S6 controle adverso",
+    "n_membros": 1,
+    "occurrence_id": "rebaixamento_rating:cosan:6bd9198c800b",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "6bc05e51969c6be1e11f",
+    "review_id": "D03",
+    "tier": "TIER1_ADVERSE_CONTROL",
+    "titulo": "Moody’s rebaixa rating da Cosan (CSAN3) em meio à deterioração da qualidade de crédito da Raízen (RAIZ4)",
+    "url": "https://www.moneytimes.com.br/moodys-rebaixa-rating-da-cosan-csan3-e-mantem-perspectiva-negativa-pads/"
+   },
+   {
+    "anchor_date": "2026-07-17",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 35.691,
+    "classe_de_sinal": "ADVERSE",
+    "company": "Rumo",
+    "contribution_class": "ADVERSE",
+    "data_efetiva": "2026-07-17",
+    "direcao_configurada": "negativa",
+    "empresa": {
+     "adverso": 44.8,
+     "contextual": 16.5,
+     "persistent": false,
+     "status": "atencao",
+     "total": 61
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": "ADVERSE",
+    "family": "rebaixamento_rating",
+    "family_label": "Rebaixamento de rating",
+    "fonte": "Valor Econômico",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "cf120a3fdb20953dc23d"
+    ],
+    "motivo_selecao": "S6 controle adverso",
+    "n_membros": 1,
+    "occurrence_id": "rebaixamento_rating:rumo:5537238ccff8",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "cf120a3fdb20953dc23d",
+    "review_id": "D04",
+    "tier": "TIER1_ADVERSE_CONTROL",
+    "titulo": "Moody’s rebaixa rating corporativo da Rumo de ‘Ba2’ para ‘Ba3’ e altera perspectiva para negativa",
+    "url": "https://valor.globo.com/empresas/noticia/2026/07/17/moodys-rebaixa-rating-corporativo-da-rumo-de-ba2-para-ba3-e-altera-perspectiva-para-negativa.ghtml"
+   },
+   {
+    "anchor_date": "2026-07-16",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 32.482,
+    "classe_de_sinal": "ADVERSE",
+    "company": "Cosan",
+    "contribution_class": "ADVERSE",
+    "data_efetiva": "2026-07-16",
+    "direcao_configurada": "negativa",
+    "empresa": {
+     "adverso": 119.6,
+     "contextual": 0.0,
+     "persistent": false,
+     "status": "atencao",
+     "total": 120
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": "ADVERSE",
+    "family": "rebaixamento_rating",
+    "family_label": "Rebaixamento de rating",
+    "fonte": "Money Times",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "826b47491b3703fc1269"
+    ],
+    "motivo_selecao": "S6 controle adverso",
+    "n_membros": 1,
+    "occurrence_id": "rebaixamento_rating:cosan:7880330e2677",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "826b47491b3703fc1269",
+    "review_id": "D05",
+    "tier": "TIER1_ADVERSE_CONTROL",
+    "titulo": "Moody’s rebaixa rating da Cosan (CSAN3) para B1 e mantém perspectiva negativa",
+    "url": "https://www.moneytimes.com.br/moodys-rebaixa-rating-da-cosan-csan3-para-b1-e-mantem-perspectiva-negativa/"
+   },
+   {
+    "anchor_date": "2026-07-20",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 16.701,
+    "classe_de_sinal": "ADVERSE",
+    "company": "Vale",
+    "contribution_class": "ADVERSE",
+    "data_efetiva": "2026-07-20",
+    "direcao_configurada": "negativa",
+    "empresa": {
+     "adverso": 38.0,
+     "contextual": 3.1,
+     "persistent": false,
+     "status": "atencao",
+     "total": 41
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": "ADVERSE",
+    "family": "investigacao_regulatoria",
+    "family_label": "Investigação regulatória",
+    "fonte": "Valor Econômico",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "3c5fafeb65e405877347"
+    ],
+    "motivo_selecao": "S18 contribuicao alta",
+    "n_membros": 1,
+    "occurrence_id": "investigacao_regulatoria:vale:131373ef3d02",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "3c5fafeb65e405877347",
+    "review_id": "D06",
+    "tier": "TIER1_ADVERSE_CONTROL",
+    "titulo": "Exclusivo: Após consulta de investidor, CVM abre processo sobre apoio da Previ a candidato ao conselho da Vale",
+    "url": "https://valor.globo.com/empresas/noticia/2026/07/20/exclusivo-apos-consulta-de-investidor-cvm-abre-processo-sobre-apoio-da-previ-a-candidato-ao-conselho-da-vale.ghtml"
+   },
+   {
+    "anchor_date": "2026-08-06",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 14.795,
+    "classe_de_sinal": "ADVERSE",
+    "company": "Lojas Renner",
+    "contribution_class": "ADVERSE",
+    "data_efetiva": "2026-08-06",
+    "direcao_configurada": "negativa",
+    "empresa": {
+     "adverso": 27.1,
+     "contextual": 0.0,
+     "persistent": false,
+     "status": "atencao",
+     "total": 27
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": "ADVERSE",
+    "family": "guidance_negativo",
+    "family_label": "Guidance negativo",
+    "fonte": "EuQueroInvestir",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "73015abfb4cfc92815b0"
+    ],
+    "motivo_selecao": "S18 contribuicao alta",
+    "n_membros": 1,
+    "occurrence_id": "guidance_negativo:lojas-renner:a48efc5f2cad",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "73015abfb4cfc92815b0",
+    "review_id": "D07",
+    "tier": "TIER1_ADVERSE_CONTROL",
+    "titulo": "Lojas Renner reduz guidance e lucro fica estável em R$ 405 mi",
+    "url": "https://euqueroinvestir.com/acoes/lojas-renner-reduz-guidance-e-lucro-fica-estavel-em-r-405-mi"
+   },
+   {
+    "anchor_date": "2026-07-23",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 13.796,
+    "classe_de_sinal": "ADVERSE",
+    "company": "Vale",
+    "contribution_class": "ADVERSE",
+    "data_efetiva": "2026-07-23",
+    "direcao_configurada": "negativa",
+    "empresa": {
+     "adverso": 38.0,
+     "contextual": 3.1,
+     "persistent": false,
+     "status": "atencao",
+     "total": 41
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": "ADVERSE",
+    "family": "investigacao_regulatoria",
+    "family_label": "Investigação regulatória",
+    "fonte": "Folha de S.Paulo",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "eea8fb0b2e52f38f04b8"
+    ],
+    "motivo_selecao": "S18 contribuicao alta",
+    "n_membros": 1,
+    "occurrence_id": "investigacao_regulatoria:vale:3ceb7abe6220",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "eea8fb0b2e52f38f04b8",
+    "review_id": "D08",
+    "tier": "TIER1_ADVERSE_CONTROL",
+    "titulo": "CVM abre processo para apurar destituição de conselheiro da Vale",
+    "url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-destituicao-de-conselheiro-da-vale.shtml"
+   },
+   {
+    "anchor_date": "2026-08-17",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 12.274,
+    "classe_de_sinal": "ADVERSE",
+    "company": "JBS",
+    "contribution_class": "ADVERSE",
+    "data_efetiva": "2026-08-17",
+    "direcao_configurada": "negativa",
+    "empresa": {
+     "adverso": 12.3,
+     "contextual": 87.3,
+     "persistent": true,
+     "status": "atencao",
+     "total": 100
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": "ADVERSE",
+    "family": "recomendacao_negativa",
+    "family_label": "Recomendação rebaixada",
+    "fonte": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "83effbd842777700232f"
+    ],
+    "motivo_selecao": "S6/S8 controle adverso",
+    "n_membros": 1,
+    "occurrence_id": "recomendacao_negativa:jbs:39d4d9955433",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "83effbd842777700232f",
+    "review_id": "D09",
+    "tier": "TIER1_ADVERSE_CONTROL",
+    "titulo": "Stephens reduz preço-alvo da JBS após resultado misto",
+    "url": "https://br.investing.com/news/analyst-ratings/stephens-reduz-precoalvo-da-jbs-apos-resultado-misto-93CH-2041188"
+   },
+   {
+    "anchor_date": "2026-08-17",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 12.256,
+    "classe_de_sinal": "ADVERSE",
+    "company": "Lojas Renner",
+    "contribution_class": "ADVERSE",
+    "data_efetiva": "2026-08-17",
+    "direcao_configurada": "negativa",
+    "empresa": {
+     "adverso": 27.1,
+     "contextual": 0.0,
+     "persistent": false,
+     "status": "atencao",
+     "total": 27
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": "ADVERSE",
+    "family": "recomendacao_negativa",
+    "family_label": "Recomendação rebaixada",
+    "fonte": "Money Times",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "bf449889bcebca2a7d7a"
+    ],
+    "motivo_selecao": "S6 controle adverso",
+    "n_membros": 1,
+    "occurrence_id": "recomendacao_negativa:lojas-renner:848eaa78e1e0",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "bf449889bcebca2a7d7a",
+    "review_id": "D10",
+    "tier": "TIER1_ADVERSE_CONTROL",
+    "titulo": "Lojas Renner (LREN3): Citi corta preço-alvo após revisão do guidance; ações caem",
+    "url": "https://www.moneytimes.com.br/lojas-renner-lren3-citi-corta-preco-alvo-apos-revisao-do-guidance-acoes-caem-lils/"
+   },
+   {
+    "anchor_date": "2026-07-16",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 5.827,
+    "classe_de_sinal": "ADVERSE",
+    "company": "Rumo",
+    "contribution_class": "ADVERSE",
+    "data_efetiva": "2026-07-16",
+    "direcao_configurada": "negativa",
+    "empresa": {
+     "adverso": 44.8,
+     "contextual": 16.5,
+     "persistent": false,
+     "status": "atencao",
+     "total": 61
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": "ADVERSE",
+    "family": "recomendacao_negativa",
+    "family_label": "Recomendação rebaixada",
+    "fonte": "Estadão",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "9617d332535c1b3491da"
+    ],
+    "motivo_selecao": "S18 contribuicao alta",
+    "n_membros": 1,
+    "occurrence_id": "recomendacao_negativa:rumo:0771760be9bc",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "9617d332535c1b3491da",
+    "review_id": "D11",
+    "tier": "TIER1_ADVERSE_CONTROL",
+    "titulo": "Citi vê incerteza com troca de CEO da Rumo (RAIL3) e mantém recomendação de venda",
+    "url": "https://www.estadao.com.br/em-alta/einvestidor/cenarios-e-mercado/citi-ve-incerteza-com-troca-de-ceo-da-rumo-rail3-e-mantem-recomendacao-de-venda/"
+   },
+   {
+    "anchor_date": "2026-06-25",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 4.736,
+    "classe_de_sinal": "ADVERSE",
+    "company": "Bradesco",
+    "contribution_class": "ADVERSE",
+    "data_efetiva": "2026-06-25",
+    "direcao_configurada": "negativa",
+    "empresa": {
+     "adverso": 4.7,
+     "contextual": 3.7,
+     "persistent": false,
+     "status": "atencao",
+     "total": 8
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": "ADVERSE",
+    "family": "investigacao_regulatoria",
+    "family_label": "Investigação regulatória",
+    "fonte": "Brasil de Fato",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "f9250a2285305bbda604"
+    ],
+    "motivo_selecao": "S18 contribuicao alta",
+    "n_membros": 1,
+    "occurrence_id": "investigacao_regulatoria:bradesco:784c1dc11677",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "f9250a2285305bbda604",
+    "review_id": "D12",
+    "tier": "TIER1_ADVERSE_CONTROL",
+    "titulo": "Fraude nas Americanas: executivos de Itaú, Bradesco e Santander são alvo de buscas",
+    "url": "https://www.brasildefato.com.br/2026/06/25/fraude-nas-americanas-executivos-de-itau-bradesco-e-santander-sao-alvo-de-buscas/"
+   },
+   {
+    "anchor_date": "2026-08-18",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 40.353,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "JBS",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-08-18",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 12.3,
+     "contextual": 87.3,
+     "persistent": true,
+     "status": "atencao",
+     "total": 100
+    },
+    "estado_evidencia": "TITULOS_MULTIPLOS",
+    "evidencia": [
+     "UBS reitera recomendação de compra para JBS após proposta de aquisição da PPC — Investing.com Brasil - Finanças, Câmbio e Investimentos"
+    ],
+    "evidencia_membros": [
+     {
+      "article_id": "9107879a6502b164d2f9",
+      "corpo_local": "",
+      "data": "2026-08-19",
+      "fonte": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+      "titulo": "UBS reitera recomendação de compra para JBS após proposta de aquisição da PPC",
+      "url": "https://br.investing.com/news/analyst-ratings/ubs-reitera-recomendacao-de-compra-para-jbs-apos-proposta-de-aquisicao-da-ppc-93CH-2043656"
+     }
+    ],
+    "expected_control": null,
+    "family": "ma",
+    "family_label": "M&A",
+    "fonte": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "ac0be217149db21ae564",
+     "9107879a6502b164d2f9"
+    ],
+    "motivo_selecao": "S8 pacote JBS",
+    "n_membros": 2,
+    "occurrence_id": "ma:jbs:557890dbb668",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO",
+     "ACOMPANHAMENTO"
+    ],
+    "representante": "ac0be217149db21ae564",
+    "review_id": "D13",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "JBS propõe aquisição dos 18% restantes da Pilgrim’s Pride",
+    "url": "https://br.investing.com/news/company-news/jbs-propoe-aquisicao-dos-18-restantes-da-pilgrims-pride-93CH-2043398"
+   },
+   {
+    "anchor_date": "2026-08-10",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 28.598,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Engie Brasil",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-06-11",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 0.0,
+     "contextual": 69.0,
+     "persistent": false,
+     "status": "atencao",
+     "total": 69
+    },
+    "estado_evidencia": "TITULOS_MULTIPLOS",
+    "evidencia": [
+     "Engie faz follow-on de R$ 8,3 bilhões para comprar fatia em Jirau e desalavancar — Brazil Journal",
+     "Engie detalha acordo sobre fatia na Jirau financiado por aumento de capital — InfoMoney"
+    ],
+    "evidencia_membros": [
+     {
+      "article_id": "dda53221e83a3de9afc8",
+      "corpo_local": "",
+      "data": "2026-06-11",
+      "fonte": "Brazil Journal",
+      "titulo": "Engie faz follow-on de R$ 8,3 bilhões para comprar fatia em Jirau e desalavancar",
+      "url": "https://braziljournal.com/engie-faz-follow-on-de-r-83-bilhoes-para-comprar-fatia-em-jirau-e-desalavancar/"
+     },
+     {
+      "article_id": "2a10cde17d27bd2a91af",
+      "corpo_local": "",
+      "data": "2026-06-17",
+      "fonte": "InfoMoney",
+      "titulo": "Engie detalha acordo sobre fatia na Jirau financiado por aumento de capital",
+      "url": "https://www.infomoney.com.br/mercados/engie-detalha-acordo-sobre-fatia-na-jirau-financiado-por-aumento-de-capital/"
+     }
+    ],
+    "expected_control": null,
+    "family": "follow_on",
+    "family_label": "Follow-on",
+    "fonte": "Bora Investir",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "dda53221e83a3de9afc8",
+     "2a10cde17d27bd2a91af",
+     "b8e23a79ffb6a23f5da5",
+     "29b5ebdbf1a391d7557a",
+     "cf4b548d7368b54456af",
+     "3aea1813289e41f7318d",
+     "a3de08f211694408beb1",
+     "f3125011635de116cfcb",
+     "4b07ef4534cf878be593"
+    ],
+    "motivo_selecao": "S12 follow-on verdadeiro",
+    "n_membros": 9,
+    "occurrence_id": "follow_on:engie-brasil:4fbf0fbd9b04",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO",
+     "INICIACAO",
+     "UNKNOWN",
+     "ETAPA",
+     "INICIACAO",
+     "UNKNOWN",
+     "ACOMPANHAMENTO",
+     "MATERIAL",
+     "INICIACAO"
+    ],
+    "representante": "cf4b548d7368b54456af",
+    "review_id": "D14",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "Follow-on: Engie Brasil realiza oferta subsequente de ações na B3",
+    "url": "https://borainvestir.b3.com.br/tipos-de-investimentos/renda-variavel/acoes/follow-on-engie-brasil-realiza-oferta-subsequente-de-acoes-na-b3/"
+   },
+   {
+    "anchor_date": "2026-08-10",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 24.476,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "JBS",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-08-10",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 12.3,
+     "contextual": 87.3,
+     "persistent": true,
+     "status": "atencao",
+     "total": 100
+    },
+    "estado_evidencia": "TITULOS_MULTIPLOS",
+    "evidencia": [
+     "JBS busca recuperar margens nos EUA com gado mexicano, e novo CEO promete continuidade — Bloomberg Línea Brasil"
+    ],
+    "evidencia_membros": [
+     {
+      "article_id": "201b91aa6b3c1d9e780c",
+      "corpo_local": "",
+      "data": "2026-08-12",
+      "fonte": "Bloomberg Línea Brasil",
+      "titulo": "JBS busca recuperar margens nos EUA com gado mexicano, e novo CEO promete continuidade",
+      "url": "https://www.bloomberglinea.com.br/agro/jbs-busca-recuperar-margens-nos-eua-com-gado-mexicano-e-novo-ceo-promete-continuidade/"
+     }
+    ],
+    "expected_control": null,
+    "family": "troca_ceo",
+    "family_label": "Troca de CEO",
+    "fonte": "Bloomberg Línea Brasil",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "edeb694bf05ba64f3430",
+     "201b91aa6b3c1d9e780c"
+    ],
+    "motivo_selecao": "S8 pacote JBS",
+    "n_membros": 2,
+    "occurrence_id": "troca_ceo:jbs:5d25d77f013e",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO",
+     "ACOMPANHAMENTO"
+    ],
+    "representante": "edeb694bf05ba64f3430",
+    "review_id": "D15",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "JBS nomeia Wesley Batista Filho como novo CEO global a partir de janeiro",
+    "url": "https://www.bloomberglinea.com.br/agro/jbs-nomeia-wesley-batista-filho-como-novo-ceo-global-a-partir-de-janeiro/"
+   },
+   {
+    "anchor_date": "2026-07-27",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 19.955,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Sabesp",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-07-27",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 0.0,
+     "contextual": 26.7,
+     "persistent": false,
+     "status": "monitorar",
+     "total": 27
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": null,
+    "family": "ma",
+    "family_label": "M&A",
+    "fonte": "Estadão",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "b1fc685f3f7d47d63a2c"
+    ],
+    "motivo_selecao": "S9 diversidade M&A",
+    "n_membros": 1,
+    "occurrence_id": "ma:sabesp:9e5e932409a7",
+    "phase": "",
+    "phase_por_membro": [
+     "ETAPA"
+    ],
+    "representante": "b1fc685f3f7d47d63a2c",
+    "review_id": "D16",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "Sabesp: assembleia para aquisição das ações da EMAE não será remarcada, apesar de ação cautelar",
+    "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/sabesp-assembleia-para-aquisicao-das-acoes-da-emae-nao-sera-remarcada-apesar-de-acao-cautelar/"
+   },
+   {
+    "anchor_date": "2026-07-29",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 17.485,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "PRIO",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-07-29",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 0.0,
+     "contextual": 17.5,
+     "persistent": false,
+     "status": "monitorar",
+     "total": 17
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": null,
+    "family": "follow_on",
+    "family_label": "Follow-on",
+    "fonte": "PRIO · RI",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "46e5fc139c31f2689a79"
+    ],
+    "motivo_selecao": "S12 follow-on verdadeiro",
+    "n_membros": 1,
+    "occurrence_id": "follow_on:prio:abeb7dfa9421",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "46e5fc139c31f2689a79",
+    "review_id": "D17",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "FATO RELEVANTE - AUMENTO DE CAPITAL SOCIAL POR EXERCÍCIO DE OPÇÕES DE COMPRA DE AÇÕES",
+    "url": "https://api.mziq.com/mzfilemanager/v2/d/cecb3d3e-6bd6-4edd-b9b3-3cacde780cac/322ef558-06df-b45c-aaf6-55a0e489bbeb?origin=2"
+   },
+   {
+    "anchor_date": "2026-08-20",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 14.539,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "CPFL Energia",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-08-20",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 0.0,
+     "contextual": 14.5,
+     "persistent": false,
+     "status": "monitorar",
+     "total": 15
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": null,
+    "family": "troca_ceo",
+    "family_label": "Troca de CEO",
+    "fonte": "Cenário Energia",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "82d4ee2f88f8b8f932a5"
+    ],
+    "motivo_selecao": "S10 CEO sem contexto adverso obvio",
+    "n_membros": 1,
+    "occurrence_id": "troca_ceo:cpfl-energia:9c42c02357a7",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "82d4ee2f88f8b8f932a5",
+    "review_id": "D18",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "De Estagiário A CEO: Bruno Monte Assume A Presidência Da CPFL Renováveis",
+    "url": "https://cenarioenergia.com.br/2026/08/20/de-estagiario-a-ceo-bruno-monte-assume-a-presidencia-da-cpfl-renovaveis/"
+   },
+   {
+    "anchor_date": "2026-07-01",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 13.358,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Suzano",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-07-01",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 0.0,
+     "contextual": 13.4,
+     "persistent": false,
+     "status": "monitorar",
+     "total": 13
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": null,
+    "family": "ma",
+    "family_label": "M&A",
+    "fonte": "InfoMoney",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "6f4ae9a2a77fb2678d11"
+    ],
+    "motivo_selecao": "S9 diversidade M&A",
+    "n_membros": 1,
+    "occurrence_id": "ma:suzano:a5d3c90f6780",
+    "phase": "encerramento",
+    "phase_por_membro": [
+     "MATERIAL"
+    ],
+    "representante": "6f4ae9a2a77fb2678d11",
+    "review_id": "D19",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "Suzano (SUZB3) conclui aquisição de 51% da Arbex por R$ 6,7 bilhões",
+    "url": "https://www.infomoney.com.br/mercados/suzano-suzb3-conclui-aquisicao-de-51-da-arbex-por-r-67-bilhoes/"
+   },
+   {
+    "anchor_date": "2026-07-06",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 13.141,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Engie Brasil",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-07-06",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 0.0,
+     "contextual": 69.0,
+     "persistent": false,
+     "status": "atencao",
+     "total": 69
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": null,
+    "family": "emissao_divida",
+    "family_label": "Grande emissão de dívida",
+    "fonte": "CVM · Fato Relevante",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "2134325dc125e327b6ac"
+    ],
+    "motivo_selecao": "S11 emissao representativa",
+    "n_membros": 1,
+    "occurrence_id": "emissao_divida:engie-brasil:f64ef0b0955b",
+    "phase": "",
+    "phase_por_membro": [
+     "UNKNOWN"
+    ],
+    "representante": "2134325dc125e327b6ac",
+    "review_id": "D20",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "[Fato Relevante] Engie Brasil: Emissão de Debêntures (17ª Emissão)",
+    "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1542213&numSequencia=1066919&numVersao=1"
+   },
+   {
+    "anchor_date": "2026-08-13",
+    "aviso_atribuicao": "ATTRIBUTION_REVIEW_CANDIDATE — o CEO novo e da Gol, nao da B3. Ver OCCURRENCE_ARCHITECTURE L578.",
+    "canonical_contrib": 12.456,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "B3",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-08-13",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 78.2,
+     "contextual": 12.5,
+     "persistent": false,
+     "status": "atencao",
+     "total": 91
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": null,
+    "family": "troca_ceo",
+    "family_label": "Troca de CEO",
+    "fonte": "Investidor10",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "63c947b7791d619e5c82"
+    ],
+    "motivo_selecao": "S18 contribuicao alta",
+    "n_membros": 1,
+    "occurrence_id": "troca_ceo:b3:165ecfcc0c3b",
+    "phase": "anuncio",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "63c947b7791d619e5c82",
+    "review_id": "D21",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "Após Chapter 11 e saída da B3, Gol anuncia novo CEO e faz mudanças na diretoria",
+    "url": "https://investidor10.com.br/amp/noticias/apos-chapter-11-e-saida-da-b3-gol-anuncia-novo-ceo-e-faz-mudancas-na-diretoria-122055/"
+   },
+   {
+    "anchor_date": "2026-07-02",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 12.288,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Natura &Co",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-07-02",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 0.0,
+     "contextual": 17.6,
+     "persistent": false,
+     "status": "monitorar",
+     "total": 18
+    },
+    "estado_evidencia": "CORPO_LOCAL",
+    "evidencia": [
+     "Aquisição de Participação Relevante pela Advent"
+    ],
+    "evidencia_membros": [],
+    "expected_control": null,
+    "family": "ma",
+    "family_label": "M&A",
+    "fonte": "CVM · Fato Relevante",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "9d0d1be36f6921025838"
+    ],
+    "motivo_selecao": "S9 diversidade M&A",
+    "n_membros": 1,
+    "occurrence_id": "ma:natura-co:7be50445cb9c",
+    "phase": "",
+    "phase_por_membro": [
+     "UNKNOWN"
+    ],
+    "representante": "9d0d1be36f6921025838",
+    "review_id": "D22",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "[Fato Relevante] Natura &Co: Aquisição de Participação Relevante pela Advent",
+    "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1540900&numSequencia=1065606&numVersao=1"
+   },
+   {
+    "anchor_date": "2026-07-23",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 12.219,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "JBS",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-07-23",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 12.3,
+     "contextual": 87.3,
+     "persistent": true,
+     "status": "atencao",
+     "total": 100
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": null,
+    "family": "ma",
+    "family_label": "M&A",
+    "fonte": "Poder360",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "f11950284cc8d9a152f5"
+    ],
+    "motivo_selecao": "S8 pacote JBS",
+    "n_membros": 1,
+    "occurrence_id": "ma:jbs:0a6cde56d6ff",
+    "phase": "",
+    "phase_por_membro": [
+     "UNKNOWN"
+    ],
+    "representante": "f11950284cc8d9a152f5",
+    "review_id": "D23",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "JBS mira expansão global com listagem nos EUA e aquisição em Omã",
+    "url": "https://www.poder360.com.br/poder-economia/jbs-mira-expansao-global-com-listagem-nos-eua-e-aquisicao-em-oma/"
+   },
+   {
+    "anchor_date": "2026-06-26",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 11.232,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Axia Energia",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-06-26",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 0.0,
+     "contextual": 21.5,
+     "persistent": false,
+     "status": "monitorar",
+     "total": 21
+    },
+    "estado_evidencia": "CORPO_LOCAL",
+    "evidencia": [
+     "6ª Emissão de Debêntures da AXIA Energia Sul",
+     "AXIA Energia Sul capta R$ 1,9 bilhão com debêntures e financiamento do BNDES — BPMoney",
+     "Axia Energia (AXIA3) aprovou emissão de debêntures simples no valor de R$ 500 mi — InfoMoney"
+    ],
+    "evidencia_membros": [
+     {
+      "article_id": "58092a392fa773182008",
+      "corpo_local": "",
+      "data": "2026-06-29",
+      "fonte": "BPMoney",
+      "titulo": "AXIA Energia Sul capta R$ 1,9 bilhão com debêntures e financiamento do BNDES",
+      "url": "https://bpmoney.com.br/negocios/empresas/axia-energia-sul-capta-r-1-9-bilhao-debentures-bndes/"
+     },
+     {
+      "article_id": "a99ddf9e546d96961096",
+      "corpo_local": "",
+      "data": "2026-07-20",
+      "fonte": "InfoMoney",
+      "titulo": "Axia Energia (AXIA3) aprovou emissão de debêntures simples no valor de R$ 500 mi",
+      "url": "https://www.infomoney.com.br/mercados/axia-energia-axia3-aprovou-captacao-de-debentures-simples-no-valor-de-r-500-mi/"
+     }
+    ],
+    "expected_control": null,
+    "family": "emissao_divida",
+    "family_label": "Grande emissão de dívida",
+    "fonte": "CVM · Fato Relevante",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "6ed152ab933e1ec253ca",
+     "58092a392fa773182008",
+     "a99ddf9e546d96961096",
+     "b60184fed9a4a3438812"
+    ],
+    "motivo_selecao": "S11 emissao representativa",
+    "n_membros": 4,
+    "occurrence_id": "emissao_divida:axia-energia:a6ef1201c408",
+    "phase": "",
+    "phase_por_membro": [
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN"
+    ],
+    "representante": "6ed152ab933e1ec253ca",
+    "review_id": "D24",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "[Fato Relevante] Axia Energia: 6ª Emissão de Debêntures da AXIA Energia Sul",
+    "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1539108&numSequencia=1063814&numVersao=1"
+   },
+   {
+    "anchor_date": "2026-07-21",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 10.227,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "JBS",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-07-21",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 12.3,
+     "contextual": 87.3,
+     "persistent": true,
+     "status": "atencao",
+     "total": 100
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": null,
+    "family": "emissao_divida",
+    "family_label": "Grande emissão de dívida",
+    "fonte": "suno.com.br",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "53340f861717b39cbca3"
+    ],
+    "motivo_selecao": "S8 pacote JBS",
+    "n_membros": 1,
+    "occurrence_id": "emissao_divida:jbs:e25e2ea627d2",
+    "phase": "",
+    "phase_por_membro": [
+     "UNKNOWN"
+    ],
+    "representante": "53340f861717b39cbca3",
+    "review_id": "D25",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "JBS capta R$ 400 mi para operação de biodiesel; cadeia do agro é acompanhada pelo SNFZ11",
+    "url": "https://www.suno.com.br/noticias/jbs-capta-r-400-mi-para-operacao-de-biodiesel-cadeia-do-agro-e-acompanhada-pelo-snfz11/"
+   },
+   {
+    "anchor_date": "2026-07-08",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 9.592,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "BTG Pactual",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-07-08",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 0.0,
+     "contextual": 37.9,
+     "persistent": false,
+     "status": "atencao",
+     "total": 38
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": null,
+    "family": "follow_on",
+    "family_label": "Follow-on",
+    "fonte": "Estadão",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "1250147b9068772a93fb"
+    ],
+    "motivo_selecao": "S18 contribuicao alta",
+    "n_membros": 1,
+    "occurrence_id": "follow_on:btg-pactual:ce0c6d877eea",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "1250147b9068772a93fb",
+    "review_id": "D26",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "Brava (BRAV3) pode subir 10% com avanço de oferta de ações, diz BTG",
+    "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/btg-ve-opa-da-brava-brav3-mais-proxima-apos-sinalizacao-da-cvm-acao-pode-subir-10/"
+   },
+   {
+    "anchor_date": "2026-06-22",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 7.61,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Rumo",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-06-22",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 44.8,
+     "contextual": 16.5,
+     "persistent": false,
+     "status": "atencao",
+     "total": 61
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": null,
+    "family": "troca_ceo",
+    "family_label": "Troca de CEO",
+    "fonte": "Brazil Journal",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "868fa15adaef38c3ee1a"
+    ],
+    "motivo_selecao": "S10 CEO com contexto potencialmente adverso",
+    "n_membros": 1,
+    "occurrence_id": "troca_ceo:rumo:f0c553fa4b3a",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "868fa15adaef38c3ee1a",
+    "review_id": "D27",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "EXCLUSIVO: Rumo escolhe Rockenbach, “ferroviário raiz”, como novo CEO",
+    "url": "https://braziljournal.com/exclusivo-rumo-escolhe-rockenbach-ferroviario-raiz-como-novo-ceo/"
+   },
+   {
+    "anchor_date": "2026-05-31",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 6.763,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Sabesp",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-05-31",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 0.0,
+     "contextual": 26.7,
+     "persistent": false,
+     "status": "monitorar",
+     "total": 27
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": null,
+    "family": "ma",
+    "family_label": "M&A",
+    "fonte": "Valor Econômico",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "8c15836213be9609398e"
+    ],
+    "motivo_selecao": "S9 diversidade M&A",
+    "n_membros": 1,
+    "occurrence_id": "ma:sabesp:8b116385df52",
+    "phase": "encerramento",
+    "phase_por_membro": [
+     "MATERIAL"
+    ],
+    "representante": "8c15836213be9609398e",
+    "review_id": "D28",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "Sabesp conclui aquisição de participação na concessionária Castilho por R$ 30,7 milhões",
+    "url": "https://valor.globo.com/empresas/noticia/2026/05/31/sabesp-conclui-aquisio-de-participao-na-concessionria-castilho-por-r-307-milhes.ghtml"
+   },
+   {
+    "anchor_date": "2026-05-31",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 5.358,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Natura &Co",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-05-31",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 0.0,
+     "contextual": 17.6,
+     "persistent": false,
+     "status": "monitorar",
+     "total": 18
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": null,
+    "family": "ma",
+    "family_label": "M&A",
+    "fonte": "Estadão",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "241a6065d3dfca23392c"
+    ],
+    "motivo_selecao": "S9 diversidade M&A",
+    "n_membros": 1,
+    "occurrence_id": "ma:natura-co:124e050376a1",
+    "phase": "aprovacao",
+    "phase_por_membro": [
+     "ETAPA"
+    ],
+    "representante": "241a6065d3dfca23392c",
+    "review_id": "D29",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "Natura aprova incorporação de holding; ações começam a ser negociadas em julho",
+    "url": "https://www.estadao.com.br/einvestidor/cenarios-e-mercado/natura-cosmeticos-incorporacao-acoes/"
+   },
+   {
+    "anchor_date": "2026-05-28",
+    "aviso_atribuicao": null,
+    "canonical_contrib": 3.12,
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Vale",
+    "contribution_class": "CONTEXTUAL",
+    "data_efetiva": "2026-05-28",
+    "direcao_configurada": "neutra",
+    "empresa": {
+     "adverso": 38.0,
+     "contextual": 3.1,
+     "persistent": false,
+     "status": "atencao",
+     "total": 41
+    },
+    "estado_evidencia": "LOCAL_EVIDENCE_INSUFFICIENT",
+    "evidencia": [],
+    "evidencia_membros": [],
+    "expected_control": null,
+    "family": "troca_ceo",
+    "family_label": "Troca de CEO",
+    "fonte": "Estadão",
+    "human_label": null,
+    "human_note": null,
+    "membros": [
+     "1cc87309f14b40640c31"
+    ],
+    "motivo_selecao": "S10 CEO sob investigacao em curso",
+    "n_membros": 1,
+    "occurrence_id": "troca_ceo:vale:1350021bf254",
+    "phase": "",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "representante": "1cc87309f14b40640c31",
+    "review_id": "D30",
+    "tier": "TIER2_CONTEXTUAL",
+    "titulo": "Novo CEO da Vale (VALE3): o que Embraer e Klabin dizem sobre participação de diretores na concorrência",
+    "url": "https://www.estadao.com.br/einvestidor/wealth-management/vale-vale3-novo-presidente-ceo-klabin-klbn11-embraer-embr3-selecao/"
+   }
+  ],
+  "n": 30,
+  "n_tier1": 12,
+  "n_tier2": 18,
+  "nomeados_ausentes": [
+   {
+    "company": "WEG",
+    "estado": "SEM_OCORRENCIA_PONTUAVEL",
+    "family": "*",
+    "motivo_pedido": "S6/S9 nomeado pela onda"
+   }
+  ],
+  "rotulos_permitidos": [
+   "ADVERSE",
+   "FAVORABLE",
+   "NEUTRAL",
+   "MIXED",
+   "UNCERTAIN"
+  ],
+  "unidade": "OCCURRENCE"
+ },
+ "proveniencia_humana": {
+  "explicitos": [
+   {
+    "onde": "/memberships/19825b59fb431f80e429|WEG|recomendacao_negativa/article_role",
+    "texto": "NEW_NEGATIVE_ASSESSMENT"
+   },
+   {
+    "onde": "/memberships/19825b59fb431f80e429|WEG|recomendacao_negativa/family",
+    "texto": "recomendacao_negativa"
+   },
+   {
+    "onde": "/memberships/19825b59fb431f80e429|WEG|recomendacao_negativa/rationale",
+    "texto": "JPMorgan rebaixa a recomendacao, corta preco-alvo e reduz estimativas de lucro. Acao de analista nova e completa — precedente positivo forte da familia."
+   },
+   {
+    "onde": "/memberships/1c5ca7299e1619111087|Capital One Financial|ma/rationale",
+    "texto": "Fonte unica com link indisponivel; o corpo nao e verificavel localmente. O titulo SUGERE M&A como pano de fundo de um teste de resultados, mas suposicao nao e evidencia humana. Nao"
+   },
+   {
+    "onde": "/memberships/6bc05e51969c6be1e11f|Cosan|rebaixamento_rating/article_role",
+    "texto": "NEW_NEGATIVE_RATING_EVENT"
+   },
+   {
+    "onde": "/memberships/6c6de2598d9b42a7c7c5|Rumo|recomendacao_negativa/diagnostic_flags[0]",
+    "texto": "REAFFIRMED_NEGATIVE_IS_NEW_SIGNAL"
+   },
+   {
+    "onde": "/memberships/6c6de2598d9b42a7c7c5|Rumo|recomendacao_negativa/family",
+    "texto": "recomendacao_negativa"
+   },
+   {
+    "onde": "/memberships/6c6de2598d9b42a7c7c5|Rumo|recomendacao_negativa/rationale",
+    "texto": "'Mantem recomendacao de venda' pode ser avaliacao negativa nova e corrente de analista. Rebaixamento NAO e requisito: uma analise nova pode reafirmar VENDA e seguir sendo sinal neg"
+   },
+   {
+    "onde": "/memberships/d6f6fd5d03b89dffb3f6|Aegea Saneamento|follow_on/diagnostic_flags[3]",
+    "texto": "POSSIBLY_CREDIT_POSITIVE"
+   },
+   {
+    "onde": "/memberships/eea8fb0b2e52f38f04b8|Vale|investigacao_regulatoria/rationale",
+    "texto": "A investigacao trata de processo de governanca — apoio/eleicao envolvendo a lideranca do conselho da Vale. Mesmo que o risco final se mostre pequeno, e informacao que o radar deve "
+   }
+  ],
+  "limitados": [
+   {
+    "onde": "/memberships/d6f6fd5d03b89dffb3f6|Aegea Saneamento|follow_on/rationale",
+    "texto": "Ha evento societario relevante da Aegea: aumento de capital com subscricao por acionistas existentes, e a Itausa pode exercer direito de subscricao. Isso NAO e automaticamente ofer"
+   }
+  ],
+  "n_explicitos": 10,
+  "n_limitados": 1,
+  "nota": "proveniencia apenas — nada aqui virou rotulo"
+ },
+ "universo": {
+  "contribuicoes_sem_ocorrencia": [],
+  "n_linhas_breakdown": 78,
+  "n_ocorrencias_pontuaveis": 77
+ }
+}
