@@ -331,7 +331,8 @@ check(_jm["eventos_materiais"] >= 4 and _jm["familias"] >= 4,
       f"[52] §10 a JBS mantem {_jm['eventos_materiais']} eventos materiais em "
       f"{_jm['familias']} familias mesmo quando o risco cai para "
       f"{p1['JBS']['total']}")
-check(_jm["adverso"] + _jm["contextual"] == _jm["materialidade_ponderada"],
+check(abs(_jm["adverso"] + _jm["contextual"]
+          - _jm["materialidade_ponderada"]) < 1e-6,
       "[53] §10 e o indice separa as duas parcelas sem somar significado")
 check(_mat["authority"].endswith("DIAGNOSTICO"),
       "[54] §10 rotulado como diagnostico: nao vai ao painel nesta onda")

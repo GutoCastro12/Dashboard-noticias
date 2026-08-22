@@ -1,0 +1,4333 @@
+{
+ "_meta": {
+  "bench_version": "model.benchmark.v2",
+  "output_label": "EVALUATION ONLY",
+  "production_occurrence_authority": "NONE",
+  "production_score_authority": "NONE",
+  "semantic_authority": "NONE",
+  "write_authority": "NONE"
+ },
+ "camada_a": {
+  "authority": "EVALUATION ONLY",
+  "linhas": [
+   {
+    "article_id": "061eb3b6f37708a1986e",
+    "chave": "061eb3b6f37708a1986e|Banco do Brasil|investigacao_regulatoria|v2|r7ba.p2|gemini-3.1-flash-lite",
+    "classe_de_falha": "CURRENT_OFFICER_AFFILIATION_ATTRIBUTED_AS_COMPANY_DIRECT",
+    "company": "Banco do Brasil",
+    "dimensoes": {
+     "company_role": {
+      "acerto": false,
+      "deterministico": "SUBJECT",
+      "humano": "MENTIONED",
+      "modelo": "SUBJECT"
+     },
+     "currentness": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "CURRENT",
+      "modelo": "CURRENT"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "NEW_OCCURRENCE",
+      "modelo": "NEW_OCCURRENCE"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "presidente do Banco do Brasil (pessoa fisica)",
+      "modelo": "Banco do Brasil"
+     }
+    },
+    "estado": "OK",
+    "family": "investigacao_regulatoria",
+    "latencia_s": 4.55,
+    "modelo": "gemini-3.1-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": false,
+    "scoreable_modelo": true,
+    "titulo": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre ações",
+    "usage": {
+     "candidates_token_count": 286,
+     "prompt_token_count": 1318,
+     "total_token_count": 1604
+    },
+    "verdict_humano": "PROCESSO_CONTRA_DIRIGENTE_NAO_E_EVENTO_DA_COMPANHIA"
+   },
+   {
+    "article_id": "061eb3b6f37708a1986e",
+    "chave": "061eb3b6f37708a1986e|Banco do Brasil|investigacao_regulatoria|v2|r7ba.p2|gemini-3.5-flash-lite",
+    "classe_de_falha": "CURRENT_OFFICER_AFFILIATION_ATTRIBUTED_AS_COMPANY_DIRECT",
+    "company": "Banco do Brasil",
+    "dimensoes": {
+     "company_role": {
+      "acerto": false,
+      "deterministico": "SUBJECT",
+      "humano": "MENTIONED",
+      "modelo": "SUBJECT"
+     },
+     "currentness": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "CURRENT",
+      "modelo": "CURRENT"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "NEW_OCCURRENCE",
+      "modelo": "NEW_OCCURRENCE"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "presidente do Banco do Brasil (pessoa fisica)",
+      "modelo": "Banco do Brasil"
+     }
+    },
+    "estado": "OK",
+    "family": "investigacao_regulatoria",
+    "latencia_s": 1.51,
+    "modelo": "gemini-3.5-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": false,
+    "scoreable_modelo": true,
+    "titulo": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre ações",
+    "usage": {
+     "candidates_token_count": 266,
+     "prompt_token_count": 1318,
+     "total_token_count": 1584
+    },
+    "verdict_humano": "PROCESSO_CONTRA_DIRIGENTE_NAO_E_EVENTO_DA_COMPANHIA"
+   },
+   {
+    "article_id": "10e297f95c5954630150",
+    "chave": "10e297f95c5954630150|Tok&Stok|recuperacao_judicial|v2|r7ba.p2|gemini-3.1-flash-lite",
+    "classe_de_falha": null,
+    "company": "Tok&Stok",
+    "dimensoes": {
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "MENTIONED",
+      "modelo": "MENTIONED"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "MENTIONED_ONLY",
+      "modelo": "MENTIONED_ONLY"
+     },
+     "occurrence_novelty": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "DESCRIPTOR_OR_BACKGROUND",
+      "modelo": "DESCRIPTOR_OR_BACKGROUND"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "Tok&Stok",
+      "modelo": "Tok&Stok"
+     }
+    },
+    "estado": "OK",
+    "family": "recuperacao_judicial",
+    "latencia_s": 2.53,
+    "modelo": "gemini-3.1-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": false,
+    "scoreable_modelo": false,
+    "titulo": "Casas Bahia, Marabraz, Mobly e Tok&STok: por que tantas empresas de varejo estão pedindo recuperação judicial?",
+    "usage": {
+     "candidates_token_count": 338,
+     "prompt_token_count": 1336,
+     "total_token_count": 1674
+    },
+    "verdict_humano": "MENCAO_EM_ANALISE_SETORIAL"
+   },
+   {
+    "article_id": "10e297f95c5954630150",
+    "chave": "10e297f95c5954630150|Tok&Stok|recuperacao_judicial|v2|r7ba.p2|gemini-3.5-flash-lite",
+    "classe_de_falha": null,
+    "company": "Tok&Stok",
+    "dimensoes": {
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "MENTIONED",
+      "modelo": "MENTIONED"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "MENTIONED_ONLY",
+      "modelo": "MENTIONED_ONLY"
+     },
+     "occurrence_novelty": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "DESCRIPTOR_OR_BACKGROUND",
+      "modelo": "DESCRIPTOR_OR_BACKGROUND"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "Tok&Stok",
+      "modelo": "Tok&Stok"
+     }
+    },
+    "estado": "OK",
+    "family": "recuperacao_judicial",
+    "latencia_s": 1.99,
+    "modelo": "gemini-3.5-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": false,
+    "scoreable_modelo": false,
+    "titulo": "Casas Bahia, Marabraz, Mobly e Tok&STok: por que tantas empresas de varejo estão pedindo recuperação judicial?",
+    "usage": {
+     "candidates_token_count": 355,
+     "prompt_token_count": 1336,
+     "total_token_count": 1691
+    },
+    "verdict_humano": "MENCAO_EM_ANALISE_SETORIAL"
+   },
+   {
+    "article_id": "201b91aa6b3c1d9e780c",
+    "chave": "201b91aa6b3c1d9e780c|JBS|troca_ceo|v2|r7ba.p2|gemini-3.1-flash-lite",
+    "classe_de_falha": null,
+    "company": "JBS",
+    "dimensoes": {
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "SUBJECT",
+      "modelo": "SUBJECT"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "MENTIONED_ONLY",
+      "modelo": "MENTIONED_ONLY"
+     },
+     "occurrence_novelty": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "DESCRIPTOR_OR_BACKGROUND",
+      "modelo": "DESCRIPTOR_OR_BACKGROUND"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "JBS",
+      "modelo": "JBS"
+     }
+    },
+    "estado": "OK",
+    "family": "troca_ceo",
+    "latencia_s": 6.4,
+    "modelo": "gemini-3.1-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": false,
+    "scoreable_modelo": false,
+    "titulo": "JBS busca recuperar margens nos EUA com gado mexicano, e novo CEO promete continuidade",
+    "usage": {
+     "candidates_token_count": 285,
+     "prompt_token_count": 1319,
+     "total_token_count": 1604
+    },
+    "verdict_humano": "MENCIONA_SEM_ANUNCIAR"
+   },
+   {
+    "article_id": "201b91aa6b3c1d9e780c",
+    "chave": "201b91aa6b3c1d9e780c|JBS|troca_ceo|v2|r7ba.p2|gemini-3.5-flash-lite",
+    "classe_de_falha": null,
+    "company": "JBS",
+    "dimensoes": {
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "SUBJECT",
+      "modelo": "SUBJECT"
+     },
+     "event_asserted": {
+      "acerto": false,
+      "deterministico": "ASSERTED",
+      "humano": "MENTIONED_ONLY",
+      "modelo": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "DESCRIPTOR_OR_BACKGROUND",
+      "modelo": "DESCRIPTOR_OR_BACKGROUND"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "JBS",
+      "modelo": "JBS"
+     }
+    },
+    "estado": "OK",
+    "family": "troca_ceo",
+    "latencia_s": 1.38,
+    "modelo": "gemini-3.5-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": false,
+    "scoreable_modelo": true,
+    "titulo": "JBS busca recuperar margens nos EUA com gado mexicano, e novo CEO promete continuidade",
+    "usage": {
+     "candidates_token_count": 283,
+     "prompt_token_count": 1319,
+     "total_token_count": 1602
+    },
+    "verdict_humano": "MENCIONA_SEM_ANUNCIAR"
+   },
+   {
+    "article_id": "2e440c297fa646ce331f",
+    "chave": "2e440c297fa646ce331f|Orizon Valorização de Resíduos|ma|v2|r7ba.p2|gemini-3.1-flash-lite",
+    "classe_de_falha": null,
+    "company": "Orizon Valorização de Resíduos",
+    "dimensoes": {
+     "centrality": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "MAIN",
+      "modelo": "MAIN"
+     },
+     "company_role": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "BUYER",
+      "modelo": "BUYER"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "NEW_OCCURRENCE",
+      "modelo": "NEW_OCCURRENCE"
+     },
+     "phase": {
+      "acerto": false,
+      "deterministico": "NOT_EMITTED",
+      "humano": "ANNOUNCED",
+      "modelo": "UNKNOWN"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "Orizon Valorizacao de Residuos",
+      "modelo": "Orizon Valorização de Resíduos"
+     },
+     "transaction_object": {
+      "acerto": false,
+      "deterministico": "NOT_EMITTED",
+      "humano": "COMPANY_CONTROL",
+      "modelo": "ASSET_OR_BUSINESS_UNIT"
+     }
+    },
+    "estado": "OK",
+    "family": "ma",
+    "latencia_s": 1.73,
+    "modelo": "gemini-3.1-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": null,
+    "titulo": "[Fato Relevante] Orizon Valorização de Resíduos: Aquisição de Rondonópolis",
+    "usage": {
+     "candidates_token_count": 289,
+     "prompt_token_count": 1302,
+     "total_token_count": 1591
+    },
+    "verdict_humano": "MA_SOCIETARIO_PONTUAVEL"
+   },
+   {
+    "article_id": "2e440c297fa646ce331f",
+    "chave": "2e440c297fa646ce331f|Orizon Valorização de Resíduos|ma|v2|r7ba.p2|gemini-3.5-flash-lite",
+    "classe_de_falha": null,
+    "company": "Orizon Valorização de Resíduos",
+    "dimensoes": {
+     "centrality": {
+      "acerto": false,
+      "deterministico": "NOT_EMITTED",
+      "humano": "MAIN",
+      "modelo": "INCIDENTAL"
+     },
+     "company_role": {
+      "acerto": false,
+      "deterministico": "NOT_EMITTED",
+      "humano": "BUYER",
+      "modelo": "MENTIONED"
+     },
+     "event_asserted": {
+      "acerto": false,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "MENTIONED_ONLY"
+     },
+     "occurrence_novelty": {
+      "acerto": false,
+      "deterministico": "NOT_EMITTED",
+      "humano": "NEW_OCCURRENCE",
+      "modelo": "UNDETERMINED"
+     },
+     "phase": {
+      "acerto": false,
+      "deterministico": "NOT_EMITTED",
+      "humano": "ANNOUNCED",
+      "modelo": "UNKNOWN"
+     },
+     "subject": {
+      "acerto": false,
+      "deterministico": "NOT_EMITTED",
+      "humano": "Orizon Valorizacao de Residuos",
+      "modelo": "Aquisição de Rondonópolis"
+     },
+     "transaction_object": {
+      "acerto": false,
+      "deterministico": "NOT_EMITTED",
+      "humano": "COMPANY_CONTROL",
+      "modelo": "NOT_APPLICABLE"
+     }
+    },
+    "estado": "OK",
+    "family": "ma",
+    "latencia_s": 1.65,
+    "modelo": "gemini-3.5-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": null,
+    "titulo": "[Fato Relevante] Orizon Valorização de Resíduos: Aquisição de Rondonópolis",
+    "usage": {
+     "candidates_token_count": 300,
+     "prompt_token_count": 1302,
+     "total_token_count": 1602
+    },
+    "verdict_humano": "MA_SOCIETARIO_PONTUAVEL"
+   },
+   {
+    "article_id": "5d05e84444486491a30b",
+    "chave": "5d05e84444486491a30b|JBS|troca_ceo|v2|r7ba.p2|gemini-3.1-flash-lite",
+    "classe_de_falha": null,
+    "company": "JBS",
+    "dimensoes": {
+     "centrality": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "MAIN",
+      "modelo": "MAIN"
+     },
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "SUBJECT",
+      "modelo": "SUBJECT"
+     },
+     "currentness": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "CURRENT",
+      "modelo": "CURRENT"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "NEW_OCCURRENCE",
+      "modelo": "NEW_OCCURRENCE"
+     },
+     "phase": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "ANNOUNCED",
+      "modelo": "ANNOUNCED"
+     },
+     "related_entity": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "Wesley Batista Filho",
+      "modelo": "Wesley Batista Filho"
+     },
+     "relation": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "CEO",
+      "modelo": "CEO"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "JBS",
+      "modelo": "JBS"
+     },
+     "transaction_object": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "NOT_APPLICABLE",
+      "modelo": "NOT_APPLICABLE"
+     }
+    },
+    "estado": "OK",
+    "family": "troca_ceo",
+    "latencia_s": 4.36,
+    "modelo": "gemini-3.1-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": null,
+    "titulo": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+    "usage": {
+     "candidates_token_count": 321,
+     "prompt_token_count": 1322,
+     "total_token_count": 1643
+    },
+    "verdict_humano": "TRUE_NEW_ANNOUNCEMENT"
+   },
+   {
+    "article_id": "5d05e84444486491a30b",
+    "chave": "5d05e84444486491a30b|JBS|troca_ceo|v2|r7ba.p2|gemini-3.5-flash-lite",
+    "classe_de_falha": null,
+    "company": "JBS",
+    "dimensoes": {
+     "centrality": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "MAIN",
+      "modelo": "MAIN"
+     },
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "SUBJECT",
+      "modelo": "SUBJECT"
+     },
+     "currentness": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "CURRENT",
+      "modelo": "CURRENT"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "NEW_OCCURRENCE",
+      "modelo": "NEW_OCCURRENCE"
+     },
+     "phase": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "ANNOUNCED",
+      "modelo": "ANNOUNCED"
+     },
+     "related_entity": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "Wesley Batista Filho",
+      "modelo": "Wesley Batista Filho"
+     },
+     "relation": {
+      "acerto": false,
+      "deterministico": "NOT_EMITTED",
+      "humano": "CEO",
+      "modelo": "CEO_APPOINTMENT"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "JBS",
+      "modelo": "JBS"
+     },
+     "transaction_object": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "NOT_APPLICABLE",
+      "modelo": "NOT_APPLICABLE"
+     }
+    },
+    "estado": "OK",
+    "family": "troca_ceo",
+    "latencia_s": 1.85,
+    "modelo": "gemini-3.5-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": null,
+    "titulo": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+    "usage": {
+     "candidates_token_count": 323,
+     "prompt_token_count": 1322,
+     "total_token_count": 1645
+    },
+    "verdict_humano": "TRUE_NEW_ANNOUNCEMENT"
+   },
+   {
+    "article_id": "61166442c0f897153eec",
+    "chave": "61166442c0f897153eec|JBS|ma|v2|r7ba.p2|gemini-3.1-flash-lite",
+    "classe_de_falha": null,
+    "company": "JBS",
+    "dimensoes": {
+     "centrality": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "MAIN",
+      "modelo": "MAIN"
+     },
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "SUBJECT",
+      "modelo": "SUBJECT"
+     },
+     "currentness": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "CURRENT",
+      "modelo": "CURRENT"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "NEW_OCCURRENCE",
+      "modelo": "NEW_OCCURRENCE"
+     },
+     "phase": {
+      "acerto": true,
+      "deterministico": "anuncio",
+      "humano": "ANNOUNCED",
+      "modelo": "ANNOUNCED"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "JBS",
+      "modelo": "JBS"
+     },
+     "transaction_object": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "COMPANY_CONTROL",
+      "modelo": "COMPANY_CONTROL"
+     }
+    },
+    "estado": "OK",
+    "family": "ma",
+    "latencia_s": 6.19,
+    "modelo": "gemini-3.1-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": null,
+    "titulo": "Pilgrim's, da JBS, anuncia aquisição da Walkers Deli & Sausage Company no Reino Unido",
+    "usage": {
+     "candidates_token_count": 303,
+     "prompt_token_count": 1319,
+     "total_token_count": 1622
+    },
+    "verdict_humano": "MA_DE_CONTROLADA_ATRIBUIVEL_AO_GRUPO"
+   },
+   {
+    "article_id": "61166442c0f897153eec",
+    "chave": "61166442c0f897153eec|JBS|ma|v2|r7ba.p2|gemini-3.5-flash-lite",
+    "classe_de_falha": null,
+    "company": "JBS",
+    "dimensoes": {
+     "centrality": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "MAIN",
+      "modelo": "MAIN"
+     },
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "SUBJECT",
+      "modelo": "SUBJECT"
+     },
+     "currentness": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "CURRENT",
+      "modelo": "CURRENT"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "NEW_OCCURRENCE",
+      "modelo": "NEW_OCCURRENCE"
+     },
+     "phase": {
+      "acerto": true,
+      "deterministico": "anuncio",
+      "humano": "ANNOUNCED",
+      "modelo": "ANNOUNCED"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "JBS",
+      "modelo": "JBS"
+     },
+     "transaction_object": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "COMPANY_CONTROL",
+      "modelo": "COMPANY_CONTROL"
+     }
+    },
+    "estado": "OK",
+    "family": "ma",
+    "latencia_s": 1.46,
+    "modelo": "gemini-3.5-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": null,
+    "titulo": "Pilgrim's, da JBS, anuncia aquisição da Walkers Deli & Sausage Company no Reino Unido",
+    "usage": {
+     "candidates_token_count": 301,
+     "prompt_token_count": 1319,
+     "total_token_count": 1620
+    },
+    "verdict_humano": "MA_DE_CONTROLADA_ATRIBUIVEL_AO_GRUPO"
+   },
+   {
+    "article_id": "6cf40fc7ad1d8e108226",
+    "chave": "6cf40fc7ad1d8e108226|Citigroup|ma|v2|r7ba.p2|gemini-3.1-flash-lite",
+    "classe_de_falha": null,
+    "company": "Citigroup",
+    "dimensoes": {
+     "centrality": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "MAIN",
+      "modelo": "MAIN"
+     },
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "BUYER",
+      "modelo": "BUYER"
+     },
+     "currentness": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "HISTORICAL",
+      "modelo": "HISTORICAL"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "acerto": false,
+      "deterministico": "NOT_EMITTED",
+      "humano": "HISTORICAL_CONTEXT",
+      "modelo": "FOLLOW_UP"
+     },
+     "phase": {
+      "acerto": true,
+      "deterministico": "encerramento",
+      "humano": "CONCLUDED",
+      "modelo": "CONCLUDED"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "Citigroup",
+      "modelo": "Citigroup"
+     },
+     "transaction_object": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "COMPANY_CONTROL",
+      "modelo": "COMPANY_CONTROL"
+     }
+    },
+    "estado": "OK",
+    "family": "ma",
+    "latencia_s": 3.61,
+    "modelo": "gemini-3.1-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": null,
+    "titulo": "Citigroup conclui com sucesso a aquisição da Associates First Capital Corp.",
+    "usage": {
+     "candidates_token_count": 299,
+     "prompt_token_count": 1310,
+     "total_token_count": 1609
+    },
+    "verdict_humano": "MA_REAL_MAS_HISTORICO"
+   },
+   {
+    "article_id": "6cf40fc7ad1d8e108226",
+    "chave": "6cf40fc7ad1d8e108226|Citigroup|ma|v2|r7ba.p2|gemini-3.5-flash-lite",
+    "classe_de_falha": null,
+    "company": "Citigroup",
+    "dimensoes": {
+     "centrality": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "MAIN",
+      "modelo": "MAIN"
+     },
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "BUYER",
+      "modelo": "BUYER"
+     },
+     "currentness": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "HISTORICAL",
+      "modelo": "HISTORICAL"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "acerto": false,
+      "deterministico": "NOT_EMITTED",
+      "humano": "HISTORICAL_CONTEXT",
+      "modelo": "FOLLOW_UP"
+     },
+     "phase": {
+      "acerto": true,
+      "deterministico": "encerramento",
+      "humano": "CONCLUDED",
+      "modelo": "CONCLUDED"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "Citigroup",
+      "modelo": "Citigroup"
+     },
+     "transaction_object": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "COMPANY_CONTROL",
+      "modelo": "COMPANY_CONTROL"
+     }
+    },
+    "estado": "OK",
+    "family": "ma",
+    "latencia_s": 1.82,
+    "modelo": "gemini-3.5-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": null,
+    "titulo": "Citigroup conclui com sucesso a aquisição da Associates First Capital Corp.",
+    "usage": {
+     "candidates_token_count": 336,
+     "prompt_token_count": 1310,
+     "total_token_count": 1646
+    },
+    "verdict_humano": "MA_REAL_MAS_HISTORICO"
+   },
+   {
+    "article_id": "83effbd842777700232f",
+    "chave": "83effbd842777700232f|JBS|recomendacao_negativa|v2|r7ba.p2|gemini-3.1-flash-lite",
+    "classe_de_falha": null,
+    "company": "JBS",
+    "dimensoes": {
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "SUBJECT",
+      "modelo": "SUBJECT"
+     },
+     "currentness": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "CURRENT",
+      "modelo": "CURRENT"
+     },
+     "event_asserted": {
+      "acerto": false,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "MENTIONED_ONLY"
+     },
+     "occurrence_novelty": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "NEW_OCCURRENCE",
+      "modelo": "NEW_OCCURRENCE"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "JBS",
+      "modelo": "JBS"
+     }
+    },
+    "estado": "OK",
+    "family": "recomendacao_negativa",
+    "latencia_s": 1.72,
+    "modelo": "gemini-3.1-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": true,
+    "scoreable_modelo": false,
+    "titulo": "Stephens reduz preço-alvo da JBS após resultado misto",
+    "usage": {
+     "candidates_token_count": 286,
+     "prompt_token_count": 1327,
+     "total_token_count": 1613
+    },
+    "verdict_humano": "RECOMENDACAO_NEGATIVA_CONFIRMADA"
+   },
+   {
+    "article_id": "83effbd842777700232f",
+    "chave": "83effbd842777700232f|JBS|recomendacao_negativa|v2|r7ba.p2|gemini-3.5-flash-lite",
+    "classe_de_falha": null,
+    "company": "JBS",
+    "dimensoes": {
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "SUBJECT",
+      "modelo": "SUBJECT"
+     },
+     "currentness": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "CURRENT",
+      "modelo": "CURRENT"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "NEW_OCCURRENCE",
+      "modelo": "NEW_OCCURRENCE"
+     },
+     "subject": {
+      "acerto": false,
+      "deterministico": "NOT_EMITTED",
+      "humano": "JBS",
+      "modelo": "Stephens"
+     }
+    },
+    "estado": "OK",
+    "family": "recomendacao_negativa",
+    "latencia_s": 1.72,
+    "modelo": "gemini-3.5-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": true,
+    "scoreable_modelo": true,
+    "titulo": "Stephens reduz preço-alvo da JBS após resultado misto",
+    "usage": {
+     "candidates_token_count": 310,
+     "prompt_token_count": 1327,
+     "total_token_count": 1637
+    },
+    "verdict_humano": "RECOMENDACAO_NEGATIVA_CONFIRMADA"
+   },
+   {
+    "article_id": "8f820bbc8fc89c13911b",
+    "chave": "8f820bbc8fc89c13911b|Eneva|ma|v2|r7ba.p2|gemini-3.1-flash-lite",
+    "classe_de_falha": null,
+    "company": "Eneva",
+    "dimensoes": {
+     "centrality": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "MAIN",
+      "modelo": "MAIN"
+     },
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "BUYER",
+      "modelo": "BUYER"
+     },
+     "currentness": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "CURRENT",
+      "modelo": "CURRENT"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "acerto": false,
+      "deterministico": "NOT_EMITTED",
+      "humano": "FOLLOW_UP",
+      "modelo": "NEW_OCCURRENCE"
+     },
+     "phase": {
+      "acerto": true,
+      "deterministico": "aprovacao",
+      "humano": "CONFIRMED",
+      "modelo": "CONFIRMED"
+     },
+     "related_entity": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "Atem",
+      "modelo": "Atem"
+     },
+     "relation": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "BUYER",
+      "modelo": "BUYER"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "Eneva",
+      "modelo": "Eneva"
+     },
+     "transaction_object": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "ASSET_OR_BUSINESS_UNIT",
+      "modelo": "ASSET_OR_BUSINESS_UNIT"
+     }
+    },
+    "estado": "OK",
+    "family": "ma",
+    "latencia_s": 5.68,
+    "modelo": "gemini-3.1-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": null,
+    "titulo": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva",
+    "usage": {
+     "candidates_token_count": 315,
+     "prompt_token_count": 1319,
+     "total_token_count": 1634
+    },
+    "verdict_humano": "FALSE_SCOPE"
+   },
+   {
+    "article_id": "8f820bbc8fc89c13911b",
+    "chave": "8f820bbc8fc89c13911b|Eneva|ma|v2|r7ba.p2|gemini-3.5-flash-lite",
+    "classe_de_falha": null,
+    "company": "Eneva",
+    "dimensoes": {
+     "centrality": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "MAIN",
+      "modelo": "MAIN"
+     },
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "BUYER",
+      "modelo": "BUYER"
+     },
+     "currentness": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "CURRENT",
+      "modelo": "CURRENT"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "acerto": false,
+      "deterministico": "NOT_EMITTED",
+      "humano": "FOLLOW_UP",
+      "modelo": "NEW_OCCURRENCE"
+     },
+     "phase": {
+      "acerto": true,
+      "deterministico": "aprovacao",
+      "humano": "CONFIRMED",
+      "modelo": "CONFIRMED"
+     },
+     "related_entity": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "Atem",
+      "modelo": "Atem"
+     },
+     "relation": {
+      "acerto": false,
+      "deterministico": "NOT_EMITTED",
+      "humano": "BUYER",
+      "modelo": "acquires stake from"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "Eneva",
+      "modelo": "Eneva"
+     },
+     "transaction_object": {
+      "acerto": false,
+      "deterministico": "NOT_EMITTED",
+      "humano": "ASSET_OR_BUSINESS_UNIT",
+      "modelo": "EQUITY_STAKE"
+     }
+    },
+    "estado": "OK",
+    "family": "ma",
+    "latencia_s": 1.86,
+    "modelo": "gemini-3.5-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": null,
+    "titulo": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva",
+    "usage": {
+     "candidates_token_count": 323,
+     "prompt_token_count": 1319,
+     "total_token_count": 1642
+    },
+    "verdict_humano": "FALSE_SCOPE"
+   },
+   {
+    "article_id": "bf449889bcebca2a7d7a",
+    "chave": "bf449889bcebca2a7d7a|Lojas Renner|recomendacao_negativa|v2|r7ba.p2|gemini-3.1-flash-lite",
+    "classe_de_falha": null,
+    "company": "Lojas Renner",
+    "dimensoes": {
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "SUBJECT",
+      "modelo": "SUBJECT"
+     },
+     "currentness": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "CURRENT",
+      "modelo": "CURRENT"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "NEW_OCCURRENCE",
+      "modelo": "NEW_OCCURRENCE"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "Lojas Renner",
+      "modelo": "Lojas Renner"
+     }
+    },
+    "estado": "OK",
+    "family": "recomendacao_negativa",
+    "latencia_s": 1.75,
+    "modelo": "gemini-3.1-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": true,
+    "scoreable_modelo": true,
+    "titulo": "Lojas Renner (LREN3): Citi corta preço-alvo após revisão do guidance; ações caem",
+    "usage": {
+     "candidates_token_count": 291,
+     "prompt_token_count": 1326,
+     "total_token_count": 1617
+    },
+    "verdict_humano": "RECOMENDACAO_NEGATIVA_CONFIRMADA"
+   },
+   {
+    "article_id": "bf449889bcebca2a7d7a",
+    "chave": "bf449889bcebca2a7d7a|Lojas Renner|recomendacao_negativa|v2|r7ba.p2|gemini-3.5-flash-lite",
+    "classe_de_falha": null,
+    "company": "Lojas Renner",
+    "dimensoes": {
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "SUBJECT",
+      "modelo": "SUBJECT"
+     },
+     "currentness": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "CURRENT",
+      "modelo": "CURRENT"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "NEW_OCCURRENCE",
+      "modelo": "NEW_OCCURRENCE"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "Lojas Renner",
+      "modelo": "Lojas Renner"
+     }
+    },
+    "estado": "OK",
+    "family": "recomendacao_negativa",
+    "latencia_s": 1.49,
+    "modelo": "gemini-3.5-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": true,
+    "scoreable_modelo": true,
+    "titulo": "Lojas Renner (LREN3): Citi corta preço-alvo após revisão do guidance; ações caem",
+    "usage": {
+     "candidates_token_count": 260,
+     "prompt_token_count": 1326,
+     "total_token_count": 1586
+    },
+    "verdict_humano": "RECOMENDACAO_NEGATIVA_CONFIRMADA"
+   },
+   {
+    "article_id": "d566e840bd3c1d4f43bc",
+    "chave": "d566e840bd3c1d4f43bc|Citigroup|ma|v2|r7ba.p2|gemini-3.1-flash-lite",
+    "classe_de_falha": null,
+    "company": "Citigroup",
+    "dimensoes": {
+     "centrality": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "MAIN",
+      "modelo": "MAIN"
+     },
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "BUYER",
+      "modelo": "BUYER"
+     },
+     "currentness": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "CURRENT",
+      "modelo": "CURRENT"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "NEW_OCCURRENCE",
+      "modelo": "NEW_OCCURRENCE"
+     },
+     "phase": {
+      "acerto": false,
+      "deterministico": "aprovacao",
+      "humano": "ANNOUNCED",
+      "modelo": "AGREED"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "Citigroup",
+      "modelo": "Citigroup"
+     },
+     "transaction_object": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "COMPANY_CONTROL",
+      "modelo": "COMPANY_CONTROL"
+     }
+    },
+    "estado": "OK",
+    "family": "ma",
+    "latencia_s": 2.76,
+    "modelo": "gemini-3.1-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": null,
+    "titulo": "Acordo de Aquisição da Kard pelo Citigroup: Um Novo Motor de Crescimento para os Cartões dos EUA?",
+    "usage": {
+     "candidates_token_count": 294,
+     "prompt_token_count": 1319,
+     "total_token_count": 1613
+    },
+    "verdict_humano": "MA_CONFIRMADO_NOVO"
+   },
+   {
+    "article_id": "d566e840bd3c1d4f43bc",
+    "chave": "d566e840bd3c1d4f43bc|Citigroup|ma|v2|r7ba.p2|gemini-3.5-flash-lite",
+    "classe_de_falha": null,
+    "company": "Citigroup",
+    "dimensoes": {
+     "centrality": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "MAIN",
+      "modelo": "MAIN"
+     },
+     "company_role": {
+      "acerto": true,
+      "deterministico": "SUBJECT",
+      "humano": "BUYER",
+      "modelo": "BUYER"
+     },
+     "currentness": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "CURRENT",
+      "modelo": "CURRENT"
+     },
+     "event_asserted": {
+      "acerto": true,
+      "deterministico": "ASSERTED",
+      "humano": "ASSERTED",
+      "modelo": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "NEW_OCCURRENCE",
+      "modelo": "NEW_OCCURRENCE"
+     },
+     "phase": {
+      "acerto": false,
+      "deterministico": "aprovacao",
+      "humano": "ANNOUNCED",
+      "modelo": "AGREED"
+     },
+     "subject": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "Citigroup",
+      "modelo": "Citigroup"
+     },
+     "transaction_object": {
+      "acerto": true,
+      "deterministico": "NOT_EMITTED",
+      "humano": "COMPANY_CONTROL",
+      "modelo": "COMPANY_CONTROL"
+     }
+    },
+    "estado": "OK",
+    "family": "ma",
+    "latencia_s": 1.32,
+    "modelo": "gemini-3.5-flash-lite",
+    "scoreable_det": true,
+    "scoreable_humano": null,
+    "titulo": "Acordo de Aquisição da Kard pelo Citigroup: Um Novo Motor de Crescimento para os Cartões dos EUA?",
+    "usage": {
+     "candidates_token_count": 228,
+     "prompt_token_count": 1319,
+     "total_token_count": 1547
+    },
+    "verdict_humano": "MA_CONFIRMADO_NOVO"
+   }
+  ],
+  "observacoes_avaliadas": 22,
+  "por_modelo": {
+   "DETERMINISTICO": {
+    "company_role": {
+     "acertos": 5,
+     "avaliaveis": 10,
+     "erros": 5
+    },
+    "event_asserted": {
+     "acertos": 9,
+     "avaliaveis": 11,
+     "erros": 2
+    },
+    "phase": {
+     "avaliaveis": 4,
+     "erros": 4
+    },
+    "scoreable": {
+     "acertos": 2,
+     "avaliaveis": 5,
+     "erros": 3
+    }
+   },
+   "gemini-3.1-flash-lite": {
+    "centrality": {
+     "acertos": 6,
+     "avaliaveis": 6
+    },
+    "company_role": {
+     "acertos": 10,
+     "avaliaveis": 11,
+     "erros": 1
+    },
+    "currentness": {
+     "acertos": 8,
+     "avaliaveis": 8
+    },
+    "event_asserted": {
+     "acertos": 10,
+     "avaliaveis": 11,
+     "erros": 1
+    },
+    "occurrence_novelty": {
+     "acertos": 9,
+     "avaliaveis": 11,
+     "erros": 2
+    },
+    "phase": {
+     "acertos": 4,
+     "avaliaveis": 6,
+     "erros": 2
+    },
+    "related_entity": {
+     "acertos": 2,
+     "avaliaveis": 2
+    },
+    "relation": {
+     "acertos": 2,
+     "avaliaveis": 2
+    },
+    "scoreable": {
+     "acertos": 3,
+     "avaliaveis": 5,
+     "erros": 2
+    },
+    "subject": {
+     "acertos": 11,
+     "avaliaveis": 11
+    },
+    "transaction_object": {
+     "acertos": 5,
+     "avaliaveis": 6,
+     "erros": 1
+    }
+   },
+   "gemini-3.5-flash-lite": {
+    "centrality": {
+     "acertos": 5,
+     "avaliaveis": 6,
+     "erros": 1
+    },
+    "company_role": {
+     "acertos": 9,
+     "avaliaveis": 11,
+     "erros": 2
+    },
+    "currentness": {
+     "acertos": 8,
+     "avaliaveis": 8
+    },
+    "event_asserted": {
+     "acertos": 9,
+     "avaliaveis": 11,
+     "erros": 2
+    },
+    "occurrence_novelty": {
+     "acertos": 8,
+     "avaliaveis": 11,
+     "erros": 3
+    },
+    "phase": {
+     "acertos": 4,
+     "avaliaveis": 6,
+     "erros": 2
+    },
+    "related_entity": {
+     "acertos": 2,
+     "avaliaveis": 2
+    },
+    "relation": {
+     "avaliaveis": 2,
+     "erros": 2
+    },
+    "scoreable": {
+     "acertos": 3,
+     "avaliaveis": 5,
+     "erros": 2
+    },
+    "subject": {
+     "acertos": 9,
+     "avaliaveis": 11,
+     "erros": 2
+    },
+    "transaction_object": {
+     "acertos": 4,
+     "avaliaveis": 6,
+     "erros": 2
+    }
+   }
+  }
+ },
+ "direcional": {
+  "authority": "EVALUATION ONLY",
+  "cobertura": null,
+  "executado": false,
+  "motivo": "nenhuma resposta direcional: o contrato `v2` nao emite campo de direcao e nao ha credencial de modelo neste ambiente"
+ },
+ "evidencia": {
+  "authority": "EVALUATION ONLY",
+  "por_modelo": {
+   "gemini-3.1-flash-lite": {
+    "FIELD_SUPPORT_PARTIALLY_SUPPORTED": 1,
+    "GROUNDED": 20,
+    "PARTIALLY_GROUNDED": 4
+   },
+   "gemini-3.5-flash-lite": {
+    "FIELD_SUPPORT_INSUFFICIENT_INPUT": 1,
+    "FIELD_SUPPORT_PARTIALLY_SUPPORTED": 2,
+    "GROUNDED": 22,
+    "PARTIALLY_GROUNDED": 2
+   }
+  }
+ },
+ "gaps": {
+  "MODEL_PROMPT_CEO_ASSERTION_GAP": {
+   "casos": [
+    {
+     "company": "JBS",
+     "family": "troca_ceo",
+     "modelos_que_erram": [
+      "gemini-3.5-flash-lite"
+     ],
+     "titulo": "JBS busca recuperar margens nos EUA com gado mexicano, e novo CEO promete contin"
+    }
+   ],
+   "estado": "SINGLE_EXAMPLE_NOT_ENOUGH",
+   "n": 1
+  },
+  "MODEL_PROMPT_MATERIALITY_DIRECTION_GAP": {
+   "casos": [],
+   "estado": "NOT_MEASURABLE",
+   "motivo": "o contrato `v2` nao emite direcao; medir exigiria chamadas novas sob contrato novo",
+   "n": 0
+  },
+  "MODEL_PROMPT_PERSON_COMPANY_GAP": {
+   "casos": [
+    {
+     "company": "Banco do Brasil",
+     "family": "investigacao_regulatoria",
+     "modelos_que_erram": [
+      "gemini-3.1-flash-lite",
+      "gemini-3.5-flash-lite"
+     ],
+     "titulo": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre açõ"
+    }
+   ],
+   "estado": "SINGLE_EXAMPLE_NOT_ENOUGH",
+   "n": 1,
+   "regra": "§36 exige ao menos 2 exemplos humanos com o MESMO padrao causal; um exemplo e anedota"
+  },
+  "authority": "EVALUATION ONLY"
+ },
+ "gatilho_de_revisao": {
+  "authority": "EVALUATION ONLY",
+  "por_modelo": {
+   "gemini-3.1-flash-lite": {
+    "disagreements_surfaced": 3,
+    "erros_reais_do_deterministico_encontrados": [
+     "JBS/troca_ceo",
+     "Tok&Stok/recuperacao_judicial"
+    ],
+    "falsos_alarmes": [
+     "JBS/recomendacao_negativa"
+    ],
+    "precisao": 0.6667
+   },
+   "gemini-3.5-flash-lite": {
+    "disagreements_surfaced": 1,
+    "erros_reais_do_deterministico_encontrados": [
+     "Tok&Stok/recuperacao_judicial"
+    ],
+    "falsos_alarmes": [],
+    "precisao": 1.0
+   }
+  }
+ },
+ "manifesto": {
+  "_meta": {
+   "bench_version": "model.benchmark.v2",
+   "output_label": "EVALUATION ONLY",
+   "production_occurrence_authority": "NONE",
+   "production_score_authority": "NONE",
+   "semantic_authority": "NONE",
+   "write_authority": "NONE"
+  },
+  "batch_v1": {
+   "CLEAR": 25,
+   "POLICY_PENDING": 1,
+   "UNDETERMINED": 1,
+   "artigos": [
+    "19825b59fb431f80e429",
+    "1c5ca7299e1619111087",
+    "1cc87309f14b40640c31",
+    "2d16863bb425f80dc9c3",
+    "46e5fc139c31f2689a79",
+    "53340f861717b39cbca3",
+    "56921be12872b108b53b",
+    "593de7c744ef8e7c6f61",
+    "601562a812028d796edb",
+    "6bc05e51969c6be1e11f",
+    "6c6de2598d9b42a7c7c5",
+    "6f4ae9a2a77fb2678d11",
+    "86474c91fba14d4e0cb3",
+    "9d0d1be36f6921025838",
+    "9eb803c2493e648262ec",
+    "a3de08f211694408beb1",
+    "b1eea0e7acee8d92a271",
+    "b1fc685f3f7d47d63a2c",
+    "c399aac548461616c3f2",
+    "cad44d85917e8bb50e46",
+    "d481295fca29979d04cb",
+    "d6f6fd5d03b89dffb3f6",
+    "eea8fb0b2e52f38f04b8",
+    "f9250a2285305bbda604"
+   ],
+   "casos": 24,
+   "memberships": 27,
+   "papel": "DEVELOPMENT_SET",
+   "por_status": {
+    "CLEAR": 25,
+    "POLICY_PENDING": 1,
+    "UNDETERMINED": 1
+   }
+  },
+  "contrato_v2": {
+   "artigos_nao_revisados": [
+    "102869a4560c662f6005",
+    "1250147b9068772a93fb",
+    "187d4b1829b0d5a8db4d",
+    "2a609d270c0ff23b4629",
+    "4b07ef4534cf878be593",
+    "7334950058186f17f96c",
+    "82d4ee2f88f8b8f932a5",
+    "9107879a6502b164d2f9",
+    "9307e232d8826f80d230",
+    "9617d332535c1b3491da",
+    "ac0be217149db21ae564",
+    "afc57f77f7524d931777",
+    "c8b94e33ce070747ba16"
+   ],
+   "artigos_observados": [
+    "061eb3b6f37708a1986e",
+    "102869a4560c662f6005",
+    "10e297f95c5954630150",
+    "1250147b9068772a93fb",
+    "187d4b1829b0d5a8db4d",
+    "201b91aa6b3c1d9e780c",
+    "2a609d270c0ff23b4629",
+    "2e440c297fa646ce331f",
+    "4b07ef4534cf878be593",
+    "5d05e84444486491a30b",
+    "61166442c0f897153eec",
+    "6cf40fc7ad1d8e108226",
+    "7334950058186f17f96c",
+    "82d4ee2f88f8b8f932a5",
+    "83effbd842777700232f",
+    "8f820bbc8fc89c13911b",
+    "9107879a6502b164d2f9",
+    "9307e232d8826f80d230",
+    "9617d332535c1b3491da",
+    "ac0be217149db21ae564",
+    "afc57f77f7524d931777",
+    "bf449889bcebca2a7d7a",
+    "c8b94e33ce070747ba16",
+    "d566e840bd3c1d4f43bc"
+   ],
+   "artigos_revisados": [
+    "061eb3b6f37708a1986e",
+    "10e297f95c5954630150",
+    "201b91aa6b3c1d9e780c",
+    "2e440c297fa646ce331f",
+    "5d05e84444486491a30b",
+    "61166442c0f897153eec",
+    "6cf40fc7ad1d8e108226",
+    "83effbd842777700232f",
+    "8f820bbc8fc89c13911b",
+    "bf449889bcebca2a7d7a",
+    "d566e840bd3c1d4f43bc"
+   ],
+   "contratos": [
+    "v2"
+   ],
+   "modelos": [
+    "gemini-3.1-flash-lite",
+    "gemini-3.5-flash-lite"
+   ],
+   "observacoes": 48,
+   "observacoes_revisadas": 22,
+   "papel": "PROSPECTIVE_VALIDATION_SET",
+   "prompts": [
+    "r7ba.p2"
+   ]
+  },
+  "freeze": {
+   "contract_freeze_commit": "7526667d36e0266fc01f9f15af2aea1aa92404ac",
+   "contract_freeze_iso": "2026-08-14T12:06:33Z",
+   "shadow_version": "sem.v2.shadow.v1"
+  },
+  "higiene": "Batch V1 e Contrato V2 sao DISJUNTOS. V1 e conjunto de DESENVOLVIMENTO (desenhou guardas deterministicas); o V2 revisado e VALIDACAO prospectiva. Reportar os dois juntos apagaria a distincao.",
+  "manifesto_hash": "0ab22591f1799e44",
+  "sobreposicao_v1_v2": []
+ },
+ "manifesto_direcional": {
+  "_meta": {
+   "bench_version": "model.benchmark.v2",
+   "output_label": "EVALUATION ONLY",
+   "production_occurrence_authority": "NONE",
+   "production_score_authority": "NONE",
+   "semantic_authority": "NONE",
+   "write_authority": "NONE"
+  },
+  "authority": "EVALUATION ONLY",
+  "casos": [
+   {
+    "anchor_date": "2026-07-24",
+    "canonical_object": "olivos",
+    "classe_de_sinal": "ADVERSE",
+    "company": "Yobel",
+    "direcao_esperada": "ADVERSE",
+    "family": "disrupcao_operacional",
+    "membros": [
+     "959b80b7cb9e175b3286",
+     "c399aac548461616c3f2",
+     "26a30ef2bdd2804959b5",
+     "b7ff3daac15a6266f4a9",
+     "17f5c76161edece69f58",
+     "b074871156df39165711",
+     "65f27c29364b4c92160a",
+     "b6de353e1ecc7fbb09e0",
+     "91f7e9e225f3bcc3c436",
+     "ee61185de920dfc8ca90"
+    ],
+    "n_membros": 10,
+    "occurrence_id": "disrupcao_operacional:yobel:27e09e6d30c7",
+    "phase_por_membro": [
+     "INICIACAO",
+     "INICIACAO",
+     "INICIACAO",
+     "INICIACAO",
+     "INICIACAO",
+     "INICIACAO",
+     "UNKNOWN",
+     "INICIACAO",
+     "INICIACAO",
+     "INICIACAO"
+    ],
+    "regra_tier2": null,
+    "representante": "959b80b7cb9e175b3286",
+    "tier": "TIER1_EXPLICIT_DIRECTIONAL_TRUTH",
+    "titulo_representante": "Incendio en Los Olivos: fuego en almacen de Yobel no se extingue, el techo colapsó y bomberos hablan de tres días más de batalla"
+   },
+   {
+    "anchor_date": "2026-06-20",
+    "canonical_object": "arequipa",
+    "classe_de_sinal": "ADVERSE",
+    "company": "Yura",
+    "direcao_esperada": "ADVERSE",
+    "family": "disrupcao_operacional",
+    "membros": [
+     "1836d92ffeba477e2a1b",
+     "54af0176f81280845747",
+     "ed7ed15d73a32ab23449",
+     "dc32f5d61da768bcbf00",
+     "c5886057a08dfa6e9775"
+    ],
+    "n_membros": 5,
+    "occurrence_id": "disrupcao_operacional:yura:5f9f67483b79",
+    "phase_por_membro": [
+     "INICIACAO",
+     "INICIACAO",
+     "INICIACAO",
+     "INICIACAO",
+     "INICIACAO"
+    ],
+    "regra_tier2": null,
+    "representante": "54af0176f81280845747",
+    "tier": "TIER1_EXPLICIT_DIRECTIONAL_TRUTH",
+    "titulo_representante": "🔴🔵 #ElInformativoDeExitosa📺📺 | Un incendio se registró en una fábrica de cementos en Arequipa y se prolongó por más de tres horas, generando alarma en"
+   },
+   {
+    "anchor_date": "2026-06-16",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Bradesco",
+    "direcao_esperada": null,
+    "family": "emissao_cotas",
+    "membros": [
+     "56921be12872b108b53b"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "emissao_cotas:bradesco:a0c211aa8a58",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "56921be12872b108b53b",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "CVM suspende emissão de cotas de FI-Infra do Bradesco por irregularidades na oferta"
+   },
+   {
+    "anchor_date": "2026-06-22",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Axia Energia",
+    "direcao_esperada": null,
+    "family": "emissao_divida",
+    "membros": [
+     "c374c3eb9ff2454ded2b"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "emissao_divida:axia-energia:b391da36e0bd",
+    "phase_por_membro": [
+     "UNKNOWN"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "c374c3eb9ff2454ded2b",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "[Fato Relevante] Axia Energia: 9ª Emissão de Debêntures"
+   },
+   {
+    "anchor_date": "2026-06-11",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Cemig",
+    "direcao_esperada": null,
+    "family": "emissao_divida",
+    "membros": [
+     "bd3c1bccdef34ba040d8"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "emissao_divida:cemig:72bc8066e3d8",
+    "phase_por_membro": [
+     "MATERIAL"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "bd3c1bccdef34ba040d8",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Cemig liquida 12ª emissão de debêntures de R$ 2 bi"
+   },
+   {
+    "anchor_date": "2026-07-10",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Copel",
+    "direcao_esperada": null,
+    "family": "emissao_divida",
+    "membros": [
+     "593de7c744ef8e7c6f61"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "emissao_divida:copel:cc910d141812",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "593de7c744ef8e7c6f61",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Fitch: AAA à proposta de 12ª emissão de debêntures da Copel Dis"
+   },
+   {
+    "anchor_date": "2026-07-10",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Energisa",
+    "direcao_esperada": null,
+    "family": "emissao_divida",
+    "membros": [
+     "a6123dd1a4f9d3ba95c9",
+     "b72fd8c73939729887ac"
+    ],
+    "n_membros": 2,
+    "occurrence_id": "emissao_divida:energisa:a8aae51785c0",
+    "phase_por_membro": [
+     "INICIACAO",
+     "UNKNOWN"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "a6123dd1a4f9d3ba95c9",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Energisa Mato Grosso (ENMT3) anuncia emissão de debêntures no valor de R$ 350 milhões"
+   },
+   {
+    "anchor_date": "2026-07-06",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Engie Brasil",
+    "direcao_esperada": null,
+    "family": "emissao_divida",
+    "membros": [
+     "2134325dc125e327b6ac"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "emissao_divida:engie-brasil:f64ef0b0955b",
+    "phase_por_membro": [
+     "UNKNOWN"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "2134325dc125e327b6ac",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "[Fato Relevante] Engie Brasil: Emissão de Debêntures (17ª Emissão)"
+   },
+   {
+    "anchor_date": "2026-07-21",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "JBS",
+    "direcao_esperada": null,
+    "family": "emissao_divida",
+    "membros": [
+     "53340f861717b39cbca3"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "emissao_divida:jbs:e25e2ea627d2",
+    "phase_por_membro": [
+     "UNKNOWN"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "53340f861717b39cbca3",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "JBS capta R$ 400 mi para operação de biodiesel; cadeia do agro é acompanhada pelo SNFZ11"
+   },
+   {
+    "anchor_date": "2026-05-31",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Localiza",
+    "direcao_esperada": null,
+    "family": "emissao_divida",
+    "membros": [
+     "79868a9f33e06d495fe9",
+     "065839a8b22a188d180d"
+    ],
+    "n_membros": 2,
+    "occurrence_id": "emissao_divida:localiza:c8f86f60a26d",
+    "phase_por_membro": [
+     "ETAPA",
+     "UNKNOWN"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "79868a9f33e06d495fe9",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Localiza Fleet aprova emissão bilionária de debêntures"
+   },
+   {
+    "anchor_date": "2026-05-29",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Rumo",
+    "direcao_esperada": null,
+    "family": "emissao_divida",
+    "membros": [
+     "84194521fbebb99abb66"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "emissao_divida:rumo:2b12cf78b79e",
+    "phase_por_membro": [
+     "UNKNOWN"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "84194521fbebb99abb66",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Rumo (RAIL3) fará a 1ª emissão de debêntures no valor de R$ 1,5 bilhão"
+   },
+   {
+    "anchor_date": "2026-07-07",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Aegea Saneamento",
+    "direcao_esperada": null,
+    "family": "follow_on",
+    "membros": [
+     "537c4ce4185b33e6744e",
+     "d6f6fd5d03b89dffb3f6"
+    ],
+    "n_membros": 2,
+    "occurrence_id": "follow_on:aegea-saneamento:f8ef64a7fbaf",
+    "phase_por_membro": [
+     "UNKNOWN",
+     "ETAPA"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "d6f6fd5d03b89dffb3f6",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Aegea aprova aumento de capital e Itaúsa (ITSA4) pode aportar até R$ 1,5 bilhão"
+   },
+   {
+    "anchor_date": "2026-07-08",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "BTG Pactual",
+    "direcao_esperada": null,
+    "family": "follow_on",
+    "membros": [
+     "1250147b9068772a93fb"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "follow_on:btg-pactual:ce0c6d877eea",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "1250147b9068772a93fb",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Brava (BRAV3) pode subir 10% com avanço de oferta de ações, diz BTG"
+   },
+   {
+    "anchor_date": "2026-05-29",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Caixa Seguridade",
+    "direcao_esperada": null,
+    "family": "follow_on",
+    "membros": [
+     "ad61a8bec948bf2ae190"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "follow_on:caixa-seguridade:a5f3b16db806",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "ad61a8bec948bf2ae190",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Caixa Seguridade (CXSE3) movimenta R$ 1,2 bilhão em oferta de ações; veja os detalhes"
+   },
+   {
+    "anchor_date": "2026-08-10",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Engie Brasil",
+    "direcao_esperada": null,
+    "family": "follow_on",
+    "membros": [
+     "dda53221e83a3de9afc8",
+     "2a10cde17d27bd2a91af",
+     "b8e23a79ffb6a23f5da5",
+     "29b5ebdbf1a391d7557a",
+     "cf4b548d7368b54456af",
+     "3aea1813289e41f7318d",
+     "a3de08f211694408beb1",
+     "f3125011635de116cfcb",
+     "4b07ef4534cf878be593"
+    ],
+    "n_membros": 9,
+    "occurrence_id": "follow_on:engie-brasil:4fbf0fbd9b04",
+    "phase_por_membro": [
+     "INICIACAO",
+     "INICIACAO",
+     "UNKNOWN",
+     "ETAPA",
+     "INICIACAO",
+     "UNKNOWN",
+     "ACOMPANHAMENTO",
+     "MATERIAL",
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "cf4b548d7368b54456af",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Follow-on: Engie Brasil realiza oferta subsequente de ações na B3"
+   },
+   {
+    "anchor_date": "2026-07-15",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "ISA Energia Brasil",
+    "direcao_esperada": null,
+    "family": "follow_on",
+    "membros": [
+     "ac62622bb62219b21145",
+     "d7e81800252d44d336fb",
+     "2d16863bb425f80dc9c3"
+    ],
+    "n_membros": 3,
+    "occurrence_id": "follow_on:isa-energia-brasil:882b8058d25d",
+    "phase_por_membro": [
+     "INICIACAO",
+     "ETAPA",
+     "ACOMPANHAMENTO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "ac62622bb62219b21145",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "ISA Energia lança oferta subsequente de ações que pode alcançar R$ 1,3 bilhão"
+   },
+   {
+    "anchor_date": "2026-07-29",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "PRIO",
+    "direcao_esperada": null,
+    "family": "follow_on",
+    "membros": [
+     "46e5fc139c31f2689a79"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "follow_on:prio:abeb7dfa9421",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "46e5fc139c31f2689a79",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "FATO RELEVANTE - AUMENTO DE CAPITAL SOCIAL POR EXERCÍCIO DE OPÇÕES DE COMPRA DE AÇÕES"
+   },
+   {
+    "anchor_date": "2026-08-06",
+    "canonical_object": "",
+    "classe_de_sinal": "ADVERSE",
+    "company": "Lojas Renner",
+    "direcao_esperada": "ADVERSE",
+    "family": "guidance_negativo",
+    "membros": [
+     "73015abfb4cfc92815b0"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "guidance_negativo:lojas-renner:a48efc5f2cad",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": null,
+    "representante": "73015abfb4cfc92815b0",
+    "tier": "TIER1_EXPLICIT_DIRECTIONAL_TRUTH",
+    "titulo_representante": "Lojas Renner reduz guidance e lucro fica estável em R$ 405 mi"
+   },
+   {
+    "anchor_date": "2026-06-25",
+    "canonical_object": "americanas|fraude|itau|santander",
+    "classe_de_sinal": "ADVERSE",
+    "company": "Bradesco",
+    "direcao_esperada": "ADVERSE",
+    "family": "investigacao_regulatoria",
+    "membros": [
+     "f9250a2285305bbda604"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "investigacao_regulatoria:bradesco:784c1dc11677",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": null,
+    "representante": "f9250a2285305bbda604",
+    "tier": "TIER1_EXPLICIT_DIRECTIONAL_TRUTH",
+    "titulo_representante": "Fraude nas Americanas: executivos de Itaú, Bradesco e Santander são alvo de buscas"
+   },
+   {
+    "anchor_date": "2026-06-25",
+    "canonical_object": "americanas|bradesco|fraude|santander",
+    "classe_de_sinal": "ADVERSE",
+    "company": "Itaú Unibanco",
+    "direcao_esperada": "ADVERSE",
+    "family": "investigacao_regulatoria",
+    "membros": [
+     "f9250a2285305bbda604"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "investigacao_regulatoria:itau-unibanco:98bb602a60e3",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": null,
+    "representante": "f9250a2285305bbda604",
+    "tier": "TIER1_EXPLICIT_DIRECTIONAL_TRUTH",
+    "titulo_representante": "Fraude nas Americanas: executivos de Itaú, Bradesco e Santander são alvo de buscas"
+   },
+   {
+    "anchor_date": "2026-06-25",
+    "canonical_object": "americanas|bradesco|fraude|itau",
+    "classe_de_sinal": "ADVERSE",
+    "company": "Santander Brasil",
+    "direcao_esperada": "ADVERSE",
+    "family": "investigacao_regulatoria",
+    "membros": [
+     "f9250a2285305bbda604"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "investigacao_regulatoria:santander-brasil:3ac2e7f89639",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": null,
+    "representante": "f9250a2285305bbda604",
+    "tier": "TIER1_EXPLICIT_DIRECTIONAL_TRUTH",
+    "titulo_representante": "Fraude nas Americanas: executivos de Itaú, Bradesco e Santander são alvo de buscas"
+   },
+   {
+    "anchor_date": "2026-07-15",
+    "canonical_object": "",
+    "classe_de_sinal": "ADVERSE",
+    "company": "Vale",
+    "direcao_esperada": "ADVERSE",
+    "family": "investigacao_regulatoria",
+    "membros": [
+     "7c9ff9161799290c2e41"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "investigacao_regulatoria:vale:9efc4624aa1d",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": null,
+    "representante": "7c9ff9161799290c2e41",
+    "tier": "TIER1_EXPLICIT_DIRECTIONAL_TRUTH",
+    "titulo_representante": "Vale elege presidente interino do conselho em meio à investigação da CVM"
+   },
+   {
+    "anchor_date": "2026-07-22",
+    "canonical_object": "france",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Albioma",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "b9a6b1c4cc1fd0c621c2"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:albioma:c1d6d49ca1da",
+    "phase_por_membro": [
+     "UNKNOWN"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "b9a6b1c4cc1fd0c621c2",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Albioma fait l’acquisition d’un portefeuille photovoltaïque de 26 MW en France hexagonale"
+   },
+   {
+    "anchor_date": "2026-06-12",
+    "canonical_object": "and|focus|puts|scrutiny|synergies|valuation",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Baker Hughes",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "193e0310eb150b3618e2"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:baker-hughes:41159ba6eee6",
+    "phase_por_membro": [
+     "ETAPA"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "193e0310eb150b3618e2",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "EU Scrutiny Puts Baker Hughes Acquisition Synergies And Valuation In Focus"
+   },
+   {
+    "anchor_date": "2026-07-14",
+    "canonical_object": "hsbc",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "BTG Pactual",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "1218f389448286416929",
+     "426956517afd2bcf7b24"
+    ],
+    "n_membros": 2,
+    "occurrence_id": "ma:btg-pactual:f7906b2da237",
+    "phase_por_membro": [
+     "ETAPA",
+     "MATERIAL"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "426956517afd2bcf7b24",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "BTG conclui aquisição do HSBC Uruguai e inicia operações no país"
+   },
+   {
+    "anchor_date": "2026-05-28",
+    "canonical_object": "and|card|discover|economics|merger|migration|one|payments|reshapes|story",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Capital One Financial",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "f2118b58b49155e0a83c",
+     "1c5ca7299e1619111087",
+     "2a609d270c0ff23b4629",
+     "102869a4560c662f6005"
+    ],
+    "n_membros": 4,
+    "occurrence_id": "ma:capital-one-financial:6bff594590a1",
+    "phase_por_membro": [
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "f2118b58b49155e0a83c",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Capital One’s Discover Card Migration Reshapes Payments Economics And Merger Story"
+   },
+   {
+    "anchor_date": "2026-06-05",
+    "canonical_object": "gerais|minas",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Cemig",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "6f66f3af2ce3063fd2b1"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:cemig:5b2a5a8c6195",
+    "phase_por_membro": [
+     "MATERIAL"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "6f66f3af2ce3063fd2b1",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Cemig SIM conclui aquisição de 11 UFV em Minas Gerais"
+   },
+   {
+    "anchor_date": "2026-08-14",
+    "canonical_object": "cartoes|crescimento|kard|motor",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Citigroup",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "d566e840bd3c1d4f43bc"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:citigroup:2c0cbe265569",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "d566e840bd3c1d4f43bc",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Acordo de Aquisição da Kard pelo Citigroup: Um Novo Motor de Crescimento para os Cartões dos EUA?"
+   },
+   {
+    "anchor_date": "2026-07-16",
+    "canonical_object": "brava|energia",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Ecopetrol",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "1109a16f61ab09917508"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:ecopetrol:9426ae8ccbcb",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "1109a16f61ab09917508",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Brava Energia retoma oferta de aquisição de controle pela Ecopetrol"
+   },
+   {
+    "anchor_date": "2026-07-01",
+    "canonical_object": "air|mexico",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Embraer",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "118c79d7fb056e16a4d9"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:embraer:c5d80bb4f32b",
+    "phase_por_membro": [
+     "MATERIAL"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "118c79d7fb056e16a4d9",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Embraer conclui aquisição de participação restante na EZ Air México"
+   },
+   {
+    "anchor_date": "2026-08-11",
+    "canonical_object": "atem|japiim",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Eneva",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "8f820bbc8fc89c13911b"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:eneva:3036a8834566",
+    "phase_por_membro": [
+     "ETAPA"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "8f820bbc8fc89c13911b",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva"
+   },
+   {
+    "anchor_date": "2026-06-26",
+    "canonical_object": "jirau",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Engie Brasil",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "cf96de6347d14586363d",
+     "a3761ebe8c2986c7a71b",
+     "a3761ebe8c2986c7a71b",
+     "5e88e0e6053e8c10ce47"
+    ],
+    "n_membros": 4,
+    "occurrence_id": "ma:engie-brasil:da7dfc6ae14c",
+    "phase_por_membro": [
+     "INICIACAO",
+     "UNKNOWN",
+     "UNKNOWN",
+     "ETAPA"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "cf96de6347d14586363d",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Engie Brasil convoca AGE para decidir aquisição de participação em Jirau"
+   },
+   {
+    "anchor_date": "2026-07-24",
+    "canonical_object": "another",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "EQT Corporation",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "a18b8632207bed1c6e6d"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:eqt-corporation:3efd87863a0d",
+    "phase_por_membro": [
+     "UNKNOWN"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "a18b8632207bed1c6e6d",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "EQT Corporation: Another Acquisition"
+   },
+   {
+    "anchor_date": "2026-06-01",
+    "canonical_object": "informatiq",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Halliburton",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "9309390a50d8a1e33150"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:halliburton:e6a02ddb127a",
+    "phase_por_membro": [
+     "UNKNOWN"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "9309390a50d8a1e33150",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Halliburton Expands Digital Capabilities With Acquisition of InformatiQ"
+   },
+   {
+    "anchor_date": "2026-07-23",
+    "canonical_object": "oma",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "JBS",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "f11950284cc8d9a152f5"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:jbs:0a6cde56d6ff",
+    "phase_por_membro": [
+     "UNKNOWN"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "f11950284cc8d9a152f5",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "JBS mira expansão global com listagem nos EUA e aquisição em Omã"
+   },
+   {
+    "anchor_date": "2026-05-27",
+    "canonical_object": "dimon|jamie",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "JPMorgan Chase",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "76c0df3c8bf105b9f8ec"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:jpmorgan-chase:7277e1b8478d",
+    "phase_por_membro": [
+     "UNKNOWN"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "76c0df3c8bf105b9f8ec",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Jamie Dimon says JPMorgan Chase could spend $20 billion on acquisition: 'We are on the lookout'"
+   },
+   {
+    "anchor_date": "2026-05-31",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Natura &Co",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "241a6065d3dfca23392c"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:natura-co:124e050376a1",
+    "phase_por_membro": [
+     "ETAPA"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "241a6065d3dfca23392c",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Natura aprova incorporação de holding; ações começam a ser negociadas em julho"
+   },
+   {
+    "anchor_date": "2026-05-28",
+    "canonical_object": "announcement|dominion|following|offers|potential",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "NextEra Energy",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "e2aaca7cbab9ab40615b",
+     "fd960e36a07c01f8f316",
+     "a7bad194a930b3949e57",
+     "c6dddcc1c7bfd7677474",
+     "182d95ac5030a480857f",
+     "2285087fea8e7ed27978"
+    ],
+    "n_membros": 6,
+    "occurrence_id": "ma:nextera-energy:47c6c73a470e",
+    "phase_por_membro": [
+     "UNKNOWN",
+     "INICIACAO",
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN",
+     "UNKNOWN"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "fd960e36a07c01f8f316",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "NextEra Energy (NEE) Offers Potential Following Dominion Acquisition Announcement"
+   },
+   {
+    "anchor_date": "2026-08-13",
+    "canonical_object": "rondonopolis",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Orizon Valorização de Resíduos",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "2e440c297fa646ce331f"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:orizon-valorizacao-de-residuos:9b71c88ce175",
+    "phase_por_membro": [
+     "UNKNOWN"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "2e440c297fa646ce331f",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "[Fato Relevante] Orizon Valorização de Resíduos: Aquisição de Rondonópolis"
+   },
+   {
+    "anchor_date": "2026-06-01",
+    "canonical_object": "argonauta",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Petrobras",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "c3fc4e1690f8b1f2f3a7"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:petrobras:529b4a5321c1",
+    "phase_por_membro": [
+     "ETAPA"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "c3fc4e1690f8b1f2f3a7",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Cade aprova aquisição no campo de Argonauta pela Petrobras"
+   },
+   {
+    "anchor_date": "2026-06-12",
+    "canonical_object": "pcar3|stix",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Raia Drogasil",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "4acac6d38f820c314bf5"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:raia-drogasil:2dbbba91d6fc",
+    "phase_por_membro": [
+     "ETAPA"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "4acac6d38f820c314bf5",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Cade aprova aquisição pela RD Saúde (RADL3) da participação da GPA (PCAR3) na Stix"
+   },
+   {
+    "anchor_date": "2026-05-31",
+    "canonical_object": "castilho",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Sabesp",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "8c15836213be9609398e"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:sabesp:8b116385df52",
+    "phase_por_membro": [
+     "MATERIAL"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "8c15836213be9609398e",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Sabesp conclui aquisição de participação na concessionária Castilho por R$ 30,7 milhões"
+   },
+   {
+    "anchor_date": "2026-07-31",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Santander Brasil",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "e394fc412eac510358ea",
+     "e394fc412eac510358ea"
+    ],
+    "n_membros": 2,
+    "occurrence_id": "ma:santander-brasil:7667d0a6b9c4",
+    "phase_por_membro": [
+     "INICIACAO",
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "e394fc412eac510358ea",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Ações do Santander Brasil têm maior alta em seis anos com oferta pública de aquisição"
+   },
+   {
+    "anchor_date": "2026-08-04",
+    "canonical_object": "evolve",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Smart Fit",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "03cd0b1b2edd82cb03ee",
+     "601562a812028d796edb"
+    ],
+    "n_membros": 2,
+    "occurrence_id": "ma:smart-fit:a736e6ea5c53",
+    "phase_por_membro": [
+     "ETAPA",
+     "MATERIAL"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "601562a812028d796edb",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Smart Fit conclui aquisição da Evolve, rede de academias com presença no DF"
+   },
+   {
+    "anchor_date": "2026-07-01",
+    "canonical_object": "suzano-tissue-ifp",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Suzano",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "6f4ae9a2a77fb2678d11"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:suzano:a5d3c90f6780",
+    "phase_por_membro": [
+     "MATERIAL"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "6f4ae9a2a77fb2678d11",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Suzano (SUZB3) conclui aquisição de 51% da Arbex por R$ 6,7 bilhões"
+   },
+   {
+    "anchor_date": "2026-07-02",
+    "canonical_object": "leste|paulo|sao",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "BTG Pactual",
+    "direcao_esperada": null,
+    "family": "pequenas_aquisicoes",
+    "membros": [
+     "cefb0e73fbd8ce4a1047"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "pequenas_aquisicoes:btg-pactual:75fe253ecd56",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "cefb0e73fbd8ce4a1047",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "BTG (BPAC11) compra fatia da Leste no WTC São Paulo e mira controle do complexo"
+   },
+   {
+    "anchor_date": "2026-07-08",
+    "canonical_object": "",
+    "classe_de_sinal": "ADVERSE",
+    "company": "Cosan",
+    "direcao_esperada": "ADVERSE",
+    "family": "rebaixamento_rating",
+    "membros": [
+     "875f72493508e2fd1945",
+     "c8b94e33ce070747ba16"
+    ],
+    "n_membros": 2,
+    "occurrence_id": "rebaixamento_rating:cosan:7e08ec0c517b",
+    "phase_por_membro": [
+     "INICIACAO",
+     "INICIACAO"
+    ],
+    "regra_tier2": null,
+    "representante": "875f72493508e2fd1945",
+    "tier": "TIER1_EXPLICIT_DIRECTIONAL_TRUTH",
+    "titulo_representante": "S&P rebaixa rating da Cosan para B+ após enfraquecimento da diversificação"
+   },
+   {
+    "anchor_date": "2026-07-17",
+    "canonical_object": "",
+    "classe_de_sinal": "ADVERSE",
+    "company": "Rumo",
+    "direcao_esperada": "ADVERSE",
+    "family": "rebaixamento_rating",
+    "membros": [
+     "cf120a3fdb20953dc23d"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "rebaixamento_rating:rumo:5537238ccff8",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": null,
+    "representante": "cf120a3fdb20953dc23d",
+    "tier": "TIER1_EXPLICIT_DIRECTIONAL_TRUTH",
+    "titulo_representante": "Moody’s rebaixa rating corporativo da Rumo de ‘Ba2’ para ‘Ba3’ e altera perspectiva para negativa"
+   },
+   {
+    "anchor_date": "2026-08-17",
+    "canonical_object": "",
+    "classe_de_sinal": "ADVERSE",
+    "company": "JBS",
+    "direcao_esperada": "ADVERSE",
+    "family": "recomendacao_negativa",
+    "membros": [
+     "83effbd842777700232f"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "recomendacao_negativa:jbs:39d4d9955433",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": null,
+    "representante": "83effbd842777700232f",
+    "tier": "TIER1_EXPLICIT_DIRECTIONAL_TRUTH",
+    "titulo_representante": "Stephens reduz preço-alvo da JBS após resultado misto"
+   },
+   {
+    "anchor_date": "2026-08-17",
+    "canonical_object": "",
+    "classe_de_sinal": "ADVERSE",
+    "company": "Lojas Renner",
+    "direcao_esperada": "ADVERSE",
+    "family": "recomendacao_negativa",
+    "membros": [
+     "bf449889bcebca2a7d7a"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "recomendacao_negativa:lojas-renner:848eaa78e1e0",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": null,
+    "representante": "bf449889bcebca2a7d7a",
+    "tier": "TIER1_EXPLICIT_DIRECTIONAL_TRUTH",
+    "titulo_representante": "Lojas Renner (LREN3): Citi corta preço-alvo após revisão do guidance; ações caem"
+   },
+   {
+    "anchor_date": "2026-06-22",
+    "canonical_object": "",
+    "classe_de_sinal": "ADVERSE",
+    "company": "Rumo",
+    "direcao_esperada": "ADVERSE",
+    "family": "recomendacao_negativa",
+    "membros": [
+     "6c6de2598d9b42a7c7c5"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "recomendacao_negativa:rumo:c711261d8e35",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": null,
+    "representante": "6c6de2598d9b42a7c7c5",
+    "tier": "TIER1_EXPLICIT_DIRECTIONAL_TRUTH",
+    "titulo_representante": "Citi vê incerteza com troca de CEO da Rumo (RAIL3) e mantém recomendação de venda"
+   },
+   {
+    "anchor_date": "2026-08-21",
+    "canonical_object": "",
+    "classe_de_sinal": "ADVERSE",
+    "company": "Tok&Stok",
+    "direcao_esperada": "ADVERSE",
+    "family": "recuperacao_judicial",
+    "membros": [
+     "513ac4b9cc7e8b520fb7",
+     "d481295fca29979d04cb",
+     "187d4b1829b0d5a8db4d"
+    ],
+    "n_membros": 3,
+    "occurrence_id": "recuperacao_judicial:tok-stok:56c099cf8930",
+    "phase_por_membro": [
+     "ETAPA",
+     "ACOMPANHAMENTO",
+     "INICIACAO"
+    ],
+    "regra_tier2": null,
+    "representante": "187d4b1829b0d5a8db4d",
+    "tier": "TIER1_EXPLICIT_DIRECTIONAL_TRUTH",
+    "titulo_representante": "Em meio à recuperação judicial, empresa compra 13,2% da dona da Tok&Stok; dois fundos deixam grupo"
+   },
+   {
+    "anchor_date": "2026-08-19",
+    "canonical_object": "refit",
+    "classe_de_sinal": "ADVERSE",
+    "company": "B3",
+    "direcao_esperada": "ADVERSE",
+    "family": "suspensao_negociacao",
+    "membros": [
+     "7334950058186f17f96c"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "suspensao_negociacao:b3:b982567920ad",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": null,
+    "representante": "7334950058186f17f96c",
+    "tier": "TIER1_EXPLICIT_DIRECTIONAL_TRUTH",
+    "titulo_representante": "B3 suspende negociação de ações da Refit"
+   },
+   {
+    "anchor_date": "2026-08-13",
+    "canonical_object": "chapter|gol",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "B3",
+    "direcao_esperada": null,
+    "family": "troca_ceo",
+    "membros": [
+     "63c947b7791d619e5c82"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "troca_ceo:b3:165ecfcc0c3b",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "63c947b7791d619e5c82",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Após Chapter 11 e saída da B3, Gol anuncia novo CEO e faz mudanças na diretoria"
+   },
+   {
+    "anchor_date": "2026-08-20",
+    "canonical_object": "assume|bruno|estagiario|monte|presidencia|renovaveis",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "CPFL Energia",
+    "direcao_esperada": null,
+    "family": "troca_ceo",
+    "membros": [
+     "82d4ee2f88f8b8f932a5"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "troca_ceo:cpfl-energia:9c42c02357a7",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "82d4ee2f88f8b8f932a5",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "De Estagiário A CEO: Bruno Monte Assume A Presidência Da CPFL Renováveis"
+   },
+   {
+    "anchor_date": "2026-08-10",
+    "canonical_object": "batista|filho|wesley",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "JBS",
+    "direcao_esperada": null,
+    "family": "troca_ceo",
+    "membros": [
+     "edeb694bf05ba64f3430",
+     "201b91aa6b3c1d9e780c"
+    ],
+    "n_membros": 2,
+    "occurrence_id": "troca_ceo:jbs:5d25d77f013e",
+    "phase_por_membro": [
+     "INICIACAO",
+     "ACOMPANHAMENTO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "edeb694bf05ba64f3430",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "JBS nomeia Wesley Batista Filho como novo CEO global a partir de janeiro"
+   },
+   {
+    "anchor_date": "2026-06-22",
+    "canonical_object": "rockenbach",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Rumo",
+    "direcao_esperada": null,
+    "family": "troca_ceo",
+    "membros": [
+     "868fa15adaef38c3ee1a"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "troca_ceo:rumo:f0c553fa4b3a",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "868fa15adaef38c3ee1a",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "EXCLUSIVO: Rumo escolhe Rockenbach, “ferroviário raiz”, como novo CEO"
+   },
+   {
+    "anchor_date": "2026-06-15",
+    "canonical_object": "bank|boost|names|new|performance|pushes|regional",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Truist Financial",
+    "direcao_esperada": null,
+    "family": "troca_ceo",
+    "membros": [
+     "583c50a75933dc8876a2"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "troca_ceo:truist-financial:87de3109c3cb",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "583c50a75933dc8876a2",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Truist Names New CEO as Regional Bank Pushes to Boost Performance"
+   },
+   {
+    "anchor_date": "2026-06-01",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Tupy",
+    "direcao_esperada": null,
+    "family": "troca_ceo",
+    "membros": [
+     "478244266a93f748a9d2"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "troca_ceo:tupy:7a7b07171ab3",
+    "phase_por_membro": [
+     "MATERIAL"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "478244266a93f748a9d2",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Tupy (TUPY3) conclui sucessão e elege novo CEO"
+   },
+   {
+    "anchor_date": "2026-05-29",
+    "canonical_object": "citi|troca",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Ultrapar",
+    "direcao_esperada": null,
+    "family": "troca_ceo",
+    "membros": [
+     "bd7f525c64eecb23e0c5"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "troca_ceo:ultrapar:e20779035e78",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "bd7f525c64eecb23e0c5",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Troca de CEO da Ultrapar (UGPA3) surpreende Citi; veja qual é a visão do banco para a mudança"
+   },
+   {
+    "anchor_date": "2026-05-28",
+    "canonical_object": "embraer|klabin",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Vale",
+    "direcao_esperada": null,
+    "family": "troca_ceo",
+    "membros": [
+     "1cc87309f14b40640c31"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "troca_ceo:vale:1350021bf254",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "1cc87309f14b40640c31",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Novo CEO da Vale (VALE3): o que Embraer e Klabin dizem sobre participação de diretores na concorrência"
+   },
+   {
+    "anchor_date": "2026-05-28",
+    "canonical_object": "eleicao",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Vamos",
+    "direcao_esperada": null,
+    "family": "troca_ceo",
+    "membros": [
+     "ea2ac395ddf286a43e7f"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "troca_ceo:vamos:46c81d4764e3",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "ea2ac395ddf286a43e7f",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "[Fato Relevante] Vamos: Eleição de novo CEO"
+   },
+   {
+    "anchor_date": "2026-07-20",
+    "canonical_object": "castillo|gonzalo|rueda",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "Yura",
+    "direcao_esperada": null,
+    "family": "troca_ceo",
+    "membros": [
+     "8c22ad696759a8820c0a"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "troca_ceo:yura:fbd7e674fc9e",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "8c22ad696759a8820c0a",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "Gonzalo Rueda Castillo es el nuevo gerente general de Cemento Yura"
+   }
+  ],
+  "rotulos_permitidos": [
+   "ADVERSE",
+   "FAVORABLE",
+   "NEUTRAL",
+   "MIXED",
+   "UNCERTAIN"
+  ],
+  "sem_multiplicador_numerico": true,
+  "tier1": 14,
+  "tier1_adverso_esperado": 14,
+  "tier1_favoravel_esperado": 0,
+  "tier2": 49,
+  "unidade": "OCCURRENCE"
+ },
+ "matriz_humana": {
+  "authority": "EVALUATION ONLY",
+  "linhas": [
+   {
+    "article_id": "061eb3b6f37708a1986e",
+    "company": "Banco do Brasil",
+    "dimensoes": {
+     "company_role": {
+      "deterministico": "SUBJECT",
+      "gemini-3.1-flash-lite": {
+       "acerto": false,
+       "valor": "SUBJECT"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": false,
+       "valor": "SUBJECT"
+      },
+      "humano": "MENTIONED"
+     },
+     "currentness": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "CURRENT"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "CURRENT"
+      },
+      "humano": "CURRENT"
+     },
+     "event_asserted": {
+      "deterministico": "ASSERTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "ASSERTED"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "ASSERTED"
+      },
+      "humano": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "NEW_OCCURRENCE"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "NEW_OCCURRENCE"
+      },
+      "humano": "NEW_OCCURRENCE"
+     },
+     "subject": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "Banco do Brasil"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "Banco do Brasil"
+      },
+      "humano": "presidente do Banco do Brasil (pessoa fisica)"
+     }
+    },
+    "family": "investigacao_regulatoria",
+    "scoreable": {
+     "deterministico": true,
+     "gemini-3.1-flash-lite": true,
+     "gemini-3.5-flash-lite": true,
+     "humano": false
+    },
+    "titulo": "CVM abre processo contra presidente do Banco do Brasil após declaração sobre ações",
+    "verdict_humano": "PROCESSO_CONTRA_DIRIGENTE_NAO_E_EVENTO_DA_COMPANHIA"
+   },
+   {
+    "article_id": "10e297f95c5954630150",
+    "company": "Tok&Stok",
+    "dimensoes": {
+     "company_role": {
+      "deterministico": "SUBJECT",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "MENTIONED"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "MENTIONED"
+      },
+      "humano": "MENTIONED"
+     },
+     "event_asserted": {
+      "deterministico": "ASSERTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "MENTIONED_ONLY"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "MENTIONED_ONLY"
+      },
+      "humano": "MENTIONED_ONLY"
+     },
+     "occurrence_novelty": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "DESCRIPTOR_OR_BACKGROUND"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "DESCRIPTOR_OR_BACKGROUND"
+      },
+      "humano": "DESCRIPTOR_OR_BACKGROUND"
+     },
+     "subject": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "Tok&Stok"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "Tok&Stok"
+      },
+      "humano": "Tok&Stok"
+     }
+    },
+    "family": "recuperacao_judicial",
+    "scoreable": {
+     "deterministico": true,
+     "gemini-3.1-flash-lite": false,
+     "gemini-3.5-flash-lite": false,
+     "humano": false
+    },
+    "titulo": "Casas Bahia, Marabraz, Mobly e Tok&STok: por que tantas empresas de varejo estão pedindo recuperação judicial?",
+    "verdict_humano": "MENCAO_EM_ANALISE_SETORIAL"
+   },
+   {
+    "article_id": "201b91aa6b3c1d9e780c",
+    "company": "JBS",
+    "dimensoes": {
+     "company_role": {
+      "deterministico": "SUBJECT",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "SUBJECT"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "SUBJECT"
+      },
+      "humano": "SUBJECT"
+     },
+     "event_asserted": {
+      "deterministico": "ASSERTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "MENTIONED_ONLY"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": false,
+       "valor": "ASSERTED"
+      },
+      "humano": "MENTIONED_ONLY"
+     },
+     "occurrence_novelty": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "DESCRIPTOR_OR_BACKGROUND"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "DESCRIPTOR_OR_BACKGROUND"
+      },
+      "humano": "DESCRIPTOR_OR_BACKGROUND"
+     },
+     "subject": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "JBS"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "JBS"
+      },
+      "humano": "JBS"
+     }
+    },
+    "family": "troca_ceo",
+    "scoreable": {
+     "deterministico": true,
+     "gemini-3.1-flash-lite": false,
+     "gemini-3.5-flash-lite": true,
+     "humano": false
+    },
+    "titulo": "JBS busca recuperar margens nos EUA com gado mexicano, e novo CEO promete continuidade",
+    "verdict_humano": "MENCIONA_SEM_ANUNCIAR"
+   },
+   {
+    "article_id": "2e440c297fa646ce331f",
+    "company": "Orizon Valorização de Resíduos",
+    "dimensoes": {
+     "centrality": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "MAIN"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": false,
+       "valor": "INCIDENTAL"
+      },
+      "humano": "MAIN"
+     },
+     "company_role": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "BUYER"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": false,
+       "valor": "MENTIONED"
+      },
+      "humano": "BUYER"
+     },
+     "event_asserted": {
+      "deterministico": "ASSERTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "ASSERTED"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": false,
+       "valor": "MENTIONED_ONLY"
+      },
+      "humano": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "NEW_OCCURRENCE"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": false,
+       "valor": "UNDETERMINED"
+      },
+      "humano": "NEW_OCCURRENCE"
+     },
+     "phase": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": false,
+       "valor": "UNKNOWN"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": false,
+       "valor": "UNKNOWN"
+      },
+      "humano": "ANNOUNCED"
+     },
+     "subject": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "Orizon Valorização de Resíduos"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": false,
+       "valor": "Aquisição de Rondonópolis"
+      },
+      "humano": "Orizon Valorizacao de Residuos"
+     },
+     "transaction_object": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": false,
+       "valor": "ASSET_OR_BUSINESS_UNIT"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": false,
+       "valor": "NOT_APPLICABLE"
+      },
+      "humano": "COMPANY_CONTROL"
+     }
+    },
+    "family": "ma",
+    "scoreable": {
+     "deterministico": true,
+     "gemini-3.1-flash-lite": null,
+     "gemini-3.5-flash-lite": null,
+     "humano": null
+    },
+    "titulo": "[Fato Relevante] Orizon Valorização de Resíduos: Aquisição de Rondonópolis",
+    "verdict_humano": "MA_SOCIETARIO_PONTUAVEL"
+   },
+   {
+    "article_id": "5d05e84444486491a30b",
+    "company": "JBS",
+    "dimensoes": {
+     "centrality": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "MAIN"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "MAIN"
+      },
+      "humano": "MAIN"
+     },
+     "company_role": {
+      "deterministico": "SUBJECT",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "SUBJECT"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "SUBJECT"
+      },
+      "humano": "SUBJECT"
+     },
+     "currentness": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "CURRENT"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "CURRENT"
+      },
+      "humano": "CURRENT"
+     },
+     "event_asserted": {
+      "deterministico": "ASSERTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "ASSERTED"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "ASSERTED"
+      },
+      "humano": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "NEW_OCCURRENCE"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "NEW_OCCURRENCE"
+      },
+      "humano": "NEW_OCCURRENCE"
+     },
+     "phase": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "ANNOUNCED"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "ANNOUNCED"
+      },
+      "humano": "ANNOUNCED"
+     },
+     "related_entity": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "Wesley Batista Filho"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "Wesley Batista Filho"
+      },
+      "humano": "Wesley Batista Filho"
+     },
+     "relation": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "CEO"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": false,
+       "valor": "CEO_APPOINTMENT"
+      },
+      "humano": "CEO"
+     },
+     "subject": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "JBS"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "JBS"
+      },
+      "humano": "JBS"
+     },
+     "transaction_object": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "NOT_APPLICABLE"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "NOT_APPLICABLE"
+      },
+      "humano": "NOT_APPLICABLE"
+     }
+    },
+    "family": "troca_ceo",
+    "scoreable": {
+     "deterministico": true,
+     "gemini-3.1-flash-lite": null,
+     "gemini-3.5-flash-lite": null,
+     "humano": null
+    },
+    "titulo": "Wesley Batista Filho será o novo CEO Global da JBS a partir de janeiro de 2027",
+    "verdict_humano": "TRUE_NEW_ANNOUNCEMENT"
+   },
+   {
+    "article_id": "61166442c0f897153eec",
+    "company": "JBS",
+    "dimensoes": {
+     "centrality": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "MAIN"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "MAIN"
+      },
+      "humano": "MAIN"
+     },
+     "company_role": {
+      "deterministico": "SUBJECT",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "SUBJECT"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "SUBJECT"
+      },
+      "humano": "SUBJECT"
+     },
+     "currentness": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "CURRENT"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "CURRENT"
+      },
+      "humano": "CURRENT"
+     },
+     "event_asserted": {
+      "deterministico": "ASSERTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "ASSERTED"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "ASSERTED"
+      },
+      "humano": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "NEW_OCCURRENCE"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "NEW_OCCURRENCE"
+      },
+      "humano": "NEW_OCCURRENCE"
+     },
+     "phase": {
+      "deterministico": "anuncio",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "ANNOUNCED"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "ANNOUNCED"
+      },
+      "humano": "ANNOUNCED"
+     },
+     "subject": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "JBS"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "JBS"
+      },
+      "humano": "JBS"
+     },
+     "transaction_object": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "COMPANY_CONTROL"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "COMPANY_CONTROL"
+      },
+      "humano": "COMPANY_CONTROL"
+     }
+    },
+    "family": "ma",
+    "scoreable": {
+     "deterministico": true,
+     "gemini-3.1-flash-lite": null,
+     "gemini-3.5-flash-lite": null,
+     "humano": null
+    },
+    "titulo": "Pilgrim's, da JBS, anuncia aquisição da Walkers Deli & Sausage Company no Reino Unido",
+    "verdict_humano": "MA_DE_CONTROLADA_ATRIBUIVEL_AO_GRUPO"
+   },
+   {
+    "article_id": "6cf40fc7ad1d8e108226",
+    "company": "Citigroup",
+    "dimensoes": {
+     "centrality": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "MAIN"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "MAIN"
+      },
+      "humano": "MAIN"
+     },
+     "company_role": {
+      "deterministico": "SUBJECT",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "BUYER"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "BUYER"
+      },
+      "humano": "BUYER"
+     },
+     "currentness": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "HISTORICAL"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "HISTORICAL"
+      },
+      "humano": "HISTORICAL"
+     },
+     "event_asserted": {
+      "deterministico": "ASSERTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "ASSERTED"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "ASSERTED"
+      },
+      "humano": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": false,
+       "valor": "FOLLOW_UP"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": false,
+       "valor": "FOLLOW_UP"
+      },
+      "humano": "HISTORICAL_CONTEXT"
+     },
+     "phase": {
+      "deterministico": "encerramento",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "CONCLUDED"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "CONCLUDED"
+      },
+      "humano": "CONCLUDED"
+     },
+     "subject": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "Citigroup"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "Citigroup"
+      },
+      "humano": "Citigroup"
+     },
+     "transaction_object": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "COMPANY_CONTROL"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "COMPANY_CONTROL"
+      },
+      "humano": "COMPANY_CONTROL"
+     }
+    },
+    "family": "ma",
+    "scoreable": {
+     "deterministico": true,
+     "gemini-3.1-flash-lite": null,
+     "gemini-3.5-flash-lite": null,
+     "humano": null
+    },
+    "titulo": "Citigroup conclui com sucesso a aquisição da Associates First Capital Corp.",
+    "verdict_humano": "MA_REAL_MAS_HISTORICO"
+   },
+   {
+    "article_id": "83effbd842777700232f",
+    "company": "JBS",
+    "dimensoes": {
+     "company_role": {
+      "deterministico": "SUBJECT",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "SUBJECT"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "SUBJECT"
+      },
+      "humano": "SUBJECT"
+     },
+     "currentness": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "CURRENT"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "CURRENT"
+      },
+      "humano": "CURRENT"
+     },
+     "event_asserted": {
+      "deterministico": "ASSERTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": false,
+       "valor": "MENTIONED_ONLY"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "ASSERTED"
+      },
+      "humano": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "NEW_OCCURRENCE"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "NEW_OCCURRENCE"
+      },
+      "humano": "NEW_OCCURRENCE"
+     },
+     "subject": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "JBS"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": false,
+       "valor": "Stephens"
+      },
+      "humano": "JBS"
+     }
+    },
+    "family": "recomendacao_negativa",
+    "scoreable": {
+     "deterministico": true,
+     "gemini-3.1-flash-lite": false,
+     "gemini-3.5-flash-lite": true,
+     "humano": true
+    },
+    "titulo": "Stephens reduz preço-alvo da JBS após resultado misto",
+    "verdict_humano": "RECOMENDACAO_NEGATIVA_CONFIRMADA"
+   },
+   {
+    "article_id": "8f820bbc8fc89c13911b",
+    "company": "Eneva",
+    "dimensoes": {
+     "centrality": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "MAIN"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "MAIN"
+      },
+      "humano": "MAIN"
+     },
+     "company_role": {
+      "deterministico": "SUBJECT",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "BUYER"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "BUYER"
+      },
+      "humano": "BUYER"
+     },
+     "currentness": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "CURRENT"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "CURRENT"
+      },
+      "humano": "CURRENT"
+     },
+     "event_asserted": {
+      "deterministico": "ASSERTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "ASSERTED"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "ASSERTED"
+      },
+      "humano": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": false,
+       "valor": "NEW_OCCURRENCE"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": false,
+       "valor": "NEW_OCCURRENCE"
+      },
+      "humano": "FOLLOW_UP"
+     },
+     "phase": {
+      "deterministico": "aprovacao",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "CONFIRMED"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "CONFIRMED"
+      },
+      "humano": "CONFIRMED"
+     },
+     "related_entity": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "Atem"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "Atem"
+      },
+      "humano": "Atem"
+     },
+     "relation": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "BUYER"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": false,
+       "valor": "acquires stake from"
+      },
+      "humano": "BUYER"
+     },
+     "subject": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "Eneva"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "Eneva"
+      },
+      "humano": "Eneva"
+     },
+     "transaction_object": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "ASSET_OR_BUSINESS_UNIT"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": false,
+       "valor": "EQUITY_STAKE"
+      },
+      "humano": "ASSET_OR_BUSINESS_UNIT"
+     }
+    },
+    "family": "ma",
+    "scoreable": {
+     "deterministico": true,
+     "gemini-3.1-flash-lite": null,
+     "gemini-3.5-flash-lite": null,
+     "humano": null
+    },
+    "titulo": "ANP aprova aquisição de parte da Atem em Japiim pela Eneva",
+    "verdict_humano": "FALSE_SCOPE"
+   },
+   {
+    "article_id": "bf449889bcebca2a7d7a",
+    "company": "Lojas Renner",
+    "dimensoes": {
+     "company_role": {
+      "deterministico": "SUBJECT",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "SUBJECT"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "SUBJECT"
+      },
+      "humano": "SUBJECT"
+     },
+     "currentness": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "CURRENT"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "CURRENT"
+      },
+      "humano": "CURRENT"
+     },
+     "event_asserted": {
+      "deterministico": "ASSERTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "ASSERTED"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "ASSERTED"
+      },
+      "humano": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "NEW_OCCURRENCE"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "NEW_OCCURRENCE"
+      },
+      "humano": "NEW_OCCURRENCE"
+     },
+     "subject": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "Lojas Renner"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "Lojas Renner"
+      },
+      "humano": "Lojas Renner"
+     }
+    },
+    "family": "recomendacao_negativa",
+    "scoreable": {
+     "deterministico": true,
+     "gemini-3.1-flash-lite": true,
+     "gemini-3.5-flash-lite": true,
+     "humano": true
+    },
+    "titulo": "Lojas Renner (LREN3): Citi corta preço-alvo após revisão do guidance; ações caem",
+    "verdict_humano": "RECOMENDACAO_NEGATIVA_CONFIRMADA"
+   },
+   {
+    "article_id": "d566e840bd3c1d4f43bc",
+    "company": "Citigroup",
+    "dimensoes": {
+     "centrality": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "MAIN"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "MAIN"
+      },
+      "humano": "MAIN"
+     },
+     "company_role": {
+      "deterministico": "SUBJECT",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "BUYER"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "BUYER"
+      },
+      "humano": "BUYER"
+     },
+     "currentness": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "CURRENT"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "CURRENT"
+      },
+      "humano": "CURRENT"
+     },
+     "event_asserted": {
+      "deterministico": "ASSERTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "ASSERTED"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "ASSERTED"
+      },
+      "humano": "ASSERTED"
+     },
+     "occurrence_novelty": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "NEW_OCCURRENCE"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "NEW_OCCURRENCE"
+      },
+      "humano": "NEW_OCCURRENCE"
+     },
+     "phase": {
+      "deterministico": "aprovacao",
+      "gemini-3.1-flash-lite": {
+       "acerto": false,
+       "valor": "AGREED"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": false,
+       "valor": "AGREED"
+      },
+      "humano": "ANNOUNCED"
+     },
+     "subject": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "Citigroup"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "Citigroup"
+      },
+      "humano": "Citigroup"
+     },
+     "transaction_object": {
+      "deterministico": "NOT_EMITTED",
+      "gemini-3.1-flash-lite": {
+       "acerto": true,
+       "valor": "COMPANY_CONTROL"
+      },
+      "gemini-3.5-flash-lite": {
+       "acerto": true,
+       "valor": "COMPANY_CONTROL"
+      },
+      "humano": "COMPANY_CONTROL"
+     }
+    },
+    "family": "ma",
+    "scoreable": {
+     "deterministico": true,
+     "gemini-3.1-flash-lite": null,
+     "gemini-3.5-flash-lite": null,
+     "humano": null
+    },
+    "titulo": "Acordo de Aquisição da Kard pelo Citigroup: Um Novo Motor de Crescimento para os Cartões dos EUA?",
+    "verdict_humano": "MA_CONFIRMADO_NOVO"
+   }
+  ],
+  "n": 11
+ },
+ "pacote_jbs": {
+  "authority": "EVALUATION ONLY",
+  "n": 4,
+  "nota": "Nao se pontua o modelo contra verdade positiva inventada. O que se mede em Tier 2 e o EXCESSO de confianca.",
+  "ocorrencias": [
+   {
+    "anchor_date": "2026-07-21",
+    "canonical_object": "",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "JBS",
+    "direcao_esperada": null,
+    "family": "emissao_divida",
+    "membros": [
+     "53340f861717b39cbca3"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "emissao_divida:jbs:e25e2ea627d2",
+    "phase_por_membro": [
+     "UNKNOWN"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "53340f861717b39cbca3",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "JBS capta R$ 400 mi para operação de biodiesel; cadeia do agro é acompanhada pelo SNFZ11",
+    "verdade_humana": "NAO NECESSARIAMENTE ADVERSO — UNCERTAIN/NEUTRAL/MIXED defensaveis; o erro a detectar e ADVERSE confiante sem evidencia"
+   },
+   {
+    "anchor_date": "2026-07-23",
+    "canonical_object": "oma",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "JBS",
+    "direcao_esperada": null,
+    "family": "ma",
+    "membros": [
+     "f11950284cc8d9a152f5"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "ma:jbs:0a6cde56d6ff",
+    "phase_por_membro": [
+     "UNKNOWN"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "f11950284cc8d9a152f5",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "JBS mira expansão global com listagem nos EUA e aquisição em Omã",
+    "verdade_humana": "NAO NECESSARIAMENTE ADVERSO — UNCERTAIN/NEUTRAL/MIXED defensaveis; o erro a detectar e ADVERSE confiante sem evidencia"
+   },
+   {
+    "anchor_date": "2026-08-17",
+    "canonical_object": "",
+    "classe_de_sinal": "ADVERSE",
+    "company": "JBS",
+    "direcao_esperada": "ADVERSE",
+    "family": "recomendacao_negativa",
+    "membros": [
+     "83effbd842777700232f"
+    ],
+    "n_membros": 1,
+    "occurrence_id": "recomendacao_negativa:jbs:39d4d9955433",
+    "phase_por_membro": [
+     "INICIACAO"
+    ],
+    "regra_tier2": null,
+    "representante": "83effbd842777700232f",
+    "tier": "TIER1_EXPLICIT_DIRECTIONAL_TRUTH",
+    "titulo_representante": "Stephens reduz preço-alvo da JBS após resultado misto",
+    "verdade_humana": "ADVERSE esperado (familia declarada `negativa`)"
+   },
+   {
+    "anchor_date": "2026-08-10",
+    "canonical_object": "batista|filho|wesley",
+    "classe_de_sinal": "CONTEXTUAL",
+    "company": "JBS",
+    "direcao_esperada": null,
+    "family": "troca_ceo",
+    "membros": [
+     "edeb694bf05ba64f3430",
+     "201b91aa6b3c1d9e780c"
+    ],
+    "n_membros": 2,
+    "occurrence_id": "troca_ceo:jbs:5d25d77f013e",
+    "phase_por_membro": [
+     "INICIACAO",
+     "ACOMPANHAMENTO"
+    ],
+    "regra_tier2": "sem rotulo unico: mede-se ADVERSE sem evidencia, FAVORABLE sem evidencia e abstencao apropriada",
+    "representante": "edeb694bf05ba64f3430",
+    "tier": "TIER2_HUMAN_BOUNDED_TRUTH",
+    "titulo_representante": "JBS nomeia Wesley Batista Filho como novo CEO global a partir de janeiro",
+    "verdade_humana": "NAO NECESSARIAMENTE ADVERSO — UNCERTAIN/NEUTRAL/MIXED defensaveis; o erro a detectar e ADVERSE confiante sem evidencia"
+   }
+  ],
+  "tier1": 1,
+  "tier2": 3
+ },
+ "prontidao": {
+  "MODEL_DIRECTION_SCORE_AUTHORITY": "NOT_READY",
+  "authority": "EVALUATION ONLY",
+  "criterios_falhos": [
+   "direcionalidade NAO MEDIDA: nenhuma resposta direcional: o contrato `v2` nao emite campo de direcao e nao ha credencial de modelo neste ambiente",
+   "evidencia fraca em gemini-3.1-flash-lite",
+   "latencia/custo direcional nao observados nesta execucao"
+  ],
+  "motivo_dominante": "falta de MEDIÇÃO, nao resultado ruim"
+ },
+ "telemetria": {
+  "authority": "EVALUATION ONLY",
+  "chamadas_nesta_execucao": 0,
+  "nota": "Nenhuma chamada foi feita nesta execucao: nao ha credencial de modelo neste ambiente. Os numeros vem das observacoes CONGELADAS.",
+  "por_modelo": {
+   "gemini-3.1-flash-lite": {
+    "chamadas": 24,
+    "custo": "indisponivel — a observacao congelada nao registra preco",
+    "falhas": 0,
+    "latencia_media_s": 3.45,
+    "latencia_mediana_s": 3.14,
+    "latencia_p95_s": 6.19,
+    "observacoes_sem_usage": 0,
+    "ok": 24,
+    "tokens_entrada": 31740,
+    "tokens_saida": 7126,
+    "tokens_total": 38866
+   },
+   "gemini-3.5-flash-lite": {
+    "chamadas": 24,
+    "custo": "indisponivel — a observacao congelada nao registra preco",
+    "falhas": 0,
+    "latencia_media_s": 1.6,
+    "latencia_mediana_s": 1.57,
+    "latencia_p95_s": 1.94,
+    "observacoes_sem_usage": 0,
+    "ok": 24,
+    "tokens_entrada": 31740,
+    "tokens_saida": 7150,
+    "tokens_total": 38890
+   }
+  }
+ },
+ "valor_sobre_deterministico": {
+  "authority": "EVALUATION ONLY",
+  "discordancias_g1_g2": [
+   {
+    "acertou": "gemini-3.1-flash-lite",
+    "company": "JBS",
+    "family": "troca_ceo"
+   },
+   {
+    "acertou": "gemini-3.5-flash-lite",
+    "company": "JBS",
+    "family": "recomendacao_negativa"
+   }
+  ],
+  "por_modelo": {
+   "gemini-3.1-flash-lite": {
+    "ambos_erram": [
+     "Banco do Brasil/investigacao_regulatoria"
+    ],
+    "regressoes": [
+     "JBS/recomendacao_negativa"
+    ],
+    "resgates": [
+     "JBS/troca_ceo",
+     "Tok&Stok/recuperacao_judicial"
+    ]
+   },
+   "gemini-3.5-flash-lite": {
+    "ambos_erram": [
+     "Banco do Brasil/investigacao_regulatoria",
+     "JBS/troca_ceo"
+    ],
+    "regressoes": [],
+    "resgates": [
+     "Tok&Stok/recuperacao_judicial"
+    ]
+   }
+  },
+  "resgates_unicos_g1": [
+   "JBS"
+  ],
+  "resgates_unicos_g2": [
+   "JBS"
+  ],
+  "valor_incremental_do_segundo_modelo": "medido: ['JBS']"
+ }
+}
